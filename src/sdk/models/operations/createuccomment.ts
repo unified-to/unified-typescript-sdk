@@ -4,7 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateUcCommentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Content: "content",
+  UserId: "user_id",
+  CallId: "call_id",
+  Raw: "raw",
+} as const;
+export type CreateUcCommentQueryParamFields = ClosedEnum<
+  typeof CreateUcCommentQueryParamFields
+>;
 
 export type CreateUcCommentRequest = {
   ucComment: shared.UcComment;
@@ -15,12 +29,17 @@ export type CreateUcCommentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateUcCommentQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateUcCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateUcCommentQueryParamFields
+> = z.nativeEnum(CreateUcCommentQueryParamFields);
 
 /** @internal */
 export type CreateUcCommentRequest$Outbound = {
@@ -38,7 +57,7 @@ export const CreateUcCommentRequest$outboundSchema: z.ZodType<
 > = z.object({
   ucComment: shared.UcComment$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateUcCommentQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

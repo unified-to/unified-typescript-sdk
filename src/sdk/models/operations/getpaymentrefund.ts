@@ -4,6 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetPaymentRefundQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TotalAmount: "total_amount",
+  PaymentId: "payment_id",
+  Currency: "currency",
+  Notes: "notes",
+  Status: "status",
+  Reference: "reference",
+  Raw: "raw",
+} as const;
+export type GetPaymentRefundQueryParamFields = ClosedEnum<
+  typeof GetPaymentRefundQueryParamFields
+>;
 
 export type GetPaymentRefundRequest = {
   /**
@@ -13,7 +30,7 @@ export type GetPaymentRefundRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetPaymentRefundQueryParamFields> | undefined;
   /**
    * ID of the Refund
    */
@@ -23,6 +40,11 @@ export type GetPaymentRefundRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetPaymentRefundQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetPaymentRefundQueryParamFields
+> = z.nativeEnum(GetPaymentRefundQueryParamFields);
 
 /** @internal */
 export type GetPaymentRefundRequest$Outbound = {
@@ -39,7 +61,7 @@ export const GetPaymentRefundRequest$outboundSchema: z.ZodType<
   GetPaymentRefundRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetPaymentRefundQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

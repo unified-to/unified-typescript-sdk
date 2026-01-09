@@ -4,7 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateHrisLocationQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Address: "address",
+  ParentId: "parent_id",
+  ExternalIdentifier: "external_identifier",
+  Telephones: "telephones",
+  Timezone: "timezone",
+  Currency: "currency",
+  LanguageLocale: "language_locale",
+  IsActive: "is_active",
+  IsHq: "is_hq",
+  CompanyId: "company_id",
+  Raw: "raw",
+} as const;
+export type UpdateHrisLocationQueryParamFields = ClosedEnum<
+  typeof UpdateHrisLocationQueryParamFields
+>;
 
 export type UpdateHrisLocationRequest = {
   hrisLocation: shared.HrisLocation;
@@ -15,7 +38,7 @@ export type UpdateHrisLocationRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateHrisLocationQueryParamFields> | undefined;
   /**
    * ID of the Location
    */
@@ -25,6 +48,11 @@ export type UpdateHrisLocationRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateHrisLocationQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateHrisLocationQueryParamFields
+> = z.nativeEnum(UpdateHrisLocationQueryParamFields);
 
 /** @internal */
 export type UpdateHrisLocationRequest$Outbound = {
@@ -43,7 +71,7 @@ export const UpdateHrisLocationRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisLocation: shared.HrisLocation$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateHrisLocationQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

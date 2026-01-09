@@ -4,6 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingExpensesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  Name: "name",
+  TotalAmount: "total_amount",
+  Currency: "currency",
+  TaxAmount: "tax_amount",
+  ReimbursedAmount: "reimbursed_amount",
+  ReimbursedAt: "reimbursed_at",
+  ApprovedAt: "approved_at",
+  ApproverUserId: "approver_user_id",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type ListAccountingExpensesQueryParamFields = ClosedEnum<
+  typeof ListAccountingExpensesQueryParamFields
+>;
 
 export type ListAccountingExpensesRequest = {
   /**
@@ -13,7 +34,7 @@ export type ListAccountingExpensesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingExpensesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,14 +48,20 @@ export type ListAccountingExpensesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingExpensesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingExpensesQueryParamFields> = z.nativeEnum(
+    ListAccountingExpensesQueryParamFields,
+  );
 
 /** @internal */
 export type ListAccountingExpensesRequest$Outbound = {
@@ -57,7 +84,8 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
   ListAccountingExpensesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingExpensesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -4,6 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsDocumentsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DocumentUrl: "document_url",
+  DocumentData: "document_data",
+  Filename: "filename",
+  Type: "type",
+  CandidateId: "candidate_id",
+  ApplicationId: "application_id",
+  JobId: "job_id",
+  UserId: "user_id",
+  Raw: "raw",
+} as const;
+export type ListAtsDocumentsQueryParamFields = ClosedEnum<
+  typeof ListAtsDocumentsQueryParamFields
+>;
 
 export type ListAtsDocumentsRequest = {
   /**
@@ -21,7 +40,7 @@ export type ListAtsDocumentsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsDocumentsQueryParamFields> | undefined;
   /**
    * The job ID to filter by
    */
@@ -43,10 +62,15 @@ export type ListAtsDocumentsRequest = {
    */
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsDocumentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAtsDocumentsQueryParamFields
+> = z.nativeEnum(ListAtsDocumentsQueryParamFields);
 
 /** @internal */
 export type ListAtsDocumentsRequest$Outbound = {
@@ -74,7 +98,7 @@ export const ListAtsDocumentsRequest$outboundSchema: z.ZodType<
   applicationId: z.string().optional(),
   candidateId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsDocumentsQueryParamFields$outboundSchema).optional(),
   jobId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

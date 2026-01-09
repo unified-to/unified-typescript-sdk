@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListKmsSpacesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentSpaceId: "parent_space_id",
+  ParentId: "parent_id",
+  IsActive: "is_active",
+  UserId: "user_id",
+  ParentPageId: "parent_page_id",
+  Raw: "raw",
+} as const;
+export type ListKmsSpacesQueryParamFields = ClosedEnum<
+  typeof ListKmsSpacesQueryParamFields
+>;
 
 export type ListKmsSpacesRequest = {
   /**
@@ -13,7 +31,7 @@ export type ListKmsSpacesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListKmsSpacesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +49,15 @@ export type ListKmsSpacesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListKmsSpacesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListKmsSpacesQueryParamFields
+> = z.nativeEnum(ListKmsSpacesQueryParamFields);
 
 /** @internal */
 export type ListKmsSpacesRequest$Outbound = {
@@ -57,7 +80,7 @@ export const ListKmsSpacesRequest$outboundSchema: z.ZodType<
   ListKmsSpacesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListKmsSpacesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

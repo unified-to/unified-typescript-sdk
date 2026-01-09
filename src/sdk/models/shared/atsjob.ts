@@ -81,10 +81,6 @@ export type AtsJob = {
   companyId?: string | undefined;
   compensation?: Array<AtsCompensation> | undefined;
   createdAt?: Date | undefined;
-  /**
-   * @deprecated Use `groups` instead
-   */
-  departments?: Array<string> | undefined;
   description?: string | undefined;
   employmentType?: EmploymentType | undefined;
   /**
@@ -154,7 +150,6 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
-    departments: z.array(z.string()).optional(),
     description: z.string().optional(),
     employment_type: EmploymentType$inboundSchema.optional(),
     groups: z.array(AtsGroup$inboundSchema).optional(),
@@ -201,7 +196,6 @@ export type AtsJob$Outbound = {
   company_id?: string | undefined;
   compensation?: Array<AtsCompensation$Outbound> | undefined;
   created_at?: string | undefined;
-  departments?: Array<string> | undefined;
   description?: string | undefined;
   employment_type?: string | undefined;
   groups?: Array<AtsGroup$Outbound> | undefined;
@@ -236,7 +230,6 @@ export const AtsJob$outboundSchema: z.ZodType<
   companyId: z.string().optional(),
   compensation: z.array(AtsCompensation$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  departments: z.array(z.string()).optional(),
   description: z.string().optional(),
   employmentType: EmploymentType$outboundSchema.optional(),
   groups: z.array(AtsGroup$outboundSchema).optional(),

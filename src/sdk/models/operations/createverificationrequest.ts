@@ -4,7 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateVerificationRequestQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PackageId: "package_id",
+  Parameters: "parameters",
+  TargetUrl: "target_url",
+  CandidateId: "candidate_id",
+  ProfileIpAddress: "profile_ip_address",
+  ProfileName: "profile_name",
+  ProfileDateOfBirth: "profile_date_of_birth",
+  ProfileAddresses: "profile_addresses",
+  ProfileGender: "profile_gender",
+  ProfileEmails: "profile_emails",
+  ProfileTelephones: "profile_telephones",
+  ProfileNationalIdentifier: "profile_national_identifier",
+  ResponseCompletedAt: "response_completed_at",
+  ResponseExpiresAt: "response_expires_at",
+  ResponseIssuedAt: "response_issued_at",
+  ResponseStatus: "response_status",
+  ResponseScore: "response_score",
+  ResponseRedirectUrl: "response_redirect_url",
+  ResponseDownloadUrls: "response_download_urls",
+  ResponseDetails: "response_details",
+  ResponseSource: "response_source",
+  Raw: "raw",
+} as const;
+export type CreateVerificationRequestQueryParamFields = ClosedEnum<
+  typeof CreateVerificationRequestQueryParamFields
+>;
 
 export type CreateVerificationRequestRequest = {
   verificationRequest: shared.VerificationRequest;
@@ -15,12 +47,17 @@ export type CreateVerificationRequestRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateVerificationRequestQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateVerificationRequestQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateVerificationRequestQueryParamFields> = z
+    .nativeEnum(CreateVerificationRequestQueryParamFields);
 
 /** @internal */
 export type CreateVerificationRequestRequest$Outbound = {
@@ -38,7 +75,8 @@ export const CreateVerificationRequestRequest$outboundSchema: z.ZodType<
 > = z.object({
   verificationRequest: shared.VerificationRequest$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateVerificationRequestQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

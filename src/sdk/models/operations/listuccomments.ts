@@ -4,6 +4,20 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListUcCommentsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Content: "content",
+  UserId: "user_id",
+  CallId: "call_id",
+  Raw: "raw",
+} as const;
+export type ListUcCommentsQueryParamFields = ClosedEnum<
+  typeof ListUcCommentsQueryParamFields
+>;
 
 export type ListUcCommentsRequest = {
   /**
@@ -17,7 +31,7 @@ export type ListUcCommentsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListUcCommentsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,14 +45,19 @@ export type ListUcCommentsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListUcCommentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListUcCommentsQueryParamFields
+> = z.nativeEnum(ListUcCommentsQueryParamFields);
 
 /** @internal */
 export type ListUcCommentsRequest$Outbound = {
@@ -63,7 +82,7 @@ export const ListUcCommentsRequest$outboundSchema: z.ZodType<
 > = z.object({
   callId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListUcCommentsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

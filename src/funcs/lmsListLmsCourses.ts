@@ -96,7 +96,6 @@ async function $do(
   const query = encodeFormQuery({
     "class_id": payload.class_id,
     "company_id": payload.company_id,
-    "course_id": payload.course_id,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,

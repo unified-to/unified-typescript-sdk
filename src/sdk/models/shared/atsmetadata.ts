@@ -59,10 +59,8 @@ export type AtsMetadata = {
     | undefined;
   format?: Format | undefined;
   id?: string | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -346,10 +344,8 @@ export const AtsMetadata$inboundSchema: z.ZodType<
   ]).optional(),
   format: Format$inboundSchema.optional(),
   id: z.string().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),
@@ -380,10 +376,8 @@ export type AtsMetadata$Outbound = {
     | undefined;
   format?: string | undefined;
   id?: string | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -415,10 +409,8 @@ export const AtsMetadata$outboundSchema: z.ZodType<
   ]).optional(),
   format: Format$outboundSchema.optional(),
   id: z.string().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),

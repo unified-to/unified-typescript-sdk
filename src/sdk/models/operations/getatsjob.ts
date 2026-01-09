@@ -4,6 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAtsJobQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  RecruiterIds: "recruiter_ids",
+  HiringManagerIds: "hiring_manager_ids",
+  Status: "status",
+  ClosedAt: "closed_at",
+  Addresses: "addresses",
+  Compensation: "compensation",
+  EmploymentType: "employment_type",
+  Remote: "remote",
+  LanguageLocale: "language_locale",
+  PublicJobUrls: "public_job_urls",
+  NumberOfOpenings: "number_of_openings",
+  CompanyId: "company_id",
+  Questions: "questions",
+  Postings: "postings",
+  Groups: "groups",
+  Openings: "openings",
+  MinimumExperienceYears: "minimum_experience_years",
+  MinimumDegree: "minimum_degree",
+  Skills: "skills",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type GetAtsJobQueryParamFields = ClosedEnum<
+  typeof GetAtsJobQueryParamFields
+>;
 
 export type GetAtsJobRequest = {
   /**
@@ -13,7 +46,7 @@ export type GetAtsJobRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAtsJobQueryParamFields> | undefined;
   /**
    * ID of the Job
    */
@@ -23,6 +56,11 @@ export type GetAtsJobRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAtsJobQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetAtsJobQueryParamFields
+> = z.nativeEnum(GetAtsJobQueryParamFields);
 
 /** @internal */
 export type GetAtsJobRequest$Outbound = {
@@ -39,7 +77,7 @@ export const GetAtsJobRequest$outboundSchema: z.ZodType<
   GetAtsJobRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAtsJobQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

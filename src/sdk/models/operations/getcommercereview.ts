@@ -4,6 +4,36 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetCommerceReviewQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ItemId: "item_id",
+  ItemVariantId: "item_variant_id",
+  Rating: "rating",
+  Title: "title",
+  Content: "content",
+  AuthorName: "author_name",
+  AuthorEmail: "author_email",
+  AuthorAvatarUrl: "author_avatar_url",
+  AuthorLocation: "author_location",
+  VerifiedPurchase: "verified_purchase",
+  HelpfulVotes: "helpful_votes",
+  UnhelpfulVotes: "unhelpful_votes",
+  Media: "media",
+  Status: "status",
+  IsVerified: "is_verified",
+  IsFeatured: "is_featured",
+  IsPublic: "is_public",
+  Comments: "comments",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type GetCommerceReviewQueryParamFields = ClosedEnum<
+  typeof GetCommerceReviewQueryParamFields
+>;
 
 export type GetCommerceReviewRequest = {
   /**
@@ -13,7 +43,7 @@ export type GetCommerceReviewRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetCommerceReviewQueryParamFields> | undefined;
   /**
    * ID of the Review
    */
@@ -23,6 +53,11 @@ export type GetCommerceReviewRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetCommerceReviewQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetCommerceReviewQueryParamFields
+> = z.nativeEnum(GetCommerceReviewQueryParamFields);
 
 /** @internal */
 export type GetCommerceReviewRequest$Outbound = {
@@ -39,7 +74,7 @@ export const GetCommerceReviewRequest$outboundSchema: z.ZodType<
   GetCommerceReviewRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetCommerceReviewQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

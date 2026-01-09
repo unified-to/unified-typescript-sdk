@@ -4,6 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingReportQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Type: "type",
+  Name: "name",
+  Currency: "currency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  BalanceSheet: "balance_sheet",
+  ProfitAndLoss: "profit_and_loss",
+  TrialBalance: "trial_balance",
+  Raw: "raw",
+} as const;
+export type GetAccountingReportQueryParamFields = ClosedEnum<
+  typeof GetAccountingReportQueryParamFields
+>;
 
 export type GetAccountingReportRequest = {
   /**
@@ -13,7 +32,7 @@ export type GetAccountingReportRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingReportQueryParamFields> | undefined;
   /**
    * ID of the Report
    */
@@ -23,6 +42,12 @@ export type GetAccountingReportRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingReportQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingReportQueryParamFields> = z.nativeEnum(
+    GetAccountingReportQueryParamFields,
+  );
 
 /** @internal */
 export type GetAccountingReportRequest$Outbound = {
@@ -39,7 +64,8 @@ export const GetAccountingReportRequest$outboundSchema: z.ZodType<
   GetAccountingReportRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingReportQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,7 +4,40 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchMessagingMessageQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ChannelId: "channel_id",
+  ChannelIds: "channel_ids",
+  Channels: "channels",
+  ParentId: "parent_id",
+  ParentMessageId: "parent_message_id",
+  RootMessageId: "root_message_id",
+  MessageThreadIdentifier: "message_thread_identifier",
+  AuthorMember: "author_member",
+  DestinationMembers: "destination_members",
+  HiddenMembers: "hidden_members",
+  MentionedMembers: "mentioned_members",
+  Reactions: "reactions",
+  Subject: "subject",
+  Message: "message",
+  MessageHtml: "message_html",
+  MessageMarkdown: "message_markdown",
+  Attachments: "attachments",
+  WebUrl: "web_url",
+  Reference: "reference",
+  HasChildren: "has_children",
+  IsUnread: "is_unread",
+  Buttons: "buttons",
+  Raw: "raw",
+} as const;
+export type PatchMessagingMessageQueryParamFields = ClosedEnum<
+  typeof PatchMessagingMessageQueryParamFields
+>;
 
 export type PatchMessagingMessageRequest = {
   messagingMessage: shared.MessagingMessage;
@@ -15,7 +48,7 @@ export type PatchMessagingMessageRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchMessagingMessageQueryParamFields> | undefined;
   /**
    * ID of the Message
    */
@@ -25,6 +58,12 @@ export type PatchMessagingMessageRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchMessagingMessageQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchMessagingMessageQueryParamFields> = z.nativeEnum(
+    PatchMessagingMessageQueryParamFields,
+  );
 
 /** @internal */
 export type PatchMessagingMessageRequest$Outbound = {
@@ -43,7 +82,8 @@ export const PatchMessagingMessageRequest$outboundSchema: z.ZodType<
 > = z.object({
   messagingMessage: shared.MessagingMessage$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchMessagingMessageQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCalendarRecordingsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  ExpiresAt: "expires_at",
+  EventId: "event_id",
+  WebUrl: "web_url",
+  Media: "media",
+  Raw: "raw",
+} as const;
+export type ListCalendarRecordingsQueryParamFields = ClosedEnum<
+  typeof ListCalendarRecordingsQueryParamFields
+>;
 
 export type ListCalendarRecordingsRequest = {
   /**
@@ -11,21 +28,17 @@ export type ListCalendarRecordingsRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
-   * The event ID to filter by
+   * The event ID to filter by (reference to CalendarEvent)
    */
   eventId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCalendarRecordingsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -39,19 +52,24 @@ export type ListCalendarRecordingsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
 
 /** @internal */
+export const ListCalendarRecordingsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListCalendarRecordingsQueryParamFields> = z.nativeEnum(
+    ListCalendarRecordingsQueryParamFields,
+  );
+
+/** @internal */
 export type ListCalendarRecordingsRequest$Outbound = {
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   event_id?: string | undefined;
   fields?: Array<string> | undefined;
@@ -72,10 +90,10 @@ export const ListCalendarRecordingsRequest$outboundSchema: z.ZodType<
   ListCalendarRecordingsRequest
 > = z.object({
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
   eventId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCalendarRecordingsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -87,7 +105,6 @@ export const ListCalendarRecordingsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
     eventId: "event_id",
     startGte: "start_gte",

@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListPaymentLinksQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  IsActive: "is_active",
+  Lineitems: "lineitems",
+  Currency: "currency",
+  Amount: "amount",
+  PaymentId: "payment_id",
+  ContactId: "contact_id",
+  Url: "url",
+  IsChargeableNow: "is_chargeable_now",
+  SuccessUrl: "success_url",
+  Raw: "raw",
+} as const;
+export type ListPaymentLinksQueryParamFields = ClosedEnum<
+  typeof ListPaymentLinksQueryParamFields
+>;
 
 export type ListPaymentLinksRequest = {
   /**
@@ -11,18 +31,18 @@ export type ListPaymentLinksRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListPaymentLinksQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The payment ID to filter by
+   * The payment ID to filter by (reference to PaymentPayment)
    */
   paymentId?: string | undefined;
   /**
@@ -35,10 +55,15 @@ export type ListPaymentLinksRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListPaymentLinksQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListPaymentLinksQueryParamFields
+> = z.nativeEnum(ListPaymentLinksQueryParamFields);
 
 /** @internal */
 export type ListPaymentLinksRequest$Outbound = {
@@ -63,7 +88,7 @@ export const ListPaymentLinksRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListPaymentLinksQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

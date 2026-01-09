@@ -4,7 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchPaymentPaymentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TotalAmount: "total_amount",
+  ContactId: "contact_id",
+  PaymentMethod: "payment_method",
+  Currency: "currency",
+  Notes: "notes",
+  InvoiceId: "invoice_id",
+  AccountId: "account_id",
+  Reference: "reference",
+  Raw: "raw",
+} as const;
+export type PatchPaymentPaymentQueryParamFields = ClosedEnum<
+  typeof PatchPaymentPaymentQueryParamFields
+>;
 
 export type PatchPaymentPaymentRequest = {
   paymentPayment: shared.PaymentPayment;
@@ -15,7 +34,7 @@ export type PatchPaymentPaymentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchPaymentPaymentQueryParamFields> | undefined;
   /**
    * ID of the Payment
    */
@@ -25,6 +44,12 @@ export type PatchPaymentPaymentRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchPaymentPaymentQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchPaymentPaymentQueryParamFields> = z.nativeEnum(
+    PatchPaymentPaymentQueryParamFields,
+  );
 
 /** @internal */
 export type PatchPaymentPaymentRequest$Outbound = {
@@ -43,7 +68,8 @@ export const PatchPaymentPaymentRequest$outboundSchema: z.ZodType<
 > = z.object({
   paymentPayment: shared.PaymentPayment$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchPaymentPaymentQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

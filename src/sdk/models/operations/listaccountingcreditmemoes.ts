@@ -4,6 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingCreditmemoesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DueAt: "due_at",
+  PaidAt: "paid_at",
+  RefundedAt: "refunded_at",
+  CancelledAt: "cancelled_at",
+  PostedAt: "posted_at",
+  TotalAmount: "total_amount",
+  PaidAmount: "paid_amount",
+  RefundAmount: "refund_amount",
+  TaxAmount: "tax_amount",
+  DiscountAmount: "discount_amount",
+  BalanceAmount: "balance_amount",
+  CreditmemoNumber: "creditmemo_number",
+  ContactId: "contact_id",
+  Currency: "currency",
+  Notes: "notes",
+  RefundReason: "refund_reason",
+  Lineitems: "lineitems",
+  Status: "status",
+  Url: "url",
+  PaymentCollectionMethod: "payment_collection_method",
+  Attachments: "attachments",
+  Send: "send",
+  Raw: "raw",
+} as const;
+export type ListAccountingCreditmemoesQueryParamFields = ClosedEnum<
+  typeof ListAccountingCreditmemoesQueryParamFields
+>;
 
 export type ListAccountingCreditmemoesRequest = {
   /**
@@ -11,18 +44,18 @@ export type ListAccountingCreditmemoesRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingCreditmemoesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AccountingOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -35,10 +68,15 @@ export type ListAccountingCreditmemoesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingCreditmemoesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingCreditmemoesQueryParamFields> = z
+    .nativeEnum(ListAccountingCreditmemoesQueryParamFields);
 
 /** @internal */
 export type ListAccountingCreditmemoesRequest$Outbound = {
@@ -63,7 +101,8 @@ export const ListAccountingCreditmemoesRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingCreditmemoesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

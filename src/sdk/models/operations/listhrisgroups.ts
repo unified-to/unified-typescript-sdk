@@ -4,10 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisGroupsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentId: "parent_id",
+  Type: "type",
+  UserIds: "user_ids",
+  ManagerIds: "manager_ids",
+  IsActive: "is_active",
+  CompanyId: "company_id",
+  Raw: "raw",
+} as const;
+export type ListHrisGroupsQueryParamFields = ClosedEnum<
+  typeof ListHrisGroupsQueryParamFields
+>;
 
 export type ListHrisGroupsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -17,7 +36,7 @@ export type ListHrisGroupsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisGroupsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +50,15 @@ export type ListHrisGroupsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListHrisGroupsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisGroupsQueryParamFields
+> = z.nativeEnum(ListHrisGroupsQueryParamFields);
 
 /** @internal */
 export type ListHrisGroupsRequest$Outbound = {
@@ -58,7 +82,7 @@ export const ListHrisGroupsRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisGroupsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

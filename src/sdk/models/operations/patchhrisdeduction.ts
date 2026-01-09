@@ -4,7 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchHrisDeductionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  CompanyId: "company_id",
+  BenefitId: "benefit_id",
+  Amount: "amount",
+  Type: "type",
+  CoverageLevel: "coverage_level",
+  Frequency: "frequency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type PatchHrisDeductionQueryParamFields = ClosedEnum<
+  typeof PatchHrisDeductionQueryParamFields
+>;
 
 export type PatchHrisDeductionRequest = {
   /**
@@ -18,7 +39,7 @@ export type PatchHrisDeductionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchHrisDeductionQueryParamFields> | undefined;
   /**
    * ID of the Deduction
    */
@@ -28,6 +49,11 @@ export type PatchHrisDeductionRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchHrisDeductionQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchHrisDeductionQueryParamFields
+> = z.nativeEnum(PatchHrisDeductionQueryParamFields);
 
 /** @internal */
 export type PatchHrisDeductionRequest$Outbound = {
@@ -46,7 +72,7 @@ export const PatchHrisDeductionRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisDeduction: shared.HrisDeduction$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchHrisDeductionQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

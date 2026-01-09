@@ -4,6 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingTransactionsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Memo: "memo",
+  TotalAmount: "total_amount",
+  TaxAmount: "tax_amount",
+  AccountId: "account_id",
+  ContactId: "contact_id",
+  Reference: "reference",
+  SubTotalAmount: "sub_total_amount",
+  SplitAccountId: "split_account_id",
+  PaymentMethod: "payment_method",
+  PaymentTerms: "payment_terms",
+  CustomerMessage: "customer_message",
+  Type: "type",
+  Lineitems: "lineitems",
+  Currency: "currency",
+  Contacts: "contacts",
+  Raw: "raw",
+} as const;
+export type ListAccountingTransactionsQueryParamFields = ClosedEnum<
+  typeof ListAccountingTransactionsQueryParamFields
+>;
 
 export type ListAccountingTransactionsRequest = {
   /**
@@ -11,13 +37,13 @@ export type ListAccountingTransactionsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingTransactionsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +57,15 @@ export type ListAccountingTransactionsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingTransactionsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingTransactionsQueryParamFields> = z
+    .nativeEnum(ListAccountingTransactionsQueryParamFields);
 
 /** @internal */
 export type ListAccountingTransactionsRequest$Outbound = {
@@ -58,7 +89,8 @@ export const ListAccountingTransactionsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingTransactionsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

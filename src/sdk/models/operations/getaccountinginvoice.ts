@@ -4,6 +4,42 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingInvoiceQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DueAt: "due_at",
+  PaidAt: "paid_at",
+  RefundedAt: "refunded_at",
+  CancelledAt: "cancelled_at",
+  PostedAt: "posted_at",
+  TotalAmount: "total_amount",
+  PaidAmount: "paid_amount",
+  RefundAmount: "refund_amount",
+  TaxAmount: "tax_amount",
+  DiscountAmount: "discount_amount",
+  BalanceAmount: "balance_amount",
+  InvoiceNumber: "invoice_number",
+  Reference: "reference",
+  ContactId: "contact_id",
+  Currency: "currency",
+  Notes: "notes",
+  RefundReason: "refund_reason",
+  Lineitems: "lineitems",
+  Status: "status",
+  Url: "url",
+  PaymentCollectionMethod: "payment_collection_method",
+  InvoiceAt: "invoice_at",
+  Type: "type",
+  Attachments: "attachments",
+  Send: "send",
+  Raw: "raw",
+} as const;
+export type GetAccountingInvoiceQueryParamFields = ClosedEnum<
+  typeof GetAccountingInvoiceQueryParamFields
+>;
 
 export type GetAccountingInvoiceRequest = {
   /**
@@ -13,7 +49,7 @@ export type GetAccountingInvoiceRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingInvoiceQueryParamFields> | undefined;
   /**
    * ID of the Invoice
    */
@@ -23,6 +59,12 @@ export type GetAccountingInvoiceRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingInvoiceQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingInvoiceQueryParamFields> = z.nativeEnum(
+    GetAccountingInvoiceQueryParamFields,
+  );
 
 /** @internal */
 export type GetAccountingInvoiceRequest$Outbound = {
@@ -39,7 +81,8 @@ export const GetAccountingInvoiceRequest$outboundSchema: z.ZodType<
   GetAccountingInvoiceRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingInvoiceQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

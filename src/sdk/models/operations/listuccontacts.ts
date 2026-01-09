@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListUcContactsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Title: "title",
+  Company: "company",
+  Emails: "emails",
+  Telephones: "telephones",
+  Raw: "raw",
+} as const;
+export type ListUcContactsQueryParamFields = ClosedEnum<
+  typeof ListUcContactsQueryParamFields
+>;
 
 export type ListUcContactsRequest = {
   /**
@@ -13,7 +31,7 @@ export type ListUcContactsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListUcContactsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,14 +45,19 @@ export type ListUcContactsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListUcContactsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListUcContactsQueryParamFields
+> = z.nativeEnum(ListUcContactsQueryParamFields);
 
 /** @internal */
 export type ListUcContactsRequest$Outbound = {
@@ -57,7 +80,7 @@ export const ListUcContactsRequest$outboundSchema: z.ZodType<
   ListUcContactsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListUcContactsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

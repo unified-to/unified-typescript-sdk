@@ -4,6 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCrmPipelinesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  IsActive: "is_active",
+  DealProbability: "deal_probability",
+  DisplayOrder: "display_order",
+  Stages: "stages",
+  Raw: "raw",
+} as const;
+export type ListCrmPipelinesQueryParamFields = ClosedEnum<
+  typeof ListCrmPipelinesQueryParamFields
+>;
 
 export type ListCrmPipelinesRequest = {
   /**
@@ -13,7 +29,7 @@ export type ListCrmPipelinesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCrmPipelinesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +43,15 @@ export type ListCrmPipelinesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListCrmPipelinesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListCrmPipelinesQueryParamFields
+> = z.nativeEnum(ListCrmPipelinesQueryParamFields);
 
 /** @internal */
 export type ListCrmPipelinesRequest$Outbound = {
@@ -52,7 +73,7 @@ export const ListCrmPipelinesRequest$outboundSchema: z.ZodType<
   ListCrmPipelinesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCrmPipelinesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

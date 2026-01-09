@@ -4,7 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateRepoPullrequestQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserIds: "user_ids",
+  RepoId: "repo_id",
+  Status: "status",
+  Labels: "labels",
+  ClosedAt: "closed_at",
+  CommitIds: "commit_ids",
+  Raw: "raw",
+} as const;
+export type CreateRepoPullrequestQueryParamFields = ClosedEnum<
+  typeof CreateRepoPullrequestQueryParamFields
+>;
 
 export type CreateRepoPullrequestRequest = {
   repoPullrequest: shared.RepoPullrequest;
@@ -15,12 +32,18 @@ export type CreateRepoPullrequestRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateRepoPullrequestQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateRepoPullrequestQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateRepoPullrequestQueryParamFields> = z.nativeEnum(
+    CreateRepoPullrequestQueryParamFields,
+  );
 
 /** @internal */
 export type CreateRepoPullrequestRequest$Outbound = {
@@ -38,7 +61,8 @@ export const CreateRepoPullrequestRequest$outboundSchema: z.ZodType<
 > = z.object({
   repoPullrequest: shared.RepoPullrequest$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateRepoPullrequestQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

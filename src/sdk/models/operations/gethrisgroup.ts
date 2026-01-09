@@ -4,6 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetHrisGroupQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentId: "parent_id",
+  Type: "type",
+  UserIds: "user_ids",
+  ManagerIds: "manager_ids",
+  IsActive: "is_active",
+  CompanyId: "company_id",
+  Raw: "raw",
+} as const;
+export type GetHrisGroupQueryParamFields = ClosedEnum<
+  typeof GetHrisGroupQueryParamFields
+>;
 
 export type GetHrisGroupRequest = {
   /**
@@ -13,7 +32,7 @@ export type GetHrisGroupRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetHrisGroupQueryParamFields> | undefined;
   /**
    * ID of the Group
    */
@@ -23,6 +42,11 @@ export type GetHrisGroupRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetHrisGroupQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetHrisGroupQueryParamFields
+> = z.nativeEnum(GetHrisGroupQueryParamFields);
 
 /** @internal */
 export type GetHrisGroupRequest$Outbound = {
@@ -39,7 +63,7 @@ export const GetHrisGroupRequest$outboundSchema: z.ZodType<
   GetHrisGroupRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetHrisGroupQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

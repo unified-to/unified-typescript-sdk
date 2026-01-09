@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListFormsSubmissionsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  FormId: "form_id",
+  RespondentEmail: "respondent_email",
+  RespondentName: "respondent_name",
+  Answers: "answers",
+  Raw: "raw",
+} as const;
+export type ListFormsSubmissionsQueryParamFields = ClosedEnum<
+  typeof ListFormsSubmissionsQueryParamFields
+>;
 
 export type ListFormsSubmissionsRequest = {
   /**
@@ -13,7 +28,7 @@ export type ListFormsSubmissionsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListFormsSubmissionsQueryParamFields> | undefined;
   /**
    * The form ID to filter by
    */
@@ -31,10 +46,16 @@ export type ListFormsSubmissionsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListFormsSubmissionsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListFormsSubmissionsQueryParamFields> = z.nativeEnum(
+    ListFormsSubmissionsQueryParamFields,
+  );
 
 /** @internal */
 export type ListFormsSubmissionsRequest$Outbound = {
@@ -57,7 +78,8 @@ export const ListFormsSubmissionsRequest$outboundSchema: z.ZodType<
   ListFormsSubmissionsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListFormsSubmissionsQueryParamFields$outboundSchema)
+    .optional(),
   formId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

@@ -26,7 +26,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.82.12
+  version: 2.82.13
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -72,6 +72,7 @@ typescript:
   outputModelSuffix: output
   packageName: '@unified-api/typescript-sdk'
   preApplyUnionDiscriminators: true
+  preserveModelFieldNames: false
   responseFormat: flat
   sseFlatResponse: false
   templateVersion: v2

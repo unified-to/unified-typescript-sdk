@@ -4,10 +4,41 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCalendarEventsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CalendarId: "calendar_id",
+  Subject: "subject",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsAllDay: "is_all_day",
+  Timezone: "timezone",
+  Notes: "notes",
+  Location: "location",
+  IsFree: "is_free",
+  IsPrivate: "is_private",
+  Status: "status",
+  Organizer: "organizer",
+  Attendees: "attendees",
+  RecurringEventId: "recurring_event_id",
+  Recurrence: "recurrence",
+  WebUrl: "web_url",
+  HasConference: "has_conference",
+  Conference: "conference",
+  Attachments: "attachments",
+  SendNotifications: "send_notifications",
+  Raw: "raw",
+} as const;
+export type ListCalendarEventsQueryParamFields = ClosedEnum<
+  typeof ListCalendarEventsQueryParamFields
+>;
 
 export type ListCalendarEventsRequest = {
   /**
-   * The calendar ID to filter by
+   * The calendar ID to filter by (reference to CalendarCalendar)
    */
   calendarId?: string | undefined;
   /**
@@ -15,11 +46,7 @@ export type ListCalendarEventsRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
@@ -27,13 +54,9 @@ export type ListCalendarEventsRequest = {
    */
   expand?: boolean | undefined;
   /**
-   * Whether to expand recurring calendar events
-   */
-  expandRecurringEvents?: boolean | undefined;
-  /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCalendarEventsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -47,23 +70,26 @@ export type ListCalendarEventsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
 
 /** @internal */
+export const ListCalendarEventsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListCalendarEventsQueryParamFields
+> = z.nativeEnum(ListCalendarEventsQueryParamFields);
+
+/** @internal */
 export type ListCalendarEventsRequest$Outbound = {
   calendar_id?: string | undefined;
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   expand?: boolean | undefined;
-  expand_recurring_events?: boolean | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -83,11 +109,9 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
 > = z.object({
   calendarId: z.string().optional(),
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
   expand: z.boolean().optional(),
-  expandRecurringEvents: z.boolean().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCalendarEventsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -100,9 +124,7 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     calendarId: "calendar_id",
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
-    expandRecurringEvents: "expand_recurring_events",
     startGte: "start_gte",
     updatedGte: "updated_gte",
   });

@@ -4,10 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisTimeshiftsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  EmployeeUserId: "employee_user_id",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  LocationId: "location_id",
+  CompanyId: "company_id",
+  GroupId: "group_id",
+  Compensation: "compensation",
+  ApproverUserId: "approver_user_id",
+  ApprovedAt: "approved_at",
+  Hours: "hours",
+  IsApproved: "is_approved",
+  Raw: "raw",
+} as const;
+export type ListHrisTimeshiftsQueryParamFields = ClosedEnum<
+  typeof ListHrisTimeshiftsQueryParamFields
+>;
 
 export type ListHrisTimeshiftsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -15,20 +37,16 @@ export type ListHrisTimeshiftsRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisTimeshiftsQueryParamFields> | undefined;
   limit?: number | undefined;
   /**
-   * The location ID to filter by
+   * The location ID to filter by (reference to HrisLocation)
    */
   locationId?: string | undefined;
   offset?: number | undefined;
@@ -43,24 +61,28 @@ export type ListHrisTimeshiftsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
 
 /** @internal */
+export const ListHrisTimeshiftsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisTimeshiftsQueryParamFields
+> = z.nativeEnum(ListHrisTimeshiftsQueryParamFields);
+
+/** @internal */
 export type ListHrisTimeshiftsRequest$Outbound = {
   company_id?: string | undefined;
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -83,9 +105,8 @@ export const ListHrisTimeshiftsRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisTimeshiftsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   locationId: z.string().optional(),
   offset: z.number().optional(),
@@ -100,7 +121,6 @@ export const ListHrisTimeshiftsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     companyId: "company_id",
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
     locationId: "location_id",
     startGte: "start_gte",

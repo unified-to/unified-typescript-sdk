@@ -4,10 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisLocationsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Address: "address",
+  ParentId: "parent_id",
+  ExternalIdentifier: "external_identifier",
+  Telephones: "telephones",
+  Timezone: "timezone",
+  Currency: "currency",
+  LanguageLocale: "language_locale",
+  IsActive: "is_active",
+  IsHq: "is_hq",
+  CompanyId: "company_id",
+  Raw: "raw",
+} as const;
+export type ListHrisLocationsQueryParamFields = ClosedEnum<
+  typeof ListHrisLocationsQueryParamFields
+>;
 
 export type ListHrisLocationsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -17,7 +40,7 @@ export type ListHrisLocationsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisLocationsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +54,15 @@ export type ListHrisLocationsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListHrisLocationsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisLocationsQueryParamFields
+> = z.nativeEnum(ListHrisLocationsQueryParamFields);
 
 /** @internal */
 export type ListHrisLocationsRequest$Outbound = {
@@ -58,7 +86,7 @@ export const ListHrisLocationsRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisLocationsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

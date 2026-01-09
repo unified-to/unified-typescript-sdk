@@ -4,6 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingCreditmemoQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DueAt: "due_at",
+  PaidAt: "paid_at",
+  RefundedAt: "refunded_at",
+  CancelledAt: "cancelled_at",
+  PostedAt: "posted_at",
+  TotalAmount: "total_amount",
+  PaidAmount: "paid_amount",
+  RefundAmount: "refund_amount",
+  TaxAmount: "tax_amount",
+  DiscountAmount: "discount_amount",
+  BalanceAmount: "balance_amount",
+  CreditmemoNumber: "creditmemo_number",
+  ContactId: "contact_id",
+  Currency: "currency",
+  Notes: "notes",
+  RefundReason: "refund_reason",
+  Lineitems: "lineitems",
+  Status: "status",
+  Url: "url",
+  PaymentCollectionMethod: "payment_collection_method",
+  Attachments: "attachments",
+  Send: "send",
+  Raw: "raw",
+} as const;
+export type GetAccountingCreditmemoQueryParamFields = ClosedEnum<
+  typeof GetAccountingCreditmemoQueryParamFields
+>;
 
 export type GetAccountingCreditmemoRequest = {
   /**
@@ -13,7 +46,7 @@ export type GetAccountingCreditmemoRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingCreditmemoQueryParamFields> | undefined;
   /**
    * ID of the Creditmemo
    */
@@ -23,6 +56,11 @@ export type GetAccountingCreditmemoRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingCreditmemoQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingCreditmemoQueryParamFields> = z
+    .nativeEnum(GetAccountingCreditmemoQueryParamFields);
 
 /** @internal */
 export type GetAccountingCreditmemoRequest$Outbound = {
@@ -39,7 +77,8 @@ export const GetAccountingCreditmemoRequest$outboundSchema: z.ZodType<
   GetAccountingCreditmemoRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingCreditmemoQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListUcCallsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ContactId: "contact_id",
+  Telephone: "telephone",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  UserId: "user_id",
+  Contacts: "contacts",
+  IsPrivate: "is_private",
+  Raw: "raw",
+} as const;
+export type ListUcCallsQueryParamFields = ClosedEnum<
+  typeof ListUcCallsQueryParamFields
+>;
 
 export type ListUcCallsRequest = {
   /**
@@ -11,13 +29,13 @@ export type ListUcCallsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to UcContact)
    */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListUcCallsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,14 +49,19 @@ export type ListUcCallsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListUcCallsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListUcCallsQueryParamFields
+> = z.nativeEnum(ListUcCallsQueryParamFields);
 
 /** @internal */
 export type ListUcCallsRequest$Outbound = {
@@ -63,7 +86,7 @@ export const ListUcCallsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListUcCallsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

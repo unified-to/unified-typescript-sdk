@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetMessagingChannelQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentChannelId: "parent_channel_id",
+  ParentId: "parent_id",
+  HasSubchannels: "has_subchannels",
+  Members: "members",
+  IsActive: "is_active",
+  IsPrivate: "is_private",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type GetMessagingChannelQueryParamFields = ClosedEnum<
+  typeof GetMessagingChannelQueryParamFields
+>;
 
 export type GetMessagingChannelRequest = {
   /**
@@ -13,7 +33,7 @@ export type GetMessagingChannelRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetMessagingChannelQueryParamFields> | undefined;
   /**
    * ID of the Channel
    */
@@ -23,6 +43,12 @@ export type GetMessagingChannelRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetMessagingChannelQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetMessagingChannelQueryParamFields> = z.nativeEnum(
+    GetMessagingChannelQueryParamFields,
+  );
 
 /** @internal */
 export type GetMessagingChannelRequest$Outbound = {
@@ -39,7 +65,8 @@ export const GetMessagingChannelRequest$outboundSchema: z.ZodType<
   GetMessagingChannelRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetMessagingChannelQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

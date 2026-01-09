@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateTicketingNoteQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CustomerId: "customer_id",
+  Description: "description",
+  TicketId: "ticket_id",
+  UserId: "user_id",
+  Raw: "raw",
+} as const;
+export type CreateTicketingNoteQueryParamFields = ClosedEnum<
+  typeof CreateTicketingNoteQueryParamFields
+>;
 
 export type CreateTicketingNoteRequest = {
   ticketingNote: shared.TicketingNote;
@@ -15,12 +30,18 @@ export type CreateTicketingNoteRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateTicketingNoteQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateTicketingNoteQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateTicketingNoteQueryParamFields> = z.nativeEnum(
+    CreateTicketingNoteQueryParamFields,
+  );
 
 /** @internal */
 export type CreateTicketingNoteRequest$Outbound = {
@@ -38,7 +59,8 @@ export const CreateTicketingNoteRequest$outboundSchema: z.ZodType<
 > = z.object({
   ticketingNote: shared.TicketingNote$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateTicketingNoteQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

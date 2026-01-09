@@ -4,6 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetStorageFileQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentId: "parent_id",
+  UserId: "user_id",
+  Size: "size",
+  Type: "type",
+  MimeType: "mime_type",
+  Permissions: "permissions",
+  DownloadUrl: "download_url",
+  Hash: "hash",
+  Data: "data",
+  Version: "version",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type GetStorageFileQueryParamFields = ClosedEnum<
+  typeof GetStorageFileQueryParamFields
+>;
 
 export type GetStorageFileRequest = {
   /**
@@ -13,7 +37,7 @@ export type GetStorageFileRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetStorageFileQueryParamFields> | undefined;
   /**
    * ID of the File
    */
@@ -23,6 +47,11 @@ export type GetStorageFileRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetStorageFileQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetStorageFileQueryParamFields
+> = z.nativeEnum(GetStorageFileQueryParamFields);
 
 /** @internal */
 export type GetStorageFileRequest$Outbound = {
@@ -39,7 +68,7 @@ export const GetStorageFileRequest$outboundSchema: z.ZodType<
   GetStorageFileRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetStorageFileQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

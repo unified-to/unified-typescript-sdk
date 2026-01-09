@@ -4,7 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreatePaymentSubscriptionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Description: "description",
+  ContactId: "contact_id",
+  InvoiceId: "invoice_id",
+  CurrentPeriodEndAt: "current_period_end_at",
+  CurrentPeriodStartAt: "current_period_start_at",
+  CanceledAt: "canceled_at",
+  Currency: "currency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Status: "status",
+  Month: "month",
+  IntervalUnit: "interval_unit",
+  DayOfMonth: "day_of_month",
+  DayOfWeek: "day_of_week",
+  Interval: "interval",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type CreatePaymentSubscriptionQueryParamFields = ClosedEnum<
+  typeof CreatePaymentSubscriptionQueryParamFields
+>;
 
 export type CreatePaymentSubscriptionRequest = {
   paymentSubscription: shared.PaymentSubscription;
@@ -15,12 +42,17 @@ export type CreatePaymentSubscriptionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreatePaymentSubscriptionQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreatePaymentSubscriptionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreatePaymentSubscriptionQueryParamFields> = z
+    .nativeEnum(CreatePaymentSubscriptionQueryParamFields);
 
 /** @internal */
 export type CreatePaymentSubscriptionRequest$Outbound = {
@@ -38,7 +70,8 @@ export const CreatePaymentSubscriptionRequest$outboundSchema: z.ZodType<
 > = z.object({
   paymentSubscription: shared.PaymentSubscription$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreatePaymentSubscriptionQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

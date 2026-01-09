@@ -4,7 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAccountingSalesorderQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PostedAt: "posted_at",
+  ContactId: "contact_id",
+  AccountId: "account_id",
+  Currency: "currency",
+  TotalAmount: "total_amount",
+  ShippingAddress: "shipping_address",
+  BillingAddress: "billing_address",
+  Status: "status",
+  Lineitems: "lineitems",
+  SalesChannel: "sales_channel",
+  Raw: "raw",
+} as const;
+export type CreateAccountingSalesorderQueryParamFields = ClosedEnum<
+  typeof CreateAccountingSalesorderQueryParamFields
+>;
 
 export type CreateAccountingSalesorderRequest = {
   accountingSalesorder: shared.AccountingSalesorder;
@@ -15,12 +36,17 @@ export type CreateAccountingSalesorderRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAccountingSalesorderQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAccountingSalesorderQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateAccountingSalesorderQueryParamFields> = z
+    .nativeEnum(CreateAccountingSalesorderQueryParamFields);
 
 /** @internal */
 export type CreateAccountingSalesorderRequest$Outbound = {
@@ -38,7 +64,8 @@ export const CreateAccountingSalesorderRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingSalesorder: shared.AccountingSalesorder$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAccountingSalesorderQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

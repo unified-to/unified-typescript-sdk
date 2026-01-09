@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateStorageFileQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentId: "parent_id",
+  UserId: "user_id",
+  Size: "size",
+  Type: "type",
+  MimeType: "mime_type",
+  Permissions: "permissions",
+  DownloadUrl: "download_url",
+  Hash: "hash",
+  Data: "data",
+  Version: "version",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type CreateStorageFileQueryParamFields = ClosedEnum<
+  typeof CreateStorageFileQueryParamFields
+>;
 
 export type CreateStorageFileRequest = {
   storageFile: shared.StorageFile;
@@ -15,12 +39,17 @@ export type CreateStorageFileRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateStorageFileQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateStorageFileQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateStorageFileQueryParamFields
+> = z.nativeEnum(CreateStorageFileQueryParamFields);
 
 /** @internal */
 export type CreateStorageFileRequest$Outbound = {
@@ -38,7 +67,7 @@ export const CreateStorageFileRequest$outboundSchema: z.ZodType<
 > = z.object({
   storageFile: shared.StorageFile$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateStorageFileQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

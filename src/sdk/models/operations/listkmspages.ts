@@ -4,6 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListKmsPagesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Title: "title",
+  Type: "type",
+  SpaceId: "space_id",
+  ParentPageId: "parent_page_id",
+  ParentId: "parent_id",
+  IsActive: "is_active",
+  UserId: "user_id",
+  DownloadUrl: "download_url",
+  Metadata: "metadata",
+  HasChildren: "has_children",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type ListKmsPagesQueryParamFields = ClosedEnum<
+  typeof ListKmsPagesQueryParamFields
+>;
 
 export type ListKmsPagesRequest = {
   /**
@@ -13,7 +35,7 @@ export type ListKmsPagesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListKmsPagesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,14 +53,19 @@ export type ListKmsPagesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The space ID to filter by
+   * The space ID to filter by (reference to KmsSpace)
    */
   spaceId?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListKmsPagesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListKmsPagesQueryParamFields
+> = z.nativeEnum(ListKmsPagesQueryParamFields);
 
 /** @internal */
 export type ListKmsPagesRequest$Outbound = {
@@ -62,7 +89,7 @@ export const ListKmsPagesRequest$outboundSchema: z.ZodType<
   ListKmsPagesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListKmsPagesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

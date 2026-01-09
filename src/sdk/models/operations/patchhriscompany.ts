@@ -4,7 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchHrisCompanyQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  LegalName: "legal_name",
+  Address: "address",
+  Raw: "raw",
+} as const;
+export type PatchHrisCompanyQueryParamFields = ClosedEnum<
+  typeof PatchHrisCompanyQueryParamFields
+>;
 
 export type PatchHrisCompanyRequest = {
   hrisCompany: shared.HrisCompany;
@@ -15,7 +29,7 @@ export type PatchHrisCompanyRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchHrisCompanyQueryParamFields> | undefined;
   /**
    * ID of the Company
    */
@@ -25,6 +39,11 @@ export type PatchHrisCompanyRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchHrisCompanyQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchHrisCompanyQueryParamFields
+> = z.nativeEnum(PatchHrisCompanyQueryParamFields);
 
 /** @internal */
 export type PatchHrisCompanyRequest$Outbound = {
@@ -43,7 +62,7 @@ export const PatchHrisCompanyRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisCompany: shared.HrisCompany$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchHrisCompanyQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

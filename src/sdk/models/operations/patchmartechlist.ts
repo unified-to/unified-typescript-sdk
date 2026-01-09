@@ -4,7 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchMartechListQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  UserId: "user_id",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type PatchMartechListQueryParamFields = ClosedEnum<
+  typeof PatchMartechListQueryParamFields
+>;
 
 export type PatchMartechListRequest = {
   /**
@@ -18,7 +35,7 @@ export type PatchMartechListRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchMartechListQueryParamFields> | undefined;
   /**
    * ID of the List
    */
@@ -28,6 +45,11 @@ export type PatchMartechListRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchMartechListQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchMartechListQueryParamFields
+> = z.nativeEnum(PatchMartechListQueryParamFields);
 
 /** @internal */
 export type PatchMartechListRequest$Outbound = {
@@ -46,7 +68,7 @@ export const PatchMartechListRequest$outboundSchema: z.ZodType<
 > = z.object({
   marketingList: shared.MarketingList$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchMartechListQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

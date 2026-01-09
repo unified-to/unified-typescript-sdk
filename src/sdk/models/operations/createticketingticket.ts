@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateTicketingTicketQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CustomerId: "customer_id",
+  Subject: "subject",
+  Description: "description",
+  Status: "status",
+  ClosedAt: "closed_at",
+  Priority: "priority",
+  CategoryId: "category_id",
+  Category: "category",
+  Source: "source",
+  SourceRef: "source_ref",
+  Tags: "tags",
+  UserId: "user_id",
+  Url: "url",
+  Raw: "raw",
+} as const;
+export type CreateTicketingTicketQueryParamFields = ClosedEnum<
+  typeof CreateTicketingTicketQueryParamFields
+>;
 
 export type CreateTicketingTicketRequest = {
   ticketingTicket: shared.TicketingTicket;
@@ -15,12 +39,18 @@ export type CreateTicketingTicketRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateTicketingTicketQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateTicketingTicketQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateTicketingTicketQueryParamFields> = z.nativeEnum(
+    CreateTicketingTicketQueryParamFields,
+  );
 
 /** @internal */
 export type CreateTicketingTicketRequest$Outbound = {
@@ -38,7 +68,8 @@ export const CreateTicketingTicketRequest$outboundSchema: z.ZodType<
 > = z.object({
   ticketingTicket: shared.TicketingTicket$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateTicketingTicketQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

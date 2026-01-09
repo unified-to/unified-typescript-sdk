@@ -4,7 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchAccountingOrderQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PostedAt: "posted_at",
+  ContactId: "contact_id",
+  AccountId: "account_id",
+  Type: "type",
+  Currency: "currency",
+  TotalAmount: "total_amount",
+  ShippingAddress: "shipping_address",
+  BillingAddress: "billing_address",
+  Status: "status",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type PatchAccountingOrderQueryParamFields = ClosedEnum<
+  typeof PatchAccountingOrderQueryParamFields
+>;
 
 export type PatchAccountingOrderRequest = {
   accountingOrder: shared.AccountingOrder;
@@ -15,7 +36,7 @@ export type PatchAccountingOrderRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchAccountingOrderQueryParamFields> | undefined;
   /**
    * ID of the Order
    */
@@ -25,6 +46,12 @@ export type PatchAccountingOrderRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchAccountingOrderQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchAccountingOrderQueryParamFields> = z.nativeEnum(
+    PatchAccountingOrderQueryParamFields,
+  );
 
 /** @internal */
 export type PatchAccountingOrderRequest$Outbound = {
@@ -43,7 +70,8 @@ export const PatchAccountingOrderRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingOrder: shared.AccountingOrder$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchAccountingOrderQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

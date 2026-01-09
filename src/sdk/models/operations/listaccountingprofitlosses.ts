@@ -4,10 +4,38 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingProfitlossesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CategoryIds: "category_ids",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Name: "name",
+  Currency: "currency",
+  Income: "income",
+  Expenses: "expenses",
+  CostOfGoodsSold: "cost_of_goods_sold",
+  GrossProfitAmount: "gross_profit_amount",
+  NetProfitAmount: "net_profit_amount",
+  IncomeTotalAmount: "income_total_amount",
+  NetIncomeAmount: "net_income_amount",
+  ExpensesTotalAmount: "expenses_total_amount",
+  CostOfGoodsSoldTotalAmount: "cost_of_goods_sold_total_amount",
+  IncomeSections: "income_sections",
+  ExpensesSections: "expenses_sections",
+  CostOfGoodsSoldSections: "cost_of_goods_sold_sections",
+  Raw: "raw",
+} as const;
+export type ListAccountingProfitlossesQueryParamFields = ClosedEnum<
+  typeof ListAccountingProfitlossesQueryParamFields
+>;
 
 export type ListAccountingProfitlossesRequest = {
   /**
-   * The category ID to filter by
+   * The category ID to filter by (reference to AccountingCategory)
    */
   categoryId?: string | undefined;
   /**
@@ -15,21 +43,17 @@ export type ListAccountingProfitlossesRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingProfitlossesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -43,21 +67,25 @@ export type ListAccountingProfitlossesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingProfitlossesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingProfitlossesQueryParamFields> = z
+    .nativeEnum(ListAccountingProfitlossesQueryParamFields);
 
 /** @internal */
 export type ListAccountingProfitlossesRequest$Outbound = {
   category_id?: string | undefined;
   connection_id: string;
   contact_id?: string | undefined;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -79,9 +107,9 @@ export const ListAccountingProfitlossesRequest$outboundSchema: z.ZodType<
   categoryId: z.string().optional(),
   connectionId: z.string(),
   contactId: z.string().optional(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingProfitlossesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -95,7 +123,6 @@ export const ListAccountingProfitlossesRequest$outboundSchema: z.ZodType<
     categoryId: "category_id",
     connectionId: "connection_id",
     contactId: "contact_id",
-    endLe: "end_le",
     endLt: "end_lt",
     startGte: "start_gte",
     updatedGte: "updated_gte",

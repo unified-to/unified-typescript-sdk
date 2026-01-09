@@ -4,6 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetRepoOrganizationQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  AvatarUrl: "avatar_url",
+  WebUrl: "web_url",
+  UserIds: "user_ids",
+  Raw: "raw",
+} as const;
+export type GetRepoOrganizationQueryParamFields = ClosedEnum<
+  typeof GetRepoOrganizationQueryParamFields
+>;
 
 export type GetRepoOrganizationRequest = {
   /**
@@ -13,7 +29,7 @@ export type GetRepoOrganizationRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetRepoOrganizationQueryParamFields> | undefined;
   /**
    * ID of the Organization
    */
@@ -23,6 +39,12 @@ export type GetRepoOrganizationRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetRepoOrganizationQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetRepoOrganizationQueryParamFields> = z.nativeEnum(
+    GetRepoOrganizationQueryParamFields,
+  );
 
 /** @internal */
 export type GetRepoOrganizationRequest$Outbound = {
@@ -39,7 +61,8 @@ export const GetRepoOrganizationRequest$outboundSchema: z.ZodType<
   GetRepoOrganizationRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetRepoOrganizationQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

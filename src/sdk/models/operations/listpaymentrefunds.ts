@@ -4,6 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListPaymentRefundsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TotalAmount: "total_amount",
+  PaymentId: "payment_id",
+  Currency: "currency",
+  Notes: "notes",
+  Status: "status",
+  Reference: "reference",
+  Raw: "raw",
+} as const;
+export type ListPaymentRefundsQueryParamFields = ClosedEnum<
+  typeof ListPaymentRefundsQueryParamFields
+>;
 
 export type ListPaymentRefundsRequest = {
   /**
@@ -13,12 +30,12 @@ export type ListPaymentRefundsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListPaymentRefundsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The payment ID to filter by
+   * The payment ID to filter by (reference to PaymentPayment)
    */
   paymentId?: string | undefined;
   /**
@@ -31,10 +48,15 @@ export type ListPaymentRefundsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListPaymentRefundsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListPaymentRefundsQueryParamFields
+> = z.nativeEnum(ListPaymentRefundsQueryParamFields);
 
 /** @internal */
 export type ListPaymentRefundsRequest$Outbound = {
@@ -57,7 +79,7 @@ export const ListPaymentRefundsRequest$outboundSchema: z.ZodType<
   ListPaymentRefundsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListPaymentRefundsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

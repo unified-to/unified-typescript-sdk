@@ -4,7 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateMartechListQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  UserId: "user_id",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type CreateMartechListQueryParamFields = ClosedEnum<
+  typeof CreateMartechListQueryParamFields
+>;
 
 export type CreateMartechListRequest = {
   /**
@@ -18,12 +35,17 @@ export type CreateMartechListRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateMartechListQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateMartechListQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateMartechListQueryParamFields
+> = z.nativeEnum(CreateMartechListQueryParamFields);
 
 /** @internal */
 export type CreateMartechListRequest$Outbound = {
@@ -41,7 +63,7 @@ export const CreateMartechListRequest$outboundSchema: z.ZodType<
 > = z.object({
   marketingList: shared.MarketingList$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateMartechListQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

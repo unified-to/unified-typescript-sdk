@@ -4,7 +4,43 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAccountingInvoiceQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DueAt: "due_at",
+  PaidAt: "paid_at",
+  RefundedAt: "refunded_at",
+  CancelledAt: "cancelled_at",
+  PostedAt: "posted_at",
+  TotalAmount: "total_amount",
+  PaidAmount: "paid_amount",
+  RefundAmount: "refund_amount",
+  TaxAmount: "tax_amount",
+  DiscountAmount: "discount_amount",
+  BalanceAmount: "balance_amount",
+  InvoiceNumber: "invoice_number",
+  Reference: "reference",
+  ContactId: "contact_id",
+  Currency: "currency",
+  Notes: "notes",
+  RefundReason: "refund_reason",
+  Lineitems: "lineitems",
+  Status: "status",
+  Url: "url",
+  PaymentCollectionMethod: "payment_collection_method",
+  InvoiceAt: "invoice_at",
+  Type: "type",
+  Attachments: "attachments",
+  Send: "send",
+  Raw: "raw",
+} as const;
+export type CreateAccountingInvoiceQueryParamFields = ClosedEnum<
+  typeof CreateAccountingInvoiceQueryParamFields
+>;
 
 export type CreateAccountingInvoiceRequest = {
   accountingInvoice: shared.AccountingInvoice;
@@ -15,12 +51,17 @@ export type CreateAccountingInvoiceRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAccountingInvoiceQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAccountingInvoiceQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateAccountingInvoiceQueryParamFields> = z
+    .nativeEnum(CreateAccountingInvoiceQueryParamFields);
 
 /** @internal */
 export type CreateAccountingInvoiceRequest$Outbound = {
@@ -38,7 +79,8 @@ export const CreateAccountingInvoiceRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingInvoice: shared.AccountingInvoice$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAccountingInvoiceQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

@@ -4,6 +4,18 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsApplicationstatusesQueryParamFields = {
+  Id: "id",
+  Status: "status",
+  OriginalStatus: "original_status",
+  Description: "description",
+  Raw: "raw",
+} as const;
+export type ListAtsApplicationstatusesQueryParamFields = ClosedEnum<
+  typeof ListAtsApplicationstatusesQueryParamFields
+>;
 
 export type ListAtsApplicationstatusesRequest = {
   /**
@@ -13,7 +25,7 @@ export type ListAtsApplicationstatusesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsApplicationstatusesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +39,15 @@ export type ListAtsApplicationstatusesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsApplicationstatusesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAtsApplicationstatusesQueryParamFields> = z
+    .nativeEnum(ListAtsApplicationstatusesQueryParamFields);
 
 /** @internal */
 export type ListAtsApplicationstatusesRequest$Outbound = {
@@ -52,7 +69,8 @@ export const ListAtsApplicationstatusesRequest$outboundSchema: z.ZodType<
   ListAtsApplicationstatusesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsApplicationstatusesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

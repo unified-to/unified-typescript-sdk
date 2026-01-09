@@ -4,6 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetHrisPayslipQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  CompanyId: "company_id",
+  PaymentType: "payment_type",
+  PaidAt: "paid_at",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Currency: "currency",
+  GrossAmount: "gross_amount",
+  NetAmount: "net_amount",
+  Details: "details",
+  Raw: "raw",
+  Deduction: "deduction",
+} as const;
+export type GetHrisPayslipQueryParamFields = ClosedEnum<
+  typeof GetHrisPayslipQueryParamFields
+>;
 
 export type GetHrisPayslipRequest = {
   /**
@@ -13,7 +35,7 @@ export type GetHrisPayslipRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetHrisPayslipQueryParamFields> | undefined;
   /**
    * ID of the Payslip
    */
@@ -23,6 +45,11 @@ export type GetHrisPayslipRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetHrisPayslipQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetHrisPayslipQueryParamFields
+> = z.nativeEnum(GetHrisPayslipQueryParamFields);
 
 /** @internal */
 export type GetHrisPayslipRequest$Outbound = {
@@ -39,7 +66,7 @@ export const GetHrisPayslipRequest$outboundSchema: z.ZodType<
   GetHrisPayslipRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetHrisPayslipQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

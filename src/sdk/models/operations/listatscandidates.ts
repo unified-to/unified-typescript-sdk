@@ -4,10 +4,43 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsCandidatesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Title: "title",
+  Telephones: "telephones",
+  CompanyName: "company_name",
+  ImageUrl: "image_url",
+  Tags: "tags",
+  Address: "address",
+  ExternalIdentifier: "external_identifier",
+  LinkUrls: "link_urls",
+  Origin: "origin",
+  CompanyId: "company_id",
+  Sources: "sources",
+  DateOfBirth: "date_of_birth",
+  UserId: "user_id",
+  WebUrl: "web_url",
+  Experiences: "experiences",
+  Education: "education",
+  Skills: "skills",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type ListAtsCandidatesQueryParamFields = ClosedEnum<
+  typeof ListAtsCandidatesQueryParamFields
+>;
 
 export type ListAtsCandidatesRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to AtsCompany)
    */
   companyId?: string | undefined;
   /**
@@ -17,7 +50,7 @@ export type ListAtsCandidatesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsCandidatesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +64,15 @@ export type ListAtsCandidatesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsCandidatesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAtsCandidatesQueryParamFields
+> = z.nativeEnum(ListAtsCandidatesQueryParamFields);
 
 /** @internal */
 export type ListAtsCandidatesRequest$Outbound = {
@@ -58,7 +96,7 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsCandidatesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

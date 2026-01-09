@@ -4,6 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListPaymentSubscriptionsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Description: "description",
+  ContactId: "contact_id",
+  InvoiceId: "invoice_id",
+  CurrentPeriodEndAt: "current_period_end_at",
+  CurrentPeriodStartAt: "current_period_start_at",
+  CanceledAt: "canceled_at",
+  Currency: "currency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Status: "status",
+  Month: "month",
+  IntervalUnit: "interval_unit",
+  DayOfMonth: "day_of_month",
+  DayOfWeek: "day_of_week",
+  Interval: "interval",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type ListPaymentSubscriptionsQueryParamFields = ClosedEnum<
+  typeof ListPaymentSubscriptionsQueryParamFields
+>;
 
 export type ListPaymentSubscriptionsRequest = {
   /**
@@ -11,21 +38,17 @@ export type ListPaymentSubscriptionsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListPaymentSubscriptionsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -39,20 +62,24 @@ export type ListPaymentSubscriptionsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
 
 /** @internal */
+export const ListPaymentSubscriptionsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListPaymentSubscriptionsQueryParamFields> = z
+    .nativeEnum(ListPaymentSubscriptionsQueryParamFields);
+
+/** @internal */
 export type ListPaymentSubscriptionsRequest$Outbound = {
   connection_id: string;
   contact_id?: string | undefined;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -73,9 +100,9 @@ export const ListPaymentSubscriptionsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListPaymentSubscriptionsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -88,7 +115,6 @@ export const ListPaymentSubscriptionsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     connectionId: "connection_id",
     contactId: "contact_id",
-    endLe: "end_le",
     endLt: "end_lt",
     startGte: "start_gte",
     updatedGte: "updated_gte",

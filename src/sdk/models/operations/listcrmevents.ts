@@ -4,10 +4,35 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCrmEventsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Type: "type",
+  Note: "note",
+  Meeting: "meeting",
+  Email: "email",
+  Call: "call",
+  Task: "task",
+  MarketingEmail: "marketing_email",
+  Form: "form",
+  PageView: "page_view",
+  DealIds: "deal_ids",
+  CompanyIds: "company_ids",
+  ContactIds: "contact_ids",
+  LeadIds: "lead_ids",
+  UserId: "user_id",
+  Raw: "raw",
+} as const;
+export type ListCrmEventsQueryParamFields = ClosedEnum<
+  typeof ListCrmEventsQueryParamFields
+>;
 
 export type ListCrmEventsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to CrmCompany)
    */
   companyId?: string | undefined;
   /**
@@ -15,19 +40,19 @@ export type ListCrmEventsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to CrmContact)
    */
   contactId?: string | undefined;
   /**
-   * The deal ID to filter by
+   * The deal ID to filter by (reference to CrmDeal)
    */
   dealId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCrmEventsQueryParamFields> | undefined;
   /**
-   * The CRM lead ID to filter by
+   * The CRM lead ID to filter by (reference to CrmLead)
    */
   leadId?: string | undefined;
   limit?: number | undefined;
@@ -44,14 +69,19 @@ export type ListCrmEventsRequest = {
   sort?: string | undefined;
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListCrmEventsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListCrmEventsQueryParamFields
+> = z.nativeEnum(ListCrmEventsQueryParamFields);
 
 /** @internal */
 export type ListCrmEventsRequest$Outbound = {
@@ -82,7 +112,7 @@ export const ListCrmEventsRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   contactId: z.string().optional(),
   dealId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCrmEventsQueryParamFields$outboundSchema).optional(),
   leadId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

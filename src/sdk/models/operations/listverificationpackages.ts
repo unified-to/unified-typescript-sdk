@@ -4,6 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListVerificationPackagesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Type: "type",
+  Aliases: "aliases",
+  Tags: "tags",
+  Description: "description",
+  Parameters: "parameters",
+  AverageProcessingTimes: "average_processing_times",
+  HasRedirectUrl: "has_redirect_url",
+  HasTargetUrl: "has_target_url",
+  NeedsIpAddress: "needs_ip_address",
+  CostAmount: "cost_amount",
+  Currency: "currency",
+  MaxScore: "max_score",
+  InfoUrl: "info_url",
+  Raw: "raw",
+} as const;
+export type ListVerificationPackagesQueryParamFields = ClosedEnum<
+  typeof ListVerificationPackagesQueryParamFields
+>;
 
 export type ListVerificationPackagesRequest = {
   /**
@@ -13,7 +38,7 @@ export type ListVerificationPackagesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListVerificationPackagesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +52,15 @@ export type ListVerificationPackagesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListVerificationPackagesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListVerificationPackagesQueryParamFields> = z
+    .nativeEnum(ListVerificationPackagesQueryParamFields);
 
 /** @internal */
 export type ListVerificationPackagesRequest$Outbound = {
@@ -52,7 +82,8 @@ export const ListVerificationPackagesRequest$outboundSchema: z.ZodType<
   ListVerificationPackagesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListVerificationPackagesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

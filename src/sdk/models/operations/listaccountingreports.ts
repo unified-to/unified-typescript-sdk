@@ -4,6 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingReportsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Type: "type",
+  Name: "name",
+  Currency: "currency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  BalanceSheet: "balance_sheet",
+  ProfitAndLoss: "profit_and_loss",
+  TrialBalance: "trial_balance",
+  Raw: "raw",
+} as const;
+export type ListAccountingReportsQueryParamFields = ClosedEnum<
+  typeof ListAccountingReportsQueryParamFields
+>;
 
 export type ListAccountingReportsRequest = {
   /**
@@ -11,17 +30,13 @@ export type ListAccountingReportsRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingReportsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -35,20 +50,25 @@ export type ListAccountingReportsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
 
 /** @internal */
+export const ListAccountingReportsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingReportsQueryParamFields> = z.nativeEnum(
+    ListAccountingReportsQueryParamFields,
+  );
+
+/** @internal */
 export type ListAccountingReportsRequest$Outbound = {
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -69,9 +89,9 @@ export const ListAccountingReportsRequest$outboundSchema: z.ZodType<
   ListAccountingReportsRequest
 > = z.object({
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingReportsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -84,7 +104,6 @@ export const ListAccountingReportsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
     startGte: "start_gte",
     updatedGte: "updated_gte",

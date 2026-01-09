@@ -4,7 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateFormsFormQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Fields: "fields",
+  IsActive: "is_active",
+  PublishedUrl: "published_url",
+  ResponseCount: "response_count",
+  HasMultipleSubmissions: "has_multiple_submissions",
+  HasProgressBar: "has_progress_bar",
+  HasShuffleQuestions: "has_shuffle_questions",
+  ConfirmationMessage: "confirmation_message",
+  ConfirmationRedirectUrl: "confirmation_redirect_url",
+  Raw: "raw",
+} as const;
+export type CreateFormsFormQueryParamFields = ClosedEnum<
+  typeof CreateFormsFormQueryParamFields
+>;
 
 export type CreateFormsFormRequest = {
   formsForm: shared.FormsForm;
@@ -15,12 +37,17 @@ export type CreateFormsFormRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateFormsFormQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateFormsFormQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateFormsFormQueryParamFields
+> = z.nativeEnum(CreateFormsFormQueryParamFields);
 
 /** @internal */
 export type CreateFormsFormRequest$Outbound = {
@@ -38,7 +65,7 @@ export const CreateFormsFormRequest$outboundSchema: z.ZodType<
 > = z.object({
   formsForm: shared.FormsForm$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateFormsFormQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

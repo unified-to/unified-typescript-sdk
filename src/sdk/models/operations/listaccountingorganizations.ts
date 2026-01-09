@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingOrganizationsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  LegalName: "legal_name",
+  Currency: "currency",
+  Address: "address",
+  TaxNumber: "tax_number",
+  Timezone: "timezone",
+  Website: "website",
+  FiscalYearEndMonth: "fiscal_year_end_month",
+  OrganizationCode: "organization_code",
+  Raw: "raw",
+} as const;
+export type ListAccountingOrganizationsQueryParamFields = ClosedEnum<
+  typeof ListAccountingOrganizationsQueryParamFields
+>;
 
 export type ListAccountingOrganizationsRequest = {
   /**
@@ -13,7 +33,7 @@ export type ListAccountingOrganizationsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingOrganizationsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +47,15 @@ export type ListAccountingOrganizationsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingOrganizationsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingOrganizationsQueryParamFields> = z
+    .nativeEnum(ListAccountingOrganizationsQueryParamFields);
 
 /** @internal */
 export type ListAccountingOrganizationsRequest$Outbound = {
@@ -52,7 +77,8 @@ export const ListAccountingOrganizationsRequest$outboundSchema: z.ZodType<
   ListAccountingOrganizationsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingOrganizationsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

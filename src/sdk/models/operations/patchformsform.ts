@@ -4,7 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchFormsFormQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Fields: "fields",
+  IsActive: "is_active",
+  PublishedUrl: "published_url",
+  ResponseCount: "response_count",
+  HasMultipleSubmissions: "has_multiple_submissions",
+  HasProgressBar: "has_progress_bar",
+  HasShuffleQuestions: "has_shuffle_questions",
+  ConfirmationMessage: "confirmation_message",
+  ConfirmationRedirectUrl: "confirmation_redirect_url",
+  Raw: "raw",
+} as const;
+export type PatchFormsFormQueryParamFields = ClosedEnum<
+  typeof PatchFormsFormQueryParamFields
+>;
 
 export type PatchFormsFormRequest = {
   formsForm: shared.FormsForm;
@@ -15,7 +37,7 @@ export type PatchFormsFormRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchFormsFormQueryParamFields> | undefined;
   /**
    * ID of the Form
    */
@@ -25,6 +47,11 @@ export type PatchFormsFormRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchFormsFormQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchFormsFormQueryParamFields
+> = z.nativeEnum(PatchFormsFormQueryParamFields);
 
 /** @internal */
 export type PatchFormsFormRequest$Outbound = {
@@ -43,7 +70,7 @@ export const PatchFormsFormRequest$outboundSchema: z.ZodType<
 > = z.object({
   formsForm: shared.FormsForm$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchFormsFormQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

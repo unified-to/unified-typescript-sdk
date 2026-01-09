@@ -4,7 +4,38 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateCalendarEventQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CalendarId: "calendar_id",
+  Subject: "subject",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsAllDay: "is_all_day",
+  Timezone: "timezone",
+  Notes: "notes",
+  Location: "location",
+  IsFree: "is_free",
+  IsPrivate: "is_private",
+  Status: "status",
+  Organizer: "organizer",
+  Attendees: "attendees",
+  RecurringEventId: "recurring_event_id",
+  Recurrence: "recurrence",
+  WebUrl: "web_url",
+  HasConference: "has_conference",
+  Conference: "conference",
+  Attachments: "attachments",
+  SendNotifications: "send_notifications",
+  Raw: "raw",
+} as const;
+export type UpdateCalendarEventQueryParamFields = ClosedEnum<
+  typeof UpdateCalendarEventQueryParamFields
+>;
 
 export type UpdateCalendarEventRequest = {
   calendarEvent: shared.CalendarEvent;
@@ -15,7 +46,7 @@ export type UpdateCalendarEventRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateCalendarEventQueryParamFields> | undefined;
   /**
    * ID of the Event
    */
@@ -25,6 +56,12 @@ export type UpdateCalendarEventRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateCalendarEventQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateCalendarEventQueryParamFields> = z.nativeEnum(
+    UpdateCalendarEventQueryParamFields,
+  );
 
 /** @internal */
 export type UpdateCalendarEventRequest$Outbound = {
@@ -43,7 +80,8 @@ export const UpdateCalendarEventRequest$outboundSchema: z.ZodType<
 > = z.object({
   calendarEvent: shared.CalendarEvent$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateCalendarEventQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

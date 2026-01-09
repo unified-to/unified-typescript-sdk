@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAdsAdQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  CampaignId: "campaign_id",
+  GroupId: "group_id",
+  OrganizationId: "organization_id",
+  IsActive: "is_active",
+  AdType: "ad_type",
+  CreativeAssetUrl: "creative_asset_url",
+  AdCopy: "ad_copy",
+  Headline: "headline",
+  Description: "description",
+  Cta: "cta",
+  FinalUrl: "final_url",
+  Targeting: "targeting",
+  Raw: "raw",
+} as const;
+export type UpdateAdsAdQueryParamFields = ClosedEnum<
+  typeof UpdateAdsAdQueryParamFields
+>;
 
 export type UpdateAdsAdRequest = {
   adsAd: shared.AdsAd;
@@ -15,7 +39,7 @@ export type UpdateAdsAdRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAdsAdQueryParamFields> | undefined;
   /**
    * ID of the Ad
    */
@@ -25,6 +49,11 @@ export type UpdateAdsAdRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAdsAdQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateAdsAdQueryParamFields
+> = z.nativeEnum(UpdateAdsAdQueryParamFields);
 
 /** @internal */
 export type UpdateAdsAdRequest$Outbound = {
@@ -43,7 +72,7 @@ export const UpdateAdsAdRequest$outboundSchema: z.ZodType<
 > = z.object({
   adsAd: shared.AdsAd$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAdsAdQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

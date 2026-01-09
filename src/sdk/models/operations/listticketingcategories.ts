@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListTicketingCategoriesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  IsActive: "is_active",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type ListTicketingCategoriesQueryParamFields = ClosedEnum<
+  typeof ListTicketingCategoriesQueryParamFields
+>;
 
 export type ListTicketingCategoriesRequest = {
   /**
@@ -13,7 +28,7 @@ export type ListTicketingCategoriesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListTicketingCategoriesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +46,15 @@ export type ListTicketingCategoriesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListTicketingCategoriesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListTicketingCategoriesQueryParamFields> = z
+    .nativeEnum(ListTicketingCategoriesQueryParamFields);
 
 /** @internal */
 export type ListTicketingCategoriesRequest$Outbound = {
@@ -57,7 +77,8 @@ export const ListTicketingCategoriesRequest$outboundSchema: z.ZodType<
   ListTicketingCategoriesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListTicketingCategoriesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

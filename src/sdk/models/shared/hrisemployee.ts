@@ -108,8 +108,6 @@ export type HrisEmployee = {
   createdAt?: Date | undefined;
   currency?: string | undefined;
   dateOfBirth?: Date | undefined;
-  department?: string | undefined;
-  division?: string | undefined;
   emails?: Array<HrisEmail> | undefined;
   employeeNumber?: string | undefined;
   employeeRoles?: Array<PropertyHrisEmployeeEmployeeRoles> | undefined;
@@ -127,7 +125,6 @@ export type HrisEmployee = {
   imageUrl?: string | undefined;
   languageLocale?: string | undefined;
   lastName?: string | undefined;
-  location?: string | undefined;
   locations?: Array<HrisLocation> | undefined;
   managerId?: string | undefined;
   maritalStatus?: MaritalStatus | undefined;
@@ -220,8 +217,6 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   date_of_birth: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
-  department: z.string().optional(),
-  division: z.string().optional(),
   emails: z.array(HrisEmail$inboundSchema).optional(),
   employee_number: z.string().optional(),
   employee_roles: z.array(PropertyHrisEmployeeEmployeeRoles$inboundSchema)
@@ -238,7 +233,6 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   image_url: z.string().optional(),
   language_locale: z.string().optional(),
   last_name: z.string().optional(),
-  location: z.string().optional(),
   locations: z.array(HrisLocation$inboundSchema).optional(),
   manager_id: z.string().optional(),
   marital_status: MaritalStatus$inboundSchema.optional(),
@@ -296,8 +290,6 @@ export type HrisEmployee$Outbound = {
   created_at?: string | undefined;
   currency?: string | undefined;
   date_of_birth?: string | undefined;
-  department?: string | undefined;
-  division?: string | undefined;
   emails?: Array<HrisEmail$Outbound> | undefined;
   employee_number?: string | undefined;
   employee_roles?: Array<string> | undefined;
@@ -312,7 +304,6 @@ export type HrisEmployee$Outbound = {
   image_url?: string | undefined;
   language_locale?: string | undefined;
   last_name?: string | undefined;
-  location?: string | undefined;
   locations?: Array<HrisLocation$Outbound> | undefined;
   manager_id?: string | undefined;
   marital_status?: string | undefined;
@@ -347,8 +338,6 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
-  department: z.string().optional(),
-  division: z.string().optional(),
   emails: z.array(HrisEmail$outboundSchema).optional(),
   employeeNumber: z.string().optional(),
   employeeRoles: z.array(PropertyHrisEmployeeEmployeeRoles$outboundSchema)
@@ -364,7 +353,6 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   imageUrl: z.string().optional(),
   languageLocale: z.string().optional(),
   lastName: z.string().optional(),
-  location: z.string().optional(),
   locations: z.array(HrisLocation$outboundSchema).optional(),
   managerId: z.string().optional(),
   maritalStatus: MaritalStatus$outboundSchema.optional(),

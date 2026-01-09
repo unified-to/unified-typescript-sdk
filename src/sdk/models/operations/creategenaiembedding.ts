@@ -4,7 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateGenaiEmbeddingQueryParamFields = {
+  ModelId: "model_id",
+  Content: "content",
+  EncondingFormat: "enconding_format",
+  Type: "type",
+  Dimension: "dimension",
+  MaxTokens: "max_tokens",
+  Embeddings: "embeddings",
+  TokensUsed: "tokens_used",
+  Raw: "raw",
+  Id: "id",
+} as const;
+export type CreateGenaiEmbeddingQueryParamFields = ClosedEnum<
+  typeof CreateGenaiEmbeddingQueryParamFields
+>;
 
 export type CreateGenaiEmbeddingRequest = {
   genaiEmbedding: shared.GenaiEmbedding;
@@ -15,12 +32,18 @@ export type CreateGenaiEmbeddingRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateGenaiEmbeddingQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateGenaiEmbeddingQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateGenaiEmbeddingQueryParamFields> = z.nativeEnum(
+    CreateGenaiEmbeddingQueryParamFields,
+  );
 
 /** @internal */
 export type CreateGenaiEmbeddingRequest$Outbound = {
@@ -38,7 +61,8 @@ export const CreateGenaiEmbeddingRequest$outboundSchema: z.ZodType<
 > = z.object({
   genaiEmbedding: shared.GenaiEmbedding$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateGenaiEmbeddingQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

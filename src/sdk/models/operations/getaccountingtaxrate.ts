@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingTaxrateQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Rate: "rate",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type GetAccountingTaxrateQueryParamFields = ClosedEnum<
+  typeof GetAccountingTaxrateQueryParamFields
+>;
 
 export type GetAccountingTaxrateRequest = {
   /**
@@ -13,7 +28,7 @@ export type GetAccountingTaxrateRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingTaxrateQueryParamFields> | undefined;
   /**
    * ID of the Taxrate
    */
@@ -23,6 +38,12 @@ export type GetAccountingTaxrateRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingTaxrateQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingTaxrateQueryParamFields> = z.nativeEnum(
+    GetAccountingTaxrateQueryParamFields,
+  );
 
 /** @internal */
 export type GetAccountingTaxrateRequest$Outbound = {
@@ -39,7 +60,8 @@ export const GetAccountingTaxrateRequest$outboundSchema: z.ZodType<
   GetAccountingTaxrateRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingTaxrateQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

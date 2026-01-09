@@ -4,10 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisBenefitsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  CompanyId: "company_id",
+  Type: "type",
+  Tax: "tax",
+  Frequency: "frequency",
+  IsActive: "is_active",
+  EmployerContributionType: "employer_contribution_type",
+  EmployerContributionAmount: "employer_contribution_amount",
+  EmployerContributionMaxAmount: "employer_contribution_max_amount",
+  CoverageLevel: "coverage_level",
+  Currency: "currency",
+  Raw: "raw",
+} as const;
+export type ListHrisBenefitsQueryParamFields = ClosedEnum<
+  typeof ListHrisBenefitsQueryParamFields
+>;
 
 export type ListHrisBenefitsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -17,7 +40,7 @@ export type ListHrisBenefitsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisBenefitsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +54,15 @@ export type ListHrisBenefitsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListHrisBenefitsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisBenefitsQueryParamFields
+> = z.nativeEnum(ListHrisBenefitsQueryParamFields);
 
 /** @internal */
 export type ListHrisBenefitsRequest$Outbound = {
@@ -58,7 +86,7 @@ export const ListHrisBenefitsRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisBenefitsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

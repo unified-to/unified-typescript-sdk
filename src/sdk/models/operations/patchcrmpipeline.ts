@@ -4,7 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchCrmPipelineQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  IsActive: "is_active",
+  DealProbability: "deal_probability",
+  DisplayOrder: "display_order",
+  Stages: "stages",
+  Raw: "raw",
+} as const;
+export type PatchCrmPipelineQueryParamFields = ClosedEnum<
+  typeof PatchCrmPipelineQueryParamFields
+>;
 
 export type PatchCrmPipelineRequest = {
   crmPipeline: shared.CrmPipeline;
@@ -15,7 +31,7 @@ export type PatchCrmPipelineRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchCrmPipelineQueryParamFields> | undefined;
   /**
    * ID of the Pipeline
    */
@@ -25,6 +41,11 @@ export type PatchCrmPipelineRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchCrmPipelineQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchCrmPipelineQueryParamFields
+> = z.nativeEnum(PatchCrmPipelineQueryParamFields);
 
 /** @internal */
 export type PatchCrmPipelineRequest$Outbound = {
@@ -43,7 +64,7 @@ export const PatchCrmPipelineRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmPipeline: shared.CrmPipeline$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchCrmPipelineQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,7 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateVerificationRequestQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PackageId: "package_id",
+  Parameters: "parameters",
+  TargetUrl: "target_url",
+  CandidateId: "candidate_id",
+  ProfileIpAddress: "profile_ip_address",
+  ProfileName: "profile_name",
+  ProfileDateOfBirth: "profile_date_of_birth",
+  ProfileAddresses: "profile_addresses",
+  ProfileGender: "profile_gender",
+  ProfileEmails: "profile_emails",
+  ProfileTelephones: "profile_telephones",
+  ProfileNationalIdentifier: "profile_national_identifier",
+  ResponseCompletedAt: "response_completed_at",
+  ResponseExpiresAt: "response_expires_at",
+  ResponseIssuedAt: "response_issued_at",
+  ResponseStatus: "response_status",
+  ResponseScore: "response_score",
+  ResponseRedirectUrl: "response_redirect_url",
+  ResponseDownloadUrls: "response_download_urls",
+  ResponseDetails: "response_details",
+  ResponseSource: "response_source",
+  Raw: "raw",
+} as const;
+export type UpdateVerificationRequestQueryParamFields = ClosedEnum<
+  typeof UpdateVerificationRequestQueryParamFields
+>;
 
 export type UpdateVerificationRequestRequest = {
   verificationRequest: shared.VerificationRequest;
@@ -15,7 +47,7 @@ export type UpdateVerificationRequestRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateVerificationRequestQueryParamFields> | undefined;
   /**
    * ID of the Request
    */
@@ -25,6 +57,11 @@ export type UpdateVerificationRequestRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateVerificationRequestQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateVerificationRequestQueryParamFields> = z
+    .nativeEnum(UpdateVerificationRequestQueryParamFields);
 
 /** @internal */
 export type UpdateVerificationRequestRequest$Outbound = {
@@ -43,7 +80,8 @@ export const UpdateVerificationRequestRequest$outboundSchema: z.ZodType<
 > = z.object({
   verificationRequest: shared.VerificationRequest$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateVerificationRequestQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,7 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchPaymentSubscriptionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Description: "description",
+  ContactId: "contact_id",
+  InvoiceId: "invoice_id",
+  CurrentPeriodEndAt: "current_period_end_at",
+  CurrentPeriodStartAt: "current_period_start_at",
+  CanceledAt: "canceled_at",
+  Currency: "currency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Status: "status",
+  Month: "month",
+  IntervalUnit: "interval_unit",
+  DayOfMonth: "day_of_month",
+  DayOfWeek: "day_of_week",
+  Interval: "interval",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type PatchPaymentSubscriptionQueryParamFields = ClosedEnum<
+  typeof PatchPaymentSubscriptionQueryParamFields
+>;
 
 export type PatchPaymentSubscriptionRequest = {
   paymentSubscription: shared.PaymentSubscription;
@@ -15,7 +42,7 @@ export type PatchPaymentSubscriptionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchPaymentSubscriptionQueryParamFields> | undefined;
   /**
    * ID of the Subscription
    */
@@ -25,6 +52,11 @@ export type PatchPaymentSubscriptionRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchPaymentSubscriptionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchPaymentSubscriptionQueryParamFields> = z
+    .nativeEnum(PatchPaymentSubscriptionQueryParamFields);
 
 /** @internal */
 export type PatchPaymentSubscriptionRequest$Outbound = {
@@ -43,7 +75,8 @@ export const PatchPaymentSubscriptionRequest$outboundSchema: z.ZodType<
 > = z.object({
   paymentSubscription: shared.PaymentSubscription$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchPaymentSubscriptionQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListRepoPullrequestsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserIds: "user_ids",
+  RepoId: "repo_id",
+  Status: "status",
+  Labels: "labels",
+  ClosedAt: "closed_at",
+  CommitIds: "commit_ids",
+  Raw: "raw",
+} as const;
+export type ListRepoPullrequestsQueryParamFields = ClosedEnum<
+  typeof ListRepoPullrequestsQueryParamFields
+>;
 
 export type ListRepoPullrequestsRequest = {
   /**
@@ -13,7 +30,7 @@ export type ListRepoPullrequestsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListRepoPullrequestsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -26,15 +43,21 @@ export type ListRepoPullrequestsRequest = {
    */
   raw?: string | undefined;
   /**
-   * The repo ID to filter by
+   * The repo ID to filter by (reference to RepoRepository)
    */
   repoId?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListRepoPullrequestsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListRepoPullrequestsQueryParamFields> = z.nativeEnum(
+    ListRepoPullrequestsQueryParamFields,
+  );
 
 /** @internal */
 export type ListRepoPullrequestsRequest$Outbound = {
@@ -57,7 +80,8 @@ export const ListRepoPullrequestsRequest$outboundSchema: z.ZodType<
   ListRepoPullrequestsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListRepoPullrequestsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

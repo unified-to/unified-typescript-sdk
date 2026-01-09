@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateStorageFileQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentId: "parent_id",
+  UserId: "user_id",
+  Size: "size",
+  Type: "type",
+  MimeType: "mime_type",
+  Permissions: "permissions",
+  DownloadUrl: "download_url",
+  Hash: "hash",
+  Data: "data",
+  Version: "version",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type UpdateStorageFileQueryParamFields = ClosedEnum<
+  typeof UpdateStorageFileQueryParamFields
+>;
 
 export type UpdateStorageFileRequest = {
   storageFile: shared.StorageFile;
@@ -15,7 +39,7 @@ export type UpdateStorageFileRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateStorageFileQueryParamFields> | undefined;
   /**
    * ID of the File
    */
@@ -25,6 +49,11 @@ export type UpdateStorageFileRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateStorageFileQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateStorageFileQueryParamFields
+> = z.nativeEnum(UpdateStorageFileQueryParamFields);
 
 /** @internal */
 export type UpdateStorageFileRequest$Outbound = {
@@ -43,7 +72,7 @@ export const UpdateStorageFileRequest$outboundSchema: z.ZodType<
 > = z.object({
   storageFile: shared.StorageFile$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateStorageFileQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

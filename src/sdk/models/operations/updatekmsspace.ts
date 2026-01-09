@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateKmsSpaceQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentSpaceId: "parent_space_id",
+  ParentId: "parent_id",
+  IsActive: "is_active",
+  UserId: "user_id",
+  ParentPageId: "parent_page_id",
+  Raw: "raw",
+} as const;
+export type UpdateKmsSpaceQueryParamFields = ClosedEnum<
+  typeof UpdateKmsSpaceQueryParamFields
+>;
 
 export type UpdateKmsSpaceRequest = {
   kmsSpace: shared.KmsSpace;
@@ -15,7 +33,7 @@ export type UpdateKmsSpaceRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateKmsSpaceQueryParamFields> | undefined;
   /**
    * ID of the Space
    */
@@ -25,6 +43,11 @@ export type UpdateKmsSpaceRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateKmsSpaceQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateKmsSpaceQueryParamFields
+> = z.nativeEnum(UpdateKmsSpaceQueryParamFields);
 
 /** @internal */
 export type UpdateKmsSpaceRequest$Outbound = {
@@ -43,7 +66,7 @@ export const UpdateKmsSpaceRequest$outboundSchema: z.ZodType<
 > = z.object({
   kmsSpace: shared.KmsSpace$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateKmsSpaceQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

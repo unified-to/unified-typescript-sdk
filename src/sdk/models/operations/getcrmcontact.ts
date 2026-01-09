@@ -4,6 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetCrmContactQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Title: "title",
+  Company: "company",
+  Emails: "emails",
+  Telephones: "telephones",
+  DealIds: "deal_ids",
+  CompanyIds: "company_ids",
+  Address: "address",
+  UserId: "user_id",
+  LinkUrls: "link_urls",
+  Metadata: "metadata",
+  Department: "department",
+  ImageUrl: "image_url",
+  Raw: "raw",
+} as const;
+export type GetCrmContactQueryParamFields = ClosedEnum<
+  typeof GetCrmContactQueryParamFields
+>;
 
 export type GetCrmContactRequest = {
   /**
@@ -13,7 +39,7 @@ export type GetCrmContactRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetCrmContactQueryParamFields> | undefined;
   /**
    * ID of the Contact
    */
@@ -23,6 +49,11 @@ export type GetCrmContactRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetCrmContactQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetCrmContactQueryParamFields
+> = z.nativeEnum(GetCrmContactQueryParamFields);
 
 /** @internal */
 export type GetCrmContactRequest$Outbound = {
@@ -39,7 +70,7 @@ export const GetCrmContactRequest$outboundSchema: z.ZodType<
   GetCrmContactRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetCrmContactQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

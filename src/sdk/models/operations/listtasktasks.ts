@@ -4,6 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListTaskTasksQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  ProjectId: "project_id",
+  ParentId: "parent_id",
+  CompletedAt: "completed_at",
+  Status: "status",
+  Notes: "notes",
+  DueAt: "due_at",
+  Priority: "priority",
+  AssignedUserIds: "assigned_user_ids",
+  CreatorUserId: "creator_user_id",
+  FollowerUserIds: "follower_user_ids",
+  GroupIds: "group_ids",
+  Tags: "tags",
+  Url: "url",
+  AttachmentIds: "attachment_ids",
+  Metadata: "metadata",
+  HasChildren: "has_children",
+  Raw: "raw",
+} as const;
+export type ListTaskTasksQueryParamFields = ClosedEnum<
+  typeof ListTaskTasksQueryParamFields
+>;
 
 export type ListTaskTasksRequest = {
   /**
@@ -13,7 +41,7 @@ export type ListTaskTasksRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListTaskTasksQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -22,7 +50,7 @@ export type ListTaskTasksRequest = {
    */
   parentId?: string | undefined;
   /**
-   * The project ID to filter by
+   * The project ID to filter by (reference to TaskProject)
    */
   projectId?: string | undefined;
   /**
@@ -39,14 +67,19 @@ export type ListTaskTasksRequest = {
    */
   status?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListTaskTasksQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListTaskTasksQueryParamFields
+> = z.nativeEnum(ListTaskTasksQueryParamFields);
 
 /** @internal */
 export type ListTaskTasksRequest$Outbound = {
@@ -72,7 +105,7 @@ export const ListTaskTasksRequest$outboundSchema: z.ZodType<
   ListTaskTasksRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListTaskTasksQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

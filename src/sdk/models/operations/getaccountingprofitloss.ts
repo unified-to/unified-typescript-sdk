@@ -4,6 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingProfitlossQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CategoryIds: "category_ids",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Name: "name",
+  Currency: "currency",
+  Income: "income",
+  Expenses: "expenses",
+  CostOfGoodsSold: "cost_of_goods_sold",
+  GrossProfitAmount: "gross_profit_amount",
+  NetProfitAmount: "net_profit_amount",
+  IncomeTotalAmount: "income_total_amount",
+  NetIncomeAmount: "net_income_amount",
+  ExpensesTotalAmount: "expenses_total_amount",
+  CostOfGoodsSoldTotalAmount: "cost_of_goods_sold_total_amount",
+  IncomeSections: "income_sections",
+  ExpensesSections: "expenses_sections",
+  CostOfGoodsSoldSections: "cost_of_goods_sold_sections",
+  Raw: "raw",
+} as const;
+export type GetAccountingProfitlossQueryParamFields = ClosedEnum<
+  typeof GetAccountingProfitlossQueryParamFields
+>;
 
 export type GetAccountingProfitlossRequest = {
   /**
@@ -13,7 +41,7 @@ export type GetAccountingProfitlossRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingProfitlossQueryParamFields> | undefined;
   /**
    * ID of the Profitloss
    */
@@ -23,6 +51,11 @@ export type GetAccountingProfitlossRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingProfitlossQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingProfitlossQueryParamFields> = z
+    .nativeEnum(GetAccountingProfitlossQueryParamFields);
 
 /** @internal */
 export type GetAccountingProfitlossRequest$Outbound = {
@@ -39,7 +72,8 @@ export const GetAccountingProfitlossRequest$outboundSchema: z.ZodType<
   GetAccountingProfitlossRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingProfitlossQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

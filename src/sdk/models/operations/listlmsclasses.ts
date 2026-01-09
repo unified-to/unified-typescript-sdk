@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListLmsClassesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Media: "media",
+  CourseId: "course_id",
+  InstructorIds: "instructor_ids",
+  StudentIds: "student_ids",
+  Languages: "languages",
+  Raw: "raw",
+} as const;
+export type ListLmsClassesQueryParamFields = ClosedEnum<
+  typeof ListLmsClassesQueryParamFields
+>;
 
 export type ListLmsClassesRequest = {
   /**
@@ -11,18 +29,14 @@ export type ListLmsClassesRequest = {
    */
   connectionId: string;
   /**
-   * The course ID to filter by
+   * The course ID to filter by (reference to Course)
    */
   courseId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListLmsClassesQueryParamFields> | undefined;
   limit?: number | undefined;
-  /**
-   * The location ID to filter by
-   */
-  locationId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
@@ -35,10 +49,15 @@ export type ListLmsClassesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListLmsClassesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListLmsClassesQueryParamFields
+> = z.nativeEnum(ListLmsClassesQueryParamFields);
 
 /** @internal */
 export type ListLmsClassesRequest$Outbound = {
@@ -46,7 +65,6 @@ export type ListLmsClassesRequest$Outbound = {
   course_id?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
-  location_id?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
@@ -63,9 +81,8 @@ export const ListLmsClassesRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   courseId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListLmsClassesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
-  locationId: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
@@ -76,7 +93,6 @@ export const ListLmsClassesRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     connectionId: "connection_id",
     courseId: "course_id",
-    locationId: "location_id",
     updatedGte: "updated_gte",
   });
 });

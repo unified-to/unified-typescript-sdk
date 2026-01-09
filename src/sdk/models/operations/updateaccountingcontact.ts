@@ -4,7 +4,36 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAccountingContactQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Telephones: "telephones",
+  Currency: "currency",
+  BillingAddress: "billing_address",
+  ShippingAddress: "shipping_address",
+  IsActive: "is_active",
+  TaxExemption: "tax_exemption",
+  TaxNumber: "tax_number",
+  IsCustomer: "is_customer",
+  IsSupplier: "is_supplier",
+  PortalUrl: "portal_url",
+  PaymentMethods: "payment_methods",
+  CompanyName: "company_name",
+  Identification: "identification",
+  AssociatedContacts: "associated_contacts",
+  Raw: "raw",
+} as const;
+export type UpdateAccountingContactQueryParamFields = ClosedEnum<
+  typeof UpdateAccountingContactQueryParamFields
+>;
 
 export type UpdateAccountingContactRequest = {
   accountingContact: shared.AccountingContact;
@@ -15,7 +44,7 @@ export type UpdateAccountingContactRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAccountingContactQueryParamFields> | undefined;
   /**
    * ID of the Contact
    */
@@ -25,6 +54,11 @@ export type UpdateAccountingContactRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAccountingContactQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateAccountingContactQueryParamFields> = z
+    .nativeEnum(UpdateAccountingContactQueryParamFields);
 
 /** @internal */
 export type UpdateAccountingContactRequest$Outbound = {
@@ -43,7 +77,8 @@ export const UpdateAccountingContactRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingContact: shared.AccountingContact$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAccountingContactQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -154,13 +154,6 @@ export const ListDocumentId = {
 } as const;
 export type ListDocumentId = OpenEnum<typeof ListDocumentId>;
 
-export const ListEndLe = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListEndLe = OpenEnum<typeof ListEndLe>;
-
 export const ListEndLt = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -181,15 +174,6 @@ export const ListExpand = {
   NotSupported: "not-supported",
 } as const;
 export type ListExpand = OpenEnum<typeof ListExpand>;
-
-export const ListExpandRecurringEvents = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListExpandRecurringEvents = OpenEnum<
-  typeof ListExpandRecurringEvents
->;
 
 export const ListFormId = {
   SupportedRequired: "supported-required",
@@ -679,13 +663,6 @@ export const VirtualWebhookDealId = {
 } as const;
 export type VirtualWebhookDealId = OpenEnum<typeof VirtualWebhookDealId>;
 
-export const VirtualWebhookEndLe = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookEndLe = OpenEnum<typeof VirtualWebhookEndLe>;
-
 export const VirtualWebhookEndLt = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -923,11 +900,9 @@ export type IntegrationSupport = {
   listCustomerId?: ListCustomerId | undefined;
   listDealId?: ListDealId | undefined;
   listDocumentId?: ListDocumentId | undefined;
-  listEndLe?: ListEndLe | undefined;
   listEndLt?: ListEndLt | undefined;
   listEventId?: ListEventId | undefined;
   listExpand?: ListExpand | undefined;
-  listExpandRecurringEvents?: ListExpandRecurringEvents | undefined;
   listFormId?: ListFormId | undefined;
   listGroupId?: ListGroupId | undefined;
   listInstructorId?: ListInstructorId | undefined;
@@ -1003,7 +978,6 @@ export type IntegrationSupport = {
   virtualWebhookContactId?: VirtualWebhookContactId | undefined;
   virtualWebhookCustomerId?: VirtualWebhookCustomerId | undefined;
   virtualWebhookDealId?: VirtualWebhookDealId | undefined;
-  virtualWebhookEndLe?: VirtualWebhookEndLe | undefined;
   virtualWebhookEndLt?: VirtualWebhookEndLt | undefined;
   virtualWebhookEventId?: VirtualWebhookEventId | undefined;
   virtualWebhookExpand?: VirtualWebhookExpand | undefined;
@@ -1177,13 +1151,6 @@ export const ListDocumentId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListDocumentId);
 
 /** @internal */
-export const ListEndLe$inboundSchema: z.ZodType<
-  ListEndLe,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListEndLe);
-
-/** @internal */
 export const ListEndLt$inboundSchema: z.ZodType<
   ListEndLt,
   z.ZodTypeDef,
@@ -1203,13 +1170,6 @@ export const ListExpand$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListExpand);
-
-/** @internal */
-export const ListExpandRecurringEvents$inboundSchema: z.ZodType<
-  ListExpandRecurringEvents,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListExpandRecurringEvents);
 
 /** @internal */
 export const ListFormId$inboundSchema: z.ZodType<
@@ -1688,13 +1648,6 @@ export const VirtualWebhookDealId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookDealId);
 
 /** @internal */
-export const VirtualWebhookEndLe$inboundSchema: z.ZodType<
-  VirtualWebhookEndLe,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookEndLe);
-
-/** @internal */
 export const VirtualWebhookEndLt$inboundSchema: z.ZodType<
   VirtualWebhookEndLt,
   z.ZodTypeDef,
@@ -1924,12 +1877,9 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_customer_id: ListCustomerId$inboundSchema.optional(),
   list_deal_id: ListDealId$inboundSchema.optional(),
   list_document_id: ListDocumentId$inboundSchema.optional(),
-  list_end_le: ListEndLe$inboundSchema.optional(),
   list_end_lt: ListEndLt$inboundSchema.optional(),
   list_event_id: ListEventId$inboundSchema.optional(),
   list_expand: ListExpand$inboundSchema.optional(),
-  list_expand_recurring_events: ListExpandRecurringEvents$inboundSchema
-    .optional(),
   list_form_id: ListFormId$inboundSchema.optional(),
   list_group_id: ListGroupId$inboundSchema.optional(),
   list_instructor_id: ListInstructorId$inboundSchema.optional(),
@@ -2008,7 +1958,6 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_customer_id: VirtualWebhookCustomerId$inboundSchema
     .optional(),
   virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
-  virtual_webhook_end_le: VirtualWebhookEndLe$inboundSchema.optional(),
   virtual_webhook_end_lt: VirtualWebhookEndLt$inboundSchema.optional(),
   virtual_webhook_event_id: VirtualWebhookEventId$inboundSchema.optional(),
   virtual_webhook_expand: VirtualWebhookExpand$inboundSchema.optional(),
@@ -2069,11 +2018,9 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_customer_id": "listCustomerId",
     "list_deal_id": "listDealId",
     "list_document_id": "listDocumentId",
-    "list_end_le": "listEndLe",
     "list_end_lt": "listEndLt",
     "list_event_id": "listEventId",
     "list_expand": "listExpand",
-    "list_expand_recurring_events": "listExpandRecurringEvents",
     "list_form_id": "listFormId",
     "list_group_id": "listGroupId",
     "list_instructor_id": "listInstructorId",
@@ -2145,7 +2092,6 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_contact_id": "virtualWebhookContactId",
     "virtual_webhook_customer_id": "virtualWebhookCustomerId",
     "virtual_webhook_deal_id": "virtualWebhookDealId",
-    "virtual_webhook_end_le": "virtualWebhookEndLe",
     "virtual_webhook_end_lt": "virtualWebhookEndLt",
     "virtual_webhook_event_id": "virtualWebhookEventId",
     "virtual_webhook_expand": "virtualWebhookExpand",

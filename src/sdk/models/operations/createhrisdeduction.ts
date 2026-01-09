@@ -4,7 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateHrisDeductionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  CompanyId: "company_id",
+  BenefitId: "benefit_id",
+  Amount: "amount",
+  Type: "type",
+  CoverageLevel: "coverage_level",
+  Frequency: "frequency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type CreateHrisDeductionQueryParamFields = ClosedEnum<
+  typeof CreateHrisDeductionQueryParamFields
+>;
 
 export type CreateHrisDeductionRequest = {
   /**
@@ -18,12 +39,18 @@ export type CreateHrisDeductionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateHrisDeductionQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateHrisDeductionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateHrisDeductionQueryParamFields> = z.nativeEnum(
+    CreateHrisDeductionQueryParamFields,
+  );
 
 /** @internal */
 export type CreateHrisDeductionRequest$Outbound = {
@@ -41,7 +68,8 @@ export const CreateHrisDeductionRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisDeduction: shared.HrisDeduction$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateHrisDeductionQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

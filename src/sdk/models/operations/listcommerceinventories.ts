@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCommerceInventoriesQueryParamFields = {
+  Id: "id",
+  UpdatedAt: "updated_at",
+  ItemId: "item_id",
+  ItemVariantId: "item_variant_id",
+  ItemOptionId: "item_option_id",
+  LocationId: "location_id",
+  Available: "available",
+  Raw: "raw",
+} as const;
+export type ListCommerceInventoriesQueryParamFields = ClosedEnum<
+  typeof ListCommerceInventoriesQueryParamFields
+>;
 
 export type ListCommerceInventoriesRequest = {
   /**
@@ -13,14 +28,14 @@ export type ListCommerceInventoriesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCommerceInventoriesQueryParamFields> | undefined;
   /**
-   * The item variant ID to filter by
+   * The item variant ID to filter by (reference to CommerceItemVariant)
    */
   itemVariantId?: string | undefined;
   limit?: number | undefined;
   /**
-   * The location ID to filter by
+   * The location ID to filter by (reference to CommerceLocation)
    */
   locationId?: string | undefined;
   offset?: number | undefined;
@@ -35,10 +50,15 @@ export type ListCommerceInventoriesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListCommerceInventoriesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListCommerceInventoriesQueryParamFields> = z
+    .nativeEnum(ListCommerceInventoriesQueryParamFields);
 
 /** @internal */
 export type ListCommerceInventoriesRequest$Outbound = {
@@ -62,7 +82,8 @@ export const ListCommerceInventoriesRequest$outboundSchema: z.ZodType<
   ListCommerceInventoriesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCommerceInventoriesQueryParamFields$outboundSchema)
+    .optional(),
   itemVariantId: z.string().optional(),
   limit: z.number().optional(),
   locationId: z.string().optional(),

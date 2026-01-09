@@ -94,16 +94,17 @@ async function $do(
   const path = pathToFunc("/task/{connection_id}/project")(pathParams);
 
   const query = encodeFormQuery({
+    "company_id": payload.company_id,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
-    "org_id": payload.org_id,
     "parent_id": payload.parent_id,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
     "updated_gte": payload.updated_gte,
+    "user_id": payload.user_id,
   });
 
   const headers = new Headers(compactMap({

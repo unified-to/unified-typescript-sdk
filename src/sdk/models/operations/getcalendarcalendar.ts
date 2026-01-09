@@ -4,6 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetCalendarCalendarQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Timezone: "timezone",
+  Primary: "primary",
+  IsPrimary: "is_primary",
+  Raw: "raw",
+} as const;
+export type GetCalendarCalendarQueryParamFields = ClosedEnum<
+  typeof GetCalendarCalendarQueryParamFields
+>;
 
 export type GetCalendarCalendarRequest = {
   /**
@@ -13,7 +29,7 @@ export type GetCalendarCalendarRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetCalendarCalendarQueryParamFields> | undefined;
   /**
    * ID of the Calendar
    */
@@ -23,6 +39,12 @@ export type GetCalendarCalendarRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetCalendarCalendarQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetCalendarCalendarQueryParamFields> = z.nativeEnum(
+    GetCalendarCalendarQueryParamFields,
+  );
 
 /** @internal */
 export type GetCalendarCalendarRequest$Outbound = {
@@ -39,7 +61,8 @@ export const GetCalendarCalendarRequest$outboundSchema: z.ZodType<
   GetCalendarCalendarRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetCalendarCalendarQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

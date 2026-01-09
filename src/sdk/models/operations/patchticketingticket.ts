@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchTicketingTicketQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CustomerId: "customer_id",
+  Subject: "subject",
+  Description: "description",
+  Status: "status",
+  ClosedAt: "closed_at",
+  Priority: "priority",
+  CategoryId: "category_id",
+  Category: "category",
+  Source: "source",
+  SourceRef: "source_ref",
+  Tags: "tags",
+  UserId: "user_id",
+  Url: "url",
+  Raw: "raw",
+} as const;
+export type PatchTicketingTicketQueryParamFields = ClosedEnum<
+  typeof PatchTicketingTicketQueryParamFields
+>;
 
 export type PatchTicketingTicketRequest = {
   ticketingTicket: shared.TicketingTicket;
@@ -15,7 +39,7 @@ export type PatchTicketingTicketRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchTicketingTicketQueryParamFields> | undefined;
   /**
    * ID of the Ticket
    */
@@ -25,6 +49,12 @@ export type PatchTicketingTicketRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchTicketingTicketQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchTicketingTicketQueryParamFields> = z.nativeEnum(
+    PatchTicketingTicketQueryParamFields,
+  );
 
 /** @internal */
 export type PatchTicketingTicketRequest$Outbound = {
@@ -43,7 +73,8 @@ export const PatchTicketingTicketRequest$outboundSchema: z.ZodType<
 > = z.object({
   ticketingTicket: shared.TicketingTicket$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchTicketingTicketQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

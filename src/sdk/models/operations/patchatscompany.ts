@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchAtsCompanyQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Address: "address",
+  WebsiteUrl: "website_url",
+  Phone: "phone",
+  ParentId: "parent_id",
+  RecruiterIds: "recruiter_ids",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type PatchAtsCompanyQueryParamFields = ClosedEnum<
+  typeof PatchAtsCompanyQueryParamFields
+>;
 
 export type PatchAtsCompanyRequest = {
   atsCompany: shared.AtsCompany;
@@ -15,7 +33,7 @@ export type PatchAtsCompanyRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchAtsCompanyQueryParamFields> | undefined;
   /**
    * ID of the Company
    */
@@ -25,6 +43,11 @@ export type PatchAtsCompanyRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchAtsCompanyQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchAtsCompanyQueryParamFields
+> = z.nativeEnum(PatchAtsCompanyQueryParamFields);
 
 /** @internal */
 export type PatchAtsCompanyRequest$Outbound = {
@@ -43,7 +66,7 @@ export const PatchAtsCompanyRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsCompany: shared.AtsCompany$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchAtsCompanyQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

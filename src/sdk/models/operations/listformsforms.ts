@@ -4,6 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListFormsFormsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Fields: "fields",
+  IsActive: "is_active",
+  PublishedUrl: "published_url",
+  ResponseCount: "response_count",
+  HasMultipleSubmissions: "has_multiple_submissions",
+  HasProgressBar: "has_progress_bar",
+  HasShuffleQuestions: "has_shuffle_questions",
+  ConfirmationMessage: "confirmation_message",
+  ConfirmationRedirectUrl: "confirmation_redirect_url",
+  Raw: "raw",
+} as const;
+export type ListFormsFormsQueryParamFields = ClosedEnum<
+  typeof ListFormsFormsQueryParamFields
+>;
 
 export type ListFormsFormsRequest = {
   /**
@@ -13,7 +35,7 @@ export type ListFormsFormsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListFormsFormsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +49,15 @@ export type ListFormsFormsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListFormsFormsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListFormsFormsQueryParamFields
+> = z.nativeEnum(ListFormsFormsQueryParamFields);
 
 /** @internal */
 export type ListFormsFormsRequest$Outbound = {
@@ -52,7 +79,7 @@ export const ListFormsFormsRequest$outboundSchema: z.ZodType<
   ListFormsFormsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListFormsFormsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

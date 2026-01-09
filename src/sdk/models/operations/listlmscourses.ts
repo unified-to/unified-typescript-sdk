@@ -4,14 +4,36 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListLmsCoursesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  IsPrivate: "is_private",
+  IsActive: "is_active",
+  PriceAmount: "price_amount",
+  Languages: "languages",
+  Categories: "categories",
+  Currency: "currency",
+  Media: "media",
+  InstructorIds: "instructor_ids",
+  StudentIds: "student_ids",
+  Raw: "raw",
+} as const;
+export type ListLmsCoursesQueryParamFields = ClosedEnum<
+  typeof ListLmsCoursesQueryParamFields
+>;
 
 export type ListLmsCoursesRequest = {
   /**
-   * The class ID to filter by
+   * The class ID to filter by (reference to LmsClass)
    */
   classId?: string | undefined;
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -19,13 +41,9 @@ export type ListLmsCoursesRequest = {
    */
   connectionId: string;
   /**
-   * The course ID to filter by
-   */
-  courseId?: string | undefined;
-  /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListLmsCoursesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -39,17 +57,21 @@ export type ListLmsCoursesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListLmsCoursesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListLmsCoursesQueryParamFields
+> = z.nativeEnum(ListLmsCoursesQueryParamFields);
 
 /** @internal */
 export type ListLmsCoursesRequest$Outbound = {
   class_id?: string | undefined;
   company_id?: string | undefined;
   connection_id: string;
-  course_id?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -69,8 +91,7 @@ export const ListLmsCoursesRequest$outboundSchema: z.ZodType<
   classId: z.string().optional(),
   companyId: z.string().optional(),
   connectionId: z.string(),
-  courseId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListLmsCoursesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -83,7 +104,6 @@ export const ListLmsCoursesRequest$outboundSchema: z.ZodType<
     classId: "class_id",
     companyId: "company_id",
     connectionId: "connection_id",
-    courseId: "course_id",
     updatedGte: "updated_gte",
   });
 });

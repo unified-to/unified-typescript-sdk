@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListTaskCommentsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Text: "text",
+  UserId: "user_id",
+  UserName: "user_name",
+  TaskId: "task_id",
+  Raw: "raw",
+} as const;
+export type ListTaskCommentsQueryParamFields = ClosedEnum<
+  typeof ListTaskCommentsQueryParamFields
+>;
 
 export type ListTaskCommentsRequest = {
   /**
@@ -13,7 +28,7 @@ export type ListTaskCommentsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListTaskCommentsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,14 +42,19 @@ export type ListTaskCommentsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The task ID to filter by
+   * The task ID to filter by (reference to TaskTask)
    */
   taskId?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListTaskCommentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListTaskCommentsQueryParamFields
+> = z.nativeEnum(ListTaskCommentsQueryParamFields);
 
 /** @internal */
 export type ListTaskCommentsRequest$Outbound = {
@@ -57,7 +77,7 @@ export const ListTaskCommentsRequest$outboundSchema: z.ZodType<
   ListTaskCommentsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListTaskCommentsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -4,7 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchUcCommentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Content: "content",
+  UserId: "user_id",
+  CallId: "call_id",
+  Raw: "raw",
+} as const;
+export type PatchUcCommentQueryParamFields = ClosedEnum<
+  typeof PatchUcCommentQueryParamFields
+>;
 
 export type PatchUcCommentRequest = {
   ucComment: shared.UcComment;
@@ -15,7 +29,7 @@ export type PatchUcCommentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchUcCommentQueryParamFields> | undefined;
   /**
    * ID of the Comment
    */
@@ -25,6 +39,11 @@ export type PatchUcCommentRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchUcCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchUcCommentQueryParamFields
+> = z.nativeEnum(PatchUcCommentQueryParamFields);
 
 /** @internal */
 export type PatchUcCommentRequest$Outbound = {
@@ -43,7 +62,7 @@ export const PatchUcCommentRequest$outboundSchema: z.ZodType<
 > = z.object({
   ucComment: shared.UcComment$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchUcCommentQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

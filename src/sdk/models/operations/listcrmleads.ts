@@ -4,10 +4,37 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCrmLeadsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  UserId: "user_id",
+  CreatorUserId: "creator_user_id",
+  ContactId: "contact_id",
+  CompanyId: "company_id",
+  CompanyName: "company_name",
+  IsActive: "is_active",
+  Address: "address",
+  Emails: "emails",
+  Telephones: "telephones",
+  Source: "source",
+  Status: "status",
+  LinkUrls: "link_urls",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type ListCrmLeadsQueryParamFields = ClosedEnum<
+  typeof ListCrmLeadsQueryParamFields
+>;
 
 export type ListCrmLeadsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to CrmCompany)
    */
   companyId?: string | undefined;
   /**
@@ -15,13 +42,13 @@ export type ListCrmLeadsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to CrmContact)
    */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCrmLeadsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -35,14 +62,19 @@ export type ListCrmLeadsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListCrmLeadsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListCrmLeadsQueryParamFields
+> = z.nativeEnum(ListCrmLeadsQueryParamFields);
 
 /** @internal */
 export type ListCrmLeadsRequest$Outbound = {
@@ -69,7 +101,7 @@ export const ListCrmLeadsRequest$outboundSchema: z.ZodType<
   companyId: z.string().optional(),
   connectionId: z.string(),
   contactId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCrmLeadsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

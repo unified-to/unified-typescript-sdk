@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAccountingTaxrateQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Rate: "rate",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type UpdateAccountingTaxrateQueryParamFields = ClosedEnum<
+  typeof UpdateAccountingTaxrateQueryParamFields
+>;
 
 export type UpdateAccountingTaxrateRequest = {
   accountingTaxrate: shared.AccountingTaxrate;
@@ -15,7 +30,7 @@ export type UpdateAccountingTaxrateRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAccountingTaxrateQueryParamFields> | undefined;
   /**
    * ID of the Taxrate
    */
@@ -25,6 +40,11 @@ export type UpdateAccountingTaxrateRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAccountingTaxrateQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateAccountingTaxrateQueryParamFields> = z
+    .nativeEnum(UpdateAccountingTaxrateQueryParamFields);
 
 /** @internal */
 export type UpdateAccountingTaxrateRequest$Outbound = {
@@ -43,7 +63,8 @@ export const UpdateAccountingTaxrateRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingTaxrate: shared.AccountingTaxrate$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAccountingTaxrateQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

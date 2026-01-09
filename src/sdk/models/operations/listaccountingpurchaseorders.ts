@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingPurchaseordersQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PostedAt: "posted_at",
+  ContactId: "contact_id",
+  AccountId: "account_id",
+  Currency: "currency",
+  TotalAmount: "total_amount",
+  ShippingAddress: "shipping_address",
+  BillingAddress: "billing_address",
+  Status: "status",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type ListAccountingPurchaseordersQueryParamFields = ClosedEnum<
+  typeof ListAccountingPurchaseordersQueryParamFields
+>;
 
 export type ListAccountingPurchaseordersRequest = {
   /**
@@ -13,12 +33,12 @@ export type ListAccountingPurchaseordersRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingPurchaseordersQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AccountingOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -31,10 +51,15 @@ export type ListAccountingPurchaseordersRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingPurchaseordersQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingPurchaseordersQueryParamFields> = z
+    .nativeEnum(ListAccountingPurchaseordersQueryParamFields);
 
 /** @internal */
 export type ListAccountingPurchaseordersRequest$Outbound = {
@@ -57,7 +82,8 @@ export const ListAccountingPurchaseordersRequest$outboundSchema: z.ZodType<
   ListAccountingPurchaseordersRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingPurchaseordersQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

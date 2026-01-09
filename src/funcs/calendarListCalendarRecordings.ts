@@ -95,7 +95,6 @@ async function $do(
   const path = pathToFunc("/calendar/{connection_id}/recording")(pathParams);
 
   const query = encodeFormQuery({
-    "end_le": payload.end_le,
     "end_lt": payload.end_lt,
     "event_id": payload.event_id,
     "fields": payload.fields,

@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchAtsApplicationQueryParamFields = {
+  Id: "id",
+  CandidateId: "candidate_id",
+  JobId: "job_id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  AppliedAt: "applied_at",
+  HiredAt: "hired_at",
+  RejectedAt: "rejected_at",
+  RejectedReason: "rejected_reason",
+  Source: "source",
+  Status: "status",
+  OriginalStatus: "original_status",
+  Answers: "answers",
+  Offers: "offers",
+  UserId: "user_id",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type PatchAtsApplicationQueryParamFields = ClosedEnum<
+  typeof PatchAtsApplicationQueryParamFields
+>;
 
 export type PatchAtsApplicationRequest = {
   atsApplication: shared.AtsApplication;
@@ -15,7 +39,7 @@ export type PatchAtsApplicationRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchAtsApplicationQueryParamFields> | undefined;
   /**
    * ID of the Application
    */
@@ -25,6 +49,12 @@ export type PatchAtsApplicationRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchAtsApplicationQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchAtsApplicationQueryParamFields> = z.nativeEnum(
+    PatchAtsApplicationQueryParamFields,
+  );
 
 /** @internal */
 export type PatchAtsApplicationRequest$Outbound = {
@@ -43,7 +73,8 @@ export const PatchAtsApplicationRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsApplication: shared.AtsApplication$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchAtsApplicationQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

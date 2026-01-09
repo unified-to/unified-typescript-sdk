@@ -4,6 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsScorecardsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ApplicationId: "application_id",
+  InterviewerId: "interviewer_id",
+  InterviewId: "interview_id",
+  CandidateId: "candidate_id",
+  JobId: "job_id",
+  Recommendation: "recommendation",
+  Comment: "comment",
+  Questions: "questions",
+  Raw: "raw",
+} as const;
+export type ListAtsScorecardsQueryParamFields = ClosedEnum<
+  typeof ListAtsScorecardsQueryParamFields
+>;
 
 export type ListAtsScorecardsRequest = {
   /**
@@ -21,7 +40,7 @@ export type ListAtsScorecardsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsScorecardsQueryParamFields> | undefined;
   /**
    * The interview ID to filter by
    */
@@ -43,10 +62,15 @@ export type ListAtsScorecardsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsScorecardsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAtsScorecardsQueryParamFields
+> = z.nativeEnum(ListAtsScorecardsQueryParamFields);
 
 /** @internal */
 export type ListAtsScorecardsRequest$Outbound = {
@@ -74,7 +98,7 @@ export const ListAtsScorecardsRequest$outboundSchema: z.ZodType<
   applicationId: z.string().optional(),
   candidateId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsScorecardsQueryParamFields$outboundSchema).optional(),
   interviewId: z.string().optional(),
   jobId: z.string().optional(),
   limit: z.number().optional(),

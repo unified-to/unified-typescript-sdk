@@ -4,6 +4,20 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisCompaniesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  LegalName: "legal_name",
+  Address: "address",
+  Raw: "raw",
+} as const;
+export type ListHrisCompaniesQueryParamFields = ClosedEnum<
+  typeof ListHrisCompaniesQueryParamFields
+>;
 
 export type ListHrisCompaniesRequest = {
   /**
@@ -13,7 +27,7 @@ export type ListHrisCompaniesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisCompaniesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +41,15 @@ export type ListHrisCompaniesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListHrisCompaniesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisCompaniesQueryParamFields
+> = z.nativeEnum(ListHrisCompaniesQueryParamFields);
 
 /** @internal */
 export type ListHrisCompaniesRequest$Outbound = {
@@ -52,7 +71,7 @@ export const ListHrisCompaniesRequest$outboundSchema: z.ZodType<
   ListHrisCompaniesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisCompaniesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

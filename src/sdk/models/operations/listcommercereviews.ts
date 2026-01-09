@@ -4,6 +4,36 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCommerceReviewsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ItemId: "item_id",
+  ItemVariantId: "item_variant_id",
+  Rating: "rating",
+  Title: "title",
+  Content: "content",
+  AuthorName: "author_name",
+  AuthorEmail: "author_email",
+  AuthorAvatarUrl: "author_avatar_url",
+  AuthorLocation: "author_location",
+  VerifiedPurchase: "verified_purchase",
+  HelpfulVotes: "helpful_votes",
+  UnhelpfulVotes: "unhelpful_votes",
+  Media: "media",
+  Status: "status",
+  IsVerified: "is_verified",
+  IsFeatured: "is_featured",
+  IsPublic: "is_public",
+  Comments: "comments",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type ListCommerceReviewsQueryParamFields = ClosedEnum<
+  typeof ListCommerceReviewsQueryParamFields
+>;
 
 export type ListCommerceReviewsRequest = {
   /**
@@ -11,15 +41,15 @@ export type ListCommerceReviewsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCommerceReviewsQueryParamFields> | undefined;
   /**
-   * The item ID to filter by
+   * The item ID to filter by (reference to CommerceItem)
    */
   itemId?: string | undefined;
   limit?: number | undefined;
@@ -35,10 +65,16 @@ export type ListCommerceReviewsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListCommerceReviewsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListCommerceReviewsQueryParamFields> = z.nativeEnum(
+    ListCommerceReviewsQueryParamFields,
+  );
 
 /** @internal */
 export type ListCommerceReviewsRequest$Outbound = {
@@ -63,7 +99,8 @@ export const ListCommerceReviewsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCommerceReviewsQueryParamFields$outboundSchema)
+    .optional(),
   itemId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

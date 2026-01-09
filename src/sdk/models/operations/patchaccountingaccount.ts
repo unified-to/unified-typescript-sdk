@@ -4,7 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchAccountingAccountQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Type: "type",
+  Status: "status",
+  Balance: "balance",
+  Currency: "currency",
+  CustomerDefinedCode: "customer_defined_code",
+  IsPayable: "is_payable",
+  ParentAccountId: "parent_account_id",
+  Section: "section",
+  Subsection: "subsection",
+  Group: "group",
+  Subgroup: "subgroup",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type PatchAccountingAccountQueryParamFields = ClosedEnum<
+  typeof PatchAccountingAccountQueryParamFields
+>;
 
 export type PatchAccountingAccountRequest = {
   /**
@@ -18,7 +43,7 @@ export type PatchAccountingAccountRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchAccountingAccountQueryParamFields> | undefined;
   /**
    * ID of the Account
    */
@@ -28,6 +53,12 @@ export type PatchAccountingAccountRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchAccountingAccountQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchAccountingAccountQueryParamFields> = z.nativeEnum(
+    PatchAccountingAccountQueryParamFields,
+  );
 
 /** @internal */
 export type PatchAccountingAccountRequest$Outbound = {
@@ -46,7 +77,8 @@ export const PatchAccountingAccountRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingAccount: shared.AccountingAccount$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchAccountingAccountQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

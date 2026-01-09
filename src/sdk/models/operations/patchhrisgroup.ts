@@ -4,7 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchHrisGroupQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentId: "parent_id",
+  Type: "type",
+  UserIds: "user_ids",
+  ManagerIds: "manager_ids",
+  IsActive: "is_active",
+  CompanyId: "company_id",
+  Raw: "raw",
+} as const;
+export type PatchHrisGroupQueryParamFields = ClosedEnum<
+  typeof PatchHrisGroupQueryParamFields
+>;
 
 export type PatchHrisGroupRequest = {
   hrisGroup: shared.HrisGroup;
@@ -15,7 +34,7 @@ export type PatchHrisGroupRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchHrisGroupQueryParamFields> | undefined;
   /**
    * ID of the Group
    */
@@ -25,6 +44,11 @@ export type PatchHrisGroupRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchHrisGroupQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchHrisGroupQueryParamFields
+> = z.nativeEnum(PatchHrisGroupQueryParamFields);
 
 /** @internal */
 export type PatchHrisGroupRequest$Outbound = {
@@ -43,7 +67,7 @@ export const PatchHrisGroupRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisGroup: shared.HrisGroup$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchHrisGroupQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

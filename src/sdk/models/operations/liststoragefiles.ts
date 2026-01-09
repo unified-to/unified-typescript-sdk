@@ -4,6 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListStorageFilesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentId: "parent_id",
+  UserId: "user_id",
+  Size: "size",
+  Type: "type",
+  MimeType: "mime_type",
+  Permissions: "permissions",
+  DownloadUrl: "download_url",
+  Hash: "hash",
+  Data: "data",
+  Version: "version",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type ListStorageFilesQueryParamFields = ClosedEnum<
+  typeof ListStorageFilesQueryParamFields
+>;
 
 export type ListStorageFilesRequest = {
   /**
@@ -13,7 +37,7 @@ export type ListStorageFilesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListStorageFilesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -35,10 +59,15 @@ export type ListStorageFilesRequest = {
    */
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListStorageFilesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListStorageFilesQueryParamFields
+> = z.nativeEnum(ListStorageFilesQueryParamFields);
 
 /** @internal */
 export type ListStorageFilesRequest$Outbound = {
@@ -62,7 +91,7 @@ export const ListStorageFilesRequest$outboundSchema: z.ZodType<
   ListStorageFilesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListStorageFilesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

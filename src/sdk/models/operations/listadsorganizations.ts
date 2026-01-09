@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAdsOrganizationsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Currency: "currency",
+  Timezone: "timezone",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type ListAdsOrganizationsQueryParamFields = ClosedEnum<
+  typeof ListAdsOrganizationsQueryParamFields
+>;
 
 export type ListAdsOrganizationsRequest = {
   /**
@@ -13,7 +28,7 @@ export type ListAdsOrganizationsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAdsOrganizationsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +46,16 @@ export type ListAdsOrganizationsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAdsOrganizationsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAdsOrganizationsQueryParamFields> = z.nativeEnum(
+    ListAdsOrganizationsQueryParamFields,
+  );
 
 /** @internal */
 export type ListAdsOrganizationsRequest$Outbound = {
@@ -57,7 +78,8 @@ export const ListAdsOrganizationsRequest$outboundSchema: z.ZodType<
   ListAdsOrganizationsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAdsOrganizationsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

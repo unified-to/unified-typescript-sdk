@@ -4,7 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAccountingExpenseQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  Name: "name",
+  TotalAmount: "total_amount",
+  Currency: "currency",
+  TaxAmount: "tax_amount",
+  ReimbursedAmount: "reimbursed_amount",
+  ReimbursedAt: "reimbursed_at",
+  ApprovedAt: "approved_at",
+  ApproverUserId: "approver_user_id",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type UpdateAccountingExpenseQueryParamFields = ClosedEnum<
+  typeof UpdateAccountingExpenseQueryParamFields
+>;
 
 export type UpdateAccountingExpenseRequest = {
   accountingExpense: shared.AccountingExpense;
@@ -15,7 +36,7 @@ export type UpdateAccountingExpenseRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAccountingExpenseQueryParamFields> | undefined;
   /**
    * ID of the Expense
    */
@@ -25,6 +46,11 @@ export type UpdateAccountingExpenseRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAccountingExpenseQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateAccountingExpenseQueryParamFields> = z
+    .nativeEnum(UpdateAccountingExpenseQueryParamFields);
 
 /** @internal */
 export type UpdateAccountingExpenseRequest$Outbound = {
@@ -43,7 +69,8 @@ export const UpdateAccountingExpenseRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingExpense: shared.AccountingExpense$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAccountingExpenseQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

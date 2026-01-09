@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchTaskProjectQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  ParentId: "parent_id",
+  UserIds: "user_ids",
+  GroupIds: "group_ids",
+  Description: "description",
+  HasTasks: "has_tasks",
+  HasChildren: "has_children",
+  Raw: "raw",
+} as const;
+export type PatchTaskProjectQueryParamFields = ClosedEnum<
+  typeof PatchTaskProjectQueryParamFields
+>;
 
 export type PatchTaskProjectRequest = {
   taskProject: shared.TaskProject;
@@ -15,7 +33,7 @@ export type PatchTaskProjectRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchTaskProjectQueryParamFields> | undefined;
   /**
    * ID of the Project
    */
@@ -25,6 +43,11 @@ export type PatchTaskProjectRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchTaskProjectQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchTaskProjectQueryParamFields
+> = z.nativeEnum(PatchTaskProjectQueryParamFields);
 
 /** @internal */
 export type PatchTaskProjectRequest$Outbound = {
@@ -43,7 +66,7 @@ export const PatchTaskProjectRequest$outboundSchema: z.ZodType<
 > = z.object({
   taskProject: shared.TaskProject$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchTaskProjectQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

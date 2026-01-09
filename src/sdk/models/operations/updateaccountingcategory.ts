@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAccountingCategoryQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  IsActive: "is_active",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type UpdateAccountingCategoryQueryParamFields = ClosedEnum<
+  typeof UpdateAccountingCategoryQueryParamFields
+>;
 
 export type UpdateAccountingCategoryRequest = {
   accountingCategory: shared.AccountingCategory;
@@ -15,7 +30,7 @@ export type UpdateAccountingCategoryRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAccountingCategoryQueryParamFields> | undefined;
   /**
    * ID of the Category
    */
@@ -25,6 +40,11 @@ export type UpdateAccountingCategoryRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAccountingCategoryQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateAccountingCategoryQueryParamFields> = z
+    .nativeEnum(UpdateAccountingCategoryQueryParamFields);
 
 /** @internal */
 export type UpdateAccountingCategoryRequest$Outbound = {
@@ -43,7 +63,8 @@ export const UpdateAccountingCategoryRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingCategory: shared.AccountingCategory$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAccountingCategoryQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

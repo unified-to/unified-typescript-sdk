@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListMessagingChannelsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  ParentChannelId: "parent_channel_id",
+  ParentId: "parent_id",
+  HasSubchannels: "has_subchannels",
+  Members: "members",
+  IsActive: "is_active",
+  IsPrivate: "is_private",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type ListMessagingChannelsQueryParamFields = ClosedEnum<
+  typeof ListMessagingChannelsQueryParamFields
+>;
 
 export type ListMessagingChannelsRequest = {
   /**
@@ -13,7 +33,7 @@ export type ListMessagingChannelsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListMessagingChannelsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -32,10 +52,16 @@ export type ListMessagingChannelsRequest = {
   sort?: string | undefined;
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListMessagingChannelsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListMessagingChannelsQueryParamFields> = z.nativeEnum(
+    ListMessagingChannelsQueryParamFields,
+  );
 
 /** @internal */
 export type ListMessagingChannelsRequest$Outbound = {
@@ -59,7 +85,8 @@ export const ListMessagingChannelsRequest$outboundSchema: z.ZodType<
   ListMessagingChannelsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListMessagingChannelsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -4,6 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetCrmCompanyQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  DealIds: "deal_ids",
+  ContactIds: "contact_ids",
+  Emails: "emails",
+  Telephones: "telephones",
+  Websites: "websites",
+  Address: "address",
+  IsActive: "is_active",
+  Tags: "tags",
+  Description: "description",
+  Industry: "industry",
+  LinkUrls: "link_urls",
+  Employees: "employees",
+  Timezone: "timezone",
+  UserId: "user_id",
+  Metadata: "metadata",
+  Domains: "domains",
+  Raw: "raw",
+} as const;
+export type GetCrmCompanyQueryParamFields = ClosedEnum<
+  typeof GetCrmCompanyQueryParamFields
+>;
 
 export type GetCrmCompanyRequest = {
   /**
@@ -13,7 +41,7 @@ export type GetCrmCompanyRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetCrmCompanyQueryParamFields> | undefined;
   /**
    * ID of the Company
    */
@@ -23,6 +51,11 @@ export type GetCrmCompanyRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetCrmCompanyQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetCrmCompanyQueryParamFields
+> = z.nativeEnum(GetCrmCompanyQueryParamFields);
 
 /** @internal */
 export type GetCrmCompanyRequest$Outbound = {
@@ -39,7 +72,7 @@ export const GetCrmCompanyRequest$outboundSchema: z.ZodType<
   GetCrmCompanyRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetCrmCompanyQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

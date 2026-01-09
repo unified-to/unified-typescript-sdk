@@ -4,6 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetVerificationPackageQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Type: "type",
+  Aliases: "aliases",
+  Tags: "tags",
+  Description: "description",
+  Parameters: "parameters",
+  AverageProcessingTimes: "average_processing_times",
+  HasRedirectUrl: "has_redirect_url",
+  HasTargetUrl: "has_target_url",
+  NeedsIpAddress: "needs_ip_address",
+  CostAmount: "cost_amount",
+  Currency: "currency",
+  MaxScore: "max_score",
+  InfoUrl: "info_url",
+  Raw: "raw",
+} as const;
+export type GetVerificationPackageQueryParamFields = ClosedEnum<
+  typeof GetVerificationPackageQueryParamFields
+>;
 
 export type GetVerificationPackageRequest = {
   /**
@@ -13,7 +38,7 @@ export type GetVerificationPackageRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetVerificationPackageQueryParamFields> | undefined;
   /**
    * ID of the Package
    */
@@ -23,6 +48,12 @@ export type GetVerificationPackageRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetVerificationPackageQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetVerificationPackageQueryParamFields> = z.nativeEnum(
+    GetVerificationPackageQueryParamFields,
+  );
 
 /** @internal */
 export type GetVerificationPackageRequest$Outbound = {
@@ -39,7 +70,8 @@ export const GetVerificationPackageRequest$outboundSchema: z.ZodType<
   GetVerificationPackageRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetVerificationPackageQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

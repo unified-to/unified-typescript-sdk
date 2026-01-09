@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsCompaniesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Address: "address",
+  WebsiteUrl: "website_url",
+  Phone: "phone",
+  ParentId: "parent_id",
+  RecruiterIds: "recruiter_ids",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type ListAtsCompaniesQueryParamFields = ClosedEnum<
+  typeof ListAtsCompaniesQueryParamFields
+>;
 
 export type ListAtsCompaniesRequest = {
   /**
@@ -13,7 +31,7 @@ export type ListAtsCompaniesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsCompaniesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +45,15 @@ export type ListAtsCompaniesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsCompaniesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAtsCompaniesQueryParamFields
+> = z.nativeEnum(ListAtsCompaniesQueryParamFields);
 
 /** @internal */
 export type ListAtsCompaniesRequest$Outbound = {
@@ -52,7 +75,7 @@ export const ListAtsCompaniesRequest$outboundSchema: z.ZodType<
   ListAtsCompaniesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsCompaniesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

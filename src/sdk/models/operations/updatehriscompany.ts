@@ -4,7 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateHrisCompanyQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  LegalName: "legal_name",
+  Address: "address",
+  Raw: "raw",
+} as const;
+export type UpdateHrisCompanyQueryParamFields = ClosedEnum<
+  typeof UpdateHrisCompanyQueryParamFields
+>;
 
 export type UpdateHrisCompanyRequest = {
   hrisCompany: shared.HrisCompany;
@@ -15,7 +29,7 @@ export type UpdateHrisCompanyRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateHrisCompanyQueryParamFields> | undefined;
   /**
    * ID of the Company
    */
@@ -25,6 +39,11 @@ export type UpdateHrisCompanyRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateHrisCompanyQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateHrisCompanyQueryParamFields
+> = z.nativeEnum(UpdateHrisCompanyQueryParamFields);
 
 /** @internal */
 export type UpdateHrisCompanyRequest$Outbound = {
@@ -43,7 +62,7 @@ export const UpdateHrisCompanyRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisCompany: shared.HrisCompany$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateHrisCompanyQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

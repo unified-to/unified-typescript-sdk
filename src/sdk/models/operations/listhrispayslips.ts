@@ -4,10 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisPayslipsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  CompanyId: "company_id",
+  PaymentType: "payment_type",
+  PaidAt: "paid_at",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Currency: "currency",
+  GrossAmount: "gross_amount",
+  NetAmount: "net_amount",
+  Details: "details",
+  Raw: "raw",
+  Deduction: "deduction",
+} as const;
+export type ListHrisPayslipsQueryParamFields = ClosedEnum<
+  typeof ListHrisPayslipsQueryParamFields
+>;
 
 export type ListHrisPayslipsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -17,7 +39,7 @@ export type ListHrisPayslipsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisPayslipsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,14 +53,19 @@ export type ListHrisPayslipsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListHrisPayslipsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisPayslipsQueryParamFields
+> = z.nativeEnum(ListHrisPayslipsQueryParamFields);
 
 /** @internal */
 export type ListHrisPayslipsRequest$Outbound = {
@@ -63,7 +90,7 @@ export const ListHrisPayslipsRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisPayslipsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

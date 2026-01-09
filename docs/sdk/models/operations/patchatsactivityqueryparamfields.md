@@ -1,0 +1,15 @@
+# PatchAtsActivityQueryParamFields
+
+## Example Usage
+
+```typescript
+import { PatchAtsActivityQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchAtsActivityQueryParamFields = "created_at";
+```
+
+## Values
+
+```typescript
+"id" | "created_at" | "updated_at" | "candidate_id" | "application_id" | "job_id" | "interview_id" | "document_ids" | "title" | "description" | "is_private" | "user_ids" | "type" | "from" | "to" | "cc" | "bcc" | "sub_type" | "raw"
+```

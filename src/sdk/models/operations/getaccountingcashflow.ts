@@ -4,6 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingCashflowQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  CategoryIds: "category_ids",
+  ContactId: "contact_id",
+  Name: "name",
+  Currency: "currency",
+  CashBeginningAmount: "cash_beginning_amount",
+  CashEndingAmount: "cash_ending_amount",
+  NetChangeInCashAmount: "net_change_in_cash_amount",
+  OperatingSections: "operating_sections",
+  InvestingSections: "investing_sections",
+  FinancingSections: "financing_sections",
+  Raw: "raw",
+} as const;
+export type GetAccountingCashflowQueryParamFields = ClosedEnum<
+  typeof GetAccountingCashflowQueryParamFields
+>;
 
 export type GetAccountingCashflowRequest = {
   /**
@@ -13,7 +36,7 @@ export type GetAccountingCashflowRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingCashflowQueryParamFields> | undefined;
   /**
    * ID of the Cashflow
    */
@@ -23,6 +46,12 @@ export type GetAccountingCashflowRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingCashflowQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingCashflowQueryParamFields> = z.nativeEnum(
+    GetAccountingCashflowQueryParamFields,
+  );
 
 /** @internal */
 export type GetAccountingCashflowRequest$Outbound = {
@@ -39,7 +68,8 @@ export const GetAccountingCashflowRequest$outboundSchema: z.ZodType<
   GetAccountingCashflowRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingCashflowQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

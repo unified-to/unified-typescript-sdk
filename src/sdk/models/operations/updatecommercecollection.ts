@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateCommerceCollectionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  PublicName: "public_name",
+  Description: "description",
+  PublicDescription: "public_description",
+  Media: "media",
+  IsVisible: "is_visible",
+  IsActive: "is_active",
+  IsFeatured: "is_featured",
+  Tags: "tags",
+  Type: "type",
+  ParentId: "parent_id",
+  Metadata: "metadata",
+  ItemMetadata: "item_metadata",
+  Raw: "raw",
+} as const;
+export type UpdateCommerceCollectionQueryParamFields = ClosedEnum<
+  typeof UpdateCommerceCollectionQueryParamFields
+>;
 
 export type UpdateCommerceCollectionRequest = {
   /**
@@ -18,7 +42,7 @@ export type UpdateCommerceCollectionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateCommerceCollectionQueryParamFields> | undefined;
   /**
    * ID of the Collection
    */
@@ -28,6 +52,11 @@ export type UpdateCommerceCollectionRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateCommerceCollectionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateCommerceCollectionQueryParamFields> = z
+    .nativeEnum(UpdateCommerceCollectionQueryParamFields);
 
 /** @internal */
 export type UpdateCommerceCollectionRequest$Outbound = {
@@ -46,7 +75,8 @@ export const UpdateCommerceCollectionRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceCollection: shared.CommerceCollection$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateCommerceCollectionQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

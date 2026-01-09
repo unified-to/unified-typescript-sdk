@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsInterviewsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CandidateId: "candidate_id",
+  JobId: "job_id",
+  ApplicationId: "application_id",
+  UserIds: "user_ids",
+  Status: "status",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Location: "location",
+  ExternalEventXref: "external_event_xref",
+  Raw: "raw",
+} as const;
+export type ListAtsInterviewsQueryParamFields = ClosedEnum<
+  typeof ListAtsInterviewsQueryParamFields
+>;
 
 export type ListAtsInterviewsRequest = {
   /**
@@ -17,7 +37,7 @@ export type ListAtsInterviewsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsInterviewsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +51,15 @@ export type ListAtsInterviewsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsInterviewsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAtsInterviewsQueryParamFields
+> = z.nativeEnum(ListAtsInterviewsQueryParamFields);
 
 /** @internal */
 export type ListAtsInterviewsRequest$Outbound = {
@@ -58,7 +83,7 @@ export const ListAtsInterviewsRequest$outboundSchema: z.ZodType<
 > = z.object({
   applicationId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsInterviewsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

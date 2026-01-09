@@ -99,7 +99,6 @@ async function $do(
     "course_id": payload.course_id,
     "fields": payload.fields,
     "limit": payload.limit,
-    "location_id": payload.location_id,
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,

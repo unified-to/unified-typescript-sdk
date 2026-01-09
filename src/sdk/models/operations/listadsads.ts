@@ -4,6 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAdsAdsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  CampaignId: "campaign_id",
+  GroupId: "group_id",
+  OrganizationId: "organization_id",
+  IsActive: "is_active",
+  AdType: "ad_type",
+  CreativeAssetUrl: "creative_asset_url",
+  AdCopy: "ad_copy",
+  Headline: "headline",
+  Description: "description",
+  Cta: "cta",
+  FinalUrl: "final_url",
+  Targeting: "targeting",
+  Raw: "raw",
+} as const;
+export type ListAdsAdsQueryParamFields = ClosedEnum<
+  typeof ListAdsAdsQueryParamFields
+>;
 
 export type ListAdsAdsRequest = {
   /**
@@ -17,16 +41,16 @@ export type ListAdsAdsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAdsAdsQueryParamFields> | undefined;
   /**
-   * The group ID to filter by
+   * The group ID to filter by (reference to HrisGroup)
    */
   groupId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AdsOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -39,10 +63,15 @@ export type ListAdsAdsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAdsAdsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAdsAdsQueryParamFields
+> = z.nativeEnum(ListAdsAdsQueryParamFields);
 
 /** @internal */
 export type ListAdsAdsRequest$Outbound = {
@@ -68,7 +97,7 @@ export const ListAdsAdsRequest$outboundSchema: z.ZodType<
 > = z.object({
   campaignId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAdsAdsQueryParamFields$outboundSchema).optional(),
   groupId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

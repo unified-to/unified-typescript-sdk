@@ -4,6 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingBillQueryParamFields = {
+  Id: "id",
+  BillNumber: "bill_number",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DueAt: "due_at",
+  PaidAt: "paid_at",
+  RefundedAt: "refunded_at",
+  CancelledAt: "cancelled_at",
+  PostedAt: "posted_at",
+  TotalAmount: "total_amount",
+  PaidAmount: "paid_amount",
+  RefundAmount: "refund_amount",
+  TaxAmount: "tax_amount",
+  DiscountAmount: "discount_amount",
+  BalanceAmount: "balance_amount",
+  ContactId: "contact_id",
+  Currency: "currency",
+  Notes: "notes",
+  RefundReason: "refund_reason",
+  Lineitems: "lineitems",
+  Status: "status",
+  Url: "url",
+  PaymentCollectionMethod: "payment_collection_method",
+  Attachments: "attachments",
+  Send: "send",
+  Raw: "raw",
+} as const;
+export type GetAccountingBillQueryParamFields = ClosedEnum<
+  typeof GetAccountingBillQueryParamFields
+>;
 
 export type GetAccountingBillRequest = {
   /**
@@ -13,7 +46,7 @@ export type GetAccountingBillRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingBillQueryParamFields> | undefined;
   /**
    * ID of the Bill
    */
@@ -23,6 +56,11 @@ export type GetAccountingBillRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingBillQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetAccountingBillQueryParamFields
+> = z.nativeEnum(GetAccountingBillQueryParamFields);
 
 /** @internal */
 export type GetAccountingBillRequest$Outbound = {
@@ -39,7 +77,7 @@ export const GetAccountingBillRequest$outboundSchema: z.ZodType<
   GetAccountingBillRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingBillQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

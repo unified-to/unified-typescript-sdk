@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateMetadataMetadataQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Slug: "slug",
+  Format: "format",
+  OriginalFormat: "original_format",
+  Options: "options",
+  ObjectType: "object_type",
+  Objects: "objects",
+  Raw: "raw",
+} as const;
+export type CreateMetadataMetadataQueryParamFields = ClosedEnum<
+  typeof CreateMetadataMetadataQueryParamFields
+>;
 
 export type CreateMetadataMetadataRequest = {
   metadataMetadata: shared.MetadataMetadata;
@@ -15,12 +33,18 @@ export type CreateMetadataMetadataRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateMetadataMetadataQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateMetadataMetadataQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateMetadataMetadataQueryParamFields> = z.nativeEnum(
+    CreateMetadataMetadataQueryParamFields,
+  );
 
 /** @internal */
 export type CreateMetadataMetadataRequest$Outbound = {
@@ -38,7 +62,8 @@ export const CreateMetadataMetadataRequest$outboundSchema: z.ZodType<
 > = z.object({
   metadataMetadata: shared.MetadataMetadata$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateMetadataMetadataQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

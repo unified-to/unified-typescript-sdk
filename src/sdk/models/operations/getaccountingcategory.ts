@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingCategoryQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  IsActive: "is_active",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type GetAccountingCategoryQueryParamFields = ClosedEnum<
+  typeof GetAccountingCategoryQueryParamFields
+>;
 
 export type GetAccountingCategoryRequest = {
   /**
@@ -13,7 +28,7 @@ export type GetAccountingCategoryRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingCategoryQueryParamFields> | undefined;
   /**
    * ID of the Category
    */
@@ -23,6 +38,12 @@ export type GetAccountingCategoryRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingCategoryQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingCategoryQueryParamFields> = z.nativeEnum(
+    GetAccountingCategoryQueryParamFields,
+  );
 
 /** @internal */
 export type GetAccountingCategoryRequest$Outbound = {
@@ -39,7 +60,8 @@ export const GetAccountingCategoryRequest$outboundSchema: z.ZodType<
   GetAccountingCategoryRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingCategoryQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

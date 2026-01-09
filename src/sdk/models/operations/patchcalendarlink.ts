@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchCalendarLinkQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Url: "url",
+  Duration: "duration",
+  Description: "description",
+  IsActive: "is_active",
+  PriceAmount: "price_amount",
+  PriceCurrency: "price_currency",
+  Raw: "raw",
+} as const;
+export type PatchCalendarLinkQueryParamFields = ClosedEnum<
+  typeof PatchCalendarLinkQueryParamFields
+>;
 
 export type PatchCalendarLinkRequest = {
   calendarLink: shared.CalendarLink;
@@ -15,7 +33,7 @@ export type PatchCalendarLinkRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchCalendarLinkQueryParamFields> | undefined;
   /**
    * ID of the Link
    */
@@ -25,6 +43,11 @@ export type PatchCalendarLinkRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchCalendarLinkQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchCalendarLinkQueryParamFields
+> = z.nativeEnum(PatchCalendarLinkQueryParamFields);
 
 /** @internal */
 export type PatchCalendarLinkRequest$Outbound = {
@@ -43,7 +66,7 @@ export const PatchCalendarLinkRequest$outboundSchema: z.ZodType<
 > = z.object({
   calendarLink: shared.CalendarLink$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchCalendarLinkQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

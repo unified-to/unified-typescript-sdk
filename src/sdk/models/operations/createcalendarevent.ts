@@ -4,7 +4,38 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateCalendarEventQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CalendarId: "calendar_id",
+  Subject: "subject",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsAllDay: "is_all_day",
+  Timezone: "timezone",
+  Notes: "notes",
+  Location: "location",
+  IsFree: "is_free",
+  IsPrivate: "is_private",
+  Status: "status",
+  Organizer: "organizer",
+  Attendees: "attendees",
+  RecurringEventId: "recurring_event_id",
+  Recurrence: "recurrence",
+  WebUrl: "web_url",
+  HasConference: "has_conference",
+  Conference: "conference",
+  Attachments: "attachments",
+  SendNotifications: "send_notifications",
+  Raw: "raw",
+} as const;
+export type CreateCalendarEventQueryParamFields = ClosedEnum<
+  typeof CreateCalendarEventQueryParamFields
+>;
 
 export type CreateCalendarEventRequest = {
   calendarEvent: shared.CalendarEvent;
@@ -15,12 +46,18 @@ export type CreateCalendarEventRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateCalendarEventQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateCalendarEventQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateCalendarEventQueryParamFields> = z.nativeEnum(
+    CreateCalendarEventQueryParamFields,
+  );
 
 /** @internal */
 export type CreateCalendarEventRequest$Outbound = {
@@ -38,7 +75,8 @@ export const CreateCalendarEventRequest$outboundSchema: z.ZodType<
 > = z.object({
   calendarEvent: shared.CalendarEvent$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateCalendarEventQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

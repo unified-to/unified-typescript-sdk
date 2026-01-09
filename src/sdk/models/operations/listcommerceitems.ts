@@ -4,10 +4,38 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCommerceItemsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  PublicName: "public_name",
+  Slug: "slug",
+  Description: "description",
+  GlobalCode: "global_code",
+  PublicDescription: "public_description",
+  IsActive: "is_active",
+  IsTaxable: "is_taxable",
+  VendorName: "vendor_name",
+  Type: "type",
+  Variants: "variants",
+  Tags: "tags",
+  Media: "media",
+  CollectionIds: "collection_ids",
+  AccountId: "account_id",
+  Metadata: "metadata",
+  Raw: "raw",
+  Collections: "collections",
+} as const;
+export type ListCommerceItemsQueryParamFields = ClosedEnum<
+  typeof ListCommerceItemsQueryParamFields
+>;
 
 export type ListCommerceItemsRequest = {
   /**
-   * The collection ID to filter by
+   * The collection ID to filter by (reference to CommerceCollection)
    */
   collectionId?: string | undefined;
   /**
@@ -17,7 +45,7 @@ export type ListCommerceItemsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCommerceItemsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,10 +59,15 @@ export type ListCommerceItemsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListCommerceItemsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListCommerceItemsQueryParamFields
+> = z.nativeEnum(ListCommerceItemsQueryParamFields);
 
 /** @internal */
 export type ListCommerceItemsRequest$Outbound = {
@@ -58,7 +91,7 @@ export const ListCommerceItemsRequest$outboundSchema: z.ZodType<
 > = z.object({
   collectionId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCommerceItemsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

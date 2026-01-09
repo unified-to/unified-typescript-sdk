@@ -4,6 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCalendarCalendarsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Timezone: "timezone",
+  Primary: "primary",
+  IsPrimary: "is_primary",
+  Raw: "raw",
+} as const;
+export type ListCalendarCalendarsQueryParamFields = ClosedEnum<
+  typeof ListCalendarCalendarsQueryParamFields
+>;
 
 export type ListCalendarCalendarsRequest = {
   /**
@@ -13,7 +29,7 @@ export type ListCalendarCalendarsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCalendarCalendarsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +43,16 @@ export type ListCalendarCalendarsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListCalendarCalendarsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListCalendarCalendarsQueryParamFields> = z.nativeEnum(
+    ListCalendarCalendarsQueryParamFields,
+  );
 
 /** @internal */
 export type ListCalendarCalendarsRequest$Outbound = {
@@ -52,7 +74,8 @@ export const ListCalendarCalendarsRequest$outboundSchema: z.ZodType<
   ListCalendarCalendarsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCalendarCalendarsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

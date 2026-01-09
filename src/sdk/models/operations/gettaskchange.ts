@@ -4,6 +4,20 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetTaskChangeQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TaskId: "task_id",
+  UserId: "user_id",
+  Items: "items",
+  Raw: "raw",
+} as const;
+export type GetTaskChangeQueryParamFields = ClosedEnum<
+  typeof GetTaskChangeQueryParamFields
+>;
 
 export type GetTaskChangeRequest = {
   /**
@@ -13,7 +27,7 @@ export type GetTaskChangeRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetTaskChangeQueryParamFields> | undefined;
   /**
    * ID of the Change
    */
@@ -23,6 +37,11 @@ export type GetTaskChangeRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetTaskChangeQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetTaskChangeQueryParamFields
+> = z.nativeEnum(GetTaskChangeQueryParamFields);
 
 /** @internal */
 export type GetTaskChangeRequest$Outbound = {
@@ -39,7 +58,7 @@ export const GetTaskChangeRequest$outboundSchema: z.ZodType<
   GetTaskChangeRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetTaskChangeQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

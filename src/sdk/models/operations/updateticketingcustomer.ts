@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateTicketingCustomerQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Emails: "emails",
+  Telephones: "telephones",
+  Tags: "tags",
+  Raw: "raw",
+} as const;
+export type UpdateTicketingCustomerQueryParamFields = ClosedEnum<
+  typeof UpdateTicketingCustomerQueryParamFields
+>;
 
 export type UpdateTicketingCustomerRequest = {
   ticketingCustomer: shared.TicketingCustomer;
@@ -15,7 +30,7 @@ export type UpdateTicketingCustomerRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateTicketingCustomerQueryParamFields> | undefined;
   /**
    * ID of the Customer
    */
@@ -25,6 +40,11 @@ export type UpdateTicketingCustomerRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateTicketingCustomerQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateTicketingCustomerQueryParamFields> = z
+    .nativeEnum(UpdateTicketingCustomerQueryParamFields);
 
 /** @internal */
 export type UpdateTicketingCustomerRequest$Outbound = {
@@ -43,7 +63,8 @@ export const UpdateTicketingCustomerRequest$outboundSchema: z.ZodType<
 > = z.object({
   ticketingCustomer: shared.TicketingCustomer$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateTicketingCustomerQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

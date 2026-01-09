@@ -4,6 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingOrdersQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PostedAt: "posted_at",
+  ContactId: "contact_id",
+  AccountId: "account_id",
+  Type: "type",
+  Currency: "currency",
+  TotalAmount: "total_amount",
+  ShippingAddress: "shipping_address",
+  BillingAddress: "billing_address",
+  Status: "status",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type ListAccountingOrdersQueryParamFields = ClosedEnum<
+  typeof ListAccountingOrdersQueryParamFields
+>;
 
 export type ListAccountingOrdersRequest = {
   /**
@@ -13,12 +34,12 @@ export type ListAccountingOrdersRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingOrdersQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AccountingOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -32,10 +53,16 @@ export type ListAccountingOrdersRequest = {
   sort?: string | undefined;
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingOrdersQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingOrdersQueryParamFields> = z.nativeEnum(
+    ListAccountingOrdersQueryParamFields,
+  );
 
 /** @internal */
 export type ListAccountingOrdersRequest$Outbound = {
@@ -59,7 +86,8 @@ export const ListAccountingOrdersRequest$outboundSchema: z.ZodType<
   ListAccountingOrdersRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingOrdersQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

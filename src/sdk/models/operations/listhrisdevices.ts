@@ -4,6 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisDevicesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  AssetTag: "asset_tag",
+  Version: "version",
+  Manufacturer: "manufacturer",
+  Model: "model",
+  Os: "os",
+  OsVersion: "os_version",
+  UserIds: "user_ids",
+  AdminUserIds: "admin_user_ids",
+  LocationId: "location_id",
+  HasAntivirus: "has_antivirus",
+  HasPasswordManager: "has_password_manager",
+  HasFirewall: "has_firewall",
+  HasHdEncrypted: "has_hd_encrypted",
+  HasScreenlock: "has_screenlock",
+  IsMissing: "is_missing",
+  Raw: "raw",
+} as const;
+export type ListHrisDevicesQueryParamFields = ClosedEnum<
+  typeof ListHrisDevicesQueryParamFields
+>;
 
 export type ListHrisDevicesRequest = {
   /**
@@ -13,7 +40,7 @@ export type ListHrisDevicesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisDevicesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,14 +54,19 @@ export type ListHrisDevicesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListHrisDevicesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisDevicesQueryParamFields
+> = z.nativeEnum(ListHrisDevicesQueryParamFields);
 
 /** @internal */
 export type ListHrisDevicesRequest$Outbound = {
@@ -57,7 +89,7 @@ export const ListHrisDevicesRequest$outboundSchema: z.ZodType<
   ListHrisDevicesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisDevicesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

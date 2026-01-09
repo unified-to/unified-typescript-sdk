@@ -4,6 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingSalesorderQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PostedAt: "posted_at",
+  ContactId: "contact_id",
+  AccountId: "account_id",
+  Currency: "currency",
+  TotalAmount: "total_amount",
+  ShippingAddress: "shipping_address",
+  BillingAddress: "billing_address",
+  Status: "status",
+  Lineitems: "lineitems",
+  SalesChannel: "sales_channel",
+  Raw: "raw",
+} as const;
+export type GetAccountingSalesorderQueryParamFields = ClosedEnum<
+  typeof GetAccountingSalesorderQueryParamFields
+>;
 
 export type GetAccountingSalesorderRequest = {
   /**
@@ -13,7 +34,7 @@ export type GetAccountingSalesorderRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingSalesorderQueryParamFields> | undefined;
   /**
    * ID of the Salesorder
    */
@@ -23,6 +44,11 @@ export type GetAccountingSalesorderRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingSalesorderQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingSalesorderQueryParamFields> = z
+    .nativeEnum(GetAccountingSalesorderQueryParamFields);
 
 /** @internal */
 export type GetAccountingSalesorderRequest$Outbound = {
@@ -39,7 +65,8 @@ export const GetAccountingSalesorderRequest$outboundSchema: z.ZodType<
   GetAccountingSalesorderRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingSalesorderQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

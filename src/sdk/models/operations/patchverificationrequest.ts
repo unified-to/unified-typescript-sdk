@@ -4,7 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchVerificationRequestQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PackageId: "package_id",
+  Parameters: "parameters",
+  TargetUrl: "target_url",
+  CandidateId: "candidate_id",
+  ProfileIpAddress: "profile_ip_address",
+  ProfileName: "profile_name",
+  ProfileDateOfBirth: "profile_date_of_birth",
+  ProfileAddresses: "profile_addresses",
+  ProfileGender: "profile_gender",
+  ProfileEmails: "profile_emails",
+  ProfileTelephones: "profile_telephones",
+  ProfileNationalIdentifier: "profile_national_identifier",
+  ResponseCompletedAt: "response_completed_at",
+  ResponseExpiresAt: "response_expires_at",
+  ResponseIssuedAt: "response_issued_at",
+  ResponseStatus: "response_status",
+  ResponseScore: "response_score",
+  ResponseRedirectUrl: "response_redirect_url",
+  ResponseDownloadUrls: "response_download_urls",
+  ResponseDetails: "response_details",
+  ResponseSource: "response_source",
+  Raw: "raw",
+} as const;
+export type PatchVerificationRequestQueryParamFields = ClosedEnum<
+  typeof PatchVerificationRequestQueryParamFields
+>;
 
 export type PatchVerificationRequestRequest = {
   verificationRequest: shared.VerificationRequest;
@@ -15,7 +47,7 @@ export type PatchVerificationRequestRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchVerificationRequestQueryParamFields> | undefined;
   /**
    * ID of the Request
    */
@@ -25,6 +57,11 @@ export type PatchVerificationRequestRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchVerificationRequestQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchVerificationRequestQueryParamFields> = z
+    .nativeEnum(PatchVerificationRequestQueryParamFields);
 
 /** @internal */
 export type PatchVerificationRequestRequest$Outbound = {
@@ -43,7 +80,8 @@ export const PatchVerificationRequestRequest$outboundSchema: z.ZodType<
 > = z.object({
   verificationRequest: shared.VerificationRequest$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchVerificationRequestQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

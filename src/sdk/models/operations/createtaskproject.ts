@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateTaskProjectQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  ParentId: "parent_id",
+  UserIds: "user_ids",
+  GroupIds: "group_ids",
+  Description: "description",
+  HasTasks: "has_tasks",
+  HasChildren: "has_children",
+  Raw: "raw",
+} as const;
+export type CreateTaskProjectQueryParamFields = ClosedEnum<
+  typeof CreateTaskProjectQueryParamFields
+>;
 
 export type CreateTaskProjectRequest = {
   taskProject: shared.TaskProject;
@@ -15,12 +33,17 @@ export type CreateTaskProjectRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateTaskProjectQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateTaskProjectQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateTaskProjectQueryParamFields
+> = z.nativeEnum(CreateTaskProjectQueryParamFields);
 
 /** @internal */
 export type CreateTaskProjectRequest$Outbound = {
@@ -38,7 +61,7 @@ export const CreateTaskProjectRequest$outboundSchema: z.ZodType<
 > = z.object({
   taskProject: shared.TaskProject$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateTaskProjectQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

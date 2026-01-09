@@ -4,6 +4,35 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingContactsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Telephones: "telephones",
+  Currency: "currency",
+  BillingAddress: "billing_address",
+  ShippingAddress: "shipping_address",
+  IsActive: "is_active",
+  TaxExemption: "tax_exemption",
+  TaxNumber: "tax_number",
+  IsCustomer: "is_customer",
+  IsSupplier: "is_supplier",
+  PortalUrl: "portal_url",
+  PaymentMethods: "payment_methods",
+  CompanyName: "company_name",
+  Identification: "identification",
+  AssociatedContacts: "associated_contacts",
+  Raw: "raw",
+} as const;
+export type ListAccountingContactsQueryParamFields = ClosedEnum<
+  typeof ListAccountingContactsQueryParamFields
+>;
 
 export type ListAccountingContactsRequest = {
   /**
@@ -13,12 +42,12 @@ export type ListAccountingContactsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingContactsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AccountingOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -32,10 +61,16 @@ export type ListAccountingContactsRequest = {
   sort?: string | undefined;
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingContactsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingContactsQueryParamFields> = z.nativeEnum(
+    ListAccountingContactsQueryParamFields,
+  );
 
 /** @internal */
 export type ListAccountingContactsRequest$Outbound = {
@@ -59,7 +94,8 @@ export const ListAccountingContactsRequest$outboundSchema: z.ZodType<
   ListAccountingContactsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingContactsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingTrialbalancesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  StartAt: "start_at",
+  Name: "name",
+  Currency: "currency",
+  EndAt: "end_at",
+  TotalDebitAmount: "total_debit_amount",
+  TotalCreditAmount: "total_credit_amount",
+  SubItems: "sub_items",
+  Raw: "raw",
+} as const;
+export type ListAccountingTrialbalancesQueryParamFields = ClosedEnum<
+  typeof ListAccountingTrialbalancesQueryParamFields
+>;
 
 export type ListAccountingTrialbalancesRequest = {
   /**
@@ -11,17 +29,13 @@ export type ListAccountingTrialbalancesRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingTrialbalancesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -35,19 +49,23 @@ export type ListAccountingTrialbalancesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
 
 /** @internal */
+export const ListAccountingTrialbalancesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingTrialbalancesQueryParamFields> = z
+    .nativeEnum(ListAccountingTrialbalancesQueryParamFields);
+
+/** @internal */
 export type ListAccountingTrialbalancesRequest$Outbound = {
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -67,9 +85,9 @@ export const ListAccountingTrialbalancesRequest$outboundSchema: z.ZodType<
   ListAccountingTrialbalancesRequest
 > = z.object({
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingTrialbalancesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -81,7 +99,6 @@ export const ListAccountingTrialbalancesRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
     startGte: "start_gte",
     updatedGte: "updated_gte",

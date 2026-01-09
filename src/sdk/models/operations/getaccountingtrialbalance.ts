@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingTrialbalanceQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  StartAt: "start_at",
+  Name: "name",
+  Currency: "currency",
+  EndAt: "end_at",
+  TotalDebitAmount: "total_debit_amount",
+  TotalCreditAmount: "total_credit_amount",
+  SubItems: "sub_items",
+  Raw: "raw",
+} as const;
+export type GetAccountingTrialbalanceQueryParamFields = ClosedEnum<
+  typeof GetAccountingTrialbalanceQueryParamFields
+>;
 
 export type GetAccountingTrialbalanceRequest = {
   /**
@@ -13,7 +31,7 @@ export type GetAccountingTrialbalanceRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingTrialbalanceQueryParamFields> | undefined;
   /**
    * ID of the Trialbalance
    */
@@ -23,6 +41,11 @@ export type GetAccountingTrialbalanceRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingTrialbalanceQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingTrialbalanceQueryParamFields> = z
+    .nativeEnum(GetAccountingTrialbalanceQueryParamFields);
 
 /** @internal */
 export type GetAccountingTrialbalanceRequest$Outbound = {
@@ -39,7 +62,8 @@ export const GetAccountingTrialbalanceRequest$outboundSchema: z.ZodType<
   GetAccountingTrialbalanceRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingTrialbalanceQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

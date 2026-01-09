@@ -4,7 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateKmsPageQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Title: "title",
+  Type: "type",
+  SpaceId: "space_id",
+  ParentPageId: "parent_page_id",
+  ParentId: "parent_id",
+  IsActive: "is_active",
+  UserId: "user_id",
+  DownloadUrl: "download_url",
+  Metadata: "metadata",
+  HasChildren: "has_children",
+  WebUrl: "web_url",
+  Raw: "raw",
+} as const;
+export type CreateKmsPageQueryParamFields = ClosedEnum<
+  typeof CreateKmsPageQueryParamFields
+>;
 
 export type CreateKmsPageRequest = {
   kmsPage: shared.KmsPage;
@@ -15,12 +37,17 @@ export type CreateKmsPageRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateKmsPageQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateKmsPageQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateKmsPageQueryParamFields
+> = z.nativeEnum(CreateKmsPageQueryParamFields);
 
 /** @internal */
 export type CreateKmsPageRequest$Outbound = {
@@ -38,7 +65,7 @@ export const CreateKmsPageRequest$outboundSchema: z.ZodType<
 > = z.object({
   kmsPage: shared.KmsPage$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateKmsPageQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

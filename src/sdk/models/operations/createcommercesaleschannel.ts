@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateCommerceSaleschannelQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Slug: "slug",
+  Description: "description",
+  IsActive: "is_active",
+  Collections: "collections",
+  Raw: "raw",
+} as const;
+export type CreateCommerceSaleschannelQueryParamFields = ClosedEnum<
+  typeof CreateCommerceSaleschannelQueryParamFields
+>;
 
 export type CreateCommerceSaleschannelRequest = {
   commerceSaleschannel: shared.CommerceSaleschannel;
@@ -15,12 +30,17 @@ export type CreateCommerceSaleschannelRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateCommerceSaleschannelQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateCommerceSaleschannelQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateCommerceSaleschannelQueryParamFields> = z
+    .nativeEnum(CreateCommerceSaleschannelQueryParamFields);
 
 /** @internal */
 export type CreateCommerceSaleschannelRequest$Outbound = {
@@ -38,7 +58,8 @@ export const CreateCommerceSaleschannelRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceSaleschannel: shared.CommerceSaleschannel$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateCommerceSaleschannelQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

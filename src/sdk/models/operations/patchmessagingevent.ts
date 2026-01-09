@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchMessagingEventQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  Type: "type",
+  Channel: "channel",
+  Message: "message",
+  Button: "button",
+  User: "user",
+  Raw: "raw",
+} as const;
+export type PatchMessagingEventQueryParamFields = ClosedEnum<
+  typeof PatchMessagingEventQueryParamFields
+>;
 
 export type PatchMessagingEventRequest = {
   messagingEvent: shared.MessagingEvent;
@@ -15,7 +30,7 @@ export type PatchMessagingEventRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchMessagingEventQueryParamFields> | undefined;
   /**
    * ID of the Event
    */
@@ -25,6 +40,12 @@ export type PatchMessagingEventRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchMessagingEventQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchMessagingEventQueryParamFields> = z.nativeEnum(
+    PatchMessagingEventQueryParamFields,
+  );
 
 /** @internal */
 export type PatchMessagingEventRequest$Outbound = {
@@ -43,7 +64,8 @@ export const PatchMessagingEventRequest$outboundSchema: z.ZodType<
 > = z.object({
   messagingEvent: shared.MessagingEvent$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchMessagingEventQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

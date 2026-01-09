@@ -4,6 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetCommerceItemQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  PublicName: "public_name",
+  Slug: "slug",
+  Description: "description",
+  GlobalCode: "global_code",
+  PublicDescription: "public_description",
+  IsActive: "is_active",
+  IsTaxable: "is_taxable",
+  VendorName: "vendor_name",
+  Type: "type",
+  Variants: "variants",
+  Tags: "tags",
+  Media: "media",
+  CollectionIds: "collection_ids",
+  AccountId: "account_id",
+  Metadata: "metadata",
+  Raw: "raw",
+  Collections: "collections",
+} as const;
+export type GetCommerceItemQueryParamFields = ClosedEnum<
+  typeof GetCommerceItemQueryParamFields
+>;
 
 export type GetCommerceItemRequest = {
   /**
@@ -13,7 +41,7 @@ export type GetCommerceItemRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetCommerceItemQueryParamFields> | undefined;
   /**
    * ID of the Item
    */
@@ -23,6 +51,11 @@ export type GetCommerceItemRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetCommerceItemQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetCommerceItemQueryParamFields
+> = z.nativeEnum(GetCommerceItemQueryParamFields);
 
 /** @internal */
 export type GetCommerceItemRequest$Outbound = {
@@ -39,7 +72,7 @@ export const GetCommerceItemRequest$outboundSchema: z.ZodType<
   GetCommerceItemRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetCommerceItemQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

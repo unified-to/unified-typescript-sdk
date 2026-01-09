@@ -4,7 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAtsDocumentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DocumentUrl: "document_url",
+  DocumentData: "document_data",
+  Filename: "filename",
+  Type: "type",
+  CandidateId: "candidate_id",
+  ApplicationId: "application_id",
+  JobId: "job_id",
+  UserId: "user_id",
+  Raw: "raw",
+} as const;
+export type UpdateAtsDocumentQueryParamFields = ClosedEnum<
+  typeof UpdateAtsDocumentQueryParamFields
+>;
 
 export type UpdateAtsDocumentRequest = {
   atsDocument: shared.AtsDocument;
@@ -15,7 +34,7 @@ export type UpdateAtsDocumentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAtsDocumentQueryParamFields> | undefined;
   /**
    * ID of the Document
    */
@@ -25,6 +44,11 @@ export type UpdateAtsDocumentRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAtsDocumentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateAtsDocumentQueryParamFields
+> = z.nativeEnum(UpdateAtsDocumentQueryParamFields);
 
 /** @internal */
 export type UpdateAtsDocumentRequest$Outbound = {
@@ -43,7 +67,7 @@ export const UpdateAtsDocumentRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsDocument: shared.AtsDocument$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAtsDocumentQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

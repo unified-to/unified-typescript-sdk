@@ -4,7 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateKmsCommentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Type: "type",
+  ContentType: "content_type",
+  Content: "content",
+  UserId: "user_id",
+  PageId: "page_id",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type CreateKmsCommentQueryParamFields = ClosedEnum<
+  typeof CreateKmsCommentQueryParamFields
+>;
 
 export type CreateKmsCommentRequest = {
   kmsComment: shared.KmsComment;
@@ -15,12 +32,17 @@ export type CreateKmsCommentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateKmsCommentQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateKmsCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateKmsCommentQueryParamFields
+> = z.nativeEnum(CreateKmsCommentQueryParamFields);
 
 /** @internal */
 export type CreateKmsCommentRequest$Outbound = {
@@ -38,7 +60,7 @@ export const CreateKmsCommentRequest$outboundSchema: z.ZodType<
 > = z.object({
   kmsComment: shared.KmsComment$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateKmsCommentQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

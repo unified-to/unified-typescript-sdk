@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCommerceSaleschannelsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Slug: "slug",
+  Description: "description",
+  IsActive: "is_active",
+  Collections: "collections",
+  Raw: "raw",
+} as const;
+export type ListCommerceSaleschannelsQueryParamFields = ClosedEnum<
+  typeof ListCommerceSaleschannelsQueryParamFields
+>;
 
 export type ListCommerceSaleschannelsRequest = {
   /**
@@ -13,7 +28,7 @@ export type ListCommerceSaleschannelsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCommerceSaleschannelsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +42,15 @@ export type ListCommerceSaleschannelsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListCommerceSaleschannelsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListCommerceSaleschannelsQueryParamFields> = z
+    .nativeEnum(ListCommerceSaleschannelsQueryParamFields);
 
 /** @internal */
 export type ListCommerceSaleschannelsRequest$Outbound = {
@@ -52,7 +72,8 @@ export const ListCommerceSaleschannelsRequest$outboundSchema: z.ZodType<
   ListCommerceSaleschannelsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCommerceSaleschannelsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

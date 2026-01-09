@@ -4,7 +4,37 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateCommerceReviewQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ItemId: "item_id",
+  ItemVariantId: "item_variant_id",
+  Rating: "rating",
+  Title: "title",
+  Content: "content",
+  AuthorName: "author_name",
+  AuthorEmail: "author_email",
+  AuthorAvatarUrl: "author_avatar_url",
+  AuthorLocation: "author_location",
+  VerifiedPurchase: "verified_purchase",
+  HelpfulVotes: "helpful_votes",
+  UnhelpfulVotes: "unhelpful_votes",
+  Media: "media",
+  Status: "status",
+  IsVerified: "is_verified",
+  IsFeatured: "is_featured",
+  IsPublic: "is_public",
+  Comments: "comments",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type UpdateCommerceReviewQueryParamFields = ClosedEnum<
+  typeof UpdateCommerceReviewQueryParamFields
+>;
 
 export type UpdateCommerceReviewRequest = {
   commerceReview: shared.CommerceReview;
@@ -15,7 +45,7 @@ export type UpdateCommerceReviewRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateCommerceReviewQueryParamFields> | undefined;
   /**
    * ID of the Review
    */
@@ -25,6 +55,12 @@ export type UpdateCommerceReviewRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateCommerceReviewQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateCommerceReviewQueryParamFields> = z.nativeEnum(
+    UpdateCommerceReviewQueryParamFields,
+  );
 
 /** @internal */
 export type UpdateCommerceReviewRequest$Outbound = {
@@ -43,7 +79,8 @@ export const UpdateCommerceReviewRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceReview: shared.CommerceReview$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateCommerceReviewQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

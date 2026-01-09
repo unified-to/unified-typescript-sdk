@@ -4,6 +4,19 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListRepoBranchesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  RepoId: "repo_id",
+  Raw: "raw",
+} as const;
+export type ListRepoBranchesQueryParamFields = ClosedEnum<
+  typeof ListRepoBranchesQueryParamFields
+>;
 
 export type ListRepoBranchesRequest = {
   /**
@@ -13,7 +26,7 @@ export type ListRepoBranchesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListRepoBranchesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -26,15 +39,20 @@ export type ListRepoBranchesRequest = {
    */
   raw?: string | undefined;
   /**
-   * The repo ID to filter by
+   * The repo ID to filter by (reference to RepoRepository)
    */
   repoId?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListRepoBranchesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListRepoBranchesQueryParamFields
+> = z.nativeEnum(ListRepoBranchesQueryParamFields);
 
 /** @internal */
 export type ListRepoBranchesRequest$Outbound = {
@@ -57,7 +75,7 @@ export const ListRepoBranchesRequest$outboundSchema: z.ZodType<
   ListRepoBranchesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListRepoBranchesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

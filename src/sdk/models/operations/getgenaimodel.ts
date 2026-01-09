@@ -4,6 +4,20 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetGenaiModelQueryParamFields = {
+  Id: "id",
+  Name: "name",
+  Description: "description",
+  MaxTokens: "max_tokens",
+  WebUrl: "web_url",
+  HasTemperature: "has_temperature",
+  Raw: "raw",
+} as const;
+export type GetGenaiModelQueryParamFields = ClosedEnum<
+  typeof GetGenaiModelQueryParamFields
+>;
 
 export type GetGenaiModelRequest = {
   /**
@@ -13,7 +27,7 @@ export type GetGenaiModelRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetGenaiModelQueryParamFields> | undefined;
   /**
    * ID of the Model
    */
@@ -23,6 +37,11 @@ export type GetGenaiModelRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetGenaiModelQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetGenaiModelQueryParamFields
+> = z.nativeEnum(GetGenaiModelQueryParamFields);
 
 /** @internal */
 export type GetGenaiModelRequest$Outbound = {
@@ -39,7 +58,7 @@ export const GetGenaiModelRequest$outboundSchema: z.ZodType<
   GetGenaiModelRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetGenaiModelQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

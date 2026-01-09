@@ -4,6 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsActivitiesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CandidateId: "candidate_id",
+  ApplicationId: "application_id",
+  JobId: "job_id",
+  InterviewId: "interview_id",
+  DocumentIds: "document_ids",
+  Title: "title",
+  Description: "description",
+  IsPrivate: "is_private",
+  UserIds: "user_ids",
+  Type: "type",
+  From: "from",
+  To: "to",
+  Cc: "cc",
+  Bcc: "bcc",
+  SubType: "sub_type",
+  Raw: "raw",
+} as const;
+export type ListAtsActivitiesQueryParamFields = ClosedEnum<
+  typeof ListAtsActivitiesQueryParamFields
+>;
 
 export type ListAtsActivitiesRequest = {
   /**
@@ -25,7 +51,7 @@ export type ListAtsActivitiesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsActivitiesQueryParamFields> | undefined;
   /**
    * The interview ID to filter by
    */
@@ -51,14 +77,19 @@ export type ListAtsActivitiesRequest = {
    */
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsActivitiesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAtsActivitiesQueryParamFields
+> = z.nativeEnum(ListAtsActivitiesQueryParamFields);
 
 /** @internal */
 export type ListAtsActivitiesRequest$Outbound = {
@@ -90,7 +121,7 @@ export const ListAtsActivitiesRequest$outboundSchema: z.ZodType<
   candidateId: z.string().optional(),
   connectionId: z.string(),
   documentId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsActivitiesQueryParamFields$outboundSchema).optional(),
   interviewId: z.string().optional(),
   jobId: z.string().optional(),
   limit: z.number().optional(),

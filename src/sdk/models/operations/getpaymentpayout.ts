@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetPaymentPayoutQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TotalAmount: "total_amount",
+  Currency: "currency",
+  Notes: "notes",
+  Status: "status",
+  Raw: "raw",
+} as const;
+export type GetPaymentPayoutQueryParamFields = ClosedEnum<
+  typeof GetPaymentPayoutQueryParamFields
+>;
 
 export type GetPaymentPayoutRequest = {
   /**
@@ -13,7 +28,7 @@ export type GetPaymentPayoutRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetPaymentPayoutQueryParamFields> | undefined;
   /**
    * ID of the Payout
    */
@@ -23,6 +38,11 @@ export type GetPaymentPayoutRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetPaymentPayoutQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetPaymentPayoutQueryParamFields
+> = z.nativeEnum(GetPaymentPayoutQueryParamFields);
 
 /** @internal */
 export type GetPaymentPayoutRequest$Outbound = {
@@ -39,7 +59,7 @@ export const GetPaymentPayoutRequest$outboundSchema: z.ZodType<
   GetPaymentPayoutRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetPaymentPayoutQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

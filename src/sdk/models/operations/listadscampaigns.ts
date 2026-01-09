@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAdsCampaignsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  OrganizationId: "organization_id",
+  IsActive: "is_active",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  BudgetAmount: "budget_amount",
+  BudgetPeriod: "budget_period",
+  TotalSpendAmount: "total_spend_amount",
+  Targeting: "targeting",
+  Raw: "raw",
+} as const;
+export type ListAdsCampaignsQueryParamFields = ClosedEnum<
+  typeof ListAdsCampaignsQueryParamFields
+>;
 
 export type ListAdsCampaignsRequest = {
   /**
@@ -13,12 +33,12 @@ export type ListAdsCampaignsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAdsCampaignsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AdsOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -31,10 +51,15 @@ export type ListAdsCampaignsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAdsCampaignsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAdsCampaignsQueryParamFields
+> = z.nativeEnum(ListAdsCampaignsQueryParamFields);
 
 /** @internal */
 export type ListAdsCampaignsRequest$Outbound = {
@@ -57,7 +82,7 @@ export const ListAdsCampaignsRequest$outboundSchema: z.ZodType<
   ListAdsCampaignsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAdsCampaignsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

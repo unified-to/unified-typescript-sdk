@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateCommerceSaleschannelQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Slug: "slug",
+  Description: "description",
+  IsActive: "is_active",
+  Collections: "collections",
+  Raw: "raw",
+} as const;
+export type UpdateCommerceSaleschannelQueryParamFields = ClosedEnum<
+  typeof UpdateCommerceSaleschannelQueryParamFields
+>;
 
 export type UpdateCommerceSaleschannelRequest = {
   commerceSaleschannel: shared.CommerceSaleschannel;
@@ -15,7 +30,7 @@ export type UpdateCommerceSaleschannelRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateCommerceSaleschannelQueryParamFields> | undefined;
   /**
    * ID of the Saleschannel
    */
@@ -25,6 +40,11 @@ export type UpdateCommerceSaleschannelRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateCommerceSaleschannelQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateCommerceSaleschannelQueryParamFields> = z
+    .nativeEnum(UpdateCommerceSaleschannelQueryParamFields);
 
 /** @internal */
 export type UpdateCommerceSaleschannelRequest$Outbound = {
@@ -43,7 +63,8 @@ export const UpdateCommerceSaleschannelRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceSaleschannel: shared.CommerceSaleschannel$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateCommerceSaleschannelQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

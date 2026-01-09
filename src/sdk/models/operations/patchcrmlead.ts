@@ -4,7 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchCrmLeadQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  UserId: "user_id",
+  CreatorUserId: "creator_user_id",
+  ContactId: "contact_id",
+  CompanyId: "company_id",
+  CompanyName: "company_name",
+  IsActive: "is_active",
+  Address: "address",
+  Emails: "emails",
+  Telephones: "telephones",
+  Source: "source",
+  Status: "status",
+  LinkUrls: "link_urls",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type PatchCrmLeadQueryParamFields = ClosedEnum<
+  typeof PatchCrmLeadQueryParamFields
+>;
 
 export type PatchCrmLeadRequest = {
   crmLead: shared.CrmLead;
@@ -15,7 +42,7 @@ export type PatchCrmLeadRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchCrmLeadQueryParamFields> | undefined;
   /**
    * ID of the Lead
    */
@@ -25,6 +52,11 @@ export type PatchCrmLeadRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchCrmLeadQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchCrmLeadQueryParamFields
+> = z.nativeEnum(PatchCrmLeadQueryParamFields);
 
 /** @internal */
 export type PatchCrmLeadRequest$Outbound = {
@@ -43,7 +75,7 @@ export const PatchCrmLeadRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmLead: shared.CrmLead$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchCrmLeadQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

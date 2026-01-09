@@ -4,10 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingBalancesheetsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Name: "name",
+  Currency: "currency",
+  NetAssetsAmount: "net_assets_amount",
+  Assets: "assets",
+  Liabilities: "liabilities",
+  Equity: "equity",
+  Raw: "raw",
+} as const;
+export type ListAccountingBalancesheetsQueryParamFields = ClosedEnum<
+  typeof ListAccountingBalancesheetsQueryParamFields
+>;
 
 export type ListAccountingBalancesheetsRequest = {
   /**
-   * The category ID to filter by
+   * The category ID to filter by (reference to AccountingCategory)
    */
   categoryId?: string | undefined;
   /**
@@ -15,21 +34,17 @@ export type ListAccountingBalancesheetsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingBalancesheetsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -43,21 +58,25 @@ export type ListAccountingBalancesheetsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingBalancesheetsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingBalancesheetsQueryParamFields> = z
+    .nativeEnum(ListAccountingBalancesheetsQueryParamFields);
 
 /** @internal */
 export type ListAccountingBalancesheetsRequest$Outbound = {
   category_id?: string | undefined;
   connection_id: string;
   contact_id?: string | undefined;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -79,9 +98,9 @@ export const ListAccountingBalancesheetsRequest$outboundSchema: z.ZodType<
   categoryId: z.string().optional(),
   connectionId: z.string(),
   contactId: z.string().optional(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingBalancesheetsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -95,7 +114,6 @@ export const ListAccountingBalancesheetsRequest$outboundSchema: z.ZodType<
     categoryId: "category_id",
     connectionId: "connection_id",
     contactId: "contact_id",
-    endLe: "end_le",
     endLt: "end_lt",
     startGte: "start_gte",
     updatedGte: "updated_gte",

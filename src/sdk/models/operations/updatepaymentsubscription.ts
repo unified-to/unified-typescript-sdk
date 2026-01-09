@@ -4,7 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdatePaymentSubscriptionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Description: "description",
+  ContactId: "contact_id",
+  InvoiceId: "invoice_id",
+  CurrentPeriodEndAt: "current_period_end_at",
+  CurrentPeriodStartAt: "current_period_start_at",
+  CanceledAt: "canceled_at",
+  Currency: "currency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Status: "status",
+  Month: "month",
+  IntervalUnit: "interval_unit",
+  DayOfMonth: "day_of_month",
+  DayOfWeek: "day_of_week",
+  Interval: "interval",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type UpdatePaymentSubscriptionQueryParamFields = ClosedEnum<
+  typeof UpdatePaymentSubscriptionQueryParamFields
+>;
 
 export type UpdatePaymentSubscriptionRequest = {
   paymentSubscription: shared.PaymentSubscription;
@@ -15,7 +42,7 @@ export type UpdatePaymentSubscriptionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdatePaymentSubscriptionQueryParamFields> | undefined;
   /**
    * ID of the Subscription
    */
@@ -25,6 +52,11 @@ export type UpdatePaymentSubscriptionRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdatePaymentSubscriptionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdatePaymentSubscriptionQueryParamFields> = z
+    .nativeEnum(UpdatePaymentSubscriptionQueryParamFields);
 
 /** @internal */
 export type UpdatePaymentSubscriptionRequest$Outbound = {
@@ -43,7 +75,8 @@ export const UpdatePaymentSubscriptionRequest$outboundSchema: z.ZodType<
 > = z.object({
   paymentSubscription: shared.PaymentSubscription$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdatePaymentSubscriptionQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

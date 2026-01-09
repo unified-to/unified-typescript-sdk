@@ -4,7 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchAdsCampaignQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  OrganizationId: "organization_id",
+  IsActive: "is_active",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  BudgetAmount: "budget_amount",
+  BudgetPeriod: "budget_period",
+  TotalSpendAmount: "total_spend_amount",
+  Targeting: "targeting",
+  Raw: "raw",
+} as const;
+export type PatchAdsCampaignQueryParamFields = ClosedEnum<
+  typeof PatchAdsCampaignQueryParamFields
+>;
 
 export type PatchAdsCampaignRequest = {
   adsCampaign: shared.AdsCampaign;
@@ -15,7 +35,7 @@ export type PatchAdsCampaignRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchAdsCampaignQueryParamFields> | undefined;
   /**
    * ID of the Campaign
    */
@@ -25,6 +45,11 @@ export type PatchAdsCampaignRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchAdsCampaignQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchAdsCampaignQueryParamFields
+> = z.nativeEnum(PatchAdsCampaignQueryParamFields);
 
 /** @internal */
 export type PatchAdsCampaignRequest$Outbound = {
@@ -43,7 +68,7 @@ export const PatchAdsCampaignRequest$outboundSchema: z.ZodType<
 > = z.object({
   adsCampaign: shared.AdsCampaign$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchAdsCampaignQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

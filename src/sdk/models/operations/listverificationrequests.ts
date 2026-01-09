@@ -4,6 +4,38 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListVerificationRequestsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PackageId: "package_id",
+  Parameters: "parameters",
+  TargetUrl: "target_url",
+  CandidateId: "candidate_id",
+  ProfileIpAddress: "profile_ip_address",
+  ProfileName: "profile_name",
+  ProfileDateOfBirth: "profile_date_of_birth",
+  ProfileAddresses: "profile_addresses",
+  ProfileGender: "profile_gender",
+  ProfileEmails: "profile_emails",
+  ProfileTelephones: "profile_telephones",
+  ProfileNationalIdentifier: "profile_national_identifier",
+  ResponseCompletedAt: "response_completed_at",
+  ResponseExpiresAt: "response_expires_at",
+  ResponseIssuedAt: "response_issued_at",
+  ResponseStatus: "response_status",
+  ResponseScore: "response_score",
+  ResponseRedirectUrl: "response_redirect_url",
+  ResponseDownloadUrls: "response_download_urls",
+  ResponseDetails: "response_details",
+  ResponseSource: "response_source",
+  Raw: "raw",
+} as const;
+export type ListVerificationRequestsQueryParamFields = ClosedEnum<
+  typeof ListVerificationRequestsQueryParamFields
+>;
 
 export type ListVerificationRequestsRequest = {
   /**
@@ -17,7 +49,7 @@ export type ListVerificationRequestsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListVerificationRequestsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -35,10 +67,15 @@ export type ListVerificationRequestsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListVerificationRequestsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListVerificationRequestsQueryParamFields> = z
+    .nativeEnum(ListVerificationRequestsQueryParamFields);
 
 /** @internal */
 export type ListVerificationRequestsRequest$Outbound = {
@@ -63,7 +100,8 @@ export const ListVerificationRequestsRequest$outboundSchema: z.ZodType<
 > = z.object({
   candidateId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListVerificationRequestsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

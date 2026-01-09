@@ -4,7 +4,40 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAccountingCreditmemoQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DueAt: "due_at",
+  PaidAt: "paid_at",
+  RefundedAt: "refunded_at",
+  CancelledAt: "cancelled_at",
+  PostedAt: "posted_at",
+  TotalAmount: "total_amount",
+  PaidAmount: "paid_amount",
+  RefundAmount: "refund_amount",
+  TaxAmount: "tax_amount",
+  DiscountAmount: "discount_amount",
+  BalanceAmount: "balance_amount",
+  CreditmemoNumber: "creditmemo_number",
+  ContactId: "contact_id",
+  Currency: "currency",
+  Notes: "notes",
+  RefundReason: "refund_reason",
+  Lineitems: "lineitems",
+  Status: "status",
+  Url: "url",
+  PaymentCollectionMethod: "payment_collection_method",
+  Attachments: "attachments",
+  Send: "send",
+  Raw: "raw",
+} as const;
+export type UpdateAccountingCreditmemoQueryParamFields = ClosedEnum<
+  typeof UpdateAccountingCreditmemoQueryParamFields
+>;
 
 export type UpdateAccountingCreditmemoRequest = {
   accountingCreditmemo: shared.AccountingCreditmemo;
@@ -15,7 +48,7 @@ export type UpdateAccountingCreditmemoRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAccountingCreditmemoQueryParamFields> | undefined;
   /**
    * ID of the Creditmemo
    */
@@ -25,6 +58,11 @@ export type UpdateAccountingCreditmemoRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAccountingCreditmemoQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateAccountingCreditmemoQueryParamFields> = z
+    .nativeEnum(UpdateAccountingCreditmemoQueryParamFields);
 
 /** @internal */
 export type UpdateAccountingCreditmemoRequest$Outbound = {
@@ -43,7 +81,8 @@ export const UpdateAccountingCreditmemoRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingCreditmemo: shared.AccountingCreditmemo$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAccountingCreditmemoQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAdsOrganizationQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Currency: "currency",
+  Timezone: "timezone",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type GetAdsOrganizationQueryParamFields = ClosedEnum<
+  typeof GetAdsOrganizationQueryParamFields
+>;
 
 export type GetAdsOrganizationRequest = {
   /**
@@ -13,7 +28,7 @@ export type GetAdsOrganizationRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAdsOrganizationQueryParamFields> | undefined;
   /**
    * ID of the Organization
    */
@@ -23,6 +38,11 @@ export type GetAdsOrganizationRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAdsOrganizationQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetAdsOrganizationQueryParamFields
+> = z.nativeEnum(GetAdsOrganizationQueryParamFields);
 
 /** @internal */
 export type GetAdsOrganizationRequest$Outbound = {
@@ -39,7 +59,7 @@ export const GetAdsOrganizationRequest$outboundSchema: z.ZodType<
   GetAdsOrganizationRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAdsOrganizationQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

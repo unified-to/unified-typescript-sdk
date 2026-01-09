@@ -4,7 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchPaymentLinkQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  IsActive: "is_active",
+  Lineitems: "lineitems",
+  Currency: "currency",
+  Amount: "amount",
+  PaymentId: "payment_id",
+  ContactId: "contact_id",
+  Url: "url",
+  IsChargeableNow: "is_chargeable_now",
+  SuccessUrl: "success_url",
+  Raw: "raw",
+} as const;
+export type PatchPaymentLinkQueryParamFields = ClosedEnum<
+  typeof PatchPaymentLinkQueryParamFields
+>;
 
 export type PatchPaymentLinkRequest = {
   paymentLink: shared.PaymentLink;
@@ -15,7 +35,7 @@ export type PatchPaymentLinkRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchPaymentLinkQueryParamFields> | undefined;
   /**
    * ID of the Link
    */
@@ -25,6 +45,11 @@ export type PatchPaymentLinkRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchPaymentLinkQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchPaymentLinkQueryParamFields
+> = z.nativeEnum(PatchPaymentLinkQueryParamFields);
 
 /** @internal */
 export type PatchPaymentLinkRequest$Outbound = {
@@ -43,7 +68,7 @@ export const PatchPaymentLinkRequest$outboundSchema: z.ZodType<
 > = z.object({
   paymentLink: shared.PaymentLink$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchPaymentLinkQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetPaymentSubscriptionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Description: "description",
+  ContactId: "contact_id",
+  InvoiceId: "invoice_id",
+  CurrentPeriodEndAt: "current_period_end_at",
+  CurrentPeriodStartAt: "current_period_start_at",
+  CanceledAt: "canceled_at",
+  Currency: "currency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Status: "status",
+  Month: "month",
+  IntervalUnit: "interval_unit",
+  DayOfMonth: "day_of_month",
+  DayOfWeek: "day_of_week",
+  Interval: "interval",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type GetPaymentSubscriptionQueryParamFields = ClosedEnum<
+  typeof GetPaymentSubscriptionQueryParamFields
+>;
 
 export type GetPaymentSubscriptionRequest = {
   /**
@@ -13,7 +40,7 @@ export type GetPaymentSubscriptionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetPaymentSubscriptionQueryParamFields> | undefined;
   /**
    * ID of the Subscription
    */
@@ -23,6 +50,12 @@ export type GetPaymentSubscriptionRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetPaymentSubscriptionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetPaymentSubscriptionQueryParamFields> = z.nativeEnum(
+    GetPaymentSubscriptionQueryParamFields,
+  );
 
 /** @internal */
 export type GetPaymentSubscriptionRequest$Outbound = {
@@ -39,7 +72,8 @@ export const GetPaymentSubscriptionRequest$outboundSchema: z.ZodType<
   GetPaymentSubscriptionRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetPaymentSubscriptionQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

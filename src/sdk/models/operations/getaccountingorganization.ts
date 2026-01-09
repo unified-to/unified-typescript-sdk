@@ -4,6 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingOrganizationQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  LegalName: "legal_name",
+  Currency: "currency",
+  Address: "address",
+  TaxNumber: "tax_number",
+  Timezone: "timezone",
+  Website: "website",
+  FiscalYearEndMonth: "fiscal_year_end_month",
+  OrganizationCode: "organization_code",
+  Raw: "raw",
+} as const;
+export type GetAccountingOrganizationQueryParamFields = ClosedEnum<
+  typeof GetAccountingOrganizationQueryParamFields
+>;
 
 export type GetAccountingOrganizationRequest = {
   /**
@@ -13,7 +33,7 @@ export type GetAccountingOrganizationRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingOrganizationQueryParamFields> | undefined;
   /**
    * ID of the Organization
    */
@@ -23,6 +43,11 @@ export type GetAccountingOrganizationRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingOrganizationQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingOrganizationQueryParamFields> = z
+    .nativeEnum(GetAccountingOrganizationQueryParamFields);
 
 /** @internal */
 export type GetAccountingOrganizationRequest$Outbound = {
@@ -39,7 +64,8 @@ export const GetAccountingOrganizationRequest$outboundSchema: z.ZodType<
   GetAccountingOrganizationRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingOrganizationQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

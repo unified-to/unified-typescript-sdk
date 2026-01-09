@@ -4,7 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAtsApplicationQueryParamFields = {
+  Id: "id",
+  CandidateId: "candidate_id",
+  JobId: "job_id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  AppliedAt: "applied_at",
+  HiredAt: "hired_at",
+  RejectedAt: "rejected_at",
+  RejectedReason: "rejected_reason",
+  Source: "source",
+  Status: "status",
+  OriginalStatus: "original_status",
+  Answers: "answers",
+  Offers: "offers",
+  UserId: "user_id",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type CreateAtsApplicationQueryParamFields = ClosedEnum<
+  typeof CreateAtsApplicationQueryParamFields
+>;
 
 export type CreateAtsApplicationRequest = {
   atsApplication: shared.AtsApplication;
@@ -15,12 +39,18 @@ export type CreateAtsApplicationRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAtsApplicationQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAtsApplicationQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateAtsApplicationQueryParamFields> = z.nativeEnum(
+    CreateAtsApplicationQueryParamFields,
+  );
 
 /** @internal */
 export type CreateAtsApplicationRequest$Outbound = {
@@ -38,7 +68,8 @@ export const CreateAtsApplicationRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsApplication: shared.AtsApplication$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAtsApplicationQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

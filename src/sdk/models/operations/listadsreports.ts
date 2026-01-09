@@ -4,6 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAdsReportsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Currency: "currency",
+  Metrics: "metrics",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  OrganizationId: "organization_id",
+  Raw: "raw",
+} as const;
+export type ListAdsReportsQueryParamFields = ClosedEnum<
+  typeof ListAdsReportsQueryParamFields
+>;
 
 export type ListAdsReportsRequest = {
   /**
@@ -17,12 +33,12 @@ export type ListAdsReportsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAdsReportsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AdsOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -36,10 +52,15 @@ export type ListAdsReportsRequest = {
   sort?: string | undefined;
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAdsReportsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAdsReportsQueryParamFields
+> = z.nativeEnum(ListAdsReportsQueryParamFields);
 
 /** @internal */
 export type ListAdsReportsRequest$Outbound = {
@@ -65,7 +86,7 @@ export const ListAdsReportsRequest$outboundSchema: z.ZodType<
 > = z.object({
   campaignId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAdsReportsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

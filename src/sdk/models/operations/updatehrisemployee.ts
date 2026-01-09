@@ -4,7 +4,54 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateHrisEmployeeQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Title: "title",
+  ManagerId: "manager_id",
+  EmploymentStatus: "employment_status",
+  Gender: "gender",
+  Telephones: "telephones",
+  DateOfBirth: "date_of_birth",
+  EmployeeNumber: "employee_number",
+  HiredAt: "hired_at",
+  TerminatedAt: "terminated_at",
+  TerminationReason: "termination_reason",
+  MaritalStatus: "marital_status",
+  EmploymentType: "employment_type",
+  Address: "address",
+  LanguageLocale: "language_locale",
+  Currency: "currency",
+  Timezone: "timezone",
+  ImageUrl: "image_url",
+  CompanyId: "company_id",
+  Pronouns: "pronouns",
+  EmployeeRoles: "employee_roles",
+  Compensation: "compensation",
+  Salutation: "salutation",
+  Bio: "bio",
+  SsnSin: "ssn_sin",
+  Groups: "groups",
+  Locations: "locations",
+  Metadata: "metadata",
+  StorageQuotaAllocated: "storage_quota_allocated",
+  StorageQuotaUsed: "storage_quota_used",
+  StorageQuotaAvailable: "storage_quota_available",
+  Relationships: "relationships",
+  HasMfa: "has_mfa",
+  Raw: "raw",
+} as const;
+export type UpdateHrisEmployeeQueryParamFields = ClosedEnum<
+  typeof UpdateHrisEmployeeQueryParamFields
+>;
 
 export type UpdateHrisEmployeeRequest = {
   hrisEmployee: shared.HrisEmployee;
@@ -15,7 +62,7 @@ export type UpdateHrisEmployeeRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateHrisEmployeeQueryParamFields> | undefined;
   /**
    * ID of the Employee
    */
@@ -25,6 +72,11 @@ export type UpdateHrisEmployeeRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateHrisEmployeeQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateHrisEmployeeQueryParamFields
+> = z.nativeEnum(UpdateHrisEmployeeQueryParamFields);
 
 /** @internal */
 export type UpdateHrisEmployeeRequest$Outbound = {
@@ -43,7 +95,7 @@ export const UpdateHrisEmployeeRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisEmployee: shared.HrisEmployee$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateHrisEmployeeQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

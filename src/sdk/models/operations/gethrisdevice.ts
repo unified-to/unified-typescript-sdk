@@ -4,6 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetHrisDeviceQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  AssetTag: "asset_tag",
+  Version: "version",
+  Manufacturer: "manufacturer",
+  Model: "model",
+  Os: "os",
+  OsVersion: "os_version",
+  UserIds: "user_ids",
+  AdminUserIds: "admin_user_ids",
+  LocationId: "location_id",
+  HasAntivirus: "has_antivirus",
+  HasPasswordManager: "has_password_manager",
+  HasFirewall: "has_firewall",
+  HasHdEncrypted: "has_hd_encrypted",
+  HasScreenlock: "has_screenlock",
+  IsMissing: "is_missing",
+  Raw: "raw",
+} as const;
+export type GetHrisDeviceQueryParamFields = ClosedEnum<
+  typeof GetHrisDeviceQueryParamFields
+>;
 
 export type GetHrisDeviceRequest = {
   /**
@@ -13,7 +40,7 @@ export type GetHrisDeviceRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetHrisDeviceQueryParamFields> | undefined;
   /**
    * ID of the Device
    */
@@ -23,6 +50,11 @@ export type GetHrisDeviceRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetHrisDeviceQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetHrisDeviceQueryParamFields
+> = z.nativeEnum(GetHrisDeviceQueryParamFields);
 
 /** @internal */
 export type GetHrisDeviceRequest$Outbound = {
@@ -39,7 +71,7 @@ export const GetHrisDeviceRequest$outboundSchema: z.ZodType<
   GetHrisDeviceRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetHrisDeviceQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

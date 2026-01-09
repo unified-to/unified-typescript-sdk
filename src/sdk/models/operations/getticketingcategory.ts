@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetTicketingCategoryQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  IsActive: "is_active",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type GetTicketingCategoryQueryParamFields = ClosedEnum<
+  typeof GetTicketingCategoryQueryParamFields
+>;
 
 export type GetTicketingCategoryRequest = {
   /**
@@ -13,7 +28,7 @@ export type GetTicketingCategoryRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetTicketingCategoryQueryParamFields> | undefined;
   /**
    * ID of the Category
    */
@@ -23,6 +38,12 @@ export type GetTicketingCategoryRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetTicketingCategoryQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetTicketingCategoryQueryParamFields> = z.nativeEnum(
+    GetTicketingCategoryQueryParamFields,
+  );
 
 /** @internal */
 export type GetTicketingCategoryRequest$Outbound = {
@@ -39,7 +60,8 @@ export const GetTicketingCategoryRequest$outboundSchema: z.ZodType<
   GetTicketingCategoryRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetTicketingCategoryQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListRepoOrganizationsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  AvatarUrl: "avatar_url",
+  WebUrl: "web_url",
+  UserIds: "user_ids",
+  Raw: "raw",
+} as const;
+export type ListRepoOrganizationsQueryParamFields = ClosedEnum<
+  typeof ListRepoOrganizationsQueryParamFields
+>;
 
 export type ListRepoOrganizationsRequest = {
   /**
@@ -13,7 +29,7 @@ export type ListRepoOrganizationsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListRepoOrganizationsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +43,16 @@ export type ListRepoOrganizationsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListRepoOrganizationsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListRepoOrganizationsQueryParamFields> = z.nativeEnum(
+    ListRepoOrganizationsQueryParamFields,
+  );
 
 /** @internal */
 export type ListRepoOrganizationsRequest$Outbound = {
@@ -52,7 +74,8 @@ export const ListRepoOrganizationsRequest$outboundSchema: z.ZodType<
   ListRepoOrganizationsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListRepoOrganizationsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

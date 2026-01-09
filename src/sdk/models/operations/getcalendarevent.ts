@@ -4,6 +4,37 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetCalendarEventQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CalendarId: "calendar_id",
+  Subject: "subject",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsAllDay: "is_all_day",
+  Timezone: "timezone",
+  Notes: "notes",
+  Location: "location",
+  IsFree: "is_free",
+  IsPrivate: "is_private",
+  Status: "status",
+  Organizer: "organizer",
+  Attendees: "attendees",
+  RecurringEventId: "recurring_event_id",
+  Recurrence: "recurrence",
+  WebUrl: "web_url",
+  HasConference: "has_conference",
+  Conference: "conference",
+  Attachments: "attachments",
+  SendNotifications: "send_notifications",
+  Raw: "raw",
+} as const;
+export type GetCalendarEventQueryParamFields = ClosedEnum<
+  typeof GetCalendarEventQueryParamFields
+>;
 
 export type GetCalendarEventRequest = {
   /**
@@ -13,7 +44,7 @@ export type GetCalendarEventRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetCalendarEventQueryParamFields> | undefined;
   /**
    * ID of the Event
    */
@@ -23,6 +54,11 @@ export type GetCalendarEventRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetCalendarEventQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetCalendarEventQueryParamFields
+> = z.nativeEnum(GetCalendarEventQueryParamFields);
 
 /** @internal */
 export type GetCalendarEventRequest$Outbound = {
@@ -39,7 +75,7 @@ export const GetCalendarEventRequest$outboundSchema: z.ZodType<
   GetCalendarEventRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetCalendarEventQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

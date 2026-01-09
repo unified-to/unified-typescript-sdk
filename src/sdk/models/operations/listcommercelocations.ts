@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCommerceLocationsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Address: "address",
+  Description: "description",
+  IsActive: "is_active",
+  LanguageLocale: "language_locale",
+  ParentId: "parent_id",
+  Currency: "currency",
+  Raw: "raw",
+} as const;
+export type ListCommerceLocationsQueryParamFields = ClosedEnum<
+  typeof ListCommerceLocationsQueryParamFields
+>;
 
 export type ListCommerceLocationsRequest = {
   /**
@@ -13,7 +31,7 @@ export type ListCommerceLocationsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCommerceLocationsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +45,16 @@ export type ListCommerceLocationsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListCommerceLocationsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListCommerceLocationsQueryParamFields> = z.nativeEnum(
+    ListCommerceLocationsQueryParamFields,
+  );
 
 /** @internal */
 export type ListCommerceLocationsRequest$Outbound = {
@@ -52,7 +76,8 @@ export const ListCommerceLocationsRequest$outboundSchema: z.ZodType<
   ListCommerceLocationsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCommerceLocationsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

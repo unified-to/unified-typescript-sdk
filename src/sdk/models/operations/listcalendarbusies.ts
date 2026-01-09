@@ -4,10 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListCalendarBusiesQueryParamFields = {
+  Id: "id",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Timezone: "timezone",
+  Description: "description",
+  Raw: "raw",
+} as const;
+export type ListCalendarBusiesQueryParamFields = ClosedEnum<
+  typeof ListCalendarBusiesQueryParamFields
+>;
 
 export type ListCalendarBusiesRequest = {
   /**
-   * The calendar ID to filter by
+   * The calendar ID to filter by (reference to CalendarCalendar)
    */
   calendarId?: string | undefined;
   /**
@@ -15,17 +28,13 @@ export type ListCalendarBusiesRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListCalendarBusiesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -39,24 +48,28 @@ export type ListCalendarBusiesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
 
 /** @internal */
+export const ListCalendarBusiesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListCalendarBusiesQueryParamFields
+> = z.nativeEnum(ListCalendarBusiesQueryParamFields);
+
+/** @internal */
 export type ListCalendarBusiesRequest$Outbound = {
   calendar_id?: string | undefined;
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -78,9 +91,8 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
 > = z.object({
   calendarId: z.string().optional(),
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListCalendarBusiesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -94,7 +106,6 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     calendarId: "calendar_id",
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
     startGte: "start_gte",
     updatedGte: "updated_gte",

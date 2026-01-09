@@ -4,6 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListPaymentPaymentsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TotalAmount: "total_amount",
+  ContactId: "contact_id",
+  PaymentMethod: "payment_method",
+  Currency: "currency",
+  Notes: "notes",
+  InvoiceId: "invoice_id",
+  AccountId: "account_id",
+  Reference: "reference",
+  Raw: "raw",
+} as const;
+export type ListPaymentPaymentsQueryParamFields = ClosedEnum<
+  typeof ListPaymentPaymentsQueryParamFields
+>;
 
 export type ListPaymentPaymentsRequest = {
   /**
@@ -11,15 +30,15 @@ export type ListPaymentPaymentsRequest = {
    */
   connectionId: string;
   /**
-   * The contact ID to filter by
+   * The contact ID to filter by (reference to AccountingContact)
    */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListPaymentPaymentsQueryParamFields> | undefined;
   /**
-   * The invoice ID to filter by
+   * The invoice ID to filter by (reference to AccountingInvoice)
    */
   invoiceId?: string | undefined;
   limit?: number | undefined;
@@ -35,10 +54,16 @@ export type ListPaymentPaymentsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListPaymentPaymentsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListPaymentPaymentsQueryParamFields> = z.nativeEnum(
+    ListPaymentPaymentsQueryParamFields,
+  );
 
 /** @internal */
 export type ListPaymentPaymentsRequest$Outbound = {
@@ -63,7 +88,8 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListPaymentPaymentsQueryParamFields$outboundSchema)
+    .optional(),
   invoiceId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

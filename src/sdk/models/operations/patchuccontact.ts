@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchUcContactQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Title: "title",
+  Company: "company",
+  Emails: "emails",
+  Telephones: "telephones",
+  Raw: "raw",
+} as const;
+export type PatchUcContactQueryParamFields = ClosedEnum<
+  typeof PatchUcContactQueryParamFields
+>;
 
 export type PatchUcContactRequest = {
   /**
@@ -18,7 +36,7 @@ export type PatchUcContactRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchUcContactQueryParamFields> | undefined;
   /**
    * ID of the Contact
    */
@@ -28,6 +46,11 @@ export type PatchUcContactRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchUcContactQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchUcContactQueryParamFields
+> = z.nativeEnum(PatchUcContactQueryParamFields);
 
 /** @internal */
 export type PatchUcContactRequest$Outbound = {
@@ -46,7 +69,7 @@ export const PatchUcContactRequest$outboundSchema: z.ZodType<
 > = z.object({
   ucContact: shared.UcContact$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchUcContactQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateUcContactQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Title: "title",
+  Company: "company",
+  Emails: "emails",
+  Telephones: "telephones",
+  Raw: "raw",
+} as const;
+export type UpdateUcContactQueryParamFields = ClosedEnum<
+  typeof UpdateUcContactQueryParamFields
+>;
 
 export type UpdateUcContactRequest = {
   /**
@@ -18,7 +36,7 @@ export type UpdateUcContactRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateUcContactQueryParamFields> | undefined;
   /**
    * ID of the Contact
    */
@@ -28,6 +46,11 @@ export type UpdateUcContactRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateUcContactQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateUcContactQueryParamFields
+> = z.nativeEnum(UpdateUcContactQueryParamFields);
 
 /** @internal */
 export type UpdateUcContactRequest$Outbound = {
@@ -46,7 +69,7 @@ export const UpdateUcContactRequest$outboundSchema: z.ZodType<
 > = z.object({
   ucContact: shared.UcContact$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateUcContactQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

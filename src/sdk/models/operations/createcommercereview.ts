@@ -4,7 +4,37 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateCommerceReviewQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ItemId: "item_id",
+  ItemVariantId: "item_variant_id",
+  Rating: "rating",
+  Title: "title",
+  Content: "content",
+  AuthorName: "author_name",
+  AuthorEmail: "author_email",
+  AuthorAvatarUrl: "author_avatar_url",
+  AuthorLocation: "author_location",
+  VerifiedPurchase: "verified_purchase",
+  HelpfulVotes: "helpful_votes",
+  UnhelpfulVotes: "unhelpful_votes",
+  Media: "media",
+  Status: "status",
+  IsVerified: "is_verified",
+  IsFeatured: "is_featured",
+  IsPublic: "is_public",
+  Comments: "comments",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type CreateCommerceReviewQueryParamFields = ClosedEnum<
+  typeof CreateCommerceReviewQueryParamFields
+>;
 
 export type CreateCommerceReviewRequest = {
   commerceReview: shared.CommerceReview;
@@ -15,12 +45,18 @@ export type CreateCommerceReviewRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateCommerceReviewQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateCommerceReviewQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateCommerceReviewQueryParamFields> = z.nativeEnum(
+    CreateCommerceReviewQueryParamFields,
+  );
 
 /** @internal */
 export type CreateCommerceReviewRequest$Outbound = {
@@ -38,7 +74,8 @@ export const CreateCommerceReviewRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceReview: shared.CommerceReview$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateCommerceReviewQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

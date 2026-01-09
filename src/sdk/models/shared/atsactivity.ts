@@ -36,7 +36,6 @@ export type AtsActivity = {
   cc?: Array<AtsEmail> | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
-  documentId?: string | undefined;
   /**
    * IDs for AtsDocument.get
    */
@@ -84,7 +83,6 @@ export const AtsActivity$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
-  document_id: z.string().optional(),
   document_ids: z.array(z.string()).optional(),
   from: PropertyAtsActivityFrom$inboundSchema.optional(),
   id: z.string().optional(),
@@ -104,7 +102,6 @@ export const AtsActivity$inboundSchema: z.ZodType<
     "application_id": "applicationId",
     "candidate_id": "candidateId",
     "created_at": "createdAt",
-    "document_id": "documentId",
     "document_ids": "documentIds",
     "interview_id": "interviewId",
     "is_private": "isPrivate",
@@ -122,7 +119,6 @@ export type AtsActivity$Outbound = {
   cc?: Array<AtsEmail$Outbound> | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
-  document_id?: string | undefined;
   document_ids?: Array<string> | undefined;
   from?: PropertyAtsActivityFrom$Outbound | undefined;
   id?: string | undefined;
@@ -150,7 +146,6 @@ export const AtsActivity$outboundSchema: z.ZodType<
   cc: z.array(AtsEmail$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
-  documentId: z.string().optional(),
   documentIds: z.array(z.string()).optional(),
   from: PropertyAtsActivityFrom$outboundSchema.optional(),
   id: z.string().optional(),
@@ -169,7 +164,6 @@ export const AtsActivity$outboundSchema: z.ZodType<
     applicationId: "application_id",
     candidateId: "candidate_id",
     createdAt: "created_at",
-    documentId: "document_id",
     documentIds: "document_ids",
     interviewId: "interview_id",
     isPrivate: "is_private",

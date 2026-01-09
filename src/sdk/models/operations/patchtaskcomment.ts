@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchTaskCommentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Text: "text",
+  UserId: "user_id",
+  UserName: "user_name",
+  TaskId: "task_id",
+  Raw: "raw",
+} as const;
+export type PatchTaskCommentQueryParamFields = ClosedEnum<
+  typeof PatchTaskCommentQueryParamFields
+>;
 
 export type PatchTaskCommentRequest = {
   taskComment: shared.TaskComment;
@@ -15,7 +30,7 @@ export type PatchTaskCommentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchTaskCommentQueryParamFields> | undefined;
   /**
    * ID of the Comment
    */
@@ -25,6 +40,11 @@ export type PatchTaskCommentRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchTaskCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchTaskCommentQueryParamFields
+> = z.nativeEnum(PatchTaskCommentQueryParamFields);
 
 /** @internal */
 export type PatchTaskCommentRequest$Outbound = {
@@ -43,7 +63,7 @@ export const PatchTaskCommentRequest$outboundSchema: z.ZodType<
 > = z.object({
   taskComment: shared.TaskComment$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchTaskCommentQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

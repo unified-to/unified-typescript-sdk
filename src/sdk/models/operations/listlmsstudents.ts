@@ -4,10 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListLmsStudentsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Telephones: "telephones",
+  Address: "address",
+  ImageUrl: "image_url",
+  Raw: "raw",
+} as const;
+export type ListLmsStudentsQueryParamFields = ClosedEnum<
+  typeof ListLmsStudentsQueryParamFields
+>;
 
 export type ListLmsStudentsRequest = {
   /**
-   * The class ID to filter by
+   * The class ID to filter by (reference to LmsClass)
    */
   classId?: string | undefined;
   /**
@@ -15,18 +33,14 @@ export type ListLmsStudentsRequest = {
    */
   connectionId: string;
   /**
-   * The course ID to filter by
+   * The course ID to filter by (reference to Course)
    */
   courseId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListLmsStudentsQueryParamFields> | undefined;
   limit?: number | undefined;
-  /**
-   * The location ID to filter by
-   */
-  locationId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
@@ -39,10 +53,15 @@ export type ListLmsStudentsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListLmsStudentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListLmsStudentsQueryParamFields
+> = z.nativeEnum(ListLmsStudentsQueryParamFields);
 
 /** @internal */
 export type ListLmsStudentsRequest$Outbound = {
@@ -51,7 +70,6 @@ export type ListLmsStudentsRequest$Outbound = {
   course_id?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
-  location_id?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
@@ -69,9 +87,8 @@ export const ListLmsStudentsRequest$outboundSchema: z.ZodType<
   classId: z.string().optional(),
   connectionId: z.string(),
   courseId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListLmsStudentsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
-  locationId: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
@@ -83,7 +100,6 @@ export const ListLmsStudentsRequest$outboundSchema: z.ZodType<
     classId: "class_id",
     connectionId: "connection_id",
     courseId: "course_id",
-    locationId: "location_id",
     updatedGte: "updated_gte",
   });
 });

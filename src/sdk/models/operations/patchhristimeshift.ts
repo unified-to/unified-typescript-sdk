@@ -4,7 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchHrisTimeshiftQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  EmployeeUserId: "employee_user_id",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  LocationId: "location_id",
+  CompanyId: "company_id",
+  GroupId: "group_id",
+  Compensation: "compensation",
+  ApproverUserId: "approver_user_id",
+  ApprovedAt: "approved_at",
+  Hours: "hours",
+  IsApproved: "is_approved",
+  Raw: "raw",
+} as const;
+export type PatchHrisTimeshiftQueryParamFields = ClosedEnum<
+  typeof PatchHrisTimeshiftQueryParamFields
+>;
 
 export type PatchHrisTimeshiftRequest = {
   hrisTimeshift: shared.HrisTimeshift;
@@ -15,7 +37,7 @@ export type PatchHrisTimeshiftRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchHrisTimeshiftQueryParamFields> | undefined;
   /**
    * ID of the Timeshift
    */
@@ -25,6 +47,11 @@ export type PatchHrisTimeshiftRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchHrisTimeshiftQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchHrisTimeshiftQueryParamFields
+> = z.nativeEnum(PatchHrisTimeshiftQueryParamFields);
 
 /** @internal */
 export type PatchHrisTimeshiftRequest$Outbound = {
@@ -43,7 +70,7 @@ export const PatchHrisTimeshiftRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisTimeshift: shared.HrisTimeshift$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchHrisTimeshiftQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

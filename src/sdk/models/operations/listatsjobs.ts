@@ -4,10 +4,43 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsJobsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  RecruiterIds: "recruiter_ids",
+  HiringManagerIds: "hiring_manager_ids",
+  Status: "status",
+  ClosedAt: "closed_at",
+  Addresses: "addresses",
+  Compensation: "compensation",
+  EmploymentType: "employment_type",
+  Remote: "remote",
+  LanguageLocale: "language_locale",
+  PublicJobUrls: "public_job_urls",
+  NumberOfOpenings: "number_of_openings",
+  CompanyId: "company_id",
+  Questions: "questions",
+  Postings: "postings",
+  Groups: "groups",
+  Openings: "openings",
+  MinimumExperienceYears: "minimum_experience_years",
+  MinimumDegree: "minimum_degree",
+  Skills: "skills",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type ListAtsJobsQueryParamFields = ClosedEnum<
+  typeof ListAtsJobsQueryParamFields
+>;
 
 export type ListAtsJobsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to AtsCompany)
    */
   companyId?: string | undefined;
   /**
@@ -17,7 +50,7 @@ export type ListAtsJobsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsJobsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -35,14 +68,19 @@ export type ListAtsJobsRequest = {
    */
   status?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsJobsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAtsJobsQueryParamFields
+> = z.nativeEnum(ListAtsJobsQueryParamFields);
 
 /** @internal */
 export type ListAtsJobsRequest$Outbound = {
@@ -68,7 +106,7 @@ export const ListAtsJobsRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsJobsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

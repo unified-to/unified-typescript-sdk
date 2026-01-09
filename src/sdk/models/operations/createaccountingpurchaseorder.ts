@@ -4,7 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAccountingPurchaseorderQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PostedAt: "posted_at",
+  ContactId: "contact_id",
+  AccountId: "account_id",
+  Currency: "currency",
+  TotalAmount: "total_amount",
+  ShippingAddress: "shipping_address",
+  BillingAddress: "billing_address",
+  Status: "status",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type CreateAccountingPurchaseorderQueryParamFields = ClosedEnum<
+  typeof CreateAccountingPurchaseorderQueryParamFields
+>;
 
 export type CreateAccountingPurchaseorderRequest = {
   accountingPurchaseorder: shared.AccountingPurchaseorder;
@@ -15,12 +35,17 @@ export type CreateAccountingPurchaseorderRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAccountingPurchaseorderQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAccountingPurchaseorderQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateAccountingPurchaseorderQueryParamFields> = z
+    .nativeEnum(CreateAccountingPurchaseorderQueryParamFields);
 
 /** @internal */
 export type CreateAccountingPurchaseorderRequest$Outbound = {
@@ -38,7 +63,8 @@ export const CreateAccountingPurchaseorderRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingPurchaseorder: shared.AccountingPurchaseorder$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAccountingPurchaseorderQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

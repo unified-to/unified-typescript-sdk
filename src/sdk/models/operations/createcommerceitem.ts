@@ -4,7 +4,35 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateCommerceItemQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  PublicName: "public_name",
+  Slug: "slug",
+  Description: "description",
+  GlobalCode: "global_code",
+  PublicDescription: "public_description",
+  IsActive: "is_active",
+  IsTaxable: "is_taxable",
+  VendorName: "vendor_name",
+  Type: "type",
+  Variants: "variants",
+  Tags: "tags",
+  Media: "media",
+  CollectionIds: "collection_ids",
+  AccountId: "account_id",
+  Metadata: "metadata",
+  Raw: "raw",
+  Collections: "collections",
+} as const;
+export type CreateCommerceItemQueryParamFields = ClosedEnum<
+  typeof CreateCommerceItemQueryParamFields
+>;
 
 export type CreateCommerceItemRequest = {
   commerceItem: shared.CommerceItem;
@@ -15,12 +43,17 @@ export type CreateCommerceItemRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateCommerceItemQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateCommerceItemQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateCommerceItemQueryParamFields
+> = z.nativeEnum(CreateCommerceItemQueryParamFields);
 
 /** @internal */
 export type CreateCommerceItemRequest$Outbound = {
@@ -38,7 +71,7 @@ export const CreateCommerceItemRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceItem: shared.CommerceItem$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateCommerceItemQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

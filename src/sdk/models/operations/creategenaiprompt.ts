@@ -4,7 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateGenaiPromptQueryParamFields = {
+  ModelId: "model_id",
+  Messages: "messages",
+  Temperature: "temperature",
+  MaxTokens: "max_tokens",
+  Responses: "responses",
+  TokensUsed: "tokens_used",
+  McpUrl: "mcp_url",
+  McpDeferredTools: "mcp_deferred_tools",
+  Raw: "raw",
+} as const;
+export type CreateGenaiPromptQueryParamFields = ClosedEnum<
+  typeof CreateGenaiPromptQueryParamFields
+>;
 
 export type CreateGenaiPromptRequest = {
   genaiPrompt: shared.GenaiPrompt;
@@ -15,12 +31,17 @@ export type CreateGenaiPromptRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateGenaiPromptQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateGenaiPromptQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateGenaiPromptQueryParamFields
+> = z.nativeEnum(CreateGenaiPromptQueryParamFields);
 
 /** @internal */
 export type CreateGenaiPromptRequest$Outbound = {
@@ -38,7 +59,7 @@ export const CreateGenaiPromptRequest$outboundSchema: z.ZodType<
 > = z.object({
   genaiPrompt: shared.GenaiPrompt$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateGenaiPromptQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

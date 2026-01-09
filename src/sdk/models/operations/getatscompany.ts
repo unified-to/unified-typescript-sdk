@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAtsCompanyQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Address: "address",
+  WebsiteUrl: "website_url",
+  Phone: "phone",
+  ParentId: "parent_id",
+  RecruiterIds: "recruiter_ids",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type GetAtsCompanyQueryParamFields = ClosedEnum<
+  typeof GetAtsCompanyQueryParamFields
+>;
 
 export type GetAtsCompanyRequest = {
   /**
@@ -13,7 +31,7 @@ export type GetAtsCompanyRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAtsCompanyQueryParamFields> | undefined;
   /**
    * ID of the Company
    */
@@ -23,6 +41,11 @@ export type GetAtsCompanyRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAtsCompanyQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetAtsCompanyQueryParamFields
+> = z.nativeEnum(GetAtsCompanyQueryParamFields);
 
 /** @internal */
 export type GetAtsCompanyRequest$Outbound = {
@@ -39,7 +62,7 @@ export const GetAtsCompanyRequest$outboundSchema: z.ZodType<
   GetAtsCompanyRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAtsCompanyQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

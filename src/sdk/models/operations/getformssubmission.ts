@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetFormsSubmissionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  FormId: "form_id",
+  RespondentEmail: "respondent_email",
+  RespondentName: "respondent_name",
+  Answers: "answers",
+  Raw: "raw",
+} as const;
+export type GetFormsSubmissionQueryParamFields = ClosedEnum<
+  typeof GetFormsSubmissionQueryParamFields
+>;
 
 export type GetFormsSubmissionRequest = {
   /**
@@ -13,7 +28,7 @@ export type GetFormsSubmissionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetFormsSubmissionQueryParamFields> | undefined;
   /**
    * ID of the Submission
    */
@@ -23,6 +38,11 @@ export type GetFormsSubmissionRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetFormsSubmissionQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetFormsSubmissionQueryParamFields
+> = z.nativeEnum(GetFormsSubmissionQueryParamFields);
 
 /** @internal */
 export type GetFormsSubmissionRequest$Outbound = {
@@ -39,7 +59,7 @@ export const GetFormsSubmissionRequest$outboundSchema: z.ZodType<
   GetFormsSubmissionRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetFormsSubmissionQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

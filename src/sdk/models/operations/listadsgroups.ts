@@ -4,6 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAdsGroupsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  CampaignId: "campaign_id",
+  OrganizationId: "organization_id",
+  IsActive: "is_active",
+  Targeting: "targeting",
+  BidAmount: "bid_amount",
+  BudgetAmount: "budget_amount",
+  BudgetPeriod: "budget_period",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Raw: "raw",
+} as const;
+export type ListAdsGroupsQueryParamFields = ClosedEnum<
+  typeof ListAdsGroupsQueryParamFields
+>;
 
 export type ListAdsGroupsRequest = {
   /**
@@ -17,12 +38,12 @@ export type ListAdsGroupsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAdsGroupsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AdsOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -35,10 +56,15 @@ export type ListAdsGroupsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAdsGroupsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAdsGroupsQueryParamFields
+> = z.nativeEnum(ListAdsGroupsQueryParamFields);
 
 /** @internal */
 export type ListAdsGroupsRequest$Outbound = {
@@ -63,7 +89,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
 > = z.object({
   campaignId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAdsGroupsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

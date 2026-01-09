@@ -4,6 +4,38 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetVerificationRequestQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PackageId: "package_id",
+  Parameters: "parameters",
+  TargetUrl: "target_url",
+  CandidateId: "candidate_id",
+  ProfileIpAddress: "profile_ip_address",
+  ProfileName: "profile_name",
+  ProfileDateOfBirth: "profile_date_of_birth",
+  ProfileAddresses: "profile_addresses",
+  ProfileGender: "profile_gender",
+  ProfileEmails: "profile_emails",
+  ProfileTelephones: "profile_telephones",
+  ProfileNationalIdentifier: "profile_national_identifier",
+  ResponseCompletedAt: "response_completed_at",
+  ResponseExpiresAt: "response_expires_at",
+  ResponseIssuedAt: "response_issued_at",
+  ResponseStatus: "response_status",
+  ResponseScore: "response_score",
+  ResponseRedirectUrl: "response_redirect_url",
+  ResponseDownloadUrls: "response_download_urls",
+  ResponseDetails: "response_details",
+  ResponseSource: "response_source",
+  Raw: "raw",
+} as const;
+export type GetVerificationRequestQueryParamFields = ClosedEnum<
+  typeof GetVerificationRequestQueryParamFields
+>;
 
 export type GetVerificationRequestRequest = {
   /**
@@ -13,7 +45,7 @@ export type GetVerificationRequestRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetVerificationRequestQueryParamFields> | undefined;
   /**
    * ID of the Request
    */
@@ -23,6 +55,12 @@ export type GetVerificationRequestRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetVerificationRequestQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetVerificationRequestQueryParamFields> = z.nativeEnum(
+    GetVerificationRequestQueryParamFields,
+  );
 
 /** @internal */
 export type GetVerificationRequestRequest$Outbound = {
@@ -39,7 +77,8 @@ export const GetVerificationRequestRequest$outboundSchema: z.ZodType<
   GetVerificationRequestRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetVerificationRequestQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

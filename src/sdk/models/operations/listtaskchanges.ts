@@ -4,6 +4,20 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListTaskChangesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TaskId: "task_id",
+  UserId: "user_id",
+  Items: "items",
+  Raw: "raw",
+} as const;
+export type ListTaskChangesQueryParamFields = ClosedEnum<
+  typeof ListTaskChangesQueryParamFields
+>;
 
 export type ListTaskChangesRequest = {
   /**
@@ -13,7 +27,7 @@ export type ListTaskChangesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListTaskChangesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,14 +41,19 @@ export type ListTaskChangesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The task ID to filter by
+   * The task ID to filter by (reference to TaskTask)
    */
   taskId?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListTaskChangesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListTaskChangesQueryParamFields
+> = z.nativeEnum(ListTaskChangesQueryParamFields);
 
 /** @internal */
 export type ListTaskChangesRequest$Outbound = {
@@ -57,7 +76,7 @@ export const ListTaskChangesRequest$outboundSchema: z.ZodType<
   ListTaskChangesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListTaskChangesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

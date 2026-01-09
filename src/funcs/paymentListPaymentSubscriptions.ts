@@ -96,7 +96,6 @@ async function $do(
 
   const query = encodeFormQuery({
     "contact_id": payload.contact_id,
-    "end_le": payload.end_le,
     "end_lt": payload.end_lt,
     "fields": payload.fields,
     "limit": payload.limit,

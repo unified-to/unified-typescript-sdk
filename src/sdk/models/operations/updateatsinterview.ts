@@ -4,7 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAtsInterviewQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CandidateId: "candidate_id",
+  JobId: "job_id",
+  ApplicationId: "application_id",
+  UserIds: "user_ids",
+  Status: "status",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Location: "location",
+  ExternalEventXref: "external_event_xref",
+  Raw: "raw",
+} as const;
+export type UpdateAtsInterviewQueryParamFields = ClosedEnum<
+  typeof UpdateAtsInterviewQueryParamFields
+>;
 
 export type UpdateAtsInterviewRequest = {
   atsInterview: shared.AtsInterview;
@@ -15,7 +35,7 @@ export type UpdateAtsInterviewRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAtsInterviewQueryParamFields> | undefined;
   /**
    * ID of the Interview
    */
@@ -25,6 +45,11 @@ export type UpdateAtsInterviewRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAtsInterviewQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateAtsInterviewQueryParamFields
+> = z.nativeEnum(UpdateAtsInterviewQueryParamFields);
 
 /** @internal */
 export type UpdateAtsInterviewRequest$Outbound = {
@@ -43,7 +68,7 @@ export const UpdateAtsInterviewRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsInterview: shared.AtsInterview$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAtsInterviewQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListKmsCommentsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Type: "type",
+  ContentType: "content_type",
+  Content: "content",
+  UserId: "user_id",
+  PageId: "page_id",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type ListKmsCommentsQueryParamFields = ClosedEnum<
+  typeof ListKmsCommentsQueryParamFields
+>;
 
 export type ListKmsCommentsRequest = {
   /**
@@ -13,12 +30,12 @@ export type ListKmsCommentsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListKmsCommentsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The page ID to filter by
+   * The page ID to filter by (reference to KmsPage)
    */
   pageId?: string | undefined;
   /**
@@ -39,10 +56,15 @@ export type ListKmsCommentsRequest = {
    */
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListKmsCommentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListKmsCommentsQueryParamFields
+> = z.nativeEnum(ListKmsCommentsQueryParamFields);
 
 /** @internal */
 export type ListKmsCommentsRequest$Outbound = {
@@ -67,7 +89,7 @@ export const ListKmsCommentsRequest$outboundSchema: z.ZodType<
   ListKmsCommentsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListKmsCommentsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -4,6 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisDeductionsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  CompanyId: "company_id",
+  BenefitId: "benefit_id",
+  Amount: "amount",
+  Type: "type",
+  CoverageLevel: "coverage_level",
+  Frequency: "frequency",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type ListHrisDeductionsQueryParamFields = ClosedEnum<
+  typeof ListHrisDeductionsQueryParamFields
+>;
 
 export type ListHrisDeductionsRequest = {
   /**
@@ -11,7 +32,7 @@ export type ListHrisDeductionsRequest = {
    */
   benefitId?: string | undefined;
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -21,7 +42,7 @@ export type ListHrisDeductionsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisDeductionsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -39,14 +60,19 @@ export type ListHrisDeductionsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListHrisDeductionsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisDeductionsQueryParamFields
+> = z.nativeEnum(ListHrisDeductionsQueryParamFields);
 
 /** @internal */
 export type ListHrisDeductionsRequest$Outbound = {
@@ -74,7 +100,7 @@ export const ListHrisDeductionsRequest$outboundSchema: z.ZodType<
   benefitId: z.string().optional(),
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisDeductionsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

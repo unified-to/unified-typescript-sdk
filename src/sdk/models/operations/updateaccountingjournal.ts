@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAccountingJournalQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Reference: "reference",
+  TaxAmount: "tax_amount",
+  Currency: "currency",
+  Lineitems: "lineitems",
+  TaxrateId: "taxrate_id",
+  Description: "description",
+  PostedAt: "posted_at",
+  Raw: "raw",
+} as const;
+export type UpdateAccountingJournalQueryParamFields = ClosedEnum<
+  typeof UpdateAccountingJournalQueryParamFields
+>;
 
 export type UpdateAccountingJournalRequest = {
   accountingJournal: shared.AccountingJournal;
@@ -15,7 +33,7 @@ export type UpdateAccountingJournalRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAccountingJournalQueryParamFields> | undefined;
   /**
    * ID of the Journal
    */
@@ -25,6 +43,11 @@ export type UpdateAccountingJournalRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAccountingJournalQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateAccountingJournalQueryParamFields> = z
+    .nativeEnum(UpdateAccountingJournalQueryParamFields);
 
 /** @internal */
 export type UpdateAccountingJournalRequest$Outbound = {
@@ -43,7 +66,8 @@ export const UpdateAccountingJournalRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingJournal: shared.AccountingJournal$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAccountingJournalQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

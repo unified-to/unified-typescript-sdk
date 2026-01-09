@@ -4,7 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateHrisBenefitQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  CompanyId: "company_id",
+  Type: "type",
+  Tax: "tax",
+  Frequency: "frequency",
+  IsActive: "is_active",
+  EmployerContributionType: "employer_contribution_type",
+  EmployerContributionAmount: "employer_contribution_amount",
+  EmployerContributionMaxAmount: "employer_contribution_max_amount",
+  CoverageLevel: "coverage_level",
+  Currency: "currency",
+  Raw: "raw",
+} as const;
+export type UpdateHrisBenefitQueryParamFields = ClosedEnum<
+  typeof UpdateHrisBenefitQueryParamFields
+>;
 
 export type UpdateHrisBenefitRequest = {
   /**
@@ -18,7 +41,7 @@ export type UpdateHrisBenefitRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateHrisBenefitQueryParamFields> | undefined;
   /**
    * ID of the Benefit
    */
@@ -28,6 +51,11 @@ export type UpdateHrisBenefitRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateHrisBenefitQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateHrisBenefitQueryParamFields
+> = z.nativeEnum(UpdateHrisBenefitQueryParamFields);
 
 /** @internal */
 export type UpdateHrisBenefitRequest$Outbound = {
@@ -46,7 +74,7 @@ export const UpdateHrisBenefitRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisBenefit: shared.HrisBenefit$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateHrisBenefitQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

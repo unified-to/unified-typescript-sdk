@@ -4,6 +4,35 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAccountingContactQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Telephones: "telephones",
+  Currency: "currency",
+  BillingAddress: "billing_address",
+  ShippingAddress: "shipping_address",
+  IsActive: "is_active",
+  TaxExemption: "tax_exemption",
+  TaxNumber: "tax_number",
+  IsCustomer: "is_customer",
+  IsSupplier: "is_supplier",
+  PortalUrl: "portal_url",
+  PaymentMethods: "payment_methods",
+  CompanyName: "company_name",
+  Identification: "identification",
+  AssociatedContacts: "associated_contacts",
+  Raw: "raw",
+} as const;
+export type GetAccountingContactQueryParamFields = ClosedEnum<
+  typeof GetAccountingContactQueryParamFields
+>;
 
 export type GetAccountingContactRequest = {
   /**
@@ -13,7 +42,7 @@ export type GetAccountingContactRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAccountingContactQueryParamFields> | undefined;
   /**
    * ID of the Contact
    */
@@ -23,6 +52,12 @@ export type GetAccountingContactRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAccountingContactQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetAccountingContactQueryParamFields> = z.nativeEnum(
+    GetAccountingContactQueryParamFields,
+  );
 
 /** @internal */
 export type GetAccountingContactRequest$Outbound = {
@@ -39,7 +74,8 @@ export const GetAccountingContactRequest$outboundSchema: z.ZodType<
   GetAccountingContactRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAccountingContactQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

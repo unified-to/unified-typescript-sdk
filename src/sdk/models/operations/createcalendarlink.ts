@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateCalendarLinkQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Url: "url",
+  Duration: "duration",
+  Description: "description",
+  IsActive: "is_active",
+  PriceAmount: "price_amount",
+  PriceCurrency: "price_currency",
+  Raw: "raw",
+} as const;
+export type CreateCalendarLinkQueryParamFields = ClosedEnum<
+  typeof CreateCalendarLinkQueryParamFields
+>;
 
 export type CreateCalendarLinkRequest = {
   calendarLink: shared.CalendarLink;
@@ -15,12 +33,17 @@ export type CreateCalendarLinkRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateCalendarLinkQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateCalendarLinkQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateCalendarLinkQueryParamFields
+> = z.nativeEnum(CreateCalendarLinkQueryParamFields);
 
 /** @internal */
 export type CreateCalendarLinkRequest$Outbound = {
@@ -38,7 +61,7 @@ export const CreateCalendarLinkRequest$outboundSchema: z.ZodType<
 > = z.object({
   calendarLink: shared.CalendarLink$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateCalendarLinkQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

@@ -4,6 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAdsGroupQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  CampaignId: "campaign_id",
+  OrganizationId: "organization_id",
+  IsActive: "is_active",
+  Targeting: "targeting",
+  BidAmount: "bid_amount",
+  BudgetAmount: "budget_amount",
+  BudgetPeriod: "budget_period",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  Raw: "raw",
+} as const;
+export type GetAdsGroupQueryParamFields = ClosedEnum<
+  typeof GetAdsGroupQueryParamFields
+>;
 
 export type GetAdsGroupRequest = {
   /**
@@ -13,7 +34,7 @@ export type GetAdsGroupRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAdsGroupQueryParamFields> | undefined;
   /**
    * ID of the Group
    */
@@ -23,6 +44,11 @@ export type GetAdsGroupRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAdsGroupQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetAdsGroupQueryParamFields
+> = z.nativeEnum(GetAdsGroupQueryParamFields);
 
 /** @internal */
 export type GetAdsGroupRequest$Outbound = {
@@ -39,7 +65,7 @@ export const GetAdsGroupRequest$outboundSchema: z.ZodType<
   GetAdsGroupRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAdsGroupQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

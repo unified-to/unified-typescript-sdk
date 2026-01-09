@@ -4,7 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchCommerceInventoryQueryParamFields = {
+  Id: "id",
+  UpdatedAt: "updated_at",
+  ItemId: "item_id",
+  ItemVariantId: "item_variant_id",
+  ItemOptionId: "item_option_id",
+  LocationId: "location_id",
+  Available: "available",
+  Raw: "raw",
+} as const;
+export type PatchCommerceInventoryQueryParamFields = ClosedEnum<
+  typeof PatchCommerceInventoryQueryParamFields
+>;
 
 export type PatchCommerceInventoryRequest = {
   commerceInventory: shared.CommerceInventory;
@@ -15,7 +30,7 @@ export type PatchCommerceInventoryRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchCommerceInventoryQueryParamFields> | undefined;
   /**
    * ID of the Inventory
    */
@@ -25,6 +40,12 @@ export type PatchCommerceInventoryRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchCommerceInventoryQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchCommerceInventoryQueryParamFields> = z.nativeEnum(
+    PatchCommerceInventoryQueryParamFields,
+  );
 
 /** @internal */
 export type PatchCommerceInventoryRequest$Outbound = {
@@ -43,7 +64,8 @@ export const PatchCommerceInventoryRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceInventory: shared.CommerceInventory$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchCommerceInventoryQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

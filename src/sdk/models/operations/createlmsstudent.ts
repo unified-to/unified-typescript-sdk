@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateLmsStudentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Telephones: "telephones",
+  Address: "address",
+  ImageUrl: "image_url",
+  Raw: "raw",
+} as const;
+export type CreateLmsStudentQueryParamFields = ClosedEnum<
+  typeof CreateLmsStudentQueryParamFields
+>;
 
 export type CreateLmsStudentRequest = {
   lmsStudent: shared.LmsStudent;
@@ -15,12 +33,17 @@ export type CreateLmsStudentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateLmsStudentQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateLmsStudentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateLmsStudentQueryParamFields
+> = z.nativeEnum(CreateLmsStudentQueryParamFields);
 
 /** @internal */
 export type CreateLmsStudentRequest$Outbound = {
@@ -38,7 +61,7 @@ export const CreateLmsStudentRequest$outboundSchema: z.ZodType<
 > = z.object({
   lmsStudent: shared.LmsStudent$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateLmsStudentQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

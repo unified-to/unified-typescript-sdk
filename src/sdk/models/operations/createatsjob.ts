@@ -4,7 +4,40 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAtsJobQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  RecruiterIds: "recruiter_ids",
+  HiringManagerIds: "hiring_manager_ids",
+  Status: "status",
+  ClosedAt: "closed_at",
+  Addresses: "addresses",
+  Compensation: "compensation",
+  EmploymentType: "employment_type",
+  Remote: "remote",
+  LanguageLocale: "language_locale",
+  PublicJobUrls: "public_job_urls",
+  NumberOfOpenings: "number_of_openings",
+  CompanyId: "company_id",
+  Questions: "questions",
+  Postings: "postings",
+  Groups: "groups",
+  Openings: "openings",
+  MinimumExperienceYears: "minimum_experience_years",
+  MinimumDegree: "minimum_degree",
+  Skills: "skills",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type CreateAtsJobQueryParamFields = ClosedEnum<
+  typeof CreateAtsJobQueryParamFields
+>;
 
 export type CreateAtsJobRequest = {
   atsJob: shared.AtsJob;
@@ -15,12 +48,17 @@ export type CreateAtsJobRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAtsJobQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAtsJobQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateAtsJobQueryParamFields
+> = z.nativeEnum(CreateAtsJobQueryParamFields);
 
 /** @internal */
 export type CreateAtsJobRequest$Outbound = {
@@ -38,7 +76,7 @@ export const CreateAtsJobRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsJob: shared.AtsJob$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAtsJobQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

@@ -4,6 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAtsScorecardQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ApplicationId: "application_id",
+  InterviewerId: "interviewer_id",
+  InterviewId: "interview_id",
+  CandidateId: "candidate_id",
+  JobId: "job_id",
+  Recommendation: "recommendation",
+  Comment: "comment",
+  Questions: "questions",
+  Raw: "raw",
+} as const;
+export type GetAtsScorecardQueryParamFields = ClosedEnum<
+  typeof GetAtsScorecardQueryParamFields
+>;
 
 export type GetAtsScorecardRequest = {
   /**
@@ -13,7 +32,7 @@ export type GetAtsScorecardRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAtsScorecardQueryParamFields> | undefined;
   /**
    * ID of the Scorecard
    */
@@ -23,6 +42,11 @@ export type GetAtsScorecardRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAtsScorecardQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetAtsScorecardQueryParamFields
+> = z.nativeEnum(GetAtsScorecardQueryParamFields);
 
 /** @internal */
 export type GetAtsScorecardRequest$Outbound = {
@@ -39,7 +63,7 @@ export const GetAtsScorecardRequest$outboundSchema: z.ZodType<
   GetAtsScorecardRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAtsScorecardQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

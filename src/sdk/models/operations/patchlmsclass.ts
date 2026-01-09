@@ -4,7 +4,25 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchLmsClassQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Media: "media",
+  CourseId: "course_id",
+  InstructorIds: "instructor_ids",
+  StudentIds: "student_ids",
+  Languages: "languages",
+  Raw: "raw",
+} as const;
+export type PatchLmsClassQueryParamFields = ClosedEnum<
+  typeof PatchLmsClassQueryParamFields
+>;
 
 export type PatchLmsClassRequest = {
   lmsClass: shared.LmsClass;
@@ -15,7 +33,7 @@ export type PatchLmsClassRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchLmsClassQueryParamFields> | undefined;
   /**
    * ID of the Class
    */
@@ -25,6 +43,11 @@ export type PatchLmsClassRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchLmsClassQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchLmsClassQueryParamFields
+> = z.nativeEnum(PatchLmsClassQueryParamFields);
 
 /** @internal */
 export type PatchLmsClassRequest$Outbound = {
@@ -43,7 +66,7 @@ export const PatchLmsClassRequest$outboundSchema: z.ZodType<
 > = z.object({
   lmsClass: shared.LmsClass$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchLmsClassQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

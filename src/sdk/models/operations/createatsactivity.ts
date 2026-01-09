@@ -4,7 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAtsActivityQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CandidateId: "candidate_id",
+  ApplicationId: "application_id",
+  JobId: "job_id",
+  InterviewId: "interview_id",
+  DocumentIds: "document_ids",
+  Title: "title",
+  Description: "description",
+  IsPrivate: "is_private",
+  UserIds: "user_ids",
+  Type: "type",
+  From: "from",
+  To: "to",
+  Cc: "cc",
+  Bcc: "bcc",
+  SubType: "sub_type",
+  Raw: "raw",
+} as const;
+export type CreateAtsActivityQueryParamFields = ClosedEnum<
+  typeof CreateAtsActivityQueryParamFields
+>;
 
 export type CreateAtsActivityRequest = {
   atsActivity: shared.AtsActivity;
@@ -15,12 +41,17 @@ export type CreateAtsActivityRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAtsActivityQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAtsActivityQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateAtsActivityQueryParamFields
+> = z.nativeEnum(CreateAtsActivityQueryParamFields);
 
 /** @internal */
 export type CreateAtsActivityRequest$Outbound = {
@@ -38,7 +69,7 @@ export const CreateAtsActivityRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsActivity: shared.AtsActivity$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAtsActivityQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

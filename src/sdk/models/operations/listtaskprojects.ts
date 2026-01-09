@@ -4,8 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListTaskProjectsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  ParentId: "parent_id",
+  UserIds: "user_ids",
+  GroupIds: "group_ids",
+  Description: "description",
+  HasTasks: "has_tasks",
+  HasChildren: "has_children",
+  Raw: "raw",
+} as const;
+export type ListTaskProjectsQueryParamFields = ClosedEnum<
+  typeof ListTaskProjectsQueryParamFields
+>;
 
 export type ListTaskProjectsRequest = {
+  /**
+   * The company ID to filter by (reference to HrisCompany)
+   */
+  companyId?: string | undefined;
   /**
    * ID of the connection
    */
@@ -13,14 +35,10 @@ export type ListTaskProjectsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListTaskProjectsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
-  /**
-   * The org ID to filter by
-   */
-  orgId?: string | undefined;
   /**
    * The parent ID to filter by
    */
@@ -35,24 +53,34 @@ export type ListTaskProjectsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
+  /**
+   * The user/employee ID to filter by (reference to HrisEmployee)
+   */
+  userId?: string | undefined;
 };
 
 /** @internal */
+export const ListTaskProjectsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListTaskProjectsQueryParamFields
+> = z.nativeEnum(ListTaskProjectsQueryParamFields);
+
+/** @internal */
 export type ListTaskProjectsRequest$Outbound = {
+  company_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
-  org_id?: string | undefined;
   parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
   updated_gte?: string | undefined;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -61,23 +89,25 @@ export const ListTaskProjectsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListTaskProjectsRequest
 > = z.object({
+  companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListTaskProjectsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
-  orgId: z.string().optional(),
   parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
   updatedGte: z.string().optional(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    companyId: "company_id",
     connectionId: "connection_id",
-    orgId: "org_id",
     parentId: "parent_id",
     updatedGte: "updated_gte",
+    userId: "user_id",
   });
 });
 

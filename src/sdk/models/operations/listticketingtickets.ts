@@ -4,6 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListTicketingTicketsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CustomerId: "customer_id",
+  Subject: "subject",
+  Description: "description",
+  Status: "status",
+  ClosedAt: "closed_at",
+  Priority: "priority",
+  CategoryId: "category_id",
+  Category: "category",
+  Source: "source",
+  SourceRef: "source_ref",
+  Tags: "tags",
+  UserId: "user_id",
+  Url: "url",
+  Raw: "raw",
+} as const;
+export type ListTicketingTicketsQueryParamFields = ClosedEnum<
+  typeof ListTicketingTicketsQueryParamFields
+>;
 
 export type ListTicketingTicketsRequest = {
   /**
@@ -17,7 +41,7 @@ export type ListTicketingTicketsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListTicketingTicketsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,14 +55,20 @@ export type ListTicketingTicketsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
+
+/** @internal */
+export const ListTicketingTicketsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListTicketingTicketsQueryParamFields> = z.nativeEnum(
+    ListTicketingTicketsQueryParamFields,
+  );
 
 /** @internal */
 export type ListTicketingTicketsRequest$Outbound = {
@@ -63,7 +93,8 @@ export const ListTicketingTicketsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   customerId: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListTicketingTicketsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

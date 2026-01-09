@@ -4,6 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetAtsActivityQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CandidateId: "candidate_id",
+  ApplicationId: "application_id",
+  JobId: "job_id",
+  InterviewId: "interview_id",
+  DocumentIds: "document_ids",
+  Title: "title",
+  Description: "description",
+  IsPrivate: "is_private",
+  UserIds: "user_ids",
+  Type: "type",
+  From: "from",
+  To: "to",
+  Cc: "cc",
+  Bcc: "bcc",
+  SubType: "sub_type",
+  Raw: "raw",
+} as const;
+export type GetAtsActivityQueryParamFields = ClosedEnum<
+  typeof GetAtsActivityQueryParamFields
+>;
 
 export type GetAtsActivityRequest = {
   /**
@@ -13,7 +39,7 @@ export type GetAtsActivityRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetAtsActivityQueryParamFields> | undefined;
   /**
    * ID of the Activity
    */
@@ -23,6 +49,11 @@ export type GetAtsActivityRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetAtsActivityQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetAtsActivityQueryParamFields
+> = z.nativeEnum(GetAtsActivityQueryParamFields);
 
 /** @internal */
 export type GetAtsActivityRequest$Outbound = {
@@ -39,7 +70,7 @@ export const GetAtsActivityRequest$outboundSchema: z.ZodType<
   GetAtsActivityRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetAtsActivityQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

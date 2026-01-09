@@ -4,7 +4,40 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchAccountingBillQueryParamFields = {
+  Id: "id",
+  BillNumber: "bill_number",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DueAt: "due_at",
+  PaidAt: "paid_at",
+  RefundedAt: "refunded_at",
+  CancelledAt: "cancelled_at",
+  PostedAt: "posted_at",
+  TotalAmount: "total_amount",
+  PaidAmount: "paid_amount",
+  RefundAmount: "refund_amount",
+  TaxAmount: "tax_amount",
+  DiscountAmount: "discount_amount",
+  BalanceAmount: "balance_amount",
+  ContactId: "contact_id",
+  Currency: "currency",
+  Notes: "notes",
+  RefundReason: "refund_reason",
+  Lineitems: "lineitems",
+  Status: "status",
+  Url: "url",
+  PaymentCollectionMethod: "payment_collection_method",
+  Attachments: "attachments",
+  Send: "send",
+  Raw: "raw",
+} as const;
+export type PatchAccountingBillQueryParamFields = ClosedEnum<
+  typeof PatchAccountingBillQueryParamFields
+>;
 
 export type PatchAccountingBillRequest = {
   accountingBill: shared.AccountingBill;
@@ -15,7 +48,7 @@ export type PatchAccountingBillRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchAccountingBillQueryParamFields> | undefined;
   /**
    * ID of the Bill
    */
@@ -25,6 +58,12 @@ export type PatchAccountingBillRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchAccountingBillQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof PatchAccountingBillQueryParamFields> = z.nativeEnum(
+    PatchAccountingBillQueryParamFields,
+  );
 
 /** @internal */
 export type PatchAccountingBillRequest$Outbound = {
@@ -43,7 +82,8 @@ export const PatchAccountingBillRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingBill: shared.AccountingBill$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchAccountingBillQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

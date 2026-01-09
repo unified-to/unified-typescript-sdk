@@ -4,6 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAtsApplicationsQueryParamFields = {
+  Id: "id",
+  CandidateId: "candidate_id",
+  JobId: "job_id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  AppliedAt: "applied_at",
+  HiredAt: "hired_at",
+  RejectedAt: "rejected_at",
+  RejectedReason: "rejected_reason",
+  Source: "source",
+  Status: "status",
+  OriginalStatus: "original_status",
+  Answers: "answers",
+  Offers: "offers",
+  UserId: "user_id",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type ListAtsApplicationsQueryParamFields = ClosedEnum<
+  typeof ListAtsApplicationsQueryParamFields
+>;
 
 export type ListAtsApplicationsRequest = {
   /**
@@ -11,7 +35,7 @@ export type ListAtsApplicationsRequest = {
    */
   candidateId?: string | undefined;
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to AtsCompany)
    */
   companyId?: string | undefined;
   /**
@@ -21,7 +45,7 @@ export type ListAtsApplicationsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAtsApplicationsQueryParamFields> | undefined;
   /**
    * The job ID to filter by
    */
@@ -39,10 +63,16 @@ export type ListAtsApplicationsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAtsApplicationsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAtsApplicationsQueryParamFields> = z.nativeEnum(
+    ListAtsApplicationsQueryParamFields,
+  );
 
 /** @internal */
 export type ListAtsApplicationsRequest$Outbound = {
@@ -69,7 +99,8 @@ export const ListAtsApplicationsRequest$outboundSchema: z.ZodType<
   candidateId: z.string().optional(),
   companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAtsApplicationsQueryParamFields$outboundSchema)
+    .optional(),
   jobId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

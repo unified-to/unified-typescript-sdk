@@ -4,7 +4,32 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateCrmEventQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Type: "type",
+  Note: "note",
+  Meeting: "meeting",
+  Email: "email",
+  Call: "call",
+  Task: "task",
+  MarketingEmail: "marketing_email",
+  Form: "form",
+  PageView: "page_view",
+  DealIds: "deal_ids",
+  CompanyIds: "company_ids",
+  ContactIds: "contact_ids",
+  LeadIds: "lead_ids",
+  UserId: "user_id",
+  Raw: "raw",
+} as const;
+export type UpdateCrmEventQueryParamFields = ClosedEnum<
+  typeof UpdateCrmEventQueryParamFields
+>;
 
 export type UpdateCrmEventRequest = {
   /**
@@ -18,7 +43,7 @@ export type UpdateCrmEventRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateCrmEventQueryParamFields> | undefined;
   /**
    * ID of the Event
    */
@@ -28,6 +53,11 @@ export type UpdateCrmEventRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateCrmEventQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateCrmEventQueryParamFields
+> = z.nativeEnum(UpdateCrmEventQueryParamFields);
 
 /** @internal */
 export type UpdateCrmEventRequest$Outbound = {
@@ -46,7 +76,7 @@ export const UpdateCrmEventRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmEvent: shared.CrmEvent$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateCrmEventQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

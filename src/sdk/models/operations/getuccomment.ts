@@ -4,6 +4,20 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetUcCommentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Content: "content",
+  UserId: "user_id",
+  CallId: "call_id",
+  Raw: "raw",
+} as const;
+export type GetUcCommentQueryParamFields = ClosedEnum<
+  typeof GetUcCommentQueryParamFields
+>;
 
 export type GetUcCommentRequest = {
   /**
@@ -13,7 +27,7 @@ export type GetUcCommentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetUcCommentQueryParamFields> | undefined;
   /**
    * ID of the Comment
    */
@@ -23,6 +37,11 @@ export type GetUcCommentRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetUcCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetUcCommentQueryParamFields
+> = z.nativeEnum(GetUcCommentQueryParamFields);
 
 /** @internal */
 export type GetUcCommentRequest$Outbound = {
@@ -39,7 +58,7 @@ export const GetUcCommentRequest$outboundSchema: z.ZodType<
   GetUcCommentRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetUcCommentQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

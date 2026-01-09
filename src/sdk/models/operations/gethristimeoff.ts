@@ -4,6 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetHrisTimeoffQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  CompanyId: "company_id",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsPaid: "is_paid",
+  Status: "status",
+  ApproverUserId: "approver_user_id",
+  ApprovedAt: "approved_at",
+  Comments: "comments",
+  Raw: "raw",
+  Reason: "reason",
+} as const;
+export type GetHrisTimeoffQueryParamFields = ClosedEnum<
+  typeof GetHrisTimeoffQueryParamFields
+>;
 
 export type GetHrisTimeoffRequest = {
   /**
@@ -13,7 +34,7 @@ export type GetHrisTimeoffRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetHrisTimeoffQueryParamFields> | undefined;
   /**
    * ID of the Timeoff
    */
@@ -23,6 +44,11 @@ export type GetHrisTimeoffRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetHrisTimeoffQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetHrisTimeoffQueryParamFields
+> = z.nativeEnum(GetHrisTimeoffQueryParamFields);
 
 /** @internal */
 export type GetHrisTimeoffRequest$Outbound = {
@@ -39,7 +65,7 @@ export const GetHrisTimeoffRequest$outboundSchema: z.ZodType<
   GetHrisTimeoffRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetHrisTimeoffQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

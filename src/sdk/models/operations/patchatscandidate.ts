@@ -4,7 +4,40 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const PatchAtsCandidateQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Title: "title",
+  Telephones: "telephones",
+  CompanyName: "company_name",
+  ImageUrl: "image_url",
+  Tags: "tags",
+  Address: "address",
+  ExternalIdentifier: "external_identifier",
+  LinkUrls: "link_urls",
+  Origin: "origin",
+  CompanyId: "company_id",
+  Sources: "sources",
+  DateOfBirth: "date_of_birth",
+  UserId: "user_id",
+  WebUrl: "web_url",
+  Experiences: "experiences",
+  Education: "education",
+  Skills: "skills",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type PatchAtsCandidateQueryParamFields = ClosedEnum<
+  typeof PatchAtsCandidateQueryParamFields
+>;
 
 export type PatchAtsCandidateRequest = {
   atsCandidate: shared.AtsCandidate;
@@ -15,7 +48,7 @@ export type PatchAtsCandidateRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<PatchAtsCandidateQueryParamFields> | undefined;
   /**
    * ID of the Candidate
    */
@@ -25,6 +58,11 @@ export type PatchAtsCandidateRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const PatchAtsCandidateQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof PatchAtsCandidateQueryParamFields
+> = z.nativeEnum(PatchAtsCandidateQueryParamFields);
 
 /** @internal */
 export type PatchAtsCandidateRequest$Outbound = {
@@ -43,7 +81,7 @@ export const PatchAtsCandidateRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsCandidate: shared.AtsCandidate$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(PatchAtsCandidateQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

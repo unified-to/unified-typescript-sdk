@@ -4,6 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListRepoRepositoriesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Owner: "owner",
+  IsPrivate: "is_private",
+  WebUrl: "web_url",
+  OrgId: "org_id",
+  Raw: "raw",
+} as const;
+export type ListRepoRepositoriesQueryParamFields = ClosedEnum<
+  typeof ListRepoRepositoriesQueryParamFields
+>;
 
 export type ListRepoRepositoriesRequest = {
   /**
@@ -13,12 +30,12 @@ export type ListRepoRepositoriesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListRepoRepositoriesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to RepoOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -31,10 +48,16 @@ export type ListRepoRepositoriesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListRepoRepositoriesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListRepoRepositoriesQueryParamFields> = z.nativeEnum(
+    ListRepoRepositoriesQueryParamFields,
+  );
 
 /** @internal */
 export type ListRepoRepositoriesRequest$Outbound = {
@@ -57,7 +80,8 @@ export const ListRepoRepositoriesRequest$outboundSchema: z.ZodType<
   ListRepoRepositoriesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListRepoRepositoriesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -4,6 +4,39 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetMessagingMessageQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ChannelId: "channel_id",
+  ChannelIds: "channel_ids",
+  Channels: "channels",
+  ParentId: "parent_id",
+  ParentMessageId: "parent_message_id",
+  RootMessageId: "root_message_id",
+  MessageThreadIdentifier: "message_thread_identifier",
+  AuthorMember: "author_member",
+  DestinationMembers: "destination_members",
+  HiddenMembers: "hidden_members",
+  MentionedMembers: "mentioned_members",
+  Reactions: "reactions",
+  Subject: "subject",
+  Message: "message",
+  MessageHtml: "message_html",
+  MessageMarkdown: "message_markdown",
+  Attachments: "attachments",
+  WebUrl: "web_url",
+  Reference: "reference",
+  HasChildren: "has_children",
+  IsUnread: "is_unread",
+  Buttons: "buttons",
+  Raw: "raw",
+} as const;
+export type GetMessagingMessageQueryParamFields = ClosedEnum<
+  typeof GetMessagingMessageQueryParamFields
+>;
 
 export type GetMessagingMessageRequest = {
   /**
@@ -13,7 +46,7 @@ export type GetMessagingMessageRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetMessagingMessageQueryParamFields> | undefined;
   /**
    * ID of the Message
    */
@@ -23,6 +56,12 @@ export type GetMessagingMessageRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetMessagingMessageQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetMessagingMessageQueryParamFields> = z.nativeEnum(
+    GetMessagingMessageQueryParamFields,
+  );
 
 /** @internal */
 export type GetMessagingMessageRequest$Outbound = {
@@ -39,7 +78,8 @@ export const GetMessagingMessageRequest$outboundSchema: z.ZodType<
   GetMessagingMessageRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetMessagingMessageQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

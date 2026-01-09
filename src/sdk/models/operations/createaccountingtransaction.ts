@@ -4,7 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAccountingTransactionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Memo: "memo",
+  TotalAmount: "total_amount",
+  TaxAmount: "tax_amount",
+  AccountId: "account_id",
+  ContactId: "contact_id",
+  Reference: "reference",
+  SubTotalAmount: "sub_total_amount",
+  SplitAccountId: "split_account_id",
+  PaymentMethod: "payment_method",
+  PaymentTerms: "payment_terms",
+  CustomerMessage: "customer_message",
+  Type: "type",
+  Lineitems: "lineitems",
+  Currency: "currency",
+  Contacts: "contacts",
+  Raw: "raw",
+} as const;
+export type CreateAccountingTransactionQueryParamFields = ClosedEnum<
+  typeof CreateAccountingTransactionQueryParamFields
+>;
 
 export type CreateAccountingTransactionRequest = {
   accountingTransaction: shared.AccountingTransaction;
@@ -15,12 +41,17 @@ export type CreateAccountingTransactionRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAccountingTransactionQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAccountingTransactionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof CreateAccountingTransactionQueryParamFields> = z
+    .nativeEnum(CreateAccountingTransactionQueryParamFields);
 
 /** @internal */
 export type CreateAccountingTransactionRequest$Outbound = {
@@ -38,7 +69,8 @@ export const CreateAccountingTransactionRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingTransaction: shared.AccountingTransaction$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAccountingTransactionQueryParamFields$outboundSchema)
+    .optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

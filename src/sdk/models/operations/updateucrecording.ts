@@ -4,7 +4,28 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateUcRecordingQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  ExpiresAt: "expires_at",
+  CallId: "call_id",
+  WebUrl: "web_url",
+  ContactId: "contact_id",
+  ContactName: "contact_name",
+  ContactPhone: "contact_phone",
+  UserId: "user_id",
+  Media: "media",
+  Raw: "raw",
+} as const;
+export type UpdateUcRecordingQueryParamFields = ClosedEnum<
+  typeof UpdateUcRecordingQueryParamFields
+>;
 
 export type UpdateUcRecordingRequest = {
   ucRecording: shared.UcRecording;
@@ -15,7 +36,7 @@ export type UpdateUcRecordingRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateUcRecordingQueryParamFields> | undefined;
   /**
    * ID of the Recording
    */
@@ -25,6 +46,11 @@ export type UpdateUcRecordingRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateUcRecordingQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateUcRecordingQueryParamFields
+> = z.nativeEnum(UpdateUcRecordingQueryParamFields);
 
 /** @internal */
 export type UpdateUcRecordingRequest$Outbound = {
@@ -43,7 +69,7 @@ export const UpdateUcRecordingRequest$outboundSchema: z.ZodType<
 > = z.object({
   ucRecording: shared.UcRecording$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateUcRecordingQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

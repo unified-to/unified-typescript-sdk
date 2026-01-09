@@ -4,7 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateCrmLeadQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  UserId: "user_id",
+  CreatorUserId: "creator_user_id",
+  ContactId: "contact_id",
+  CompanyId: "company_id",
+  CompanyName: "company_name",
+  IsActive: "is_active",
+  Address: "address",
+  Emails: "emails",
+  Telephones: "telephones",
+  Source: "source",
+  Status: "status",
+  LinkUrls: "link_urls",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type CreateCrmLeadQueryParamFields = ClosedEnum<
+  typeof CreateCrmLeadQueryParamFields
+>;
 
 export type CreateCrmLeadRequest = {
   crmLead: shared.CrmLead;
@@ -15,12 +42,17 @@ export type CreateCrmLeadRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateCrmLeadQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateCrmLeadQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateCrmLeadQueryParamFields
+> = z.nativeEnum(CreateCrmLeadQueryParamFields);
 
 /** @internal */
 export type CreateCrmLeadRequest$Outbound = {
@@ -38,7 +70,7 @@ export const CreateCrmLeadRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmLead: shared.CrmLead$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateCrmLeadQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

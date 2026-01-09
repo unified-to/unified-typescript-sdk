@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListAccountingJournalsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Reference: "reference",
+  TaxAmount: "tax_amount",
+  Currency: "currency",
+  Lineitems: "lineitems",
+  TaxrateId: "taxrate_id",
+  Description: "description",
+  PostedAt: "posted_at",
+  Raw: "raw",
+} as const;
+export type ListAccountingJournalsQueryParamFields = ClosedEnum<
+  typeof ListAccountingJournalsQueryParamFields
+>;
 
 export type ListAccountingJournalsRequest = {
   /**
@@ -13,12 +31,12 @@ export type ListAccountingJournalsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListAccountingJournalsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The org ID to filter by
+   * The org ID to filter by (reference to AccountingOrganization)
    */
   orgId?: string | undefined;
   /**
@@ -31,10 +49,16 @@ export type ListAccountingJournalsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListAccountingJournalsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListAccountingJournalsQueryParamFields> = z.nativeEnum(
+    ListAccountingJournalsQueryParamFields,
+  );
 
 /** @internal */
 export type ListAccountingJournalsRequest$Outbound = {
@@ -57,7 +81,8 @@ export const ListAccountingJournalsRequest$outboundSchema: z.ZodType<
   ListAccountingJournalsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListAccountingJournalsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

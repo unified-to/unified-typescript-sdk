@@ -4,6 +4,23 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListMartechListsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  UserId: "user_id",
+  IsActive: "is_active",
+  Raw: "raw",
+} as const;
+export type ListMartechListsQueryParamFields = ClosedEnum<
+  typeof ListMartechListsQueryParamFields
+>;
 
 export type ListMartechListsRequest = {
   /**
@@ -13,7 +30,7 @@ export type ListMartechListsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListMartechListsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +44,15 @@ export type ListMartechListsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListMartechListsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListMartechListsQueryParamFields
+> = z.nativeEnum(ListMartechListsQueryParamFields);
 
 /** @internal */
 export type ListMartechListsRequest$Outbound = {
@@ -52,7 +74,7 @@ export const ListMartechListsRequest$outboundSchema: z.ZodType<
   ListMartechListsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListMartechListsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

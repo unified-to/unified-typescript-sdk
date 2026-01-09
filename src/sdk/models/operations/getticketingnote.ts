@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetTicketingNoteQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  CustomerId: "customer_id",
+  Description: "description",
+  TicketId: "ticket_id",
+  UserId: "user_id",
+  Raw: "raw",
+} as const;
+export type GetTicketingNoteQueryParamFields = ClosedEnum<
+  typeof GetTicketingNoteQueryParamFields
+>;
 
 export type GetTicketingNoteRequest = {
   /**
@@ -13,7 +28,7 @@ export type GetTicketingNoteRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetTicketingNoteQueryParamFields> | undefined;
   /**
    * ID of the Note
    */
@@ -23,6 +38,11 @@ export type GetTicketingNoteRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetTicketingNoteQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetTicketingNoteQueryParamFields
+> = z.nativeEnum(GetTicketingNoteQueryParamFields);
 
 /** @internal */
 export type GetTicketingNoteRequest$Outbound = {
@@ -39,7 +59,7 @@ export const GetTicketingNoteRequest$outboundSchema: z.ZodType<
   GetTicketingNoteRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetTicketingNoteQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

@@ -4,6 +4,21 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListPaymentPayoutsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  TotalAmount: "total_amount",
+  Currency: "currency",
+  Notes: "notes",
+  Status: "status",
+  Raw: "raw",
+} as const;
+export type ListPaymentPayoutsQueryParamFields = ClosedEnum<
+  typeof ListPaymentPayoutsQueryParamFields
+>;
 
 export type ListPaymentPayoutsRequest = {
   /**
@@ -13,7 +28,7 @@ export type ListPaymentPayoutsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListPaymentPayoutsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +42,15 @@ export type ListPaymentPayoutsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListPaymentPayoutsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListPaymentPayoutsQueryParamFields
+> = z.nativeEnum(ListPaymentPayoutsQueryParamFields);
 
 /** @internal */
 export type ListPaymentPayoutsRequest$Outbound = {
@@ -52,7 +72,7 @@ export const ListPaymentPayoutsRequest$outboundSchema: z.ZodType<
   ListPaymentPayoutsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListPaymentPayoutsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

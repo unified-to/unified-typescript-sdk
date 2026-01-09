@@ -4,6 +4,24 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetLmsStudentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Telephones: "telephones",
+  Address: "address",
+  ImageUrl: "image_url",
+  Raw: "raw",
+} as const;
+export type GetLmsStudentQueryParamFields = ClosedEnum<
+  typeof GetLmsStudentQueryParamFields
+>;
 
 export type GetLmsStudentRequest = {
   /**
@@ -13,7 +31,7 @@ export type GetLmsStudentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<GetLmsStudentQueryParamFields> | undefined;
   /**
    * ID of the Student
    */
@@ -23,6 +41,11 @@ export type GetLmsStudentRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const GetLmsStudentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof GetLmsStudentQueryParamFields
+> = z.nativeEnum(GetLmsStudentQueryParamFields);
 
 /** @internal */
 export type GetLmsStudentRequest$Outbound = {
@@ -39,7 +62,7 @@ export const GetLmsStudentRequest$outboundSchema: z.ZodType<
   GetLmsStudentRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(GetLmsStudentQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

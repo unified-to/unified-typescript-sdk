@@ -4,7 +4,35 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateTaskTaskQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  ProjectId: "project_id",
+  ParentId: "parent_id",
+  CompletedAt: "completed_at",
+  Status: "status",
+  Notes: "notes",
+  DueAt: "due_at",
+  Priority: "priority",
+  AssignedUserIds: "assigned_user_ids",
+  CreatorUserId: "creator_user_id",
+  FollowerUserIds: "follower_user_ids",
+  GroupIds: "group_ids",
+  Tags: "tags",
+  Url: "url",
+  AttachmentIds: "attachment_ids",
+  Metadata: "metadata",
+  HasChildren: "has_children",
+  Raw: "raw",
+} as const;
+export type UpdateTaskTaskQueryParamFields = ClosedEnum<
+  typeof UpdateTaskTaskQueryParamFields
+>;
 
 export type UpdateTaskTaskRequest = {
   taskTask: shared.TaskTask;
@@ -15,7 +43,7 @@ export type UpdateTaskTaskRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateTaskTaskQueryParamFields> | undefined;
   /**
    * ID of the Task
    */
@@ -25,6 +53,11 @@ export type UpdateTaskTaskRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateTaskTaskQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateTaskTaskQueryParamFields
+> = z.nativeEnum(UpdateTaskTaskQueryParamFields);
 
 /** @internal */
 export type UpdateTaskTaskRequest$Outbound = {
@@ -43,7 +76,7 @@ export const UpdateTaskTaskRequest$outboundSchema: z.ZodType<
 > = z.object({
   taskTask: shared.TaskTask$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateTaskTaskQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

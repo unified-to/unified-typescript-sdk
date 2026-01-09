@@ -4,10 +4,43 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListMessagingMessagesQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  ChannelId: "channel_id",
+  ChannelIds: "channel_ids",
+  Channels: "channels",
+  ParentId: "parent_id",
+  ParentMessageId: "parent_message_id",
+  RootMessageId: "root_message_id",
+  MessageThreadIdentifier: "message_thread_identifier",
+  AuthorMember: "author_member",
+  DestinationMembers: "destination_members",
+  HiddenMembers: "hidden_members",
+  MentionedMembers: "mentioned_members",
+  Reactions: "reactions",
+  Subject: "subject",
+  Message: "message",
+  MessageHtml: "message_html",
+  MessageMarkdown: "message_markdown",
+  Attachments: "attachments",
+  WebUrl: "web_url",
+  Reference: "reference",
+  HasChildren: "has_children",
+  IsUnread: "is_unread",
+  Buttons: "buttons",
+  Raw: "raw",
+} as const;
+export type ListMessagingMessagesQueryParamFields = ClosedEnum<
+  typeof ListMessagingMessagesQueryParamFields
+>;
 
 export type ListMessagingMessagesRequest = {
   /**
-   * The channel ID to filter by. You can also use these aliases; INBOX, SENT or DRAFT
+   * The channel ID to filter by. You can also use these aliases; INBOX, SENT or DRAFT (reference to MessagingChannel)
    */
   channelId?: string | undefined;
   /**
@@ -15,11 +48,7 @@ export type ListMessagingMessagesRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
@@ -29,7 +58,7 @@ export type ListMessagingMessagesRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListMessagingMessagesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -47,16 +76,16 @@ export type ListMessagingMessagesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   type?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
   /**
@@ -66,10 +95,15 @@ export type ListMessagingMessagesRequest = {
 };
 
 /** @internal */
+export const ListMessagingMessagesQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListMessagingMessagesQueryParamFields> = z.nativeEnum(
+    ListMessagingMessagesQueryParamFields,
+  );
+
+/** @internal */
 export type ListMessagingMessagesRequest$Outbound = {
   channel_id?: string | undefined;
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   expand?: boolean | undefined;
   fields?: Array<string> | undefined;
@@ -95,10 +129,10 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
 > = z.object({
   channelId: z.string().optional(),
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
   expand: z.boolean().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListMessagingMessagesQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -115,7 +149,6 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     channelId: "channel_id",
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
     parentId: "parent_id",
     startGte: "start_gte",

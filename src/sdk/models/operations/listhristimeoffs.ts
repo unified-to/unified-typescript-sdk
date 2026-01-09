@@ -4,10 +4,31 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListHrisTimeoffsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  UserId: "user_id",
+  CompanyId: "company_id",
+  StartAt: "start_at",
+  EndAt: "end_at",
+  IsPaid: "is_paid",
+  Status: "status",
+  ApproverUserId: "approver_user_id",
+  ApprovedAt: "approved_at",
+  Comments: "comments",
+  Raw: "raw",
+  Reason: "reason",
+} as const;
+export type ListHrisTimeoffsQueryParamFields = ClosedEnum<
+  typeof ListHrisTimeoffsQueryParamFields
+>;
 
 export type ListHrisTimeoffsRequest = {
   /**
-   * The company ID to filter by
+   * The company ID to filter by (reference to HrisCompany)
    */
   companyId?: string | undefined;
   /**
@@ -15,17 +36,13 @@ export type ListHrisTimeoffsRequest = {
    */
   connectionId: string;
   /**
-   * The end date to filter by (deprecated)
-   */
-  endLe?: string | undefined;
-  /**
-   * The end date to filter by
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListHrisTimeoffsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -39,24 +56,28 @@ export type ListHrisTimeoffsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The start date to filter by
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
   /**
-   * The user/employee ID to filter by
+   * The user/employee ID to filter by (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };
 
 /** @internal */
+export const ListHrisTimeoffsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisTimeoffsQueryParamFields
+> = z.nativeEnum(ListHrisTimeoffsQueryParamFields);
+
+/** @internal */
 export type ListHrisTimeoffsRequest$Outbound = {
   company_id?: string | undefined;
   connection_id: string;
-  end_le?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -78,9 +99,8 @@ export const ListHrisTimeoffsRequest$outboundSchema: z.ZodType<
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
-  endLe: z.string().optional(),
   endLt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListHrisTimeoffsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -94,7 +114,6 @@ export const ListHrisTimeoffsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     companyId: "company_id",
     connectionId: "connection_id",
-    endLe: "end_le",
     endLt: "end_lt",
     startGte: "start_gte",
     updatedGte: "updated_gte",

@@ -4,7 +4,34 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateHrisDeviceQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  AssetTag: "asset_tag",
+  Version: "version",
+  Manufacturer: "manufacturer",
+  Model: "model",
+  Os: "os",
+  OsVersion: "os_version",
+  UserIds: "user_ids",
+  AdminUserIds: "admin_user_ids",
+  LocationId: "location_id",
+  HasAntivirus: "has_antivirus",
+  HasPasswordManager: "has_password_manager",
+  HasFirewall: "has_firewall",
+  HasHdEncrypted: "has_hd_encrypted",
+  HasScreenlock: "has_screenlock",
+  IsMissing: "is_missing",
+  Raw: "raw",
+} as const;
+export type UpdateHrisDeviceQueryParamFields = ClosedEnum<
+  typeof UpdateHrisDeviceQueryParamFields
+>;
 
 export type UpdateHrisDeviceRequest = {
   hrisDevice: shared.HrisDevice;
@@ -15,7 +42,7 @@ export type UpdateHrisDeviceRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateHrisDeviceQueryParamFields> | undefined;
   /**
    * ID of the Device
    */
@@ -25,6 +52,11 @@ export type UpdateHrisDeviceRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateHrisDeviceQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof UpdateHrisDeviceQueryParamFields
+> = z.nativeEnum(UpdateHrisDeviceQueryParamFields);
 
 /** @internal */
 export type UpdateHrisDeviceRequest$Outbound = {
@@ -43,7 +75,7 @@ export const UpdateHrisDeviceRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisDevice: shared.HrisDevice$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateHrisDeviceQueryParamFields$outboundSchema).optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

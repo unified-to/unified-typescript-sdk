@@ -4,7 +4,40 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAtsCandidateQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
+  Emails: "emails",
+  Title: "title",
+  Telephones: "telephones",
+  CompanyName: "company_name",
+  ImageUrl: "image_url",
+  Tags: "tags",
+  Address: "address",
+  ExternalIdentifier: "external_identifier",
+  LinkUrls: "link_urls",
+  Origin: "origin",
+  CompanyId: "company_id",
+  Sources: "sources",
+  DateOfBirth: "date_of_birth",
+  UserId: "user_id",
+  WebUrl: "web_url",
+  Experiences: "experiences",
+  Education: "education",
+  Skills: "skills",
+  Metadata: "metadata",
+  Raw: "raw",
+} as const;
+export type CreateAtsCandidateQueryParamFields = ClosedEnum<
+  typeof CreateAtsCandidateQueryParamFields
+>;
 
 export type CreateAtsCandidateRequest = {
   atsCandidate: shared.AtsCandidate;
@@ -15,12 +48,17 @@ export type CreateAtsCandidateRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAtsCandidateQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAtsCandidateQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateAtsCandidateQueryParamFields
+> = z.nativeEnum(CreateAtsCandidateQueryParamFields);
 
 /** @internal */
 export type CreateAtsCandidateRequest$Outbound = {
@@ -38,7 +76,7 @@ export const CreateAtsCandidateRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsCandidate: shared.AtsCandidate$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAtsCandidateQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

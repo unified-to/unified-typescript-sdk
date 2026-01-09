@@ -4,7 +4,27 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const UpdateAccountingPurchaseorderQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  PostedAt: "posted_at",
+  ContactId: "contact_id",
+  AccountId: "account_id",
+  Currency: "currency",
+  TotalAmount: "total_amount",
+  ShippingAddress: "shipping_address",
+  BillingAddress: "billing_address",
+  Status: "status",
+  Lineitems: "lineitems",
+  Raw: "raw",
+} as const;
+export type UpdateAccountingPurchaseorderQueryParamFields = ClosedEnum<
+  typeof UpdateAccountingPurchaseorderQueryParamFields
+>;
 
 export type UpdateAccountingPurchaseorderRequest = {
   accountingPurchaseorder: shared.AccountingPurchaseorder;
@@ -15,7 +35,7 @@ export type UpdateAccountingPurchaseorderRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<UpdateAccountingPurchaseorderQueryParamFields> | undefined;
   /**
    * ID of the Purchaseorder
    */
@@ -25,6 +45,11 @@ export type UpdateAccountingPurchaseorderRequest = {
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const UpdateAccountingPurchaseorderQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof UpdateAccountingPurchaseorderQueryParamFields> = z
+    .nativeEnum(UpdateAccountingPurchaseorderQueryParamFields);
 
 /** @internal */
 export type UpdateAccountingPurchaseorderRequest$Outbound = {
@@ -43,7 +68,8 @@ export const UpdateAccountingPurchaseorderRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingPurchaseorder: shared.AccountingPurchaseorder$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(UpdateAccountingPurchaseorderQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
   raw: z.string().optional(),
 }).transform((v) => {

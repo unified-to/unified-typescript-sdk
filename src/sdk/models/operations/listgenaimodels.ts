@@ -4,6 +4,20 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ListGenaiModelsQueryParamFields = {
+  Id: "id",
+  Name: "name",
+  Description: "description",
+  MaxTokens: "max_tokens",
+  WebUrl: "web_url",
+  HasTemperature: "has_temperature",
+  Raw: "raw",
+} as const;
+export type ListGenaiModelsQueryParamFields = ClosedEnum<
+  typeof ListGenaiModelsQueryParamFields
+>;
 
 export type ListGenaiModelsRequest = {
   /**
@@ -13,7 +27,7 @@ export type ListGenaiModelsRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<ListGenaiModelsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -27,10 +41,15 @@ export type ListGenaiModelsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * Return only results whose updated date is equal or greater to this value
+   * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
 };
+
+/** @internal */
+export const ListGenaiModelsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListGenaiModelsQueryParamFields
+> = z.nativeEnum(ListGenaiModelsQueryParamFields);
 
 /** @internal */
 export type ListGenaiModelsRequest$Outbound = {
@@ -52,7 +71,7 @@ export const ListGenaiModelsRequest$outboundSchema: z.ZodType<
   ListGenaiModelsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(ListGenaiModelsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

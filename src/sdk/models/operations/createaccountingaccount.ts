@@ -4,7 +4,30 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const Fields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  Name: "name",
+  Description: "description",
+  Type: "type",
+  Status: "status",
+  Balance: "balance",
+  Currency: "currency",
+  CustomerDefinedCode: "customer_defined_code",
+  IsPayable: "is_payable",
+  ParentAccountId: "parent_account_id",
+  Section: "section",
+  Subsection: "subsection",
+  Group: "group",
+  Subgroup: "subgroup",
+  ParentId: "parent_id",
+  Raw: "raw",
+} as const;
+export type Fields = ClosedEnum<typeof Fields>;
 
 export type CreateAccountingAccountRequest = {
   /**
@@ -18,12 +41,16 @@ export type CreateAccountingAccountRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<Fields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const Fields$outboundSchema: z.ZodNativeEnum<typeof Fields> = z
+  .nativeEnum(Fields);
 
 /** @internal */
 export type CreateAccountingAccountRequest$Outbound = {
@@ -41,7 +68,7 @@ export const CreateAccountingAccountRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingAccount: shared.AccountingAccount$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(Fields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

@@ -4,7 +4,26 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
+
+export const CreateAtsDocumentQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  DocumentUrl: "document_url",
+  DocumentData: "document_data",
+  Filename: "filename",
+  Type: "type",
+  CandidateId: "candidate_id",
+  ApplicationId: "application_id",
+  JobId: "job_id",
+  UserId: "user_id",
+  Raw: "raw",
+} as const;
+export type CreateAtsDocumentQueryParamFields = ClosedEnum<
+  typeof CreateAtsDocumentQueryParamFields
+>;
 
 export type CreateAtsDocumentRequest = {
   atsDocument: shared.AtsDocument;
@@ -15,12 +34,17 @@ export type CreateAtsDocumentRequest = {
   /**
    * Comma-delimited fields to return
    */
-  fields?: Array<string> | undefined;
+  fields?: Array<CreateAtsDocumentQueryParamFields> | undefined;
   /**
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
 };
+
+/** @internal */
+export const CreateAtsDocumentQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof CreateAtsDocumentQueryParamFields
+> = z.nativeEnum(CreateAtsDocumentQueryParamFields);
 
 /** @internal */
 export type CreateAtsDocumentRequest$Outbound = {
@@ -38,7 +62,7 @@ export const CreateAtsDocumentRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsDocument: shared.AtsDocument$outboundSchema,
   connectionId: z.string(),
-  fields: z.array(z.string()).optional(),
+  fields: z.array(CreateAtsDocumentQueryParamFields$outboundSchema).optional(),
   raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
