@@ -36,7 +36,7 @@ export type CreateHrisLocationRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateHrisLocationQueryParamFields> | undefined;
   /**

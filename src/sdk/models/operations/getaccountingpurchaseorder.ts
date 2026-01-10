@@ -31,7 +31,7 @@ export type GetAccountingPurchaseorderRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAccountingPurchaseorderQueryParamFields> | undefined;
   /**

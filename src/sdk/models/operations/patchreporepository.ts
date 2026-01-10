@@ -30,7 +30,7 @@ export type PatchRepoRepositoryRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchRepoRepositoryQueryParamFields> | undefined;
   /**

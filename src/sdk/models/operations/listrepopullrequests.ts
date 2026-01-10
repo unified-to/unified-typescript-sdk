@@ -28,7 +28,7 @@ export type ListRepoPullrequestsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListRepoPullrequestsQueryParamFields> | undefined;
   limit?: number | undefined;

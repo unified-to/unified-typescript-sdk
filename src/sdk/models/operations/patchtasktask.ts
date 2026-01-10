@@ -41,7 +41,7 @@ export type PatchTaskTaskRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchTaskTaskQueryParamFields> | undefined;
   /**

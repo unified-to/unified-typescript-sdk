@@ -41,7 +41,7 @@ export type UpdateCrmEventRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateCrmEventQueryParamFields> | undefined;
   /**

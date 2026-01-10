@@ -11,5 +11,5 @@ let value: UpdateKmsSpaceQueryParamFields = "user_id";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "parent_space_id" | "parent_id" | "is_active" | "user_id" | "parent_page_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "parent_id" | "is_active" | "user_id" | "parent_page_id" | "raw"
 ```

@@ -36,7 +36,7 @@ export type ListCalendarRecordingsRequest = {
    */
   eventId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCalendarRecordingsQueryParamFields> | undefined;
   limit?: number | undefined;

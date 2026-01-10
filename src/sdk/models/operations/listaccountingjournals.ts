@@ -29,7 +29,7 @@ export type ListAccountingJournalsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingJournalsQueryParamFields> | undefined;
   limit?: number | undefined;

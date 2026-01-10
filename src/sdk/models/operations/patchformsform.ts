@@ -35,7 +35,7 @@ export type PatchFormsFormRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchFormsFormQueryParamFields> | undefined;
   /**

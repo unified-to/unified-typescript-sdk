@@ -31,7 +31,7 @@ export type CreateCalendarLinkRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateCalendarLinkQueryParamFields> | undefined;
   /**

@@ -44,7 +44,7 @@ export type UpdateCalendarEventRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateCalendarEventQueryParamFields> | undefined;
   /**

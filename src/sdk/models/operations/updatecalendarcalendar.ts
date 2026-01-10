@@ -14,7 +14,6 @@ export const UpdateCalendarCalendarQueryParamFields = {
   Name: "name",
   Description: "description",
   Timezone: "timezone",
-  Primary: "primary",
   IsPrimary: "is_primary",
   Raw: "raw",
 } as const;
@@ -29,7 +28,7 @@ export type UpdateCalendarCalendarRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateCalendarCalendarQueryParamFields> | undefined;
   /**

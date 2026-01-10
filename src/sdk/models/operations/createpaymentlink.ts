@@ -33,7 +33,7 @@ export type CreatePaymentLinkRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreatePaymentLinkQueryParamFields> | undefined;
   /**

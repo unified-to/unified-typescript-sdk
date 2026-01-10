@@ -13,7 +13,6 @@ export const ListCalendarCalendarsQueryParamFields = {
   Name: "name",
   Description: "description",
   Timezone: "timezone",
-  Primary: "primary",
   IsPrimary: "is_primary",
   Raw: "raw",
 } as const;
@@ -27,7 +26,7 @@ export type ListCalendarCalendarsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCalendarCalendarsQueryParamFields> | undefined;
   limit?: number | undefined;

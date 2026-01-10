@@ -26,7 +26,7 @@ export type ListFormsSubmissionsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListFormsSubmissionsQueryParamFields> | undefined;
   /**

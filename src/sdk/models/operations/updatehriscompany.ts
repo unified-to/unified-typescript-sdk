@@ -27,7 +27,7 @@ export type UpdateHrisCompanyRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateHrisCompanyQueryParamFields> | undefined;
   /**

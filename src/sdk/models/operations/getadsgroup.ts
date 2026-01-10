@@ -32,7 +32,7 @@ export type GetAdsGroupRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAdsGroupQueryParamFields> | undefined;
   /**

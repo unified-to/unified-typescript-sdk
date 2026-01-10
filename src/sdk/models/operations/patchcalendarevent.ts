@@ -44,7 +44,7 @@ export type PatchCalendarEventRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchCalendarEventQueryParamFields> | undefined;
   /**

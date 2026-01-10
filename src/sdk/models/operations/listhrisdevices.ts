@@ -38,7 +38,7 @@ export type ListHrisDevicesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListHrisDevicesQueryParamFields> | undefined;
   limit?: number | undefined;

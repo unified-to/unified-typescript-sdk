@@ -32,7 +32,7 @@ export type ListAccountingOrdersRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingOrdersQueryParamFields> | undefined;
   limit?: number | undefined;

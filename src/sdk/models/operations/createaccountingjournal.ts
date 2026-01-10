@@ -31,7 +31,7 @@ export type CreateAccountingJournalRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAccountingJournalQueryParamFields> | undefined;
   /**

@@ -36,7 +36,7 @@ export type ListVerificationPackagesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListVerificationPackagesQueryParamFields> | undefined;
   limit?: number | undefined;

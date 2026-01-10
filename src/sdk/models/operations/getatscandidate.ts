@@ -44,7 +44,7 @@ export type GetAtsCandidateRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAtsCandidateQueryParamFields> | undefined;
   /**

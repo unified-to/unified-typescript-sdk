@@ -15,7 +15,6 @@ export const PatchAccountingTransactionQueryParamFields = {
   TotalAmount: "total_amount",
   TaxAmount: "tax_amount",
   AccountId: "account_id",
-  ContactId: "contact_id",
   Reference: "reference",
   SubTotalAmount: "sub_total_amount",
   SplitAccountId: "split_account_id",
@@ -39,7 +38,7 @@ export type PatchAccountingTransactionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAccountingTransactionQueryParamFields> | undefined;
   /**

@@ -34,7 +34,7 @@ export type PatchAccountingSalesorderRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAccountingSalesorderQueryParamFields> | undefined;
   /**

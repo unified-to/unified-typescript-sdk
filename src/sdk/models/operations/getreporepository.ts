@@ -28,7 +28,7 @@ export type GetRepoRepositoryRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetRepoRepositoryQueryParamFields> | undefined;
   /**

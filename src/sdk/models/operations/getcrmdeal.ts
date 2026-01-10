@@ -40,7 +40,7 @@ export type GetCrmDealRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetCrmDealQueryParamFields> | undefined;
   /**

@@ -25,7 +25,7 @@ export type ListGenaiModelsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListGenaiModelsQueryParamFields> | undefined;
   limit?: number | undefined;

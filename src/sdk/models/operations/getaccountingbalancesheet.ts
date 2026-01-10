@@ -30,7 +30,7 @@ export type GetAccountingBalancesheetRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAccountingBalancesheetQueryParamFields> | undefined;
   /**

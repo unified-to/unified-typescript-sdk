@@ -37,7 +37,7 @@ export type UpdateTicketingTicketRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateTicketingTicketQueryParamFields> | undefined;
   /**

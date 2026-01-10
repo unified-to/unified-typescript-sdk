@@ -26,7 +26,7 @@ export type ListAccountingCategoriesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingCategoriesQueryParamFields> | undefined;
   limit?: number | undefined;

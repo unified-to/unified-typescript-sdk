@@ -39,7 +39,7 @@ export type CreateHrisBenefitRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateHrisBenefitQueryParamFields> | undefined;
   /**

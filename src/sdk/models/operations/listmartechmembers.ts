@@ -28,7 +28,7 @@ export type ListMartechMembersRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListMartechMembersQueryParamFields> | undefined;
   limit?: number | undefined;

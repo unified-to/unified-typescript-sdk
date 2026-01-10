@@ -27,7 +27,7 @@ export type PatchUcCommentRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchUcCommentQueryParamFields> | undefined;
   /**

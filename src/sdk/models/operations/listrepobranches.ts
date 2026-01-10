@@ -24,7 +24,7 @@ export type ListRepoBranchesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListRepoBranchesQueryParamFields> | undefined;
   limit?: number | undefined;

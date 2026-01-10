@@ -39,7 +39,7 @@ export type UpdateAtsActivityRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateAtsActivityQueryParamFields> | undefined;
   /**

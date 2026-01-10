@@ -31,7 +31,7 @@ export type ListAdsReportsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAdsReportsQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -42,7 +42,7 @@ export type CreateAccountingContactRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAccountingContactQueryParamFields> | undefined;
   /**

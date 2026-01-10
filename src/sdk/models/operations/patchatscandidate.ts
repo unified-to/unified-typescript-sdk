@@ -46,7 +46,7 @@ export type PatchAtsCandidateRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAtsCandidateQueryParamFields> | undefined;
   /**

@@ -39,7 +39,7 @@ export type PatchAtsActivityRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAtsActivityQueryParamFields> | undefined;
   /**

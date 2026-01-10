@@ -15,7 +15,6 @@ export const UpdateAccountingTransactionQueryParamFields = {
   TotalAmount: "total_amount",
   TaxAmount: "tax_amount",
   AccountId: "account_id",
-  ContactId: "contact_id",
   Reference: "reference",
   SubTotalAmount: "sub_total_amount",
   SplitAccountId: "split_account_id",
@@ -39,7 +38,7 @@ export type UpdateAccountingTransactionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateAccountingTransactionQueryParamFields> | undefined;
   /**

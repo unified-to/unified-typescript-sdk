@@ -34,7 +34,7 @@ export type PatchUcRecordingRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchUcRecordingQueryParamFields> | undefined;
   /**

@@ -54,7 +54,7 @@ export type ListCalendarEventsRequest = {
    */
   expand?: boolean | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCalendarEventsQueryParamFields> | undefined;
   limit?: number | undefined;

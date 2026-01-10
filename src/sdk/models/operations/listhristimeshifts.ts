@@ -41,7 +41,7 @@ export type ListHrisTimeshiftsRequest = {
    */
   endLt?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListHrisTimeshiftsQueryParamFields> | undefined;
   limit?: number | undefined;

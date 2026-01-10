@@ -48,7 +48,7 @@ export type ListAccountingCreditmemoesRequest = {
    */
   contactId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingCreditmemoesQueryParamFields> | undefined;
   limit?: number | undefined;

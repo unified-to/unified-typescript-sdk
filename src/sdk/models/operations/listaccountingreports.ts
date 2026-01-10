@@ -34,7 +34,7 @@ export type ListAccountingReportsRequest = {
    */
   endLt?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingReportsQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -32,7 +32,7 @@ export type UpdateHrisGroupRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateHrisGroupQueryParamFields> | undefined;
   /**

@@ -44,7 +44,7 @@ export type CreateCalendarEventRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateCalendarEventQueryParamFields> | undefined;
   /**

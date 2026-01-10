@@ -44,7 +44,7 @@ export type CreateCrmCompanyRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateCrmCompanyQueryParamFields> | undefined;
   /**

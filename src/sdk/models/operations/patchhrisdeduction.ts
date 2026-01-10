@@ -37,7 +37,7 @@ export type PatchHrisDeductionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchHrisDeductionQueryParamFields> | undefined;
   /**

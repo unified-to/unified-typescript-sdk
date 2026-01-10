@@ -54,6 +54,8 @@ export const PropertyConnectionPermissions = {
   PaymentSubscriptionWrite: "payment_subscription_write",
   CommerceItemRead: "commerce_item_read",
   CommerceItemWrite: "commerce_item_write",
+  CommerceItemvariantRead: "commerce_itemvariant_read",
+  CommerceItemvariantWrite: "commerce_itemvariant_write",
   CommerceCollectionRead: "commerce_collection_read",
   CommerceCollectionWrite: "commerce_collection_write",
   CommerceInventoryRead: "commerce_inventory_read",

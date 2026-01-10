@@ -22,7 +22,6 @@ import {
 
 export type AccountingTransaction = {
   accountId?: string | undefined;
-  contactId?: string | undefined;
   contacts?: Array<AccountingTransactionContact> | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -49,7 +48,6 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
-  contact_id: z.string().optional(),
   contacts: z.array(AccountingTransactionContact$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -72,7 +70,6 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
-    "contact_id": "contactId",
     "created_at": "createdAt",
     "customer_message": "customerMessage",
     "payment_method": "paymentMethod",
@@ -87,7 +84,6 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingTransaction$Outbound = {
   account_id?: string | undefined;
-  contact_id?: string | undefined;
   contacts?: Array<AccountingTransactionContact$Outbound> | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
@@ -114,7 +110,6 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
   AccountingTransaction
 > = z.object({
   accountId: z.string().optional(),
-  contactId: z.string().optional(),
   contacts: z.array(AccountingTransactionContact$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
@@ -135,7 +130,6 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
-    contactId: "contact_id",
     createdAt: "created_at",
     customerMessage: "customer_message",
     paymentMethod: "payment_method",

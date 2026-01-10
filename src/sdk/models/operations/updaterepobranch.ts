@@ -26,7 +26,7 @@ export type UpdateRepoBranchRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateRepoBranchQueryParamFields> | undefined;
   /**

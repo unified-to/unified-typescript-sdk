@@ -39,7 +39,7 @@ export type GetTaskTaskRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetTaskTaskQueryParamFields> | undefined;
   /**

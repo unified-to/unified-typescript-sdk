@@ -28,7 +28,7 @@ export type GetCalendarRecordingRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetCalendarRecordingQueryParamFields> | undefined;
   /**

@@ -48,7 +48,7 @@ export type ListAccountingBillsRequest = {
    */
   contactId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingBillsQueryParamFields> | undefined;
   limit?: number | undefined;

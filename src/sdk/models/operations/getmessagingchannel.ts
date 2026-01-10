@@ -31,7 +31,7 @@ export type GetMessagingChannelRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetMessagingChannelQueryParamFields> | undefined;
   /**

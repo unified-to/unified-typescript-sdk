@@ -29,7 +29,7 @@ export type PatchCrmPipelineRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchCrmPipelineQueryParamFields> | undefined;
   /**

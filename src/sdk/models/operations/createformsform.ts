@@ -35,7 +35,7 @@ export type CreateFormsFormRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateFormsFormQueryParamFields> | undefined;
   /**

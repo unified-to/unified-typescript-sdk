@@ -29,7 +29,7 @@ export type ListCommerceLocationsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCommerceLocationsQueryParamFields> | undefined;
   limit?: number | undefined;

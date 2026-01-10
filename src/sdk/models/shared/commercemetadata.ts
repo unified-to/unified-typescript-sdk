@@ -65,10 +65,8 @@ export type CommerceMetadata = {
   format?: CommerceMetadataFormat | undefined;
   id?: string | undefined;
   isRequired?: boolean | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -403,10 +401,8 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   format: CommerceMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
   is_required: z.boolean().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),
@@ -440,10 +436,8 @@ export type CommerceMetadata$Outbound = {
   format?: string | undefined;
   id?: string | undefined;
   is_required?: boolean | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -477,10 +471,8 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   format: CommerceMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
   isRequired: z.boolean().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),

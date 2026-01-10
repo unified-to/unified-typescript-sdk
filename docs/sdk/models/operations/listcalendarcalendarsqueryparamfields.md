@@ -11,5 +11,5 @@ let value: ListCalendarCalendarsQueryParamFields = "id";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "timezone" | "primary" | "is_primary" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "timezone" | "is_primary" | "raw"
 ```

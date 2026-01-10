@@ -43,7 +43,6 @@ export type AccountingAccount = {
   id?: string | undefined;
   isPayable?: boolean | undefined;
   name?: string | undefined;
-  parentAccountId?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   section?: string | undefined;
@@ -84,7 +83,6 @@ export const AccountingAccount$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_payable: z.boolean().optional(),
   name: z.string().optional(),
-  parent_account_id: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   section: z.string().optional(),
@@ -99,7 +97,6 @@ export const AccountingAccount$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "customer_defined_code": "customerDefinedCode",
     "is_payable": "isPayable",
-    "parent_account_id": "parentAccountId",
     "parent_id": "parentId",
     "updated_at": "updatedAt",
   });
@@ -115,7 +112,6 @@ export type AccountingAccount$Outbound = {
   id?: string | undefined;
   is_payable?: boolean | undefined;
   name?: string | undefined;
-  parent_account_id?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   section?: string | undefined;
@@ -141,7 +137,6 @@ export const AccountingAccount$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isPayable: z.boolean().optional(),
   name: z.string().optional(),
-  parentAccountId: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   section: z.string().optional(),
@@ -155,7 +150,6 @@ export const AccountingAccount$outboundSchema: z.ZodType<
     createdAt: "created_at",
     customerDefinedCode: "customer_defined_code",
     isPayable: "is_payable",
-    parentAccountId: "parent_account_id",
     parentId: "parent_id",
     updatedAt: "updated_at",
   });

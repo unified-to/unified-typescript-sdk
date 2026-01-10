@@ -30,7 +30,7 @@ export type GetPaymentPaymentRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetPaymentPaymentQueryParamFields> | undefined;
   /**

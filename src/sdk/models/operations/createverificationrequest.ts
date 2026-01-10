@@ -45,7 +45,7 @@ export type CreateVerificationRequestRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateVerificationRequestQueryParamFields> | undefined;
   /**

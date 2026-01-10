@@ -39,7 +39,7 @@ export type ListTaskTasksRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListTaskTasksQueryParamFields> | undefined;
   limit?: number | undefined;

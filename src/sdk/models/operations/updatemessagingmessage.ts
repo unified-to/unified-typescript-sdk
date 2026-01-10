@@ -46,7 +46,7 @@ export type UpdateMessagingMessageRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateMessagingMessageQueryParamFields> | undefined;
   /**

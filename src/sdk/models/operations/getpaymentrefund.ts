@@ -28,7 +28,7 @@ export type GetPaymentRefundRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetPaymentRefundQueryParamFields> | undefined;
   /**

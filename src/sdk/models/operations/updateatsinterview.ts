@@ -33,7 +33,7 @@ export type UpdateAtsInterviewRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateAtsInterviewQueryParamFields> | undefined;
   /**

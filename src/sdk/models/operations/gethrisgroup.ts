@@ -30,7 +30,7 @@ export type GetHrisGroupRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetHrisGroupQueryParamFields> | undefined;
   /**

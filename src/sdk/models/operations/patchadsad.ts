@@ -37,7 +37,7 @@ export type PatchAdsAdRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAdsAdQueryParamFields> | undefined;
   /**

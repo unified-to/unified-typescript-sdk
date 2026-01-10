@@ -25,7 +25,7 @@ export type ListTaskChangesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListTaskChangesQueryParamFields> | undefined;
   limit?: number | undefined;

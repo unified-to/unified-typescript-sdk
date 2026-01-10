@@ -39,7 +39,7 @@ export type ListTicketingTicketsRequest = {
    */
   customerId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListTicketingTicketsQueryParamFields> | undefined;
   limit?: number | undefined;

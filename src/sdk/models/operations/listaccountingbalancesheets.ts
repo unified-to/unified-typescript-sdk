@@ -42,7 +42,7 @@ export type ListAccountingBalancesheetsRequest = {
    */
   endLt?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingBalancesheetsQueryParamFields> | undefined;
   limit?: number | undefined;

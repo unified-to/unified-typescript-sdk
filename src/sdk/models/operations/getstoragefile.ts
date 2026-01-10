@@ -35,7 +35,7 @@ export type GetStorageFileRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetStorageFileQueryParamFields> | undefined;
   /**

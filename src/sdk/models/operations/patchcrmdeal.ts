@@ -45,7 +45,7 @@ export type PatchCrmDealRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchCrmDealQueryParamFields> | undefined;
   /**

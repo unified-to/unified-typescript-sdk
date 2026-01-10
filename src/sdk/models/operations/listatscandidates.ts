@@ -48,7 +48,7 @@ export type ListAtsCandidatesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAtsCandidatesQueryParamFields> | undefined;
   limit?: number | undefined;

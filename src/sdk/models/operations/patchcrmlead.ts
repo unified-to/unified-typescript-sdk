@@ -40,7 +40,7 @@ export type PatchCrmLeadRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchCrmLeadQueryParamFields> | undefined;
   /**

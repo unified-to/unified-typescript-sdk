@@ -35,7 +35,7 @@ export type ListCommerceCollectionsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCommerceCollectionsQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -46,7 +46,7 @@ export type ListPaymentSubscriptionsRequest = {
    */
   endLt?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListPaymentSubscriptionsQueryParamFields> | undefined;
   limit?: number | undefined;

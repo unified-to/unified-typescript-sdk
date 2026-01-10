@@ -28,7 +28,7 @@ export type UpdateCommerceSaleschannelRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateCommerceSaleschannelQueryParamFields> | undefined;
   /**

@@ -31,7 +31,7 @@ export type PatchMetadataMetadataRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchMetadataMetadataQueryParamFields> | undefined;
   /**

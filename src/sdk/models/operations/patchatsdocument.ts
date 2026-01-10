@@ -32,7 +32,7 @@ export type PatchAtsDocumentRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAtsDocumentQueryParamFields> | undefined;
   /**

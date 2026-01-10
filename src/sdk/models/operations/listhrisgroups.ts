@@ -34,7 +34,7 @@ export type ListHrisGroupsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListHrisGroupsQueryParamFields> | undefined;
   limit?: number | undefined;

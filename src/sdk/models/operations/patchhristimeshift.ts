@@ -35,7 +35,7 @@ export type PatchHrisTimeshiftRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchHrisTimeshiftQueryParamFields> | undefined;
   /**

@@ -28,7 +28,7 @@ export type UpdateTicketingCategoryRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateTicketingCategoryQueryParamFields> | undefined;
   /**

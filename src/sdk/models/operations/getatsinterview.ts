@@ -31,7 +31,7 @@ export type GetAtsInterviewRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAtsInterviewQueryParamFields> | undefined;
   /**

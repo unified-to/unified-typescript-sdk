@@ -29,7 +29,7 @@ export type PatchRepoOrganizationRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchRepoOrganizationQueryParamFields> | undefined;
   /**

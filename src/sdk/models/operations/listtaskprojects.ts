@@ -33,7 +33,7 @@ export type ListTaskProjectsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListTaskProjectsQueryParamFields> | undefined;
   limit?: number | undefined;

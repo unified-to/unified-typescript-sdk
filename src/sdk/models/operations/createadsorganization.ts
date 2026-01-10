@@ -28,7 +28,7 @@ export type CreateAdsOrganizationRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAdsOrganizationQueryParamFields> | undefined;
   /**

@@ -31,7 +31,7 @@ export type UpdateLmsStudentRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateLmsStudentQueryParamFields> | undefined;
   /**

@@ -46,7 +46,7 @@ export type PatchAccountingCreditmemoRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAccountingCreditmemoQueryParamFields> | undefined;
   /**

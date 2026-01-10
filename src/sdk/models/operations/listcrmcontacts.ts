@@ -45,7 +45,7 @@ export type ListCrmContactsRequest = {
    */
   dealId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCrmContactsQueryParamFields> | undefined;
   limit?: number | undefined;

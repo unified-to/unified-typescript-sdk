@@ -27,7 +27,7 @@ export type CreateHrisCompanyRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateHrisCompanyQueryParamFields> | undefined;
   /**

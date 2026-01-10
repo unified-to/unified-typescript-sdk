@@ -14,7 +14,6 @@ export const ListAccountingTransactionsQueryParamFields = {
   TotalAmount: "total_amount",
   TaxAmount: "tax_amount",
   AccountId: "account_id",
-  ContactId: "contact_id",
   Reference: "reference",
   SubTotalAmount: "sub_total_amount",
   SplitAccountId: "split_account_id",
@@ -41,7 +40,7 @@ export type ListAccountingTransactionsRequest = {
    */
   contactId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingTransactionsQueryParamFields> | undefined;
   limit?: number | undefined;

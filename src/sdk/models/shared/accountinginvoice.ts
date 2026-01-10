@@ -61,7 +61,6 @@ export type AccountingInvoice = {
   discountAmount?: number | undefined;
   dueAt?: Date | undefined;
   id?: string | undefined;
-  invoiceAt?: Date | undefined;
   invoiceNumber?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   notes?: string | undefined;
@@ -143,8 +142,6 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
-  invoice_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
   invoice_number: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   notes: z.string().optional(),
@@ -177,7 +174,6 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "due_at": "dueAt",
-    "invoice_at": "invoiceAt",
     "invoice_number": "invoiceNumber",
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
@@ -202,7 +198,6 @@ export type AccountingInvoice$Outbound = {
   discount_amount?: number | undefined;
   due_at?: string | undefined;
   id?: string | undefined;
-  invoice_at?: string | undefined;
   invoice_number?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   notes?: string | undefined;
@@ -239,7 +234,6 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   discountAmount: z.number().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
-  invoiceAt: z.date().transform(v => v.toISOString()).optional(),
   invoiceNumber: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   notes: z.string().optional(),
@@ -268,7 +262,6 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     createdAt: "created_at",
     discountAmount: "discount_amount",
     dueAt: "due_at",
-    invoiceAt: "invoice_at",
     invoiceNumber: "invoice_number",
     paidAmount: "paid_amount",
     paidAt: "paid_at",

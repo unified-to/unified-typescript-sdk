@@ -34,7 +34,7 @@ export type CreateAccountingOrderRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAccountingOrderQueryParamFields> | undefined;
   /**

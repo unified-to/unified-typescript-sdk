@@ -30,7 +30,7 @@ export type ListTicketingNotesRequest = {
    */
   customerId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListTicketingNotesQueryParamFields> | undefined;
   limit?: number | undefined;

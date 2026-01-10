@@ -40,7 +40,7 @@ export type GetAccountingContactRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAccountingContactQueryParamFields> | undefined;
   /**

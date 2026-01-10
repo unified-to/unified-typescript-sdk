@@ -28,7 +28,7 @@ export type ListPaymentRefundsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListPaymentRefundsQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -38,7 +38,7 @@ export type ListHrisLocationsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListHrisLocationsQueryParamFields> | undefined;
   limit?: number | undefined;

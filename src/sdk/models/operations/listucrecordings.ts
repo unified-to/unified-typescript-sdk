@@ -44,7 +44,7 @@ export type ListUcRecordingsRequest = {
    */
   endLt?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListUcRecordingsQueryParamFields> | undefined;
   limit?: number | undefined;

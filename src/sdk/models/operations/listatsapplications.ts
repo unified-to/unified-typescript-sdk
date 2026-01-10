@@ -43,7 +43,7 @@ export type ListAtsApplicationsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAtsApplicationsQueryParamFields> | undefined;
   /**

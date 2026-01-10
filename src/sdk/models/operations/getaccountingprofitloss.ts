@@ -39,7 +39,7 @@ export type GetAccountingProfitlossRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAccountingProfitlossQueryParamFields> | undefined;
   /**

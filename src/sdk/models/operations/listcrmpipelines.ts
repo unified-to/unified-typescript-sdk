@@ -27,7 +27,7 @@ export type ListCrmPipelinesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCrmPipelinesQueryParamFields> | undefined;
   limit?: number | undefined;

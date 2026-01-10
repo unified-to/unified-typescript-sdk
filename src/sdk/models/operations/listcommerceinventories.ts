@@ -26,7 +26,7 @@ export type ListCommerceInventoriesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCommerceInventoriesQueryParamFields> | undefined;
   /**

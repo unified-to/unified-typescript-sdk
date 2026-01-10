@@ -53,6 +53,7 @@ export const ObjectType = {
   PaymentRefund: "payment_refund",
   PaymentSubscription: "payment_subscription",
   CommerceItem: "commerce_item",
+  CommerceItemvariant: "commerce_itemvariant",
   CommerceCollection: "commerce_collection",
   CommerceInventory: "commerce_inventory",
   CommerceLocation: "commerce_location",

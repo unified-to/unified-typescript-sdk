@@ -28,7 +28,7 @@ export type GetKmsCommentRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetKmsCommentQueryParamFields> | undefined;
   /**

@@ -31,7 +31,7 @@ export type GetAccountingOrganizationRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAccountingOrganizationQueryParamFields> | undefined;
   /**

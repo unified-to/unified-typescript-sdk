@@ -31,7 +31,7 @@ export type CreateAtsCompanyRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAtsCompanyQueryParamFields> | undefined;
   /**

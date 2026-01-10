@@ -29,7 +29,7 @@ export type GetUcContactRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetUcContactQueryParamFields> | undefined;
   /**

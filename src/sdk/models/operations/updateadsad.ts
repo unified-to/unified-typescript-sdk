@@ -37,7 +37,7 @@ export type UpdateAdsAdRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateAdsAdQueryParamFields> | undefined;
   /**

@@ -34,7 +34,7 @@ export type CreateAdsGroupRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAdsGroupQueryParamFields> | undefined;
   /**

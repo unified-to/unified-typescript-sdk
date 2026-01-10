@@ -33,7 +33,7 @@ export type PatchAccountingPurchaseorderRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAccountingPurchaseorderQueryParamFields> | undefined;
   /**

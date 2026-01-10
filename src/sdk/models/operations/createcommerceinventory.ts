@@ -28,7 +28,7 @@ export type CreateCommerceInventoryRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateCommerceInventoryQueryParamFields> | undefined;
   /**

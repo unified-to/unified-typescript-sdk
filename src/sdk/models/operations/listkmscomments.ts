@@ -28,7 +28,7 @@ export type ListKmsCommentsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListKmsCommentsQueryParamFields> | undefined;
   limit?: number | undefined;

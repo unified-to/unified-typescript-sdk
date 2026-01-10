@@ -36,7 +36,7 @@ export type GetCrmEventRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetCrmEventQueryParamFields> | undefined;
   /**

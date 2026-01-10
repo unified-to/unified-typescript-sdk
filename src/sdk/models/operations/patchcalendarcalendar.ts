@@ -14,7 +14,6 @@ export const PatchCalendarCalendarQueryParamFields = {
   Name: "name",
   Description: "description",
   Timezone: "timezone",
-  Primary: "primary",
   IsPrimary: "is_primary",
   Raw: "raw",
 } as const;
@@ -29,7 +28,7 @@ export type PatchCalendarCalendarRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchCalendarCalendarQueryParamFields> | undefined;
   /**

@@ -40,7 +40,7 @@ export type CreateCommerceCollectionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateCommerceCollectionQueryParamFields> | undefined;
   /**

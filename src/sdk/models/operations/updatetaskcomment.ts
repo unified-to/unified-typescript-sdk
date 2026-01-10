@@ -28,7 +28,7 @@ export type UpdateTaskCommentRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateTaskCommentQueryParamFields> | undefined;
   /**

@@ -26,7 +26,7 @@ export type GetRepoCommitRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetRepoCommitQueryParamFields> | undefined;
   /**

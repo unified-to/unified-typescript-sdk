@@ -40,7 +40,7 @@ export type CreateCrmLeadRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateCrmLeadQueryParamFields> | undefined;
   /**

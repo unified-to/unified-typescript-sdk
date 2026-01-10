@@ -29,7 +29,7 @@ export type ListUcCommentsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListUcCommentsQueryParamFields> | undefined;
   limit?: number | undefined;

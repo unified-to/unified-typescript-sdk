@@ -28,7 +28,7 @@ export type PatchTicketingCustomerRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchTicketingCustomerQueryParamFields> | undefined;
   /**

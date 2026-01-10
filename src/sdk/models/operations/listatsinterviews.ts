@@ -35,7 +35,7 @@ export type ListAtsInterviewsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAtsInterviewsQueryParamFields> | undefined;
   limit?: number | undefined;

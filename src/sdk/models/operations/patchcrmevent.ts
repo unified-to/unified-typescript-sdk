@@ -41,7 +41,7 @@ export type PatchCrmEventRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchCrmEventQueryParamFields> | undefined;
   /**

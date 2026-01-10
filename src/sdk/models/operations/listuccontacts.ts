@@ -29,7 +29,7 @@ export type ListUcContactsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListUcContactsQueryParamFields> | undefined;
   limit?: number | undefined;

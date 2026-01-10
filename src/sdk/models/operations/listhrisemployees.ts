@@ -62,7 +62,7 @@ export type ListHrisEmployeesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListHrisEmployeesQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -40,7 +40,7 @@ export type UpdatePaymentSubscriptionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdatePaymentSubscriptionQueryParamFields> | undefined;
   /**

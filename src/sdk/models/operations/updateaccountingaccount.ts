@@ -19,7 +19,6 @@ export const UpdateAccountingAccountQueryParamFields = {
   Currency: "currency",
   CustomerDefinedCode: "customer_defined_code",
   IsPayable: "is_payable",
-  ParentAccountId: "parent_account_id",
   Section: "section",
   Subsection: "subsection",
   Group: "group",
@@ -41,7 +40,7 @@ export type UpdateAccountingAccountRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateAccountingAccountQueryParamFields> | undefined;
   /**

@@ -37,7 +37,7 @@ export type CreateHrisDeductionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateHrisDeductionQueryParamFields> | undefined;
   /**

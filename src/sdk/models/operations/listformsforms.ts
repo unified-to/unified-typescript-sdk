@@ -33,7 +33,7 @@ export type ListFormsFormsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListFormsFormsQueryParamFields> | undefined;
   limit?: number | undefined;

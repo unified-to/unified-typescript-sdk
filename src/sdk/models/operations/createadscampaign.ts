@@ -33,7 +33,7 @@ export type CreateAdsCampaignRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAdsCampaignQueryParamFields> | undefined;
   /**

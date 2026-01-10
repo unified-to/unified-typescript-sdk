@@ -32,7 +32,7 @@ export type PatchAtsScorecardRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAtsScorecardQueryParamFields> | undefined;
   /**

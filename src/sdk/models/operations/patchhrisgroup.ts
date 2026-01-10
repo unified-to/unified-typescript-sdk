@@ -32,7 +32,7 @@ export type PatchHrisGroupRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchHrisGroupQueryParamFields> | undefined;
   /**

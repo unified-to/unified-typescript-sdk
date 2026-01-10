@@ -40,7 +40,7 @@ export type ListAccountingContactsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingContactsQueryParamFields> | undefined;
   limit?: number | undefined;

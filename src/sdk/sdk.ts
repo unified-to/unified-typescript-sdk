@@ -61,6 +61,7 @@ import { Inventory } from "./inventory.js";
 import { Invoice } from "./invoice.js";
 import { Issue } from "./issue.js";
 import { Item } from "./item.js";
+import { Itemvariant } from "./itemvariant.js";
 import { Job } from "./job.js";
 import { Journal } from "./journal.js";
 import { Kms } from "./kms.js";
@@ -336,6 +337,11 @@ export class UnifiedTo extends ClientSDK {
   private _item?: Item;
   get item(): Item {
     return (this._item ??= new Item(this._options));
+  }
+
+  private _itemvariant?: Itemvariant;
+  get itemvariant(): Itemvariant {
+    return (this._itemvariant ??= new Itemvariant(this._options));
   }
 
   private _location?: Location;

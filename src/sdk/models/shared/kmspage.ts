@@ -32,7 +32,6 @@ export type KmsPage = {
   isActive?: boolean | undefined;
   metadata?: Array<KmsPageMetadata> | undefined;
   parentId?: string | undefined;
-  parentPageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   spaceId?: string | undefined;
   title: string;
@@ -67,7 +66,6 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
     is_active: z.boolean().optional(),
     metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
     parent_id: z.string().optional(),
-    parent_page_id: z.string().optional(),
     raw: z.record(z.any()).optional(),
     space_id: z.string().optional(),
     title: z.string(),
@@ -84,7 +82,6 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
       "has_children": "hasChildren",
       "is_active": "isActive",
       "parent_id": "parentId",
-      "parent_page_id": "parentPageId",
       "space_id": "spaceId",
       "updated_at": "updatedAt",
       "user_id": "userId",
@@ -100,7 +97,6 @@ export type KmsPage$Outbound = {
   is_active?: boolean | undefined;
   metadata?: Array<KmsPageMetadata$Outbound> | undefined;
   parent_id?: string | undefined;
-  parent_page_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   space_id?: string | undefined;
   title: string;
@@ -123,7 +119,6 @@ export const KmsPage$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
   parentId: z.string().optional(),
-  parentPageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   spaceId: z.string().optional(),
   title: z.string(),
@@ -138,7 +133,6 @@ export const KmsPage$outboundSchema: z.ZodType<
     hasChildren: "has_children",
     isActive: "is_active",
     parentId: "parent_id",
-    parentPageId: "parent_page_id",
     spaceId: "space_id",
     updatedAt: "updated_at",
     userId: "user_id",

@@ -31,7 +31,6 @@ export const ListAccountingInvoicesQueryParamFields = {
   Status: "status",
   Url: "url",
   PaymentCollectionMethod: "payment_collection_method",
-  InvoiceAt: "invoice_at",
   Type: "type",
   Attachments: "attachments",
   Send: "send",
@@ -51,7 +50,7 @@ export type ListAccountingInvoicesRequest = {
    */
   contactId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingInvoicesQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -26,7 +26,7 @@ export type ListTicketingCategoriesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListTicketingCategoriesQueryParamFields> | undefined;
   limit?: number | undefined;

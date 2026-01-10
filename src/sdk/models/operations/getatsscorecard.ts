@@ -30,7 +30,7 @@ export type GetAtsScorecardRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAtsScorecardQueryParamFields> | undefined;
   /**

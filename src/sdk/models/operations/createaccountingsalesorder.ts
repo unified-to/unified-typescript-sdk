@@ -34,7 +34,7 @@ export type CreateAccountingSalesorderRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAccountingSalesorderQueryParamFields> | undefined;
   /**

@@ -63,10 +63,8 @@ export type CrmMetadata = {
     | undefined;
   format?: CrmMetadataFormat | undefined;
   id?: string | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -391,10 +389,8 @@ export const CrmMetadata$inboundSchema: z.ZodType<
   ]).optional(),
   format: CrmMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),
@@ -425,10 +421,8 @@ export type CrmMetadata$Outbound = {
     | undefined;
   format?: string | undefined;
   id?: string | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -460,10 +454,8 @@ export const CrmMetadata$outboundSchema: z.ZodType<
   ]).optional(),
   format: CrmMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),

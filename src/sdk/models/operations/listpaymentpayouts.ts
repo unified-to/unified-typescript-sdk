@@ -26,7 +26,7 @@ export type ListPaymentPayoutsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListPaymentPayoutsQueryParamFields> | undefined;
   limit?: number | undefined;

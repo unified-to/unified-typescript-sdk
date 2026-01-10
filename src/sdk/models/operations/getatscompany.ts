@@ -29,7 +29,7 @@ export type GetAtsCompanyRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAtsCompanyQueryParamFields> | undefined;
   /**

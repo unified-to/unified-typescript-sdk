@@ -25,7 +25,7 @@ export type ListHrisCompaniesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListHrisCompaniesQueryParamFields> | undefined;
   limit?: number | undefined;

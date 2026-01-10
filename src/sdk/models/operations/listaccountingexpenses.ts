@@ -32,7 +32,7 @@ export type ListAccountingExpensesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingExpensesQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -26,7 +26,7 @@ export type ListAccountingTaxratesRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingTaxratesQueryParamFields> | undefined;
   limit?: number | undefined;

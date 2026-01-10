@@ -46,7 +46,7 @@ export type UpdateAtsJobRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateAtsJobQueryParamFields> | undefined;
   /**

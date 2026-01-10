@@ -16,7 +16,6 @@ export type KmsSpace = {
   name: string;
   parentId?: string | undefined;
   parentPageId?: string | undefined;
-  parentSpaceId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
@@ -36,7 +35,6 @@ export const KmsSpace$inboundSchema: z.ZodType<
   name: z.string(),
   parent_id: z.string().optional(),
   parent_page_id: z.string().optional(),
-  parent_space_id: z.string().default("sp"),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -47,7 +45,6 @@ export const KmsSpace$inboundSchema: z.ZodType<
     "is_active": "isActive",
     "parent_id": "parentId",
     "parent_page_id": "parentPageId",
-    "parent_space_id": "parentSpaceId",
     "updated_at": "updatedAt",
     "user_id": "userId",
   });
@@ -61,7 +58,6 @@ export type KmsSpace$Outbound = {
   name: string;
   parent_id?: string | undefined;
   parent_page_id?: string | undefined;
-  parent_space_id: string;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -80,7 +76,6 @@ export const KmsSpace$outboundSchema: z.ZodType<
   name: z.string(),
   parentId: z.string().optional(),
   parentPageId: z.string().optional(),
-  parentSpaceId: z.string().default("sp"),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
@@ -90,7 +85,6 @@ export const KmsSpace$outboundSchema: z.ZodType<
     isActive: "is_active",
     parentId: "parent_id",
     parentPageId: "parent_page_id",
-    parentSpaceId: "parent_space_id",
     updatedAt: "updated_at",
     userId: "user_id",
   });

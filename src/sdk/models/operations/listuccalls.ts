@@ -33,7 +33,7 @@ export type ListUcCallsRequest = {
    */
   contactId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListUcCallsQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -35,7 +35,7 @@ export type GetCommerceCollectionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetCommerceCollectionQueryParamFields> | undefined;
   /**

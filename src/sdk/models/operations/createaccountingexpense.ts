@@ -34,7 +34,7 @@ export type CreateAccountingExpenseRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAccountingExpenseQueryParamFields> | undefined;
   /**

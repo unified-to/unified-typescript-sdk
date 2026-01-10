@@ -41,7 +41,7 @@ export type ListLmsInstructorsRequest = {
    */
   courseId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListLmsInstructorsQueryParamFields> | undefined;
   limit?: number | undefined;

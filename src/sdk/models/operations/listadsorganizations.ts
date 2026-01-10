@@ -26,7 +26,7 @@ export type ListAdsOrganizationsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAdsOrganizationsQueryParamFields> | undefined;
   limit?: number | undefined;

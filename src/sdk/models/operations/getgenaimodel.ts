@@ -25,7 +25,7 @@ export type GetGenaiModelRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetGenaiModelQueryParamFields> | undefined;
   /**

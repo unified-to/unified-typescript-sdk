@@ -31,7 +31,7 @@ export type ListAccountingOrganizationsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingOrganizationsQueryParamFields> | undefined;
   limit?: number | undefined;

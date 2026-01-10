@@ -26,7 +26,7 @@ export type ListCommerceSaleschannelsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCommerceSaleschannelsQueryParamFields> | undefined;
   limit?: number | undefined;

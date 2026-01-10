@@ -38,7 +38,7 @@ export type GetHrisDeviceRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetHrisDeviceQueryParamFields> | undefined;
   /**

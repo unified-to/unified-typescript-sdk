@@ -28,7 +28,7 @@ export type UpdateAccountingCategoryRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateAccountingCategoryQueryParamFields> | undefined;
   /**

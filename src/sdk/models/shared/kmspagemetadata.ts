@@ -68,10 +68,8 @@ export type KmsPageMetadata = {
     | undefined;
   format?: KmsPageMetadataFormat | undefined;
   id?: string | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -404,10 +402,8 @@ export const KmsPageMetadata$inboundSchema: z.ZodType<
   ]).optional(),
   format: KmsPageMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),
@@ -438,10 +434,8 @@ export type KmsPageMetadata$Outbound = {
     | undefined;
   format?: string | undefined;
   id?: string | undefined;
-  key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
-  type?: string | undefined;
   value?:
     | { [k: string]: any }
     | string
@@ -473,10 +467,8 @@ export const KmsPageMetadata$outboundSchema: z.ZodType<
   ]).optional(),
   format: KmsPageMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
-  key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
-  type: z.string().optional(),
   value: z.union([
     z.record(z.any()),
     z.string(),

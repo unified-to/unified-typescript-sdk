@@ -33,7 +33,7 @@ export type PatchPaymentLinkRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchPaymentLinkQueryParamFields> | undefined;
   /**

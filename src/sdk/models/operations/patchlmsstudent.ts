@@ -31,7 +31,7 @@ export type PatchLmsStudentRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchLmsStudentQueryParamFields> | undefined;
   /**

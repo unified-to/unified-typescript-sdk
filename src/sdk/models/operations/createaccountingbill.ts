@@ -46,7 +46,7 @@ export type CreateAccountingBillRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAccountingBillQueryParamFields> | undefined;
   /**

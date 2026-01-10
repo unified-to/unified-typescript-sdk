@@ -33,7 +33,7 @@ export type PatchMartechListRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchMartechListQueryParamFields> | undefined;
   /**

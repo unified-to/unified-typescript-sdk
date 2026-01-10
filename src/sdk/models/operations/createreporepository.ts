@@ -30,7 +30,7 @@ export type CreateRepoRepositoryRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateRepoRepositoryQueryParamFields> | undefined;
   /**

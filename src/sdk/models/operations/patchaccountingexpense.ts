@@ -34,7 +34,7 @@ export type PatchAccountingExpenseRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchAccountingExpenseQueryParamFields> | undefined;
   /**

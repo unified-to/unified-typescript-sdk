@@ -19,7 +19,6 @@ export const Fields = {
   Currency: "currency",
   CustomerDefinedCode: "customer_defined_code",
   IsPayable: "is_payable",
-  ParentAccountId: "parent_account_id",
   Section: "section",
   Subsection: "subsection",
   Group: "group",
@@ -39,7 +38,7 @@ export type CreateAccountingAccountRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<Fields> | undefined;
   /**

@@ -29,7 +29,7 @@ export type ListMetadataMetadatasRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListMetadataMetadatasQueryParamFields> | undefined;
   limit?: number | undefined;

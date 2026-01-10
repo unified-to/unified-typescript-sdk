@@ -32,7 +32,7 @@ export type GetAccountingSalesorderRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAccountingSalesorderQueryParamFields> | undefined;
   /**

@@ -40,7 +40,7 @@ export type PatchPaymentSubscriptionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchPaymentSubscriptionQueryParamFields> | undefined;
   /**

@@ -37,7 +37,7 @@ export type CreateTicketingTicketRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateTicketingTicketQueryParamFields> | undefined;
   /**

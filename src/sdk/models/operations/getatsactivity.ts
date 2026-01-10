@@ -37,7 +37,7 @@ export type GetAtsActivityRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAtsActivityQueryParamFields> | undefined;
   /**

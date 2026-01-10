@@ -838,6 +838,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceCreateCommerceInventory`](docs/sdks/inventory/README.md#createcommerceinventory) - Create an inventory
 - [`commerceCreateCommerceItem`](docs/sdks/commerce/README.md#createcommerceitem) - Create an item
 - [`commerceCreateCommerceItem`](docs/sdks/item/README.md#createcommerceitem) - Create an item
+- [`commerceCreateCommerceItemvariant`](docs/sdks/commerce/README.md#createcommerceitemvariant) - Create an itemvariant
+- [`commerceCreateCommerceItemvariant`](docs/sdks/itemvariant/README.md#createcommerceitemvariant) - Create an itemvariant
 - [`commerceCreateCommerceLocation`](docs/sdks/commerce/README.md#createcommercelocation) - Create a location
 - [`commerceCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
 - [`commerceCreateCommerceReview`](docs/sdks/commerce/README.md#createcommercereview) - Create a review
@@ -850,6 +852,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceGetCommerceInventory`](docs/sdks/inventory/README.md#getcommerceinventory) - Retrieve an inventory
 - [`commerceGetCommerceItem`](docs/sdks/commerce/README.md#getcommerceitem) - Retrieve an item
 - [`commerceGetCommerceItem`](docs/sdks/item/README.md#getcommerceitem) - Retrieve an item
+- [`commerceGetCommerceItemvariant`](docs/sdks/commerce/README.md#getcommerceitemvariant) - Retrieve an itemvariant
+- [`commerceGetCommerceItemvariant`](docs/sdks/itemvariant/README.md#getcommerceitemvariant) - Retrieve an itemvariant
 - [`commerceGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
 - [`commerceGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
 - [`commerceGetCommerceReview`](docs/sdks/commerce/README.md#getcommercereview) - Retrieve a review
@@ -862,6 +866,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceListCommerceInventories`](docs/sdks/inventory/README.md#listcommerceinventories) - List all inventories
 - [`commerceListCommerceItems`](docs/sdks/commerce/README.md#listcommerceitems) - List all items
 - [`commerceListCommerceItems`](docs/sdks/item/README.md#listcommerceitems) - List all items
+- [`commerceListCommerceItemvariants`](docs/sdks/commerce/README.md#listcommerceitemvariants) - List all itemvariants
+- [`commerceListCommerceItemvariants`](docs/sdks/itemvariant/README.md#listcommerceitemvariants) - List all itemvariants
 - [`commerceListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
 - [`commerceListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
 - [`commerceListCommerceReviews`](docs/sdks/commerce/README.md#listcommercereviews) - List all reviews
@@ -874,6 +880,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commercePatchCommerceInventory`](docs/sdks/inventory/README.md#patchcommerceinventory) - Update an inventory
 - [`commercePatchCommerceItem`](docs/sdks/commerce/README.md#patchcommerceitem) - Update an item
 - [`commercePatchCommerceItem`](docs/sdks/item/README.md#patchcommerceitem) - Update an item
+- [`commercePatchCommerceItemvariant`](docs/sdks/commerce/README.md#patchcommerceitemvariant) - Update an itemvariant
+- [`commercePatchCommerceItemvariant`](docs/sdks/itemvariant/README.md#patchcommerceitemvariant) - Update an itemvariant
 - [`commercePatchCommerceLocation`](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
 - [`commercePatchCommerceLocation`](docs/sdks/location/README.md#patchcommercelocation) - Update a location
 - [`commercePatchCommerceReview`](docs/sdks/commerce/README.md#patchcommercereview) - Update a review
@@ -886,6 +894,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceRemoveCommerceInventory`](docs/sdks/inventory/README.md#removecommerceinventory) - Remove an inventory
 - [`commerceRemoveCommerceItem`](docs/sdks/commerce/README.md#removecommerceitem) - Remove an item
 - [`commerceRemoveCommerceItem`](docs/sdks/item/README.md#removecommerceitem) - Remove an item
+- [`commerceRemoveCommerceItemvariant`](docs/sdks/commerce/README.md#removecommerceitemvariant) - Remove an itemvariant
+- [`commerceRemoveCommerceItemvariant`](docs/sdks/itemvariant/README.md#removecommerceitemvariant) - Remove an itemvariant
 - [`commerceRemoveCommerceLocation`](docs/sdks/commerce/README.md#removecommercelocation) - Remove a location
 - [`commerceRemoveCommerceLocation`](docs/sdks/location/README.md#removecommercelocation) - Remove a location
 - [`commerceRemoveCommerceReview`](docs/sdks/commerce/README.md#removecommercereview) - Remove a review
@@ -898,6 +908,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceUpdateCommerceInventory`](docs/sdks/inventory/README.md#updatecommerceinventory) - Update an inventory
 - [`commerceUpdateCommerceItem`](docs/sdks/commerce/README.md#updatecommerceitem) - Update an item
 - [`commerceUpdateCommerceItem`](docs/sdks/item/README.md#updatecommerceitem) - Update an item
+- [`commerceUpdateCommerceItemvariant`](docs/sdks/commerce/README.md#updatecommerceitemvariant) - Update an itemvariant
+- [`commerceUpdateCommerceItemvariant`](docs/sdks/itemvariant/README.md#updatecommerceitemvariant) - Update an itemvariant
 - [`commerceUpdateCommerceLocation`](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
 - [`commerceUpdateCommerceLocation`](docs/sdks/location/README.md#updatecommercelocation) - Update a location
 - [`commerceUpdateCommerceReview`](docs/sdks/commerce/README.md#updatecommercereview) - Update a review

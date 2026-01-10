@@ -42,7 +42,7 @@ export type CreateCrmContactRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateCrmContactQueryParamFields> | undefined;
   /**

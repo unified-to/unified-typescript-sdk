@@ -14,6 +14,7 @@ export const ListCommerceItemsQueryParamFields = {
   PublicName: "public_name",
   Slug: "slug",
   Description: "description",
+  TaxrateId: "taxrate_id",
   GlobalCode: "global_code",
   PublicDescription: "public_description",
   IsActive: "is_active",
@@ -43,7 +44,7 @@ export type ListCommerceItemsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCommerceItemsQueryParamFields> | undefined;
   limit?: number | undefined;

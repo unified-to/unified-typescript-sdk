@@ -33,7 +33,7 @@ export type ListLmsClassesRequest = {
    */
   courseId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListLmsClassesQueryParamFields> | undefined;
   limit?: number | undefined;

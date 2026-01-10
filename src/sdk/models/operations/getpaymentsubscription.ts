@@ -38,7 +38,7 @@ export type GetPaymentSubscriptionRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetPaymentSubscriptionQueryParamFields> | undefined;
   /**

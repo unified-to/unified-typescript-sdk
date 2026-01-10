@@ -34,7 +34,7 @@ export type UpdateUcContactRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateUcContactQueryParamFields> | undefined;
   /**

@@ -13,7 +13,6 @@ export const CreateKmsSpaceQueryParamFields = {
   UpdatedAt: "updated_at",
   Name: "name",
   Description: "description",
-  ParentSpaceId: "parent_space_id",
   ParentId: "parent_id",
   IsActive: "is_active",
   UserId: "user_id",
@@ -31,7 +30,7 @@ export type CreateKmsSpaceRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateKmsSpaceQueryParamFields> | undefined;
   /**

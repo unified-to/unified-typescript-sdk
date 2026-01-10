@@ -18,7 +18,6 @@ export const ListAccountingAccountsQueryParamFields = {
   Currency: "currency",
   CustomerDefinedCode: "customer_defined_code",
   IsPayable: "is_payable",
-  ParentAccountId: "parent_account_id",
   Section: "section",
   Subsection: "subsection",
   Group: "group",
@@ -36,7 +35,7 @@ export type ListAccountingAccountsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListAccountingAccountsQueryParamFields> | undefined;
   limit?: number | undefined;

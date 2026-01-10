@@ -32,7 +32,6 @@ export const CreateAccountingInvoiceQueryParamFields = {
   Status: "status",
   Url: "url",
   PaymentCollectionMethod: "payment_collection_method",
-  InvoiceAt: "invoice_at",
   Type: "type",
   Attachments: "attachments",
   Send: "send",
@@ -49,7 +48,7 @@ export type CreateAccountingInvoiceRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateAccountingInvoiceQueryParamFields> | undefined;
   /**

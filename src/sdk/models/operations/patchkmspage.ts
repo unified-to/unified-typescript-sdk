@@ -14,7 +14,6 @@ export const PatchKmsPageQueryParamFields = {
   Title: "title",
   Type: "type",
   SpaceId: "space_id",
-  ParentPageId: "parent_page_id",
   ParentId: "parent_id",
   IsActive: "is_active",
   UserId: "user_id",
@@ -35,7 +34,7 @@ export type PatchKmsPageRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<PatchKmsPageQueryParamFields> | undefined;
   /**

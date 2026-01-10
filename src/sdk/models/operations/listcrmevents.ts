@@ -48,7 +48,7 @@ export type ListCrmEventsRequest = {
    */
   dealId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCrmEventsQueryParamFields> | undefined;
   /**

@@ -29,7 +29,7 @@ export type GetLmsInstructorRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetLmsInstructorQueryParamFields> | undefined;
   /**

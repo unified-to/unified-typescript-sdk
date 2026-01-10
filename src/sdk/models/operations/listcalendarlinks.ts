@@ -29,7 +29,7 @@ export type ListCalendarLinksRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListCalendarLinksQueryParamFields> | undefined;
   limit?: number | undefined;

@@ -56,7 +56,7 @@ export type ListMessagingMessagesRequest = {
    */
   expand?: boolean | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListMessagingMessagesQueryParamFields> | undefined;
   limit?: number | undefined;

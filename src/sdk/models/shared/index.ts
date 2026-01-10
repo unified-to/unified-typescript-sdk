@@ -87,6 +87,7 @@ export * from "./commerceitemmedia.js";
 export * from "./commerceitemoption.js";
 export * from "./commerceitemprice.js";
 export * from "./commerceitemvariant.js";
+export * from "./commerceitemvariant1.js";
 export * from "./commercelocation.js";
 export * from "./commercemetadata.js";
 export * from "./commercereference.js";

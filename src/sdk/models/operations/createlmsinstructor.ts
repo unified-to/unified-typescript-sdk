@@ -31,7 +31,7 @@ export type CreateLmsInstructorRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<CreateLmsInstructorQueryParamFields> | undefined;
   /**

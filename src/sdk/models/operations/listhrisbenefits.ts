@@ -38,7 +38,7 @@ export type ListHrisBenefitsRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListHrisBenefitsQueryParamFields> | undefined;
   limit?: number | undefined;

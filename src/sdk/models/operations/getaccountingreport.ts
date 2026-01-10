@@ -30,7 +30,7 @@ export type GetAccountingReportRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<GetAccountingReportQueryParamFields> | undefined;
   /**

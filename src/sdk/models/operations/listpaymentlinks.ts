@@ -35,7 +35,7 @@ export type ListPaymentLinksRequest = {
    */
   contactId?: string | undefined;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<ListPaymentLinksQueryParamFields> | undefined;
   limit?: number | undefined;

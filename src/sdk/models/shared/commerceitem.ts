@@ -56,6 +56,7 @@ export type CommerceItem = {
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
   tags?: Array<string> | undefined;
+  taxrateId?: string | undefined;
   type?: string | undefined;
   updatedAt?: Date | undefined;
   /**
@@ -89,6 +90,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  taxrate_id: z.string().optional(),
   type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -104,6 +106,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
     "is_taxable": "isTaxable",
     "public_description": "publicDescription",
     "public_name": "publicName",
+    "taxrate_id": "taxrateId",
     "updated_at": "updatedAt",
     "vendor_name": "vendorName",
   });
@@ -127,6 +130,7 @@ export type CommerceItem$Outbound = {
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
   tags?: Array<string> | undefined;
+  taxrate_id?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
   variants?: Array<CommerceItemVariant$Outbound> | undefined;
@@ -156,6 +160,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  taxrateId: z.string().optional(),
   type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   variants: z.array(CommerceItemVariant$outboundSchema).optional(),
@@ -170,6 +175,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
     isTaxable: "is_taxable",
     publicDescription: "public_description",
     publicName: "public_name",
+    taxrateId: "taxrate_id",
     updatedAt: "updated_at",
     vendorName: "vendor_name",
   });

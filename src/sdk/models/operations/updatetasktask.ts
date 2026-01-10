@@ -41,7 +41,7 @@ export type UpdateTaskTaskRequest = {
    */
   connectionId: string;
   /**
-   * Comma-delimited fields to return
+   * Fields to return
    */
   fields?: Array<UpdateTaskTaskQueryParamFields> | undefined;
   /**
