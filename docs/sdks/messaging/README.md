@@ -424,9 +424,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.patchMessagingEvent({
-    messagingEvent: {
-      type: "CHANNEL_JOINED",
-    },
+    messagingEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -455,9 +453,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventPatchMessagingEvent(unifiedTo, {
-    messagingEvent: {
-      type: "CHANNEL_JOINED",
-    },
+    messagingEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -669,9 +665,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.updateMessagingEvent({
-    messagingEvent: {
-      type: "CHANNEL_JOINED",
-    },
+    messagingEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -700,9 +694,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventUpdateMessagingEvent(unifiedTo, {
-    messagingEvent: {
-      type: "CHANNEL_JOINED",
-    },
+    messagingEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });

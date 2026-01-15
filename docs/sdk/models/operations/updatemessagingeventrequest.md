@@ -6,9 +6,7 @@
 import { UpdateMessagingEventRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateMessagingEventRequest = {
-  messagingEvent: {
-    type: "REACTION_REMOVED",
-  },
+  messagingEvent: {},
   connectionId: "<id>",
   id: "<id>",
 };

@@ -22,6 +22,7 @@ import { Calendar } from "./calendar.js";
 import { Call } from "./call.js";
 import { Campaign } from "./campaign.js";
 import { Candidate } from "./candidate.js";
+import { Carrier } from "./carrier.js";
 import { Cashflow } from "./cashflow.js";
 import { Category } from "./category.js";
 import { Change } from "./change.js";
@@ -65,6 +66,7 @@ import { Itemvariant } from "./itemvariant.js";
 import { Job } from "./job.js";
 import { Journal } from "./journal.js";
 import { Kms } from "./kms.js";
+import { Label } from "./label.js";
 import { Lead } from "./lead.js";
 import { Link } from "./link.js";
 import { List } from "./list.js";
@@ -93,6 +95,7 @@ import { Project } from "./project.js";
 import { Prompt } from "./prompt.js";
 import { Pullrequest } from "./pullrequest.js";
 import { Purchaseorder } from "./purchaseorder.js";
+import { Rate } from "./rate.js";
 import { Recording } from "./recording.js";
 import { Refund } from "./refund.js";
 import { Repo } from "./repo.js";
@@ -104,6 +107,8 @@ import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
+import { Shipment } from "./shipment.js";
+import { Shipping } from "./shipping.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
 import { Student } from "./student.js";
@@ -115,6 +120,7 @@ import { Ticket } from "./ticket.js";
 import { Ticketing } from "./ticketing.js";
 import { Timeoff } from "./timeoff.js";
 import { Timeshift } from "./timeshift.js";
+import { Tracking } from "./tracking.js";
 import { Transaction } from "./transaction.js";
 import { Trialbalance } from "./trialbalance.js";
 import { Uc } from "./uc.js";
@@ -602,6 +608,36 @@ export class UnifiedTo extends ClientSDK {
   private _user?: User;
   get user(): User {
     return (this._user ??= new User(this._options));
+  }
+
+  private _shipping?: Shipping;
+  get shipping(): Shipping {
+    return (this._shipping ??= new Shipping(this._options));
+  }
+
+  private _carrier?: Carrier;
+  get carrier(): Carrier {
+    return (this._carrier ??= new Carrier(this._options));
+  }
+
+  private _label?: Label;
+  get label(): Label {
+    return (this._label ??= new Label(this._options));
+  }
+
+  private _rate?: Rate;
+  get rate(): Rate {
+    return (this._rate ??= new Rate(this._options));
+  }
+
+  private _shipment?: Shipment;
+  get shipment(): Shipment {
+    return (this._shipment ??= new Shipment(this._options));
+  }
+
+  private _tracking?: Tracking;
+  get tracking(): Tracking {
+    return (this._tracking ??= new Tracking(this._options));
   }
 
   private _storage?: Storage;

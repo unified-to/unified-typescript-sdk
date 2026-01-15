@@ -54,8 +54,6 @@ export const PropertyConnectionPermissions = {
   PaymentSubscriptionWrite: "payment_subscription_write",
   CommerceItemRead: "commerce_item_read",
   CommerceItemWrite: "commerce_item_write",
-  CommerceItemvariantRead: "commerce_itemvariant_read",
-  CommerceItemvariantWrite: "commerce_itemvariant_write",
   CommerceCollectionRead: "commerce_collection_read",
   CommerceCollectionWrite: "commerce_collection_write",
   CommerceInventoryRead: "commerce_inventory_read",
@@ -66,6 +64,8 @@ export const PropertyConnectionPermissions = {
   CommerceReviewWrite: "commerce_review_write",
   CommerceSaleschannelRead: "commerce_saleschannel_read",
   CommerceSaleschannelWrite: "commerce_saleschannel_write",
+  CommerceItemvariantRead: "commerce_itemvariant_read",
+  CommerceItemvariantWrite: "commerce_itemvariant_write",
   VerificationPackageRead: "verification_package_read",
   VerificationRequestRead: "verification_request_read",
   VerificationRequestWrite: "verification_request_write",
@@ -210,6 +210,13 @@ export const PropertyConnectionPermissions = {
   FormsFormWrite: "forms_form_write",
   FormsSubmissionRead: "forms_submission_read",
   FormsSubmissionWrite: "forms_submission_write",
+  ShippingShipmentRead: "shipping_shipment_read",
+  ShippingShipmentWrite: "shipping_shipment_write",
+  ShippingLabelRead: "shipping_label_read",
+  ShippingLabelWrite: "shipping_label_write",
+  ShippingTrackingRead: "shipping_tracking_read",
+  ShippingRateRead: "shipping_rate_read",
+  ShippingCarrierRead: "shipping_carrier_read",
 } as const;
 export type PropertyConnectionPermissions = OpenEnum<
   typeof PropertyConnectionPermissions

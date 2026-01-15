@@ -8,7 +8,7 @@ import { UpdateUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/
 let value: UpdateUnifiedConnectionRequest = {
   connection: {
     categories: [
-      "lms",
+      "repo",
     ],
     integrationType: "<value>",
     permissions: [],

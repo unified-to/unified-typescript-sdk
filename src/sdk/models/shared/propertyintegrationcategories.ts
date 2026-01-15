@@ -32,6 +32,7 @@ export const PropertyIntegrationCategories = {
   Verification: "verification",
   Ads: "ads",
   Forms: "forms",
+  Shipping: "shipping",
 } as const;
 export type PropertyIntegrationCategories = OpenEnum<
   typeof PropertyIntegrationCategories

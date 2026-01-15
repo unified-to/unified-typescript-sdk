@@ -1,0 +1,23 @@
+# ShippingCustomsItem
+
+## Example Usage
+
+```typescript
+import { ShippingCustomsItem } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ShippingCustomsItem = {};
+```
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `amount`                                                                                            | *number*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `countryOfOrigin`                                                                                   | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `currency`                                                                                          | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `description`                                                                                       | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `harmonizedTariffCode`                                                                              | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `quantity`                                                                                          | *number*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `sku`                                                                                               | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `weight`                                                                                            | *number*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `weightUnit`                                                                                        | [shared.ShippingCustomsItemWeightUnit](../../../sdk/models/shared/shippingcustomsitemweightunit.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |

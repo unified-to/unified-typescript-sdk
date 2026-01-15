@@ -11,5 +11,5 @@ let value: UpdateMessagingEventQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"id" | "created_at" | "type" | "channel" | "message" | "button" | "user" | "raw"
+"id" | "created_at" | "type" | "channel" | "message" | "button" | "user" | "is_replacing_original" | "raw"
 ```

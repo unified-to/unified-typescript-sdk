@@ -55,9 +55,10 @@ export type MessagingEvent = {
   channel?: PropertyMessagingEventChannel | undefined;
   createdAt?: Date | undefined;
   id?: string | undefined;
+  isReplacingOriginal?: boolean | undefined;
   message?: PropertyMessagingEventMessage | undefined;
   raw?: { [k: string]: any } | undefined;
-  type: MessagingEventType;
+  type?: MessagingEventType | undefined;
   user?: PropertyMessagingEventUser | undefined;
 };
 
@@ -85,13 +86,15 @@ export const MessagingEvent$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  is_replacing_original: z.boolean().optional(),
   message: PropertyMessagingEventMessage$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
-  type: MessagingEventType$inboundSchema,
+  type: MessagingEventType$inboundSchema.optional(),
   user: PropertyMessagingEventUser$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "is_replacing_original": "isReplacingOriginal",
   });
 });
 /** @internal */
@@ -100,9 +103,10 @@ export type MessagingEvent$Outbound = {
   channel?: PropertyMessagingEventChannel$Outbound | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
+  is_replacing_original?: boolean | undefined;
   message?: PropertyMessagingEventMessage$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
-  type: string;
+  type?: string | undefined;
   user?: PropertyMessagingEventUser$Outbound | undefined;
 };
 
@@ -116,13 +120,15 @@ export const MessagingEvent$outboundSchema: z.ZodType<
   channel: PropertyMessagingEventChannel$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  isReplacingOriginal: z.boolean().optional(),
   message: PropertyMessagingEventMessage$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),
-  type: MessagingEventType$outboundSchema,
+  type: MessagingEventType$outboundSchema.optional(),
   user: PropertyMessagingEventUser$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    isReplacingOriginal: "is_replacing_original",
   });
 });
 

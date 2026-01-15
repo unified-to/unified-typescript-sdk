@@ -1422,6 +1422,40 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`scimRemoveScimUsers`](docs/sdks/user/README.md#removescimusers) - Delete user
 - [`scimUpdateScimUsers`](docs/sdks/scim/README.md#updatescimusers) - Update user
 - [`scimUpdateScimUsers`](docs/sdks/user/README.md#updatescimusers) - Update user
+- [`shippingCreateShippingLabel`](docs/sdks/label/README.md#createshippinglabel) - Create a label
+- [`shippingCreateShippingLabel`](docs/sdks/shipping/README.md#createshippinglabel) - Create a label
+- [`shippingCreateShippingRate`](docs/sdks/rate/README.md#createshippingrate) - Create a rate
+- [`shippingCreateShippingRate`](docs/sdks/shipping/README.md#createshippingrate) - Create a rate
+- [`shippingCreateShippingShipment`](docs/sdks/shipment/README.md#createshippingshipment) - Create a shipment
+- [`shippingCreateShippingShipment`](docs/sdks/shipping/README.md#createshippingshipment) - Create a shipment
+- [`shippingCreateShippingTracking`](docs/sdks/shipping/README.md#createshippingtracking) - Create a tracking
+- [`shippingCreateShippingTracking`](docs/sdks/tracking/README.md#createshippingtracking) - Create a tracking
+- [`shippingGetShippingCarrier`](docs/sdks/carrier/README.md#getshippingcarrier) - Retrieve a carrier
+- [`shippingGetShippingCarrier`](docs/sdks/shipping/README.md#getshippingcarrier) - Retrieve a carrier
+- [`shippingGetShippingLabel`](docs/sdks/label/README.md#getshippinglabel) - Retrieve a label
+- [`shippingGetShippingLabel`](docs/sdks/shipping/README.md#getshippinglabel) - Retrieve a label
+- [`shippingGetShippingRate`](docs/sdks/rate/README.md#getshippingrate) - Retrieve a rate
+- [`shippingGetShippingRate`](docs/sdks/shipping/README.md#getshippingrate) - Retrieve a rate
+- [`shippingGetShippingShipment`](docs/sdks/shipment/README.md#getshippingshipment) - Retrieve a shipment
+- [`shippingGetShippingShipment`](docs/sdks/shipping/README.md#getshippingshipment) - Retrieve a shipment
+- [`shippingGetShippingTracking`](docs/sdks/shipping/README.md#getshippingtracking) - Retrieve a tracking
+- [`shippingGetShippingTracking`](docs/sdks/tracking/README.md#getshippingtracking) - Retrieve a tracking
+- [`shippingListShippingCarriers`](docs/sdks/carrier/README.md#listshippingcarriers) - List all carriers
+- [`shippingListShippingCarriers`](docs/sdks/shipping/README.md#listshippingcarriers) - List all carriers
+- [`shippingListShippingLabels`](docs/sdks/label/README.md#listshippinglabels) - List all labels
+- [`shippingListShippingLabels`](docs/sdks/shipping/README.md#listshippinglabels) - List all labels
+- [`shippingListShippingShipments`](docs/sdks/shipment/README.md#listshippingshipments) - List all shipments
+- [`shippingListShippingShipments`](docs/sdks/shipping/README.md#listshippingshipments) - List all shipments
+- [`shippingListShippingTrackings`](docs/sdks/shipping/README.md#listshippingtrackings) - List all trackings
+- [`shippingListShippingTrackings`](docs/sdks/tracking/README.md#listshippingtrackings) - List all trackings
+- [`shippingPatchShippingShipment`](docs/sdks/shipment/README.md#patchshippingshipment) - Update a shipment
+- [`shippingPatchShippingShipment`](docs/sdks/shipping/README.md#patchshippingshipment) - Update a shipment
+- [`shippingRemoveShippingLabel`](docs/sdks/label/README.md#removeshippinglabel) - Remove a label
+- [`shippingRemoveShippingLabel`](docs/sdks/shipping/README.md#removeshippinglabel) - Remove a label
+- [`shippingRemoveShippingShipment`](docs/sdks/shipment/README.md#removeshippingshipment) - Remove a shipment
+- [`shippingRemoveShippingShipment`](docs/sdks/shipping/README.md#removeshippingshipment) - Remove a shipment
+- [`shippingUpdateShippingShipment`](docs/sdks/shipment/README.md#updateshippingshipment) - Update a shipment
+- [`shippingUpdateShippingShipment`](docs/sdks/shipping/README.md#updateshippingshipment) - Update a shipment
 - [`storageCreateStorageFile`](docs/sdks/file/README.md#createstoragefile) - Create a file
 - [`storageCreateStorageFile`](docs/sdks/storage/README.md#createstoragefile) - Create a file
 - [`storageGetStorageFile`](docs/sdks/file/README.md#getstoragefile) - Retrieve a file

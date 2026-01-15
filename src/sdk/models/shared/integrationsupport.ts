@@ -84,6 +84,13 @@ export const ListCandidateId = {
 } as const;
 export type ListCandidateId = OpenEnum<typeof ListCandidateId>;
 
+export const ListCarrierId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListCarrierId = OpenEnum<typeof ListCarrierId>;
+
 export const ListCategoryId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -231,6 +238,13 @@ export const ListJobId = {
 } as const;
 export type ListJobId = OpenEnum<typeof ListJobId>;
 
+export const ListLabelId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListLabelId = OpenEnum<typeof ListLabelId>;
+
 export const ListLeadId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -279,6 +293,13 @@ export const ListOrder = {
   NotSupported: "not-supported",
 } as const;
 export type ListOrder = OpenEnum<typeof ListOrder>;
+
+export const ListOrderId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListOrderId = OpenEnum<typeof ListOrderId>;
 
 export const ListOrgId = {
   SupportedRequired: "supported-required",
@@ -370,6 +391,13 @@ export const ListSaleschannelId = {
   NotSupported: "not-supported",
 } as const;
 export type ListSaleschannelId = OpenEnum<typeof ListSaleschannelId>;
+
+export const ListShipmentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListShipmentId = OpenEnum<typeof ListShipmentId>;
 
 export const ListSortByCreatedAt = {
   SupportedRequired: "supported-required",
@@ -476,6 +504,13 @@ export const NativeWebhookCalendarId = {
 } as const;
 export type NativeWebhookCalendarId = OpenEnum<typeof NativeWebhookCalendarId>;
 
+export const NativeWebhookCarrierId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookCarrierId = OpenEnum<typeof NativeWebhookCarrierId>;
+
 export const NativeWebhookChannelId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -504,6 +539,20 @@ export const NativeWebhookFormId = {
 } as const;
 export type NativeWebhookFormId = OpenEnum<typeof NativeWebhookFormId>;
 
+export const NativeWebhookLabelId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookLabelId = OpenEnum<typeof NativeWebhookLabelId>;
+
+export const NativeWebhookOrderId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookOrderId = OpenEnum<typeof NativeWebhookOrderId>;
+
 export const NativeWebhookParentId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -517,6 +566,13 @@ export const NativeWebhookProjectId = {
   NotSupported: "not-supported",
 } as const;
 export type NativeWebhookProjectId = OpenEnum<typeof NativeWebhookProjectId>;
+
+export const NativeWebhookShipmentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookShipmentId = OpenEnum<typeof NativeWebhookShipmentId>;
 
 export const NativeWebhookTaskId = {
   SupportedRequired: "supported-required",
@@ -616,6 +672,13 @@ export const VirtualWebhookCandidateId = {
 export type VirtualWebhookCandidateId = OpenEnum<
   typeof VirtualWebhookCandidateId
 >;
+
+export const VirtualWebhookCarrierId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookCarrierId = OpenEnum<typeof VirtualWebhookCarrierId>;
 
 export const VirtualWebhookChannelId = {
   SupportedRequired: "supported-required",
@@ -728,6 +791,13 @@ export const VirtualWebhookJobId = {
 } as const;
 export type VirtualWebhookJobId = OpenEnum<typeof VirtualWebhookJobId>;
 
+export const VirtualWebhookLabelId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookLabelId = OpenEnum<typeof VirtualWebhookLabelId>;
+
 export const VirtualWebhookLeadId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -757,6 +827,13 @@ export const VirtualWebhookLocationId = {
 export type VirtualWebhookLocationId = OpenEnum<
   typeof VirtualWebhookLocationId
 >;
+
+export const VirtualWebhookOrderId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookOrderId = OpenEnum<typeof VirtualWebhookOrderId>;
 
 export const VirtualWebhookOrgId = {
   SupportedRequired: "supported-required",
@@ -809,6 +886,15 @@ export const VirtualWebhookSaleschannelId = {
 } as const;
 export type VirtualWebhookSaleschannelId = OpenEnum<
   typeof VirtualWebhookSaleschannelId
+>;
+
+export const VirtualWebhookShipmentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookShipmentId = OpenEnum<
+  typeof VirtualWebhookShipmentId
 >;
 
 export const VirtualWebhookSpaceId = {
@@ -890,6 +976,7 @@ export type IntegrationSupport = {
   listCallId?: ListCallId | undefined;
   listCampaignId?: ListCampaignId | undefined;
   listCandidateId?: ListCandidateId | undefined;
+  listCarrierId?: ListCarrierId | undefined;
   listCategoryId?: ListCategoryId | undefined;
   listChannelId?: ListChannelId | undefined;
   listClassId?: ListClassId | undefined;
@@ -911,6 +998,7 @@ export type IntegrationSupport = {
   listItemId?: ListItemId | undefined;
   listItemVariantId?: ListItemVariantId | undefined;
   listJobId?: ListJobId | undefined;
+  listLabelId?: ListLabelId | undefined;
   listLeadId?: ListLeadId | undefined;
   listLimit?: ListLimit | undefined;
   listLinkId?: ListLinkId | undefined;
@@ -918,6 +1006,7 @@ export type IntegrationSupport = {
   listLocationId?: ListLocationId | undefined;
   listOffset?: ListOffset | undefined;
   listOrder?: ListOrder | undefined;
+  listOrderId?: ListOrderId | undefined;
   listOrgId?: ListOrgId | undefined;
   listPackageId?: ListPackageId | undefined;
   listPageId?: ListPageId | undefined;
@@ -931,6 +1020,7 @@ export type IntegrationSupport = {
   listRepoId?: ListRepoId | undefined;
   listRootId?: ListRootId | undefined;
   listSaleschannelId?: ListSaleschannelId | undefined;
+  listShipmentId?: ListShipmentId | undefined;
   listSortByCreatedAt?: ListSortByCreatedAt | undefined;
   listSortByName?: ListSortByName | undefined;
   listSortByUpdatedAt?: ListSortByUpdatedAt | undefined;
@@ -947,12 +1037,16 @@ export type IntegrationSupport = {
   listUserMentionedId?: ListUserMentionedId | undefined;
   methods?: { [k: string]: boolean } | undefined;
   nativeWebhookCalendarId?: NativeWebhookCalendarId | undefined;
+  nativeWebhookCarrierId?: NativeWebhookCarrierId | undefined;
   nativeWebhookChannelId?: NativeWebhookChannelId | undefined;
   nativeWebhookCompanyId?: NativeWebhookCompanyId | undefined;
   nativeWebhookEventId?: NativeWebhookEventId | undefined;
   nativeWebhookFormId?: NativeWebhookFormId | undefined;
+  nativeWebhookLabelId?: NativeWebhookLabelId | undefined;
+  nativeWebhookOrderId?: NativeWebhookOrderId | undefined;
   nativeWebhookParentId?: NativeWebhookParentId | undefined;
   nativeWebhookProjectId?: NativeWebhookProjectId | undefined;
+  nativeWebhookShipmentId?: NativeWebhookShipmentId | undefined;
   nativeWebhookTaskId?: NativeWebhookTaskId | undefined;
   outboundFields?: { [k: string]: string } | undefined;
   /**
@@ -972,6 +1066,7 @@ export type IntegrationSupport = {
   virtualWebhookCallId?: VirtualWebhookCallId | undefined;
   virtualWebhookCampaignId?: VirtualWebhookCampaignId | undefined;
   virtualWebhookCandidateId?: VirtualWebhookCandidateId | undefined;
+  virtualWebhookCarrierId?: VirtualWebhookCarrierId | undefined;
   virtualWebhookChannelId?: VirtualWebhookChannelId | undefined;
   virtualWebhookCollectionId?: VirtualWebhookCollectionId | undefined;
   virtualWebhookCompanyId?: VirtualWebhookCompanyId | undefined;
@@ -987,10 +1082,12 @@ export type IntegrationSupport = {
   virtualWebhookItemId?: VirtualWebhookItemId | undefined;
   virtualWebhookItemVariantId?: VirtualWebhookItemVariantId | undefined;
   virtualWebhookJobId?: VirtualWebhookJobId | undefined;
+  virtualWebhookLabelId?: VirtualWebhookLabelId | undefined;
   virtualWebhookLeadId?: VirtualWebhookLeadId | undefined;
   virtualWebhookLimit?: VirtualWebhookLimit | undefined;
   virtualWebhookListId?: VirtualWebhookListId | undefined;
   virtualWebhookLocationId?: VirtualWebhookLocationId | undefined;
+  virtualWebhookOrderId?: VirtualWebhookOrderId | undefined;
   virtualWebhookOrgId?: VirtualWebhookOrgId | undefined;
   virtualWebhookPageId?: VirtualWebhookPageId | undefined;
   virtualWebhookParentId?: VirtualWebhookParentId | undefined;
@@ -998,6 +1095,7 @@ export type IntegrationSupport = {
   virtualWebhookProjectId?: VirtualWebhookProjectId | undefined;
   virtualWebhookRepoId?: VirtualWebhookRepoId | undefined;
   virtualWebhookSaleschannelId?: VirtualWebhookSaleschannelId | undefined;
+  virtualWebhookShipmentId?: VirtualWebhookShipmentId | undefined;
   virtualWebhookSpaceId?: VirtualWebhookSpaceId | undefined;
   virtualWebhookStartGte?: VirtualWebhookStartGte | undefined;
   virtualWebhookStatus?: VirtualWebhookStatus | undefined;
@@ -1079,6 +1177,13 @@ export const ListCandidateId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListCandidateId);
+
+/** @internal */
+export const ListCarrierId$inboundSchema: z.ZodType<
+  ListCarrierId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListCarrierId);
 
 /** @internal */
 export const ListCategoryId$inboundSchema: z.ZodType<
@@ -1228,6 +1333,13 @@ export const ListJobId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListJobId);
 
 /** @internal */
+export const ListLabelId$inboundSchema: z.ZodType<
+  ListLabelId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListLabelId);
+
+/** @internal */
 export const ListLeadId$inboundSchema: z.ZodType<
   ListLeadId,
   z.ZodTypeDef,
@@ -1275,6 +1387,13 @@ export const ListOrder$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListOrder);
+
+/** @internal */
+export const ListOrderId$inboundSchema: z.ZodType<
+  ListOrderId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListOrderId);
 
 /** @internal */
 export const ListOrgId$inboundSchema: z.ZodType<
@@ -1366,6 +1485,13 @@ export const ListSaleschannelId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListSaleschannelId);
+
+/** @internal */
+export const ListShipmentId$inboundSchema: z.ZodType<
+  ListShipmentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListShipmentId);
 
 /** @internal */
 export const ListSortByCreatedAt$inboundSchema: z.ZodType<
@@ -1473,6 +1599,13 @@ export const NativeWebhookCalendarId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookCalendarId);
 
 /** @internal */
+export const NativeWebhookCarrierId$inboundSchema: z.ZodType<
+  NativeWebhookCarrierId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookCarrierId);
+
+/** @internal */
 export const NativeWebhookChannelId$inboundSchema: z.ZodType<
   NativeWebhookChannelId,
   z.ZodTypeDef,
@@ -1501,6 +1634,20 @@ export const NativeWebhookFormId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookFormId);
 
 /** @internal */
+export const NativeWebhookLabelId$inboundSchema: z.ZodType<
+  NativeWebhookLabelId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookLabelId);
+
+/** @internal */
+export const NativeWebhookOrderId$inboundSchema: z.ZodType<
+  NativeWebhookOrderId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookOrderId);
+
+/** @internal */
 export const NativeWebhookParentId$inboundSchema: z.ZodType<
   NativeWebhookParentId,
   z.ZodTypeDef,
@@ -1513,6 +1660,13 @@ export const NativeWebhookProjectId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(NativeWebhookProjectId);
+
+/** @internal */
+export const NativeWebhookShipmentId$inboundSchema: z.ZodType<
+  NativeWebhookShipmentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookShipmentId);
 
 /** @internal */
 export const NativeWebhookTaskId$inboundSchema: z.ZodType<
@@ -1604,6 +1758,13 @@ export const VirtualWebhookCandidateId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookCandidateId);
+
+/** @internal */
+export const VirtualWebhookCarrierId$inboundSchema: z.ZodType<
+  VirtualWebhookCarrierId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookCarrierId);
 
 /** @internal */
 export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
@@ -1711,6 +1872,13 @@ export const VirtualWebhookJobId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookJobId);
 
 /** @internal */
+export const VirtualWebhookLabelId$inboundSchema: z.ZodType<
+  VirtualWebhookLabelId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookLabelId);
+
+/** @internal */
 export const VirtualWebhookLeadId$inboundSchema: z.ZodType<
   VirtualWebhookLeadId,
   z.ZodTypeDef,
@@ -1737,6 +1905,13 @@ export const VirtualWebhookLocationId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookLocationId);
+
+/** @internal */
+export const VirtualWebhookOrderId$inboundSchema: z.ZodType<
+  VirtualWebhookOrderId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookOrderId);
 
 /** @internal */
 export const VirtualWebhookOrgId$inboundSchema: z.ZodType<
@@ -1786,6 +1961,13 @@ export const VirtualWebhookSaleschannelId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookSaleschannelId);
+
+/** @internal */
+export const VirtualWebhookShipmentId$inboundSchema: z.ZodType<
+  VirtualWebhookShipmentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookShipmentId);
 
 /** @internal */
 export const VirtualWebhookSpaceId$inboundSchema: z.ZodType<
@@ -1867,6 +2049,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_call_id: ListCallId$inboundSchema.optional(),
   list_campaign_id: ListCampaignId$inboundSchema.optional(),
   list_candidate_id: ListCandidateId$inboundSchema.optional(),
+  list_carrier_id: ListCarrierId$inboundSchema.optional(),
   list_category_id: ListCategoryId$inboundSchema.optional(),
   list_channel_id: ListChannelId$inboundSchema.optional(),
   list_class_id: ListClassId$inboundSchema.optional(),
@@ -1888,6 +2071,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_item_id: ListItemId$inboundSchema.optional(),
   list_item_variant_id: ListItemVariantId$inboundSchema.optional(),
   list_job_id: ListJobId$inboundSchema.optional(),
+  list_label_id: ListLabelId$inboundSchema.optional(),
   list_lead_id: ListLeadId$inboundSchema.optional(),
   list_limit: ListLimit$inboundSchema.optional(),
   list_link_id: ListLinkId$inboundSchema.optional(),
@@ -1895,6 +2079,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_location_id: ListLocationId$inboundSchema.optional(),
   list_offset: ListOffset$inboundSchema.optional(),
   list_order: ListOrder$inboundSchema.optional(),
+  list_order_id: ListOrderId$inboundSchema.optional(),
   list_org_id: ListOrgId$inboundSchema.optional(),
   list_package_id: ListPackageId$inboundSchema.optional(),
   list_page_id: ListPageId$inboundSchema.optional(),
@@ -1908,6 +2093,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_repo_id: ListRepoId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
   list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
+  list_shipment_id: ListShipmentId$inboundSchema.optional(),
   list_sort_by_created_at: ListSortByCreatedAt$inboundSchema.optional(),
   list_sort_by_name: ListSortByName$inboundSchema.optional(),
   list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
@@ -1924,12 +2110,16 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_user_mentioned_id: ListUserMentionedId$inboundSchema.optional(),
   methods: z.record(z.boolean()).optional(),
   native_webhook_calendar_id: NativeWebhookCalendarId$inboundSchema.optional(),
+  native_webhook_carrier_id: NativeWebhookCarrierId$inboundSchema.optional(),
   native_webhook_channel_id: NativeWebhookChannelId$inboundSchema.optional(),
   native_webhook_company_id: NativeWebhookCompanyId$inboundSchema.optional(),
   native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
   native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
+  native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
+  native_webhook_order_id: NativeWebhookOrderId$inboundSchema.optional(),
   native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
   native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
+  native_webhook_shipment_id: NativeWebhookShipmentId$inboundSchema.optional(),
   native_webhook_task_id: NativeWebhookTaskId$inboundSchema.optional(),
   outbound_fields: z.record(z.string()).optional(),
   raw_objects: z.array(z.string()).optional(),
@@ -1950,6 +2140,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     .optional(),
   virtual_webhook_candidate_id: VirtualWebhookCandidateId$inboundSchema
     .optional(),
+  virtual_webhook_carrier_id: VirtualWebhookCarrierId$inboundSchema.optional(),
   virtual_webhook_channel_id: VirtualWebhookChannelId$inboundSchema.optional(),
   virtual_webhook_collection_id: VirtualWebhookCollectionId$inboundSchema
     .optional(),
@@ -1968,11 +2159,13 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
     .optional(),
   virtual_webhook_job_id: VirtualWebhookJobId$inboundSchema.optional(),
+  virtual_webhook_label_id: VirtualWebhookLabelId$inboundSchema.optional(),
   virtual_webhook_lead_id: VirtualWebhookLeadId$inboundSchema.optional(),
   virtual_webhook_limit: VirtualWebhookLimit$inboundSchema.optional(),
   virtual_webhook_list_id: VirtualWebhookListId$inboundSchema.optional(),
   virtual_webhook_location_id: VirtualWebhookLocationId$inboundSchema
     .optional(),
+  virtual_webhook_order_id: VirtualWebhookOrderId$inboundSchema.optional(),
   virtual_webhook_org_id: VirtualWebhookOrgId$inboundSchema.optional(),
   virtual_webhook_page_id: VirtualWebhookPageId$inboundSchema.optional(),
   virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
@@ -1981,6 +2174,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema.optional(),
   virtual_webhook_repo_id: VirtualWebhookRepoId$inboundSchema.optional(),
   virtual_webhook_saleschannel_id: VirtualWebhookSaleschannelId$inboundSchema
+    .optional(),
+  virtual_webhook_shipment_id: VirtualWebhookShipmentId$inboundSchema
     .optional(),
   virtual_webhook_space_id: VirtualWebhookSpaceId$inboundSchema.optional(),
   virtual_webhook_start_gte: VirtualWebhookStartGte$inboundSchema.optional(),
@@ -2008,6 +2203,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_call_id": "listCallId",
     "list_campaign_id": "listCampaignId",
     "list_candidate_id": "listCandidateId",
+    "list_carrier_id": "listCarrierId",
     "list_category_id": "listCategoryId",
     "list_channel_id": "listChannelId",
     "list_class_id": "listClassId",
@@ -2029,6 +2225,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_item_id": "listItemId",
     "list_item_variant_id": "listItemVariantId",
     "list_job_id": "listJobId",
+    "list_label_id": "listLabelId",
     "list_lead_id": "listLeadId",
     "list_limit": "listLimit",
     "list_link_id": "listLinkId",
@@ -2036,6 +2233,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_location_id": "listLocationId",
     "list_offset": "listOffset",
     "list_order": "listOrder",
+    "list_order_id": "listOrderId",
     "list_org_id": "listOrgId",
     "list_package_id": "listPackageId",
     "list_page_id": "listPageId",
@@ -2049,6 +2247,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_repo_id": "listRepoId",
     "list_root_id": "listRootId",
     "list_saleschannel_id": "listSaleschannelId",
+    "list_shipment_id": "listShipmentId",
     "list_sort_by_created_at": "listSortByCreatedAt",
     "list_sort_by_name": "listSortByName",
     "list_sort_by_updated_at": "listSortByUpdatedAt",
@@ -2064,12 +2263,16 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_user_id": "listUserId",
     "list_user_mentioned_id": "listUserMentionedId",
     "native_webhook_calendar_id": "nativeWebhookCalendarId",
+    "native_webhook_carrier_id": "nativeWebhookCarrierId",
     "native_webhook_channel_id": "nativeWebhookChannelId",
     "native_webhook_company_id": "nativeWebhookCompanyId",
     "native_webhook_event_id": "nativeWebhookEventId",
     "native_webhook_form_id": "nativeWebhookFormId",
+    "native_webhook_label_id": "nativeWebhookLabelId",
+    "native_webhook_order_id": "nativeWebhookOrderId",
     "native_webhook_parent_id": "nativeWebhookParentId",
     "native_webhook_project_id": "nativeWebhookProjectId",
+    "native_webhook_shipment_id": "nativeWebhookShipmentId",
     "native_webhook_task_id": "nativeWebhookTaskId",
     "outbound_fields": "outboundFields",
     "raw_objects": "rawObjects",
@@ -2086,6 +2289,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_call_id": "virtualWebhookCallId",
     "virtual_webhook_campaign_id": "virtualWebhookCampaignId",
     "virtual_webhook_candidate_id": "virtualWebhookCandidateId",
+    "virtual_webhook_carrier_id": "virtualWebhookCarrierId",
     "virtual_webhook_channel_id": "virtualWebhookChannelId",
     "virtual_webhook_collection_id": "virtualWebhookCollectionId",
     "virtual_webhook_company_id": "virtualWebhookCompanyId",
@@ -2101,10 +2305,12 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_item_id": "virtualWebhookItemId",
     "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
     "virtual_webhook_job_id": "virtualWebhookJobId",
+    "virtual_webhook_label_id": "virtualWebhookLabelId",
     "virtual_webhook_lead_id": "virtualWebhookLeadId",
     "virtual_webhook_limit": "virtualWebhookLimit",
     "virtual_webhook_list_id": "virtualWebhookListId",
     "virtual_webhook_location_id": "virtualWebhookLocationId",
+    "virtual_webhook_order_id": "virtualWebhookOrderId",
     "virtual_webhook_org_id": "virtualWebhookOrgId",
     "virtual_webhook_page_id": "virtualWebhookPageId",
     "virtual_webhook_parent_id": "virtualWebhookParentId",
@@ -2112,6 +2318,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_project_id": "virtualWebhookProjectId",
     "virtual_webhook_repo_id": "virtualWebhookRepoId",
     "virtual_webhook_saleschannel_id": "virtualWebhookSaleschannelId",
+    "virtual_webhook_shipment_id": "virtualWebhookShipmentId",
     "virtual_webhook_space_id": "virtualWebhookSpaceId",
     "virtual_webhook_start_gte": "virtualWebhookStartGte",
     "virtual_webhook_status": "virtualWebhookStatus",

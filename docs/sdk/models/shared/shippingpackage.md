@@ -1,0 +1,25 @@
+# ShippingPackage
+
+## Example Usage
+
+```typescript
+import { ShippingPackage } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ShippingPackage = {};
+```
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `currency`                                                                                  | *string*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `description`                                                                               | *string*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `height`                                                                                    | *number*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `insuredAmount`                                                                             | *number*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `length`                                                                                    | *number*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `sizeUnit`                                                                                  | [shared.ShippingPackageSizeUnit](../../../sdk/models/shared/shippingpackagesizeunit.md)     | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `trackingNumber`                                                                            | *string*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `value`                                                                                     | *number*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `weight`                                                                                    | *number*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `weightUnit`                                                                                | [shared.ShippingPackageWeightUnit](../../../sdk/models/shared/shippingpackageweightunit.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `width`                                                                                     | *number*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
