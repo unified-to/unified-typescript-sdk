@@ -1,5 +1,7 @@
 # PropertyMessagingEventMessageAuthorMember
 
+for email systems, this field represents the From value
+
 ## Example Usage
 
 ```typescript

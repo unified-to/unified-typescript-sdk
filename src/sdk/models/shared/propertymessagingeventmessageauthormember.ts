@@ -8,6 +8,9 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * for email systems, this field represents the From value
+ */
 export type PropertyMessagingEventMessageAuthorMember = {
   email?: string | undefined;
   imageUrl?: string | undefined;

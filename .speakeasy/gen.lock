@@ -1,26 +1,26 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: fc328f365075899265a9857aed41aa46
+  docChecksum: 091d7b9c5c8337ec015b0663ff6edb22
   docVersion: "1.0"
-  speakeasyVersion: 1.685.2
-  generationVersion: 2.795.6
-  releaseVersion: 2.82.15
-  configChecksum: f912d10925739d188d95afb47fb8ff12
+  speakeasyVersion: 1.686.0
+  generationVersion: 2.796.1
+  releaseVersion: 2.82.16
+  configChecksum: c7e2fe561f64c8eb85bb197d422df3a5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 1f719d68-ed3d-4711-9698-64fb16bd6753
-  pristine_commit_hash: 796f0e8339bd3b08ab84c9fb30c18249d73aaf37
-  pristine_tree_hash: b156b6417ffb5fcaa9de24ddfd12408e42f08622
+  generation_id: 49518a2f-0f87-42b8-96f6-95d45c91f830
+  pristine_commit_hash: e330dd16fcb1f699e9ed0877dace1631e34a4f90
+  pristine_tree_hash: c4c0d8ef9b13e5d294fd118a9494ae5e4e24782f
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.26.21
+    core: 3.26.22
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -3018,8 +3018,8 @@ trackedFiles:
     pristine_git_object: 8204694b3cb2c2c23656d0a2008a7d8594b847f9
   docs/sdk/models/operations/patchmessagingeventqueryparamfields.md:
     id: 601d4c69eaee
-    last_write_checksum: sha1:c10df32074c851cb6a995e43521bca68866d5b19
-    pristine_git_object: c324804addc686c8d7649dd5b9a31169fb39473d
+    last_write_checksum: sha1:f8f197589067d7fa8e65873f964f2c51f811a9a1
+    pristine_git_object: 369d1341996720f435cb40d39234cc6020e2adbe
   docs/sdk/models/operations/patchmessagingeventrequest.md:
     id: 758cc9ab41f7
     last_write_checksum: sha1:91bc09764908a69c9d24c37797f7fed6897c55e9
@@ -4450,8 +4450,8 @@ trackedFiles:
     pristine_git_object: 2ac9cc366989587027cc9c376ece4088cd691029
   docs/sdk/models/operations/updatemessagingeventqueryparamfields.md:
     id: 7e4d82d75449
-    last_write_checksum: sha1:90717b078f9cde7b909ec3bb72c6f6784a9a4121
-    pristine_git_object: c0c5dc1d23a0a40cb23926ce9b48b56a8dde273f
+    last_write_checksum: sha1:1303621a93120fce323edd86e327385dde240c81
+    pristine_git_object: 2d221a1087ef4b7417f5add4e9992b22d46adf39
   docs/sdk/models/operations/updatemessagingeventrequest.md:
     id: 7ef5ffd6dbf3
     last_write_checksum: sha1:c0c74e3fc7198e6fd3fcd181f0b18f5efb63c841
@@ -6110,8 +6110,8 @@ trackedFiles:
     pristine_git_object: b1ea25708bafa6f17d5d5d03fd3988e7a6523f11
   docs/sdk/models/shared/messagingmessage.md:
     id: 83dcf0871e5f
-    last_write_checksum: sha1:e9479104fb7a8a616ac296225155918ca33f2ffa
-    pristine_git_object: fdc86c79e36d57fc8f5a03c85d19ae37ab3cc0b1
+    last_write_checksum: sha1:3565f585ee51341557a985648806ade1eda6d7ba
+    pristine_git_object: 87097b5fb42286dd8e835dbd3f9c1646646b6046
   docs/sdk/models/shared/messagingreaction.md:
     id: 71eb53c1ff4b
     last_write_checksum: sha1:3eebf6d434ca30b96750248a98edf619482d5db2
@@ -6530,20 +6530,20 @@ trackedFiles:
     pristine_git_object: 2655915848037aaefb525e4c115d99bbe8a60893
   docs/sdk/models/shared/propertymessagingeventmessage.md:
     id: a97621e6a8de
-    last_write_checksum: sha1:505150649ebcc2e9b741e83758b61a5fd9eeb1c6
-    pristine_git_object: 09c332a6515ed018ce096ba697c34f957d4df16e
+    last_write_checksum: sha1:f1bca94175765202be8663bdc82a0e20af6f6f44
+    pristine_git_object: d182a2aa3166ef38250b9be5bf32c1b7f21dda89
   docs/sdk/models/shared/propertymessagingeventmessageauthormember.md:
     id: 125bd04825b5
-    last_write_checksum: sha1:a26a9a28c60a224655d36d00a4de5801113c0419
-    pristine_git_object: 20def3b1b5e02762be06603f7b9789b6be77f1af
+    last_write_checksum: sha1:3c26fa65fa64ba2db5881825886414988acf8627
+    pristine_git_object: 87f24352fbe495f867b1a78e09ec477243f9fddb
   docs/sdk/models/shared/propertymessagingeventuser.md:
     id: 82c18e89bb92
     last_write_checksum: sha1:12fc8517ede5664488eda1ae0fd776d16f6fb2ec
     pristine_git_object: 452e89bd1bcfe96b8e17f611ad67fa369e4afc28
   docs/sdk/models/shared/propertymessagingmessageauthormember.md:
     id: 02fb69379369
-    last_write_checksum: sha1:965bca122d2effdf4c622f2fe072db14e7db24f4
-    pristine_git_object: 0e290db06727f6765bdf6e8f1ff03fa89462ae4e
+    last_write_checksum: sha1:d2525bdfa10086572c62d71237a79082784c0884
+    pristine_git_object: a895bc0802fe1c5404d025cb01715cce42f65963
   docs/sdk/models/shared/propertymessagingreactionmember.md:
     id: 15d557e2b498
     last_write_checksum: sha1:2c34d745dea76cfaa64f0defd49fe01b3899a888
@@ -7806,12 +7806,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:3999c8e6893d674db878bef23758e504777f978d
-    pristine_git_object: 84650e2c1e26aadaddd6b68f0f319c3fd66b125d
+    last_write_checksum: sha1:b37d53d156f5789966382a92ac1ae3e80e12b0b1
+    pristine_git_object: e7009f52e8e62de857bfc9e50e218d11f39a4a5b
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:d4546e90383c6d3ecebdd88d996dcd873e8dd9e1
-    pristine_git_object: b8ae82cc2a247571b6a0b2a5d10cc5798b438de8
+    last_write_checksum: sha1:cc711943c90775bfa7cd0ca55502502251e975ed
+    pristine_git_object: 445a6124dab03e318e15601e1e1be3c7cd497449
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10202,8 +10202,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:0e672a2337c1c2087cd2776de0e376a2919b335f
-    pristine_git_object: 4beeb108711d339c1bcf688a6fab36ab37a22c54
+    last_write_checksum: sha1:5b4ca75b6629d29348bd67d1833aca55fdf25e2a
+    pristine_git_object: 47d028c14621ab39c305fb48f365c16d4c4fa581
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -12106,8 +12106,8 @@ trackedFiles:
     pristine_git_object: d15992c5ff6ef2fc4bd186a8e9e8881ed862d9e8
   src/sdk/models/operations/patchmessagingevent.ts:
     id: 85784876a4f3
-    last_write_checksum: sha1:5b50b2f14f84672bc2a44e430cd4206e84e37d62
-    pristine_git_object: 19690b87e15ff2de44c89ac29c80a16bacb8ca27
+    last_write_checksum: sha1:ecfaa6aef958faa46dc2f449e422fe422068ff59
+    pristine_git_object: ca28547e381419c649599b10a110db33df05be49
   src/sdk/models/operations/patchmessagingmessage.ts:
     id: 5ef32d31e480
     last_write_checksum: sha1:15a560a831a99051be739e103763c82aee990700
@@ -12822,8 +12822,8 @@ trackedFiles:
     pristine_git_object: 03a5ef2bb5ef6f84855cb3ae32917483d4ef41ff
   src/sdk/models/operations/updatemessagingevent.ts:
     id: 93c7bd4a610f
-    last_write_checksum: sha1:b123355416b4af60a9f063add19ebbd95e4126ff
-    pristine_git_object: a469be2af0d09205d76acc57029513dfca90d66d
+    last_write_checksum: sha1:9c4f75bd987837e64b88cb429ac4da2a09b0a73c
+    pristine_git_object: b0b38dc327798bbc4bde8a52c5b739e73cf3f836
   src/sdk/models/operations/updatemessagingmessage.ts:
     id: 631c016e84bb
     last_write_checksum: sha1:c797e7cd8689583acca0d54d250f52130f4ccfef
@@ -13578,8 +13578,8 @@ trackedFiles:
     pristine_git_object: c0bb4f48baf8ea4fbcb237e0a4f927868190c398
   src/sdk/models/shared/messagingmessage.ts:
     id: 778c470779bb
-    last_write_checksum: sha1:079ab9499ff3c7496b2533704eb969033edf2761
-    pristine_git_object: 5714f5e6fc846550d8a50e445e8674816388f586
+    last_write_checksum: sha1:756e15e1570e6e7df1f988bb9d0d7e1480d35ba9
+    pristine_git_object: 48565861d5c45bb18a0919207ee504934291b50b
   src/sdk/models/shared/messagingreaction.ts:
     id: b3221e5a1c6a
     last_write_checksum: sha1:250e625969c8ef7d6dc216575c5282a572aa9cd8
@@ -13854,20 +13854,20 @@ trackedFiles:
     pristine_git_object: f839b5a87ac8d0369b600f7ea830566d2f366301
   src/sdk/models/shared/propertymessagingeventmessage.ts:
     id: 36e47f6d95b6
-    last_write_checksum: sha1:01a2807e03843fbeaf8ab00327cc0d5520c970a4
-    pristine_git_object: cbc228f5ed1fe49fac1736d40c944a3650019690
+    last_write_checksum: sha1:6e7695f7a3871b596fbc8ec479562e65dda9b257
+    pristine_git_object: 7ba03966c6c36031400f785d179af224d805f709
   src/sdk/models/shared/propertymessagingeventmessageauthormember.ts:
     id: 0593ba01097d
-    last_write_checksum: sha1:c5923c6e35fd16346b376a29151dc23a33fe10cb
-    pristine_git_object: 939c59a857d42e71cf5f868f811b4ae3098728c2
+    last_write_checksum: sha1:0e44f67a7556a022451485cdf286875237745079
+    pristine_git_object: 1b60304f7f6dc60df200d6c6e6831c57bd28d384
   src/sdk/models/shared/propertymessagingeventuser.ts:
     id: 56b4a15d1023
     last_write_checksum: sha1:d717b5d5f8c30ed749667f6b361dd0b27c343dde
     pristine_git_object: 9e7aa11257c17ff5931a74c7b394d19290c39325
   src/sdk/models/shared/propertymessagingmessageauthormember.ts:
     id: d01d5eb610a9
-    last_write_checksum: sha1:111d06654df7769b80cb1d1f31509afbd952972d
-    pristine_git_object: e15d0deb35e37ccf7922548b7752f0bd5c10f76d
+    last_write_checksum: sha1:f8ba204d5bbbd9422463e89e0f1ead1ea0213b61
+    pristine_git_object: a016bf135401d9e3c2cfc3c4ccf10c960bbe6db2
   src/sdk/models/shared/propertymessagingreactionmember.ts:
     id: 3d5538d2bb01
     last_write_checksum: sha1:ba3d3f5c0b1792b4611db79fd09c7d8f9f895ed7
@@ -19792,7 +19792,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.shipping.createShippingLabel()`: **Added**\n* `unified-to.shipping.createShippingRate()`: **Added**\n* `unified-to.shipping.createShippingShipment()`: **Added**\n* `unified-to.shipping.createShippingTracking()`: **Added**\n* `unified-to.shipping.getShippingCarrier()`: **Added**\n* `unified-to.shipping.getShippingLabel()`: **Added**\n* `unified-to.shipping.getShippingRate()`: **Added**\n* `unified-to.shipping.getShippingShipment()`: **Added**\n* `unified-to.shipping.getShippingTracking()`: **Added**\n* `unified-to.shipping.listShippingCarriers()`: **Added**\n* `unified-to.shipping.listShippingLabels()`: **Added**\n* `unified-to.shipping.listShippingShipments()`: **Added**\n* `unified-to.shipping.listShippingTrackings()`: **Added**\n* `unified-to.shipping.patchShippingShipment()`: **Added**\n* `unified-to.shipping.removeShippingLabel()`: **Added**\n* `unified-to.shipping.removeShippingShipment()`: **Added**\n* `unified-to.shipping.updateShippingShipment()`: **Added**\n* `unified-to.carrier.getShippingCarrier()`: **Added**\n* `unified-to.carrier.listShippingCarriers()`: **Added**\n* `unified-to.label.createShippingLabel()`: **Added**\n* `unified-to.label.getShippingLabel()`: **Added**\n* `unified-to.label.listShippingLabels()`: **Added**\n* `unified-to.label.removeShippingLabel()`: **Added**\n* `unified-to.rate.createShippingRate()`: **Added**\n* `unified-to.rate.getShippingRate()`: **Added**\n* `unified-to.shipment.createShippingShipment()`: **Added**\n* `unified-to.shipment.getShippingShipment()`: **Added**\n* `unified-to.shipment.listShippingShipments()`: **Added**\n* `unified-to.shipment.patchShippingShipment()`: **Added**\n* `unified-to.shipment.removeShippingShipment()`: **Added**\n* `unified-to.shipment.updateShippingShipment()`: **Added**\n* `unified-to.tracking.createShippingTracking()`: **Added**\n* `unified-to.tracking.getShippingTracking()`: **Added**\n* `unified-to.tracking.listShippingTrackings()`: **Added**\n* `unified-to.event.patchMessagingEvent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.event.updateMessagingEvent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.messaging.patchMessagingEvent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.messaging.updateMessagingEvent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.listUnifiedConnections()`: \n  *  `request.categories` **Changed**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`: \n  *  `request.categories` **Changed**\n  *  `response.[].support.{}` **Changed**\n* `unified-to.unified.listUnifiedIntegrations()`: \n  *  `request.categories` **Changed**\n  *  `response.[].support.{}` **Changed**\n* `unified-to.connection.listUnifiedConnections()`: \n  *  `request.categories` **Changed**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`: \n  *  `request.categories` **Changed**\n  *  `response.[].support.{}` **Changed**\n* `unified-to.integration.listUnifiedIntegrations()`: \n  *  `request.categories` **Changed**\n  *  `response.[].support.{}` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.event.patchMessagingEvent()`: \n  *  `request.fields` **Changed**\n* `unified-to.event.updateMessagingEvent()`: \n  *  `request.fields` **Changed**\n* `unified-to.messaging.patchMessagingEvent()`: \n  *  `request.fields` **Changed**\n* `unified-to.messaging.updateMessagingEvent()`: \n  *  `request.fields` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

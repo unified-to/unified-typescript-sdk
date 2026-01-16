@@ -15,8 +15,8 @@ export const UpdateMessagingEventQueryParamFields = {
   Message: "message",
   Button: "button",
   User: "user",
-  IsReplacingOriginal: "is_replacing_original",
   Raw: "raw",
+  IsReplacingOriginal: "is_replacing_original",
 } as const;
 export type UpdateMessagingEventQueryParamFields = ClosedEnum<
   typeof UpdateMessagingEventQueryParamFields

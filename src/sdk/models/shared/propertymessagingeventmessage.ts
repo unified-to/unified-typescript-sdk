@@ -46,6 +46,9 @@ import {
 
 export type PropertyMessagingEventMessage = {
   attachments?: Array<MessagingAttachment> | undefined;
+  /**
+   * for email systems, this field represents the From value
+   */
   authorMember?: PropertyMessagingEventMessageAuthorMember | undefined;
   buttons?: Array<MessagingButton> | undefined;
   channelId?: string | undefined;
@@ -58,11 +61,20 @@ export type PropertyMessagingEventMessage = {
    */
   channels?: Array<MessagingReference> | undefined;
   createdAt?: Date | undefined;
+  /**
+   * for email systems, this field represents the To value
+   */
   destinationMembers?: Array<MessagingMember> | undefined;
   hasChildren?: boolean | undefined;
+  /**
+   * for email systems, this field represents the BCC value
+   */
   hiddenMembers?: Array<MessagingMember> | undefined;
   id?: string | undefined;
   isUnread?: boolean | undefined;
+  /**
+   * for email systems, this field represents the CC value
+   */
   mentionedMembers?: Array<MessagingMember> | undefined;
   message?: string | undefined;
   messageHtml?: string | undefined;
