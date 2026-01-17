@@ -47,6 +47,10 @@ export type ListAdsGroupsRequest = {
    */
   orgId?: string | undefined;
   /**
+   * The parent ID to filter by
+   */
+  parentId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -75,6 +79,7 @@ export type ListAdsGroupsRequest$Outbound = {
   offset?: number | undefined;
   order?: string | undefined;
   org_id?: string | undefined;
+  parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -94,6 +99,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   orgId: z.string().optional(),
+  parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -103,6 +109,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
     campaignId: "campaign_id",
     connectionId: "connection_id",
     orgId: "org_id",
+    parentId: "parent_id",
     updatedGte: "updated_gte",
   });
 });

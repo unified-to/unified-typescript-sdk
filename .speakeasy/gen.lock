@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 091d7b9c5c8337ec015b0663ff6edb22
+  docChecksum: efb9a6c3665234f4ced6bdd175a6f17e
   docVersion: "1.0"
-  speakeasyVersion: 1.686.0
+  speakeasyVersion: 1.687.1
   generationVersion: 2.796.1
-  releaseVersion: 2.82.16
-  configChecksum: c7e2fe561f64c8eb85bb197d422df3a5
+  releaseVersion: 2.82.17
+  configChecksum: a40ded860c8848bef75bd3ca5ebb7426
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 49518a2f-0f87-42b8-96f6-95d45c91f830
-  pristine_commit_hash: e330dd16fcb1f699e9ed0877dace1631e34a4f90
-  pristine_tree_hash: c4c0d8ef9b13e5d294fd118a9494ae5e4e24782f
+  generation_id: 9466a658-e947-4e3f-83ea-e21c205e6215
+  pristine_commit_hash: 882a0f3731565548dbc9af44555190007960a9fe
+  pristine_tree_hash: 6421e96b12a4aae324cab31d0cb2c9bbbaa0dcb3
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -1710,8 +1710,8 @@ trackedFiles:
     pristine_git_object: 83c165ddb041cf61967f87d826f735361d0ee267
   docs/sdk/models/operations/listaccountingexpensesrequest.md:
     id: 9c5c8629e28d
-    last_write_checksum: sha1:46b18147bf99a5d452fc07af1fb129d8358f73fa
-    pristine_git_object: 83c21fe7e2f42afc7b5521ff3640702c083bdb58
+    last_write_checksum: sha1:65e0f694f1800a56ea95910ff35c0fe910eab0df
+    pristine_git_object: d4973cb9fd54eb63568e4521232fb4a5c2837500
   docs/sdk/models/operations/listaccountinginvoicesqueryparamfields.md:
     id: 2c312a24818b
     last_write_checksum: sha1:7896e1be07f530d704540879517bdf41080b6d14
@@ -1822,8 +1822,8 @@ trackedFiles:
     pristine_git_object: 43e85c4203292746fee9752f7073b62265699e33
   docs/sdk/models/operations/listadsgroupsrequest.md:
     id: 50c7c8f3c3e6
-    last_write_checksum: sha1:f75b60c48eabdb479d5242060ada8a5aa7af1188
-    pristine_git_object: 49475416c5acc3d041f32b74b83492914c786a76
+    last_write_checksum: sha1:c6c8fbfa26f1737828be8bb83ab282b2cfb8b4c7
+    pristine_git_object: f6f2ef24117bf1001a6e68e1811f6b6b25eaabd3
   docs/sdk/models/operations/listadsorganizationsqueryparamfields.md:
     id: 679c88502f84
     last_write_checksum: sha1:e7cad564ce28cfc5d8232e4c2f8bfe96761917d0
@@ -7806,12 +7806,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:b37d53d156f5789966382a92ac1ae3e80e12b0b1
-    pristine_git_object: e7009f52e8e62de857bfc9e50e218d11f39a4a5b
+    last_write_checksum: sha1:f0df959f8df7a324c858218620dfc989982d0374
+    pristine_git_object: 909e910a27fdc38ab64f9f8fa1cd6ac596f0b45a
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:cc711943c90775bfa7cd0ca55502502251e975ed
-    pristine_git_object: 445a6124dab03e318e15601e1e1be3c7cd497449
+    last_write_checksum: sha1:6aa59776b0f7911595fad2438599016344221438
+    pristine_git_object: 1ccee675a7ce4efd6d7f2dc04ecd082975462c34
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -7974,8 +7974,8 @@ trackedFiles:
     pristine_git_object: 0d123e68e3e81979d0b21a7c7b4468515db59a6b
   src/funcs/accountingListAccountingExpenses.ts:
     id: a5a424d39c82
-    last_write_checksum: sha1:719f4cd83ec05837be5ce9d411588d017d801e1e
-    pristine_git_object: 685c9a09d60e30f75b66312a45f6b9c13ade09df
+    last_write_checksum: sha1:d25e3ec7f7b650e348595bc0cb2b1bfcf0de51e9
+    pristine_git_object: ed14af77e67b76d74c7a7eb89afc3575493b2ef6
   src/funcs/accountingListAccountingInvoices.ts:
     id: 1332e28f0922
     last_write_checksum: sha1:d914c80f6a02e61fc0cc4d3dcef21e70f08a3f89
@@ -8210,8 +8210,8 @@ trackedFiles:
     pristine_git_object: 292af43a583204e2dae46a50a9dd7cf1cf0a33e0
   src/funcs/adsListAdsGroups.ts:
     id: e5ab3d678821
-    last_write_checksum: sha1:3c61b26f39686ff3d4b41791abbde019fd652c5d
-    pristine_git_object: b55491ae8d40ef6e6ac51ef26cbafe047a301e45
+    last_write_checksum: sha1:e1f1e6598af6795ac2ec6d4fb048290400e8d240
+    pristine_git_object: 63509e6af7f59b0d52a5e906ac51353df15fc6ca
   src/funcs/adsPatchAdsAd.ts:
     id: 5ecf884fc196
     last_write_checksum: sha1:e9f83c9413efc3d1dda851fabdd8cb9cc07de6ae
@@ -10202,8 +10202,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:5b4ca75b6629d29348bd67d1833aca55fdf25e2a
-    pristine_git_object: 47d028c14621ab39c305fb48f365c16d4c4fa581
+    last_write_checksum: sha1:11212d9cf06f25372465193bd1cfed633de54df3
+    pristine_git_object: 9d00fbb3c6a937ae9b15d82d8b881b8a33a52ddd
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -11434,8 +11434,8 @@ trackedFiles:
     pristine_git_object: 2b9090ab0225dabb49bfc8beb204fe6a0f5e4058
   src/sdk/models/operations/listaccountingexpenses.ts:
     id: 5917434df735
-    last_write_checksum: sha1:2df975789ade02c02428b8b038485cc22a68029b
-    pristine_git_object: 5c0ea697fe6737e3ca911f977b1b369be61331e4
+    last_write_checksum: sha1:d95daf1c1ab4f513c047510018139230f19b5c29
+    pristine_git_object: a20b102a98148b644f415be0e8408781114ed75d
   src/sdk/models/operations/listaccountinginvoices.ts:
     id: a990d54dbf7a
     last_write_checksum: sha1:c49c439831a6ea2304f3679ad7ac2b1f425f9a71
@@ -11490,8 +11490,8 @@ trackedFiles:
     pristine_git_object: 7e45e7596443a1dcbced9f046e4fdf5ef0511f20
   src/sdk/models/operations/listadsgroups.ts:
     id: 40d82fe59ee2
-    last_write_checksum: sha1:5b9a6fbeb63df3f5a0f66d28fc7498d851f3d743
-    pristine_git_object: 3f28d06752ede5078f9999de9acbb60972999d42
+    last_write_checksum: sha1:a6820c209e7ed91282196f51c037840e03907829
+    pristine_git_object: e6836701aea9229365df2266aa0618816033deb5
   src/sdk/models/operations/listadsorganizations.ts:
     id: 6d8f9c3dc0e5
     last_write_checksum: sha1:5a9a3257957008f1ed06e7ef478ed21f07260271
@@ -19792,7 +19792,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.event.patchMessagingEvent()`: \n  *  `request.fields` **Changed**\n* `unified-to.event.updateMessagingEvent()`: \n  *  `request.fields` **Changed**\n* `unified-to.messaging.patchMessagingEvent()`: \n  *  `request.fields` **Changed**\n* `unified-to.messaging.updateMessagingEvent()`: \n  *  `request.fields` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.listAccountingExpenses()`:  `request` **Changed**\n* `unified-to.expense.listAccountingExpenses()`:  `request` **Changed**\n* `unified-to.ads.listAdsGroups()`: \n  *  `request.parentId` **Added**\n* `unified-to.group.listAdsGroups()`: \n  *  `request.parentId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

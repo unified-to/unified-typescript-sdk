@@ -28,13 +28,29 @@ export type ListAccountingExpensesQueryParamFields = ClosedEnum<
 
 export type ListAccountingExpensesRequest = {
   /**
+   * The category ID to filter by (reference to AccountingCategory)
+   */
+  categoryId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
   /**
+   * The contact ID to filter by (reference to AccountingContact)
+   */
+  contactId?: string | undefined;
+  /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListAccountingExpensesQueryParamFields> | undefined;
+  /**
+   * The group ID to filter by (reference to HrisGroup)
+   */
+  groupId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -47,6 +63,10 @@ export type ListAccountingExpensesRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -65,14 +85,19 @@ export const ListAccountingExpensesQueryParamFields$outboundSchema:
 
 /** @internal */
 export type ListAccountingExpensesRequest$Outbound = {
+  category_id?: string | undefined;
   connection_id: string;
+  contact_id?: string | undefined;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
+  group_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
 };
@@ -83,20 +108,30 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAccountingExpensesRequest
 > = z.object({
+  categoryId: z.string().optional(),
   connectionId: z.string(),
+  contactId: z.string().optional(),
+  endLt: z.string().optional(),
   fields: z.array(ListAccountingExpensesQueryParamFields$outboundSchema)
     .optional(),
+  groupId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   updatedGte: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    categoryId: "category_id",
     connectionId: "connection_id",
+    contactId: "contact_id",
+    endLt: "end_lt",
+    groupId: "group_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
     userId: "user_id",
   });
