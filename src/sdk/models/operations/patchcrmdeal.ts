@@ -20,6 +20,7 @@ export const PatchCrmDealQueryParamFields = {
   StageId: "stage_id",
   Pipeline: "pipeline",
   PipelineId: "pipeline_id",
+  Stages: "stages",
   Source: "source",
   Probability: "probability",
   Tags: "tags",
@@ -30,6 +31,7 @@ export const PatchCrmDealQueryParamFields = {
   CompanyIds: "company_ids",
   Metadata: "metadata",
   Raw: "raw",
+  Pipelines: "pipelines",
 } as const;
 export type PatchCrmDealQueryParamFields = ClosedEnum<
   typeof PatchCrmDealQueryParamFields

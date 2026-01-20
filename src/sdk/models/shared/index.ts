@@ -105,6 +105,7 @@ export * from "./crmeventformoption.js";
 export * from "./crmlead.js";
 export * from "./crmmetadata.js";
 export * from "./crmpipeline.js";
+export * from "./crmreference.js";
 export * from "./crmstage.js";
 export * from "./crmtelephone.js";
 export * from "./enrichcompany.js";

@@ -13,6 +13,12 @@ import {
   CrmMetadata$Outbound,
   CrmMetadata$outboundSchema,
 } from "./crmmetadata.js";
+import {
+  CrmReference,
+  CrmReference$inboundSchema,
+  CrmReference$Outbound,
+  CrmReference$outboundSchema,
+} from "./crmreference.js";
 
 /**
  * A deal represents an opportunity with companies and/or contacts
@@ -31,11 +37,13 @@ export type CrmDeal = {
   name?: string | undefined;
   pipeline?: string | undefined;
   pipelineId?: string | undefined;
+  pipelines?: Array<CrmReference> | undefined;
   probability?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
   stage?: string | undefined;
   stageId?: string | undefined;
+  stages?: Array<CrmReference> | undefined;
   tags?: Array<string> | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
@@ -63,11 +71,13 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
     name: z.string().optional(),
     pipeline: z.string().optional(),
     pipeline_id: z.string().optional(),
+    pipelines: z.array(CrmReference$inboundSchema).optional(),
     probability: z.number().optional(),
     raw: z.record(z.any()).optional(),
     source: z.string().optional(),
     stage: z.string().optional(),
     stage_id: z.string().optional(),
+    stages: z.array(CrmReference$inboundSchema).optional(),
     tags: z.array(z.string()).optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
@@ -104,11 +114,13 @@ export type CrmDeal$Outbound = {
   name?: string | undefined;
   pipeline?: string | undefined;
   pipeline_id?: string | undefined;
+  pipelines?: Array<CrmReference$Outbound> | undefined;
   probability?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
   stage?: string | undefined;
   stage_id?: string | undefined;
+  stages?: Array<CrmReference$Outbound> | undefined;
   tags?: Array<string> | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -134,11 +146,13 @@ export const CrmDeal$outboundSchema: z.ZodType<
   name: z.string().optional(),
   pipeline: z.string().optional(),
   pipelineId: z.string().optional(),
+  pipelines: z.array(CrmReference$outboundSchema).optional(),
   probability: z.number().optional(),
   raw: z.record(z.any()).optional(),
   source: z.string().optional(),
   stage: z.string().optional(),
   stageId: z.string().optional(),
+  stages: z.array(CrmReference$outboundSchema).optional(),
   tags: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),

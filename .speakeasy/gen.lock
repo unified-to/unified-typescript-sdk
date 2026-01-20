@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: efb9a6c3665234f4ced6bdd175a6f17e
+  docChecksum: ffa471bd7fa4f3990f03aef2cc210f38
   docVersion: "1.0"
-  speakeasyVersion: 1.687.1
-  generationVersion: 2.796.1
-  releaseVersion: 2.82.17
-  configChecksum: a40ded860c8848bef75bd3ca5ebb7426
+  speakeasyVersion: 1.689.0
+  generationVersion: 2.796.4
+  releaseVersion: 2.82.18
+  configChecksum: 24ac0e735daa375c3d1dad509cbc9bc7
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 9466a658-e947-4e3f-83ea-e21c205e6215
-  pristine_commit_hash: 882a0f3731565548dbc9af44555190007960a9fe
-  pristine_tree_hash: 6421e96b12a4aae324cab31d0cb2c9bbbaa0dcb3
+  generation_id: 734adada-418d-451c-bc95-668835c2818e
+  pristine_commit_hash: 1508f02a30eec9bf7a7321015f4dce6018c456d4
+  pristine_tree_hash: ebbbb11148f98e77573c125f9e9ca481d2f7768a
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -358,8 +358,8 @@ trackedFiles:
     pristine_git_object: bf2967e5009b3329baafb353789ea6a896753d74
   docs/sdk/models/operations/createcrmdealqueryparamfields.md:
     id: 2c44ba3138e5
-    last_write_checksum: sha1:7f48c9a12e104fe316ff74e222d04da0fc97f319
-    pristine_git_object: f458b7c58994be44cb2e876cb605a3f01db8d910
+    last_write_checksum: sha1:e0eeef764705ceec6f7796bb459bd3bd9c4b75c0
+    pristine_git_object: 3a2583ca8b3e7528e4e91ea7cbf377e2e219f71d
   docs/sdk/models/operations/createcrmdealrequest.md:
     id: f4b64bb6fa14
     last_write_checksum: sha1:4d1f1a3e7d421017813d42e476b186b7849f36d2
@@ -1146,8 +1146,8 @@ trackedFiles:
     pristine_git_object: be102aa0bc67cade4d098f497bcef170aa395fcb
   docs/sdk/models/operations/getcrmdealqueryparamfields.md:
     id: b494c7987213
-    last_write_checksum: sha1:502f219f0327ee3b6c73fb3aeeaf8dd155c73913
-    pristine_git_object: a6368ffae4e02a5e2ba1a870e9d754f1e7280674
+    last_write_checksum: sha1:95f32c14d1396b37f21800321c08f6a1aa79b286
+    pristine_git_object: 53f9012bffe94ed29d681ab3339f0ceb1218c8e3
   docs/sdk/models/operations/getcrmdealrequest.md:
     id: 97816ce64e6e
     last_write_checksum: sha1:1f2d70c1589af41a7803046b83e1e1173b07ad6d
@@ -2026,8 +2026,8 @@ trackedFiles:
     pristine_git_object: 3edcf59a77d257b05521d4ba13e165d7fc158e13
   docs/sdk/models/operations/listcrmdealsqueryparamfields.md:
     id: b3937a9b90fd
-    last_write_checksum: sha1:ac0e245bd748a491b0d1f5e22c440403aa63b592
-    pristine_git_object: 0c03c8d6272c24a610153752f36df9d70c1e6a00
+    last_write_checksum: sha1:8198f385fd979d86d9e2d2c939470fda6191aa32
+    pristine_git_object: 9d45b923c4b3d7d18ddb4bb8823e269534a5ddad
   docs/sdk/models/operations/listcrmdealsrequest.md:
     id: 45034a6ad92a
     last_write_checksum: sha1:b14a4f6a1daa98bea43186bda43ca6ded99ce498
@@ -2842,8 +2842,8 @@ trackedFiles:
     pristine_git_object: 35e060e438eb6d770b40f0821af1ce1df6c14111
   docs/sdk/models/operations/patchcrmdealqueryparamfields.md:
     id: 0834f1718bf3
-    last_write_checksum: sha1:1376de114f85650110795dda11e2d6c124ba5eff
-    pristine_git_object: b6ebdf542ccf8fe02a3ca07b224ed6205900b8ba
+    last_write_checksum: sha1:3ac94c9a64d017be831fff058fb1294575be26e1
+    pristine_git_object: 9e425fc0a013d2494a0099a2767dc453fda18b4a
   docs/sdk/models/operations/patchcrmdealrequest.md:
     id: 57d70692a9d8
     last_write_checksum: sha1:4957cc9461152d602946f20332101a862bbde72f
@@ -4274,8 +4274,8 @@ trackedFiles:
     pristine_git_object: 46652b6baa897619f76abe935c4d15350d4a70c3
   docs/sdk/models/operations/updatecrmdealqueryparamfields.md:
     id: 30e6d660279e
-    last_write_checksum: sha1:76ef3c74c1d5a1e7081e77f514a3e7104e8b1424
-    pristine_git_object: 42537d2afed346ebf33d63bcc5bc326e8ec22f51
+    last_write_checksum: sha1:7468cedc6e6a56680b6bd06b1abdf5dc1cb05f8c
+    pristine_git_object: c6fea2dfcf66c90f05640df4f99fc144d7478dc4
   docs/sdk/models/operations/updatecrmdealrequest.md:
     id: 269c955be7f0
     last_write_checksum: sha1:a19359c777f9f326270dbbda17305ee6d8488016
@@ -5290,8 +5290,8 @@ trackedFiles:
     pristine_git_object: 7578ccf6ae57363514556a178ba6aa255e06af03
   docs/sdk/models/shared/crmdeal.md:
     id: 69654089034e
-    last_write_checksum: sha1:db5eae9b524c49656459f103820cc2558e803a88
-    pristine_git_object: 4074c84b668b0727c759e89bcabff79a9697d161
+    last_write_checksum: sha1:f62fd0cc750b039b0b25653deb1fe47ae50930d0
+    pristine_git_object: b78cdc9dccb9076ad328a1564761e07790f3a81c
   docs/sdk/models/shared/crmemail.md:
     id: e5eb5c4dfd98
     last_write_checksum: sha1:e73ad22ec6cbaa040665fb82b8a1481a49a362b2
@@ -5360,6 +5360,10 @@ trackedFiles:
     id: 14ce97abaa18
     last_write_checksum: sha1:4707e4a9ceb897bccd1fdaeb9e73384963c72c86
     pristine_git_object: e6e0a56eac5c81a43ab3d7053e7727c54d1f56f1
+  docs/sdk/models/shared/crmreference.md:
+    id: 5a10c8a895ff
+    last_write_checksum: sha1:a3546e8fc7e1a7b76915e5d907f3c76d5cd39a3d
+    pristine_git_object: 78673711b2d36157a52f5b5709069ed62834ce3f
   docs/sdk/models/shared/crmstage.md:
     id: f7dee93f2166
     last_write_checksum: sha1:9be78326c4672532202ef9d195ffefa54c531ffc
@@ -7806,12 +7810,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:f0df959f8df7a324c858218620dfc989982d0374
-    pristine_git_object: 909e910a27fdc38ab64f9f8fa1cd6ac596f0b45a
+    last_write_checksum: sha1:bf7cbeed58be2a45cb621b27dbd9169219a5a5f9
+    pristine_git_object: 50336df9e8507a0655563b042459f03bb27b72f5
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:6aa59776b0f7911595fad2438599016344221438
-    pristine_git_object: 1ccee675a7ce4efd6d7f2dc04ecd082975462c34
+    last_write_checksum: sha1:69310a05fdf71516bc72d37c513f371a2bc2a343
+    pristine_git_object: d37382ae014e803a950a9602ee3b820303053398
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10202,8 +10206,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:11212d9cf06f25372465193bd1cfed633de54df3
-    pristine_git_object: 9d00fbb3c6a937ae9b15d82d8b881b8a33a52ddd
+    last_write_checksum: sha1:cb06b64e8cd7943921033d64f1cb77f5dc1f32e1
+    pristine_git_object: cf077bb0f89f628fc9ec6109f855508411cab571
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -10738,8 +10742,8 @@ trackedFiles:
     pristine_git_object: 93c186153b884d4da7588b984a3ac6dc754c204a
   src/sdk/models/operations/createcrmdeal.ts:
     id: ca039a07da57
-    last_write_checksum: sha1:8c9d76d4986976a1e4bf4b0b5689fdaf8d8c4591
-    pristine_git_object: 8dad29377f2095fc7131249de9fb6f7289003f66
+    last_write_checksum: sha1:8e16d6e895b8388381a6e9c3523d46619f9c2e3b
+    pristine_git_object: 0ec97aaaaffdac6ea4db77b0f1ab6c0b63674621
   src/sdk/models/operations/createcrmevent.ts:
     id: 9ba7bd16b7e2
     last_write_checksum: sha1:083c5de03f58fa86e9c804b462660b9e6da0cad1
@@ -11134,8 +11138,8 @@ trackedFiles:
     pristine_git_object: 5ed186829bf400ee7ba0c8b1b0338d757baaa00e
   src/sdk/models/operations/getcrmdeal.ts:
     id: 9568b42c926d
-    last_write_checksum: sha1:14c38eba72c347d70f59895c361b8b9632a1c876
-    pristine_git_object: 968bf0f7893ca7bcfa9821cb138784d6ad383c8f
+    last_write_checksum: sha1:427fda63dcd11ef6494e7a4c76e1a330cb4ffcb3
+    pristine_git_object: 041291f14bb41fa4415ffaaf0a1667cc4894d266
   src/sdk/models/operations/getcrmevent.ts:
     id: e2cd6ebcc22a
     last_write_checksum: sha1:0998dfc898b91a9b15084288a4b933356818469c
@@ -11594,8 +11598,8 @@ trackedFiles:
     pristine_git_object: 3baed80701c01f8c83c084aa52e8549e20cde610
   src/sdk/models/operations/listcrmdeals.ts:
     id: 826901d79669
-    last_write_checksum: sha1:bd17096bd84e36a6c49529c934ecb204f3aab688
-    pristine_git_object: 7575da8fc3af0b1e57b43a6cdfff049c94c09d94
+    last_write_checksum: sha1:1dd2f0a1225d4f3bd88613ae599f2a408d942a68
+    pristine_git_object: c408c1bd2fd965d0a067744e403bf2727634067f
   src/sdk/models/operations/listcrmevents.ts:
     id: 7a2b70fb038a
     last_write_checksum: sha1:cd1cb3195dda7b1a04a774f5900a276f753a5c78
@@ -12018,8 +12022,8 @@ trackedFiles:
     pristine_git_object: 1a628870525e17658ea6af3b3af818de9c9ed9f1
   src/sdk/models/operations/patchcrmdeal.ts:
     id: f947666e0bc9
-    last_write_checksum: sha1:61d509ccb945c16069b2471efff83dbde0124b97
-    pristine_git_object: 13d7958605006ffef14029d1316c61054f68aaa6
+    last_write_checksum: sha1:3f6b502b4f26a559da042fb3e730ea04ed78a546
+    pristine_git_object: 0daedd9e3965ae36056ed4bbb038b70b3608a0f0
   src/sdk/models/operations/patchcrmevent.ts:
     id: ba6a86a073cb
     last_write_checksum: sha1:e5619ce4ac5bab06dbcdce1ea0dc15e5f38ca03f
@@ -12734,8 +12738,8 @@ trackedFiles:
     pristine_git_object: 8897284fa321980cd182b11f59b4a0324d43d227
   src/sdk/models/operations/updatecrmdeal.ts:
     id: 9cad16b5542c
-    last_write_checksum: sha1:6a97381e919bb3ce6ef08abf741773ae31bfc5d0
-    pristine_git_object: 17671d641384713c5944d9457b5d1f65fd27e47e
+    last_write_checksum: sha1:54724813a483f714dc2ab5beff78bdf354b9ff5c
+    pristine_git_object: 0e7f46dcf449b8729277099276ebbddd24626910
   src/sdk/models/operations/updatecrmevent.ts:
     id: 98c76dfba2b5
     last_write_checksum: sha1:da88dd21f8442b932d21164c8bf1223932f251d0
@@ -13326,8 +13330,8 @@ trackedFiles:
     pristine_git_object: acb909e13e43d9f189f2860743a6ba54494df121
   src/sdk/models/shared/crmdeal.ts:
     id: 351d0c708a78
-    last_write_checksum: sha1:1f59112b9d5b2f416877bc9d6db7c7c35995172d
-    pristine_git_object: f999e3d0e0da63f704638e1e17f8481d9934cc22
+    last_write_checksum: sha1:d9de41c148671a6131666f0ae2ad554a3e2eac7f
+    pristine_git_object: b457c21687aa125809f60eee4b6dceeb123716d6
   src/sdk/models/shared/crmemail.ts:
     id: 1a680b66c30d
     last_write_checksum: sha1:85668b198b076cbc0705ab798c9bd86645042322
@@ -13356,6 +13360,10 @@ trackedFiles:
     id: 42817072f408
     last_write_checksum: sha1:6b67f52be137dc2ad51385b0d0dbf6cc683637e5
     pristine_git_object: 17b544aeef1cea1201c7276bd89b9bddebf0b8fd
+  src/sdk/models/shared/crmreference.ts:
+    id: ff64d0e73e4d
+    last_write_checksum: sha1:5a2692a13d0f87aee4d0d1d4587b6c299338ef1c
+    pristine_git_object: 27c96dc30e056591ff4c170bfa072c3e5ce95eed
   src/sdk/models/shared/crmstage.ts:
     id: cc90f2673e7b
     last_write_checksum: sha1:3554f11b3bc499ac7c0f5113bb44d595c19328e6
@@ -13486,8 +13494,8 @@ trackedFiles:
     pristine_git_object: c65c1e1ae74a86db783ce21cc309bbfaa5bf9581
   src/sdk/models/shared/index.ts:
     id: e97e906e3c14
-    last_write_checksum: sha1:97bedd7483232cef4f8c5b28c98edc1a6cf07eea
-    pristine_git_object: 72357c24a35bdad4ff188e89fac8d548c4383a82
+    last_write_checksum: sha1:2320b4c9d536631075fa292efa3c907392f7a254
+    pristine_git_object: 33d33ab4e8c542e7186de3c5d553198fc991de2b
   src/sdk/models/shared/integration.ts:
     id: 7dddee0366e4
     last_write_checksum: sha1:febbe9d7dad4073133d5cf3fc897d66d3df00b29
@@ -19792,7 +19800,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.listAccountingExpenses()`:  `request` **Changed**\n* `unified-to.expense.listAccountingExpenses()`:  `request` **Changed**\n* `unified-to.ads.listAdsGroups()`: \n  *  `request.parentId` **Added**\n* `unified-to.group.listAdsGroups()`: \n  *  `request.parentId` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.crm.createCrmDeal()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.crm.getCrmDeal()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.crm.listCrmDeals()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.crm.patchCrmDeal()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.crm.updateCrmDeal()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.deal.createCrmDeal()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.deal.getCrmDeal()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.deal.listCrmDeals()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.deal.patchCrmDeal()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.deal.updateCrmDeal()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
