@@ -58,6 +58,10 @@ export type VerificationPackage = {
   tags?: Array<string> | undefined;
   type: VerificationPackageType;
   updatedAt?: Date | undefined;
+  /**
+   * {country}-{stateprovince/territory} or just {country} 2-digit ISO codes
+   */
+  validRegions?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -93,6 +97,7 @@ export const VerificationPackage$inboundSchema: z.ZodType<
   type: VerificationPackageType$inboundSchema,
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  valid_regions: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "average_processing_times": "averageProcessingTimes",
@@ -104,6 +109,7 @@ export const VerificationPackage$inboundSchema: z.ZodType<
     "max_score": "maxScore",
     "needs_ip_address": "needsIpAddress",
     "updated_at": "updatedAt",
+    "valid_regions": "validRegions",
   });
 });
 
