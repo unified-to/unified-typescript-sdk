@@ -10,9 +10,31 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  PropertyAdsReportMetricsGroupBidStrategy,
+  PropertyAdsReportMetricsGroupBidStrategy$inboundSchema,
+} from "./propertyadsreportmetricsgroupbidstrategy.js";
+import {
+  PropertyAdsReportMetricsGroupFrequencyCap,
+  PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema,
+} from "./propertyadsreportmetricsgroupfrequencycap.js";
+import {
+  PropertyAdsReportMetricsGroupPacing,
+  PropertyAdsReportMetricsGroupPacing$inboundSchema,
+} from "./propertyadsreportmetricsgrouppacing.js";
+import {
   PropertyAdsReportMetricsGroupTargeting,
   PropertyAdsReportMetricsGroupTargeting$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargeting.js";
+
+export const PropertyAdsReportMetricsGroupBudgetAllocationType = {
+  Unspecified: "UNSPECIFIED",
+  Automatic: "AUTOMATIC",
+  Fixed: "FIXED",
+  Unlimited: "UNLIMITED",
+} as const;
+export type PropertyAdsReportMetricsGroupBudgetAllocationType = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupBudgetAllocationType
+>;
 
 export const PropertyAdsReportMetricsGroupBudgetPeriod = {
   Daily: "DAILY",
@@ -24,22 +46,80 @@ export type PropertyAdsReportMetricsGroupBudgetPeriod = OpenEnum<
   typeof PropertyAdsReportMetricsGroupBudgetPeriod
 >;
 
+export const PropertyAdsReportMetricsGroupBudgetUnit = {
+  Unspecified: "UNSPECIFIED",
+  Currency: "CURRENCY",
+  Impressions: "IMPRESSIONS",
+} as const;
+export type PropertyAdsReportMetricsGroupBudgetUnit = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupBudgetUnit
+>;
+
+export const PropertyAdsReportMetricsGroupStatus = {
+  Unspecified: "UNSPECIFIED",
+  Active: "ACTIVE",
+  Paused: "PAUSED",
+  Archived: "ARCHIVED",
+  Draft: "DRAFT",
+  ScheduledForDeletion: "SCHEDULED_FOR_DELETION",
+} as const;
+export type PropertyAdsReportMetricsGroupStatus = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupStatus
+>;
+
+export const PropertyAdsReportMetricsGroupType = {
+  Display: "DISPLAY",
+  Video: "VIDEO",
+  Audio: "AUDIO",
+  Youtube: "YOUTUBE",
+} as const;
+export type PropertyAdsReportMetricsGroupType = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupType
+>;
+
 export type PropertyAdsReportMetricsGroup = {
   bidAmount?: number | undefined;
+  /**
+   * YOUTUBE_AND_PARTNERS
+   */
+  bidStrategy?: PropertyAdsReportMetricsGroupBidStrategy | undefined;
+  budgetAllocationType?:
+    | PropertyAdsReportMetricsGroupBudgetAllocationType
+    | undefined;
   budgetAmount?: number | undefined;
+  budgetMaxAmount?: number | undefined;
   budgetPeriod?: PropertyAdsReportMetricsGroupBudgetPeriod | undefined;
+  budgetUnit?: PropertyAdsReportMetricsGroupBudgetUnit | undefined;
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
+  creativeIds?: Array<string> | undefined;
   endAt?: Date | undefined;
+  frequencyCap?: PropertyAdsReportMetricsGroupFrequencyCap | undefined;
+  hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
+  insertionorderId?: string | undefined;
   isActive?: boolean | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
+  pacing?: PropertyAdsReportMetricsGroupPacing | undefined;
+  parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
+  status?: PropertyAdsReportMetricsGroupStatus | undefined;
   targeting?: PropertyAdsReportMetricsGroupTargeting | undefined;
+  type?: PropertyAdsReportMetricsGroupType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema:
+  z.ZodType<
+    PropertyAdsReportMetricsGroupBudgetAllocationType,
+    z.ZodTypeDef,
+    unknown
+  > = openEnums.inboundSchema(
+    PropertyAdsReportMetricsGroupBudgetAllocationType,
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema: z.ZodType<
@@ -49,40 +129,85 @@ export const PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetPeriod);
 
 /** @internal */
+export const PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsGroupBudgetUnit,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetUnit);
+
+/** @internal */
+export const PropertyAdsReportMetricsGroupStatus$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsGroupStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupStatus);
+
+/** @internal */
+export const PropertyAdsReportMetricsGroupType$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsGroupType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupType);
+
+/** @internal */
 export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroup,
   z.ZodTypeDef,
   unknown
 > = z.object({
   bid_amount: z.number().optional(),
+  bid_strategy: PropertyAdsReportMetricsGroupBidStrategy$inboundSchema
+    .optional(),
+  budget_allocation_type:
+    PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema.optional(),
   budget_amount: z.number().optional(),
+  budget_max_amount: z.number().optional(),
   budget_period: PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema
     .optional(),
+  budget_unit: PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema.optional(),
   campaign_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  creative_ids: z.array(z.string()).optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  frequency_cap: PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema
+    .optional(),
+  has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
+  insertionorder_id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
+  pacing: PropertyAdsReportMetricsGroupPacing$inboundSchema.optional(),
+  parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  status: PropertyAdsReportMetricsGroupStatus$inboundSchema.optional(),
   targeting: PropertyAdsReportMetricsGroupTargeting$inboundSchema.optional(),
+  type: PropertyAdsReportMetricsGroupType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "bid_amount": "bidAmount",
+    "bid_strategy": "bidStrategy",
+    "budget_allocation_type": "budgetAllocationType",
     "budget_amount": "budgetAmount",
+    "budget_max_amount": "budgetMaxAmount",
     "budget_period": "budgetPeriod",
+    "budget_unit": "budgetUnit",
     "campaign_id": "campaignId",
     "created_at": "createdAt",
+    "creative_ids": "creativeIds",
     "end_at": "endAt",
+    "frequency_cap": "frequencyCap",
+    "has_eu_political_ads": "hasEuPoliticalAds",
+    "insertionorder_id": "insertionorderId",
     "is_active": "isActive",
     "organization_id": "organizationId",
+    "parent_id": "parentId",
     "start_at": "startAt",
     "updated_at": "updatedAt",
   });

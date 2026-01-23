@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  PropertyAdsCampaignFrequencyCap,
+  PropertyAdsCampaignFrequencyCap$inboundSchema,
+  PropertyAdsCampaignFrequencyCap$Outbound,
+  PropertyAdsCampaignFrequencyCap$outboundSchema,
+} from "./propertyadscampaignfrequencycap.js";
+import {
   PropertyAdsCampaignTargeting,
   PropertyAdsCampaignTargeting$inboundSchema,
   PropertyAdsCampaignTargeting$Outbound,
@@ -24,17 +30,42 @@ export const BudgetPeriod = {
 } as const;
 export type BudgetPeriod = OpenEnum<typeof BudgetPeriod>;
 
+export const Goal = {
+  Unspecified: "UNSPECIFIED",
+  BrandAwareness: "BRAND_AWARENESS",
+  Reach: "REACH",
+  WebsiteTraffic: "WEBSITE_TRAFFIC",
+  Leads: "LEADS",
+  Sales: "SALES",
+  AppPromotion: "APP_PROMOTION",
+} as const;
+export type Goal = OpenEnum<typeof Goal>;
+
+export const AdsCampaignStatus = {
+  Unspecified: "UNSPECIFIED",
+  Active: "ACTIVE",
+  Paused: "PAUSED",
+  Archived: "ARCHIVED",
+  Draft: "DRAFT",
+  ScheduledForDeletion: "SCHEDULED_FOR_DELETION",
+} as const;
+export type AdsCampaignStatus = OpenEnum<typeof AdsCampaignStatus>;
+
 export type AdsCampaign = {
   budgetAmount?: number | undefined;
   budgetPeriod?: BudgetPeriod | undefined;
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
+  frequencyCap?: PropertyAdsCampaignFrequencyCap | undefined;
+  goal?: Goal | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
+  plannedSpendAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
+  status?: AdsCampaignStatus | undefined;
   targeting?: PropertyAdsCampaignTargeting | undefined;
   totalSpendAmount?: number | undefined;
   updatedAt?: Date | undefined;
@@ -54,6 +85,26 @@ export const BudgetPeriod$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(BudgetPeriod);
 
 /** @internal */
+export const Goal$inboundSchema: z.ZodType<Goal, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Goal);
+/** @internal */
+export const Goal$outboundSchema: z.ZodType<string, z.ZodTypeDef, Goal> =
+  openEnums.outboundSchema(Goal);
+
+/** @internal */
+export const AdsCampaignStatus$inboundSchema: z.ZodType<
+  AdsCampaignStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AdsCampaignStatus);
+/** @internal */
+export const AdsCampaignStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AdsCampaignStatus
+> = openEnums.outboundSchema(AdsCampaignStatus);
+
+/** @internal */
 export const AdsCampaign$inboundSchema: z.ZodType<
   AdsCampaign,
   z.ZodTypeDef,
@@ -65,13 +116,17 @@ export const AdsCampaign$inboundSchema: z.ZodType<
     .optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  frequency_cap: PropertyAdsCampaignFrequencyCap$inboundSchema.optional(),
+  goal: Goal$inboundSchema.optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
+  planned_spend_amount: z.number().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  status: AdsCampaignStatus$inboundSchema.optional(),
   targeting: PropertyAdsCampaignTargeting$inboundSchema.optional(),
   total_spend_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -82,8 +137,10 @@ export const AdsCampaign$inboundSchema: z.ZodType<
     "budget_period": "budgetPeriod",
     "created_at": "createdAt",
     "end_at": "endAt",
+    "frequency_cap": "frequencyCap",
     "is_active": "isActive",
     "organization_id": "organizationId",
+    "planned_spend_amount": "plannedSpendAmount",
     "start_at": "startAt",
     "total_spend_amount": "totalSpendAmount",
     "updated_at": "updatedAt",
@@ -95,12 +152,16 @@ export type AdsCampaign$Outbound = {
   budget_period?: string | undefined;
   created_at?: string | undefined;
   end_at?: string | undefined;
+  frequency_cap?: PropertyAdsCampaignFrequencyCap$Outbound | undefined;
+  goal?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
+  planned_spend_amount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
+  status?: string | undefined;
   targeting?: PropertyAdsCampaignTargeting$Outbound | undefined;
   total_spend_amount?: number | undefined;
   updated_at?: string | undefined;
@@ -116,12 +177,16 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   budgetPeriod: BudgetPeriod$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
+  frequencyCap: PropertyAdsCampaignFrequencyCap$outboundSchema.optional(),
+  goal: Goal$outboundSchema.optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
+  plannedSpendAmount: z.number().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
+  status: AdsCampaignStatus$outboundSchema.optional(),
   targeting: PropertyAdsCampaignTargeting$outboundSchema.optional(),
   totalSpendAmount: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -131,8 +196,10 @@ export const AdsCampaign$outboundSchema: z.ZodType<
     budgetPeriod: "budget_period",
     createdAt: "created_at",
     endAt: "end_at",
+    frequencyCap: "frequency_cap",
     isActive: "is_active",
     organizationId: "organization_id",
+    plannedSpendAmount: "planned_spend_amount",
     startAt: "start_at",
     totalSpendAmount: "total_spend_amount",
     updatedAt: "updated_at",

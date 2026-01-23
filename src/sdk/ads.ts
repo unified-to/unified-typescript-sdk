@@ -4,22 +4,34 @@
 
 import { adsCreateAdsAd } from "../funcs/adsCreateAdsAd.js";
 import { adsCreateAdsCampaign } from "../funcs/adsCreateAdsCampaign.js";
+import { adsCreateAdsCreative } from "../funcs/adsCreateAdsCreative.js";
 import { adsCreateAdsGroup } from "../funcs/adsCreateAdsGroup.js";
+import { adsCreateAdsInsertionorder } from "../funcs/adsCreateAdsInsertionorder.js";
 import { adsGetAdsAd } from "../funcs/adsGetAdsAd.js";
 import { adsGetAdsCampaign } from "../funcs/adsGetAdsCampaign.js";
+import { adsGetAdsCreative } from "../funcs/adsGetAdsCreative.js";
 import { adsGetAdsGroup } from "../funcs/adsGetAdsGroup.js";
+import { adsGetAdsInsertionorder } from "../funcs/adsGetAdsInsertionorder.js";
 import { adsListAdsAds } from "../funcs/adsListAdsAds.js";
 import { adsListAdsCampaigns } from "../funcs/adsListAdsCampaigns.js";
+import { adsListAdsCreatives } from "../funcs/adsListAdsCreatives.js";
 import { adsListAdsGroups } from "../funcs/adsListAdsGroups.js";
+import { adsListAdsInsertionorders } from "../funcs/adsListAdsInsertionorders.js";
 import { adsPatchAdsAd } from "../funcs/adsPatchAdsAd.js";
 import { adsPatchAdsCampaign } from "../funcs/adsPatchAdsCampaign.js";
+import { adsPatchAdsCreative } from "../funcs/adsPatchAdsCreative.js";
 import { adsPatchAdsGroup } from "../funcs/adsPatchAdsGroup.js";
+import { adsPatchAdsInsertionorder } from "../funcs/adsPatchAdsInsertionorder.js";
 import { adsRemoveAdsAd } from "../funcs/adsRemoveAdsAd.js";
 import { adsRemoveAdsCampaign } from "../funcs/adsRemoveAdsCampaign.js";
+import { adsRemoveAdsCreative } from "../funcs/adsRemoveAdsCreative.js";
 import { adsRemoveAdsGroup } from "../funcs/adsRemoveAdsGroup.js";
+import { adsRemoveAdsInsertionorder } from "../funcs/adsRemoveAdsInsertionorder.js";
 import { adsUpdateAdsAd } from "../funcs/adsUpdateAdsAd.js";
 import { adsUpdateAdsCampaign } from "../funcs/adsUpdateAdsCampaign.js";
+import { adsUpdateAdsCreative } from "../funcs/adsUpdateAdsCreative.js";
 import { adsUpdateAdsGroup } from "../funcs/adsUpdateAdsGroup.js";
+import { adsUpdateAdsInsertionorder } from "../funcs/adsUpdateAdsInsertionorder.js";
 import { organizationCreateAdsOrganization } from "../funcs/organizationCreateAdsOrganization.js";
 import { organizationGetAdsOrganization } from "../funcs/organizationGetAdsOrganization.js";
 import { organizationListAdsOrganizations } from "../funcs/organizationListAdsOrganizations.js";
@@ -62,6 +74,20 @@ export class Ads extends ClientSDK {
   }
 
   /**
+   * Create a creative
+   */
+  async createAdsCreative(
+    request: operations.CreateAdsCreativeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsCreative> {
+    return unwrapAsync(adsCreateAdsCreative(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Create a group
    */
   async createAdsGroup(
@@ -69,6 +95,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsGroup> {
     return unwrapAsync(adsCreateAdsGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create an insertionorder
+   */
+  async createAdsInsertionorder(
+    request: operations.CreateAdsInsertionorderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsInsertionorder> {
+    return unwrapAsync(adsCreateAdsInsertionorder(
       this,
       request,
       options,
@@ -118,6 +158,20 @@ export class Ads extends ClientSDK {
   }
 
   /**
+   * Retrieve a creative
+   */
+  async getAdsCreative(
+    request: operations.GetAdsCreativeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsCreative> {
+    return unwrapAsync(adsGetAdsCreative(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a group
    */
   async getAdsGroup(
@@ -125,6 +179,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsGroup> {
     return unwrapAsync(adsGetAdsGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an insertionorder
+   */
+  async getAdsInsertionorder(
+    request: operations.GetAdsInsertionorderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsInsertionorder> {
+    return unwrapAsync(adsGetAdsInsertionorder(
       this,
       request,
       options,
@@ -174,6 +242,20 @@ export class Ads extends ClientSDK {
   }
 
   /**
+   * List all creatives
+   */
+  async listAdsCreatives(
+    request: operations.ListAdsCreativesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsCreative>> {
+    return unwrapAsync(adsListAdsCreatives(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all groups
    */
   async listAdsGroups(
@@ -181,6 +263,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AdsGroup>> {
     return unwrapAsync(adsListAdsGroups(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all insertionorders
+   */
+  async listAdsInsertionorders(
+    request: operations.ListAdsInsertionordersRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsInsertionorder>> {
+    return unwrapAsync(adsListAdsInsertionorders(
       this,
       request,
       options,
@@ -244,6 +340,20 @@ export class Ads extends ClientSDK {
   }
 
   /**
+   * Update a creative
+   */
+  async patchAdsCreative(
+    request: operations.PatchAdsCreativeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsCreative> {
+    return unwrapAsync(adsPatchAdsCreative(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a group
    */
   async patchAdsGroup(
@@ -251,6 +361,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsGroup> {
     return unwrapAsync(adsPatchAdsGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an insertionorder
+   */
+  async patchAdsInsertionorder(
+    request: operations.PatchAdsInsertionorderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsInsertionorder> {
+    return unwrapAsync(adsPatchAdsInsertionorder(
       this,
       request,
       options,
@@ -300,6 +424,20 @@ export class Ads extends ClientSDK {
   }
 
   /**
+   * Remove a creative
+   */
+  async removeAdsCreative(
+    request: operations.RemoveAdsCreativeRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAdsCreativeResponse | undefined> {
+    return unwrapAsync(adsRemoveAdsCreative(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a group
    */
   async removeAdsGroup(
@@ -307,6 +445,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveAdsGroupResponse | undefined> {
     return unwrapAsync(adsRemoveAdsGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove an insertionorder
+   */
+  async removeAdsInsertionorder(
+    request: operations.RemoveAdsInsertionorderRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAdsInsertionorderResponse | undefined> {
+    return unwrapAsync(adsRemoveAdsInsertionorder(
       this,
       request,
       options,
@@ -356,6 +508,20 @@ export class Ads extends ClientSDK {
   }
 
   /**
+   * Update a creative
+   */
+  async updateAdsCreative(
+    request: operations.UpdateAdsCreativeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsCreative> {
+    return unwrapAsync(adsUpdateAdsCreative(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a group
    */
   async updateAdsGroup(
@@ -363,6 +529,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsGroup> {
     return unwrapAsync(adsUpdateAdsGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an insertionorder
+   */
+  async updateAdsInsertionorder(
+    request: operations.UpdateAdsInsertionorderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsInsertionorder> {
+    return unwrapAsync(adsUpdateAdsInsertionorder(
       this,
       request,
       options,

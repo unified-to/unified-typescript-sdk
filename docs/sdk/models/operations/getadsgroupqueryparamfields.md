@@ -5,11 +5,11 @@
 ```typescript
 import { GetAdsGroupQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetAdsGroupQueryParamFields = "campaign_id";
+let value: GetAdsGroupQueryParamFields = "status";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "campaign_id" | "organization_id" | "is_active" | "targeting" | "bid_amount" | "budget_amount" | "budget_period" | "start_at" | "end_at" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "parent_id" | "campaign_id" | "organization_id" | "insertionorder_id" | "status" | "targeting" | "bid_amount" | "bid_strategy" | "budget_amount" | "budget_period" | "budget_allocation_type" | "start_at" | "end_at" | "budget_unit" | "budget_max_amount" | "type" | "has_eu_political_ads" | "pacing" | "frequency_cap" | "creative_ids" | "is_active" | "raw"
 ```

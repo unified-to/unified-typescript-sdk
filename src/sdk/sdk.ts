@@ -36,6 +36,7 @@ import { Company } from "./company.js";
 import { Connection } from "./connection.js";
 import { Contact } from "./contact.js";
 import { Course } from "./course.js";
+import { Creative } from "./creative.js";
 import { Creditmemo } from "./creditmemo.js";
 import { Crm } from "./crm.js";
 import { Customer } from "./customer.js";
@@ -55,6 +56,7 @@ import { Forms } from "./forms.js";
 import { Genai } from "./genai.js";
 import { Group } from "./group.js";
 import { Hris } from "./hris.js";
+import { Insertionorder } from "./insertionorder.js";
 import { Instructor } from "./instructor.js";
 import { Integration } from "./integration.js";
 import { Interview } from "./interview.js";
@@ -245,9 +247,19 @@ export class UnifiedTo extends ClientSDK {
     return (this._campaign ??= new Campaign(this._options));
   }
 
+  private _creative?: Creative;
+  get creative(): Creative {
+    return (this._creative ??= new Creative(this._options));
+  }
+
   private _group?: Group;
   get group(): Group {
     return (this._group ??= new Group(this._options));
+  }
+
+  private _insertionorder?: Insertionorder;
+  get insertionorder(): Insertionorder {
+    return (this._insertionorder ??= new Insertionorder(this._options));
   }
 
   private _ats?: Ats;

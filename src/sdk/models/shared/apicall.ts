@@ -34,6 +34,7 @@ export type ApiCall = {
   size?: number | undefined;
   status: string;
   type: ApiCallType;
+  userAgent?: string | undefined;
   webhookId?: string | undefined;
   workspaceId?: string | undefined;
 };
@@ -65,6 +66,7 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
     size: z.number().optional(),
     status: z.string(),
     type: ApiCallType$inboundSchema,
+    user_agent: z.string().optional(),
     webhook_id: z.string().optional(),
     workspace_id: z.string().optional(),
   }).transform((v) => {
@@ -75,6 +77,7 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
       "integration_type": "integrationType",
       "ip_address": "ipAddress",
       "is_billable": "isBillable",
+      "user_agent": "userAgent",
       "webhook_id": "webhookId",
       "workspace_id": "workspaceId",
     });

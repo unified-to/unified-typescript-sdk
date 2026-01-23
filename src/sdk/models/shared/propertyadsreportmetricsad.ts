@@ -29,12 +29,25 @@ export type PropertyAdsReportMetricsAdAdType = OpenEnum<
   typeof PropertyAdsReportMetricsAdAdType
 >;
 
+export const PropertyAdsReportMetricsAdStatus = {
+  Unspecified: "UNSPECIFIED",
+  Active: "ACTIVE",
+  Paused: "PAUSED",
+  Archived: "ARCHIVED",
+  Draft: "DRAFT",
+  ScheduledForDeletion: "SCHEDULED_FOR_DELETION",
+} as const;
+export type PropertyAdsReportMetricsAdStatus = OpenEnum<
+  typeof PropertyAdsReportMetricsAdStatus
+>;
+
 export type PropertyAdsReportMetricsAd = {
   adCopy?: string | undefined;
   adType?: PropertyAdsReportMetricsAdAdType | undefined;
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeAssetUrl?: string | undefined;
+  creativeIds?: Array<string> | undefined;
   cta?: string | undefined;
   description?: string | undefined;
   finalUrl?: string | undefined;
@@ -42,9 +55,11 @@ export type PropertyAdsReportMetricsAd = {
   headline?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  itemId?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  status?: PropertyAdsReportMetricsAdStatus | undefined;
   targeting?: PropertyAdsReportMetricsAdTargeting | undefined;
   updatedAt?: Date | undefined;
 };
@@ -55,6 +70,13 @@ export const PropertyAdsReportMetricsAdAdType$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(PropertyAdsReportMetricsAdAdType);
+
+/** @internal */
+export const PropertyAdsReportMetricsAdStatus$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsAdStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsAdStatus);
 
 /** @internal */
 export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
@@ -68,6 +90,7 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_asset_url: z.string().optional(),
+  creative_ids: z.array(z.string()).optional(),
   cta: z.string().optional(),
   description: z.string().optional(),
   final_url: z.string().optional(),
@@ -75,9 +98,11 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
   headline: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  item_id: z.string().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  status: PropertyAdsReportMetricsAdStatus$inboundSchema.optional(),
   targeting: PropertyAdsReportMetricsAdTargeting$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -88,9 +113,11 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_asset_url": "creativeAssetUrl",
+    "creative_ids": "creativeIds",
     "final_url": "finalUrl",
     "group_id": "groupId",
     "is_active": "isActive",
+    "item_id": "itemId",
     "organization_id": "organizationId",
     "updated_at": "updatedAt",
   });
