@@ -21,6 +21,7 @@ export type ApiCallType = OpenEnum<typeof ApiCallType>;
 export type ApiCall = {
   connectionId?: string | undefined;
   createdAt?: Date | undefined;
+  endapiResponseTime?: number | undefined;
   environment: string;
   error?: string | undefined;
   externalXref?: string | undefined;
@@ -34,6 +35,7 @@ export type ApiCall = {
   size?: number | undefined;
   status: string;
   type: ApiCallType;
+  unifiedResponseTime?: number | undefined;
   userAgent?: string | undefined;
   webhookId?: string | undefined;
   workspaceId?: string | undefined;
@@ -53,6 +55,7 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
+    endapi_response_time: z.number().optional(),
     environment: z.string().default("Production"),
     error: z.string().optional(),
     external_xref: z.string().optional(),
@@ -66,6 +69,7 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
     size: z.number().optional(),
     status: z.string(),
     type: ApiCallType$inboundSchema,
+    unified_response_time: z.number().optional(),
     user_agent: z.string().optional(),
     webhook_id: z.string().optional(),
     workspace_id: z.string().optional(),
@@ -73,10 +77,12 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
     return remap$(v, {
       "connection_id": "connectionId",
       "created_at": "createdAt",
+      "endapi_response_time": "endapiResponseTime",
       "external_xref": "externalXref",
       "integration_type": "integrationType",
       "ip_address": "ipAddress",
       "is_billable": "isBillable",
+      "unified_response_time": "unifiedResponseTime",
       "user_agent": "userAgent",
       "webhook_id": "webhookId",
       "workspace_id": "workspaceId",

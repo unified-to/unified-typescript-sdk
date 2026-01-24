@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: e791a4d4f6acb4af6f7a5261e1dded55
+  docChecksum: 85c371a0fa4d94ec3af46b9fe331307f
   docVersion: "1.0"
-  speakeasyVersion: 1.695.0
+  speakeasyVersion: 1.697.5
   generationVersion: 2.799.0
-  releaseVersion: 2.82.20
-  configChecksum: d1dd50444e4af049c7b4f1d7122dcb22
+  releaseVersion: 2.82.21
+  configChecksum: b1d15a85e843eb5af9c5c7ffa429fda3
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 0a9da7b1-83e3-4d4e-bdb0-455b3653d371
-  pristine_commit_hash: e075bec173ca0d80a6772a993283c4f8c1512676
-  pristine_tree_hash: 3305a106de3875205ecb2d049559cae6b5ad7e55
+  generation_id: bcc27bb9-2faa-453e-968e-2eda0fa9509f
+  pristine_commit_hash: 9af8b2e618a85ea536091a882d67f0370cc4648b
+  pristine_tree_hash: 477df420e6aca4e7498042a2090cfac3962d5de7
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -5070,8 +5070,8 @@ trackedFiles:
     pristine_git_object: eef746e0b09461fdf68eec3c21ed9e4da234f497
   docs/sdk/models/shared/apicall.md:
     id: 25c50cd47669
-    last_write_checksum: sha1:f45cd9020e2c845ebc8867e2bbb9670034f56f7e
-    pristine_git_object: 5e37c4ea44c173476fb5299cd7226b93c356efb6
+    last_write_checksum: sha1:93db3ac9dba4f70358d840e55e9b8cc810067b78
+    pristine_git_object: cdef9318b0a4f1159fbf61cb6b04972777c328b9
   docs/sdk/models/shared/apicalltype.md:
     id: e9c63a4c56ff
     last_write_checksum: sha1:2b02a3798e0ce6e50ff0e6cb13dbe240ac22e859
@@ -5406,8 +5406,8 @@ trackedFiles:
     pristine_git_object: 7ba966d8fd453aceb41b67b4270d74ec2e7aebbf
   docs/sdk/models/shared/connection.md:
     id: 1c171381dd82
-    last_write_checksum: sha1:5097f4b95b4d307f1aaadf5ab463cd2c7f2083d0
-    pristine_git_object: de8bc2a3f07fd7841d4217e31948fd5f14656575
+    last_write_checksum: sha1:6f14551379cf636ad88b196b0a8e11556e4dd6a4
+    pristine_git_object: 8ba69af470ecf2aed38a4154f01469a317b62f8e
   docs/sdk/models/shared/contentstype.md:
     id: 6da131716566
     last_write_checksum: sha1:a1f38b982c229832f39d50450010718ae1543ee2
@@ -8122,12 +8122,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:40e81a99ba72876e0916e77dd59370a947f6dc84
-    pristine_git_object: 97f67119c6e437b74cba5047aa761b2b455c3f6f
+    last_write_checksum: sha1:807279e18b389cefe0293b79b74251253f2c63e0
+    pristine_git_object: a8b495fba5f6177837ca952f3a361912953f3468
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:e39cfa9be8a7ca57d5bbd09c60ec521a5075e44d
-    pristine_git_object: 66cce89c324d3cfd0b7f41ebd1e1970dc1442cf7
+    last_write_checksum: sha1:df00f9ed9aff9ea53ac468aba148aaba15f3e1f8
+    pristine_git_object: ec27b4c0cfd1917ca0d4c520008d5bb5d75e769a
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10566,8 +10566,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:661f805e9e3803b9b6968e6eb71bd951cefdfd89
-    pristine_git_object: 32a725e19efb21c9391bf87c9cd3ea8124b72887
+    last_write_checksum: sha1:15b7b809d068b081201011bce581aff2c767841c
+    pristine_git_object: f9ff5ca83fcb764b225ab9f8f38030c50264a876
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -13550,8 +13550,8 @@ trackedFiles:
     pristine_git_object: 4414b689252bbbcb28d852a3f4a51f926fe4f74a
   src/sdk/models/shared/apicall.ts:
     id: e858a24f31a0
-    last_write_checksum: sha1:57effe8e87ca63407361c47cf363f8ac5f14ce08
-    pristine_git_object: 67f428166bdd6eb5ec5e821a5d2016bbea884eca
+    last_write_checksum: sha1:93362e4fcf2dc6bf7aba75580f02746c9d4e2e52
+    pristine_git_object: 8a2a7ed6ecc09631d3f084e5ddf9f3653678a92b
   src/sdk/models/shared/atsactivity.ts:
     id: c043a16eb816
     last_write_checksum: sha1:dcada8535a570727a48b84c1e2763d0b961ff95f
@@ -13746,8 +13746,8 @@ trackedFiles:
     pristine_git_object: 1080ea63d4f095e3f91a73cc8fe2c9170a28c986
   src/sdk/models/shared/connection.ts:
     id: 18ea99cdadfb
-    last_write_checksum: sha1:e76d281e746d0908a5c0ba1f58c49fc055485b06
-    pristine_git_object: d5805146afed2ba27d2163b418991db393842ac6
+    last_write_checksum: sha1:61b70ef4dc231471cfc06d9caad79128aa66cacb
+    pristine_git_object: d7dd634a8bf1b8554c96fe3a172454ffbe3805e9
   src/sdk/models/shared/crmcompany.ts:
     id: fdb0cee06281
     last_write_checksum: sha1:798971352d3243e500c415613d6b61e9a91895b2
@@ -20386,7 +20386,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.ads.createAdsCreative()`: **Added**\n* `unified-to.ads.createAdsInsertionorder()`: **Added**\n* `unified-to.ads.getAdsCreative()`: **Added**\n* `unified-to.ads.getAdsInsertionorder()`: **Added**\n* `unified-to.ads.listAdsCreatives()`: **Added**\n* `unified-to.ads.listAdsInsertionorders()`: **Added**\n* `unified-to.ads.patchAdsCreative()`: **Added**\n* `unified-to.ads.patchAdsInsertionorder()`: **Added**\n* `unified-to.ads.removeAdsCreative()`: **Added**\n* `unified-to.ads.removeAdsInsertionorder()`: **Added**\n* `unified-to.ads.updateAdsCreative()`: **Added**\n* `unified-to.ads.updateAdsInsertionorder()`: **Added**\n* `unified-to.creative.createAdsCreative()`: **Added**\n* `unified-to.creative.getAdsCreative()`: **Added**\n* `unified-to.creative.listAdsCreatives()`: **Added**\n* `unified-to.creative.patchAdsCreative()`: **Added**\n* `unified-to.creative.removeAdsCreative()`: **Added**\n* `unified-to.creative.updateAdsCreative()`: **Added**\n* `unified-to.insertionorder.createAdsInsertionorder()`: **Added**\n* `unified-to.insertionorder.getAdsInsertionorder()`: **Added**\n* `unified-to.insertionorder.listAdsInsertionorders()`: **Added**\n* `unified-to.insertionorder.patchAdsInsertionorder()`: **Added**\n* `unified-to.insertionorder.removeAdsInsertionorder()`: **Added**\n* `unified-to.insertionorder.updateAdsInsertionorder()`: **Added**\n* `unified-to.report.listAdsReports()`:  `response.[].metrics.[]` **Changed**\n* `unified-to.ads.createAdsAd()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.createAdsGroup()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.getAdsAd()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.getAdsGroup()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.listAdsAds()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.ads.listAdsCampaigns()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.ads.listAdsGroups()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.ads.listAdsReports()`:  `response.[].metrics.[]` **Changed**\n* `unified-to.ads.patchAdsAd()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.patchAdsGroup()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.updateAdsAd()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.updateAdsGroup()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ad.createAdsAd()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ad.getAdsAd()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.ad.listAdsAds()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.ad.patchAdsAd()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ad.updateAdsAd()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.campaign.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.campaign.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.campaign.listAdsCampaigns()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.campaign.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.campaign.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.group.createAdsGroup()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.group.getAdsGroup()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.group.listAdsGroups()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.group.patchAdsGroup()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.group.updateAdsGroup()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.getUnifiedApicall()`:  `response.user_agent` **Added**\n* `unified-to.unified.listUnifiedApicalls()`:  `response.[].userAgent` **Added**\n* `unified-to.apicall.getUnifiedApicall()`:  `response.user_agent` **Added**\n* `unified-to.apicall.listUnifiedApicalls()`:  `response.[].userAgent` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.getUnifiedApicall()`:  `response` **Changed**\n* `unified-to.unified.getUnifiedConnection()`:  `response` **Changed**\n* `unified-to.unified.listUnifiedApicalls()`:  `response.[]` **Changed**\n* `unified-to.unified.listUnifiedConnections()`:  `response.[]` **Changed**\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `unified-to.apicall.getUnifiedApicall()`:  `response` **Changed**\n* `unified-to.apicall.listUnifiedApicalls()`:  `response.[]` **Changed**\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.connection.getUnifiedConnection()`:  `response` **Changed**\n* `unified-to.connection.listUnifiedConnections()`:  `response.[]` **Changed**\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
