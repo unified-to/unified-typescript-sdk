@@ -7,19 +7,18 @@
 * [createShippingLabel](#createshippinglabel) - Create a label
 * [createShippingRate](#createshippingrate) - Create a rate
 * [createShippingShipment](#createshippingshipment) - Create a shipment
-* [createShippingTracking](#createshippingtracking) - Create a tracking
 * [getShippingCarrier](#getshippingcarrier) - Retrieve a carrier
 * [getShippingLabel](#getshippinglabel) - Retrieve a label
-* [getShippingRate](#getshippingrate) - Retrieve a rate
 * [getShippingShipment](#getshippingshipment) - Retrieve a shipment
 * [getShippingTracking](#getshippingtracking) - Retrieve a tracking
 * [listShippingCarriers](#listshippingcarriers) - List all carriers
 * [listShippingLabels](#listshippinglabels) - List all labels
 * [listShippingShipments](#listshippingshipments) - List all shipments
-* [listShippingTrackings](#listshippingtrackings) - List all trackings
+* [patchShippingLabel](#patchshippinglabel) - Update a label
 * [patchShippingShipment](#patchshippingshipment) - Update a shipment
 * [removeShippingLabel](#removeshippinglabel) - Remove a label
 * [removeShippingShipment](#removeshippingshipment) - Remove a shipment
+* [updateShippingLabel](#updateshippinglabel) - Update a label
 * [updateShippingShipment](#updateshippingshipment) - Update a shipment
 
 ## createShippingLabel
@@ -259,85 +258,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createShippingTracking
-
-Create a tracking
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="createShippingTracking" method="post" path="/shipping/{connection_id}/tracking" -->
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.shipping.createShippingTracking({
-    shippingTracking: {},
-    connectionId: "<id>",
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { shippingCreateShippingTracking } from "@unified-api/typescript-sdk/funcs/shippingCreateShippingTracking.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await shippingCreateShippingTracking(unifiedTo, {
-    shippingTracking: {},
-    connectionId: "<id>",
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("shippingCreateShippingTracking failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateShippingTrackingRequest](../../sdk/models/operations/createshippingtrackingrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.ShippingTracking](../../sdk/models/shared/shippingtracking.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
 ## getShippingCarrier
 
 Retrieve a carrier
@@ -489,85 +409,6 @@ run();
 ### Response
 
 **Promise\<[shared.ShippingLabel](../../sdk/models/shared/shippinglabel.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
-## getShippingRate
-
-Retrieve a rate
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="getShippingRate" method="get" path="/shipping/{connection_id}/rate/{id}" -->
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.shipping.getShippingRate({
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { shippingGetShippingRate } from "@unified-api/typescript-sdk/funcs/shippingGetShippingRate.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await shippingGetShippingRate(unifiedTo, {
-    connectionId: "<id>",
-    id: "<id>",
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("shippingGetShippingRate failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetShippingRateRequest](../../sdk/models/operations/getshippingraterequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.ShippingRate](../../sdk/models/shared/shippingrate.md)\>**
 
 ### Errors
 
@@ -964,13 +805,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listShippingTrackings
+## patchShippingLabel
 
-List all trackings
+Update a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listShippingTrackings" method="get" path="/shipping/{connection_id}/tracking" -->
+<!-- UsageSnippet language="typescript" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -981,8 +822,10 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.shipping.listShippingTrackings({
+  const result = await unifiedTo.shipping.patchShippingLabel({
+    shippingLabel: {},
     connectionId: "<id>",
+    id: "<id>",
   });
 
   console.log(result);
@@ -997,7 +840,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { shippingListShippingTrackings } from "@unified-api/typescript-sdk/funcs/shippingListShippingTrackings.js";
+import { shippingPatchShippingLabel } from "@unified-api/typescript-sdk/funcs/shippingPatchShippingLabel.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1008,14 +851,16 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await shippingListShippingTrackings(unifiedTo, {
+  const res = await shippingPatchShippingLabel(unifiedTo, {
+    shippingLabel: {},
     connectionId: "<id>",
+    id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("shippingListShippingTrackings failed:", res.error);
+    console.log("shippingPatchShippingLabel failed:", res.error);
   }
 }
 
@@ -1026,14 +871,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListShippingTrackingsRequest](../../sdk/models/operations/listshippingtrackingsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchShippingLabelRequest](../../sdk/models/operations/patchshippinglabelrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[shared.ShippingTracking[]](../../models/.md)\>**
+**Promise\<[shared.ShippingLabel](../../sdk/models/shared/shippinglabel.md)\>**
 
 ### Errors
 
@@ -1273,6 +1118,87 @@ run();
 ### Response
 
 **Promise\<[operations.RemoveShippingShipmentResponse](../../sdk/models/operations/removeshippingshipmentresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateShippingLabel
+
+Update a label
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.shipping.updateShippingLabel({
+    shippingLabel: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { shippingUpdateShippingLabel } from "@unified-api/typescript-sdk/funcs/shippingUpdateShippingLabel.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await shippingUpdateShippingLabel(unifiedTo, {
+    shippingLabel: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("shippingUpdateShippingLabel failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateShippingLabelRequest](../../sdk/models/operations/updateshippinglabelrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.ShippingLabel](../../sdk/models/shared/shippinglabel.md)\>**
 
 ### Errors
 

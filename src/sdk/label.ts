@@ -5,7 +5,9 @@
 import { shippingCreateShippingLabel } from "../funcs/shippingCreateShippingLabel.js";
 import { shippingGetShippingLabel } from "../funcs/shippingGetShippingLabel.js";
 import { shippingListShippingLabels } from "../funcs/shippingListShippingLabels.js";
+import { shippingPatchShippingLabel } from "../funcs/shippingPatchShippingLabel.js";
 import { shippingRemoveShippingLabel } from "../funcs/shippingRemoveShippingLabel.js";
+import { shippingUpdateShippingLabel } from "../funcs/shippingUpdateShippingLabel.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -55,6 +57,20 @@ export class Label extends ClientSDK {
   }
 
   /**
+   * Update a label
+   */
+  async patchShippingLabel(
+    request: operations.PatchShippingLabelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ShippingLabel> {
+    return unwrapAsync(shippingPatchShippingLabel(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a label
    */
   async removeShippingLabel(
@@ -62,6 +78,20 @@ export class Label extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveShippingLabelResponse | undefined> {
     return unwrapAsync(shippingRemoveShippingLabel(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a label
+   */
+  async updateShippingLabel(
+    request: operations.UpdateShippingLabelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ShippingLabel> {
+    return unwrapAsync(shippingUpdateShippingLabel(
       this,
       request,
       options,

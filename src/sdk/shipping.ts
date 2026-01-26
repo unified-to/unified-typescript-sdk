@@ -5,19 +5,18 @@
 import { shippingCreateShippingLabel } from "../funcs/shippingCreateShippingLabel.js";
 import { shippingCreateShippingRate } from "../funcs/shippingCreateShippingRate.js";
 import { shippingCreateShippingShipment } from "../funcs/shippingCreateShippingShipment.js";
-import { shippingCreateShippingTracking } from "../funcs/shippingCreateShippingTracking.js";
 import { shippingGetShippingCarrier } from "../funcs/shippingGetShippingCarrier.js";
 import { shippingGetShippingLabel } from "../funcs/shippingGetShippingLabel.js";
-import { shippingGetShippingRate } from "../funcs/shippingGetShippingRate.js";
 import { shippingGetShippingShipment } from "../funcs/shippingGetShippingShipment.js";
 import { shippingGetShippingTracking } from "../funcs/shippingGetShippingTracking.js";
 import { shippingListShippingCarriers } from "../funcs/shippingListShippingCarriers.js";
 import { shippingListShippingLabels } from "../funcs/shippingListShippingLabels.js";
 import { shippingListShippingShipments } from "../funcs/shippingListShippingShipments.js";
-import { shippingListShippingTrackings } from "../funcs/shippingListShippingTrackings.js";
+import { shippingPatchShippingLabel } from "../funcs/shippingPatchShippingLabel.js";
 import { shippingPatchShippingShipment } from "../funcs/shippingPatchShippingShipment.js";
 import { shippingRemoveShippingLabel } from "../funcs/shippingRemoveShippingLabel.js";
 import { shippingRemoveShippingShipment } from "../funcs/shippingRemoveShippingShipment.js";
+import { shippingUpdateShippingLabel } from "../funcs/shippingUpdateShippingLabel.js";
 import { shippingUpdateShippingShipment } from "../funcs/shippingUpdateShippingShipment.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -68,20 +67,6 @@ export class Shipping extends ClientSDK {
   }
 
   /**
-   * Create a tracking
-   */
-  async createShippingTracking(
-    request: operations.CreateShippingTrackingRequest,
-    options?: RequestOptions,
-  ): Promise<shared.ShippingTracking> {
-    return unwrapAsync(shippingCreateShippingTracking(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
    * Retrieve a carrier
    */
   async getShippingCarrier(
@@ -103,20 +88,6 @@ export class Shipping extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.ShippingLabel> {
     return unwrapAsync(shippingGetShippingLabel(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Retrieve a rate
-   */
-  async getShippingRate(
-    request: operations.GetShippingRateRequest,
-    options?: RequestOptions,
-  ): Promise<shared.ShippingRate> {
-    return unwrapAsync(shippingGetShippingRate(
       this,
       request,
       options,
@@ -194,13 +165,13 @@ export class Shipping extends ClientSDK {
   }
 
   /**
-   * List all trackings
+   * Update a label
    */
-  async listShippingTrackings(
-    request: operations.ListShippingTrackingsRequest,
+  async patchShippingLabel(
+    request: operations.PatchShippingLabelRequest,
     options?: RequestOptions,
-  ): Promise<Array<shared.ShippingTracking>> {
-    return unwrapAsync(shippingListShippingTrackings(
+  ): Promise<shared.ShippingLabel> {
+    return unwrapAsync(shippingPatchShippingLabel(
       this,
       request,
       options,
@@ -243,6 +214,20 @@ export class Shipping extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveShippingShipmentResponse | undefined> {
     return unwrapAsync(shippingRemoveShippingShipment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a label
+   */
+  async updateShippingLabel(
+    request: operations.UpdateShippingLabelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ShippingLabel> {
+    return unwrapAsync(shippingUpdateShippingLabel(
       this,
       request,
       options,

@@ -3,7 +3,6 @@
  */
 
 import { shippingCreateShippingRate } from "../funcs/shippingCreateShippingRate.js";
-import { shippingGetShippingRate } from "../funcs/shippingGetShippingRate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -18,20 +17,6 @@ export class Rate extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.ShippingRate> {
     return unwrapAsync(shippingCreateShippingRate(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Retrieve a rate
-   */
-  async getShippingRate(
-    request: operations.GetShippingRateRequest,
-    options?: RequestOptions,
-  ): Promise<shared.ShippingRate> {
-    return unwrapAsync(shippingGetShippingRate(
       this,
       request,
       options,

@@ -1,13 +1,14 @@
-# CreateShippingTrackingRequest
+# UpdateShippingLabelRequest
 
 ## Example Usage
 
 ```typescript
-import { CreateShippingTrackingRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+import { UpdateShippingLabelRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateShippingTrackingRequest = {
-  shippingTracking: {},
+let value: UpdateShippingLabelRequest = {
+  shippingLabel: {},
   connectionId: "<id>",
+  id: "<id>",
 };
 ```
 
@@ -15,7 +16,8 @@ let value: CreateShippingTrackingRequest = {
 
 | Field                                                                                                                                            | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `shippingTracking`                                                                                                                               | [shared.ShippingTracking](../../../sdk/models/shared/shippingtracking.md)                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `shippingLabel`                                                                                                                                  | [shared.ShippingLabel](../../../sdk/models/shared/shippinglabel.md)                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `connectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `fields`                                                                                                                                         | [operations.CreateShippingTrackingQueryParamFields](../../../sdk/models/operations/createshippingtrackingqueryparamfields.md)[]                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `fields`                                                                                                                                         | [operations.UpdateShippingLabelQueryParamFields](../../../sdk/models/operations/updateshippinglabelqueryparamfields.md)[]                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Label                                                                                                                                  |
 | `raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |

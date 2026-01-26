@@ -59,69 +59,7 @@ export const PropertyShippingTrackingEventLocationAddress$inboundSchema:
       "region_code": "regionCode",
     });
   });
-/** @internal */
-export type PropertyShippingTrackingEventLocationAddress$Outbound = {
-  address1?: string | undefined;
-  address2?: string | undefined;
-  city?: string | undefined;
-  company_name?: string | undefined;
-  country?: string | undefined;
-  country_code?: string | undefined;
-  delivery_instructions?: string | undefined;
-  email?: string | undefined;
-  is_residential?: boolean | undefined;
-  is_validated?: boolean | undefined;
-  name?: string | undefined;
-  postal_code?: string | undefined;
-  region?: string | undefined;
-  region_code?: string | undefined;
-  telephone?: string | undefined;
-};
 
-/** @internal */
-export const PropertyShippingTrackingEventLocationAddress$outboundSchema:
-  z.ZodType<
-    PropertyShippingTrackingEventLocationAddress$Outbound,
-    z.ZodTypeDef,
-    PropertyShippingTrackingEventLocationAddress
-  > = z.object({
-    address1: z.string().optional(),
-    address2: z.string().optional(),
-    city: z.string().optional(),
-    companyName: z.string().optional(),
-    country: z.string().optional(),
-    countryCode: z.string().optional(),
-    deliveryInstructions: z.string().optional(),
-    email: z.string().optional(),
-    isResidential: z.boolean().optional(),
-    isValidated: z.boolean().optional(),
-    name: z.string().optional(),
-    postalCode: z.string().optional(),
-    region: z.string().optional(),
-    regionCode: z.string().optional(),
-    telephone: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      companyName: "company_name",
-      countryCode: "country_code",
-      deliveryInstructions: "delivery_instructions",
-      isResidential: "is_residential",
-      isValidated: "is_validated",
-      postalCode: "postal_code",
-      regionCode: "region_code",
-    });
-  });
-
-export function propertyShippingTrackingEventLocationAddressToJSON(
-  propertyShippingTrackingEventLocationAddress:
-    PropertyShippingTrackingEventLocationAddress,
-): string {
-  return JSON.stringify(
-    PropertyShippingTrackingEventLocationAddress$outboundSchema.parse(
-      propertyShippingTrackingEventLocationAddress,
-    ),
-  );
-}
 export function propertyShippingTrackingEventLocationAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<

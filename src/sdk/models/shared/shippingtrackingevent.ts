@@ -12,8 +12,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyShippingTrackingEventLocationAddress,
   PropertyShippingTrackingEventLocationAddress$inboundSchema,
-  PropertyShippingTrackingEventLocationAddress$Outbound,
-  PropertyShippingTrackingEventLocationAddress$outboundSchema,
 } from "./propertyshippingtrackingeventlocationaddress.js";
 
 export const ShippingTrackingEventStatus = {
@@ -55,12 +53,6 @@ export const ShippingTrackingEventStatus$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ShippingTrackingEventStatus);
-/** @internal */
-export const ShippingTrackingEventStatus$outboundSchema: z.ZodType<
-  string,
-  z.ZodTypeDef,
-  ShippingTrackingEventStatus
-> = openEnums.outboundSchema(ShippingTrackingEventStatus);
 
 /** @internal */
 export const ShippingTrackingEvent$inboundSchema: z.ZodType<
@@ -91,58 +83,7 @@ export const ShippingTrackingEvent$inboundSchema: z.ZodType<
     "signed_by": "signedBy",
   });
 });
-/** @internal */
-export type ShippingTrackingEvent$Outbound = {
-  carrier_status_code?: string | undefined;
-  created_at?: string | undefined;
-  description?: string | undefined;
-  event_code?: string | undefined;
-  location_address?:
-    | PropertyShippingTrackingEventLocationAddress$Outbound
-    | undefined;
-  location_id?: string | undefined;
-  location_name?: string | undefined;
-  notes?: string | undefined;
-  signed_by?: string | undefined;
-  status?: string | undefined;
-};
 
-/** @internal */
-export const ShippingTrackingEvent$outboundSchema: z.ZodType<
-  ShippingTrackingEvent$Outbound,
-  z.ZodTypeDef,
-  ShippingTrackingEvent
-> = z.object({
-  carrierStatusCode: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  eventCode: z.string().optional(),
-  locationAddress: PropertyShippingTrackingEventLocationAddress$outboundSchema
-    .optional(),
-  locationId: z.string().optional(),
-  locationName: z.string().optional(),
-  notes: z.string().optional(),
-  signedBy: z.string().optional(),
-  status: ShippingTrackingEventStatus$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    carrierStatusCode: "carrier_status_code",
-    createdAt: "created_at",
-    eventCode: "event_code",
-    locationAddress: "location_address",
-    locationId: "location_id",
-    locationName: "location_name",
-    signedBy: "signed_by",
-  });
-});
-
-export function shippingTrackingEventToJSON(
-  shippingTrackingEvent: ShippingTrackingEvent,
-): string {
-  return JSON.stringify(
-    ShippingTrackingEvent$outboundSchema.parse(shippingTrackingEvent),
-  );
-}
 export function shippingTrackingEventFromJSON(
   jsonString: string,
 ): SafeParseResult<ShippingTrackingEvent, SDKValidationError> {

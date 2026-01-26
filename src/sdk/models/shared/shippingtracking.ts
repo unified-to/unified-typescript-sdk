@@ -12,8 +12,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   ShippingTrackingEvent,
   ShippingTrackingEvent$inboundSchema,
-  ShippingTrackingEvent$Outbound,
-  ShippingTrackingEvent$outboundSchema,
 } from "./shippingtrackingevent.js";
 
 export const ShippingTrackingStatus = {
@@ -60,12 +58,6 @@ export const ShippingTrackingStatus$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ShippingTrackingStatus);
-/** @internal */
-export const ShippingTrackingStatus$outboundSchema: z.ZodType<
-  string,
-  z.ZodTypeDef,
-  ShippingTrackingStatus
-> = openEnums.outboundSchema(ShippingTrackingStatus);
 
 /** @internal */
 export const ShippingTracking$inboundSchema: z.ZodType<
@@ -107,66 +99,7 @@ export const ShippingTracking$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-/** @internal */
-export type ShippingTracking$Outbound = {
-  actual_delivery_at?: string | undefined;
-  carrier_id?: string | undefined;
-  carrier_status_code?: string | undefined;
-  carrier_status_description?: string | undefined;
-  created_at?: string | undefined;
-  estimated_delivery?: string | undefined;
-  events?: Array<ShippingTrackingEvent$Outbound> | undefined;
-  id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
-  shipment_id?: string | undefined;
-  status?: string | undefined;
-  status_description?: string | undefined;
-  tracking_number?: string | undefined;
-  updated_at?: string | undefined;
-};
 
-/** @internal */
-export const ShippingTracking$outboundSchema: z.ZodType<
-  ShippingTracking$Outbound,
-  z.ZodTypeDef,
-  ShippingTracking
-> = z.object({
-  actualDeliveryAt: z.date().transform(v => v.toISOString()).optional(),
-  carrierId: z.string().optional(),
-  carrierStatusCode: z.string().optional(),
-  carrierStatusDescription: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  estimatedDelivery: z.date().transform(v => v.toISOString()).optional(),
-  events: z.array(ShippingTrackingEvent$outboundSchema).optional(),
-  id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  shipmentId: z.string().optional(),
-  status: ShippingTrackingStatus$outboundSchema.optional(),
-  statusDescription: z.string().optional(),
-  trackingNumber: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    actualDeliveryAt: "actual_delivery_at",
-    carrierId: "carrier_id",
-    carrierStatusCode: "carrier_status_code",
-    carrierStatusDescription: "carrier_status_description",
-    createdAt: "created_at",
-    estimatedDelivery: "estimated_delivery",
-    shipmentId: "shipment_id",
-    statusDescription: "status_description",
-    trackingNumber: "tracking_number",
-    updatedAt: "updated_at",
-  });
-});
-
-export function shippingTrackingToJSON(
-  shippingTracking: ShippingTracking,
-): string {
-  return JSON.stringify(
-    ShippingTracking$outboundSchema.parse(shippingTracking),
-  );
-}
 export function shippingTrackingFromJSON(
   jsonString: string,
 ): SafeParseResult<ShippingTracking, SDKValidationError> {
