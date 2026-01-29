@@ -12,6 +12,8 @@ export type AccountingJournalLineitem = {
   accountId?: string | undefined;
   categoryIds?: Array<string> | undefined;
   contactId?: string | undefined;
+  creditAmount?: number | undefined;
+  debitAmount?: number | undefined;
   description?: string | undefined;
   groupId?: string | undefined;
   id?: string | undefined;
@@ -31,6 +33,8 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
   account_id: z.string().optional(),
   category_ids: z.array(z.string()).optional(),
   contact_id: z.string().optional(),
+  credit_amount: z.number().optional(),
+  debit_amount: z.number().optional(),
   description: z.string().optional(),
   group_id: z.string().optional(),
   id: z.string().optional(),
@@ -44,6 +48,8 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
     "account_id": "accountId",
     "category_ids": "categoryIds",
     "contact_id": "contactId",
+    "credit_amount": "creditAmount",
+    "debit_amount": "debitAmount",
     "group_id": "groupId",
     "invoice_id": "invoiceId",
     "payment_id": "paymentId",
@@ -57,6 +63,8 @@ export type AccountingJournalLineitem$Outbound = {
   account_id?: string | undefined;
   category_ids?: Array<string> | undefined;
   contact_id?: string | undefined;
+  credit_amount?: number | undefined;
+  debit_amount?: number | undefined;
   description?: string | undefined;
   group_id?: string | undefined;
   id?: string | undefined;
@@ -76,6 +84,8 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
   accountId: z.string().optional(),
   categoryIds: z.array(z.string()).optional(),
   contactId: z.string().optional(),
+  creditAmount: z.number().optional(),
+  debitAmount: z.number().optional(),
   description: z.string().optional(),
   groupId: z.string().optional(),
   id: z.string().optional(),
@@ -89,6 +99,8 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
     accountId: "account_id",
     categoryIds: "category_ids",
     contactId: "contact_id",
+    creditAmount: "credit_amount",
+    debitAmount: "debit_amount",
     groupId: "group_id",
     invoiceId: "invoice_id",
     paymentId: "payment_id",

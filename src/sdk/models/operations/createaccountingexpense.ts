@@ -12,6 +12,7 @@ export const CreateAccountingExpenseQueryParamFields = {
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
   UserId: "user_id",
+  ContactId: "contact_id",
   Name: "name",
   TotalAmount: "total_amount",
   Currency: "currency",
