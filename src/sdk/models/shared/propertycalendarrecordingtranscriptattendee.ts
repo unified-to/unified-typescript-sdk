@@ -21,6 +21,7 @@ export type PropertyCalendarRecordingTranscriptAttendeeStatus = OpenEnum<
 
 export type PropertyCalendarRecordingTranscriptAttendee = {
   email?: string | undefined;
+  isCohost?: boolean | undefined;
   name?: string | undefined;
   required?: boolean | undefined;
   status?: PropertyCalendarRecordingTranscriptAttendeeStatus | undefined;
@@ -45,6 +46,7 @@ export const PropertyCalendarRecordingTranscriptAttendee$inboundSchema:
     unknown
   > = z.object({
     email: z.string().optional(),
+    is_cohost: z.boolean().optional(),
     name: z.string().optional(),
     required: z.boolean().optional(),
     status: PropertyCalendarRecordingTranscriptAttendeeStatus$inboundSchema
@@ -52,6 +54,7 @@ export const PropertyCalendarRecordingTranscriptAttendee$inboundSchema:
     user_id: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
+      "is_cohost": "isCohost",
       "user_id": "userId",
     });
   });

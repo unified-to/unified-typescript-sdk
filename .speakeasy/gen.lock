@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 842cdb22961f557bcd41a4dc4569932b
+  docChecksum: 92ddc604425066fbaa39dfc01dd91097
   docVersion: "1.0"
   speakeasyVersion: 1.700.2
   generationVersion: 2.801.2
-  releaseVersion: 2.82.23
-  configChecksum: c4c1d7efaa8ecb48f9e1c72d9d71f1b4
+  releaseVersion: 2.82.24
+  configChecksum: 07692adc65d06e40c9b604dc79a0fd0f
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 771303e8-575f-4717-8e9a-bf14840ac87b
-  pristine_commit_hash: d7327b4d378228a05b568ffb619c7235c9961bd7
-  pristine_tree_hash: bfc0895e19195eefa7d7dc7ff89d594220b0e616
+  generation_id: 815ca4b8-c454-43e0-b664-048518c4000c
+  pristine_commit_hash: 3341c7ce00c6533494a599c44e9333ef9185c684
+  pristine_tree_hash: c2b15cb6c0bbc59cfd0be20e0a8fda8bf2d784ae
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -5238,8 +5238,8 @@ trackedFiles:
     pristine_git_object: fb06e41ba1e21533019bb573f4644e8c5a040a35
   docs/sdk/models/shared/calendarattendee.md:
     id: fa9ce0b38939
-    last_write_checksum: sha1:1771f0a588e156a0aff14fb534e2405dfb8bd9d8
-    pristine_git_object: 98e023c1a8a37282bd1ac62f4a086eb4482bc0f5
+    last_write_checksum: sha1:b5aeb9b953d21a1553dc35eb5ef78a49f96e4c8b
+    pristine_git_object: 67e07d89519168801d0a4f7a96ef923b310f03c9
   docs/sdk/models/shared/calendarattendeestatus.md:
     id: d915643c35df
     last_write_checksum: sha1:c0613bb0743d7e3c079e13c1f7c743f6038c5373
@@ -6662,8 +6662,8 @@ trackedFiles:
     pristine_git_object: 5ba7eaaf6ce66e6a9102034f404b954fe3f9b0d2
   docs/sdk/models/shared/propertycalendareventorganizer.md:
     id: b4f0f53a7f99
-    last_write_checksum: sha1:dd1f8c8d8685ec37487f0503b2ed966a74624bad
-    pristine_git_object: 2698405ac4868037feb570d95a290b895e40c7d9
+    last_write_checksum: sha1:4b292d378004d7581d502fed94057fee8d6fe323
+    pristine_git_object: 25947c587744099f0329635afd2c772441ca8d64
   docs/sdk/models/shared/propertycalendareventorganizerstatus.md:
     id: a6317e44a373
     last_write_checksum: sha1:ee1c04c7c1489bd580ce7592196f1e945162cc60
@@ -6674,8 +6674,8 @@ trackedFiles:
     pristine_git_object: e3f4dc33edd83615436d123076262e2204511bcd
   docs/sdk/models/shared/propertycalendarrecordingtranscriptattendee.md:
     id: 63a753e837a7
-    last_write_checksum: sha1:af1a337445fae2932be266fdba69f55bce56134d
-    pristine_git_object: a80d7f382ac973cc8f9274c71c3afecb62a1e39f
+    last_write_checksum: sha1:3cb8901b7050db3cb75b6210aabc68eb6ace2cef
+    pristine_git_object: a47149e8e31947f8007f7dc71eea3346a9bd43c9
   docs/sdk/models/shared/propertycalendarrecordingtranscriptattendeestatus.md:
     id: df7894a27c2c
     last_write_checksum: sha1:35d45d2f24a61161c2c480f4b5cc9ab6f7e8a71d
@@ -8114,12 +8114,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:c28df4583127463db5598e8567b360534ad65797
-    pristine_git_object: 9690a42364cb6b9aeced81a8fb5cd843ec16f110
+    last_write_checksum: sha1:516323f91d376c4b0ff9d6978707b0c0b2a19551
+    pristine_git_object: dc252736ced0be6b765f340c41f8c8cf9d17968b
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:00d4f3ee5eb1cfd05db69307a04c83623e5e1bce
-    pristine_git_object: cbfc36a5aa9157f6071b9eb6e22522d8025a8bb2
+    last_write_checksum: sha1:1a63bb644782170cc3fd0524dcc5f2d76db1c4a8
+    pristine_git_object: 2817d9a978104839317607f1005a01e1f93242a1
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10554,8 +10554,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:8e20b33c690d612d5e777fe846947e28770d34e2
-    pristine_git_object: 444d74af9599e621f3ab11f6d75d28657d653710
+    last_write_checksum: sha1:34448ff6b71a3397fe685485b271318fb00a3272
+    pristine_git_object: 8e2b148c50c9ffc1e15658d50ce68cc96e74dfaf
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -13634,8 +13634,8 @@ trackedFiles:
     pristine_git_object: b0adec8aac16d18f1992a8991e62241b9ce2c25f
   src/sdk/models/shared/calendarattendee.ts:
     id: c26272f04f84
-    last_write_checksum: sha1:b3342b17ac4b190e2bb200377b3c207a7b016124
-    pristine_git_object: 579fd4c86ac4c36129f58098dbe397f29e83716b
+    last_write_checksum: sha1:fa7e7ff144ccfbdae30c4c9e0691064f782a10fb
+    pristine_git_object: 0f51dd81e84c2a6a7fcd63c6aba286303c6420b5
   src/sdk/models/shared/calendarbusy.ts:
     id: bf30f18fba6c
     last_write_checksum: sha1:efc98e0666fb7fc359e1c7e27500d8bbe8ce28b9
@@ -14186,16 +14186,16 @@ trackedFiles:
     pristine_git_object: 668c0b341c70ffd5990efba5571d85f2b5f5e16d
   src/sdk/models/shared/propertycalendareventorganizer.ts:
     id: 0f9521909474
-    last_write_checksum: sha1:01079cbe4677e400b4582b7587e8b02a49fa2d1e
-    pristine_git_object: 9ffdfde3f8c37c92af2ef95615e50847352f7915
+    last_write_checksum: sha1:34c873f4388e4af53d6c9f60bd7851936a738fea
+    pristine_git_object: fb69420e506dbc6fe039bd461f1fc57b0cfc4fe1
   src/sdk/models/shared/propertycalendareventrecurrenceondays.ts:
     id: cde7135dbdda
     last_write_checksum: sha1:d096f9335cfa38becfcf2d5d4dfeee7a2d34fa22
     pristine_git_object: 7cada5b0d9f582ed1174da0f10cb0d0564c346b6
   src/sdk/models/shared/propertycalendarrecordingtranscriptattendee.ts:
     id: 949a0b682990
-    last_write_checksum: sha1:744e64507b529dcd20a379aba022b8eeb389db50
-    pristine_git_object: 7eac5540a505bf2efd4957c0a01e4d9bbc9ca2c7
+    last_write_checksum: sha1:3502c2d6314e6ca733c4e9affaa3711c900003b0
+    pristine_git_object: 134b0a5223458a21d5b9cc89975ae1224dbfc2ba
   src/sdk/models/shared/propertycommercelocationaddress.ts:
     id: e71a04fb5e9c
     last_write_checksum: sha1:89045af4880ed4a32e75634bec6c4241fe3ff916
@@ -20392,7 +20392,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.createAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.accounting.createAccountingJournal()`: \n  *  `request.accountingJournal.lineitems[]` **Changed**\n  *  `response.lineitems[]` **Changed**\n* `unified-to.accounting.getAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.accounting.getAccountingJournal()`:  `response.lineitems[]` **Changed**\n* `unified-to.accounting.listAccountingExpenses()`: \n  *  `request.fields` **Changed**\n  *  `response.[].contactId` **Added**\n* `unified-to.accounting.listAccountingJournals()`:  `response.[].lineitems[]` **Changed**\n* `unified-to.accounting.patchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.accounting.patchAccountingJournal()`: \n  *  `request.accountingJournal.lineitems[]` **Changed**\n  *  `response.lineitems[]` **Changed**\n* `unified-to.accounting.updateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.accounting.updateAccountingJournal()`: \n  *  `request.accountingJournal.lineitems[]` **Changed**\n  *  `response.lineitems[]` **Changed**\n* `unified-to.expense.createAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.expense.getAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.expense.listAccountingExpenses()`: \n  *  `request.fields` **Changed**\n  *  `response.[].contactId` **Added**\n* `unified-to.expense.patchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.expense.updateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response.contactId` **Added**\n* `unified-to.journal.createAccountingJournal()`: \n  *  `request.accountingJournal.lineitems[]` **Changed**\n  *  `response.lineitems[]` **Changed**\n* `unified-to.journal.getAccountingJournal()`:  `response.lineitems[]` **Changed**\n* `unified-to.journal.listAccountingJournals()`:  `response.[].lineitems[]` **Changed**\n* `unified-to.journal.patchAccountingJournal()`: \n  *  `request.accountingJournal.lineitems[]` **Changed**\n  *  `response.lineitems[]` **Changed**\n* `unified-to.journal.updateAccountingJournal()`: \n  *  `request.accountingJournal.lineitems[]` **Changed**\n  *  `response.lineitems[]` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.calendar.createCalendarEvent()`: \n  *  `request.calendarEvent` **Changed**\n  *  `response` **Changed**\n* `unified-to.calendar.getCalendarEvent()`:  `response` **Changed**\n* `unified-to.calendar.getCalendarRecording()`:  `response.media[]` **Changed**\n* `unified-to.calendar.listCalendarEvents()`:  `response.[]` **Changed**\n* `unified-to.calendar.listCalendarRecordings()`:  `response.[].media[]` **Changed**\n* `unified-to.calendar.patchCalendarEvent()`: \n  *  `request.calendarEvent` **Changed**\n  *  `response` **Changed**\n* `unified-to.calendar.updateCalendarEvent()`: \n  *  `request.calendarEvent` **Changed**\n  *  `response` **Changed**\n* `unified-to.event.createCalendarEvent()`: \n  *  `request.calendarEvent` **Changed**\n  *  `response` **Changed**\n* `unified-to.event.getCalendarEvent()`:  `response` **Changed**\n* `unified-to.event.listCalendarEvents()`:  `response.[]` **Changed**\n* `unified-to.event.patchCalendarEvent()`: \n  *  `request.calendarEvent` **Changed**\n  *  `response` **Changed**\n* `unified-to.event.updateCalendarEvent()`: \n  *  `request.calendarEvent` **Changed**\n  *  `response` **Changed**\n* `unified-to.recording.getCalendarRecording()`:  `response.media[]` **Changed**\n* `unified-to.recording.listCalendarRecordings()`:  `response.[].media[]` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

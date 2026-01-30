@@ -19,6 +19,7 @@ export type CalendarAttendeeStatus = OpenEnum<typeof CalendarAttendeeStatus>;
 
 export type CalendarAttendee = {
   email?: string | undefined;
+  isCohost?: boolean | undefined;
   name?: string | undefined;
   required?: boolean | undefined;
   status?: CalendarAttendeeStatus | undefined;
@@ -45,18 +46,21 @@ export const CalendarAttendee$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   email: z.string().optional(),
+  is_cohost: z.boolean().optional(),
   name: z.string().optional(),
   required: z.boolean().optional(),
   status: CalendarAttendeeStatus$inboundSchema.optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "is_cohost": "isCohost",
     "user_id": "userId",
   });
 });
 /** @internal */
 export type CalendarAttendee$Outbound = {
   email?: string | undefined;
+  is_cohost?: boolean | undefined;
   name?: string | undefined;
   required?: boolean | undefined;
   status?: string | undefined;
@@ -70,12 +74,14 @@ export const CalendarAttendee$outboundSchema: z.ZodType<
   CalendarAttendee
 > = z.object({
   email: z.string().optional(),
+  isCohost: z.boolean().optional(),
   name: z.string().optional(),
   required: z.boolean().optional(),
   status: CalendarAttendeeStatus$outboundSchema.optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    isCohost: "is_cohost",
     userId: "user_id",
   });
 });

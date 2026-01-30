@@ -21,6 +21,7 @@ export type PropertyCalendarEventOrganizerStatus = OpenEnum<
 
 export type PropertyCalendarEventOrganizer = {
   email?: string | undefined;
+  isCohost?: boolean | undefined;
   name?: string | undefined;
   required?: boolean | undefined;
   status?: PropertyCalendarEventOrganizerStatus | undefined;
@@ -47,18 +48,21 @@ export const PropertyCalendarEventOrganizer$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   email: z.string().optional(),
+  is_cohost: z.boolean().optional(),
   name: z.string().optional(),
   required: z.boolean().optional(),
   status: PropertyCalendarEventOrganizerStatus$inboundSchema.optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "is_cohost": "isCohost",
     "user_id": "userId",
   });
 });
 /** @internal */
 export type PropertyCalendarEventOrganizer$Outbound = {
   email?: string | undefined;
+  is_cohost?: boolean | undefined;
   name?: string | undefined;
   required?: boolean | undefined;
   status?: string | undefined;
@@ -72,12 +76,14 @@ export const PropertyCalendarEventOrganizer$outboundSchema: z.ZodType<
   PropertyCalendarEventOrganizer
 > = z.object({
   email: z.string().optional(),
+  isCohost: z.boolean().optional(),
   name: z.string().optional(),
   required: z.boolean().optional(),
   status: PropertyCalendarEventOrganizerStatus$outboundSchema.optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    isCohost: "is_cohost",
     userId: "user_id",
   });
 });
