@@ -1,0 +1,20 @@
+# PropertyCalendarWebinarOrganizer
+
+## Example Usage
+
+```typescript
+import { PropertyCalendarWebinarOrganizer } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCalendarWebinarOrganizer = {};
+```
+
+## Fields
+
+| Field                                                                                                                 | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `email`                                                                                                               | *string*                                                                                                              | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| `isCohost`                                                                                                            | *boolean*                                                                                                             | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| `name`                                                                                                                | *string*                                                                                                              | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| `required`                                                                                                            | *boolean*                                                                                                             | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| `status`                                                                                                              | [shared.PropertyCalendarWebinarOrganizerStatus](../../../sdk/models/shared/propertycalendarwebinarorganizerstatus.md) | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| `userId`                                                                                                              | *string*                                                                                                              | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |

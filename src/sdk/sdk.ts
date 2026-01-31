@@ -130,6 +130,7 @@ import { Unified } from "./unified.js";
 import { User } from "./user.js";
 import { Verification } from "./verification.js";
 import { Webhook } from "./webhook.js";
+import { Webinar } from "./webinar.js";
 
 export class UnifiedTo extends ClientSDK {
   private _accounting?: Accounting;
@@ -335,6 +336,11 @@ export class UnifiedTo extends ClientSDK {
   private _recording?: Recording;
   get recording(): Recording {
     return (this._recording ??= new Recording(this._options));
+  }
+
+  private _webinar?: Webinar;
+  get webinar(): Webinar {
+    return (this._webinar ??= new Webinar(this._options));
   }
 
   private _commerce?: Commerce;

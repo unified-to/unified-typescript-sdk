@@ -130,6 +130,7 @@ export const ObjectType = {
   CalendarBusy: "calendar_busy",
   CalendarLink: "calendar_link",
   CalendarRecording: "calendar_recording",
+  CalendarWebinar: "calendar_webinar",
   AdsOrganization: "ads_organization",
   AdsAd: "ads_ad",
   AdsCampaign: "ads_campaign",

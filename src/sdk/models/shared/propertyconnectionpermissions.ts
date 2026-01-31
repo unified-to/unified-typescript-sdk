@@ -195,6 +195,8 @@ export const PropertyConnectionPermissions = {
   CalendarLinkWrite: "calendar_link_write",
   CalendarRecordingRead: "calendar_recording_read",
   CalendarRecordingWrite: "calendar_recording_write",
+  CalendarWebinarRead: "calendar_webinar_read",
+  CalendarWebinarWrite: "calendar_webinar_write",
   EnrichPersonRead: "enrich_person_read",
   EnrichCompanyRead: "enrich_company_read",
   AdsAdRead: "ads_ad_read",

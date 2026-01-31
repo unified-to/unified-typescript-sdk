@@ -5,24 +5,30 @@
 import { calendarCreateCalendarCalendar } from "../funcs/calendarCreateCalendarCalendar.js";
 import { calendarCreateCalendarEvent } from "../funcs/calendarCreateCalendarEvent.js";
 import { calendarCreateCalendarLink } from "../funcs/calendarCreateCalendarLink.js";
+import { calendarCreateCalendarWebinar } from "../funcs/calendarCreateCalendarWebinar.js";
 import { calendarGetCalendarCalendar } from "../funcs/calendarGetCalendarCalendar.js";
 import { calendarGetCalendarEvent } from "../funcs/calendarGetCalendarEvent.js";
 import { calendarGetCalendarLink } from "../funcs/calendarGetCalendarLink.js";
 import { calendarGetCalendarRecording } from "../funcs/calendarGetCalendarRecording.js";
+import { calendarGetCalendarWebinar } from "../funcs/calendarGetCalendarWebinar.js";
 import { calendarListCalendarBusies } from "../funcs/calendarListCalendarBusies.js";
 import { calendarListCalendarCalendars } from "../funcs/calendarListCalendarCalendars.js";
 import { calendarListCalendarEvents } from "../funcs/calendarListCalendarEvents.js";
 import { calendarListCalendarLinks } from "../funcs/calendarListCalendarLinks.js";
 import { calendarListCalendarRecordings } from "../funcs/calendarListCalendarRecordings.js";
+import { calendarListCalendarWebinars } from "../funcs/calendarListCalendarWebinars.js";
 import { calendarPatchCalendarCalendar } from "../funcs/calendarPatchCalendarCalendar.js";
 import { calendarPatchCalendarEvent } from "../funcs/calendarPatchCalendarEvent.js";
 import { calendarPatchCalendarLink } from "../funcs/calendarPatchCalendarLink.js";
+import { calendarPatchCalendarWebinar } from "../funcs/calendarPatchCalendarWebinar.js";
 import { calendarRemoveCalendarCalendar } from "../funcs/calendarRemoveCalendarCalendar.js";
 import { calendarRemoveCalendarEvent } from "../funcs/calendarRemoveCalendarEvent.js";
 import { calendarRemoveCalendarLink } from "../funcs/calendarRemoveCalendarLink.js";
+import { calendarRemoveCalendarWebinar } from "../funcs/calendarRemoveCalendarWebinar.js";
 import { calendarUpdateCalendarCalendar } from "../funcs/calendarUpdateCalendarCalendar.js";
 import { calendarUpdateCalendarEvent } from "../funcs/calendarUpdateCalendarEvent.js";
 import { calendarUpdateCalendarLink } from "../funcs/calendarUpdateCalendarLink.js";
+import { calendarUpdateCalendarWebinar } from "../funcs/calendarUpdateCalendarWebinar.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -65,6 +71,20 @@ export class Calendar extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarLink> {
     return unwrapAsync(calendarCreateCalendarLink(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a webinar
+   */
+  async createCalendarWebinar(
+    request: operations.CreateCalendarWebinarRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CalendarWebinar> {
+    return unwrapAsync(calendarCreateCalendarWebinar(
       this,
       request,
       options,
@@ -121,6 +141,20 @@ export class Calendar extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarRecording> {
     return unwrapAsync(calendarGetCalendarRecording(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a webinar
+   */
+  async getCalendarWebinar(
+    request: operations.GetCalendarWebinarRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CalendarWebinar> {
+    return unwrapAsync(calendarGetCalendarWebinar(
       this,
       request,
       options,
@@ -198,6 +232,20 @@ export class Calendar extends ClientSDK {
   }
 
   /**
+   * List all webinars
+   */
+  async listCalendarWebinars(
+    request: operations.ListCalendarWebinarsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CalendarWebinar>> {
+    return unwrapAsync(calendarListCalendarWebinars(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a calendar
    */
   async patchCalendarCalendar(
@@ -233,6 +281,20 @@ export class Calendar extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarLink> {
     return unwrapAsync(calendarPatchCalendarLink(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a webinar
+   */
+  async patchCalendarWebinar(
+    request: operations.PatchCalendarWebinarRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CalendarWebinar> {
+    return unwrapAsync(calendarPatchCalendarWebinar(
       this,
       request,
       options,
@@ -282,6 +344,20 @@ export class Calendar extends ClientSDK {
   }
 
   /**
+   * Remove a webinar
+   */
+  async removeCalendarWebinar(
+    request: operations.RemoveCalendarWebinarRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveCalendarWebinarResponse | undefined> {
+    return unwrapAsync(calendarRemoveCalendarWebinar(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a calendar
    */
   async updateCalendarCalendar(
@@ -317,6 +393,20 @@ export class Calendar extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarLink> {
     return unwrapAsync(calendarUpdateCalendarLink(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a webinar
+   */
+  async updateCalendarWebinar(
+    request: operations.UpdateCalendarWebinarRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CalendarWebinar> {
+    return unwrapAsync(calendarUpdateCalendarWebinar(
       this,
       request,
       options,
