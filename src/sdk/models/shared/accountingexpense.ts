@@ -15,6 +15,7 @@ import {
 } from "./accountinglineitem.js";
 
 export type AccountingExpense = {
+  accountId?: string | undefined;
   approvedAt?: Date | undefined;
   approverUserId?: string | undefined;
   contactId?: string | undefined;
@@ -23,6 +24,8 @@ export type AccountingExpense = {
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   name?: string | undefined;
+  paymentMethod?: string | undefined;
+  postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   reimbursedAmount?: number | undefined;
   reimbursedAt?: Date | undefined;
@@ -38,6 +41,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  account_id: z.string().optional(),
   approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   approver_user_id: z.string().optional(),
@@ -48,6 +52,9 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   name: z.string().optional(),
+  payment_method: z.string().optional(),
+  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   raw: z.record(z.any()).optional(),
   reimbursed_amount: z.number().optional(),
   reimbursed_at: z.string().datetime({ offset: true }).transform(v =>
@@ -60,10 +67,13 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "account_id": "accountId",
     "approved_at": "approvedAt",
     "approver_user_id": "approverUserId",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "payment_method": "paymentMethod",
+    "posted_at": "postedAt",
     "reimbursed_amount": "reimbursedAmount",
     "reimbursed_at": "reimbursedAt",
     "tax_amount": "taxAmount",
@@ -74,6 +84,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AccountingExpense$Outbound = {
+  account_id?: string | undefined;
   approved_at?: string | undefined;
   approver_user_id?: string | undefined;
   contact_id?: string | undefined;
@@ -82,6 +93,8 @@ export type AccountingExpense$Outbound = {
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   name?: string | undefined;
+  payment_method?: string | undefined;
+  posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reimbursed_amount?: number | undefined;
   reimbursed_at?: string | undefined;
@@ -97,6 +110,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingExpense
 > = z.object({
+  accountId: z.string().optional(),
   approvedAt: z.date().transform(v => v.toISOString()).optional(),
   approverUserId: z.string().optional(),
   contactId: z.string().optional(),
@@ -105,6 +119,8 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   name: z.string().optional(),
+  paymentMethod: z.string().optional(),
+  postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   reimbursedAmount: z.number().optional(),
   reimbursedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -114,10 +130,13 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    accountId: "account_id",
     approvedAt: "approved_at",
     approverUserId: "approver_user_id",
     contactId: "contact_id",
     createdAt: "created_at",
+    paymentMethod: "payment_method",
+    postedAt: "posted_at",
     reimbursedAmount: "reimbursed_amount",
     reimbursedAt: "reimbursed_at",
     taxAmount: "tax_amount",
