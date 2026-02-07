@@ -832,6 +832,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`calendarUpdateCalendarLink`](docs/sdks/link/README.md#updatecalendarlink) - Update a link
 - [`calendarUpdateCalendarWebinar`](docs/sdks/calendar/README.md#updatecalendarwebinar) - Update a webinar
 - [`calendarUpdateCalendarWebinar`](docs/sdks/webinar/README.md#updatecalendarwebinar) - Update a webinar
+- [`campaignCreateMartechCampaign`](docs/sdks/campaign/README.md#createmartechcampaign) - Create a campaign
+- [`campaignCreateMartechCampaign`](docs/sdks/martech/README.md#createmartechcampaign) - Create a campaign
+- [`campaignGetMartechCampaign`](docs/sdks/campaign/README.md#getmartechcampaign) - Retrieve a campaign
+- [`campaignGetMartechCampaign`](docs/sdks/martech/README.md#getmartechcampaign) - Retrieve a campaign
+- [`campaignListMartechCampaigns`](docs/sdks/campaign/README.md#listmartechcampaigns) - List all campaigns
+- [`campaignListMartechCampaigns`](docs/sdks/martech/README.md#listmartechcampaigns) - List all campaigns
+- [`campaignPatchMartechCampaign`](docs/sdks/campaign/README.md#patchmartechcampaign) - Update a campaign
+- [`campaignPatchMartechCampaign`](docs/sdks/martech/README.md#patchmartechcampaign) - Update a campaign
+- [`campaignRemoveMartechCampaign`](docs/sdks/campaign/README.md#removemartechcampaign) - Remove a campaign
+- [`campaignRemoveMartechCampaign`](docs/sdks/martech/README.md#removemartechcampaign) - Remove a campaign
+- [`campaignUpdateMartechCampaign`](docs/sdks/campaign/README.md#updatemartechcampaign) - Update a campaign
+- [`campaignUpdateMartechCampaign`](docs/sdks/martech/README.md#updatemartechcampaign) - Update a campaign
 - [`categoryCreateTicketingCategory`](docs/sdks/category/README.md#createticketingcategory) - Create a category
 - [`categoryCreateTicketingCategory`](docs/sdks/ticketing/README.md#createticketingcategory) - Create a category
 - [`categoryGetTicketingCategory`](docs/sdks/category/README.md#getticketingcategory) - Retrieve a category
@@ -1438,6 +1450,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoRemoveRepoRepository`](docs/sdks/repository/README.md#removereporepository) - Remove a repository
 - [`reportListAdsReports`](docs/sdks/ads/README.md#listadsreports) - List all reports
 - [`reportListAdsReports`](docs/sdks/report/README.md#listadsreports) - List all reports
+- [`reportListMartechReports`](docs/sdks/martech/README.md#listmartechreports) - List all reports
+- [`reportListMartechReports`](docs/sdks/report/README.md#listmartechreports) - List all reports
 - [`repoUpdateRepoBranch`](docs/sdks/branch/README.md#updaterepobranch) - Update a branch
 - [`repoUpdateRepoBranch`](docs/sdks/repo/README.md#updaterepobranch) - Update a branch
 - [`repoUpdateRepoCommit`](docs/sdks/commit/README.md#updaterepocommit) - Update a commit

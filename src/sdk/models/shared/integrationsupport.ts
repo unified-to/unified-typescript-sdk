@@ -280,6 +280,13 @@ export const ListLocationId = {
 } as const;
 export type ListLocationId = OpenEnum<typeof ListLocationId>;
 
+export const ListMemberId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListMemberId = OpenEnum<typeof ListMemberId>;
+
 export const ListOffset = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -828,6 +835,13 @@ export type VirtualWebhookLocationId = OpenEnum<
   typeof VirtualWebhookLocationId
 >;
 
+export const VirtualWebhookMemberId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookMemberId = OpenEnum<typeof VirtualWebhookMemberId>;
+
 export const VirtualWebhookOrderId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1004,6 +1018,7 @@ export type IntegrationSupport = {
   listLinkId?: ListLinkId | undefined;
   listListId?: ListListId | undefined;
   listLocationId?: ListLocationId | undefined;
+  listMemberId?: ListMemberId | undefined;
   listOffset?: ListOffset | undefined;
   listOrder?: ListOrder | undefined;
   listOrderId?: ListOrderId | undefined;
@@ -1087,6 +1102,7 @@ export type IntegrationSupport = {
   virtualWebhookLimit?: VirtualWebhookLimit | undefined;
   virtualWebhookListId?: VirtualWebhookListId | undefined;
   virtualWebhookLocationId?: VirtualWebhookLocationId | undefined;
+  virtualWebhookMemberId?: VirtualWebhookMemberId | undefined;
   virtualWebhookOrderId?: VirtualWebhookOrderId | undefined;
   virtualWebhookOrgId?: VirtualWebhookOrgId | undefined;
   virtualWebhookPageId?: VirtualWebhookPageId | undefined;
@@ -1373,6 +1389,13 @@ export const ListLocationId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListLocationId);
+
+/** @internal */
+export const ListMemberId$inboundSchema: z.ZodType<
+  ListMemberId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListMemberId);
 
 /** @internal */
 export const ListOffset$inboundSchema: z.ZodType<
@@ -1907,6 +1930,13 @@ export const VirtualWebhookLocationId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookLocationId);
 
 /** @internal */
+export const VirtualWebhookMemberId$inboundSchema: z.ZodType<
+  VirtualWebhookMemberId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookMemberId);
+
+/** @internal */
 export const VirtualWebhookOrderId$inboundSchema: z.ZodType<
   VirtualWebhookOrderId,
   z.ZodTypeDef,
@@ -2077,6 +2107,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_link_id: ListLinkId$inboundSchema.optional(),
   list_list_id: ListListId$inboundSchema.optional(),
   list_location_id: ListLocationId$inboundSchema.optional(),
+  list_member_id: ListMemberId$inboundSchema.optional(),
   list_offset: ListOffset$inboundSchema.optional(),
   list_order: ListOrder$inboundSchema.optional(),
   list_order_id: ListOrderId$inboundSchema.optional(),
@@ -2165,6 +2196,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_list_id: VirtualWebhookListId$inboundSchema.optional(),
   virtual_webhook_location_id: VirtualWebhookLocationId$inboundSchema
     .optional(),
+  virtual_webhook_member_id: VirtualWebhookMemberId$inboundSchema.optional(),
   virtual_webhook_order_id: VirtualWebhookOrderId$inboundSchema.optional(),
   virtual_webhook_org_id: VirtualWebhookOrgId$inboundSchema.optional(),
   virtual_webhook_page_id: VirtualWebhookPageId$inboundSchema.optional(),
@@ -2231,6 +2263,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_link_id": "listLinkId",
     "list_list_id": "listListId",
     "list_location_id": "listLocationId",
+    "list_member_id": "listMemberId",
     "list_offset": "listOffset",
     "list_order": "listOrder",
     "list_order_id": "listOrderId",
@@ -2310,6 +2343,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_limit": "virtualWebhookLimit",
     "virtual_webhook_list_id": "virtualWebhookListId",
     "virtual_webhook_location_id": "virtualWebhookLocationId",
+    "virtual_webhook_member_id": "virtualWebhookMemberId",
     "virtual_webhook_order_id": "virtualWebhookOrderId",
     "virtual_webhook_org_id": "virtualWebhookOrgId",
     "virtual_webhook_page_id": "virtualWebhookPageId",

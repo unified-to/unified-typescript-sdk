@@ -8,6 +8,12 @@ import { adsListAdsCampaigns } from "../funcs/adsListAdsCampaigns.js";
 import { adsPatchAdsCampaign } from "../funcs/adsPatchAdsCampaign.js";
 import { adsRemoveAdsCampaign } from "../funcs/adsRemoveAdsCampaign.js";
 import { adsUpdateAdsCampaign } from "../funcs/adsUpdateAdsCampaign.js";
+import { campaignCreateMartechCampaign } from "../funcs/campaignCreateMartechCampaign.js";
+import { campaignGetMartechCampaign } from "../funcs/campaignGetMartechCampaign.js";
+import { campaignListMartechCampaigns } from "../funcs/campaignListMartechCampaigns.js";
+import { campaignPatchMartechCampaign } from "../funcs/campaignPatchMartechCampaign.js";
+import { campaignRemoveMartechCampaign } from "../funcs/campaignRemoveMartechCampaign.js";
+import { campaignUpdateMartechCampaign } from "../funcs/campaignUpdateMartechCampaign.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -29,6 +35,20 @@ export class Campaign extends ClientSDK {
   }
 
   /**
+   * Create a campaign
+   */
+  async createMartechCampaign(
+    request: operations.CreateMartechCampaignRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingCampaign> {
+    return unwrapAsync(campaignCreateMartechCampaign(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a campaign
    */
   async getAdsCampaign(
@@ -36,6 +56,20 @@ export class Campaign extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsCampaign> {
     return unwrapAsync(adsGetAdsCampaign(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a campaign
+   */
+  async getMartechCampaign(
+    request: operations.GetMartechCampaignRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingCampaign> {
+    return unwrapAsync(campaignGetMartechCampaign(
       this,
       request,
       options,
@@ -57,6 +91,20 @@ export class Campaign extends ClientSDK {
   }
 
   /**
+   * List all campaigns
+   */
+  async listMartechCampaigns(
+    request: operations.ListMartechCampaignsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.MarketingCampaign>> {
+    return unwrapAsync(campaignListMartechCampaigns(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a campaign
    */
   async patchAdsCampaign(
@@ -64,6 +112,20 @@ export class Campaign extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsCampaign> {
     return unwrapAsync(adsPatchAdsCampaign(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a campaign
+   */
+  async patchMartechCampaign(
+    request: operations.PatchMartechCampaignRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingCampaign> {
+    return unwrapAsync(campaignPatchMartechCampaign(
       this,
       request,
       options,
@@ -85,6 +147,20 @@ export class Campaign extends ClientSDK {
   }
 
   /**
+   * Remove a campaign
+   */
+  async removeMartechCampaign(
+    request: operations.RemoveMartechCampaignRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveMartechCampaignResponse | undefined> {
+    return unwrapAsync(campaignRemoveMartechCampaign(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a campaign
    */
   async updateAdsCampaign(
@@ -92,6 +168,20 @@ export class Campaign extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsCampaign> {
     return unwrapAsync(adsUpdateAdsCampaign(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a campaign
+   */
+  async updateMartechCampaign(
+    request: operations.UpdateMartechCampaignRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingCampaign> {
+    return unwrapAsync(campaignUpdateMartechCampaign(
       this,
       request,
       options,
