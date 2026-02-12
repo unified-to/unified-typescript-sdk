@@ -33,6 +33,7 @@ export const PropertyConnectionCategories = {
   Ads: "ads",
   Forms: "forms",
   Shipping: "shipping",
+  Assessment: "assessment",
 } as const;
 export type PropertyConnectionCategories = OpenEnum<
   typeof PropertyConnectionCategories

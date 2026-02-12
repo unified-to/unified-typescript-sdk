@@ -11,6 +11,7 @@ import { Ads } from "./ads.js";
 import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
 import { Applicationstatus } from "./applicationstatus.js";
+import { Assessment } from "./assessment.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
 import { Balancesheet } from "./balancesheet.js";
@@ -261,6 +262,16 @@ export class UnifiedTo extends ClientSDK {
   private _insertionorder?: Insertionorder;
   get insertionorder(): Insertionorder {
     return (this._insertionorder ??= new Insertionorder(this._options));
+  }
+
+  private _assessment?: Assessment;
+  get assessment(): Assessment {
+    return (this._assessment ??= new Assessment(this._options));
+  }
+
+  private _package?: Package;
+  get package(): Package {
+    return (this._package ??= new Package(this._options));
   }
 
   private _ats?: Ats;
@@ -761,11 +772,6 @@ export class UnifiedTo extends ClientSDK {
   private _verification?: Verification;
   get verification(): Verification {
     return (this._verification ??= new Verification(this._options));
-  }
-
-  private _package?: Package;
-  get package(): Package {
-    return (this._package ??= new Package(this._options));
   }
 
   private _request?: RequestT;

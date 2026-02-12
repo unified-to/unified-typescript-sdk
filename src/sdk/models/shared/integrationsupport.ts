@@ -553,6 +553,13 @@ export const NativeWebhookLabelId = {
 } as const;
 export type NativeWebhookLabelId = OpenEnum<typeof NativeWebhookLabelId>;
 
+export const NativeWebhookMemberId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookMemberId = OpenEnum<typeof NativeWebhookMemberId>;
+
 export const NativeWebhookOrderId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1058,6 +1065,7 @@ export type IntegrationSupport = {
   nativeWebhookEventId?: NativeWebhookEventId | undefined;
   nativeWebhookFormId?: NativeWebhookFormId | undefined;
   nativeWebhookLabelId?: NativeWebhookLabelId | undefined;
+  nativeWebhookMemberId?: NativeWebhookMemberId | undefined;
   nativeWebhookOrderId?: NativeWebhookOrderId | undefined;
   nativeWebhookParentId?: NativeWebhookParentId | undefined;
   nativeWebhookProjectId?: NativeWebhookProjectId | undefined;
@@ -1664,6 +1672,13 @@ export const NativeWebhookLabelId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookLabelId);
 
 /** @internal */
+export const NativeWebhookMemberId$inboundSchema: z.ZodType<
+  NativeWebhookMemberId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookMemberId);
+
+/** @internal */
 export const NativeWebhookOrderId$inboundSchema: z.ZodType<
   NativeWebhookOrderId,
   z.ZodTypeDef,
@@ -2147,6 +2162,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
   native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
   native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
+  native_webhook_member_id: NativeWebhookMemberId$inboundSchema.optional(),
   native_webhook_order_id: NativeWebhookOrderId$inboundSchema.optional(),
   native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
   native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
@@ -2302,6 +2318,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_event_id": "nativeWebhookEventId",
     "native_webhook_form_id": "nativeWebhookFormId",
     "native_webhook_label_id": "nativeWebhookLabelId",
+    "native_webhook_member_id": "nativeWebhookMemberId",
     "native_webhook_order_id": "nativeWebhookOrderId",
     "native_webhook_parent_id": "nativeWebhookParentId",
     "native_webhook_project_id": "nativeWebhookProjectId",

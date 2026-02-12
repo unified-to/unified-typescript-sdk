@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ResponseStatus = "PENDING";
+let value: ResponseStatus = "REJECTED";
 ```
 
 ## Values
@@ -13,5 +13,5 @@ let value: ResponseStatus = "PENDING";
 This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
-"COMPLETED" | "FAILED" | "PASSED" | "PENDING" | Unrecognized<string>
+"OPEN" | "IN_PROGRESS" | "COMPLETED" | "FAILED" | "REJECTED" | Unrecognized<string>
 ```

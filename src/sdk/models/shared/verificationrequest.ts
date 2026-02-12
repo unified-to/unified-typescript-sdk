@@ -28,22 +28,26 @@ import {
   VerificationResponseDetail$outboundSchema,
 } from "./verificationresponsedetail.js";
 
-export const ProfileGender = {
+export const VerificationRequestProfileGender = {
   Male: "MALE",
   Female: "FEMALE",
   Intersex: "INTERSEX",
   Trans: "TRANS",
   NonBinary: "NON_BINARY",
 } as const;
-export type ProfileGender = OpenEnum<typeof ProfileGender>;
+export type VerificationRequestProfileGender = OpenEnum<
+  typeof VerificationRequestProfileGender
+>;
 
-export const ResponseStatus = {
+export const VerificationRequestResponseStatus = {
   Completed: "COMPLETED",
   Failed: "FAILED",
   Passed: "PASSED",
   Pending: "PENDING",
 } as const;
-export type ResponseStatus = OpenEnum<typeof ResponseStatus>;
+export type VerificationRequestResponseStatus = OpenEnum<
+  typeof VerificationRequestResponseStatus
+>;
 
 export type VerificationRequest = {
   candidateId?: string | undefined;
@@ -54,7 +58,7 @@ export type VerificationRequest = {
   profileAddresses?: Array<VerificationAddress> | undefined;
   profileDateOfBirth?: string | undefined;
   profileEmails?: Array<string> | undefined;
-  profileGender?: ProfileGender | undefined;
+  profileGender?: VerificationRequestProfileGender | undefined;
   profileIpAddress?: string | undefined;
   profileName?: string | undefined;
   profileNationalIdentifier?: string | undefined;
@@ -71,36 +75,36 @@ export type VerificationRequest = {
   responseRedirectUrl?: string | undefined;
   responseScore?: number | undefined;
   responseSource?: string | undefined;
-  responseStatus?: ResponseStatus | undefined;
+  responseStatus?: VerificationRequestResponseStatus | undefined;
   targetUrl?: string | undefined;
   updatedAt?: Date | undefined;
 };
 
 /** @internal */
-export const ProfileGender$inboundSchema: z.ZodType<
-  ProfileGender,
+export const VerificationRequestProfileGender$inboundSchema: z.ZodType<
+  VerificationRequestProfileGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ProfileGender);
+> = openEnums.inboundSchema(VerificationRequestProfileGender);
 /** @internal */
-export const ProfileGender$outboundSchema: z.ZodType<
+export const VerificationRequestProfileGender$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  ProfileGender
-> = openEnums.outboundSchema(ProfileGender);
+  VerificationRequestProfileGender
+> = openEnums.outboundSchema(VerificationRequestProfileGender);
 
 /** @internal */
-export const ResponseStatus$inboundSchema: z.ZodType<
-  ResponseStatus,
+export const VerificationRequestResponseStatus$inboundSchema: z.ZodType<
+  VerificationRequestResponseStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ResponseStatus);
+> = openEnums.inboundSchema(VerificationRequestResponseStatus);
 /** @internal */
-export const ResponseStatus$outboundSchema: z.ZodType<
+export const VerificationRequestResponseStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  ResponseStatus
-> = openEnums.outboundSchema(ResponseStatus);
+  VerificationRequestResponseStatus
+> = openEnums.outboundSchema(VerificationRequestResponseStatus);
 
 /** @internal */
 export const VerificationRequest$inboundSchema: z.ZodType<
@@ -117,7 +121,7 @@ export const VerificationRequest$inboundSchema: z.ZodType<
   profile_addresses: z.array(VerificationAddress$inboundSchema).optional(),
   profile_date_of_birth: z.string().optional(),
   profile_emails: z.array(z.string()).optional(),
-  profile_gender: ProfileGender$inboundSchema.optional(),
+  profile_gender: VerificationRequestProfileGender$inboundSchema.optional(),
   profile_ip_address: z.string().optional(),
   profile_name: z.string().optional(),
   profile_national_identifier: z.string().optional(),
@@ -138,7 +142,7 @@ export const VerificationRequest$inboundSchema: z.ZodType<
   response_redirect_url: z.string().optional(),
   response_score: z.number().optional(),
   response_source: z.string().optional(),
-  response_status: ResponseStatus$inboundSchema.optional(),
+  response_status: VerificationRequestResponseStatus$inboundSchema.optional(),
   target_url: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -211,7 +215,7 @@ export const VerificationRequest$outboundSchema: z.ZodType<
   profileAddresses: z.array(VerificationAddress$outboundSchema).optional(),
   profileDateOfBirth: z.string().optional(),
   profileEmails: z.array(z.string()).optional(),
-  profileGender: ProfileGender$outboundSchema.optional(),
+  profileGender: VerificationRequestProfileGender$outboundSchema.optional(),
   profileIpAddress: z.string().optional(),
   profileName: z.string().optional(),
   profileNationalIdentifier: z.string().optional(),
@@ -226,7 +230,7 @@ export const VerificationRequest$outboundSchema: z.ZodType<
   responseRedirectUrl: z.string().optional(),
   responseScore: z.number().optional(),
   responseSource: z.string().optional(),
-  responseStatus: ResponseStatus$outboundSchema.optional(),
+  responseStatus: VerificationRequestResponseStatus$outboundSchema.optional(),
   targetUrl: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

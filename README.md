@@ -152,19 +152,23 @@ The `HTTPClient` constructor takes an optional `fetcher` argument that can be
 used to integrate a third-party HTTP client or when writing tests to mock out
 the HTTP client and feed in fixtures.
 
-The following example shows how to use the `"beforeRequest"` hook to to add a
-custom header and a timeout to requests and how to use the `"requestError"` hook
-to log errors:
+The following example shows how to:
+- route requests through a proxy server using [undici](https://www.npmjs.com/package/undici)'s ProxyAgent
+- use the `"beforeRequest"` hook to add a custom header and a timeout to requests
+- use the `"requestError"` hook to log errors
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ProxyAgent } from "undici";
 import { HTTPClient } from "@unified-api/typescript-sdk/lib/http";
 
+const dispatcher = new ProxyAgent("http://proxy.example.com:8080");
+
 const httpClient = new HTTPClient({
-  // fetcher takes a function that has the same signature as native `fetch`.
-  fetcher: (request) => {
-    return fetch(request);
-  }
+  // 'fetcher' takes a function that has the same signature as native 'fetch'.
+  fetcher: (input, init) =>
+    // 'dispatcher' is specific to undici and not part of the standard Fetch API.
+    fetch(input, { ...init, dispatcher } as RequestInit),
 });
 
 httpClient.addHook("beforeRequest", (request) => {
@@ -684,6 +688,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsUpdateAdsGroup`](docs/sdks/group/README.md#updateadsgroup) - Update a group
 - [`adsUpdateAdsInsertionorder`](docs/sdks/ads/README.md#updateadsinsertionorder) - Update an insertionorder
 - [`adsUpdateAdsInsertionorder`](docs/sdks/insertionorder/README.md#updateadsinsertionorder) - Update an insertionorder
+- [`assessmentCreateAssessmentPackage`](docs/sdks/assessment/README.md#createassessmentpackage) - Create an assessment package
+- [`assessmentCreateAssessmentPackage`](docs/sdks/package/README.md#createassessmentpackage) - Create an assessment package
+- [`assessmentGetAssessmentPackage`](docs/sdks/assessment/README.md#getassessmentpackage) - Get an assessment package
+- [`assessmentGetAssessmentPackage`](docs/sdks/package/README.md#getassessmentpackage) - Get an assessment package
+- [`assessmentListAssessmentPackages`](docs/sdks/assessment/README.md#listassessmentpackages) - List assessment packages
+- [`assessmentListAssessmentPackages`](docs/sdks/package/README.md#listassessmentpackages) - List assessment packages
+- [`assessmentPatchAssessmentPackage`](docs/sdks/assessment/README.md#patchassessmentpackage) - Update an assessment package
+- [`assessmentPatchAssessmentPackage`](docs/sdks/package/README.md#patchassessmentpackage) - Update an assessment package
+- [`assessmentRemoveAssessmentPackage`](docs/sdks/assessment/README.md#removeassessmentpackage) - Delete an assessment package
+- [`assessmentRemoveAssessmentPackage`](docs/sdks/package/README.md#removeassessmentpackage) - Delete an assessment package
+- [`assessmentUpdateAssessmentPackage`](docs/sdks/assessment/README.md#updateassessmentpackage) - Update an assessment package
+- [`assessmentUpdateAssessmentPackage`](docs/sdks/package/README.md#updateassessmentpackage) - Update an assessment package
 - [`atsCreateAtsActivity`](docs/sdks/activity/README.md#createatsactivity) - Create an activity
 - [`atsCreateAtsActivity`](docs/sdks/ats/README.md#createatsactivity) - Create an activity
 - [`atsCreateAtsApplication`](docs/sdks/application/README.md#createatsapplication) - Create an application
@@ -1338,6 +1354,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`metadataPatchMetadataMetadata`](docs/sdks/metadata/README.md#patchmetadatametadata) - Update a metadata
 - [`metadataRemoveMetadataMetadata`](docs/sdks/metadata/README.md#removemetadatametadata) - Remove a metadata
 - [`metadataUpdateMetadataMetadata`](docs/sdks/metadata/README.md#updatemetadatametadata) - Update a metadata
+- [`orderPatchAssessmentOrder`](docs/sdks/assessment/README.md#patchassessmentorder) - Update an order
+- [`orderPatchAssessmentOrder`](docs/sdks/order/README.md#patchassessmentorder) - Update an order
+- [`orderUpdateAssessmentOrder`](docs/sdks/assessment/README.md#updateassessmentorder) - Update an order
+- [`orderUpdateAssessmentOrder`](docs/sdks/order/README.md#updateassessmentorder) - Update an order
 - [`organizationCreateAdsOrganization`](docs/sdks/ads/README.md#createadsorganization) - Create an organization
 - [`organizationCreateAdsOrganization`](docs/sdks/organization/README.md#createadsorganization) - Create an organization
 - [`organizationCreateRepoOrganization`](docs/sdks/organization/README.md#createrepoorganization) - Create an organization
@@ -1362,6 +1382,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`organizationUpdateAdsOrganization`](docs/sdks/organization/README.md#updateadsorganization) - Update an organization
 - [`organizationUpdateRepoOrganization`](docs/sdks/organization/README.md#updaterepoorganization) - Update an organization
 - [`organizationUpdateRepoOrganization`](docs/sdks/repo/README.md#updaterepoorganization) - Update an organization
+- [`packageGetVerificationPackage`](docs/sdks/package/README.md#getverificationpackage) - Retrieve a package
+- [`packageGetVerificationPackage`](docs/sdks/verification/README.md#getverificationpackage) - Retrieve a package
+- [`packageListVerificationPackages`](docs/sdks/package/README.md#listverificationpackages) - List all packages
+- [`packageListVerificationPackages`](docs/sdks/verification/README.md#listverificationpackages) - List all packages
 - [`passthroughCreatePassthroughJson`](docs/sdks/passthrough/README.md#createpassthroughjson) - Passthrough POST
 - [`passthroughCreatePassthroughRaw`](docs/sdks/passthrough/README.md#createpassthroughraw) - Passthrough POST
 - [`passthroughListPassthroughs`](docs/sdks/passthrough/README.md#listpassthroughs) - Passthrough GET
@@ -1629,12 +1653,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 - [`verificationCreateVerificationRequest`](docs/sdks/request/README.md#createverificationrequest) - Create a request
 - [`verificationCreateVerificationRequest`](docs/sdks/verification/README.md#createverificationrequest) - Create a request
-- [`verificationGetVerificationPackage`](docs/sdks/package/README.md#getverificationpackage) - Retrieve a package
-- [`verificationGetVerificationPackage`](docs/sdks/verification/README.md#getverificationpackage) - Retrieve a package
 - [`verificationGetVerificationRequest`](docs/sdks/request/README.md#getverificationrequest) - Retrieve a request
 - [`verificationGetVerificationRequest`](docs/sdks/verification/README.md#getverificationrequest) - Retrieve a request
-- [`verificationListVerificationPackages`](docs/sdks/package/README.md#listverificationpackages) - List all packages
-- [`verificationListVerificationPackages`](docs/sdks/verification/README.md#listverificationpackages) - List all packages
 - [`verificationListVerificationRequests`](docs/sdks/request/README.md#listverificationrequests) - List all requests
 - [`verificationListVerificationRequests`](docs/sdks/verification/README.md#listverificationrequests) - List all requests
 - [`verificationPatchVerificationRequest`](docs/sdks/request/README.md#patchverificationrequest) - Update a request

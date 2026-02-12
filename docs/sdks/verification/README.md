@@ -126,7 +126,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationGetVerificationPackage } from "@unified-api/typescript-sdk/funcs/verificationGetVerificationPackage.js";
+import { packageGetVerificationPackage } from "@unified-api/typescript-sdk/funcs/packageGetVerificationPackage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -137,7 +137,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationGetVerificationPackage(unifiedTo, {
+  const res = await packageGetVerificationPackage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -145,7 +145,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationGetVerificationPackage failed:", res.error);
+    console.log("packageGetVerificationPackage failed:", res.error);
   }
 }
 
@@ -283,7 +283,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationListVerificationPackages } from "@unified-api/typescript-sdk/funcs/verificationListVerificationPackages.js";
+import { packageListVerificationPackages } from "@unified-api/typescript-sdk/funcs/packageListVerificationPackages.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -294,14 +294,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationListVerificationPackages(unifiedTo, {
+  const res = await packageListVerificationPackages(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationListVerificationPackages failed:", res.error);
+    console.log("packageListVerificationPackages failed:", res.error);
   }
 }
 

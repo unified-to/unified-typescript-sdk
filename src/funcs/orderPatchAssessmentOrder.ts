@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -26,15 +26,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve a package
+ * Update an order
  */
-export function verificationGetVerificationPackage(
+export function orderPatchAssessmentOrder(
   client: UnifiedToCore,
-  request: operations.GetVerificationPackageRequest,
+  request: operations.PatchAssessmentOrderRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.VerificationPackage,
+    shared.AssessmentOrder,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -54,12 +54,12 @@ export function verificationGetVerificationPackage(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.GetVerificationPackageRequest,
+  request: operations.PatchAssessmentOrderRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.VerificationPackage,
+      shared.AssessmentOrder,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -75,14 +75,14 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.GetVerificationPackageRequest$outboundSchema.parse(value),
+      operations.PatchAssessmentOrderRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload.AssessmentOrder, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -95,9 +95,7 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/verification/{connection_id}/package/{id}")(
-    pathParams,
-  );
+  const path = pathToFunc("/assessment/{connection_id}/order/{id}")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -105,6 +103,7 @@ async function $do(
   });
 
   const headers = new Headers(compactMap({
+    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -114,7 +113,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getVerificationPackage",
+    operationID: "patchAssessmentOrder",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -128,7 +127,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "PATCH",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
@@ -154,7 +153,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.VerificationPackage,
+    shared.AssessmentOrder,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -164,7 +163,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.VerificationPackage$inboundSchema),
+    M.json(200, shared.AssessmentOrder$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);
