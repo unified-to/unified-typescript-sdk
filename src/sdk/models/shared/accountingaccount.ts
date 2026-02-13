@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AccountingAccountTaxonomy,
+  AccountingAccountTaxonomy$inboundSchema,
+  AccountingAccountTaxonomy$Outbound,
+  AccountingAccountTaxonomy$outboundSchema,
+} from "./accountingaccounttaxonomy.js";
 
 export const Status = {
   Active: "ACTIVE",
@@ -49,6 +55,7 @@ export type AccountingAccount = {
   status?: Status | undefined;
   subgroup?: string | undefined;
   subsection?: string | undefined;
+  taxonomy?: Array<AccountingAccountTaxonomy> | undefined;
   type?: Type | undefined;
   updatedAt?: Date | undefined;
 };
@@ -89,6 +96,7 @@ export const AccountingAccount$inboundSchema: z.ZodType<
   status: Status$inboundSchema.optional(),
   subgroup: z.string().optional(),
   subsection: z.string().optional(),
+  taxonomy: z.array(AccountingAccountTaxonomy$inboundSchema).optional(),
   type: Type$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -118,6 +126,7 @@ export type AccountingAccount$Outbound = {
   status?: string | undefined;
   subgroup?: string | undefined;
   subsection?: string | undefined;
+  taxonomy?: Array<AccountingAccountTaxonomy$Outbound> | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -143,6 +152,7 @@ export const AccountingAccount$outboundSchema: z.ZodType<
   status: Status$outboundSchema.optional(),
   subgroup: z.string().optional(),
   subsection: z.string().optional(),
+  taxonomy: z.array(AccountingAccountTaxonomy$outboundSchema).optional(),
   type: Type$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

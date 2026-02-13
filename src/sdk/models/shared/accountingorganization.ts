@@ -19,8 +19,9 @@ export type AccountingOrganization = {
   fiscalYearEndMonth?: number | undefined;
   id?: string | undefined;
   legalName?: string | undefined;
-  name: string;
+  name?: string | undefined;
   organizationCode?: string | undefined;
+  parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   taxNumber?: string | undefined;
   timezone?: string | undefined;
@@ -41,8 +42,9 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   fiscal_year_end_month: z.number().optional(),
   id: z.string().optional(),
   legal_name: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   organization_code: z.string().optional(),
+  parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   tax_number: z.string().optional(),
   timezone: z.string().optional(),
@@ -55,6 +57,7 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
     "fiscal_year_end_month": "fiscalYearEndMonth",
     "legal_name": "legalName",
     "organization_code": "organizationCode",
+    "parent_id": "parentId",
     "tax_number": "taxNumber",
     "updated_at": "updatedAt",
   });

@@ -81,7 +81,6 @@ export type MessagingMessage = {
   messageMarkdown?: string | undefined;
   messageThreadIdentifier?: string | undefined;
   parentId?: string | undefined;
-  parentMessageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reactions?: Array<MessagingReaction> | undefined;
   reference?: string | undefined;
@@ -116,7 +115,6 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   message_markdown: z.string().optional(),
   message_thread_identifier: z.string().optional(),
   parent_id: z.string().optional(),
-  parent_message_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reactions: z.array(MessagingReaction$inboundSchema).optional(),
   reference: z.string().optional(),
@@ -140,7 +138,6 @@ export const MessagingMessage$inboundSchema: z.ZodType<
     "message_markdown": "messageMarkdown",
     "message_thread_identifier": "messageThreadIdentifier",
     "parent_id": "parentId",
-    "parent_message_id": "parentMessageId",
     "root_message_id": "rootMessageId",
     "updated_at": "updatedAt",
     "web_url": "webUrl",
@@ -166,7 +163,6 @@ export type MessagingMessage$Outbound = {
   message_markdown?: string | undefined;
   message_thread_identifier?: string | undefined;
   parent_id?: string | undefined;
-  parent_message_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reactions?: Array<MessagingReaction$Outbound> | undefined;
   reference?: string | undefined;
@@ -200,7 +196,6 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   messageMarkdown: z.string().optional(),
   messageThreadIdentifier: z.string().optional(),
   parentId: z.string().optional(),
-  parentMessageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reactions: z.array(MessagingReaction$outboundSchema).optional(),
   reference: z.string().optional(),
@@ -223,7 +218,6 @@ export const MessagingMessage$outboundSchema: z.ZodType<
     messageMarkdown: "message_markdown",
     messageThreadIdentifier: "message_thread_identifier",
     parentId: "parent_id",
-    parentMessageId: "parent_message_id",
     rootMessageId: "root_message_id",
     updatedAt: "updated_at",
     webUrl: "web_url",

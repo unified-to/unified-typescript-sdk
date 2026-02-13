@@ -18,6 +18,7 @@ export type AccountingJournalLineitem = {
   groupId?: string | undefined;
   id?: string | undefined;
   invoiceId?: string | undefined;
+  organizationId?: string | undefined;
   paymentId?: string | undefined;
   projectId?: string | undefined;
   taxAmount?: number | undefined;
@@ -39,6 +40,7 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
   group_id: z.string().optional(),
   id: z.string().optional(),
   invoice_id: z.string().optional(),
+  organization_id: z.string().optional(),
   payment_id: z.string().optional(),
   project_id: z.string().optional(),
   tax_amount: z.number().optional(),
@@ -52,6 +54,7 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
     "debit_amount": "debitAmount",
     "group_id": "groupId",
     "invoice_id": "invoiceId",
+    "organization_id": "organizationId",
     "payment_id": "paymentId",
     "project_id": "projectId",
     "tax_amount": "taxAmount",
@@ -69,6 +72,7 @@ export type AccountingJournalLineitem$Outbound = {
   group_id?: string | undefined;
   id?: string | undefined;
   invoice_id?: string | undefined;
+  organization_id?: string | undefined;
   payment_id?: string | undefined;
   project_id?: string | undefined;
   tax_amount?: number | undefined;
@@ -90,6 +94,7 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
   groupId: z.string().optional(),
   id: z.string().optional(),
   invoiceId: z.string().optional(),
+  organizationId: z.string().optional(),
   paymentId: z.string().optional(),
   projectId: z.string().optional(),
   taxAmount: z.number().optional(),
@@ -103,6 +108,7 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
     debitAmount: "debit_amount",
     groupId: "group_id",
     invoiceId: "invoice_id",
+    organizationId: "organization_id",
     paymentId: "payment_id",
     projectId: "project_id",
     taxAmount: "tax_amount",

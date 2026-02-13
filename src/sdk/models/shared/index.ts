@@ -3,6 +3,7 @@
  */
 
 export * from "./accountingaccount.js";
+export * from "./accountingaccounttaxonomy.js";
 export * from "./accountingassociatedcontact.js";
 export * from "./accountingattachment.js";
 export * from "./accountingbalancesheet.js";

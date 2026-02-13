@@ -24,6 +24,7 @@ export const UpdateAccountingAccountQueryParamFields = {
   Group: "group",
   Subgroup: "subgroup",
   ParentId: "parent_id",
+  Taxonomy: "taxonomy",
   Raw: "raw",
 } as const;
 export type UpdateAccountingAccountQueryParamFields = ClosedEnum<

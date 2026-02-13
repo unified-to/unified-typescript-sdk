@@ -15,7 +15,6 @@ export const PatchMessagingMessageQueryParamFields = {
   ChannelIds: "channel_ids",
   Channels: "channels",
   ParentId: "parent_id",
-  ParentMessageId: "parent_message_id",
   RootMessageId: "root_message_id",
   MessageThreadIdentifier: "message_thread_identifier",
   AuthorMember: "author_member",
