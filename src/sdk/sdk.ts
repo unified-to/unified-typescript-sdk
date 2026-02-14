@@ -36,6 +36,7 @@ import { Commit } from "./commit.js";
 import { Company } from "./company.js";
 import { Connection } from "./connection.js";
 import { Contact } from "./contact.js";
+import { Content } from "./content.js";
 import { Course } from "./course.js";
 import { Creative } from "./creative.js";
 import { Creditmemo } from "./creditmemo.js";
@@ -527,6 +528,11 @@ export class UnifiedTo extends ClientSDK {
   private _class?: Class;
   get class(): Class {
     return (this._class ??= new Class(this._options));
+  }
+
+  private _content?: Content;
+  get content(): Content {
+    return (this._content ??= new Content(this._options));
   }
 
   private _course?: Course;

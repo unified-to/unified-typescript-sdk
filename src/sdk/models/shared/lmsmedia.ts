@@ -16,11 +16,15 @@ export const LmsMediaType = {
   Video: "VIDEO",
   Web: "WEB",
   Document: "DOCUMENT",
+  Text: "TEXT",
+  Html: "HTML",
+  Markdown: "MARKDOWN",
   Other: "OTHER",
 } as const;
 export type LmsMediaType = OpenEnum<typeof LmsMediaType>;
 
 export type LmsMedia = {
+  content?: string | undefined;
   description?: string | undefined;
   name?: string | undefined;
   thumbnailUrl?: string | undefined;
@@ -47,6 +51,7 @@ export const LmsMedia$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  content: z.string().optional(),
   description: z.string().optional(),
   name: z.string().optional(),
   thumbnail_url: z.string().optional(),
@@ -59,6 +64,7 @@ export const LmsMedia$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type LmsMedia$Outbound = {
+  content?: string | undefined;
   description?: string | undefined;
   name?: string | undefined;
   thumbnail_url?: string | undefined;
@@ -72,6 +78,7 @@ export const LmsMedia$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   LmsMedia
 > = z.object({
+  content: z.string().optional(),
   description: z.string().optional(),
   name: z.string().optional(),
   thumbnailUrl: z.string().optional(),

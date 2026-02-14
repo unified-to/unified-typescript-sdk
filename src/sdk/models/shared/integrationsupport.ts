@@ -133,6 +133,13 @@ export const ListContactId = {
 } as const;
 export type ListContactId = OpenEnum<typeof ListContactId>;
 
+export const ListContentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListContentId = OpenEnum<typeof ListContentId>;
+
 export const ListCourseId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -532,6 +539,13 @@ export const NativeWebhookCompanyId = {
 } as const;
 export type NativeWebhookCompanyId = OpenEnum<typeof NativeWebhookCompanyId>;
 
+export const NativeWebhookCourseId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookCourseId = OpenEnum<typeof NativeWebhookCourseId>;
+
 export const NativeWebhookEventId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -587,6 +601,13 @@ export const NativeWebhookShipmentId = {
   NotSupported: "not-supported",
 } as const;
 export type NativeWebhookShipmentId = OpenEnum<typeof NativeWebhookShipmentId>;
+
+export const NativeWebhookStudentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookStudentId = OpenEnum<typeof NativeWebhookStudentId>;
 
 export const NativeWebhookTaskId = {
   SupportedRequired: "supported-required",
@@ -723,6 +744,13 @@ export const VirtualWebhookContactId = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookContactId = OpenEnum<typeof VirtualWebhookContactId>;
+
+export const VirtualWebhookCourseId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookCourseId = OpenEnum<typeof VirtualWebhookCourseId>;
 
 export const VirtualWebhookCustomerId = {
   SupportedRequired: "supported-required",
@@ -939,6 +967,13 @@ export const VirtualWebhookStatus = {
 } as const;
 export type VirtualWebhookStatus = OpenEnum<typeof VirtualWebhookStatus>;
 
+export const VirtualWebhookStudentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookStudentId = OpenEnum<typeof VirtualWebhookStudentId>;
+
 export const VirtualWebhookTaskId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1004,6 +1039,7 @@ export type IntegrationSupport = {
   listCollectionId?: ListCollectionId | undefined;
   listCompanyId?: ListCompanyId | undefined;
   listContactId?: ListContactId | undefined;
+  listContentId?: ListContentId | undefined;
   listCourseId?: ListCourseId | undefined;
   listCustomerId?: ListCustomerId | undefined;
   listDealId?: ListDealId | undefined;
@@ -1062,6 +1098,7 @@ export type IntegrationSupport = {
   nativeWebhookCarrierId?: NativeWebhookCarrierId | undefined;
   nativeWebhookChannelId?: NativeWebhookChannelId | undefined;
   nativeWebhookCompanyId?: NativeWebhookCompanyId | undefined;
+  nativeWebhookCourseId?: NativeWebhookCourseId | undefined;
   nativeWebhookEventId?: NativeWebhookEventId | undefined;
   nativeWebhookFormId?: NativeWebhookFormId | undefined;
   nativeWebhookLabelId?: NativeWebhookLabelId | undefined;
@@ -1070,6 +1107,7 @@ export type IntegrationSupport = {
   nativeWebhookParentId?: NativeWebhookParentId | undefined;
   nativeWebhookProjectId?: NativeWebhookProjectId | undefined;
   nativeWebhookShipmentId?: NativeWebhookShipmentId | undefined;
+  nativeWebhookStudentId?: NativeWebhookStudentId | undefined;
   nativeWebhookTaskId?: NativeWebhookTaskId | undefined;
   outboundFields?: { [k: string]: string } | undefined;
   /**
@@ -1094,6 +1132,7 @@ export type IntegrationSupport = {
   virtualWebhookCollectionId?: VirtualWebhookCollectionId | undefined;
   virtualWebhookCompanyId?: VirtualWebhookCompanyId | undefined;
   virtualWebhookContactId?: VirtualWebhookContactId | undefined;
+  virtualWebhookCourseId?: VirtualWebhookCourseId | undefined;
   virtualWebhookCustomerId?: VirtualWebhookCustomerId | undefined;
   virtualWebhookDealId?: VirtualWebhookDealId | undefined;
   virtualWebhookEndLt?: VirtualWebhookEndLt | undefined;
@@ -1123,6 +1162,7 @@ export type IntegrationSupport = {
   virtualWebhookSpaceId?: VirtualWebhookSpaceId | undefined;
   virtualWebhookStartGte?: VirtualWebhookStartGte | undefined;
   virtualWebhookStatus?: VirtualWebhookStatus | undefined;
+  virtualWebhookStudentId?: VirtualWebhookStudentId | undefined;
   virtualWebhookTaskId?: VirtualWebhookTaskId | undefined;
   virtualWebhookTicketId?: VirtualWebhookTicketId | undefined;
   virtualWebhookType?: VirtualWebhookType | undefined;
@@ -1250,6 +1290,13 @@ export const ListContactId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListContactId);
+
+/** @internal */
+export const ListContentId$inboundSchema: z.ZodType<
+  ListContentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListContentId);
 
 /** @internal */
 export const ListCourseId$inboundSchema: z.ZodType<
@@ -1651,6 +1698,13 @@ export const NativeWebhookCompanyId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookCompanyId);
 
 /** @internal */
+export const NativeWebhookCourseId$inboundSchema: z.ZodType<
+  NativeWebhookCourseId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookCourseId);
+
+/** @internal */
 export const NativeWebhookEventId$inboundSchema: z.ZodType<
   NativeWebhookEventId,
   z.ZodTypeDef,
@@ -1705,6 +1759,13 @@ export const NativeWebhookShipmentId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(NativeWebhookShipmentId);
+
+/** @internal */
+export const NativeWebhookStudentId$inboundSchema: z.ZodType<
+  NativeWebhookStudentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookStudentId);
 
 /** @internal */
 export const NativeWebhookTaskId$inboundSchema: z.ZodType<
@@ -1831,6 +1892,13 @@ export const VirtualWebhookContactId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookContactId);
+
+/** @internal */
+export const VirtualWebhookCourseId$inboundSchema: z.ZodType<
+  VirtualWebhookCourseId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookCourseId);
 
 /** @internal */
 export const VirtualWebhookCustomerId$inboundSchema: z.ZodType<
@@ -2036,6 +2104,13 @@ export const VirtualWebhookStatus$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookStatus);
 
 /** @internal */
+export const VirtualWebhookStudentId$inboundSchema: z.ZodType<
+  VirtualWebhookStudentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookStudentId);
+
+/** @internal */
 export const VirtualWebhookTaskId$inboundSchema: z.ZodType<
   VirtualWebhookTaskId,
   z.ZodTypeDef,
@@ -2101,6 +2176,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_collection_id: ListCollectionId$inboundSchema.optional(),
   list_company_id: ListCompanyId$inboundSchema.optional(),
   list_contact_id: ListContactId$inboundSchema.optional(),
+  list_content_id: ListContentId$inboundSchema.optional(),
   list_course_id: ListCourseId$inboundSchema.optional(),
   list_customer_id: ListCustomerId$inboundSchema.optional(),
   list_deal_id: ListDealId$inboundSchema.optional(),
@@ -2159,6 +2235,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_carrier_id: NativeWebhookCarrierId$inboundSchema.optional(),
   native_webhook_channel_id: NativeWebhookChannelId$inboundSchema.optional(),
   native_webhook_company_id: NativeWebhookCompanyId$inboundSchema.optional(),
+  native_webhook_course_id: NativeWebhookCourseId$inboundSchema.optional(),
   native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
   native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
   native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
@@ -2167,6 +2244,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
   native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
   native_webhook_shipment_id: NativeWebhookShipmentId$inboundSchema.optional(),
+  native_webhook_student_id: NativeWebhookStudentId$inboundSchema.optional(),
   native_webhook_task_id: NativeWebhookTaskId$inboundSchema.optional(),
   outbound_fields: z.record(z.string()).optional(),
   raw_objects: z.array(z.string()).optional(),
@@ -2193,6 +2271,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     .optional(),
   virtual_webhook_company_id: VirtualWebhookCompanyId$inboundSchema.optional(),
   virtual_webhook_contact_id: VirtualWebhookContactId$inboundSchema.optional(),
+  virtual_webhook_course_id: VirtualWebhookCourseId$inboundSchema.optional(),
   virtual_webhook_customer_id: VirtualWebhookCustomerId$inboundSchema
     .optional(),
   virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
@@ -2228,6 +2307,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_space_id: VirtualWebhookSpaceId$inboundSchema.optional(),
   virtual_webhook_start_gte: VirtualWebhookStartGte$inboundSchema.optional(),
   virtual_webhook_status: VirtualWebhookStatus$inboundSchema.optional(),
+  virtual_webhook_student_id: VirtualWebhookStudentId$inboundSchema.optional(),
   virtual_webhook_task_id: VirtualWebhookTaskId$inboundSchema.optional(),
   virtual_webhook_ticket_id: VirtualWebhookTicketId$inboundSchema.optional(),
   virtual_webhook_type: VirtualWebhookType$inboundSchema.optional(),
@@ -2258,6 +2338,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_collection_id": "listCollectionId",
     "list_company_id": "listCompanyId",
     "list_contact_id": "listContactId",
+    "list_content_id": "listContentId",
     "list_course_id": "listCourseId",
     "list_customer_id": "listCustomerId",
     "list_deal_id": "listDealId",
@@ -2315,6 +2396,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_carrier_id": "nativeWebhookCarrierId",
     "native_webhook_channel_id": "nativeWebhookChannelId",
     "native_webhook_company_id": "nativeWebhookCompanyId",
+    "native_webhook_course_id": "nativeWebhookCourseId",
     "native_webhook_event_id": "nativeWebhookEventId",
     "native_webhook_form_id": "nativeWebhookFormId",
     "native_webhook_label_id": "nativeWebhookLabelId",
@@ -2323,6 +2405,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_parent_id": "nativeWebhookParentId",
     "native_webhook_project_id": "nativeWebhookProjectId",
     "native_webhook_shipment_id": "nativeWebhookShipmentId",
+    "native_webhook_student_id": "nativeWebhookStudentId",
     "native_webhook_task_id": "nativeWebhookTaskId",
     "outbound_fields": "outboundFields",
     "raw_objects": "rawObjects",
@@ -2344,6 +2427,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_collection_id": "virtualWebhookCollectionId",
     "virtual_webhook_company_id": "virtualWebhookCompanyId",
     "virtual_webhook_contact_id": "virtualWebhookContactId",
+    "virtual_webhook_course_id": "virtualWebhookCourseId",
     "virtual_webhook_customer_id": "virtualWebhookCustomerId",
     "virtual_webhook_deal_id": "virtualWebhookDealId",
     "virtual_webhook_end_lt": "virtualWebhookEndLt",
@@ -2373,6 +2457,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_space_id": "virtualWebhookSpaceId",
     "virtual_webhook_start_gte": "virtualWebhookStartGte",
     "virtual_webhook_status": "virtualWebhookStatus",
+    "virtual_webhook_student_id": "virtualWebhookStudentId",
     "virtual_webhook_task_id": "virtualWebhookTaskId",
     "virtual_webhook_ticket_id": "virtualWebhookTicketId",
     "virtual_webhook_type": "virtualWebhookType",
