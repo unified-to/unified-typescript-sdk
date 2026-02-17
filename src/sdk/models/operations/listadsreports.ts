@@ -23,6 +23,10 @@ export type ListAdsReportsQueryParamFields = ClosedEnum<
 
 export type ListAdsReportsRequest = {
   /**
+   * The ad ID to filter by
+   */
+  adId?: string | undefined;
+  /**
    * The campaign ID to filter by
    */
   campaignId?: string | undefined;
@@ -31,9 +35,17 @@ export type ListAdsReportsRequest = {
    */
   connectionId: string;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListAdsReportsQueryParamFields> | undefined;
+  /**
+   * The group ID to filter by (reference to HrisGroup)
+   */
+  groupId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -50,6 +62,10 @@ export type ListAdsReportsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
   type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -64,9 +80,12 @@ export const ListAdsReportsQueryParamFields$outboundSchema: z.ZodNativeEnum<
 
 /** @internal */
 export type ListAdsReportsRequest$Outbound = {
+  ad_id?: string | undefined;
   campaign_id?: string | undefined;
   connection_id: string;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
+  group_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -74,6 +93,7 @@ export type ListAdsReportsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   type?: string | undefined;
   updated_gte?: string | undefined;
 };
@@ -84,9 +104,12 @@ export const ListAdsReportsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAdsReportsRequest
 > = z.object({
+  adId: z.string().optional(),
   campaignId: z.string().optional(),
   connectionId: z.string(),
+  endLt: z.string().optional(),
   fields: z.array(ListAdsReportsQueryParamFields$outboundSchema).optional(),
+  groupId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -94,13 +117,18 @@ export const ListAdsReportsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    adId: "ad_id",
     campaignId: "campaign_id",
     connectionId: "connection_id",
+    endLt: "end_lt",
+    groupId: "group_id",
     orgId: "org_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });

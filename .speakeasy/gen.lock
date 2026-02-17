@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: bba5d3ebf913171b03ce2be8b22a3947
+  docChecksum: d121c23b689164804bad4c9617517509
   docVersion: "1.0"
-  speakeasyVersion: 1.716.0
-  generationVersion: 2.823.1
-  releaseVersion: 2.83.4
-  configChecksum: a365dc55133f3c1efd8d7174acae107e
+  speakeasyVersion: 1.719.0
+  generationVersion: 2.824.1
+  releaseVersion: 2.83.5
+  configChecksum: 8a08d0ae37d210941435671edcd7111f
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 191e6bd0-f5e7-4761-98d6-1eea71f3a4c3
-  pristine_commit_hash: 0139e615157415691f3f32a34c480cf0315fd1ef
-  pristine_tree_hash: 71a26cd50304ea846b882da1ed577f36b4e46441
+  generation_id: aa8b3c98-2bb8-4e7a-8ae7-6da61a5a6ef8
+  pristine_commit_hash: 09ab3b6f68acec4a7289f2d5056d7442e1c99ac9
+  pristine_tree_hash: ce22c7a186fefca225e2984d33181b57cd2a5d8e
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -758,8 +758,8 @@ trackedFiles:
     pristine_git_object: 2e5abea210a2310be4caf1835a197d4e594faa89
   docs/sdk/models/operations/createtaskcommentrequest.md:
     id: ba9e28e14036
-    last_write_checksum: sha1:588806cd00d1418ac29865ab1ce1faa46343722a
-    pristine_git_object: 96a66116a0153e51b991c8b3b3a68be14730211a
+    last_write_checksum: sha1:1b1f10c816b533c574a9e66410c45d49ade2eb40
+    pristine_git_object: a0642774a9df7f3eb0a66297ad794da31acb7b9f
   docs/sdk/models/operations/createtaskprojectqueryparamfields.md:
     id: 40b68c185b8c
     last_write_checksum: sha1:4dc9d051a8b67f805c9f136c290ea88f65f436e3
@@ -1958,8 +1958,8 @@ trackedFiles:
     pristine_git_object: f97cd15a1cbc3faacae75ac6b077b2de0696b09c
   docs/sdk/models/operations/listadsreportsrequest.md:
     id: eb958fb66aef
-    last_write_checksum: sha1:7af93bb32f9e820b4b09e4ae0db061f7eb1d84ef
-    pristine_git_object: 0aa82db6ae925761493eb9eb7b2fec5189bd0a51
+    last_write_checksum: sha1:67ea434705302c23fc23166742710a88540592c7
+    pristine_git_object: 2381b44e2dbb62317478300cd286307ddd6f600f
   docs/sdk/models/operations/listassessmentpackagesrequest.md:
     id: adc5267ee0f2
     last_write_checksum: sha1:a43a1d2de163a44073cc32a110457b566be66377
@@ -3398,8 +3398,8 @@ trackedFiles:
     pristine_git_object: 32acc7bb106780adc4958c7f2fe7e3ecc9d393a6
   docs/sdk/models/operations/patchtaskcommentrequest.md:
     id: 6d336ff9b10e
-    last_write_checksum: sha1:23c06df9f2a81976b2f2dee6821c782f2612578a
-    pristine_git_object: 272aecc3b4e10bec4c906b0666d21c9911a72137
+    last_write_checksum: sha1:b92dc9104114b30a99cf880c6f5b989ef1e1bacd
+    pristine_git_object: 3fa5608f7742f2cda9977335d39b174e58c9e133
   docs/sdk/models/operations/patchtaskprojectqueryparamfields.md:
     id: 5e355e72a489
     last_write_checksum: sha1:3ca94a64a07cd1cfe1e87376725479f2f7afacdd
@@ -4970,8 +4970,8 @@ trackedFiles:
     pristine_git_object: c59bd4bebb8a5b543b75f012760b4e142d954bf1
   docs/sdk/models/operations/updatetaskcommentrequest.md:
     id: 575bb0987141
-    last_write_checksum: sha1:b69ba9a399948c923d1cc628aadf96c80b3b349c
-    pristine_git_object: 69827e2d00081119bf47fab345aee85efcd1565f
+    last_write_checksum: sha1:20cb73512f386d8c4cfb10bc682b7f0c431c0e74
+    pristine_git_object: c7fc1d4fbdc1fc1ec767ad2d8c7778f98c9d37e8
   docs/sdk/models/operations/updatetaskprojectqueryparamfields.md:
     id: c3ccaf2b7125
     last_write_checksum: sha1:dba33537476ce228b203d5b918bff5edcbf17cd6
@@ -7634,8 +7634,8 @@ trackedFiles:
     pristine_git_object: 173ea661291ba6e3189dd77b8e1ac82b3c606d7f
   docs/sdk/models/shared/taskcomment.md:
     id: 5bae5b27125a
-    last_write_checksum: sha1:4c1416e00b5c83586a21b68491d9b947fd5c38a1
-    pristine_git_object: 44d8ea71a81dd72e727dadfb854dc325e0ef6bfb
+    last_write_checksum: sha1:44b990bc70018420b460a0dc1b84702ff7bda0a5
+    pristine_git_object: 4e2c845684ba7d11696e8fbec8f3a23e74bd2e00
   docs/sdk/models/shared/taskmetadata.md:
     id: efc6901a9ded
     last_write_checksum: sha1:c2d1127a578943bd13f3d7e0a3ea45e42e2b1b35
@@ -8150,8 +8150,8 @@ trackedFiles:
     pristine_git_object: 4f51283ca0a6d146e489d8d17f44d94fb55da981
   docs/sdks/comment/README.md:
     id: e4246f80d976
-    last_write_checksum: sha1:68147cac9390fd1fbc264ee6ed1f2552d2a119e2
-    pristine_git_object: 4f9beb750364e341ad82dd981f9d55a59c317758
+    last_write_checksum: sha1:0fa2db1673c81494f87611fd27ba6eda7b533b1b
+    pristine_git_object: 9b7d179578c4f6e216a86818f08942dfcbb08ce2
   docs/sdks/commerce/README.md:
     id: ec0eedee4bc3
     last_write_checksum: sha1:a4ecda3077687e64f81499c90b8059d015dcecd5
@@ -8502,8 +8502,8 @@ trackedFiles:
     pristine_git_object: 856f8e7888ffb82ca29f742de2737bb9931c9668
   docs/sdks/task/README.md:
     id: ae2d0d96ea1f
-    last_write_checksum: sha1:16cd5b1cbf1412adce257f045c7c49c54c58c200
-    pristine_git_object: baf8a952dcdc01191562255dffe8866f5c86c4df
+    last_write_checksum: sha1:fb0a7e14ab3de478b950fa0e945508ab37ecdc5d
+    pristine_git_object: cacd6521bc0d2523a320467c48e3cc1ce527af56
   docs/sdks/taxrate/README.md:
     id: 626e6511cf80
     last_write_checksum: sha1:326000a77b62ae85fc2f55244fb10de38fcc9a26
@@ -8582,12 +8582,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:c4c1094e02f67adf6866cdd381297da4755782f8
-    pristine_git_object: fae3d7e94c773b0be21d1989e58ac231c34fa4f5
+    last_write_checksum: sha1:12cf98be322bd8c1b659ef2309307d8b0e3a2e3d
+    pristine_git_object: 0c76236631dff6b5b38339facfe38a14e6ec01fb
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:f9a79c2ba30a67d007c16ad8b7bf889c44b1cbbf
-    pristine_git_object: 63cf9d0820c44c7436c52e753a5441065df28161
+    last_write_checksum: sha1:a30f7f4dca4d3ddc3fe7f69674ead0f37f0fa04f
+    pristine_git_object: 06309fec91a5f6dfd6bdceab402f6e60c2595f63
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10782,8 +10782,8 @@ trackedFiles:
     pristine_git_object: 39905a04a8f36d52dbea25bccfec75310e5ca9d0
   src/funcs/reportListAdsReports.ts:
     id: c0c0a973269e
-    last_write_checksum: sha1:b316ed2d6ff7bbf19400a7762bd5d2ed874c1507
-    pristine_git_object: b5409f7b7998eb267d67c14448af332e4b32d935
+    last_write_checksum: sha1:bedc7bfcf2615727da0c93e85907ad7f7e53b62e
+    pristine_git_object: c76daea4066ba96139a93f4083a8d915a0b5a380
   src/funcs/reportListMartechReports.ts:
     id: feddc036c717
     last_write_checksum: sha1:ba771f5ce070d30f9eeef1f0dedae46395556c7d
@@ -11178,8 +11178,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:bfd80d22693560a167edcca67e217f1bea2caa82
-    pristine_git_object: 38c766d6b1ca527097204a89793d288f6694b9c9
+    last_write_checksum: sha1:816129e72814efd6630519655ef17afbabc59ccf
+    pristine_git_object: 77d38bd567adacaf34d12f11eb3d9b79c08fb3bf
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -12554,8 +12554,8 @@ trackedFiles:
     pristine_git_object: b621cbd51c62813e23476d72af73ce33614c64c4
   src/sdk/models/operations/listadsreports.ts:
     id: 18728bf16bcc
-    last_write_checksum: sha1:958ad761cde91b35b0e7a0328b36a4755922c8a4
-    pristine_git_object: 4a4c5749178ffb6da5e948b7416f76035d1ca974
+    last_write_checksum: sha1:0105d37d767497873b722e55d06c91c6680a1597
+    pristine_git_object: 16b182b265a7e3acac810fe0a419655aa1e75a6a
   src/sdk/models/operations/listassessmentpackages.ts:
     id: 1517f74ce8b9
     last_write_checksum: sha1:dac323c86e4116e001caf4e36bae873faeb77689
@@ -15414,8 +15414,8 @@ trackedFiles:
     pristine_git_object: 7a3bd0fe43671097c5df55b8167bc78ad6aa84c6
   src/sdk/models/shared/taskcomment.ts:
     id: 9f1468394064
-    last_write_checksum: sha1:3785e947c9c9887aa550821021ed46566c98cdb0
-    pristine_git_object: aef2a543e209f8c742c9bd54cb0b6b2bfa0edc0f
+    last_write_checksum: sha1:63314e8c925e563d49e7ec182643e91ba32bc5c7
+    pristine_git_object: 72c1805373c7305a63b5dc60dddad8cca8cdb2c4
   src/sdk/models/shared/taskmetadata.ts:
     id: 1a8140a575ba
     last_write_checksum: sha1:0fe49ee4b21a6a3cd3c8638a2a04d3ec7f4a4ecc
@@ -18178,10 +18178,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"task_id": "<id>", "text": "<value>"}
+        application/json: {"text": "<value>"}
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   createUcComment:
     speakeasy-default-create-uc-comment:
       parameters:
@@ -18200,7 +18200,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   getUcComment:
     speakeasy-default-get-uc-comment:
       parameters:
@@ -18233,10 +18233,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"task_id": "<id>", "text": "<value>"}
+        application/json: {"text": "<value>"}
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   patchUcComment:
     speakeasy-default-patch-uc-comment:
       parameters:
@@ -18267,10 +18267,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"task_id": "<id>", "text": "<value>"}
+        application/json: {"text": "<value>"}
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   updateUcComment:
     speakeasy-default-update-uc-comment:
       parameters:
@@ -21624,7 +21624,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.activity.createLmsActivity()`: **Added**\n* `unified-to.activity.getLmsActivity()`: **Added**\n* `unified-to.activity.listLmsActivities()`: **Added**\n* `unified-to.activity.patchLmsActivity()`: **Added**\n* `unified-to.activity.removeLmsActivity()`: **Added**\n* `unified-to.activity.updateLmsActivity()`: **Added**\n* `unified-to.collection.createLmsCollection()`: **Added**\n* `unified-to.collection.getLmsCollection()`: **Added**\n* `unified-to.collection.listLmsCollections()`: **Added**\n* `unified-to.collection.patchLmsCollection()`: **Added**\n* `unified-to.collection.removeLmsCollection()`: **Added**\n* `unified-to.collection.updateLmsCollection()`: **Added**\n* `unified-to.lms.createLmsActivity()`: **Added**\n* `unified-to.lms.createLmsCollection()`: **Added**\n* `unified-to.lms.createLmsContent()`: **Added**\n* `unified-to.lms.getLmsActivity()`: **Added**\n* `unified-to.lms.getLmsCollection()`: **Added**\n* `unified-to.lms.getLmsContent()`: **Added**\n* `unified-to.lms.listLmsActivities()`: **Added**\n* `unified-to.lms.listLmsCollections()`: **Added**\n* `unified-to.lms.listLmsContents()`: **Added**\n* `unified-to.lms.patchLmsActivity()`: **Added**\n* `unified-to.lms.patchLmsCollection()`: **Added**\n* `unified-to.lms.patchLmsContent()`: **Added**\n* `unified-to.lms.removeLmsActivity()`: **Added**\n* `unified-to.lms.removeLmsCollection()`: **Added**\n* `unified-to.lms.removeLmsContent()`: **Added**\n* `unified-to.lms.updateLmsActivity()`: **Added**\n* `unified-to.lms.updateLmsCollection()`: **Added**\n* `unified-to.lms.updateLmsContent()`: **Added**\n* `unified-to.content.createLmsContent()`: **Added**\n* `unified-to.content.getLmsContent()`: **Added**\n* `unified-to.content.listLmsContents()`: **Added**\n* `unified-to.content.patchLmsContent()`: **Added**\n* `unified-to.content.removeLmsContent()`: **Added**\n* `unified-to.content.updateLmsContent()`: **Added**\n* `unified-to.lms.createLmsClass()`: \n  *  `request.lmsClass.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.lms.createLmsCourse()`: \n  *  `request.lmsCourse.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.lms.getLmsClass()`:  `response.media[]` **Changed**\n* `unified-to.lms.getLmsCourse()`:  `response.media[]` **Changed**\n* `unified-to.lms.listLmsClasses()`:  `response.[].media[]` **Changed**\n* `unified-to.lms.listLmsCourses()`:  `response.[].media[]` **Changed**\n* `unified-to.lms.patchLmsClass()`: \n  *  `request.lmsClass.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.lms.patchLmsCourse()`: \n  *  `request.lmsCourse.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.lms.updateLmsClass()`: \n  *  `request.lmsClass.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.lms.updateLmsCourse()`: \n  *  `request.lmsCourse.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.class.createLmsClass()`: \n  *  `request.lmsClass.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.class.getLmsClass()`:  `response.media[]` **Changed**\n* `unified-to.class.listLmsClasses()`:  `response.[].media[]` **Changed**\n* `unified-to.class.patchLmsClass()`: \n  *  `request.lmsClass.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.class.updateLmsClass()`: \n  *  `request.lmsClass.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.course.createLmsCourse()`: \n  *  `request.lmsCourse.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.course.getLmsCourse()`:  `response.media[]` **Changed**\n* `unified-to.course.listLmsCourses()`:  `response.[].media[]` **Changed**\n* `unified-to.course.patchLmsCourse()`: \n  *  `request.lmsCourse.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.course.updateLmsCourse()`: \n  *  `request.lmsCourse.media[]` **Changed**\n  *  `response.media[]` **Changed**\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.createUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.unified.getUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `unified-to.unified.getUnifiedWebhook()`:  `response.objectType` **Changed**\n* `unified-to.unified.listUnifiedConnections()`:  `response.[].permissions[]` **Changed**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.unified.listUnifiedWebhooks()`:  `response.[].objectType` **Changed**\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.connection.getUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `unified-to.connection.listUnifiedConnections()`:  `response.[].permissions[]` **Changed**\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.webhook.createUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.webhook.getUnifiedWebhook()`:  `response.objectType` **Changed**\n* `unified-to.webhook.listUnifiedWebhooks()`:  `response.[].objectType` **Changed**\n* `unified-to.webhook.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.webhook.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.report.listAdsReports()`:  `request` **Changed**\n* `unified-to.ads.listAdsReports()`:  `request` **Changed**\n* `unified-to.comment.createTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.comment.getTaskComment()`:  `response.taskId` **Changed**\n* `unified-to.comment.listTaskComments()`:  `response.[].taskId` **Changed**\n* `unified-to.comment.patchTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.comment.updateTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.task.createTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.task.getTaskComment()`:  `response.taskId` **Changed**\n* `unified-to.task.listTaskComments()`:  `response.[].taskId` **Changed**\n* `unified-to.task.patchTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.task.updateTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

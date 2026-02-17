@@ -94,8 +94,11 @@ async function $do(
   const path = pathToFunc("/ads/{connection_id}/report")(pathParams);
 
   const query = encodeFormQuery({
+    "ad_id": payload.ad_id,
     "campaign_id": payload.campaign_id,
+    "end_lt": payload.end_lt,
     "fields": payload.fields,
+    "group_id": payload.group_id,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
@@ -103,6 +106,7 @@ async function $do(
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "start_gte": payload.start_gte,
     "type": payload.type,
     "updated_gte": payload.updated_gte,
   });

@@ -7,7 +7,6 @@ import { PatchTaskCommentRequest } from "@unified-api/typescript-sdk/sdk/models/
 
 let value: PatchTaskCommentRequest = {
   taskComment: {
-    taskId: "<id>",
     text: "<value>",
   },
   connectionId: "<id>",
