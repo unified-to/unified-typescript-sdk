@@ -37,6 +37,7 @@ export type HrisCompensation = {
   currency?: string | undefined;
   frequency?: HrisCompensationFrequency | undefined;
   groupId?: string | undefined;
+  notes?: string | undefined;
   type?: HrisCompensationType | undefined;
 };
 
@@ -76,6 +77,7 @@ export const HrisCompensation$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   frequency: HrisCompensationFrequency$inboundSchema.optional(),
   group_id: z.string().optional(),
+  notes: z.string().optional(),
   type: HrisCompensationType$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -88,6 +90,7 @@ export type HrisCompensation$Outbound = {
   currency?: string | undefined;
   frequency?: string | undefined;
   group_id?: string | undefined;
+  notes?: string | undefined;
   type?: string | undefined;
 };
 
@@ -101,6 +104,7 @@ export const HrisCompensation$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   frequency: HrisCompensationFrequency$outboundSchema.optional(),
   groupId: z.string().optional(),
+  notes: z.string().optional(),
   type: HrisCompensationType$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {

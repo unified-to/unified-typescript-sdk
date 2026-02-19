@@ -1156,6 +1156,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`groupUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 - [`groupUpdateScimGroups`](docs/sdks/group/README.md#updatescimgroups) - Update group
 - [`groupUpdateScimGroups`](docs/sdks/scim/README.md#updatescimgroups) - Update group
+- [`hrisCreateHrisBankaccount`](docs/sdks/bankaccount/README.md#createhrisbankaccount) - Create a bankaccount
+- [`hrisCreateHrisBankaccount`](docs/sdks/hris/README.md#createhrisbankaccount) - Create a bankaccount
 - [`hrisCreateHrisBenefit`](docs/sdks/benefit/README.md#createhrisbenefit) - Create a benefit
 - [`hrisCreateHrisBenefit`](docs/sdks/hris/README.md#createhrisbenefit) - Create a benefit
 - [`hrisCreateHrisDeduction`](docs/sdks/deduction/README.md#createhrisdeduction) - Create a deduction
@@ -1166,6 +1168,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisCreateHrisEmployee`](docs/sdks/hris/README.md#createhrisemployee) - Create an employee
 - [`hrisCreateHrisTimeshift`](docs/sdks/hris/README.md#createhristimeshift) - Create a timeshift
 - [`hrisCreateHrisTimeshift`](docs/sdks/timeshift/README.md#createhristimeshift) - Create a timeshift
+- [`hrisGetHrisBankaccount`](docs/sdks/bankaccount/README.md#gethrisbankaccount) - Retrieve a bankaccount
+- [`hrisGetHrisBankaccount`](docs/sdks/hris/README.md#gethrisbankaccount) - Retrieve a bankaccount
 - [`hrisGetHrisBenefit`](docs/sdks/benefit/README.md#gethrisbenefit) - Retrieve a benefit
 - [`hrisGetHrisBenefit`](docs/sdks/hris/README.md#gethrisbenefit) - Retrieve a benefit
 - [`hrisGetHrisDeduction`](docs/sdks/deduction/README.md#gethrisdeduction) - Retrieve a deduction
@@ -1180,6 +1184,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisTimeoff`](docs/sdks/timeoff/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeshift`](docs/sdks/hris/README.md#gethristimeshift) - Retrieve a timeshift
 - [`hrisGetHrisTimeshift`](docs/sdks/timeshift/README.md#gethristimeshift) - Retrieve a timeshift
+- [`hrisListHrisBankaccounts`](docs/sdks/bankaccount/README.md#listhrisbankaccounts) - List all bankaccounts
+- [`hrisListHrisBankaccounts`](docs/sdks/hris/README.md#listhrisbankaccounts) - List all bankaccounts
 - [`hrisListHrisBenefits`](docs/sdks/benefit/README.md#listhrisbenefits) - List all benefits
 - [`hrisListHrisBenefits`](docs/sdks/hris/README.md#listhrisbenefits) - List all benefits
 - [`hrisListHrisDeductions`](docs/sdks/deduction/README.md#listhrisdeductions) - List all deductions
@@ -1194,6 +1200,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisTimeoffs`](docs/sdks/timeoff/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeshifts`](docs/sdks/hris/README.md#listhristimeshifts) - List all timeshifts
 - [`hrisListHrisTimeshifts`](docs/sdks/timeshift/README.md#listhristimeshifts) - List all timeshifts
+- [`hrisPatchHrisBankaccount`](docs/sdks/bankaccount/README.md#patchhrisbankaccount) - Update a bankaccount
+- [`hrisPatchHrisBankaccount`](docs/sdks/hris/README.md#patchhrisbankaccount) - Update a bankaccount
 - [`hrisPatchHrisBenefit`](docs/sdks/benefit/README.md#patchhrisbenefit) - Update a benefit
 - [`hrisPatchHrisBenefit`](docs/sdks/hris/README.md#patchhrisbenefit) - Update a benefit
 - [`hrisPatchHrisDeduction`](docs/sdks/deduction/README.md#patchhrisdeduction) - Update a deduction
@@ -1204,6 +1212,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisPatchHrisEmployee`](docs/sdks/hris/README.md#patchhrisemployee) - Update an employee
 - [`hrisPatchHrisTimeshift`](docs/sdks/hris/README.md#patchhristimeshift) - Update a timeshift
 - [`hrisPatchHrisTimeshift`](docs/sdks/timeshift/README.md#patchhristimeshift) - Update a timeshift
+- [`hrisRemoveHrisBankaccount`](docs/sdks/bankaccount/README.md#removehrisbankaccount) - Remove a bankaccount
+- [`hrisRemoveHrisBankaccount`](docs/sdks/hris/README.md#removehrisbankaccount) - Remove a bankaccount
 - [`hrisRemoveHrisBenefit`](docs/sdks/benefit/README.md#removehrisbenefit) - Remove a benefit
 - [`hrisRemoveHrisBenefit`](docs/sdks/hris/README.md#removehrisbenefit) - Remove a benefit
 - [`hrisRemoveHrisDeduction`](docs/sdks/deduction/README.md#removehrisdeduction) - Remove a deduction
@@ -1214,6 +1224,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisRemoveHrisEmployee`](docs/sdks/hris/README.md#removehrisemployee) - Remove an employee
 - [`hrisRemoveHrisTimeshift`](docs/sdks/hris/README.md#removehristimeshift) - Remove a timeshift
 - [`hrisRemoveHrisTimeshift`](docs/sdks/timeshift/README.md#removehristimeshift) - Remove a timeshift
+- [`hrisUpdateHrisBankaccount`](docs/sdks/bankaccount/README.md#updatehrisbankaccount) - Update a bankaccount
+- [`hrisUpdateHrisBankaccount`](docs/sdks/hris/README.md#updatehrisbankaccount) - Update a bankaccount
 - [`hrisUpdateHrisBenefit`](docs/sdks/benefit/README.md#updatehrisbenefit) - Update a benefit
 - [`hrisUpdateHrisBenefit`](docs/sdks/hris/README.md#updatehrisbenefit) - Update a benefit
 - [`hrisUpdateHrisDeduction`](docs/sdks/deduction/README.md#updatehrisdeduction) - Update a deduction

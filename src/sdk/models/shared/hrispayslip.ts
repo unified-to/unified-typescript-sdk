@@ -30,7 +30,7 @@ export type HrisPayslip = {
   createdAt?: Date | undefined;
   currency?: string | undefined;
   /**
-   * // The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+   * The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
    */
   deduction?: PropertyHrisPayslipDeduction | undefined;
   details?: Array<HrisPayslipDetail> | undefined;

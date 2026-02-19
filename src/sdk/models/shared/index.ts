@@ -137,6 +137,7 @@ export * from "./genaiembedding.js";
 export * from "./genaiembeddingcontent.js";
 export * from "./genaimodel.js";
 export * from "./genaiprompt.js";
+export * from "./hrisbankaccount.js";
 export * from "./hrisbenefit.js";
 export * from "./hriscompany.js";
 export * from "./hriscompensation.js";

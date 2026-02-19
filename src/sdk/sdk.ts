@@ -15,6 +15,7 @@ import { Assessment } from "./assessment.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
 import { Balancesheet } from "./balancesheet.js";
+import { Bankaccount } from "./bankaccount.js";
 import { Benefit } from "./benefit.js";
 import { Bill } from "./bill.js";
 import { Branch } from "./branch.js";
@@ -463,6 +464,11 @@ export class UnifiedTo extends ClientSDK {
   private _hris?: Hris;
   get hris(): Hris {
     return (this._hris ??= new Hris(this._options));
+  }
+
+  private _bankaccount?: Bankaccount;
+  get bankaccount(): Bankaccount {
+    return (this._bankaccount ??= new Bankaccount(this._options));
   }
 
   private _benefit?: Benefit;

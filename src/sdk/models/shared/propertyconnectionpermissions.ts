@@ -137,6 +137,8 @@ export const PropertyConnectionPermissions = {
   HrisDeductionWrite: "hris_deduction_write",
   HrisBenefitRead: "hris_benefit_read",
   HrisBenefitWrite: "hris_benefit_write",
+  HrisBankaccountRead: "hris_bankaccount_read",
+  HrisBankaccountWrite: "hris_bankaccount_write",
   UcCallRead: "uc_call_read",
   UcContactRead: "uc_contact_read",
   UcContactWrite: "uc_contact_write",

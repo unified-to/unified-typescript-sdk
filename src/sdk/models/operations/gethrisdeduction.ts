@@ -20,6 +20,7 @@ export const GetHrisDeductionQueryParamFields = {
   StartAt: "start_at",
   EndAt: "end_at",
   IsActive: "is_active",
+  Notes: "notes",
   Raw: "raw",
 } as const;
 export type GetHrisDeductionQueryParamFields = ClosedEnum<

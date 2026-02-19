@@ -45,7 +45,7 @@ export type PropertyHrisPayslipDeductionType = OpenEnum<
 >;
 
 /**
- * // The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+ * The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
  */
 export type PropertyHrisPayslipDeduction = {
   amount?: number | undefined;
@@ -57,6 +57,7 @@ export type PropertyHrisPayslipDeduction = {
   frequency?: PropertyHrisPayslipDeductionFrequency | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   type?: PropertyHrisPayslipDeductionType | undefined;
@@ -103,6 +104,7 @@ export const PropertyHrisPayslipDeduction$inboundSchema: z.ZodType<
   frequency: PropertyHrisPayslipDeductionFrequency$inboundSchema.optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),

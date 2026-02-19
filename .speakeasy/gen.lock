@@ -1,26 +1,26 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: d121c23b689164804bad4c9617517509
+  docChecksum: 9e3f584ad566f757bc4ca573da1e88d2
   docVersion: "1.0"
-  speakeasyVersion: 1.719.0
-  generationVersion: 2.824.1
-  releaseVersion: 2.83.5
-  configChecksum: 8a08d0ae37d210941435671edcd7111f
+  speakeasyVersion: 1.722.2
+  generationVersion: 2.832.2
+  releaseVersion: 2.83.6
+  configChecksum: 86a29481cf9a6ce9241195b708f3c352
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: aa8b3c98-2bb8-4e7a-8ae7-6da61a5a6ef8
-  pristine_commit_hash: 09ab3b6f68acec4a7289f2d5056d7442e1c99ac9
-  pristine_tree_hash: ce22c7a186fefca225e2984d33181b57cd2a5d8e
+  generation_id: efda264c-94e1-463f-8fff-15f3f306e119
+  pristine_commit_hash: c7eb5ee4b29d92fe1c0cd6ef5ae2648ec5543167
+  pristine_tree_hash: b0e17b81808eb7e94a687819d10bf7daefe96bfd
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.13
-    core: 3.26.27
+    core: 3.26.28
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -440,6 +440,14 @@ trackedFiles:
     id: b88d7ddc49f4
     last_write_checksum: sha1:dd1e3b543770a05966b667e0446253bdc5c1f463
     pristine_git_object: f34b1d2b11c7914e7b0ef577e92198abf6aa5998
+  docs/sdk/models/operations/createhrisbankaccountqueryparamfields.md:
+    id: ce0f4ea571f3
+    last_write_checksum: sha1:5f0851f09e7cf26ac057b2a4e04c59a9ed4a711b
+    pristine_git_object: 2f11985a914a82561ed1e33989925406147746d9
+  docs/sdk/models/operations/createhrisbankaccountrequest.md:
+    id: b867c828a70a
+    last_write_checksum: sha1:348a07e3b826c0435f1b4655abadc6c0be816490
+    pristine_git_object: facc0f6fd372c4ca1393fc2ad7b07ecb11bfeb2d
   docs/sdk/models/operations/createhrisbenefitqueryparamfields.md:
     id: e77f80a68845
     last_write_checksum: sha1:6d57fd7cbfa20bfae2527cae4687ced29642d395
@@ -458,8 +466,8 @@ trackedFiles:
     pristine_git_object: 3476f2ba4470d2adea32a163ded910464a9d0c9a
   docs/sdk/models/operations/createhrisdeductionqueryparamfields.md:
     id: 897ec80093e1
-    last_write_checksum: sha1:a05abf8b151610c277cac9514f4dbbdc5a9455e7
-    pristine_git_object: 6847367a21263af31798b56f8b38cfe53e450ee3
+    last_write_checksum: sha1:26a3c99f2de03056c25be54dcf0f37315836022d
+    pristine_git_object: 7c413b6278a6e498a3c694f72610b5e8bf8199d5
   docs/sdk/models/operations/createhrisdeductionrequest.md:
     id: fd9ba2eb9d85
     last_write_checksum: sha1:59645bdc1f9318f60f384c37e067fab7dc8b930a
@@ -1280,6 +1288,14 @@ trackedFiles:
     id: 5eb6e8959c84
     last_write_checksum: sha1:57e50588fc5c8aa1e15cb8c518a879dd82e675ae
     pristine_git_object: 4ae536702b8def261c9bb68750cd3e4b7e6c0f9b
+  docs/sdk/models/operations/gethrisbankaccountqueryparamfields.md:
+    id: c10a93a350b1
+    last_write_checksum: sha1:28736e5c83137187655696d3f7373a034d89fd8c
+    pristine_git_object: 9d3529bce23d59d3e622de9a20793ea22c99d248
+  docs/sdk/models/operations/gethrisbankaccountrequest.md:
+    id: 06562215e0ef
+    last_write_checksum: sha1:d3b13464557d08f4e6b27e0e35a5ccae5a2390a4
+    pristine_git_object: 7d250dbaa44b367df48c9da9fe80494b4ac814ec
   docs/sdk/models/operations/gethrisbenefitqueryparamfields.md:
     id: 74d0cbca2be6
     last_write_checksum: sha1:d504fe055325a3731dfeb6e344ac60e906d17104
@@ -1298,8 +1314,8 @@ trackedFiles:
     pristine_git_object: 8cf7c5d02fb13b045c4a5829f6947a068669fe62
   docs/sdk/models/operations/gethrisdeductionqueryparamfields.md:
     id: d413525dd753
-    last_write_checksum: sha1:e423e5b12a2698b88725ec2862dfb5c55c2b7a59
-    pristine_git_object: 1b7fa19ad8cb1fc9b494aac149d43fedd22241b1
+    last_write_checksum: sha1:b9a63ec39afacdffa67491502b8004531f71bb5a
+    pristine_git_object: f58b9928b95e01ce390849550143b97b73214d22
   docs/sdk/models/operations/gethrisdeductionrequest.md:
     id: 12b317e83684
     last_write_checksum: sha1:ecb5f18d44381b3c488dbc777727f5ffe9334f29
@@ -2220,6 +2236,14 @@ trackedFiles:
     id: f56ff17cf895
     last_write_checksum: sha1:78b2e7aaf30b32697ae6075bd457f6cc9d9597b3
     pristine_git_object: c780297e836d074b1c3d40226bba31c8f6ac692d
+  docs/sdk/models/operations/listhrisbankaccountsqueryparamfields.md:
+    id: 7dc753172fdf
+    last_write_checksum: sha1:f498f464ae1fb1a60da4ad0582b0b40bb9ea846d
+    pristine_git_object: 289f6d2cde4a65dba545a7db131d7dac33301b31
+  docs/sdk/models/operations/listhrisbankaccountsrequest.md:
+    id: d404e8316826
+    last_write_checksum: sha1:b603ac06c70cfb86cf88f6e16208f0c40c7aa587
+    pristine_git_object: 2c40f42817e2f0a83f7e944f9f88ed9833d1dba2
   docs/sdk/models/operations/listhrisbenefitsqueryparamfields.md:
     id: 50ef157a572f
     last_write_checksum: sha1:f6ce6de676c1024193702dc69f5782dc4b8a3623
@@ -2238,8 +2262,8 @@ trackedFiles:
     pristine_git_object: 70e4492a2ead0cc52e6cf39e0b605ddddd7b978f
   docs/sdk/models/operations/listhrisdeductionsqueryparamfields.md:
     id: 8c8f4a2050b2
-    last_write_checksum: sha1:22264e27113db8c8762c48bd6760614e8b1e3296
-    pristine_git_object: 8653f458dc49e54fc52d7314ebc9875a0acfeecc
+    last_write_checksum: sha1:1bc78775500f6f6dc8cc6fadc1b62d4ffcf73db3
+    pristine_git_object: e693a3d52802968f6c6d1a16ff185068978092a9
   docs/sdk/models/operations/listhrisdeductionsrequest.md:
     id: 9c40f22ba281
     last_write_checksum: sha1:191d50f60b816dcd3379d2197d7d0c178c2866f9
@@ -3080,6 +3104,14 @@ trackedFiles:
     id: 49e932e4503a
     last_write_checksum: sha1:238476e51a6c3684562c431d51e34d5954a734f4
     pristine_git_object: 7f8a34101346d5d6a71f4186c72018da06cd595e
+  docs/sdk/models/operations/patchhrisbankaccountqueryparamfields.md:
+    id: 0470cb4c0caf
+    last_write_checksum: sha1:dbc9730c8ddca2c6fdf68c3dd213b62eb5c82185
+    pristine_git_object: 890e7a3c4012bfecc19890765c8b8bee1d5bd6e0
+  docs/sdk/models/operations/patchhrisbankaccountrequest.md:
+    id: aafbce0aa89a
+    last_write_checksum: sha1:32a48d996602c971443db59a5111e1fb9e4f8c9b
+    pristine_git_object: 0e1b6a66624cdd9804ed9c9c86fae68be51962ff
   docs/sdk/models/operations/patchhrisbenefitqueryparamfields.md:
     id: e8ac4324d7ee
     last_write_checksum: sha1:b2e7f8374432f9146a3ece7ad168da1aaa6ba39b
@@ -3098,8 +3130,8 @@ trackedFiles:
     pristine_git_object: 1dded5a49f7c88f0d73552d8933c6fb6f00b177f
   docs/sdk/models/operations/patchhrisdeductionqueryparamfields.md:
     id: bf171a1bb99c
-    last_write_checksum: sha1:590397af2ee8cf6e74aaaa4c402997966211eaf7
-    pristine_git_object: 3fd92cbcc3a4f1c64b97a5b19019a99d2b5f97e5
+    last_write_checksum: sha1:c917cd437151a2718c626db903710106c0ab87fb
+    pristine_git_object: 8651c540164f461e41a91961f1d4a1cc979713c3
   docs/sdk/models/operations/patchhrisdeductionrequest.md:
     id: a97488170804
     last_write_checksum: sha1:c54d1c55ce8bc0e99b4c611986f61f3cb44333c4
@@ -3872,6 +3904,14 @@ trackedFiles:
     id: 1b8a91f1cb07
     last_write_checksum: sha1:9695863b625746c63b6fc0f9d37aef50bdaffbcc
     pristine_git_object: 994c8d6fac54361cab00d2df291d5fecf29799f9
+  docs/sdk/models/operations/removehrisbankaccountrequest.md:
+    id: dd4c0c134d94
+    last_write_checksum: sha1:9af1dad0c262fc02209f8c2baec9d90967377eb7
+    pristine_git_object: 64e8380acffb6a99b1eb23920161ce94c7803209
+  docs/sdk/models/operations/removehrisbankaccountresponse.md:
+    id: 065613815d3b
+    last_write_checksum: sha1:25c472fe590040a9a54a13e0b39d8d56702d9bf7
+    pristine_git_object: e2fff748154f3eec0ce52ccb85a4c8fc836688af
   docs/sdk/models/operations/removehrisbenefitrequest.md:
     id: ecb4167768f7
     last_write_checksum: sha1:b218b91247c3e5194985d27edc33a086730c6f53
@@ -4652,6 +4692,14 @@ trackedFiles:
     id: 85905898d98e
     last_write_checksum: sha1:8d2bffe56b4792d5bcc38a440bfc0e7630185a25
     pristine_git_object: a19f13317566940417c20ed09a3f5804b8cab143
+  docs/sdk/models/operations/updatehrisbankaccountqueryparamfields.md:
+    id: c12d05c76eeb
+    last_write_checksum: sha1:752f934877e7a386c944ad620e4e54cac2218cc1
+    pristine_git_object: 4472cad338f157ff9429209abd1d2bd377d015ee
+  docs/sdk/models/operations/updatehrisbankaccountrequest.md:
+    id: 2ee10654168d
+    last_write_checksum: sha1:6f76ae6a38777457955169dc13b3afd503cfe062
+    pristine_git_object: 24b69e062ac4c20de211320877886eda766f9f97
   docs/sdk/models/operations/updatehrisbenefitqueryparamfields.md:
     id: f5da11ee2730
     last_write_checksum: sha1:f4a0f51e947f5dee1808f8cb3aa3a537ebd25eaf
@@ -4670,8 +4718,8 @@ trackedFiles:
     pristine_git_object: 469b0095a97884031ce0813b3481e929d27ff2f0
   docs/sdk/models/operations/updatehrisdeductionqueryparamfields.md:
     id: b20874217825
-    last_write_checksum: sha1:de6d2d6154511b4566db89b935df80855d35aa7f
-    pristine_git_object: 9e3b55dd34adb63d096b8a6fb3ff9b2bbda1c7d0
+    last_write_checksum: sha1:f52c6cc6eada4979654b9aee9365642070bd4af6
+    pristine_git_object: 4c97a0b123606b9d2b4922378c496cf4d41ab3ca
   docs/sdk/models/operations/updatehrisdeductionrequest.md:
     id: fd4acde013dd
     last_write_checksum: sha1:e5ed079652308f862715335d4915abbd83259a7b
@@ -5280,6 +5328,10 @@ trackedFiles:
     id: 5a42b1ac396c
     last_write_checksum: sha1:c99632d44602d42a90b5dfc4be3a6168b6fbb453
     pristine_git_object: b964eb29047e453f933481353337195a54ad50d5
+  docs/sdk/models/shared/accounttype.md:
+    id: 1c016d1deade
+    last_write_checksum: sha1:a77a8da17a4c10d09d435bedc916cfecfc1e11ef
+    pristine_git_object: 126b043de7064f814c8d08403129343de8e31e82
   docs/sdk/models/shared/adsad.md:
     id: 223cf1cbf260
     last_write_checksum: sha1:7fc73e3635c66c1790daa11844abdf8719b95b6e
@@ -6020,6 +6072,10 @@ trackedFiles:
     id: a6f437e3da75
     last_write_checksum: sha1:4f0d8f1c9c2e800e90c8829a99af109c7c436616
     pristine_git_object: 1f382b6a9247ecb7870f00879517dc1485e08060
+  docs/sdk/models/shared/hrisbankaccount.md:
+    id: 29278a06f260
+    last_write_checksum: sha1:5dfe8563e5699d6ca371bc853756742fa814f398
+    pristine_git_object: 8867d18b6ab478ce4f1668fc23de4659965272ba
   docs/sdk/models/shared/hrisbenefit.md:
     id: 8770ce522f61
     last_write_checksum: sha1:4229eb11b719902977daeabcd2ef1fdef2b4f67b
@@ -6038,8 +6094,8 @@ trackedFiles:
     pristine_git_object: fd8951c9c6ce2e52a6b755c9c1ea381f4a31a3d6
   docs/sdk/models/shared/hriscompensation.md:
     id: c2612a1e0b1a
-    last_write_checksum: sha1:b8207dcf4ce3045275d7ab69309591aa7b9299b9
-    pristine_git_object: b0012775c3efe6cbd3f24cfe882e5c6acb821fdf
+    last_write_checksum: sha1:b06ee781514b921bca8f33e5a4622041e34d9fd4
+    pristine_git_object: 647051a65f9c745c2c814e30bb337ff960b78507
   docs/sdk/models/shared/hriscompensationfrequency.md:
     id: 8921242e1fe3
     last_write_checksum: sha1:0130cf952396dc54d3cd5892e2f0780e7d9374ae
@@ -6050,8 +6106,8 @@ trackedFiles:
     pristine_git_object: b1de40958506da2cb148033d75847eda602caed7
   docs/sdk/models/shared/hrisdeduction.md:
     id: 8800b9d6897c
-    last_write_checksum: sha1:a0c3d1de6c40cfaa1cdcaee7f74a7b55cafa6bc6
-    pristine_git_object: 5f0182743ef16dd8506a9df23e321dc216ad3da6
+    last_write_checksum: sha1:3577e1b187b3a86b436cd89a2e1a9bd28acd55fe
+    pristine_git_object: 6f485e2ab923f2a82e9acb19bbe4f9d3999b7477
   docs/sdk/models/shared/hrisdeductioncoveragelevel.md:
     id: 6ba8b93a2761
     last_write_checksum: sha1:20d9868fa3605aa69270aff9c2676298da5b2a7b
@@ -6142,8 +6198,8 @@ trackedFiles:
     pristine_git_object: b2e12c2c0108f3b38049cb13c66fdd52f0873fc9
   docs/sdk/models/shared/hrispayslip.md:
     id: 1d9871796fbe
-    last_write_checksum: sha1:b08b8a54728fa290b87e166da513ce4b10819038
-    pristine_git_object: 600fbabb68689e1bc50574f974d8b10c7523a7d0
+    last_write_checksum: sha1:99723e6d65fcfbaa6252d3b3804123207703aab5
+    pristine_git_object: 2dac523e688c180afbf3accf7b9669bf63db9aa3
   docs/sdk/models/shared/hrispayslipdetail.md:
     id: ff285083ebb7
     last_write_checksum: sha1:a8de7252bb893dba774d1cc29642e38aae45a317
@@ -6758,8 +6814,8 @@ trackedFiles:
     pristine_git_object: 461283bae80406ed9f25f8e2d7ac6c4d365c6002
   docs/sdk/models/shared/objecttype.md:
     id: 5aa1a34338e3
-    last_write_checksum: sha1:12e60bc611eb67f488217130315e73e28ad21485
-    pristine_git_object: f94e9b485b0a1d0f9b5b418dcc3510d6b76d188f
+    last_write_checksum: sha1:a82f256db4a9f9e39c71e5ae59bfac517c6b0c43
+    pristine_git_object: cee57271909aa56632987e832852c7b7e5eebd04
   docs/sdk/models/shared/one.md:
     id: cfea86b11a47
     last_write_checksum: sha1:79f14ec89ec098b58eb06d73d20861e500359ed9
@@ -7126,8 +7182,8 @@ trackedFiles:
     pristine_git_object: f27bff0d0d6eb2a904276a5ca51a273b60d23d95
   docs/sdk/models/shared/propertyconnectionpermissions.md:
     id: 55bbe6011514
-    last_write_checksum: sha1:f6f5053c4b4b02f46a3024a390f3c4c4de805280
-    pristine_git_object: 58d0589cf47858dc98ac3ad42f01bc99f96c5e3c
+    last_write_checksum: sha1:4263f0d4ae80680b7828b3642c7224200e865970
+    pristine_git_object: c8d3f1e3bd3a8a4b153c79d1735abd85a9ea0870
   docs/sdk/models/shared/propertycrmcompanyaddress.md:
     id: 585899750cb0
     last_write_checksum: sha1:519de1456644bac0bd9eb6fb6c62284a7962f3f0
@@ -7206,8 +7262,8 @@ trackedFiles:
     pristine_git_object: ed443ae30867eb23ead1ed61b18623805efe4efb
   docs/sdk/models/shared/propertyhrispayslipdeduction.md:
     id: 5ba76a23de73
-    last_write_checksum: sha1:196688f1e8dcdaf65806f0e098bedf3834491d6b
-    pristine_git_object: f235b9dbc770ade8799e4fa83a574ae7d8c90c79
+    last_write_checksum: sha1:be0e0d0d0f2c9e73d1491f6b6961d1672652c3ed
+    pristine_git_object: e7a6c5770f7da2c6dfe4062eb411ac61c24779b8
   docs/sdk/models/shared/propertyhrispayslipdeductioncoveragelevel.md:
     id: a9790515bcd7
     last_write_checksum: sha1:5dd8843c719fe78ffe0dc7f3616c69fe95d7d0c4
@@ -8022,8 +8078,8 @@ trackedFiles:
     pristine_git_object: 1dcaba8ce538c9a40e9aef0d58e59177bc8987ab
   docs/sdk/models/shared/webhook.md:
     id: 3f3e06364a24
-    last_write_checksum: sha1:84eb6fa7af3968bc5e706211a8a92f8da66355e4
-    pristine_git_object: 4f81eb5f6fb29e4ad5b55a7f0ae5674189ec8098
+    last_write_checksum: sha1:c552e405b95f739454607385183e2e8ad675a69b
+    pristine_git_object: 31de6daa82d9f955d7d6e0b02f6343a90c09d847
   docs/sdk/models/shared/webhooktype.md:
     id: 29583c0cec9e
     last_write_checksum: sha1:0e38332ca82ae624199c42f9ca21318766fea47b
@@ -8088,6 +8144,10 @@ trackedFiles:
     id: b360644f6413
     last_write_checksum: sha1:093901ea1abad135729ee09e6ff2d5f4b09ba61e
     pristine_git_object: d892e5ad35c57de3ed107183525ad58fda26da71
+  docs/sdks/bankaccount/README.md:
+    id: 734f6bc0a158
+    last_write_checksum: sha1:89f3df17792c2dc5d46fa56ce90f023968e14b63
+    pristine_git_object: 85086ff1aefa7b6e62737b46a5d4e32f2ce36bd2
   docs/sdks/benefit/README.md:
     id: 39125f9257ef
     last_write_checksum: sha1:e6eb284c3ced87972e2fb28f4e00f13c894ed4fa
@@ -8258,8 +8318,8 @@ trackedFiles:
     pristine_git_object: d750e8019b598a3a379b3cf982927471fe9dbff9
   docs/sdks/hris/README.md:
     id: 0baa868a038c
-    last_write_checksum: sha1:dceda24d8ae657f14fedb6bb5c1942b7a4e9f368
-    pristine_git_object: 955370a88854d08020fe214b8c0536479a7fc23c
+    last_write_checksum: sha1:97356adbc6bc59b3f2d58a2876cc0e9da9d92c46
+    pristine_git_object: 2ae7f9752bfdd81043844c069204c92bf227ab02
   docs/sdks/insertionorder/README.md:
     id: 72e4049753b2
     last_write_checksum: sha1:f93607321c6335bbb04f26f5ed5d5b1ceedeb6e6
@@ -8582,12 +8642,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:12cf98be322bd8c1b659ef2309307d8b0e3a2e3d
-    pristine_git_object: 0c76236631dff6b5b38339facfe38a14e6ec01fb
+    last_write_checksum: sha1:8e64204a22ff9731cf000f974253367b14a18d10
+    pristine_git_object: 525151ef2f7357864d81e814164ebdd98d31ee3c
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:a30f7f4dca4d3ddc3fe7f69674ead0f37f0fa04f
-    pristine_git_object: 06309fec91a5f6dfd6bdceab402f6e60c2595f63
+    last_write_checksum: sha1:6149abbde5ffe124d150d32e15ff8790ecc4e80d
+    pristine_git_object: 128ff3579a12f5031e94786decb29fc4f0a202b7
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10020,6 +10080,10 @@ trackedFiles:
     id: 2fc4ace99590
     last_write_checksum: sha1:b14cb51e34753143244201408ba9d0969159df47
     pristine_git_object: d8228834787dcc78e93d8b4e2be5dad9cb4d883d
+  src/funcs/hrisCreateHrisBankaccount.ts:
+    id: 6630f45c7b68
+    last_write_checksum: sha1:064f16121c7149732673c511232ec45801c02f2a
+    pristine_git_object: 10459fe4200f645d528a4b287320043a5fe6c46c
   src/funcs/hrisCreateHrisBenefit.ts:
     id: f078301f887e
     last_write_checksum: sha1:3f9395eabed6b905a76b1fc406d6eeaa411cf2e9
@@ -10040,6 +10104,10 @@ trackedFiles:
     id: fa7fcbfe7642
     last_write_checksum: sha1:d4a126b949089fe5dde68f4849ee1df0d91a8697
     pristine_git_object: 5c738740bb008ac29f6b0e17efed6b890cc5746f
+  src/funcs/hrisGetHrisBankaccount.ts:
+    id: abc57de86eb8
+    last_write_checksum: sha1:690810d92f4b895d460145d79b5eec5b86c6d901
+    pristine_git_object: 166fdf6f9fdac6305a7b3af16a91ea94aa8e0eb6
   src/funcs/hrisGetHrisBenefit.ts:
     id: 8ca7af971324
     last_write_checksum: sha1:b9a87cde65478d6ad80ada55642c3d9c110e6b68
@@ -10068,6 +10136,10 @@ trackedFiles:
     id: e9742138ff6e
     last_write_checksum: sha1:b31adb437e13ca4a2d4a1ea35f1a7518f7768419
     pristine_git_object: 78f95db76346d52d053b2f70373efe8331abb627
+  src/funcs/hrisListHrisBankaccounts.ts:
+    id: c97dca4ee3bf
+    last_write_checksum: sha1:0e32b9a0ebf2ab01847660da3d53fe60d58650dc
+    pristine_git_object: b2cc1e977b98d930c749672c75410d8f66637054
   src/funcs/hrisListHrisBenefits.ts:
     id: 4817499ca40f
     last_write_checksum: sha1:56198bd0a0559c7dbde0e8e23d9feece9b1601de
@@ -10096,6 +10168,10 @@ trackedFiles:
     id: 718a3a552e7e
     last_write_checksum: sha1:bfe841cc7e502d5453317b007df6d59e6cf92414
     pristine_git_object: 8bf7dba6a51897e84dfbe8d348aea6c4849fccdd
+  src/funcs/hrisPatchHrisBankaccount.ts:
+    id: bd8e7785d0fb
+    last_write_checksum: sha1:8b380b989ba0ff9130e05c10c0df87051d76e962
+    pristine_git_object: 355fc0531e6de39bf76401cd4ed27db09905ea97
   src/funcs/hrisPatchHrisBenefit.ts:
     id: 379c82b35b27
     last_write_checksum: sha1:2c7a6ff45e4e38778a5e75bf2ad3107fcd286122
@@ -10116,6 +10192,10 @@ trackedFiles:
     id: 31b378e0fc92
     last_write_checksum: sha1:06dec5bb9066ced7282459ff606a4f5bbd2f46c9
     pristine_git_object: 12498ab356f466831da9488f3dccb4f9f8f54196
+  src/funcs/hrisRemoveHrisBankaccount.ts:
+    id: 7219f773006e
+    last_write_checksum: sha1:906cd37997853a656b8800612c4da36a1cdf0eaa
+    pristine_git_object: 74dfb6ea11b6dc2c0a0710544405f5219450078f
   src/funcs/hrisRemoveHrisBenefit.ts:
     id: cbb8abd43fd7
     last_write_checksum: sha1:081fe747e96b0dc172338214c6c9843824d47ec9
@@ -10136,6 +10216,10 @@ trackedFiles:
     id: 0606b09d86ca
     last_write_checksum: sha1:0b40a3005f0efa5ae304432aa4e249dcafb940d3
     pristine_git_object: 21e9bb32539df12147fb7f61cf590a77af2b9014
+  src/funcs/hrisUpdateHrisBankaccount.ts:
+    id: 29645967a2c1
+    last_write_checksum: sha1:4068465385a8682dfe8ed181671747950593ea20
+    pristine_git_object: 0cbc1ba83dba352bb7fbfdd74c486461cdcb82e4
   src/funcs/hrisUpdateHrisBenefit.ts:
     id: 93664c44e851
     last_write_checksum: sha1:b2f97702fd530f5f1cabfe7d84707d2a64ab55cc
@@ -11178,8 +11262,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:816129e72814efd6630519655ef17afbabc59ccf
-    pristine_git_object: 77d38bd567adacaf34d12f11eb3d9b79c08fb3bf
+    last_write_checksum: sha1:5a9f64e5383f8f8464ec38dc43dea7570f1b3a2a
+    pristine_git_object: c1a979d8e42f8b1b62e9e2262547a98849dd43f7
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -11280,6 +11364,10 @@ trackedFiles:
     id: a246b32a5283
     last_write_checksum: sha1:76784fca557131e8b33197c7557512cf69f17e02
     pristine_git_object: f63ef9fdd554a0b4e5a76c721eb4ca79559aabde
+  src/sdk/bankaccount.ts:
+    id: c1fd7ced82f0
+    last_write_checksum: sha1:0326f5a6d89d6a3e570c1010d62341dd862c0dab
+    pristine_git_object: 72e03589901e97baa8c203b22b431ab41945abb2
   src/sdk/benefit.ts:
     id: 4fcb1bb5b6dd
     last_write_checksum: sha1:a1c09ec5859fc7c38a9a916ee699f1263679c8a7
@@ -11450,8 +11538,8 @@ trackedFiles:
     pristine_git_object: 5ffa13c0b1f8442ff8090270ddef30b385755f4e
   src/sdk/hris.ts:
     id: b7831a6209ac
-    last_write_checksum: sha1:18e63f71815a060624ceaa56cae28f1c834b4f8e
-    pristine_git_object: 6ba1a61c988c8ecd3b3c4acfa25b89cad6cc98bb
+    last_write_checksum: sha1:f3479fac3fee9375948a0b80e357f825d06a7eb9
+    pristine_git_object: 34d5c86aae37e75459453b4bcbdbb35f7ce8b85b
   src/sdk/index.ts:
     id: a857902a703f
     last_write_checksum: sha1:ed6d64f2a6135349aa8498b8d8cff9ba85c7fb8f
@@ -11772,6 +11860,10 @@ trackedFiles:
     id: 1304c31ef85d
     last_write_checksum: sha1:07f4eaac3f453aaaf1fa5557ef5bd5ed157e15e6
     pristine_git_object: 4b52c6657982d95eeceff991702810b5466e2149
+  src/sdk/models/operations/createhrisbankaccount.ts:
+    id: e0885fe5b56c
+    last_write_checksum: sha1:1b1ee2e6e88df6d3ec7deea03e34c4401f382ee8
+    pristine_git_object: 1d1c583d3474de1a14f3b366fcf82fc05182e58a
   src/sdk/models/operations/createhrisbenefit.ts:
     id: 3be4d041c2a8
     last_write_checksum: sha1:39f2bc1e53129eb73436d23d87263a5b07b8c8c7
@@ -11782,8 +11874,8 @@ trackedFiles:
     pristine_git_object: 2fe2aa72da76347fa672bc3c2e4088c093f483b9
   src/sdk/models/operations/createhrisdeduction.ts:
     id: c8c234e9774d
-    last_write_checksum: sha1:428dda918f04447f3c312dd76b10c915b79fe36f
-    pristine_git_object: 12f38450479bd5d73f871be22432abf7989d8bc7
+    last_write_checksum: sha1:19f213731afc739011122e7b90afa9a69c9532d0
+    pristine_git_object: bf6b6f7e8ff8b9a88b71d71563af1338097d5945
   src/sdk/models/operations/createhrisdevice.ts:
     id: 0f810d1c3e05
     last_write_checksum: sha1:3a51d1a782e754cef9f7b75af2dea44258865241
@@ -12196,6 +12288,10 @@ trackedFiles:
     id: e4259b4a549e
     last_write_checksum: sha1:a3bb183d5c24f3e379389e810a4a1f29bffede76
     pristine_git_object: 80cf7f38dda26130179b03eb91d56b7b4c8f163c
+  src/sdk/models/operations/gethrisbankaccount.ts:
+    id: 71d420393501
+    last_write_checksum: sha1:8293579e640d00a36bd7c7177085b9a8ea3ff955
+    pristine_git_object: af8a45b2cface946b15af9787f46d1859c0e91de
   src/sdk/models/operations/gethrisbenefit.ts:
     id: e432d12fd51d
     last_write_checksum: sha1:896b5fdd9a0b866d126171d564997a7faea19352
@@ -12206,8 +12302,8 @@ trackedFiles:
     pristine_git_object: 15f0a3b0e16c8409239c78a26263712112f8179e
   src/sdk/models/operations/gethrisdeduction.ts:
     id: 6cdca9cacc6f
-    last_write_checksum: sha1:dfd5b8e00ccbe3f795e2952b1fb3ddf9cd49052e
-    pristine_git_object: 6a531fcc701b353fa0e14fc70aea2dce07aaa08d
+    last_write_checksum: sha1:c1148fab8c5933065af0da4aaf18fd821d38a439
+    pristine_git_object: 031987ad69d564b13feba4cdaf6f51054870c085
   src/sdk/models/operations/gethrisdevice.ts:
     id: 30a1a57801ce
     last_write_checksum: sha1:5bcbc7f98b9e8d518217e1a76ba23d5f58afe20b
@@ -12450,8 +12546,8 @@ trackedFiles:
     pristine_git_object: d61602c96c69d2d8e351908ab105aba239b1577e
   src/sdk/models/operations/index.ts:
     id: b2864d0519d7
-    last_write_checksum: sha1:847dc409ed9f9275817ef7374e6ab827cad46dcd
-    pristine_git_object: ecb2681bd0efd2832d1e74ff99842169c29cb405
+    last_write_checksum: sha1:0fad7235c8223801ece657dbedf85a299ff3f26d
+    pristine_git_object: f8b30762c5922a66295e2f26a76da3edc88fe29d
   src/sdk/models/operations/listaccountingaccounts.ts:
     id: 9c22ea1649e0
     last_write_checksum: sha1:f7f651bf76de4924fb3238ec1a43b8549aeaeafc
@@ -12692,6 +12788,10 @@ trackedFiles:
     id: 230c38399ca8
     last_write_checksum: sha1:e26b502f491a6bcc5cc5d398c2e30181e46c487c
     pristine_git_object: 0b9317726ac598ea36122bb944a619d962cd5779
+  src/sdk/models/operations/listhrisbankaccounts.ts:
+    id: 08158d52c51b
+    last_write_checksum: sha1:9a0ea9fe6b938c2771aa0a2b2de3b1434e48bdb0
+    pristine_git_object: 524084f3087b4539cd4e5c1c274c0398032be92d
   src/sdk/models/operations/listhrisbenefits.ts:
     id: eab955b8a7be
     last_write_checksum: sha1:1b7f62377bfb7d81f2bb737de82a1c6e4366444d
@@ -12702,8 +12802,8 @@ trackedFiles:
     pristine_git_object: d7991f545848a54663c2ba0759fbab2a3b951fc1
   src/sdk/models/operations/listhrisdeductions.ts:
     id: 42085268e48b
-    last_write_checksum: sha1:f23edad053ad4a8d41a19a69b4d5020c8788e0d6
-    pristine_git_object: eaa39573532efcea64cb1075cdb9b3945b6b0eb3
+    last_write_checksum: sha1:f9d379f1050342994a07805511f4c2db44719097
+    pristine_git_object: ea40c0e7fc60292187083727f5df8f9d7e111976
   src/sdk/models/operations/listhrisdevices.ts:
     id: 8936c57a47f6
     last_write_checksum: sha1:2f0485e161981d308434785daddaa23324faf73c
@@ -13136,6 +13236,10 @@ trackedFiles:
     id: 56ab36d43a6a
     last_write_checksum: sha1:fc048c20b52805658fe7ef1971cee3d445ef603e
     pristine_git_object: 78c0853ad597512a53f7bb982a35ce7f400f034f
+  src/sdk/models/operations/patchhrisbankaccount.ts:
+    id: ab6960e7a794
+    last_write_checksum: sha1:a125152c8c5da876a5d78b69c5c1d3f2f5c25381
+    pristine_git_object: 59c7b3f94cc90c4dcb727c580f4810a65abd73d5
   src/sdk/models/operations/patchhrisbenefit.ts:
     id: c4d6ab27be0b
     last_write_checksum: sha1:3413c3a0da0ccf74749d0615099330f516fd0536
@@ -13146,8 +13250,8 @@ trackedFiles:
     pristine_git_object: bce585f799992021923447b04484047557002e0e
   src/sdk/models/operations/patchhrisdeduction.ts:
     id: 4c7cf9ae070d
-    last_write_checksum: sha1:7d0d42f75a82a1e85b4cc8306c7212e4b39a9f6f
-    pristine_git_object: 4b44ff8eb1eba4cb68cef13c92261c6dfeb3455e
+    last_write_checksum: sha1:6e17f8ee519bda03455408024b93796785a779e0
+    pristine_git_object: 1aed316a8abbf845a45f863c7ac79adc564a7c71
   src/sdk/models/operations/patchhrisdevice.ts:
     id: d734e77d8755
     last_write_checksum: sha1:bfd8ec84c2aa7c4455fc96b0db9e5f87f008088c
@@ -13532,6 +13636,10 @@ trackedFiles:
     id: a744be1ef13c
     last_write_checksum: sha1:42c3d29bd1aaea7023314eb1cbc874429f72665d
     pristine_git_object: c42a7b5a0398997f2d1b5c35f56e84c4859a0dcf
+  src/sdk/models/operations/removehrisbankaccount.ts:
+    id: 892c6714f7ca
+    last_write_checksum: sha1:7299a757e5539c832b2fa57351797cfd71658264
+    pristine_git_object: 28c04f80392e34c347c390d2a35d7706a787c308
   src/sdk/models/operations/removehrisbenefit.ts:
     id: 69756274dd82
     last_write_checksum: sha1:5bb6e48abea6dbeb17b85ce310008d1831198936
@@ -13924,6 +14032,10 @@ trackedFiles:
     id: f33d492e7bf9
     last_write_checksum: sha1:6ab536446fbac858bdd55674111a4778b7bab614
     pristine_git_object: c94a47e25cd0d98c9d5360ded5ffd525e4b27683
+  src/sdk/models/operations/updatehrisbankaccount.ts:
+    id: 2ccc374e83b3
+    last_write_checksum: sha1:087524c4c29f5625126b58106125e0e0056f20d9
+    pristine_git_object: a6fa9cc6406c2fcee4792db2090267c24bfc39ef
   src/sdk/models/operations/updatehrisbenefit.ts:
     id: 0178dbf6ad04
     last_write_checksum: sha1:5e62afe9d078bd6b06ce58e00fb6e722bccdaf74
@@ -13934,8 +14046,8 @@ trackedFiles:
     pristine_git_object: e4e2f3226c6d5f65d68d1ec930f5530393654e6c
   src/sdk/models/operations/updatehrisdeduction.ts:
     id: 63c64a0a2d48
-    last_write_checksum: sha1:35a32f7fab797cb079edfdd18780b3fe7822fe87
-    pristine_git_object: 2da42cc8e95c43a68bacae16c528ee0714b6e22f
+    last_write_checksum: sha1:50d8e72d8ec6e3890ce4874b591c97553726aaac
+    pristine_git_object: 1e61d8ac66d321272d9a3b30ebf5fcbe29109c99
   src/sdk/models/operations/updatehrisdevice.ts:
     id: 861da05780be
     last_write_checksum: sha1:2606f4423f43e54e3dae3b24720c0ea2833dd314
@@ -14676,6 +14788,10 @@ trackedFiles:
     id: 08360cc2e3c7
     last_write_checksum: sha1:54aae7bb5cdb336a3a046b4c25840b7c2dda2f04
     pristine_git_object: 45e1f5783b3eae060de4e10789356f70d35621bc
+  src/sdk/models/shared/hrisbankaccount.ts:
+    id: 39ea544de5fe
+    last_write_checksum: sha1:990c19dd82f7ba131694ff392b019b530a875c9a
+    pristine_git_object: 3c4fc5aaea04ee3e42f875729e4f42b5befc2c3c
   src/sdk/models/shared/hrisbenefit.ts:
     id: 9ae0e2ac6cb7
     last_write_checksum: sha1:8f877063bea40a9ba3da8e6bf50c88738c5345d3
@@ -14686,12 +14802,12 @@ trackedFiles:
     pristine_git_object: 21e8cd56ff90a672a9a38dcf3e08e0af8e45b8ab
   src/sdk/models/shared/hriscompensation.ts:
     id: 1b857b2ef3ce
-    last_write_checksum: sha1:0eb43018cb6f4e8dd05a1301ef0bbb6a9ec4eee1
-    pristine_git_object: 04d76653981b251456728c058a1f7ab452b5953b
+    last_write_checksum: sha1:d7cbb37cfbf6f0400333fc948b5a11b253ec463d
+    pristine_git_object: 44436488adaaadf6a5a441369070632d81d0e572
   src/sdk/models/shared/hrisdeduction.ts:
     id: ec68825aebb3
-    last_write_checksum: sha1:7653ab34a8ab5c743b3b242b0a89af74f3636240
-    pristine_git_object: 451e50baa1fdf880830dcf40f36ed7d144690c39
+    last_write_checksum: sha1:d25c0061ca269c72e93713781fea4e17ae011703
+    pristine_git_object: d0c41697cccbdf2b94276ed8ca7ee63124d7a751
   src/sdk/models/shared/hrisdevice.ts:
     id: 3b50d9853eab
     last_write_checksum: sha1:83f8534c570914ce16afaa68dd88a7dc5a26694a
@@ -14722,8 +14838,8 @@ trackedFiles:
     pristine_git_object: 8645bbaa613b621f84bc3626628b78dcc005f558
   src/sdk/models/shared/hrispayslip.ts:
     id: 558035213ea5
-    last_write_checksum: sha1:cac387f5e943b1cd2d1c97c98df7cce081cf25bc
-    pristine_git_object: b0b5fa457ddcdbec13bdf290bea171d7f903d3f5
+    last_write_checksum: sha1:40b254d54b3249ee8ba5ca977348a0a4f126ba9a
+    pristine_git_object: 6ecb2c8eca28789771c5adef13452fda2671dbaa
   src/sdk/models/shared/hrispayslipdetail.ts:
     id: 84a81a722764
     last_write_checksum: sha1:fdb5235b7b4c424656cac94260056be8142c60c2
@@ -14742,8 +14858,8 @@ trackedFiles:
     pristine_git_object: c65c1e1ae74a86db783ce21cc309bbfaa5bf9581
   src/sdk/models/shared/index.ts:
     id: e97e906e3c14
-    last_write_checksum: sha1:95d52860d69a0878073252e69fdc96ad5240bf8e
-    pristine_git_object: b11ccc75fa97136f935da5a3c58d2f07c6f64c1e
+    last_write_checksum: sha1:cf1a8b3c72a87777b9ede08a4eebf1e23046c98c
+    pristine_git_object: 3c2f85f07f5efca58d5799c2e68975cb9816f77b
   src/sdk/models/shared/integration.ts:
     id: 7dddee0366e4
     last_write_checksum: sha1:febbe9d7dad4073133d5cf3fc897d66d3df00b29
@@ -15078,8 +15194,8 @@ trackedFiles:
     pristine_git_object: 36ea2cd9df84e717723b19066e8fe4bc37bdc9a9
   src/sdk/models/shared/propertyconnectionpermissions.ts:
     id: 0a4d4e7be3da
-    last_write_checksum: sha1:13219137f5091ae39a2a35734b29dc0242923da5
-    pristine_git_object: 6b2b531c0585b4e1f786243b0d78788bfdb3ddb4
+    last_write_checksum: sha1:539d0b6c55969b63ab5689072d2f8b51f1cacd70
+    pristine_git_object: 47e3b890a5026b06835b58eec2c7ddeaee4900b2
   src/sdk/models/shared/propertycrmcompanyaddress.ts:
     id: 345c116a01ec
     last_write_checksum: sha1:3395b60488e4364055a08e805c96aeda1f5b7ff6
@@ -15154,8 +15270,8 @@ trackedFiles:
     pristine_git_object: f73e2fa55f949e0c9fe3f11cf7989f2eb0471ea1
   src/sdk/models/shared/propertyhrispayslipdeduction.ts:
     id: ddb0843a5982
-    last_write_checksum: sha1:eaff2fc7eb6077ea67dfb3de9318170d0be57260
-    pristine_git_object: eefe04a22add199381ca1faa56326753cad72e5f
+    last_write_checksum: sha1:a10b747c3252df221883b1b52c8719011302c9b4
+    pristine_git_object: ea797eeefd94462fc2ab37c5bf7b64bf812169df
   src/sdk/models/shared/propertyintegrationcategories.ts:
     id: 141daafaedde
     last_write_checksum: sha1:f107162487633e515bf8d739122f381d8429ab91
@@ -15514,8 +15630,8 @@ trackedFiles:
     pristine_git_object: 830933862b70cefdcb62d15dd0a399bc3a0c7975
   src/sdk/models/shared/webhook.ts:
     id: fe82e8a7994c
-    last_write_checksum: sha1:a30e37ec7464bc3d41ef31997dbcc986e86a3630
-    pristine_git_object: 91afaca02ead6a0d1f73998d58c87ea9f263a85a
+    last_write_checksum: sha1:a6d5bd9ae7822f395c65054fe47a2f03191e51da
+    pristine_git_object: 20ee7655c087c76460352b935ad65dd0e00090e1
   src/sdk/note.ts:
     id: 40aa15108739
     last_write_checksum: sha1:435b80fa41f35e6bbd0899152e2be854682ac502
@@ -15630,8 +15746,8 @@ trackedFiles:
     pristine_git_object: 1c5e8b6ac29ef940468f9745c9bcbc206e2f768c
   src/sdk/sdk.ts:
     id: 784571af2f69
-    last_write_checksum: sha1:82dc49edecce48f8d451d312b1fb7c143a8d969b
-    pristine_git_object: defabe931a76de79040ea9077b1f781a44269887
+    last_write_checksum: sha1:6a48c284b58803011def7b2de05f18769dffe9ee
+    pristine_git_object: daf875a13281c10bb5e5b517482afee8d75cc905
   src/sdk/shipment.ts:
     id: d4c8ed4abf4d
     last_write_checksum: sha1:e8014f6e787a99942c0979a9e74217f2460723dd
@@ -21622,9 +21738,64 @@ examples:
       responses:
         "200":
           application/json: {}
+  createHrisBankaccount:
+    speakeasy-default-create-hris-bankaccount:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getHrisBankaccount:
+    speakeasy-default-get-hris-bankaccount:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listHrisBankaccounts:
+    speakeasy-default-list-hris-bankaccounts:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchHrisBankaccount:
+    speakeasy-default-patch-hris-bankaccount:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeHrisBankaccount:
+    speakeasy-default-remove-hris-bankaccount:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateHrisBankaccount:
+    speakeasy-default-update-hris-bankaccount:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.report.listAdsReports()`:  `request` **Changed**\n* `unified-to.ads.listAdsReports()`:  `request` **Changed**\n* `unified-to.comment.createTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.comment.getTaskComment()`:  `response.taskId` **Changed**\n* `unified-to.comment.listTaskComments()`:  `response.[].taskId` **Changed**\n* `unified-to.comment.patchTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.comment.updateTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.task.createTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.task.getTaskComment()`:  `response.taskId` **Changed**\n* `unified-to.task.listTaskComments()`:  `response.[].taskId` **Changed**\n* `unified-to.task.patchTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n* `unified-to.task.updateTaskComment()`: \n  *  `request.taskComment.taskId` **Changed**\n  *  `response.taskId` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.hris.createHrisBankaccount()`: **Added**\n* `unified-to.hris.getHrisBankaccount()`: **Added**\n* `unified-to.hris.listHrisBankaccounts()`: **Added**\n* `unified-to.hris.patchHrisBankaccount()`: **Added**\n* `unified-to.hris.removeHrisBankaccount()`: **Added**\n* `unified-to.hris.updateHrisBankaccount()`: **Added**\n* `unified-to.bankaccount.createHrisBankaccount()`: **Added**\n* `unified-to.bankaccount.getHrisBankaccount()`: **Added**\n* `unified-to.bankaccount.listHrisBankaccounts()`: **Added**\n* `unified-to.bankaccount.patchHrisBankaccount()`: **Added**\n* `unified-to.bankaccount.removeHrisBankaccount()`: **Added**\n* `unified-to.bankaccount.updateHrisBankaccount()`: **Added**\n* `unified-to.hris.createHrisDeduction()`: \n  *  `request` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.hris.createHrisEmployee()`: \n  *  `request.hrisEmployee.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.hris.createHrisTimeshift()`: \n  *  `request.hrisTimeshift.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.hris.getHrisDeduction()`: \n  *  `request.fields` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.hris.getHrisEmployee()`:  `response.compensation[].notes` **Added**\n* `unified-to.hris.getHrisPayslip()`:  `response.deduction.notes` **Added**\n* `unified-to.hris.getHrisTimeshift()`:  `response.compensation[].notes` **Added**\n* `unified-to.hris.listHrisDeductions()`: \n  *  `request.fields` **Changed**\n  *  `response.[].notes` **Added**\n* `unified-to.hris.listHrisEmployees()`:  `response.[].compensation[].notes` **Added**\n* `unified-to.hris.listHrisPayslips()`:  `response.[].deduction.notes` **Added**\n* `unified-to.hris.listHrisTimeshifts()`:  `response.[].compensation[].notes` **Added**\n* `unified-to.hris.patchHrisDeduction()`: \n  *  `request` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.hris.patchHrisEmployee()`: \n  *  `request.hrisEmployee.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.hris.patchHrisTimeshift()`: \n  *  `request.hrisTimeshift.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.hris.updateHrisDeduction()`: \n  *  `request` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.hris.updateHrisEmployee()`: \n  *  `request.hrisEmployee.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.hris.updateHrisTimeshift()`: \n  *  `request.hrisTimeshift.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.deduction.createHrisDeduction()`: \n  *  `request` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.deduction.getHrisDeduction()`: \n  *  `request.fields` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.deduction.listHrisDeductions()`: \n  *  `request.fields` **Changed**\n  *  `response.[].notes` **Added**\n* `unified-to.deduction.patchHrisDeduction()`: \n  *  `request` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.deduction.updateHrisDeduction()`: \n  *  `request` **Changed**\n  *  `response.notes` **Added**\n* `unified-to.employee.createHrisEmployee()`: \n  *  `request.hrisEmployee.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.employee.getHrisEmployee()`:  `response.compensation[].notes` **Added**\n* `unified-to.employee.listHrisEmployees()`:  `response.[].compensation[].notes` **Added**\n* `unified-to.employee.patchHrisEmployee()`: \n  *  `request.hrisEmployee.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.employee.updateHrisEmployee()`: \n  *  `request.hrisEmployee.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.payslip.getHrisPayslip()`:  `response.deduction.notes` **Added**\n* `unified-to.payslip.listHrisPayslips()`:  `response.[].deduction.notes` **Added**\n* `unified-to.timeshift.createHrisTimeshift()`: \n  *  `request.hrisTimeshift.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.timeshift.getHrisTimeshift()`:  `response.compensation[].notes` **Added**\n* `unified-to.timeshift.listHrisTimeshifts()`:  `response.[].compensation[].notes` **Added**\n* `unified-to.timeshift.patchHrisTimeshift()`: \n  *  `request.hrisTimeshift.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.timeshift.updateHrisTimeshift()`: \n  *  `request.hrisTimeshift.compensation[].notes` **Added**\n  *  `response.compensation[].notes` **Added**\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.createUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(hrisBankaccount)` **Added**\n  *  `response.objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.unified.getUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `unified-to.unified.getUnifiedWebhook()`:  `response.objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.unified.listUnifiedConnections()`:  `response.[].permissions[]` **Changed**\n* `unified-to.unified.listUnifiedWebhooks()`:  `response.[].objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(hrisBankaccount)` **Added**\n  *  `response.objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(hrisBankaccount)` **Added**\n  *  `response.objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.connection.getUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `unified-to.connection.listUnifiedConnections()`:  `response.[].permissions[]` **Changed**\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.webhook.createUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(hrisBankaccount)` **Added**\n  *  `response.objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.webhook.getUnifiedWebhook()`:  `response.objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.webhook.listUnifiedWebhooks()`:  `response.[].objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.webhook.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(hrisBankaccount)` **Added**\n  *  `response.objectType.enum(hrisBankaccount)` **Added**\n* `unified-to.webhook.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(hrisBankaccount)` **Added**\n  *  `response.objectType.enum(hrisBankaccount)` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

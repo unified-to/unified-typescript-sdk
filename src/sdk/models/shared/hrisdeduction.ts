@@ -53,6 +53,7 @@ export type HrisDeduction = {
   frequency?: HrisDeductionFrequency | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   type?: HrisDeductionType | undefined;
@@ -116,6 +117,7 @@ export const HrisDeduction$inboundSchema: z.ZodType<
   frequency: HrisDeductionFrequency$inboundSchema.optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -147,6 +149,7 @@ export type HrisDeduction$Outbound = {
   frequency?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   type?: string | undefined;
@@ -169,6 +172,7 @@ export const HrisDeduction$outboundSchema: z.ZodType<
   frequency: HrisDeductionFrequency$outboundSchema.optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   type: HrisDeductionType$outboundSchema.optional(),

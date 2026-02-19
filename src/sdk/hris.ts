@@ -14,11 +14,13 @@ import { groupListHrisGroups } from "../funcs/groupListHrisGroups.js";
 import { groupPatchHrisGroup } from "../funcs/groupPatchHrisGroup.js";
 import { groupRemoveHrisGroup } from "../funcs/groupRemoveHrisGroup.js";
 import { groupUpdateHrisGroup } from "../funcs/groupUpdateHrisGroup.js";
+import { hrisCreateHrisBankaccount } from "../funcs/hrisCreateHrisBankaccount.js";
 import { hrisCreateHrisBenefit } from "../funcs/hrisCreateHrisBenefit.js";
 import { hrisCreateHrisDeduction } from "../funcs/hrisCreateHrisDeduction.js";
 import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
 import { hrisCreateHrisTimeshift } from "../funcs/hrisCreateHrisTimeshift.js";
+import { hrisGetHrisBankaccount } from "../funcs/hrisGetHrisBankaccount.js";
 import { hrisGetHrisBenefit } from "../funcs/hrisGetHrisBenefit.js";
 import { hrisGetHrisDeduction } from "../funcs/hrisGetHrisDeduction.js";
 import { hrisGetHrisDevice } from "../funcs/hrisGetHrisDevice.js";
@@ -26,6 +28,7 @@ import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
+import { hrisListHrisBankaccounts } from "../funcs/hrisListHrisBankaccounts.js";
 import { hrisListHrisBenefits } from "../funcs/hrisListHrisBenefits.js";
 import { hrisListHrisDeductions } from "../funcs/hrisListHrisDeductions.js";
 import { hrisListHrisDevices } from "../funcs/hrisListHrisDevices.js";
@@ -33,16 +36,19 @@ import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
+import { hrisPatchHrisBankaccount } from "../funcs/hrisPatchHrisBankaccount.js";
 import { hrisPatchHrisBenefit } from "../funcs/hrisPatchHrisBenefit.js";
 import { hrisPatchHrisDeduction } from "../funcs/hrisPatchHrisDeduction.js";
 import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
 import { hrisPatchHrisTimeshift } from "../funcs/hrisPatchHrisTimeshift.js";
+import { hrisRemoveHrisBankaccount } from "../funcs/hrisRemoveHrisBankaccount.js";
 import { hrisRemoveHrisBenefit } from "../funcs/hrisRemoveHrisBenefit.js";
 import { hrisRemoveHrisDeduction } from "../funcs/hrisRemoveHrisDeduction.js";
 import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
 import { hrisRemoveHrisTimeshift } from "../funcs/hrisRemoveHrisTimeshift.js";
+import { hrisUpdateHrisBankaccount } from "../funcs/hrisUpdateHrisBankaccount.js";
 import { hrisUpdateHrisBenefit } from "../funcs/hrisUpdateHrisBenefit.js";
 import { hrisUpdateHrisDeduction } from "../funcs/hrisUpdateHrisDeduction.js";
 import { hrisUpdateHrisDevice } from "../funcs/hrisUpdateHrisDevice.js";
@@ -60,6 +66,20 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Hris extends ClientSDK {
+  /**
+   * Create a bankaccount
+   */
+  async createHrisBankaccount(
+    request: operations.CreateHrisBankaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisBankaccount> {
+    return unwrapAsync(hrisCreateHrisBankaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Create a benefit
    */
@@ -166,6 +186,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisTimeshift> {
     return unwrapAsync(hrisCreateHrisTimeshift(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a bankaccount
+   */
+  async getHrisBankaccount(
+    request: operations.GetHrisBankaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisBankaccount> {
+    return unwrapAsync(hrisGetHrisBankaccount(
       this,
       request,
       options,
@@ -313,6 +347,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all bankaccounts
+   */
+  async listHrisBankaccounts(
+    request: operations.ListHrisBankaccountsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisBankaccount>> {
+    return unwrapAsync(hrisListHrisBankaccounts(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all benefits
    */
   async listHrisBenefits(
@@ -453,6 +501,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update a bankaccount
+   */
+  async patchHrisBankaccount(
+    request: operations.PatchHrisBankaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisBankaccount> {
+    return unwrapAsync(hrisPatchHrisBankaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a benefit
    */
   async patchHrisBenefit(
@@ -565,6 +627,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove a bankaccount
+   */
+  async removeHrisBankaccount(
+    request: operations.RemoveHrisBankaccountRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisBankaccountResponse | undefined> {
+    return unwrapAsync(hrisRemoveHrisBankaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a benefit
    */
   async removeHrisBenefit(
@@ -670,6 +746,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveHrisTimeshiftResponse | undefined> {
     return unwrapAsync(hrisRemoveHrisTimeshift(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a bankaccount
+   */
+  async updateHrisBankaccount(
+    request: operations.UpdateHrisBankaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisBankaccount> {
+    return unwrapAsync(hrisUpdateHrisBankaccount(
       this,
       request,
       options,
