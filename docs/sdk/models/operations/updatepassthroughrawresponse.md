@@ -13,4 +13,4 @@ import { UpdatePassthroughRawResponse } from "@unified-api/typescript-sdk/sdk/mo
 | Field                                           | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | `headers`                                       | Record<string, *string*[]>                      | :heavy_check_mark:                              | N/A                                             |
-| `result`                                        | *operations.UpdatePassthroughRawResponseResult* | :heavy_check_mark:                              | N/A                                             |
+| `result`                                        | *operations.UpdatePassthroughRawResponseResult* | :heavy_minus_sign:                              | N/A                                             |

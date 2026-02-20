@@ -93,6 +93,7 @@ export type PropertyAdsReportMetricsGroup = {
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
+  currency?: string | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsReportMetricsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
@@ -169,6 +170,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_ids: z.array(z.string()).optional(),
+  currency: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema

@@ -616,6 +616,13 @@ export const NativeWebhookTaskId = {
 } as const;
 export type NativeWebhookTaskId = OpenEnum<typeof NativeWebhookTaskId>;
 
+export const NativeWebhookType = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookType = OpenEnum<typeof NativeWebhookType>;
+
 export const SearchDomain = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1109,6 +1116,7 @@ export type IntegrationSupport = {
   nativeWebhookShipmentId?: NativeWebhookShipmentId | undefined;
   nativeWebhookStudentId?: NativeWebhookStudentId | undefined;
   nativeWebhookTaskId?: NativeWebhookTaskId | undefined;
+  nativeWebhookType?: NativeWebhookType | undefined;
   outboundFields?: { [k: string]: string } | undefined;
   /**
    * objects that we map from in the integration
@@ -1775,6 +1783,13 @@ export const NativeWebhookTaskId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookTaskId);
 
 /** @internal */
+export const NativeWebhookType$inboundSchema: z.ZodType<
+  NativeWebhookType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookType);
+
+/** @internal */
 export const SearchDomain$inboundSchema: z.ZodType<
   SearchDomain,
   z.ZodTypeDef,
@@ -2246,6 +2261,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_shipment_id: NativeWebhookShipmentId$inboundSchema.optional(),
   native_webhook_student_id: NativeWebhookStudentId$inboundSchema.optional(),
   native_webhook_task_id: NativeWebhookTaskId$inboundSchema.optional(),
+  native_webhook_type: NativeWebhookType$inboundSchema.optional(),
   outbound_fields: z.record(z.string()).optional(),
   raw_objects: z.array(z.string()).optional(),
   search_domain: SearchDomain$inboundSchema.optional(),
@@ -2407,6 +2423,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_shipment_id": "nativeWebhookShipmentId",
     "native_webhook_student_id": "nativeWebhookStudentId",
     "native_webhook_task_id": "nativeWebhookTaskId",
+    "native_webhook_type": "nativeWebhookType",
     "outbound_fields": "outboundFields",
     "raw_objects": "rawObjects",
     "search_domain": "searchDomain",

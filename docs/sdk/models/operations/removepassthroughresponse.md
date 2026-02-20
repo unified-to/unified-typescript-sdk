@@ -13,4 +13,4 @@ import { RemovePassthroughResponse } from "@unified-api/typescript-sdk/sdk/model
 | Field                                        | Type                                         | Required                                     | Description                                  |
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
 | `headers`                                    | Record<string, *string*[]>                   | :heavy_check_mark:                           | N/A                                          |
-| `result`                                     | *operations.RemovePassthroughResponseResult* | :heavy_check_mark:                           | N/A                                          |
+| `result`                                     | *operations.RemovePassthroughResponseResult* | :heavy_minus_sign:                           | N/A                                          |

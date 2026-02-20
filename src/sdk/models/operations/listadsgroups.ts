@@ -18,6 +18,7 @@ export const ListAdsGroupsQueryParamFields = {
   Status: "status",
   Targeting: "targeting",
   BidAmount: "bid_amount",
+  Currency: "currency",
   BidStrategy: "bid_strategy",
   BudgetAmount: "budget_amount",
   BudgetPeriod: "budget_period",

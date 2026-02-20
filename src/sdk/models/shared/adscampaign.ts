@@ -55,6 +55,7 @@ export type AdsCampaign = {
   budgetAmount?: number | undefined;
   budgetPeriod?: BudgetPeriod | undefined;
   createdAt?: Date | undefined;
+  currency?: string | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsCampaignFrequencyCap | undefined;
   goal?: Goal | undefined;
@@ -114,6 +115,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
   budget_period: BudgetPeriod$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  currency: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsCampaignFrequencyCap$inboundSchema.optional(),
@@ -151,6 +153,7 @@ export type AdsCampaign$Outbound = {
   budget_amount?: number | undefined;
   budget_period?: string | undefined;
   created_at?: string | undefined;
+  currency?: string | undefined;
   end_at?: string | undefined;
   frequency_cap?: PropertyAdsCampaignFrequencyCap$Outbound | undefined;
   goal?: string | undefined;
@@ -176,6 +179,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   budgetAmount: z.number().optional(),
   budgetPeriod: BudgetPeriod$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  currency: z.string().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   frequencyCap: PropertyAdsCampaignFrequencyCap$outboundSchema.optional(),
   goal: Goal$outboundSchema.optional(),

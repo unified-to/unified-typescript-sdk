@@ -89,6 +89,7 @@ export type AdsGroup = {
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
+  currency?: string | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
@@ -189,6 +190,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_ids: z.array(z.string()).optional(),
+  currency: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsGroupFrequencyCap$inboundSchema.optional(),
@@ -243,6 +245,7 @@ export type AdsGroup$Outbound = {
   campaign_id?: string | undefined;
   created_at?: string | undefined;
   creative_ids?: Array<string> | undefined;
+  currency?: string | undefined;
   end_at?: string | undefined;
   frequency_cap?: PropertyAdsGroupFrequencyCap$Outbound | undefined;
   has_eu_political_ads?: boolean | undefined;
@@ -277,6 +280,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   campaignId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeIds: z.array(z.string()).optional(),
+  currency: z.string().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   frequencyCap: PropertyAdsGroupFrequencyCap$outboundSchema.optional(),
   hasEuPoliticalAds: z.boolean().optional(),

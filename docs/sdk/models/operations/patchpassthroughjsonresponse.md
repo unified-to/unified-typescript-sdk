@@ -13,4 +13,4 @@ import { PatchPassthroughJsonResponse } from "@unified-api/typescript-sdk/sdk/mo
 | Field                                           | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | `headers`                                       | Record<string, *string*[]>                      | :heavy_check_mark:                              | N/A                                             |
-| `result`                                        | *operations.PatchPassthroughJsonResponseResult* | :heavy_check_mark:                              | N/A                                             |
+| `result`                                        | *operations.PatchPassthroughJsonResponseResult* | :heavy_minus_sign:                              | N/A                                             |
