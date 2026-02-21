@@ -1,26 +1,26 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 0016420ba460156764e16b3acba7913d
+  docChecksum: 064bed284f2f86435722fec67549e099
   docVersion: "1.0"
-  speakeasyVersion: 1.722.7
-  generationVersion: 2.832.9
-  releaseVersion: 2.83.7
-  configChecksum: f38c9b22bf1edb6b9eb7e7f3ce511d88
+  speakeasyVersion: 1.723.0
+  generationVersion: 2.835.2
+  releaseVersion: 2.83.8
+  configChecksum: c3d5184296749e543c136ac8c86720cc
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 719b8628-60eb-454f-b20f-dc43322910fd
-  pristine_commit_hash: da601f922ad8a44e2b878b60119f11d370d95d3d
-  pristine_tree_hash: 18d42bc4ade51a6436727b9a4d735fe6e24a31d0
+  generation_id: 1670a61f-a2d9-4eb4-a619-d0113f1e1bc1
+  pristine_commit_hash: 4a46cef41dad4915f3e0f6105de0c270bdbdd5cc
+  pristine_tree_hash: 68923b97dce8b400d7bca563262d1aca5f83bafe
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.13
-    core: 3.26.29
+    core: 3.26.31
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -2662,8 +2662,8 @@ trackedFiles:
     pristine_git_object: 09e6f168d6e6d567ccae33024b55c71b0908c59f
   docs/sdk/models/operations/listuccallsrequest.md:
     id: 8848cb7c7419
-    last_write_checksum: sha1:f10f2359c1738b186e572bd6001e03f134c390ca
-    pristine_git_object: 5b6ade1d4a0917a0636d465669db142dcf164b8d
+    last_write_checksum: sha1:263d542b74d673b0d5c43fcabdcfe1d7353e5b5a
+    pristine_git_object: 941ed7ec1542ab9008bf5feb2b7f4d34b6629814
   docs/sdk/models/operations/listuccommentsqueryparamfields.md:
     id: 73fe4278950e
     last_write_checksum: sha1:93a59ff752443b06a95b23d78a2609bfe669fb1b
@@ -8646,12 +8646,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:a275db360a634c874d4cfe5ff354c49283abf249
-    pristine_git_object: d7eb1e33ec1638a3f1229e4eeef19a32dd32d686
+    last_write_checksum: sha1:394d5482fc5dc745aaee123273ed0746258a0c40
+    pristine_git_object: 5ac83599e977b8f8a2e3936187aad21d5c6d91f1
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:ea7b79d107ec623898486b17bd8a19fd695d536c
-    pristine_git_object: 149697c76e832d390addd730fc7afd527a7c6682
+    last_write_checksum: sha1:d2820c97c41ceca56ae4d9a5b95af81f7c62c9de
+    pristine_git_object: 33fef1f467b351d77797955fead8deb2bbe3d64a
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11122,8 +11122,8 @@ trackedFiles:
     pristine_git_object: 0bbc65440edde38a33282da8c4c37929e70642b1
   src/funcs/ucListUcCalls.ts:
     id: dc271f6f8960
-    last_write_checksum: sha1:63fd46e79e0c418dec841ca59e06ae854650fdba
-    pristine_git_object: 9c4f8f2eeed804a68f057fc31dc52cda2457d831
+    last_write_checksum: sha1:39a35a66ce9f657a8ac08d9cefcabffb4c038a0b
+    pristine_git_object: d84f72197f14d97010114f2741f7893041663b81
   src/funcs/unifiedCreateUnifiedConnection.ts:
     id: cba2ea5bcd87
     last_write_checksum: sha1:bc74ff1851bb7eb603023e9a2ad7487c55d5d04a
@@ -11266,8 +11266,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:145b1ddc14a9621175afc35cb55f8691061e2f3b
-    pristine_git_object: b6cafc3dc482fedaabad40ba95494e51ef2cf940
+    last_write_checksum: sha1:270a6e16682264bdcde2fcae5d73ea7f9b399e99
+    pristine_git_object: 4c46bddd0601a017a1179782c8175d19f5d91a4e
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -13006,8 +13006,8 @@ trackedFiles:
     pristine_git_object: 3b8e5be41f1b94127cf93d83dcfc354ae8fbdf3f
   src/sdk/models/operations/listuccalls.ts:
     id: 36fdaba72f31
-    last_write_checksum: sha1:8c36361aa85460108c9e237f7194cd4f56bd1738
-    pristine_git_object: eacdc3a53ea923834672728d2eb6c39969770124
+    last_write_checksum: sha1:54211767689609ca08f7a5d9fc981201a6174472
+    pristine_git_object: 8f38b3054a4c916660bdaa660e8b0c165cc263db
   src/sdk/models/operations/listuccomments.ts:
     id: de49b4676efe
     last_write_checksum: sha1:47279096f1571aac49d1827f67565d75e5818d8d
@@ -21799,7 +21799,10 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.report.listAdsReports()`:  `response.[].metrics[]` **Changed**\n* `unified-to.ads.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.ads.createAdsGroup()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.ads.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.ads.getAdsGroup()`: \n  *  `request.fields` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.ads.listAdsCampaigns()`: \n  *  `request.fields` **Changed**\n  *  `response.[].currency` **Added**\n* `unified-to.ads.listAdsGroups()`: \n  *  `request.fields` **Changed**\n  *  `response.[].currency` **Added**\n* `unified-to.ads.listAdsReports()`:  `response.[].metrics[]` **Changed**\n* `unified-to.ads.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.ads.patchAdsGroup()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.ads.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.ads.updateAdsGroup()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.campaign.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.campaign.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.campaign.listAdsCampaigns()`: \n  *  `request.fields` **Changed**\n  *  `response.[].currency` **Added**\n* `unified-to.campaign.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.campaign.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.group.createAdsGroup()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.group.getAdsGroup()`: \n  *  `request.fields` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.group.listAdsGroups()`: \n  *  `request.fields` **Changed**\n  *  `response.[].currency` **Added**\n* `unified-to.group.patchAdsGroup()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.group.updateAdsGroup()`: \n  *  `request` **Changed**\n  *  `response.currency` **Added**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookType` **Added**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookType` **Added**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookType` **Added**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookType` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `unified-to.uc.listUcCalls()`:  `request` **Changed**
+  * `unified-to.call.listUcCalls()`:  `request` **Changed**
 generatedFiles:
   - .gitattributes
   - .npmignore
