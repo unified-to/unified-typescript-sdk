@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 064bed284f2f86435722fec67549e099
+  docChecksum: 652ace824dae629e23fe1566cb364efb
   docVersion: "1.0"
   speakeasyVersion: 1.723.0
   generationVersion: 2.835.2
-  releaseVersion: 2.83.8
-  configChecksum: c3d5184296749e543c136ac8c86720cc
+  releaseVersion: 2.83.9
+  configChecksum: ece7305177591d35c9d302e074353f18
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 1670a61f-a2d9-4eb4-a619-d0113f1e1bc1
-  pristine_commit_hash: 4a46cef41dad4915f3e0f6105de0c270bdbdd5cc
-  pristine_tree_hash: 68923b97dce8b400d7bca563262d1aca5f83bafe
+  generation_id: d691889b-9d96-4086-8680-435eec958374
+  pristine_commit_hash: afc92541d8a8c19b07da476a881aeca9a7808858
+  pristine_tree_hash: bd633705533b3d6c17e24129dcc84946b6f79c17
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -6230,8 +6230,8 @@ trackedFiles:
     pristine_git_object: 9b0736fa87fd889992c064b1022b17a1a7009aa2
   docs/sdk/models/shared/integration.md:
     id: 024440ffaed0
-    last_write_checksum: sha1:d2229d136390cff77a95578bf1e116a250b7293f
-    pristine_git_object: 45ebeccd767e8105480c393bcd3130dab2ad130f
+    last_write_checksum: sha1:bf6d9c3d31214bcbac97304b9f9e327d597d9b8f
+    pristine_git_object: 712cba2d4eae75d21699df8cdbb37bfc4558ef59
   docs/sdk/models/shared/integration1.md:
     id: e166cd8d79f1
     last_write_checksum: sha1:c7a8d3e84eb6ed6c135f0ea2e21f0acd72330f9f
@@ -8646,12 +8646,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:394d5482fc5dc745aaee123273ed0746258a0c40
-    pristine_git_object: 5ac83599e977b8f8a2e3936187aad21d5c6d91f1
+    last_write_checksum: sha1:89706199b987ea6a9e02fc9a4d5e222c09dfb39e
+    pristine_git_object: b5ea7973aae34164919827d7e2c6a70bc10a15ba
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:d2820c97c41ceca56ae4d9a5b95af81f7c62c9de
-    pristine_git_object: 33fef1f467b351d77797955fead8deb2bbe3d64a
+    last_write_checksum: sha1:4ff924d9af29474e0e65b4e0aecdf7a3f0039864
+    pristine_git_object: 912a2f637e34e1bc12a15dd60caf98f7813b9d7f
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11266,8 +11266,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:270a6e16682264bdcde2fcae5d73ea7f9b399e99
-    pristine_git_object: 4c46bddd0601a017a1179782c8175d19f5d91a4e
+    last_write_checksum: sha1:8989cfb0ecbfb60d65754db0266c909334119426
+    pristine_git_object: a499fc30e4dc7b1d8b359234f38acbc76b58930f
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -14866,8 +14866,8 @@ trackedFiles:
     pristine_git_object: 3c2f85f07f5efca58d5799c2e68975cb9816f77b
   src/sdk/models/shared/integration.ts:
     id: 7dddee0366e4
-    last_write_checksum: sha1:febbe9d7dad4073133d5cf3fc897d66d3df00b29
-    pristine_git_object: a6bbb4d00a8dd6c1d831effc84060bdb31fd0e22
+    last_write_checksum: sha1:cf36d0eda3014cdfd4129e429ce5cb890f5d8673
+    pristine_git_object: 3917db55dbfec7306d93dddf063d8156a282f45d
   src/sdk/models/shared/integrationsupport.ts:
     id: 7d6c3b1a29b1
     last_write_checksum: sha1:47911d5eeb6c894c1fe0cbbac7a11a7fde5c50ff
@@ -21801,8 +21801,10 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes:
-  * `unified-to.uc.listUcCalls()`:  `request` **Changed**
-  * `unified-to.call.listUcCalls()`:  `request` **Changed**
+  * `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].isHidden` **Added**
+  * `unified-to.unified.listUnifiedIntegrations()`:  `response.[].isHidden` **Added**
+  * `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].isHidden` **Added**
+  * `unified-to.integration.listUnifiedIntegrations()`:  `response.[].isHidden` **Added**
 generatedFiles:
   - .gitattributes
   - .npmignore

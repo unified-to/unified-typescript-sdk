@@ -97,6 +97,7 @@ export type Integration = {
   featured?: boolean | undefined;
   inProgress?: boolean | undefined;
   isActive?: boolean | undefined;
+  isHidden?: boolean | undefined;
   logoUrl?: string | undefined;
   name: string;
   partnership?:
@@ -437,6 +438,7 @@ export const Integration$inboundSchema: z.ZodType<
   featured: z.boolean().optional(),
   in_progress: z.boolean().optional(),
   is_active: z.boolean().optional(),
+  is_hidden: z.boolean().optional(),
   logo_url: z.string().optional(),
   name: z.string(),
   partnership: z.union([
@@ -500,6 +502,7 @@ export const Integration$inboundSchema: z.ZodType<
     "fa_icon": "faIcon",
     "in_progress": "inProgress",
     "is_active": "isActive",
+    "is_hidden": "isHidden",
     "logo_url": "logoUrl",
     "rate_limit_description": "rateLimitDescription",
     "tested_at": "testedAt",
