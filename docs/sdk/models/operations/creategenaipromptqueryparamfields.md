@@ -11,5 +11,5 @@ let value: CreateGenaiPromptQueryParamFields = "model_id";
 ## Values
 
 ```typescript
-"model_id" | "messages" | "temperature" | "max_tokens" | "responses" | "tokens_used" | "mcp_url" | "mcp_deferred_tools" | "raw"
+"model_id" | "messages" | "temperature" | "max_tokens" | "responses" | "tokens_used" | "mcp_url" | "mcp_deferred_tools" | "mcp_authorization_token" | "raw"
 ```

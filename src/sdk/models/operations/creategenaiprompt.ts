@@ -16,6 +16,7 @@ export const CreateGenaiPromptQueryParamFields = {
   TokensUsed: "tokens_used",
   McpUrl: "mcp_url",
   McpDeferredTools: "mcp_deferred_tools",
+  McpAuthorizationToken: "mcp_authorization_token",
   Raw: "raw",
 } as const;
 export type CreateGenaiPromptQueryParamFields = ClosedEnum<

@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 652ace824dae629e23fe1566cb364efb
+  docChecksum: 10d21384d59617a5ae23a76cc75e1339
   docVersion: "1.0"
-  speakeasyVersion: 1.723.0
-  generationVersion: 2.835.2
-  releaseVersion: 2.83.9
-  configChecksum: ece7305177591d35c9d302e074353f18
+  speakeasyVersion: 1.725.0
+  generationVersion: 2.836.5
+  releaseVersion: 2.83.10
+  configChecksum: 2e0b0ed40494d1e93518fc42a852dce2
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: d691889b-9d96-4086-8680-435eec958374
-  pristine_commit_hash: afc92541d8a8c19b07da476a881aeca9a7808858
-  pristine_tree_hash: bd633705533b3d6c17e24129dcc84946b6f79c17
+  generation_id: 94205bd8-6b8f-4df3-8be9-1673cdf1398c
+  pristine_commit_hash: e9ba58a643237bf9cb539c33ebe0e3c8cdaafb4d
+  pristine_tree_hash: 04685bc90f9ace75b97dc7aeb5a6c898f402f150
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -434,8 +434,8 @@ trackedFiles:
     pristine_git_object: e9b85c6739ad7df1de67c533f75bdddf7a05091f
   docs/sdk/models/operations/creategenaipromptqueryparamfields.md:
     id: 0c93ed3c3d63
-    last_write_checksum: sha1:c40dd8c16ac7e5fa578dec042e8200472c79c066
-    pristine_git_object: ff325f091cae5327848b8fb66f861d8287a5645e
+    last_write_checksum: sha1:c5727020138ac9b60805a27331d418f430d80fb7
+    pristine_git_object: f92359a94607e90c8f5509f3737891d4351d498c
   docs/sdk/models/operations/creategenaipromptrequest.md:
     id: b88d7ddc49f4
     last_write_checksum: sha1:dd1e3b543770a05966b667e0446253bdc5c1f463
@@ -6058,8 +6058,8 @@ trackedFiles:
     pristine_git_object: 08600cfd5e76a747f28e6bfb4419269d1371b819
   docs/sdk/models/shared/genaiprompt.md:
     id: bcfa76f6a482
-    last_write_checksum: sha1:630dd0c3d9c25b4fd49f2624c4cdb6fa366d6096
-    pristine_git_object: ffe0a0847ee86bd8b84affead3bef3d5139e5b30
+    last_write_checksum: sha1:c9a862756705923ab8c7703b1009f67eea6fcef0
+    pristine_git_object: 9165f745b67a889ba459f0c739d1125614a164a8
   docs/sdk/models/shared/gender.md:
     id: 8104135d56e8
     last_write_checksum: sha1:df3dcdab8114da765b3279ab0997b4c3aceafeae
@@ -8646,12 +8646,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:89706199b987ea6a9e02fc9a4d5e222c09dfb39e
-    pristine_git_object: b5ea7973aae34164919827d7e2c6a70bc10a15ba
+    last_write_checksum: sha1:20bb341231e7174b8b10313ef3e24cdea1cb3e0d
+    pristine_git_object: d53e5aa61f76bb915ed9e676aff68ba502d45800
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:4ff924d9af29474e0e65b4e0aecdf7a3f0039864
-    pristine_git_object: 912a2f637e34e1bc12a15dd60caf98f7813b9d7f
+    last_write_checksum: sha1:08447cd4f922c50ee85d7cac1a7e203b40398760
+    pristine_git_object: b4bea3de16d4b777dc0ac805ca8e2a5bc25356fc
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11266,8 +11266,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:8989cfb0ecbfb60d65754db0266c909334119426
-    pristine_git_object: a499fc30e4dc7b1d8b359234f38acbc76b58930f
+    last_write_checksum: sha1:6f7a726e2f616ed1c35c58c37bee3bb40a746f05
+    pristine_git_object: 5dcedac038454559a38c5747914abc4d16e4e1dd
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -11862,8 +11862,8 @@ trackedFiles:
     pristine_git_object: b394eb6d830225ec096f5526e74e6a4b231fa9bb
   src/sdk/models/operations/creategenaiprompt.ts:
     id: 1304c31ef85d
-    last_write_checksum: sha1:07f4eaac3f453aaaf1fa5557ef5bd5ed157e15e6
-    pristine_git_object: 4b52c6657982d95eeceff991702810b5466e2149
+    last_write_checksum: sha1:0a3b804822a7ae3a719a870c55ca11deeb54908b
+    pristine_git_object: eee3ac6ddbd5065fa28070ff9ab07be29deb9349
   src/sdk/models/operations/createhrisbankaccount.ts:
     id: e0885fe5b56c
     last_write_checksum: sha1:1b1ee2e6e88df6d3ec7deea03e34c4401f382ee8
@@ -14790,8 +14790,8 @@ trackedFiles:
     pristine_git_object: f784dcc92268cdc4bf9ddb1de67868fa1c3cc68c
   src/sdk/models/shared/genaiprompt.ts:
     id: 08360cc2e3c7
-    last_write_checksum: sha1:54aae7bb5cdb336a3a046b4c25840b7c2dda2f04
-    pristine_git_object: 45e1f5783b3eae060de4e10789356f70d35621bc
+    last_write_checksum: sha1:7676a534b6f48acf79944c28b59163260839371e
+    pristine_git_object: 252dfa328bb316fb2bec2946f7d26371c3f43354
   src/sdk/models/shared/hrisbankaccount.ts:
     id: 39ea544de5fe
     last_write_checksum: sha1:990c19dd82f7ba131694ff392b019b530a875c9a
@@ -21799,12 +21799,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].isHidden` **Added**
-  * `unified-to.unified.listUnifiedIntegrations()`:  `response.[].isHidden` **Added**
-  * `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].isHidden` **Added**
-  * `unified-to.integration.listUnifiedIntegrations()`:  `response.[].isHidden` **Added**
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.genai.createGenaiPrompt()`: \n  *  `request` **Changed**\n  *  `response.mcpAuthorizationToken` **Added**\n* `unified-to.prompt.createGenaiPrompt()`: \n  *  `request` **Changed**\n  *  `response.mcpAuthorizationToken` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

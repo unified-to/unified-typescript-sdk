@@ -16,6 +16,7 @@ import {
 
 export type GenaiPrompt = {
   maxTokens?: number | undefined;
+  mcpAuthorizationToken?: string | undefined;
   mcpDeferredTools?: Array<string> | undefined;
   mcpUrl?: string | undefined;
   messages?: Array<GenaiContent> | undefined;
@@ -33,6 +34,7 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   max_tokens: z.number().optional(),
+  mcp_authorization_token: z.string().optional(),
   mcp_deferred_tools: z.array(z.string()).optional(),
   mcp_url: z.string().optional(),
   messages: z.array(GenaiContent$inboundSchema).optional(),
@@ -44,6 +46,7 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "max_tokens": "maxTokens",
+    "mcp_authorization_token": "mcpAuthorizationToken",
     "mcp_deferred_tools": "mcpDeferredTools",
     "mcp_url": "mcpUrl",
     "model_id": "modelId",
@@ -53,6 +56,7 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
 /** @internal */
 export type GenaiPrompt$Outbound = {
   max_tokens?: number | undefined;
+  mcp_authorization_token?: string | undefined;
   mcp_deferred_tools?: Array<string> | undefined;
   mcp_url?: string | undefined;
   messages?: Array<GenaiContent$Outbound> | undefined;
@@ -70,6 +74,7 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
   GenaiPrompt
 > = z.object({
   maxTokens: z.number().optional(),
+  mcpAuthorizationToken: z.string().optional(),
   mcpDeferredTools: z.array(z.string()).optional(),
   mcpUrl: z.string().optional(),
   messages: z.array(GenaiContent$outboundSchema).optional(),
@@ -81,6 +86,7 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     maxTokens: "max_tokens",
+    mcpAuthorizationToken: "mcp_authorization_token",
     mcpDeferredTools: "mcp_deferred_tools",
     mcpUrl: "mcp_url",
     modelId: "model_id",
