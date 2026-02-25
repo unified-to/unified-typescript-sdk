@@ -26,6 +26,7 @@ export type AccountingJournal = {
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
+  source?: string | undefined;
   taxAmount?: number | undefined;
   taxrateId?: string | undefined;
   updatedAt?: Date | undefined;
@@ -47,6 +48,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
     .optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
+  source: z.string().optional(),
   tax_amount: z.number().optional(),
   taxrate_id: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -70,6 +72,7 @@ export type AccountingJournal$Outbound = {
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
+  source?: string | undefined;
   tax_amount?: number | undefined;
   taxrate_id?: string | undefined;
   updated_at?: string | undefined;
@@ -89,6 +92,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
+  source: z.string().optional(),
   taxAmount: z.number().optional(),
   taxrateId: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

@@ -17,6 +17,7 @@ export const GetAccountingJournalQueryParamFields = {
   TaxrateId: "taxrate_id",
   Description: "description",
   PostedAt: "posted_at",
+  Source: "source",
   Raw: "raw",
 } as const;
 export type GetAccountingJournalQueryParamFields = ClosedEnum<

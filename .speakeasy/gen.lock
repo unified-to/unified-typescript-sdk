@@ -1,26 +1,26 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 10d21384d59617a5ae23a76cc75e1339
+  docChecksum: ff9e98d56a3f5cf54e98753d7490862e
   docVersion: "1.0"
-  speakeasyVersion: 1.725.0
-  generationVersion: 2.836.5
-  releaseVersion: 2.83.10
-  configChecksum: 2e0b0ed40494d1e93518fc42a852dce2
+  speakeasyVersion: 1.728.0
+  generationVersion: 2.839.0
+  releaseVersion: 2.83.11
+  configChecksum: 8a3744bb2188d1c6174fd8ad0666e8db
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 94205bd8-6b8f-4df3-8be9-1673cdf1398c
-  pristine_commit_hash: e9ba58a643237bf9cb539c33ebe0e3c8cdaafb4d
-  pristine_tree_hash: 04685bc90f9ace75b97dc7aeb5a6c898f402f150
+  generation_id: 1827d7ae-770a-4f8f-8ce2-35e228aa6d40
+  pristine_commit_hash: 480291fcecd017579b770041bcaa2d0745eea14a
+  pristine_tree_hash: 59bc3c871725700b4dc36daccd0cd82b03e175d8
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.13
-    core: 3.26.31
+    constsAndDefaults: 0.1.14
+    core: 3.26.34
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -42,8 +42,8 @@ trackedFiles:
     pristine_git_object: 113eead5093c17d43a46159132885318f281a68a
   .npmignore:
     id: aa70c1f807c3
-    last_write_checksum: sha1:3d5eb92f81539175db1ff0280e0aefbdd701f200
-    pristine_git_object: cf98a6bf092538eb10ff0edc915102682ce9a6e6
+    last_write_checksum: sha1:425e91786e3b6cddd2b364bf3f9f9cd38e3c3e1a
+    pristine_git_object: 134e78a629b846b88e408199011801852bacc600
   FUNCTIONS.md:
     id: 21b9df02aaeb
     last_write_checksum: sha1:b32835cc3db67e998d6cfbc8d6ba4ad1dd432d65
@@ -118,8 +118,8 @@ trackedFiles:
     pristine_git_object: d055aeaae3bdac982168c64de4e14d1eced498ea
   docs/sdk/models/operations/createaccountingjournalqueryparamfields.md:
     id: d33f26c01999
-    last_write_checksum: sha1:c35360b9ff003435a61b337b845f235ebb7c059a
-    pristine_git_object: e1dbd747d9cd37f6f724de502001525d482b51bf
+    last_write_checksum: sha1:fcd71d286d6dc37440f9869f02a08f7af2717a8a
+    pristine_git_object: f74dccb6a28baa898b7ed17160c32c2ddb60236e
   docs/sdk/models/operations/createaccountingjournalrequest.md:
     id: f74e414efe79
     last_write_checksum: sha1:586b4f02d8b42bda5b959ae661ed6eef3bd1bb04
@@ -926,8 +926,8 @@ trackedFiles:
     pristine_git_object: 02e681f2a55ab145f07c52ee5b39011a3764b2ca
   docs/sdk/models/operations/getaccountingjournalqueryparamfields.md:
     id: e83499721de4
-    last_write_checksum: sha1:a12dfe353af1977522352a6b550d4da16c655729
-    pristine_git_object: be5504191a0cc448354c2e490545b232d7326600
+    last_write_checksum: sha1:bef555c39c45bbe2df394275eae3d2d268285b31
+    pristine_git_object: e536c4be60e6b44e9507f8a8cd8d81ae11e6958b
   docs/sdk/models/operations/getaccountingjournalrequest.md:
     id: ebb5da603997
     last_write_checksum: sha1:bf91e19c2f646243d16126e44d227b30e48b41cb
@@ -1842,8 +1842,8 @@ trackedFiles:
     pristine_git_object: 48bf723d1fa1b5ed2750c7050cc47bbf3acd223e
   docs/sdk/models/operations/listaccountingjournalsqueryparamfields.md:
     id: 487a11e0b7d0
-    last_write_checksum: sha1:2b852a3ad8536e54dfc82b2d86458b996a73e9b5
-    pristine_git_object: 0763cd0a9b1766778ca58e5fadc2f7cfc4490d24
+    last_write_checksum: sha1:8fd41e8a80e0a59e06caba7cdb8f14528d4cfbfb
+    pristine_git_object: 5acb9fbc3356296ab176d5c9c01b50f75396eaf2
   docs/sdk/models/operations/listaccountingjournalsrequest.md:
     id: e75f90edfcf3
     last_write_checksum: sha1:384271f1570009dd7a0d3aaacfe68931d255d24c
@@ -2790,8 +2790,8 @@ trackedFiles:
     pristine_git_object: 418f2187e50752f7f04040731ffa92fbfeeeece7
   docs/sdk/models/operations/patchaccountingjournalqueryparamfields.md:
     id: 5d0b5cc7bdaf
-    last_write_checksum: sha1:0da1e436e19e29f9481e24d91fe90c0df33a7eab
-    pristine_git_object: 96830e8e798470f522e9d54f9e527aa1928a61e6
+    last_write_checksum: sha1:fadee2aa8263fc4276b48c0aaa67130e7ceb6b3c
+    pristine_git_object: d61b3028f4ddb7e5360e91cc9381920cd2f35a36
   docs/sdk/models/operations/patchaccountingjournalrequest.md:
     id: 467990d9cb41
     last_write_checksum: sha1:70d3cb182f25c1fb3f7eb955bf36aaafa01e5021
@@ -4378,8 +4378,8 @@ trackedFiles:
     pristine_git_object: 3492a905a6c1669c6657e60739889cc36afcb495
   docs/sdk/models/operations/updateaccountingjournalqueryparamfields.md:
     id: 4f6648bae6a9
-    last_write_checksum: sha1:5d5f6474faf59e0eebfb1ff2064120a21fcfb074
-    pristine_git_object: 2d6a21cb392ac7f8673bbb88f33987b012abce78
+    last_write_checksum: sha1:907130c006ad9fc50dc9da0c1ae74702315cb253
+    pristine_git_object: df58e5c5ca9075f7de8e7e3d58456cb43dbbf1ad
   docs/sdk/models/operations/updateaccountingjournalrequest.md:
     id: 124b3c452987
     last_write_checksum: sha1:9b2a7e7acb026e912d1f21bae795aefbfdd901f8
@@ -5222,8 +5222,8 @@ trackedFiles:
     pristine_git_object: d3756998f410f991b0d5795a16d6b4981911f49b
   docs/sdk/models/shared/accountingjournal.md:
     id: 6e20519212c0
-    last_write_checksum: sha1:e53bceb6983f430fe3c1227c8ca707efefbc814d
-    pristine_git_object: 68185880569b6cb88b3972ce4239983122465a18
+    last_write_checksum: sha1:84aaa57d006e77757bf56e7874fc4e8084e68d9b
+    pristine_git_object: 5a1cbf8def13ee88b616a1a4a32e001143791855
   docs/sdk/models/shared/accountingjournallineitem.md:
     id: 1eaf17bcbdbc
     last_write_checksum: sha1:3d0f470ef8998baaa8c288d0bd5cd3d6cfea09a4
@@ -8646,12 +8646,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:20bb341231e7174b8b10313ef3e24cdea1cb3e0d
-    pristine_git_object: d53e5aa61f76bb915ed9e676aff68ba502d45800
+    last_write_checksum: sha1:8a114713c2eac60c47749acc6d80cb179a81164e
+    pristine_git_object: 0e9dd9eb7696a1e95b58e8e283959ea9ec5306ff
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:08447cd4f922c50ee85d7cac1a7e203b40398760
-    pristine_git_object: b4bea3de16d4b777dc0ac805ca8e2a5bc25356fc
+    last_write_checksum: sha1:7621100ddd5e32f3d88f3fdb4547304ea3f23515
+    pristine_git_object: 9c603267e4f52973c95d491556db6149db6a613a
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11266,8 +11266,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:6f7a726e2f616ed1c35c58c37bee3bb40a746f05
-    pristine_git_object: 5dcedac038454559a38c5747914abc4d16e4e1dd
+    last_write_checksum: sha1:8019c52a5fa565d46dd56573128ef7a4cad1350c
+    pristine_git_object: 08e8387afcd543d0615f7054da4d31203d335216
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -11702,8 +11702,8 @@ trackedFiles:
     pristine_git_object: 9e363e3a6b9b27cca9e17acf0fcdb5b900bace0f
   src/sdk/models/operations/createaccountingjournal.ts:
     id: 743393616c61
-    last_write_checksum: sha1:2746b6e698c6123df4a20260fc18da9e5df2de1f
-    pristine_git_object: dff4a9f7e3106ea61e5a63116648d2a0ed0d921b
+    last_write_checksum: sha1:34db5021718c39b8f4bbc3e30e2d50d860b1ee90
+    pristine_git_object: 32fc5de62fef73d1c9c5f1f15fc72f6dccba571d
   src/sdk/models/operations/createaccountingorder.ts:
     id: 4135b8583ed7
     last_write_checksum: sha1:bafa17d26e8d6a1d548913b28a613d6a586cabc9
@@ -12110,8 +12110,8 @@ trackedFiles:
     pristine_git_object: e30aafe37ba1480934449afda5e20e9f1023f133
   src/sdk/models/operations/getaccountingjournal.ts:
     id: 8f3ac34d6409
-    last_write_checksum: sha1:5aa34ca78de66db41e923dc30f4cc490f4e2197d
-    pristine_git_object: 91e34842db9f35e48075a60f53b5dc183873bf32
+    last_write_checksum: sha1:49889a894d4eeeaadc7fbe041e3c41cd08abc623
+    pristine_git_object: b412fa1fa73be2b068a789bfb8344d5ae44b5715
   src/sdk/models/operations/getaccountingorder.ts:
     id: 3d760ae892c6
     last_write_checksum: sha1:27b5bbc483c14bbf589fcc9dc24846660973bae3
@@ -12590,8 +12590,8 @@ trackedFiles:
     pristine_git_object: 598db117358e0fee0c1be6374ee4936f26e176f3
   src/sdk/models/operations/listaccountingjournals.ts:
     id: 358876d89c67
-    last_write_checksum: sha1:0136dfbf1599daae3ef67e36c7b599d6ee1a29fa
-    pristine_git_object: c375b2883f8f008baa7f50bd2872b745357ed79f
+    last_write_checksum: sha1:e2dedc678265ed835c953ad46cfb250504b0c664
+    pristine_git_object: 14a8947b8d85b83dad13a1306746a6fe622ef406
   src/sdk/models/operations/listaccountingorders.ts:
     id: 245289a8871f
     last_write_checksum: sha1:0122f92e025efd270fdc90bb52930cca837bacec
@@ -13082,8 +13082,8 @@ trackedFiles:
     pristine_git_object: 2a866da20950e49ce2edbc54717db6ef9edfbf97
   src/sdk/models/operations/patchaccountingjournal.ts:
     id: 2faef1d3d873
-    last_write_checksum: sha1:e0cf683215025c58711f6f3b1ea73d150a853933
-    pristine_git_object: cf397f16ec1fba5632fc152681eb7b473d2334fa
+    last_write_checksum: sha1:82b78b8f9fbe882953ced6e13158f8dc91e16d89
+    pristine_git_object: 827bf18d7a4baa58f75afc99859809912bbc3f02
   src/sdk/models/operations/patchaccountingorder.ts:
     id: e4f5a195153c
     last_write_checksum: sha1:79c63c179c713331d30c18de310c4c27dd798540
@@ -13878,8 +13878,8 @@ trackedFiles:
     pristine_git_object: b5fedc9d6b0ac29267dfb64a85b7a799c37e4e0e
   src/sdk/models/operations/updateaccountingjournal.ts:
     id: 3ed670860440
-    last_write_checksum: sha1:a60867fd84966003a87cce53c6b6f2d4af78241a
-    pristine_git_object: a9d717b1d3a5f40598cc7a716f5f84f72cea5285
+    last_write_checksum: sha1:7480437363cc30ce6f14938728a9b29f8df8274c
+    pristine_git_object: a5dec3fb3c4123be16cb46ab9464e462b5b6dcb7
   src/sdk/models/operations/updateaccountingorder.ts:
     id: 613a368e5788
     last_write_checksum: sha1:4acac8d5ae9e04cdb0579e3ea81e947ea58de4ab
@@ -14322,8 +14322,8 @@ trackedFiles:
     pristine_git_object: dd7b484fcd3a378335eb064e7b881755abec7ddf
   src/sdk/models/shared/accountingjournal.ts:
     id: 3abb84bdb597
-    last_write_checksum: sha1:d75c478719e9c458850d80f7a2a078d8c24eaf08
-    pristine_git_object: 72ad430e6a900dc6af175c760c9c17373f3181bf
+    last_write_checksum: sha1:431f01577e188d5d8bef0b2c5d53dd200735f35e
+    pristine_git_object: 07f79da49a89d8ab2de449e3ab0f143759408147
   src/sdk/models/shared/accountingjournallineitem.ts:
     id: 56f193adece6
     last_write_checksum: sha1:49341d026afab6b3d5a2aee7217c5e9bb636403b
@@ -21799,7 +21799,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.genai.createGenaiPrompt()`: \n  *  `request` **Changed**\n  *  `response.mcpAuthorizationToken` **Added**\n* `unified-to.prompt.createGenaiPrompt()`: \n  *  `request` **Changed**\n  *  `response.mcpAuthorizationToken` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.createAccountingJournal()`: \n  *  `request` **Changed**\n  *  `response.source` **Added**\n* `unified-to.accounting.getAccountingJournal()`: \n  *  `request.fields` **Changed**\n  *  `response.source` **Added**\n* `unified-to.accounting.listAccountingJournals()`: \n  *  `request.fields` **Changed**\n  *  `response.[].source` **Added**\n* `unified-to.accounting.patchAccountingJournal()`: \n  *  `request` **Changed**\n  *  `response.source` **Added**\n* `unified-to.accounting.updateAccountingJournal()`: \n  *  `request` **Changed**\n  *  `response.source` **Added**\n* `unified-to.journal.createAccountingJournal()`: \n  *  `request` **Changed**\n  *  `response.source` **Added**\n* `unified-to.journal.getAccountingJournal()`: \n  *  `request.fields` **Changed**\n  *  `response.source` **Added**\n* `unified-to.journal.listAccountingJournals()`: \n  *  `request.fields` **Changed**\n  *  `response.[].source` **Added**\n* `unified-to.journal.patchAccountingJournal()`: \n  *  `request` **Changed**\n  *  `response.source` **Added**\n* `unified-to.journal.updateAccountingJournal()`: \n  *  `request` **Changed**\n  *  `response.source` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
