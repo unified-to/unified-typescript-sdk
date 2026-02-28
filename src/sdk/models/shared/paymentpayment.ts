@@ -5,11 +5,20 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export const PaymentPaymentType = {
+  Invoice: "INVOICE",
+  Bill: "BILL",
+} as const;
+export type PaymentPaymentType = OpenEnum<typeof PaymentPaymentType>;
+
 export type PaymentPayment = {
   accountId?: string | undefined;
+  billId?: string | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -20,8 +29,22 @@ export type PaymentPayment = {
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   totalAmount?: number | undefined;
+  type?: PaymentPaymentType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const PaymentPaymentType$inboundSchema: z.ZodType<
+  PaymentPaymentType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PaymentPaymentType);
+/** @internal */
+export const PaymentPaymentType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  PaymentPaymentType
+> = openEnums.outboundSchema(PaymentPaymentType);
 
 /** @internal */
 export const PaymentPayment$inboundSchema: z.ZodType<
@@ -30,6 +53,7 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  bill_id: z.string().optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -41,11 +65,13 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   total_amount: z.number().optional(),
+  type: PaymentPaymentType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
+    "bill_id": "billId",
     "contact_id": "contactId",
     "created_at": "createdAt",
     "invoice_id": "invoiceId",
@@ -57,6 +83,7 @@ export const PaymentPayment$inboundSchema: z.ZodType<
 /** @internal */
 export type PaymentPayment$Outbound = {
   account_id?: string | undefined;
+  bill_id?: string | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency: string;
@@ -67,6 +94,7 @@ export type PaymentPayment$Outbound = {
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   total_amount?: number | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
 };
 
@@ -77,6 +105,7 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   PaymentPayment
 > = z.object({
   accountId: z.string().optional(),
+  billId: z.string().optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().default("USD"),
@@ -87,10 +116,12 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   totalAmount: z.number().optional(),
+  type: PaymentPaymentType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
+    billId: "bill_id",
     contactId: "contact_id",
     createdAt: "created_at",
     invoiceId: "invoice_id",

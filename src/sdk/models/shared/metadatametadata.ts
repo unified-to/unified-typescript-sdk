@@ -31,6 +31,7 @@ export type MetadataMetadata = {
   createdAt?: Date | undefined;
   format?: MetadataMetadataFormat | undefined;
   id?: string | undefined;
+  isRequired?: boolean | undefined;
   name: string;
   objectType: string;
   objects?: { [k: string]: any } | undefined;
@@ -64,6 +65,7 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
     .optional(),
   format: MetadataMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
+  is_required: z.boolean().optional(),
   name: z.string(),
   object_type: z.string(),
   objects: z.record(z.any()).optional(),
@@ -76,6 +78,7 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "is_required": "isRequired",
     "object_type": "objectType",
     "original_format": "originalFormat",
     "updated_at": "updatedAt",
@@ -86,6 +89,7 @@ export type MetadataMetadata$Outbound = {
   created_at?: string | undefined;
   format?: string | undefined;
   id?: string | undefined;
+  is_required?: boolean | undefined;
   name: string;
   object_type: string;
   objects?: { [k: string]: any } | undefined;
@@ -105,6 +109,7 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   format: MetadataMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
+  isRequired: z.boolean().optional(),
   name: z.string(),
   objectType: z.string(),
   objects: z.record(z.any()).optional(),
@@ -116,6 +121,7 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    isRequired: "is_required",
     objectType: "object_type",
     originalFormat: "original_format",
     updatedAt: "updated_at",

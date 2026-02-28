@@ -10,7 +10,7 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const PerformanceGoalType = {
+export const PropertyAdsGroupBidStrategyPerformanceGoalType = {
   Unspecified: "UNSPECIFIED",
   Cpa: "CPA",
   Cpc: "CPC",
@@ -21,7 +21,9 @@ export const PerformanceGoalType = {
   AvViewed: "AV_VIEWED",
   Reach: "REACH",
 } as const;
-export type PerformanceGoalType = OpenEnum<typeof PerformanceGoalType>;
+export type PropertyAdsGroupBidStrategyPerformanceGoalType = OpenEnum<
+  typeof PropertyAdsGroupBidStrategyPerformanceGoalType
+>;
 
 export const PropertyAdsGroupBidStrategyType = {
   FixedBid: "FIXED_BID",
@@ -33,7 +35,7 @@ export type PropertyAdsGroupBidStrategyType = OpenEnum<
   typeof PropertyAdsGroupBidStrategyType
 >;
 
-export const YoutubeAndPartnersType = {
+export const PropertyAdsGroupBidStrategyYoutubeAndPartnersType = {
   Unspecified: "UNSPECIFIED",
   ManualCpv: "MANUAL_CPV",
   ManualCpm: "MANUAL_CPM",
@@ -46,7 +48,9 @@ export const YoutubeAndPartnersType = {
   TargetRoas: "TARGET_ROAS",
   MaximizeConversionValue: "MAXIMIZE_CONVERSION_VALUE",
 } as const;
-export type YoutubeAndPartnersType = OpenEnum<typeof YoutubeAndPartnersType>;
+export type PropertyAdsGroupBidStrategyYoutubeAndPartnersType = OpenEnum<
+  typeof PropertyAdsGroupBidStrategyYoutubeAndPartnersType
+>;
 
 /**
  * YOUTUBE_AND_PARTNERS
@@ -56,25 +60,32 @@ export type PropertyAdsGroupBidStrategy = {
   fixedBidAmount?: number | undefined;
   maxAverageCpmBidAmount?: number | undefined;
   performanceGoalAmount?: number | undefined;
-  performanceGoalType?: PerformanceGoalType | undefined;
+  performanceGoalType?:
+    | PropertyAdsGroupBidStrategyPerformanceGoalType
+    | undefined;
   raiseBidForDeals?: boolean | undefined;
+  targetRoas?: number | undefined;
   type: PropertyAdsGroupBidStrategyType;
-  youtubeAndPartnersType?: YoutubeAndPartnersType | undefined;
+  youtubeAndPartnersType?:
+    | PropertyAdsGroupBidStrategyYoutubeAndPartnersType
+    | undefined;
   youtubeAndPartnersValue?: string | undefined;
 };
 
 /** @internal */
-export const PerformanceGoalType$inboundSchema: z.ZodType<
-  PerformanceGoalType,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(PerformanceGoalType);
+export const PropertyAdsGroupBidStrategyPerformanceGoalType$inboundSchema:
+  z.ZodType<
+    PropertyAdsGroupBidStrategyPerformanceGoalType,
+    z.ZodTypeDef,
+    unknown
+  > = openEnums.inboundSchema(PropertyAdsGroupBidStrategyPerformanceGoalType);
 /** @internal */
-export const PerformanceGoalType$outboundSchema: z.ZodType<
-  string,
-  z.ZodTypeDef,
-  PerformanceGoalType
-> = openEnums.outboundSchema(PerformanceGoalType);
+export const PropertyAdsGroupBidStrategyPerformanceGoalType$outboundSchema:
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    PropertyAdsGroupBidStrategyPerformanceGoalType
+  > = openEnums.outboundSchema(PropertyAdsGroupBidStrategyPerformanceGoalType);
 
 /** @internal */
 export const PropertyAdsGroupBidStrategyType$inboundSchema: z.ZodType<
@@ -90,17 +101,23 @@ export const PropertyAdsGroupBidStrategyType$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(PropertyAdsGroupBidStrategyType);
 
 /** @internal */
-export const YoutubeAndPartnersType$inboundSchema: z.ZodType<
-  YoutubeAndPartnersType,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(YoutubeAndPartnersType);
+export const PropertyAdsGroupBidStrategyYoutubeAndPartnersType$inboundSchema:
+  z.ZodType<
+    PropertyAdsGroupBidStrategyYoutubeAndPartnersType,
+    z.ZodTypeDef,
+    unknown
+  > = openEnums.inboundSchema(
+    PropertyAdsGroupBidStrategyYoutubeAndPartnersType,
+  );
 /** @internal */
-export const YoutubeAndPartnersType$outboundSchema: z.ZodType<
-  string,
-  z.ZodTypeDef,
-  YoutubeAndPartnersType
-> = openEnums.outboundSchema(YoutubeAndPartnersType);
+export const PropertyAdsGroupBidStrategyYoutubeAndPartnersType$outboundSchema:
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    PropertyAdsGroupBidStrategyYoutubeAndPartnersType
+  > = openEnums.outboundSchema(
+    PropertyAdsGroupBidStrategyYoutubeAndPartnersType,
+  );
 
 /** @internal */
 export const PropertyAdsGroupBidStrategy$inboundSchema: z.ZodType<
@@ -112,10 +129,13 @@ export const PropertyAdsGroupBidStrategy$inboundSchema: z.ZodType<
   fixed_bid_amount: z.number().optional(),
   max_average_cpm_bid_amount: z.number().optional(),
   performance_goal_amount: z.number().optional(),
-  performance_goal_type: PerformanceGoalType$inboundSchema.optional(),
+  performance_goal_type:
+    PropertyAdsGroupBidStrategyPerformanceGoalType$inboundSchema.optional(),
   raise_bid_for_deals: z.boolean().optional(),
+  target_roas: z.number().optional(),
   type: PropertyAdsGroupBidStrategyType$inboundSchema,
-  youtube_and_partners_type: YoutubeAndPartnersType$inboundSchema.optional(),
+  youtube_and_partners_type:
+    PropertyAdsGroupBidStrategyYoutubeAndPartnersType$inboundSchema.optional(),
   youtube_and_partners_value: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -125,6 +145,7 @@ export const PropertyAdsGroupBidStrategy$inboundSchema: z.ZodType<
     "performance_goal_amount": "performanceGoalAmount",
     "performance_goal_type": "performanceGoalType",
     "raise_bid_for_deals": "raiseBidForDeals",
+    "target_roas": "targetRoas",
     "youtube_and_partners_type": "youtubeAndPartnersType",
     "youtube_and_partners_value": "youtubeAndPartnersValue",
   });
@@ -137,6 +158,7 @@ export type PropertyAdsGroupBidStrategy$Outbound = {
   performance_goal_amount?: number | undefined;
   performance_goal_type?: string | undefined;
   raise_bid_for_deals?: boolean | undefined;
+  target_roas?: number | undefined;
   type: string;
   youtube_and_partners_type?: string | undefined;
   youtube_and_partners_value?: string | undefined;
@@ -152,10 +174,13 @@ export const PropertyAdsGroupBidStrategy$outboundSchema: z.ZodType<
   fixedBidAmount: z.number().optional(),
   maxAverageCpmBidAmount: z.number().optional(),
   performanceGoalAmount: z.number().optional(),
-  performanceGoalType: PerformanceGoalType$outboundSchema.optional(),
+  performanceGoalType:
+    PropertyAdsGroupBidStrategyPerformanceGoalType$outboundSchema.optional(),
   raiseBidForDeals: z.boolean().optional(),
+  targetRoas: z.number().optional(),
   type: PropertyAdsGroupBidStrategyType$outboundSchema,
-  youtubeAndPartnersType: YoutubeAndPartnersType$outboundSchema.optional(),
+  youtubeAndPartnersType:
+    PropertyAdsGroupBidStrategyYoutubeAndPartnersType$outboundSchema.optional(),
   youtubeAndPartnersValue: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -165,6 +190,7 @@ export const PropertyAdsGroupBidStrategy$outboundSchema: z.ZodType<
     performanceGoalAmount: "performance_goal_amount",
     performanceGoalType: "performance_goal_type",
     raiseBidForDeals: "raise_bid_for_deals",
+    targetRoas: "target_roas",
     youtubeAndPartnersType: "youtube_and_partners_type",
     youtubeAndPartnersValue: "youtube_and_partners_value",
   });

@@ -64,6 +64,7 @@ export type PropertyAdsReportMetricsGroupBidStrategy = {
     | PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType
     | undefined;
   raiseBidForDeals?: boolean | undefined;
+  targetRoas?: number | undefined;
   type: PropertyAdsReportMetricsGroupBidStrategyType;
   youtubeAndPartnersType?:
     | PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType
@@ -113,6 +114,7 @@ export const PropertyAdsReportMetricsGroupBidStrategy$inboundSchema: z.ZodType<
     PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType$inboundSchema
       .optional(),
   raise_bid_for_deals: z.boolean().optional(),
+  target_roas: z.number().optional(),
   type: PropertyAdsReportMetricsGroupBidStrategyType$inboundSchema,
   youtube_and_partners_type:
     PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType$inboundSchema
@@ -126,6 +128,7 @@ export const PropertyAdsReportMetricsGroupBidStrategy$inboundSchema: z.ZodType<
     "performance_goal_amount": "performanceGoalAmount",
     "performance_goal_type": "performanceGoalType",
     "raise_bid_for_deals": "raiseBidForDeals",
+    "target_roas": "targetRoas",
     "youtube_and_partners_type": "youtubeAndPartnersType",
     "youtube_and_partners_value": "youtubeAndPartnersValue",
   });

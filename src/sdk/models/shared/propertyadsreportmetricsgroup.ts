@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import {
   PropertyAdsReportMetricsGroupBidStrategy,
   PropertyAdsReportMetricsGroupBidStrategy$inboundSchema,
@@ -68,8 +69,17 @@ export type PropertyAdsReportMetricsGroupStatus = OpenEnum<
 >;
 
 export const PropertyAdsReportMetricsGroupType = {
-  Display: "DISPLAY",
+  Text: "TEXT",
+  Image: "IMAGE",
   Video: "VIDEO",
+  Responsive: "RESPONSIVE",
+  Shopping: "SHOPPING",
+  App: "APP",
+  Call: "CALL",
+  Carousel: "CAROUSEL",
+  Social: "SOCIAL",
+  Display: "DISPLAY",
+  Search: "SEARCH",
   Audio: "AUDIO",
   Youtube: "YOUTUBE",
 } as const;
@@ -78,11 +88,13 @@ export type PropertyAdsReportMetricsGroupType = OpenEnum<
 >;
 
 export type PropertyAdsReportMetricsGroup = {
+  adGroupType?: string | undefined;
   bidAmount?: number | undefined;
   /**
    * YOUTUBE_AND_PARTNERS
    */
   bidStrategy?: PropertyAdsReportMetricsGroupBidStrategy | undefined;
+  billingEvent?: string | undefined;
   budgetAllocationType?:
     | PropertyAdsReportMetricsGroupBudgetAllocationType
     | undefined;
@@ -94,13 +106,16 @@ export type PropertyAdsReportMetricsGroup = {
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
   currency?: string | undefined;
+  dailySpendCap?: number | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsReportMetricsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
-  isActive?: boolean | undefined;
+  lifetimeSpendCap?: number | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
+  optimizationGoal?: string | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsReportMetricsGroupPacing | undefined;
   parentId?: string | undefined;
@@ -156,9 +171,11 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  ad_group_type: z.string().optional(),
   bid_amount: z.number().optional(),
   bid_strategy: PropertyAdsReportMetricsGroupBidStrategy$inboundSchema
     .optional(),
+  billing_event: z.string().optional(),
   budget_allocation_type:
     PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema.optional(),
   budget_amount: z.number().optional(),
@@ -171,6 +188,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     .optional(),
   creative_ids: z.array(z.string()).optional(),
   currency: z.string().optional(),
+  daily_spend_cap: z.number().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema
@@ -178,8 +196,10 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
-  is_active: z.boolean().optional(),
+  lifetime_spend_cap: z.number().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
+  optimization_goal: z.string().optional(),
   organization_id: z.string().optional(),
   pacing: PropertyAdsReportMetricsGroupPacing$inboundSchema.optional(),
   parent_id: z.string().optional(),
@@ -193,8 +213,10 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "ad_group_type": "adGroupType",
     "bid_amount": "bidAmount",
     "bid_strategy": "bidStrategy",
+    "billing_event": "billingEvent",
     "budget_allocation_type": "budgetAllocationType",
     "budget_amount": "budgetAmount",
     "budget_max_amount": "budgetMaxAmount",
@@ -203,11 +225,13 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
+    "daily_spend_cap": "dailySpendCap",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
     "has_eu_political_ads": "hasEuPoliticalAds",
     "insertionorder_id": "insertionorderId",
-    "is_active": "isActive",
+    "lifetime_spend_cap": "lifetimeSpendCap",
+    "optimization_goal": "optimizationGoal",
     "organization_id": "organizationId",
     "parent_id": "parentId",
     "start_at": "startAt",

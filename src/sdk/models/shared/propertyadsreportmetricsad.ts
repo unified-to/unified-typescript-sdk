@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import {
   PropertyAdsReportMetricsAdTargeting,
   PropertyAdsReportMetricsAdTargeting$inboundSchema,
@@ -24,6 +25,10 @@ export const PropertyAdsReportMetricsAdAdType = {
   Call: "CALL",
   Carousel: "CAROUSEL",
   Social: "SOCIAL",
+  Display: "DISPLAY",
+  Search: "SEARCH",
+  Audio: "AUDIO",
+  Youtube: "YOUTUBE",
 } as const;
 export type PropertyAdsReportMetricsAdAdType = OpenEnum<
   typeof PropertyAdsReportMetricsAdAdType
@@ -50,15 +55,21 @@ export type PropertyAdsReportMetricsAd = {
   creativeIds?: Array<string> | undefined;
   cta?: string | undefined;
   description?: string | undefined;
+  displayUrl?: string | undefined;
+  endAt?: Date | undefined;
   finalUrl?: string | undefined;
   groupId?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   itemId?: string | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
+  path1?: string | undefined;
+  path2?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  startAt?: Date | undefined;
   status?: PropertyAdsReportMetricsAdStatus | undefined;
   targeting?: PropertyAdsReportMetricsAdTargeting | undefined;
   updatedAt?: Date | undefined;
@@ -93,15 +104,23 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
   creative_ids: z.array(z.string()).optional(),
   cta: z.string().optional(),
   description: z.string().optional(),
+  display_url: z.string().optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   final_url: z.string().optional(),
   group_id: z.string().optional(),
   headline: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   item_id: z.string().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
+  path1: z.string().optional(),
+  path2: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   status: PropertyAdsReportMetricsAdStatus$inboundSchema.optional(),
   targeting: PropertyAdsReportMetricsAdTargeting$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -114,11 +133,14 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "creative_asset_url": "creativeAssetUrl",
     "creative_ids": "creativeIds",
+    "display_url": "displayUrl",
+    "end_at": "endAt",
     "final_url": "finalUrl",
     "group_id": "groupId",
     "is_active": "isActive",
     "item_id": "itemId",
     "organization_id": "organizationId",
+    "start_at": "startAt",
     "updated_at": "updatedAt",
   });
 });

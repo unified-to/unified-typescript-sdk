@@ -12,10 +12,12 @@ export const ListPaymentPaymentsQueryParamFields = {
   UpdatedAt: "updated_at",
   TotalAmount: "total_amount",
   ContactId: "contact_id",
+  Type: "type",
   PaymentMethod: "payment_method",
   Currency: "currency",
   Notes: "notes",
   InvoiceId: "invoice_id",
+  BillId: "bill_id",
   AccountId: "account_id",
   Reference: "reference",
   Raw: "raw",
@@ -25,6 +27,10 @@ export type ListPaymentPaymentsQueryParamFields = ClosedEnum<
 >;
 
 export type ListPaymentPaymentsRequest = {
+  /**
+   * The bill ID to filter by
+   */
+  billId?: string | undefined;
   /**
    * ID of the connection
    */
@@ -42,6 +48,10 @@ export type ListPaymentPaymentsRequest = {
    */
   invoiceId?: string | undefined;
   limit?: number | undefined;
+  /**
+   * The link ID to filter by
+   */
+  linkId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
@@ -53,6 +63,10 @@ export type ListPaymentPaymentsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The type to filter by
+   */
+  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -67,16 +81,19 @@ export const ListPaymentPaymentsQueryParamFields$outboundSchema:
 
 /** @internal */
 export type ListPaymentPaymentsRequest$Outbound = {
+  bill_id?: string | undefined;
   connection_id: string;
   contact_id?: string | undefined;
   fields?: Array<string> | undefined;
   invoice_id?: string | undefined;
   limit?: number | undefined;
+  link_id?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -86,23 +103,28 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListPaymentPaymentsRequest
 > = z.object({
+  billId: z.string().optional(),
   connectionId: z.string(),
   contactId: z.string().optional(),
   fields: z.array(ListPaymentPaymentsQueryParamFields$outboundSchema)
     .optional(),
   invoiceId: z.string().optional(),
   limit: z.number().optional(),
+  linkId: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    billId: "bill_id",
     connectionId: "connection_id",
     contactId: "contact_id",
     invoiceId: "invoice_id",
+    linkId: "link_id",
     updatedGte: "updated_gte",
   });
 });

@@ -49,6 +49,13 @@ export const ListBenefitId = {
 } as const;
 export type ListBenefitId = OpenEnum<typeof ListBenefitId>;
 
+export const ListBillId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListBillId = OpenEnum<typeof ListBillId>;
+
 export const ListBranchId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -674,6 +681,13 @@ export type VirtualWebhookApplicationId = OpenEnum<
   typeof VirtualWebhookApplicationId
 >;
 
+export const VirtualWebhookBillId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookBillId = OpenEnum<typeof VirtualWebhookBillId>;
+
 export const VirtualWebhookBranchId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -817,6 +831,13 @@ export const VirtualWebhookGroupId = {
 } as const;
 export type VirtualWebhookGroupId = OpenEnum<typeof VirtualWebhookGroupId>;
 
+export const VirtualWebhookInvoiceId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookInvoiceId = OpenEnum<typeof VirtualWebhookInvoiceId>;
+
 export const VirtualWebhookItemId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -860,6 +881,13 @@ export const VirtualWebhookLimit = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookLimit = OpenEnum<typeof VirtualWebhookLimit>;
+
+export const VirtualWebhookLinkId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookLinkId = OpenEnum<typeof VirtualWebhookLinkId>;
 
 export const VirtualWebhookListId = {
   SupportedRequired: "supported-required",
@@ -1034,6 +1062,7 @@ export type IntegrationSupport = {
   listAdId?: ListAdId | undefined;
   listApplicationId?: ListApplicationId | undefined;
   listBenefitId?: ListBenefitId | undefined;
+  listBillId?: ListBillId | undefined;
   listBranchId?: ListBranchId | undefined;
   listCalendarId?: ListCalendarId | undefined;
   listCallId?: ListCallId | undefined;
@@ -1130,6 +1159,8 @@ export type IntegrationSupport = {
   slowFields?: Array<string> | undefined;
   virtualWebhookAdId?: VirtualWebhookAdId | undefined;
   virtualWebhookApplicationId?: VirtualWebhookApplicationId | undefined;
+  virtualWebhookBenefitId?: string | undefined;
+  virtualWebhookBillId?: VirtualWebhookBillId | undefined;
   virtualWebhookBranchId?: VirtualWebhookBranchId | undefined;
   virtualWebhookCalendarId?: VirtualWebhookCalendarId | undefined;
   virtualWebhookCallId?: VirtualWebhookCallId | undefined;
@@ -1149,12 +1180,14 @@ export type IntegrationSupport = {
   virtualWebhookFields?: VirtualWebhookFields | undefined;
   virtualWebhookFormId?: VirtualWebhookFormId | undefined;
   virtualWebhookGroupId?: VirtualWebhookGroupId | undefined;
+  virtualWebhookInvoiceId?: VirtualWebhookInvoiceId | undefined;
   virtualWebhookItemId?: VirtualWebhookItemId | undefined;
   virtualWebhookItemVariantId?: VirtualWebhookItemVariantId | undefined;
   virtualWebhookJobId?: VirtualWebhookJobId | undefined;
   virtualWebhookLabelId?: VirtualWebhookLabelId | undefined;
   virtualWebhookLeadId?: VirtualWebhookLeadId | undefined;
   virtualWebhookLimit?: VirtualWebhookLimit | undefined;
+  virtualWebhookLinkId?: VirtualWebhookLinkId | undefined;
   virtualWebhookListId?: VirtualWebhookListId | undefined;
   virtualWebhookLocationId?: VirtualWebhookLocationId | undefined;
   virtualWebhookMemberId?: VirtualWebhookMemberId | undefined;
@@ -1214,6 +1247,13 @@ export const ListBenefitId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListBenefitId);
+
+/** @internal */
+export const ListBillId$inboundSchema: z.ZodType<
+  ListBillId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListBillId);
 
 /** @internal */
 export const ListBranchId$inboundSchema: z.ZodType<
@@ -1839,6 +1879,13 @@ export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookApplicationId);
 
 /** @internal */
+export const VirtualWebhookBillId$inboundSchema: z.ZodType<
+  VirtualWebhookBillId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookBillId);
+
+/** @internal */
 export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
   VirtualWebhookBranchId,
   z.ZodTypeDef,
@@ -1972,6 +2019,13 @@ export const VirtualWebhookGroupId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookGroupId);
 
 /** @internal */
+export const VirtualWebhookInvoiceId$inboundSchema: z.ZodType<
+  VirtualWebhookInvoiceId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookInvoiceId);
+
+/** @internal */
 export const VirtualWebhookItemId$inboundSchema: z.ZodType<
   VirtualWebhookItemId,
   z.ZodTypeDef,
@@ -2012,6 +2066,13 @@ export const VirtualWebhookLimit$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookLimit);
+
+/** @internal */
+export const VirtualWebhookLinkId$inboundSchema: z.ZodType<
+  VirtualWebhookLinkId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookLinkId);
 
 /** @internal */
 export const VirtualWebhookListId$inboundSchema: z.ZodType<
@@ -2179,6 +2240,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_ad_id: ListAdId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
   list_benefit_id: ListBenefitId$inboundSchema.optional(),
+  list_bill_id: ListBillId$inboundSchema.optional(),
   list_branch_id: ListBranchId$inboundSchema.optional(),
   list_calendar_id: ListCalendarId$inboundSchema.optional(),
   list_call_id: ListCallId$inboundSchema.optional(),
@@ -2273,6 +2335,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_ad_id: VirtualWebhookAdId$inboundSchema.optional(),
   virtual_webhook_application_id: VirtualWebhookApplicationId$inboundSchema
     .optional(),
+  virtual_webhook_benefit_id: z.string().optional(),
+  virtual_webhook_bill_id: VirtualWebhookBillId$inboundSchema.optional(),
   virtual_webhook_branch_id: VirtualWebhookBranchId$inboundSchema.optional(),
   virtual_webhook_calendar_id: VirtualWebhookCalendarId$inboundSchema
     .optional(),
@@ -2297,6 +2361,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_fields: VirtualWebhookFields$inboundSchema.optional(),
   virtual_webhook_form_id: VirtualWebhookFormId$inboundSchema.optional(),
   virtual_webhook_group_id: VirtualWebhookGroupId$inboundSchema.optional(),
+  virtual_webhook_invoice_id: VirtualWebhookInvoiceId$inboundSchema.optional(),
   virtual_webhook_item_id: VirtualWebhookItemId$inboundSchema.optional(),
   virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
     .optional(),
@@ -2304,6 +2369,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_label_id: VirtualWebhookLabelId$inboundSchema.optional(),
   virtual_webhook_lead_id: VirtualWebhookLeadId$inboundSchema.optional(),
   virtual_webhook_limit: VirtualWebhookLimit$inboundSchema.optional(),
+  virtual_webhook_link_id: VirtualWebhookLinkId$inboundSchema.optional(),
   virtual_webhook_list_id: VirtualWebhookListId$inboundSchema.optional(),
   virtual_webhook_location_id: VirtualWebhookLocationId$inboundSchema
     .optional(),
@@ -2342,6 +2408,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_ad_id": "listAdId",
     "list_application_id": "listApplicationId",
     "list_benefit_id": "listBenefitId",
+    "list_bill_id": "listBillId",
     "list_branch_id": "listBranchId",
     "list_calendar_id": "listCalendarId",
     "list_call_id": "listCallId",
@@ -2434,6 +2501,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "slow_fields": "slowFields",
     "virtual_webhook_ad_id": "virtualWebhookAdId",
     "virtual_webhook_application_id": "virtualWebhookApplicationId",
+    "virtual_webhook_benefit_id": "virtualWebhookBenefitId",
+    "virtual_webhook_bill_id": "virtualWebhookBillId",
     "virtual_webhook_branch_id": "virtualWebhookBranchId",
     "virtual_webhook_calendar_id": "virtualWebhookCalendarId",
     "virtual_webhook_call_id": "virtualWebhookCallId",
@@ -2453,12 +2522,14 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_fields": "virtualWebhookFields",
     "virtual_webhook_form_id": "virtualWebhookFormId",
     "virtual_webhook_group_id": "virtualWebhookGroupId",
+    "virtual_webhook_invoice_id": "virtualWebhookInvoiceId",
     "virtual_webhook_item_id": "virtualWebhookItemId",
     "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
     "virtual_webhook_job_id": "virtualWebhookJobId",
     "virtual_webhook_label_id": "virtualWebhookLabelId",
     "virtual_webhook_lead_id": "virtualWebhookLeadId",
     "virtual_webhook_limit": "virtualWebhookLimit",
+    "virtual_webhook_link_id": "virtualWebhookLinkId",
     "virtual_webhook_list_id": "virtualWebhookListId",
     "virtual_webhook_location_id": "virtualWebhookLocationId",
     "virtual_webhook_member_id": "virtualWebhookMemberId",

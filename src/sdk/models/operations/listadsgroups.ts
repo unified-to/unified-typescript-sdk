@@ -18,7 +18,6 @@ export const ListAdsGroupsQueryParamFields = {
   Status: "status",
   Targeting: "targeting",
   BidAmount: "bid_amount",
-  Currency: "currency",
   BidStrategy: "bid_strategy",
   BudgetAmount: "budget_amount",
   BudgetPeriod: "budget_period",
@@ -32,7 +31,13 @@ export const ListAdsGroupsQueryParamFields = {
   Pacing: "pacing",
   FrequencyCap: "frequency_cap",
   CreativeIds: "creative_ids",
-  IsActive: "is_active",
+  OptimizationGoal: "optimization_goal",
+  BillingEvent: "billing_event",
+  DailySpendCap: "daily_spend_cap",
+  LifetimeSpendCap: "lifetime_spend_cap",
+  AdGroupType: "ad_group_type",
+  Currency: "currency",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAdsGroupsQueryParamFields = ClosedEnum<

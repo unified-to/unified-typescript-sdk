@@ -17,6 +17,7 @@ export const GetMetadataMetadataQueryParamFields = {
   Options: "options",
   ObjectType: "object_type",
   Objects: "objects",
+  IsRequired: "is_required",
   Raw: "raw",
 } as const;
 export type GetMetadataMetadataQueryParamFields = ClosedEnum<

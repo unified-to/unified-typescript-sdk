@@ -11,10 +11,14 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type PropertyAdsReportMetricsAdTargeting = {
   ageRanges?: Array<string> | undefined;
   audiences?: Array<string> | undefined;
+  behaviors?: Array<string> | undefined;
   companies?: Array<string> | undefined;
   companySizes?: Array<string> | undefined;
+  customAudiences?: Array<string> | undefined;
   degrees?: Array<string> | undefined;
   devices?: Array<string> | undefined;
+  excludedAudiences?: Array<string> | undefined;
+  excludedLocations?: Array<string> | undefined;
   genders?: Array<string> | undefined;
   industries?: Array<string> | undefined;
   interests?: Array<string> | undefined;
@@ -37,10 +41,14 @@ export const PropertyAdsReportMetricsAdTargeting$inboundSchema: z.ZodType<
 > = z.object({
   age_ranges: z.array(z.string()).optional(),
   audiences: z.array(z.string()).optional(),
+  behaviors: z.array(z.string()).optional(),
   companies: z.array(z.string()).optional(),
   company_sizes: z.array(z.string()).optional(),
+  custom_audiences: z.array(z.string()).optional(),
   degrees: z.array(z.string()).optional(),
   devices: z.array(z.string()).optional(),
+  excluded_audiences: z.array(z.string()).optional(),
+  excluded_locations: z.array(z.string()).optional(),
   genders: z.array(z.string()).optional(),
   industries: z.array(z.string()).optional(),
   interests: z.array(z.string()).optional(),
@@ -57,6 +65,9 @@ export const PropertyAdsReportMetricsAdTargeting$inboundSchema: z.ZodType<
   return remap$(v, {
     "age_ranges": "ageRanges",
     "company_sizes": "companySizes",
+    "custom_audiences": "customAudiences",
+    "excluded_audiences": "excludedAudiences",
+    "excluded_locations": "excludedLocations",
     "job_functions": "jobFunctions",
     "job_titles": "jobTitles",
   });

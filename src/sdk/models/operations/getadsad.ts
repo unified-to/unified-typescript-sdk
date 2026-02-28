@@ -26,6 +26,12 @@ export const GetAdsAdQueryParamFields = {
   FinalUrl: "final_url",
   Targeting: "targeting",
   IsActive: "is_active",
+  EndAt: "end_at",
+  StartAt: "start_at",
+  DisplayUrl: "display_url",
+  Path1: "path1",
+  Path2: "path2",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAdsAdQueryParamFields = ClosedEnum<

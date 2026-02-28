@@ -18,14 +18,17 @@ export const PatchAdsCampaignQueryParamFields = {
   EndAt: "end_at",
   BudgetAmount: "budget_amount",
   BudgetPeriod: "budget_period",
-  Currency: "currency",
   TotalSpendAmount: "total_spend_amount",
   Targeting: "targeting",
-  Raw: "raw",
   Goal: "goal",
   PlannedSpendAmount: "planned_spend_amount",
   FrequencyCap: "frequency_cap",
-  IsActive: "is_active",
+  BidStrategy: "bid_strategy",
+  SpecialAdCategories: "special_ad_categories",
+  AdvertisingChannelType: "advertising_channel_type",
+  CampaignBudgetIdentifier: "campaign_budget_identifier",
+  Currency: "currency",
+  Raw: "raw",
 } as const;
 export type PatchAdsCampaignQueryParamFields = ClosedEnum<
   typeof PatchAdsCampaignQueryParamFields

@@ -95,15 +95,18 @@ async function $do(
   const path = pathToFunc("/payment/{connection_id}/payment")(pathParams);
 
   const query = encodeFormQuery({
+    "bill_id": payload.bill_id,
     "contact_id": payload.contact_id,
     "fields": payload.fields,
     "invoice_id": payload.invoice_id,
     "limit": payload.limit,
+    "link_id": payload.link_id,
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "type": payload.type,
     "updated_gte": payload.updated_gte,
   });
 

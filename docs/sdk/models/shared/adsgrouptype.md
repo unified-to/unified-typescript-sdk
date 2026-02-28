@@ -5,7 +5,7 @@
 ```typescript
 import { AdsGroupType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AdsGroupType = "VIDEO";
+let value: AdsGroupType = "CALL";
 ```
 
 ## Values
@@ -13,5 +13,5 @@ let value: AdsGroupType = "VIDEO";
 This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
-"DISPLAY" | "VIDEO" | "AUDIO" | "YOUTUBE" | Unrecognized<string>
+"TEXT" | "IMAGE" | "VIDEO" | "RESPONSIVE" | "SHOPPING" | "APP" | "CALL" | "CAROUSEL" | "SOCIAL" | "DISPLAY" | "SEARCH" | "AUDIO" | "YOUTUBE" | Unrecognized<string>
 ```

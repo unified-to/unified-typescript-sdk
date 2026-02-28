@@ -63,6 +63,7 @@ export type PropertyAdsInsertionorderBidStrategy = {
     | PropertyAdsInsertionorderBidStrategyPerformanceGoalType
     | undefined;
   raiseBidForDeals?: boolean | undefined;
+  targetRoas?: number | undefined;
   type: PropertyAdsInsertionorderBidStrategyType;
   youtubeAndPartnersType?:
     | PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType
@@ -135,6 +136,7 @@ export const PropertyAdsInsertionorderBidStrategy$inboundSchema: z.ZodType<
     PropertyAdsInsertionorderBidStrategyPerformanceGoalType$inboundSchema
       .optional(),
   raise_bid_for_deals: z.boolean().optional(),
+  target_roas: z.number().optional(),
   type: PropertyAdsInsertionorderBidStrategyType$inboundSchema,
   youtube_and_partners_type:
     PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$inboundSchema
@@ -148,6 +150,7 @@ export const PropertyAdsInsertionorderBidStrategy$inboundSchema: z.ZodType<
     "performance_goal_amount": "performanceGoalAmount",
     "performance_goal_type": "performanceGoalType",
     "raise_bid_for_deals": "raiseBidForDeals",
+    "target_roas": "targetRoas",
     "youtube_and_partners_type": "youtubeAndPartnersType",
     "youtube_and_partners_value": "youtubeAndPartnersValue",
   });
@@ -160,6 +163,7 @@ export type PropertyAdsInsertionorderBidStrategy$Outbound = {
   performance_goal_amount?: number | undefined;
   performance_goal_type?: string | undefined;
   raise_bid_for_deals?: boolean | undefined;
+  target_roas?: number | undefined;
   type: string;
   youtube_and_partners_type?: string | undefined;
   youtube_and_partners_value?: string | undefined;
@@ -179,6 +183,7 @@ export const PropertyAdsInsertionorderBidStrategy$outboundSchema: z.ZodType<
     PropertyAdsInsertionorderBidStrategyPerformanceGoalType$outboundSchema
       .optional(),
   raiseBidForDeals: z.boolean().optional(),
+  targetRoas: z.number().optional(),
   type: PropertyAdsInsertionorderBidStrategyType$outboundSchema,
   youtubeAndPartnersType:
     PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$outboundSchema
@@ -192,6 +197,7 @@ export const PropertyAdsInsertionorderBidStrategy$outboundSchema: z.ZodType<
     performanceGoalAmount: "performance_goal_amount",
     performanceGoalType: "performance_goal_type",
     raiseBidForDeals: "raise_bid_for_deals",
+    targetRoas: "target_roas",
     youtubeAndPartnersType: "youtube_and_partners_type",
     youtubeAndPartnersValue: "youtube_and_partners_value",
   });

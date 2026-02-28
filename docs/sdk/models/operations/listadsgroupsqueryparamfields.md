@@ -5,11 +5,11 @@
 ```typescript
 import { ListAdsGroupsQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListAdsGroupsQueryParamFields = "budget_amount";
+let value: ListAdsGroupsQueryParamFields = "end_at";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "parent_id" | "campaign_id" | "organization_id" | "insertionorder_id" | "status" | "targeting" | "bid_amount" | "currency" | "bid_strategy" | "budget_amount" | "budget_period" | "budget_allocation_type" | "start_at" | "end_at" | "budget_unit" | "budget_max_amount" | "type" | "has_eu_political_ads" | "pacing" | "frequency_cap" | "creative_ids" | "is_active" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "parent_id" | "campaign_id" | "organization_id" | "insertionorder_id" | "status" | "targeting" | "bid_amount" | "bid_strategy" | "budget_amount" | "budget_period" | "budget_allocation_type" | "start_at" | "end_at" | "budget_unit" | "budget_max_amount" | "type" | "has_eu_political_ads" | "pacing" | "frequency_cap" | "creative_ids" | "optimization_goal" | "billing_event" | "daily_spend_cap" | "lifetime_spend_cap" | "ad_group_type" | "currency" | "metadata" | "raw"
 ```
