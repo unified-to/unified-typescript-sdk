@@ -15,6 +15,7 @@ export type PropertyConnectionAuth = {
   accessToken?: string | undefined;
   apiUrl?: string | undefined;
   appId?: string | undefined;
+  audience?: string | undefined;
   authorizeUrl?: string | undefined;
   clientId?: string | undefined;
   clientSecret?: string | undefined;
@@ -51,6 +52,7 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
   access_token: z.string().optional(),
   api_url: z.string().optional(),
   app_id: z.string().optional(),
+  audience: z.string().optional(),
   authorize_url: z.string().optional(),
   client_id: z.string().optional(),
   client_secret: z.string().optional(),
@@ -103,6 +105,7 @@ export type PropertyConnectionAuth$Outbound = {
   access_token?: string | undefined;
   api_url?: string | undefined;
   app_id?: string | undefined;
+  audience?: string | undefined;
   authorize_url?: string | undefined;
   client_id?: string | undefined;
   client_secret?: string | undefined;
@@ -136,6 +139,7 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
   accessToken: z.string().optional(),
   apiUrl: z.string().optional(),
   appId: z.string().optional(),
+  audience: z.string().optional(),
   authorizeUrl: z.string().optional(),
   clientId: z.string().optional(),
   clientSecret: z.string().optional(),
