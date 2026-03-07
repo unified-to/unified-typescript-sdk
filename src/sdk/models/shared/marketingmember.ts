@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -13,6 +15,15 @@ import {
   MarketingEmail$Outbound,
   MarketingEmail$outboundSchema,
 } from "./marketingemail.js";
+
+export const MarketingMemberStatus = {
+  Subscribed: "SUBSCRIBED",
+  Unsubscribed: "UNSUBSCRIBED",
+  Cleaned: "CLEANED",
+  Pending: "PENDING",
+  Transactional: "TRANSACTIONAL",
+} as const;
+export type MarketingMemberStatus = OpenEnum<typeof MarketingMemberStatus>;
 
 /**
  * A member represents a person
@@ -32,12 +43,26 @@ export type MarketingMember = {
   listIds?: Array<string> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  status?: MarketingMemberStatus | undefined;
   /**
    * An array of tags associated with this member
    */
   tags?: Array<string> | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const MarketingMemberStatus$inboundSchema: z.ZodType<
+  MarketingMemberStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(MarketingMemberStatus);
+/** @internal */
+export const MarketingMemberStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  MarketingMemberStatus
+> = openEnums.outboundSchema(MarketingMemberStatus);
 
 /** @internal */
 export const MarketingMember$inboundSchema: z.ZodType<
@@ -54,6 +79,7 @@ export const MarketingMember$inboundSchema: z.ZodType<
   list_ids: z.array(z.string()).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  status: MarketingMemberStatus$inboundSchema.optional(),
   tags: z.array(z.string()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -76,6 +102,7 @@ export type MarketingMember$Outbound = {
   list_ids?: Array<string> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  status?: string | undefined;
   tags?: Array<string> | undefined;
   updated_at?: string | undefined;
 };
@@ -94,6 +121,7 @@ export const MarketingMember$outboundSchema: z.ZodType<
   listIds: z.array(z.string()).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  status: MarketingMemberStatus$outboundSchema.optional(),
   tags: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

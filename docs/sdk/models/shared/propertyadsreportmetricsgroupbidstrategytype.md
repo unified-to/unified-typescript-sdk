@@ -7,11 +7,11 @@ import { PropertyAdsReportMetricsGroupBidStrategyType } from "@unified-api/types
 
 let value: PropertyAdsReportMetricsGroupBidStrategyType =
   "YOUTUBE_AND_PARTNERS";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "FIXED_BID" | "MAXIMIZE_SPEND" | "PERFORMANCE_GOAL" | "YOUTUBE_AND_PARTNERS" | Unrecognized<string>

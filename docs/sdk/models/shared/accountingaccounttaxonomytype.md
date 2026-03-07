@@ -6,11 +6,11 @@
 import { AccountingAccountTaxonomyType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AccountingAccountTaxonomyType = "SYSTEM_ROLE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "CLASSIFICATION" | "GROUP" | "SUBGROUP" | "SYSTEM_ROLE" | "OTHER" | Unrecognized<string>

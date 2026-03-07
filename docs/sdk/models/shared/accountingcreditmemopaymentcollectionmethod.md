@@ -6,11 +6,11 @@
 import { AccountingCreditmemoPaymentCollectionMethod } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AccountingCreditmemoPaymentCollectionMethod = "charge_automatically";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "send_invoice" | "charge_automatically" | Unrecognized<string>

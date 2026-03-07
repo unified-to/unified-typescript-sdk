@@ -6,11 +6,11 @@
 import { Ethnicity } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Ethnicity = "Filipino";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "Caucasian" | "East Asian" | "Middle Eastern" | "Black" | "Biracial (South Asian & Caucasian)" | "Filipino" | "South Asian" | "Indian" | "White" | "Asian" | Unrecognized<string>

@@ -7,11 +7,11 @@ import { PropertyAdsReportMetricsCampaignBidStrategyPerformanceGoalType } from "
 
 let value: PropertyAdsReportMetricsCampaignBidStrategyPerformanceGoalType =
   "REACH";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "UNSPECIFIED" | "CPA" | "CPC" | "VIEWABLE_CPM" | "CUSTOM_ALGO" | "CIVA" | "IVO_TEN" | "AV_VIEWED" | "REACH" | Unrecognized<string>

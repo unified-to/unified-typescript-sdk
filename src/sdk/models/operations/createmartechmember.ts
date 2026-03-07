@@ -17,6 +17,7 @@ export const CreateMartechMemberQueryParamFields = {
   Emails: "emails",
   ListIds: "list_ids",
   Tags: "tags",
+  Status: "status",
   Raw: "raw",
 } as const;
 export type CreateMartechMemberQueryParamFields = ClosedEnum<
