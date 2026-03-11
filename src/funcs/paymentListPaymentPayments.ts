@@ -97,6 +97,7 @@ async function $do(
   const query = encodeFormQuery({
     "bill_id": payload.bill_id,
     "contact_id": payload.contact_id,
+    "end_lt": payload.end_lt,
     "fields": payload.fields,
     "invoice_id": payload.invoice_id,
     "limit": payload.limit,
@@ -106,6 +107,7 @@ async function $do(
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "start_gte": payload.start_gte,
     "type": payload.type,
     "updated_gte": payload.updated_gte,
   });

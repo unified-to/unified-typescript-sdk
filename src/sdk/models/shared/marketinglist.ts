@@ -7,19 +7,31 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PropertyMarketingListAddress,
+  PropertyMarketingListAddress$inboundSchema,
+  PropertyMarketingListAddress$Outbound,
+  PropertyMarketingListAddress$outboundSchema,
+} from "./propertymarketinglistaddress.js";
 
 /**
  * Mailing List
  */
 export type MarketingList = {
+  address?: PropertyMarketingListAddress | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
   endAt?: Date | undefined;
+  fromEmail?: string | undefined;
+  fromName?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  language?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
+  state?: string | undefined;
+  subject?: string | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
@@ -30,17 +42,23 @@ export const MarketingList$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  address: PropertyMarketingListAddress$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  from_email: z.string().optional(),
+  from_name: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  language: z.string().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  state: z.string().optional(),
+  subject: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -48,6 +66,8 @@ export const MarketingList$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "end_at": "endAt",
+    "from_email": "fromEmail",
+    "from_name": "fromName",
     "is_active": "isActive",
     "start_at": "startAt",
     "updated_at": "updatedAt",
@@ -56,14 +76,20 @@ export const MarketingList$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type MarketingList$Outbound = {
+  address?: PropertyMarketingListAddress$Outbound | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
   end_at?: string | undefined;
+  from_email?: string | undefined;
+  from_name?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  language?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
+  state?: string | undefined;
+  subject?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
 };
@@ -74,20 +100,28 @@ export const MarketingList$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   MarketingList
 > = z.object({
+  address: PropertyMarketingListAddress$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
+  fromEmail: z.string().optional(),
+  fromName: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  language: z.string().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
+  state: z.string().optional(),
+  subject: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
     endAt: "end_at",
+    fromEmail: "from_email",
+    fromName: "from_name",
     isActive: "is_active",
     startAt: "start_at",
     updatedAt: "updated_at",

@@ -266,6 +266,7 @@ export * from "./propertyintegrationsupportwebhookeventscreated.js";
 export * from "./propertyintegrationsupportwebhookeventsdeleted.js";
 export * from "./propertyintegrationsupportwebhookeventsupdated.js";
 export * from "./propertylmsstudentaddress.js";
+export * from "./propertymarketinglistaddress.js";
 export * from "./propertymessagingeventbutton.js";
 export * from "./propertymessagingeventchannel.js";
 export * from "./propertymessagingeventmessage.js";

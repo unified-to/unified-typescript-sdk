@@ -17,6 +17,12 @@ export const PatchMartechListQueryParamFields = {
   EndAt: "end_at",
   UserId: "user_id",
   IsActive: "is_active",
+  State: "state",
+  FromName: "from_name",
+  FromEmail: "from_email",
+  Subject: "subject",
+  Language: "language",
+  Address: "address",
   Raw: "raw",
 } as const;
 export type PatchMartechListQueryParamFields = ClosedEnum<

@@ -40,6 +40,10 @@ export type ListPaymentPaymentsRequest = {
    */
   contactId?: string | undefined;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListPaymentPaymentsQueryParamFields> | undefined;
@@ -64,6 +68,10 @@ export type ListPaymentPaymentsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
+  /**
    * The type to filter by
    */
   type?: string | undefined;
@@ -84,6 +92,7 @@ export type ListPaymentPaymentsRequest$Outbound = {
   bill_id?: string | undefined;
   connection_id: string;
   contact_id?: string | undefined;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   invoice_id?: string | undefined;
   limit?: number | undefined;
@@ -93,6 +102,7 @@ export type ListPaymentPaymentsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   type?: string | undefined;
   updated_gte?: string | undefined;
 };
@@ -106,6 +116,7 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
   billId: z.string().optional(),
   connectionId: z.string(),
   contactId: z.string().optional(),
+  endLt: z.string().optional(),
   fields: z.array(ListPaymentPaymentsQueryParamFields$outboundSchema)
     .optional(),
   invoiceId: z.string().optional(),
@@ -116,6 +127,7 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
@@ -123,8 +135,10 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
     billId: "bill_id",
     connectionId: "connection_id",
     contactId: "contact_id",
+    endLt: "end_lt",
     invoiceId: "invoice_id",
     linkId: "link_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });
