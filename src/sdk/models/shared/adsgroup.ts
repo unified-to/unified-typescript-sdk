@@ -91,7 +91,6 @@ export const AdsGroupType = {
 export type AdsGroupType = OpenEnum<typeof AdsGroupType>;
 
 export type AdsGroup = {
-  adGroupType?: string | undefined;
   bidAmount?: number | undefined;
   /**
    * YOUTUBE_AND_PARTNERS
@@ -107,13 +106,11 @@ export type AdsGroup = {
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
   currency?: string | undefined;
-  dailySpendCap?: number | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
-  lifetimeSpendCap?: number | undefined;
   metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   optimizationGoal?: string | undefined;
@@ -199,7 +196,6 @@ export const AdsGroup$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  ad_group_type: z.string().optional(),
   bid_amount: z.number().optional(),
   bid_strategy: PropertyAdsGroupBidStrategy$inboundSchema.optional(),
   billing_event: z.string().optional(),
@@ -213,14 +209,12 @@ export const AdsGroup$inboundSchema: z.ZodType<
     .optional(),
   creative_ids: z.array(z.string()).optional(),
   currency: z.string().optional(),
-  daily_spend_cap: z.number().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsGroupFrequencyCap$inboundSchema.optional(),
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
-  lifetime_spend_cap: z.number().optional(),
   metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   optimization_goal: z.string().optional(),
@@ -237,7 +231,6 @@ export const AdsGroup$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
-    "ad_group_type": "adGroupType",
     "bid_amount": "bidAmount",
     "bid_strategy": "bidStrategy",
     "billing_event": "billingEvent",
@@ -249,12 +242,10 @@ export const AdsGroup$inboundSchema: z.ZodType<
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
-    "daily_spend_cap": "dailySpendCap",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
     "has_eu_political_ads": "hasEuPoliticalAds",
     "insertionorder_id": "insertionorderId",
-    "lifetime_spend_cap": "lifetimeSpendCap",
     "optimization_goal": "optimizationGoal",
     "organization_id": "organizationId",
     "parent_id": "parentId",
@@ -264,7 +255,6 @@ export const AdsGroup$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AdsGroup$Outbound = {
-  ad_group_type?: string | undefined;
   bid_amount?: number | undefined;
   bid_strategy?: PropertyAdsGroupBidStrategy$Outbound | undefined;
   billing_event?: string | undefined;
@@ -277,13 +267,11 @@ export type AdsGroup$Outbound = {
   created_at?: string | undefined;
   creative_ids?: Array<string> | undefined;
   currency?: string | undefined;
-  daily_spend_cap?: number | undefined;
   end_at?: string | undefined;
   frequency_cap?: PropertyAdsGroupFrequencyCap$Outbound | undefined;
   has_eu_political_ads?: boolean | undefined;
   id?: string | undefined;
   insertionorder_id?: string | undefined;
-  lifetime_spend_cap?: number | undefined;
   metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   optimization_goal?: string | undefined;
@@ -304,7 +292,6 @@ export const AdsGroup$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AdsGroup
 > = z.object({
-  adGroupType: z.string().optional(),
   bidAmount: z.number().optional(),
   bidStrategy: PropertyAdsGroupBidStrategy$outboundSchema.optional(),
   billingEvent: z.string().optional(),
@@ -317,13 +304,11 @@ export const AdsGroup$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeIds: z.array(z.string()).optional(),
   currency: z.string().optional(),
-  dailySpendCap: z.number().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   frequencyCap: PropertyAdsGroupFrequencyCap$outboundSchema.optional(),
   hasEuPoliticalAds: z.boolean().optional(),
   id: z.string().optional(),
   insertionorderId: z.string().optional(),
-  lifetimeSpendCap: z.number().optional(),
   metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   optimizationGoal: z.string().optional(),
@@ -338,7 +323,6 @@ export const AdsGroup$outboundSchema: z.ZodType<
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
-    adGroupType: "ad_group_type",
     bidAmount: "bid_amount",
     bidStrategy: "bid_strategy",
     billingEvent: "billing_event",
@@ -350,12 +334,10 @@ export const AdsGroup$outboundSchema: z.ZodType<
     campaignId: "campaign_id",
     createdAt: "created_at",
     creativeIds: "creative_ids",
-    dailySpendCap: "daily_spend_cap",
     endAt: "end_at",
     frequencyCap: "frequency_cap",
     hasEuPoliticalAds: "has_eu_political_ads",
     insertionorderId: "insertionorder_id",
-    lifetimeSpendCap: "lifetime_spend_cap",
     optimizationGoal: "optimization_goal",
     organizationId: "organization_id",
     parentId: "parent_id",

@@ -12,7 +12,6 @@ export const ListMessagingChannelsQueryParamFields = {
   UpdatedAt: "updated_at",
   Name: "name",
   Description: "description",
-  ParentChannelId: "parent_channel_id",
   ParentId: "parent_id",
   HasSubchannels: "has_subchannels",
   Members: "members",

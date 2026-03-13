@@ -12,15 +12,10 @@ export type PropertyMarketingListAddress = {
   address1?: string | undefined;
   address2?: string | undefined;
   city?: string | undefined;
-  company?: string | undefined;
   country?: string | undefined;
-  fromEmail?: string | undefined;
-  fromName?: string | undefined;
-  language?: string | undefined;
-  phone?: string | undefined;
-  state?: string | undefined;
-  subject?: string | undefined;
-  zip?: string | undefined;
+  countryCode?: string | undefined;
+  postalCode?: string | undefined;
+  region?: string | undefined;
 };
 
 /** @internal */
@@ -32,19 +27,14 @@ export const PropertyMarketingListAddress$inboundSchema: z.ZodType<
   address1: z.string().optional(),
   address2: z.string().optional(),
   city: z.string().optional(),
-  company: z.string().optional(),
   country: z.string().optional(),
-  from_email: z.string().optional(),
-  from_name: z.string().optional(),
-  language: z.string().optional(),
-  phone: z.string().optional(),
-  state: z.string().optional(),
-  subject: z.string().optional(),
-  zip: z.string().optional(),
+  country_code: z.string().optional(),
+  postal_code: z.string().optional(),
+  region: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "from_email": "fromEmail",
-    "from_name": "fromName",
+    "country_code": "countryCode",
+    "postal_code": "postalCode",
   });
 });
 /** @internal */
@@ -52,15 +42,10 @@ export type PropertyMarketingListAddress$Outbound = {
   address1?: string | undefined;
   address2?: string | undefined;
   city?: string | undefined;
-  company?: string | undefined;
   country?: string | undefined;
-  from_email?: string | undefined;
-  from_name?: string | undefined;
-  language?: string | undefined;
-  phone?: string | undefined;
-  state?: string | undefined;
-  subject?: string | undefined;
-  zip?: string | undefined;
+  country_code?: string | undefined;
+  postal_code?: string | undefined;
+  region?: string | undefined;
 };
 
 /** @internal */
@@ -72,19 +57,14 @@ export const PropertyMarketingListAddress$outboundSchema: z.ZodType<
   address1: z.string().optional(),
   address2: z.string().optional(),
   city: z.string().optional(),
-  company: z.string().optional(),
   country: z.string().optional(),
-  fromEmail: z.string().optional(),
-  fromName: z.string().optional(),
-  language: z.string().optional(),
-  phone: z.string().optional(),
-  state: z.string().optional(),
-  subject: z.string().optional(),
-  zip: z.string().optional(),
+  countryCode: z.string().optional(),
+  postalCode: z.string().optional(),
+  region: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    fromEmail: "from_email",
-    fromName: "from_name",
+    countryCode: "country_code",
+    postalCode: "postal_code",
   });
 });
 

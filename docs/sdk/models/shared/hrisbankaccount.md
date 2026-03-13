@@ -1,7 +1,5 @@
 # HrisBankaccount
 
-Employee payroll bank account for direct deposit.
-
 ## Example Usage
 
 ```typescript

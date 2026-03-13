@@ -23,7 +23,6 @@ export type PropertyMessagingEventChannel = {
   isPrivate?: boolean | undefined;
   members?: Array<MessagingMember> | undefined;
   name: string;
-  parentChannelId?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
@@ -45,7 +44,6 @@ export const PropertyMessagingEventChannel$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   members: z.array(MessagingMember$inboundSchema).optional(),
   name: z.string(),
-  parent_channel_id: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -57,7 +55,6 @@ export const PropertyMessagingEventChannel$inboundSchema: z.ZodType<
     "has_subchannels": "hasSubchannels",
     "is_active": "isActive",
     "is_private": "isPrivate",
-    "parent_channel_id": "parentChannelId",
     "parent_id": "parentId",
     "updated_at": "updatedAt",
     "web_url": "webUrl",
@@ -73,7 +70,6 @@ export type PropertyMessagingEventChannel$Outbound = {
   is_private?: boolean | undefined;
   members?: Array<MessagingMember$Outbound> | undefined;
   name: string;
-  parent_channel_id?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
@@ -94,7 +90,6 @@ export const PropertyMessagingEventChannel$outboundSchema: z.ZodType<
   isPrivate: z.boolean().optional(),
   members: z.array(MessagingMember$outboundSchema).optional(),
   name: z.string(),
-  parentChannelId: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -105,7 +100,6 @@ export const PropertyMessagingEventChannel$outboundSchema: z.ZodType<
     hasSubchannels: "has_subchannels",
     isActive: "is_active",
     isPrivate: "is_private",
-    parentChannelId: "parent_channel_id",
     parentId: "parent_id",
     updatedAt: "updated_at",
     webUrl: "web_url",

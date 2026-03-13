@@ -23,8 +23,6 @@ export const UpdateAdsCampaignQueryParamFields = {
   Goal: "goal",
   PlannedSpendAmount: "planned_spend_amount",
   FrequencyCap: "frequency_cap",
-  BidStrategy: "bid_strategy",
-  SpecialAdCategories: "special_ad_categories",
   AdvertisingChannelType: "advertising_channel_type",
   CampaignBudgetIdentifier: "campaign_budget_identifier",
   Currency: "currency",

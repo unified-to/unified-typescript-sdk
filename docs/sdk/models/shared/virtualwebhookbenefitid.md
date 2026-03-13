@@ -1,41 +1,17 @@
 # VirtualWebhookBenefitId
 
-
-## Supported Types
-
-### `{ [k: string]: any }`
+## Example Usage
 
 ```typescript
-const value: { [k: string]: any } = {
-  "key": "<value>",
-  "key1": "<value>",
-  "key2": "<value>",
-};
+import { VirtualWebhookBenefitId } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: VirtualWebhookBenefitId = "not-supported";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
-### `string`
+## Values
 
 ```typescript
-const value: string = "<value>";
+"supported-required" | "supported" | "not-supported" | Unrecognized<string>
 ```
-
-### `number`
-
-```typescript
-const value: number = 1284.03;
-```
-
-### `boolean`
-
-```typescript
-const value: boolean = true;
-```
-
-### `shared.IntegrationSupport5[]`
-
-```typescript
-const value: shared.IntegrationSupport5[] = [
-  "<value>",
-];
-```
-

@@ -65,23 +65,19 @@ export type AdsCreative = {
   height?: number | undefined;
   hostingSource?: HostingSource | undefined;
   id?: string | undefined;
-  imageHash?: string | undefined;
   itemId?: string | undefined;
   linkUrl?: string | undefined;
   metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
-  pageIdentifier?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: AdsCreativeStatus | undefined;
   thirdPartyTag?: string | undefined;
-  thumbnailUrl?: string | undefined;
   title?: string | undefined;
   updatedAt?: Date | undefined;
   vastTagUrl?: string | undefined;
-  videoId?: string | undefined;
   width?: number | undefined;
 };
 
@@ -144,24 +140,20 @@ export const AdsCreative$inboundSchema: z.ZodType<
   height: z.number().optional(),
   hosting_source: HostingSource$inboundSchema.optional(),
   id: z.string().optional(),
-  image_hash: z.string().optional(),
   item_id: z.string().optional(),
   link_url: z.string().optional(),
   metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
-  page_identifier: z.string().optional(),
   path1: z.string().optional(),
   path2: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: AdsCreativeStatus$inboundSchema.optional(),
   third_party_tag: z.string().optional(),
-  thumbnail_url: z.string().optional(),
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   vast_tag_url: z.string().optional(),
-  video_id: z.string().optional(),
   width: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -174,16 +166,12 @@ export const AdsCreative$inboundSchema: z.ZodType<
     "external_placement_reference": "externalPlacementReference",
     "group_id": "groupId",
     "hosting_source": "hostingSource",
-    "image_hash": "imageHash",
     "item_id": "itemId",
     "link_url": "linkUrl",
     "organization_id": "organizationId",
-    "page_identifier": "pageIdentifier",
     "third_party_tag": "thirdPartyTag",
-    "thumbnail_url": "thumbnailUrl",
     "updated_at": "updatedAt",
     "vast_tag_url": "vastTagUrl",
-    "video_id": "videoId",
   });
 });
 /** @internal */
@@ -201,23 +189,19 @@ export type AdsCreative$Outbound = {
   height?: number | undefined;
   hosting_source?: string | undefined;
   id?: string | undefined;
-  image_hash?: string | undefined;
   item_id?: string | undefined;
   link_url?: string | undefined;
   metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
-  page_identifier?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: string | undefined;
   third_party_tag?: string | undefined;
-  thumbnail_url?: string | undefined;
   title?: string | undefined;
   updated_at?: string | undefined;
   vast_tag_url?: string | undefined;
-  video_id?: string | undefined;
   width?: number | undefined;
 };
 
@@ -240,23 +224,19 @@ export const AdsCreative$outboundSchema: z.ZodType<
   height: z.number().optional(),
   hostingSource: HostingSource$outboundSchema.optional(),
   id: z.string().optional(),
-  imageHash: z.string().optional(),
   itemId: z.string().optional(),
   linkUrl: z.string().optional(),
   metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
-  pageIdentifier: z.string().optional(),
   path1: z.string().optional(),
   path2: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: AdsCreativeStatus$outboundSchema.optional(),
   thirdPartyTag: z.string().optional(),
-  thumbnailUrl: z.string().optional(),
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   vastTagUrl: z.string().optional(),
-  videoId: z.string().optional(),
   width: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -269,16 +249,12 @@ export const AdsCreative$outboundSchema: z.ZodType<
     externalPlacementReference: "external_placement_reference",
     groupId: "group_id",
     hostingSource: "hosting_source",
-    imageHash: "image_hash",
     itemId: "item_id",
     linkUrl: "link_url",
     organizationId: "organization_id",
-    pageIdentifier: "page_identifier",
     thirdPartyTag: "third_party_tag",
-    thumbnailUrl: "thumbnail_url",
     updatedAt: "updated_at",
     vastTagUrl: "vast_tag_url",
-    videoId: "video_id",
   });
 });
 

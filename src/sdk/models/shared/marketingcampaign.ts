@@ -22,16 +22,13 @@ export const MarketingCampaignStatus = {
 } as const;
 export type MarketingCampaignStatus = OpenEnum<typeof MarketingCampaignStatus>;
 
-/**
- * A marketing campaign or email send
- */
 export type MarketingCampaign = {
   createdAt?: Date | undefined;
   fromEmail?: string | undefined;
   fromName?: string | undefined;
   id?: string | undefined;
   /**
-   * Associated list/audience IDs
+   * Associated listaudience IDs
    */
   listIds?: Array<string> | undefined;
   name?: string | undefined;

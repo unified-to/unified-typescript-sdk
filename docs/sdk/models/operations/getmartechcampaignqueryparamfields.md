@@ -5,11 +5,11 @@
 ```typescript
 import { GetMartechCampaignQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetMartechCampaignQueryParamFields = "name";
+let value: GetMartechCampaignQueryParamFields = "created_at";
 ```
 
 ## Values
 
 ```typescript
-"id" | "name" | "type" | "status" | "list_ids" | "subject_line" | "preview_text" | "from_name" | "from_email" | "reply_to_email" | "send_at" | "created_at" | "updated_at" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "type" | "status" | "list_ids" | "subject_line" | "preview_text" | "from_name" | "from_email" | "reply_to_email" | "send_at" | "raw"
 ```

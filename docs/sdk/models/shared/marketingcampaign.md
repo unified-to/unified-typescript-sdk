@@ -1,7 +1,5 @@
 # MarketingCampaign
 
-A marketing campaign or email send
-
 ## Example Usage
 
 ```typescript
@@ -18,7 +16,7 @@ let value: MarketingCampaign = {};
 | `fromEmail`                                                                                   | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `fromName`                                                                                    | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `listIds`                                                                                     | *string*[]                                                                                    | :heavy_minus_sign:                                                                            | Associated list/audience IDs                                                                  |
+| `listIds`                                                                                     | *string*[]                                                                                    | :heavy_minus_sign:                                                                            | Associated listaudience IDs                                                                   |
 | `name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `previewText`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |

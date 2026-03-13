@@ -21,7 +21,6 @@ export type MessagingChannel = {
   isPrivate?: boolean | undefined;
   members?: Array<MessagingMember> | undefined;
   name: string;
-  parentChannelId?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
@@ -43,7 +42,6 @@ export const MessagingChannel$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   members: z.array(MessagingMember$inboundSchema).optional(),
   name: z.string(),
-  parent_channel_id: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -55,7 +53,6 @@ export const MessagingChannel$inboundSchema: z.ZodType<
     "has_subchannels": "hasSubchannels",
     "is_active": "isActive",
     "is_private": "isPrivate",
-    "parent_channel_id": "parentChannelId",
     "parent_id": "parentId",
     "updated_at": "updatedAt",
     "web_url": "webUrl",

@@ -10,10 +10,6 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  PropertyAdsReportMetricsCampaignBidStrategy,
-  PropertyAdsReportMetricsCampaignBidStrategy$inboundSchema,
-} from "./propertyadsreportmetricscampaignbidstrategy.js";
-import {
   PropertyAdsReportMetricsCampaignFrequencyCap,
   PropertyAdsReportMetricsCampaignFrequencyCap$inboundSchema,
 } from "./propertyadsreportmetricscampaignfrequencycap.js";
@@ -80,10 +76,6 @@ export type PropertyAdsReportMetricsCampaign = {
   advertisingChannelType?:
     | PropertyAdsReportMetricsCampaignAdvertisingChannelType
     | undefined;
-  /**
-   * YOUTUBE_AND_PARTNERS
-   */
-  bidStrategy?: PropertyAdsReportMetricsCampaignBidStrategy | undefined;
   budgetAmount?: number | undefined;
   budgetPeriod?: PropertyAdsReportMetricsCampaignBudgetPeriod | undefined;
   campaignBudgetIdentifier?: string | undefined;
@@ -97,7 +89,6 @@ export type PropertyAdsReportMetricsCampaign = {
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
-  specialAdCategories?: Array<string> | undefined;
   startAt?: Date | undefined;
   status?: PropertyAdsReportMetricsCampaignStatus | undefined;
   targeting?: PropertyAdsReportMetricsCampaignTargeting | undefined;
@@ -146,8 +137,6 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   advertising_channel_type:
     PropertyAdsReportMetricsCampaignAdvertisingChannelType$inboundSchema
       .optional(),
-  bid_strategy: PropertyAdsReportMetricsCampaignBidStrategy$inboundSchema
-    .optional(),
   budget_amount: z.number().optional(),
   budget_period: PropertyAdsReportMetricsCampaignBudgetPeriod$inboundSchema
     .optional(),
@@ -165,7 +154,6 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   organization_id: z.string().optional(),
   planned_spend_amount: z.number().optional(),
   raw: z.record(z.any()).optional(),
-  special_ad_categories: z.array(z.string()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   status: PropertyAdsReportMetricsCampaignStatus$inboundSchema.optional(),
@@ -176,7 +164,6 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "advertising_channel_type": "advertisingChannelType",
-    "bid_strategy": "bidStrategy",
     "budget_amount": "budgetAmount",
     "budget_period": "budgetPeriod",
     "campaign_budget_identifier": "campaignBudgetIdentifier",
@@ -185,7 +172,6 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
     "frequency_cap": "frequencyCap",
     "organization_id": "organizationId",
     "planned_spend_amount": "plannedSpendAmount",
-    "special_ad_categories": "specialAdCategories",
     "start_at": "startAt",
     "total_spend_amount": "totalSpendAmount",
     "updated_at": "updatedAt",

@@ -12,7 +12,6 @@ export const CreateCommerceItemvariantQueryParamFields = {
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
   Name: "name",
-  Items: "items",
   PublicName: "public_name",
   Description: "description",
   PublicDescription: "public_description",
@@ -35,6 +34,7 @@ export const CreateCommerceItemvariantQueryParamFields = {
   InventoryId: "inventory_id",
   RequiresShipping: "requires_shipping",
   Metadata: "metadata",
+  Items: "items",
   Raw: "raw",
 } as const;
 export type CreateCommerceItemvariantQueryParamFields = ClosedEnum<
@@ -42,7 +42,7 @@ export type CreateCommerceItemvariantQueryParamFields = ClosedEnum<
 >;
 
 export type CreateCommerceItemvariantRequest = {
-  commerceItemvariant: shared.CommerceItemvariant1;
+  commerceItemvariant: shared.CommerceItemvariant;
   /**
    * ID of the connection
    */
@@ -64,7 +64,7 @@ export const CreateCommerceItemvariantQueryParamFields$outboundSchema:
 
 /** @internal */
 export type CreateCommerceItemvariantRequest$Outbound = {
-  CommerceItemvariant: shared.CommerceItemvariant1$Outbound;
+  CommerceItemvariant: shared.CommerceItemvariant$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   raw?: string | undefined;
@@ -76,7 +76,7 @@ export const CreateCommerceItemvariantRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateCommerceItemvariantRequest
 > = z.object({
-  commerceItemvariant: shared.CommerceItemvariant1$outboundSchema,
+  commerceItemvariant: shared.CommerceItemvariant$outboundSchema,
   connectionId: z.string(),
   fields: z.array(CreateCommerceItemvariantQueryParamFields$outboundSchema)
     .optional(),

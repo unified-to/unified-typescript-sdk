@@ -35,7 +35,7 @@ export function commerceListCommerceItemvariants(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.CommerceItemvariant1>,
+    Array<shared.CommerceItemvariant>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -60,7 +60,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      Array<shared.CommerceItemvariant1>,
+      Array<shared.CommerceItemvariant>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -157,7 +157,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.CommerceItemvariant1>,
+    Array<shared.CommerceItemvariant>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -167,7 +167,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.CommerceItemvariant1$inboundSchema)),
+    M.json(200, z.array(shared.CommerceItemvariant$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

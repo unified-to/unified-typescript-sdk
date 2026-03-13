@@ -8,6 +8,8 @@ import { ClosedEnum } from "../../types/enums.js";
 
 export const GetMartechCampaignQueryParamFields = {
   Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
   Name: "name",
   Type: "type",
   Status: "status",
@@ -18,8 +20,6 @@ export const GetMartechCampaignQueryParamFields = {
   FromEmail: "from_email",
   ReplyToEmail: "reply_to_email",
   SendAt: "send_at",
-  CreatedAt: "created_at",
-  UpdatedAt: "updated_at",
   Raw: "raw",
 } as const;
 export type GetMartechCampaignQueryParamFields = ClosedEnum<

@@ -14,10 +14,10 @@ import {
   CommerceItemMedia$outboundSchema,
 } from "./commerceitemmedia.js";
 import {
-  CommerceItemVariant,
-  CommerceItemVariant$inboundSchema,
-  CommerceItemVariant$Outbound,
-  CommerceItemVariant$outboundSchema,
+  CommerceItemvariant,
+  CommerceItemvariant$inboundSchema,
+  CommerceItemvariant$Outbound,
+  CommerceItemvariant$outboundSchema,
 } from "./commerceitemvariant.js";
 import {
   CommerceMetadata,
@@ -62,7 +62,7 @@ export type CommerceItem = {
   /**
    * first variant is the default variant
    */
-  variants?: Array<CommerceItemVariant> | undefined;
+  variants?: Array<CommerceItemvariant> | undefined;
   vendorName?: string | undefined;
 };
 
@@ -94,7 +94,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  variants: z.array(CommerceItemVariant$inboundSchema).optional(),
+  variants: z.array(CommerceItemvariant$inboundSchema).optional(),
   vendor_name: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -133,7 +133,7 @@ export type CommerceItem$Outbound = {
   taxrate_id?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
-  variants?: Array<CommerceItemVariant$Outbound> | undefined;
+  variants?: Array<CommerceItemvariant$Outbound> | undefined;
   vendor_name?: string | undefined;
 };
 
@@ -163,7 +163,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   taxrateId: z.string().optional(),
   type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  variants: z.array(CommerceItemVariant$outboundSchema).optional(),
+  variants: z.array(CommerceItemvariant$outboundSchema).optional(),
   vendorName: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

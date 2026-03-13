@@ -88,7 +88,6 @@ export type PropertyAdsReportMetricsGroupType = OpenEnum<
 >;
 
 export type PropertyAdsReportMetricsGroup = {
-  adGroupType?: string | undefined;
   bidAmount?: number | undefined;
   /**
    * YOUTUBE_AND_PARTNERS
@@ -106,13 +105,11 @@ export type PropertyAdsReportMetricsGroup = {
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
   currency?: string | undefined;
-  dailySpendCap?: number | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsReportMetricsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
-  lifetimeSpendCap?: number | undefined;
   metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   optimizationGoal?: string | undefined;
@@ -171,7 +168,6 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  ad_group_type: z.string().optional(),
   bid_amount: z.number().optional(),
   bid_strategy: PropertyAdsReportMetricsGroupBidStrategy$inboundSchema
     .optional(),
@@ -188,7 +184,6 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     .optional(),
   creative_ids: z.array(z.string()).optional(),
   currency: z.string().optional(),
-  daily_spend_cap: z.number().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema
@@ -196,7 +191,6 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
-  lifetime_spend_cap: z.number().optional(),
   metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   optimization_goal: z.string().optional(),
@@ -213,7 +207,6 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
-    "ad_group_type": "adGroupType",
     "bid_amount": "bidAmount",
     "bid_strategy": "bidStrategy",
     "billing_event": "billingEvent",
@@ -225,12 +218,10 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
-    "daily_spend_cap": "dailySpendCap",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
     "has_eu_political_ads": "hasEuPoliticalAds",
     "insertionorder_id": "insertionorderId",
-    "lifetime_spend_cap": "lifetimeSpendCap",
     "optimization_goal": "optimizationGoal",
     "organization_id": "organizationId",
     "parent_id": "parentId",

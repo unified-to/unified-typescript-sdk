@@ -9,6 +9,8 @@ import * as shared from "../shared/index.js";
 
 export const UpdateMartechCampaignQueryParamFields = {
   Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
   Name: "name",
   Type: "type",
   Status: "status",
@@ -19,8 +21,6 @@ export const UpdateMartechCampaignQueryParamFields = {
   FromEmail: "from_email",
   ReplyToEmail: "reply_to_email",
   SendAt: "send_at",
-  CreatedAt: "created_at",
-  UpdatedAt: "updated_at",
   Raw: "raw",
 } as const;
 export type UpdateMartechCampaignQueryParamFields = ClosedEnum<
@@ -28,9 +28,6 @@ export type UpdateMartechCampaignQueryParamFields = ClosedEnum<
 >;
 
 export type UpdateMartechCampaignRequest = {
-  /**
-   * A marketing campaign or email send
-   */
   marketingCampaign: shared.MarketingCampaign;
   /**
    * ID of the connection

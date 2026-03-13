@@ -21,6 +21,7 @@ export const CreateCrmDealQueryParamFields = {
   Pipeline: "pipeline",
   PipelineId: "pipeline_id",
   Stages: "stages",
+  Pipelines: "pipelines",
   Source: "source",
   Probability: "probability",
   Tags: "tags",
@@ -31,7 +32,6 @@ export const CreateCrmDealQueryParamFields = {
   CompanyIds: "company_ids",
   Metadata: "metadata",
   Raw: "raw",
-  Pipelines: "pipelines",
 } as const;
 export type CreateCrmDealQueryParamFields = ClosedEnum<
   typeof CreateCrmDealQueryParamFields

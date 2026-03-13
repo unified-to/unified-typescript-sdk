@@ -16,9 +16,6 @@ export const AccountType = {
 } as const;
 export type AccountType = OpenEnum<typeof AccountType>;
 
-/**
- * Employee payroll bank account for direct deposit.
- */
 export type HrisBankaccount = {
   accountNumber?: string | undefined;
   accountNumberLast4?: string | undefined;

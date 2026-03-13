@@ -1,7 +1,5 @@
 # MarketingReport
 
-Campaign performance report
-
 ## Example Usage
 
 ```typescript

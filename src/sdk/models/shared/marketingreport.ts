@@ -12,9 +12,6 @@ import {
   MarketingReportLink$inboundSchema,
 } from "./marketingreportlink.js";
 
-/**
- * Campaign performance report
- */
 export type MarketingReport = {
   abuseReports?: number | undefined;
   campaignId?: string | undefined;

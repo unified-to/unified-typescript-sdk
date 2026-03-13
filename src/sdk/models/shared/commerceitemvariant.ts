@@ -33,6 +33,12 @@ import {
   CommerceMetadata$Outbound,
   CommerceMetadata$outboundSchema,
 } from "./commercemetadata.js";
+import {
+  CommerceReference,
+  CommerceReference$inboundSchema,
+  CommerceReference$Outbound,
+  CommerceReference$outboundSchema,
+} from "./commercereference.js";
 
 export const SizeUnit = {
   Cm: "cm",
@@ -48,8 +54,9 @@ export const WeightUnit = {
 } as const;
 export type WeightUnit = OpenEnum<typeof WeightUnit>;
 
-export type CommerceItemVariant = {
+export type CommerceItemvariant = {
   availableAt?: Date | undefined;
+  createdAt?: Date | undefined;
   description?: string | undefined;
   height?: number | undefined;
   id?: string | undefined;
@@ -57,6 +64,10 @@ export type CommerceItemVariant = {
   isActive?: boolean | undefined;
   isFeatured?: boolean | undefined;
   isVisible?: boolean | undefined;
+  /**
+   * references CommerceItem
+   */
+  items?: Array<CommerceReference> | undefined;
   length?: number | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
@@ -65,11 +76,13 @@ export type CommerceItemVariant = {
   prices?: Array<CommerceItemPrice> | undefined;
   publicDescription?: string | undefined;
   publicName?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
   requiresShipping?: boolean | undefined;
   sizeUnit?: SizeUnit | undefined;
   sku?: string | undefined;
   tags?: Array<string> | undefined;
   totalStock?: number | undefined;
+  updatedAt?: Date | undefined;
   weight?: number | undefined;
   weightUnit?: WeightUnit | undefined;
   width?: number | undefined;
@@ -102,14 +115,16 @@ export const WeightUnit$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(WeightUnit);
 
 /** @internal */
-export const CommerceItemVariant$inboundSchema: z.ZodType<
-  CommerceItemVariant,
+export const CommerceItemvariant$inboundSchema: z.ZodType<
+  CommerceItemvariant,
   z.ZodTypeDef,
   unknown
 > = z.object({
   available_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   description: z.string().optional(),
   height: z.number().optional(),
   id: z.string().optional(),
@@ -117,6 +132,7 @@ export const CommerceItemVariant$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_featured: z.boolean().optional(),
   is_visible: z.boolean().optional(),
+  items: z.array(CommerceReference$inboundSchema).optional(),
   length: z.number().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
   metadata: z.array(CommerceMetadata$inboundSchema).optional(),
@@ -125,17 +141,21 @@ export const CommerceItemVariant$inboundSchema: z.ZodType<
   prices: z.array(CommerceItemPrice$inboundSchema).optional(),
   public_description: z.string().optional(),
   public_name: z.string().optional(),
+  raw: z.record(z.any()).optional(),
   requires_shipping: z.boolean().optional(),
   size_unit: SizeUnit$inboundSchema.optional(),
   sku: z.string().optional(),
   tags: z.array(z.string()).optional(),
   total_stock: z.number().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   weight: z.number().optional(),
   weight_unit: WeightUnit$inboundSchema.optional(),
   width: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     "available_at": "availableAt",
+    "created_at": "createdAt",
     "inventory_id": "inventoryId",
     "is_active": "isActive",
     "is_featured": "isFeatured",
@@ -145,12 +165,14 @@ export const CommerceItemVariant$inboundSchema: z.ZodType<
     "requires_shipping": "requiresShipping",
     "size_unit": "sizeUnit",
     "total_stock": "totalStock",
+    "updated_at": "updatedAt",
     "weight_unit": "weightUnit",
   });
 });
 /** @internal */
-export type CommerceItemVariant$Outbound = {
+export type CommerceItemvariant$Outbound = {
   available_at?: string | undefined;
+  created_at?: string | undefined;
   description?: string | undefined;
   height?: number | undefined;
   id?: string | undefined;
@@ -158,6 +180,7 @@ export type CommerceItemVariant$Outbound = {
   is_active?: boolean | undefined;
   is_featured?: boolean | undefined;
   is_visible?: boolean | undefined;
+  items?: Array<CommerceReference$Outbound> | undefined;
   length?: number | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
   metadata?: Array<CommerceMetadata$Outbound> | undefined;
@@ -166,23 +189,26 @@ export type CommerceItemVariant$Outbound = {
   prices?: Array<CommerceItemPrice$Outbound> | undefined;
   public_description?: string | undefined;
   public_name?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
   requires_shipping?: boolean | undefined;
   size_unit?: string | undefined;
   sku?: string | undefined;
   tags?: Array<string> | undefined;
   total_stock?: number | undefined;
+  updated_at?: string | undefined;
   weight?: number | undefined;
   weight_unit?: string | undefined;
   width?: number | undefined;
 };
 
 /** @internal */
-export const CommerceItemVariant$outboundSchema: z.ZodType<
-  CommerceItemVariant$Outbound,
+export const CommerceItemvariant$outboundSchema: z.ZodType<
+  CommerceItemvariant$Outbound,
   z.ZodTypeDef,
-  CommerceItemVariant
+  CommerceItemvariant
 > = z.object({
   availableAt: z.date().transform(v => v.toISOString()).optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   height: z.number().optional(),
   id: z.string().optional(),
@@ -190,6 +216,7 @@ export const CommerceItemVariant$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
   isVisible: z.boolean().optional(),
+  items: z.array(CommerceReference$outboundSchema).optional(),
   length: z.number().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
   metadata: z.array(CommerceMetadata$outboundSchema).optional(),
@@ -198,17 +225,20 @@ export const CommerceItemVariant$outboundSchema: z.ZodType<
   prices: z.array(CommerceItemPrice$outboundSchema).optional(),
   publicDescription: z.string().optional(),
   publicName: z.string().optional(),
+  raw: z.record(z.any()).optional(),
   requiresShipping: z.boolean().optional(),
   sizeUnit: SizeUnit$outboundSchema.optional(),
   sku: z.string().optional(),
   tags: z.array(z.string()).optional(),
   totalStock: z.number().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
   weight: z.number().optional(),
   weightUnit: WeightUnit$outboundSchema.optional(),
   width: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     availableAt: "available_at",
+    createdAt: "created_at",
     inventoryId: "inventory_id",
     isActive: "is_active",
     isFeatured: "is_featured",
@@ -218,23 +248,24 @@ export const CommerceItemVariant$outboundSchema: z.ZodType<
     requiresShipping: "requires_shipping",
     sizeUnit: "size_unit",
     totalStock: "total_stock",
+    updatedAt: "updated_at",
     weightUnit: "weight_unit",
   });
 });
 
-export function commerceItemVariantToJSON(
-  commerceItemVariant: CommerceItemVariant,
+export function commerceItemvariantToJSON(
+  commerceItemvariant: CommerceItemvariant,
 ): string {
   return JSON.stringify(
-    CommerceItemVariant$outboundSchema.parse(commerceItemVariant),
+    CommerceItemvariant$outboundSchema.parse(commerceItemvariant),
   );
 }
-export function commerceItemVariantFromJSON(
+export function commerceItemvariantFromJSON(
   jsonString: string,
-): SafeParseResult<CommerceItemVariant, SDKValidationError> {
+): SafeParseResult<CommerceItemvariant, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => CommerceItemVariant$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CommerceItemVariant' from JSON`,
+    (x) => CommerceItemvariant$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemvariant' from JSON`,
   );
 }

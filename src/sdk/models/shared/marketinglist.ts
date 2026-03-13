@@ -22,15 +22,16 @@ export type MarketingList = {
   createdAt?: Date | undefined;
   description?: string | undefined;
   endAt?: Date | undefined;
-  fromEmail?: string | undefined;
-  fromName?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   language?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  senderCompany?: string | undefined;
+  senderEmail?: string | undefined;
+  senderName?: string | undefined;
+  senderPhone?: string | undefined;
   startAt?: Date | undefined;
-  state?: string | undefined;
   subject?: string | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
@@ -48,16 +49,17 @@ export const MarketingList$inboundSchema: z.ZodType<
   description: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  from_email: z.string().optional(),
-  from_name: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   language: z.string().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  sender_company: z.string().optional(),
+  sender_email: z.string().optional(),
+  sender_name: z.string().optional(),
+  sender_phone: z.string().optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  state: z.string().optional(),
   subject: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -66,9 +68,11 @@ export const MarketingList$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "end_at": "endAt",
-    "from_email": "fromEmail",
-    "from_name": "fromName",
     "is_active": "isActive",
+    "sender_company": "senderCompany",
+    "sender_email": "senderEmail",
+    "sender_name": "senderName",
+    "sender_phone": "senderPhone",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -80,15 +84,16 @@ export type MarketingList$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
   end_at?: string | undefined;
-  from_email?: string | undefined;
-  from_name?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
   language?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  sender_company?: string | undefined;
+  sender_email?: string | undefined;
+  sender_name?: string | undefined;
+  sender_phone?: string | undefined;
   start_at?: string | undefined;
-  state?: string | undefined;
   subject?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -104,15 +109,16 @@ export const MarketingList$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
-  fromEmail: z.string().optional(),
-  fromName: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   language: z.string().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  senderCompany: z.string().optional(),
+  senderEmail: z.string().optional(),
+  senderName: z.string().optional(),
+  senderPhone: z.string().optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
-  state: z.string().optional(),
   subject: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
@@ -120,9 +126,11 @@ export const MarketingList$outboundSchema: z.ZodType<
   return remap$(v, {
     createdAt: "created_at",
     endAt: "end_at",
-    fromEmail: "from_email",
-    fromName: "from_name",
     isActive: "is_active",
+    senderCompany: "sender_company",
+    senderEmail: "sender_email",
+    senderName: "sender_name",
+    senderPhone: "sender_phone",
     startAt: "start_at",
     updatedAt: "updated_at",
     userId: "user_id",

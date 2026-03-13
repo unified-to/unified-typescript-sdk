@@ -30,7 +30,7 @@ export type ListCommerceInventoriesRequest = {
    */
   fields?: Array<ListCommerceInventoriesQueryParamFields> | undefined;
   /**
-   * The item variant ID to filter by (reference to CommerceItemVariant)
+   * The item variant ID to filter by (reference to CommerceCommerceItemvariant)
    */
   itemVariantId?: string | undefined;
   limit?: number | undefined;

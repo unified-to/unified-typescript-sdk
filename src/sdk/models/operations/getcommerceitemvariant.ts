@@ -11,7 +11,6 @@ export const GetCommerceItemvariantQueryParamFields = {
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
   Name: "name",
-  Items: "items",
   PublicName: "public_name",
   Description: "description",
   PublicDescription: "public_description",
@@ -34,6 +33,7 @@ export const GetCommerceItemvariantQueryParamFields = {
   InventoryId: "inventory_id",
   RequiresShipping: "requires_shipping",
   Metadata: "metadata",
+  Items: "items",
   Raw: "raw",
 } as const;
 export type GetCommerceItemvariantQueryParamFields = ClosedEnum<

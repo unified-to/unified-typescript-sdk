@@ -27,9 +27,6 @@ export type PatchHrisBankaccountQueryParamFields = ClosedEnum<
 >;
 
 export type PatchHrisBankaccountRequest = {
-  /**
-   * Employee payroll bank account for direct deposit.
-   */
   hrisBankaccount: shared.HrisBankaccount;
   /**
    * ID of the connection

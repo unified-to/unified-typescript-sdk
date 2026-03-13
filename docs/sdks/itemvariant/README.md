@@ -82,7 +82,7 @@ run();
 
 ### Response
 
-**Promise\<[shared.CommerceItemvariant1](../../sdk/models/shared/commerceitemvariant1.md)\>**
+**Promise\<[shared.CommerceItemvariant](../../sdk/models/shared/commerceitemvariant.md)\>**
 
 ### Errors
 
@@ -161,7 +161,7 @@ run();
 
 ### Response
 
-**Promise\<[shared.CommerceItemvariant1](../../sdk/models/shared/commerceitemvariant1.md)\>**
+**Promise\<[shared.CommerceItemvariant](../../sdk/models/shared/commerceitemvariant.md)\>**
 
 ### Errors
 
@@ -238,7 +238,7 @@ run();
 
 ### Response
 
-**Promise\<[shared.CommerceItemvariant1[]](../../models/.md)\>**
+**Promise\<[shared.CommerceItemvariant[]](../../models/.md)\>**
 
 ### Errors
 
@@ -319,7 +319,7 @@ run();
 
 ### Response
 
-**Promise\<[shared.CommerceItemvariant1](../../sdk/models/shared/commerceitemvariant1.md)\>**
+**Promise\<[shared.CommerceItemvariant](../../sdk/models/shared/commerceitemvariant.md)\>**
 
 ### Errors
 
@@ -479,7 +479,7 @@ run();
 
 ### Response
 
-**Promise\<[shared.CommerceItemvariant1](../../sdk/models/shared/commerceitemvariant1.md)\>**
+**Promise\<[shared.CommerceItemvariant](../../sdk/models/shared/commerceitemvariant.md)\>**
 
 ### Errors
 

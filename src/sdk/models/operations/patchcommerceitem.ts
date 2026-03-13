@@ -15,7 +15,6 @@ export const PatchCommerceItemQueryParamFields = {
   PublicName: "public_name",
   Slug: "slug",
   Description: "description",
-  TaxrateId: "taxrate_id",
   GlobalCode: "global_code",
   PublicDescription: "public_description",
   IsActive: "is_active",
@@ -28,8 +27,9 @@ export const PatchCommerceItemQueryParamFields = {
   CollectionIds: "collection_ids",
   AccountId: "account_id",
   Metadata: "metadata",
-  Raw: "raw",
   Collections: "collections",
+  TaxrateId: "taxrate_id",
+  Raw: "raw",
 } as const;
 export type PatchCommerceItemQueryParamFields = ClosedEnum<
   typeof PatchCommerceItemQueryParamFields

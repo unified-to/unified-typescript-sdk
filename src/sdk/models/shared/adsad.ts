@@ -15,12 +15,6 @@ import {
   AdsMetadata$Outbound,
   AdsMetadata$outboundSchema,
 } from "./adsmetadata.js";
-import {
-  PropertyAdsAdTargeting,
-  PropertyAdsAdTargeting$inboundSchema,
-  PropertyAdsAdTargeting$Outbound,
-  PropertyAdsAdTargeting$outboundSchema,
-} from "./propertyadsadtargeting.js";
 
 export const AdType = {
   Text: "TEXT",
@@ -59,22 +53,17 @@ export type AdsAd = {
   cta?: string | undefined;
   description?: string | undefined;
   displayUrl?: string | undefined;
-  endAt?: Date | undefined;
   finalUrl?: string | undefined;
   groupId?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
-  isActive?: boolean | undefined;
-  itemId?: string | undefined;
   metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  startAt?: Date | undefined;
   status?: AdsAdStatus | undefined;
-  targeting?: PropertyAdsAdTargeting | undefined;
   updatedAt?: Date | undefined;
 };
 
@@ -112,24 +101,17 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
     cta: z.string().optional(),
     description: z.string().optional(),
     display_url: z.string().optional(),
-    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
     final_url: z.string().optional(),
     group_id: z.string().optional(),
     headline: z.string().optional(),
     id: z.string().optional(),
-    is_active: z.boolean().optional(),
-    item_id: z.string().optional(),
     metadata: z.array(AdsMetadata$inboundSchema).optional(),
     name: z.string().optional(),
     organization_id: z.string().optional(),
     path1: z.string().optional(),
     path2: z.string().optional(),
     raw: z.record(z.any()).optional(),
-    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
     status: AdsAdStatus$inboundSchema.optional(),
-    targeting: PropertyAdsAdTargeting$inboundSchema.optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
@@ -142,13 +124,9 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
       "creative_asset_url": "creativeAssetUrl",
       "creative_ids": "creativeIds",
       "display_url": "displayUrl",
-      "end_at": "endAt",
       "final_url": "finalUrl",
       "group_id": "groupId",
-      "is_active": "isActive",
-      "item_id": "itemId",
       "organization_id": "organizationId",
-      "start_at": "startAt",
       "updated_at": "updatedAt",
     });
   });
@@ -163,22 +141,17 @@ export type AdsAd$Outbound = {
   cta?: string | undefined;
   description?: string | undefined;
   display_url?: string | undefined;
-  end_at?: string | undefined;
   final_url?: string | undefined;
   group_id?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
-  is_active?: boolean | undefined;
-  item_id?: string | undefined;
   metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
   status?: string | undefined;
-  targeting?: PropertyAdsAdTargeting$Outbound | undefined;
   updated_at?: string | undefined;
 };
 
@@ -197,22 +170,17 @@ export const AdsAd$outboundSchema: z.ZodType<
   cta: z.string().optional(),
   description: z.string().optional(),
   displayUrl: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
   finalUrl: z.string().optional(),
   groupId: z.string().optional(),
   headline: z.string().optional(),
   id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  itemId: z.string().optional(),
   metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   path1: z.string().optional(),
   path2: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
   status: AdsAdStatus$outboundSchema.optional(),
-  targeting: PropertyAdsAdTargeting$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -223,13 +191,9 @@ export const AdsAd$outboundSchema: z.ZodType<
     creativeAssetUrl: "creative_asset_url",
     creativeIds: "creative_ids",
     displayUrl: "display_url",
-    endAt: "end_at",
     finalUrl: "final_url",
     groupId: "group_id",
-    isActive: "is_active",
-    itemId: "item_id",
     organizationId: "organization_id",
-    startAt: "start_at",
     updatedAt: "updated_at",
   });
 });

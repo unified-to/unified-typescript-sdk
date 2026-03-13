@@ -20,7 +20,7 @@ export class Itemvariant extends ClientSDK {
   async createCommerceItemvariant(
     request: operations.CreateCommerceItemvariantRequest,
     options?: RequestOptions,
-  ): Promise<shared.CommerceItemvariant1> {
+  ): Promise<shared.CommerceItemvariant> {
     return unwrapAsync(commerceCreateCommerceItemvariant(
       this,
       request,
@@ -34,7 +34,7 @@ export class Itemvariant extends ClientSDK {
   async getCommerceItemvariant(
     request: operations.GetCommerceItemvariantRequest,
     options?: RequestOptions,
-  ): Promise<shared.CommerceItemvariant1> {
+  ): Promise<shared.CommerceItemvariant> {
     return unwrapAsync(commerceGetCommerceItemvariant(
       this,
       request,
@@ -48,7 +48,7 @@ export class Itemvariant extends ClientSDK {
   async listCommerceItemvariants(
     request: operations.ListCommerceItemvariantsRequest,
     options?: RequestOptions,
-  ): Promise<Array<shared.CommerceItemvariant1>> {
+  ): Promise<Array<shared.CommerceItemvariant>> {
     return unwrapAsync(commerceListCommerceItemvariants(
       this,
       request,
@@ -62,7 +62,7 @@ export class Itemvariant extends ClientSDK {
   async patchCommerceItemvariant(
     request: operations.PatchCommerceItemvariantRequest,
     options?: RequestOptions,
-  ): Promise<shared.CommerceItemvariant1> {
+  ): Promise<shared.CommerceItemvariant> {
     return unwrapAsync(commercePatchCommerceItemvariant(
       this,
       request,
@@ -90,7 +90,7 @@ export class Itemvariant extends ClientSDK {
   async updateCommerceItemvariant(
     request: operations.UpdateCommerceItemvariantRequest,
     options?: RequestOptions,
-  ): Promise<shared.CommerceItemvariant1> {
+  ): Promise<shared.CommerceItemvariant> {
     return unwrapAsync(commerceUpdateCommerceItemvariant(
       this,
       request,

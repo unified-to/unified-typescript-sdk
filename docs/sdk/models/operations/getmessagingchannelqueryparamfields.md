@@ -11,5 +11,5 @@ let value: GetMessagingChannelQueryParamFields = "web_url";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "parent_channel_id" | "parent_id" | "has_subchannels" | "members" | "is_active" | "is_private" | "web_url" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "parent_id" | "has_subchannels" | "members" | "is_active" | "is_private" | "web_url" | "raw"
 ```

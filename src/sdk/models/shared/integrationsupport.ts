@@ -681,20 +681,12 @@ export type VirtualWebhookApplicationId = OpenEnum<
   typeof VirtualWebhookApplicationId
 >;
 
-export type IntegrationSupport1 = {};
-
-export type IntegrationSupport5 =
-  | IntegrationSupport1
-  | string
-  | number
-  | boolean;
-
-export type VirtualWebhookBenefitId =
-  | { [k: string]: any }
-  | string
-  | number
-  | boolean
-  | Array<IntegrationSupport1 | string | number | boolean>;
+export const VirtualWebhookBenefitId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookBenefitId = OpenEnum<typeof VirtualWebhookBenefitId>;
 
 export const VirtualWebhookBillId = {
   SupportedRequired: "supported-required",
@@ -955,20 +947,12 @@ export const VirtualWebhookParentId = {
 } as const;
 export type VirtualWebhookParentId = OpenEnum<typeof VirtualWebhookParentId>;
 
-export type IntegrationSupportSchemas1 = {};
-
-export type IntegrationSupportSchemas5 =
-  | IntegrationSupportSchemas1
-  | string
-  | number
-  | boolean;
-
-export type VirtualWebhookPaymentId =
-  | { [k: string]: any }
-  | string
-  | number
-  | boolean
-  | Array<IntegrationSupportSchemas1 | string | number | boolean>;
+export const VirtualWebhookPaymentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookPaymentId = OpenEnum<typeof VirtualWebhookPaymentId>;
 
 export const VirtualWebhookPipelineId = {
   SupportedRequired: "supported-required",
@@ -1189,13 +1173,7 @@ export type IntegrationSupport = {
   slowFields?: Array<string> | undefined;
   virtualWebhookAdId?: VirtualWebhookAdId | undefined;
   virtualWebhookApplicationId?: VirtualWebhookApplicationId | undefined;
-  virtualWebhookBenefitId?:
-    | { [k: string]: any }
-    | string
-    | number
-    | boolean
-    | Array<IntegrationSupport1 | string | number | boolean>
-    | undefined;
+  virtualWebhookBenefitId?: VirtualWebhookBenefitId | undefined;
   virtualWebhookBillId?: VirtualWebhookBillId | undefined;
   virtualWebhookBranchId?: VirtualWebhookBranchId | undefined;
   virtualWebhookCalendarId?: VirtualWebhookCalendarId | undefined;
@@ -1231,13 +1209,7 @@ export type IntegrationSupport = {
   virtualWebhookOrgId?: VirtualWebhookOrgId | undefined;
   virtualWebhookPageId?: VirtualWebhookPageId | undefined;
   virtualWebhookParentId?: VirtualWebhookParentId | undefined;
-  virtualWebhookPaymentId?:
-    | { [k: string]: any }
-    | string
-    | number
-    | boolean
-    | Array<IntegrationSupportSchemas1 | string | number | boolean>
-    | undefined;
+  virtualWebhookPaymentId?: VirtualWebhookPaymentId | undefined;
   virtualWebhookPipelineId?: VirtualWebhookPipelineId | undefined;
   virtualWebhookProjectId?: VirtualWebhookProjectId | undefined;
   virtualWebhookRepoId?: VirtualWebhookRepoId | undefined;
@@ -1922,73 +1894,11 @@ export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookApplicationId);
 
 /** @internal */
-export const IntegrationSupport1$inboundSchema: z.ZodType<
-  IntegrationSupport1,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-export function integrationSupport1FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSupport1, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSupport1$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSupport1' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSupport5$inboundSchema: z.ZodType<
-  IntegrationSupport5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSupport1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
-
-export function integrationSupport5FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSupport5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSupport5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSupport5' from JSON`,
-  );
-}
-
-/** @internal */
 export const VirtualWebhookBenefitId$inboundSchema: z.ZodType<
   VirtualWebhookBenefitId,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => IntegrationSupport1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
-
-export function virtualWebhookBenefitIdFromJSON(
-  jsonString: string,
-): SafeParseResult<VirtualWebhookBenefitId, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => VirtualWebhookBenefitId$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'VirtualWebhookBenefitId' from JSON`,
-  );
-}
+> = openEnums.inboundSchema(VirtualWebhookBenefitId);
 
 /** @internal */
 export const VirtualWebhookBillId$inboundSchema: z.ZodType<
@@ -2236,73 +2146,11 @@ export const VirtualWebhookParentId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookParentId);
 
 /** @internal */
-export const IntegrationSupportSchemas1$inboundSchema: z.ZodType<
-  IntegrationSupportSchemas1,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-export function integrationSupportSchemas1FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSupportSchemas1, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSupportSchemas1$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSupportSchemas1' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSupportSchemas5$inboundSchema: z.ZodType<
-  IntegrationSupportSchemas5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSupportSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
-
-export function integrationSupportSchemas5FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSupportSchemas5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSupportSchemas5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSupportSchemas5' from JSON`,
-  );
-}
-
-/** @internal */
 export const VirtualWebhookPaymentId$inboundSchema: z.ZodType<
   VirtualWebhookPaymentId,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => IntegrationSupportSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
-
-export function virtualWebhookPaymentIdFromJSON(
-  jsonString: string,
-): SafeParseResult<VirtualWebhookPaymentId, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => VirtualWebhookPaymentId$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'VirtualWebhookPaymentId' from JSON`,
-  );
-}
+> = openEnums.inboundSchema(VirtualWebhookPaymentId);
 
 /** @internal */
 export const VirtualWebhookPipelineId$inboundSchema: z.ZodType<
@@ -2516,20 +2364,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_ad_id: VirtualWebhookAdId$inboundSchema.optional(),
   virtual_webhook_application_id: VirtualWebhookApplicationId$inboundSchema
     .optional(),
-  virtual_webhook_benefit_id: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => IntegrationSupport1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
+  virtual_webhook_benefit_id: VirtualWebhookBenefitId$inboundSchema.optional(),
   virtual_webhook_bill_id: VirtualWebhookBillId$inboundSchema.optional(),
   virtual_webhook_branch_id: VirtualWebhookBranchId$inboundSchema.optional(),
   virtual_webhook_calendar_id: VirtualWebhookCalendarId$inboundSchema
@@ -2572,20 +2407,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_org_id: VirtualWebhookOrgId$inboundSchema.optional(),
   virtual_webhook_page_id: VirtualWebhookPageId$inboundSchema.optional(),
   virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
-  virtual_webhook_payment_id: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => IntegrationSupportSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
+  virtual_webhook_payment_id: VirtualWebhookPaymentId$inboundSchema.optional(),
   virtual_webhook_pipeline_id: VirtualWebhookPipelineId$inboundSchema
     .optional(),
   virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema.optional(),
