@@ -203,6 +203,13 @@ export const ListFormId = {
 } as const;
 export type ListFormId = OpenEnum<typeof ListFormId>;
 
+export const ListFulltext = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListFulltext = OpenEnum<typeof ListFulltext>;
+
 export const ListGroupId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1098,6 +1105,7 @@ export type IntegrationSupport = {
   listEventId?: ListEventId | undefined;
   listExpand?: ListExpand | undefined;
   listFormId?: ListFormId | undefined;
+  listFulltext?: ListFulltext | undefined;
   listGroupId?: ListGroupId | undefined;
   listInstructorId?: ListInstructorId | undefined;
   listInterviewId?: ListInterviewId | undefined;
@@ -1416,6 +1424,13 @@ export const ListFormId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListFormId);
+
+/** @internal */
+export const ListFulltext$inboundSchema: z.ZodType<
+  ListFulltext,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListFulltext);
 
 /** @internal */
 export const ListGroupId$inboundSchema: z.ZodType<
@@ -2291,6 +2306,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_event_id: ListEventId$inboundSchema.optional(),
   list_expand: ListExpand$inboundSchema.optional(),
   list_form_id: ListFormId$inboundSchema.optional(),
+  list_fulltext: ListFulltext$inboundSchema.optional(),
   list_group_id: ListGroupId$inboundSchema.optional(),
   list_instructor_id: ListInstructorId$inboundSchema.optional(),
   list_interview_id: ListInterviewId$inboundSchema.optional(),
@@ -2460,6 +2476,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_event_id": "listEventId",
     "list_expand": "listExpand",
     "list_form_id": "listFormId",
+    "list_fulltext": "listFulltext",
     "list_group_id": "listGroupId",
     "list_instructor_id": "listInstructorId",
     "list_interview_id": "listInterviewId",

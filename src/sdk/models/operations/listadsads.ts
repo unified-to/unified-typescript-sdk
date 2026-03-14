@@ -47,7 +47,7 @@ export type ListAdsAdsRequest = {
    */
   fields?: Array<ListAdsAdsQueryParamFields> | undefined;
   /**
-   * The group ID to filter by (reference to HrisGroup)
+   * The group ID to filter by (reference to AdsGroup)
    */
   groupId?: string | undefined;
   limit?: number | undefined;

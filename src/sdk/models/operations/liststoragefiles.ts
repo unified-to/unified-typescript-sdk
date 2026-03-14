@@ -35,9 +35,14 @@ export type ListStorageFilesRequest = {
    */
   connectionId: string;
   /**
+   * Whether to flatten grouped or recurring items into individual entries.
+   */
+  expand?: boolean | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListStorageFilesQueryParamFields> | undefined;
+  fulltext?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -72,7 +77,9 @@ export const ListStorageFilesQueryParamFields$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export type ListStorageFilesRequest$Outbound = {
   connection_id: string;
+  expand?: boolean | undefined;
   fields?: Array<string> | undefined;
+  fulltext?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -91,7 +98,9 @@ export const ListStorageFilesRequest$outboundSchema: z.ZodType<
   ListStorageFilesRequest
 > = z.object({
   connectionId: z.string(),
+  expand: z.boolean().optional(),
   fields: z.array(ListStorageFilesQueryParamFields$outboundSchema).optional(),
+  fulltext: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

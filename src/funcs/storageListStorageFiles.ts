@@ -94,7 +94,9 @@ async function $do(
   const path = pathToFunc("/storage/{connection_id}/file")(pathParams);
 
   const query = encodeFormQuery({
+    "expand": payload.expand,
     "fields": payload.fields,
+    "fulltext": payload.fulltext,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
