@@ -79,6 +79,7 @@ export type PropertyAdsReportMetricsCampaign = {
   budgetAmount?: number | undefined;
   budgetPeriod?: PropertyAdsReportMetricsCampaignBudgetPeriod | undefined;
   campaignBudgetIdentifier?: string | undefined;
+  category?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   endAt?: Date | undefined;
@@ -141,6 +142,7 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   budget_period: PropertyAdsReportMetricsCampaignBudgetPeriod$inboundSchema
     .optional(),
   campaign_budget_identifier: z.string().optional(),
+  category: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),

@@ -11,5 +11,5 @@ let value: ListAdsCampaignsQueryParamFields = "budget_amount";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "organization_id" | "status" | "start_at" | "end_at" | "budget_amount" | "budget_period" | "total_spend_amount" | "targeting" | "goal" | "planned_spend_amount" | "frequency_cap" | "advertising_channel_type" | "campaign_budget_identifier" | "currency" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "organization_id" | "status" | "start_at" | "end_at" | "budget_amount" | "budget_period" | "total_spend_amount" | "targeting" | "goal" | "planned_spend_amount" | "frequency_cap" | "advertising_channel_type" | "campaign_budget_identifier" | "currency" | "category" | "raw"
 ```

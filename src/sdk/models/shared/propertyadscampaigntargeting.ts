@@ -7,30 +7,90 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AdSchedule,
+  AdSchedule$inboundSchema,
+  AdSchedule$Outbound,
+  AdSchedule$outboundSchema,
+} from "./adschedule.js";
+import {
+  PropertyAdsCampaignTargetingAudience,
+  PropertyAdsCampaignTargetingAudience$inboundSchema,
+  PropertyAdsCampaignTargetingAudience$Outbound,
+  PropertyAdsCampaignTargetingAudience$outboundSchema,
+} from "./propertyadscampaigntargetingaudience.js";
+import {
+  PropertyAdsCampaignTargetingBrandSafety,
+  PropertyAdsCampaignTargetingBrandSafety$inboundSchema,
+  PropertyAdsCampaignTargetingBrandSafety$Outbound,
+  PropertyAdsCampaignTargetingBrandSafety$outboundSchema,
+} from "./propertyadscampaigntargetingbrandsafety.js";
+import {
+  PropertyAdsCampaignTargetingContent,
+  PropertyAdsCampaignTargetingContent$inboundSchema,
+  PropertyAdsCampaignTargetingContent$Outbound,
+  PropertyAdsCampaignTargetingContent$outboundSchema,
+} from "./propertyadscampaigntargetingcontent.js";
+import {
+  PropertyAdsCampaignTargetingDemographic,
+  PropertyAdsCampaignTargetingDemographic$inboundSchema,
+  PropertyAdsCampaignTargetingDemographic$Outbound,
+  PropertyAdsCampaignTargetingDemographic$outboundSchema,
+} from "./propertyadscampaigntargetingdemographic.js";
+import {
+  PropertyAdsCampaignTargetingDevice,
+  PropertyAdsCampaignTargetingDevice$inboundSchema,
+  PropertyAdsCampaignTargetingDevice$Outbound,
+  PropertyAdsCampaignTargetingDevice$outboundSchema,
+} from "./propertyadscampaigntargetingdevice.js";
+import {
+  PropertyAdsCampaignTargetingGeographic,
+  PropertyAdsCampaignTargetingGeographic$inboundSchema,
+  PropertyAdsCampaignTargetingGeographic$Outbound,
+  PropertyAdsCampaignTargetingGeographic$outboundSchema,
+} from "./propertyadscampaigntargetinggeographic.js";
+import {
+  PropertyAdsCampaignTargetingLanguage,
+  PropertyAdsCampaignTargetingLanguage$inboundSchema,
+  PropertyAdsCampaignTargetingLanguage$Outbound,
+  PropertyAdsCampaignTargetingLanguage$outboundSchema,
+} from "./propertyadscampaigntargetinglanguage.js";
+import {
+  PropertyAdsCampaignTargetingOptimization,
+  PropertyAdsCampaignTargetingOptimization$inboundSchema,
+  PropertyAdsCampaignTargetingOptimization$Outbound,
+  PropertyAdsCampaignTargetingOptimization$outboundSchema,
+} from "./propertyadscampaigntargetingoptimization.js";
+import {
+  PropertyAdsCampaignTargetingPlacement,
+  PropertyAdsCampaignTargetingPlacement$inboundSchema,
+  PropertyAdsCampaignTargetingPlacement$Outbound,
+  PropertyAdsCampaignTargetingPlacement$outboundSchema,
+} from "./propertyadscampaigntargetingplacement.js";
 
 export type PropertyAdsCampaignTargeting = {
-  ageRanges?: Array<string> | undefined;
-  audiences?: Array<string> | undefined;
-  behaviors?: Array<string> | undefined;
-  companies?: Array<string> | undefined;
-  companySizes?: Array<string> | undefined;
-  customAudiences?: Array<string> | undefined;
-  degrees?: Array<string> | undefined;
-  devices?: Array<string> | undefined;
-  excludedAudiences?: Array<string> | undefined;
-  excludedLocations?: Array<string> | undefined;
-  genders?: Array<string> | undefined;
-  industries?: Array<string> | undefined;
-  interests?: Array<string> | undefined;
-  jobFunctions?: Array<string> | undefined;
-  jobTitles?: Array<string> | undefined;
-  keywords?: Array<string> | undefined;
-  languages?: Array<string> | undefined;
-  locations?: Array<string> | undefined;
-  placements?: Array<string> | undefined;
-  schools?: Array<string> | undefined;
-  seniorities?: Array<string> | undefined;
-  skills?: Array<string> | undefined;
+  audience?: PropertyAdsCampaignTargetingAudience | undefined;
+  /**
+   * Brand safety (Meta: excluded_publisher_categories, etc.; Google
+   */
+  brandSafety?: PropertyAdsCampaignTargetingBrandSafety | undefined;
+  content?: PropertyAdsCampaignTargetingContent | undefined;
+  /**
+   * Demographic targeting (Meta: age_min, age_max, genders)
+   */
+  demographic?: PropertyAdsCampaignTargetingDemographic | undefined;
+  device?: PropertyAdsCampaignTargetingDevice | undefined;
+  geographic?: PropertyAdsCampaignTargetingGeographic | undefined;
+  /**
+   * Language targeting (Meta
+   */
+  language?: PropertyAdsCampaignTargetingLanguage | undefined;
+  /**
+   * Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
+   */
+  optimization?: PropertyAdsCampaignTargetingOptimization | undefined;
+  placement?: PropertyAdsCampaignTargetingPlacement | undefined;
+  schedule?: Array<AdSchedule> | undefined;
 };
 
 /** @internal */
@@ -39,63 +99,35 @@ export const PropertyAdsCampaignTargeting$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  age_ranges: z.array(z.string()).optional(),
-  audiences: z.array(z.string()).optional(),
-  behaviors: z.array(z.string()).optional(),
-  companies: z.array(z.string()).optional(),
-  company_sizes: z.array(z.string()).optional(),
-  custom_audiences: z.array(z.string()).optional(),
-  degrees: z.array(z.string()).optional(),
-  devices: z.array(z.string()).optional(),
-  excluded_audiences: z.array(z.string()).optional(),
-  excluded_locations: z.array(z.string()).optional(),
-  genders: z.array(z.string()).optional(),
-  industries: z.array(z.string()).optional(),
-  interests: z.array(z.string()).optional(),
-  job_functions: z.array(z.string()).optional(),
-  job_titles: z.array(z.string()).optional(),
-  keywords: z.array(z.string()).optional(),
-  languages: z.array(z.string()).optional(),
-  locations: z.array(z.string()).optional(),
-  placements: z.array(z.string()).optional(),
-  schools: z.array(z.string()).optional(),
-  seniorities: z.array(z.string()).optional(),
-  skills: z.array(z.string()).optional(),
+  audience: PropertyAdsCampaignTargetingAudience$inboundSchema.optional(),
+  brand_safety: PropertyAdsCampaignTargetingBrandSafety$inboundSchema
+    .optional(),
+  content: PropertyAdsCampaignTargetingContent$inboundSchema.optional(),
+  demographic: PropertyAdsCampaignTargetingDemographic$inboundSchema.optional(),
+  device: PropertyAdsCampaignTargetingDevice$inboundSchema.optional(),
+  geographic: PropertyAdsCampaignTargetingGeographic$inboundSchema.optional(),
+  language: PropertyAdsCampaignTargetingLanguage$inboundSchema.optional(),
+  optimization: PropertyAdsCampaignTargetingOptimization$inboundSchema
+    .optional(),
+  placement: PropertyAdsCampaignTargetingPlacement$inboundSchema.optional(),
+  schedule: z.array(AdSchedule$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
-    "age_ranges": "ageRanges",
-    "company_sizes": "companySizes",
-    "custom_audiences": "customAudiences",
-    "excluded_audiences": "excludedAudiences",
-    "excluded_locations": "excludedLocations",
-    "job_functions": "jobFunctions",
-    "job_titles": "jobTitles",
+    "brand_safety": "brandSafety",
   });
 });
 /** @internal */
 export type PropertyAdsCampaignTargeting$Outbound = {
-  age_ranges?: Array<string> | undefined;
-  audiences?: Array<string> | undefined;
-  behaviors?: Array<string> | undefined;
-  companies?: Array<string> | undefined;
-  company_sizes?: Array<string> | undefined;
-  custom_audiences?: Array<string> | undefined;
-  degrees?: Array<string> | undefined;
-  devices?: Array<string> | undefined;
-  excluded_audiences?: Array<string> | undefined;
-  excluded_locations?: Array<string> | undefined;
-  genders?: Array<string> | undefined;
-  industries?: Array<string> | undefined;
-  interests?: Array<string> | undefined;
-  job_functions?: Array<string> | undefined;
-  job_titles?: Array<string> | undefined;
-  keywords?: Array<string> | undefined;
-  languages?: Array<string> | undefined;
-  locations?: Array<string> | undefined;
-  placements?: Array<string> | undefined;
-  schools?: Array<string> | undefined;
-  seniorities?: Array<string> | undefined;
-  skills?: Array<string> | undefined;
+  audience?: PropertyAdsCampaignTargetingAudience$Outbound | undefined;
+  brand_safety?: PropertyAdsCampaignTargetingBrandSafety$Outbound | undefined;
+  content?: PropertyAdsCampaignTargetingContent$Outbound | undefined;
+  demographic?: PropertyAdsCampaignTargetingDemographic$Outbound | undefined;
+  device?: PropertyAdsCampaignTargetingDevice$Outbound | undefined;
+  geographic?: PropertyAdsCampaignTargetingGeographic$Outbound | undefined;
+  language?: PropertyAdsCampaignTargetingLanguage$Outbound | undefined;
+  optimization?: PropertyAdsCampaignTargetingOptimization$Outbound | undefined;
+  placement?: PropertyAdsCampaignTargetingPlacement$Outbound | undefined;
+  schedule?: Array<AdSchedule$Outbound> | undefined;
 };
 
 /** @internal */
@@ -104,37 +136,22 @@ export const PropertyAdsCampaignTargeting$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PropertyAdsCampaignTargeting
 > = z.object({
-  ageRanges: z.array(z.string()).optional(),
-  audiences: z.array(z.string()).optional(),
-  behaviors: z.array(z.string()).optional(),
-  companies: z.array(z.string()).optional(),
-  companySizes: z.array(z.string()).optional(),
-  customAudiences: z.array(z.string()).optional(),
-  degrees: z.array(z.string()).optional(),
-  devices: z.array(z.string()).optional(),
-  excludedAudiences: z.array(z.string()).optional(),
-  excludedLocations: z.array(z.string()).optional(),
-  genders: z.array(z.string()).optional(),
-  industries: z.array(z.string()).optional(),
-  interests: z.array(z.string()).optional(),
-  jobFunctions: z.array(z.string()).optional(),
-  jobTitles: z.array(z.string()).optional(),
-  keywords: z.array(z.string()).optional(),
-  languages: z.array(z.string()).optional(),
-  locations: z.array(z.string()).optional(),
-  placements: z.array(z.string()).optional(),
-  schools: z.array(z.string()).optional(),
-  seniorities: z.array(z.string()).optional(),
-  skills: z.array(z.string()).optional(),
+  audience: PropertyAdsCampaignTargetingAudience$outboundSchema.optional(),
+  brandSafety: PropertyAdsCampaignTargetingBrandSafety$outboundSchema
+    .optional(),
+  content: PropertyAdsCampaignTargetingContent$outboundSchema.optional(),
+  demographic: PropertyAdsCampaignTargetingDemographic$outboundSchema
+    .optional(),
+  device: PropertyAdsCampaignTargetingDevice$outboundSchema.optional(),
+  geographic: PropertyAdsCampaignTargetingGeographic$outboundSchema.optional(),
+  language: PropertyAdsCampaignTargetingLanguage$outboundSchema.optional(),
+  optimization: PropertyAdsCampaignTargetingOptimization$outboundSchema
+    .optional(),
+  placement: PropertyAdsCampaignTargetingPlacement$outboundSchema.optional(),
+  schedule: z.array(AdSchedule$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
-    ageRanges: "age_ranges",
-    companySizes: "company_sizes",
-    customAudiences: "custom_audiences",
-    excludedAudiences: "excluded_audiences",
-    excludedLocations: "excluded_locations",
-    jobFunctions: "job_functions",
-    jobTitles: "job_titles",
+    brandSafety: "brand_safety",
   });
 });
 

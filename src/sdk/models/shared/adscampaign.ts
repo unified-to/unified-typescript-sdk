@@ -73,6 +73,7 @@ export type AdsCampaign = {
   budgetAmount?: number | undefined;
   budgetPeriod?: BudgetPeriod | undefined;
   campaignBudgetIdentifier?: string | undefined;
+  category?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   endAt?: Date | undefined;
@@ -146,6 +147,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
   budget_amount: z.number().optional(),
   budget_period: BudgetPeriod$inboundSchema.optional(),
   campaign_budget_identifier: z.string().optional(),
+  category: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
@@ -187,6 +189,7 @@ export type AdsCampaign$Outbound = {
   budget_amount?: number | undefined;
   budget_period?: string | undefined;
   campaign_budget_identifier?: string | undefined;
+  category?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   end_at?: string | undefined;
@@ -214,6 +217,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   budgetAmount: z.number().optional(),
   budgetPeriod: BudgetPeriod$outboundSchema.optional(),
   campaignBudgetIdentifier: z.string().optional(),
+  category: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),

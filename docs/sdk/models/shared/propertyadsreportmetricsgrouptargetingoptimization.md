@@ -1,0 +1,20 @@
+# PropertyAdsReportMetricsGroupTargetingOptimization
+
+Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
+
+## Example Usage
+
+```typescript
+import { PropertyAdsReportMetricsGroupTargetingOptimization } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyAdsReportMetricsGroupTargetingOptimization = {};
+```
+
+## Fields
+
+| Field                                                                                                                                                 | Type                                                                                                                                                  | Required                                                                                                                                              | Description                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `advantageAudience`                                                                                                                                   | *boolean*                                                                                                                                             | :heavy_minus_sign:                                                                                                                                    | N/A                                                                                                                                                   |
+| `advantagePlacements`                                                                                                                                 | *boolean*                                                                                                                                             | :heavy_minus_sign:                                                                                                                                    | N/A                                                                                                                                                   |
+| `mode`                                                                                                                                                | [shared.PropertyAdsReportMetricsGroupTargetingOptimizationMode](../../../sdk/models/shared/propertyadsreportmetricsgrouptargetingoptimizationmode.md) | :heavy_minus_sign:                                                                                                                                    | N/A                                                                                                                                                   |
+| `targetingOptimizationExpansionAll`                                                                                                                   | *boolean*                                                                                                                                             | :heavy_minus_sign:                                                                                                                                    | N/A                                                                                                                                                   |

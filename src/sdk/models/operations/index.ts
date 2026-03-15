@@ -247,6 +247,7 @@ export * from "./listadsgroups.js";
 export * from "./listadsinsertionorders.js";
 export * from "./listadsorganizations.js";
 export * from "./listadsreports.js";
+export * from "./listadstargets.js";
 export * from "./listassessmentpackages.js";
 export * from "./listatsactivities.js";
 export * from "./listatsapplications.js";

@@ -7,30 +7,67 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdSchedule, AdSchedule$inboundSchema } from "./adschedule.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingAudience,
+  PropertyAdsReportMetricsGroupTargetingAudience$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetingaudience.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingBrandSafety,
+  PropertyAdsReportMetricsGroupTargetingBrandSafety$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetingbrandsafety.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingContent,
+  PropertyAdsReportMetricsGroupTargetingContent$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetingcontent.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingDemographic,
+  PropertyAdsReportMetricsGroupTargetingDemographic$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetingdemographic.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingDevice,
+  PropertyAdsReportMetricsGroupTargetingDevice$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetingdevice.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingGeographic,
+  PropertyAdsReportMetricsGroupTargetingGeographic$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetinggeographic.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingLanguage,
+  PropertyAdsReportMetricsGroupTargetingLanguage$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetinglanguage.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingOptimization,
+  PropertyAdsReportMetricsGroupTargetingOptimization$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetingoptimization.js";
+import {
+  PropertyAdsReportMetricsGroupTargetingPlacement,
+  PropertyAdsReportMetricsGroupTargetingPlacement$inboundSchema,
+} from "./propertyadsreportmetricsgrouptargetingplacement.js";
 
 export type PropertyAdsReportMetricsGroupTargeting = {
-  ageRanges?: Array<string> | undefined;
-  audiences?: Array<string> | undefined;
-  behaviors?: Array<string> | undefined;
-  companies?: Array<string> | undefined;
-  companySizes?: Array<string> | undefined;
-  customAudiences?: Array<string> | undefined;
-  degrees?: Array<string> | undefined;
-  devices?: Array<string> | undefined;
-  excludedAudiences?: Array<string> | undefined;
-  excludedLocations?: Array<string> | undefined;
-  genders?: Array<string> | undefined;
-  industries?: Array<string> | undefined;
-  interests?: Array<string> | undefined;
-  jobFunctions?: Array<string> | undefined;
-  jobTitles?: Array<string> | undefined;
-  keywords?: Array<string> | undefined;
-  languages?: Array<string> | undefined;
-  locations?: Array<string> | undefined;
-  placements?: Array<string> | undefined;
-  schools?: Array<string> | undefined;
-  seniorities?: Array<string> | undefined;
-  skills?: Array<string> | undefined;
+  audience?: PropertyAdsReportMetricsGroupTargetingAudience | undefined;
+  /**
+   * Brand safety (Meta: excluded_publisher_categories, etc.; Google
+   */
+  brandSafety?: PropertyAdsReportMetricsGroupTargetingBrandSafety | undefined;
+  content?: PropertyAdsReportMetricsGroupTargetingContent | undefined;
+  /**
+   * Demographic targeting (Meta: age_min, age_max, genders)
+   */
+  demographic?: PropertyAdsReportMetricsGroupTargetingDemographic | undefined;
+  device?: PropertyAdsReportMetricsGroupTargetingDevice | undefined;
+  geographic?: PropertyAdsReportMetricsGroupTargetingGeographic | undefined;
+  /**
+   * Language targeting (Meta
+   */
+  language?: PropertyAdsReportMetricsGroupTargetingLanguage | undefined;
+  /**
+   * Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
+   */
+  optimization?: PropertyAdsReportMetricsGroupTargetingOptimization | undefined;
+  placement?: PropertyAdsReportMetricsGroupTargetingPlacement | undefined;
+  schedule?: Array<AdSchedule> | undefined;
 };
 
 /** @internal */
@@ -39,37 +76,27 @@ export const PropertyAdsReportMetricsGroupTargeting$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  age_ranges: z.array(z.string()).optional(),
-  audiences: z.array(z.string()).optional(),
-  behaviors: z.array(z.string()).optional(),
-  companies: z.array(z.string()).optional(),
-  company_sizes: z.array(z.string()).optional(),
-  custom_audiences: z.array(z.string()).optional(),
-  degrees: z.array(z.string()).optional(),
-  devices: z.array(z.string()).optional(),
-  excluded_audiences: z.array(z.string()).optional(),
-  excluded_locations: z.array(z.string()).optional(),
-  genders: z.array(z.string()).optional(),
-  industries: z.array(z.string()).optional(),
-  interests: z.array(z.string()).optional(),
-  job_functions: z.array(z.string()).optional(),
-  job_titles: z.array(z.string()).optional(),
-  keywords: z.array(z.string()).optional(),
-  languages: z.array(z.string()).optional(),
-  locations: z.array(z.string()).optional(),
-  placements: z.array(z.string()).optional(),
-  schools: z.array(z.string()).optional(),
-  seniorities: z.array(z.string()).optional(),
-  skills: z.array(z.string()).optional(),
+  audience: PropertyAdsReportMetricsGroupTargetingAudience$inboundSchema
+    .optional(),
+  brand_safety: PropertyAdsReportMetricsGroupTargetingBrandSafety$inboundSchema
+    .optional(),
+  content: PropertyAdsReportMetricsGroupTargetingContent$inboundSchema
+    .optional(),
+  demographic: PropertyAdsReportMetricsGroupTargetingDemographic$inboundSchema
+    .optional(),
+  device: PropertyAdsReportMetricsGroupTargetingDevice$inboundSchema.optional(),
+  geographic: PropertyAdsReportMetricsGroupTargetingGeographic$inboundSchema
+    .optional(),
+  language: PropertyAdsReportMetricsGroupTargetingLanguage$inboundSchema
+    .optional(),
+  optimization: PropertyAdsReportMetricsGroupTargetingOptimization$inboundSchema
+    .optional(),
+  placement: PropertyAdsReportMetricsGroupTargetingPlacement$inboundSchema
+    .optional(),
+  schedule: z.array(AdSchedule$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
-    "age_ranges": "ageRanges",
-    "company_sizes": "companySizes",
-    "custom_audiences": "customAudiences",
-    "excluded_audiences": "excludedAudiences",
-    "excluded_locations": "excludedLocations",
-    "job_functions": "jobFunctions",
-    "job_titles": "jobTitles",
+    "brand_safety": "brandSafety",
   });
 });
 

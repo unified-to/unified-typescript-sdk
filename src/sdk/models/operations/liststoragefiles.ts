@@ -42,6 +42,9 @@ export type ListStorageFilesRequest = {
    * Fields to return
    */
   fields?: Array<ListStorageFilesQueryParamFields> | undefined;
+  /**
+   * The fulltext to filter by
+   */
   fulltext?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;

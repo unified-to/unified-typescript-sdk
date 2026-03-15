@@ -27,6 +27,22 @@ import {
   PropertyAdsReportMetricsGroupTargeting$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargeting.js";
 
+export const PropertyAdsReportMetricsGroupBillingEvent = {
+  Impressions: "IMPRESSIONS",
+  LinkClicks: "LINK_CLICKS",
+  VideoViews: "VIDEO_VIEWS",
+  AppInstalls: "APP_INSTALLS",
+  Engagement: "ENGAGEMENT",
+  PageLikes: "PAGE_LIKES",
+  Messages: "MESSAGES",
+  PostEngagement: "POST_ENGAGEMENT",
+  Purchase: "PURCHASE",
+  None: "NONE",
+} as const;
+export type PropertyAdsReportMetricsGroupBillingEvent = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupBillingEvent
+>;
+
 export const PropertyAdsReportMetricsGroupBudgetAllocationType = {
   Unspecified: "UNSPECIFIED",
   Automatic: "AUTOMATIC",
@@ -54,6 +70,24 @@ export const PropertyAdsReportMetricsGroupBudgetUnit = {
 } as const;
 export type PropertyAdsReportMetricsGroupBudgetUnit = OpenEnum<
   typeof PropertyAdsReportMetricsGroupBudgetUnit
+>;
+
+export const PropertyAdsReportMetricsGroupOptimizationGoal = {
+  Reach: "REACH",
+  Impressions: "IMPRESSIONS",
+  LinkClicks: "LINK_CLICKS",
+  LandingPageViews: "LANDING_PAGE_VIEWS",
+  Conversions: "CONVERSIONS",
+  LeadGeneration: "LEAD_GENERATION",
+  AppInstalls: "APP_INSTALLS",
+  AppEngagement: "APP_ENGAGEMENT",
+  VideoViews: "VIDEO_VIEWS",
+  Engagement: "ENGAGEMENT",
+  PageLikes: "PAGE_LIKES",
+  Messages: "MESSAGES",
+} as const;
+export type PropertyAdsReportMetricsGroupOptimizationGoal = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupOptimizationGoal
 >;
 
 export const PropertyAdsReportMetricsGroupStatus = {
@@ -93,7 +127,7 @@ export type PropertyAdsReportMetricsGroup = {
    * YOUTUBE_AND_PARTNERS
    */
   bidStrategy?: PropertyAdsReportMetricsGroupBidStrategy | undefined;
-  billingEvent?: string | undefined;
+  billingEvent?: PropertyAdsReportMetricsGroupBillingEvent | undefined;
   budgetAllocationType?:
     | PropertyAdsReportMetricsGroupBudgetAllocationType
     | undefined;
@@ -112,7 +146,7 @@ export type PropertyAdsReportMetricsGroup = {
   insertionorderId?: string | undefined;
   metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
-  optimizationGoal?: string | undefined;
+  optimizationGoal?: PropertyAdsReportMetricsGroupOptimizationGoal | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsReportMetricsGroupPacing | undefined;
   parentId?: string | undefined;
@@ -123,6 +157,13 @@ export type PropertyAdsReportMetricsGroup = {
   type?: PropertyAdsReportMetricsGroupType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const PropertyAdsReportMetricsGroupBillingEvent$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsGroupBillingEvent,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBillingEvent);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema:
@@ -149,6 +190,14 @@ export const PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetUnit);
 
 /** @internal */
+export const PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema:
+  z.ZodType<
+    PropertyAdsReportMetricsGroupOptimizationGoal,
+    z.ZodTypeDef,
+    unknown
+  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupOptimizationGoal);
+
+/** @internal */
 export const PropertyAdsReportMetricsGroupStatus$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupStatus,
   z.ZodTypeDef,
@@ -171,7 +220,8 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   bid_amount: z.number().optional(),
   bid_strategy: PropertyAdsReportMetricsGroupBidStrategy$inboundSchema
     .optional(),
-  billing_event: z.string().optional(),
+  billing_event: PropertyAdsReportMetricsGroupBillingEvent$inboundSchema
+    .optional(),
   budget_allocation_type:
     PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema.optional(),
   budget_amount: z.number().optional(),
@@ -193,7 +243,8 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   insertionorder_id: z.string().optional(),
   metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
-  optimization_goal: z.string().optional(),
+  optimization_goal: PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema
+    .optional(),
   organization_id: z.string().optional(),
   pacing: PropertyAdsReportMetricsGroupPacing$inboundSchema.optional(),
   parent_id: z.string().optional(),

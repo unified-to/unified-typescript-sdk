@@ -40,6 +40,20 @@ import {
   PropertyAdsGroupTargeting$outboundSchema,
 } from "./propertyadsgrouptargeting.js";
 
+export const BillingEvent = {
+  Impressions: "IMPRESSIONS",
+  LinkClicks: "LINK_CLICKS",
+  VideoViews: "VIDEO_VIEWS",
+  AppInstalls: "APP_INSTALLS",
+  Engagement: "ENGAGEMENT",
+  PageLikes: "PAGE_LIKES",
+  Messages: "MESSAGES",
+  PostEngagement: "POST_ENGAGEMENT",
+  Purchase: "PURCHASE",
+  None: "NONE",
+} as const;
+export type BillingEvent = OpenEnum<typeof BillingEvent>;
+
 export const BudgetAllocationType = {
   Unspecified: "UNSPECIFIED",
   Automatic: "AUTOMATIC",
@@ -62,6 +76,22 @@ export const BudgetUnit = {
   Impressions: "IMPRESSIONS",
 } as const;
 export type BudgetUnit = OpenEnum<typeof BudgetUnit>;
+
+export const OptimizationGoal = {
+  Reach: "REACH",
+  Impressions: "IMPRESSIONS",
+  LinkClicks: "LINK_CLICKS",
+  LandingPageViews: "LANDING_PAGE_VIEWS",
+  Conversions: "CONVERSIONS",
+  LeadGeneration: "LEAD_GENERATION",
+  AppInstalls: "APP_INSTALLS",
+  AppEngagement: "APP_ENGAGEMENT",
+  VideoViews: "VIDEO_VIEWS",
+  Engagement: "ENGAGEMENT",
+  PageLikes: "PAGE_LIKES",
+  Messages: "MESSAGES",
+} as const;
+export type OptimizationGoal = OpenEnum<typeof OptimizationGoal>;
 
 export const AdsGroupStatus = {
   Unspecified: "UNSPECIFIED",
@@ -96,7 +126,7 @@ export type AdsGroup = {
    * YOUTUBE_AND_PARTNERS
    */
   bidStrategy?: PropertyAdsGroupBidStrategy | undefined;
-  billingEvent?: string | undefined;
+  billingEvent?: BillingEvent | undefined;
   budgetAllocationType?: BudgetAllocationType | undefined;
   budgetAmount?: number | undefined;
   budgetMaxAmount?: number | undefined;
@@ -113,7 +143,7 @@ export type AdsGroup = {
   insertionorderId?: string | undefined;
   metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
-  optimizationGoal?: string | undefined;
+  optimizationGoal?: OptimizationGoal | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsGroupPacing | undefined;
   parentId?: string | undefined;
@@ -124,6 +154,19 @@ export type AdsGroup = {
   type?: AdsGroupType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const BillingEvent$inboundSchema: z.ZodType<
+  BillingEvent,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(BillingEvent);
+/** @internal */
+export const BillingEvent$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  BillingEvent
+> = openEnums.outboundSchema(BillingEvent);
 
 /** @internal */
 export const BudgetAllocationType$inboundSchema: z.ZodType<
@@ -165,6 +208,19 @@ export const BudgetUnit$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(BudgetUnit);
 
 /** @internal */
+export const OptimizationGoal$inboundSchema: z.ZodType<
+  OptimizationGoal,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(OptimizationGoal);
+/** @internal */
+export const OptimizationGoal$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  OptimizationGoal
+> = openEnums.outboundSchema(OptimizationGoal);
+
+/** @internal */
 export const AdsGroupStatus$inboundSchema: z.ZodType<
   AdsGroupStatus,
   z.ZodTypeDef,
@@ -198,7 +254,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
 > = z.object({
   bid_amount: z.number().optional(),
   bid_strategy: PropertyAdsGroupBidStrategy$inboundSchema.optional(),
-  billing_event: z.string().optional(),
+  billing_event: BillingEvent$inboundSchema.optional(),
   budget_allocation_type: BudgetAllocationType$inboundSchema.optional(),
   budget_amount: z.number().optional(),
   budget_max_amount: z.number().optional(),
@@ -217,7 +273,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   insertionorder_id: z.string().optional(),
   metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
-  optimization_goal: z.string().optional(),
+  optimization_goal: OptimizationGoal$inboundSchema.optional(),
   organization_id: z.string().optional(),
   pacing: PropertyAdsGroupPacing$inboundSchema.optional(),
   parent_id: z.string().optional(),
@@ -294,7 +350,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
 > = z.object({
   bidAmount: z.number().optional(),
   bidStrategy: PropertyAdsGroupBidStrategy$outboundSchema.optional(),
-  billingEvent: z.string().optional(),
+  billingEvent: BillingEvent$outboundSchema.optional(),
   budgetAllocationType: BudgetAllocationType$outboundSchema.optional(),
   budgetAmount: z.number().optional(),
   budgetMaxAmount: z.number().optional(),
@@ -311,7 +367,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   insertionorderId: z.string().optional(),
   metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
-  optimizationGoal: z.string().optional(),
+  optimizationGoal: OptimizationGoal$outboundSchema.optional(),
   organizationId: z.string().optional(),
   pacing: PropertyAdsGroupPacing$outboundSchema.optional(),
   parentId: z.string().optional(),

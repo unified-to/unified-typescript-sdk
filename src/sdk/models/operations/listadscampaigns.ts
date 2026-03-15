@@ -25,6 +25,7 @@ export const ListAdsCampaignsQueryParamFields = {
   AdvertisingChannelType: "advertising_channel_type",
   CampaignBudgetIdentifier: "campaign_budget_identifier",
   Currency: "currency",
+  Category: "category",
   Raw: "raw",
 } as const;
 export type ListAdsCampaignsQueryParamFields = ClosedEnum<

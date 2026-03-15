@@ -146,6 +146,7 @@ export const ObjectType = {
   AdsGroup: "ads_group",
   AdsCreative: "ads_creative",
   AdsInsertionorder: "ads_insertionorder",
+  AdsTarget: "ads_target",
   FormsForm: "forms_form",
   FormsSubmission: "forms_submission",
   ShippingCarrier: "shipping_carrier",

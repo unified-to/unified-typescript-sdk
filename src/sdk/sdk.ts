@@ -119,6 +119,7 @@ import { Storage } from "./storage.js";
 import { Student } from "./student.js";
 import { Submission } from "./submission.js";
 import { Subscription } from "./subscription.js";
+import { Target } from "./target.js";
 import { Task } from "./task.js";
 import { Taxrate } from "./taxrate.js";
 import { Ticket } from "./ticket.js";
@@ -264,6 +265,11 @@ export class UnifiedTo extends ClientSDK {
   private _insertionorder?: Insertionorder;
   get insertionorder(): Insertionorder {
     return (this._insertionorder ??= new Insertionorder(this._options));
+  }
+
+  private _target?: Target;
+  get target(): Target {
+    return (this._target ??= new Target(this._options));
   }
 
   private _assessment?: Assessment;

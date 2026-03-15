@@ -17,6 +17,7 @@ import { adsListAdsCampaigns } from "../funcs/adsListAdsCampaigns.js";
 import { adsListAdsCreatives } from "../funcs/adsListAdsCreatives.js";
 import { adsListAdsGroups } from "../funcs/adsListAdsGroups.js";
 import { adsListAdsInsertionorders } from "../funcs/adsListAdsInsertionorders.js";
+import { adsListAdsTargets } from "../funcs/adsListAdsTargets.js";
 import { adsPatchAdsAd } from "../funcs/adsPatchAdsAd.js";
 import { adsPatchAdsCampaign } from "../funcs/adsPatchAdsCampaign.js";
 import { adsPatchAdsCreative } from "../funcs/adsPatchAdsCreative.js";
@@ -305,6 +306,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AdsReport>> {
     return unwrapAsync(reportListAdsReports(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all targets
+   */
+  async listAdsTargets(
+    request: operations.ListAdsTargetsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsTarget>> {
+    return unwrapAsync(adsListAdsTargets(
       this,
       request,
       options,
