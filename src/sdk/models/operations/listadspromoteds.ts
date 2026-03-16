@@ -6,38 +6,16 @@ import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { ClosedEnum } from "../../types/enums.js";
 
-export const ListAdsAdsQueryParamFields = {
+export const ListAdsPromotedsQueryParamFields = {
   Id: "id",
-  CreatedAt: "created_at",
-  UpdatedAt: "updated_at",
   Name: "name",
-  CampaignId: "campaign_id",
-  GroupId: "group_id",
-  OrganizationId: "organization_id",
-  Status: "status",
-  AdType: "ad_type",
-  CreativeIds: "creative_ids",
-  CreativeAssetUrl: "creative_asset_url",
-  AdCopy: "ad_copy",
-  Headline: "headline",
-  Description: "description",
-  Cta: "cta",
-  FinalUrl: "final_url",
-  DisplayUrl: "display_url",
-  Path1: "path1",
-  Path2: "path2",
-  Promoted: "promoted",
-  Raw: "raw",
+  Type: "type",
 } as const;
-export type ListAdsAdsQueryParamFields = ClosedEnum<
-  typeof ListAdsAdsQueryParamFields
+export type ListAdsPromotedsQueryParamFields = ClosedEnum<
+  typeof ListAdsPromotedsQueryParamFields
 >;
 
-export type ListAdsAdsRequest = {
-  /**
-   * The campaign ID to filter by
-   */
-  campaignId?: string | undefined;
+export type ListAdsPromotedsRequest = {
   /**
    * ID of the connection
    */
@@ -45,11 +23,7 @@ export type ListAdsAdsRequest = {
   /**
    * Fields to return
    */
-  fields?: Array<ListAdsAdsQueryParamFields> | undefined;
-  /**
-   * The group ID to filter by (reference to AdsGroup)
-   */
-  groupId?: string | undefined;
+  fields?: Array<ListAdsPromotedsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -66,6 +40,7 @@ export type ListAdsAdsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -73,16 +48,14 @@ export type ListAdsAdsRequest = {
 };
 
 /** @internal */
-export const ListAdsAdsQueryParamFields$outboundSchema: z.ZodNativeEnum<
-  typeof ListAdsAdsQueryParamFields
-> = z.nativeEnum(ListAdsAdsQueryParamFields);
+export const ListAdsPromotedsQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListAdsPromotedsQueryParamFields
+> = z.nativeEnum(ListAdsPromotedsQueryParamFields);
 
 /** @internal */
-export type ListAdsAdsRequest$Outbound = {
-  campaign_id?: string | undefined;
+export type ListAdsPromotedsRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
-  group_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -90,19 +63,18 @@ export type ListAdsAdsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
 /** @internal */
-export const ListAdsAdsRequest$outboundSchema: z.ZodType<
-  ListAdsAdsRequest$Outbound,
+export const ListAdsPromotedsRequest$outboundSchema: z.ZodType<
+  ListAdsPromotedsRequest$Outbound,
   z.ZodTypeDef,
-  ListAdsAdsRequest
+  ListAdsPromotedsRequest
 > = z.object({
-  campaignId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(ListAdsAdsQueryParamFields$outboundSchema).optional(),
-  groupId: z.string().optional(),
+  fields: z.array(ListAdsPromotedsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -110,21 +82,20 @@ export const ListAdsAdsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    campaignId: "campaign_id",
     connectionId: "connection_id",
-    groupId: "group_id",
     orgId: "org_id",
     updatedGte: "updated_gte",
   });
 });
 
-export function listAdsAdsRequestToJSON(
-  listAdsAdsRequest: ListAdsAdsRequest,
+export function listAdsPromotedsRequestToJSON(
+  listAdsPromotedsRequest: ListAdsPromotedsRequest,
 ): string {
   return JSON.stringify(
-    ListAdsAdsRequest$outboundSchema.parse(listAdsAdsRequest),
+    ListAdsPromotedsRequest$outboundSchema.parse(listAdsPromotedsRequest),
   );
 }

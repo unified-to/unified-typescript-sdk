@@ -10,11 +10,11 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AdsMetadata,
-  AdsMetadata$inboundSchema,
-  AdsMetadata$Outbound,
-  AdsMetadata$outboundSchema,
-} from "./adsmetadata.js";
+  AdsPromoted,
+  AdsPromoted$inboundSchema,
+  AdsPromoted$Outbound,
+  AdsPromoted$outboundSchema,
+} from "./adspromoted.js";
 
 export const CreativeType = {
   Unspecified: "UNSPECIFIED",
@@ -67,11 +67,11 @@ export type AdsCreative = {
   id?: string | undefined;
   itemId?: string | undefined;
   linkUrl?: string | undefined;
-  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
+  promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: AdsCreativeStatus | undefined;
   thirdPartyTag?: string | undefined;
@@ -142,11 +142,11 @@ export const AdsCreative$inboundSchema: z.ZodType<
   id: z.string().optional(),
   item_id: z.string().optional(),
   link_url: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   path1: z.string().optional(),
   path2: z.string().optional(),
+  promoted: z.array(AdsPromoted$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   status: AdsCreativeStatus$inboundSchema.optional(),
   third_party_tag: z.string().optional(),
@@ -191,11 +191,11 @@ export type AdsCreative$Outbound = {
   id?: string | undefined;
   item_id?: string | undefined;
   link_url?: string | undefined;
-  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
+  promoted?: Array<AdsPromoted$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: string | undefined;
   third_party_tag?: string | undefined;
@@ -226,11 +226,11 @@ export const AdsCreative$outboundSchema: z.ZodType<
   id: z.string().optional(),
   itemId: z.string().optional(),
   linkUrl: z.string().optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   path1: z.string().optional(),
   path2: z.string().optional(),
+  promoted: z.array(AdsPromoted$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   status: AdsCreativeStatus$outboundSchema.optional(),
   thirdPartyTag: z.string().optional(),

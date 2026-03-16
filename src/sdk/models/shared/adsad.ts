@@ -10,11 +10,11 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AdsMetadata,
-  AdsMetadata$inboundSchema,
-  AdsMetadata$Outbound,
-  AdsMetadata$outboundSchema,
-} from "./adsmetadata.js";
+  AdsPromoted,
+  AdsPromoted$inboundSchema,
+  AdsPromoted$Outbound,
+  AdsPromoted$outboundSchema,
+} from "./adspromoted.js";
 
 export const AdType = {
   Text: "TEXT",
@@ -57,11 +57,11 @@ export type AdsAd = {
   groupId?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
-  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
+  promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: AdsAdStatus | undefined;
   updatedAt?: Date | undefined;
@@ -105,11 +105,11 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
     group_id: z.string().optional(),
     headline: z.string().optional(),
     id: z.string().optional(),
-    metadata: z.array(AdsMetadata$inboundSchema).optional(),
     name: z.string().optional(),
     organization_id: z.string().optional(),
     path1: z.string().optional(),
     path2: z.string().optional(),
+    promoted: z.array(AdsPromoted$inboundSchema).optional(),
     raw: z.record(z.any()).optional(),
     status: AdsAdStatus$inboundSchema.optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
@@ -145,11 +145,11 @@ export type AdsAd$Outbound = {
   group_id?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
-  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
+  promoted?: Array<AdsPromoted$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: string | undefined;
   updated_at?: string | undefined;
@@ -174,11 +174,11 @@ export const AdsAd$outboundSchema: z.ZodType<
   groupId: z.string().optional(),
   headline: z.string().optional(),
   id: z.string().optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   path1: z.string().optional(),
   path2: z.string().optional(),
+  promoted: z.array(AdsPromoted$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   status: AdsAdStatus$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

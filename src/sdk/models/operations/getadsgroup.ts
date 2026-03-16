@@ -34,7 +34,7 @@ export const GetAdsGroupQueryParamFields = {
   OptimizationGoal: "optimization_goal",
   BillingEvent: "billing_event",
   Currency: "currency",
-  Metadata: "metadata",
+  Promoted: "promoted",
   Raw: "raw",
 } as const;
 export type GetAdsGroupQueryParamFields = ClosedEnum<

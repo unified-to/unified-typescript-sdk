@@ -17,6 +17,7 @@ import { adsListAdsCampaigns } from "../funcs/adsListAdsCampaigns.js";
 import { adsListAdsCreatives } from "../funcs/adsListAdsCreatives.js";
 import { adsListAdsGroups } from "../funcs/adsListAdsGroups.js";
 import { adsListAdsInsertionorders } from "../funcs/adsListAdsInsertionorders.js";
+import { adsListAdsPromoteds } from "../funcs/adsListAdsPromoteds.js";
 import { adsListAdsTargets } from "../funcs/adsListAdsTargets.js";
 import { adsPatchAdsAd } from "../funcs/adsPatchAdsAd.js";
 import { adsPatchAdsCampaign } from "../funcs/adsPatchAdsCampaign.js";
@@ -292,6 +293,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AdsOrganization>> {
     return unwrapAsync(organizationListAdsOrganizations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all promoteds
+   */
+  async listAdsPromoteds(
+    request: operations.ListAdsPromotedsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsPromoted>> {
+    return unwrapAsync(adsListAdsPromoteds(
       this,
       request,
       options,

@@ -31,9 +31,11 @@ const value: number = 1284.03;
 const value: boolean = true;
 ```
 
-### `shared.Five[]`
+### `shared.AtsMetadata5[]`
 
 ```typescript
-const value: shared.Five[] = [];
+const value: shared.AtsMetadata5[] = [
+  799.42,
+];
 ```
 

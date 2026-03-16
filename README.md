@@ -670,6 +670,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsListAdsGroups`](docs/sdks/group/README.md#listadsgroups) - List all groups
 - [`adsListAdsInsertionorders`](docs/sdks/ads/README.md#listadsinsertionorders) - List all insertionorders
 - [`adsListAdsInsertionorders`](docs/sdks/insertionorder/README.md#listadsinsertionorders) - List all insertionorders
+- [`adsListAdsPromoteds`](docs/sdks/ads/README.md#listadspromoteds) - List all promoteds
+- [`adsListAdsPromoteds`](docs/sdks/promoted/README.md#listadspromoteds) - List all promoteds
 - [`adsListAdsTargets`](docs/sdks/ads/README.md#listadstargets) - List all targets
 - [`adsListAdsTargets`](docs/sdks/target/README.md#listadstargets) - List all targets
 - [`adsPatchAdsAd`](docs/sdks/ad/README.md#patchadsad) - Update an ad

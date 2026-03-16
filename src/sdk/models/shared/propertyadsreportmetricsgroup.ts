@@ -9,7 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
+import { AdsPromoted, AdsPromoted$inboundSchema } from "./adspromoted.js";
 import {
   PropertyAdsReportMetricsGroupBidStrategy,
   PropertyAdsReportMetricsGroupBidStrategy$inboundSchema,
@@ -144,12 +144,12 @@ export type PropertyAdsReportMetricsGroup = {
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
-  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   optimizationGoal?: PropertyAdsReportMetricsGroupOptimizationGoal | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsReportMetricsGroupPacing | undefined;
   parentId?: string | undefined;
+  promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   status?: PropertyAdsReportMetricsGroupStatus | undefined;
@@ -241,13 +241,13 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   optimization_goal: PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema
     .optional(),
   organization_id: z.string().optional(),
   pacing: PropertyAdsReportMetricsGroupPacing$inboundSchema.optional(),
   parent_id: z.string().optional(),
+  promoted: z.array(AdsPromoted$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),

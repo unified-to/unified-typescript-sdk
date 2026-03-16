@@ -10,11 +10,11 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AdsMetadata,
-  AdsMetadata$inboundSchema,
-  AdsMetadata$Outbound,
-  AdsMetadata$outboundSchema,
-} from "./adsmetadata.js";
+  AdsPromoted,
+  AdsPromoted$inboundSchema,
+  AdsPromoted$Outbound,
+  AdsPromoted$outboundSchema,
+} from "./adspromoted.js";
 import {
   PropertyAdsGroupBidStrategy,
   PropertyAdsGroupBidStrategy$inboundSchema,
@@ -141,12 +141,12 @@ export type AdsGroup = {
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
-  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   optimizationGoal?: OptimizationGoal | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsGroupPacing | undefined;
   parentId?: string | undefined;
+  promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   status?: AdsGroupStatus | undefined;
@@ -271,12 +271,12 @@ export const AdsGroup$inboundSchema: z.ZodType<
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   optimization_goal: OptimizationGoal$inboundSchema.optional(),
   organization_id: z.string().optional(),
   pacing: PropertyAdsGroupPacing$inboundSchema.optional(),
   parent_id: z.string().optional(),
+  promoted: z.array(AdsPromoted$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -328,12 +328,12 @@ export type AdsGroup$Outbound = {
   has_eu_political_ads?: boolean | undefined;
   id?: string | undefined;
   insertionorder_id?: string | undefined;
-  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   optimization_goal?: string | undefined;
   organization_id?: string | undefined;
   pacing?: PropertyAdsGroupPacing$Outbound | undefined;
   parent_id?: string | undefined;
+  promoted?: Array<AdsPromoted$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
@@ -365,12 +365,12 @@ export const AdsGroup$outboundSchema: z.ZodType<
   hasEuPoliticalAds: z.boolean().optional(),
   id: z.string().optional(),
   insertionorderId: z.string().optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   optimizationGoal: OptimizationGoal$outboundSchema.optional(),
   organizationId: z.string().optional(),
   pacing: PropertyAdsGroupPacing$outboundSchema.optional(),
   parentId: z.string().optional(),
+  promoted: z.array(AdsPromoted$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   status: AdsGroupStatus$outboundSchema.optional(),

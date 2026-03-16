@@ -9,7 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
+import { AdsPromoted, AdsPromoted$inboundSchema } from "./adspromoted.js";
 
 export const PropertyAdsReportMetricsAdAdType = {
   Text: "TEXT",
@@ -56,11 +56,11 @@ export type PropertyAdsReportMetricsAd = {
   groupId?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
-  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   path1?: string | undefined;
   path2?: string | undefined;
+  promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: PropertyAdsReportMetricsAdStatus | undefined;
   updatedAt?: Date | undefined;
@@ -100,11 +100,11 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
   group_id: z.string().optional(),
   headline: z.string().optional(),
   id: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   path1: z.string().optional(),
   path2: z.string().optional(),
+  promoted: z.array(AdsPromoted$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   status: PropertyAdsReportMetricsAdStatus$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

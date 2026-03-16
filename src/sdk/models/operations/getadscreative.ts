@@ -30,7 +30,7 @@ export const GetAdsCreativeQueryParamFields = {
   ExternalCreativeReference: "external_creative_reference",
   ExternalPlacementReference: "external_placement_reference",
   ExternalAdReference: "external_ad_reference",
-  Metadata: "metadata",
+  Promoted: "promoted",
   Path1: "path1",
   Path2: "path2",
   Raw: "raw",

@@ -97,6 +97,7 @@ import { Person } from "./person.js";
 import { Pipeline } from "./pipeline.js";
 import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
+import { Promoted } from "./promoted.js";
 import { Prompt } from "./prompt.js";
 import { Pullrequest } from "./pullrequest.js";
 import { Purchaseorder } from "./purchaseorder.js";
@@ -265,6 +266,11 @@ export class UnifiedTo extends ClientSDK {
   private _insertionorder?: Insertionorder;
   get insertionorder(): Insertionorder {
     return (this._insertionorder ??= new Insertionorder(this._options));
+  }
+
+  private _promoted?: Promoted;
+  get promoted(): Promoted {
+    return (this._promoted ??= new Promoted(this._options));
   }
 
   private _target?: Target;

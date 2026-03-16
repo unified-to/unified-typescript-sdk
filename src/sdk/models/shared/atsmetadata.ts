@@ -10,16 +10,16 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AtsMetadata1 = {};
+export type One = {};
 
-export type AtsMetadata5 = AtsMetadata1 | string | number | boolean;
+export type Five = One | string | number | boolean;
 
 export type ExtraData =
   | { [k: string]: any }
   | string
   | number
   | boolean
-  | Array<AtsMetadata1 | string | number | boolean>;
+  | Array<One | string | number | boolean>;
 
 export const Format = {
   Text: "TEXT",
@@ -38,20 +38,16 @@ export const Format = {
 } as const;
 export type Format = OpenEnum<typeof Format>;
 
-export type AtsMetadataSchemas1 = {};
+export type AtsMetadata1 = {};
 
-export type AtsMetadataSchemas5 =
-  | AtsMetadataSchemas1
-  | string
-  | number
-  | boolean;
+export type AtsMetadata5 = AtsMetadata1 | string | number | boolean;
 
-export type AtsMetadataValue =
+export type Value =
   | { [k: string]: any }
   | string
   | number
   | boolean
-  | Array<AtsMetadataSchemas1 | string | number | boolean>;
+  | Array<AtsMetadata1 | string | number | boolean>;
 
 export type AtsMetadata = {
   extraData?:
@@ -59,7 +55,7 @@ export type AtsMetadata = {
     | string
     | number
     | boolean
-    | Array<AtsMetadata1 | string | number | boolean>
+    | Array<One | string | number | boolean>
     | undefined;
   format?: Format | undefined;
   id?: string | undefined;
@@ -70,9 +66,132 @@ export type AtsMetadata = {
     | string
     | number
     | boolean
-    | Array<AtsMetadataSchemas1 | string | number | boolean>
+    | Array<AtsMetadata1 | string | number | boolean>
     | undefined;
 };
+
+/** @internal */
+export const One$inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z
+  .object({});
+/** @internal */
+export type One$Outbound = {};
+
+/** @internal */
+export const One$outboundSchema: z.ZodType<One$Outbound, z.ZodTypeDef, One> = z
+  .object({});
+
+export function oneToJSON(one: One): string {
+  return JSON.stringify(One$outboundSchema.parse(one));
+}
+export function oneFromJSON(
+  jsonString: string,
+): SafeParseResult<One, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => One$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'One' from JSON`,
+  );
+}
+
+/** @internal */
+export const Five$inboundSchema: z.ZodType<Five, z.ZodTypeDef, unknown> = z
+  .union([
+    z.lazy(() => One$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ]);
+/** @internal */
+export type Five$Outbound = One$Outbound | string | number | boolean;
+
+/** @internal */
+export const Five$outboundSchema: z.ZodType<Five$Outbound, z.ZodTypeDef, Five> =
+  z.union([
+    z.lazy(() => One$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ]);
+
+export function fiveToJSON(five: Five): string {
+  return JSON.stringify(Five$outboundSchema.parse(five));
+}
+export function fiveFromJSON(
+  jsonString: string,
+): SafeParseResult<Five, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Five$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Five' from JSON`,
+  );
+}
+
+/** @internal */
+export const ExtraData$inboundSchema: z.ZodType<
+  ExtraData,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => One$inboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
+]);
+/** @internal */
+export type ExtraData$Outbound =
+  | { [k: string]: any }
+  | string
+  | number
+  | boolean
+  | Array<One$Outbound | string | number | boolean>;
+
+/** @internal */
+export const ExtraData$outboundSchema: z.ZodType<
+  ExtraData$Outbound,
+  z.ZodTypeDef,
+  ExtraData
+> = z.union([
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => One$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
+]);
+
+export function extraDataToJSON(extraData: ExtraData): string {
+  return JSON.stringify(ExtraData$outboundSchema.parse(extraData));
+}
+export function extraDataFromJSON(
+  jsonString: string,
+): SafeParseResult<ExtraData, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ExtraData$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ExtraData' from JSON`,
+  );
+}
+
+/** @internal */
+export const Format$inboundSchema: z.ZodType<Format, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Format);
+/** @internal */
+export const Format$outboundSchema: z.ZodType<string, z.ZodTypeDef, Format> =
+  openEnums.outboundSchema(Format);
 
 /** @internal */
 export const AtsMetadata1$inboundSchema: z.ZodType<
@@ -147,26 +266,23 @@ export function atsMetadata5FromJSON(
 }
 
 /** @internal */
-export const ExtraData$inboundSchema: z.ZodType<
-  ExtraData,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AtsMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z
+  .union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ]);
 /** @internal */
-export type ExtraData$Outbound =
+export type Value$Outbound =
   | { [k: string]: any }
   | string
   | number
@@ -174,10 +290,10 @@ export type ExtraData$Outbound =
   | Array<AtsMetadata1$Outbound | string | number | boolean>;
 
 /** @internal */
-export const ExtraData$outboundSchema: z.ZodType<
-  ExtraData$Outbound,
+export const Value$outboundSchema: z.ZodType<
+  Value$Outbound,
   z.ZodTypeDef,
-  ExtraData
+  Value
 > = z.union([
   z.record(z.any()),
   z.string(),
@@ -193,167 +309,16 @@ export const ExtraData$outboundSchema: z.ZodType<
   ),
 ]);
 
-export function extraDataToJSON(extraData: ExtraData): string {
-  return JSON.stringify(ExtraData$outboundSchema.parse(extraData));
+export function valueToJSON(value: Value): string {
+  return JSON.stringify(Value$outboundSchema.parse(value));
 }
-export function extraDataFromJSON(
+export function valueFromJSON(
   jsonString: string,
-): SafeParseResult<ExtraData, SDKValidationError> {
+): SafeParseResult<Value, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ExtraData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ExtraData' from JSON`,
-  );
-}
-
-/** @internal */
-export const Format$inboundSchema: z.ZodType<Format, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Format);
-/** @internal */
-export const Format$outboundSchema: z.ZodType<string, z.ZodTypeDef, Format> =
-  openEnums.outboundSchema(Format);
-
-/** @internal */
-export const AtsMetadataSchemas1$inboundSchema: z.ZodType<
-  AtsMetadataSchemas1,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-/** @internal */
-export type AtsMetadataSchemas1$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemas1$outboundSchema: z.ZodType<
-  AtsMetadataSchemas1$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemas1
-> = z.object({});
-
-export function atsMetadataSchemas1ToJSON(
-  atsMetadataSchemas1: AtsMetadataSchemas1,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemas1$outboundSchema.parse(atsMetadataSchemas1),
-  );
-}
-export function atsMetadataSchemas1FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemas1, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemas1$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemas1' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataSchemas5$inboundSchema: z.ZodType<
-  AtsMetadataSchemas5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => AtsMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
-/** @internal */
-export type AtsMetadataSchemas5$Outbound =
-  | AtsMetadataSchemas1$Outbound
-  | string
-  | number
-  | boolean;
-
-/** @internal */
-export const AtsMetadataSchemas5$outboundSchema: z.ZodType<
-  AtsMetadataSchemas5$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemas5
-> = z.union([
-  z.lazy(() => AtsMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
-
-export function atsMetadataSchemas5ToJSON(
-  atsMetadataSchemas5: AtsMetadataSchemas5,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemas5$outboundSchema.parse(atsMetadataSchemas5),
-  );
-}
-export function atsMetadataSchemas5FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemas5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemas5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemas5' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataValue$inboundSchema: z.ZodType<
-  AtsMetadataValue,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AtsMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
-/** @internal */
-export type AtsMetadataValue$Outbound =
-  | { [k: string]: any }
-  | string
-  | number
-  | boolean
-  | Array<AtsMetadataSchemas1$Outbound | string | number | boolean>;
-
-/** @internal */
-export const AtsMetadataValue$outboundSchema: z.ZodType<
-  AtsMetadataValue$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AtsMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
-
-export function atsMetadataValueToJSON(
-  atsMetadataValue: AtsMetadataValue,
-): string {
-  return JSON.stringify(
-    AtsMetadataValue$outboundSchema.parse(atsMetadataValue),
-  );
-}
-export function atsMetadataValueFromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataValue, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataValue$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataValue' from JSON`,
+    (x) => Value$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Value' from JSON`,
   );
 }
 
@@ -370,7 +335,7 @@ export const AtsMetadata$inboundSchema: z.ZodType<
     z.boolean(),
     z.array(
       z.union([
-        z.lazy(() => AtsMetadata1$inboundSchema),
+        z.lazy(() => One$inboundSchema),
         z.string(),
         z.number(),
         z.boolean(),
@@ -388,7 +353,7 @@ export const AtsMetadata$inboundSchema: z.ZodType<
     z.boolean(),
     z.array(
       z.union([
-        z.lazy(() => AtsMetadataSchemas1$inboundSchema),
+        z.lazy(() => AtsMetadata1$inboundSchema),
         z.string(),
         z.number(),
         z.boolean(),
@@ -407,7 +372,7 @@ export type AtsMetadata$Outbound = {
     | string
     | number
     | boolean
-    | Array<AtsMetadata1$Outbound | string | number | boolean>
+    | Array<One$Outbound | string | number | boolean>
     | undefined;
   format?: string | undefined;
   id?: string | undefined;
@@ -418,7 +383,7 @@ export type AtsMetadata$Outbound = {
     | string
     | number
     | boolean
-    | Array<AtsMetadataSchemas1$Outbound | string | number | boolean>
+    | Array<AtsMetadata1$Outbound | string | number | boolean>
     | undefined;
 };
 
@@ -435,7 +400,7 @@ export const AtsMetadata$outboundSchema: z.ZodType<
     z.boolean(),
     z.array(
       z.union([
-        z.lazy(() => AtsMetadata1$outboundSchema),
+        z.lazy(() => One$outboundSchema),
         z.string(),
         z.number(),
         z.boolean(),
@@ -453,7 +418,7 @@ export const AtsMetadata$outboundSchema: z.ZodType<
     z.boolean(),
     z.array(
       z.union([
-        z.lazy(() => AtsMetadataSchemas1$outboundSchema),
+        z.lazy(() => AtsMetadata1$outboundSchema),
         z.string(),
         z.number(),
         z.boolean(),
