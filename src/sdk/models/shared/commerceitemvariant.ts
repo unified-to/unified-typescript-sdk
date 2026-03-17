@@ -46,13 +46,15 @@ export const SizeUnit = {
 } as const;
 export type SizeUnit = OpenEnum<typeof SizeUnit>;
 
-export const WeightUnit = {
+export const CommerceItemvariantWeightUnit = {
   G: "g",
   Kg: "kg",
   Oz: "oz",
   Lb: "lb",
 } as const;
-export type WeightUnit = OpenEnum<typeof WeightUnit>;
+export type CommerceItemvariantWeightUnit = OpenEnum<
+  typeof CommerceItemvariantWeightUnit
+>;
 
 export type CommerceItemvariant = {
   availableAt?: Date | undefined;
@@ -84,7 +86,7 @@ export type CommerceItemvariant = {
   totalStock?: number | undefined;
   updatedAt?: Date | undefined;
   weight?: number | undefined;
-  weightUnit?: WeightUnit | undefined;
+  weightUnit?: CommerceItemvariantWeightUnit | undefined;
   width?: number | undefined;
 };
 
@@ -102,17 +104,17 @@ export const SizeUnit$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(SizeUnit);
 
 /** @internal */
-export const WeightUnit$inboundSchema: z.ZodType<
-  WeightUnit,
+export const CommerceItemvariantWeightUnit$inboundSchema: z.ZodType<
+  CommerceItemvariantWeightUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(WeightUnit);
+> = openEnums.inboundSchema(CommerceItemvariantWeightUnit);
 /** @internal */
-export const WeightUnit$outboundSchema: z.ZodType<
+export const CommerceItemvariantWeightUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  WeightUnit
-> = openEnums.outboundSchema(WeightUnit);
+  CommerceItemvariantWeightUnit
+> = openEnums.outboundSchema(CommerceItemvariantWeightUnit);
 
 /** @internal */
 export const CommerceItemvariant$inboundSchema: z.ZodType<
@@ -150,7 +152,7 @@ export const CommerceItemvariant$inboundSchema: z.ZodType<
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   weight: z.number().optional(),
-  weight_unit: WeightUnit$inboundSchema.optional(),
+  weight_unit: CommerceItemvariantWeightUnit$inboundSchema.optional(),
   width: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -233,7 +235,7 @@ export const CommerceItemvariant$outboundSchema: z.ZodType<
   totalStock: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   weight: z.number().optional(),
-  weightUnit: WeightUnit$outboundSchema.optional(),
+  weightUnit: CommerceItemvariantWeightUnit$outboundSchema.optional(),
   width: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {

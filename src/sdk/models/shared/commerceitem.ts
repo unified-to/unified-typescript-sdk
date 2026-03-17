@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -13,6 +15,12 @@ import {
   CommerceItemMedia$Outbound,
   CommerceItemMedia$outboundSchema,
 } from "./commerceitemmedia.js";
+import {
+  CommerceItemPrice,
+  CommerceItemPrice$inboundSchema,
+  CommerceItemPrice$Outbound,
+  CommerceItemPrice$outboundSchema,
+} from "./commerceitemprice.js";
 import {
   CommerceItemvariant,
   CommerceItemvariant$inboundSchema,
@@ -32,6 +40,14 @@ import {
   CommerceReference$outboundSchema,
 } from "./commercereference.js";
 
+export const WeightUnit = {
+  G: "g",
+  Kg: "kg",
+  Oz: "oz",
+  Lb: "lb",
+} as const;
+export type WeightUnit = OpenEnum<typeof WeightUnit>;
+
 export type CommerceItem = {
   accountId?: string | undefined;
   /**
@@ -46,17 +62,23 @@ export type CommerceItem = {
   description?: string | undefined;
   globalCode?: string | undefined;
   id?: string | undefined;
+  inventoryId?: string | undefined;
   isActive?: boolean | undefined;
+  isFeatured?: boolean | undefined;
   isTaxable?: boolean | undefined;
+  isVisible?: boolean | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
   name?: string | undefined;
+  prices?: Array<CommerceItemPrice> | undefined;
   publicDescription?: string | undefined;
   publicName?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  requiresShipping?: boolean | undefined;
   slug?: string | undefined;
   tags?: Array<string> | undefined;
   taxrateId?: string | undefined;
+  totalStock?: number | undefined;
   type?: string | undefined;
   updatedAt?: Date | undefined;
   /**
@@ -64,7 +86,22 @@ export type CommerceItem = {
    */
   variants?: Array<CommerceItemvariant> | undefined;
   vendorName?: string | undefined;
+  weight?: number | undefined;
+  weightUnit?: WeightUnit | undefined;
 };
+
+/** @internal */
+export const WeightUnit$inboundSchema: z.ZodType<
+  WeightUnit,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(WeightUnit);
+/** @internal */
+export const WeightUnit$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  WeightUnit
+> = openEnums.outboundSchema(WeightUnit);
 
 /** @internal */
 export const CommerceItem$inboundSchema: z.ZodType<
@@ -80,35 +117,49 @@ export const CommerceItem$inboundSchema: z.ZodType<
   description: z.string().optional(),
   global_code: z.string().optional(),
   id: z.string().optional(),
+  inventory_id: z.string().optional(),
   is_active: z.boolean().optional(),
+  is_featured: z.boolean().optional(),
   is_taxable: z.boolean().optional(),
+  is_visible: z.boolean().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
   metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   name: z.string().optional(),
+  prices: z.array(CommerceItemPrice$inboundSchema).optional(),
   public_description: z.string().optional(),
   public_name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  requires_shipping: z.boolean().optional(),
   slug: z.string().optional(),
   tags: z.array(z.string()).optional(),
   taxrate_id: z.string().optional(),
+  total_stock: z.number().optional(),
   type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   variants: z.array(CommerceItemvariant$inboundSchema).optional(),
   vendor_name: z.string().optional(),
+  weight: z.number().optional(),
+  weight_unit: WeightUnit$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
     "collection_ids": "collectionIds",
     "created_at": "createdAt",
     "global_code": "globalCode",
+    "inventory_id": "inventoryId",
     "is_active": "isActive",
+    "is_featured": "isFeatured",
     "is_taxable": "isTaxable",
+    "is_visible": "isVisible",
     "public_description": "publicDescription",
     "public_name": "publicName",
+    "requires_shipping": "requiresShipping",
     "taxrate_id": "taxrateId",
+    "total_stock": "totalStock",
     "updated_at": "updatedAt",
     "vendor_name": "vendorName",
+    "weight_unit": "weightUnit",
   });
 });
 /** @internal */
@@ -120,21 +171,29 @@ export type CommerceItem$Outbound = {
   description?: string | undefined;
   global_code?: string | undefined;
   id?: string | undefined;
+  inventory_id?: string | undefined;
   is_active?: boolean | undefined;
+  is_featured?: boolean | undefined;
   is_taxable?: boolean | undefined;
+  is_visible?: boolean | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
   metadata?: Array<CommerceMetadata$Outbound> | undefined;
   name?: string | undefined;
+  prices?: Array<CommerceItemPrice$Outbound> | undefined;
   public_description?: string | undefined;
   public_name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  requires_shipping?: boolean | undefined;
   slug?: string | undefined;
   tags?: Array<string> | undefined;
   taxrate_id?: string | undefined;
+  total_stock?: number | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
   variants?: Array<CommerceItemvariant$Outbound> | undefined;
   vendor_name?: string | undefined;
+  weight?: number | undefined;
+  weight_unit?: string | undefined;
 };
 
 /** @internal */
@@ -150,34 +209,48 @@ export const CommerceItem$outboundSchema: z.ZodType<
   description: z.string().optional(),
   globalCode: z.string().optional(),
   id: z.string().optional(),
+  inventoryId: z.string().optional(),
   isActive: z.boolean().optional(),
+  isFeatured: z.boolean().optional(),
   isTaxable: z.boolean().optional(),
+  isVisible: z.boolean().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
   metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   name: z.string().optional(),
+  prices: z.array(CommerceItemPrice$outboundSchema).optional(),
   publicDescription: z.string().optional(),
   publicName: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  requiresShipping: z.boolean().optional(),
   slug: z.string().optional(),
   tags: z.array(z.string()).optional(),
   taxrateId: z.string().optional(),
+  totalStock: z.number().optional(),
   type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   variants: z.array(CommerceItemvariant$outboundSchema).optional(),
   vendorName: z.string().optional(),
+  weight: z.number().optional(),
+  weightUnit: WeightUnit$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
     collectionIds: "collection_ids",
     createdAt: "created_at",
     globalCode: "global_code",
+    inventoryId: "inventory_id",
     isActive: "is_active",
+    isFeatured: "is_featured",
     isTaxable: "is_taxable",
+    isVisible: "is_visible",
     publicDescription: "public_description",
     publicName: "public_name",
+    requiresShipping: "requires_shipping",
     taxrateId: "taxrate_id",
+    totalStock: "total_stock",
     updatedAt: "updated_at",
     vendorName: "vendor_name",
+    weightUnit: "weight_unit",
   });
 });
 
