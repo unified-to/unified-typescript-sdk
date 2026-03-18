@@ -238,6 +238,13 @@ export const ListInvoiceId = {
 } as const;
 export type ListInvoiceId = OpenEnum<typeof ListInvoiceId>;
 
+export const ListIoId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListIoId = OpenEnum<typeof ListIoId>;
+
 export const ListItemId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -574,6 +581,13 @@ export const NativeWebhookFormId = {
 } as const;
 export type NativeWebhookFormId = OpenEnum<typeof NativeWebhookFormId>;
 
+export const NativeWebhookIoId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookIoId = OpenEnum<typeof NativeWebhookIoId>;
+
 export const NativeWebhookLabelId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -852,6 +866,13 @@ export const VirtualWebhookInvoiceId = {
 } as const;
 export type VirtualWebhookInvoiceId = OpenEnum<typeof VirtualWebhookInvoiceId>;
 
+export const VirtualWebhookIoId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookIoId = OpenEnum<typeof VirtualWebhookIoId>;
+
 export const VirtualWebhookItemId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1110,6 +1131,7 @@ export type IntegrationSupport = {
   listInstructorId?: ListInstructorId | undefined;
   listInterviewId?: ListInterviewId | undefined;
   listInvoiceId?: ListInvoiceId | undefined;
+  listIoId?: ListIoId | undefined;
   listItemId?: ListItemId | undefined;
   listItemVariantId?: ListItemVariantId | undefined;
   listJobId?: ListJobId | undefined;
@@ -1159,6 +1181,7 @@ export type IntegrationSupport = {
   nativeWebhookCourseId?: NativeWebhookCourseId | undefined;
   nativeWebhookEventId?: NativeWebhookEventId | undefined;
   nativeWebhookFormId?: NativeWebhookFormId | undefined;
+  nativeWebhookIoId?: NativeWebhookIoId | undefined;
   nativeWebhookLabelId?: NativeWebhookLabelId | undefined;
   nativeWebhookMemberId?: NativeWebhookMemberId | undefined;
   nativeWebhookOrderId?: NativeWebhookOrderId | undefined;
@@ -1203,6 +1226,7 @@ export type IntegrationSupport = {
   virtualWebhookFormId?: VirtualWebhookFormId | undefined;
   virtualWebhookGroupId?: VirtualWebhookGroupId | undefined;
   virtualWebhookInvoiceId?: VirtualWebhookInvoiceId | undefined;
+  virtualWebhookIoId?: VirtualWebhookIoId | undefined;
   virtualWebhookItemId?: VirtualWebhookItemId | undefined;
   virtualWebhookItemVariantId?: VirtualWebhookItemVariantId | undefined;
   virtualWebhookJobId?: VirtualWebhookJobId | undefined;
@@ -1459,6 +1483,13 @@ export const ListInvoiceId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListInvoiceId);
+
+/** @internal */
+export const ListIoId$inboundSchema: z.ZodType<
+  ListIoId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListIoId);
 
 /** @internal */
 export const ListItemId$inboundSchema: z.ZodType<
@@ -1797,6 +1828,13 @@ export const NativeWebhookFormId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookFormId);
 
 /** @internal */
+export const NativeWebhookIoId$inboundSchema: z.ZodType<
+  NativeWebhookIoId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookIoId);
+
+/** @internal */
 export const NativeWebhookLabelId$inboundSchema: z.ZodType<
   NativeWebhookLabelId,
   z.ZodTypeDef,
@@ -2063,6 +2101,13 @@ export const VirtualWebhookInvoiceId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookInvoiceId);
 
 /** @internal */
+export const VirtualWebhookIoId$inboundSchema: z.ZodType<
+  VirtualWebhookIoId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookIoId);
+
+/** @internal */
 export const VirtualWebhookItemId$inboundSchema: z.ZodType<
   VirtualWebhookItemId,
   z.ZodTypeDef,
@@ -2311,6 +2356,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_instructor_id: ListInstructorId$inboundSchema.optional(),
   list_interview_id: ListInterviewId$inboundSchema.optional(),
   list_invoice_id: ListInvoiceId$inboundSchema.optional(),
+  list_io_id: ListIoId$inboundSchema.optional(),
   list_item_id: ListItemId$inboundSchema.optional(),
   list_item_variant_id: ListItemVariantId$inboundSchema.optional(),
   list_job_id: ListJobId$inboundSchema.optional(),
@@ -2360,6 +2406,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_course_id: NativeWebhookCourseId$inboundSchema.optional(),
   native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
   native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
+  native_webhook_io_id: NativeWebhookIoId$inboundSchema.optional(),
   native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
   native_webhook_member_id: NativeWebhookMemberId$inboundSchema.optional(),
   native_webhook_order_id: NativeWebhookOrderId$inboundSchema.optional(),
@@ -2407,6 +2454,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_form_id: VirtualWebhookFormId$inboundSchema.optional(),
   virtual_webhook_group_id: VirtualWebhookGroupId$inboundSchema.optional(),
   virtual_webhook_invoice_id: VirtualWebhookInvoiceId$inboundSchema.optional(),
+  virtual_webhook_io_id: VirtualWebhookIoId$inboundSchema.optional(),
   virtual_webhook_item_id: VirtualWebhookItemId$inboundSchema.optional(),
   virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
     .optional(),
@@ -2481,6 +2529,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_instructor_id": "listInstructorId",
     "list_interview_id": "listInterviewId",
     "list_invoice_id": "listInvoiceId",
+    "list_io_id": "listIoId",
     "list_item_id": "listItemId",
     "list_item_variant_id": "listItemVariantId",
     "list_job_id": "listJobId",
@@ -2529,6 +2578,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_course_id": "nativeWebhookCourseId",
     "native_webhook_event_id": "nativeWebhookEventId",
     "native_webhook_form_id": "nativeWebhookFormId",
+    "native_webhook_io_id": "nativeWebhookIoId",
     "native_webhook_label_id": "nativeWebhookLabelId",
     "native_webhook_member_id": "nativeWebhookMemberId",
     "native_webhook_order_id": "nativeWebhookOrderId",
@@ -2570,6 +2620,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_form_id": "virtualWebhookFormId",
     "virtual_webhook_group_id": "virtualWebhookGroupId",
     "virtual_webhook_invoice_id": "virtualWebhookInvoiceId",
+    "virtual_webhook_io_id": "virtualWebhookIoId",
     "virtual_webhook_item_id": "virtualWebhookItemId",
     "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
     "virtual_webhook_job_id": "virtualWebhookJobId",

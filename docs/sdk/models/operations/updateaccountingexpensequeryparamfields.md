@@ -5,11 +5,11 @@
 ```typescript
 import { UpdateAccountingExpenseQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: UpdateAccountingExpenseQueryParamFields = "posted_at";
+let value: UpdateAccountingExpenseQueryParamFields = "total_amount";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "user_id" | "contact_id" | "account_id" | "name" | "payment_method" | "posted_at" | "total_amount" | "currency" | "tax_amount" | "reimbursed_amount" | "reimbursed_at" | "approved_at" | "approver_user_id" | "lineitems" | "raw"
+"id" | "created_at" | "updated_at" | "user_id" | "contact_id" | "account_id" | "name" | "payment_method" | "posted_at" | "total_amount" | "currency" | "tax_amount" | "reimbursed_amount" | "reimbursed_at" | "approved_at" | "approver_user_id" | "lineitems" | "organization_id" | "raw"
 ```

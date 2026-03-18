@@ -24,6 +24,7 @@ export type AccountingExpense = {
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   name?: string | undefined;
+  organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -52,6 +53,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   name: z.string().optional(),
+  organization_id: z.string().optional(),
   payment_method: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -72,6 +74,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
     "approver_user_id": "approverUserId",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "organization_id": "organizationId",
     "payment_method": "paymentMethod",
     "posted_at": "postedAt",
     "reimbursed_amount": "reimbursedAmount",
@@ -93,6 +96,7 @@ export type AccountingExpense$Outbound = {
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   name?: string | undefined;
+  organization_id?: string | undefined;
   payment_method?: string | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -119,6 +123,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   name: z.string().optional(),
+  organizationId: z.string().optional(),
   paymentMethod: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
@@ -135,6 +140,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
     approverUserId: "approver_user_id",
     contactId: "contact_id",
     createdAt: "created_at",
+    organizationId: "organization_id",
     paymentMethod: "payment_method",
     postedAt: "posted_at",
     reimbursedAmount: "reimbursed_amount",

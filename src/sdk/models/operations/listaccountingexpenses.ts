@@ -24,6 +24,7 @@ export const ListAccountingExpensesQueryParamFields = {
   ApprovedAt: "approved_at",
   ApproverUserId: "approver_user_id",
   Lineitems: "lineitems",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type ListAccountingExpensesQueryParamFields = ClosedEnum<
@@ -58,6 +59,10 @@ export type ListAccountingExpensesRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The org ID to filter by (reference to AccountingOrganization)
+   */
+  orgId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -98,6 +103,7 @@ export type ListAccountingExpensesRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -122,6 +128,7 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -135,6 +142,7 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
     contactId: "contact_id",
     endLt: "end_lt",
     groupId: "group_id",
+    orgId: "org_id",
     startGte: "start_gte",
     updatedGte: "updated_gte",
     userId: "user_id",

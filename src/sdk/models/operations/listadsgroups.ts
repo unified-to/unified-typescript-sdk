@@ -54,6 +54,10 @@ export type ListAdsGroupsRequest = {
    * Fields to return
    */
   fields?: Array<ListAdsGroupsQueryParamFields> | undefined;
+  /**
+   * The IO ID to filter by
+   */
+  ioId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -90,6 +94,7 @@ export type ListAdsGroupsRequest$Outbound = {
   campaign_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
+  io_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -110,6 +115,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
   campaignId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(ListAdsGroupsQueryParamFields$outboundSchema).optional(),
+  ioId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -123,6 +129,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     campaignId: "campaign_id",
     connectionId: "connection_id",
+    ioId: "io_id",
     orgId: "org_id",
     parentId: "parent_id",
     updatedGte: "updated_gte",

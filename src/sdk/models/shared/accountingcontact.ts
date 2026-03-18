@@ -76,6 +76,7 @@ export type AccountingContact = {
   isSupplier?: boolean | undefined;
   lastName?: string | undefined;
   name?: string | undefined;
+  organizationId?: string | undefined;
   paymentMethods?: Array<AccountingContactPaymentMethod> | undefined;
   portalUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -122,6 +123,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
   is_supplier: z.boolean().optional(),
   last_name: z.string().optional(),
   name: z.string().optional(),
+  organization_id: z.string().optional(),
   payment_methods: z.array(AccountingContactPaymentMethod$inboundSchema)
     .optional(),
   portal_url: z.string().optional(),
@@ -144,6 +146,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
     "is_customer": "isCustomer",
     "is_supplier": "isSupplier",
     "last_name": "lastName",
+    "organization_id": "organizationId",
     "payment_methods": "paymentMethods",
     "portal_url": "portalUrl",
     "shipping_address": "shippingAddress",
@@ -170,6 +173,7 @@ export type AccountingContact$Outbound = {
   is_supplier?: boolean | undefined;
   last_name?: string | undefined;
   name?: string | undefined;
+  organization_id?: string | undefined;
   payment_methods?: Array<AccountingContactPaymentMethod$Outbound> | undefined;
   portal_url?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -204,6 +208,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   isSupplier: z.boolean().optional(),
   lastName: z.string().optional(),
   name: z.string().optional(),
+  organizationId: z.string().optional(),
   paymentMethods: z.array(AccountingContactPaymentMethod$outboundSchema)
     .optional(),
   portalUrl: z.string().optional(),
@@ -225,6 +230,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
     isCustomer: "is_customer",
     isSupplier: "is_supplier",
     lastName: "last_name",
+    organizationId: "organization_id",
     paymentMethods: "payment_methods",
     portalUrl: "portal_url",
     shippingAddress: "shipping_address",

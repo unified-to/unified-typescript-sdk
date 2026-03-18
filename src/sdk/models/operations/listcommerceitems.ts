@@ -59,6 +59,10 @@ export type ListCommerceItemsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The org ID to filter by (reference to AccountingOrganization)
+   */
+  orgId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -86,6 +90,7 @@ export type ListCommerceItemsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -104,6 +109,7 @@ export const ListCommerceItemsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -112,6 +118,7 @@ export const ListCommerceItemsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     collectionId: "collection_id",
     connectionId: "connection_id",
+    orgId: "org_id",
     updatedGte: "updated_gte",
   });
 });

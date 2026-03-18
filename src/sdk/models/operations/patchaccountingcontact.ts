@@ -29,6 +29,7 @@ export const PatchAccountingContactQueryParamFields = {
   CompanyName: "company_name",
   Identification: "identification",
   AssociatedContacts: "associated_contacts",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type PatchAccountingContactQueryParamFields = ClosedEnum<

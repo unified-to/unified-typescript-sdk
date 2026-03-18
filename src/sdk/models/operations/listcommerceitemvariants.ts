@@ -61,6 +61,10 @@ export type ListCommerceItemvariantsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The org ID to filter by (reference to AccountingOrganization)
+   */
+  orgId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -89,6 +93,7 @@ export type ListCommerceItemvariantsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -109,6 +114,7 @@ export const ListCommerceItemvariantsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -118,6 +124,7 @@ export const ListCommerceItemvariantsRequest$outboundSchema: z.ZodType<
     collectionId: "collection_id",
     connectionId: "connection_id",
     itemId: "item_id",
+    orgId: "org_id",
     updatedGte: "updated_gte",
   });
 });

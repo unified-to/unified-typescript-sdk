@@ -59,6 +59,10 @@ export type ListPaymentPaymentsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The org ID to filter by
+   */
+  orgId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -99,6 +103,7 @@ export type ListPaymentPaymentsRequest$Outbound = {
   link_id?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -124,6 +129,7 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
   linkId: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -138,6 +144,7 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
     endLt: "end_lt",
     invoiceId: "invoice_id",
     linkId: "link_id",
+    orgId: "org_id",
     startGte: "start_gte",
     updatedGte: "updated_gte",
   });
