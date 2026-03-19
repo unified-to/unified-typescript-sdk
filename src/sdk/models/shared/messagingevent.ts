@@ -44,6 +44,7 @@ export const MessagingEventType = {
   ChannelLeft: "CHANNEL_LEFT",
   ChannelCreated: "CHANNEL_CREATED",
   ChannelDeleted: "CHANNEL_DELETED",
+  ChannelRenamed: "CHANNEL_RENAMED",
   UserCreated: "USER_CREATED",
   UserDeleted: "USER_DELETED",
   UserUpdated: "USER_UPDATED",

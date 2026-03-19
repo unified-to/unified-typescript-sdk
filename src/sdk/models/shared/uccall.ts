@@ -28,6 +28,8 @@ export type UcCall = {
   telephone?: PropertyUcCallTelephone | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
+  userName?: string | undefined;
+  userPhone?: string | undefined;
 };
 
 /** @internal */
@@ -50,6 +52,8 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
       new Date(v)
     ).optional(),
     user_id: z.string().optional(),
+    user_name: z.string().optional(),
+    user_phone: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
       "contact_id": "contactId",
@@ -59,6 +63,8 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
       "start_at": "startAt",
       "updated_at": "updatedAt",
       "user_id": "userId",
+      "user_name": "userName",
+      "user_phone": "userPhone",
     });
   });
 

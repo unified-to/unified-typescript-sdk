@@ -28,6 +28,8 @@ export type UcRecording = {
   startAt?: Date | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
+  userName?: string | undefined;
+  userPhone?: string | undefined;
   webUrl?: string | undefined;
 };
 
@@ -55,6 +57,8 @@ export const UcRecording$inboundSchema: z.ZodType<
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
+  user_name: z.string().optional(),
+  user_phone: z.string().optional(),
   web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -68,6 +72,8 @@ export const UcRecording$inboundSchema: z.ZodType<
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",
+    "user_name": "userName",
+    "user_phone": "userPhone",
     "web_url": "webUrl",
   });
 });
@@ -86,6 +92,8 @@ export type UcRecording$Outbound = {
   start_at?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
+  user_name?: string | undefined;
+  user_phone?: string | undefined;
   web_url?: string | undefined;
 };
 
@@ -108,6 +116,8 @@ export const UcRecording$outboundSchema: z.ZodType<
   startAt: z.date().transform(v => v.toISOString()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
+  userName: z.string().optional(),
+  userPhone: z.string().optional(),
   webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -121,6 +131,8 @@ export const UcRecording$outboundSchema: z.ZodType<
     startAt: "start_at",
     updatedAt: "updated_at",
     userId: "user_id",
+    userName: "user_name",
+    userPhone: "user_phone",
     webUrl: "web_url",
   });
 });

@@ -22,6 +22,8 @@ export const PatchUcRecordingQueryParamFields = {
   UserId: "user_id",
   Media: "media",
   Raw: "raw",
+  UserName: "user_name",
+  UserPhone: "user_phone",
 } as const;
 export type PatchUcRecordingQueryParamFields = ClosedEnum<
   typeof PatchUcRecordingQueryParamFields

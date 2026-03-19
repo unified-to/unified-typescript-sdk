@@ -5,7 +5,7 @@
 ```typescript
 import { MessagingEventType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: MessagingEventType = "USER_DELETED";
+let value: MessagingEventType = "USER_CREATED";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: MessagingEventType = "USER_DELETED";
 ## Values
 
 ```typescript
-"MESSAGE_RECEIVED" | "REACTION_ADDED" | "REACTION_REMOVED" | "BUTTON_CLICK" | "APP_MENTION" | "CHANNEL_JOINED" | "CHANNEL_LEFT" | "CHANNEL_CREATED" | "CHANNEL_DELETED" | "USER_CREATED" | "USER_DELETED" | "USER_UPDATED" | Unrecognized<string>
+"MESSAGE_RECEIVED" | "REACTION_ADDED" | "REACTION_REMOVED" | "BUTTON_CLICK" | "APP_MENTION" | "CHANNEL_JOINED" | "CHANNEL_LEFT" | "CHANNEL_CREATED" | "CHANNEL_DELETED" | "CHANNEL_RENAMED" | "USER_CREATED" | "USER_DELETED" | "USER_UPDATED" | Unrecognized<string>
 ```

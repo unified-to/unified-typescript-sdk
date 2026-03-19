@@ -97,12 +97,14 @@ async function $do(
   );
 
   const query = encodeFormQuery({
+    "account_id": payload.account_id,
     "contact_id": payload.contact_id,
     "end_lt": payload.end_lt,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
+    "org_id": payload.org_id,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,

@@ -32,6 +32,10 @@ export type ListAccountingTransactionsQueryParamFields = ClosedEnum<
 
 export type ListAccountingTransactionsRequest = {
   /**
+   * The account ID to filter by (reference to AccountingAccount)
+   */
+  accountId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
@@ -50,6 +54,10 @@ export type ListAccountingTransactionsRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The org ID to filter by (reference to AccountingOrganization)
+   */
+  orgId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -76,6 +84,7 @@ export const ListAccountingTransactionsQueryParamFields$outboundSchema:
 
 /** @internal */
 export type ListAccountingTransactionsRequest$Outbound = {
+  account_id?: string | undefined;
   connection_id: string;
   contact_id?: string | undefined;
   end_lt?: string | undefined;
@@ -83,6 +92,7 @@ export type ListAccountingTransactionsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -96,6 +106,7 @@ export const ListAccountingTransactionsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAccountingTransactionsRequest
 > = z.object({
+  accountId: z.string().optional(),
   connectionId: z.string(),
   contactId: z.string().optional(),
   endLt: z.string().optional(),
@@ -104,6 +115,7 @@ export const ListAccountingTransactionsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -111,9 +123,11 @@ export const ListAccountingTransactionsRequest$outboundSchema: z.ZodType<
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    accountId: "account_id",
     connectionId: "connection_id",
     contactId: "contact_id",
     endLt: "end_lt",
+    orgId: "org_id",
     startGte: "start_gte",
     updatedGte: "updated_gte",
   });

@@ -581,13 +581,6 @@ export const NativeWebhookFormId = {
 } as const;
 export type NativeWebhookFormId = OpenEnum<typeof NativeWebhookFormId>;
 
-export const NativeWebhookIoId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookIoId = OpenEnum<typeof NativeWebhookIoId>;
-
 export const NativeWebhookLabelId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1181,7 +1174,6 @@ export type IntegrationSupport = {
   nativeWebhookCourseId?: NativeWebhookCourseId | undefined;
   nativeWebhookEventId?: NativeWebhookEventId | undefined;
   nativeWebhookFormId?: NativeWebhookFormId | undefined;
-  nativeWebhookIoId?: NativeWebhookIoId | undefined;
   nativeWebhookLabelId?: NativeWebhookLabelId | undefined;
   nativeWebhookMemberId?: NativeWebhookMemberId | undefined;
   nativeWebhookOrderId?: NativeWebhookOrderId | undefined;
@@ -1828,13 +1820,6 @@ export const NativeWebhookFormId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookFormId);
 
 /** @internal */
-export const NativeWebhookIoId$inboundSchema: z.ZodType<
-  NativeWebhookIoId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookIoId);
-
-/** @internal */
 export const NativeWebhookLabelId$inboundSchema: z.ZodType<
   NativeWebhookLabelId,
   z.ZodTypeDef,
@@ -2406,7 +2391,6 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_course_id: NativeWebhookCourseId$inboundSchema.optional(),
   native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
   native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
-  native_webhook_io_id: NativeWebhookIoId$inboundSchema.optional(),
   native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
   native_webhook_member_id: NativeWebhookMemberId$inboundSchema.optional(),
   native_webhook_order_id: NativeWebhookOrderId$inboundSchema.optional(),
@@ -2578,7 +2562,6 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_course_id": "nativeWebhookCourseId",
     "native_webhook_event_id": "nativeWebhookEventId",
     "native_webhook_form_id": "nativeWebhookFormId",
-    "native_webhook_io_id": "nativeWebhookIoId",
     "native_webhook_label_id": "nativeWebhookLabelId",
     "native_webhook_member_id": "nativeWebhookMemberId",
     "native_webhook_order_id": "nativeWebhookOrderId",
