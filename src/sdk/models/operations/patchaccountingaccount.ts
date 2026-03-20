@@ -24,6 +24,7 @@ export const PatchAccountingAccountQueryParamFields = {
   Group: "group",
   Subgroup: "subgroup",
   ParentId: "parent_id",
+  OrganizationId: "organization_id",
   Taxonomy: "taxonomy",
   Raw: "raw",
 } as const;

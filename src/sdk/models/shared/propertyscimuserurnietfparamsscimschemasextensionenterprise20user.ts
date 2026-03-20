@@ -39,6 +39,7 @@ export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User =
     additionalManagers?: Array<ScimManager> | undefined;
     birthday?: Date | undefined;
     costCenter?: string | undefined;
+    currency?: string | undefined;
     department?: string | undefined;
     division?: string | undefined;
     employeeNumber?: string | undefined;
@@ -88,6 +89,7 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$i
     birthday: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
     costCenter: z.string().optional(),
+    currency: z.string().optional(),
     department: z.string().optional(),
     division: z.string().optional(),
     employeeNumber: z.string().optional(),
@@ -111,6 +113,7 @@ export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$Ou
     additionalManagers?: Array<ScimManager$Outbound> | undefined;
     birthday?: string | undefined;
     costCenter?: string | undefined;
+    currency?: string | undefined;
     department?: string | undefined;
     division?: string | undefined;
     employeeNumber?: string | undefined;
@@ -135,6 +138,7 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$o
     additionalManagers: z.array(ScimManager$outboundSchema).optional(),
     birthday: z.date().transform(v => v.toISOString()).optional(),
     costCenter: z.string().optional(),
+    currency: z.string().optional(),
     department: z.string().optional(),
     division: z.string().optional(),
     employeeNumber: z.string().optional(),
