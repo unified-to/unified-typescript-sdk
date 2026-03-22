@@ -92,7 +92,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/commerce/{connection_id}/saleschannel")(pathParams);
 
   const query = encodeFormQuery({

@@ -92,7 +92,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/crm/{connection_id}/event/{id}")(pathParams);
 
   const headers = new Headers(compactMap({

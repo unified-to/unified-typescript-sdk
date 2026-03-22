@@ -90,7 +90,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/unified/connection/{id}")(pathParams);
 
   const headers = new Headers(compactMap({

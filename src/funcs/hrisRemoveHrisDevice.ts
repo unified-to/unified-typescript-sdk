@@ -92,7 +92,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/hris/{connection_id}/device/{id}")(pathParams);
 
   const headers = new Headers(compactMap({

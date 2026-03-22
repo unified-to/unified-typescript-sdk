@@ -89,7 +89,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/hris/{connection_id}/employee")(pathParams);
 
   const query = encodeFormQuery({

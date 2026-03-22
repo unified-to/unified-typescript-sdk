@@ -90,7 +90,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/task/{connection_id}/task")(pathParams);
 
   const query = encodeFormQuery({

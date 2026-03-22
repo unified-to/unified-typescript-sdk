@@ -31,6 +31,7 @@ export type AdsTargetType = OpenEnum<typeof AdsTargetType>;
 export type AdsTarget = {
   id: string;
   name?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
   type?: AdsTargetType | undefined;
   value: string;
 };
@@ -50,6 +51,7 @@ export const AdsTarget$inboundSchema: z.ZodType<
 > = z.object({
   id: z.string(),
   name: z.string().optional(),
+  raw: z.record(z.any()).optional(),
   type: AdsTargetType$inboundSchema.optional(),
   value: z.string(),
 });

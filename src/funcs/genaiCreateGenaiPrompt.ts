@@ -89,7 +89,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/genai/{connection_id}/prompt")(pathParams);
 
   const query = encodeFormQuery({

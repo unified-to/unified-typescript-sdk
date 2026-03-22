@@ -91,7 +91,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/ticketing/{connection_id}/category")(pathParams);
 
   const query = encodeFormQuery({

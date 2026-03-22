@@ -89,7 +89,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/scim/{connection_id}/groups")(pathParams);
 
   const headers = new Headers(compactMap({

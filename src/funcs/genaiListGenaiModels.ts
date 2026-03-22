@@ -90,7 +90,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/genai/{connection_id}/model")(pathParams);
 
   const query = encodeFormQuery({

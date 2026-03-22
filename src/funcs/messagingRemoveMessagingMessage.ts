@@ -93,7 +93,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/messaging/{connection_id}/message/{id}")(
     pathParams,
   );

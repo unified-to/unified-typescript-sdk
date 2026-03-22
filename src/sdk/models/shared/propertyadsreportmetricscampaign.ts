@@ -85,6 +85,7 @@ export type PropertyAdsReportMetricsCampaign = {
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsReportMetricsCampaignFrequencyCap | undefined;
   goal?: PropertyAdsReportMetricsCampaignGoal | undefined;
+  hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
@@ -151,6 +152,7 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   frequency_cap: PropertyAdsReportMetricsCampaignFrequencyCap$inboundSchema
     .optional(),
   goal: PropertyAdsReportMetricsCampaignGoal$inboundSchema.optional(),
+  has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
@@ -172,6 +174,7 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
+    "has_eu_political_ads": "hasEuPoliticalAds",
     "organization_id": "organizationId",
     "planned_spend_amount": "plannedSpendAmount",
     "start_at": "startAt",

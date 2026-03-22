@@ -92,7 +92,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/lms/{connection_id}/class/{id}")(pathParams);
 
   const headers = new Headers(compactMap({

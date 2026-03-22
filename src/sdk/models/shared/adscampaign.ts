@@ -79,6 +79,7 @@ export type AdsCampaign = {
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsCampaignFrequencyCap | undefined;
   goal?: Goal | undefined;
+  hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
@@ -155,6 +156,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
     .optional(),
   frequency_cap: PropertyAdsCampaignFrequencyCap$inboundSchema.optional(),
   goal: Goal$inboundSchema.optional(),
+  has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
@@ -176,6 +178,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
+    "has_eu_political_ads": "hasEuPoliticalAds",
     "organization_id": "organizationId",
     "planned_spend_amount": "plannedSpendAmount",
     "start_at": "startAt",
@@ -195,6 +198,7 @@ export type AdsCampaign$Outbound = {
   end_at?: string | undefined;
   frequency_cap?: PropertyAdsCampaignFrequencyCap$Outbound | undefined;
   goal?: string | undefined;
+  has_eu_political_ads?: boolean | undefined;
   id?: string | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
@@ -223,6 +227,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   endAt: z.date().transform(v => v.toISOString()).optional(),
   frequencyCap: PropertyAdsCampaignFrequencyCap$outboundSchema.optional(),
   goal: Goal$outboundSchema.optional(),
+  hasEuPoliticalAds: z.boolean().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
@@ -242,6 +247,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
     createdAt: "created_at",
     endAt: "end_at",
     frequencyCap: "frequency_cap",
+    hasEuPoliticalAds: "has_eu_political_ads",
     organizationId: "organization_id",
     plannedSpendAmount: "planned_spend_amount",
     startAt: "start_at",

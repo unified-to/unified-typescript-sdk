@@ -94,7 +94,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/martech/{connection_id}/campaign/{id}")(pathParams);
 
   const query = encodeFormQuery({

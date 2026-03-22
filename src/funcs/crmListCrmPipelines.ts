@@ -90,7 +90,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/crm/{connection_id}/pipeline")(pathParams);
 
   const query = encodeFormQuery({

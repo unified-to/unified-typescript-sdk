@@ -98,7 +98,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc(
     "/unified/integration/login/{workspace_id}/{integration_type}",
   )(pathParams);

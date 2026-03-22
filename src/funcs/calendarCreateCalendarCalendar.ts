@@ -90,7 +90,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/calendar/{connection_id}/calendar")(pathParams);
 
   const query = encodeFormQuery({

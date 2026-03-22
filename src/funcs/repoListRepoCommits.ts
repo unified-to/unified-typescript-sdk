@@ -90,7 +90,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/repo/{connection_id}/commit")(pathParams);
 
   const query = encodeFormQuery({

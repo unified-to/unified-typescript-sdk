@@ -91,7 +91,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/verification/{connection_id}/package")(pathParams);
 
   const query = encodeFormQuery({

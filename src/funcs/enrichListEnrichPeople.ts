@@ -89,7 +89,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/enrich/{connection_id}/person")(pathParams);
 
   const query = encodeFormQuery({

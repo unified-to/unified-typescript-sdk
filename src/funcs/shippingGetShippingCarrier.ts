@@ -93,7 +93,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/shipping/{connection_id}/carrier/{id}")(pathParams);
 
   const query = encodeFormQuery({

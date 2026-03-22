@@ -90,7 +90,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/kms/{connection_id}/space")(pathParams);
 
   const query = encodeFormQuery({

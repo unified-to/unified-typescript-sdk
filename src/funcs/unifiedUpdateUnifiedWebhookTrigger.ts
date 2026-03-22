@@ -89,7 +89,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/unified/webhook/{id}/trigger")(pathParams);
 
   const headers = new Headers(compactMap({

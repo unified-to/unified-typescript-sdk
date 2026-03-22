@@ -92,7 +92,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/calendar/{connection_id}/link/{id}")(pathParams);
 
   const headers = new Headers(compactMap({

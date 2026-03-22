@@ -93,7 +93,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/lms/{connection_id}/instructor/{id}")(pathParams);
 
   const query = encodeFormQuery({

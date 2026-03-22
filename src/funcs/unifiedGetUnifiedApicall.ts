@@ -89,7 +89,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/unified/apicall/{id}")(pathParams);
 
   const headers = new Headers(compactMap({
