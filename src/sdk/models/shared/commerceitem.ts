@@ -60,6 +60,7 @@ export type CommerceItem = {
   collections?: Array<CommerceReference> | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
+  duration?: number | undefined;
   globalCode?: string | undefined;
   id?: string | undefined;
   inventoryId?: string | undefined;
@@ -67,6 +68,7 @@ export type CommerceItem = {
   isFeatured?: boolean | undefined;
   isTaxable?: boolean | undefined;
   isVisible?: boolean | undefined;
+  locationId?: string | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
   name?: string | undefined;
@@ -115,6 +117,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
+  duration: z.number().optional(),
   global_code: z.string().optional(),
   id: z.string().optional(),
   inventory_id: z.string().optional(),
@@ -122,6 +125,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   is_featured: z.boolean().optional(),
   is_taxable: z.boolean().optional(),
   is_visible: z.boolean().optional(),
+  location_id: z.string().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
   metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   name: z.string().optional(),
@@ -152,6 +156,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
     "is_featured": "isFeatured",
     "is_taxable": "isTaxable",
     "is_visible": "isVisible",
+    "location_id": "locationId",
     "public_description": "publicDescription",
     "public_name": "publicName",
     "requires_shipping": "requiresShipping",
@@ -169,6 +174,7 @@ export type CommerceItem$Outbound = {
   collections?: Array<CommerceReference$Outbound> | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
+  duration?: number | undefined;
   global_code?: string | undefined;
   id?: string | undefined;
   inventory_id?: string | undefined;
@@ -176,6 +182,7 @@ export type CommerceItem$Outbound = {
   is_featured?: boolean | undefined;
   is_taxable?: boolean | undefined;
   is_visible?: boolean | undefined;
+  location_id?: string | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
   metadata?: Array<CommerceMetadata$Outbound> | undefined;
   name?: string | undefined;
@@ -207,6 +214,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   collections: z.array(CommerceReference$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
+  duration: z.number().optional(),
   globalCode: z.string().optional(),
   id: z.string().optional(),
   inventoryId: z.string().optional(),
@@ -214,6 +222,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   isFeatured: z.boolean().optional(),
   isTaxable: z.boolean().optional(),
   isVisible: z.boolean().optional(),
+  locationId: z.string().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
   metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   name: z.string().optional(),
@@ -243,6 +252,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
     isFeatured: "is_featured",
     isTaxable: "is_taxable",
     isVisible: "is_visible",
+    locationId: "location_id",
     publicDescription: "public_description",
     publicName: "public_name",
     requiresShipping: "requires_shipping",

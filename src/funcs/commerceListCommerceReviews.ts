@@ -98,6 +98,7 @@ async function $do(
     "fields": payload.fields,
     "item_id": payload.item_id,
     "limit": payload.limit,
+    "location_id": payload.location_id,
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,

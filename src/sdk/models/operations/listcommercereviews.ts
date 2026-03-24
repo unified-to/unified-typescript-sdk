@@ -12,6 +12,7 @@ export const ListCommerceReviewsQueryParamFields = {
   UpdatedAt: "updated_at",
   ItemId: "item_id",
   ItemVariantId: "item_variant_id",
+  LocationId: "location_id",
   Rating: "rating",
   Title: "title",
   Content: "content",
@@ -29,6 +30,7 @@ export const ListCommerceReviewsQueryParamFields = {
   IsPublic: "is_public",
   Comments: "comments",
   Metadata: "metadata",
+  Url: "url",
   Raw: "raw",
 } as const;
 export type ListCommerceReviewsQueryParamFields = ClosedEnum<
@@ -53,6 +55,10 @@ export type ListCommerceReviewsRequest = {
    */
   itemId?: string | undefined;
   limit?: number | undefined;
+  /**
+   * The location ID to filter by (reference to CommerceLocation)
+   */
+  locationId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
@@ -83,6 +89,7 @@ export type ListCommerceReviewsRequest$Outbound = {
   fields?: Array<string> | undefined;
   item_id?: string | undefined;
   limit?: number | undefined;
+  location_id?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
@@ -103,6 +110,7 @@ export const ListCommerceReviewsRequest$outboundSchema: z.ZodType<
     .optional(),
   itemId: z.string().optional(),
   limit: z.number().optional(),
+  locationId: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
@@ -114,6 +122,7 @@ export const ListCommerceReviewsRequest$outboundSchema: z.ZodType<
     connectionId: "connection_id",
     contactId: "contact_id",
     itemId: "item_id",
+    locationId: "location_id",
     updatedGte: "updated_gte",
   });
 });

@@ -14,6 +14,7 @@ import { Applicationstatus } from "./applicationstatus.js";
 import { Assessment } from "./assessment.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
+import { Availability } from "./availability.js";
 import { Balancesheet } from "./balancesheet.js";
 import { Bankaccount } from "./bankaccount.js";
 import { Benefit } from "./benefit.js";
@@ -108,6 +109,7 @@ import { Repo } from "./repo.js";
 import { Report } from "./report.js";
 import { Repository } from "./repository.js";
 import { RequestT } from "./request.js";
+import { Reservation } from "./reservation.js";
 import { Review } from "./review.js";
 import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
@@ -373,6 +375,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._commerce ??= new Commerce(this._options));
   }
 
+  private _availability?: Availability;
+  get availability(): Availability {
+    return (this._availability ??= new Availability(this._options));
+  }
+
   private _collection?: Collection;
   get collection(): Collection {
     return (this._collection ??= new Collection(this._options));
@@ -396,6 +403,11 @@ export class UnifiedTo extends ClientSDK {
   private _location?: Location;
   get location(): Location {
     return (this._location ??= new Location(this._options));
+  }
+
+  private _reservation?: Reservation;
+  get reservation(): Reservation {
+    return (this._reservation ??= new Reservation(this._options));
   }
 
   private _review?: Review;

@@ -51,6 +51,7 @@ export type CommerceReview = {
   isVerified?: boolean | undefined;
   itemId: string;
   itemVariantId?: string | undefined;
+  locationId?: string | undefined;
   /**
    * Photosvideos attached to the review
    */
@@ -62,6 +63,7 @@ export type CommerceReview = {
   title?: string | undefined;
   unhelpfulVotes?: number | undefined;
   updatedAt?: Date | undefined;
+  url?: string | undefined;
   verifiedPurchase?: boolean | undefined;
 };
 
@@ -99,6 +101,7 @@ export const CommerceReview$inboundSchema: z.ZodType<
   is_verified: z.boolean().optional(),
   item_id: z.string(),
   item_variant_id: z.string().optional(),
+  location_id: z.string().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
   metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   rating: z.number().optional(),
@@ -108,6 +111,7 @@ export const CommerceReview$inboundSchema: z.ZodType<
   unhelpful_votes: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  url: z.string().optional(),
   verified_purchase: z.boolean().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -122,6 +126,7 @@ export const CommerceReview$inboundSchema: z.ZodType<
     "is_verified": "isVerified",
     "item_id": "itemId",
     "item_variant_id": "itemVariantId",
+    "location_id": "locationId",
     "unhelpful_votes": "unhelpfulVotes",
     "updated_at": "updatedAt",
     "verified_purchase": "verifiedPurchase",
@@ -143,6 +148,7 @@ export type CommerceReview$Outbound = {
   is_verified?: boolean | undefined;
   item_id: string;
   item_variant_id?: string | undefined;
+  location_id?: string | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
   metadata?: Array<CommerceMetadata$Outbound> | undefined;
   rating?: number | undefined;
@@ -151,6 +157,7 @@ export type CommerceReview$Outbound = {
   title?: string | undefined;
   unhelpful_votes?: number | undefined;
   updated_at?: string | undefined;
+  url?: string | undefined;
   verified_purchase?: boolean | undefined;
 };
 
@@ -174,6 +181,7 @@ export const CommerceReview$outboundSchema: z.ZodType<
   isVerified: z.boolean().optional(),
   itemId: z.string(),
   itemVariantId: z.string().optional(),
+  locationId: z.string().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
   metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   rating: z.number().optional(),
@@ -182,6 +190,7 @@ export const CommerceReview$outboundSchema: z.ZodType<
   title: z.string().optional(),
   unhelpfulVotes: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  url: z.string().optional(),
   verifiedPurchase: z.boolean().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -196,6 +205,7 @@ export const CommerceReview$outboundSchema: z.ZodType<
     isVerified: "is_verified",
     itemId: "item_id",
     itemVariantId: "item_variant_id",
+    locationId: "location_id",
     unhelpfulVotes: "unhelpful_votes",
     updatedAt: "updated_at",
     verifiedPurchase: "verified_purchase",

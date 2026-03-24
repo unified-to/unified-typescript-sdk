@@ -434,6 +434,13 @@ export const ListShipmentId = {
 } as const;
 export type ListShipmentId = OpenEnum<typeof ListShipmentId>;
 
+export const ListSize = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListSize = OpenEnum<typeof ListSize>;
+
 export const ListSortByCreatedAt = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -580,6 +587,13 @@ export const NativeWebhookFormId = {
   NotSupported: "not-supported",
 } as const;
 export type NativeWebhookFormId = OpenEnum<typeof NativeWebhookFormId>;
+
+export const NativeWebhookIoId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookIoId = OpenEnum<typeof NativeWebhookIoId>;
 
 export const NativeWebhookLabelId = {
   SupportedRequired: "supported-required",
@@ -1152,6 +1166,7 @@ export type IntegrationSupport = {
   listRootId?: ListRootId | undefined;
   listSaleschannelId?: ListSaleschannelId | undefined;
   listShipmentId?: ListShipmentId | undefined;
+  listSize?: ListSize | undefined;
   listSortByCreatedAt?: ListSortByCreatedAt | undefined;
   listSortByName?: ListSortByName | undefined;
   listSortByUpdatedAt?: ListSortByUpdatedAt | undefined;
@@ -1174,6 +1189,7 @@ export type IntegrationSupport = {
   nativeWebhookCourseId?: NativeWebhookCourseId | undefined;
   nativeWebhookEventId?: NativeWebhookEventId | undefined;
   nativeWebhookFormId?: NativeWebhookFormId | undefined;
+  nativeWebhookIoId?: NativeWebhookIoId | undefined;
   nativeWebhookLabelId?: NativeWebhookLabelId | undefined;
   nativeWebhookMemberId?: NativeWebhookMemberId | undefined;
   nativeWebhookOrderId?: NativeWebhookOrderId | undefined;
@@ -1673,6 +1689,13 @@ export const ListShipmentId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListShipmentId);
 
 /** @internal */
+export const ListSize$inboundSchema: z.ZodType<
+  ListSize,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListSize);
+
+/** @internal */
 export const ListSortByCreatedAt$inboundSchema: z.ZodType<
   ListSortByCreatedAt,
   z.ZodTypeDef,
@@ -1818,6 +1841,13 @@ export const NativeWebhookFormId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(NativeWebhookFormId);
+
+/** @internal */
+export const NativeWebhookIoId$inboundSchema: z.ZodType<
+  NativeWebhookIoId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookIoId);
 
 /** @internal */
 export const NativeWebhookLabelId$inboundSchema: z.ZodType<
@@ -2369,6 +2399,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_root_id: ListRootId$inboundSchema.optional(),
   list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
   list_shipment_id: ListShipmentId$inboundSchema.optional(),
+  list_size: ListSize$inboundSchema.optional(),
   list_sort_by_created_at: ListSortByCreatedAt$inboundSchema.optional(),
   list_sort_by_name: ListSortByName$inboundSchema.optional(),
   list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
@@ -2391,6 +2422,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_course_id: NativeWebhookCourseId$inboundSchema.optional(),
   native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
   native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
+  native_webhook_io_id: NativeWebhookIoId$inboundSchema.optional(),
   native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
   native_webhook_member_id: NativeWebhookMemberId$inboundSchema.optional(),
   native_webhook_order_id: NativeWebhookOrderId$inboundSchema.optional(),
@@ -2541,6 +2573,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_root_id": "listRootId",
     "list_saleschannel_id": "listSaleschannelId",
     "list_shipment_id": "listShipmentId",
+    "list_size": "listSize",
     "list_sort_by_created_at": "listSortByCreatedAt",
     "list_sort_by_name": "listSortByName",
     "list_sort_by_updated_at": "listSortByUpdatedAt",
@@ -2562,6 +2595,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_course_id": "nativeWebhookCourseId",
     "native_webhook_event_id": "nativeWebhookEventId",
     "native_webhook_form_id": "nativeWebhookFormId",
+    "native_webhook_io_id": "nativeWebhookIoId",
     "native_webhook_label_id": "nativeWebhookLabelId",
     "native_webhook_member_id": "nativeWebhookMemberId",
     "native_webhook_order_id": "nativeWebhookOrderId",

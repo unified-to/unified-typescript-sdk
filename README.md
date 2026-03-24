@@ -934,6 +934,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceCreateCommerceItemvariant`](docs/sdks/itemvariant/README.md#createcommerceitemvariant) - Create an itemvariant
 - [`commerceCreateCommerceLocation`](docs/sdks/commerce/README.md#createcommercelocation) - Create a location
 - [`commerceCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
+- [`commerceCreateCommerceReservation`](docs/sdks/commerce/README.md#createcommercereservation) - Create a reservation
+- [`commerceCreateCommerceReservation`](docs/sdks/reservation/README.md#createcommercereservation) - Create a reservation
 - [`commerceCreateCommerceReview`](docs/sdks/commerce/README.md#createcommercereview) - Create a review
 - [`commerceCreateCommerceReview`](docs/sdks/review/README.md#createcommercereview) - Create a review
 - [`commerceCreateCommerceSaleschannel`](docs/sdks/commerce/README.md#createcommercesaleschannel) - Create a saleschannel
@@ -948,10 +950,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceGetCommerceItemvariant`](docs/sdks/itemvariant/README.md#getcommerceitemvariant) - Retrieve an itemvariant
 - [`commerceGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
 - [`commerceGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
+- [`commerceGetCommerceReservation`](docs/sdks/commerce/README.md#getcommercereservation) - Retrieve a reservation
+- [`commerceGetCommerceReservation`](docs/sdks/reservation/README.md#getcommercereservation) - Retrieve a reservation
 - [`commerceGetCommerceReview`](docs/sdks/commerce/README.md#getcommercereview) - Retrieve a review
 - [`commerceGetCommerceReview`](docs/sdks/review/README.md#getcommercereview) - Retrieve a review
 - [`commerceGetCommerceSaleschannel`](docs/sdks/commerce/README.md#getcommercesaleschannel) - Retrieve a saleschannel
 - [`commerceGetCommerceSaleschannel`](docs/sdks/saleschannel/README.md#getcommercesaleschannel) - Retrieve a saleschannel
+- [`commerceListCommerceAvailabilities`](docs/sdks/availability/README.md#listcommerceavailabilities) - List all availabilities
+- [`commerceListCommerceAvailabilities`](docs/sdks/commerce/README.md#listcommerceavailabilities) - List all availabilities
 - [`commerceListCommerceCollections`](docs/sdks/collection/README.md#listcommercecollections) - List all collections
 - [`commerceListCommerceCollections`](docs/sdks/commerce/README.md#listcommercecollections) - List all collections
 - [`commerceListCommerceInventories`](docs/sdks/commerce/README.md#listcommerceinventories) - List all inventories
@@ -962,6 +968,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceListCommerceItemvariants`](docs/sdks/itemvariant/README.md#listcommerceitemvariants) - List all itemvariants
 - [`commerceListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
 - [`commerceListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
+- [`commerceListCommerceReservations`](docs/sdks/commerce/README.md#listcommercereservations) - List all reservations
+- [`commerceListCommerceReservations`](docs/sdks/reservation/README.md#listcommercereservations) - List all reservations
 - [`commerceListCommerceReviews`](docs/sdks/commerce/README.md#listcommercereviews) - List all reviews
 - [`commerceListCommerceReviews`](docs/sdks/review/README.md#listcommercereviews) - List all reviews
 - [`commerceListCommerceSaleschannels`](docs/sdks/commerce/README.md#listcommercesaleschannels) - List all saleschannels
@@ -976,6 +984,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commercePatchCommerceItemvariant`](docs/sdks/itemvariant/README.md#patchcommerceitemvariant) - Update an itemvariant
 - [`commercePatchCommerceLocation`](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
 - [`commercePatchCommerceLocation`](docs/sdks/location/README.md#patchcommercelocation) - Update a location
+- [`commercePatchCommerceReservation`](docs/sdks/commerce/README.md#patchcommercereservation) - Update a reservation
+- [`commercePatchCommerceReservation`](docs/sdks/reservation/README.md#patchcommercereservation) - Update a reservation
 - [`commercePatchCommerceReview`](docs/sdks/commerce/README.md#patchcommercereview) - Update a review
 - [`commercePatchCommerceReview`](docs/sdks/review/README.md#patchcommercereview) - Update a review
 - [`commercePatchCommerceSaleschannel`](docs/sdks/commerce/README.md#patchcommercesaleschannel) - Update a saleschannel
@@ -990,6 +1000,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceRemoveCommerceItemvariant`](docs/sdks/itemvariant/README.md#removecommerceitemvariant) - Remove an itemvariant
 - [`commerceRemoveCommerceLocation`](docs/sdks/commerce/README.md#removecommercelocation) - Remove a location
 - [`commerceRemoveCommerceLocation`](docs/sdks/location/README.md#removecommercelocation) - Remove a location
+- [`commerceRemoveCommerceReservation`](docs/sdks/commerce/README.md#removecommercereservation) - Remove a reservation
+- [`commerceRemoveCommerceReservation`](docs/sdks/reservation/README.md#removecommercereservation) - Remove a reservation
 - [`commerceRemoveCommerceReview`](docs/sdks/commerce/README.md#removecommercereview) - Remove a review
 - [`commerceRemoveCommerceReview`](docs/sdks/review/README.md#removecommercereview) - Remove a review
 - [`commerceRemoveCommerceSaleschannel`](docs/sdks/commerce/README.md#removecommercesaleschannel) - Remove a saleschannel
@@ -1004,6 +1016,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceUpdateCommerceItemvariant`](docs/sdks/itemvariant/README.md#updatecommerceitemvariant) - Update an itemvariant
 - [`commerceUpdateCommerceLocation`](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
 - [`commerceUpdateCommerceLocation`](docs/sdks/location/README.md#updatecommercelocation) - Update a location
+- [`commerceUpdateCommerceReservation`](docs/sdks/commerce/README.md#updatecommercereservation) - Update a reservation
+- [`commerceUpdateCommerceReservation`](docs/sdks/reservation/README.md#updatecommercereservation) - Update a reservation
 - [`commerceUpdateCommerceReview`](docs/sdks/commerce/README.md#updatecommercereview) - Update a review
 - [`commerceUpdateCommerceReview`](docs/sdks/review/README.md#updatecommercereview) - Update a review
 - [`commerceUpdateCommerceSaleschannel`](docs/sdks/commerce/README.md#updatecommercesaleschannel) - Update a saleschannel
