@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -12,6 +14,12 @@ import {
   PropertyUcCallTelephone$inboundSchema,
 } from "./propertyuccalltelephone.js";
 import { UcContact, UcContact$inboundSchema } from "./uccontact.js";
+
+export const UcCallType = {
+  Inbound: "INBOUND",
+  Outbound: "OUTBOUND",
+} as const;
+export type UcCallType = OpenEnum<typeof UcCallType>;
 
 export type UcCall = {
   contactId?: string | undefined;
@@ -26,11 +34,19 @@ export type UcCall = {
    * The telephone number called
    */
   telephone?: PropertyUcCallTelephone | undefined;
+  type?: UcCallType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
   userName?: string | undefined;
   userPhone?: string | undefined;
 };
+
+/** @internal */
+export const UcCallType$inboundSchema: z.ZodType<
+  UcCallType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(UcCallType);
 
 /** @internal */
 export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
@@ -48,6 +64,7 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
     start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
     telephone: PropertyUcCallTelephone$inboundSchema.optional(),
+    type: UcCallType$inboundSchema.optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),

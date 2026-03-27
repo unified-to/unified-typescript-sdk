@@ -1,26 +1,26 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 4b6bb302afd17171c278cb7394f80ddb
+  docChecksum: f77412ae0427c7004cdb97ca98cb5828
   docVersion: "1.0"
-  speakeasyVersion: 1.759.1
-  generationVersion: 2.869.10
-  releaseVersion: 2.83.26
-  configChecksum: 79a1a613dfa8df2de119838098f7ee9b
+  speakeasyVersion: 1.759.3
+  generationVersion: 2.869.25
+  releaseVersion: 2.83.27
+  configChecksum: ff74eaf21ce4583ad2542daf451e9527
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 1d74e08e-bfbe-416a-a4be-2b698ebff3e7
-  pristine_commit_hash: c33520ba1b3fdc5892e9d7d09e56142c63dc4376
-  pristine_tree_hash: f74b6976c0bf046bde14fc3328c12bdddb891d60
+  generation_id: a8d5ffea-16fb-4535-b796-36bbd5009eed
+  pristine_commit_hash: 409e25588da3d0db5e160a8f72ff4087248dd3d7
+  pristine_tree_hash: 6e1e4a0257601ffd403cc0b8417611a76640fbee
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.14
-    core: 3.26.43
+    core: 3.26.44
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -842,8 +842,8 @@ trackedFiles:
     pristine_git_object: 67103646adfb2a6b315a13c225353f52c8e9ea76
   docs/sdk/models/operations/createucrecordingqueryparamfields.md:
     id: 75f6f1a82e3e
-    last_write_checksum: sha1:9d319e23d33ffa85d6579c4fc8175680d1c56851
-    pristine_git_object: a52865daba54cf83628959191e70f6269459c378
+    last_write_checksum: sha1:77fb7d3b88c3366ce9a21e52b4bbef266900aa65
+    pristine_git_object: 4991fd0d7a6d86b8093b0fd170f1d51463258f99
   docs/sdk/models/operations/createucrecordingrequest.md:
     id: 8feafe4967b0
     last_write_checksum: sha1:f30d9e1e991ac990d61c1839871db7515a3ca3c1
@@ -1714,8 +1714,8 @@ trackedFiles:
     pristine_git_object: c9ffd19070e47840e36fe67592f38a5d94cc735e
   docs/sdk/models/operations/getuccallqueryparamfields.md:
     id: 1fc900ba7d97
-    last_write_checksum: sha1:e5ad0e0494a074a5ff86d4a9287da257956a6814
-    pristine_git_object: 12ab8438b2c34047445e7e61239713964911de4c
+    last_write_checksum: sha1:fcaf6da218bb65b064b7d67dcfc5d20540867253
+    pristine_git_object: e368984d505460d8834f6e22a184d5cd4c800eeb
   docs/sdk/models/operations/getuccallrequest.md:
     id: a58ea1e4c5bd
     last_write_checksum: sha1:89760920a2a6c6b6cb5398cec7d2bf1d88b48616
@@ -1738,8 +1738,8 @@ trackedFiles:
     pristine_git_object: bc5e4c834e109152a622c0be3cb1a6d2de72f958
   docs/sdk/models/operations/getucrecordingqueryparamfields.md:
     id: 20eae7df97c4
-    last_write_checksum: sha1:da97a3654ace173144e7cf93be6dface11c396ed
-    pristine_git_object: e2e8be70b98c3a34a4c330691f112bdde54b5f31
+    last_write_checksum: sha1:696dd7f82dfcd20195eca1aab1295ace04153eb6
+    pristine_git_object: a7c0d18430b471c902e1da9eb11ca84e47750e50
   docs/sdk/models/operations/getucrecordingrequest.md:
     id: efd9a13f2e9f
     last_write_checksum: sha1:efa55e2f87b12060513b33ccb6bfb4d607fa533e
@@ -2706,8 +2706,8 @@ trackedFiles:
     pristine_git_object: a1110b619b37d8807f02a9b6aba0a4a966652a80
   docs/sdk/models/operations/listuccallsqueryparamfields.md:
     id: b488382e72cf
-    last_write_checksum: sha1:8617c9b3db0a1835128d9f3901001179a62c8c47
-    pristine_git_object: 35efe8ce69ebd5579106f1ad00903c3e43af9161
+    last_write_checksum: sha1:b2ef31b8ea6e4d30da6f1d3e686bb9467d23c980
+    pristine_git_object: 679ad10b6a27a19942bc21f7acd888d671dab2e1
   docs/sdk/models/operations/listuccallsrequest.md:
     id: 8848cb7c7419
     last_write_checksum: sha1:263d542b74d673b0d5c43fcabdcfe1d7353e5b5a
@@ -2730,8 +2730,8 @@ trackedFiles:
     pristine_git_object: 0296c999a2a19e1e20910b8ef86e77bf137b5375
   docs/sdk/models/operations/listucrecordingsqueryparamfields.md:
     id: dff63da8e1c4
-    last_write_checksum: sha1:80d094fe857f35a0e0147cc31edf51485172b5f2
-    pristine_git_object: f959626ab596c3f61f0dea538994ef9bea429ab2
+    last_write_checksum: sha1:dcd707058c5c5c72c291d8b9ec307484411ac585
+    pristine_git_object: ca1ae8416780181c3cc70d6e843b0317c78cbeba
   docs/sdk/models/operations/listucrecordingsrequest.md:
     id: 7064176a7e34
     last_write_checksum: sha1:89716bfe3e1aa2f2e44c3bb086abf941b324d55e
@@ -3554,8 +3554,8 @@ trackedFiles:
     pristine_git_object: e6505cd7a69d69988b8e629d8cb66b3b02ac17db
   docs/sdk/models/operations/patchucrecordingqueryparamfields.md:
     id: 50720ddb0889
-    last_write_checksum: sha1:27c88aecd9f3c4f9d012731ac770bfd2c617edfe
-    pristine_git_object: c13be14bc91469d0580dfb50a31dea83bee154aa
+    last_write_checksum: sha1:2233fb2cce2c995a5e5f68c29cb1751ebd4ad14e
+    pristine_git_object: 028f4eb16bea153f03c803a62823ee357bc03115
   docs/sdk/models/operations/patchucrecordingrequest.md:
     id: 786181a9e20c
     last_write_checksum: sha1:9e69bfd39b24a02ccf690e8a1c28653cb80e8c7e
@@ -5158,8 +5158,8 @@ trackedFiles:
     pristine_git_object: 31d50b8327c401f336f262b9a5f0c37eb3eacb6a
   docs/sdk/models/operations/updateucrecordingqueryparamfields.md:
     id: 64661a6de609
-    last_write_checksum: sha1:e38444ecdd45908e855bae08262f2ec80882e7d6
-    pristine_git_object: 8c414a86c57aedcb5c752e727d27a47a3822b49b
+    last_write_checksum: sha1:4ed3a9da2ac6e1e74d4c5580225436d0d1d192e6
+    pristine_git_object: d084062b7013e5105d9b6f11e8ed8a6ebc35c080
   docs/sdk/models/operations/updateucrecordingrequest.md:
     id: c9b0ba61dcae
     last_write_checksum: sha1:276bf4b540df379f3e8fa1d1fbf8c3b2c5821d79
@@ -8262,8 +8262,12 @@ trackedFiles:
     pristine_git_object: 8adb8d9127cdbce07d5ef833f4c7ff0c70fa86a3
   docs/sdk/models/shared/uccall.md:
     id: c2360d769329
-    last_write_checksum: sha1:85d48d89cf4aca1ee748d1d9f3c53a8eaaad1066
-    pristine_git_object: b8b1f03864b43ea552a4ce8a34553439d084340c
+    last_write_checksum: sha1:04448a9928975381ec14eb0307f3362f584b0300
+    pristine_git_object: 111b55e786b3a085e4d375196257e993e9903756
+  docs/sdk/models/shared/uccalltype.md:
+    id: 4174d6720f62
+    last_write_checksum: sha1:0fc56c20b33f0b4c7f52c6eef90c55ac8f3f07f2
+    pristine_git_object: c3924502a26a0de2c526eb48130ed7117bcec509
   docs/sdk/models/shared/uccomment.md:
     id: e3ae8afb37ab
     last_write_checksum: sha1:343a349b1e2df3c9fc6694c797bf9ee8c980dfd8
@@ -8282,8 +8286,8 @@ trackedFiles:
     pristine_git_object: 2a64944a7f5836adac852de31fff1b44ccce581a
   docs/sdk/models/shared/ucrecording.md:
     id: e69f9d9aa6fd
-    last_write_checksum: sha1:ba00217af7cf65023f7da87bcf2055d4b7e43035
-    pristine_git_object: 08f38519e536986dae1d6c0ff1d7c279b83b5ffd
+    last_write_checksum: sha1:c2c453052294dd2ebae90aaa5b8327eba38054e2
+    pristine_git_object: e497487a1c975fc2b9652e4550a79222ae939228
   docs/sdk/models/shared/ucrecordingmedia.md:
     id: b15f5073bdea
     last_write_checksum: sha1:666f115ccd019d58e409061c4e9be83c00067766
@@ -8292,6 +8296,10 @@ trackedFiles:
     id: 66d7be53783c
     last_write_checksum: sha1:cf435ef272b2989f573e7e20fbae3de901400117
     pristine_git_object: 4b06693f30b3b23dfb0ee4dac6601eacfec2b51c
+  docs/sdk/models/shared/ucrecordingtype.md:
+    id: 4b9597b954c4
+    last_write_checksum: sha1:7028c5701e500e81e4f42dfebfcdf01b37051eb0
+    pristine_git_object: cd9a2195e3faece61685a3b1ae9f552c734f39b5
   docs/sdk/models/shared/uctelephone.md:
     id: b97b86622de5
     last_write_checksum: sha1:db85e2cb55ccf7eb5e62c0cd0421ece71f0e5b00
@@ -9150,12 +9158,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:71b67048f629f63fc4bef2034f41c00e3ca5ee2a
-    pristine_git_object: 0fcb434e81150dbdcbc878d404a461d23ed81ac6
+    last_write_checksum: sha1:e8bf3ca3da84234e77d89a68430bb7b9fa2558f5
+    pristine_git_object: d6e97023634efdb5b3a8945da14703f231131e0d
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:593a701fd0504593c7b9b7f78547e0eac8a5c5c5
-    pristine_git_object: 2d2bce239614479200bec7e5b9e6c3fa613d2130
+    last_write_checksum: sha1:448f7687236136645445b646c62e45b76fcc3e25
+    pristine_git_object: 09a1628466291f2b77cfe6b2a811f7725c0275c4
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11806,16 +11814,16 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:5e6668e660fa46fb6e1a0c32e0c631818ac9aa37
-    pristine_git_object: feff4c704d2326edfbae41d2bc88615990800a07
+    last_write_checksum: sha1:8c83575f68ea36376c61e9b903b255147820a62f
+    pristine_git_object: 02f5f09a07f7cf872e662a9d10b06faf68d9c5af
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
     pristine_git_object: e81091f5e536f82739f71379b1fddc2d147c49e2
   src/lib/encodings.ts:
     id: 3bd8ead98afd
-    last_write_checksum: sha1:d20c131976ab8ac68b22bdde2b7ed84b5b873922
-    pristine_git_object: 31cd3733907afbee3641b9ab680ed417247a7d33
+    last_write_checksum: sha1:14a1c57947f58b6851f480ab87aef14def989fa0
+    pristine_git_object: d21ccfedbfd9f8460372edcf9b65273612aaa955
   src/lib/files.ts:
     id: e5efa54fcb95
     last_write_checksum: sha1:795c14026405d547bfc47012f7ad9666e530fa7f
@@ -12610,8 +12618,8 @@ trackedFiles:
     pristine_git_object: e9c7af343657cf9d074003817b03250ad92787b9
   src/sdk/models/operations/createucrecording.ts:
     id: 24a46802f546
-    last_write_checksum: sha1:4c471a2b9512c31dcf356396ecd3ecff126b4808
-    pristine_git_object: b5c9fe6d3818cb746991a26c27f2d88d4533e3ea
+    last_write_checksum: sha1:460dcec8242cc026eddc2967579b737e879a9400
+    pristine_git_object: 74426a0c0b1dc9f1da43a57cec4decd7a32eae91
   src/sdk/models/operations/createunifiedwebhook.ts:
     id: 59c07696eba2
     last_write_checksum: sha1:e85ae85b350443a8a98616b48ad9266260e8bc9d
@@ -13054,8 +13062,8 @@ trackedFiles:
     pristine_git_object: c8a6b3a45c6ad9bc244ce0ec03966f2fadccf305
   src/sdk/models/operations/getuccall.ts:
     id: bafbf4ddcfb2
-    last_write_checksum: sha1:7de5d0721ef87d9d1cc32e8668d7714e35f49f67
-    pristine_git_object: c6daed275c6bb8a84e36942067bdd757564db5f3
+    last_write_checksum: sha1:07f83391a147b78a1b8a33f8805a15adcec14f6b
+    pristine_git_object: 7c7557d090c6995d14ae6dc15167f29804a69693
   src/sdk/models/operations/getuccomment.ts:
     id: 157b5f219aca
     last_write_checksum: sha1:f55da2c7dd405f99b63303ca12c150a6dc59dc66
@@ -13066,8 +13074,8 @@ trackedFiles:
     pristine_git_object: 42bd5922ca8da18311fe93da25ca75828b6a3309
   src/sdk/models/operations/getucrecording.ts:
     id: 04885c97856e
-    last_write_checksum: sha1:42f3d194ada0df7c2f33a5b36a527531ea8053bf
-    pristine_git_object: 1f9e8a863933e0d66095d5c61510038dbaac783e
+    last_write_checksum: sha1:178d928b6d36e86bd62e46865f4b8b19243f55c7
+    pristine_git_object: a369af209ea48b97e2eea33e0a7ee39ab18ca97c
   src/sdk/models/operations/getunifiedapicall.ts:
     id: 4d035b60330f
     last_write_checksum: sha1:4586fbe2d5e43f402194e8187f11315bdc7747d2
@@ -13574,8 +13582,8 @@ trackedFiles:
     pristine_git_object: 3b8e5be41f1b94127cf93d83dcfc354ae8fbdf3f
   src/sdk/models/operations/listuccalls.ts:
     id: 36fdaba72f31
-    last_write_checksum: sha1:9ccb036afc7d0fd70e7ecb65b1cf9ad90d45df93
-    pristine_git_object: 6d6c8bc901a08d45f9ee3b2e550642fa72b3e8dc
+    last_write_checksum: sha1:c75afe4bd92cf61d9746e20b31ea46c48940a23e
+    pristine_git_object: 66b22ee21e00aa0740ddb4523d9a151ac0f2d28e
   src/sdk/models/operations/listuccomments.ts:
     id: de49b4676efe
     last_write_checksum: sha1:47279096f1571aac49d1827f67565d75e5818d8d
@@ -13586,8 +13594,8 @@ trackedFiles:
     pristine_git_object: aab49ed788c0d057bf60ef26676527b515239153
   src/sdk/models/operations/listucrecordings.ts:
     id: 4b124feb87f5
-    last_write_checksum: sha1:284995458cd015dc81d299b0f5cd6255b02e5787
-    pristine_git_object: 3b79b5f7743ac4c035a9fd5dce1c0e6e8dbe9453
+    last_write_checksum: sha1:b783881cafa9a68668e6d88ca023dc92bd9e7eea
+    pristine_git_object: d09d2fd158df10fe889237939c58d7ed3d9bcfe0
   src/sdk/models/operations/listunifiedapicalls.ts:
     id: 37efecb9d535
     last_write_checksum: sha1:5bc111813b1307d1989e623c6fdb605609dded54
@@ -14010,8 +14018,8 @@ trackedFiles:
     pristine_git_object: eee48f96ebd91aa06c57935ab7d9795c29f8d1aa
   src/sdk/models/operations/patchucrecording.ts:
     id: 9e2e39dfd26a
-    last_write_checksum: sha1:e75f83e649d168e771539061b91cb70a76a8a2ec
-    pristine_git_object: b4f48fbb999c129b3a7146742b92d0b5b7b7f541
+    last_write_checksum: sha1:0cccd5547f61b1d439b60fffa3308d616fd0af32
+    pristine_git_object: 7b99014e3fe770af0250e11037867d9d9a612acf
   src/sdk/models/operations/patchunifiedconnection.ts:
     id: 27698da0c102
     last_write_checksum: sha1:c46ed91e925e2b65284ec3cbe3cd05880222b373
@@ -14814,8 +14822,8 @@ trackedFiles:
     pristine_git_object: 8ee174d720e280f553cf7b15f020418b3a5ff445
   src/sdk/models/operations/updateucrecording.ts:
     id: 9dfb32f30c16
-    last_write_checksum: sha1:02d48f3e1053aa8a3a998d0273ec814dc36d3e94
-    pristine_git_object: 7bdef88ae01a98b3b68e2eaf568545e4e2f77ba2
+    last_write_checksum: sha1:170f5c46c873c7006fd9ddf817cf9f5ef628c9b9
+    pristine_git_object: 8dcb597d249f487e75d824a7354542852fb0cc2f
   src/sdk/models/operations/updateunifiedconnection.ts:
     id: 860db2843c46
     last_write_checksum: sha1:e077339f6fecab76ae27e8dda1cba6b5a4144aea
@@ -16434,8 +16442,8 @@ trackedFiles:
     pristine_git_object: ff7513e4e759d4ee9020eb0a224c0e4073eb0039
   src/sdk/models/shared/uccall.ts:
     id: fe9e2d886cc3
-    last_write_checksum: sha1:4ddcb1f6b0a0970abb239990c4a3a92cafbea821
-    pristine_git_object: 306e0d2ba749e8df9ca8fea4a01deefb76c71fef
+    last_write_checksum: sha1:79f765a996169f91a12c5360a2116ca8742fec48
+    pristine_git_object: 1d76788ca6b4b197e723e5e9a28bafc6eba0b4a5
   src/sdk/models/shared/uccomment.ts:
     id: 0b473d2e11ad
     last_write_checksum: sha1:cf9c0a45b963c2108692d166d6eec62713f3d9fa
@@ -16450,8 +16458,8 @@ trackedFiles:
     pristine_git_object: ef7131c6eeeeecdfcead8e7a7e695b15f8c9a5e6
   src/sdk/models/shared/ucrecording.ts:
     id: 6903f0b891ee
-    last_write_checksum: sha1:accf5437eba640a0a20e5cd66818b69c7c9081a6
-    pristine_git_object: 41fac22b9087836eafceb9e9f6bc8a08a8970c6d
+    last_write_checksum: sha1:99ac8945115c8503f21a96a41e1bb52bc47ff49e
+    pristine_git_object: fb205d05c19559cfff3e88cee4c429524537c739
   src/sdk/models/shared/ucrecordingmedia.ts:
     id: 5014f7ea42d6
     last_write_checksum: sha1:b53602aa0aad5b666228cb48d8069f23413e187a
@@ -22750,7 +22758,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.commerce.createCommerceReservation()`: **Added**\n* `unified-to.commerce.getCommerceReservation()`: **Added**\n* `unified-to.commerce.listCommerceAvailabilities()`: **Added**\n* `unified-to.commerce.listCommerceReservations()`: **Added**\n* `unified-to.commerce.patchCommerceReservation()`: **Added**\n* `unified-to.commerce.removeCommerceReservation()`: **Added**\n* `unified-to.commerce.updateCommerceReservation()`: **Added**\n* `unified-to.availability.listCommerceAvailabilities()`: **Added**\n* `unified-to.reservation.createCommerceReservation()`: **Added**\n* `unified-to.reservation.getCommerceReservation()`: **Added**\n* `unified-to.reservation.listCommerceReservations()`: **Added**\n* `unified-to.reservation.patchCommerceReservation()`: **Added**\n* `unified-to.reservation.removeCommerceReservation()`: **Added**\n* `unified-to.reservation.updateCommerceReservation()`: **Added**\n* `unified-to.commerce.createCommerceItem()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.createCommerceLocation()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.createCommerceReview()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.getCommerceItem()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.getCommerceLocation()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.getCommerceReview()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.listCommerceItems()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.commerce.listCommerceLocations()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.commerce.listCommerceReviews()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.commerce.patchCommerceItem()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.patchCommerceLocation()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.patchCommerceReview()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.updateCommerceItem()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.updateCommerceLocation()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.updateCommerceReview()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.item.createCommerceItem()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.item.getCommerceItem()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.item.listCommerceItems()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.item.patchCommerceItem()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.item.updateCommerceItem()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.location.createCommerceLocation()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.location.getCommerceLocation()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.location.listCommerceLocations()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.location.patchCommerceLocation()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.location.updateCommerceLocation()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.review.createCommerceReview()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.review.getCommerceReview()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.review.listCommerceReviews()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.review.patchCommerceReview()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.review.updateCommerceReview()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.createUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.unified.getUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `unified-to.unified.getUnifiedWebhook()`:  `response.objectType` **Changed**\n* `unified-to.unified.listUnifiedConnections()`:  `response.[].permissions[]` **Changed**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.unified.listUnifiedWebhooks()`:  `response.[].objectType` **Changed**\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.unified.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.connection.getUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `unified-to.connection.listUnifiedConnections()`:  `response.[].permissions[]` **Changed**\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>` **Changed**\n* `unified-to.webhook.createUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.webhook.getUnifiedWebhook()`:  `response.objectType` **Changed**\n* `unified-to.webhook.listUnifiedWebhooks()`:  `response.[].objectType` **Changed**\n* `unified-to.webhook.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.webhook.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.recording.createUcRecording()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.recording.getUcRecording()`: \n  *  `request.fields` **Changed**\n  *  `response.type` **Added**\n* `unified-to.recording.listUcRecordings()`: \n  *  `request.fields` **Changed**\n  *  `response.[].type` **Added**\n* `unified-to.recording.patchUcRecording()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.recording.updateUcRecording()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.uc.createUcRecording()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.uc.getUcCall()`: \n  *  `request.fields` **Changed**\n  *  `response.type` **Added**\n* `unified-to.uc.getUcRecording()`: \n  *  `request.fields` **Changed**\n  *  `response.type` **Added**\n* `unified-to.uc.listUcCalls()`: \n  *  `request.fields` **Changed**\n  *  `response.[].type` **Added**\n* `unified-to.uc.listUcRecordings()`: \n  *  `request.fields` **Changed**\n  *  `response.[].type` **Added**\n* `unified-to.uc.patchUcRecording()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.uc.updateUcRecording()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.call.getUcCall()`: \n  *  `request.fields` **Changed**\n  *  `response.type` **Added**\n* `unified-to.call.listUcCalls()`: \n  *  `request.fields` **Changed**\n  *  `response.[].type` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

@@ -17,9 +17,10 @@ export const GetUcCallQueryParamFields = {
   UserId: "user_id",
   Contacts: "contacts",
   IsPrivate: "is_private",
-  Raw: "raw",
   UserName: "user_name",
   UserPhone: "user_phone",
+  Type: "type",
+  Raw: "raw",
 } as const;
 export type GetUcCallQueryParamFields = ClosedEnum<
   typeof GetUcCallQueryParamFields

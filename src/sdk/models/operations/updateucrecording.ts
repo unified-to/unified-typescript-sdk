@@ -21,9 +21,10 @@ export const UpdateUcRecordingQueryParamFields = {
   ContactPhone: "contact_phone",
   UserId: "user_id",
   Media: "media",
-  Raw: "raw",
   UserName: "user_name",
   UserPhone: "user_phone",
+  Type: "type",
+  Raw: "raw",
 } as const;
 export type UpdateUcRecordingQueryParamFields = ClosedEnum<
   typeof UpdateUcRecordingQueryParamFields

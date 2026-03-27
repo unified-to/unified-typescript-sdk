@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -13,6 +15,12 @@ import {
   UcRecordingMedia$Outbound,
   UcRecordingMedia$outboundSchema,
 } from "./ucrecordingmedia.js";
+
+export const UcRecordingType = {
+  Inbound: "INBOUND",
+  Outbound: "OUTBOUND",
+} as const;
+export type UcRecordingType = OpenEnum<typeof UcRecordingType>;
 
 export type UcRecording = {
   callId?: string | undefined;
@@ -26,12 +34,26 @@ export type UcRecording = {
   media?: Array<UcRecordingMedia> | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
+  type?: UcRecordingType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
   userName?: string | undefined;
   userPhone?: string | undefined;
   webUrl?: string | undefined;
 };
+
+/** @internal */
+export const UcRecordingType$inboundSchema: z.ZodType<
+  UcRecordingType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(UcRecordingType);
+/** @internal */
+export const UcRecordingType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  UcRecordingType
+> = openEnums.outboundSchema(UcRecordingType);
 
 /** @internal */
 export const UcRecording$inboundSchema: z.ZodType<
@@ -54,6 +76,7 @@ export const UcRecording$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  type: UcRecordingType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -90,6 +113,7 @@ export type UcRecording$Outbound = {
   media?: Array<UcRecordingMedia$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
   user_name?: string | undefined;
@@ -114,6 +138,7 @@ export const UcRecording$outboundSchema: z.ZodType<
   media: z.array(UcRecordingMedia$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
+  type: UcRecordingType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
   userName: z.string().optional(),
