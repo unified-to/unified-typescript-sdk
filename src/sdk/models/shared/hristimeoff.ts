@@ -28,7 +28,7 @@ export type HrisTimeoff = {
   isPaid?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
   reason?: string | undefined;
-  startAt: Date;
+  startAt?: Date | undefined;
   status?: HrisTimeoffStatus | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
@@ -40,6 +40,12 @@ export const HrisTimeoffStatus$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(HrisTimeoffStatus);
+/** @internal */
+export const HrisTimeoffStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  HrisTimeoffStatus
+> = openEnums.outboundSchema(HrisTimeoffStatus);
 
 /** @internal */
 export const HrisTimeoff$inboundSchema: z.ZodType<
@@ -60,7 +66,8 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
   is_paid: z.boolean().optional(),
   raw: z.record(z.any()).optional(),
   reason: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   status: HrisTimeoffStatus$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -78,7 +85,61 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
+/** @internal */
+export type HrisTimeoff$Outbound = {
+  approved_at?: string | undefined;
+  approver_user_id?: string | undefined;
+  comments?: string | undefined;
+  company_id?: string | undefined;
+  created_at?: string | undefined;
+  end_at?: string | undefined;
+  id?: string | undefined;
+  is_paid?: boolean | undefined;
+  raw?: { [k: string]: any } | undefined;
+  reason?: string | undefined;
+  start_at?: string | undefined;
+  status?: string | undefined;
+  updated_at?: string | undefined;
+  user_id?: string | undefined;
+};
 
+/** @internal */
+export const HrisTimeoff$outboundSchema: z.ZodType<
+  HrisTimeoff$Outbound,
+  z.ZodTypeDef,
+  HrisTimeoff
+> = z.object({
+  approvedAt: z.date().transform(v => v.toISOString()).optional(),
+  approverUserId: z.string().optional(),
+  comments: z.string().optional(),
+  companyId: z.string().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
+  id: z.string().optional(),
+  isPaid: z.boolean().optional(),
+  raw: z.record(z.any()).optional(),
+  reason: z.string().optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
+  status: HrisTimeoffStatus$outboundSchema.optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  userId: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    approvedAt: "approved_at",
+    approverUserId: "approver_user_id",
+    companyId: "company_id",
+    createdAt: "created_at",
+    endAt: "end_at",
+    isPaid: "is_paid",
+    startAt: "start_at",
+    updatedAt: "updated_at",
+    userId: "user_id",
+  });
+});
+
+export function hrisTimeoffToJSON(hrisTimeoff: HrisTimeoff): string {
+  return JSON.stringify(HrisTimeoff$outboundSchema.parse(hrisTimeoff));
+}
 export function hrisTimeoffFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisTimeoff, SDKValidationError> {

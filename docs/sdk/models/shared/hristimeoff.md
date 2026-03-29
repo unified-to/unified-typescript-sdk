@@ -5,9 +5,7 @@
 ```typescript
 import { HrisTimeoff } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisTimeoff = {
-  startAt: new Date("2026-01-20T14:14:36.130Z"),
-};
+let value: HrisTimeoff = {};
 ```
 
 ## Fields
@@ -24,7 +22,7 @@ let value: HrisTimeoff = {
 | `isPaid`                                                                                      | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `reason`                                                                                      | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `startAt`                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `startAt`                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `status`                                                                                      | [shared.HrisTimeoffStatus](../../../sdk/models/shared/hristimeoffstatus.md)                   | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `userId`                                                                                      | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

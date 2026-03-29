@@ -19,6 +19,7 @@ import { hrisCreateHrisBenefit } from "../funcs/hrisCreateHrisBenefit.js";
 import { hrisCreateHrisDeduction } from "../funcs/hrisCreateHrisDeduction.js";
 import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
+import { hrisCreateHrisTimeoff } from "../funcs/hrisCreateHrisTimeoff.js";
 import { hrisCreateHrisTimeshift } from "../funcs/hrisCreateHrisTimeshift.js";
 import { hrisGetHrisBankaccount } from "../funcs/hrisGetHrisBankaccount.js";
 import { hrisGetHrisBenefit } from "../funcs/hrisGetHrisBenefit.js";
@@ -41,18 +42,21 @@ import { hrisPatchHrisBenefit } from "../funcs/hrisPatchHrisBenefit.js";
 import { hrisPatchHrisDeduction } from "../funcs/hrisPatchHrisDeduction.js";
 import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
+import { hrisPatchHrisTimeoff } from "../funcs/hrisPatchHrisTimeoff.js";
 import { hrisPatchHrisTimeshift } from "../funcs/hrisPatchHrisTimeshift.js";
 import { hrisRemoveHrisBankaccount } from "../funcs/hrisRemoveHrisBankaccount.js";
 import { hrisRemoveHrisBenefit } from "../funcs/hrisRemoveHrisBenefit.js";
 import { hrisRemoveHrisDeduction } from "../funcs/hrisRemoveHrisDeduction.js";
 import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
+import { hrisRemoveHrisTimeoff } from "../funcs/hrisRemoveHrisTimeoff.js";
 import { hrisRemoveHrisTimeshift } from "../funcs/hrisRemoveHrisTimeshift.js";
 import { hrisUpdateHrisBankaccount } from "../funcs/hrisUpdateHrisBankaccount.js";
 import { hrisUpdateHrisBenefit } from "../funcs/hrisUpdateHrisBenefit.js";
 import { hrisUpdateHrisDeduction } from "../funcs/hrisUpdateHrisDeduction.js";
 import { hrisUpdateHrisDevice } from "../funcs/hrisUpdateHrisDevice.js";
 import { hrisUpdateHrisEmployee } from "../funcs/hrisUpdateHrisEmployee.js";
+import { hrisUpdateHrisTimeoff } from "../funcs/hrisUpdateHrisTimeoff.js";
 import { hrisUpdateHrisTimeshift } from "../funcs/hrisUpdateHrisTimeshift.js";
 import { locationCreateHrisLocation } from "../funcs/locationCreateHrisLocation.js";
 import { locationGetHrisLocation } from "../funcs/locationGetHrisLocation.js";
@@ -172,6 +176,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(locationCreateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a timeoff
+   */
+  async createHrisTimeoff(
+    request: operations.CreateHrisTimeoffRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeoff> {
+    return unwrapAsync(hrisCreateHrisTimeoff(
       this,
       request,
       options,
@@ -613,6 +631,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update a timeoff
+   */
+  async patchHrisTimeoff(
+    request: operations.PatchHrisTimeoffRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeoff> {
+    return unwrapAsync(hrisPatchHrisTimeoff(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a timeshift
    */
   async patchHrisTimeshift(
@@ -739,6 +771,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove a timeoff
+   */
+  async removeHrisTimeoff(
+    request: operations.RemoveHrisTimeoffRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisTimeoffResponse | undefined> {
+    return unwrapAsync(hrisRemoveHrisTimeoff(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a timeshift
    */
   async removeHrisTimeshift(
@@ -858,6 +904,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(locationUpdateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a timeoff
+   */
+  async updateHrisTimeoff(
+    request: operations.UpdateHrisTimeoffRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeoff> {
+    return unwrapAsync(hrisUpdateHrisTimeoff(
       this,
       request,
       options,

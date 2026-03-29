@@ -1184,6 +1184,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisCreateHrisDevice`](docs/sdks/hris/README.md#createhrisdevice) - Create a device
 - [`hrisCreateHrisEmployee`](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
 - [`hrisCreateHrisEmployee`](docs/sdks/hris/README.md#createhrisemployee) - Create an employee
+- [`hrisCreateHrisTimeoff`](docs/sdks/hris/README.md#createhristimeoff) - Create a timeoff
+- [`hrisCreateHrisTimeoff`](docs/sdks/timeoff/README.md#createhristimeoff) - Create a timeoff
 - [`hrisCreateHrisTimeshift`](docs/sdks/hris/README.md#createhristimeshift) - Create a timeshift
 - [`hrisCreateHrisTimeshift`](docs/sdks/timeshift/README.md#createhristimeshift) - Create a timeshift
 - [`hrisGetHrisBankaccount`](docs/sdks/bankaccount/README.md#gethrisbankaccount) - Retrieve a bankaccount
@@ -1228,6 +1230,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisPatchHrisDevice`](docs/sdks/hris/README.md#patchhrisdevice) - Update a device
 - [`hrisPatchHrisEmployee`](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
 - [`hrisPatchHrisEmployee`](docs/sdks/hris/README.md#patchhrisemployee) - Update an employee
+- [`hrisPatchHrisTimeoff`](docs/sdks/hris/README.md#patchhristimeoff) - Update a timeoff
+- [`hrisPatchHrisTimeoff`](docs/sdks/timeoff/README.md#patchhristimeoff) - Update a timeoff
 - [`hrisPatchHrisTimeshift`](docs/sdks/hris/README.md#patchhristimeshift) - Update a timeshift
 - [`hrisPatchHrisTimeshift`](docs/sdks/timeshift/README.md#patchhristimeshift) - Update a timeshift
 - [`hrisRemoveHrisBankaccount`](docs/sdks/bankaccount/README.md#removehrisbankaccount) - Remove a bankaccount
@@ -1240,6 +1244,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisRemoveHrisDevice`](docs/sdks/hris/README.md#removehrisdevice) - Remove a device
 - [`hrisRemoveHrisEmployee`](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
 - [`hrisRemoveHrisEmployee`](docs/sdks/hris/README.md#removehrisemployee) - Remove an employee
+- [`hrisRemoveHrisTimeoff`](docs/sdks/hris/README.md#removehristimeoff) - Remove a timeoff
+- [`hrisRemoveHrisTimeoff`](docs/sdks/timeoff/README.md#removehristimeoff) - Remove a timeoff
 - [`hrisRemoveHrisTimeshift`](docs/sdks/hris/README.md#removehristimeshift) - Remove a timeshift
 - [`hrisRemoveHrisTimeshift`](docs/sdks/timeshift/README.md#removehristimeshift) - Remove a timeshift
 - [`hrisUpdateHrisBankaccount`](docs/sdks/bankaccount/README.md#updatehrisbankaccount) - Update a bankaccount
@@ -1252,6 +1258,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisUpdateHrisDevice`](docs/sdks/hris/README.md#updatehrisdevice) - Update a device
 - [`hrisUpdateHrisEmployee`](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
 - [`hrisUpdateHrisEmployee`](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
+- [`hrisUpdateHrisTimeoff`](docs/sdks/hris/README.md#updatehristimeoff) - Update a timeoff
+- [`hrisUpdateHrisTimeoff`](docs/sdks/timeoff/README.md#updatehristimeoff) - Update a timeoff
 - [`hrisUpdateHrisTimeshift`](docs/sdks/hris/README.md#updatehristimeshift) - Update a timeshift
 - [`hrisUpdateHrisTimeshift`](docs/sdks/timeshift/README.md#updatehristimeshift) - Update a timeshift
 - [`kmsCreateKmsComment`](docs/sdks/comment/README.md#createkmscomment) - Create a comment
