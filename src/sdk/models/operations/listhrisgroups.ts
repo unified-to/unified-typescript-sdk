@@ -50,6 +50,10 @@ export type ListHrisGroupsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The type to filter by
+   */
+  type?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
@@ -71,6 +75,7 @@ export type ListHrisGroupsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -89,6 +94,7 @@ export const ListHrisGroupsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

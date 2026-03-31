@@ -1,31 +1,31 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 5123fef2d7f9f12ba6135b87f82ae573
+  docChecksum: 4b271fa62ae0cc77a25c0a077d2a284f
   docVersion: "1.0"
-  speakeasyVersion: 1.759.3
-  generationVersion: 2.869.25
-  releaseVersion: 2.83.28
-  configChecksum: 35ed57ff5c648b3a8011358186bba56d
+  speakeasyVersion: 1.760.0
+  generationVersion: 2.873.1
+  releaseVersion: 2.83.29
+  configChecksum: dd34396819fd74a4eee261c80247f66a
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: cd0ef993-3cec-4145-ba79-88e7215a6ac8
-  pristine_commit_hash: 352a31f7961d8818e50c15f6e35db8e8a0efccb4
-  pristine_tree_hash: 3ed1bb464466e07ee02110710a0d62a39e59e36b
+  generation_id: 9e6aa5e3-2ecf-4564-a93c-8b18ae3e2630
+  pristine_commit_hash: 1e44d55f4bb8929275d08fe35577f11ed4cb5789
+  pristine_tree_hash: cb52b2b121dbddd5b5128087b78c3307a3629ac1
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.14
-    core: 3.26.44
+    core: 3.26.45
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
-    globalSecurity: 2.82.15
+    globalSecurity: 2.82.16
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.83.1
     inputOutputModels: 2.82.1
@@ -2346,8 +2346,8 @@ trackedFiles:
     pristine_git_object: 0841c7ebb0212afdb6ac17a0d40539557151dfb6
   docs/sdk/models/operations/listhrisgroupsrequest.md:
     id: 79d9ac415285
-    last_write_checksum: sha1:07e3932b11810fd2abcbfdb15d7a5321816ab14d
-    pristine_git_object: 6873d712663213463e309a8d5e4f1bd5a0ccd314
+    last_write_checksum: sha1:c3a48bcca36a1e3b87f61cef93954f1f82cf066f
+    pristine_git_object: c9ecaf2da51b01779c53fdf97be55efc36287662
   docs/sdk/models/operations/listhrislocationsqueryparamfields.md:
     id: 29a7664b9048
     last_write_checksum: sha1:ecb7fbdc29960838baa1ea26723274f86d76c33e
@@ -9190,12 +9190,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:20d946dc10ebc9f7be65011226e293569831ac51
-    pristine_git_object: b5f085049033221bd335702d5d13f0c6bfd723ff
+    last_write_checksum: sha1:45ac8f33f7470b2022506a88799af26198e18e69
+    pristine_git_object: ae0a14b0c2fb1896839f7cdfbf51177a55f9afcb
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:0660277ec0f668a13064de40a41dd741afe334d0
-    pristine_git_object: e534f0466751d4e662f3d2d43a9703baa341216a
+    last_write_checksum: sha1:7676a64fd58919047d2c44f5bd7c82e0e4f2b656
+    pristine_git_object: a50880745e74482aa9fca5ac2494627bc74d603f
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10634,8 +10634,8 @@ trackedFiles:
     pristine_git_object: 0f2c433dbf97ce1f1d136e1d1f30c0e0b4dfde3b
   src/funcs/groupListHrisGroups.ts:
     id: 49fab44074f6
-    last_write_checksum: sha1:c8bb05f587a68893c69c08d63b9cad04def18096
-    pristine_git_object: 64135af43bf9643927b5317f170915c2f813d485
+    last_write_checksum: sha1:0fd70c58bd9b83b4bdafe465536f8d842508d6f3
+    pristine_git_object: 1f492c9c7f14008833460fadfbdccba6486de8e8
   src/funcs/groupListScimGroups.ts:
     id: 8e617d590053
     last_write_checksum: sha1:a01378c63321c04784c4a56bf7ef30667d8baae6
@@ -11862,8 +11862,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:ed7d79e241884a97420cdc3da967722ae2a28100
-    pristine_git_object: 346991253062368c4c6bba781bc158291393d54e
+    last_write_checksum: sha1:2f9aefe07a36bfa6a6a60e10b12bc73cb89875e9
+    pristine_git_object: f4d1dd6b101597b52a0987553d1a438e8868a85d
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -11910,8 +11910,8 @@ trackedFiles:
     pristine_git_object: 43fcf336ef4986ed91de77f38e0cc8b3d9c4ed76
   src/lib/security.ts:
     id: 0502afa7922e
-    last_write_checksum: sha1:2fc481bdec05d378e4c89b968be0bf4875798a48
-    pristine_git_object: 39dfe5e4c567e2cb6caf68919801699f2b4c1022
+    last_write_checksum: sha1:287d25c1934cc52d8f31af3f863b6a8a3ce13e1a
+    pristine_git_object: 6674e48a885e6f6747d49e47740fa570ce8b9150
   src/lib/url.ts:
     id: b0057e24ed76
     last_write_checksum: sha1:3bceadd74bf0b31adf13eb06b7531077c3e07d65
@@ -13446,8 +13446,8 @@ trackedFiles:
     pristine_git_object: ecc3bbe726c60b20bce7923dc678a8c2c85962f8
   src/sdk/models/operations/listhrisgroups.ts:
     id: 73bb3324414f
-    last_write_checksum: sha1:174c6357f63ff47759572a47ce606b54265dad5f
-    pristine_git_object: 6647cdb3505498eb60a7c784213429ec11499e42
+    last_write_checksum: sha1:d36442694d6a1e567423018460ebf6021492a3bb
+    pristine_git_object: 6c7a798c112f6ee5c78afa4ad124a8340a6d1230
   src/sdk/models/operations/listhrislocations.ts:
     id: 7a01907ca2a2
     last_write_checksum: sha1:c1c8e4a3718087f15a58f4035d1c097cdfbf71d9
@@ -22860,20 +22860,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `unified-to.hris.createHrisTimeoff()`: **Added**
-  * `unified-to.hris.patchHrisTimeoff()`: **Added**
-  * `unified-to.hris.removeHrisTimeoff()`: **Added**
-  * `unified-to.hris.updateHrisTimeoff()`: **Added**
-  * `unified-to.timeoff.createHrisTimeoff()`: **Added**
-  * `unified-to.timeoff.patchHrisTimeoff()`: **Added**
-  * `unified-to.timeoff.removeHrisTimeoff()`: **Added**
-  * `unified-to.timeoff.updateHrisTimeoff()`: **Added**
-  * `unified-to.hris.getHrisTimeoff()`:  `response.startAt` **Changed**
-  * `unified-to.hris.listHrisTimeoffs()`:  `response.[].startAt` **Changed**
-  * `unified-to.timeoff.getHrisTimeoff()`:  `response.startAt` **Changed**
-  * `unified-to.timeoff.listHrisTimeoffs()`:  `response.[].startAt` **Changed**
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.group.listHrisGroups()`: \n  *  `request.type` **Added**\n* `unified-to.hris.listHrisGroups()`: \n  *  `request.type` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
