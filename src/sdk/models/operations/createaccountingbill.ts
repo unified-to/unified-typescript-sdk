@@ -33,6 +33,7 @@ export const CreateAccountingBillQueryParamFields = {
   PaymentCollectionMethod: "payment_collection_method",
   Attachments: "attachments",
   Send: "send",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type CreateAccountingBillQueryParamFields = ClosedEnum<

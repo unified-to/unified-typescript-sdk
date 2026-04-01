@@ -24,9 +24,9 @@ export const Fields = {
   Group: "group",
   Subgroup: "subgroup",
   ParentId: "parent_id",
-  OrganizationId: "organization_id",
   Taxonomy: "taxonomy",
   Raw: "raw",
+  OrganizationId: "organization_id",
 } as const;
 export type Fields = ClosedEnum<typeof Fields>;
 

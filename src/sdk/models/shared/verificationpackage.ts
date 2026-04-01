@@ -59,7 +59,7 @@ export type VerificationPackage = {
   type: VerificationPackageType;
   updatedAt?: Date | undefined;
   /**
-   * {country}-{stateprovince/territory} or just {country} 2-digit ISO codes
+   * {country}-{state/province/territory} or just {country} 2-digit ISO codes
    */
   validRegions?: Array<string> | undefined;
 };

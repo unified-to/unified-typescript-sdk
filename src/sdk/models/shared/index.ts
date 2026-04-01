@@ -174,7 +174,7 @@ export * from "./lmsactivity.js";
 export * from "./lmsclass.js";
 export * from "./lmscollection.js";
 export * from "./lmscontent.js";
-export * from "./lmscontentshapelocalization.js";
+export * from "./lmscontentlocalization.js";
 export * from "./lmscourse.js";
 export * from "./lmsemail.js";
 export * from "./lmsinstructor.js";

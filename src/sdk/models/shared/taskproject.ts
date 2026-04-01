@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  TaskMetadata,
+  TaskMetadata$inboundSchema,
+  TaskMetadata$Outbound,
+  TaskMetadata$outboundSchema,
+} from "./taskmetadata.js";
 
 export type TaskProject = {
   createdAt?: Date | undefined;
@@ -15,6 +21,7 @@ export type TaskProject = {
   hasChildren?: boolean | undefined;
   hasTasks?: boolean | undefined;
   id?: string | undefined;
+  metadata?: Array<TaskMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -35,6 +42,7 @@ export const TaskProject$inboundSchema: z.ZodType<
   has_children: z.boolean().optional(),
   has_tasks: z.boolean().optional(),
   id: z.string().optional(),
+  metadata: z.array(TaskMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -60,6 +68,7 @@ export type TaskProject$Outbound = {
   has_children?: boolean | undefined;
   has_tasks?: boolean | undefined;
   id?: string | undefined;
+  metadata?: Array<TaskMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -79,6 +88,7 @@ export const TaskProject$outboundSchema: z.ZodType<
   hasChildren: z.boolean().optional(),
   hasTasks: z.boolean().optional(),
   id: z.string().optional(),
+  metadata: z.array(TaskMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

@@ -18,7 +18,6 @@ export const LmsMediaType = {
   Document: "DOCUMENT",
   Text: "TEXT",
   Html: "HTML",
-  Markdown: "MARKDOWN",
   Other: "OTHER",
 } as const;
 export type LmsMediaType = OpenEnum<typeof LmsMediaType>;

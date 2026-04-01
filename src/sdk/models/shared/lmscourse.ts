@@ -16,9 +16,11 @@ import {
 
 export type LmsCourse = {
   categories?: Array<string> | undefined;
+  contentIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
+  durationMinutes?: number | undefined;
   id?: string | undefined;
   instructorIds?: Array<string> | undefined;
   isActive?: boolean | undefined;
@@ -27,7 +29,9 @@ export type LmsCourse = {
   media?: Array<LmsMedia> | undefined;
   name: string;
   priceAmount?: number | undefined;
+  providerName?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  skills?: Array<string> | undefined;
   studentIds?: Array<string> | undefined;
   updatedAt?: Date | undefined;
 };
@@ -39,10 +43,12 @@ export const LmsCourse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   categories: z.array(z.string()).optional(),
+  content_ids: z.array(z.string()).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
+  duration_minutes: z.number().optional(),
   id: z.string().optional(),
   instructor_ids: z.array(z.string()).optional(),
   is_active: z.boolean().optional(),
@@ -51,17 +57,22 @@ export const LmsCourse$inboundSchema: z.ZodType<
   media: z.array(LmsMedia$inboundSchema).optional(),
   name: z.string(),
   price_amount: z.number().optional(),
+  provider_name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  skills: z.array(z.string()).optional(),
   student_ids: z.array(z.string()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "content_ids": "contentIds",
     "created_at": "createdAt",
+    "duration_minutes": "durationMinutes",
     "instructor_ids": "instructorIds",
     "is_active": "isActive",
     "is_private": "isPrivate",
     "price_amount": "priceAmount",
+    "provider_name": "providerName",
     "student_ids": "studentIds",
     "updated_at": "updatedAt",
   });
@@ -69,9 +80,11 @@ export const LmsCourse$inboundSchema: z.ZodType<
 /** @internal */
 export type LmsCourse$Outbound = {
   categories?: Array<string> | undefined;
+  content_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   description?: string | undefined;
+  duration_minutes?: number | undefined;
   id?: string | undefined;
   instructor_ids?: Array<string> | undefined;
   is_active?: boolean | undefined;
@@ -80,7 +93,9 @@ export type LmsCourse$Outbound = {
   media?: Array<LmsMedia$Outbound> | undefined;
   name: string;
   price_amount?: number | undefined;
+  provider_name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  skills?: Array<string> | undefined;
   student_ids?: Array<string> | undefined;
   updated_at?: string | undefined;
 };
@@ -92,9 +107,11 @@ export const LmsCourse$outboundSchema: z.ZodType<
   LmsCourse
 > = z.object({
   categories: z.array(z.string()).optional(),
+  contentIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
+  durationMinutes: z.number().optional(),
   id: z.string().optional(),
   instructorIds: z.array(z.string()).optional(),
   isActive: z.boolean().optional(),
@@ -103,16 +120,21 @@ export const LmsCourse$outboundSchema: z.ZodType<
   media: z.array(LmsMedia$outboundSchema).optional(),
   name: z.string(),
   priceAmount: z.number().optional(),
+  providerName: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  skills: z.array(z.string()).optional(),
   studentIds: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    contentIds: "content_ids",
     createdAt: "created_at",
+    durationMinutes: "duration_minutes",
     instructorIds: "instructor_ids",
     isActive: "is_active",
     isPrivate: "is_private",
     priceAmount: "price_amount",
+    providerName: "provider_name",
     studentIds: "student_ids",
     updatedAt: "updated_at",
   });

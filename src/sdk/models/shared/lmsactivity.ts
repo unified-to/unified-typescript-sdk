@@ -9,6 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LmsActivity = {
+  assignedGrade?: string | undefined;
   completedAt?: Date | undefined;
   contentId?: string | undefined;
   courseId?: string | undefined;
@@ -29,6 +30,7 @@ export const LmsActivity$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  assigned_grade: z.string().optional(),
   completed_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
@@ -48,6 +50,7 @@ export const LmsActivity$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "assigned_grade": "assignedGrade",
     "completed_at": "completedAt",
     "content_id": "contentId",
     "course_id": "courseId",
@@ -62,6 +65,7 @@ export const LmsActivity$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type LmsActivity$Outbound = {
+  assigned_grade?: string | undefined;
   completed_at?: string | undefined;
   content_id?: string | undefined;
   course_id?: string | undefined;
@@ -82,6 +86,7 @@ export const LmsActivity$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   LmsActivity
 > = z.object({
+  assignedGrade: z.string().optional(),
   completedAt: z.date().transform(v => v.toISOString()).optional(),
   contentId: z.string().optional(),
   courseId: z.string().optional(),
@@ -96,6 +101,7 @@ export const LmsActivity$outboundSchema: z.ZodType<
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    assignedGrade: "assigned_grade",
     completedAt: "completed_at",
     contentId: "content_id",
     courseId: "course_id",

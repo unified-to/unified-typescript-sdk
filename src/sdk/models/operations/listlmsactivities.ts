@@ -14,6 +14,7 @@ export const ListLmsActivitiesQueryParamFields = {
   CourseId: "course_id",
   StudentId: "student_id",
   DurationMinutes: "duration_minutes",
+  AssignedGrade: "assigned_grade",
   IsCompleted: "is_completed",
   ProgressPercentage: "progress_percentage",
   StartedAt: "started_at",

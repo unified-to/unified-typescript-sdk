@@ -18,6 +18,7 @@ export const GetAccountingJournalQueryParamFields = {
   Description: "description",
   PostedAt: "posted_at",
   Source: "source",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type GetAccountingJournalQueryParamFields = ClosedEnum<

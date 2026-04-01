@@ -23,6 +23,7 @@ export type AccountingJournal = {
    * new field name
    */
   lineitems?: Array<AccountingJournalLineitem> | undefined;
+  organizationId?: string | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -44,6 +45,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingJournalLineitem$inboundSchema).optional(),
+  organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   raw: z.record(z.any()).optional(),
@@ -56,6 +58,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "organization_id": "organizationId",
     "posted_at": "postedAt",
     "tax_amount": "taxAmount",
     "taxrate_id": "taxrateId",
@@ -69,6 +72,7 @@ export type AccountingJournal$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingJournalLineitem$Outbound> | undefined;
+  organization_id?: string | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -89,6 +93,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
+  organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -99,6 +104,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    organizationId: "organization_id",
     postedAt: "posted_at",
     taxAmount: "tax_amount",
     taxrateId: "taxrate_id",

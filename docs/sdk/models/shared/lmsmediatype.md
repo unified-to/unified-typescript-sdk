@@ -13,5 +13,5 @@ let value: LmsMediaType = "WEB";
 ## Values
 
 ```typescript
-"IMAGE" | "HEADSHOT" | "VIDEO" | "WEB" | "DOCUMENT" | "TEXT" | "HTML" | "MARKDOWN" | "OTHER" | Unrecognized<string>
+"IMAGE" | "HEADSHOT" | "VIDEO" | "WEB" | "DOCUMENT" | "TEXT" | "HTML" | "OTHER" | Unrecognized<string>
 ```

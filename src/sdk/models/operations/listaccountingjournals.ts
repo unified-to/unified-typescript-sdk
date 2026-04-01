@@ -18,6 +18,7 @@ export const ListAccountingJournalsQueryParamFields = {
   Description: "description",
   PostedAt: "posted_at",
   Source: "source",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type ListAccountingJournalsQueryParamFields = ClosedEnum<
@@ -25,6 +26,10 @@ export type ListAccountingJournalsQueryParamFields = ClosedEnum<
 >;
 
 export type ListAccountingJournalsRequest = {
+  /**
+   * The account ID to filter by (reference to AccountingAccount)
+   */
+  accountId?: string | undefined;
   /**
    * ID of the connection
    */
@@ -63,6 +68,7 @@ export const ListAccountingJournalsQueryParamFields$outboundSchema:
 
 /** @internal */
 export type ListAccountingJournalsRequest$Outbound = {
+  account_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -81,6 +87,7 @@ export const ListAccountingJournalsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAccountingJournalsRequest
 > = z.object({
+  accountId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(ListAccountingJournalsQueryParamFields$outboundSchema)
     .optional(),
@@ -94,6 +101,7 @@ export const ListAccountingJournalsRequest$outboundSchema: z.ZodType<
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    accountId: "account_id",
     connectionId: "connection_id",
     orgId: "org_id",
     updatedGte: "updated_gte",

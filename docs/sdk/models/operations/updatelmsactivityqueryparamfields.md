@@ -11,5 +11,5 @@ let value: UpdateLmsActivityQueryParamFields = "completed_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "content_id" | "course_id" | "student_id" | "duration_minutes" | "is_completed" | "progress_percentage" | "started_at" | "completed_at" | "raw"
+"id" | "created_at" | "updated_at" | "content_id" | "course_id" | "student_id" | "duration_minutes" | "assigned_grade" | "is_completed" | "progress_percentage" | "started_at" | "completed_at" | "raw"
 ```

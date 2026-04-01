@@ -8,11 +8,11 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  LmsContentShapeLocalization,
-  LmsContentShapeLocalization$inboundSchema,
-  LmsContentShapeLocalization$Outbound,
-  LmsContentShapeLocalization$outboundSchema,
-} from "./lmscontentshapelocalization.js";
+  LmsContentLocalization,
+  LmsContentLocalization$inboundSchema,
+  LmsContentLocalization$Outbound,
+  LmsContentLocalization$outboundSchema,
+} from "./lmscontentlocalization.js";
 import {
   LmsMedia,
   LmsMedia$inboundSchema,
@@ -32,7 +32,7 @@ export type LmsContent = {
   instructorIds?: Array<string> | undefined;
   isActive?: boolean | undefined;
   languages?: Array<string> | undefined;
-  localizations?: Array<LmsContentShapeLocalization> | undefined;
+  localizations?: Array<LmsContentLocalization> | undefined;
   media?: Array<LmsMedia> | undefined;
   name?: string | undefined;
   providerName?: string | undefined;
@@ -61,7 +61,7 @@ export const LmsContent$inboundSchema: z.ZodType<
   instructor_ids: z.array(z.string()).optional(),
   is_active: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
-  localizations: z.array(LmsContentShapeLocalization$inboundSchema).optional(),
+  localizations: z.array(LmsContentLocalization$inboundSchema).optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
   name: z.string().optional(),
   provider_name: z.string().optional(),
@@ -99,7 +99,7 @@ export type LmsContent$Outbound = {
   instructor_ids?: Array<string> | undefined;
   is_active?: boolean | undefined;
   languages?: Array<string> | undefined;
-  localizations?: Array<LmsContentShapeLocalization$Outbound> | undefined;
+  localizations?: Array<LmsContentLocalization$Outbound> | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
   name?: string | undefined;
   provider_name?: string | undefined;
@@ -127,7 +127,7 @@ export const LmsContent$outboundSchema: z.ZodType<
   instructorIds: z.array(z.string()).optional(),
   isActive: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
-  localizations: z.array(LmsContentShapeLocalization$outboundSchema).optional(),
+  localizations: z.array(LmsContentLocalization$outboundSchema).optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
   name: z.string().optional(),
   providerName: z.string().optional(),

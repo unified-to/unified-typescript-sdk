@@ -55,6 +55,7 @@ export type AccountingBill = {
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   notes?: string | undefined;
+  organizationId?: string | undefined;
   paidAmount?: number | undefined;
   paidAt?: Date | undefined;
   paymentCollectionMethod?: PaymentCollectionMethod | undefined;
@@ -119,6 +120,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   notes: z.string().optional(),
+  organization_id: z.string().optional(),
   paid_amount: z.number().optional(),
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -146,6 +148,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "due_at": "dueAt",
+    "organization_id": "organizationId",
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
     "payment_collection_method": "paymentCollectionMethod",
@@ -172,6 +175,7 @@ export type AccountingBill$Outbound = {
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   notes?: string | undefined;
+  organization_id?: string | undefined;
   paid_amount?: number | undefined;
   paid_at?: string | undefined;
   payment_collection_method?: string | undefined;
@@ -206,6 +210,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   notes: z.string().optional(),
+  organizationId: z.string().optional(),
   paidAmount: z.number().optional(),
   paidAt: z.date().transform(v => v.toISOString()).optional(),
   paymentCollectionMethod: PaymentCollectionMethod$outboundSchema.optional(),
@@ -229,6 +234,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
     createdAt: "created_at",
     discountAmount: "discount_amount",
     dueAt: "due_at",
+    organizationId: "organization_id",
     paidAmount: "paid_amount",
     paidAt: "paid_at",
     paymentCollectionMethod: "payment_collection_method",

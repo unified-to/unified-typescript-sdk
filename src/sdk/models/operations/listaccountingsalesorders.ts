@@ -20,6 +20,7 @@ export const ListAccountingSalesordersQueryParamFields = {
   Status: "status",
   Lineitems: "lineitems",
   SalesChannel: "sales_channel",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type ListAccountingSalesordersQueryParamFields = ClosedEnum<
@@ -31,6 +32,10 @@ export type ListAccountingSalesordersRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by (reference to AccountingContact)
+   */
+  contactId?: string | undefined;
   /**
    * Fields to return
    */
@@ -65,6 +70,7 @@ export const ListAccountingSalesordersQueryParamFields$outboundSchema:
 /** @internal */
 export type ListAccountingSalesordersRequest$Outbound = {
   connection_id: string;
+  contact_id?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -83,6 +89,7 @@ export const ListAccountingSalesordersRequest$outboundSchema: z.ZodType<
   ListAccountingSalesordersRequest
 > = z.object({
   connectionId: z.string(),
+  contactId: z.string().optional(),
   fields: z.array(ListAccountingSalesordersQueryParamFields$outboundSchema)
     .optional(),
   limit: z.number().optional(),
@@ -96,6 +103,7 @@ export const ListAccountingSalesordersRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    contactId: "contact_id",
     orgId: "org_id",
     updatedGte: "updated_gte",
   });

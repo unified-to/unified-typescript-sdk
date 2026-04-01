@@ -23,9 +23,9 @@ export const ListAccountingAccountsQueryParamFields = {
   Group: "group",
   Subgroup: "subgroup",
   ParentId: "parent_id",
-  OrganizationId: "organization_id",
   Taxonomy: "taxonomy",
   Raw: "raw",
+  OrganizationId: "organization_id",
 } as const;
 export type ListAccountingAccountsQueryParamFields = ClosedEnum<
   typeof ListAccountingAccountsQueryParamFields
@@ -57,6 +57,10 @@ export type ListAccountingAccountsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The type to filter by
+   */
+  type?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
@@ -79,6 +83,7 @@ export type ListAccountingAccountsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -98,6 +103,7 @@ export const ListAccountingAccountsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

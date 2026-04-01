@@ -51,6 +51,7 @@ export type AccountingSalesorder = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  organizationId?: string | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   salesChannel?: string | undefined;
@@ -88,6 +89,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+  organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   raw: z.record(z.any()).optional(),
@@ -104,6 +106,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
     "billing_address": "billingAddress",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "organization_id": "organizationId",
     "posted_at": "postedAt",
     "sales_channel": "salesChannel",
     "shipping_address": "shippingAddress",
@@ -122,6 +125,7 @@ export type AccountingSalesorder$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
+  organization_id?: string | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   sales_channel?: string | undefined;
@@ -147,6 +151,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+  organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   salesChannel: z.string().optional(),
@@ -161,6 +166,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
     billingAddress: "billing_address",
     contactId: "contact_id",
     createdAt: "created_at",
+    organizationId: "organization_id",
     postedAt: "posted_at",
     salesChannel: "sales_channel",
     shippingAddress: "shipping_address",

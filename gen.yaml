@@ -29,7 +29,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.83.29
+  version: 2.83.30
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -48,6 +48,7 @@ typescript:
   enableReactQuery: false
   enumFormat: union
   exportZodModelNamespace: false
+  fixEnumNameSanitization: false
   flatAdditionalProperties: false
   flattenGlobalSecurity: false
   flatteningOrder: body-first

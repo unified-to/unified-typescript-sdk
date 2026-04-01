@@ -32,6 +32,10 @@ export type ListAccountingOrdersRequest = {
    */
   connectionId: string;
   /**
+   * The contact ID to filter by (reference to AccountingContact)
+   */
+  contactId?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListAccountingOrdersQueryParamFields> | undefined;
@@ -67,6 +71,7 @@ export const ListAccountingOrdersQueryParamFields$outboundSchema:
 /** @internal */
 export type ListAccountingOrdersRequest$Outbound = {
   connection_id: string;
+  contact_id?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -86,6 +91,7 @@ export const ListAccountingOrdersRequest$outboundSchema: z.ZodType<
   ListAccountingOrdersRequest
 > = z.object({
   connectionId: z.string(),
+  contactId: z.string().optional(),
   fields: z.array(ListAccountingOrdersQueryParamFields$outboundSchema)
     .optional(),
   limit: z.number().optional(),
@@ -100,6 +106,7 @@ export const ListAccountingOrdersRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    contactId: "contact_id",
     orgId: "org_id",
     updatedGte: "updated_gte",
   });

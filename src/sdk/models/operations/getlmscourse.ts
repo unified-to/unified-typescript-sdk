@@ -21,6 +21,10 @@ export const GetLmsCourseQueryParamFields = {
   Media: "media",
   InstructorIds: "instructor_ids",
   StudentIds: "student_ids",
+  ContentIds: "content_ids",
+  Skills: "skills",
+  DurationMinutes: "duration_minutes",
+  ProviderName: "provider_name",
   Raw: "raw",
 } as const;
 export type GetLmsCourseQueryParamFields = ClosedEnum<

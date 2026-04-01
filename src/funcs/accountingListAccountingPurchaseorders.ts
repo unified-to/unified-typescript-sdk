@@ -98,6 +98,7 @@ async function $do(
   );
 
   const query = encodeFormQuery({
+    "contact_id": payload.contact_id,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
