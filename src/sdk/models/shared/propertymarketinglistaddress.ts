@@ -16,6 +16,7 @@ export type PropertyMarketingListAddress = {
   countryCode?: string | undefined;
   postalCode?: string | undefined;
   region?: string | undefined;
+  regionCode?: string | undefined;
 };
 
 /** @internal */
@@ -31,10 +32,12 @@ export const PropertyMarketingListAddress$inboundSchema: z.ZodType<
   country_code: z.string().optional(),
   postal_code: z.string().optional(),
   region: z.string().optional(),
+  region_code: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "country_code": "countryCode",
     "postal_code": "postalCode",
+    "region_code": "regionCode",
   });
 });
 /** @internal */
@@ -46,6 +49,7 @@ export type PropertyMarketingListAddress$Outbound = {
   country_code?: string | undefined;
   postal_code?: string | undefined;
   region?: string | undefined;
+  region_code?: string | undefined;
 };
 
 /** @internal */
@@ -61,10 +65,12 @@ export const PropertyMarketingListAddress$outboundSchema: z.ZodType<
   countryCode: z.string().optional(),
   postalCode: z.string().optional(),
   region: z.string().optional(),
+  regionCode: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     countryCode: "country_code",
     postalCode: "postal_code",
+    regionCode: "region_code",
   });
 });
 

@@ -19,3 +19,4 @@ let value: PropertyMarketingListAddress = {};
 | `countryCode`      | *string*           | :heavy_minus_sign: | N/A                |
 | `postalCode`       | *string*           | :heavy_minus_sign: | N/A                |
 | `region`           | *string*           | :heavy_minus_sign: | N/A                |
+| `regionCode`       | *string*           | :heavy_minus_sign: | N/A                |
