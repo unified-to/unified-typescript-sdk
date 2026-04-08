@@ -41,6 +41,10 @@ export type ListHrisDeductionsRequest = {
    */
   connectionId: string;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListHrisDeductionsQueryParamFields> | undefined;
@@ -61,6 +65,10 @@ export type ListHrisDeductionsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
@@ -80,6 +88,7 @@ export type ListHrisDeductionsRequest$Outbound = {
   benefit_id?: string | undefined;
   company_id?: string | undefined;
   connection_id: string;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -88,6 +97,7 @@ export type ListHrisDeductionsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
 };
@@ -101,6 +111,7 @@ export const ListHrisDeductionsRequest$outboundSchema: z.ZodType<
   benefitId: z.string().optional(),
   companyId: z.string().optional(),
   connectionId: z.string(),
+  endLt: z.string().optional(),
   fields: z.array(ListHrisDeductionsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -109,6 +120,7 @@ export const ListHrisDeductionsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   updatedGte: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
@@ -116,7 +128,9 @@ export const ListHrisDeductionsRequest$outboundSchema: z.ZodType<
     benefitId: "benefit_id",
     companyId: "company_id",
     connectionId: "connection_id",
+    endLt: "end_lt",
     payslipId: "payslip_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
     userId: "user_id",
   });

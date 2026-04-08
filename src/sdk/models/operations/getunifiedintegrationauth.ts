@@ -29,6 +29,9 @@ export type GetUnifiedIntegrationAuthRequest = {
    * Extra state to send back to your success URL
    */
   state?: string | undefined;
+  /**
+   * Optional tenant domain or subdomain for integrations that require it to build the authorize, token, or API URL. Depending on the integration, this may be a bare subdomain or a full domain/URL.
+   */
   subdomain?: string | undefined;
   /**
    * The URL where you want the user to be redirect to after a successful authorization.  The connection ID will be appended with (id=<connectionId>) to this URL, as will the state that was provided.

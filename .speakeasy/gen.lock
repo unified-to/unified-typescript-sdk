@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 293e8f940db1edc64ea3bee29612e534
+  docChecksum: 5aadf962c09ceec8ee8c741b10920bd7
   docVersion: "1.0"
-  speakeasyVersion: 1.761.0
-  generationVersion: 2.879.1
-  releaseVersion: 2.83.31
-  configChecksum: 5023a28ceed6d377fdd00d06b91ced62
+  speakeasyVersion: 1.761.1
+  generationVersion: 2.879.6
+  releaseVersion: 2.83.32
+  configChecksum: 31c61aeb01ca01096ce4a2b5aa63e8e7
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: fc73a5ee-74cb-454d-8b78-0aeeda077d25
-  pristine_commit_hash: fcf62192ee5c47c8c5ec53b3ee79c6de1242d726
-  pristine_tree_hash: 7c4d5b2e637033e0439d6c765408dd4002cab5f2
+  generation_id: 8fdbf476-7358-40d7-a945-a10aa2b221b3
+  pristine_commit_hash: 936aa267f5eb024f9c7219926ec650ab993988e5
+  pristine_tree_hash: 15f00ce4809ed6ec4e17ff0d9de43286d78dad1f
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -1762,8 +1762,8 @@ trackedFiles:
     pristine_git_object: fc4c45ccd3638cebebf42bad082cab5a213a39eb
   docs/sdk/models/operations/getunifiedintegrationauthrequest.md:
     id: 87556619bec2
-    last_write_checksum: sha1:6a089d954dcb98a1ec7ac0d877116be26ec77d4f
-    pristine_git_object: 92f0a90201607262c4913df45e01a8b5920b3031
+    last_write_checksum: sha1:af2c5f85d3f53e02c44b5432069544af3e39c052
+    pristine_git_object: 77b21b48110021b7487c600a1529591cf0efd6d4
   docs/sdk/models/operations/getunifiedintegrationloginrequest.md:
     id: c2cc6d60c47c
     last_write_checksum: sha1:5bd99d4db11289778c69068151099d40a890f119
@@ -2322,8 +2322,8 @@ trackedFiles:
     pristine_git_object: e693a3d52802968f6c6d1a16ff185068978092a9
   docs/sdk/models/operations/listhrisdeductionsrequest.md:
     id: 9c40f22ba281
-    last_write_checksum: sha1:191d50f60b816dcd3379d2197d7d0c178c2866f9
-    pristine_git_object: d044aee892def8a0bcffed8b1f866fb7419a0855
+    last_write_checksum: sha1:f8425a2ee703f92bddcbc1f373e59e08f8da3881
+    pristine_git_object: 2f6c7795fdf301f89e11f7f3a2ab6d6fcf9beb42
   docs/sdk/models/operations/listhrisdevicesqueryparamfields.md:
     id: 16e6fee8fc1f
     last_write_checksum: sha1:47a6365d5c97db3f11dd54ff3752adfc202ac094
@@ -9190,12 +9190,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:faf4d645a9e8d0dcc804484924e95e84a6fce151
-    pristine_git_object: 0aa77ccaee3131df79d21f7579bace8bc1b361e5
+    last_write_checksum: sha1:d3562dbf60ed51bb8c9e692587a0d2bdc268b58c
+    pristine_git_object: f0f78e14fa3d7ed1cfbec0ab31d089cd26f0a867
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:0434549a678e3a9d84cd33104ff42d23c1329475
-    pristine_git_object: 52163a88b5c195e86af18652ecdfca8d835dfb7f
+    last_write_checksum: sha1:d323fdcbbd3b031edc6b0b39f7bdcc6a0217e77f
+    pristine_git_object: 850a1d3ec56e337c2ef7a763422b2fa7dad94c9a
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -10734,8 +10734,8 @@ trackedFiles:
     pristine_git_object: cec160dcdeb30794c65c01510f53d273f8eced62
   src/funcs/hrisListHrisDeductions.ts:
     id: 61f788ed0736
-    last_write_checksum: sha1:0bd4e079e2e5e906e5ce331b02d22d5146789b91
-    pristine_git_object: 8b31427e6b33466dd74339973531a333e451f97f
+    last_write_checksum: sha1:40cd5c054ded3bbe4d512670690982340a897ed1
+    pristine_git_object: 78116543ef8072340ff862effb3c55390a38af34
   src/funcs/hrisListHrisDevices.ts:
     id: d3249a7f30d4
     last_write_checksum: sha1:3a8ba38b75bcbca383603c39b94a330767fab8f3
@@ -11862,8 +11862,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:ae30d96a8757707c8d69d2b792fc6efc451fdd39
-    pristine_git_object: 544f13ce60edab6af6f6bb21fea0b14e42cc9630
+    last_write_checksum: sha1:e11c5a0363d81b0b61a4571d226a01080c480771
+    pristine_git_object: 877cb97dfc5684658fe4bb49bd136c85780dc305
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -13138,8 +13138,8 @@ trackedFiles:
     pristine_git_object: 351316f9aa85e4a88ffc0bbbf151b2d68338b001
   src/sdk/models/operations/getunifiedintegrationauth.ts:
     id: 47da06bc9555
-    last_write_checksum: sha1:2214a2f21453feb2c58916bc1af9450462dcae5f
-    pristine_git_object: 2e4ca8e4681ffc343bcbbc26c239cb07cbccbc15
+    last_write_checksum: sha1:56c1c5c10a84e023314d90c807fc3f14002db6d9
+    pristine_git_object: d58a4bb59c5e460d723c255e31cf3da80ff8f5ef
   src/sdk/models/operations/getunifiedintegrationlogin.ts:
     id: b95fb2dfd44e
     last_write_checksum: sha1:f16a5a6617bf4abac87d73b6cc95ccdc34700229
@@ -13434,8 +13434,8 @@ trackedFiles:
     pristine_git_object: d7991f545848a54663c2ba0759fbab2a3b951fc1
   src/sdk/models/operations/listhrisdeductions.ts:
     id: 42085268e48b
-    last_write_checksum: sha1:f9d379f1050342994a07805511f4c2db44719097
-    pristine_git_object: ea40c0e7fc60292187083727f5df8f9d7e111976
+    last_write_checksum: sha1:7fc5adfad2ceee4c564f004e7d6e35650a7c07fb
+    pristine_git_object: 2f3435db13c01ed7e1260f5aff1d053df385a023
   src/sdk/models/operations/listhrisdevices.ts:
     id: 8936c57a47f6
     last_write_checksum: sha1:2f0485e161981d308434785daddaa23324faf73c
@@ -22860,7 +22860,10 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.martech.createMartechList()`: \n  *  `request.marketingList.address.regionCode` **Added**\n  *  `response.address.regionCode` **Added**\n* `unified-to.martech.getMartechList()`:  `response.address.regionCode` **Added**\n* `unified-to.martech.listMartechLists()`:  `response.[].address.regionCode` **Added**\n* `unified-to.martech.patchMartechList()`: \n  *  `request.marketingList.address.regionCode` **Added**\n  *  `response.address.regionCode` **Added**\n* `unified-to.martech.updateMartechList()`: \n  *  `request.marketingList.address.regionCode` **Added**\n  *  `response.address.regionCode` **Added**\n* `unified-to.list.createMartechList()`: \n  *  `request.marketingList.address.regionCode` **Added**\n  *  `response.address.regionCode` **Added**\n* `unified-to.list.getMartechList()`:  `response.address.regionCode` **Added**\n* `unified-to.list.listMartechLists()`:  `response.[].address.regionCode` **Added**\n* `unified-to.list.patchMartechList()`: \n  *  `request.marketingList.address.regionCode` **Added**\n  *  `response.address.regionCode` **Added**\n* `unified-to.list.updateMartechList()`: \n  *  `request.marketingList.address.regionCode` **Added**\n  *  `response.address.regionCode` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `unified-to.hris.listHrisDeductions()`:  `request` **Changed**
+  * `unified-to.deduction.listHrisDeductions()`:  `request` **Changed**
 generatedFiles:
   - .gitattributes
   - .npmignore
