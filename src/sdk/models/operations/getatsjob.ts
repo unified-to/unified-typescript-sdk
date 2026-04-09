@@ -14,6 +14,7 @@ export const GetAtsJobQueryParamFields = {
   Description: "description",
   RecruiterIds: "recruiter_ids",
   HiringManagerIds: "hiring_manager_ids",
+  HiringManagers: "hiring_managers",
   Status: "status",
   ClosedAt: "closed_at",
   Addresses: "addresses",

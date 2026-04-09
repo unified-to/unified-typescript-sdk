@@ -81,6 +81,7 @@ export * from "./atsjobposting.js";
 export * from "./atsjobquestion.js";
 export * from "./atsmetadata.js";
 export * from "./atsoffer.js";
+export * from "./atsreference.js";
 export * from "./atsscorecard.js";
 export * from "./atsscorecardquestion.js";
 export * from "./atsstatus.js";

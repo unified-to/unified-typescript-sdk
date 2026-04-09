@@ -51,6 +51,12 @@ import {
   AtsMetadata$Outbound,
   AtsMetadata$outboundSchema,
 } from "./atsmetadata.js";
+import {
+  AtsReference,
+  AtsReference$inboundSchema,
+  AtsReference$Outbound,
+  AtsReference$outboundSchema,
+} from "./atsreference.js";
 
 export const EmploymentType = {
   FullTime: "FULL_TIME",
@@ -88,6 +94,7 @@ export type AtsJob = {
    */
   groups?: Array<AtsGroup> | undefined;
   hiringManagerIds?: Array<string> | undefined;
+  hiringManagers?: Array<AtsReference> | undefined;
   id?: string | undefined;
   languageLocale?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
@@ -154,6 +161,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     employment_type: EmploymentType$inboundSchema.optional(),
     groups: z.array(AtsGroup$inboundSchema).optional(),
     hiring_manager_ids: z.array(z.string()).optional(),
+    hiring_managers: z.array(AtsReference$inboundSchema).optional(),
     id: z.string().optional(),
     language_locale: z.string().optional(),
     metadata: z.array(AtsMetadata$inboundSchema).optional(),
@@ -180,6 +188,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
       "created_at": "createdAt",
       "employment_type": "employmentType",
       "hiring_manager_ids": "hiringManagerIds",
+      "hiring_managers": "hiringManagers",
       "language_locale": "languageLocale",
       "minimum_degree": "minimumDegree",
       "minimum_experience_years": "minimumExperienceYears",
@@ -200,6 +209,7 @@ export type AtsJob$Outbound = {
   employment_type?: string | undefined;
   groups?: Array<AtsGroup$Outbound> | undefined;
   hiring_manager_ids?: Array<string> | undefined;
+  hiring_managers?: Array<AtsReference$Outbound> | undefined;
   id?: string | undefined;
   language_locale?: string | undefined;
   metadata?: Array<AtsMetadata$Outbound> | undefined;
@@ -234,6 +244,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   employmentType: EmploymentType$outboundSchema.optional(),
   groups: z.array(AtsGroup$outboundSchema).optional(),
   hiringManagerIds: z.array(z.string()).optional(),
+  hiringManagers: z.array(AtsReference$outboundSchema).optional(),
   id: z.string().optional(),
   languageLocale: z.string().optional(),
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
@@ -258,6 +269,7 @@ export const AtsJob$outboundSchema: z.ZodType<
     createdAt: "created_at",
     employmentType: "employment_type",
     hiringManagerIds: "hiring_manager_ids",
+    hiringManagers: "hiring_managers",
     languageLocale: "language_locale",
     minimumDegree: "minimum_degree",
     minimumExperienceYears: "minimum_experience_years",
