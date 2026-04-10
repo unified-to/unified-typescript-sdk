@@ -185,6 +185,7 @@ export type Webhook = {
   id?: string | undefined;
   integrationType?: string | undefined;
   interval?: number | undefined;
+  isBeta?: boolean | undefined;
   isHealthy?: boolean | undefined;
   isPaused?: boolean | undefined;
   objectType: ObjectType;
@@ -260,6 +261,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
     id: z.string().optional(),
     integration_type: z.string().optional(),
     interval: z.number().optional(),
+    is_beta: z.boolean().optional(),
     is_healthy: z.boolean().optional(),
     is_paused: z.boolean().optional(),
     object_type: ObjectType$inboundSchema,
@@ -281,6 +283,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
       "db_url": "dbUrl",
       "hook_url": "hookUrl",
       "integration_type": "integrationType",
+      "is_beta": "isBeta",
       "is_healthy": "isHealthy",
       "is_paused": "isPaused",
       "object_type": "objectType",
@@ -307,6 +310,7 @@ export type Webhook$Outbound = {
   id?: string | undefined;
   integration_type?: string | undefined;
   interval?: number | undefined;
+  is_beta?: boolean | undefined;
   is_healthy?: boolean | undefined;
   is_paused?: boolean | undefined;
   object_type: string;
@@ -338,6 +342,7 @@ export const Webhook$outboundSchema: z.ZodType<
   id: z.string().optional(),
   integrationType: z.string().optional(),
   interval: z.number().optional(),
+  isBeta: z.boolean().optional(),
   isHealthy: z.boolean().optional(),
   isPaused: z.boolean().optional(),
   objectType: ObjectType$outboundSchema,
@@ -357,6 +362,7 @@ export const Webhook$outboundSchema: z.ZodType<
     dbUrl: "db_url",
     hookUrl: "hook_url",
     integrationType: "integration_type",
+    isBeta: "is_beta",
     isHealthy: "is_healthy",
     isPaused: "is_paused",
     objectType: "object_type",

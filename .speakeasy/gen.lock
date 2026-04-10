@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 185e3f9bf567bcfb80297100b1c48628
+  docChecksum: 411f51acbf2ce7fbfc478c04772f380d
   docVersion: "1.0"
   speakeasyVersion: 1.761.1
   generationVersion: 2.879.6
-  releaseVersion: 2.83.33
-  configChecksum: 6d3e121e4212ae195a96e5d76b12f366
+  releaseVersion: 2.83.34
+  configChecksum: 595d3a0fd52bbc93545a79f9f593b3cc
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 912db17b-8e0b-48d4-a7c1-ca1bd5afdc83
-  pristine_commit_hash: 56a28550eee7a541a5c62bcdc5c86523916aa16a
-  pristine_tree_hash: 01be8ea77c64bbf87863b0d1af80f1c232d7a5f1
+  generation_id: 0a16299f-6c48-4f84-9d56-10cf04f15f99
+  pristine_commit_hash: f5158be6a13acb85d449ae69c9b0de6d2eb89add
+  pristine_tree_hash: 02d8dddcce0cb60304b3e875c59c6211ce0089a4
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -8614,8 +8614,8 @@ trackedFiles:
     pristine_git_object: fff6ec7b6dcb9587e40bfe421d31709e6040feeb
   docs/sdk/models/shared/webhook.md:
     id: 3f3e06364a24
-    last_write_checksum: sha1:84eb6fa7af3968bc5e706211a8a92f8da66355e4
-    pristine_git_object: 4f81eb5f6fb29e4ad5b55a7f0ae5674189ec8098
+    last_write_checksum: sha1:b07d3fa69f1216945e5f4efc828e7b0b3b55ab88
+    pristine_git_object: 1cc801b1a4b6418e31882dd1baf887f9ef0cece4
   docs/sdk/models/shared/webhooktype.md:
     id: 29583c0cec9e
     last_write_checksum: sha1:70cb42b754fe09f28a107b0f5a06339b7aa99090
@@ -9194,12 +9194,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:1cf9a8ca079e1b93ab6d673257d07e3f3f0a3bb5
-    pristine_git_object: 25e3a0c1bddd06aca695e114bfa0b4610c096bcb
+    last_write_checksum: sha1:cfca4901ea3e5a1dd4c53ff7b1bddab3cf58419d
+    pristine_git_object: 617b2f6b2b63c50d2484617e18fbb435254df9bc
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:dc093f8b367733ab97bb14dde25861c99a94c22c
-    pristine_git_object: 610b11defde15d744c13edd5bf4e74538cfdfb19
+    last_write_checksum: sha1:01947da72c46e62ad6edd4aa460c7b1696a7544d
+    pristine_git_object: 581e708a77bbc5371b388c56d04ec730219ea122
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11866,8 +11866,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:991a2b35f9f7164f09da08cdda154a481da1e34d
-    pristine_git_object: e89ae23e7ba6c32fde3ada782d61a62b4c2b829f
+    last_write_checksum: sha1:c96d7b362be72d36127eb98ece967a86789ca5f8
+    pristine_git_object: 1ee744e8a311c95d6671d281fff2c9ac92503c83
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -16574,8 +16574,8 @@ trackedFiles:
     pristine_git_object: 830933862b70cefdcb62d15dd0a399bc3a0c7975
   src/sdk/models/shared/webhook.ts:
     id: fe82e8a7994c
-    last_write_checksum: sha1:8a4f500c751c877218bacd343e17ed5a8cf03f8f
-    pristine_git_object: 6af1b3129470d8dd01e7499341a998048bf79e71
+    last_write_checksum: sha1:46f00297dd152fa2186cd4a250dbe506854247e5
+    pristine_git_object: 27a0ef2bc763efd17716444e27e5a1ce71f973df
   src/sdk/note.ts:
     id: 40aa15108739
     last_write_checksum: sha1:435b80fa41f35e6bbd0899152e2be854682ac502
@@ -22868,7 +22868,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.ats.createAtsJob()`: \n  *  `request` **Changed**\n  *  `response.hiringManagers` **Added**\n* `unified-to.ats.getAtsJob()`: \n  *  `request.fields` **Changed**\n  *  `response.hiringManagers` **Added**\n* `unified-to.ats.listAtsJobs()`: \n  *  `request.fields` **Changed**\n  *  `response.[].hiringManagers` **Added**\n* `unified-to.ats.patchAtsJob()`: \n  *  `request` **Changed**\n  *  `response.hiringManagers` **Added**\n* `unified-to.ats.updateAtsJob()`: \n  *  `request` **Changed**\n  *  `response.hiringManagers` **Added**\n* `unified-to.job.createAtsJob()`: \n  *  `request` **Changed**\n  *  `response.hiringManagers` **Added**\n* `unified-to.job.getAtsJob()`: \n  *  `request.fields` **Changed**\n  *  `response.hiringManagers` **Added**\n* `unified-to.job.listAtsJobs()`: \n  *  `request.fields` **Changed**\n  *  `response.[].hiringManagers` **Added**\n* `unified-to.job.patchAtsJob()`: \n  *  `request` **Changed**\n  *  `response.hiringManagers` **Added**\n* `unified-to.job.updateAtsJob()`: \n  *  `request` **Changed**\n  *  `response.hiringManagers` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.unified.createUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.unified.getUnifiedWebhook()`:  `response.isBeta` **Added**\n* `unified-to.unified.listUnifiedWebhooks()`:  `response.[].isBeta` **Added**\n* `unified-to.unified.patchUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.unified.updateUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.webhook.createUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.webhook.getUnifiedWebhook()`:  `response.isBeta` **Added**\n* `unified-to.webhook.listUnifiedWebhooks()`:  `response.[].isBeta` **Added**\n* `unified-to.webhook.patchUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.webhook.updateUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
