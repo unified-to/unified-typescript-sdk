@@ -1,26 +1,26 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 411f51acbf2ce7fbfc478c04772f380d
+  docChecksum: d9d06ebf4f927b0b7aaabb635a00340f
   docVersion: "1.0"
-  speakeasyVersion: 1.761.1
-  generationVersion: 2.879.6
-  releaseVersion: 2.83.34
-  configChecksum: 595d3a0fd52bbc93545a79f9f593b3cc
+  speakeasyVersion: 1.761.4
+  generationVersion: 2.879.13
+  releaseVersion: 2.83.35
+  configChecksum: 667d2566dd52a142b1d47321af560cf5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 0a16299f-6c48-4f84-9d56-10cf04f15f99
-  pristine_commit_hash: f5158be6a13acb85d449ae69c9b0de6d2eb89add
-  pristine_tree_hash: 02d8dddcce0cb60304b3e875c59c6211ce0089a4
+  generation_id: fe9824cd-36b9-4028-a90e-c757874dbe0f
+  pristine_commit_hash: d02a036a9a664d7ec43b2f4af80ee75b93f4b927
+  pristine_tree_hash: c33b2802b4dcfa01150bf3a8644bbcf0a9a89d85
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.14
-    core: 3.26.46
+    core: 3.26.48
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -6434,8 +6434,8 @@ trackedFiles:
     pristine_git_object: 7b8e894bd2546fed0f0804df427116e850ca9f48
   docs/sdk/models/shared/integrationsupport.md:
     id: d54f7cc37476
-    last_write_checksum: sha1:8ccf4e99ca6fdddc21f7389b82299426f463e684
-    pristine_git_object: 706347927f20a904234394978374257210465115
+    last_write_checksum: sha1:914811bfbbd27fc0b66c1e55f3e8b9da6e853ee8
+    pristine_git_object: 78a313aec1a9ad7bc122c2d8b010ccb50753bd20
   docs/sdk/models/shared/intervalunit.md:
     id: febb2c2424b5
     last_write_checksum: sha1:cf6be252d3076d78aa5b51091722404cc33d66dc
@@ -6988,6 +6988,10 @@ trackedFiles:
     id: c54258246738
     last_write_checksum: sha1:7d22b829f8c797cccdf09846aa5b02acd61643b8
     pristine_git_object: f7eca06552a5e94ddc95808f5b960461e75755a6
+  docs/sdk/models/shared/nativewebhooklistid.md:
+    id: d7913c179929
+    last_write_checksum: sha1:24599c1df852c9db22ab75d3c428f2b846ef13eb
+    pristine_git_object: 0ff1884cc4597afc09a0bedb6c064249e7ec3cec
   docs/sdk/models/shared/nativewebhookmemberid.md:
     id: 5c2118906e9a
     last_write_checksum: sha1:a618774ffdc91f69ab403d23fbc744a9122592dc
@@ -9194,12 +9198,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:cfca4901ea3e5a1dd4c53ff7b1bddab3cf58419d
-    pristine_git_object: 617b2f6b2b63c50d2484617e18fbb435254df9bc
+    last_write_checksum: sha1:74d5fd4c50eb03bf921c81f075b0d789b1389273
+    pristine_git_object: 9583dc6adcd2ebb30b08ea36caae4abff0114c43
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:01947da72c46e62ad6edd4aa460c7b1696a7544d
-    pristine_git_object: 581e708a77bbc5371b388c56d04ec730219ea122
+    last_write_checksum: sha1:eb91465bd1f82f13dc73431ce922b32240328f1e
+    pristine_git_object: a9bcbea60889b107f4caa790542b5b6994192023
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11866,16 +11870,16 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:c96d7b362be72d36127eb98ece967a86789ca5f8
-    pristine_git_object: 1ee744e8a311c95d6671d281fff2c9ac92503c83
+    last_write_checksum: sha1:263273670ef980305fcd8374e0738f4cab8f5fdf
+    pristine_git_object: 998bf4df0a1d48bb3a24a191cdae23bc81554272
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
     pristine_git_object: e81091f5e536f82739f71379b1fddc2d147c49e2
   src/lib/encodings.ts:
     id: 3bd8ead98afd
-    last_write_checksum: sha1:14a1c57947f58b6851f480ab87aef14def989fa0
-    pristine_git_object: d21ccfedbfd9f8460372edcf9b65273612aaa955
+    last_write_checksum: sha1:d47614c415b37e092965c34cb668562195701004
+    pristine_git_object: 2791d25bc4f7cf6eec17a65f899851e225fa3deb
   src/lib/files.ts:
     id: e5efa54fcb95
     last_write_checksum: sha1:795c14026405d547bfc47012f7ad9666e530fa7f
@@ -15566,8 +15570,8 @@ trackedFiles:
     pristine_git_object: 3917db55dbfec7306d93dddf063d8156a282f45d
   src/sdk/models/shared/integrationsupport.ts:
     id: 7d6c3b1a29b1
-    last_write_checksum: sha1:52ba70b8950889ea52d83664e94c614df81b8752
-    pristine_git_object: 76a035e999d957e59357c5599112d0fca90dd7e1
+    last_write_checksum: sha1:8181c5adf1a25aa4f57f96a7f364d62f99e04346
+    pristine_git_object: 8a5967b56445b92f4b1721209afec7d75e571d38
   src/sdk/models/shared/issue.ts:
     id: 03d66f3fd292
     last_write_checksum: sha1:7830a0273ddd855fa53862fce9a387d3d8f882e3
@@ -22868,7 +22872,12 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.unified.createUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.unified.getUnifiedWebhook()`:  `response.isBeta` **Added**\n* `unified-to.unified.listUnifiedWebhooks()`:  `response.[].isBeta` **Added**\n* `unified-to.unified.patchUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.unified.updateUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.webhook.createUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.webhook.getUnifiedWebhook()`:  `response.isBeta` **Added**\n* `unified-to.webhook.listUnifiedWebhooks()`:  `response.[].isBeta` **Added**\n* `unified-to.webhook.patchUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n* `unified-to.webhook.updateUnifiedWebhook()`: \n  *  `request.webhook.isBeta` **Added**\n  *  `response.isBeta` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
+  * `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
+  * `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
+  * `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
 generatedFiles:
   - .gitattributes
   - .npmignore

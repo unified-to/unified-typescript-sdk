@@ -1,0 +1,17 @@
+# NativeWebhookListId
+
+## Example Usage
+
+```typescript
+import { NativeWebhookListId } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: NativeWebhookListId = "supported";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
+```
+
+## Values
+
+```typescript
+"supported-required" | "supported" | "not-supported" | Unrecognized<string>
+```
