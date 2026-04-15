@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: d9d06ebf4f927b0b7aaabb635a00340f
+  docChecksum: 97059ed622bfecd9741a74a3557254e7
   docVersion: "1.0"
-  speakeasyVersion: 1.761.4
+  speakeasyVersion: 1.761.5
   generationVersion: 2.879.13
-  releaseVersion: 2.83.35
-  configChecksum: 667d2566dd52a142b1d47321af560cf5
+  releaseVersion: 2.83.36
+  configChecksum: 563471958822dbf617357970dc510ed1
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: fe9824cd-36b9-4028-a90e-c757874dbe0f
-  pristine_commit_hash: d02a036a9a664d7ec43b2f4af80ee75b93f4b927
-  pristine_tree_hash: c33b2802b4dcfa01150bf3a8644bbcf0a9a89d85
+  generation_id: 6a62bea3-301c-45cf-86e4-53139600cebe
+  pristine_commit_hash: d19d66f7b36803217bd9412ebc4a67dc00426100
+  pristine_tree_hash: bcda4223461efec4a5d23f57c5d84ad0177c547f
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -5622,8 +5622,8 @@ trackedFiles:
     pristine_git_object: 949aa3c4923545df53220e697279d3eacdd17b35
   docs/sdk/models/shared/atsapplicationanswer.md:
     id: ce7b93e34277
-    last_write_checksum: sha1:c5241149b178867c9e0d684c9c804f01f0891c3c
-    pristine_git_object: ae8d7465f9080e59a17b5f00cadc8331e0533300
+    last_write_checksum: sha1:ba8364c6ff8caad720edbbca885c23d4ce1ea86d
+    pristine_git_object: e42418fe6c6c8852d4ccd8f87d044a0cdc585a27
   docs/sdk/models/shared/atsapplicationstatus.md:
     id: e61da3b2d938
     last_write_checksum: sha1:6708b0ffd82812af32ff9083320c2b615328b66d
@@ -9198,12 +9198,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:74d5fd4c50eb03bf921c81f075b0d789b1389273
-    pristine_git_object: 9583dc6adcd2ebb30b08ea36caae4abff0114c43
+    last_write_checksum: sha1:b9a3cad56e06fb4735a6016af449e4c56f2820cd
+    pristine_git_object: 7b4c3a6d12705827e79546e341fc12595516ead2
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:eb91465bd1f82f13dc73431ce922b32240328f1e
-    pristine_git_object: a9bcbea60889b107f4caa790542b5b6994192023
+    last_write_checksum: sha1:f28dc00bfb1a24e82ada1b9d1e8e34c296affa65
+    pristine_git_object: d1f3248989ccef78b0afd70175aa2e014d539e4a
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11870,8 +11870,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:263273670ef980305fcd8374e0738f4cab8f5fdf
-    pristine_git_object: 998bf4df0a1d48bb3a24a191cdae23bc81554272
+    last_write_checksum: sha1:150fd54f79fc021e5a37b2d2a1a1364af9e316b9
+    pristine_git_object: af6ae11f05fdda2ad1ecaec2b1e8f210a05d956f
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -15166,8 +15166,8 @@ trackedFiles:
     pristine_git_object: 52f6fc4ee199b735a48cf89d255292195589c648
   src/sdk/models/shared/atsapplicationanswer.ts:
     id: 2d672be672c1
-    last_write_checksum: sha1:95015387f8be0df5ddabcd557b225c6303e7c39a
-    pristine_git_object: cd8b6bd7449fc7f632c835a65f6abf4289b4e2ab
+    last_write_checksum: sha1:ffb26e6f8ab9bdaa8d0c2618c1ffffba8786d677
+    pristine_git_object: 8b319ee4e8de74bb6a3555530bdf2bee5e0bc428
   src/sdk/models/shared/atscandidate.ts:
     id: d92ba397c38c
     last_write_checksum: sha1:8c0a6cba443abd3a7504959b77a5023c0e6acb88
@@ -22872,12 +22872,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
-  * `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
-  * `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
-  * `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.nativeWebhookListId` **Added**
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.ats.createAtsApplication()`: \n  *  `request.atsApplication.answers[].question` **Added**\n  *  `response.answers[].question` **Added**\n* `unified-to.ats.getAtsApplication()`:  `response.answers[].question` **Added**\n* `unified-to.ats.listAtsApplications()`:  `response.[].answers[].question` **Added**\n* `unified-to.ats.patchAtsApplication()`: \n  *  `request.atsApplication.answers[].question` **Added**\n  *  `response.answers[].question` **Added**\n* `unified-to.ats.updateAtsApplication()`: \n  *  `request.atsApplication.answers[].question` **Added**\n  *  `response.answers[].question` **Added**\n* `unified-to.application.createAtsApplication()`: \n  *  `request.atsApplication.answers[].question` **Added**\n  *  `response.answers[].question` **Added**\n* `unified-to.application.getAtsApplication()`:  `response.answers[].question` **Added**\n* `unified-to.application.listAtsApplications()`:  `response.[].answers[].question` **Added**\n* `unified-to.application.patchAtsApplication()`: \n  *  `request.atsApplication.answers[].question` **Added**\n  *  `response.answers[].question` **Added**\n* `unified-to.application.updateAtsApplication()`: \n  *  `request.atsApplication.answers[].question` **Added**\n  *  `response.answers[].question` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

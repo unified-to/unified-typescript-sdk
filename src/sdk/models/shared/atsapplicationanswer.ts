@@ -10,6 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AtsApplicationAnswer = {
   answers: Array<string>;
+  question?: string | undefined;
   questionId: string;
 };
 
@@ -20,6 +21,7 @@ export const AtsApplicationAnswer$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   answers: z.array(z.string()),
+  question: z.string().optional(),
   question_id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -29,6 +31,7 @@ export const AtsApplicationAnswer$inboundSchema: z.ZodType<
 /** @internal */
 export type AtsApplicationAnswer$Outbound = {
   answers: Array<string>;
+  question?: string | undefined;
   question_id: string;
 };
 
@@ -39,6 +42,7 @@ export const AtsApplicationAnswer$outboundSchema: z.ZodType<
   AtsApplicationAnswer
 > = z.object({
   answers: z.array(z.string()),
+  question: z.string().optional(),
   questionId: z.string(),
 }).transform((v) => {
   return remap$(v, {
