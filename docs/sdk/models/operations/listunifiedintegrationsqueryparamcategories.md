@@ -5,11 +5,11 @@
 ```typescript
 import { ListUnifiedIntegrationsQueryParamCategories } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListUnifiedIntegrationsQueryParamCategories = "storage";
+let value: ListUnifiedIntegrationsQueryParamCategories = "commerce";
 ```
 
 ## Values
 
 ```typescript
-"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "forms" | "shipping" | "assessment"
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "forms" | "shipping" | "assessment" | "signing"
 ```

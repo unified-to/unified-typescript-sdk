@@ -34,6 +34,7 @@ export const Categories = {
   Forms: "forms",
   Shipping: "shipping",
   Assessment: "assessment",
+  Signing: "signing",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 

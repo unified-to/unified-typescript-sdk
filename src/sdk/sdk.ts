@@ -117,6 +117,8 @@ import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
 import { Shipment } from "./shipment.js";
 import { Shipping } from "./shipping.js";
+import { Signatory } from "./signatory.js";
+import { Signing } from "./signing.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
 import { Student } from "./student.js";
@@ -125,6 +127,7 @@ import { Subscription } from "./subscription.js";
 import { Target } from "./target.js";
 import { Task } from "./task.js";
 import { Taxrate } from "./taxrate.js";
+import { Template } from "./template.js";
 import { Ticket } from "./ticket.js";
 import { Ticketing } from "./ticketing.js";
 import { Timeoff } from "./timeoff.js";
@@ -703,6 +706,21 @@ export class UnifiedTo extends ClientSDK {
   private _tracking?: Tracking;
   get tracking(): Tracking {
     return (this._tracking ??= new Tracking(this._options));
+  }
+
+  private _signing?: Signing;
+  get signing(): Signing {
+    return (this._signing ??= new Signing(this._options));
+  }
+
+  private _signatory?: Signatory;
+  get signatory(): Signatory {
+    return (this._signatory ??= new Signatory(this._options));
+  }
+
+  private _template?: Template;
+  get template(): Template {
+    return (this._template ??= new Template(this._options));
   }
 
   private _storage?: Storage;

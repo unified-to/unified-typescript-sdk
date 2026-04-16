@@ -504,6 +504,13 @@ export const ListTeacherId = {
 } as const;
 export type ListTeacherId = OpenEnum<typeof ListTeacherId>;
 
+export const ListTemplateId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListTemplateId = OpenEnum<typeof ListTemplateId>;
+
 export const ListTicketId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -657,6 +664,13 @@ export const NativeWebhookTaskId = {
   NotSupported: "not-supported",
 } as const;
 export type NativeWebhookTaskId = OpenEnum<typeof NativeWebhookTaskId>;
+
+export const NativeWebhookTemplateId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookTemplateId = OpenEnum<typeof NativeWebhookTemplateId>;
 
 export const NativeWebhookType = {
   SupportedRequired: "supported-required",
@@ -1072,6 +1086,15 @@ export const VirtualWebhookTaskId = {
 } as const;
 export type VirtualWebhookTaskId = OpenEnum<typeof VirtualWebhookTaskId>;
 
+export const VirtualWebhookTemplateId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookTemplateId = OpenEnum<
+  typeof VirtualWebhookTemplateId
+>;
+
 export const VirtualWebhookTicketId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1183,6 +1206,7 @@ export type IntegrationSupport = {
   listStudentId?: ListStudentId | undefined;
   listTaskId?: ListTaskId | undefined;
   listTeacherId?: ListTeacherId | undefined;
+  listTemplateId?: ListTemplateId | undefined;
   listTicketId?: ListTicketId | undefined;
   listType?: ListType | undefined;
   listUpdatedGte?: ListUpdatedGte | undefined;
@@ -1206,6 +1230,7 @@ export type IntegrationSupport = {
   nativeWebhookShipmentId?: NativeWebhookShipmentId | undefined;
   nativeWebhookStudentId?: NativeWebhookStudentId | undefined;
   nativeWebhookTaskId?: NativeWebhookTaskId | undefined;
+  nativeWebhookTemplateId?: NativeWebhookTemplateId | undefined;
   nativeWebhookType?: NativeWebhookType | undefined;
   outboundFields?: { [k: string]: string } | undefined;
   /**
@@ -1268,6 +1293,7 @@ export type IntegrationSupport = {
   virtualWebhookStatus?: VirtualWebhookStatus | undefined;
   virtualWebhookStudentId?: VirtualWebhookStudentId | undefined;
   virtualWebhookTaskId?: VirtualWebhookTaskId | undefined;
+  virtualWebhookTemplateId?: VirtualWebhookTemplateId | undefined;
   virtualWebhookTicketId?: VirtualWebhookTicketId | undefined;
   virtualWebhookType?: VirtualWebhookType | undefined;
   virtualWebhookUpdatedGte?: VirtualWebhookUpdatedGte | undefined;
@@ -1767,6 +1793,13 @@ export const ListTeacherId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListTeacherId);
 
 /** @internal */
+export const ListTemplateId$inboundSchema: z.ZodType<
+  ListTemplateId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListTemplateId);
+
+/** @internal */
 export const ListTicketId$inboundSchema: z.ZodType<
   ListTicketId,
   z.ZodTypeDef,
@@ -1919,6 +1952,13 @@ export const NativeWebhookTaskId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(NativeWebhookTaskId);
+
+/** @internal */
+export const NativeWebhookTemplateId$inboundSchema: z.ZodType<
+  NativeWebhookTemplateId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookTemplateId);
 
 /** @internal */
 export const NativeWebhookType$inboundSchema: z.ZodType<
@@ -2313,6 +2353,13 @@ export const VirtualWebhookTaskId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookTaskId);
 
 /** @internal */
+export const VirtualWebhookTemplateId$inboundSchema: z.ZodType<
+  VirtualWebhookTemplateId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookTemplateId);
+
+/** @internal */
 export const VirtualWebhookTicketId$inboundSchema: z.ZodType<
   VirtualWebhookTicketId,
   z.ZodTypeDef,
@@ -2424,6 +2471,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_student_id: ListStudentId$inboundSchema.optional(),
   list_task_id: ListTaskId$inboundSchema.optional(),
   list_teacher_id: ListTeacherId$inboundSchema.optional(),
+  list_template_id: ListTemplateId$inboundSchema.optional(),
   list_ticket_id: ListTicketId$inboundSchema.optional(),
   list_type: ListType$inboundSchema.optional(),
   list_updated_gte: ListUpdatedGte$inboundSchema.optional(),
@@ -2447,6 +2495,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_shipment_id: NativeWebhookShipmentId$inboundSchema.optional(),
   native_webhook_student_id: NativeWebhookStudentId$inboundSchema.optional(),
   native_webhook_task_id: NativeWebhookTaskId$inboundSchema.optional(),
+  native_webhook_template_id: NativeWebhookTemplateId$inboundSchema.optional(),
   native_webhook_type: NativeWebhookType$inboundSchema.optional(),
   outbound_fields: z.record(z.string()).optional(),
   raw_objects: z.array(z.string()).optional(),
@@ -2517,6 +2566,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_status: VirtualWebhookStatus$inboundSchema.optional(),
   virtual_webhook_student_id: VirtualWebhookStudentId$inboundSchema.optional(),
   virtual_webhook_task_id: VirtualWebhookTaskId$inboundSchema.optional(),
+  virtual_webhook_template_id: VirtualWebhookTemplateId$inboundSchema
+    .optional(),
   virtual_webhook_ticket_id: VirtualWebhookTicketId$inboundSchema.optional(),
   virtual_webhook_type: VirtualWebhookType$inboundSchema.optional(),
   virtual_webhook_updated_gte: VirtualWebhookUpdatedGte$inboundSchema
@@ -2599,6 +2650,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_student_id": "listStudentId",
     "list_task_id": "listTaskId",
     "list_teacher_id": "listTeacherId",
+    "list_template_id": "listTemplateId",
     "list_ticket_id": "listTicketId",
     "list_type": "listType",
     "list_updated_gte": "listUpdatedGte",
@@ -2621,6 +2673,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_shipment_id": "nativeWebhookShipmentId",
     "native_webhook_student_id": "nativeWebhookStudentId",
     "native_webhook_task_id": "nativeWebhookTaskId",
+    "native_webhook_template_id": "nativeWebhookTemplateId",
     "native_webhook_type": "nativeWebhookType",
     "outbound_fields": "outboundFields",
     "raw_objects": "rawObjects",
@@ -2680,6 +2733,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_status": "virtualWebhookStatus",
     "virtual_webhook_student_id": "virtualWebhookStudentId",
     "virtual_webhook_task_id": "virtualWebhookTaskId",
+    "virtual_webhook_template_id": "virtualWebhookTemplateId",
     "virtual_webhook_ticket_id": "virtualWebhookTicketId",
     "virtual_webhook_type": "virtualWebhookType",
     "virtual_webhook_updated_gte": "virtualWebhookUpdatedGte",

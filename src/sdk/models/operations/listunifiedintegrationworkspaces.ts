@@ -34,6 +34,7 @@ export const QueryParamCategories = {
   Forms: "forms",
   Shipping: "shipping",
   Assessment: "assessment",
+  Signing: "signing",
 } as const;
 export type QueryParamCategories = ClosedEnum<typeof QueryParamCategories>;
 

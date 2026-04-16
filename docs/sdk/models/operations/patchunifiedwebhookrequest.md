@@ -9,7 +9,7 @@ let value: PatchUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "task_change",
+    objectType: "scim_groups",
   },
   id: "<id>",
 };

@@ -8,6 +8,12 @@ import { atsListAtsDocuments } from "../funcs/atsListAtsDocuments.js";
 import { atsPatchAtsDocument } from "../funcs/atsPatchAtsDocument.js";
 import { atsRemoveAtsDocument } from "../funcs/atsRemoveAtsDocument.js";
 import { atsUpdateAtsDocument } from "../funcs/atsUpdateAtsDocument.js";
+import { documentCreateSigningDocument } from "../funcs/documentCreateSigningDocument.js";
+import { documentGetSigningDocument } from "../funcs/documentGetSigningDocument.js";
+import { documentListSigningDocuments } from "../funcs/documentListSigningDocuments.js";
+import { documentPatchSigningDocument } from "../funcs/documentPatchSigningDocument.js";
+import { documentRemoveSigningDocument } from "../funcs/documentRemoveSigningDocument.js";
+import { documentUpdateSigningDocument } from "../funcs/documentUpdateSigningDocument.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -29,6 +35,20 @@ export class Document extends ClientSDK {
   }
 
   /**
+   * Create a document
+   */
+  async createSigningDocument(
+    request: operations.CreateSigningDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SigningDocument> {
+    return unwrapAsync(documentCreateSigningDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a document
    */
   async getAtsDocument(
@@ -36,6 +56,20 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsDocument> {
     return unwrapAsync(atsGetAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a document
+   */
+  async getSigningDocument(
+    request: operations.GetSigningDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SigningDocument> {
+    return unwrapAsync(documentGetSigningDocument(
       this,
       request,
       options,
@@ -57,6 +91,20 @@ export class Document extends ClientSDK {
   }
 
   /**
+   * List all documents
+   */
+  async listSigningDocuments(
+    request: operations.ListSigningDocumentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.SigningDocument>> {
+    return unwrapAsync(documentListSigningDocuments(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a document
    */
   async patchAtsDocument(
@@ -64,6 +112,20 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsDocument> {
     return unwrapAsync(atsPatchAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a document
+   */
+  async patchSigningDocument(
+    request: operations.PatchSigningDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SigningDocument> {
+    return unwrapAsync(documentPatchSigningDocument(
       this,
       request,
       options,
@@ -85,6 +147,20 @@ export class Document extends ClientSDK {
   }
 
   /**
+   * Remove a document
+   */
+  async removeSigningDocument(
+    request: operations.RemoveSigningDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveSigningDocumentResponse | undefined> {
+    return unwrapAsync(documentRemoveSigningDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a document
    */
   async updateAtsDocument(
@@ -92,6 +168,20 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsDocument> {
     return unwrapAsync(atsUpdateAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a document
+   */
+  async updateSigningDocument(
+    request: operations.UpdateSigningDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SigningDocument> {
+    return unwrapAsync(documentUpdateSigningDocument(
       this,
       request,
       options,

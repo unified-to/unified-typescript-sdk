@@ -1108,6 +1108,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`crmUpdateCrmLead`](docs/sdks/lead/README.md#updatecrmlead) - Update a lead
 - [`crmUpdateCrmPipeline`](docs/sdks/crm/README.md#updatecrmpipeline) - Update a pipeline
 - [`crmUpdateCrmPipeline`](docs/sdks/pipeline/README.md#updatecrmpipeline) - Update a pipeline
+- [`documentCreateSigningDocument`](docs/sdks/document/README.md#createsigningdocument) - Create a document
+- [`documentCreateSigningDocument`](docs/sdks/signing/README.md#createsigningdocument) - Create a document
+- [`documentGetSigningDocument`](docs/sdks/document/README.md#getsigningdocument) - Retrieve a document
+- [`documentGetSigningDocument`](docs/sdks/signing/README.md#getsigningdocument) - Retrieve a document
+- [`documentListSigningDocuments`](docs/sdks/document/README.md#listsigningdocuments) - List all documents
+- [`documentListSigningDocuments`](docs/sdks/signing/README.md#listsigningdocuments) - List all documents
+- [`documentPatchSigningDocument`](docs/sdks/document/README.md#patchsigningdocument) - Update a document
+- [`documentPatchSigningDocument`](docs/sdks/signing/README.md#patchsigningdocument) - Update a document
+- [`documentRemoveSigningDocument`](docs/sdks/document/README.md#removesigningdocument) - Remove a document
+- [`documentRemoveSigningDocument`](docs/sdks/signing/README.md#removesigningdocument) - Remove a document
+- [`documentUpdateSigningDocument`](docs/sdks/document/README.md#updatesigningdocument) - Update a document
+- [`documentUpdateSigningDocument`](docs/sdks/signing/README.md#updatesigningdocument) - Update a document
 - [`enrichListEnrichPeople`](docs/sdks/enrich/README.md#listenrichpeople) - Retrieve enrichment information for a person
 - [`enrichListEnrichPeople`](docs/sdks/person/README.md#listenrichpeople) - Retrieve enrichment information for a person
 - [`eventCreateCrmEvent`](docs/sdks/crm/README.md#createcrmevent) - Create an event
@@ -1602,6 +1614,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`shippingUpdateShippingLabel`](docs/sdks/shipping/README.md#updateshippinglabel) - Update a label
 - [`shippingUpdateShippingShipment`](docs/sdks/shipment/README.md#updateshippingshipment) - Update a shipment
 - [`shippingUpdateShippingShipment`](docs/sdks/shipping/README.md#updateshippingshipment) - Update a shipment
+- [`signingCreateSigningSignatory`](docs/sdks/signatory/README.md#createsigningsignatory) - Create a signatory
+- [`signingCreateSigningSignatory`](docs/sdks/signing/README.md#createsigningsignatory) - Create a signatory
+- [`signingGetSigningSignatory`](docs/sdks/signatory/README.md#getsigningsignatory) - Retrieve a signatory
+- [`signingGetSigningSignatory`](docs/sdks/signing/README.md#getsigningsignatory) - Retrieve a signatory
+- [`signingGetSigningTemplate`](docs/sdks/signing/README.md#getsigningtemplate) - Retrieve a template
+- [`signingGetSigningTemplate`](docs/sdks/template/README.md#getsigningtemplate) - Retrieve a template
+- [`signingListSigningSignatories`](docs/sdks/signatory/README.md#listsigningsignatories) - List all signatories
+- [`signingListSigningSignatories`](docs/sdks/signing/README.md#listsigningsignatories) - List all signatories
+- [`signingListSigningTemplates`](docs/sdks/signing/README.md#listsigningtemplates) - List all templates
+- [`signingListSigningTemplates`](docs/sdks/template/README.md#listsigningtemplates) - List all templates
+- [`signingPatchSigningSignatory`](docs/sdks/signatory/README.md#patchsigningsignatory) - Update a signatory
+- [`signingPatchSigningSignatory`](docs/sdks/signing/README.md#patchsigningsignatory) - Update a signatory
+- [`signingRemoveSigningSignatory`](docs/sdks/signatory/README.md#removesigningsignatory) - Remove a signatory
+- [`signingRemoveSigningSignatory`](docs/sdks/signing/README.md#removesigningsignatory) - Remove a signatory
+- [`signingUpdateSigningSignatory`](docs/sdks/signatory/README.md#updatesigningsignatory) - Update a signatory
+- [`signingUpdateSigningSignatory`](docs/sdks/signing/README.md#updatesigningsignatory) - Update a signatory
 - [`storageCreateStorageFile`](docs/sdks/file/README.md#createstoragefile) - Create a file
 - [`storageCreateStorageFile`](docs/sdks/storage/README.md#createstoragefile) - Create a file
 - [`storageGetStorageFile`](docs/sdks/file/README.md#getstoragefile) - Retrieve a file
