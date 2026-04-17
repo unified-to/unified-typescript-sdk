@@ -13,5 +13,5 @@ let value: Role = "SYSTEM";
 ## Values
 
 ```typescript
-"SYSTEM" | "USER" | Unrecognized<string>
+"SYSTEM" | "USER" | "ASSISTANT" | Unrecognized<string>
 ```

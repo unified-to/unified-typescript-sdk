@@ -12,6 +12,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export const Role = {
   System: "SYSTEM",
   User: "USER",
+  Assistant: "ASSISTANT",
 } as const;
 export type Role = OpenEnum<typeof Role>;
 

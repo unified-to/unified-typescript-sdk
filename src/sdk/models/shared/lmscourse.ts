@@ -8,11 +8,23 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  LmsInstructor,
+  LmsInstructor$inboundSchema,
+  LmsInstructor$Outbound,
+  LmsInstructor$outboundSchema,
+} from "./lmsinstructor.js";
+import {
   LmsMedia,
   LmsMedia$inboundSchema,
   LmsMedia$Outbound,
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
+import {
+  LmsStudent,
+  LmsStudent$inboundSchema,
+  LmsStudent$Outbound,
+  LmsStudent$outboundSchema,
+} from "./lmsstudent.js";
 
 export type LmsCourse = {
   categories?: Array<string> | undefined;
@@ -22,7 +34,11 @@ export type LmsCourse = {
   description?: string | undefined;
   durationMinutes?: number | undefined;
   id?: string | undefined;
+  /**
+   * @deprecated; use instructors
+   */
   instructorIds?: Array<string> | undefined;
+  instructors?: Array<LmsInstructor> | undefined;
   isActive?: boolean | undefined;
   isPrivate?: boolean | undefined;
   languages?: Array<string> | undefined;
@@ -30,9 +46,15 @@ export type LmsCourse = {
   name: string;
   priceAmount?: number | undefined;
   providerName?: string | undefined;
+  publishedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
+  /**
+   * @deprecated; use students
+   */
   studentIds?: Array<string> | undefined;
+  students?: Array<LmsStudent> | undefined;
+  timeEstimateMinutes?: number | undefined;
   updatedAt?: Date | undefined;
 };
 
@@ -51,6 +73,7 @@ export const LmsCourse$inboundSchema: z.ZodType<
   duration_minutes: z.number().optional(),
   id: z.string().optional(),
   instructor_ids: z.array(z.string()).optional(),
+  instructors: z.array(LmsInstructor$inboundSchema).optional(),
   is_active: z.boolean().optional(),
   is_private: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
@@ -58,9 +81,14 @@ export const LmsCourse$inboundSchema: z.ZodType<
   name: z.string(),
   price_amount: z.number().optional(),
   provider_name: z.string().optional(),
+  published_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
   raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   student_ids: z.array(z.string()).optional(),
+  students: z.array(LmsStudent$inboundSchema).optional(),
+  time_estimate_minutes: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -73,7 +101,9 @@ export const LmsCourse$inboundSchema: z.ZodType<
     "is_private": "isPrivate",
     "price_amount": "priceAmount",
     "provider_name": "providerName",
+    "published_at": "publishedAt",
     "student_ids": "studentIds",
+    "time_estimate_minutes": "timeEstimateMinutes",
     "updated_at": "updatedAt",
   });
 });
@@ -87,6 +117,7 @@ export type LmsCourse$Outbound = {
   duration_minutes?: number | undefined;
   id?: string | undefined;
   instructor_ids?: Array<string> | undefined;
+  instructors?: Array<LmsInstructor$Outbound> | undefined;
   is_active?: boolean | undefined;
   is_private?: boolean | undefined;
   languages?: Array<string> | undefined;
@@ -94,9 +125,12 @@ export type LmsCourse$Outbound = {
   name: string;
   price_amount?: number | undefined;
   provider_name?: string | undefined;
+  published_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   student_ids?: Array<string> | undefined;
+  students?: Array<LmsStudent$Outbound> | undefined;
+  time_estimate_minutes?: number | undefined;
   updated_at?: string | undefined;
 };
 
@@ -114,6 +148,7 @@ export const LmsCourse$outboundSchema: z.ZodType<
   durationMinutes: z.number().optional(),
   id: z.string().optional(),
   instructorIds: z.array(z.string()).optional(),
+  instructors: z.array(LmsInstructor$outboundSchema).optional(),
   isActive: z.boolean().optional(),
   isPrivate: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
@@ -121,9 +156,12 @@ export const LmsCourse$outboundSchema: z.ZodType<
   name: z.string(),
   priceAmount: z.number().optional(),
   providerName: z.string().optional(),
+  publishedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   studentIds: z.array(z.string()).optional(),
+  students: z.array(LmsStudent$outboundSchema).optional(),
+  timeEstimateMinutes: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -135,7 +173,9 @@ export const LmsCourse$outboundSchema: z.ZodType<
     isPrivate: "is_private",
     priceAmount: "price_amount",
     providerName: "provider_name",
+    publishedAt: "published_at",
     studentIds: "student_ids",
+    timeEstimateMinutes: "time_estimate_minutes",
     updatedAt: "updated_at",
   });
 });

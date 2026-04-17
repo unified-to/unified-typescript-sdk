@@ -25,10 +25,11 @@ export type LmsMediaType = OpenEnum<typeof LmsMediaType>;
 export type LmsMedia = {
   content?: string | undefined;
   description?: string | undefined;
+  languages?: Array<string> | undefined;
   name?: string | undefined;
   thumbnailUrl?: string | undefined;
   type?: LmsMediaType | undefined;
-  url: string;
+  url?: string | undefined;
 };
 
 /** @internal */
@@ -52,10 +53,11 @@ export const LmsMedia$inboundSchema: z.ZodType<
 > = z.object({
   content: z.string().optional(),
   description: z.string().optional(),
+  languages: z.array(z.string()).optional(),
   name: z.string().optional(),
   thumbnail_url: z.string().optional(),
   type: LmsMediaType$inboundSchema.optional(),
-  url: z.string(),
+  url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "thumbnail_url": "thumbnailUrl",
@@ -65,10 +67,11 @@ export const LmsMedia$inboundSchema: z.ZodType<
 export type LmsMedia$Outbound = {
   content?: string | undefined;
   description?: string | undefined;
+  languages?: Array<string> | undefined;
   name?: string | undefined;
   thumbnail_url?: string | undefined;
   type?: string | undefined;
-  url: string;
+  url?: string | undefined;
 };
 
 /** @internal */
@@ -79,10 +82,11 @@ export const LmsMedia$outboundSchema: z.ZodType<
 > = z.object({
   content: z.string().optional(),
   description: z.string().optional(),
+  languages: z.array(z.string()).optional(),
   name: z.string().optional(),
   thumbnailUrl: z.string().optional(),
   type: LmsMediaType$outboundSchema.optional(),
-  url: z.string(),
+  url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     thumbnailUrl: "thumbnail_url",

@@ -30,10 +30,6 @@ export type SigningDocument = {
   downloadUrl?: string | undefined;
   expiresAt?: Date | undefined;
   id?: string | undefined;
-  /**
-   * Custom key-value pairs
-   */
-  metadata?: { [k: string]: string } | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   sentAt?: Date | undefined;
@@ -72,7 +68,6 @@ export const SigningDocument$inboundSchema: z.ZodType<
   expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
-  metadata: z.record(z.string()).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -102,7 +97,6 @@ export type SigningDocument$Outbound = {
   download_url?: string | undefined;
   expires_at?: string | undefined;
   id?: string | undefined;
-  metadata?: { [k: string]: string } | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   sent_at?: string | undefined;
@@ -124,7 +118,6 @@ export const SigningDocument$outboundSchema: z.ZodType<
   downloadUrl: z.string().optional(),
   expiresAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
-  metadata: z.record(z.string()).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   sentAt: z.date().transform(v => v.toISOString()).optional(),

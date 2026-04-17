@@ -21,12 +21,16 @@ export const PatchLmsCourseQueryParamFields = {
   Currency: "currency",
   Media: "media",
   InstructorIds: "instructor_ids",
+  Instructors: "instructors",
   StudentIds: "student_ids",
+  Students: "students",
   ContentIds: "content_ids",
   Skills: "skills",
   DurationMinutes: "duration_minutes",
   ProviderName: "provider_name",
   Raw: "raw",
+  PublishedAt: "published_at",
+  TimeEstimateMinutes: "time_estimate_minutes",
 } as const;
 export type PatchLmsCourseQueryParamFields = ClosedEnum<
   typeof PatchLmsCourseQueryParamFields
