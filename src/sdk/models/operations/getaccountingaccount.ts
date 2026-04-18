@@ -24,8 +24,8 @@ export const QueryParamFields = {
   Subgroup: "subgroup",
   ParentId: "parent_id",
   Taxonomy: "taxonomy",
-  Raw: "raw",
   OrganizationId: "organization_id",
+  Raw: "raw",
 } as const;
 export type QueryParamFields = ClosedEnum<typeof QueryParamFields>;
 

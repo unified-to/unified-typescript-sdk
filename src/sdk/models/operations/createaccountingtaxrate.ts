@@ -15,6 +15,7 @@ export const CreateAccountingTaxrateQueryParamFields = {
   Description: "description",
   Rate: "rate",
   IsActive: "is_active",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type CreateAccountingTaxrateQueryParamFields = ClosedEnum<

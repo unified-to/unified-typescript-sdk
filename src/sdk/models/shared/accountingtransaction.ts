@@ -29,6 +29,7 @@ export type AccountingTransaction = {
   id?: string | undefined;
   lineitems?: Array<AccountingTransactionLineItem> | undefined;
   memo?: string | undefined;
+  organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   paymentTerms?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -56,6 +57,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingTransactionLineItem$inboundSchema).optional(),
   memo: z.string().optional(),
+  organization_id: z.string().optional(),
   payment_method: z.string().optional(),
   payment_terms: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -72,6 +74,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
     "account_id": "accountId",
     "created_at": "createdAt",
     "customer_message": "customerMessage",
+    "organization_id": "organizationId",
     "payment_method": "paymentMethod",
     "payment_terms": "paymentTerms",
     "split_account_id": "splitAccountId",
@@ -91,6 +94,7 @@ export type AccountingTransaction$Outbound = {
   id?: string | undefined;
   lineitems?: Array<AccountingTransactionLineItem$Outbound> | undefined;
   memo?: string | undefined;
+  organization_id?: string | undefined;
   payment_method?: string | undefined;
   payment_terms?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -117,6 +121,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingTransactionLineItem$outboundSchema).optional(),
   memo: z.string().optional(),
+  organizationId: z.string().optional(),
   paymentMethod: z.string().optional(),
   paymentTerms: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -132,6 +137,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
     accountId: "account_id",
     createdAt: "created_at",
     customerMessage: "customer_message",
+    organizationId: "organization_id",
     paymentMethod: "payment_method",
     paymentTerms: "payment_terms",
     splitAccountId: "split_account_id",

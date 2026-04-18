@@ -11,5 +11,5 @@ let value: Fields = "status";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "type" | "status" | "balance" | "currency" | "customer_defined_code" | "is_payable" | "section" | "subsection" | "group" | "subgroup" | "parent_id" | "taxonomy" | "raw" | "organization_id"
+"id" | "created_at" | "updated_at" | "name" | "description" | "type" | "status" | "balance" | "currency" | "customer_defined_code" | "is_payable" | "section" | "subsection" | "group" | "subgroup" | "parent_id" | "taxonomy" | "organization_id" | "raw"
 ```

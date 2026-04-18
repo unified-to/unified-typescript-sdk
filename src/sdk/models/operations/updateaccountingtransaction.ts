@@ -25,6 +25,7 @@ export const UpdateAccountingTransactionQueryParamFields = {
   Lineitems: "lineitems",
   Currency: "currency",
   Contacts: "contacts",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type UpdateAccountingTransactionQueryParamFields = ClosedEnum<

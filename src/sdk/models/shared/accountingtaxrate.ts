@@ -14,6 +14,7 @@ export type AccountingTaxrate = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   name?: string | undefined;
+  organizationId?: string | undefined;
   rate?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
@@ -31,6 +32,7 @@ export const AccountingTaxrate$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
+  organization_id: z.string().optional(),
   rate: z.number().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -39,6 +41,7 @@ export const AccountingTaxrate$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "is_active": "isActive",
+    "organization_id": "organizationId",
     "updated_at": "updatedAt",
   });
 });
@@ -49,6 +52,7 @@ export type AccountingTaxrate$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   name?: string | undefined;
+  organization_id?: string | undefined;
   rate?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
@@ -65,6 +69,7 @@ export const AccountingTaxrate$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   name: z.string().optional(),
+  organizationId: z.string().optional(),
   rate: z.number().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -72,6 +77,7 @@ export const AccountingTaxrate$outboundSchema: z.ZodType<
   return remap$(v, {
     createdAt: "created_at",
     isActive: "is_active",
+    organizationId: "organization_id",
     updatedAt: "updated_at",
   });
 });

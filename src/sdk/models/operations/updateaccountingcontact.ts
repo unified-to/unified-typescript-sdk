@@ -29,8 +29,8 @@ export const UpdateAccountingContactQueryParamFields = {
   CompanyName: "company_name",
   Identification: "identification",
   AssociatedContacts: "associated_contacts",
-  Raw: "raw",
   OrganizationId: "organization_id",
+  Raw: "raw",
 } as const;
 export type UpdateAccountingContactQueryParamFields = ClosedEnum<
   typeof UpdateAccountingContactQueryParamFields

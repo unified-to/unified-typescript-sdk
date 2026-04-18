@@ -32,6 +32,7 @@ export const ListAccountingCreditmemoesQueryParamFields = {
   PaymentCollectionMethod: "payment_collection_method",
   Attachments: "attachments",
   Send: "send",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type ListAccountingCreditmemoesQueryParamFields = ClosedEnum<

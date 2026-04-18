@@ -25,6 +25,9 @@ export type LmsMediaType = OpenEnum<typeof LmsMediaType>;
 export type LmsMedia = {
   content?: string | undefined;
   description?: string | undefined;
+  /**
+   * ISO 2-digit language codes
+   */
   languages?: Array<string> | undefined;
   name?: string | undefined;
   thumbnailUrl?: string | undefined;

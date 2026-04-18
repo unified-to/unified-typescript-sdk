@@ -11,5 +11,5 @@ let value: UpdateAccountingTaxrateQueryParamFields = "created_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "rate" | "is_active" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "rate" | "is_active" | "organization_id" | "raw"
 ```
