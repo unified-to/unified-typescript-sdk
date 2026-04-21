@@ -406,6 +406,13 @@ export const ListRawFields = {
 } as const;
 export type ListRawFields = OpenEnum<typeof ListRawFields>;
 
+export const ListReference = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListReference = OpenEnum<typeof ListReference>;
+
 export const ListRepoId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1026,6 +1033,13 @@ export const VirtualWebhookProjectId = {
 } as const;
 export type VirtualWebhookProjectId = OpenEnum<typeof VirtualWebhookProjectId>;
 
+export const VirtualWebhookReference = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookReference = OpenEnum<typeof VirtualWebhookReference>;
+
 export const VirtualWebhookRepoId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1192,6 +1206,7 @@ export type IntegrationSupport = {
   listProjectId?: ListProjectId | undefined;
   listQuery?: ListQuery | undefined;
   listRawFields?: ListRawFields | undefined;
+  listReference?: ListReference | undefined;
   listRepoId?: ListRepoId | undefined;
   listRootId?: ListRootId | undefined;
   listSaleschannelId?: ListSaleschannelId | undefined;
@@ -1285,6 +1300,7 @@ export type IntegrationSupport = {
   virtualWebhookPaymentId?: VirtualWebhookPaymentId | undefined;
   virtualWebhookPipelineId?: VirtualWebhookPipelineId | undefined;
   virtualWebhookProjectId?: VirtualWebhookProjectId | undefined;
+  virtualWebhookReference?: VirtualWebhookReference | undefined;
   virtualWebhookRepoId?: VirtualWebhookRepoId | undefined;
   virtualWebhookSaleschannelId?: VirtualWebhookSaleschannelId | undefined;
   virtualWebhookShipmentId?: VirtualWebhookShipmentId | undefined;
@@ -1693,6 +1709,13 @@ export const ListRawFields$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListRawFields);
+
+/** @internal */
+export const ListReference$inboundSchema: z.ZodType<
+  ListReference,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListReference);
 
 /** @internal */
 export const ListRepoId$inboundSchema: z.ZodType<
@@ -2297,6 +2320,13 @@ export const VirtualWebhookProjectId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookProjectId);
 
 /** @internal */
+export const VirtualWebhookReference$inboundSchema: z.ZodType<
+  VirtualWebhookReference,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookReference);
+
+/** @internal */
 export const VirtualWebhookRepoId$inboundSchema: z.ZodType<
   VirtualWebhookRepoId,
   z.ZodTypeDef,
@@ -2457,6 +2487,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_project_id: ListProjectId$inboundSchema.optional(),
   list_query: ListQuery$inboundSchema.optional(),
   list_raw_fields: ListRawFields$inboundSchema.optional(),
+  list_reference: ListReference$inboundSchema.optional(),
   list_repo_id: ListRepoId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
   list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
@@ -2556,6 +2587,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_pipeline_id: VirtualWebhookPipelineId$inboundSchema
     .optional(),
   virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema.optional(),
+  virtual_webhook_reference: VirtualWebhookReference$inboundSchema.optional(),
   virtual_webhook_repo_id: VirtualWebhookRepoId$inboundSchema.optional(),
   virtual_webhook_saleschannel_id: VirtualWebhookSaleschannelId$inboundSchema
     .optional(),
@@ -2636,6 +2668,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_project_id": "listProjectId",
     "list_query": "listQuery",
     "list_raw_fields": "listRawFields",
+    "list_reference": "listReference",
     "list_repo_id": "listRepoId",
     "list_root_id": "listRootId",
     "list_saleschannel_id": "listSaleschannelId",
@@ -2725,6 +2758,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_payment_id": "virtualWebhookPaymentId",
     "virtual_webhook_pipeline_id": "virtualWebhookPipelineId",
     "virtual_webhook_project_id": "virtualWebhookProjectId",
+    "virtual_webhook_reference": "virtualWebhookReference",
     "virtual_webhook_repo_id": "virtualWebhookRepoId",
     "virtual_webhook_saleschannel_id": "virtualWebhookSaleschannelId",
     "virtual_webhook_shipment_id": "virtualWebhookShipmentId",

@@ -15,6 +15,12 @@ import {
   StoragePermission$Outbound,
   StoragePermission$outboundSchema,
 } from "./storagepermission.js";
+import {
+  StorageReference,
+  StorageReference$inboundSchema,
+  StorageReference$Outbound,
+  StorageReference$outboundSchema,
+} from "./storagereference.js";
 
 export const StorageFileType = {
   File: "FILE",
@@ -34,6 +40,7 @@ export type StorageFile = {
   parentId?: string | undefined;
   permissions?: Array<StoragePermission> | undefined;
   raw?: { [k: string]: any } | undefined;
+  references?: Array<StorageReference> | undefined;
   size?: number | undefined;
   type?: StorageFileType | undefined;
   updatedAt?: Date | undefined;
@@ -73,6 +80,7 @@ export const StorageFile$inboundSchema: z.ZodType<
   parent_id: z.string().optional(),
   permissions: z.array(StoragePermission$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
+  references: z.array(StorageReference$inboundSchema).optional(),
   size: z.number().optional(),
   type: StorageFileType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -104,6 +112,7 @@ export type StorageFile$Outbound = {
   parent_id?: string | undefined;
   permissions?: Array<StoragePermission$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
+  references?: Array<StorageReference$Outbound> | undefined;
   size?: number | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -129,6 +138,7 @@ export const StorageFile$outboundSchema: z.ZodType<
   parentId: z.string().optional(),
   permissions: z.array(StoragePermission$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
+  references: z.array(StorageReference$outboundSchema).optional(),
   size: z.number().optional(),
   type: StorageFileType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

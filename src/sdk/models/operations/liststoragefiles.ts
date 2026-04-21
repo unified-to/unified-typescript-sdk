@@ -23,6 +23,7 @@ export const ListStorageFilesQueryParamFields = {
   Data: "data",
   Version: "version",
   WebUrl: "web_url",
+  References: "references",
   Raw: "raw",
 } as const;
 export type ListStorageFilesQueryParamFields = ClosedEnum<
@@ -61,6 +62,10 @@ export type ListStorageFilesRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
+  /**
+   * The referenced entity ID to filter by (e.g. linked accounting record for storage_file)
+   */
+  reference?: string | undefined;
   sort?: string | undefined;
   /**
    * The type to filter by
@@ -89,6 +94,7 @@ export type ListStorageFilesRequest$Outbound = {
   parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
+  reference?: string | undefined;
   sort?: string | undefined;
   type?: string | undefined;
   updated_gte?: string | undefined;
@@ -110,6 +116,7 @@ export const ListStorageFilesRequest$outboundSchema: z.ZodType<
   parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
+  reference: z.string().optional(),
   sort: z.string().optional(),
   type: z.string().optional(),
   updatedGte: z.string().optional(),

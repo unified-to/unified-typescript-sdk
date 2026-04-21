@@ -103,6 +103,7 @@ async function $do(
     "parent_id": payload.parent_id,
     "query": payload.query,
     "raw": payload.raw,
+    "reference": payload.reference,
     "sort": payload.sort,
     "type": payload.type,
     "updated_gte": payload.updated_gte,

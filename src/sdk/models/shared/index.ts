@@ -393,6 +393,7 @@ export * from "./signingsignatory.js";
 export * from "./signingtemplate.js";
 export * from "./storagefile.js";
 export * from "./storagepermission.js";
+export * from "./storagereference.js";
 export * from "./taskchange.js";
 export * from "./taskchangeitem.js";
 export * from "./taskcomment.js";
