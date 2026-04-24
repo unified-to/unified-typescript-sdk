@@ -6,7 +6,9 @@
 import { PatchHrisTimeoffRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchHrisTimeoffRequest = {
-  hrisTimeoff: {},
+  hrisTimeoff: {
+    startAt: new Date("2024-02-29T18:12:31.089Z"),
+  },
   connectionId: "<id>",
   id: "<id>",
 };

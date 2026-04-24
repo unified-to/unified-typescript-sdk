@@ -47,6 +47,8 @@ export const CreateHrisEmployeeQueryParamFields = {
   StorageQuotaAvailable: "storage_quota_available",
   Relationships: "relationships",
   HasMfa: "has_mfa",
+  TimeoffDaysTotal: "timeoff_days_total",
+  TimeoffDaysUsed: "timeoff_days_used",
   Raw: "raw",
 } as const;
 export type CreateHrisEmployeeQueryParamFields = ClosedEnum<

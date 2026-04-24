@@ -51,6 +51,10 @@ export type ListAccountingInvoicesRequest = {
    */
   contactId?: string | undefined;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListAccountingInvoicesQueryParamFields> | undefined;
@@ -70,6 +74,10 @@ export type ListAccountingInvoicesRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
   type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -87,6 +95,7 @@ export const ListAccountingInvoicesQueryParamFields$outboundSchema:
 export type ListAccountingInvoicesRequest$Outbound = {
   connection_id: string;
   contact_id?: string | undefined;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -95,6 +104,7 @@ export type ListAccountingInvoicesRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   type?: string | undefined;
   updated_gte?: string | undefined;
 };
@@ -107,6 +117,7 @@ export const ListAccountingInvoicesRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
+  endLt: z.string().optional(),
   fields: z.array(ListAccountingInvoicesQueryParamFields$outboundSchema)
     .optional(),
   limit: z.number().optional(),
@@ -116,13 +127,16 @@ export const ListAccountingInvoicesRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
     contactId: "contact_id",
+    endLt: "end_lt",
     orgId: "org_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });

@@ -144,6 +144,8 @@ export type HrisEmployee = {
   telephones?: Array<HrisTelephone> | undefined;
   terminatedAt?: Date | undefined;
   terminationReason?: string | undefined;
+  timeoffDaysTotal?: number | undefined;
+  timeoffDaysUsed?: number | undefined;
   timezone?: string | undefined;
   title?: string | undefined;
   updatedAt?: Date | undefined;
@@ -251,6 +253,8 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     new Date(v)
   ).optional(),
   termination_reason: z.string().optional(),
+  timeoff_days_total: z.number().optional(),
+  timeoff_days_used: z.number().optional(),
   timezone: z.string().optional(),
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -278,6 +282,8 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "storage_quota_used": "storageQuotaUsed",
     "terminated_at": "terminatedAt",
     "termination_reason": "terminationReason",
+    "timeoff_days_total": "timeoffDaysTotal",
+    "timeoff_days_used": "timeoffDaysUsed",
     "updated_at": "updatedAt",
   });
 });
@@ -320,6 +326,8 @@ export type HrisEmployee$Outbound = {
   telephones?: Array<HrisTelephone$Outbound> | undefined;
   terminated_at?: string | undefined;
   termination_reason?: string | undefined;
+  timeoff_days_total?: number | undefined;
+  timeoff_days_used?: number | undefined;
   timezone?: string | undefined;
   title?: string | undefined;
   updated_at?: string | undefined;
@@ -369,6 +377,8 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   telephones: z.array(HrisTelephone$outboundSchema).optional(),
   terminatedAt: z.date().transform(v => v.toISOString()).optional(),
   terminationReason: z.string().optional(),
+  timeoffDaysTotal: z.number().optional(),
+  timeoffDaysUsed: z.number().optional(),
   timezone: z.string().optional(),
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -395,6 +405,8 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     storageQuotaUsed: "storage_quota_used",
     terminatedAt: "terminated_at",
     terminationReason: "termination_reason",
+    timeoffDaysTotal: "timeoff_days_total",
+    timeoffDaysUsed: "timeoff_days_used",
     updatedAt: "updated_at",
   });
 });
