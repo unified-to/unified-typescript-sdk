@@ -5,7 +5,7 @@
 ```typescript
 import { AdsTargetType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AdsTargetType = "user_lists";
+let value: AdsTargetType = "USER_LISTS";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AdsTargetType = "user_lists";
 ## Values
 
 ```typescript
-"interests" | "behaviors" | "locales" | "countries" | "regions" | "cities" | "zips" | "us_dmas" | "topics" | "user_lists" | "age_ranges" | "genders" | Unrecognized<string>
+"INTERESTS" | "BEHAVIORS" | "LOCALES" | "COUNTRIES" | "REGIONS" | "CITIES" | "ZIPS" | "US_DMAS" | "TOPICS" | "USER_LISTS" | "AGE_RANGES" | "GENDERS" | Unrecognized<string>
 ```

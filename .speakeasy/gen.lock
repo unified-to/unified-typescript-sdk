@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 2e65ff785fedef7765dc3a1ace699f58
+  docChecksum: a690f95a42bb9813e1ec1b14dce3b416
   docVersion: "1.0"
   speakeasyVersion: 1.761.9
   generationVersion: 2.881.4
-  releaseVersion: 2.83.41
-  configChecksum: d6f3494d2cf8e1c821e69219464e9031
+  releaseVersion: 2.83.42
+  configChecksum: a02cddd5fb2f0aff62ddbb5e50c18475
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: b97e2619-b8bd-4d24-a139-ba60451bba70
-  pristine_commit_hash: dd2dfacf33641f37039d443825d98c09563d0c69
-  pristine_tree_hash: 5d38228077a8a27ee1350c9b30eb7839bd011660
+  generation_id: 584bad17-f446-4549-bc0b-a70bf44e173d
+  pristine_commit_hash: 8a1bbe16d1446857c0ef1340595025e761cebd6f
+  pristine_tree_hash: b7b73fa3d3ba9844deea32bc751adbcd3eae910d
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -5642,8 +5642,8 @@ trackedFiles:
     pristine_git_object: d255a80bad6ab8bd8dd63edaa0b61a8bead93147
   docs/sdk/models/shared/adstargettype.md:
     id: "459558109243"
-    last_write_checksum: sha1:6a62ca4a1a0c7a15d4dc061ad825124d06da3ccc
-    pristine_git_object: 7021600c1706a501418d6b8ff680b2c6b902840c
+    last_write_checksum: sha1:1c5947203ded92a01049cd45e2006aec04553eb1
+    pristine_git_object: ee549cc712eb69d5a07431c52d328cb87351a858
   docs/sdk/models/shared/adtype.md:
     id: 0496e169e631
     last_write_checksum: sha1:30a1b672c1bd3163db37d2e2d68e5c8c25de6e91
@@ -9370,12 +9370,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:5921ece30f6ee20af97cfa7081f85dd9e16fe61a
-    pristine_git_object: e779298fb86e0bbee869445cb81646a4e8cee885
+    last_write_checksum: sha1:2887d6bc6b217c6516fc3f71e4674c2b6bde2937
+    pristine_git_object: ea105506378b6840c93ab537043844777199dfff
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:e16413f1a0cc363e1c5e46cce930185d398c16a2
-    pristine_git_object: e9d51f8de2578a0d13434e51c0937390c66f7c2f
+    last_write_checksum: sha1:ac4911019873c76bfdeac9174dd97c00e48b4212
+    pristine_git_object: d9f917105add3a29d1f6270b6683e4e72fc318b0
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -12098,8 +12098,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:3429258db1265d7c17839e994a0d3f1efe418943
-    pristine_git_object: e2f9a636a45fd66b3238e35c5da9a93a931e5a70
+    last_write_checksum: sha1:487f14c99e0802ada1cd8d1ae73dd4981aa79ad8
+    pristine_git_object: 75a550464442c21e597828d380c50222976fef8e
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -15398,8 +15398,8 @@ trackedFiles:
     pristine_git_object: 4414b689252bbbcb28d852a3f4a51f926fe4f74a
   src/sdk/models/shared/adstarget.ts:
     id: 2b2f66053cca
-    last_write_checksum: sha1:16c4c5b9450c53920805c202aa5185f9c57be2b3
-    pristine_git_object: ac97287419a0fb9204b34100e97a18da6fcf29c4
+    last_write_checksum: sha1:13f43f1795da518b72d202738c3ad1edc7cb2f02
+    pristine_git_object: 5554b595f1e8eee39a32c3c9e6cc75e6cc040865
   src/sdk/models/shared/apicall.ts:
     id: e858a24f31a0
     last_write_checksum: sha1:93362e4fcf2dc6bf7aba75580f02746c9d4e2e52
@@ -23311,7 +23311,10 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.hris.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed** (Breaking ⚠️)\n  *  `response.startAt` **Changed**\n* `unified-to.timeoff.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed** (Breaking ⚠️)\n  *  `response.startAt` **Changed**\n* `unified-to.timeoff.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed** (Breaking ⚠️)\n  *  `response.startAt` **Changed**\n* `unified-to.hris.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed** (Breaking ⚠️)\n  *  `response.startAt` **Changed**\n* `unified-to.timeoff.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed** (Breaking ⚠️)\n  *  `response.startAt` **Changed**\n* `unified-to.hris.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed** (Breaking ⚠️)\n  *  `response.startAt` **Changed**\n* `unified-to.hris.updateHrisEmployee()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.employee.getHrisEmployee()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.hris.patchHrisEmployee()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.hris.listHrisEmployees()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.accounting.listAccountingInvoices()`:  `request` **Changed**\n* `unified-to.hris.getHrisTimeoff()`:  `response.startAt` **Changed**\n* `unified-to.employee.createHrisEmployee()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.hris.listHrisTimeoffs()`:  `response.[].startAt` **Changed**\n* `unified-to.employee.listHrisEmployees()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.employee.patchHrisEmployee()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.employee.updateHrisEmployee()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.hris.getHrisEmployee()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.timeoff.getHrisTimeoff()`:  `response.startAt` **Changed**\n* `unified-to.timeoff.listHrisTimeoffs()`:  `response.[].startAt` **Changed**\n* `unified-to.hris.createHrisEmployee()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.invoice.listAccountingInvoices()`:  `request` **Changed**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `unified-to.ads.listAdsTargets()`:  `response.[].type` **Changed** (Breaking ⚠️)
+  * `unified-to.target.listAdsTargets()`:  `response.[].type` **Changed** (Breaking ⚠️)
 generatedFiles:
   - .gitattributes
   - .npmignore
