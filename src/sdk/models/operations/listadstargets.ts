@@ -9,8 +9,9 @@ import { ClosedEnum } from "../../types/enums.js";
 export const ListAdsTargetsQueryParamFields = {
   Id: "id",
   Name: "name",
-  Value: "value",
   Type: "type",
+  IsActive: "is_active",
+  ParentId: "parent_id",
   Raw: "raw",
 } as const;
 export type ListAdsTargetsQueryParamFields = ClosedEnum<

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
@@ -10,18 +11,21 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const AdsTargetType = {
-  Interests: "INTERESTS",
-  Behaviors: "BEHAVIORS",
-  Locales: "LOCALES",
-  Countries: "COUNTRIES",
-  Regions: "REGIONS",
-  Cities: "CITIES",
-  Zips: "ZIPS",
-  UsDmas: "US_DMAS",
-  Topics: "TOPICS",
-  UserLists: "USER_LISTS",
-  AgeRanges: "AGE_RANGES",
-  Genders: "GENDERS",
+  Interest: "INTEREST",
+  Behavior: "BEHAVIOR",
+  Locale: "LOCALE",
+  Country: "COUNTRY",
+  Region: "REGION",
+  City: "CITY",
+  Zip: "ZIP",
+  UsDma: "US_DMA",
+  Topic: "TOPIC",
+  UserList: "USER_LIST",
+  AgeRange: "AGE_RANGE",
+  Gender: "GENDER",
+  Carrier: "CARRIER",
+  DeviceModel: "DEVICE_MODEL",
+  OsVersion: "OS_VERSION",
 } as const;
 export type AdsTargetType = OpenEnum<typeof AdsTargetType>;
 
@@ -30,10 +34,11 @@ export type AdsTargetType = OpenEnum<typeof AdsTargetType>;
  */
 export type AdsTarget = {
   id: string;
+  isActive?: boolean | undefined;
   name?: string | undefined;
+  parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: AdsTargetType | undefined;
-  value: string;
 };
 
 /** @internal */
@@ -50,10 +55,16 @@ export const AdsTarget$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   id: z.string(),
+  is_active: z.boolean().optional(),
   name: z.string().optional(),
+  parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   type: AdsTargetType$inboundSchema.optional(),
-  value: z.string(),
+}).transform((v) => {
+  return remap$(v, {
+    "is_active": "isActive",
+    "parent_id": "parentId",
+  });
 });
 
 export function adsTargetFromJSON(

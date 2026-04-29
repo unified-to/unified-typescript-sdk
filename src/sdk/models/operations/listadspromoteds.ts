@@ -10,6 +10,7 @@ export const ListAdsPromotedsQueryParamFields = {
   Id: "id",
   Name: "name",
   Type: "type",
+  Raw: "raw",
 } as const;
 export type ListAdsPromotedsQueryParamFields = ClosedEnum<
   typeof ListAdsPromotedsQueryParamFields

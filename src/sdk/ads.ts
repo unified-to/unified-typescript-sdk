@@ -12,6 +12,8 @@ import { adsGetAdsCampaign } from "../funcs/adsGetAdsCampaign.js";
 import { adsGetAdsCreative } from "../funcs/adsGetAdsCreative.js";
 import { adsGetAdsGroup } from "../funcs/adsGetAdsGroup.js";
 import { adsGetAdsInsertionorder } from "../funcs/adsGetAdsInsertionorder.js";
+import { adsGetAdsPromoted } from "../funcs/adsGetAdsPromoted.js";
+import { adsGetAdsTarget } from "../funcs/adsGetAdsTarget.js";
 import { adsListAdsAds } from "../funcs/adsListAdsAds.js";
 import { adsListAdsCampaigns } from "../funcs/adsListAdsCampaigns.js";
 import { adsListAdsCreatives } from "../funcs/adsListAdsCreatives.js";
@@ -209,6 +211,34 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsOrganization> {
     return unwrapAsync(organizationGetAdsOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a promoted
+   */
+  async getAdsPromoted(
+    request: operations.GetAdsPromotedRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsPromoted> {
+    return unwrapAsync(adsGetAdsPromoted(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a target
+   */
+  async getAdsTarget(
+    request: operations.GetAdsTargetRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsTarget> {
+    return unwrapAsync(adsGetAdsTarget(
       this,
       request,
       options,

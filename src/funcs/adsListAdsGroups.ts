@@ -95,6 +95,7 @@ async function $do(
 
   const query = encodeFormQuery({
     "campaign_id": payload.campaign_id,
+    "end_lt": payload.end_lt,
     "fields": payload.fields,
     "io_id": payload.io_id,
     "limit": payload.limit,
@@ -105,6 +106,7 @@ async function $do(
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "start_gte": payload.start_gte,
     "updated_gte": payload.updated_gte,
   });
 

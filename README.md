@@ -660,6 +660,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsGetAdsGroup`](docs/sdks/group/README.md#getadsgroup) - Retrieve a group
 - [`adsGetAdsInsertionorder`](docs/sdks/ads/README.md#getadsinsertionorder) - Retrieve an insertionorder
 - [`adsGetAdsInsertionorder`](docs/sdks/insertionorder/README.md#getadsinsertionorder) - Retrieve an insertionorder
+- [`adsGetAdsPromoted`](docs/sdks/ads/README.md#getadspromoted) - Retrieve a promoted
+- [`adsGetAdsPromoted`](docs/sdks/promoted/README.md#getadspromoted) - Retrieve a promoted
+- [`adsGetAdsTarget`](docs/sdks/ads/README.md#getadstarget) - Retrieve a target
+- [`adsGetAdsTarget`](docs/sdks/target/README.md#getadstarget) - Retrieve a target
 - [`adsListAdsAds`](docs/sdks/ad/README.md#listadsads) - List all ads
 - [`adsListAdsAds`](docs/sdks/ads/README.md#listadsads) - List all ads
 - [`adsListAdsCampaigns`](docs/sdks/ads/README.md#listadscampaigns) - List all campaigns

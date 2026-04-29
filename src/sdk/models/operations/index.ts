@@ -131,6 +131,8 @@ export * from "./getadscreative.js";
 export * from "./getadsgroup.js";
 export * from "./getadsinsertionorder.js";
 export * from "./getadsorganization.js";
+export * from "./getadspromoted.js";
+export * from "./getadstarget.js";
 export * from "./getassessmentpackage.js";
 export * from "./getatsactivity.js";
 export * from "./getatsapplication.js";

@@ -51,6 +51,10 @@ export type ListAdsGroupsRequest = {
    */
   connectionId: string;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListAdsGroupsQueryParamFields> | undefined;
@@ -79,6 +83,10 @@ export type ListAdsGroupsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
@@ -93,6 +101,7 @@ export const ListAdsGroupsQueryParamFields$outboundSchema: z.ZodNativeEnum<
 export type ListAdsGroupsRequest$Outbound = {
   campaign_id?: string | undefined;
   connection_id: string;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   io_id?: string | undefined;
   limit?: number | undefined;
@@ -103,6 +112,7 @@ export type ListAdsGroupsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -114,6 +124,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
 > = z.object({
   campaignId: z.string().optional(),
   connectionId: z.string(),
+  endLt: z.string().optional(),
   fields: z.array(ListAdsGroupsQueryParamFields$outboundSchema).optional(),
   ioId: z.string().optional(),
   limit: z.number().optional(),
@@ -124,14 +135,17 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     campaignId: "campaign_id",
     connectionId: "connection_id",
+    endLt: "end_lt",
     ioId: "io_id",
     orgId: "org_id",
     parentId: "parent_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });

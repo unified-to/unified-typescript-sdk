@@ -11,5 +11,5 @@ let value: ListAdsPromotedsQueryParamFields = "type";
 ## Values
 
 ```typescript
-"id" | "name" | "type"
+"id" | "name" | "type" | "raw"
 ```

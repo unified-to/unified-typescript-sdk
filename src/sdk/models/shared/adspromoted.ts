@@ -34,6 +34,7 @@ export type AdsPromotedType = OpenEnum<typeof AdsPromotedType>;
 export type AdsPromoted = {
   id: string;
   name?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
   type: AdsPromotedType;
 };
 
@@ -58,12 +59,14 @@ export const AdsPromoted$inboundSchema: z.ZodType<
 > = z.object({
   id: z.string(),
   name: z.string().optional(),
+  raw: z.record(z.any()).optional(),
   type: AdsPromotedType$inboundSchema,
 });
 /** @internal */
 export type AdsPromoted$Outbound = {
   id: string;
   name?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
   type: string;
 };
 
@@ -75,6 +78,7 @@ export const AdsPromoted$outboundSchema: z.ZodType<
 > = z.object({
   id: z.string(),
   name: z.string().optional(),
+  raw: z.record(z.any()).optional(),
   type: AdsPromotedType$outboundSchema,
 });
 

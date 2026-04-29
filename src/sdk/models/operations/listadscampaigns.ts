@@ -39,6 +39,10 @@ export type ListAdsCampaignsRequest = {
    */
   connectionId: string;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListAdsCampaignsQueryParamFields> | undefined;
@@ -59,6 +63,10 @@ export type ListAdsCampaignsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
@@ -72,6 +80,7 @@ export const ListAdsCampaignsQueryParamFields$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export type ListAdsCampaignsRequest$Outbound = {
   connection_id: string;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -80,6 +89,7 @@ export type ListAdsCampaignsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -90,6 +100,7 @@ export const ListAdsCampaignsRequest$outboundSchema: z.ZodType<
   ListAdsCampaignsRequest
 > = z.object({
   connectionId: z.string(),
+  endLt: z.string().optional(),
   fields: z.array(ListAdsCampaignsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -98,11 +109,14 @@ export const ListAdsCampaignsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    endLt: "end_lt",
     orgId: "org_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });
