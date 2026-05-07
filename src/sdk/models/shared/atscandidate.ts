@@ -69,6 +69,7 @@ export type AtsCandidate = {
   firstName?: string | undefined;
   id?: string | undefined;
   imageUrl?: string | undefined;
+  jobIds?: Array<string> | undefined;
   lastName?: string | undefined;
   /**
    * URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.)
@@ -116,6 +117,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   first_name: z.string().optional(),
   id: z.string().optional(),
   image_url: z.string().optional(),
+  job_ids: z.array(z.string()).optional(),
   last_name: z.string().optional(),
   link_urls: z.array(z.string()).optional(),
   metadata: z.array(AtsMetadata$inboundSchema).optional(),
@@ -140,6 +142,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
     "external_identifier": "externalIdentifier",
     "first_name": "firstName",
     "image_url": "imageUrl",
+    "job_ids": "jobIds",
     "last_name": "lastName",
     "link_urls": "linkUrls",
     "updated_at": "updatedAt",
@@ -161,6 +164,7 @@ export type AtsCandidate$Outbound = {
   first_name?: string | undefined;
   id?: string | undefined;
   image_url?: string | undefined;
+  job_ids?: Array<string> | undefined;
   last_name?: string | undefined;
   link_urls?: Array<string> | undefined;
   metadata?: Array<AtsMetadata$Outbound> | undefined;
@@ -195,6 +199,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   firstName: z.string().optional(),
   id: z.string().optional(),
   imageUrl: z.string().optional(),
+  jobIds: z.array(z.string()).optional(),
   lastName: z.string().optional(),
   linkUrls: z.array(z.string()).optional(),
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
@@ -218,6 +223,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
     externalIdentifier: "external_identifier",
     firstName: "first_name",
     imageUrl: "image_url",
+    jobIds: "job_ids",
     lastName: "last_name",
     linkUrls: "link_urls",
     updatedAt: "updated_at",

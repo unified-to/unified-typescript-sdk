@@ -32,6 +32,7 @@ export const UpdateAtsCandidateQueryParamFields = {
   Experiences: "experiences",
   Education: "education",
   Skills: "skills",
+  JobIds: "job_ids",
   Metadata: "metadata",
   Raw: "raw",
 } as const;
