@@ -20,8 +20,9 @@ export const PatchHrisTimeoffQueryParamFields = {
   ApproverUserId: "approver_user_id",
   ApprovedAt: "approved_at",
   Comments: "comments",
-  Raw: "raw",
   Reason: "reason",
+  Type: "type",
+  Raw: "raw",
 } as const;
 export type PatchHrisTimeoffQueryParamFields = ClosedEnum<
   typeof PatchHrisTimeoffQueryParamFields

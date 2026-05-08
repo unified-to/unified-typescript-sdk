@@ -17,6 +17,18 @@ export const HrisTimeoffStatus = {
 } as const;
 export type HrisTimeoffStatus = OpenEnum<typeof HrisTimeoffStatus>;
 
+export const HrisTimeoffType = {
+  Vacation: "VACATION",
+  Sick: "SICK",
+  Holiday: "HOLIDAY",
+  Bereavement: "BEREAVEMENT",
+  Parental: "PARENTAL",
+  Unpaid: "UNPAID",
+  InLieu: "IN_LIEU",
+  Other: "OTHER",
+} as const;
+export type HrisTimeoffType = OpenEnum<typeof HrisTimeoffType>;
+
 export type HrisTimeoff = {
   approvedAt?: Date | undefined;
   approverUserId?: string | undefined;
@@ -30,6 +42,7 @@ export type HrisTimeoff = {
   reason?: string | undefined;
   startAt: Date;
   status?: HrisTimeoffStatus | undefined;
+  type?: HrisTimeoffType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
@@ -46,6 +59,19 @@ export const HrisTimeoffStatus$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   HrisTimeoffStatus
 > = openEnums.outboundSchema(HrisTimeoffStatus);
+
+/** @internal */
+export const HrisTimeoffType$inboundSchema: z.ZodType<
+  HrisTimeoffType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(HrisTimeoffType);
+/** @internal */
+export const HrisTimeoffType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  HrisTimeoffType
+> = openEnums.outboundSchema(HrisTimeoffType);
 
 /** @internal */
 export const HrisTimeoff$inboundSchema: z.ZodType<
@@ -68,6 +94,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
   reason: z.string().optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   status: HrisTimeoffStatus$inboundSchema.optional(),
+  type: HrisTimeoffType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -98,6 +125,7 @@ export type HrisTimeoff$Outbound = {
   reason?: string | undefined;
   start_at: string;
   status?: string | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
 };
@@ -120,6 +148,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   reason: z.string().optional(),
   startAt: z.date().transform(v => v.toISOString()),
   status: HrisTimeoffStatus$outboundSchema.optional(),
+  type: HrisTimeoffType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {
