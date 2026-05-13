@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: b92ae9b53e2fd3c68f3300b3a8bec89d
+  docChecksum: 1a8d1590728cad21bdabd6d8e81d61e1
   docVersion: "1.0"
   speakeasyVersion: 1.762.0
   generationVersion: 2.882.0
-  releaseVersion: 2.83.45
-  configChecksum: f498079a089df6a52e3c3626d41030f5
+  releaseVersion: 2.83.46
+  configChecksum: 28e6c8de36a9b0b746219bddef705c98
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 66c7bd55-592e-4de7-812a-9539bab5a462
-  pristine_commit_hash: 94499925539ede4ef3a516fa383655f1b65fcb2b
-  pristine_tree_hash: c21dbd383011a598350f1aba6d2578256bbf0d9f
+  generation_id: fdf65de1-2007-42df-8bcf-757d18f87706
+  pristine_commit_hash: b14351e5691b2a9c99002f95a361be873f151a49
+  pristine_tree_hash: f13fbf4b63dced788f5bb80d767eb2705c185771
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -2122,8 +2122,8 @@ trackedFiles:
     pristine_git_object: 9c2fc3a06099a8e0580f9496cff2a8d7fd144ee1
   docs/sdk/models/operations/listatsdocumentsrequest.md:
     id: da3693be752b
-    last_write_checksum: sha1:3b4bbe8d7fe8db17727e2e1062415d9204b21cac
-    pristine_git_object: bb9f5d5b79cee83d4c1934df846dae30d25e3b3d
+    last_write_checksum: sha1:05ccd3b25f1706dd1453c1b6f517b051c2e21fb5
+    pristine_git_object: 685de5ca82e1ca7e3d75d99079c07a9563691e7c
   docs/sdk/models/operations/listatsinterviewsqueryparamfields.md:
     id: 46faaffeef7e
     last_write_checksum: sha1:5881e0bfdf0a0ca38ad75aa7c42545afa434245e
@@ -9390,12 +9390,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:99d9bf9d73cea9d67860f99a551160a7d98a7c16
-    pristine_git_object: e2d42edb6900b50c4d4354423aab89dd7021ca12
+    last_write_checksum: sha1:a45e607d51e204bf7f4aa8437851274fb4a31e00
+    pristine_git_object: f9f558231983eb6d94f5b1689c84a0643420cf61
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:88673641d63092db09b8ec83133a1117e57d4bea
-    pristine_git_object: 76d3bbc384e051cae42ad6145e3ada6eaade5f8a
+    last_write_checksum: sha1:a6dbe5bdbb1c6c4a777c7b7de3c36f25f8308792
+    pristine_git_object: e0120ea60824464c9fd8b5fb851653a7b947283d
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -12126,8 +12126,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:e6dc99412d3ebf2f1eca04bf4dbcdae47244ff17
-    pristine_git_object: 5ff3bf5dab156f80cbce57105c9a9f3e260ede49
+    last_write_checksum: sha1:f1e666c31c12256219c3e53f925d4037a7682702
+    pristine_git_object: bad3f2eb8437342a9a190b604d4087585c14a803
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -13594,8 +13594,8 @@ trackedFiles:
     pristine_git_object: 70b55d4e0209c4e93ee3d7284347da359955c7d7
   src/sdk/models/operations/listatsdocuments.ts:
     id: 3339aecafa37
-    last_write_checksum: sha1:e8112b42869709f07adc980ded430966f7490547
-    pristine_git_object: ad96e62928557e2fa21fe38513232bca9110aac2
+    last_write_checksum: sha1:5718f0bf52ec56e19cf3941807aaae229f831fd5
+    pristine_git_object: 897d229b12de9ac430a490b0fac8a3c3dd96600b
   src/sdk/models/operations/listatsinterviews.ts:
     id: a0460b8dddca
     last_write_checksum: sha1:1a4c90f210c1e9a3670b3770fc841a3ca0bb1fe3
@@ -23365,7 +23365,6 @@ examples:
           application/json: {"id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.hris.createHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.hris.getHrisTimeoff()`: \n  *  `request.fields` **Changed**\n  *  `response.type` **Added**\n* `unified-to.hris.listHrisTimeoffs()`: \n  *  `request.fields` **Changed**\n  *  `response.[].type` **Added**\n* `unified-to.hris.patchHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.hris.updateHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.timeoff.createHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.timeoff.getHrisTimeoff()`: \n  *  `request.fields` **Changed**\n  *  `response.type` **Added**\n* `unified-to.timeoff.listHrisTimeoffs()`: \n  *  `request.fields` **Changed**\n  *  `response.[].type` **Added**\n* `unified-to.timeoff.patchHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n* `unified-to.timeoff.updateHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.type` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
