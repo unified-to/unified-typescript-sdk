@@ -3,6 +3,7 @@
  */
 
 import { shippingGetShippingTracking } from "../funcs/shippingGetShippingTracking.js";
+import { shippingListShippingTrackings } from "../funcs/shippingListShippingTrackings.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -17,6 +18,20 @@ export class Tracking extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.ShippingTracking> {
     return unwrapAsync(shippingGetShippingTracking(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all trackings
+   */
+  async listShippingTrackings(
+    request: operations.ListShippingTrackingsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.ShippingTracking>> {
+    return unwrapAsync(shippingListShippingTrackings(
       this,
       request,
       options,

@@ -721,6 +721,13 @@ export const SearchTwitter = {
 } as const;
 export type SearchTwitter = OpenEnum<typeof SearchTwitter>;
 
+export const VirtualWebhookAccountId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookAccountId = OpenEnum<typeof VirtualWebhookAccountId>;
+
 export const VirtualWebhookAdId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1258,6 +1265,7 @@ export type IntegrationSupport = {
   searchName?: SearchName | undefined;
   searchTwitter?: SearchTwitter | undefined;
   slowFields?: Array<string> | undefined;
+  virtualWebhookAccountId?: VirtualWebhookAccountId | undefined;
   virtualWebhookAdId?: VirtualWebhookAdId | undefined;
   virtualWebhookApplicationId?: VirtualWebhookApplicationId | undefined;
   virtualWebhookBenefitId?: VirtualWebhookBenefitId | undefined;
@@ -2026,6 +2034,13 @@ export const SearchTwitter$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(SearchTwitter);
 
 /** @internal */
+export const VirtualWebhookAccountId$inboundSchema: z.ZodType<
+  VirtualWebhookAccountId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookAccountId);
+
+/** @internal */
 export const VirtualWebhookAdId$inboundSchema: z.ZodType<
   VirtualWebhookAdId,
   z.ZodTypeDef,
@@ -2536,6 +2551,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   search_name: SearchName$inboundSchema.optional(),
   search_twitter: SearchTwitter$inboundSchema.optional(),
   slow_fields: z.array(z.string()).optional(),
+  virtual_webhook_account_id: VirtualWebhookAccountId$inboundSchema.optional(),
   virtual_webhook_ad_id: VirtualWebhookAdId$inboundSchema.optional(),
   virtual_webhook_application_id: VirtualWebhookApplicationId$inboundSchema
     .optional(),
@@ -2716,6 +2732,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "search_name": "searchName",
     "search_twitter": "searchTwitter",
     "slow_fields": "slowFields",
+    "virtual_webhook_account_id": "virtualWebhookAccountId",
     "virtual_webhook_ad_id": "virtualWebhookAdId",
     "virtual_webhook_application_id": "virtualWebhookApplicationId",
     "virtual_webhook_benefit_id": "virtualWebhookBenefitId",

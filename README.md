@@ -1606,6 +1606,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`shippingListShippingLabels`](docs/sdks/shipping/README.md#listshippinglabels) - List all labels
 - [`shippingListShippingShipments`](docs/sdks/shipment/README.md#listshippingshipments) - List all shipments
 - [`shippingListShippingShipments`](docs/sdks/shipping/README.md#listshippingshipments) - List all shipments
+- [`shippingListShippingTrackings`](docs/sdks/shipping/README.md#listshippingtrackings) - List all trackings
+- [`shippingListShippingTrackings`](docs/sdks/tracking/README.md#listshippingtrackings) - List all trackings
 - [`shippingPatchShippingLabel`](docs/sdks/label/README.md#patchshippinglabel) - Update a label
 - [`shippingPatchShippingLabel`](docs/sdks/shipping/README.md#patchshippinglabel) - Update a label
 - [`shippingPatchShippingShipment`](docs/sdks/shipment/README.md#patchshippingshipment) - Update a shipment

@@ -118,6 +118,7 @@ export type AtsJob = {
   skills?: Array<string> | undefined;
   status?: AtsJobStatus | undefined;
   updatedAt?: Date | undefined;
+  userId?: string | undefined;
 };
 
 /** @internal */
@@ -181,6 +182,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     updated_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
+    user_id: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
       "closed_at": "closedAt",
@@ -196,6 +198,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
       "public_job_urls": "publicJobUrls",
       "recruiter_ids": "recruiterIds",
       "updated_at": "updatedAt",
+      "user_id": "userId",
     });
   });
 /** @internal */
@@ -227,6 +230,7 @@ export type AtsJob$Outbound = {
   skills?: Array<string> | undefined;
   status?: string | undefined;
   updated_at?: string | undefined;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -262,6 +266,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   skills: z.array(z.string()).optional(),
   status: AtsJobStatus$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     closedAt: "closed_at",
@@ -277,6 +282,7 @@ export const AtsJob$outboundSchema: z.ZodType<
     publicJobUrls: "public_job_urls",
     recruiterIds: "recruiter_ids",
     updatedAt: "updated_at",
+    userId: "user_id",
   });
 });
 

@@ -12,6 +12,7 @@ import { shippingGetShippingTracking } from "../funcs/shippingGetShippingTrackin
 import { shippingListShippingCarriers } from "../funcs/shippingListShippingCarriers.js";
 import { shippingListShippingLabels } from "../funcs/shippingListShippingLabels.js";
 import { shippingListShippingShipments } from "../funcs/shippingListShippingShipments.js";
+import { shippingListShippingTrackings } from "../funcs/shippingListShippingTrackings.js";
 import { shippingPatchShippingLabel } from "../funcs/shippingPatchShippingLabel.js";
 import { shippingPatchShippingShipment } from "../funcs/shippingPatchShippingShipment.js";
 import { shippingRemoveShippingLabel } from "../funcs/shippingRemoveShippingLabel.js";
@@ -158,6 +159,20 @@ export class Shipping extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.ShippingShipment>> {
     return unwrapAsync(shippingListShippingShipments(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all trackings
+   */
+  async listShippingTrackings(
+    request: operations.ListShippingTrackingsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.ShippingTracking>> {
+    return unwrapAsync(shippingListShippingTrackings(
       this,
       request,
       options,

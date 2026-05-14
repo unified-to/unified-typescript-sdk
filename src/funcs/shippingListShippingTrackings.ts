@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all pages
+ * List all trackings
  */
-export function kmsListKmsPages(
+export function shippingListShippingTrackings(
   client: UnifiedToCore,
-  request: operations.ListKmsPagesRequest,
+  request: operations.ListShippingTrackingsRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.KmsPage>,
+    Array<shared.ShippingTracking>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -56,12 +56,12 @@ export function kmsListKmsPages(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListKmsPagesRequest,
+  request: operations.ListShippingTrackingsRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.KmsPage>,
+      Array<shared.ShippingTracking>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -76,7 +76,8 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ListKmsPagesRequest$outboundSchema.parse(value),
+    (value) =>
+      operations.ListShippingTrackingsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -91,20 +92,17 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/kms/{connection_id}/page")(pathParams);
+  const path = pathToFunc("/shipping/{connection_id}/tracking")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
-    "parent_id": payload.parent_id,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
-    "space_id": payload.space_id,
     "updated_gte": payload.updated_gte,
-    "user_id": payload.user_id,
   });
 
   const headers = new Headers(compactMap({
@@ -117,7 +115,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listKmsPages",
+    operationID: "listShippingTrackings",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -158,7 +156,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.KmsPage>,
+    Array<shared.ShippingTracking>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -168,7 +166,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.KmsPage$inboundSchema)),
+    M.json(200, z.array(shared.ShippingTracking$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

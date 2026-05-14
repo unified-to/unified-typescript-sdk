@@ -6,27 +6,27 @@ import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { ClosedEnum } from "../../types/enums.js";
 
-export const ListKmsPagesQueryParamFields = {
+export const ListShippingTrackingsQueryParamFields = {
   Id: "id",
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
-  Title: "title",
-  Type: "type",
-  SpaceId: "space_id",
-  ParentId: "parent_id",
-  IsActive: "is_active",
-  UserId: "user_id",
-  DownloadUrl: "download_url",
-  Metadata: "metadata",
-  HasChildren: "has_children",
-  WebUrl: "web_url",
+  ShipmentId: "shipment_id",
+  TrackingNumber: "tracking_number",
+  Status: "status",
+  Events: "events",
+  EstimatedDelivery: "estimated_delivery",
+  ActualDeliveryAt: "actual_delivery_at",
+  StatusDescription: "status_description",
+  CarrierId: "carrier_id",
+  CarrierStatusCode: "carrier_status_code",
+  CarrierStatusDescription: "carrier_status_description",
   Raw: "raw",
 } as const;
-export type ListKmsPagesQueryParamFields = ClosedEnum<
-  typeof ListKmsPagesQueryParamFields
+export type ListShippingTrackingsQueryParamFields = ClosedEnum<
+  typeof ListShippingTrackingsQueryParamFields
 >;
 
-export type ListKmsPagesRequest = {
+export type ListShippingTrackingsRequest = {
   /**
    * ID of the connection
    */
@@ -34,14 +34,10 @@ export type ListKmsPagesRequest = {
   /**
    * Fields to return
    */
-  fields?: Array<ListKmsPagesQueryParamFields> | undefined;
+  fields?: Array<ListShippingTrackingsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
-  /**
-   * The parent ID to filter by
-   */
-  parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -52,72 +48,59 @@ export type ListKmsPagesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
-   * The space ID to filter by (reference to KmsSpace)
-   */
-  spaceId?: string | undefined;
-  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
-  /**
-   * The user/employee ID to filter by (reference to HrisEmployee)
-   */
-  userId?: string | undefined;
 };
 
 /** @internal */
-export const ListKmsPagesQueryParamFields$outboundSchema: z.ZodNativeEnum<
-  typeof ListKmsPagesQueryParamFields
-> = z.nativeEnum(ListKmsPagesQueryParamFields);
+export const ListShippingTrackingsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListShippingTrackingsQueryParamFields> = z.nativeEnum(
+    ListShippingTrackingsQueryParamFields,
+  );
 
 /** @internal */
-export type ListKmsPagesRequest$Outbound = {
+export type ListShippingTrackingsRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
-  parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
-  space_id?: string | undefined;
   updated_gte?: string | undefined;
-  user_id?: string | undefined;
 };
 
 /** @internal */
-export const ListKmsPagesRequest$outboundSchema: z.ZodType<
-  ListKmsPagesRequest$Outbound,
+export const ListShippingTrackingsRequest$outboundSchema: z.ZodType<
+  ListShippingTrackingsRequest$Outbound,
   z.ZodTypeDef,
-  ListKmsPagesRequest
+  ListShippingTrackingsRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(ListKmsPagesQueryParamFields$outboundSchema).optional(),
+  fields: z.array(ListShippingTrackingsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
-  parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  spaceId: z.string().optional(),
   updatedGte: z.string().optional(),
-  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
-    parentId: "parent_id",
-    spaceId: "space_id",
     updatedGte: "updated_gte",
-    userId: "user_id",
   });
 });
 
-export function listKmsPagesRequestToJSON(
-  listKmsPagesRequest: ListKmsPagesRequest,
+export function listShippingTrackingsRequestToJSON(
+  listShippingTrackingsRequest: ListShippingTrackingsRequest,
 ): string {
   return JSON.stringify(
-    ListKmsPagesRequest$outboundSchema.parse(listKmsPagesRequest),
+    ListShippingTrackingsRequest$outboundSchema.parse(
+      listShippingTrackingsRequest,
+    ),
   );
 }

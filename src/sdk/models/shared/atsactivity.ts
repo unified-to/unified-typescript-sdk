@@ -34,6 +34,7 @@ export type AtsActivity = {
   bcc?: Array<AtsEmail> | undefined;
   candidateId?: string | undefined;
   cc?: Array<AtsEmail> | undefined;
+  companyId?: string | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
   /**
@@ -80,6 +81,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
   bcc: z.array(AtsEmail$inboundSchema).optional(),
   candidate_id: z.string().optional(),
   cc: z.array(AtsEmail$inboundSchema).optional(),
+  company_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
@@ -101,6 +103,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
   return remap$(v, {
     "application_id": "applicationId",
     "candidate_id": "candidateId",
+    "company_id": "companyId",
     "created_at": "createdAt",
     "document_ids": "documentIds",
     "interview_id": "interviewId",
@@ -117,6 +120,7 @@ export type AtsActivity$Outbound = {
   bcc?: Array<AtsEmail$Outbound> | undefined;
   candidate_id?: string | undefined;
   cc?: Array<AtsEmail$Outbound> | undefined;
+  company_id?: string | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
   document_ids?: Array<string> | undefined;
@@ -144,6 +148,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
   bcc: z.array(AtsEmail$outboundSchema).optional(),
   candidateId: z.string().optional(),
   cc: z.array(AtsEmail$outboundSchema).optional(),
+  companyId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   documentIds: z.array(z.string()).optional(),
@@ -163,6 +168,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
   return remap$(v, {
     applicationId: "application_id",
     candidateId: "candidate_id",
+    companyId: "company_id",
     createdAt: "created_at",
     documentIds: "document_ids",
     interviewId: "interview_id",

@@ -339,6 +339,7 @@ export * from "./listscimusers.js";
 export * from "./listshippingcarriers.js";
 export * from "./listshippinglabels.js";
 export * from "./listshippingshipments.js";
+export * from "./listshippingtrackings.js";
 export * from "./listsigningdocuments.js";
 export * from "./listsigningsignatories.js";
 export * from "./listsigningtemplates.js";

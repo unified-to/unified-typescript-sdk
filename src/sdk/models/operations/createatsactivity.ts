@@ -26,6 +26,7 @@ export const CreateAtsActivityQueryParamFields = {
   Cc: "cc",
   Bcc: "bcc",
   SubType: "sub_type",
+  CompanyId: "company_id",
   Raw: "raw",
 } as const;
 export type CreateAtsActivityQueryParamFields = ClosedEnum<
