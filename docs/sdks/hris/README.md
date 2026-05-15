@@ -721,9 +721,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeoff({
-    hrisTimeoff: {
-      startAt: new Date("2024-09-03T22:31:51.863Z"),
-    },
+    hrisTimeoff: {},
     connectionId: "<id>",
   });
 
@@ -751,9 +749,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
-    hrisTimeoff: {
-      startAt: new Date("2024-09-03T22:31:51.863Z"),
-    },
+    hrisTimeoff: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -3259,9 +3255,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeoff({
-    hrisTimeoff: {
-      startAt: new Date("2024-01-26T05:49:44.056Z"),
-    },
+    hrisTimeoff: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3290,9 +3284,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
-    hrisTimeoff: {
-      startAt: new Date("2024-01-26T05:49:44.056Z"),
-    },
+    hrisTimeoff: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -4875,9 +4867,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeoff({
-    hrisTimeoff: {
-      startAt: new Date("2026-02-26T01:59:20.061Z"),
-    },
+    hrisTimeoff: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -4906,9 +4896,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
-    hrisTimeoff: {
-      startAt: new Date("2026-02-26T01:59:20.061Z"),
-    },
+    hrisTimeoff: {},
     connectionId: "<id>",
     id: "<id>",
   });

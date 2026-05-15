@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 71e30ed7c0a4fabc725793c8d315129a
+  docChecksum: d0c51f91b1e66262f9489b66ca8d3b1f
   docVersion: "1.0"
-  speakeasyVersion: 1.763.0
-  generationVersion: 2.884.0
-  releaseVersion: 2.83.47
-  configChecksum: ed2b3f546767a9ab5a1178a60c929727
+  speakeasyVersion: 1.763.1
+  generationVersion: 2.884.4
+  releaseVersion: 2.83.48
+  configChecksum: 416a04a2cdb804a1612a3a55b9eae224
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 66cfd881-b15c-40a4-a795-363ec02a9197
-  pristine_commit_hash: 65cae32ff5f10712b46afd98ad4a8f05b88852de
-  pristine_tree_hash: 30d98c73a6d582904bda6779ae2655110c4100d1
+  generation_id: 32551bb5-9dea-4eb4-ad84-91110133363f
+  pristine_commit_hash: 46e7a622ce5d1ffcfeef5367b15b86efb3b69627
+  pristine_tree_hash: 37bb31f4c4fa0917fd2a1ae74ff51c310839c7ab
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -518,8 +518,8 @@ trackedFiles:
     pristine_git_object: e3fc5531f116732de84b7b7507779fc16cb324ca
   docs/sdk/models/operations/createhristimeoffrequest.md:
     id: 70cb746aff5f
-    last_write_checksum: sha1:d900c298f389eae63719717fa04b5dcb25eca0c3
-    pristine_git_object: f13b1e63c2ee793bc7a46c927d61e88a608fb6fb
+    last_write_checksum: sha1:597b6e33b84f2daa5662633361779c26e55c8c3d
+    pristine_git_object: 2eb293b0b03e3ba5220046fbf678b12fde3481b5
   docs/sdk/models/operations/createhristimeshiftqueryparamfields.md:
     id: 6a1803e06748
     last_write_checksum: sha1:586443428690cd8d8992f1d4714a7f698178d421
@@ -3326,8 +3326,8 @@ trackedFiles:
     pristine_git_object: 1069a18eed2833313458acc1f9fa4460ad392e0a
   docs/sdk/models/operations/patchhristimeoffrequest.md:
     id: fee589573006
-    last_write_checksum: sha1:84d3c1e3285b6e43e848f4482d453d3e4bd1e265
-    pristine_git_object: 480bf73be15b9f55e5a3ce2e69118ebec4dd9bd7
+    last_write_checksum: sha1:23540c7556031eab018f25e90ced9dd47c092a15
+    pristine_git_object: 927f2c767e136ec2b6ff04bee044c45603466fbe
   docs/sdk/models/operations/patchhristimeshiftqueryparamfields.md:
     id: 59de7c8353fe
     last_write_checksum: sha1:c0b026c2ce4b92be364429b9022ecc4c09944ad5
@@ -4978,8 +4978,8 @@ trackedFiles:
     pristine_git_object: 1f76a5919e7123848b4c9bf2d66b81b1605a1de9
   docs/sdk/models/operations/updatehristimeoffrequest.md:
     id: d8cc8084dfa4
-    last_write_checksum: sha1:53b468c1ddaaff222724ee1614cbc28887578140
-    pristine_git_object: 64afe792ed4bb8dba49de5dc47277acb992cf884
+    last_write_checksum: sha1:405517f724cc57121203b38201ed52f380b6f97d
+    pristine_git_object: c659df978676c46292cc4bc57c5938b6cd5a7827
   docs/sdk/models/operations/updatehristimeshiftqueryparamfields.md:
     id: ba4e1d9f3496
     last_write_checksum: sha1:2b1778052ae4f753a2add19c704bf0ef104c6d47
@@ -6522,8 +6522,8 @@ trackedFiles:
     pristine_git_object: 2d4aea2559bac116212e65a2f3046207f8760f24
   docs/sdk/models/shared/hristimeoff.md:
     id: 09118075436e
-    last_write_checksum: sha1:a066781449e86c73a7fde3fcfb229ed1ce999293
-    pristine_git_object: edaac3f2425b3cc0e11e1921d06a82f39d31ed32
+    last_write_checksum: sha1:5d052e2c42ba509fe96904383dccb592c1dab823
+    pristine_git_object: cd2f557974191fccb5504ef49ed8acbdea175e83
   docs/sdk/models/shared/hristimeoffstatus.md:
     id: db9795a0253a
     last_write_checksum: sha1:096500aa563b670d4c93f982a6e2db95b6931fe2
@@ -9054,8 +9054,8 @@ trackedFiles:
     pristine_git_object: d750e8019b598a3a379b3cf982927471fe9dbff9
   docs/sdks/hris/README.md:
     id: 0baa868a038c
-    last_write_checksum: sha1:6119b54c3a39207966a532bd4ca9bb34bc510017
-    pristine_git_object: d74a213227ea6090e53819601c7b740540a5592b
+    last_write_checksum: sha1:cab70163b68a621301cfa8a981f60d881a545480
+    pristine_git_object: daa22c8e026d148ca0e2d1ea656f258bb91b7207
   docs/sdks/insertionorder/README.md:
     id: 72e4049753b2
     last_write_checksum: sha1:f93607321c6335bbb04f26f5ed5d5b1ceedeb6e6
@@ -9338,8 +9338,8 @@ trackedFiles:
     pristine_git_object: 6a1568bb43950d362ffec1e1dc67301908e73c07
   docs/sdks/timeoff/README.md:
     id: 5dfa0f033e4a
-    last_write_checksum: sha1:ff84af4c1fdd98b3b5675276c77575cc3796f114
-    pristine_git_object: c3e04ffec496cc81096611f0c6ff2965efd56cae
+    last_write_checksum: sha1:e2bb8281a416d191c7f355e8b75869d62f52097a
+    pristine_git_object: 3969b1a118f92cd74ee4f788bb4b516d17223422
   docs/sdks/timeshift/README.md:
     id: f11112fc9233
     last_write_checksum: sha1:7dc357e375bcc0ab77f5a2c1390437ffdd52b933
@@ -9402,12 +9402,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:67bb593597429e787e42a76e58b62c08e969e158
-    pristine_git_object: fcd87b065e2e83db1025cbbc2eedc8d3657d7da0
+    last_write_checksum: sha1:9cc766c8e5fb5a9e0d64998d2391aa2debb8cc5b
+    pristine_git_object: 1c482d9f252ec005bf0d4b6df17730578749c641
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:51552dab0c97c3e5480001fb66998356b0aa3b03
-    pristine_git_object: dcc5eedcf17bdf2c6562229f518856f0a02efec8
+    last_write_checksum: sha1:43eea137cb1da2aa08c82a76389c73c821740520
+    pristine_git_object: 93d525530ef269973a04c6e99c2308184e59ff6b
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -12142,8 +12142,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:917ac7ad7102cd48c4e441d613aaba1722739836
-    pristine_git_object: 2a9a2304df8202acd91ada35c330b26e26f1736c
+    last_write_checksum: sha1:33a7edc4830b002a9a4bda2835c4232b0502b7f8
+    pristine_git_object: 609ef334013866b5d818cedfc5927e9a0eb1cb29
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -15894,8 +15894,8 @@ trackedFiles:
     pristine_git_object: 3b1c95405ab45695ce221d451f0794ad8b66e59b
   src/sdk/models/shared/hristimeoff.ts:
     id: 0606163023f2
-    last_write_checksum: sha1:eb7eb799027e45efa43099bad7a28cb3601dbe60
-    pristine_git_object: 8857e064c24f646915cf6b30968731840ded7a08
+    last_write_checksum: sha1:e73d4d803050db6cb0907098f9bb2a1d2729a1e0
+    pristine_git_object: f4c52d03eb3ccdf974ad687d6572b640cb1da479
   src/sdk/models/shared/hristimeshift.ts:
     id: dbead5c4ebfd
     last_write_checksum: sha1:c84749aa2c05a7fa777983223401f68cae8c3b79
@@ -19271,7 +19271,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"start_at": "2025-10-20T08:12:47.408Z"}
+          application/json: {}
   listHrisDevices:
     speakeasy-default-list-hris-devices:
       parameters:
@@ -23206,10 +23206,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"start_at": "2024-09-03T22:31:51.863Z"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"start_at": "2026-06-15T05:46:27.150Z"}
+          application/json: {}
   patchHrisTimeoff:
     speakeasy-default-patch-hris-timeoff:
       parameters:
@@ -23217,10 +23217,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"start_at": "2024-01-26T05:49:44.056Z"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"start_at": "2024-11-03T06:01:35.702Z"}
+          application/json: {}
   removeHrisTimeoff:
     speakeasy-default-remove-hris-timeoff:
       parameters:
@@ -23234,10 +23234,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"start_at": "2026-02-26T01:59:20.061Z"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"start_at": "2025-05-04T04:02:48.766Z"}
+          application/json: {}
   createSigningDocument:
     speakeasy-default-create-signing-document:
       parameters:
@@ -23385,7 +23385,7 @@ examples:
           application/json: {"id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.shipping.listShippingTrackings()`: **Added**\n* `unified-to.tracking.listShippingTrackings()`: **Added**\n* `unified-to.ats.createAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.ats.createAtsJob()`: \n  *  `request` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.ats.getAtsActivity()`: \n  *  `request.fields` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.ats.getAtsJob()`: \n  *  `request.fields` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.ats.listAtsActivities()`: \n  *  `request.fields` **Changed**\n  *  `response.[].companyId` **Added**\n* `unified-to.ats.listAtsJobs()`: \n  *  `request.fields` **Changed**\n  *  `response.[].userId` **Added**\n* `unified-to.ats.patchAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.ats.patchAtsJob()`: \n  *  `request` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.ats.updateAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.ats.updateAtsJob()`: \n  *  `request` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.activity.createAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.activity.getAtsActivity()`: \n  *  `request.fields` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.activity.listAtsActivities()`: \n  *  `request.fields` **Changed**\n  *  `response.[].companyId` **Added**\n* `unified-to.activity.patchAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.activity.updateAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.companyId` **Added**\n* `unified-to.job.createAtsJob()`: \n  *  `request` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.job.getAtsJob()`: \n  *  `request.fields` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.job.listAtsJobs()`: \n  *  `request.fields` **Changed**\n  *  `response.[].userId` **Added**\n* `unified-to.job.patchAtsJob()`: \n  *  `request` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.job.updateAtsJob()`: \n  *  `request` **Changed**\n  *  `response.userId` **Added**\n* `unified-to.kms.listKmsPages()`: \n  *  `request.userId` **Added**\n* `unified-to.page.listKmsPages()`: \n  *  `request.userId` **Added**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.virtualWebhookAccountId` **Added**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.virtualWebhookAccountId` **Added**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.virtualWebhookAccountId` **Added**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.virtualWebhookAccountId` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.hris.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed**\n  *  `response.startAt` **Changed**\n* `unified-to.hris.getHrisTimeoff()`:  `response.startAt` **Changed**\n* `unified-to.hris.listHrisTimeoffs()`:  `response.[].startAt` **Changed**\n* `unified-to.hris.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed**\n  *  `response.startAt` **Changed**\n* `unified-to.hris.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed**\n  *  `response.startAt` **Changed**\n* `unified-to.timeoff.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed**\n  *  `response.startAt` **Changed**\n* `unified-to.timeoff.getHrisTimeoff()`:  `response.startAt` **Changed**\n* `unified-to.timeoff.listHrisTimeoffs()`:  `response.[].startAt` **Changed**\n* `unified-to.timeoff.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed**\n  *  `response.startAt` **Changed**\n* `unified-to.timeoff.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.startAt` **Changed**\n  *  `response.startAt` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
