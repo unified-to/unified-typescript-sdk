@@ -19,13 +19,19 @@ import {
   PropertyAdsCampaignTargetingContentVideo$Outbound,
   PropertyAdsCampaignTargetingContentVideo$outboundSchema,
 } from "./propertyadscampaigntargetingcontentvideo.js";
+import {
+  TopicTarget,
+  TopicTarget$inboundSchema,
+  TopicTarget$Outbound,
+  TopicTarget$outboundSchema,
+} from "./topictarget.js";
 
 export type PropertyAdsCampaignTargetingContent = {
   excludedKeywords?: Array<AdsKeyword> | undefined;
-  excludedTopics?: Array<string> | undefined;
+  excludedTopics?: Array<TopicTarget> | undefined;
   excludedUrls?: Array<string> | undefined;
   keywords?: Array<AdsKeyword> | undefined;
-  topics?: Array<string> | undefined;
+  topics?: Array<TopicTarget> | undefined;
   urls?: Array<string> | undefined;
   video?: PropertyAdsCampaignTargetingContentVideo | undefined;
 };
@@ -37,10 +43,10 @@ export const PropertyAdsCampaignTargetingContent$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   excluded_keywords: z.array(AdsKeyword$inboundSchema).optional(),
-  excluded_topics: z.array(z.string()).optional(),
+  excluded_topics: z.array(TopicTarget$inboundSchema).optional(),
   excluded_urls: z.array(z.string()).optional(),
   keywords: z.array(AdsKeyword$inboundSchema).optional(),
-  topics: z.array(z.string()).optional(),
+  topics: z.array(TopicTarget$inboundSchema).optional(),
   urls: z.array(z.string()).optional(),
   video: PropertyAdsCampaignTargetingContentVideo$inboundSchema.optional(),
 }).transform((v) => {
@@ -53,10 +59,10 @@ export const PropertyAdsCampaignTargetingContent$inboundSchema: z.ZodType<
 /** @internal */
 export type PropertyAdsCampaignTargetingContent$Outbound = {
   excluded_keywords?: Array<AdsKeyword$Outbound> | undefined;
-  excluded_topics?: Array<string> | undefined;
+  excluded_topics?: Array<TopicTarget$Outbound> | undefined;
   excluded_urls?: Array<string> | undefined;
   keywords?: Array<AdsKeyword$Outbound> | undefined;
-  topics?: Array<string> | undefined;
+  topics?: Array<TopicTarget$Outbound> | undefined;
   urls?: Array<string> | undefined;
   video?: PropertyAdsCampaignTargetingContentVideo$Outbound | undefined;
 };
@@ -68,10 +74,10 @@ export const PropertyAdsCampaignTargetingContent$outboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingContent
 > = z.object({
   excludedKeywords: z.array(AdsKeyword$outboundSchema).optional(),
-  excludedTopics: z.array(z.string()).optional(),
+  excludedTopics: z.array(TopicTarget$outboundSchema).optional(),
   excludedUrls: z.array(z.string()).optional(),
   keywords: z.array(AdsKeyword$outboundSchema).optional(),
-  topics: z.array(z.string()).optional(),
+  topics: z.array(TopicTarget$outboundSchema).optional(),
   urls: z.array(z.string()).optional(),
   video: PropertyAdsCampaignTargetingContentVideo$outboundSchema.optional(),
 }).transform((v) => {

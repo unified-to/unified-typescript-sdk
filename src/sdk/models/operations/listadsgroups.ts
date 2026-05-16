@@ -87,6 +87,10 @@ export type ListAdsGroupsRequest = {
    */
   startGte?: string | undefined;
   /**
+   * The status to filter by
+   */
+  status?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
@@ -113,6 +117,7 @@ export type ListAdsGroupsRequest$Outbound = {
   raw?: string | undefined;
   sort?: string | undefined;
   start_gte?: string | undefined;
+  status?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -136,6 +141,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
+  status: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

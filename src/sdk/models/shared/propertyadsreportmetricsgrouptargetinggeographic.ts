@@ -10,6 +10,7 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { CityTarget, CityTarget$inboundSchema } from "./citytarget.js";
+import { GeoTarget, GeoTarget$inboundSchema } from "./geotarget.js";
 import {
   PropertyAdsReportMetricsGroupTargetingGeographicLocationTypes,
   PropertyAdsReportMetricsGroupTargetingGeographicLocationTypes$inboundSchema,
@@ -25,21 +26,21 @@ export type PropertyAdsReportMetricsGroupTargetingGeographicPresenceType =
 
 export type PropertyAdsReportMetricsGroupTargetingGeographic = {
   cities?: Array<CityTarget> | undefined;
-  countries?: Array<string> | undefined;
+  countries?: Array<GeoTarget> | undefined;
   excludedCities?: Array<CityTarget> | undefined;
-  excludedCountries?: Array<string> | undefined;
-  excludedPostalCodes?: Array<string> | undefined;
+  excludedCountries?: Array<GeoTarget> | undefined;
+  excludedPostalCodes?: Array<GeoTarget> | undefined;
   excludedRegions?: Array<RegionTarget> | undefined;
-  excludedUsDmas?: Array<string> | undefined;
+  excludedUsDmas?: Array<GeoTarget> | undefined;
   locationTypes?:
     | Array<PropertyAdsReportMetricsGroupTargetingGeographicLocationTypes>
     | undefined;
-  postalCodes?: Array<string> | undefined;
+  postalCodes?: Array<GeoTarget> | undefined;
   presenceType?:
     | PropertyAdsReportMetricsGroupTargetingGeographicPresenceType
     | undefined;
   regions?: Array<RegionTarget> | undefined;
-  usDmas?: Array<string> | undefined;
+  usDmas?: Array<GeoTarget> | undefined;
 };
 
 /** @internal */
@@ -60,21 +61,21 @@ export const PropertyAdsReportMetricsGroupTargetingGeographic$inboundSchema:
     unknown
   > = z.object({
     cities: z.array(CityTarget$inboundSchema).optional(),
-    countries: z.array(z.string()).optional(),
+    countries: z.array(GeoTarget$inboundSchema).optional(),
     excluded_cities: z.array(CityTarget$inboundSchema).optional(),
-    excluded_countries: z.array(z.string()).optional(),
-    excluded_postal_codes: z.array(z.string()).optional(),
+    excluded_countries: z.array(GeoTarget$inboundSchema).optional(),
+    excluded_postal_codes: z.array(GeoTarget$inboundSchema).optional(),
     excluded_regions: z.array(RegionTarget$inboundSchema).optional(),
-    excluded_us_dmas: z.array(z.string()).optional(),
+    excluded_us_dmas: z.array(GeoTarget$inboundSchema).optional(),
     location_types: z.array(
       PropertyAdsReportMetricsGroupTargetingGeographicLocationTypes$inboundSchema,
     ).optional(),
-    postal_codes: z.array(z.string()).optional(),
+    postal_codes: z.array(GeoTarget$inboundSchema).optional(),
     presence_type:
       PropertyAdsReportMetricsGroupTargetingGeographicPresenceType$inboundSchema
         .optional(),
     regions: z.array(RegionTarget$inboundSchema).optional(),
-    us_dmas: z.array(z.string()).optional(),
+    us_dmas: z.array(GeoTarget$inboundSchema).optional(),
   }).transform((v) => {
     return remap$(v, {
       "excluded_cities": "excludedCities",

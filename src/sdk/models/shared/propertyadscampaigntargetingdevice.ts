@@ -7,12 +7,18 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  DeviceTarget,
+  DeviceTarget$inboundSchema,
+  DeviceTarget$Outbound,
+  DeviceTarget$outboundSchema,
+} from "./devicetarget.js";
 
 export type PropertyAdsCampaignTargetingDevice = {
-  carriers?: Array<string> | undefined;
-  types?: Array<string> | undefined;
-  userDevice?: Array<string> | undefined;
-  userOs?: Array<string> | undefined;
+  carriers?: Array<DeviceTarget> | undefined;
+  types?: Array<DeviceTarget> | undefined;
+  userDevice?: Array<DeviceTarget> | undefined;
+  userOs?: Array<DeviceTarget> | undefined;
 };
 
 /** @internal */
@@ -21,10 +27,10 @@ export const PropertyAdsCampaignTargetingDevice$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  carriers: z.array(z.string()).optional(),
-  types: z.array(z.string()).optional(),
-  user_device: z.array(z.string()).optional(),
-  user_os: z.array(z.string()).optional(),
+  carriers: z.array(DeviceTarget$inboundSchema).optional(),
+  types: z.array(DeviceTarget$inboundSchema).optional(),
+  user_device: z.array(DeviceTarget$inboundSchema).optional(),
+  user_os: z.array(DeviceTarget$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     "user_device": "userDevice",
@@ -33,10 +39,10 @@ export const PropertyAdsCampaignTargetingDevice$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type PropertyAdsCampaignTargetingDevice$Outbound = {
-  carriers?: Array<string> | undefined;
-  types?: Array<string> | undefined;
-  user_device?: Array<string> | undefined;
-  user_os?: Array<string> | undefined;
+  carriers?: Array<DeviceTarget$Outbound> | undefined;
+  types?: Array<DeviceTarget$Outbound> | undefined;
+  user_device?: Array<DeviceTarget$Outbound> | undefined;
+  user_os?: Array<DeviceTarget$Outbound> | undefined;
 };
 
 /** @internal */
@@ -45,10 +51,10 @@ export const PropertyAdsCampaignTargetingDevice$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PropertyAdsCampaignTargetingDevice
 > = z.object({
-  carriers: z.array(z.string()).optional(),
-  types: z.array(z.string()).optional(),
-  userDevice: z.array(z.string()).optional(),
-  userOs: z.array(z.string()).optional(),
+  carriers: z.array(DeviceTarget$outboundSchema).optional(),
+  types: z.array(DeviceTarget$outboundSchema).optional(),
+  userDevice: z.array(DeviceTarget$outboundSchema).optional(),
+  userOs: z.array(DeviceTarget$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     userDevice: "user_device",

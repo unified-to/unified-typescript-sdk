@@ -10,9 +10,9 @@ let value: PropertyAdsGroupTargetingDevice = {};
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `carriers`         | *string*[]         | :heavy_minus_sign: | N/A                |
-| `types`            | *string*[]         | :heavy_minus_sign: | N/A                |
-| `userDevice`       | *string*[]         | :heavy_minus_sign: | N/A                |
-| `userOs`           | *string*[]         | :heavy_minus_sign: | N/A                |
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `carriers`                                                          | [shared.DeviceTarget](../../../sdk/models/shared/devicetarget.md)[] | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `types`                                                             | [shared.DeviceTarget](../../../sdk/models/shared/devicetarget.md)[] | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `userDevice`                                                        | [shared.DeviceTarget](../../../sdk/models/shared/devicetarget.md)[] | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `userOs`                                                            | [shared.DeviceTarget](../../../sdk/models/shared/devicetarget.md)[] | :heavy_minus_sign:                                                  | N/A                                                                 |

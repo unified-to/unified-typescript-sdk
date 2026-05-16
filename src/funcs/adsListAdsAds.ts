@@ -104,6 +104,7 @@ async function $do(
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "status": payload.status,
     "updated_gte": payload.updated_gte,
   });
 
