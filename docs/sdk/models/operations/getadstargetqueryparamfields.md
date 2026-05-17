@@ -11,5 +11,5 @@ let value: GetAdsTargetQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"id" | "name" | "type" | "is_active" | "parent_id" | "raw"
+"id" | "name" | "type" | "is_active" | "parent_id" | "audience_count_min" | "audience_count_max" | "raw"
 ```

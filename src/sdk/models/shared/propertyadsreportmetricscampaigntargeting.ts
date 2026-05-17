@@ -33,10 +33,6 @@ import {
   PropertyAdsReportMetricsCampaignTargetingGeographic$inboundSchema,
 } from "./propertyadsreportmetricscampaigntargetinggeographic.js";
 import {
-  PropertyAdsReportMetricsCampaignTargetingLanguage,
-  PropertyAdsReportMetricsCampaignTargetingLanguage$inboundSchema,
-} from "./propertyadsreportmetricscampaigntargetinglanguage.js";
-import {
   PropertyAdsReportMetricsCampaignTargetingOptimization,
   PropertyAdsReportMetricsCampaignTargetingOptimization$inboundSchema,
 } from "./propertyadsreportmetricscampaigntargetingoptimization.js";
@@ -44,6 +40,7 @@ import {
   PropertyAdsReportMetricsCampaignTargetingPlacement,
   PropertyAdsReportMetricsCampaignTargetingPlacement$inboundSchema,
 } from "./propertyadsreportmetricscampaigntargetingplacement.js";
+import { TargetRef, TargetRef$inboundSchema } from "./targetref.js";
 
 export type PropertyAdsReportMetricsCampaignTargeting = {
   audience?: PropertyAdsReportMetricsCampaignTargetingAudience | undefined;
@@ -62,10 +59,7 @@ export type PropertyAdsReportMetricsCampaignTargeting = {
     | undefined;
   device?: PropertyAdsReportMetricsCampaignTargetingDevice | undefined;
   geographic?: PropertyAdsReportMetricsCampaignTargetingGeographic | undefined;
-  /**
-   * Language targeting (Meta
-   */
-  language?: PropertyAdsReportMetricsCampaignTargetingLanguage | undefined;
+  language?: Array<TargetRef> | undefined;
   /**
    * Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
    */
@@ -96,8 +90,7 @@ export const PropertyAdsReportMetricsCampaignTargeting$inboundSchema: z.ZodType<
     .optional(),
   geographic: PropertyAdsReportMetricsCampaignTargetingGeographic$inboundSchema
     .optional(),
-  language: PropertyAdsReportMetricsCampaignTargetingLanguage$inboundSchema
-    .optional(),
+  language: z.array(TargetRef$inboundSchema).optional(),
   optimization:
     PropertyAdsReportMetricsCampaignTargetingOptimization$inboundSchema
       .optional(),

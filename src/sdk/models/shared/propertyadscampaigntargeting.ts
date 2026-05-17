@@ -50,12 +50,6 @@ import {
   PropertyAdsCampaignTargetingGeographic$outboundSchema,
 } from "./propertyadscampaigntargetinggeographic.js";
 import {
-  PropertyAdsCampaignTargetingLanguage,
-  PropertyAdsCampaignTargetingLanguage$inboundSchema,
-  PropertyAdsCampaignTargetingLanguage$Outbound,
-  PropertyAdsCampaignTargetingLanguage$outboundSchema,
-} from "./propertyadscampaigntargetinglanguage.js";
-import {
   PropertyAdsCampaignTargetingOptimization,
   PropertyAdsCampaignTargetingOptimization$inboundSchema,
   PropertyAdsCampaignTargetingOptimization$Outbound,
@@ -67,6 +61,12 @@ import {
   PropertyAdsCampaignTargetingPlacement$Outbound,
   PropertyAdsCampaignTargetingPlacement$outboundSchema,
 } from "./propertyadscampaigntargetingplacement.js";
+import {
+  TargetRef,
+  TargetRef$inboundSchema,
+  TargetRef$Outbound,
+  TargetRef$outboundSchema,
+} from "./targetref.js";
 
 export type PropertyAdsCampaignTargeting = {
   audience?: PropertyAdsCampaignTargetingAudience | undefined;
@@ -81,10 +81,7 @@ export type PropertyAdsCampaignTargeting = {
   demographic?: PropertyAdsCampaignTargetingDemographic | undefined;
   device?: PropertyAdsCampaignTargetingDevice | undefined;
   geographic?: PropertyAdsCampaignTargetingGeographic | undefined;
-  /**
-   * Language targeting (Meta
-   */
-  language?: PropertyAdsCampaignTargetingLanguage | undefined;
+  language?: Array<TargetRef> | undefined;
   /**
    * Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
    */
@@ -106,7 +103,7 @@ export const PropertyAdsCampaignTargeting$inboundSchema: z.ZodType<
   demographic: PropertyAdsCampaignTargetingDemographic$inboundSchema.optional(),
   device: PropertyAdsCampaignTargetingDevice$inboundSchema.optional(),
   geographic: PropertyAdsCampaignTargetingGeographic$inboundSchema.optional(),
-  language: PropertyAdsCampaignTargetingLanguage$inboundSchema.optional(),
+  language: z.array(TargetRef$inboundSchema).optional(),
   optimization: PropertyAdsCampaignTargetingOptimization$inboundSchema
     .optional(),
   placement: PropertyAdsCampaignTargetingPlacement$inboundSchema.optional(),
@@ -124,7 +121,7 @@ export type PropertyAdsCampaignTargeting$Outbound = {
   demographic?: PropertyAdsCampaignTargetingDemographic$Outbound | undefined;
   device?: PropertyAdsCampaignTargetingDevice$Outbound | undefined;
   geographic?: PropertyAdsCampaignTargetingGeographic$Outbound | undefined;
-  language?: PropertyAdsCampaignTargetingLanguage$Outbound | undefined;
+  language?: Array<TargetRef$Outbound> | undefined;
   optimization?: PropertyAdsCampaignTargetingOptimization$Outbound | undefined;
   placement?: PropertyAdsCampaignTargetingPlacement$Outbound | undefined;
   schedule?: Array<AdSchedule$Outbound> | undefined;
@@ -144,7 +141,7 @@ export const PropertyAdsCampaignTargeting$outboundSchema: z.ZodType<
     .optional(),
   device: PropertyAdsCampaignTargetingDevice$outboundSchema.optional(),
   geographic: PropertyAdsCampaignTargetingGeographic$outboundSchema.optional(),
-  language: PropertyAdsCampaignTargetingLanguage$outboundSchema.optional(),
+  language: z.array(TargetRef$outboundSchema).optional(),
   optimization: PropertyAdsCampaignTargetingOptimization$outboundSchema
     .optional(),
   placement: PropertyAdsCampaignTargetingPlacement$outboundSchema.optional(),

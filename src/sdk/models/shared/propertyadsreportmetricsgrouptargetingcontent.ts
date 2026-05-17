@@ -12,14 +12,14 @@ import {
   PropertyAdsReportMetricsGroupTargetingContentVideo,
   PropertyAdsReportMetricsGroupTargetingContentVideo$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargetingcontentvideo.js";
-import { TopicTarget, TopicTarget$inboundSchema } from "./topictarget.js";
+import { TargetRef, TargetRef$inboundSchema } from "./targetref.js";
 
 export type PropertyAdsReportMetricsGroupTargetingContent = {
   excludedKeywords?: Array<AdsKeyword> | undefined;
-  excludedTopics?: Array<TopicTarget> | undefined;
+  excludedTopics?: Array<TargetRef> | undefined;
   excludedUrls?: Array<string> | undefined;
   keywords?: Array<AdsKeyword> | undefined;
-  topics?: Array<TopicTarget> | undefined;
+  topics?: Array<TargetRef> | undefined;
   urls?: Array<string> | undefined;
   video?: PropertyAdsReportMetricsGroupTargetingContentVideo | undefined;
 };
@@ -32,10 +32,10 @@ export const PropertyAdsReportMetricsGroupTargetingContent$inboundSchema:
     unknown
   > = z.object({
     excluded_keywords: z.array(AdsKeyword$inboundSchema).optional(),
-    excluded_topics: z.array(TopicTarget$inboundSchema).optional(),
+    excluded_topics: z.array(TargetRef$inboundSchema).optional(),
     excluded_urls: z.array(z.string()).optional(),
     keywords: z.array(AdsKeyword$inboundSchema).optional(),
-    topics: z.array(TopicTarget$inboundSchema).optional(),
+    topics: z.array(TargetRef$inboundSchema).optional(),
     urls: z.array(z.string()).optional(),
     video: PropertyAdsReportMetricsGroupTargetingContentVideo$inboundSchema
       .optional(),

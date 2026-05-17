@@ -12,22 +12,19 @@ import {
   AudienceCombination$inboundSchema,
 } from "./audiencecombination.js";
 import {
-  AudienceSegment,
-  AudienceSegment$inboundSchema,
-} from "./audiencesegment.js";
-import {
   LookalikeAudience,
   LookalikeAudience$inboundSchema,
 } from "./lookalikeaudience.js";
+import { TargetRef, TargetRef$inboundSchema } from "./targetref.js";
 
 export type PropertyAdsReportMetricsCampaignTargetingAudience = {
-  behaviors?: Array<AudienceSegment> | undefined;
+  behaviors?: Array<TargetRef> | undefined;
   combinationSpec?: Array<AudienceCombination> | undefined;
-  customAudiences?: Array<AudienceSegment> | undefined;
-  excludedBehaviors?: Array<AudienceSegment> | undefined;
-  excludedCustomAudiences?: Array<AudienceSegment> | undefined;
-  excludedInterests?: Array<AudienceSegment> | undefined;
-  interests?: Array<AudienceSegment> | undefined;
+  customAudiences?: Array<TargetRef> | undefined;
+  excludedBehaviors?: Array<TargetRef> | undefined;
+  excludedCustomAudiences?: Array<TargetRef> | undefined;
+  excludedInterests?: Array<TargetRef> | undefined;
+  interests?: Array<TargetRef> | undefined;
   lookalikeAudiences?: Array<LookalikeAudience> | undefined;
 };
 
@@ -38,14 +35,13 @@ export const PropertyAdsReportMetricsCampaignTargetingAudience$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({
-    behaviors: z.array(AudienceSegment$inboundSchema).optional(),
+    behaviors: z.array(TargetRef$inboundSchema).optional(),
     combination_spec: z.array(AudienceCombination$inboundSchema).optional(),
-    custom_audiences: z.array(AudienceSegment$inboundSchema).optional(),
-    excluded_behaviors: z.array(AudienceSegment$inboundSchema).optional(),
-    excluded_custom_audiences: z.array(AudienceSegment$inboundSchema)
-      .optional(),
-    excluded_interests: z.array(AudienceSegment$inboundSchema).optional(),
-    interests: z.array(AudienceSegment$inboundSchema).optional(),
+    custom_audiences: z.array(TargetRef$inboundSchema).optional(),
+    excluded_behaviors: z.array(TargetRef$inboundSchema).optional(),
+    excluded_custom_audiences: z.array(TargetRef$inboundSchema).optional(),
+    excluded_interests: z.array(TargetRef$inboundSchema).optional(),
+    interests: z.array(TargetRef$inboundSchema).optional(),
     lookalike_audiences: z.array(LookalikeAudience$inboundSchema).optional(),
   }).transform((v) => {
     return remap$(v, {

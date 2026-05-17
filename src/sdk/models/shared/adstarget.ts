@@ -31,6 +31,8 @@ export type AdsTargetType = OpenEnum<typeof AdsTargetType>;
  * Targeting search result (for ads_target list endpoint)
  */
 export type AdsTarget = {
+  audienceCountMax?: number | undefined;
+  audienceCountMin?: number | undefined;
   id: string;
   isActive?: boolean | undefined;
   name?: string | undefined;
@@ -52,6 +54,8 @@ export const AdsTarget$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  audience_count_max: z.number().optional(),
+  audience_count_min: z.number().optional(),
   id: z.string(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
@@ -60,6 +64,8 @@ export const AdsTarget$inboundSchema: z.ZodType<
   type: AdsTargetType$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
+    "audience_count_max": "audienceCountMax",
+    "audience_count_min": "audienceCountMin",
     "is_active": "isActive",
     "parent_id": "parentId",
   });

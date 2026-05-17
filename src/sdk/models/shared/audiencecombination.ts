@@ -8,17 +8,17 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AudienceSegment,
-  AudienceSegment$inboundSchema,
-  AudienceSegment$Outbound,
-  AudienceSegment$outboundSchema,
-} from "./audiencesegment.js";
+  TargetRef,
+  TargetRef$inboundSchema,
+  TargetRef$Outbound,
+  TargetRef$outboundSchema,
+} from "./targetref.js";
 
 export type AudienceCombination = {
-  behaviors?: Array<AudienceSegment> | undefined;
-  demographics?: Array<AudienceSegment> | undefined;
-  interests?: Array<AudienceSegment> | undefined;
-  lifeEvents?: Array<AudienceSegment> | undefined;
+  behaviors?: Array<TargetRef> | undefined;
+  interests?: Array<TargetRef> | undefined;
+  lifeEvents?: Array<TargetRef> | undefined;
+  references?: Array<TargetRef> | undefined;
 };
 
 /** @internal */
@@ -27,10 +27,10 @@ export const AudienceCombination$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  behaviors: z.array(AudienceSegment$inboundSchema).optional(),
-  demographics: z.array(AudienceSegment$inboundSchema).optional(),
-  interests: z.array(AudienceSegment$inboundSchema).optional(),
-  life_events: z.array(AudienceSegment$inboundSchema).optional(),
+  behaviors: z.array(TargetRef$inboundSchema).optional(),
+  interests: z.array(TargetRef$inboundSchema).optional(),
+  life_events: z.array(TargetRef$inboundSchema).optional(),
+  references: z.array(TargetRef$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     "life_events": "lifeEvents",
@@ -38,10 +38,10 @@ export const AudienceCombination$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AudienceCombination$Outbound = {
-  behaviors?: Array<AudienceSegment$Outbound> | undefined;
-  demographics?: Array<AudienceSegment$Outbound> | undefined;
-  interests?: Array<AudienceSegment$Outbound> | undefined;
-  life_events?: Array<AudienceSegment$Outbound> | undefined;
+  behaviors?: Array<TargetRef$Outbound> | undefined;
+  interests?: Array<TargetRef$Outbound> | undefined;
+  life_events?: Array<TargetRef$Outbound> | undefined;
+  references?: Array<TargetRef$Outbound> | undefined;
 };
 
 /** @internal */
@@ -50,10 +50,10 @@ export const AudienceCombination$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AudienceCombination
 > = z.object({
-  behaviors: z.array(AudienceSegment$outboundSchema).optional(),
-  demographics: z.array(AudienceSegment$outboundSchema).optional(),
-  interests: z.array(AudienceSegment$outboundSchema).optional(),
-  lifeEvents: z.array(AudienceSegment$outboundSchema).optional(),
+  behaviors: z.array(TargetRef$outboundSchema).optional(),
+  interests: z.array(TargetRef$outboundSchema).optional(),
+  lifeEvents: z.array(TargetRef$outboundSchema).optional(),
+  references: z.array(TargetRef$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     lifeEvents: "life_events",

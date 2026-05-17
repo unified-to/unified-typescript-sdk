@@ -16,22 +16,16 @@ import {
   CityTarget$outboundSchema,
 } from "./citytarget.js";
 import {
-  GeoTarget,
-  GeoTarget$inboundSchema,
-  GeoTarget$Outbound,
-  GeoTarget$outboundSchema,
-} from "./geotarget.js";
-import {
   PropertyAdsGroupTargetingGeographicLocationTypes,
   PropertyAdsGroupTargetingGeographicLocationTypes$inboundSchema,
   PropertyAdsGroupTargetingGeographicLocationTypes$outboundSchema,
 } from "./propertyadsgrouptargetinggeographiclocationtypes.js";
 import {
-  RegionTarget,
-  RegionTarget$inboundSchema,
-  RegionTarget$Outbound,
-  RegionTarget$outboundSchema,
-} from "./regiontarget.js";
+  TargetRef,
+  TargetRef$inboundSchema,
+  TargetRef$Outbound,
+  TargetRef$outboundSchema,
+} from "./targetref.js";
 
 export const PropertyAdsGroupTargetingGeographicPresenceType = {
   Presence: "PRESENCE",
@@ -43,19 +37,19 @@ export type PropertyAdsGroupTargetingGeographicPresenceType = OpenEnum<
 
 export type PropertyAdsGroupTargetingGeographic = {
   cities?: Array<CityTarget> | undefined;
-  countries?: Array<GeoTarget> | undefined;
+  countries?: Array<TargetRef> | undefined;
   excludedCities?: Array<CityTarget> | undefined;
-  excludedCountries?: Array<GeoTarget> | undefined;
-  excludedPostalCodes?: Array<GeoTarget> | undefined;
-  excludedRegions?: Array<RegionTarget> | undefined;
-  excludedUsDmas?: Array<GeoTarget> | undefined;
+  excludedCountries?: Array<TargetRef> | undefined;
+  excludedPostalCodes?: Array<TargetRef> | undefined;
+  excludedRegions?: Array<TargetRef> | undefined;
+  excludedUsDmas?: Array<TargetRef> | undefined;
   locationTypes?:
     | Array<PropertyAdsGroupTargetingGeographicLocationTypes>
     | undefined;
-  postalCodes?: Array<GeoTarget> | undefined;
+  postalCodes?: Array<TargetRef> | undefined;
   presenceType?: PropertyAdsGroupTargetingGeographicPresenceType | undefined;
-  regions?: Array<RegionTarget> | undefined;
-  usDmas?: Array<GeoTarget> | undefined;
+  regions?: Array<TargetRef> | undefined;
+  usDmas?: Array<TargetRef> | undefined;
 };
 
 /** @internal */
@@ -80,20 +74,20 @@ export const PropertyAdsGroupTargetingGeographic$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   cities: z.array(CityTarget$inboundSchema).optional(),
-  countries: z.array(GeoTarget$inboundSchema).optional(),
+  countries: z.array(TargetRef$inboundSchema).optional(),
   excluded_cities: z.array(CityTarget$inboundSchema).optional(),
-  excluded_countries: z.array(GeoTarget$inboundSchema).optional(),
-  excluded_postal_codes: z.array(GeoTarget$inboundSchema).optional(),
-  excluded_regions: z.array(RegionTarget$inboundSchema).optional(),
-  excluded_us_dmas: z.array(GeoTarget$inboundSchema).optional(),
+  excluded_countries: z.array(TargetRef$inboundSchema).optional(),
+  excluded_postal_codes: z.array(TargetRef$inboundSchema).optional(),
+  excluded_regions: z.array(TargetRef$inboundSchema).optional(),
+  excluded_us_dmas: z.array(TargetRef$inboundSchema).optional(),
   location_types: z.array(
     PropertyAdsGroupTargetingGeographicLocationTypes$inboundSchema,
   ).optional(),
-  postal_codes: z.array(GeoTarget$inboundSchema).optional(),
+  postal_codes: z.array(TargetRef$inboundSchema).optional(),
   presence_type: PropertyAdsGroupTargetingGeographicPresenceType$inboundSchema
     .optional(),
-  regions: z.array(RegionTarget$inboundSchema).optional(),
-  us_dmas: z.array(GeoTarget$inboundSchema).optional(),
+  regions: z.array(TargetRef$inboundSchema).optional(),
+  us_dmas: z.array(TargetRef$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     "excluded_cities": "excludedCities",
@@ -110,17 +104,17 @@ export const PropertyAdsGroupTargetingGeographic$inboundSchema: z.ZodType<
 /** @internal */
 export type PropertyAdsGroupTargetingGeographic$Outbound = {
   cities?: Array<CityTarget$Outbound> | undefined;
-  countries?: Array<GeoTarget$Outbound> | undefined;
+  countries?: Array<TargetRef$Outbound> | undefined;
   excluded_cities?: Array<CityTarget$Outbound> | undefined;
-  excluded_countries?: Array<GeoTarget$Outbound> | undefined;
-  excluded_postal_codes?: Array<GeoTarget$Outbound> | undefined;
-  excluded_regions?: Array<RegionTarget$Outbound> | undefined;
-  excluded_us_dmas?: Array<GeoTarget$Outbound> | undefined;
+  excluded_countries?: Array<TargetRef$Outbound> | undefined;
+  excluded_postal_codes?: Array<TargetRef$Outbound> | undefined;
+  excluded_regions?: Array<TargetRef$Outbound> | undefined;
+  excluded_us_dmas?: Array<TargetRef$Outbound> | undefined;
   location_types?: Array<string> | undefined;
-  postal_codes?: Array<GeoTarget$Outbound> | undefined;
+  postal_codes?: Array<TargetRef$Outbound> | undefined;
   presence_type?: string | undefined;
-  regions?: Array<RegionTarget$Outbound> | undefined;
-  us_dmas?: Array<GeoTarget$Outbound> | undefined;
+  regions?: Array<TargetRef$Outbound> | undefined;
+  us_dmas?: Array<TargetRef$Outbound> | undefined;
 };
 
 /** @internal */
@@ -130,20 +124,20 @@ export const PropertyAdsGroupTargetingGeographic$outboundSchema: z.ZodType<
   PropertyAdsGroupTargetingGeographic
 > = z.object({
   cities: z.array(CityTarget$outboundSchema).optional(),
-  countries: z.array(GeoTarget$outboundSchema).optional(),
+  countries: z.array(TargetRef$outboundSchema).optional(),
   excludedCities: z.array(CityTarget$outboundSchema).optional(),
-  excludedCountries: z.array(GeoTarget$outboundSchema).optional(),
-  excludedPostalCodes: z.array(GeoTarget$outboundSchema).optional(),
-  excludedRegions: z.array(RegionTarget$outboundSchema).optional(),
-  excludedUsDmas: z.array(GeoTarget$outboundSchema).optional(),
+  excludedCountries: z.array(TargetRef$outboundSchema).optional(),
+  excludedPostalCodes: z.array(TargetRef$outboundSchema).optional(),
+  excludedRegions: z.array(TargetRef$outboundSchema).optional(),
+  excludedUsDmas: z.array(TargetRef$outboundSchema).optional(),
   locationTypes: z.array(
     PropertyAdsGroupTargetingGeographicLocationTypes$outboundSchema,
   ).optional(),
-  postalCodes: z.array(GeoTarget$outboundSchema).optional(),
+  postalCodes: z.array(TargetRef$outboundSchema).optional(),
   presenceType: PropertyAdsGroupTargetingGeographicPresenceType$outboundSchema
     .optional(),
-  regions: z.array(RegionTarget$outboundSchema).optional(),
-  usDmas: z.array(GeoTarget$outboundSchema).optional(),
+  regions: z.array(TargetRef$outboundSchema).optional(),
+  usDmas: z.array(TargetRef$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     excludedCities: "excluded_cities",

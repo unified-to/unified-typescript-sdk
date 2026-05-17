@@ -33,10 +33,6 @@ import {
   PropertyAdsReportMetricsGroupTargetingGeographic$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargetinggeographic.js";
 import {
-  PropertyAdsReportMetricsGroupTargetingLanguage,
-  PropertyAdsReportMetricsGroupTargetingLanguage$inboundSchema,
-} from "./propertyadsreportmetricsgrouptargetinglanguage.js";
-import {
   PropertyAdsReportMetricsGroupTargetingOptimization,
   PropertyAdsReportMetricsGroupTargetingOptimization$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargetingoptimization.js";
@@ -44,6 +40,7 @@ import {
   PropertyAdsReportMetricsGroupTargetingPlacement,
   PropertyAdsReportMetricsGroupTargetingPlacement$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargetingplacement.js";
+import { TargetRef, TargetRef$inboundSchema } from "./targetref.js";
 
 export type PropertyAdsReportMetricsGroupTargeting = {
   audience?: PropertyAdsReportMetricsGroupTargetingAudience | undefined;
@@ -58,10 +55,7 @@ export type PropertyAdsReportMetricsGroupTargeting = {
   demographic?: PropertyAdsReportMetricsGroupTargetingDemographic | undefined;
   device?: PropertyAdsReportMetricsGroupTargetingDevice | undefined;
   geographic?: PropertyAdsReportMetricsGroupTargetingGeographic | undefined;
-  /**
-   * Language targeting (Meta
-   */
-  language?: PropertyAdsReportMetricsGroupTargetingLanguage | undefined;
+  language?: Array<TargetRef> | undefined;
   /**
    * Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
    */
@@ -87,8 +81,7 @@ export const PropertyAdsReportMetricsGroupTargeting$inboundSchema: z.ZodType<
   device: PropertyAdsReportMetricsGroupTargetingDevice$inboundSchema.optional(),
   geographic: PropertyAdsReportMetricsGroupTargetingGeographic$inboundSchema
     .optional(),
-  language: PropertyAdsReportMetricsGroupTargetingLanguage$inboundSchema
-    .optional(),
+  language: z.array(TargetRef$inboundSchema).optional(),
   optimization: PropertyAdsReportMetricsGroupTargetingOptimization$inboundSchema
     .optional(),
   placement: PropertyAdsReportMetricsGroupTargetingPlacement$inboundSchema
