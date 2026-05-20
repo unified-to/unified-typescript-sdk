@@ -721,7 +721,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeoff({
-    hrisTimeoff: {},
+    hrisTimeoff: {
+      startAt: new Date("2024-09-03T22:31:51.863Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -749,7 +751,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
-    hrisTimeoff: {},
+    hrisTimeoff: {
+      startAt: new Date("2024-09-03T22:31:51.863Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -802,8 +806,6 @@ async function run() {
   const result = await unifiedTo.hris.createHrisTimeshift({
     hrisTimeshift: {
       employeeUserId: "<id>",
-      endAt: new Date("2025-10-18T00:03:45.822Z"),
-      startAt: new Date("2024-06-03T05:33:48.715Z"),
     },
     connectionId: "<id>",
   });
@@ -834,8 +836,6 @@ async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
       employeeUserId: "<id>",
-      endAt: new Date("2025-10-18T00:03:45.822Z"),
-      startAt: new Date("2024-06-03T05:33:48.715Z"),
     },
     connectionId: "<id>",
   });
@@ -3255,7 +3255,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeoff({
-    hrisTimeoff: {},
+    hrisTimeoff: {
+      startAt: new Date("2024-01-26T05:49:44.056Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3284,7 +3286,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
-    hrisTimeoff: {},
+    hrisTimeoff: {
+      startAt: new Date("2024-01-26T05:49:44.056Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3338,8 +3342,6 @@ async function run() {
   const result = await unifiedTo.hris.patchHrisTimeshift({
     hrisTimeshift: {
       employeeUserId: "<id>",
-      endAt: new Date("2023-11-17T18:53:02.172Z"),
-      startAt: new Date("2023-01-19T02:48:41.002Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3371,8 +3373,6 @@ async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
       employeeUserId: "<id>",
-      endAt: new Date("2023-11-17T18:53:02.172Z"),
-      startAt: new Date("2023-01-19T02:48:41.002Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4867,7 +4867,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeoff({
-    hrisTimeoff: {},
+    hrisTimeoff: {
+      startAt: new Date("2026-02-26T01:59:20.061Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -4896,7 +4898,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
-    hrisTimeoff: {},
+    hrisTimeoff: {
+      startAt: new Date("2026-02-26T01:59:20.061Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -4950,8 +4954,6 @@ async function run() {
   const result = await unifiedTo.hris.updateHrisTimeshift({
     hrisTimeshift: {
       employeeUserId: "<id>",
-      endAt: new Date("2025-03-03T22:04:09.340Z"),
-      startAt: new Date("2024-05-30T21:19:58.772Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4983,8 +4985,6 @@ async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
       employeeUserId: "<id>",
-      endAt: new Date("2025-03-03T22:04:09.340Z"),
-      startAt: new Date("2024-05-30T21:19:58.772Z"),
     },
     connectionId: "<id>",
     id: "<id>",

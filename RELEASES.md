@@ -3807,3 +3807,13 @@ Based on:
 - [typescript v2.83.50] .
 ### Releases
 - [NPM v2.83.50] https://www.npmjs.com/package/@unified-api/typescript-sdk/v/2.83.50 - .
+
+## 2026-05-20 00:37:49
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.763.2 (2.884.4) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v2.83.51] .
+### Releases
+- [NPM v2.83.51] https://www.npmjs.com/package/@unified-api/typescript-sdk/v/2.83.51 - .
