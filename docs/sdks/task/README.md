@@ -43,9 +43,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.createTaskComment({
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
   });
 
@@ -73,9 +71,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentCreateTaskComment(unifiedTo, {
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -908,9 +904,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.patchTaskComment({
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -939,9 +933,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentPatchTaskComment(unifiedTo, {
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1392,9 +1384,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.updateTaskComment({
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1423,9 +1413,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentUpdateTaskComment(unifiedTo, {
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });

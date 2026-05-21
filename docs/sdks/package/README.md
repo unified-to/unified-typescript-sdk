@@ -32,8 +32,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.package.createAssessmentPackage({
     assessmentPackage: {
-      id: "<id>",
-      name: "<value>",
       type: "REFERENCE_CHECK",
     },
     connectionId: "<id>",
@@ -64,8 +62,6 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentCreateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      id: "<id>",
-      name: "<value>",
       type: "REFERENCE_CHECK",
     },
     connectionId: "<id>",
@@ -431,8 +427,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.package.patchAssessmentPackage({
     assessmentPackage: {
-      id: "<id>",
-      name: "<value>",
       type: "BACKGROUND_CHECK",
     },
     connectionId: "<id>",
@@ -464,8 +458,6 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentPatchAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      id: "<id>",
-      name: "<value>",
       type: "BACKGROUND_CHECK",
     },
     connectionId: "<id>",
@@ -599,8 +591,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.package.updateAssessmentPackage({
     assessmentPackage: {
-      id: "<id>",
-      name: "<value>",
       type: "OTHER",
     },
     connectionId: "<id>",
@@ -632,8 +622,6 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentUpdateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      id: "<id>",
-      name: "<value>",
       type: "OTHER",
     },
     connectionId: "<id>",

@@ -13,7 +13,7 @@ export type TaskComment = {
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   taskId?: string | undefined;
-  text: string;
+  text?: string | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
   userName?: string | undefined;
@@ -30,7 +30,7 @@ export const TaskComment$inboundSchema: z.ZodType<
   id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   task_id: z.string().optional(),
-  text: z.string(),
+  text: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -50,7 +50,7 @@ export type TaskComment$Outbound = {
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   task_id?: string | undefined;
-  text: string;
+  text?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
   user_name?: string | undefined;
@@ -66,7 +66,7 @@ export const TaskComment$outboundSchema: z.ZodType<
   id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   taskId: z.string().optional(),
-  text: z.string(),
+  text: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
   userName: z.string().optional(),

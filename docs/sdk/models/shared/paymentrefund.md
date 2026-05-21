@@ -5,10 +5,7 @@
 ```typescript
 import { PaymentRefund } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PaymentRefund = {
-  paymentId: "<id>",
-  totalAmount: 842.47,
-};
+let value: PaymentRefund = {};
 ```
 
 ## Fields
@@ -19,9 +16,9 @@ let value: PaymentRefund = {
 | `currency`                                                                                    | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `notes`                                                                                       | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `paymentId`                                                                                   | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `paymentId`                                                                                   | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `reference`                                                                                   | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `status`                                                                                      | [shared.PaymentRefundStatus](../../../sdk/models/shared/paymentrefundstatus.md)               | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `totalAmount`                                                                                 | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `totalAmount`                                                                                 | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |

@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type UcComment = {
   callId?: string | undefined;
-  content: string;
+  content?: string | undefined;
   createdAt?: string | undefined;
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -25,7 +25,7 @@ export const UcComment$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   call_id: z.string().optional(),
-  content: z.string(),
+  content: z.string().optional(),
   created_at: z.string().optional(),
   id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -42,7 +42,7 @@ export const UcComment$inboundSchema: z.ZodType<
 /** @internal */
 export type UcComment$Outbound = {
   call_id?: string | undefined;
-  content: string;
+  content?: string | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -57,7 +57,7 @@ export const UcComment$outboundSchema: z.ZodType<
   UcComment
 > = z.object({
   callId: z.string().optional(),
-  content: z.string(),
+  content: z.string().optional(),
   createdAt: z.string().optional(),
   id: z.string().optional(),
   raw: z.record(z.any()).optional(),

@@ -25,7 +25,7 @@ export type PaymentPayout = {
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: PaymentPayoutStatus | undefined;
-  totalAmount: number;
+  totalAmount?: number | undefined;
   updatedAt?: string | undefined;
 };
 
@@ -48,7 +48,7 @@ export const PaymentPayout$inboundSchema: z.ZodType<
   notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: PaymentPayoutStatus$inboundSchema.optional(),
-  total_amount: z.number(),
+  total_amount: z.number().optional(),
   updated_at: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

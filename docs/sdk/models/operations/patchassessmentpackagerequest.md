@@ -7,8 +7,6 @@ import { PatchAssessmentPackageRequest } from "@unified-api/typescript-sdk/sdk/m
 
 let value: PatchAssessmentPackageRequest = {
   assessmentPackage: {
-    id: "<id>",
-    name: "<value>",
     type: "VIDEO_INTERVIEW",
   },
   connectionId: "<id>",

@@ -29,9 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.device.createHrisDevice({
-    hrisDevice: {
-      name: "<value>",
-    },
+    hrisDevice: {},
     connectionId: "<id>",
   });
 
@@ -59,9 +57,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisDevice(unifiedTo, {
-    hrisDevice: {
-      name: "<value>",
-    },
+    hrisDevice: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -268,9 +264,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.device.patchHrisDevice({
-    hrisDevice: {
-      name: "<value>",
-    },
+    hrisDevice: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -299,9 +293,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisDevice(unifiedTo, {
-    hrisDevice: {
-      name: "<value>",
-    },
+    hrisDevice: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -432,9 +424,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.device.updateHrisDevice({
-    hrisDevice: {
-      name: "<value>",
-    },
+    hrisDevice: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -463,9 +453,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisDevice(unifiedTo, {
-    hrisDevice: {
-      name: "<value>",
-    },
+    hrisDevice: {},
     connectionId: "<id>",
     id: "<id>",
   });

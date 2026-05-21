@@ -24,6 +24,10 @@ export type GetUnifiedIntegrationAuthRequest = {
    */
   lang?: string | undefined;
   redirect?: boolean | undefined;
+  /**
+   * Optional region index (into the integration api.urls array) selected by the end-user. Set automatically by the auth widget when the workspace integration has prompt_region=true.
+   */
+  region?: string | undefined;
   scopes?: Array<string> | undefined;
   /**
    * Extra state to send back to your success URL
@@ -51,6 +55,7 @@ export type GetUnifiedIntegrationAuthRequest$Outbound = {
   integration_type: string;
   lang?: string | undefined;
   redirect?: boolean | undefined;
+  region?: string | undefined;
   scopes?: Array<string> | undefined;
   state?: string | undefined;
   subdomain?: string | undefined;
@@ -70,6 +75,7 @@ export const GetUnifiedIntegrationAuthRequest$outboundSchema: z.ZodType<
   integrationType: z.string(),
   lang: z.string().optional(),
   redirect: z.boolean().optional(),
+  region: z.string().optional(),
   scopes: z.array(z.string()).optional(),
   state: z.string().optional(),
   subdomain: z.string().optional(),

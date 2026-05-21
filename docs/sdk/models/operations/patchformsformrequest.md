@@ -6,9 +6,7 @@
 import { PatchFormsFormRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchFormsFormRequest = {
-  formsForm: {
-    name: "<value>",
-  },
+  formsForm: {},
   connectionId: "<id>",
   id: "<id>",
 };

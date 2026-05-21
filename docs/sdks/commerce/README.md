@@ -155,9 +155,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceInventory({
-    commerceInventory: {
-      available: 7463.62,
-    },
+    commerceInventory: {},
     connectionId: "<id>",
   });
 
@@ -185,9 +183,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
-    commerceInventory: {
-      available: 7463.62,
-    },
+    commerceInventory: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -396,9 +392,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceLocation({
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
   });
 
@@ -426,9 +420,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceLocation(unifiedTo, {
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -558,9 +550,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceReview({
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
   });
 
@@ -588,9 +578,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceReview(unifiedTo, {
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -2130,9 +2118,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceInventory({
-    commerceInventory: {
-      available: 7859.84,
-    },
+    commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2161,9 +2147,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
-    commerceInventory: {
-      available: 7859.84,
-    },
+    commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2377,9 +2361,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceLocation({
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2408,9 +2390,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceLocation(unifiedTo, {
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2543,9 +2523,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceReview({
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2574,9 +2552,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceReview(unifiedTo, {
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3426,9 +3402,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceInventory({
-    commerceInventory: {
-      available: 4497.29,
-    },
+    commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3457,9 +3431,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
-    commerceInventory: {
-      available: 4497.29,
-    },
+    commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3673,9 +3645,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceLocation({
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3704,9 +3674,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceLocation(unifiedTo, {
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3839,9 +3807,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceReview({
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3870,9 +3836,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceReview(unifiedTo, {
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });

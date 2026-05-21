@@ -5,9 +5,7 @@
 ```typescript
 import { CommerceReviewComment } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CommerceReviewComment = {
-  content: "<value>",
-};
+let value: CommerceReviewComment = {};
 ```
 
 ## Fields
@@ -18,7 +16,7 @@ let value: CommerceReviewComment = {
 | `authorEmail`                                                                                   | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
 | `authorLocation`                                                                                | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
 | `authorName`                                                                                    | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
-| `content`                                                                                       | *string*                                                                                        | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `content`                                                                                       | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
 | `createdAt`                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)   | :heavy_minus_sign:                                                                              | N/A                                                                                             |
 | `helpfulVotes`                                                                                  | *number*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
 | `id`                                                                                            | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |

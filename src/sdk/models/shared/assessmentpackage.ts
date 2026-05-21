@@ -45,14 +45,14 @@ export type AssessmentPackage = {
   description?: string | undefined;
   hasRedirectUrl?: boolean | undefined;
   hasTargetUrl?: boolean | undefined;
-  id: string;
+  id?: string | undefined;
   infoUrl?: string | undefined;
   /**
    * Integration types that support this package
    */
   integrationTypes?: Array<string> | undefined;
   maxScore?: number | undefined;
-  name: string;
+  name?: string | undefined;
   needsIpAddress?: boolean | undefined;
   /**
    * Questionsinputs needed for this assessment (aligned with verification)
@@ -95,11 +95,11 @@ export const AssessmentPackage$inboundSchema: z.ZodType<
   description: z.string().optional(),
   has_redirect_url: z.boolean().optional(),
   has_target_url: z.boolean().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   info_url: z.string().optional(),
   integration_types: z.array(z.string()).optional(),
   max_score: z.number().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   needs_ip_address: z.boolean().optional(),
   parameters: z.array(AssessmentParameter$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
@@ -131,11 +131,11 @@ export type AssessmentPackage$Outbound = {
   description?: string | undefined;
   has_redirect_url?: boolean | undefined;
   has_target_url?: boolean | undefined;
-  id: string;
+  id?: string | undefined;
   info_url?: string | undefined;
   integration_types?: Array<string> | undefined;
   max_score?: number | undefined;
-  name: string;
+  name?: string | undefined;
   needs_ip_address?: boolean | undefined;
   parameters?: Array<AssessmentParameter$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -158,11 +158,11 @@ export const AssessmentPackage$outboundSchema: z.ZodType<
   description: z.string().optional(),
   hasRedirectUrl: z.boolean().optional(),
   hasTargetUrl: z.boolean().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   infoUrl: z.string().optional(),
   integrationTypes: z.array(z.string()).optional(),
   maxScore: z.number().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   needsIpAddress: z.boolean().optional(),
   parameters: z.array(AssessmentParameter$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),

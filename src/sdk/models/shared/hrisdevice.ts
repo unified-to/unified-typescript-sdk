@@ -22,7 +22,7 @@ export type HrisDevice = {
   locationId?: string | undefined;
   manufacturer?: string | undefined;
   model?: string | undefined;
-  name: string;
+  name?: string | undefined;
   os?: string | undefined;
   osVersion?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -54,7 +54,7 @@ export const HrisDevice$inboundSchema: z.ZodType<
   location_id: z.string().optional(),
   manufacturer: z.string().optional(),
   model: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   os: z.string().optional(),
   os_version: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -94,7 +94,7 @@ export type HrisDevice$Outbound = {
   location_id?: string | undefined;
   manufacturer?: string | undefined;
   model?: string | undefined;
-  name: string;
+  name?: string | undefined;
   os?: string | undefined;
   os_version?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -122,7 +122,7 @@ export const HrisDevice$outboundSchema: z.ZodType<
   locationId: z.string().optional(),
   manufacturer: z.string().optional(),
   model: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   os: z.string().optional(),
   osVersion: z.string().optional(),
   raw: z.record(z.any()).optional(),

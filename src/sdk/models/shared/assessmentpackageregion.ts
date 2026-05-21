@@ -9,13 +9,13 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AssessmentPackageRegion = {
-  costAmount: number;
+  costAmount?: number | undefined;
   currency?: string | undefined;
   processingTime?: number | undefined;
   /**
    * Countryregion codes where this package is available ({country}-{state} or {country})
    */
-  regions: Array<string>;
+  regions?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -24,10 +24,10 @@ export const AssessmentPackageRegion$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  cost_amount: z.number(),
+  cost_amount: z.number().optional(),
   currency: z.string().optional(),
   processing_time: z.number().optional(),
-  regions: z.array(z.string()),
+  regions: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "cost_amount": "costAmount",
@@ -36,10 +36,10 @@ export const AssessmentPackageRegion$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AssessmentPackageRegion$Outbound = {
-  cost_amount: number;
+  cost_amount?: number | undefined;
   currency?: string | undefined;
   processing_time?: number | undefined;
-  regions: Array<string>;
+  regions?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -48,10 +48,10 @@ export const AssessmentPackageRegion$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AssessmentPackageRegion
 > = z.object({
-  costAmount: z.number(),
+  costAmount: z.number().optional(),
   currency: z.string().optional(),
   processingTime: z.number().optional(),
-  regions: z.array(z.string()),
+  regions: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     costAmount: "cost_amount",

@@ -22,7 +22,7 @@ export type PropertyMessagingEventChannel = {
   isActive?: boolean | undefined;
   isPrivate?: boolean | undefined;
   members?: Array<MessagingMember> | undefined;
-  name: string;
+  name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
@@ -43,7 +43,7 @@ export const PropertyMessagingEventChannel$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_private: z.boolean().optional(),
   members: z.array(MessagingMember$inboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -69,7 +69,7 @@ export type PropertyMessagingEventChannel$Outbound = {
   is_active?: boolean | undefined;
   is_private?: boolean | undefined;
   members?: Array<MessagingMember$Outbound> | undefined;
-  name: string;
+  name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
@@ -89,7 +89,7 @@ export const PropertyMessagingEventChannel$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isPrivate: z.boolean().optional(),
   members: z.array(MessagingMember$outboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

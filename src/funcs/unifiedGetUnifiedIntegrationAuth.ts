@@ -109,6 +109,7 @@ async function $do(
     "failure_redirect": payload.failure_redirect,
     "lang": payload.lang,
     "redirect": payload.redirect,
+    "region": payload.region,
     "scopes": payload.scopes,
     "state": payload.state,
     "subdomain": payload.subdomain,

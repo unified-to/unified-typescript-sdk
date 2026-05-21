@@ -6,9 +6,7 @@
 import { CreateHrisDeviceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateHrisDeviceRequest = {
-  hrisDevice: {
-    name: "<value>",
-  },
+  hrisDevice: {},
   connectionId: "<id>",
 };
 ```

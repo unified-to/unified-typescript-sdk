@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CommerceInventory = {
-  available: number;
+  available?: number | undefined;
   id?: string | undefined;
   itemId?: string | undefined;
   itemOptionId?: string | undefined;
@@ -25,7 +25,7 @@ export const CommerceInventory$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  available: z.number(),
+  available: z.number().optional(),
   id: z.string().optional(),
   item_id: z.string().optional(),
   item_option_id: z.string().optional(),
@@ -45,7 +45,7 @@ export const CommerceInventory$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type CommerceInventory$Outbound = {
-  available: number;
+  available?: number | undefined;
   id?: string | undefined;
   item_id?: string | undefined;
   item_option_id?: string | undefined;
@@ -61,7 +61,7 @@ export const CommerceInventory$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceInventory
 > = z.object({
-  available: z.number(),
+  available: z.number().optional(),
   id: z.string().optional(),
   itemId: z.string().optional(),
   itemOptionId: z.string().optional(),

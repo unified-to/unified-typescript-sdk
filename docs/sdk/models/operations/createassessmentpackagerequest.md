@@ -7,8 +7,6 @@ import { CreateAssessmentPackageRequest } from "@unified-api/typescript-sdk/sdk/
 
 let value: CreateAssessmentPackageRequest = {
   assessmentPackage: {
-    id: "<id>",
-    name: "<value>",
     type: "VIDEO_INTERVIEW",
   },
   connectionId: "<id>",

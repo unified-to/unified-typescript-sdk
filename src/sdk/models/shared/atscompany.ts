@@ -25,7 +25,7 @@ export type AtsCompany = {
   createdAt?: Date | undefined;
   id?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
-  name: string;
+  name?: string | undefined;
   parentId?: string | undefined;
   phone?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -45,7 +45,7 @@ export const AtsCompany$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parent_id: z.string().optional(),
   phone: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -68,7 +68,7 @@ export type AtsCompany$Outbound = {
   created_at?: string | undefined;
   id?: string | undefined;
   metadata?: Array<AtsMetadata$Outbound> | undefined;
-  name: string;
+  name?: string | undefined;
   parent_id?: string | undefined;
   phone?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -87,7 +87,7 @@ export const AtsCompany$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parentId: z.string().optional(),
   phone: z.string().optional(),
   raw: z.record(z.any()).optional(),

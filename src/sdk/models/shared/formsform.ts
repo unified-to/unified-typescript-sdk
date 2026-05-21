@@ -25,7 +25,7 @@ export type FormsForm = {
   hasShuffleQuestions?: boolean | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   publishedUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   responseCount?: number | undefined;
@@ -49,7 +49,7 @@ export const FormsForm$inboundSchema: z.ZodType<
   has_shuffle_questions: z.boolean().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   published_url: z.string().optional(),
   raw: z.record(z.any()).optional(),
   response_count: z.number().optional(),
@@ -81,7 +81,7 @@ export type FormsForm$Outbound = {
   has_shuffle_questions?: boolean | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   published_url?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   response_count?: number | undefined;
@@ -104,7 +104,7 @@ export const FormsForm$outboundSchema: z.ZodType<
   hasShuffleQuestions: z.boolean().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   publishedUrl: z.string().optional(),
   raw: z.record(z.any()).optional(),
   responseCount: z.number().optional(),

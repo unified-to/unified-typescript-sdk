@@ -6,9 +6,7 @@
 import { CreateTaskCommentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateTaskCommentRequest = {
-  taskComment: {
-    text: "<value>",
-  },
+  taskComment: {},
   connectionId: "<id>",
 };
 ```

@@ -5,9 +5,7 @@
 ```typescript
 import { PropertyMessagingEventChannel } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyMessagingEventChannel = {
-  name: "<value>",
-};
+let value: PropertyMessagingEventChannel = {};
 ```
 
 ## Fields
@@ -21,7 +19,7 @@ let value: PropertyMessagingEventChannel = {
 | `isActive`                                                                                    | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `isPrivate`                                                                                   | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `members`                                                                                     | [shared.MessagingMember](../../../sdk/models/shared/messagingmember.md)[]                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `parentId`                                                                                    | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |

@@ -42,7 +42,7 @@ export type VerificationPackage = {
   description?: string | undefined;
   hasRedirectUrl?: boolean | undefined;
   hasTargetUrl?: boolean | undefined;
-  id: string;
+  id?: string | undefined;
   infoUrl?: string | undefined;
   maxScore?: number | undefined;
   name: string;
@@ -86,7 +86,7 @@ export const VerificationPackage$inboundSchema: z.ZodType<
   description: z.string().optional(),
   has_redirect_url: z.boolean().optional(),
   has_target_url: z.boolean().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   info_url: z.string().optional(),
   max_score: z.number().optional(),
   name: z.string(),

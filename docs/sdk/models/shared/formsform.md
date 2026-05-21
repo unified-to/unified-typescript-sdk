@@ -5,9 +5,7 @@
 ```typescript
 import { FormsForm } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: FormsForm = {
-  name: "<value>",
-};
+let value: FormsForm = {};
 ```
 
 ## Fields
@@ -24,7 +22,7 @@ let value: FormsForm = {
 | `hasShuffleQuestions`                                                                         | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `isActive`                                                                                    | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `publishedUrl`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `responseCount`                                                                               | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

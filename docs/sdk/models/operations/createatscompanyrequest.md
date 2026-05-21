@@ -6,9 +6,7 @@
 import { CreateAtsCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAtsCompanyRequest = {
-  atsCompany: {
-    name: "<value>",
-  },
+  atsCompany: {},
   connectionId: "<id>",
 };
 ```

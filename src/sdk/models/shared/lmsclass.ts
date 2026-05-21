@@ -15,14 +15,14 @@ import {
 } from "./lmsmedia.js";
 
 export type LmsClass = {
-  courseId: string;
+  courseId?: string | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
   instructorIds?: Array<string> | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia> | undefined;
-  name: string;
+  name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   studentIds?: Array<string> | undefined;
   updatedAt?: Date | undefined;
@@ -34,7 +34,7 @@ export const LmsClass$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  course_id: z.string(),
+  course_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
@@ -42,7 +42,7 @@ export const LmsClass$inboundSchema: z.ZodType<
   instructor_ids: z.array(z.string()).optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   student_ids: z.array(z.string()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -58,14 +58,14 @@ export const LmsClass$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type LmsClass$Outbound = {
-  course_id: string;
+  course_id?: string | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
   instructor_ids?: Array<string> | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
-  name: string;
+  name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   student_ids?: Array<string> | undefined;
   updated_at?: string | undefined;
@@ -77,14 +77,14 @@ export const LmsClass$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   LmsClass
 > = z.object({
-  courseId: z.string(),
+  courseId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
   instructorIds: z.array(z.string()).optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   studentIds: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

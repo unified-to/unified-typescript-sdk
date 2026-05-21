@@ -5,9 +5,7 @@
 ```typescript
 import { CommerceReview } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CommerceReview = {
-  itemId: "<id>",
-};
+let value: CommerceReview = {};
 ```
 
 ## Fields
@@ -26,7 +24,7 @@ let value: CommerceReview = {
 | `isFeatured`                                                                                  | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `isPublic`                                                                                    | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `isVerified`                                                                                  | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `itemId`                                                                                      | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `itemId`                                                                                      | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `itemVariantId`                                                                               | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `locationId`                                                                                  | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `media`                                                                                       | [shared.CommerceItemMedia](../../../sdk/models/shared/commerceitemmedia.md)[]                 | :heavy_minus_sign:                                                                            | Photosvideos attached to the review                                                           |

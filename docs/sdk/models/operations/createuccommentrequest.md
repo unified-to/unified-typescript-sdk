@@ -6,9 +6,7 @@
 import { CreateUcCommentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateUcCommentRequest = {
-  ucComment: {
-    content: "<value>",
-  },
+  ucComment: {},
   connectionId: "<id>",
 };
 ```

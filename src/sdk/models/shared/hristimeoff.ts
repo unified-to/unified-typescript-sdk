@@ -40,11 +40,11 @@ export type HrisTimeoff = {
   isPaid?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
   reason?: string | undefined;
-  startAt: Date;
+  startAt?: Date | undefined;
   status?: HrisTimeoffStatus | undefined;
   type?: HrisTimeoffType | undefined;
   updatedAt?: Date | undefined;
-  userId?: string | undefined;
+  userId: string;
 };
 
 /** @internal */
@@ -92,12 +92,13 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
   is_paid: z.boolean().optional(),
   raw: z.record(z.any()).optional(),
   reason: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   status: HrisTimeoffStatus$inboundSchema.optional(),
   type: HrisTimeoffType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  user_id: z.string().optional(),
+  user_id: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "approved_at": "approvedAt",
@@ -123,11 +124,11 @@ export type HrisTimeoff$Outbound = {
   is_paid?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
   reason?: string | undefined;
-  start_at: string;
+  start_at?: string | undefined;
   status?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
-  user_id?: string | undefined;
+  user_id: string;
 };
 
 /** @internal */
@@ -146,11 +147,11 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   isPaid: z.boolean().optional(),
   raw: z.record(z.any()).optional(),
   reason: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
   status: HrisTimeoffStatus$outboundSchema.optional(),
   type: HrisTimeoffType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
+  userId: z.string(),
 }).transform((v) => {
   return remap$(v, {
     approvedAt: "approved_at",

@@ -35,9 +35,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.createCommerceLocation({
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
   });
 
@@ -65,9 +63,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceLocation(unifiedTo, {
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -509,9 +505,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.patchCommerceLocation({
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -540,9 +534,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceLocation(unifiedTo, {
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -833,9 +825,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.updateCommerceLocation({
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -864,9 +854,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceLocation(unifiedTo, {
-    commerceLocation: {
-      name: "<value>",
-    },
+    commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });

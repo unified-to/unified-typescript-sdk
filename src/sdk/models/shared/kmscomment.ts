@@ -25,7 +25,7 @@ export const KmsCommentType = {
 export type KmsCommentType = OpenEnum<typeof KmsCommentType>;
 
 export type KmsComment = {
-  content: string;
+  content?: string | undefined;
   contentType?: ContentType | undefined;
   createdAt?: Date | undefined;
   id?: string | undefined;
@@ -69,7 +69,7 @@ export const KmsComment$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  content: z.string(),
+  content: z.string().optional(),
   content_type: ContentType$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -93,7 +93,7 @@ export const KmsComment$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type KmsComment$Outbound = {
-  content: string;
+  content?: string | undefined;
   content_type?: string | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
@@ -111,7 +111,7 @@ export const KmsComment$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   KmsComment
 > = z.object({
-  content: z.string(),
+  content: z.string().optional(),
   contentType: ContentType$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),

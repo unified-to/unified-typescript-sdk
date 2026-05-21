@@ -309,9 +309,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsCompany({
-    atsCompany: {
-      name: "<value>",
-    },
+    atsCompany: {},
     connectionId: "<id>",
   });
 
@@ -339,9 +337,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsCompany(unifiedTo, {
-    atsCompany: {
-      name: "<value>",
-    },
+    atsCompany: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -2276,9 +2272,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsCompany({
-    atsCompany: {
-      name: "<value>",
-    },
+    atsCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2307,9 +2301,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsCompany(unifiedTo, {
-    atsCompany: {
-      name: "<value>",
-    },
+    atsCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3560,9 +3552,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsCompany({
-    atsCompany: {
-      name: "<value>",
-    },
+    atsCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3591,9 +3581,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsCompany(unifiedTo, {
-    atsCompany: {
-      name: "<value>",
-    },
+    atsCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });

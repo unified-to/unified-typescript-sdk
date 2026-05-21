@@ -24,7 +24,9 @@ export type PaymentPayment = {
   currency?: string | undefined;
   id?: string | undefined;
   invoiceId?: string | undefined;
+  linkId?: string | undefined;
   notes?: string | undefined;
+  organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -60,7 +62,9 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   currency: z.string().default("USD"),
   id: z.string().optional(),
   invoice_id: z.string().optional(),
+  link_id: z.string().optional(),
   notes: z.string().optional(),
+  organization_id: z.string().optional(),
   payment_method: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -75,6 +79,8 @@ export const PaymentPayment$inboundSchema: z.ZodType<
     "contact_id": "contactId",
     "created_at": "createdAt",
     "invoice_id": "invoiceId",
+    "link_id": "linkId",
+    "organization_id": "organizationId",
     "payment_method": "paymentMethod",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
@@ -89,7 +95,9 @@ export type PaymentPayment$Outbound = {
   currency: string;
   id?: string | undefined;
   invoice_id?: string | undefined;
+  link_id?: string | undefined;
   notes?: string | undefined;
+  organization_id?: string | undefined;
   payment_method?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -111,7 +119,9 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   currency: z.string().default("USD"),
   id: z.string().optional(),
   invoiceId: z.string().optional(),
+  linkId: z.string().optional(),
   notes: z.string().optional(),
+  organizationId: z.string().optional(),
   paymentMethod: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -125,6 +135,8 @@ export const PaymentPayment$outboundSchema: z.ZodType<
     contactId: "contact_id",
     createdAt: "created_at",
     invoiceId: "invoice_id",
+    linkId: "link_id",
+    organizationId: "organization_id",
     paymentMethod: "payment_method",
     totalAmount: "total_amount",
     updatedAt: "updated_at",

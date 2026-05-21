@@ -5,9 +5,7 @@
 ```typescript
 import { LmsCourse } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: LmsCourse = {
-  name: "<value>",
-};
+let value: LmsCourse = {};
 ```
 
 ## Fields
@@ -27,7 +25,7 @@ let value: LmsCourse = {
 | `isPrivate`                                                                                   | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `languages`                                                                                   | *string*[]                                                                                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `media`                                                                                       | [shared.LmsMedia](../../../sdk/models/shared/lmsmedia.md)[]                                   | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `priceAmount`                                                                                 | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `providerName`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `publishedAt`                                                                                 | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |

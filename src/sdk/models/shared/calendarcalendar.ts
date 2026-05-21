@@ -13,7 +13,7 @@ export type CalendarCalendar = {
   description?: string | undefined;
   id?: string | undefined;
   isPrimary?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
   updatedAt?: Date | undefined;
@@ -30,7 +30,7 @@ export const CalendarCalendar$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_primary: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -48,7 +48,7 @@ export type CalendarCalendar$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_primary?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
   updated_at?: string | undefined;
@@ -64,7 +64,7 @@ export const CalendarCalendar$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isPrimary: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

@@ -5,9 +5,7 @@
 ```typescript
 import { UcComment } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: UcComment = {
-  content: "<value>",
-};
+let value: UcComment = {};
 ```
 
 ## Fields
@@ -15,7 +13,7 @@ let value: UcComment = {
 | Field                 | Type                  | Required              | Description           |
 | --------------------- | --------------------- | --------------------- | --------------------- |
 | `callId`              | *string*              | :heavy_minus_sign:    | N/A                   |
-| `content`             | *string*              | :heavy_check_mark:    | N/A                   |
+| `content`             | *string*              | :heavy_minus_sign:    | N/A                   |
 | `createdAt`           | *string*              | :heavy_minus_sign:    | N/A                   |
 | `id`                  | *string*              | :heavy_minus_sign:    | N/A                   |
 | `raw`                 | Record<string, *any*> | :heavy_minus_sign:    | N/A                   |

@@ -6,7 +6,6 @@
 import { VerificationPackage } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: VerificationPackage = {
-  id: "<id>",
   name: "<value>",
   type: "CREDIT_CHECK",
 };
@@ -24,7 +23,7 @@ let value: VerificationPackage = {
 | `description`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `hasRedirectUrl`                                                                              | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `hasTargetUrl`                                                                                | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `id`                                                                                          | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `infoUrl`                                                                                     | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `maxScore`                                                                                    | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |

@@ -5,16 +5,14 @@
 ```typescript
 import { KmsComment } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: KmsComment = {
-  content: "<value>",
-};
+let value: KmsComment = {};
 ```
 
 ## Fields
 
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `content`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `content`                                                                                     | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `contentType`                                                                                 | [shared.ContentType](../../../sdk/models/shared/contenttype.md)                               | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

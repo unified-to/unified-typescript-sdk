@@ -30,7 +30,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.page.createKmsPage({
     kmsPage: {
-      title: "<value>",
       type: "TEXT",
     },
     connectionId: "<id>",
@@ -61,7 +60,6 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsCreateKmsPage(unifiedTo, {
     kmsPage: {
-      title: "<value>",
       type: "TEXT",
     },
     connectionId: "<id>",
@@ -271,7 +269,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.page.patchKmsPage({
     kmsPage: {
-      title: "<value>",
       type: "OTHER",
     },
     connectionId: "<id>",
@@ -303,7 +300,6 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsPatchKmsPage(unifiedTo, {
     kmsPage: {
-      title: "<value>",
       type: "OTHER",
     },
     connectionId: "<id>",
@@ -437,7 +433,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.page.updateKmsPage({
     kmsPage: {
-      title: "<value>",
       type: "OTHER",
     },
     connectionId: "<id>",
@@ -469,7 +464,6 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsUpdateKmsPage(unifiedTo, {
     kmsPage: {
-      title: "<value>",
       type: "OTHER",
     },
     connectionId: "<id>",

@@ -5,9 +5,7 @@
 ```typescript
 import { PaymentPayout } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PaymentPayout = {
-  totalAmount: 8981.6,
-};
+let value: PaymentPayout = {};
 ```
 
 ## Fields
@@ -20,5 +18,5 @@ let value: PaymentPayout = {
 | `notes`                                                                         | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
 | `raw`                                                                           | Record<string, *any*>                                                           | :heavy_minus_sign:                                                              | N/A                                                                             |
 | `status`                                                                        | [shared.PaymentPayoutStatus](../../../sdk/models/shared/paymentpayoutstatus.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
-| `totalAmount`                                                                   | *number*                                                                        | :heavy_check_mark:                                                              | N/A                                                                             |
+| `totalAmount`                                                                   | *number*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
 | `updatedAt`                                                                     | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |

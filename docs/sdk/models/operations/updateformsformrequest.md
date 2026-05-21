@@ -6,9 +6,7 @@
 import { UpdateFormsFormRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateFormsFormRequest = {
-  formsForm: {
-    name: "<value>",
-  },
+  formsForm: {},
   connectionId: "<id>",
   id: "<id>",
 };

@@ -27,7 +27,7 @@ export type AssessmentParameter = {
   fileTypes?: Array<string> | undefined;
   id?: string | undefined;
   isRequired?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   /**
    * Options for MULTIPLE_CHOICE and MULTIPLE_SELECT
    */
@@ -62,7 +62,7 @@ export const AssessmentParameter$inboundSchema: z.ZodType<
   file_types: z.array(z.string()).optional(),
   id: z.string().optional(),
   is_required: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   options: z.array(z.string()).optional(),
   public_question: z.string().optional(),
   type: AssessmentParameterType$inboundSchema.optional(),
@@ -80,7 +80,7 @@ export type AssessmentParameter$Outbound = {
   file_types?: Array<string> | undefined;
   id?: string | undefined;
   is_required?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   options?: Array<string> | undefined;
   public_question?: string | undefined;
   type?: string | undefined;
@@ -96,7 +96,7 @@ export const AssessmentParameter$outboundSchema: z.ZodType<
   fileTypes: z.array(z.string()).optional(),
   id: z.string().optional(),
   isRequired: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   options: z.array(z.string()).optional(),
   publicQuestion: z.string().optional(),
   type: AssessmentParameterType$outboundSchema.optional(),

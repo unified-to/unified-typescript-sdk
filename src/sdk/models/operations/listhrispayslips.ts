@@ -20,8 +20,8 @@ export const ListHrisPayslipsQueryParamFields = {
   GrossAmount: "gross_amount",
   NetAmount: "net_amount",
   Details: "details",
-  Raw: "raw",
   Deduction: "deduction",
+  Raw: "raw",
 } as const;
 export type ListHrisPayslipsQueryParamFields = ClosedEnum<
   typeof ListHrisPayslipsQueryParamFields

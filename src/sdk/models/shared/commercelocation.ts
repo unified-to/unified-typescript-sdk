@@ -51,7 +51,7 @@ export type CommerceLocation = {
   locationType?: LocationType | undefined;
   longitude?: number | undefined;
   media?: Array<CommerceItemMedia> | undefined;
-  name: string;
+  name?: string | undefined;
   parentId?: string | undefined;
   priceLevel?: string | undefined;
   rating?: number | undefined;
@@ -95,7 +95,7 @@ export const CommerceLocation$inboundSchema: z.ZodType<
   location_type: LocationType$inboundSchema.optional(),
   longitude: z.number().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parent_id: z.string().optional(),
   price_level: z.string().optional(),
   rating: z.number().optional(),
@@ -134,7 +134,7 @@ export type CommerceLocation$Outbound = {
   location_type?: string | undefined;
   longitude?: number | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
-  name: string;
+  name?: string | undefined;
   parent_id?: string | undefined;
   price_level?: string | undefined;
   rating?: number | undefined;
@@ -164,7 +164,7 @@ export const CommerceLocation$outboundSchema: z.ZodType<
   locationType: LocationType$outboundSchema.optional(),
   longitude: z.number().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parentId: z.string().optional(),
   priceLevel: z.string().optional(),
   rating: z.number().optional(),

@@ -23,11 +23,11 @@ export type PaymentRefund = {
   currency?: string | undefined;
   id?: string | undefined;
   notes?: string | undefined;
-  paymentId: string;
+  paymentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   status?: PaymentRefundStatus | undefined;
-  totalAmount: number;
+  totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
 };
 
@@ -49,11 +49,11 @@ export const PaymentRefund$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   notes: z.string().optional(),
-  payment_id: z.string(),
+  payment_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   status: PaymentRefundStatus$inboundSchema.optional(),
-  total_amount: z.number(),
+  total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {

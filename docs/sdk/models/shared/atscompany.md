@@ -5,9 +5,7 @@
 ```typescript
 import { AtsCompany } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsCompany = {
-  name: "<value>",
-};
+let value: AtsCompany = {};
 ```
 
 ## Fields
@@ -18,7 +16,7 @@ let value: AtsCompany = {
 | `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `metadata`                                                                                    | [shared.AtsMetadata](../../../sdk/models/shared/atsmetadata.md)[]                             | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `parentId`                                                                                    | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `phone`                                                                                       | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |

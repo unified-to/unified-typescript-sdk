@@ -31,7 +31,7 @@ export type CommerceReviewComment = {
   authorEmail?: string | undefined;
   authorLocation?: string | undefined;
   authorName?: string | undefined;
-  content: string;
+  content?: string | undefined;
   createdAt?: Date | undefined;
   helpfulVotes?: number | undefined;
   id?: string | undefined;
@@ -67,7 +67,7 @@ export const CommerceReviewComment$inboundSchema: z.ZodType<
   author_email: z.string().optional(),
   author_location: z.string().optional(),
   author_name: z.string().optional(),
-  content: z.string(),
+  content: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   helpful_votes: z.number().optional(),
@@ -100,7 +100,7 @@ export type CommerceReviewComment$Outbound = {
   author_email?: string | undefined;
   author_location?: string | undefined;
   author_name?: string | undefined;
-  content: string;
+  content?: string | undefined;
   created_at?: string | undefined;
   helpful_votes?: number | undefined;
   id?: string | undefined;
@@ -123,7 +123,7 @@ export const CommerceReviewComment$outboundSchema: z.ZodType<
   authorEmail: z.string().optional(),
   authorLocation: z.string().optional(),
   authorName: z.string().optional(),
-  content: z.string(),
+  content: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   helpfulVotes: z.number().optional(),
   id: z.string().optional(),

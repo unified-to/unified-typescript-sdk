@@ -49,7 +49,7 @@ export type CommerceReview = {
   isFeatured?: boolean | undefined;
   isPublic?: boolean | undefined;
   isVerified?: boolean | undefined;
-  itemId: string;
+  itemId?: string | undefined;
   itemVariantId?: string | undefined;
   locationId?: string | undefined;
   /**
@@ -99,7 +99,7 @@ export const CommerceReview$inboundSchema: z.ZodType<
   is_featured: z.boolean().optional(),
   is_public: z.boolean().optional(),
   is_verified: z.boolean().optional(),
-  item_id: z.string(),
+  item_id: z.string().optional(),
   item_variant_id: z.string().optional(),
   location_id: z.string().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
@@ -146,7 +146,7 @@ export type CommerceReview$Outbound = {
   is_featured?: boolean | undefined;
   is_public?: boolean | undefined;
   is_verified?: boolean | undefined;
-  item_id: string;
+  item_id?: string | undefined;
   item_variant_id?: string | undefined;
   location_id?: string | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
@@ -179,7 +179,7 @@ export const CommerceReview$outboundSchema: z.ZodType<
   isFeatured: z.boolean().optional(),
   isPublic: z.boolean().optional(),
   isVerified: z.boolean().optional(),
-  itemId: z.string(),
+  itemId: z.string().optional(),
   itemVariantId: z.string().optional(),
   locationId: z.string().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),

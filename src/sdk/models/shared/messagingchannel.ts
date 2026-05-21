@@ -20,7 +20,7 @@ export type MessagingChannel = {
   isActive?: boolean | undefined;
   isPrivate?: boolean | undefined;
   members?: Array<MessagingMember> | undefined;
-  name: string;
+  name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
@@ -41,7 +41,7 @@ export const MessagingChannel$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_private: z.boolean().optional(),
   members: z.array(MessagingMember$inboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

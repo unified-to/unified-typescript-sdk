@@ -43,7 +43,7 @@ export type LmsCourse = {
   isPrivate?: boolean | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia> | undefined;
-  name: string;
+  name?: string | undefined;
   priceAmount?: number | undefined;
   providerName?: string | undefined;
   publishedAt?: Date | undefined;
@@ -78,7 +78,7 @@ export const LmsCourse$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   price_amount: z.number().optional(),
   provider_name: z.string().optional(),
   published_at: z.string().datetime({ offset: true }).transform(v =>
@@ -122,7 +122,7 @@ export type LmsCourse$Outbound = {
   is_private?: boolean | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
-  name: string;
+  name?: string | undefined;
   price_amount?: number | undefined;
   provider_name?: string | undefined;
   published_at?: string | undefined;
@@ -153,7 +153,7 @@ export const LmsCourse$outboundSchema: z.ZodType<
   isPrivate: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
-  name: z.string(),
+  name: z.string().optional(),
   priceAmount: z.number().optional(),
   providerName: z.string().optional(),
   publishedAt: z.date().transform(v => v.toISOString()).optional(),

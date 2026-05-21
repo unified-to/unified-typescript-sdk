@@ -50,9 +50,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.calendar.createCalendarCalendar({
-    calendarCalendar: {
-      name: "<value>",
-    },
+    calendarCalendar: {},
     connectionId: "<id>",
   });
 
@@ -80,9 +78,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await calendarCreateCalendarCalendar(unifiedTo, {
-    calendarCalendar: {
-      name: "<value>",
-    },
+    calendarCalendar: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1231,9 +1227,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.calendar.patchCalendarCalendar({
-    calendarCalendar: {
-      name: "<value>",
-    },
+    calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1262,9 +1256,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await calendarPatchCalendarCalendar(unifiedTo, {
-    calendarCalendar: {
-      name: "<value>",
-    },
+    calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1879,9 +1871,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.calendar.updateCalendarCalendar({
-    calendarCalendar: {
-      name: "<value>",
-    },
+    calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1910,9 +1900,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await calendarUpdateCalendarCalendar(unifiedTo, {
-    calendarCalendar: {
-      name: "<value>",
-    },
+    calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
   });

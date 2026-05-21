@@ -29,9 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.review.createCommerceReview({
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
   });
 
@@ -59,9 +57,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceReview(unifiedTo, {
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -268,9 +264,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.review.patchCommerceReview({
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -299,9 +293,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceReview(unifiedTo, {
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -432,9 +424,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.review.updateCommerceReview({
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -463,9 +453,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceReview(unifiedTo, {
-    commerceReview: {
-      itemId: "<id>",
-    },
+    commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
   });

@@ -6,9 +6,7 @@
 import { PatchHrisDeviceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchHrisDeviceRequest = {
-  hrisDevice: {
-    name: "<value>",
-  },
+  hrisDevice: {},
   connectionId: "<id>",
   id: "<id>",
 };

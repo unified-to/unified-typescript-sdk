@@ -5,9 +5,7 @@
 ```typescript
 import { CommerceLocation } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CommerceLocation = {
-  name: "<value>",
-};
+let value: CommerceLocation = {};
 ```
 
 ## Fields
@@ -27,7 +25,7 @@ let value: CommerceLocation = {
 | `locationType`                                                                                          | [shared.LocationType](../../../sdk/models/shared/locationtype.md)                                       | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
 | `longitude`                                                                                             | *number*                                                                                                | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
 | `media`                                                                                                 | [shared.CommerceItemMedia](../../../sdk/models/shared/commerceitemmedia.md)[]                           | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
-| `name`                                                                                                  | *string*                                                                                                | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
+| `name`                                                                                                  | *string*                                                                                                | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
 | `parentId`                                                                                              | *string*                                                                                                | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
 | `priceLevel`                                                                                            | *string*                                                                                                | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
 | `rating`                                                                                                | *number*                                                                                                | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |

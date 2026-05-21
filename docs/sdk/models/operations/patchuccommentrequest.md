@@ -6,9 +6,7 @@
 import { PatchUcCommentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchUcCommentRequest = {
-  ucComment: {
-    content: "<value>",
-  },
+  ucComment: {},
   connectionId: "<id>",
   id: "<id>",
 };

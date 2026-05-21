@@ -41,9 +41,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.createKmsComment({
-    kmsComment: {
-      content: "<value>",
-    },
+    kmsComment: {},
     connectionId: "<id>",
   });
 
@@ -71,9 +69,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsCreateKmsComment(unifiedTo, {
-    kmsComment: {
-      content: "<value>",
-    },
+    kmsComment: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -124,9 +120,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.createTaskComment({
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
   });
 
@@ -154,9 +148,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentCreateTaskComment(unifiedTo, {
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -207,9 +199,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.createUcComment({
-    ucComment: {
-      content: "<value>",
-    },
+    ucComment: {},
     connectionId: "<id>",
   });
 
@@ -237,9 +227,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentCreateUcComment(unifiedTo, {
-    ucComment: {
-      content: "<value>",
-    },
+    ucComment: {},
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -758,9 +746,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.patchKmsComment({
-    kmsComment: {
-      content: "<value>",
-    },
+    kmsComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -789,9 +775,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsPatchKmsComment(unifiedTo, {
-    kmsComment: {
-      content: "<value>",
-    },
+    kmsComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -843,9 +827,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.patchTaskComment({
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -874,9 +856,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentPatchTaskComment(unifiedTo, {
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -928,9 +908,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.patchUcComment({
-    ucComment: {
-      content: "<value>",
-    },
+    ucComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -959,9 +937,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentPatchUcComment(unifiedTo, {
-    ucComment: {
-      content: "<value>",
-    },
+    ucComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1250,9 +1226,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.updateKmsComment({
-    kmsComment: {
-      content: "<value>",
-    },
+    kmsComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1281,9 +1255,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsUpdateKmsComment(unifiedTo, {
-    kmsComment: {
-      content: "<value>",
-    },
+    kmsComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1335,9 +1307,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.updateTaskComment({
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1366,9 +1336,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentUpdateTaskComment(unifiedTo, {
-    taskComment: {
-      text: "<value>",
-    },
+    taskComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1420,9 +1388,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.updateUcComment({
-    ucComment: {
-      content: "<value>",
-    },
+    ucComment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1451,9 +1417,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentUpdateUcComment(unifiedTo, {
-    ucComment: {
-      content: "<value>",
-    },
+    ucComment: {},
     connectionId: "<id>",
     id: "<id>",
   });

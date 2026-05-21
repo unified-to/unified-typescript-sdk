@@ -13,7 +13,7 @@ export type KmsSpace = {
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   parentId?: string | undefined;
   parentPageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -32,7 +32,7 @@ export const KmsSpace$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parent_id: z.string().optional(),
   parent_page_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -55,7 +55,7 @@ export type KmsSpace$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
-  name: string;
+  name?: string | undefined;
   parent_id?: string | undefined;
   parent_page_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -73,7 +73,7 @@ export const KmsSpace$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   parentId: z.string().optional(),
   parentPageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
