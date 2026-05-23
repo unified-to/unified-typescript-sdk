@@ -34,7 +34,6 @@ export type AtsOffer = {
   creatorUserId?: string | undefined;
   employeeUserId?: string | undefined;
   id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
   rejectedAt?: Date | undefined;
   sentAt?: Date | undefined;
   startAt?: Date | undefined;
@@ -69,7 +68,6 @@ export const AtsOffer$inboundSchema: z.ZodType<
   creator_user_id: z.string().optional(),
   employee_user_id: z.string().optional(),
   id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
   rejected_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -99,7 +97,6 @@ export type AtsOffer$Outbound = {
   creator_user_id?: string | undefined;
   employee_user_id?: string | undefined;
   id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
   rejected_at?: string | undefined;
   sent_at?: string | undefined;
   start_at?: string | undefined;
@@ -119,7 +116,6 @@ export const AtsOffer$outboundSchema: z.ZodType<
   creatorUserId: z.string().optional(),
   employeeUserId: z.string().optional(),
   id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
   rejectedAt: z.date().transform(v => v.toISOString()).optional(),
   sentAt: z.date().transform(v => v.toISOString()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
