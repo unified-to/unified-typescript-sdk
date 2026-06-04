@@ -249,6 +249,16 @@ export const PropertyConnectionPermissions = {
   SigningSignatoryRead: "signing_signatory_read",
   SigningSignatoryWrite: "signing_signatory_write",
   SigningTemplateRead: "signing_template_read",
+  ClubsGroupRead: "clubs_group_read",
+  ClubsGroupWrite: "clubs_group_write",
+  ClubsMemberRead: "clubs_member_read",
+  ClubsMemberWrite: "clubs_member_write",
+  ClubsActivityRead: "clubs_activity_read",
+  ClubsActivityWrite: "clubs_activity_write",
+  ClubsLocationRead: "clubs_location_read",
+  ClubsLocationWrite: "clubs_location_write",
+  ClubsEventRead: "clubs_event_read",
+  ClubsEventWrite: "clubs_event_write",
 } as const;
 export type PropertyConnectionPermissions = OpenEnum<
   typeof PropertyConnectionPermissions

@@ -50,6 +50,8 @@ export type Connection = {
   lastHealthyAt?: Date | undefined;
   lastUnhealthyAt?: Date | undefined;
   permissions: Array<PropertyConnectionPermissions>;
+  secretsmanagerId?: string | undefined;
+  secretsmanagerKey?: string | undefined;
   updatedAt?: Date | undefined;
   workspaceId?: string | undefined;
 };
@@ -81,6 +83,8 @@ export const Connection$inboundSchema: z.ZodType<
     new Date(v)
   ).optional(),
   permissions: z.array(PropertyConnectionPermissions$inboundSchema),
+  secretsmanager_id: z.string().optional(),
+  secretsmanager_key: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   workspace_id: z.string().optional(),
@@ -97,6 +101,8 @@ export const Connection$inboundSchema: z.ZodType<
     "is_paused": "isPaused",
     "last_healthy_at": "lastHealthyAt",
     "last_unhealthy_at": "lastUnhealthyAt",
+    "secretsmanager_id": "secretsmanagerId",
+    "secretsmanager_key": "secretsmanagerKey",
     "updated_at": "updatedAt",
     "workspace_id": "workspaceId",
   });
@@ -119,6 +125,8 @@ export type Connection$Outbound = {
   last_healthy_at?: string | undefined;
   last_unhealthy_at?: string | undefined;
   permissions: Array<string>;
+  secretsmanager_id?: string | undefined;
+  secretsmanager_key?: string | undefined;
   updated_at?: string | undefined;
   workspace_id?: string | undefined;
 };
@@ -145,6 +153,8 @@ export const Connection$outboundSchema: z.ZodType<
   lastHealthyAt: z.date().transform(v => v.toISOString()).optional(),
   lastUnhealthyAt: z.date().transform(v => v.toISOString()).optional(),
   permissions: z.array(PropertyConnectionPermissions$outboundSchema),
+  secretsmanagerId: z.string().optional(),
+  secretsmanagerKey: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   workspaceId: z.string().optional(),
 }).transform((v) => {
@@ -160,6 +170,8 @@ export const Connection$outboundSchema: z.ZodType<
     isPaused: "is_paused",
     lastHealthyAt: "last_healthy_at",
     lastUnhealthyAt: "last_unhealthy_at",
+    secretsmanagerId: "secretsmanager_id",
+    secretsmanagerKey: "secretsmanager_key",
     updatedAt: "updated_at",
     workspaceId: "workspace_id",
   });

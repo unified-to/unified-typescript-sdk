@@ -3,7 +3,9 @@
  */
 
 import { activityCreateLmsActivity } from "../funcs/activityCreateLmsActivity.js";
+import { activityGetClubsActivity } from "../funcs/activityGetClubsActivity.js";
 import { activityGetLmsActivity } from "../funcs/activityGetLmsActivity.js";
+import { activityListClubsActivities } from "../funcs/activityListClubsActivities.js";
 import { activityListLmsActivities } from "../funcs/activityListLmsActivities.js";
 import { activityPatchLmsActivity } from "../funcs/activityPatchLmsActivity.js";
 import { activityRemoveLmsActivity } from "../funcs/activityRemoveLmsActivity.js";
@@ -65,6 +67,20 @@ export class Activity extends ClientSDK {
   /**
    * Retrieve an activity
    */
+  async getClubsActivity(
+    request: operations.GetClubsActivityRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ClubsActivity> {
+    return unwrapAsync(activityGetClubsActivity(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an activity
+   */
   async getLmsActivity(
     request: operations.GetLmsActivityRequest,
     options?: RequestOptions,
@@ -84,6 +100,20 @@ export class Activity extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AtsActivity>> {
     return unwrapAsync(atsListAtsActivities(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all activities
+   */
+  async listClubsActivities(
+    request: operations.ListClubsActivitiesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.ClubsActivity>> {
+    return unwrapAsync(activityListClubsActivities(
       this,
       request,
       options,

@@ -27,15 +27,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve a member
+ * Retrieve a group
  */
-export function martechGetMartechMember(
+export function groupGetClubsGroup(
   client: UnifiedToCore,
-  request: operations.GetMartechMemberRequest,
+  request: operations.GetClubsGroupRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.MarketingMember,
+    shared.ClubsGroup,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -55,12 +55,12 @@ export function martechGetMartechMember(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.GetMartechMemberRequest,
+  request: operations.GetClubsGroupRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.MarketingMember,
+      shared.ClubsGroup,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -75,7 +75,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetMartechMemberRequest$outboundSchema.parse(value),
+    (value) => operations.GetClubsGroupRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -94,7 +94,7 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/martech/{connection_id}/member/{id}")(pathParams);
+  const path = pathToFunc("/clubs/{connection_id}/group/{id}")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -111,7 +111,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getMartechMember",
+    operationID: "getClubsGroup",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -152,7 +152,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.MarketingMember,
+    shared.ClubsGroup,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -162,7 +162,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.MarketingMember$inboundSchema),
+    M.json(200, shared.ClubsGroup$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

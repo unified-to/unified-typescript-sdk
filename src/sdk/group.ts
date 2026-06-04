@@ -10,8 +10,10 @@ import { adsRemoveAdsGroup } from "../funcs/adsRemoveAdsGroup.js";
 import { adsUpdateAdsGroup } from "../funcs/adsUpdateAdsGroup.js";
 import { groupCreateHrisGroup } from "../funcs/groupCreateHrisGroup.js";
 import { groupCreateScimGroups } from "../funcs/groupCreateScimGroups.js";
+import { groupGetClubsGroup } from "../funcs/groupGetClubsGroup.js";
 import { groupGetHrisGroup } from "../funcs/groupGetHrisGroup.js";
 import { groupGetScimGroups } from "../funcs/groupGetScimGroups.js";
+import { groupListClubsGroups } from "../funcs/groupListClubsGroups.js";
 import { groupListHrisGroups } from "../funcs/groupListHrisGroups.js";
 import { groupListScimGroups } from "../funcs/groupListScimGroups.js";
 import { groupPatchHrisGroup } from "../funcs/groupPatchHrisGroup.js";
@@ -85,6 +87,20 @@ export class Group extends ClientSDK {
   /**
    * Retrieve a group
    */
+  async getClubsGroup(
+    request: operations.GetClubsGroupRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ClubsGroup> {
+    return unwrapAsync(groupGetClubsGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a group
+   */
   async getHrisGroup(
     request: operations.GetHrisGroupRequest,
     options?: RequestOptions,
@@ -118,6 +134,20 @@ export class Group extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AdsGroup>> {
     return unwrapAsync(adsListAdsGroups(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all groups
+   */
+  async listClubsGroups(
+    request: operations.ListClubsGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.ClubsGroup>> {
+    return unwrapAsync(groupListClubsGroups(
       this,
       request,
       options,

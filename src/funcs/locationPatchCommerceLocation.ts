@@ -29,7 +29,7 @@ import { Result } from "../sdk/types/fp.js";
 /**
  * Update a location
  */
-export function commercePatchCommerceLocation(
+export function locationPatchCommerceLocation(
   client: UnifiedToCore,
   request: operations.PatchCommerceLocationRequest,
   options?: RequestOptions,

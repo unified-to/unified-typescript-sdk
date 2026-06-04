@@ -31,6 +31,7 @@ import { Category } from "./category.js";
 import { Change } from "./change.js";
 import { Channel } from "./channel.js";
 import { Class } from "./class.js";
+import { Clubs } from "./clubs.js";
 import { Collection } from "./collection.js";
 import { Comment } from "./comment.js";
 import { Commerce } from "./commerce.js";
@@ -373,6 +374,21 @@ export class UnifiedTo extends ClientSDK {
     return (this._webinar ??= new Webinar(this._options));
   }
 
+  private _clubs?: Clubs;
+  get clubs(): Clubs {
+    return (this._clubs ??= new Clubs(this._options));
+  }
+
+  private _location?: Location;
+  get location(): Location {
+    return (this._location ??= new Location(this._options));
+  }
+
+  private _member?: Member;
+  get member(): Member {
+    return (this._member ??= new Member(this._options));
+  }
+
   private _commerce?: Commerce;
   get commerce(): Commerce {
     return (this._commerce ??= new Commerce(this._options));
@@ -401,11 +417,6 @@ export class UnifiedTo extends ClientSDK {
   private _itemvariant?: Itemvariant;
   get itemvariant(): Itemvariant {
     return (this._itemvariant ??= new Itemvariant(this._options));
-  }
-
-  private _location?: Location;
-  get location(): Location {
-    return (this._location ??= new Location(this._options));
   }
 
   private _reservation?: Reservation;
@@ -591,11 +602,6 @@ export class UnifiedTo extends ClientSDK {
   private _list?: List;
   get list(): List {
     return (this._list ??= new List(this._options));
-  }
-
-  private _member?: Member;
-  get member(): Member {
-    return (this._member ??= new Member(this._options));
   }
 
   private _messaging?: Messaging;

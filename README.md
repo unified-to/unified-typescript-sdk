@@ -630,8 +630,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingUpdateAccountingTransaction`](docs/sdks/transaction/README.md#updateaccountingtransaction) - Update a transaction
 - [`activityCreateLmsActivity`](docs/sdks/activity/README.md#createlmsactivity) - Create an activity
 - [`activityCreateLmsActivity`](docs/sdks/lms/README.md#createlmsactivity) - Create an activity
+- [`activityGetClubsActivity`](docs/sdks/activity/README.md#getclubsactivity) - Retrieve an activity
+- [`activityGetClubsActivity`](docs/sdks/clubs/README.md#getclubsactivity) - Retrieve an activity
 - [`activityGetLmsActivity`](docs/sdks/activity/README.md#getlmsactivity) - Retrieve an activity
 - [`activityGetLmsActivity`](docs/sdks/lms/README.md#getlmsactivity) - Retrieve an activity
+- [`activityListClubsActivities`](docs/sdks/activity/README.md#listclubsactivities) - List all activities
+- [`activityListClubsActivities`](docs/sdks/clubs/README.md#listclubsactivities) - List all activities
 - [`activityListLmsActivities`](docs/sdks/activity/README.md#listlmsactivities) - List all activities
 - [`activityListLmsActivities`](docs/sdks/lms/README.md#listlmsactivities) - List all activities
 - [`activityPatchLmsActivity`](docs/sdks/activity/README.md#patchlmsactivity) - Update an activity
@@ -892,6 +896,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`categoryRemoveTicketingCategory`](docs/sdks/ticketing/README.md#removeticketingcategory) - Remove a category
 - [`categoryUpdateTicketingCategory`](docs/sdks/category/README.md#updateticketingcategory) - Update a category
 - [`categoryUpdateTicketingCategory`](docs/sdks/ticketing/README.md#updateticketingcategory) - Update a category
+- [`clubsGetClubsLocation`](docs/sdks/clubs/README.md#getclubslocation) - Retrieve a location
+- [`clubsGetClubsLocation`](docs/sdks/location/README.md#getclubslocation) - Retrieve a location
+- [`clubsGetClubsMember`](docs/sdks/clubs/README.md#getclubsmember) - Retrieve a member
+- [`clubsGetClubsMember`](docs/sdks/member/README.md#getclubsmember) - Retrieve a member
+- [`clubsListClubsLocations`](docs/sdks/clubs/README.md#listclubslocations) - List all locations
+- [`clubsListClubsLocations`](docs/sdks/location/README.md#listclubslocations) - List all locations
+- [`clubsListClubsMembers`](docs/sdks/clubs/README.md#listclubsmembers) - List all members
+- [`clubsListClubsMembers`](docs/sdks/member/README.md#listclubsmembers) - List all members
 - [`collectionCreateLmsCollection`](docs/sdks/collection/README.md#createlmscollection) - Create a collection
 - [`collectionCreateLmsCollection`](docs/sdks/lms/README.md#createlmscollection) - Create a collection
 - [`collectionGetLmsCollection`](docs/sdks/collection/README.md#getlmscollection) - Retrieve a collection
@@ -936,8 +948,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceCreateCommerceItem`](docs/sdks/item/README.md#createcommerceitem) - Create an item
 - [`commerceCreateCommerceItemvariant`](docs/sdks/commerce/README.md#createcommerceitemvariant) - Create an itemvariant
 - [`commerceCreateCommerceItemvariant`](docs/sdks/itemvariant/README.md#createcommerceitemvariant) - Create an itemvariant
-- [`commerceCreateCommerceLocation`](docs/sdks/commerce/README.md#createcommercelocation) - Create a location
-- [`commerceCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
 - [`commerceCreateCommerceReservation`](docs/sdks/commerce/README.md#createcommercereservation) - Create a reservation
 - [`commerceCreateCommerceReservation`](docs/sdks/reservation/README.md#createcommercereservation) - Create a reservation
 - [`commerceCreateCommerceReview`](docs/sdks/commerce/README.md#createcommercereview) - Create a review
@@ -952,8 +962,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceGetCommerceItem`](docs/sdks/item/README.md#getcommerceitem) - Retrieve an item
 - [`commerceGetCommerceItemvariant`](docs/sdks/commerce/README.md#getcommerceitemvariant) - Retrieve an itemvariant
 - [`commerceGetCommerceItemvariant`](docs/sdks/itemvariant/README.md#getcommerceitemvariant) - Retrieve an itemvariant
-- [`commerceGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
-- [`commerceGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
 - [`commerceGetCommerceReservation`](docs/sdks/commerce/README.md#getcommercereservation) - Retrieve a reservation
 - [`commerceGetCommerceReservation`](docs/sdks/reservation/README.md#getcommercereservation) - Retrieve a reservation
 - [`commerceGetCommerceReview`](docs/sdks/commerce/README.md#getcommercereview) - Retrieve a review
@@ -970,8 +978,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceListCommerceItems`](docs/sdks/item/README.md#listcommerceitems) - List all items
 - [`commerceListCommerceItemvariants`](docs/sdks/commerce/README.md#listcommerceitemvariants) - List all itemvariants
 - [`commerceListCommerceItemvariants`](docs/sdks/itemvariant/README.md#listcommerceitemvariants) - List all itemvariants
-- [`commerceListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
-- [`commerceListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
 - [`commerceListCommerceReservations`](docs/sdks/commerce/README.md#listcommercereservations) - List all reservations
 - [`commerceListCommerceReservations`](docs/sdks/reservation/README.md#listcommercereservations) - List all reservations
 - [`commerceListCommerceReviews`](docs/sdks/commerce/README.md#listcommercereviews) - List all reviews
@@ -986,8 +992,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commercePatchCommerceItem`](docs/sdks/item/README.md#patchcommerceitem) - Update an item
 - [`commercePatchCommerceItemvariant`](docs/sdks/commerce/README.md#patchcommerceitemvariant) - Update an itemvariant
 - [`commercePatchCommerceItemvariant`](docs/sdks/itemvariant/README.md#patchcommerceitemvariant) - Update an itemvariant
-- [`commercePatchCommerceLocation`](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
-- [`commercePatchCommerceLocation`](docs/sdks/location/README.md#patchcommercelocation) - Update a location
 - [`commercePatchCommerceReservation`](docs/sdks/commerce/README.md#patchcommercereservation) - Update a reservation
 - [`commercePatchCommerceReservation`](docs/sdks/reservation/README.md#patchcommercereservation) - Update a reservation
 - [`commercePatchCommerceReview`](docs/sdks/commerce/README.md#patchcommercereview) - Update a review
@@ -1002,8 +1006,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceRemoveCommerceItem`](docs/sdks/item/README.md#removecommerceitem) - Remove an item
 - [`commerceRemoveCommerceItemvariant`](docs/sdks/commerce/README.md#removecommerceitemvariant) - Remove an itemvariant
 - [`commerceRemoveCommerceItemvariant`](docs/sdks/itemvariant/README.md#removecommerceitemvariant) - Remove an itemvariant
-- [`commerceRemoveCommerceLocation`](docs/sdks/commerce/README.md#removecommercelocation) - Remove a location
-- [`commerceRemoveCommerceLocation`](docs/sdks/location/README.md#removecommercelocation) - Remove a location
 - [`commerceRemoveCommerceReservation`](docs/sdks/commerce/README.md#removecommercereservation) - Remove a reservation
 - [`commerceRemoveCommerceReservation`](docs/sdks/reservation/README.md#removecommercereservation) - Remove a reservation
 - [`commerceRemoveCommerceReview`](docs/sdks/commerce/README.md#removecommercereview) - Remove a review
@@ -1018,8 +1020,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceUpdateCommerceItem`](docs/sdks/item/README.md#updatecommerceitem) - Update an item
 - [`commerceUpdateCommerceItemvariant`](docs/sdks/commerce/README.md#updatecommerceitemvariant) - Update an itemvariant
 - [`commerceUpdateCommerceItemvariant`](docs/sdks/itemvariant/README.md#updatecommerceitemvariant) - Update an itemvariant
-- [`commerceUpdateCommerceLocation`](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
-- [`commerceUpdateCommerceLocation`](docs/sdks/location/README.md#updatecommercelocation) - Update a location
 - [`commerceUpdateCommerceReservation`](docs/sdks/commerce/README.md#updatecommercereservation) - Update a reservation
 - [`commerceUpdateCommerceReservation`](docs/sdks/reservation/README.md#updatecommercereservation) - Update a reservation
 - [`commerceUpdateCommerceReview`](docs/sdks/commerce/README.md#updatecommercereview) - Update a review
@@ -1128,8 +1128,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`enrichListEnrichPeople`](docs/sdks/person/README.md#listenrichpeople) - Retrieve enrichment information for a person
 - [`eventCreateCrmEvent`](docs/sdks/crm/README.md#createcrmevent) - Create an event
 - [`eventCreateCrmEvent`](docs/sdks/event/README.md#createcrmevent) - Create an event
+- [`eventGetClubsEvent`](docs/sdks/clubs/README.md#getclubsevent) - Retrieve an event
+- [`eventGetClubsEvent`](docs/sdks/event/README.md#getclubsevent) - Retrieve an event
 - [`eventGetCrmEvent`](docs/sdks/crm/README.md#getcrmevent) - Retrieve an event
 - [`eventGetCrmEvent`](docs/sdks/event/README.md#getcrmevent) - Retrieve an event
+- [`eventListClubsEvents`](docs/sdks/clubs/README.md#listclubsevents) - List all events
+- [`eventListClubsEvents`](docs/sdks/event/README.md#listclubsevents) - List all events
 - [`eventListCrmEvents`](docs/sdks/crm/README.md#listcrmevents) - List all events
 - [`eventListCrmEvents`](docs/sdks/event/README.md#listcrmevents) - List all events
 - [`eventPatchCrmEvent`](docs/sdks/crm/README.md#patchcrmevent) - Update an event
@@ -1170,10 +1174,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`groupCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 - [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group
 - [`groupCreateScimGroups`](docs/sdks/scim/README.md#createscimgroups) - Create group
+- [`groupGetClubsGroup`](docs/sdks/clubs/README.md#getclubsgroup) - Retrieve a group
+- [`groupGetClubsGroup`](docs/sdks/group/README.md#getclubsgroup) - Retrieve a group
 - [`groupGetHrisGroup`](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
 - [`groupGetHrisGroup`](docs/sdks/hris/README.md#gethrisgroup) - Retrieve a group
 - [`groupGetScimGroups`](docs/sdks/group/README.md#getscimgroups) - Get group
 - [`groupGetScimGroups`](docs/sdks/scim/README.md#getscimgroups) - Get group
+- [`groupListClubsGroups`](docs/sdks/clubs/README.md#listclubsgroups) - List all groups
+- [`groupListClubsGroups`](docs/sdks/group/README.md#listclubsgroups) - List all groups
 - [`groupListHrisGroups`](docs/sdks/group/README.md#listhrisgroups) - List all groups
 - [`groupListHrisGroups`](docs/sdks/hris/README.md#listhrisgroups) - List all groups
 - [`groupListScimGroups`](docs/sdks/group/README.md#listscimgroups) - List groups
@@ -1386,42 +1394,54 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`lmsUpdateLmsInstructor`](docs/sdks/lms/README.md#updatelmsinstructor) - Update an instructor
 - [`lmsUpdateLmsStudent`](docs/sdks/lms/README.md#updatelmsstudent) - Update a student
 - [`lmsUpdateLmsStudent`](docs/sdks/student/README.md#updatelmsstudent) - Update a student
+- [`locationCreateCommerceLocation`](docs/sdks/commerce/README.md#createcommercelocation) - Create a location
+- [`locationCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
 - [`locationCreateHrisLocation`](docs/sdks/hris/README.md#createhrislocation) - Create a location
 - [`locationCreateHrisLocation`](docs/sdks/location/README.md#createhrislocation) - Create a location
+- [`locationGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
+- [`locationGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
 - [`locationGetHrisLocation`](docs/sdks/hris/README.md#gethrislocation) - Retrieve a location
 - [`locationGetHrisLocation`](docs/sdks/location/README.md#gethrislocation) - Retrieve a location
+- [`locationListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
+- [`locationListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
 - [`locationListHrisLocations`](docs/sdks/hris/README.md#listhrislocations) - List all locations
 - [`locationListHrisLocations`](docs/sdks/location/README.md#listhrislocations) - List all locations
+- [`locationPatchCommerceLocation`](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
+- [`locationPatchCommerceLocation`](docs/sdks/location/README.md#patchcommercelocation) - Update a location
 - [`locationPatchHrisLocation`](docs/sdks/hris/README.md#patchhrislocation) - Update a location
 - [`locationPatchHrisLocation`](docs/sdks/location/README.md#patchhrislocation) - Update a location
+- [`locationRemoveCommerceLocation`](docs/sdks/commerce/README.md#removecommercelocation) - Remove a location
+- [`locationRemoveCommerceLocation`](docs/sdks/location/README.md#removecommercelocation) - Remove a location
 - [`locationRemoveHrisLocation`](docs/sdks/hris/README.md#removehrislocation) - Remove a location
 - [`locationRemoveHrisLocation`](docs/sdks/location/README.md#removehrislocation) - Remove a location
+- [`locationUpdateCommerceLocation`](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
+- [`locationUpdateCommerceLocation`](docs/sdks/location/README.md#updatecommercelocation) - Update a location
 - [`locationUpdateHrisLocation`](docs/sdks/hris/README.md#updatehrislocation) - Update a location
 - [`locationUpdateHrisLocation`](docs/sdks/location/README.md#updatehrislocation) - Update a location
 - [`martechCreateMartechList`](docs/sdks/list/README.md#createmartechlist) - Create a list
 - [`martechCreateMartechList`](docs/sdks/martech/README.md#createmartechlist) - Create a list
-- [`martechCreateMartechMember`](docs/sdks/martech/README.md#createmartechmember) - Create a member
-- [`martechCreateMartechMember`](docs/sdks/member/README.md#createmartechmember) - Create a member
 - [`martechGetMartechList`](docs/sdks/list/README.md#getmartechlist) - Retrieve a list
 - [`martechGetMartechList`](docs/sdks/martech/README.md#getmartechlist) - Retrieve a list
-- [`martechGetMartechMember`](docs/sdks/martech/README.md#getmartechmember) - Retrieve a member
-- [`martechGetMartechMember`](docs/sdks/member/README.md#getmartechmember) - Retrieve a member
 - [`martechListMartechLists`](docs/sdks/list/README.md#listmartechlists) - List all lists
 - [`martechListMartechLists`](docs/sdks/martech/README.md#listmartechlists) - List all lists
-- [`martechListMartechMembers`](docs/sdks/martech/README.md#listmartechmembers) - List all members
-- [`martechListMartechMembers`](docs/sdks/member/README.md#listmartechmembers) - List all members
 - [`martechPatchMartechList`](docs/sdks/list/README.md#patchmartechlist) - Update a list
 - [`martechPatchMartechList`](docs/sdks/martech/README.md#patchmartechlist) - Update a list
-- [`martechPatchMartechMember`](docs/sdks/martech/README.md#patchmartechmember) - Update a member
-- [`martechPatchMartechMember`](docs/sdks/member/README.md#patchmartechmember) - Update a member
 - [`martechRemoveMartechList`](docs/sdks/list/README.md#removemartechlist) - Remove a list
 - [`martechRemoveMartechList`](docs/sdks/martech/README.md#removemartechlist) - Remove a list
-- [`martechRemoveMartechMember`](docs/sdks/martech/README.md#removemartechmember) - Remove a member
-- [`martechRemoveMartechMember`](docs/sdks/member/README.md#removemartechmember) - Remove a member
 - [`martechUpdateMartechList`](docs/sdks/list/README.md#updatemartechlist) - Update a list
 - [`martechUpdateMartechList`](docs/sdks/martech/README.md#updatemartechlist) - Update a list
-- [`martechUpdateMartechMember`](docs/sdks/martech/README.md#updatemartechmember) - Update a member
-- [`martechUpdateMartechMember`](docs/sdks/member/README.md#updatemartechmember) - Update a member
+- [`memberCreateMartechMember`](docs/sdks/martech/README.md#createmartechmember) - Create a member
+- [`memberCreateMartechMember`](docs/sdks/member/README.md#createmartechmember) - Create a member
+- [`memberGetMartechMember`](docs/sdks/martech/README.md#getmartechmember) - Retrieve a member
+- [`memberGetMartechMember`](docs/sdks/member/README.md#getmartechmember) - Retrieve a member
+- [`memberListMartechMembers`](docs/sdks/martech/README.md#listmartechmembers) - List all members
+- [`memberListMartechMembers`](docs/sdks/member/README.md#listmartechmembers) - List all members
+- [`memberPatchMartechMember`](docs/sdks/martech/README.md#patchmartechmember) - Update a member
+- [`memberPatchMartechMember`](docs/sdks/member/README.md#patchmartechmember) - Update a member
+- [`memberRemoveMartechMember`](docs/sdks/martech/README.md#removemartechmember) - Remove a member
+- [`memberRemoveMartechMember`](docs/sdks/member/README.md#removemartechmember) - Remove a member
+- [`memberUpdateMartechMember`](docs/sdks/martech/README.md#updatemartechmember) - Update a member
+- [`memberUpdateMartechMember`](docs/sdks/member/README.md#updatemartechmember) - Update a member
 - [`messagingCreateMessagingMessage`](docs/sdks/message/README.md#createmessagingmessage) - Create a message
 - [`messagingCreateMessagingMessage`](docs/sdks/messaging/README.md#createmessagingmessage) - Create a message
 - [`messagingGetMessagingChannel`](docs/sdks/channel/README.md#getmessagingchannel) - Retrieve a channel

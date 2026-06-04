@@ -1,0 +1,27 @@
+# ClubsMember
+
+`lastname` is only a single initial. We do not synthesize an id, so `id` is typically absent.
+
+## Example Usage
+
+```typescript
+import { ClubsMember } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ClubsMember = {};
+```
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `createdAt`                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)   | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `firstName`                                                                                     | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `groupId`                                                                                       | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `id`                                                                                            | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `isAdmin`                                                                                       | *boolean*                                                                                       | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `isOwner`                                                                                       | *boolean*                                                                                       | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `lastName`                                                                                      | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `membershipStatus`                                                                              | [shared.ClubsMemberMembershipStatus](../../../sdk/models/shared/clubsmembermembershipstatus.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `name`                                                                                          | *string*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `raw`                                                                                           | Record<string, *any*>                                                                           | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `updatedAt`                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)   | :heavy_minus_sign:                                                                              | N/A                                                                                             |

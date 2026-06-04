@@ -9,7 +9,9 @@ import { calendarPatchCalendarEvent } from "../funcs/calendarPatchCalendarEvent.
 import { calendarRemoveCalendarEvent } from "../funcs/calendarRemoveCalendarEvent.js";
 import { calendarUpdateCalendarEvent } from "../funcs/calendarUpdateCalendarEvent.js";
 import { eventCreateCrmEvent } from "../funcs/eventCreateCrmEvent.js";
+import { eventGetClubsEvent } from "../funcs/eventGetClubsEvent.js";
 import { eventGetCrmEvent } from "../funcs/eventGetCrmEvent.js";
+import { eventListClubsEvents } from "../funcs/eventListClubsEvents.js";
 import { eventListCrmEvents } from "../funcs/eventListCrmEvents.js";
 import { eventPatchCrmEvent } from "../funcs/eventPatchCrmEvent.js";
 import { eventPatchMessagingEvent } from "../funcs/eventPatchMessagingEvent.js";
@@ -67,6 +69,20 @@ export class Event extends ClientSDK {
   /**
    * Retrieve an event
    */
+  async getClubsEvent(
+    request: operations.GetClubsEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ClubsEvent> {
+    return unwrapAsync(eventGetClubsEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an event
+   */
   async getCrmEvent(
     request: operations.GetCrmEventRequest,
     options?: RequestOptions,
@@ -86,6 +102,20 @@ export class Event extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CalendarEvent>> {
     return unwrapAsync(calendarListCalendarEvents(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all events
+   */
+  async listClubsEvents(
+    request: operations.ListClubsEventsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.ClubsEvent>> {
+    return unwrapAsync(eventListClubsEvents(
       this,
       request,
       options,

@@ -408,7 +408,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceLocation } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceLocation.js";
+import { locationCreateCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationCreateCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -419,7 +419,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceLocation(unifiedTo, {
+  const res = await locationCreateCommerceLocation(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
   });
@@ -427,7 +427,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceLocation failed:", res.error);
+    console.log("locationCreateCommerceLocation failed:", res.error);
   }
 }
 
@@ -1040,7 +1040,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceLocation } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceLocation.js";
+import { locationGetCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationGetCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1051,7 +1051,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceLocation(unifiedTo, {
+  const res = await locationGetCommerceLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1059,7 +1059,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceLocation failed:", res.error);
+    console.log("locationGetCommerceLocation failed:", res.error);
   }
 }
 
@@ -1740,7 +1740,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceLocations } from "@unified-api/typescript-sdk/funcs/commerceListCommerceLocations.js";
+import { locationListCommerceLocations } from "@unified-api/typescript-sdk/funcs/locationListCommerceLocations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1751,14 +1751,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceLocations(unifiedTo, {
+  const res = await locationListCommerceLocations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceLocations failed:", res.error);
+    console.log("locationListCommerceLocations failed:", res.error);
   }
 }
 
@@ -2378,7 +2378,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceLocation } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceLocation.js";
+import { locationPatchCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationPatchCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2389,7 +2389,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceLocation(unifiedTo, {
+  const res = await locationPatchCommerceLocation(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2398,7 +2398,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceLocation failed:", res.error);
+    console.log("locationPatchCommerceLocation failed:", res.error);
   }
 }
 
@@ -3017,7 +3017,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceLocation } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceLocation.js";
+import { locationRemoveCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationRemoveCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3028,7 +3028,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceLocation(unifiedTo, {
+  const res = await locationRemoveCommerceLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3036,7 +3036,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceLocation failed:", res.error);
+    console.log("locationRemoveCommerceLocation failed:", res.error);
   }
 }
 
@@ -3662,7 +3662,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceLocation } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceLocation.js";
+import { locationUpdateCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationUpdateCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3673,7 +3673,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceLocation(unifiedTo, {
+  const res = await locationUpdateCommerceLocation(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3682,7 +3682,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceLocation failed:", res.error);
+    console.log("locationUpdateCommerceLocation failed:", res.error);
   }
 }
 

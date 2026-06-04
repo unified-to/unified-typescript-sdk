@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -27,11 +27,11 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Update a location
+ * Retrieve a location
  */
-export function commerceUpdateCommerceLocation(
+export function locationGetCommerceLocation(
   client: UnifiedToCore,
-  request: operations.UpdateCommerceLocationRequest,
+  request: operations.GetCommerceLocationRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -55,7 +55,7 @@ export function commerceUpdateCommerceLocation(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.UpdateCommerceLocationRequest,
+  request: operations.GetCommerceLocationRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -76,14 +76,14 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.UpdateCommerceLocationRequest$outboundSchema.parse(value),
+      operations.GetCommerceLocationRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.CommerceLocation, { explode: true });
+  const body = null;
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -105,7 +105,6 @@ async function $do(
   });
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -115,7 +114,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "updateCommerceLocation",
+    operationID: "getCommerceLocation",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -129,7 +128,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "PUT",
+    method: "GET",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,

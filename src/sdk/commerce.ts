@@ -6,7 +6,6 @@ import { commerceCreateCommerceCollection } from "../funcs/commerceCreateCommerc
 import { commerceCreateCommerceInventory } from "../funcs/commerceCreateCommerceInventory.js";
 import { commerceCreateCommerceItem } from "../funcs/commerceCreateCommerceItem.js";
 import { commerceCreateCommerceItemvariant } from "../funcs/commerceCreateCommerceItemvariant.js";
-import { commerceCreateCommerceLocation } from "../funcs/commerceCreateCommerceLocation.js";
 import { commerceCreateCommerceReservation } from "../funcs/commerceCreateCommerceReservation.js";
 import { commerceCreateCommerceReview } from "../funcs/commerceCreateCommerceReview.js";
 import { commerceCreateCommerceSaleschannel } from "../funcs/commerceCreateCommerceSaleschannel.js";
@@ -14,7 +13,6 @@ import { commerceGetCommerceCollection } from "../funcs/commerceGetCommerceColle
 import { commerceGetCommerceInventory } from "../funcs/commerceGetCommerceInventory.js";
 import { commerceGetCommerceItem } from "../funcs/commerceGetCommerceItem.js";
 import { commerceGetCommerceItemvariant } from "../funcs/commerceGetCommerceItemvariant.js";
-import { commerceGetCommerceLocation } from "../funcs/commerceGetCommerceLocation.js";
 import { commerceGetCommerceReservation } from "../funcs/commerceGetCommerceReservation.js";
 import { commerceGetCommerceReview } from "../funcs/commerceGetCommerceReview.js";
 import { commerceGetCommerceSaleschannel } from "../funcs/commerceGetCommerceSaleschannel.js";
@@ -23,7 +21,6 @@ import { commerceListCommerceCollections } from "../funcs/commerceListCommerceCo
 import { commerceListCommerceInventories } from "../funcs/commerceListCommerceInventories.js";
 import { commerceListCommerceItems } from "../funcs/commerceListCommerceItems.js";
 import { commerceListCommerceItemvariants } from "../funcs/commerceListCommerceItemvariants.js";
-import { commerceListCommerceLocations } from "../funcs/commerceListCommerceLocations.js";
 import { commerceListCommerceReservations } from "../funcs/commerceListCommerceReservations.js";
 import { commerceListCommerceReviews } from "../funcs/commerceListCommerceReviews.js";
 import { commerceListCommerceSaleschannels } from "../funcs/commerceListCommerceSaleschannels.js";
@@ -31,7 +28,6 @@ import { commercePatchCommerceCollection } from "../funcs/commercePatchCommerceC
 import { commercePatchCommerceInventory } from "../funcs/commercePatchCommerceInventory.js";
 import { commercePatchCommerceItem } from "../funcs/commercePatchCommerceItem.js";
 import { commercePatchCommerceItemvariant } from "../funcs/commercePatchCommerceItemvariant.js";
-import { commercePatchCommerceLocation } from "../funcs/commercePatchCommerceLocation.js";
 import { commercePatchCommerceReservation } from "../funcs/commercePatchCommerceReservation.js";
 import { commercePatchCommerceReview } from "../funcs/commercePatchCommerceReview.js";
 import { commercePatchCommerceSaleschannel } from "../funcs/commercePatchCommerceSaleschannel.js";
@@ -39,7 +35,6 @@ import { commerceRemoveCommerceCollection } from "../funcs/commerceRemoveCommerc
 import { commerceRemoveCommerceInventory } from "../funcs/commerceRemoveCommerceInventory.js";
 import { commerceRemoveCommerceItem } from "../funcs/commerceRemoveCommerceItem.js";
 import { commerceRemoveCommerceItemvariant } from "../funcs/commerceRemoveCommerceItemvariant.js";
-import { commerceRemoveCommerceLocation } from "../funcs/commerceRemoveCommerceLocation.js";
 import { commerceRemoveCommerceReservation } from "../funcs/commerceRemoveCommerceReservation.js";
 import { commerceRemoveCommerceReview } from "../funcs/commerceRemoveCommerceReview.js";
 import { commerceRemoveCommerceSaleschannel } from "../funcs/commerceRemoveCommerceSaleschannel.js";
@@ -47,10 +42,15 @@ import { commerceUpdateCommerceCollection } from "../funcs/commerceUpdateCommerc
 import { commerceUpdateCommerceInventory } from "../funcs/commerceUpdateCommerceInventory.js";
 import { commerceUpdateCommerceItem } from "../funcs/commerceUpdateCommerceItem.js";
 import { commerceUpdateCommerceItemvariant } from "../funcs/commerceUpdateCommerceItemvariant.js";
-import { commerceUpdateCommerceLocation } from "../funcs/commerceUpdateCommerceLocation.js";
 import { commerceUpdateCommerceReservation } from "../funcs/commerceUpdateCommerceReservation.js";
 import { commerceUpdateCommerceReview } from "../funcs/commerceUpdateCommerceReview.js";
 import { commerceUpdateCommerceSaleschannel } from "../funcs/commerceUpdateCommerceSaleschannel.js";
+import { locationCreateCommerceLocation } from "../funcs/locationCreateCommerceLocation.js";
+import { locationGetCommerceLocation } from "../funcs/locationGetCommerceLocation.js";
+import { locationListCommerceLocations } from "../funcs/locationListCommerceLocations.js";
+import { locationPatchCommerceLocation } from "../funcs/locationPatchCommerceLocation.js";
+import { locationRemoveCommerceLocation } from "../funcs/locationRemoveCommerceLocation.js";
+import { locationUpdateCommerceLocation } from "../funcs/locationUpdateCommerceLocation.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -120,7 +120,7 @@ export class Commerce extends ClientSDK {
     request: operations.CreateCommerceLocationRequest,
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
-    return unwrapAsync(commerceCreateCommerceLocation(
+    return unwrapAsync(locationCreateCommerceLocation(
       this,
       request,
       options,
@@ -232,7 +232,7 @@ export class Commerce extends ClientSDK {
     request: operations.GetCommerceLocationRequest,
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
-    return unwrapAsync(commerceGetCommerceLocation(
+    return unwrapAsync(locationGetCommerceLocation(
       this,
       request,
       options,
@@ -358,7 +358,7 @@ export class Commerce extends ClientSDK {
     request: operations.ListCommerceLocationsRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.CommerceLocation>> {
-    return unwrapAsync(commerceListCommerceLocations(
+    return unwrapAsync(locationListCommerceLocations(
       this,
       request,
       options,
@@ -470,7 +470,7 @@ export class Commerce extends ClientSDK {
     request: operations.PatchCommerceLocationRequest,
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
-    return unwrapAsync(commercePatchCommerceLocation(
+    return unwrapAsync(locationPatchCommerceLocation(
       this,
       request,
       options,
@@ -582,7 +582,7 @@ export class Commerce extends ClientSDK {
     request: operations.RemoveCommerceLocationRequest,
     options?: RequestOptions,
   ): Promise<operations.RemoveCommerceLocationResponse | undefined> {
-    return unwrapAsync(commerceRemoveCommerceLocation(
+    return unwrapAsync(locationRemoveCommerceLocation(
       this,
       request,
       options,
@@ -694,7 +694,7 @@ export class Commerce extends ClientSDK {
     request: operations.UpdateCommerceLocationRequest,
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
-    return unwrapAsync(commerceUpdateCommerceLocation(
+    return unwrapAsync(locationUpdateCommerceLocation(
       this,
       request,
       options,

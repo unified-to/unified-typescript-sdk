@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -22,19 +22,20 @@ import { ResponseValidationError } from "../sdk/models/errors/responsevalidation
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
+import * as shared from "../sdk/models/shared/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Remove a member
+ * Create a location
  */
-export function martechRemoveMartechMember(
+export function locationCreateCommerceLocation(
   client: UnifiedToCore,
-  request: operations.RemoveMartechMemberRequest,
+  request: operations.CreateCommerceLocationRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.RemoveMartechMemberResponse | undefined,
+    shared.CommerceLocation,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -54,12 +55,12 @@ export function martechRemoveMartechMember(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.RemoveMartechMemberRequest,
+  request: operations.CreateCommerceLocationRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.RemoveMartechMemberResponse | undefined,
+      shared.CommerceLocation,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -75,29 +76,31 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.RemoveMartechMemberRequest$outboundSchema.parse(value),
+      operations.CreateCommerceLocationRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload.CommerceLocation, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
       explode: false,
       charEncoding: "percent",
     }),
-    id: encodeSimple("id", payload.id, {
-      explode: false,
-      charEncoding: "percent",
-    }),
   };
-  const path = pathToFunc("/martech/{connection_id}/member/{id}")(pathParams);
+  const path = pathToFunc("/commerce/{connection_id}/location")(pathParams);
+
+  const query = encodeFormQuery({
+    "fields": payload.fields,
+    "raw": payload.raw,
+  });
 
   const headers = new Headers(compactMap({
-    Accept: "*/*",
+    "Content-Type": "application/json",
+    Accept: "application/json",
   }));
 
   const securityInput = await extractSecurity(client._options.security);
@@ -106,7 +109,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "removeMartechMember",
+    operationID: "createCommerceLocation",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -120,10 +123,11 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "DELETE",
+    method: "POST",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    query: query,
     body: body,
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -145,12 +149,8 @@ async function $do(
   }
   const response = doResult.value;
 
-  const responseFields = {
-    HttpMeta: { Response: response, Request: req },
-  };
-
   const [result] = await M.match<
-    operations.RemoveMartechMemberResponse | undefined,
+    shared.CommerceLocation,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -160,15 +160,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.nil(200, operations.RemoveMartechMemberResponse$inboundSchema.optional()),
+    M.json(200, shared.CommerceLocation$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-    M.nil(
-      "default",
-      operations.RemoveMartechMemberResponse$inboundSchema.optional(),
-      { hdrs: true },
-    ),
-  )(response, req, { extraFields: responseFields });
+  )(response, req);
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

@@ -29,7 +29,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.83.53
+  version: 2.84.0
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -78,6 +78,7 @@ typescript:
   packageName: '@unified-api/typescript-sdk'
   preApplyUnionDiscriminators: true
   preserveModelFieldNames: false
+  privateIdentifierPrefix: '#'
   responseFormat: flat
   sseFlatResponse: false
   templateVersion: v2

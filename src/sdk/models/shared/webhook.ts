@@ -160,6 +160,11 @@ export const ObjectType = {
   SigningDocument: "signing_document",
   SigningSignatory: "signing_signatory",
   SigningTemplate: "signing_template",
+  ClubsGroup: "clubs_group",
+  ClubsMember: "clubs_member",
+  ClubsActivity: "clubs_activity",
+  ClubsLocation: "clubs_location",
+  ClubsEvent: "clubs_event",
 } as const;
 export type ObjectType = OpenEnum<typeof ObjectType>;
 

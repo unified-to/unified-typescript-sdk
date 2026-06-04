@@ -9,17 +9,17 @@ import { campaignPatchMartechCampaign } from "../funcs/campaignPatchMartechCampa
 import { campaignRemoveMartechCampaign } from "../funcs/campaignRemoveMartechCampaign.js";
 import { campaignUpdateMartechCampaign } from "../funcs/campaignUpdateMartechCampaign.js";
 import { martechCreateMartechList } from "../funcs/martechCreateMartechList.js";
-import { martechCreateMartechMember } from "../funcs/martechCreateMartechMember.js";
 import { martechGetMartechList } from "../funcs/martechGetMartechList.js";
-import { martechGetMartechMember } from "../funcs/martechGetMartechMember.js";
 import { martechListMartechLists } from "../funcs/martechListMartechLists.js";
-import { martechListMartechMembers } from "../funcs/martechListMartechMembers.js";
 import { martechPatchMartechList } from "../funcs/martechPatchMartechList.js";
-import { martechPatchMartechMember } from "../funcs/martechPatchMartechMember.js";
 import { martechRemoveMartechList } from "../funcs/martechRemoveMartechList.js";
-import { martechRemoveMartechMember } from "../funcs/martechRemoveMartechMember.js";
 import { martechUpdateMartechList } from "../funcs/martechUpdateMartechList.js";
-import { martechUpdateMartechMember } from "../funcs/martechUpdateMartechMember.js";
+import { memberCreateMartechMember } from "../funcs/memberCreateMartechMember.js";
+import { memberGetMartechMember } from "../funcs/memberGetMartechMember.js";
+import { memberListMartechMembers } from "../funcs/memberListMartechMembers.js";
+import { memberPatchMartechMember } from "../funcs/memberPatchMartechMember.js";
+import { memberRemoveMartechMember } from "../funcs/memberRemoveMartechMember.js";
+import { memberUpdateMartechMember } from "../funcs/memberUpdateMartechMember.js";
 import { reportListMartechReports } from "../funcs/reportListMartechReports.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -62,7 +62,7 @@ export class Martech extends ClientSDK {
     request: operations.CreateMartechMemberRequest,
     options?: RequestOptions,
   ): Promise<shared.MarketingMember> {
-    return unwrapAsync(martechCreateMartechMember(
+    return unwrapAsync(memberCreateMartechMember(
       this,
       request,
       options,
@@ -104,7 +104,7 @@ export class Martech extends ClientSDK {
     request: operations.GetMartechMemberRequest,
     options?: RequestOptions,
   ): Promise<shared.MarketingMember> {
-    return unwrapAsync(martechGetMartechMember(
+    return unwrapAsync(memberGetMartechMember(
       this,
       request,
       options,
@@ -146,7 +146,7 @@ export class Martech extends ClientSDK {
     request: operations.ListMartechMembersRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.MarketingMember>> {
-    return unwrapAsync(martechListMartechMembers(
+    return unwrapAsync(memberListMartechMembers(
       this,
       request,
       options,
@@ -202,7 +202,7 @@ export class Martech extends ClientSDK {
     request: operations.PatchMartechMemberRequest,
     options?: RequestOptions,
   ): Promise<shared.MarketingMember> {
-    return unwrapAsync(martechPatchMartechMember(
+    return unwrapAsync(memberPatchMartechMember(
       this,
       request,
       options,
@@ -244,7 +244,7 @@ export class Martech extends ClientSDK {
     request: operations.RemoveMartechMemberRequest,
     options?: RequestOptions,
   ): Promise<operations.RemoveMartechMemberResponse | undefined> {
-    return unwrapAsync(martechRemoveMartechMember(
+    return unwrapAsync(memberRemoveMartechMember(
       this,
       request,
       options,
@@ -286,7 +286,7 @@ export class Martech extends ClientSDK {
     request: operations.UpdateMartechMemberRequest,
     options?: RequestOptions,
   ): Promise<shared.MarketingMember> {
-    return unwrapAsync(martechUpdateMartechMember(
+    return unwrapAsync(memberUpdateMartechMember(
       this,
       request,
       options,

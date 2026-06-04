@@ -5,7 +5,9 @@
 ### Available Operations
 
 * [createMartechMember](#createmartechmember) - Create a member
+* [getClubsMember](#getclubsmember) - Retrieve a member
 * [getMartechMember](#getmartechmember) - Retrieve a member
+* [listClubsMembers](#listclubsmembers) - List all members
 * [listMartechMembers](#listmartechmembers) - List all members
 * [patchMartechMember](#patchmartechmember) - Update a member
 * [removeMartechMember](#removemartechmember) - Remove a member
@@ -45,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { martechCreateMartechMember } from "@unified-api/typescript-sdk/funcs/martechCreateMartechMember.js";
+import { memberCreateMartechMember } from "@unified-api/typescript-sdk/funcs/memberCreateMartechMember.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await martechCreateMartechMember(unifiedTo, {
+  const res = await memberCreateMartechMember(unifiedTo, {
     marketingMember: {},
     connectionId: "<id>",
   });
@@ -64,7 +66,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("martechCreateMartechMember failed:", res.error);
+    console.log("memberCreateMartechMember failed:", res.error);
   }
 }
 
@@ -83,6 +85,85 @@ run();
 ### Response
 
 **Promise\<[shared.MarketingMember](../../sdk/models/shared/marketingmember.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getClubsMember
+
+Retrieve a member
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getClubsMember" method="get" path="/clubs/{connection_id}/member/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.member.getClubsMember({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { clubsGetClubsMember } from "@unified-api/typescript-sdk/funcs/clubsGetClubsMember.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await clubsGetClubsMember(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clubsGetClubsMember failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetClubsMemberRequest](../../sdk/models/operations/getclubsmemberrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.ClubsMember](../../sdk/models/shared/clubsmember.md)\>**
 
 ### Errors
 
@@ -124,7 +205,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { martechGetMartechMember } from "@unified-api/typescript-sdk/funcs/martechGetMartechMember.js";
+import { memberGetMartechMember } from "@unified-api/typescript-sdk/funcs/memberGetMartechMember.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +216,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await martechGetMartechMember(unifiedTo, {
+  const res = await memberGetMartechMember(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +224,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("martechGetMartechMember failed:", res.error);
+    console.log("memberGetMartechMember failed:", res.error);
   }
 }
 
@@ -162,6 +243,83 @@ run();
 ### Response
 
 **Promise\<[shared.MarketingMember](../../sdk/models/shared/marketingmember.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listClubsMembers
+
+List all members
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listClubsMembers" method="get" path="/clubs/{connection_id}/member" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.member.listClubsMembers({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { clubsListClubsMembers } from "@unified-api/typescript-sdk/funcs/clubsListClubsMembers.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await clubsListClubsMembers(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("clubsListClubsMembers failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListClubsMembersRequest](../../sdk/models/operations/listclubsmembersrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.ClubsMember[]](../../models/.md)\>**
 
 ### Errors
 
@@ -202,7 +360,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { martechListMartechMembers } from "@unified-api/typescript-sdk/funcs/martechListMartechMembers.js";
+import { memberListMartechMembers } from "@unified-api/typescript-sdk/funcs/memberListMartechMembers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +371,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await martechListMartechMembers(unifiedTo, {
+  const res = await memberListMartechMembers(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("martechListMartechMembers failed:", res.error);
+    console.log("memberListMartechMembers failed:", res.error);
   }
 }
 
@@ -281,7 +439,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { martechPatchMartechMember } from "@unified-api/typescript-sdk/funcs/martechPatchMartechMember.js";
+import { memberPatchMartechMember } from "@unified-api/typescript-sdk/funcs/memberPatchMartechMember.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +450,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await martechPatchMartechMember(unifiedTo, {
+  const res = await memberPatchMartechMember(unifiedTo, {
     marketingMember: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +459,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("martechPatchMartechMember failed:", res.error);
+    console.log("memberPatchMartechMember failed:", res.error);
   }
 }
 
@@ -361,7 +519,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { martechRemoveMartechMember } from "@unified-api/typescript-sdk/funcs/martechRemoveMartechMember.js";
+import { memberRemoveMartechMember } from "@unified-api/typescript-sdk/funcs/memberRemoveMartechMember.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +530,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await martechRemoveMartechMember(unifiedTo, {
+  const res = await memberRemoveMartechMember(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +538,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("martechRemoveMartechMember failed:", res.error);
+    console.log("memberRemoveMartechMember failed:", res.error);
   }
 }
 
@@ -441,7 +599,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { martechUpdateMartechMember } from "@unified-api/typescript-sdk/funcs/martechUpdateMartechMember.js";
+import { memberUpdateMartechMember } from "@unified-api/typescript-sdk/funcs/memberUpdateMartechMember.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +610,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await martechUpdateMartechMember(unifiedTo, {
+  const res = await memberUpdateMartechMember(unifiedTo, {
     marketingMember: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +619,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("martechUpdateMartechMember failed:", res.error);
+    console.log("memberUpdateMartechMember failed:", res.error);
   }
 }
 

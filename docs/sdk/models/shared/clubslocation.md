@@ -1,0 +1,27 @@
+# ClubsLocation
+
+formatted address string + lat/long) and PlayHQ venues (structured address parts).
+
+## Example Usage
+
+```typescript
+import { ClubsLocation } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ClubsLocation = {};
+```
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `address`                                                                                         | [shared.PropertyClubsLocationAddress](../../../sdk/models/shared/propertyclubslocationaddress.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `createdAt`                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)     | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `groupId`                                                                                         | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `id`                                                                                              | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `latitude`                                                                                        | *number*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `longitude`                                                                                       | *number*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `name`                                                                                            | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `raw`                                                                                             | Record<string, *any*>                                                                             | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `telephone`                                                                                       | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `updatedAt`                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)     | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `url`                                                                                             | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
