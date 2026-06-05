@@ -16,6 +16,7 @@ export const ListAdsCreativesQueryParamFields = {
   ItemId: "item_id",
   OrganizationId: "organization_id",
   Status: "status",
+  Data: "data",
   CreativeType: "creative_type",
   HostingSource: "hosting_source",
   Width: "width",

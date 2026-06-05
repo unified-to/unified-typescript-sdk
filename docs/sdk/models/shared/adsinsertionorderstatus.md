@@ -5,7 +5,7 @@
 ```typescript
 import { AdsInsertionorderStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AdsInsertionorderStatus = "DRAFT";
+let value: AdsInsertionorderStatus = "PROCESSING_FAILED";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AdsInsertionorderStatus = "DRAFT";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | Unrecognized<string>
+"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "PROCESSING" | "PROCESSING_FAILED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | Unrecognized<string>
 ```

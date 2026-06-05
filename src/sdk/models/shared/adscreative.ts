@@ -22,7 +22,9 @@ export const CreativeType = {
   Expandable: "EXPANDABLE",
   Video: "VIDEO",
   Native: "NATIVE",
+  Image: "IMAGE",
   Audio: "AUDIO",
+  Document: "DOCUMENT",
   PublisherHosted: "PUBLISHER_HOSTED",
   AssetBased: "ASSET_BASED",
 } as const;
@@ -43,6 +45,8 @@ export const AdsCreativeStatus = {
   Active: "ACTIVE",
   Paused: "PAUSED",
   Archived: "ARCHIVED",
+  Processing: "PROCESSING",
+  ProcessingFailed: "PROCESSING_FAILED",
   Draft: "DRAFT",
   ScheduledForDeletion: "SCHEDULED_FOR_DELETION",
 } as const;
@@ -58,6 +62,7 @@ export type AdsCreative = {
   createdAt?: Date | undefined;
   creativeType?: CreativeType | undefined;
   cta?: string | undefined;
+  data?: string | undefined;
   externalAdReference?: string | undefined;
   externalCreativeReference?: string | undefined;
   externalPlacementReference?: string | undefined;
@@ -133,6 +138,7 @@ export const AdsCreative$inboundSchema: z.ZodType<
     .optional(),
   creative_type: CreativeType$inboundSchema.optional(),
   cta: z.string().optional(),
+  data: z.string().optional(),
   external_ad_reference: z.string().optional(),
   external_creative_reference: z.string().optional(),
   external_placement_reference: z.string().optional(),
@@ -182,6 +188,7 @@ export type AdsCreative$Outbound = {
   created_at?: string | undefined;
   creative_type?: string | undefined;
   cta?: string | undefined;
+  data?: string | undefined;
   external_ad_reference?: string | undefined;
   external_creative_reference?: string | undefined;
   external_placement_reference?: string | undefined;
@@ -217,6 +224,7 @@ export const AdsCreative$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeType: CreativeType$outboundSchema.optional(),
   cta: z.string().optional(),
+  data: z.string().optional(),
   externalAdReference: z.string().optional(),
   externalCreativeReference: z.string().optional(),
   externalPlacementReference: z.string().optional(),

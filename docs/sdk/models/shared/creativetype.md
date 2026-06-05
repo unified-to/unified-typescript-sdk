@@ -13,5 +13,5 @@ let value: CreativeType = "ASSET_BASED";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "STANDARD" | "EXPANDABLE" | "VIDEO" | "NATIVE" | "AUDIO" | "PUBLISHER_HOSTED" | "ASSET_BASED" | Unrecognized<string>
+"UNSPECIFIED" | "STANDARD" | "EXPANDABLE" | "VIDEO" | "NATIVE" | "IMAGE" | "AUDIO" | "DOCUMENT" | "PUBLISHER_HOSTED" | "ASSET_BASED" | Unrecognized<string>
 ```
