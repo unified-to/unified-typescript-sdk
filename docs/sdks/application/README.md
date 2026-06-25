@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createAtsApplication](#createatsapplication) - Create an application
-* [getAtsApplication](#getatsapplication) - Retrieve an application
-* [listAtsApplications](#listatsapplications) - List all applications
-* [patchAtsApplication](#patchatsapplication) - Update an application
-* [removeAtsApplication](#removeatsapplication) - Remove an application
-* [updateAtsApplication](#updateatsapplication) - Update an application
+* [createAtsApplication2](#createatsapplication2) - Create an application
+* [getAtsApplication2](#getatsapplication2) - Retrieve an application
+* [listAtsApplications2](#listatsapplications2) - List all applications
+* [patchAtsApplication2](#patchatsapplication2) - Update an application
+* [removeAtsApplication2](#removeatsapplication2) - Remove an application
+* [updateAtsApplication2](#updateatsapplication2) - Update an application
 
-## createAtsApplication
+## createAtsApplication2
 
 Create an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsApplication" method="post" path="/ats/{connection_id}/application" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsApplication2" method="post" path="/ats/{connection_id}/application" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.application.createAtsApplication({
+  const result = await unifiedTo.application.createAtsApplication2({
     atsApplication: {},
     connectionId: "<id>",
   });
@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { atsCreateAtsApplication } from "@unified-api/typescript-sdk/funcs/atsCreateAtsApplication.js";
+import { atsCreateAtsApplication2 } from "@unified-api/typescript-sdk/funcs/atsCreateAtsApplication2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await atsCreateAtsApplication(unifiedTo, {
+  const res = await atsCreateAtsApplication2(unifiedTo, {
     atsApplication: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("atsCreateAtsApplication failed:", res.error);
+    console.log("atsCreateAtsApplication2 failed:", res.error);
   }
 }
 
@@ -75,7 +75,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateAtsApplicationRequest](../../sdk/models/operations/createatsapplicationrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateAtsApplication2Request](../../sdk/models/operations/createatsapplication2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -90,13 +90,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAtsApplication
+## getAtsApplication2
 
 Retrieve an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAtsApplication" method="get" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAtsApplication2" method="get" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.application.getAtsApplication({
+  const result = await unifiedTo.application.getAtsApplication2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -124,7 +124,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { atsGetAtsApplication } from "@unified-api/typescript-sdk/funcs/atsGetAtsApplication.js";
+import { atsGetAtsApplication2 } from "@unified-api/typescript-sdk/funcs/atsGetAtsApplication2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await atsGetAtsApplication(unifiedTo, {
+  const res = await atsGetAtsApplication2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +143,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("atsGetAtsApplication failed:", res.error);
+    console.log("atsGetAtsApplication2 failed:", res.error);
   }
 }
 
@@ -154,7 +154,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAtsApplicationRequest](../../sdk/models/operations/getatsapplicationrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAtsApplication2Request](../../sdk/models/operations/getatsapplication2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -169,13 +169,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAtsApplications
+## listAtsApplications2
 
 List all applications
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAtsApplications" method="get" path="/ats/{connection_id}/application" -->
+<!-- UsageSnippet language="typescript" operationID="listAtsApplications2" method="get" path="/ats/{connection_id}/application" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -186,7 +186,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.application.listAtsApplications({
+  const result = await unifiedTo.application.listAtsApplications2({
     connectionId: "<id>",
   });
 
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { atsListAtsApplications } from "@unified-api/typescript-sdk/funcs/atsListAtsApplications.js";
+import { atsListAtsApplications2 } from "@unified-api/typescript-sdk/funcs/atsListAtsApplications2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +213,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await atsListAtsApplications(unifiedTo, {
+  const res = await atsListAtsApplications2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("atsListAtsApplications failed:", res.error);
+    console.log("atsListAtsApplications2 failed:", res.error);
   }
 }
 
@@ -231,7 +231,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAtsApplicationsRequest](../../sdk/models/operations/listatsapplicationsrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAtsApplications2Request](../../sdk/models/operations/listatsapplications2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -246,13 +246,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAtsApplication
+## patchAtsApplication2
 
 Update an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsApplication" method="patch" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsApplication2" method="patch" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -263,7 +263,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.application.patchAtsApplication({
+  const result = await unifiedTo.application.patchAtsApplication2({
     atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
@@ -281,7 +281,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { atsPatchAtsApplication } from "@unified-api/typescript-sdk/funcs/atsPatchAtsApplication.js";
+import { atsPatchAtsApplication2 } from "@unified-api/typescript-sdk/funcs/atsPatchAtsApplication2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +292,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await atsPatchAtsApplication(unifiedTo, {
+  const res = await atsPatchAtsApplication2(unifiedTo, {
     atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +301,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("atsPatchAtsApplication failed:", res.error);
+    console.log("atsPatchAtsApplication2 failed:", res.error);
   }
 }
 
@@ -312,7 +312,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchAtsApplicationRequest](../../sdk/models/operations/patchatsapplicationrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchAtsApplication2Request](../../sdk/models/operations/patchatsapplication2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -327,13 +327,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAtsApplication
+## removeAtsApplication2
 
 Remove an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeAtsApplication" method="delete" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeAtsApplication2" method="delete" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -344,7 +344,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.application.removeAtsApplication({
+  const result = await unifiedTo.application.removeAtsApplication2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -361,7 +361,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { atsRemoveAtsApplication } from "@unified-api/typescript-sdk/funcs/atsRemoveAtsApplication.js";
+import { atsRemoveAtsApplication2 } from "@unified-api/typescript-sdk/funcs/atsRemoveAtsApplication2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await atsRemoveAtsApplication(unifiedTo, {
+  const res = await atsRemoveAtsApplication2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +380,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("atsRemoveAtsApplication failed:", res.error);
+    console.log("atsRemoveAtsApplication2 failed:", res.error);
   }
 }
 
@@ -391,14 +391,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveAtsApplicationRequest](../../sdk/models/operations/removeatsapplicationrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveAtsApplication2Request](../../sdk/models/operations/removeatsapplication2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveAtsApplicationResponse](../../sdk/models/operations/removeatsapplicationresponse.md)\>**
+**Promise\<[operations.RemoveAtsApplication2Response](../../sdk/models/operations/removeatsapplication2response.md)\>**
 
 ### Errors
 
@@ -406,13 +406,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAtsApplication
+## updateAtsApplication2
 
 Update an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsApplication" method="put" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsApplication2" method="put" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -423,7 +423,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.application.updateAtsApplication({
+  const result = await unifiedTo.application.updateAtsApplication2({
     atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
@@ -441,7 +441,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { atsUpdateAtsApplication } from "@unified-api/typescript-sdk/funcs/atsUpdateAtsApplication.js";
+import { atsUpdateAtsApplication2 } from "@unified-api/typescript-sdk/funcs/atsUpdateAtsApplication2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await atsUpdateAtsApplication(unifiedTo, {
+  const res = await atsUpdateAtsApplication2(unifiedTo, {
     atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +461,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("atsUpdateAtsApplication failed:", res.error);
+    console.log("atsUpdateAtsApplication2 failed:", res.error);
   }
 }
 
@@ -472,7 +472,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateAtsApplicationRequest](../../sdk/models/operations/updateatsapplicationrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateAtsApplication2Request](../../sdk/models/operations/updateatsapplication2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createAdsInsertionorder](#createadsinsertionorder) - Create an insertionorder
-* [getAdsInsertionorder](#getadsinsertionorder) - Retrieve an insertionorder
-* [listAdsInsertionorders](#listadsinsertionorders) - List all insertionorders
-* [patchAdsInsertionorder](#patchadsinsertionorder) - Update an insertionorder
-* [removeAdsInsertionorder](#removeadsinsertionorder) - Remove an insertionorder
-* [updateAdsInsertionorder](#updateadsinsertionorder) - Update an insertionorder
+* [createAdsInsertionorder2](#createadsinsertionorder2) - Create an insertionorder
+* [getAdsInsertionorder2](#getadsinsertionorder2) - Retrieve an insertionorder
+* [listAdsInsertionorders2](#listadsinsertionorders2) - List all insertionorders
+* [patchAdsInsertionorder2](#patchadsinsertionorder2) - Update an insertionorder
+* [removeAdsInsertionorder2](#removeadsinsertionorder2) - Remove an insertionorder
+* [updateAdsInsertionorder2](#updateadsinsertionorder2) - Update an insertionorder
 
-## createAdsInsertionorder
+## createAdsInsertionorder2
 
 Create an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsInsertionorder2" method="post" path="/ads/{connection_id}/insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.insertionorder.createAdsInsertionorder({
+  const result = await unifiedTo.insertionorder.createAdsInsertionorder2({
     adsInsertionorder: {},
     connectionId: "<id>",
   });
@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsCreateAdsInsertionorder } from "@unified-api/typescript-sdk/funcs/adsCreateAdsInsertionorder.js";
+import { adsCreateAdsInsertionorder2 } from "@unified-api/typescript-sdk/funcs/adsCreateAdsInsertionorder2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsCreateAdsInsertionorder(unifiedTo, {
+  const res = await adsCreateAdsInsertionorder2(unifiedTo, {
     adsInsertionorder: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsCreateAdsInsertionorder failed:", res.error);
+    console.log("adsCreateAdsInsertionorder2 failed:", res.error);
   }
 }
 
@@ -75,7 +75,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateAdsInsertionorderRequest](../../sdk/models/operations/createadsinsertionorderrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateAdsInsertionorder2Request](../../sdk/models/operations/createadsinsertionorder2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -90,13 +90,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAdsInsertionorder
+## getAdsInsertionorder2
 
 Retrieve an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAdsInsertionorder" method="get" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAdsInsertionorder2" method="get" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.insertionorder.getAdsInsertionorder({
+  const result = await unifiedTo.insertionorder.getAdsInsertionorder2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -124,7 +124,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsGetAdsInsertionorder } from "@unified-api/typescript-sdk/funcs/adsGetAdsInsertionorder.js";
+import { adsGetAdsInsertionorder2 } from "@unified-api/typescript-sdk/funcs/adsGetAdsInsertionorder2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsGetAdsInsertionorder(unifiedTo, {
+  const res = await adsGetAdsInsertionorder2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +143,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsGetAdsInsertionorder failed:", res.error);
+    console.log("adsGetAdsInsertionorder2 failed:", res.error);
   }
 }
 
@@ -154,7 +154,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAdsInsertionorderRequest](../../sdk/models/operations/getadsinsertionorderrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAdsInsertionorder2Request](../../sdk/models/operations/getadsinsertionorder2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -169,13 +169,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAdsInsertionorders
+## listAdsInsertionorders2
 
 List all insertionorders
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAdsInsertionorders" method="get" path="/ads/{connection_id}/insertionorder" -->
+<!-- UsageSnippet language="typescript" operationID="listAdsInsertionorders2" method="get" path="/ads/{connection_id}/insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -186,7 +186,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.insertionorder.listAdsInsertionorders({
+  const result = await unifiedTo.insertionorder.listAdsInsertionorders2({
     connectionId: "<id>",
   });
 
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsListAdsInsertionorders } from "@unified-api/typescript-sdk/funcs/adsListAdsInsertionorders.js";
+import { adsListAdsInsertionorders2 } from "@unified-api/typescript-sdk/funcs/adsListAdsInsertionorders2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +213,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsListAdsInsertionorders(unifiedTo, {
+  const res = await adsListAdsInsertionorders2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsListAdsInsertionorders failed:", res.error);
+    console.log("adsListAdsInsertionorders2 failed:", res.error);
   }
 }
 
@@ -231,7 +231,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAdsInsertionordersRequest](../../sdk/models/operations/listadsinsertionordersrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAdsInsertionorders2Request](../../sdk/models/operations/listadsinsertionorders2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -246,13 +246,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAdsInsertionorder
+## patchAdsInsertionorder2
 
 Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsInsertionorder2" method="patch" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -263,7 +263,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.insertionorder.patchAdsInsertionorder({
+  const result = await unifiedTo.insertionorder.patchAdsInsertionorder2({
     adsInsertionorder: {},
     connectionId: "<id>",
     id: "<id>",
@@ -281,7 +281,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsPatchAdsInsertionorder } from "@unified-api/typescript-sdk/funcs/adsPatchAdsInsertionorder.js";
+import { adsPatchAdsInsertionorder2 } from "@unified-api/typescript-sdk/funcs/adsPatchAdsInsertionorder2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +292,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsPatchAdsInsertionorder(unifiedTo, {
+  const res = await adsPatchAdsInsertionorder2(unifiedTo, {
     adsInsertionorder: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +301,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsPatchAdsInsertionorder failed:", res.error);
+    console.log("adsPatchAdsInsertionorder2 failed:", res.error);
   }
 }
 
@@ -312,7 +312,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchAdsInsertionorderRequest](../../sdk/models/operations/patchadsinsertionorderrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchAdsInsertionorder2Request](../../sdk/models/operations/patchadsinsertionorder2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -327,13 +327,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAdsInsertionorder
+## removeAdsInsertionorder2
 
 Remove an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeAdsInsertionorder" method="delete" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeAdsInsertionorder2" method="delete" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -344,7 +344,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.insertionorder.removeAdsInsertionorder({
+  const result = await unifiedTo.insertionorder.removeAdsInsertionorder2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -361,7 +361,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsRemoveAdsInsertionorder } from "@unified-api/typescript-sdk/funcs/adsRemoveAdsInsertionorder.js";
+import { adsRemoveAdsInsertionorder2 } from "@unified-api/typescript-sdk/funcs/adsRemoveAdsInsertionorder2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsRemoveAdsInsertionorder(unifiedTo, {
+  const res = await adsRemoveAdsInsertionorder2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +380,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsRemoveAdsInsertionorder failed:", res.error);
+    console.log("adsRemoveAdsInsertionorder2 failed:", res.error);
   }
 }
 
@@ -391,14 +391,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveAdsInsertionorderRequest](../../sdk/models/operations/removeadsinsertionorderrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveAdsInsertionorder2Request](../../sdk/models/operations/removeadsinsertionorder2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveAdsInsertionorderResponse](../../sdk/models/operations/removeadsinsertionorderresponse.md)\>**
+**Promise\<[operations.RemoveAdsInsertionorder2Response](../../sdk/models/operations/removeadsinsertionorder2response.md)\>**
 
 ### Errors
 
@@ -406,13 +406,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAdsInsertionorder
+## updateAdsInsertionorder2
 
 Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsInsertionorder2" method="put" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -423,7 +423,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.insertionorder.updateAdsInsertionorder({
+  const result = await unifiedTo.insertionorder.updateAdsInsertionorder2({
     adsInsertionorder: {},
     connectionId: "<id>",
     id: "<id>",
@@ -441,7 +441,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsUpdateAdsInsertionorder } from "@unified-api/typescript-sdk/funcs/adsUpdateAdsInsertionorder.js";
+import { adsUpdateAdsInsertionorder2 } from "@unified-api/typescript-sdk/funcs/adsUpdateAdsInsertionorder2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsUpdateAdsInsertionorder(unifiedTo, {
+  const res = await adsUpdateAdsInsertionorder2(unifiedTo, {
     adsInsertionorder: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +461,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsUpdateAdsInsertionorder failed:", res.error);
+    console.log("adsUpdateAdsInsertionorder2 failed:", res.error);
   }
 }
 
@@ -472,7 +472,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateAdsInsertionorderRequest](../../sdk/models/operations/updateadsinsertionorderrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateAdsInsertionorder2Request](../../sdk/models/operations/updateadsinsertionorder2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

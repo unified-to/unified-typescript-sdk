@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createRepoPullrequest](#createrepopullrequest) - Create a pullrequest
-* [getRepoPullrequest](#getrepopullrequest) - Retrieve a pullrequest
-* [listRepoPullrequests](#listrepopullrequests) - List all pullrequests
-* [patchRepoPullrequest](#patchrepopullrequest) - Update a pullrequest
-* [removeRepoPullrequest](#removerepopullrequest) - Remove a pullrequest
-* [updateRepoPullrequest](#updaterepopullrequest) - Update a pullrequest
+* [createRepoPullrequest2](#createrepopullrequest2) - Create a pullrequest
+* [getRepoPullrequest2](#getrepopullrequest2) - Retrieve a pullrequest
+* [listRepoPullrequests2](#listrepopullrequests2) - List all pullrequests
+* [patchRepoPullrequest2](#patchrepopullrequest2) - Update a pullrequest
+* [removeRepoPullrequest2](#removerepopullrequest2) - Remove a pullrequest
+* [updateRepoPullrequest2](#updaterepopullrequest2) - Update a pullrequest
 
-## createRepoPullrequest
+## createRepoPullrequest2
 
 Create a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest2" method="post" path="/repo/{connection_id}/pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.pullrequest.createRepoPullrequest({
+  const result = await unifiedTo.pullrequest.createRepoPullrequest2({
     repoPullrequest: {},
     connectionId: "<id>",
   });
@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoCreateRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoCreateRepoPullrequest.js";
+import { repoCreateRepoPullrequest2 } from "@unified-api/typescript-sdk/funcs/repoCreateRepoPullrequest2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoCreateRepoPullrequest(unifiedTo, {
+  const res = await repoCreateRepoPullrequest2(unifiedTo, {
     repoPullrequest: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoCreateRepoPullrequest failed:", res.error);
+    console.log("repoCreateRepoPullrequest2 failed:", res.error);
   }
 }
 
@@ -75,7 +75,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateRepoPullrequestRequest](../../sdk/models/operations/createrepopullrequestrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateRepoPullrequest2Request](../../sdk/models/operations/createrepopullrequest2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -90,13 +90,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getRepoPullrequest
+## getRepoPullrequest2
 
 Retrieve a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getRepoPullrequest" method="get" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getRepoPullrequest2" method="get" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.pullrequest.getRepoPullrequest({
+  const result = await unifiedTo.pullrequest.getRepoPullrequest2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -124,7 +124,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoGetRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoGetRepoPullrequest.js";
+import { repoGetRepoPullrequest2 } from "@unified-api/typescript-sdk/funcs/repoGetRepoPullrequest2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoGetRepoPullrequest(unifiedTo, {
+  const res = await repoGetRepoPullrequest2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +143,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoGetRepoPullrequest failed:", res.error);
+    console.log("repoGetRepoPullrequest2 failed:", res.error);
   }
 }
 
@@ -154,7 +154,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetRepoPullrequestRequest](../../sdk/models/operations/getrepopullrequestrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetRepoPullrequest2Request](../../sdk/models/operations/getrepopullrequest2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -169,13 +169,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listRepoPullrequests
+## listRepoPullrequests2
 
 List all pullrequests
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listRepoPullrequests" method="get" path="/repo/{connection_id}/pullrequest" -->
+<!-- UsageSnippet language="typescript" operationID="listRepoPullrequests2" method="get" path="/repo/{connection_id}/pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -186,7 +186,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.pullrequest.listRepoPullrequests({
+  const result = await unifiedTo.pullrequest.listRepoPullrequests2({
     connectionId: "<id>",
   });
 
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoListRepoPullrequests } from "@unified-api/typescript-sdk/funcs/repoListRepoPullrequests.js";
+import { repoListRepoPullrequests2 } from "@unified-api/typescript-sdk/funcs/repoListRepoPullrequests2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +213,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoListRepoPullrequests(unifiedTo, {
+  const res = await repoListRepoPullrequests2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoListRepoPullrequests failed:", res.error);
+    console.log("repoListRepoPullrequests2 failed:", res.error);
   }
 }
 
@@ -231,7 +231,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListRepoPullrequestsRequest](../../sdk/models/operations/listrepopullrequestsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListRepoPullrequests2Request](../../sdk/models/operations/listrepopullrequests2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -246,13 +246,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchRepoPullrequest
+## patchRepoPullrequest2
 
 Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest2" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -263,7 +263,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.pullrequest.patchRepoPullrequest({
+  const result = await unifiedTo.pullrequest.patchRepoPullrequest2({
     repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -281,7 +281,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoPatchRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoPatchRepoPullrequest.js";
+import { repoPatchRepoPullrequest2 } from "@unified-api/typescript-sdk/funcs/repoPatchRepoPullrequest2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +292,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoPatchRepoPullrequest(unifiedTo, {
+  const res = await repoPatchRepoPullrequest2(unifiedTo, {
     repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +301,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoPatchRepoPullrequest failed:", res.error);
+    console.log("repoPatchRepoPullrequest2 failed:", res.error);
   }
 }
 
@@ -312,7 +312,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchRepoPullrequestRequest](../../sdk/models/operations/patchrepopullrequestrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchRepoPullrequest2Request](../../sdk/models/operations/patchrepopullrequest2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -327,13 +327,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeRepoPullrequest
+## removeRepoPullrequest2
 
 Remove a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeRepoPullrequest" method="delete" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeRepoPullrequest2" method="delete" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -344,7 +344,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.pullrequest.removeRepoPullrequest({
+  const result = await unifiedTo.pullrequest.removeRepoPullrequest2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -361,7 +361,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoRemoveRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoPullrequest.js";
+import { repoRemoveRepoPullrequest2 } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoPullrequest2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoRemoveRepoPullrequest(unifiedTo, {
+  const res = await repoRemoveRepoPullrequest2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +380,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoRemoveRepoPullrequest failed:", res.error);
+    console.log("repoRemoveRepoPullrequest2 failed:", res.error);
   }
 }
 
@@ -391,14 +391,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveRepoPullrequestRequest](../../sdk/models/operations/removerepopullrequestrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveRepoPullrequest2Request](../../sdk/models/operations/removerepopullrequest2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveRepoPullrequestResponse](../../sdk/models/operations/removerepopullrequestresponse.md)\>**
+**Promise\<[operations.RemoveRepoPullrequest2Response](../../sdk/models/operations/removerepopullrequest2response.md)\>**
 
 ### Errors
 
@@ -406,13 +406,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateRepoPullrequest
+## updateRepoPullrequest2
 
 Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest2" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -423,7 +423,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.pullrequest.updateRepoPullrequest({
+  const result = await unifiedTo.pullrequest.updateRepoPullrequest2({
     repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -441,7 +441,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoUpdateRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoPullrequest.js";
+import { repoUpdateRepoPullrequest2 } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoPullrequest2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoUpdateRepoPullrequest(unifiedTo, {
+  const res = await repoUpdateRepoPullrequest2(unifiedTo, {
     repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +461,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoUpdateRepoPullrequest failed:", res.error);
+    console.log("repoUpdateRepoPullrequest2 failed:", res.error);
   }
 }
 
@@ -472,7 +472,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateRepoPullrequestRequest](../../sdk/models/operations/updaterepopullrequestrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateRepoPullrequest2Request](../../sdk/models/operations/updaterepopullrequest2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

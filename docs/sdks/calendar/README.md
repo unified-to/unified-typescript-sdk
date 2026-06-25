@@ -4,41 +4,41 @@
 
 ### Available Operations
 
-* [createCalendarCalendar](#createcalendarcalendar) - Create a calendar
-* [createCalendarEvent](#createcalendarevent) - Create an event
-* [createCalendarLink](#createcalendarlink) - Create a link
-* [createCalendarWebinar](#createcalendarwebinar) - Create a webinar
-* [getCalendarCalendar](#getcalendarcalendar) - Retrieve a calendar
-* [getCalendarEvent](#getcalendarevent) - Retrieve an event
-* [getCalendarLink](#getcalendarlink) - Retrieve a link
-* [getCalendarRecording](#getcalendarrecording) - Retrieve a recording
-* [getCalendarWebinar](#getcalendarwebinar) - Retrieve a webinar
-* [listCalendarBusies](#listcalendarbusies) - List all busies
-* [listCalendarCalendars](#listcalendarcalendars) - List all calendars
-* [listCalendarEvents](#listcalendarevents) - List all events
-* [listCalendarLinks](#listcalendarlinks) - List all links
-* [listCalendarRecordings](#listcalendarrecordings) - List all recordings
-* [listCalendarWebinars](#listcalendarwebinars) - List all webinars
-* [patchCalendarCalendar](#patchcalendarcalendar) - Update a calendar
-* [patchCalendarEvent](#patchcalendarevent) - Update an event
-* [patchCalendarLink](#patchcalendarlink) - Update a link
-* [patchCalendarWebinar](#patchcalendarwebinar) - Update a webinar
-* [removeCalendarCalendar](#removecalendarcalendar) - Remove a calendar
-* [removeCalendarEvent](#removecalendarevent) - Remove an event
-* [removeCalendarLink](#removecalendarlink) - Remove a link
-* [removeCalendarWebinar](#removecalendarwebinar) - Remove a webinar
-* [updateCalendarCalendar](#updatecalendarcalendar) - Update a calendar
-* [updateCalendarEvent](#updatecalendarevent) - Update an event
-* [updateCalendarLink](#updatecalendarlink) - Update a link
-* [updateCalendarWebinar](#updatecalendarwebinar) - Update a webinar
+* [createCalendarCalendar2](#createcalendarcalendar2) - Create a calendar
+* [createCalendarEvent2](#createcalendarevent2) - Create an event
+* [createCalendarLink2](#createcalendarlink2) - Create a link
+* [createCalendarWebinar2](#createcalendarwebinar2) - Create a webinar
+* [getCalendarCalendar2](#getcalendarcalendar2) - Retrieve a calendar
+* [getCalendarEvent2](#getcalendarevent2) - Retrieve an event
+* [getCalendarLink2](#getcalendarlink2) - Retrieve a link
+* [getCalendarRecording2](#getcalendarrecording2) - Retrieve a recording
+* [getCalendarWebinar2](#getcalendarwebinar2) - Retrieve a webinar
+* [listCalendarBusies2](#listcalendarbusies2) - List all busies
+* [listCalendarCalendars2](#listcalendarcalendars2) - List all calendars
+* [listCalendarEvents2](#listcalendarevents2) - List all events
+* [listCalendarLinks2](#listcalendarlinks2) - List all links
+* [listCalendarRecordings2](#listcalendarrecordings2) - List all recordings
+* [listCalendarWebinars2](#listcalendarwebinars2) - List all webinars
+* [patchCalendarCalendar2](#patchcalendarcalendar2) - Update a calendar
+* [patchCalendarEvent2](#patchcalendarevent2) - Update an event
+* [patchCalendarLink2](#patchcalendarlink2) - Update a link
+* [patchCalendarWebinar2](#patchcalendarwebinar2) - Update a webinar
+* [removeCalendarCalendar2](#removecalendarcalendar2) - Remove a calendar
+* [removeCalendarEvent2](#removecalendarevent2) - Remove an event
+* [removeCalendarLink2](#removecalendarlink2) - Remove a link
+* [removeCalendarWebinar2](#removecalendarwebinar2) - Remove a webinar
+* [updateCalendarCalendar2](#updatecalendarcalendar2) - Update a calendar
+* [updateCalendarEvent2](#updatecalendarevent2) - Update an event
+* [updateCalendarLink2](#updatecalendarlink2) - Update a link
+* [updateCalendarWebinar2](#updatecalendarwebinar2) - Update a webinar
 
-## createCalendarCalendar
+## createCalendarCalendar2
 
 Create a calendar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCalendarCalendar" method="post" path="/calendar/{connection_id}/calendar" -->
+<!-- UsageSnippet language="typescript" operationID="createCalendarCalendar2" method="post" path="/calendar/{connection_id}/calendar" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -49,7 +49,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.createCalendarCalendar({
+  const result = await unifiedTo.calendar.createCalendarCalendar2({
     calendarCalendar: {},
     connectionId: "<id>",
   });
@@ -66,7 +66,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarCreateCalendarCalendar } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarCalendar.js";
+import { calendarCreateCalendarCalendar2 } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarCalendar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -77,7 +77,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarCreateCalendarCalendar(unifiedTo, {
+  const res = await calendarCreateCalendarCalendar2(unifiedTo, {
     calendarCalendar: {},
     connectionId: "<id>",
   });
@@ -85,7 +85,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarCreateCalendarCalendar failed:", res.error);
+    console.log("calendarCreateCalendarCalendar2 failed:", res.error);
   }
 }
 
@@ -96,7 +96,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCalendarCalendarRequest](../../sdk/models/operations/createcalendarcalendarrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCalendarCalendar2Request](../../sdk/models/operations/createcalendarcalendar2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -111,13 +111,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCalendarEvent
+## createCalendarEvent2
 
 Create an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCalendarEvent" method="post" path="/calendar/{connection_id}/event" -->
+<!-- UsageSnippet language="typescript" operationID="createCalendarEvent2" method="post" path="/calendar/{connection_id}/event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -128,7 +128,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.createCalendarEvent({
+  const result = await unifiedTo.calendar.createCalendarEvent2({
     calendarEvent: {},
     connectionId: "<id>",
   });
@@ -145,7 +145,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarCreateCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarEvent.js";
+import { eventCreateCalendarEvent2 } from "@unified-api/typescript-sdk/funcs/eventCreateCalendarEvent2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -156,7 +156,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarCreateCalendarEvent(unifiedTo, {
+  const res = await eventCreateCalendarEvent2(unifiedTo, {
     calendarEvent: {},
     connectionId: "<id>",
   });
@@ -164,7 +164,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarCreateCalendarEvent failed:", res.error);
+    console.log("eventCreateCalendarEvent2 failed:", res.error);
   }
 }
 
@@ -175,7 +175,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCalendarEventRequest](../../sdk/models/operations/createcalendareventrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCalendarEvent2Request](../../sdk/models/operations/createcalendarevent2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -190,13 +190,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCalendarLink
+## createCalendarLink2
 
 Create a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCalendarLink" method="post" path="/calendar/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="createCalendarLink2" method="post" path="/calendar/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -207,9 +207,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.createCalendarLink({
+  const result = await unifiedTo.calendar.createCalendarLink2({
     calendarLink: {
-      url: "https://misguided-thongs.info",
+      url: "https://prestigious-fort.name/",
     },
     connectionId: "<id>",
   });
@@ -226,7 +226,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarCreateCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarLink.js";
+import { calendarCreateCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -237,9 +237,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarCreateCalendarLink(unifiedTo, {
+  const res = await calendarCreateCalendarLink2(unifiedTo, {
     calendarLink: {
-      url: "https://misguided-thongs.info",
+      url: "https://prestigious-fort.name/",
     },
     connectionId: "<id>",
   });
@@ -247,7 +247,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarCreateCalendarLink failed:", res.error);
+    console.log("calendarCreateCalendarLink2 failed:", res.error);
   }
 }
 
@@ -258,7 +258,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCalendarLinkRequest](../../sdk/models/operations/createcalendarlinkrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCalendarLink2Request](../../sdk/models/operations/createcalendarlink2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -273,13 +273,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCalendarWebinar
+## createCalendarWebinar2
 
 Create a webinar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCalendarWebinar" method="post" path="/calendar/{connection_id}/webinar" -->
+<!-- UsageSnippet language="typescript" operationID="createCalendarWebinar2" method="post" path="/calendar/{connection_id}/webinar" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -290,7 +290,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.createCalendarWebinar({
+  const result = await unifiedTo.calendar.createCalendarWebinar2({
     calendarWebinar: {},
     connectionId: "<id>",
   });
@@ -307,7 +307,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarCreateCalendarWebinar } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarWebinar.js";
+import { calendarCreateCalendarWebinar2 } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarWebinar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -318,7 +318,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarCreateCalendarWebinar(unifiedTo, {
+  const res = await calendarCreateCalendarWebinar2(unifiedTo, {
     calendarWebinar: {},
     connectionId: "<id>",
   });
@@ -326,7 +326,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarCreateCalendarWebinar failed:", res.error);
+    console.log("calendarCreateCalendarWebinar2 failed:", res.error);
   }
 }
 
@@ -337,7 +337,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCalendarWebinarRequest](../../sdk/models/operations/createcalendarwebinarrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCalendarWebinar2Request](../../sdk/models/operations/createcalendarwebinar2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -352,13 +352,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCalendarCalendar
+## getCalendarCalendar2
 
 Retrieve a calendar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCalendarCalendar" method="get" path="/calendar/{connection_id}/calendar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCalendarCalendar2" method="get" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -369,7 +369,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.getCalendarCalendar({
+  const result = await unifiedTo.calendar.getCalendarCalendar2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -386,7 +386,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarGetCalendarCalendar } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarCalendar.js";
+import { calendarGetCalendarCalendar2 } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarCalendar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -397,7 +397,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarGetCalendarCalendar(unifiedTo, {
+  const res = await calendarGetCalendarCalendar2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -405,7 +405,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarGetCalendarCalendar failed:", res.error);
+    console.log("calendarGetCalendarCalendar2 failed:", res.error);
   }
 }
 
@@ -416,7 +416,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCalendarCalendarRequest](../../sdk/models/operations/getcalendarcalendarrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCalendarCalendar2Request](../../sdk/models/operations/getcalendarcalendar2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -431,13 +431,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCalendarEvent
+## getCalendarEvent2
 
 Retrieve an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCalendarEvent" method="get" path="/calendar/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCalendarEvent2" method="get" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -448,7 +448,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.getCalendarEvent({
+  const result = await unifiedTo.calendar.getCalendarEvent2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -465,7 +465,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarGetCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarEvent.js";
+import { eventGetCalendarEvent2 } from "@unified-api/typescript-sdk/funcs/eventGetCalendarEvent2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -476,7 +476,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarGetCalendarEvent(unifiedTo, {
+  const res = await eventGetCalendarEvent2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -484,7 +484,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarGetCalendarEvent failed:", res.error);
+    console.log("eventGetCalendarEvent2 failed:", res.error);
   }
 }
 
@@ -495,7 +495,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCalendarEventRequest](../../sdk/models/operations/getcalendareventrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCalendarEvent2Request](../../sdk/models/operations/getcalendarevent2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -510,13 +510,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCalendarLink
+## getCalendarLink2
 
 Retrieve a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCalendarLink" method="get" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCalendarLink2" method="get" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -527,7 +527,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.getCalendarLink({
+  const result = await unifiedTo.calendar.getCalendarLink2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -544,7 +544,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarGetCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarLink.js";
+import { calendarGetCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -555,7 +555,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarGetCalendarLink(unifiedTo, {
+  const res = await calendarGetCalendarLink2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -563,7 +563,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarGetCalendarLink failed:", res.error);
+    console.log("calendarGetCalendarLink2 failed:", res.error);
   }
 }
 
@@ -574,7 +574,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCalendarLinkRequest](../../sdk/models/operations/getcalendarlinkrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCalendarLink2Request](../../sdk/models/operations/getcalendarlink2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -589,13 +589,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCalendarRecording
+## getCalendarRecording2
 
 Retrieve a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCalendarRecording" method="get" path="/calendar/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCalendarRecording2" method="get" path="/calendar/{connection_id}/recording/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -606,7 +606,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.getCalendarRecording({
+  const result = await unifiedTo.calendar.getCalendarRecording2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -623,7 +623,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarGetCalendarRecording } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarRecording.js";
+import { calendarGetCalendarRecording2 } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarRecording2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -634,7 +634,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarGetCalendarRecording(unifiedTo, {
+  const res = await calendarGetCalendarRecording2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -642,7 +642,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarGetCalendarRecording failed:", res.error);
+    console.log("calendarGetCalendarRecording2 failed:", res.error);
   }
 }
 
@@ -653,7 +653,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCalendarRecordingRequest](../../sdk/models/operations/getcalendarrecordingrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCalendarRecording2Request](../../sdk/models/operations/getcalendarrecording2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -668,13 +668,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCalendarWebinar
+## getCalendarWebinar2
 
 Retrieve a webinar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCalendarWebinar" method="get" path="/calendar/{connection_id}/webinar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCalendarWebinar2" method="get" path="/calendar/{connection_id}/webinar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -685,7 +685,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.getCalendarWebinar({
+  const result = await unifiedTo.calendar.getCalendarWebinar2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -702,7 +702,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarGetCalendarWebinar } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarWebinar.js";
+import { calendarGetCalendarWebinar2 } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarWebinar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -713,7 +713,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarGetCalendarWebinar(unifiedTo, {
+  const res = await calendarGetCalendarWebinar2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -721,7 +721,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarGetCalendarWebinar failed:", res.error);
+    console.log("calendarGetCalendarWebinar2 failed:", res.error);
   }
 }
 
@@ -732,7 +732,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCalendarWebinarRequest](../../sdk/models/operations/getcalendarwebinarrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCalendarWebinar2Request](../../sdk/models/operations/getcalendarwebinar2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -747,13 +747,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCalendarBusies
+## listCalendarBusies2
 
 List all busies
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCalendarBusies" method="get" path="/calendar/{connection_id}/busy" -->
+<!-- UsageSnippet language="typescript" operationID="listCalendarBusies2" method="get" path="/calendar/{connection_id}/busy" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -764,7 +764,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.listCalendarBusies({
+  const result = await unifiedTo.calendar.listCalendarBusies2({
     connectionId: "<id>",
   });
 
@@ -780,7 +780,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarListCalendarBusies } from "@unified-api/typescript-sdk/funcs/calendarListCalendarBusies.js";
+import { calendarListCalendarBusies2 } from "@unified-api/typescript-sdk/funcs/calendarListCalendarBusies2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -791,14 +791,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarListCalendarBusies(unifiedTo, {
+  const res = await calendarListCalendarBusies2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarListCalendarBusies failed:", res.error);
+    console.log("calendarListCalendarBusies2 failed:", res.error);
   }
 }
 
@@ -809,7 +809,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCalendarBusiesRequest](../../sdk/models/operations/listcalendarbusiesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCalendarBusies2Request](../../sdk/models/operations/listcalendarbusies2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -824,13 +824,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCalendarCalendars
+## listCalendarCalendars2
 
 List all calendars
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCalendarCalendars" method="get" path="/calendar/{connection_id}/calendar" -->
+<!-- UsageSnippet language="typescript" operationID="listCalendarCalendars2" method="get" path="/calendar/{connection_id}/calendar" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -841,7 +841,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.listCalendarCalendars({
+  const result = await unifiedTo.calendar.listCalendarCalendars2({
     connectionId: "<id>",
   });
 
@@ -857,7 +857,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarListCalendarCalendars } from "@unified-api/typescript-sdk/funcs/calendarListCalendarCalendars.js";
+import { calendarListCalendarCalendars2 } from "@unified-api/typescript-sdk/funcs/calendarListCalendarCalendars2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -868,14 +868,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarListCalendarCalendars(unifiedTo, {
+  const res = await calendarListCalendarCalendars2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarListCalendarCalendars failed:", res.error);
+    console.log("calendarListCalendarCalendars2 failed:", res.error);
   }
 }
 
@@ -886,7 +886,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCalendarCalendarsRequest](../../sdk/models/operations/listcalendarcalendarsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCalendarCalendars2Request](../../sdk/models/operations/listcalendarcalendars2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -901,13 +901,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCalendarEvents
+## listCalendarEvents2
 
 List all events
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCalendarEvents" method="get" path="/calendar/{connection_id}/event" -->
+<!-- UsageSnippet language="typescript" operationID="listCalendarEvents2" method="get" path="/calendar/{connection_id}/event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -918,7 +918,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.listCalendarEvents({
+  const result = await unifiedTo.calendar.listCalendarEvents2({
     connectionId: "<id>",
   });
 
@@ -934,7 +934,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarListCalendarEvents } from "@unified-api/typescript-sdk/funcs/calendarListCalendarEvents.js";
+import { eventListCalendarEvents2 } from "@unified-api/typescript-sdk/funcs/eventListCalendarEvents2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -945,14 +945,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarListCalendarEvents(unifiedTo, {
+  const res = await eventListCalendarEvents2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarListCalendarEvents failed:", res.error);
+    console.log("eventListCalendarEvents2 failed:", res.error);
   }
 }
 
@@ -963,7 +963,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCalendarEventsRequest](../../sdk/models/operations/listcalendareventsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCalendarEvents2Request](../../sdk/models/operations/listcalendarevents2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -978,13 +978,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCalendarLinks
+## listCalendarLinks2
 
 List all links
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCalendarLinks" method="get" path="/calendar/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="listCalendarLinks2" method="get" path="/calendar/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -995,7 +995,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.listCalendarLinks({
+  const result = await unifiedTo.calendar.listCalendarLinks2({
     connectionId: "<id>",
   });
 
@@ -1011,7 +1011,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarListCalendarLinks } from "@unified-api/typescript-sdk/funcs/calendarListCalendarLinks.js";
+import { calendarListCalendarLinks2 } from "@unified-api/typescript-sdk/funcs/calendarListCalendarLinks2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1022,14 +1022,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarListCalendarLinks(unifiedTo, {
+  const res = await calendarListCalendarLinks2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarListCalendarLinks failed:", res.error);
+    console.log("calendarListCalendarLinks2 failed:", res.error);
   }
 }
 
@@ -1040,7 +1040,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCalendarLinksRequest](../../sdk/models/operations/listcalendarlinksrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCalendarLinks2Request](../../sdk/models/operations/listcalendarlinks2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1055,13 +1055,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCalendarRecordings
+## listCalendarRecordings2
 
 List all recordings
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCalendarRecordings" method="get" path="/calendar/{connection_id}/recording" -->
+<!-- UsageSnippet language="typescript" operationID="listCalendarRecordings2" method="get" path="/calendar/{connection_id}/recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1072,7 +1072,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.listCalendarRecordings({
+  const result = await unifiedTo.calendar.listCalendarRecordings2({
     connectionId: "<id>",
   });
 
@@ -1088,7 +1088,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarListCalendarRecordings } from "@unified-api/typescript-sdk/funcs/calendarListCalendarRecordings.js";
+import { calendarListCalendarRecordings2 } from "@unified-api/typescript-sdk/funcs/calendarListCalendarRecordings2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1099,14 +1099,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarListCalendarRecordings(unifiedTo, {
+  const res = await calendarListCalendarRecordings2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarListCalendarRecordings failed:", res.error);
+    console.log("calendarListCalendarRecordings2 failed:", res.error);
   }
 }
 
@@ -1117,7 +1117,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCalendarRecordingsRequest](../../sdk/models/operations/listcalendarrecordingsrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCalendarRecordings2Request](../../sdk/models/operations/listcalendarrecordings2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1132,13 +1132,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCalendarWebinars
+## listCalendarWebinars2
 
 List all webinars
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCalendarWebinars" method="get" path="/calendar/{connection_id}/webinar" -->
+<!-- UsageSnippet language="typescript" operationID="listCalendarWebinars2" method="get" path="/calendar/{connection_id}/webinar" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1149,7 +1149,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.listCalendarWebinars({
+  const result = await unifiedTo.calendar.listCalendarWebinars2({
     connectionId: "<id>",
   });
 
@@ -1165,7 +1165,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarListCalendarWebinars } from "@unified-api/typescript-sdk/funcs/calendarListCalendarWebinars.js";
+import { calendarListCalendarWebinars2 } from "@unified-api/typescript-sdk/funcs/calendarListCalendarWebinars2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1176,14 +1176,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarListCalendarWebinars(unifiedTo, {
+  const res = await calendarListCalendarWebinars2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarListCalendarWebinars failed:", res.error);
+    console.log("calendarListCalendarWebinars2 failed:", res.error);
   }
 }
 
@@ -1194,7 +1194,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCalendarWebinarsRequest](../../sdk/models/operations/listcalendarwebinarsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCalendarWebinars2Request](../../sdk/models/operations/listcalendarwebinars2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1209,13 +1209,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCalendarCalendar
+## patchCalendarCalendar2
 
 Update a calendar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCalendarCalendar" method="patch" path="/calendar/{connection_id}/calendar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCalendarCalendar2" method="patch" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1226,7 +1226,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.patchCalendarCalendar({
+  const result = await unifiedTo.calendar.patchCalendarCalendar2({
     calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1244,7 +1244,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarPatchCalendarCalendar } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarCalendar.js";
+import { calendarPatchCalendarCalendar2 } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarCalendar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1255,7 +1255,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarPatchCalendarCalendar(unifiedTo, {
+  const res = await calendarPatchCalendarCalendar2(unifiedTo, {
     calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1264,7 +1264,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarPatchCalendarCalendar failed:", res.error);
+    console.log("calendarPatchCalendarCalendar2 failed:", res.error);
   }
 }
 
@@ -1275,7 +1275,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCalendarCalendarRequest](../../sdk/models/operations/patchcalendarcalendarrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCalendarCalendar2Request](../../sdk/models/operations/patchcalendarcalendar2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1290,13 +1290,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCalendarEvent
+## patchCalendarEvent2
 
 Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCalendarEvent" method="patch" path="/calendar/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCalendarEvent2" method="patch" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1307,7 +1307,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.patchCalendarEvent({
+  const result = await unifiedTo.calendar.patchCalendarEvent2({
     calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1325,7 +1325,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarPatchCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarEvent.js";
+import { eventPatchCalendarEvent2 } from "@unified-api/typescript-sdk/funcs/eventPatchCalendarEvent2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1336,7 +1336,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarPatchCalendarEvent(unifiedTo, {
+  const res = await eventPatchCalendarEvent2(unifiedTo, {
     calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1345,7 +1345,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarPatchCalendarEvent failed:", res.error);
+    console.log("eventPatchCalendarEvent2 failed:", res.error);
   }
 }
 
@@ -1356,7 +1356,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCalendarEventRequest](../../sdk/models/operations/patchcalendareventrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCalendarEvent2Request](../../sdk/models/operations/patchcalendarevent2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1371,13 +1371,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCalendarLink
+## patchCalendarLink2
 
 Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCalendarLink" method="patch" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCalendarLink2" method="patch" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1388,9 +1388,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.patchCalendarLink({
+  const result = await unifiedTo.calendar.patchCalendarLink2({
     calendarLink: {
-      url: "https://warm-hexagon.name/",
+      url: "https://probable-accelerator.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1408,7 +1408,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarPatchCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarLink.js";
+import { calendarPatchCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1419,9 +1419,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarPatchCalendarLink(unifiedTo, {
+  const res = await calendarPatchCalendarLink2(unifiedTo, {
     calendarLink: {
-      url: "https://warm-hexagon.name/",
+      url: "https://probable-accelerator.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1430,7 +1430,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarPatchCalendarLink failed:", res.error);
+    console.log("calendarPatchCalendarLink2 failed:", res.error);
   }
 }
 
@@ -1441,7 +1441,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCalendarLinkRequest](../../sdk/models/operations/patchcalendarlinkrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCalendarLink2Request](../../sdk/models/operations/patchcalendarlink2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1456,13 +1456,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCalendarWebinar
+## patchCalendarWebinar2
 
 Update a webinar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCalendarWebinar" method="patch" path="/calendar/{connection_id}/webinar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCalendarWebinar2" method="patch" path="/calendar/{connection_id}/webinar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1473,7 +1473,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.patchCalendarWebinar({
+  const result = await unifiedTo.calendar.patchCalendarWebinar2({
     calendarWebinar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1491,7 +1491,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarPatchCalendarWebinar } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarWebinar.js";
+import { calendarPatchCalendarWebinar2 } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarWebinar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1502,7 +1502,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarPatchCalendarWebinar(unifiedTo, {
+  const res = await calendarPatchCalendarWebinar2(unifiedTo, {
     calendarWebinar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1511,7 +1511,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarPatchCalendarWebinar failed:", res.error);
+    console.log("calendarPatchCalendarWebinar2 failed:", res.error);
   }
 }
 
@@ -1522,7 +1522,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCalendarWebinarRequest](../../sdk/models/operations/patchcalendarwebinarrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCalendarWebinar2Request](../../sdk/models/operations/patchcalendarwebinar2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1537,13 +1537,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCalendarCalendar
+## removeCalendarCalendar2
 
 Remove a calendar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCalendarCalendar" method="delete" path="/calendar/{connection_id}/calendar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCalendarCalendar2" method="delete" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1554,7 +1554,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.removeCalendarCalendar({
+  const result = await unifiedTo.calendar.removeCalendarCalendar2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1571,7 +1571,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarRemoveCalendarCalendar } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarCalendar.js";
+import { calendarRemoveCalendarCalendar2 } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarCalendar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1582,7 +1582,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarRemoveCalendarCalendar(unifiedTo, {
+  const res = await calendarRemoveCalendarCalendar2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1590,7 +1590,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarRemoveCalendarCalendar failed:", res.error);
+    console.log("calendarRemoveCalendarCalendar2 failed:", res.error);
   }
 }
 
@@ -1601,14 +1601,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCalendarCalendarRequest](../../sdk/models/operations/removecalendarcalendarrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCalendarCalendar2Request](../../sdk/models/operations/removecalendarcalendar2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCalendarCalendarResponse](../../sdk/models/operations/removecalendarcalendarresponse.md)\>**
+**Promise\<[operations.RemoveCalendarCalendar2Response](../../sdk/models/operations/removecalendarcalendar2response.md)\>**
 
 ### Errors
 
@@ -1616,13 +1616,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCalendarEvent
+## removeCalendarEvent2
 
 Remove an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCalendarEvent" method="delete" path="/calendar/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCalendarEvent2" method="delete" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1633,7 +1633,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.removeCalendarEvent({
+  const result = await unifiedTo.calendar.removeCalendarEvent2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1650,7 +1650,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarRemoveCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarEvent.js";
+import { eventRemoveCalendarEvent2 } from "@unified-api/typescript-sdk/funcs/eventRemoveCalendarEvent2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1661,7 +1661,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarRemoveCalendarEvent(unifiedTo, {
+  const res = await eventRemoveCalendarEvent2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1669,7 +1669,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarRemoveCalendarEvent failed:", res.error);
+    console.log("eventRemoveCalendarEvent2 failed:", res.error);
   }
 }
 
@@ -1680,14 +1680,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCalendarEventRequest](../../sdk/models/operations/removecalendareventrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCalendarEvent2Request](../../sdk/models/operations/removecalendarevent2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCalendarEventResponse](../../sdk/models/operations/removecalendareventresponse.md)\>**
+**Promise\<[operations.RemoveCalendarEvent2Response](../../sdk/models/operations/removecalendarevent2response.md)\>**
 
 ### Errors
 
@@ -1695,13 +1695,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCalendarLink
+## removeCalendarLink2
 
 Remove a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCalendarLink" method="delete" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCalendarLink2" method="delete" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1712,7 +1712,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.removeCalendarLink({
+  const result = await unifiedTo.calendar.removeCalendarLink2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1729,7 +1729,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarRemoveCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarLink.js";
+import { calendarRemoveCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1740,7 +1740,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarRemoveCalendarLink(unifiedTo, {
+  const res = await calendarRemoveCalendarLink2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1748,7 +1748,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarRemoveCalendarLink failed:", res.error);
+    console.log("calendarRemoveCalendarLink2 failed:", res.error);
   }
 }
 
@@ -1759,14 +1759,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCalendarLinkRequest](../../sdk/models/operations/removecalendarlinkrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCalendarLink2Request](../../sdk/models/operations/removecalendarlink2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCalendarLinkResponse](../../sdk/models/operations/removecalendarlinkresponse.md)\>**
+**Promise\<[operations.RemoveCalendarLink2Response](../../sdk/models/operations/removecalendarlink2response.md)\>**
 
 ### Errors
 
@@ -1774,13 +1774,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCalendarWebinar
+## removeCalendarWebinar2
 
 Remove a webinar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCalendarWebinar" method="delete" path="/calendar/{connection_id}/webinar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCalendarWebinar2" method="delete" path="/calendar/{connection_id}/webinar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1791,7 +1791,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.removeCalendarWebinar({
+  const result = await unifiedTo.calendar.removeCalendarWebinar2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1808,7 +1808,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarRemoveCalendarWebinar } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarWebinar.js";
+import { calendarRemoveCalendarWebinar2 } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarWebinar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1819,7 +1819,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarRemoveCalendarWebinar(unifiedTo, {
+  const res = await calendarRemoveCalendarWebinar2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1827,7 +1827,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarRemoveCalendarWebinar failed:", res.error);
+    console.log("calendarRemoveCalendarWebinar2 failed:", res.error);
   }
 }
 
@@ -1838,14 +1838,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCalendarWebinarRequest](../../sdk/models/operations/removecalendarwebinarrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCalendarWebinar2Request](../../sdk/models/operations/removecalendarwebinar2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCalendarWebinarResponse](../../sdk/models/operations/removecalendarwebinarresponse.md)\>**
+**Promise\<[operations.RemoveCalendarWebinar2Response](../../sdk/models/operations/removecalendarwebinar2response.md)\>**
 
 ### Errors
 
@@ -1853,13 +1853,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCalendarCalendar
+## updateCalendarCalendar2
 
 Update a calendar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCalendarCalendar" method="put" path="/calendar/{connection_id}/calendar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCalendarCalendar2" method="put" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1870,7 +1870,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.updateCalendarCalendar({
+  const result = await unifiedTo.calendar.updateCalendarCalendar2({
     calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1888,7 +1888,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarUpdateCalendarCalendar } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarCalendar.js";
+import { calendarUpdateCalendarCalendar2 } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarCalendar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1899,7 +1899,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarUpdateCalendarCalendar(unifiedTo, {
+  const res = await calendarUpdateCalendarCalendar2(unifiedTo, {
     calendarCalendar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1908,7 +1908,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarUpdateCalendarCalendar failed:", res.error);
+    console.log("calendarUpdateCalendarCalendar2 failed:", res.error);
   }
 }
 
@@ -1919,7 +1919,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCalendarCalendarRequest](../../sdk/models/operations/updatecalendarcalendarrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCalendarCalendar2Request](../../sdk/models/operations/updatecalendarcalendar2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1934,13 +1934,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCalendarEvent
+## updateCalendarEvent2
 
 Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCalendarEvent" method="put" path="/calendar/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCalendarEvent2" method="put" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1951,7 +1951,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.updateCalendarEvent({
+  const result = await unifiedTo.calendar.updateCalendarEvent2({
     calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1969,7 +1969,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarUpdateCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarEvent.js";
+import { eventUpdateCalendarEvent2 } from "@unified-api/typescript-sdk/funcs/eventUpdateCalendarEvent2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1980,7 +1980,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarUpdateCalendarEvent(unifiedTo, {
+  const res = await eventUpdateCalendarEvent2(unifiedTo, {
     calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1989,7 +1989,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarUpdateCalendarEvent failed:", res.error);
+    console.log("eventUpdateCalendarEvent2 failed:", res.error);
   }
 }
 
@@ -2000,7 +2000,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCalendarEventRequest](../../sdk/models/operations/updatecalendareventrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCalendarEvent2Request](../../sdk/models/operations/updatecalendarevent2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2015,13 +2015,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCalendarLink
+## updateCalendarLink2
 
 Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCalendarLink" method="put" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCalendarLink2" method="put" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2032,9 +2032,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.updateCalendarLink({
+  const result = await unifiedTo.calendar.updateCalendarLink2({
     calendarLink: {
-      url: "https://partial-hydrocarbon.info",
+      url: "https://soupy-extension.net/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2052,7 +2052,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarUpdateCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarLink.js";
+import { calendarUpdateCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2063,9 +2063,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarUpdateCalendarLink(unifiedTo, {
+  const res = await calendarUpdateCalendarLink2(unifiedTo, {
     calendarLink: {
-      url: "https://partial-hydrocarbon.info",
+      url: "https://soupy-extension.net/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2074,7 +2074,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarUpdateCalendarLink failed:", res.error);
+    console.log("calendarUpdateCalendarLink2 failed:", res.error);
   }
 }
 
@@ -2085,7 +2085,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCalendarLinkRequest](../../sdk/models/operations/updatecalendarlinkrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCalendarLink2Request](../../sdk/models/operations/updatecalendarlink2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2100,13 +2100,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCalendarWebinar
+## updateCalendarWebinar2
 
 Update a webinar
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCalendarWebinar" method="put" path="/calendar/{connection_id}/webinar/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCalendarWebinar2" method="put" path="/calendar/{connection_id}/webinar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2117,7 +2117,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.calendar.updateCalendarWebinar({
+  const result = await unifiedTo.calendar.updateCalendarWebinar2({
     calendarWebinar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2135,7 +2135,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarUpdateCalendarWebinar } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarWebinar.js";
+import { calendarUpdateCalendarWebinar2 } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarWebinar2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2146,7 +2146,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarUpdateCalendarWebinar(unifiedTo, {
+  const res = await calendarUpdateCalendarWebinar2(unifiedTo, {
     calendarWebinar: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2155,7 +2155,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarUpdateCalendarWebinar failed:", res.error);
+    console.log("calendarUpdateCalendarWebinar2 failed:", res.error);
   }
 }
 
@@ -2166,7 +2166,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCalendarWebinarRequest](../../sdk/models/operations/updatecalendarwebinarrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCalendarWebinar2Request](../../sdk/models/operations/updatecalendarwebinar2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

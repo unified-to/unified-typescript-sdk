@@ -4,34 +4,34 @@
 
 ### Available Operations
 
-* [createTaskComment](#createtaskcomment) - Create a comment
-* [createTaskProject](#createtaskproject) - Create a project
-* [createTaskTask](#createtasktask) - Create a task
-* [getTaskChange](#gettaskchange) - Retrieve a change
-* [getTaskComment](#gettaskcomment) - Retrieve a comment
-* [getTaskProject](#gettaskproject) - Retrieve a project
-* [getTaskTask](#gettasktask) - Retrieve a task
-* [listTaskChanges](#listtaskchanges) - List all changes
-* [listTaskComments](#listtaskcomments) - List all comments
-* [listTaskProjects](#listtaskprojects) - List all projects
-* [listTaskTasks](#listtasktasks) - List all tasks
-* [patchTaskComment](#patchtaskcomment) - Update a comment
-* [patchTaskProject](#patchtaskproject) - Update a project
-* [patchTaskTask](#patchtasktask) - Update a task
-* [removeTaskComment](#removetaskcomment) - Remove a comment
-* [removeTaskProject](#removetaskproject) - Remove a project
-* [removeTaskTask](#removetasktask) - Remove a task
-* [updateTaskComment](#updatetaskcomment) - Update a comment
-* [updateTaskProject](#updatetaskproject) - Update a project
-* [updateTaskTask](#updatetasktask) - Update a task
+* [createTaskComment2](#createtaskcomment2) - Create a comment
+* [createTaskProject2](#createtaskproject2) - Create a project
+* [createTaskTask2](#createtasktask2) - Create a task
+* [getTaskChange2](#gettaskchange2) - Retrieve a change
+* [getTaskComment2](#gettaskcomment2) - Retrieve a comment
+* [getTaskProject2](#gettaskproject2) - Retrieve a project
+* [getTaskTask2](#gettasktask2) - Retrieve a task
+* [listTaskChanges2](#listtaskchanges2) - List all changes
+* [listTaskComments2](#listtaskcomments2) - List all comments
+* [listTaskProjects2](#listtaskprojects2) - List all projects
+* [listTaskTasks2](#listtasktasks2) - List all tasks
+* [patchTaskComment2](#patchtaskcomment2) - Update a comment
+* [patchTaskProject2](#patchtaskproject2) - Update a project
+* [patchTaskTask2](#patchtasktask2) - Update a task
+* [removeTaskComment2](#removetaskcomment2) - Remove a comment
+* [removeTaskProject2](#removetaskproject2) - Remove a project
+* [removeTaskTask2](#removetasktask2) - Remove a task
+* [updateTaskComment2](#updatetaskcomment2) - Update a comment
+* [updateTaskProject2](#updatetaskproject2) - Update a project
+* [updateTaskTask2](#updatetasktask2) - Update a task
 
-## createTaskComment
+## createTaskComment2
 
 Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskComment2" method="post" path="/task/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -42,7 +42,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.createTaskComment({
+  const result = await unifiedTo.task.createTaskComment2({
     taskComment: {},
     connectionId: "<id>",
   });
@@ -59,7 +59,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentCreateTaskComment } from "@unified-api/typescript-sdk/funcs/commentCreateTaskComment.js";
+import { commentCreateTaskComment2 } from "@unified-api/typescript-sdk/funcs/commentCreateTaskComment2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -70,7 +70,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentCreateTaskComment(unifiedTo, {
+  const res = await commentCreateTaskComment2(unifiedTo, {
     taskComment: {},
     connectionId: "<id>",
   });
@@ -78,7 +78,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentCreateTaskComment failed:", res.error);
+    console.log("commentCreateTaskComment2 failed:", res.error);
   }
 }
 
@@ -89,7 +89,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateTaskCommentRequest](../../sdk/models/operations/createtaskcommentrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateTaskComment2Request](../../sdk/models/operations/createtaskcomment2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -104,13 +104,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createTaskProject
+## createTaskProject2
 
 Create a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskProject2" method="post" path="/task/{connection_id}/project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -121,7 +121,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.createTaskProject({
+  const result = await unifiedTo.task.createTaskProject2({
     taskProject: {},
     connectionId: "<id>",
   });
@@ -138,7 +138,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskCreateTaskProject } from "@unified-api/typescript-sdk/funcs/taskCreateTaskProject.js";
+import { taskCreateTaskProject2 } from "@unified-api/typescript-sdk/funcs/taskCreateTaskProject2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -149,7 +149,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskCreateTaskProject(unifiedTo, {
+  const res = await taskCreateTaskProject2(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
   });
@@ -157,7 +157,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskCreateTaskProject failed:", res.error);
+    console.log("taskCreateTaskProject2 failed:", res.error);
   }
 }
 
@@ -168,7 +168,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateTaskProjectRequest](../../sdk/models/operations/createtaskprojectrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateTaskProject2Request](../../sdk/models/operations/createtaskproject2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -183,13 +183,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createTaskTask
+## createTaskTask2
 
 Create a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskTask" method="post" path="/task/{connection_id}/task" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskTask2" method="post" path="/task/{connection_id}/task" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -200,7 +200,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.createTaskTask({
+  const result = await unifiedTo.task.createTaskTask2({
     taskTask: {},
     connectionId: "<id>",
   });
@@ -217,7 +217,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskCreateTaskTask } from "@unified-api/typescript-sdk/funcs/taskCreateTaskTask.js";
+import { taskCreateTaskTask2 } from "@unified-api/typescript-sdk/funcs/taskCreateTaskTask2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -228,7 +228,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskCreateTaskTask(unifiedTo, {
+  const res = await taskCreateTaskTask2(unifiedTo, {
     taskTask: {},
     connectionId: "<id>",
   });
@@ -236,7 +236,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskCreateTaskTask failed:", res.error);
+    console.log("taskCreateTaskTask2 failed:", res.error);
   }
 }
 
@@ -247,7 +247,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateTaskTaskRequest](../../sdk/models/operations/createtasktaskrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateTaskTask2Request](../../sdk/models/operations/createtasktask2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -262,13 +262,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTaskChange
+## getTaskChange2
 
 Retrieve a change
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTaskChange" method="get" path="/task/{connection_id}/change/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTaskChange2" method="get" path="/task/{connection_id}/change/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -279,7 +279,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.getTaskChange({
+  const result = await unifiedTo.task.getTaskChange2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -296,7 +296,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskGetTaskChange } from "@unified-api/typescript-sdk/funcs/taskGetTaskChange.js";
+import { taskGetTaskChange2 } from "@unified-api/typescript-sdk/funcs/taskGetTaskChange2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -307,7 +307,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskGetTaskChange(unifiedTo, {
+  const res = await taskGetTaskChange2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -315,7 +315,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskGetTaskChange failed:", res.error);
+    console.log("taskGetTaskChange2 failed:", res.error);
   }
 }
 
@@ -326,7 +326,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTaskChangeRequest](../../sdk/models/operations/gettaskchangerequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTaskChange2Request](../../sdk/models/operations/gettaskchange2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -341,13 +341,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTaskComment
+## getTaskComment2
 
 Retrieve a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTaskComment" method="get" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTaskComment2" method="get" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -358,7 +358,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.getTaskComment({
+  const result = await unifiedTo.task.getTaskComment2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -375,7 +375,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentGetTaskComment } from "@unified-api/typescript-sdk/funcs/commentGetTaskComment.js";
+import { commentGetTaskComment2 } from "@unified-api/typescript-sdk/funcs/commentGetTaskComment2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -386,7 +386,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentGetTaskComment(unifiedTo, {
+  const res = await commentGetTaskComment2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -394,7 +394,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentGetTaskComment failed:", res.error);
+    console.log("commentGetTaskComment2 failed:", res.error);
   }
 }
 
@@ -405,7 +405,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTaskCommentRequest](../../sdk/models/operations/gettaskcommentrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTaskComment2Request](../../sdk/models/operations/gettaskcomment2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -420,13 +420,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTaskProject
+## getTaskProject2
 
 Retrieve a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTaskProject" method="get" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTaskProject2" method="get" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -437,7 +437,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.getTaskProject({
+  const result = await unifiedTo.task.getTaskProject2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -454,7 +454,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskGetTaskProject } from "@unified-api/typescript-sdk/funcs/taskGetTaskProject.js";
+import { taskGetTaskProject2 } from "@unified-api/typescript-sdk/funcs/taskGetTaskProject2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -465,7 +465,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskGetTaskProject(unifiedTo, {
+  const res = await taskGetTaskProject2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -473,7 +473,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskGetTaskProject failed:", res.error);
+    console.log("taskGetTaskProject2 failed:", res.error);
   }
 }
 
@@ -484,7 +484,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTaskProjectRequest](../../sdk/models/operations/gettaskprojectrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTaskProject2Request](../../sdk/models/operations/gettaskproject2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -499,13 +499,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTaskTask
+## getTaskTask2
 
 Retrieve a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTaskTask" method="get" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTaskTask2" method="get" path="/task/{connection_id}/task/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -516,7 +516,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.getTaskTask({
+  const result = await unifiedTo.task.getTaskTask2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -533,7 +533,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskGetTaskTask } from "@unified-api/typescript-sdk/funcs/taskGetTaskTask.js";
+import { taskGetTaskTask2 } from "@unified-api/typescript-sdk/funcs/taskGetTaskTask2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -544,7 +544,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskGetTaskTask(unifiedTo, {
+  const res = await taskGetTaskTask2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -552,7 +552,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskGetTaskTask failed:", res.error);
+    console.log("taskGetTaskTask2 failed:", res.error);
   }
 }
 
@@ -563,7 +563,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTaskTaskRequest](../../sdk/models/operations/gettasktaskrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTaskTask2Request](../../sdk/models/operations/gettasktask2request.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -578,13 +578,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTaskChanges
+## listTaskChanges2
 
 List all changes
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTaskChanges" method="get" path="/task/{connection_id}/change" -->
+<!-- UsageSnippet language="typescript" operationID="listTaskChanges2" method="get" path="/task/{connection_id}/change" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -595,7 +595,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.listTaskChanges({
+  const result = await unifiedTo.task.listTaskChanges2({
     connectionId: "<id>",
   });
 
@@ -611,7 +611,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskListTaskChanges } from "@unified-api/typescript-sdk/funcs/taskListTaskChanges.js";
+import { taskListTaskChanges2 } from "@unified-api/typescript-sdk/funcs/taskListTaskChanges2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -622,14 +622,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskListTaskChanges(unifiedTo, {
+  const res = await taskListTaskChanges2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskListTaskChanges failed:", res.error);
+    console.log("taskListTaskChanges2 failed:", res.error);
   }
 }
 
@@ -640,7 +640,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTaskChangesRequest](../../sdk/models/operations/listtaskchangesrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTaskChanges2Request](../../sdk/models/operations/listtaskchanges2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -655,13 +655,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTaskComments
+## listTaskComments2
 
 List all comments
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTaskComments" method="get" path="/task/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="listTaskComments2" method="get" path="/task/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -672,7 +672,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.listTaskComments({
+  const result = await unifiedTo.task.listTaskComments2({
     connectionId: "<id>",
   });
 
@@ -688,7 +688,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentListTaskComments } from "@unified-api/typescript-sdk/funcs/commentListTaskComments.js";
+import { commentListTaskComments2 } from "@unified-api/typescript-sdk/funcs/commentListTaskComments2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -699,14 +699,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentListTaskComments(unifiedTo, {
+  const res = await commentListTaskComments2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentListTaskComments failed:", res.error);
+    console.log("commentListTaskComments2 failed:", res.error);
   }
 }
 
@@ -717,7 +717,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTaskCommentsRequest](../../sdk/models/operations/listtaskcommentsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTaskComments2Request](../../sdk/models/operations/listtaskcomments2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -732,13 +732,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTaskProjects
+## listTaskProjects2
 
 List all projects
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTaskProjects" method="get" path="/task/{connection_id}/project" -->
+<!-- UsageSnippet language="typescript" operationID="listTaskProjects2" method="get" path="/task/{connection_id}/project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -749,7 +749,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.listTaskProjects({
+  const result = await unifiedTo.task.listTaskProjects2({
     connectionId: "<id>",
   });
 
@@ -765,7 +765,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskListTaskProjects } from "@unified-api/typescript-sdk/funcs/taskListTaskProjects.js";
+import { taskListTaskProjects2 } from "@unified-api/typescript-sdk/funcs/taskListTaskProjects2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -776,14 +776,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskListTaskProjects(unifiedTo, {
+  const res = await taskListTaskProjects2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskListTaskProjects failed:", res.error);
+    console.log("taskListTaskProjects2 failed:", res.error);
   }
 }
 
@@ -794,7 +794,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTaskProjectsRequest](../../sdk/models/operations/listtaskprojectsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTaskProjects2Request](../../sdk/models/operations/listtaskprojects2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -809,13 +809,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTaskTasks
+## listTaskTasks2
 
 List all tasks
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTaskTasks" method="get" path="/task/{connection_id}/task" -->
+<!-- UsageSnippet language="typescript" operationID="listTaskTasks2" method="get" path="/task/{connection_id}/task" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -826,7 +826,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.listTaskTasks({
+  const result = await unifiedTo.task.listTaskTasks2({
     connectionId: "<id>",
   });
 
@@ -842,7 +842,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskListTaskTasks } from "@unified-api/typescript-sdk/funcs/taskListTaskTasks.js";
+import { taskListTaskTasks2 } from "@unified-api/typescript-sdk/funcs/taskListTaskTasks2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -853,14 +853,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskListTaskTasks(unifiedTo, {
+  const res = await taskListTaskTasks2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskListTaskTasks failed:", res.error);
+    console.log("taskListTaskTasks2 failed:", res.error);
   }
 }
 
@@ -871,7 +871,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTaskTasksRequest](../../sdk/models/operations/listtasktasksrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTaskTasks2Request](../../sdk/models/operations/listtasktasks2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -886,13 +886,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchTaskComment
+## patchTaskComment2
 
 Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskComment2" method="patch" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -903,7 +903,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.patchTaskComment({
+  const result = await unifiedTo.task.patchTaskComment2({
     taskComment: {},
     connectionId: "<id>",
     id: "<id>",
@@ -921,7 +921,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentPatchTaskComment } from "@unified-api/typescript-sdk/funcs/commentPatchTaskComment.js";
+import { commentPatchTaskComment2 } from "@unified-api/typescript-sdk/funcs/commentPatchTaskComment2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -932,7 +932,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentPatchTaskComment(unifiedTo, {
+  const res = await commentPatchTaskComment2(unifiedTo, {
     taskComment: {},
     connectionId: "<id>",
     id: "<id>",
@@ -941,7 +941,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentPatchTaskComment failed:", res.error);
+    console.log("commentPatchTaskComment2 failed:", res.error);
   }
 }
 
@@ -952,7 +952,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchTaskCommentRequest](../../sdk/models/operations/patchtaskcommentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchTaskComment2Request](../../sdk/models/operations/patchtaskcomment2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -967,13 +967,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchTaskProject
+## patchTaskProject2
 
 Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskProject2" method="patch" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -984,7 +984,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.patchTaskProject({
+  const result = await unifiedTo.task.patchTaskProject2({
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1002,7 +1002,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskPatchTaskProject } from "@unified-api/typescript-sdk/funcs/taskPatchTaskProject.js";
+import { taskPatchTaskProject2 } from "@unified-api/typescript-sdk/funcs/taskPatchTaskProject2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1013,7 +1013,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskPatchTaskProject(unifiedTo, {
+  const res = await taskPatchTaskProject2(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1022,7 +1022,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskPatchTaskProject failed:", res.error);
+    console.log("taskPatchTaskProject2 failed:", res.error);
   }
 }
 
@@ -1033,7 +1033,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchTaskProjectRequest](../../sdk/models/operations/patchtaskprojectrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchTaskProject2Request](../../sdk/models/operations/patchtaskproject2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1048,13 +1048,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchTaskTask
+## patchTaskTask2
 
 Update a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskTask" method="patch" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskTask2" method="patch" path="/task/{connection_id}/task/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1065,7 +1065,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.patchTaskTask({
+  const result = await unifiedTo.task.patchTaskTask2({
     taskTask: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1083,7 +1083,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskPatchTaskTask } from "@unified-api/typescript-sdk/funcs/taskPatchTaskTask.js";
+import { taskPatchTaskTask2 } from "@unified-api/typescript-sdk/funcs/taskPatchTaskTask2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1094,7 +1094,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskPatchTaskTask(unifiedTo, {
+  const res = await taskPatchTaskTask2(unifiedTo, {
     taskTask: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1103,7 +1103,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskPatchTaskTask failed:", res.error);
+    console.log("taskPatchTaskTask2 failed:", res.error);
   }
 }
 
@@ -1114,7 +1114,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchTaskTaskRequest](../../sdk/models/operations/patchtasktaskrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchTaskTask2Request](../../sdk/models/operations/patchtasktask2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1129,13 +1129,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeTaskComment
+## removeTaskComment2
 
 Remove a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeTaskComment" method="delete" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeTaskComment2" method="delete" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1146,7 +1146,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.removeTaskComment({
+  const result = await unifiedTo.task.removeTaskComment2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1163,7 +1163,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentRemoveTaskComment } from "@unified-api/typescript-sdk/funcs/commentRemoveTaskComment.js";
+import { commentRemoveTaskComment2 } from "@unified-api/typescript-sdk/funcs/commentRemoveTaskComment2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1174,7 +1174,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentRemoveTaskComment(unifiedTo, {
+  const res = await commentRemoveTaskComment2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1182,7 +1182,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentRemoveTaskComment failed:", res.error);
+    console.log("commentRemoveTaskComment2 failed:", res.error);
   }
 }
 
@@ -1193,14 +1193,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveTaskCommentRequest](../../sdk/models/operations/removetaskcommentrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveTaskComment2Request](../../sdk/models/operations/removetaskcomment2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveTaskCommentResponse](../../sdk/models/operations/removetaskcommentresponse.md)\>**
+**Promise\<[operations.RemoveTaskComment2Response](../../sdk/models/operations/removetaskcomment2response.md)\>**
 
 ### Errors
 
@@ -1208,13 +1208,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeTaskProject
+## removeTaskProject2
 
 Remove a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeTaskProject" method="delete" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeTaskProject2" method="delete" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1225,7 +1225,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.removeTaskProject({
+  const result = await unifiedTo.task.removeTaskProject2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1242,7 +1242,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskRemoveTaskProject } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskProject.js";
+import { taskRemoveTaskProject2 } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskProject2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1253,7 +1253,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskRemoveTaskProject(unifiedTo, {
+  const res = await taskRemoveTaskProject2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1261,7 +1261,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskRemoveTaskProject failed:", res.error);
+    console.log("taskRemoveTaskProject2 failed:", res.error);
   }
 }
 
@@ -1272,14 +1272,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveTaskProjectRequest](../../sdk/models/operations/removetaskprojectrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveTaskProject2Request](../../sdk/models/operations/removetaskproject2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveTaskProjectResponse](../../sdk/models/operations/removetaskprojectresponse.md)\>**
+**Promise\<[operations.RemoveTaskProject2Response](../../sdk/models/operations/removetaskproject2response.md)\>**
 
 ### Errors
 
@@ -1287,13 +1287,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeTaskTask
+## removeTaskTask2
 
 Remove a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeTaskTask" method="delete" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeTaskTask2" method="delete" path="/task/{connection_id}/task/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1304,7 +1304,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.removeTaskTask({
+  const result = await unifiedTo.task.removeTaskTask2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1321,7 +1321,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskRemoveTaskTask } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskTask.js";
+import { taskRemoveTaskTask2 } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskTask2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1332,7 +1332,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskRemoveTaskTask(unifiedTo, {
+  const res = await taskRemoveTaskTask2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1340,7 +1340,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskRemoveTaskTask failed:", res.error);
+    console.log("taskRemoveTaskTask2 failed:", res.error);
   }
 }
 
@@ -1351,14 +1351,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveTaskTaskRequest](../../sdk/models/operations/removetasktaskrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveTaskTask2Request](../../sdk/models/operations/removetasktask2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveTaskTaskResponse](../../sdk/models/operations/removetasktaskresponse.md)\>**
+**Promise\<[operations.RemoveTaskTask2Response](../../sdk/models/operations/removetasktask2response.md)\>**
 
 ### Errors
 
@@ -1366,13 +1366,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateTaskComment
+## updateTaskComment2
 
 Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskComment2" method="put" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1383,7 +1383,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.updateTaskComment({
+  const result = await unifiedTo.task.updateTaskComment2({
     taskComment: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1401,7 +1401,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentUpdateTaskComment } from "@unified-api/typescript-sdk/funcs/commentUpdateTaskComment.js";
+import { commentUpdateTaskComment2 } from "@unified-api/typescript-sdk/funcs/commentUpdateTaskComment2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1412,7 +1412,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentUpdateTaskComment(unifiedTo, {
+  const res = await commentUpdateTaskComment2(unifiedTo, {
     taskComment: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1421,7 +1421,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentUpdateTaskComment failed:", res.error);
+    console.log("commentUpdateTaskComment2 failed:", res.error);
   }
 }
 
@@ -1432,7 +1432,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateTaskCommentRequest](../../sdk/models/operations/updatetaskcommentrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateTaskComment2Request](../../sdk/models/operations/updatetaskcomment2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1447,13 +1447,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateTaskProject
+## updateTaskProject2
 
 Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskProject2" method="put" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1464,7 +1464,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.updateTaskProject({
+  const result = await unifiedTo.task.updateTaskProject2({
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1482,7 +1482,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskUpdateTaskProject } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskProject.js";
+import { taskUpdateTaskProject2 } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskProject2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1493,7 +1493,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskUpdateTaskProject(unifiedTo, {
+  const res = await taskUpdateTaskProject2(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1502,7 +1502,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskUpdateTaskProject failed:", res.error);
+    console.log("taskUpdateTaskProject2 failed:", res.error);
   }
 }
 
@@ -1513,7 +1513,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateTaskProjectRequest](../../sdk/models/operations/updatetaskprojectrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateTaskProject2Request](../../sdk/models/operations/updatetaskproject2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1528,13 +1528,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateTaskTask
+## updateTaskTask2
 
 Update a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskTask" method="put" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskTask2" method="put" path="/task/{connection_id}/task/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1545,7 +1545,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.task.updateTaskTask({
+  const result = await unifiedTo.task.updateTaskTask2({
     taskTask: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1563,7 +1563,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskUpdateTaskTask } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskTask.js";
+import { taskUpdateTaskTask2 } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskTask2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1574,7 +1574,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskUpdateTaskTask(unifiedTo, {
+  const res = await taskUpdateTaskTask2(unifiedTo, {
     taskTask: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1583,7 +1583,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskUpdateTaskTask failed:", res.error);
+    console.log("taskUpdateTaskTask2 failed:", res.error);
   }
 }
 
@@ -1594,7 +1594,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateTaskTaskRequest](../../sdk/models/operations/updatetasktaskrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateTaskTask2Request](../../sdk/models/operations/updatetasktask2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

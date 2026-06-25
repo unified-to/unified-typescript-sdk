@@ -4,16 +4,16 @@
 
 ### Available Operations
 
-* [getFormsSubmission](#getformssubmission) - Retrieve a submission
-* [listFormsSubmissions](#listformssubmissions) - List all submissions
+* [getFormsSubmission2](#getformssubmission2) - Retrieve a submission
+* [listFormsSubmissions2](#listformssubmissions2) - List all submissions
 
-## getFormsSubmission
+## getFormsSubmission2
 
 Retrieve a submission
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getFormsSubmission" method="get" path="/forms/{connection_id}/submission/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getFormsSubmission2" method="get" path="/forms/{connection_id}/submission/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.submission.getFormsSubmission({
+  const result = await unifiedTo.submission.getFormsSubmission2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { formsGetFormsSubmission } from "@unified-api/typescript-sdk/funcs/formsGetFormsSubmission.js";
+import { formsGetFormsSubmission2 } from "@unified-api/typescript-sdk/funcs/formsGetFormsSubmission2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await formsGetFormsSubmission(unifiedTo, {
+  const res = await formsGetFormsSubmission2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("formsGetFormsSubmission failed:", res.error);
+    console.log("formsGetFormsSubmission2 failed:", res.error);
   }
 }
 
@@ -71,7 +71,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetFormsSubmissionRequest](../../sdk/models/operations/getformssubmissionrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetFormsSubmission2Request](../../sdk/models/operations/getformssubmission2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -86,13 +86,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listFormsSubmissions
+## listFormsSubmissions2
 
 List all submissions
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listFormsSubmissions" method="get" path="/forms/{connection_id}/submission" -->
+<!-- UsageSnippet language="typescript" operationID="listFormsSubmissions2" method="get" path="/forms/{connection_id}/submission" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -103,7 +103,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.submission.listFormsSubmissions({
+  const result = await unifiedTo.submission.listFormsSubmissions2({
     connectionId: "<id>",
   });
 
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { formsListFormsSubmissions } from "@unified-api/typescript-sdk/funcs/formsListFormsSubmissions.js";
+import { formsListFormsSubmissions2 } from "@unified-api/typescript-sdk/funcs/formsListFormsSubmissions2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -130,14 +130,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await formsListFormsSubmissions(unifiedTo, {
+  const res = await formsListFormsSubmissions2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("formsListFormsSubmissions failed:", res.error);
+    console.log("formsListFormsSubmissions2 failed:", res.error);
   }
 }
 
@@ -148,7 +148,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListFormsSubmissionsRequest](../../sdk/models/operations/listformssubmissionsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListFormsSubmissions2Request](../../sdk/models/operations/listformssubmissions2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

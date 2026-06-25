@@ -4,16 +4,16 @@
 
 ### Available Operations
 
-* [getShippingTracking](#getshippingtracking) - Retrieve a tracking
-* [listShippingTrackings](#listshippingtrackings) - List all trackings
+* [getShippingTracking2](#getshippingtracking2) - Retrieve a tracking
+* [listShippingTrackings2](#listshippingtrackings2) - List all trackings
 
-## getShippingTracking
+## getShippingTracking2
 
 Retrieve a tracking
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getShippingTracking" method="get" path="/shipping/{connection_id}/tracking/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getShippingTracking2" method="get" path="/shipping/{connection_id}/tracking/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.tracking.getShippingTracking({
+  const result = await unifiedTo.tracking.getShippingTracking2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { shippingGetShippingTracking } from "@unified-api/typescript-sdk/funcs/shippingGetShippingTracking.js";
+import { shippingGetShippingTracking2 } from "@unified-api/typescript-sdk/funcs/shippingGetShippingTracking2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await shippingGetShippingTracking(unifiedTo, {
+  const res = await shippingGetShippingTracking2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("shippingGetShippingTracking failed:", res.error);
+    console.log("shippingGetShippingTracking2 failed:", res.error);
   }
 }
 
@@ -71,7 +71,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetShippingTrackingRequest](../../sdk/models/operations/getshippingtrackingrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetShippingTracking2Request](../../sdk/models/operations/getshippingtracking2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -86,13 +86,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listShippingTrackings
+## listShippingTrackings2
 
 List all trackings
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listShippingTrackings" method="get" path="/shipping/{connection_id}/tracking" -->
+<!-- UsageSnippet language="typescript" operationID="listShippingTrackings2" method="get" path="/shipping/{connection_id}/tracking" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -103,7 +103,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.tracking.listShippingTrackings({
+  const result = await unifiedTo.tracking.listShippingTrackings2({
     connectionId: "<id>",
   });
 
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { shippingListShippingTrackings } from "@unified-api/typescript-sdk/funcs/shippingListShippingTrackings.js";
+import { shippingListShippingTrackings2 } from "@unified-api/typescript-sdk/funcs/shippingListShippingTrackings2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -130,14 +130,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await shippingListShippingTrackings(unifiedTo, {
+  const res = await shippingListShippingTrackings2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("shippingListShippingTrackings failed:", res.error);
+    console.log("shippingListShippingTrackings2 failed:", res.error);
   }
 }
 
@@ -148,7 +148,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListShippingTrackingsRequest](../../sdk/models/operations/listshippingtrackingsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListShippingTrackings2Request](../../sdk/models/operations/listshippingtrackings2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

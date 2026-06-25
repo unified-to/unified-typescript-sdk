@@ -4,34 +4,34 @@
 
 ### Available Operations
 
-* [createAdsGroup](#createadsgroup) - Create a group
-* [createHrisGroup](#createhrisgroup) - Create a group
+* [createAdsGroup2](#createadsgroup2) - Create a group
+* [createHrisGroup2](#createhrisgroup2) - Create a group
 * [createScimGroups](#createscimgroups) - Create group
-* [getAdsGroup](#getadsgroup) - Retrieve a group
-* [getClubsGroup](#getclubsgroup) - Retrieve a group
-* [getHrisGroup](#gethrisgroup) - Retrieve a group
+* [getAdsGroup2](#getadsgroup2) - Retrieve a group
+* [getClubsGroup2](#getclubsgroup2) - Retrieve a group
+* [getHrisGroup2](#gethrisgroup2) - Retrieve a group
 * [getScimGroups](#getscimgroups) - Get group
-* [listAdsGroups](#listadsgroups) - List all groups
-* [listClubsGroups](#listclubsgroups) - List all groups
-* [listHrisGroups](#listhrisgroups) - List all groups
+* [listAdsGroups2](#listadsgroups2) - List all groups
+* [listClubsGroups2](#listclubsgroups2) - List all groups
+* [listHrisGroups2](#listhrisgroups2) - List all groups
 * [listScimGroups](#listscimgroups) - List groups
-* [patchAdsGroup](#patchadsgroup) - Update a group
-* [patchHrisGroup](#patchhrisgroup) - Update a group
+* [patchAdsGroup2](#patchadsgroup2) - Update a group
+* [patchHrisGroup2](#patchhrisgroup2) - Update a group
 * [patchScimGroups](#patchscimgroups) - Update group
-* [removeAdsGroup](#removeadsgroup) - Remove a group
-* [removeHrisGroup](#removehrisgroup) - Remove a group
+* [removeAdsGroup2](#removeadsgroup2) - Remove a group
+* [removeHrisGroup2](#removehrisgroup2) - Remove a group
 * [removeScimGroups](#removescimgroups) - Delete group
-* [updateAdsGroup](#updateadsgroup) - Update a group
-* [updateHrisGroup](#updatehrisgroup) - Update a group
+* [updateAdsGroup2](#updateadsgroup2) - Update a group
+* [updateHrisGroup2](#updatehrisgroup2) - Update a group
 * [updateScimGroups](#updatescimgroups) - Update group
 
-## createAdsGroup
+## createAdsGroup2
 
 Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsGroup2" method="post" path="/ads/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -42,7 +42,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.createAdsGroup({
+  const result = await unifiedTo.group.createAdsGroup2({
     adsGroup: {},
     connectionId: "<id>",
   });
@@ -59,7 +59,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsCreateAdsGroup } from "@unified-api/typescript-sdk/funcs/adsCreateAdsGroup.js";
+import { adsCreateAdsGroup2 } from "@unified-api/typescript-sdk/funcs/adsCreateAdsGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -70,7 +70,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsCreateAdsGroup(unifiedTo, {
+  const res = await adsCreateAdsGroup2(unifiedTo, {
     adsGroup: {},
     connectionId: "<id>",
   });
@@ -78,7 +78,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsCreateAdsGroup failed:", res.error);
+    console.log("adsCreateAdsGroup2 failed:", res.error);
   }
 }
 
@@ -89,7 +89,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateAdsGroupRequest](../../sdk/models/operations/createadsgrouprequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateAdsGroup2Request](../../sdk/models/operations/createadsgroup2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -104,13 +104,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createHrisGroup
+## createHrisGroup2
 
 Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisGroup2" method="post" path="/hris/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -121,7 +121,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.createHrisGroup({
+  const result = await unifiedTo.group.createHrisGroup2({
     hrisGroup: {},
     connectionId: "<id>",
   });
@@ -138,7 +138,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupCreateHrisGroup } from "@unified-api/typescript-sdk/funcs/groupCreateHrisGroup.js";
+import { groupCreateHrisGroup2 } from "@unified-api/typescript-sdk/funcs/groupCreateHrisGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -149,7 +149,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupCreateHrisGroup(unifiedTo, {
+  const res = await groupCreateHrisGroup2(unifiedTo, {
     hrisGroup: {},
     connectionId: "<id>",
   });
@@ -157,7 +157,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupCreateHrisGroup failed:", res.error);
+    console.log("groupCreateHrisGroup2 failed:", res.error);
   }
 }
 
@@ -168,7 +168,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateHrisGroupRequest](../../sdk/models/operations/createhrisgrouprequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateHrisGroup2Request](../../sdk/models/operations/createhrisgroup2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -266,13 +266,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAdsGroup
+## getAdsGroup2
 
 Retrieve a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAdsGroup" method="get" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAdsGroup2" method="get" path="/ads/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -283,7 +283,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.getAdsGroup({
+  const result = await unifiedTo.group.getAdsGroup2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,7 +300,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsGetAdsGroup } from "@unified-api/typescript-sdk/funcs/adsGetAdsGroup.js";
+import { adsGetAdsGroup2 } from "@unified-api/typescript-sdk/funcs/adsGetAdsGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -311,7 +311,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsGetAdsGroup(unifiedTo, {
+  const res = await adsGetAdsGroup2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -319,7 +319,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsGetAdsGroup failed:", res.error);
+    console.log("adsGetAdsGroup2 failed:", res.error);
   }
 }
 
@@ -330,7 +330,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAdsGroupRequest](../../sdk/models/operations/getadsgrouprequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAdsGroup2Request](../../sdk/models/operations/getadsgroup2request.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -345,13 +345,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getClubsGroup
+## getClubsGroup2
 
 Retrieve a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getClubsGroup" method="get" path="/clubs/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getClubsGroup2" method="get" path="/clubs/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -362,7 +362,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.getClubsGroup({
+  const result = await unifiedTo.group.getClubsGroup2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -379,7 +379,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupGetClubsGroup } from "@unified-api/typescript-sdk/funcs/groupGetClubsGroup.js";
+import { groupGetClubsGroup2 } from "@unified-api/typescript-sdk/funcs/groupGetClubsGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -390,7 +390,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupGetClubsGroup(unifiedTo, {
+  const res = await groupGetClubsGroup2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -398,7 +398,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupGetClubsGroup failed:", res.error);
+    console.log("groupGetClubsGroup2 failed:", res.error);
   }
 }
 
@@ -409,7 +409,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetClubsGroupRequest](../../sdk/models/operations/getclubsgrouprequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetClubsGroup2Request](../../sdk/models/operations/getclubsgroup2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -424,13 +424,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getHrisGroup
+## getHrisGroup2
 
 Retrieve a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getHrisGroup" method="get" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getHrisGroup2" method="get" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -441,7 +441,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.getHrisGroup({
+  const result = await unifiedTo.group.getHrisGroup2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -458,7 +458,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupGetHrisGroup } from "@unified-api/typescript-sdk/funcs/groupGetHrisGroup.js";
+import { groupGetHrisGroup2 } from "@unified-api/typescript-sdk/funcs/groupGetHrisGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -469,7 +469,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupGetHrisGroup(unifiedTo, {
+  const res = await groupGetHrisGroup2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -477,7 +477,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupGetHrisGroup failed:", res.error);
+    console.log("groupGetHrisGroup2 failed:", res.error);
   }
 }
 
@@ -488,7 +488,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetHrisGroupRequest](../../sdk/models/operations/gethrisgrouprequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetHrisGroup2Request](../../sdk/models/operations/gethrisgroup2request.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -582,13 +582,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAdsGroups
+## listAdsGroups2
 
 List all groups
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAdsGroups" method="get" path="/ads/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="listAdsGroups2" method="get" path="/ads/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -599,7 +599,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.listAdsGroups({
+  const result = await unifiedTo.group.listAdsGroups2({
     connectionId: "<id>",
   });
 
@@ -615,7 +615,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsListAdsGroups } from "@unified-api/typescript-sdk/funcs/adsListAdsGroups.js";
+import { adsListAdsGroups2 } from "@unified-api/typescript-sdk/funcs/adsListAdsGroups2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -626,14 +626,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsListAdsGroups(unifiedTo, {
+  const res = await adsListAdsGroups2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsListAdsGroups failed:", res.error);
+    console.log("adsListAdsGroups2 failed:", res.error);
   }
 }
 
@@ -644,7 +644,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAdsGroupsRequest](../../sdk/models/operations/listadsgroupsrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAdsGroups2Request](../../sdk/models/operations/listadsgroups2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -659,13 +659,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listClubsGroups
+## listClubsGroups2
 
 List all groups
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listClubsGroups" method="get" path="/clubs/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="listClubsGroups2" method="get" path="/clubs/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -676,7 +676,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.listClubsGroups({
+  const result = await unifiedTo.group.listClubsGroups2({
     connectionId: "<id>",
   });
 
@@ -692,7 +692,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupListClubsGroups } from "@unified-api/typescript-sdk/funcs/groupListClubsGroups.js";
+import { groupListClubsGroups2 } from "@unified-api/typescript-sdk/funcs/groupListClubsGroups2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -703,14 +703,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupListClubsGroups(unifiedTo, {
+  const res = await groupListClubsGroups2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupListClubsGroups failed:", res.error);
+    console.log("groupListClubsGroups2 failed:", res.error);
   }
 }
 
@@ -721,7 +721,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListClubsGroupsRequest](../../sdk/models/operations/listclubsgroupsrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListClubsGroups2Request](../../sdk/models/operations/listclubsgroups2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -736,13 +736,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listHrisGroups
+## listHrisGroups2
 
 List all groups
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listHrisGroups" method="get" path="/hris/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="listHrisGroups2" method="get" path="/hris/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -753,7 +753,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.listHrisGroups({
+  const result = await unifiedTo.group.listHrisGroups2({
     connectionId: "<id>",
   });
 
@@ -769,7 +769,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupListHrisGroups } from "@unified-api/typescript-sdk/funcs/groupListHrisGroups.js";
+import { groupListHrisGroups2 } from "@unified-api/typescript-sdk/funcs/groupListHrisGroups2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -780,14 +780,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupListHrisGroups(unifiedTo, {
+  const res = await groupListHrisGroups2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupListHrisGroups failed:", res.error);
+    console.log("groupListHrisGroups2 failed:", res.error);
   }
 }
 
@@ -798,7 +798,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListHrisGroupsRequest](../../sdk/models/operations/listhrisgroupsrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListHrisGroups2Request](../../sdk/models/operations/listhrisgroups2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -890,13 +890,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAdsGroup
+## patchAdsGroup2
 
 Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsGroup2" method="patch" path="/ads/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -907,7 +907,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.patchAdsGroup({
+  const result = await unifiedTo.group.patchAdsGroup2({
     adsGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -925,7 +925,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsPatchAdsGroup } from "@unified-api/typescript-sdk/funcs/adsPatchAdsGroup.js";
+import { adsPatchAdsGroup2 } from "@unified-api/typescript-sdk/funcs/adsPatchAdsGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -936,7 +936,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsPatchAdsGroup(unifiedTo, {
+  const res = await adsPatchAdsGroup2(unifiedTo, {
     adsGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -945,7 +945,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsPatchAdsGroup failed:", res.error);
+    console.log("adsPatchAdsGroup2 failed:", res.error);
   }
 }
 
@@ -956,7 +956,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchAdsGroupRequest](../../sdk/models/operations/patchadsgrouprequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchAdsGroup2Request](../../sdk/models/operations/patchadsgroup2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -971,13 +971,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchHrisGroup
+## patchHrisGroup2
 
 Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisGroup2" method="patch" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -988,7 +988,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.patchHrisGroup({
+  const result = await unifiedTo.group.patchHrisGroup2({
     hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1006,7 +1006,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupPatchHrisGroup } from "@unified-api/typescript-sdk/funcs/groupPatchHrisGroup.js";
+import { groupPatchHrisGroup2 } from "@unified-api/typescript-sdk/funcs/groupPatchHrisGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1017,7 +1017,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupPatchHrisGroup(unifiedTo, {
+  const res = await groupPatchHrisGroup2(unifiedTo, {
     hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1026,7 +1026,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupPatchHrisGroup failed:", res.error);
+    console.log("groupPatchHrisGroup2 failed:", res.error);
   }
 }
 
@@ -1037,7 +1037,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchHrisGroupRequest](../../sdk/models/operations/patchhrisgrouprequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchHrisGroup2Request](../../sdk/models/operations/patchhrisgroup2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1137,13 +1137,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAdsGroup
+## removeAdsGroup2
 
 Remove a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeAdsGroup" method="delete" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeAdsGroup2" method="delete" path="/ads/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1154,7 +1154,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.removeAdsGroup({
+  const result = await unifiedTo.group.removeAdsGroup2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1171,7 +1171,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsRemoveAdsGroup } from "@unified-api/typescript-sdk/funcs/adsRemoveAdsGroup.js";
+import { adsRemoveAdsGroup2 } from "@unified-api/typescript-sdk/funcs/adsRemoveAdsGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1182,7 +1182,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsRemoveAdsGroup(unifiedTo, {
+  const res = await adsRemoveAdsGroup2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1190,7 +1190,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsRemoveAdsGroup failed:", res.error);
+    console.log("adsRemoveAdsGroup2 failed:", res.error);
   }
 }
 
@@ -1201,14 +1201,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveAdsGroupRequest](../../sdk/models/operations/removeadsgrouprequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveAdsGroup2Request](../../sdk/models/operations/removeadsgroup2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveAdsGroupResponse](../../sdk/models/operations/removeadsgroupresponse.md)\>**
+**Promise\<[operations.RemoveAdsGroup2Response](../../sdk/models/operations/removeadsgroup2response.md)\>**
 
 ### Errors
 
@@ -1216,13 +1216,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeHrisGroup
+## removeHrisGroup2
 
 Remove a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeHrisGroup" method="delete" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeHrisGroup2" method="delete" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1233,7 +1233,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.removeHrisGroup({
+  const result = await unifiedTo.group.removeHrisGroup2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1250,7 +1250,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupRemoveHrisGroup } from "@unified-api/typescript-sdk/funcs/groupRemoveHrisGroup.js";
+import { groupRemoveHrisGroup2 } from "@unified-api/typescript-sdk/funcs/groupRemoveHrisGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1261,7 +1261,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupRemoveHrisGroup(unifiedTo, {
+  const res = await groupRemoveHrisGroup2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1269,7 +1269,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupRemoveHrisGroup failed:", res.error);
+    console.log("groupRemoveHrisGroup2 failed:", res.error);
   }
 }
 
@@ -1280,14 +1280,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveHrisGroupRequest](../../sdk/models/operations/removehrisgrouprequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveHrisGroup2Request](../../sdk/models/operations/removehrisgroup2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveHrisGroupResponse](../../sdk/models/operations/removehrisgroupresponse.md)\>**
+**Promise\<[operations.RemoveHrisGroup2Response](../../sdk/models/operations/removehrisgroup2response.md)\>**
 
 ### Errors
 
@@ -1374,13 +1374,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAdsGroup
+## updateAdsGroup2
 
 Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsGroup2" method="put" path="/ads/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1391,7 +1391,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.updateAdsGroup({
+  const result = await unifiedTo.group.updateAdsGroup2({
     adsGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1409,7 +1409,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsUpdateAdsGroup } from "@unified-api/typescript-sdk/funcs/adsUpdateAdsGroup.js";
+import { adsUpdateAdsGroup2 } from "@unified-api/typescript-sdk/funcs/adsUpdateAdsGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1420,7 +1420,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsUpdateAdsGroup(unifiedTo, {
+  const res = await adsUpdateAdsGroup2(unifiedTo, {
     adsGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1429,7 +1429,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsUpdateAdsGroup failed:", res.error);
+    console.log("adsUpdateAdsGroup2 failed:", res.error);
   }
 }
 
@@ -1440,7 +1440,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateAdsGroupRequest](../../sdk/models/operations/updateadsgrouprequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateAdsGroup2Request](../../sdk/models/operations/updateadsgroup2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1455,13 +1455,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateHrisGroup
+## updateHrisGroup2
 
 Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisGroup2" method="put" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1472,7 +1472,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.group.updateHrisGroup({
+  const result = await unifiedTo.group.updateHrisGroup2({
     hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1490,7 +1490,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupUpdateHrisGroup } from "@unified-api/typescript-sdk/funcs/groupUpdateHrisGroup.js";
+import { groupUpdateHrisGroup2 } from "@unified-api/typescript-sdk/funcs/groupUpdateHrisGroup2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1501,7 +1501,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupUpdateHrisGroup(unifiedTo, {
+  const res = await groupUpdateHrisGroup2(unifiedTo, {
     hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1510,7 +1510,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupUpdateHrisGroup failed:", res.error);
+    console.log("groupUpdateHrisGroup2 failed:", res.error);
   }
 }
 
@@ -1521,7 +1521,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateHrisGroupRequest](../../sdk/models/operations/updatehrisgrouprequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateHrisGroup2Request](../../sdk/models/operations/updatehrisgroup2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

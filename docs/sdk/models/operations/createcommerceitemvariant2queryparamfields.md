@@ -1,0 +1,15 @@
+# CreateCommerceItemvariant2QueryParamFields
+
+## Example Usage
+
+```typescript
+import { CreateCommerceItemvariant2QueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateCommerceItemvariant2QueryParamFields = "description";
+```
+
+## Values
+
+```typescript
+"id" | "created_at" | "updated_at" | "name" | "public_name" | "description" | "public_description" | "sku" | "is_active" | "is_visible" | "is_featured" | "media" | "available_at" | "tags" | "width" | "height" | "length" | "weight" | "size_unit" | "weight_unit" | "total_stock" | "prices" | "options" | "inventory_id" | "requires_shipping" | "metadata" | "items" | "raw"
+```

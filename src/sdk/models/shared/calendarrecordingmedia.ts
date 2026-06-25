@@ -22,6 +22,8 @@ export type CalendarRecordingMedia = {
   language?: string | undefined;
   recordingDownloadUrl?: string | undefined;
   startAt?: Date | undefined;
+  summary?: string | undefined;
+  summaryDownloadUrl?: string | undefined;
   transcriptDownloadUrl?: string | undefined;
   transcripts?: Array<CalendarRecordingTranscript> | undefined;
 };
@@ -39,6 +41,8 @@ export const CalendarRecordingMedia$inboundSchema: z.ZodType<
   recording_download_url: z.string().optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  summary: z.string().optional(),
+  summary_download_url: z.string().optional(),
   transcript_download_url: z.string().optional(),
   transcripts: z.array(CalendarRecordingTranscript$inboundSchema).optional(),
 }).transform((v) => {
@@ -46,6 +50,7 @@ export const CalendarRecordingMedia$inboundSchema: z.ZodType<
     "end_at": "endAt",
     "recording_download_url": "recordingDownloadUrl",
     "start_at": "startAt",
+    "summary_download_url": "summaryDownloadUrl",
     "transcript_download_url": "transcriptDownloadUrl",
   });
 });

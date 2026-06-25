@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export const DurationType = {
+  Hour: "HOUR",
+  Day: "DAY",
+} as const;
+export type DurationType = OpenEnum<typeof DurationType>;
+
 export const HrisTimeoffStatus = {
   Approved: "APPROVED",
   Pending: "PENDING",
@@ -35,6 +41,8 @@ export type HrisTimeoff = {
   comments?: string | undefined;
   companyId?: string | undefined;
   createdAt?: Date | undefined;
+  duration?: number | undefined;
+  durationType?: DurationType | undefined;
   endAt?: Date | undefined;
   id?: string | undefined;
   isPaid?: boolean | undefined;
@@ -46,6 +54,19 @@ export type HrisTimeoff = {
   updatedAt?: Date | undefined;
   userId: string;
 };
+
+/** @internal */
+export const DurationType$inboundSchema: z.ZodType<
+  DurationType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(DurationType);
+/** @internal */
+export const DurationType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  DurationType
+> = openEnums.outboundSchema(DurationType);
 
 /** @internal */
 export const HrisTimeoffStatus$inboundSchema: z.ZodType<
@@ -86,6 +107,8 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
   company_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  duration: z.number().optional(),
+  duration_type: DurationType$inboundSchema.optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
@@ -105,6 +128,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     "approver_user_id": "approverUserId",
     "company_id": "companyId",
     "created_at": "createdAt",
+    "duration_type": "durationType",
     "end_at": "endAt",
     "is_paid": "isPaid",
     "start_at": "startAt",
@@ -119,6 +143,8 @@ export type HrisTimeoff$Outbound = {
   comments?: string | undefined;
   company_id?: string | undefined;
   created_at?: string | undefined;
+  duration?: number | undefined;
+  duration_type?: string | undefined;
   end_at?: string | undefined;
   id?: string | undefined;
   is_paid?: boolean | undefined;
@@ -142,6 +168,8 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   comments: z.string().optional(),
   companyId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  duration: z.number().optional(),
+  durationType: DurationType$outboundSchema.optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   isPaid: z.boolean().optional(),
@@ -158,6 +186,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
     approverUserId: "approver_user_id",
     companyId: "company_id",
     createdAt: "created_at",
+    durationType: "duration_type",
     endAt: "end_at",
     isPaid: "is_paid",
     startAt: "start_at",

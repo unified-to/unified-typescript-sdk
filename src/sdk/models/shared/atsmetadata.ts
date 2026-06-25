@@ -42,7 +42,7 @@ export type AtsMetadata1 = {};
 
 export type AtsMetadata5 = AtsMetadata1 | string | number | boolean;
 
-export type Value =
+export type AtsMetadataValue =
   | { [k: string]: any }
   | string
   | number
@@ -266,23 +266,26 @@ export function atsMetadata5FromJSON(
 }
 
 /** @internal */
-export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z
-  .union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AtsMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]);
+export const AtsMetadataValue$inboundSchema: z.ZodType<
+  AtsMetadataValue,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => AtsMetadata1$inboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
+]);
 /** @internal */
-export type Value$Outbound =
+export type AtsMetadataValue$Outbound =
   | { [k: string]: any }
   | string
   | number
@@ -290,10 +293,10 @@ export type Value$Outbound =
   | Array<AtsMetadata1$Outbound | string | number | boolean>;
 
 /** @internal */
-export const Value$outboundSchema: z.ZodType<
-  Value$Outbound,
+export const AtsMetadataValue$outboundSchema: z.ZodType<
+  AtsMetadataValue$Outbound,
   z.ZodTypeDef,
-  Value
+  AtsMetadataValue
 > = z.union([
   z.record(z.any()),
   z.string(),
@@ -309,16 +312,20 @@ export const Value$outboundSchema: z.ZodType<
   ),
 ]);
 
-export function valueToJSON(value: Value): string {
-  return JSON.stringify(Value$outboundSchema.parse(value));
+export function atsMetadataValueToJSON(
+  atsMetadataValue: AtsMetadataValue,
+): string {
+  return JSON.stringify(
+    AtsMetadataValue$outboundSchema.parse(atsMetadataValue),
+  );
 }
-export function valueFromJSON(
+export function atsMetadataValueFromJSON(
   jsonString: string,
-): SafeParseResult<Value, SDKValidationError> {
+): SafeParseResult<AtsMetadataValue, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Value$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Value' from JSON`,
+    (x) => AtsMetadataValue$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsMetadataValue' from JSON`,
   );
 }
 

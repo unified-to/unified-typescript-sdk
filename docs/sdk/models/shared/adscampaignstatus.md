@@ -13,5 +13,5 @@ let value: AdsCampaignStatus = "ACTIVE";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "PROCESSING" | "PROCESSING_FAILED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | Unrecognized<string>
+"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | "PROCESSING" | "PROCESSING_FAILED" | Unrecognized<string>
 ```

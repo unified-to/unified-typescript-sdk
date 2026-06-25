@@ -4,15 +4,15 @@
 
 ### Available Operations
 
-* [createGenaiEmbedding](#creategenaiembedding) - Create an embedding
+* [createGenaiEmbedding2](#creategenaiembedding2) - Create an embedding
 
-## createGenaiEmbedding
+## createGenaiEmbedding2
 
 Create an embedding
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" -->
+<!-- UsageSnippet language="typescript" operationID="createGenaiEmbedding2" method="post" path="/genai/{connection_id}/embedding" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -23,7 +23,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.embedding.createGenaiEmbedding({
+  const result = await unifiedTo.embedding.createGenaiEmbedding2({
     genaiEmbedding: {},
     connectionId: "<id>",
   });
@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { genaiCreateGenaiEmbedding } from "@unified-api/typescript-sdk/funcs/genaiCreateGenaiEmbedding.js";
+import { genaiCreateGenaiEmbedding2 } from "@unified-api/typescript-sdk/funcs/genaiCreateGenaiEmbedding2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,7 +51,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await genaiCreateGenaiEmbedding(unifiedTo, {
+  const res = await genaiCreateGenaiEmbedding2(unifiedTo, {
     genaiEmbedding: {},
     connectionId: "<id>",
   });
@@ -59,7 +59,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("genaiCreateGenaiEmbedding failed:", res.error);
+    console.log("genaiCreateGenaiEmbedding2 failed:", res.error);
   }
 }
 
@@ -70,7 +70,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateGenaiEmbeddingRequest](../../sdk/models/operations/creategenaiembeddingrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateGenaiEmbedding2Request](../../sdk/models/operations/creategenaiembedding2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

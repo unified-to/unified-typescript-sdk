@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingCreateAccountingAccount } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingAccount.js";
+import { accountingCreateAccountingAccount2 } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingAccount2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -31,7 +31,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingCreateAccountingAccount(unifiedTo, {
+  const res = await accountingCreateAccountingAccount2(unifiedTo, {
     accountingAccount: {},
     connectionId: "<id>",
   });
@@ -39,7 +39,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingCreateAccountingAccount failed:", res.error);
+    console.log("accountingCreateAccountingAccount2 failed:", res.error);
   }
 }
 

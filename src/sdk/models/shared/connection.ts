@@ -32,10 +32,6 @@ export type Connection = {
    * An authentication object that represents a specific authorized user's connection to an integration.
    */
   auth?: PropertyConnectionAuth | undefined;
-  authAwsArn?: string | undefined;
-  authAzureKeyvaultId?: string | undefined;
-  authGcpSecretName?: string | undefined;
-  authHashiVaultPath?: string | undefined;
   /**
    * The Integration categories that this connection supports
    */
@@ -63,10 +59,6 @@ export const Connection$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   auth: PropertyConnectionAuth$inboundSchema.optional(),
-  auth_aws_arn: z.string().optional(),
-  auth_azure_keyvault_id: z.string().optional(),
-  auth_gcp_secret_name: z.string().optional(),
-  auth_hashi_vault_path: z.string().optional(),
   categories: z.array(PropertyConnectionCategories$inboundSchema),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -90,10 +82,6 @@ export const Connection$inboundSchema: z.ZodType<
   workspace_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "auth_aws_arn": "authAwsArn",
-    "auth_azure_keyvault_id": "authAzureKeyvaultId",
-    "auth_gcp_secret_name": "authGcpSecretName",
-    "auth_hashi_vault_path": "authHashiVaultPath",
     "created_at": "createdAt",
     "external_xref": "externalXref",
     "integration_name": "integrationName",
@@ -110,10 +98,6 @@ export const Connection$inboundSchema: z.ZodType<
 /** @internal */
 export type Connection$Outbound = {
   auth?: PropertyConnectionAuth$Outbound | undefined;
-  auth_aws_arn?: string | undefined;
-  auth_azure_keyvault_id?: string | undefined;
-  auth_gcp_secret_name?: string | undefined;
-  auth_hashi_vault_path?: string | undefined;
   categories: Array<string>;
   created_at?: string | undefined;
   environment: string;
@@ -138,10 +122,6 @@ export const Connection$outboundSchema: z.ZodType<
   Connection
 > = z.object({
   auth: PropertyConnectionAuth$outboundSchema.optional(),
-  authAwsArn: z.string().optional(),
-  authAzureKeyvaultId: z.string().optional(),
-  authGcpSecretName: z.string().optional(),
-  authHashiVaultPath: z.string().optional(),
   categories: z.array(PropertyConnectionCategories$outboundSchema),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   environment: z.string().default("Production"),
@@ -159,10 +139,6 @@ export const Connection$outboundSchema: z.ZodType<
   workspaceId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    authAwsArn: "auth_aws_arn",
-    authAzureKeyvaultId: "auth_azure_keyvault_id",
-    authGcpSecretName: "auth_gcp_secret_name",
-    authHashiVaultPath: "auth_hashi_vault_path",
     createdAt: "created_at",
     externalXref: "external_xref",
     integrationName: "integration_name",

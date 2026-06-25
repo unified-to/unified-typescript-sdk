@@ -31,11 +31,13 @@ export const QueryParamCategories = {
   Calendar: "calendar",
   Verification: "verification",
   Ads: "ads",
+  Analytics: "analytics",
   Forms: "forms",
   Shipping: "shipping",
   Assessment: "assessment",
   Signing: "signing",
   Clubs: "clubs",
+  Datastore: "datastore",
 } as const;
 export type QueryParamCategories = ClosedEnum<typeof QueryParamCategories>;
 

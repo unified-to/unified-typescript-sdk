@@ -23,11 +23,11 @@ import {
   PropertyEnrichPersonAddress$inboundSchema,
 } from "./propertyenrichpersonaddress.js";
 
-export const Gender = {
+export const EnrichPersonGender = {
   Male: "MALE",
   Female: "FEMALE",
 } as const;
-export type Gender = OpenEnum<typeof Gender>;
+export type EnrichPersonGender = OpenEnum<typeof EnrichPersonGender>;
 
 /**
  * A person object from an enrichment integration
@@ -48,7 +48,7 @@ export type EnrichPerson = {
   emails?: Array<EnrichEmail> | undefined;
   facebookUrl?: string | undefined;
   firstName?: string | undefined;
-  gender?: Gender | undefined;
+  gender?: EnrichPersonGender | undefined;
   githubUrl?: string | undefined;
   githubUsername?: string | undefined;
   id?: string | undefined;
@@ -71,8 +71,11 @@ export type EnrichPerson = {
 };
 
 /** @internal */
-export const Gender$inboundSchema: z.ZodType<Gender, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Gender);
+export const EnrichPersonGender$inboundSchema: z.ZodType<
+  EnrichPersonGender,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(EnrichPersonGender);
 
 /** @internal */
 export const EnrichPerson$inboundSchema: z.ZodType<
@@ -90,7 +93,7 @@ export const EnrichPerson$inboundSchema: z.ZodType<
   emails: z.array(EnrichEmail$inboundSchema).optional(),
   facebook_url: z.string().optional(),
   first_name: z.string().optional(),
-  gender: Gender$inboundSchema.optional(),
+  gender: EnrichPersonGender$inboundSchema.optional(),
   github_url: z.string().optional(),
   github_username: z.string().optional(),
   id: z.string().optional(),

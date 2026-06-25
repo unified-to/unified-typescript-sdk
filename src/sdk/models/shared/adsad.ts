@@ -38,10 +38,10 @@ export const AdsAdStatus = {
   Active: "ACTIVE",
   Paused: "PAUSED",
   Archived: "ARCHIVED",
-  Processing: "PROCESSING",
-  ProcessingFailed: "PROCESSING_FAILED",
   Draft: "DRAFT",
   ScheduledForDeletion: "SCHEDULED_FOR_DELETION",
+  Processing: "PROCESSING",
+  ProcessingFailed: "PROCESSING_FAILED",
 } as const;
 export type AdsAdStatus = OpenEnum<typeof AdsAdStatus>;
 

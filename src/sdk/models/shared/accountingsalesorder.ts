@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingFee,
+  AccountingFee$inboundSchema,
+  AccountingFee$Outbound,
+  AccountingFee$outboundSchema,
+} from "./accountingfee.js";
+import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
   AccountingLineitem$Outbound,
@@ -49,6 +55,7 @@ export type AccountingSalesorder = {
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  fees?: Array<AccountingFee> | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   organizationId?: string | undefined;
@@ -87,6 +94,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
+  fees: z.array(AccountingFee$inboundSchema).optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   organization_id: z.string().optional(),
@@ -123,6 +131,7 @@ export type AccountingSalesorder$Outbound = {
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
+  fees?: Array<AccountingFee$Outbound> | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   organization_id?: string | undefined;
@@ -149,6 +158,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
+  fees: z.array(AccountingFee$outboundSchema).optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   organizationId: z.string().optional(),

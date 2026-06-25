@@ -57,6 +57,7 @@ export type AtsApplication = {
   metadata?: Array<AtsMetadata> | undefined;
   offers?: Array<AtsOffer> | undefined;
   originalStatus?: string | undefined;
+  originalSubstatus?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   rejectedAt?: Date | undefined;
   rejectedReason?: string | undefined;
@@ -98,6 +99,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
   metadata: z.array(AtsMetadata$inboundSchema).optional(),
   offers: z.array(AtsOffer$inboundSchema).optional(),
   original_status: z.string().optional(),
+  original_substatus: z.string().optional(),
   raw: z.record(z.any()).optional(),
   rejected_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -115,6 +117,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
     "hired_at": "hiredAt",
     "job_id": "jobId",
     "original_status": "originalStatus",
+    "original_substatus": "originalSubstatus",
     "rejected_at": "rejectedAt",
     "rejected_reason": "rejectedReason",
     "updated_at": "updatedAt",
@@ -133,6 +136,7 @@ export type AtsApplication$Outbound = {
   metadata?: Array<AtsMetadata$Outbound> | undefined;
   offers?: Array<AtsOffer$Outbound> | undefined;
   original_status?: string | undefined;
+  original_substatus?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   rejected_at?: string | undefined;
   rejected_reason?: string | undefined;
@@ -158,6 +162,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
   offers: z.array(AtsOffer$outboundSchema).optional(),
   originalStatus: z.string().optional(),
+  originalSubstatus: z.string().optional(),
   raw: z.record(z.any()).optional(),
   rejectedAt: z.date().transform(v => v.toISOString()).optional(),
   rejectedReason: z.string().optional(),
@@ -173,6 +178,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
     hiredAt: "hired_at",
     jobId: "job_id",
     originalStatus: "original_status",
+    originalSubstatus: "original_substatus",
     rejectedAt: "rejected_at",
     rejectedReason: "rejected_reason",
     updatedAt: "updated_at",

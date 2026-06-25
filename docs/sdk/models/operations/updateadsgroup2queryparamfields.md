@@ -1,0 +1,15 @@
+# UpdateAdsGroup2QueryParamFields
+
+## Example Usage
+
+```typescript
+import { UpdateAdsGroup2QueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateAdsGroup2QueryParamFields = "has_eu_political_ads";
+```
+
+## Values
+
+```typescript
+"id" | "created_at" | "updated_at" | "name" | "parent_id" | "campaign_id" | "organization_id" | "insertionorder_id" | "status" | "targeting" | "bid_amount" | "bid_strategy" | "budget_amount" | "budget_period" | "budget_allocation_type" | "start_at" | "end_at" | "budget_unit" | "budget_max_amount" | "type" | "has_eu_political_ads" | "pacing" | "frequency_cap" | "creative_ids" | "optimization_goal" | "billing_event" | "currency" | "promoted" | "raw"
+```

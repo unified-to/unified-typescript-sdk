@@ -22,11 +22,11 @@ export const CreativeType = {
   Expandable: "EXPANDABLE",
   Video: "VIDEO",
   Native: "NATIVE",
-  Image: "IMAGE",
   Audio: "AUDIO",
-  Document: "DOCUMENT",
   PublisherHosted: "PUBLISHER_HOSTED",
   AssetBased: "ASSET_BASED",
+  Image: "IMAGE",
+  Document: "DOCUMENT",
 } as const;
 export type CreativeType = OpenEnum<typeof CreativeType>;
 
@@ -45,10 +45,10 @@ export const AdsCreativeStatus = {
   Active: "ACTIVE",
   Paused: "PAUSED",
   Archived: "ARCHIVED",
-  Processing: "PROCESSING",
-  ProcessingFailed: "PROCESSING_FAILED",
   Draft: "DRAFT",
   ScheduledForDeletion: "SCHEDULED_FOR_DELETION",
+  Processing: "PROCESSING",
+  ProcessingFailed: "PROCESSING_FAILED",
 } as const;
 export type AdsCreativeStatus = OpenEnum<typeof AdsCreativeStatus>;
 

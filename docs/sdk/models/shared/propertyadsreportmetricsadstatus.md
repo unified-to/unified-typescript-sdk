@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyAdsReportMetricsAdStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyAdsReportMetricsAdStatus = "PROCESSING_FAILED";
+let value: PropertyAdsReportMetricsAdStatus = "SCHEDULED_FOR_DELETION";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: PropertyAdsReportMetricsAdStatus = "PROCESSING_FAILED";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "PROCESSING" | "PROCESSING_FAILED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | Unrecognized<string>
+"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | "PROCESSING" | "PROCESSING_FAILED" | Unrecognized<string>
 ```

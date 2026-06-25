@@ -5,7 +5,7 @@
 ```typescript
 import { AdsGroupStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AdsGroupStatus = "SCHEDULED_FOR_DELETION";
+let value: AdsGroupStatus = "PROCESSING_FAILED";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AdsGroupStatus = "SCHEDULED_FOR_DELETION";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "PROCESSING" | "PROCESSING_FAILED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | Unrecognized<string>
+"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | "PROCESSING" | "PROCESSING_FAILED" | Unrecognized<string>
 ```

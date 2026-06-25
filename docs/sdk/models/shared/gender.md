@@ -13,5 +13,5 @@ let value: Gender = "MALE";
 ## Values
 
 ```typescript
-"MALE" | "FEMALE" | Unrecognized<string>
+"MALE" | "FEMALE" | "INTERSEX" | "TRANS" | "NON_BINARY" | Unrecognized<string>
 ```

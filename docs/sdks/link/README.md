@@ -4,26 +4,26 @@
 
 ### Available Operations
 
-* [createCalendarLink](#createcalendarlink) - Create a link
-* [createPaymentLink](#createpaymentlink) - Create a link
-* [getCalendarLink](#getcalendarlink) - Retrieve a link
-* [getPaymentLink](#getpaymentlink) - Retrieve a link
-* [listCalendarLinks](#listcalendarlinks) - List all links
-* [listPaymentLinks](#listpaymentlinks) - List all links
-* [patchCalendarLink](#patchcalendarlink) - Update a link
-* [patchPaymentLink](#patchpaymentlink) - Update a link
-* [removeCalendarLink](#removecalendarlink) - Remove a link
-* [removePaymentLink](#removepaymentlink) - Remove a link
-* [updateCalendarLink](#updatecalendarlink) - Update a link
-* [updatePaymentLink](#updatepaymentlink) - Update a link
+* [createCalendarLink2](#createcalendarlink2) - Create a link
+* [createPaymentLink2](#createpaymentlink2) - Create a link
+* [getCalendarLink2](#getcalendarlink2) - Retrieve a link
+* [getPaymentLink2](#getpaymentlink2) - Retrieve a link
+* [listCalendarLinks2](#listcalendarlinks2) - List all links
+* [listPaymentLinks2](#listpaymentlinks2) - List all links
+* [patchCalendarLink2](#patchcalendarlink2) - Update a link
+* [patchPaymentLink2](#patchpaymentlink2) - Update a link
+* [removeCalendarLink2](#removecalendarlink2) - Remove a link
+* [removePaymentLink2](#removepaymentlink2) - Remove a link
+* [updateCalendarLink2](#updatecalendarlink2) - Update a link
+* [updatePaymentLink2](#updatepaymentlink2) - Update a link
 
-## createCalendarLink
+## createCalendarLink2
 
 Create a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCalendarLink" method="post" path="/calendar/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="createCalendarLink2" method="post" path="/calendar/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -34,9 +34,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.createCalendarLink({
+  const result = await unifiedTo.link.createCalendarLink2({
     calendarLink: {
-      url: "https://misguided-thongs.info",
+      url: "https://prestigious-fort.name/",
     },
     connectionId: "<id>",
   });
@@ -53,7 +53,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarCreateCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarLink.js";
+import { calendarCreateCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -64,9 +64,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarCreateCalendarLink(unifiedTo, {
+  const res = await calendarCreateCalendarLink2(unifiedTo, {
     calendarLink: {
-      url: "https://misguided-thongs.info",
+      url: "https://prestigious-fort.name/",
     },
     connectionId: "<id>",
   });
@@ -74,7 +74,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarCreateCalendarLink failed:", res.error);
+    console.log("calendarCreateCalendarLink2 failed:", res.error);
   }
 }
 
@@ -85,7 +85,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCalendarLinkRequest](../../sdk/models/operations/createcalendarlinkrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCalendarLink2Request](../../sdk/models/operations/createcalendarlink2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -100,13 +100,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createPaymentLink
+## createPaymentLink2
 
 Create a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="createPaymentLink2" method="post" path="/payment/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -117,7 +117,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.createPaymentLink({
+  const result = await unifiedTo.link.createPaymentLink2({
     paymentLink: {},
     connectionId: "<id>",
   });
@@ -134,7 +134,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkCreatePaymentLink } from "@unified-api/typescript-sdk/funcs/linkCreatePaymentLink.js";
+import { linkCreatePaymentLink2 } from "@unified-api/typescript-sdk/funcs/linkCreatePaymentLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -145,7 +145,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkCreatePaymentLink(unifiedTo, {
+  const res = await linkCreatePaymentLink2(unifiedTo, {
     paymentLink: {},
     connectionId: "<id>",
   });
@@ -153,7 +153,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkCreatePaymentLink failed:", res.error);
+    console.log("linkCreatePaymentLink2 failed:", res.error);
   }
 }
 
@@ -164,7 +164,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreatePaymentLinkRequest](../../sdk/models/operations/createpaymentlinkrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreatePaymentLink2Request](../../sdk/models/operations/createpaymentlink2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -179,13 +179,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCalendarLink
+## getCalendarLink2
 
 Retrieve a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCalendarLink" method="get" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCalendarLink2" method="get" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -196,7 +196,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.getCalendarLink({
+  const result = await unifiedTo.link.getCalendarLink2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -213,7 +213,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarGetCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarLink.js";
+import { calendarGetCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -224,7 +224,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarGetCalendarLink(unifiedTo, {
+  const res = await calendarGetCalendarLink2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -232,7 +232,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarGetCalendarLink failed:", res.error);
+    console.log("calendarGetCalendarLink2 failed:", res.error);
   }
 }
 
@@ -243,7 +243,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCalendarLinkRequest](../../sdk/models/operations/getcalendarlinkrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCalendarLink2Request](../../sdk/models/operations/getcalendarlink2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -258,13 +258,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getPaymentLink
+## getPaymentLink2
 
 Retrieve a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getPaymentLink" method="get" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getPaymentLink2" method="get" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -275,7 +275,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.getPaymentLink({
+  const result = await unifiedTo.link.getPaymentLink2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -292,7 +292,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkGetPaymentLink } from "@unified-api/typescript-sdk/funcs/linkGetPaymentLink.js";
+import { linkGetPaymentLink2 } from "@unified-api/typescript-sdk/funcs/linkGetPaymentLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -303,7 +303,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkGetPaymentLink(unifiedTo, {
+  const res = await linkGetPaymentLink2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -311,7 +311,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkGetPaymentLink failed:", res.error);
+    console.log("linkGetPaymentLink2 failed:", res.error);
   }
 }
 
@@ -322,7 +322,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetPaymentLinkRequest](../../sdk/models/operations/getpaymentlinkrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetPaymentLink2Request](../../sdk/models/operations/getpaymentlink2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -337,13 +337,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCalendarLinks
+## listCalendarLinks2
 
 List all links
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCalendarLinks" method="get" path="/calendar/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="listCalendarLinks2" method="get" path="/calendar/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -354,7 +354,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.listCalendarLinks({
+  const result = await unifiedTo.link.listCalendarLinks2({
     connectionId: "<id>",
   });
 
@@ -370,7 +370,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarListCalendarLinks } from "@unified-api/typescript-sdk/funcs/calendarListCalendarLinks.js";
+import { calendarListCalendarLinks2 } from "@unified-api/typescript-sdk/funcs/calendarListCalendarLinks2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -381,14 +381,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarListCalendarLinks(unifiedTo, {
+  const res = await calendarListCalendarLinks2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarListCalendarLinks failed:", res.error);
+    console.log("calendarListCalendarLinks2 failed:", res.error);
   }
 }
 
@@ -399,7 +399,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCalendarLinksRequest](../../sdk/models/operations/listcalendarlinksrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCalendarLinks2Request](../../sdk/models/operations/listcalendarlinks2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -414,13 +414,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listPaymentLinks
+## listPaymentLinks2
 
 List all links
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listPaymentLinks" method="get" path="/payment/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="listPaymentLinks2" method="get" path="/payment/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -431,7 +431,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.listPaymentLinks({
+  const result = await unifiedTo.link.listPaymentLinks2({
     connectionId: "<id>",
   });
 
@@ -447,7 +447,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkListPaymentLinks } from "@unified-api/typescript-sdk/funcs/linkListPaymentLinks.js";
+import { linkListPaymentLinks2 } from "@unified-api/typescript-sdk/funcs/linkListPaymentLinks2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -458,14 +458,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkListPaymentLinks(unifiedTo, {
+  const res = await linkListPaymentLinks2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkListPaymentLinks failed:", res.error);
+    console.log("linkListPaymentLinks2 failed:", res.error);
   }
 }
 
@@ -476,7 +476,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListPaymentLinksRequest](../../sdk/models/operations/listpaymentlinksrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListPaymentLinks2Request](../../sdk/models/operations/listpaymentlinks2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -491,13 +491,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCalendarLink
+## patchCalendarLink2
 
 Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCalendarLink" method="patch" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCalendarLink2" method="patch" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -508,9 +508,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.patchCalendarLink({
+  const result = await unifiedTo.link.patchCalendarLink2({
     calendarLink: {
-      url: "https://warm-hexagon.name/",
+      url: "https://probable-accelerator.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -528,7 +528,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarPatchCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarLink.js";
+import { calendarPatchCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -539,9 +539,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarPatchCalendarLink(unifiedTo, {
+  const res = await calendarPatchCalendarLink2(unifiedTo, {
     calendarLink: {
-      url: "https://warm-hexagon.name/",
+      url: "https://probable-accelerator.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -550,7 +550,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarPatchCalendarLink failed:", res.error);
+    console.log("calendarPatchCalendarLink2 failed:", res.error);
   }
 }
 
@@ -561,7 +561,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCalendarLinkRequest](../../sdk/models/operations/patchcalendarlinkrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCalendarLink2Request](../../sdk/models/operations/patchcalendarlink2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -576,13 +576,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchPaymentLink
+## patchPaymentLink2
 
 Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPaymentLink2" method="patch" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -593,7 +593,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.patchPaymentLink({
+  const result = await unifiedTo.link.patchPaymentLink2({
     paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
@@ -611,7 +611,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkPatchPaymentLink } from "@unified-api/typescript-sdk/funcs/linkPatchPaymentLink.js";
+import { linkPatchPaymentLink2 } from "@unified-api/typescript-sdk/funcs/linkPatchPaymentLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -622,7 +622,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkPatchPaymentLink(unifiedTo, {
+  const res = await linkPatchPaymentLink2(unifiedTo, {
     paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
@@ -631,7 +631,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkPatchPaymentLink failed:", res.error);
+    console.log("linkPatchPaymentLink2 failed:", res.error);
   }
 }
 
@@ -642,7 +642,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchPaymentLinkRequest](../../sdk/models/operations/patchpaymentlinkrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchPaymentLink2Request](../../sdk/models/operations/patchpaymentlink2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -657,13 +657,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCalendarLink
+## removeCalendarLink2
 
 Remove a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCalendarLink" method="delete" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCalendarLink2" method="delete" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -674,7 +674,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.removeCalendarLink({
+  const result = await unifiedTo.link.removeCalendarLink2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -691,7 +691,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarRemoveCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarLink.js";
+import { calendarRemoveCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -702,7 +702,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarRemoveCalendarLink(unifiedTo, {
+  const res = await calendarRemoveCalendarLink2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -710,7 +710,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarRemoveCalendarLink failed:", res.error);
+    console.log("calendarRemoveCalendarLink2 failed:", res.error);
   }
 }
 
@@ -721,14 +721,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCalendarLinkRequest](../../sdk/models/operations/removecalendarlinkrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCalendarLink2Request](../../sdk/models/operations/removecalendarlink2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCalendarLinkResponse](../../sdk/models/operations/removecalendarlinkresponse.md)\>**
+**Promise\<[operations.RemoveCalendarLink2Response](../../sdk/models/operations/removecalendarlink2response.md)\>**
 
 ### Errors
 
@@ -736,13 +736,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removePaymentLink
+## removePaymentLink2
 
 Remove a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removePaymentLink" method="delete" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removePaymentLink2" method="delete" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -753,7 +753,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.removePaymentLink({
+  const result = await unifiedTo.link.removePaymentLink2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -770,7 +770,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkRemovePaymentLink } from "@unified-api/typescript-sdk/funcs/linkRemovePaymentLink.js";
+import { linkRemovePaymentLink2 } from "@unified-api/typescript-sdk/funcs/linkRemovePaymentLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -781,7 +781,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkRemovePaymentLink(unifiedTo, {
+  const res = await linkRemovePaymentLink2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -789,7 +789,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkRemovePaymentLink failed:", res.error);
+    console.log("linkRemovePaymentLink2 failed:", res.error);
   }
 }
 
@@ -800,14 +800,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemovePaymentLinkRequest](../../sdk/models/operations/removepaymentlinkrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemovePaymentLink2Request](../../sdk/models/operations/removepaymentlink2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemovePaymentLinkResponse](../../sdk/models/operations/removepaymentlinkresponse.md)\>**
+**Promise\<[operations.RemovePaymentLink2Response](../../sdk/models/operations/removepaymentlink2response.md)\>**
 
 ### Errors
 
@@ -815,13 +815,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCalendarLink
+## updateCalendarLink2
 
 Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCalendarLink" method="put" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCalendarLink2" method="put" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -832,9 +832,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.updateCalendarLink({
+  const result = await unifiedTo.link.updateCalendarLink2({
     calendarLink: {
-      url: "https://partial-hydrocarbon.info",
+      url: "https://soupy-extension.net/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -852,7 +852,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { calendarUpdateCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarLink.js";
+import { calendarUpdateCalendarLink2 } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -863,9 +863,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await calendarUpdateCalendarLink(unifiedTo, {
+  const res = await calendarUpdateCalendarLink2(unifiedTo, {
     calendarLink: {
-      url: "https://partial-hydrocarbon.info",
+      url: "https://soupy-extension.net/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -874,7 +874,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("calendarUpdateCalendarLink failed:", res.error);
+    console.log("calendarUpdateCalendarLink2 failed:", res.error);
   }
 }
 
@@ -885,7 +885,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCalendarLinkRequest](../../sdk/models/operations/updatecalendarlinkrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCalendarLink2Request](../../sdk/models/operations/updatecalendarlink2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -900,13 +900,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updatePaymentLink
+## updatePaymentLink2
 
 Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePaymentLink2" method="put" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -917,7 +917,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.link.updatePaymentLink({
+  const result = await unifiedTo.link.updatePaymentLink2({
     paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
@@ -935,7 +935,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkUpdatePaymentLink } from "@unified-api/typescript-sdk/funcs/linkUpdatePaymentLink.js";
+import { linkUpdatePaymentLink2 } from "@unified-api/typescript-sdk/funcs/linkUpdatePaymentLink2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -946,7 +946,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkUpdatePaymentLink(unifiedTo, {
+  const res = await linkUpdatePaymentLink2(unifiedTo, {
     paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
@@ -955,7 +955,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkUpdatePaymentLink failed:", res.error);
+    console.log("linkUpdatePaymentLink2 failed:", res.error);
   }
 }
 
@@ -966,7 +966,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdatePaymentLinkRequest](../../sdk/models/operations/updatepaymentlinkrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdatePaymentLink2Request](../../sdk/models/operations/updatepaymentlink2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

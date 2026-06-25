@@ -4,16 +4,16 @@
 
 ### Available Operations
 
-* [getShippingCarrier](#getshippingcarrier) - Retrieve a carrier
-* [listShippingCarriers](#listshippingcarriers) - List all carriers
+* [getShippingCarrier2](#getshippingcarrier2) - Retrieve a carrier
+* [listShippingCarriers2](#listshippingcarriers2) - List all carriers
 
-## getShippingCarrier
+## getShippingCarrier2
 
 Retrieve a carrier
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getShippingCarrier" method="get" path="/shipping/{connection_id}/carrier/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getShippingCarrier2" method="get" path="/shipping/{connection_id}/carrier/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.carrier.getShippingCarrier({
+  const result = await unifiedTo.carrier.getShippingCarrier2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { shippingGetShippingCarrier } from "@unified-api/typescript-sdk/funcs/shippingGetShippingCarrier.js";
+import { shippingGetShippingCarrier2 } from "@unified-api/typescript-sdk/funcs/shippingGetShippingCarrier2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await shippingGetShippingCarrier(unifiedTo, {
+  const res = await shippingGetShippingCarrier2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("shippingGetShippingCarrier failed:", res.error);
+    console.log("shippingGetShippingCarrier2 failed:", res.error);
   }
 }
 
@@ -71,7 +71,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetShippingCarrierRequest](../../sdk/models/operations/getshippingcarrierrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetShippingCarrier2Request](../../sdk/models/operations/getshippingcarrier2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -86,13 +86,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listShippingCarriers
+## listShippingCarriers2
 
 List all carriers
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listShippingCarriers" method="get" path="/shipping/{connection_id}/carrier" -->
+<!-- UsageSnippet language="typescript" operationID="listShippingCarriers2" method="get" path="/shipping/{connection_id}/carrier" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -103,7 +103,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.carrier.listShippingCarriers({
+  const result = await unifiedTo.carrier.listShippingCarriers2({
     connectionId: "<id>",
   });
 
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { shippingListShippingCarriers } from "@unified-api/typescript-sdk/funcs/shippingListShippingCarriers.js";
+import { shippingListShippingCarriers2 } from "@unified-api/typescript-sdk/funcs/shippingListShippingCarriers2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -130,14 +130,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await shippingListShippingCarriers(unifiedTo, {
+  const res = await shippingListShippingCarriers2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("shippingListShippingCarriers failed:", res.error);
+    console.log("shippingListShippingCarriers2 failed:", res.error);
   }
 }
 
@@ -148,7 +148,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListShippingCarriersRequest](../../sdk/models/operations/listshippingcarriersrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListShippingCarriers2Request](../../sdk/models/operations/listshippingcarriers2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

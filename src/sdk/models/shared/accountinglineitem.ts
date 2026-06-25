@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingFee,
+  AccountingFee$inboundSchema,
+  AccountingFee$Outbound,
+  AccountingFee$outboundSchema,
+} from "./accountingfee.js";
+import {
   AccountingReference,
   AccountingReference$inboundSchema,
   AccountingReference$Outbound,
@@ -19,6 +25,7 @@ export type AccountingLineitem = {
   categoryIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   discountAmount?: number | undefined;
+  fees?: Array<AccountingFee> | undefined;
   id?: string | undefined;
   itemDescription?: string | undefined;
   itemId?: string | undefined;
@@ -48,6 +55,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   discount_amount: z.number().optional(),
+  fees: z.array(AccountingFee$inboundSchema).optional(),
   id: z.string().optional(),
   item_description: z.string().optional(),
   item_id: z.string().optional(),
@@ -93,6 +101,7 @@ export type AccountingLineitem$Outbound = {
   category_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   discount_amount?: number | undefined;
+  fees?: Array<AccountingFee$Outbound> | undefined;
   id?: string | undefined;
   item_description?: string | undefined;
   item_id?: string | undefined;
@@ -121,6 +130,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   categoryIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   discountAmount: z.number().optional(),
+  fees: z.array(AccountingFee$outboundSchema).optional(),
   id: z.string().optional(),
   itemDescription: z.string().optional(),
   itemId: z.string().optional(),

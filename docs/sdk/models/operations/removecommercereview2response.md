@@ -1,0 +1,17 @@
+# RemoveCommerceReview2Response
+
+## Example Usage
+
+```typescript
+import { RemoveCommerceReview2Response } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveCommerceReview2Response = {
+  headers: {},
+};
+```
+
+## Fields
+
+| Field                      | Type                       | Required                   | Description                |
+| -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| `headers`                  | Record<string, *string*[]> | :heavy_check_mark:         | N/A                        |

@@ -5,7 +5,7 @@
 ```typescript
 import { AdsCreativeStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AdsCreativeStatus = "DRAFT";
+let value: AdsCreativeStatus = "PROCESSING";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AdsCreativeStatus = "DRAFT";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "PROCESSING" | "PROCESSING_FAILED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | Unrecognized<string>
+"UNSPECIFIED" | "ACTIVE" | "PAUSED" | "ARCHIVED" | "DRAFT" | "SCHEDULED_FOR_DELETION" | "PROCESSING" | "PROCESSING_FAILED" | Unrecognized<string>
 ```

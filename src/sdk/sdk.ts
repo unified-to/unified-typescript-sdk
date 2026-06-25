@@ -8,6 +8,7 @@ import { Accounting } from "./accounting.js";
 import { Activity } from "./activity.js";
 import { Ad } from "./ad.js";
 import { Ads } from "./ads.js";
+import { Analytics } from "./analytics.js";
 import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
 import { Applicationstatus } from "./applicationstatus.js";
@@ -45,6 +46,8 @@ import { Creative } from "./creative.js";
 import { Creditmemo } from "./creditmemo.js";
 import { Crm } from "./crm.js";
 import { Customer } from "./customer.js";
+import { Database } from "./database.js";
+import { Datastore } from "./datastore.js";
 import { Deal } from "./deal.js";
 import { Deduction } from "./deduction.js";
 import { Device } from "./device.js";
@@ -101,9 +104,12 @@ import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
 import { Promoted } from "./promoted.js";
 import { Prompt } from "./prompt.js";
+import { Property } from "./property.js";
 import { Pullrequest } from "./pullrequest.js";
 import { Purchaseorder } from "./purchaseorder.js";
+import { Query } from "./query.js";
 import { Rate } from "./rate.js";
+import { RecordT } from "./record.js";
 import { Recording } from "./recording.js";
 import { Refund } from "./refund.js";
 import { Repo } from "./repo.js";
@@ -116,6 +122,7 @@ import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
+import { Session } from "./session.js";
 import { Shipment } from "./shipment.js";
 import { Shipping } from "./shipping.js";
 import { Signatory } from "./signatory.js";
@@ -125,6 +132,7 @@ import { Storage } from "./storage.js";
 import { Student } from "./student.js";
 import { Submission } from "./submission.js";
 import { Subscription } from "./subscription.js";
+import { Table } from "./table.js";
 import { Target } from "./target.js";
 import { Task } from "./task.js";
 import { Taxrate } from "./taxrate.js";
@@ -140,6 +148,7 @@ import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
 import { User } from "./user.js";
 import { Verification } from "./verification.js";
+import { Visitor } from "./visitor.js";
 import { Webhook } from "./webhook.js";
 import { Webinar } from "./webinar.js";
 
@@ -284,6 +293,31 @@ export class UnifiedTo extends ClientSDK {
     return (this._target ??= new Target(this._options));
   }
 
+  private _analytics?: Analytics;
+  get analytics(): Analytics {
+    return (this._analytics ??= new Analytics(this._options));
+  }
+
+  private _event?: Event;
+  get event(): Event {
+    return (this._event ??= new Event(this._options));
+  }
+
+  private _property?: Property;
+  get property(): Property {
+    return (this._property ??= new Property(this._options));
+  }
+
+  private _session?: Session;
+  get session(): Session {
+    return (this._session ??= new Session(this._options));
+  }
+
+  private _visitor?: Visitor;
+  get visitor(): Visitor {
+    return (this._visitor ??= new Visitor(this._options));
+  }
+
   private _assessment?: Assessment;
   get assessment(): Assessment {
     return (this._assessment ??= new Assessment(this._options));
@@ -352,11 +386,6 @@ export class UnifiedTo extends ClientSDK {
   private _busy?: Busy;
   get busy(): Busy {
     return (this._busy ??= new Busy(this._options));
-  }
-
-  private _event?: Event;
-  get event(): Event {
-    return (this._event ??= new Event(this._options));
   }
 
   private _link?: Link;
@@ -452,6 +481,31 @@ export class UnifiedTo extends ClientSDK {
   private _pipeline?: Pipeline;
   get pipeline(): Pipeline {
     return (this._pipeline ??= new Pipeline(this._options));
+  }
+
+  private _datastore?: Datastore;
+  get datastore(): Datastore {
+    return (this._datastore ??= new Datastore(this._options));
+  }
+
+  private _database?: Database;
+  get database(): Database {
+    return (this._database ??= new Database(this._options));
+  }
+
+  private _query?: Query;
+  get query(): Query {
+    return (this._query ??= new Query(this._options));
+  }
+
+  private _record?: RecordT;
+  get record(): RecordT {
+    return (this._record ??= new RecordT(this._options));
+  }
+
+  private _table?: Table;
+  get table(): Table {
+    return (this._table ??= new Table(this._options));
   }
 
   private _enrich?: Enrich;

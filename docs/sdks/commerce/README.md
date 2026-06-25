@@ -4,63 +4,63 @@
 
 ### Available Operations
 
-* [createCommerceCollection](#createcommercecollection) - Create a collection
-* [createCommerceInventory](#createcommerceinventory) - Create an inventory
-* [createCommerceItem](#createcommerceitem) - Create an item
-* [createCommerceItemvariant](#createcommerceitemvariant) - Create an itemvariant
-* [createCommerceLocation](#createcommercelocation) - Create a location
-* [createCommerceReservation](#createcommercereservation) - Create a reservation
-* [createCommerceReview](#createcommercereview) - Create a review
-* [createCommerceSaleschannel](#createcommercesaleschannel) - Create a saleschannel
-* [getCommerceCollection](#getcommercecollection) - Retrieve a collection
-* [getCommerceInventory](#getcommerceinventory) - Retrieve an inventory
-* [getCommerceItem](#getcommerceitem) - Retrieve an item
-* [getCommerceItemvariant](#getcommerceitemvariant) - Retrieve an itemvariant
-* [getCommerceLocation](#getcommercelocation) - Retrieve a location
-* [getCommerceReservation](#getcommercereservation) - Retrieve a reservation
-* [getCommerceReview](#getcommercereview) - Retrieve a review
-* [getCommerceSaleschannel](#getcommercesaleschannel) - Retrieve a saleschannel
-* [listCommerceAvailabilities](#listcommerceavailabilities) - List all availabilities
-* [listCommerceCollections](#listcommercecollections) - List all collections
-* [listCommerceInventories](#listcommerceinventories) - List all inventories
-* [listCommerceItems](#listcommerceitems) - List all items
-* [listCommerceItemvariants](#listcommerceitemvariants) - List all itemvariants
-* [listCommerceLocations](#listcommercelocations) - List all locations
-* [listCommerceReservations](#listcommercereservations) - List all reservations
-* [listCommerceReviews](#listcommercereviews) - List all reviews
-* [listCommerceSaleschannels](#listcommercesaleschannels) - List all saleschannels
-* [patchCommerceCollection](#patchcommercecollection) - Update a collection
-* [patchCommerceInventory](#patchcommerceinventory) - Update an inventory
-* [patchCommerceItem](#patchcommerceitem) - Update an item
-* [patchCommerceItemvariant](#patchcommerceitemvariant) - Update an itemvariant
-* [patchCommerceLocation](#patchcommercelocation) - Update a location
-* [patchCommerceReservation](#patchcommercereservation) - Update a reservation
-* [patchCommerceReview](#patchcommercereview) - Update a review
-* [patchCommerceSaleschannel](#patchcommercesaleschannel) - Update a saleschannel
-* [removeCommerceCollection](#removecommercecollection) - Remove a collection
-* [removeCommerceInventory](#removecommerceinventory) - Remove an inventory
-* [removeCommerceItem](#removecommerceitem) - Remove an item
-* [removeCommerceItemvariant](#removecommerceitemvariant) - Remove an itemvariant
-* [removeCommerceLocation](#removecommercelocation) - Remove a location
-* [removeCommerceReservation](#removecommercereservation) - Remove a reservation
-* [removeCommerceReview](#removecommercereview) - Remove a review
-* [removeCommerceSaleschannel](#removecommercesaleschannel) - Remove a saleschannel
-* [updateCommerceCollection](#updatecommercecollection) - Update a collection
-* [updateCommerceInventory](#updatecommerceinventory) - Update an inventory
-* [updateCommerceItem](#updatecommerceitem) - Update an item
-* [updateCommerceItemvariant](#updatecommerceitemvariant) - Update an itemvariant
-* [updateCommerceLocation](#updatecommercelocation) - Update a location
-* [updateCommerceReservation](#updatecommercereservation) - Update a reservation
-* [updateCommerceReview](#updatecommercereview) - Update a review
-* [updateCommerceSaleschannel](#updatecommercesaleschannel) - Update a saleschannel
+* [createCommerceCollection2](#createcommercecollection2) - Create a collection
+* [createCommerceInventory2](#createcommerceinventory2) - Create an inventory
+* [createCommerceItem2](#createcommerceitem2) - Create an item
+* [createCommerceItemvariant2](#createcommerceitemvariant2) - Create an itemvariant
+* [createCommerceLocation2](#createcommercelocation2) - Create a location
+* [createCommerceReservation2](#createcommercereservation2) - Create a reservation
+* [createCommerceReview2](#createcommercereview2) - Create a review
+* [createCommerceSaleschannel2](#createcommercesaleschannel2) - Create a saleschannel
+* [getCommerceCollection2](#getcommercecollection2) - Retrieve a collection
+* [getCommerceInventory2](#getcommerceinventory2) - Retrieve an inventory
+* [getCommerceItem2](#getcommerceitem2) - Retrieve an item
+* [getCommerceItemvariant2](#getcommerceitemvariant2) - Retrieve an itemvariant
+* [getCommerceLocation2](#getcommercelocation2) - Retrieve a location
+* [getCommerceReservation2](#getcommercereservation2) - Retrieve a reservation
+* [getCommerceReview2](#getcommercereview2) - Retrieve a review
+* [getCommerceSaleschannel2](#getcommercesaleschannel2) - Retrieve a saleschannel
+* [listCommerceAvailabilities2](#listcommerceavailabilities2) - List all availabilities
+* [listCommerceCollections2](#listcommercecollections2) - List all collections
+* [listCommerceInventories2](#listcommerceinventories2) - List all inventories
+* [listCommerceItems2](#listcommerceitems2) - List all items
+* [listCommerceItemvariants2](#listcommerceitemvariants2) - List all itemvariants
+* [listCommerceLocations2](#listcommercelocations2) - List all locations
+* [listCommerceReservations2](#listcommercereservations2) - List all reservations
+* [listCommerceReviews2](#listcommercereviews2) - List all reviews
+* [listCommerceSaleschannels2](#listcommercesaleschannels2) - List all saleschannels
+* [patchCommerceCollection2](#patchcommercecollection2) - Update a collection
+* [patchCommerceInventory2](#patchcommerceinventory2) - Update an inventory
+* [patchCommerceItem2](#patchcommerceitem2) - Update an item
+* [patchCommerceItemvariant2](#patchcommerceitemvariant2) - Update an itemvariant
+* [patchCommerceLocation2](#patchcommercelocation2) - Update a location
+* [patchCommerceReservation2](#patchcommercereservation2) - Update a reservation
+* [patchCommerceReview2](#patchcommercereview2) - Update a review
+* [patchCommerceSaleschannel2](#patchcommercesaleschannel2) - Update a saleschannel
+* [removeCommerceCollection2](#removecommercecollection2) - Remove a collection
+* [removeCommerceInventory2](#removecommerceinventory2) - Remove an inventory
+* [removeCommerceItem2](#removecommerceitem2) - Remove an item
+* [removeCommerceItemvariant2](#removecommerceitemvariant2) - Remove an itemvariant
+* [removeCommerceLocation2](#removecommercelocation2) - Remove a location
+* [removeCommerceReservation2](#removecommercereservation2) - Remove a reservation
+* [removeCommerceReview2](#removecommercereview2) - Remove a review
+* [removeCommerceSaleschannel2](#removecommercesaleschannel2) - Remove a saleschannel
+* [updateCommerceCollection2](#updatecommercecollection2) - Update a collection
+* [updateCommerceInventory2](#updatecommerceinventory2) - Update an inventory
+* [updateCommerceItem2](#updatecommerceitem2) - Update an item
+* [updateCommerceItemvariant2](#updatecommerceitemvariant2) - Update an itemvariant
+* [updateCommerceLocation2](#updatecommercelocation2) - Update a location
+* [updateCommerceReservation2](#updatecommercereservation2) - Update a reservation
+* [updateCommerceReview2](#updatecommercereview2) - Update a review
+* [updateCommerceSaleschannel2](#updatecommercesaleschannel2) - Update a saleschannel
 
-## createCommerceCollection
+## createCommerceCollection2
 
 Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceCollection2" method="post" path="/commerce/{connection_id}/collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -71,7 +71,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceCollection({
+  const result = await unifiedTo.commerce.createCommerceCollection2({
     commerceCollection: {
       name: "<value>",
     },
@@ -90,7 +90,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceCollection.js";
+import { commerceCreateCommerceCollection2 } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceCollection2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -101,7 +101,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceCollection(unifiedTo, {
+  const res = await commerceCreateCommerceCollection2(unifiedTo, {
     commerceCollection: {
       name: "<value>",
     },
@@ -111,7 +111,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceCollection failed:", res.error);
+    console.log("commerceCreateCommerceCollection2 failed:", res.error);
   }
 }
 
@@ -122,7 +122,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceCollectionRequest](../../sdk/models/operations/createcommercecollectionrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceCollection2Request](../../sdk/models/operations/createcommercecollection2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -137,13 +137,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCommerceInventory
+## createCommerceInventory2
 
 Create an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceInventory2" method="post" path="/commerce/{connection_id}/inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -154,7 +154,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceInventory({
+  const result = await unifiedTo.commerce.createCommerceInventory2({
     commerceInventory: {},
     connectionId: "<id>",
   });
@@ -171,7 +171,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceInventory.js";
+import { commerceCreateCommerceInventory2 } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceInventory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -182,7 +182,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceInventory(unifiedTo, {
+  const res = await commerceCreateCommerceInventory2(unifiedTo, {
     commerceInventory: {},
     connectionId: "<id>",
   });
@@ -190,7 +190,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceInventory failed:", res.error);
+    console.log("commerceCreateCommerceInventory2 failed:", res.error);
   }
 }
 
@@ -201,7 +201,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceInventoryRequest](../../sdk/models/operations/createcommerceinventoryrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceInventory2Request](../../sdk/models/operations/createcommerceinventory2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -216,13 +216,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCommerceItem
+## createCommerceItem2
 
 Create an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceItem" method="post" path="/commerce/{connection_id}/item" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceItem2" method="post" path="/commerce/{connection_id}/item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -233,7 +233,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceItem({
+  const result = await unifiedTo.commerce.createCommerceItem2({
     commerceItem: {},
     connectionId: "<id>",
   });
@@ -250,7 +250,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceItem } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceItem.js";
+import { commerceCreateCommerceItem2 } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceItem2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -261,7 +261,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceItem(unifiedTo, {
+  const res = await commerceCreateCommerceItem2(unifiedTo, {
     commerceItem: {},
     connectionId: "<id>",
   });
@@ -269,7 +269,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceItem failed:", res.error);
+    console.log("commerceCreateCommerceItem2 failed:", res.error);
   }
 }
 
@@ -280,7 +280,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceItemRequest](../../sdk/models/operations/createcommerceitemrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceItem2Request](../../sdk/models/operations/createcommerceitem2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -295,13 +295,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCommerceItemvariant
+## createCommerceItemvariant2
 
 Create an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceItemvariant" method="post" path="/commerce/{connection_id}/itemvariant" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceItemvariant2" method="post" path="/commerce/{connection_id}/itemvariant" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -312,7 +312,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceItemvariant({
+  const result = await unifiedTo.commerce.createCommerceItemvariant2({
     commerceItemvariant: {},
     connectionId: "<id>",
   });
@@ -329,7 +329,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceItemvariant } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceItemvariant.js";
+import { commerceCreateCommerceItemvariant2 } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceItemvariant2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -340,7 +340,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceItemvariant(unifiedTo, {
+  const res = await commerceCreateCommerceItemvariant2(unifiedTo, {
     commerceItemvariant: {},
     connectionId: "<id>",
   });
@@ -348,7 +348,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceItemvariant failed:", res.error);
+    console.log("commerceCreateCommerceItemvariant2 failed:", res.error);
   }
 }
 
@@ -359,7 +359,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceItemvariantRequest](../../sdk/models/operations/createcommerceitemvariantrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceItemvariant2Request](../../sdk/models/operations/createcommerceitemvariant2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -374,13 +374,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCommerceLocation
+## createCommerceLocation2
 
 Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceLocation2" method="post" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -391,7 +391,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceLocation({
+  const result = await unifiedTo.commerce.createCommerceLocation2({
     commerceLocation: {},
     connectionId: "<id>",
   });
@@ -408,7 +408,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationCreateCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationCreateCommerceLocation.js";
+import { locationCreateCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationCreateCommerceLocation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -419,7 +419,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationCreateCommerceLocation(unifiedTo, {
+  const res = await locationCreateCommerceLocation2(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
   });
@@ -427,7 +427,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationCreateCommerceLocation failed:", res.error);
+    console.log("locationCreateCommerceLocation2 failed:", res.error);
   }
 }
 
@@ -438,7 +438,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceLocationRequest](../../sdk/models/operations/createcommercelocationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceLocation2Request](../../sdk/models/operations/createcommercelocation2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -453,13 +453,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCommerceReservation
+## createCommerceReservation2
 
 Create a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceReservation" method="post" path="/commerce/{connection_id}/reservation" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceReservation2" method="post" path="/commerce/{connection_id}/reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -470,7 +470,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceReservation({
+  const result = await unifiedTo.commerce.createCommerceReservation2({
     commerceReservation: {},
     connectionId: "<id>",
   });
@@ -487,7 +487,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceReservation } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceReservation.js";
+import { commerceCreateCommerceReservation2 } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceReservation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -498,7 +498,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceReservation(unifiedTo, {
+  const res = await commerceCreateCommerceReservation2(unifiedTo, {
     commerceReservation: {},
     connectionId: "<id>",
   });
@@ -506,7 +506,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceReservation failed:", res.error);
+    console.log("commerceCreateCommerceReservation2 failed:", res.error);
   }
 }
 
@@ -517,7 +517,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceReservationRequest](../../sdk/models/operations/createcommercereservationrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceReservation2Request](../../sdk/models/operations/createcommercereservation2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -532,13 +532,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCommerceReview
+## createCommerceReview2
 
 Create a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceReview2" method="post" path="/commerce/{connection_id}/review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -549,7 +549,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceReview({
+  const result = await unifiedTo.commerce.createCommerceReview2({
     commerceReview: {},
     connectionId: "<id>",
   });
@@ -566,7 +566,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceReview.js";
+import { commerceCreateCommerceReview2 } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceReview2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -577,7 +577,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceReview(unifiedTo, {
+  const res = await commerceCreateCommerceReview2(unifiedTo, {
     commerceReview: {},
     connectionId: "<id>",
   });
@@ -585,7 +585,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceReview failed:", res.error);
+    console.log("commerceCreateCommerceReview2 failed:", res.error);
   }
 }
 
@@ -596,7 +596,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceReviewRequest](../../sdk/models/operations/createcommercereviewrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceReview2Request](../../sdk/models/operations/createcommercereview2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -611,13 +611,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCommerceSaleschannel
+## createCommerceSaleschannel2
 
 Create a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceSaleschannel2" method="post" path="/commerce/{connection_id}/saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -628,7 +628,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.createCommerceSaleschannel({
+  const result = await unifiedTo.commerce.createCommerceSaleschannel2({
     commerceSaleschannel: {},
     connectionId: "<id>",
   });
@@ -645,7 +645,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceSaleschannel } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceSaleschannel.js";
+import { commerceCreateCommerceSaleschannel2 } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceSaleschannel2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -656,7 +656,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceSaleschannel(unifiedTo, {
+  const res = await commerceCreateCommerceSaleschannel2(unifiedTo, {
     commerceSaleschannel: {},
     connectionId: "<id>",
   });
@@ -664,7 +664,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceSaleschannel failed:", res.error);
+    console.log("commerceCreateCommerceSaleschannel2 failed:", res.error);
   }
 }
 
@@ -675,7 +675,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceSaleschannelRequest](../../sdk/models/operations/createcommercesaleschannelrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceSaleschannel2Request](../../sdk/models/operations/createcommercesaleschannel2request.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -690,13 +690,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceCollection
+## getCommerceCollection2
 
 Retrieve a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceCollection" method="get" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceCollection2" method="get" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -707,7 +707,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceCollection({
+  const result = await unifiedTo.commerce.getCommerceCollection2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -724,7 +724,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceCollection.js";
+import { commerceGetCommerceCollection2 } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceCollection2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -735,7 +735,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceCollection(unifiedTo, {
+  const res = await commerceGetCommerceCollection2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -743,7 +743,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceCollection failed:", res.error);
+    console.log("commerceGetCommerceCollection2 failed:", res.error);
   }
 }
 
@@ -754,7 +754,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceCollectionRequest](../../sdk/models/operations/getcommercecollectionrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceCollection2Request](../../sdk/models/operations/getcommercecollection2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -769,13 +769,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceInventory
+## getCommerceInventory2
 
 Retrieve an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceInventory" method="get" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceInventory2" method="get" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -786,7 +786,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceInventory({
+  const result = await unifiedTo.commerce.getCommerceInventory2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -803,7 +803,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceInventory.js";
+import { commerceGetCommerceInventory2 } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceInventory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -814,7 +814,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceInventory(unifiedTo, {
+  const res = await commerceGetCommerceInventory2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -822,7 +822,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceInventory failed:", res.error);
+    console.log("commerceGetCommerceInventory2 failed:", res.error);
   }
 }
 
@@ -833,7 +833,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceInventoryRequest](../../sdk/models/operations/getcommerceinventoryrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceInventory2Request](../../sdk/models/operations/getcommerceinventory2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -848,13 +848,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceItem
+## getCommerceItem2
 
 Retrieve an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceItem" method="get" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceItem2" method="get" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -865,7 +865,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceItem({
+  const result = await unifiedTo.commerce.getCommerceItem2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -882,7 +882,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceItem } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceItem.js";
+import { commerceGetCommerceItem2 } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceItem2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -893,7 +893,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceItem(unifiedTo, {
+  const res = await commerceGetCommerceItem2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -901,7 +901,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceItem failed:", res.error);
+    console.log("commerceGetCommerceItem2 failed:", res.error);
   }
 }
 
@@ -912,7 +912,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceItemRequest](../../sdk/models/operations/getcommerceitemrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceItem2Request](../../sdk/models/operations/getcommerceitem2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -927,13 +927,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceItemvariant
+## getCommerceItemvariant2
 
 Retrieve an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceItemvariant" method="get" path="/commerce/{connection_id}/itemvariant/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceItemvariant2" method="get" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -944,7 +944,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceItemvariant({
+  const result = await unifiedTo.commerce.getCommerceItemvariant2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -961,7 +961,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceItemvariant } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceItemvariant.js";
+import { commerceGetCommerceItemvariant2 } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceItemvariant2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -972,7 +972,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceItemvariant(unifiedTo, {
+  const res = await commerceGetCommerceItemvariant2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -980,7 +980,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceItemvariant failed:", res.error);
+    console.log("commerceGetCommerceItemvariant2 failed:", res.error);
   }
 }
 
@@ -991,7 +991,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceItemvariantRequest](../../sdk/models/operations/getcommerceitemvariantrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceItemvariant2Request](../../sdk/models/operations/getcommerceitemvariant2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1006,13 +1006,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceLocation
+## getCommerceLocation2
 
 Retrieve a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceLocation" method="get" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceLocation2" method="get" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1023,7 +1023,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceLocation({
+  const result = await unifiedTo.commerce.getCommerceLocation2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1040,7 +1040,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationGetCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationGetCommerceLocation.js";
+import { locationGetCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationGetCommerceLocation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1051,7 +1051,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationGetCommerceLocation(unifiedTo, {
+  const res = await locationGetCommerceLocation2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1059,7 +1059,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationGetCommerceLocation failed:", res.error);
+    console.log("locationGetCommerceLocation2 failed:", res.error);
   }
 }
 
@@ -1070,7 +1070,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceLocationRequest](../../sdk/models/operations/getcommercelocationrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceLocation2Request](../../sdk/models/operations/getcommercelocation2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1085,13 +1085,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceReservation
+## getCommerceReservation2
 
 Retrieve a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceReservation" method="get" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceReservation2" method="get" path="/commerce/{connection_id}/reservation/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1102,7 +1102,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceReservation({
+  const result = await unifiedTo.commerce.getCommerceReservation2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1119,7 +1119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceReservation } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceReservation.js";
+import { commerceGetCommerceReservation2 } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceReservation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1130,7 +1130,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceReservation(unifiedTo, {
+  const res = await commerceGetCommerceReservation2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1138,7 +1138,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceReservation failed:", res.error);
+    console.log("commerceGetCommerceReservation2 failed:", res.error);
   }
 }
 
@@ -1149,7 +1149,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceReservationRequest](../../sdk/models/operations/getcommercereservationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceReservation2Request](../../sdk/models/operations/getcommercereservation2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1164,13 +1164,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceReview
+## getCommerceReview2
 
 Retrieve a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceReview" method="get" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceReview2" method="get" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1181,7 +1181,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceReview({
+  const result = await unifiedTo.commerce.getCommerceReview2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1198,7 +1198,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceReview.js";
+import { commerceGetCommerceReview2 } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceReview2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1209,7 +1209,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceReview(unifiedTo, {
+  const res = await commerceGetCommerceReview2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1217,7 +1217,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceReview failed:", res.error);
+    console.log("commerceGetCommerceReview2 failed:", res.error);
   }
 }
 
@@ -1228,7 +1228,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceReviewRequest](../../sdk/models/operations/getcommercereviewrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceReview2Request](../../sdk/models/operations/getcommercereview2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1243,13 +1243,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceSaleschannel
+## getCommerceSaleschannel2
 
 Retrieve a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceSaleschannel" method="get" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceSaleschannel2" method="get" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1260,7 +1260,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.getCommerceSaleschannel({
+  const result = await unifiedTo.commerce.getCommerceSaleschannel2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1277,7 +1277,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceSaleschannel } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceSaleschannel.js";
+import { commerceGetCommerceSaleschannel2 } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceSaleschannel2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1288,7 +1288,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceSaleschannel(unifiedTo, {
+  const res = await commerceGetCommerceSaleschannel2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1296,7 +1296,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceSaleschannel failed:", res.error);
+    console.log("commerceGetCommerceSaleschannel2 failed:", res.error);
   }
 }
 
@@ -1307,7 +1307,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceSaleschannelRequest](../../sdk/models/operations/getcommercesaleschannelrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceSaleschannel2Request](../../sdk/models/operations/getcommercesaleschannel2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1322,13 +1322,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceAvailabilities
+## listCommerceAvailabilities2
 
 List all availabilities
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceAvailabilities" method="get" path="/commerce/{connection_id}/availability" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceAvailabilities2" method="get" path="/commerce/{connection_id}/availability" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1339,7 +1339,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceAvailabilities({
+  const result = await unifiedTo.commerce.listCommerceAvailabilities2({
     connectionId: "<id>",
   });
 
@@ -1355,7 +1355,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceAvailabilities } from "@unified-api/typescript-sdk/funcs/commerceListCommerceAvailabilities.js";
+import { commerceListCommerceAvailabilities2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceAvailabilities2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1366,14 +1366,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceAvailabilities(unifiedTo, {
+  const res = await commerceListCommerceAvailabilities2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceAvailabilities failed:", res.error);
+    console.log("commerceListCommerceAvailabilities2 failed:", res.error);
   }
 }
 
@@ -1384,7 +1384,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceAvailabilitiesRequest](../../sdk/models/operations/listcommerceavailabilitiesrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceAvailabilities2Request](../../sdk/models/operations/listcommerceavailabilities2request.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1399,13 +1399,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceCollections
+## listCommerceCollections2
 
 List all collections
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceCollections" method="get" path="/commerce/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceCollections2" method="get" path="/commerce/{connection_id}/collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1416,7 +1416,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceCollections({
+  const result = await unifiedTo.commerce.listCommerceCollections2({
     connectionId: "<id>",
   });
 
@@ -1432,7 +1432,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceCollections } from "@unified-api/typescript-sdk/funcs/commerceListCommerceCollections.js";
+import { commerceListCommerceCollections2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceCollections2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1443,14 +1443,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceCollections(unifiedTo, {
+  const res = await commerceListCommerceCollections2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceCollections failed:", res.error);
+    console.log("commerceListCommerceCollections2 failed:", res.error);
   }
 }
 
@@ -1461,7 +1461,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceCollectionsRequest](../../sdk/models/operations/listcommercecollectionsrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceCollections2Request](../../sdk/models/operations/listcommercecollections2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1476,13 +1476,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceInventories
+## listCommerceInventories2
 
 List all inventories
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceInventories" method="get" path="/commerce/{connection_id}/inventory" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceInventories2" method="get" path="/commerce/{connection_id}/inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1493,7 +1493,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceInventories({
+  const result = await unifiedTo.commerce.listCommerceInventories2({
     connectionId: "<id>",
   });
 
@@ -1509,7 +1509,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceInventories } from "@unified-api/typescript-sdk/funcs/commerceListCommerceInventories.js";
+import { commerceListCommerceInventories2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceInventories2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1520,14 +1520,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceInventories(unifiedTo, {
+  const res = await commerceListCommerceInventories2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceInventories failed:", res.error);
+    console.log("commerceListCommerceInventories2 failed:", res.error);
   }
 }
 
@@ -1538,7 +1538,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceInventoriesRequest](../../sdk/models/operations/listcommerceinventoriesrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceInventories2Request](../../sdk/models/operations/listcommerceinventories2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1553,13 +1553,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceItems
+## listCommerceItems2
 
 List all items
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceItems" method="get" path="/commerce/{connection_id}/item" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceItems2" method="get" path="/commerce/{connection_id}/item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1570,7 +1570,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceItems({
+  const result = await unifiedTo.commerce.listCommerceItems2({
     connectionId: "<id>",
   });
 
@@ -1586,7 +1586,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceItems } from "@unified-api/typescript-sdk/funcs/commerceListCommerceItems.js";
+import { commerceListCommerceItems2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceItems2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1597,14 +1597,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceItems(unifiedTo, {
+  const res = await commerceListCommerceItems2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceItems failed:", res.error);
+    console.log("commerceListCommerceItems2 failed:", res.error);
   }
 }
 
@@ -1615,7 +1615,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceItemsRequest](../../sdk/models/operations/listcommerceitemsrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceItems2Request](../../sdk/models/operations/listcommerceitems2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1630,13 +1630,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceItemvariants
+## listCommerceItemvariants2
 
 List all itemvariants
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceItemvariants" method="get" path="/commerce/{connection_id}/itemvariant" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceItemvariants2" method="get" path="/commerce/{connection_id}/itemvariant" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1647,7 +1647,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceItemvariants({
+  const result = await unifiedTo.commerce.listCommerceItemvariants2({
     connectionId: "<id>",
   });
 
@@ -1663,7 +1663,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceItemvariants } from "@unified-api/typescript-sdk/funcs/commerceListCommerceItemvariants.js";
+import { commerceListCommerceItemvariants2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceItemvariants2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1674,14 +1674,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceItemvariants(unifiedTo, {
+  const res = await commerceListCommerceItemvariants2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceItemvariants failed:", res.error);
+    console.log("commerceListCommerceItemvariants2 failed:", res.error);
   }
 }
 
@@ -1692,7 +1692,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceItemvariantsRequest](../../sdk/models/operations/listcommerceitemvariantsrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceItemvariants2Request](../../sdk/models/operations/listcommerceitemvariants2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1707,13 +1707,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceLocations
+## listCommerceLocations2
 
 List all locations
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceLocations" method="get" path="/commerce/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceLocations2" method="get" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1724,7 +1724,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceLocations({
+  const result = await unifiedTo.commerce.listCommerceLocations2({
     connectionId: "<id>",
   });
 
@@ -1740,7 +1740,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationListCommerceLocations } from "@unified-api/typescript-sdk/funcs/locationListCommerceLocations.js";
+import { locationListCommerceLocations2 } from "@unified-api/typescript-sdk/funcs/locationListCommerceLocations2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1751,14 +1751,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationListCommerceLocations(unifiedTo, {
+  const res = await locationListCommerceLocations2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationListCommerceLocations failed:", res.error);
+    console.log("locationListCommerceLocations2 failed:", res.error);
   }
 }
 
@@ -1769,7 +1769,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceLocationsRequest](../../sdk/models/operations/listcommercelocationsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceLocations2Request](../../sdk/models/operations/listcommercelocations2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1784,13 +1784,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceReservations
+## listCommerceReservations2
 
 List all reservations
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceReservations" method="get" path="/commerce/{connection_id}/reservation" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceReservations2" method="get" path="/commerce/{connection_id}/reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1801,7 +1801,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceReservations({
+  const result = await unifiedTo.commerce.listCommerceReservations2({
     connectionId: "<id>",
   });
 
@@ -1817,7 +1817,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceReservations } from "@unified-api/typescript-sdk/funcs/commerceListCommerceReservations.js";
+import { commerceListCommerceReservations2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceReservations2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1828,14 +1828,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceReservations(unifiedTo, {
+  const res = await commerceListCommerceReservations2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceReservations failed:", res.error);
+    console.log("commerceListCommerceReservations2 failed:", res.error);
   }
 }
 
@@ -1846,7 +1846,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceReservationsRequest](../../sdk/models/operations/listcommercereservationsrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceReservations2Request](../../sdk/models/operations/listcommercereservations2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1861,13 +1861,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceReviews
+## listCommerceReviews2
 
 List all reviews
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceReviews" method="get" path="/commerce/{connection_id}/review" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceReviews2" method="get" path="/commerce/{connection_id}/review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1878,7 +1878,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceReviews({
+  const result = await unifiedTo.commerce.listCommerceReviews2({
     connectionId: "<id>",
   });
 
@@ -1894,7 +1894,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceReviews } from "@unified-api/typescript-sdk/funcs/commerceListCommerceReviews.js";
+import { commerceListCommerceReviews2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceReviews2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1905,14 +1905,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceReviews(unifiedTo, {
+  const res = await commerceListCommerceReviews2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceReviews failed:", res.error);
+    console.log("commerceListCommerceReviews2 failed:", res.error);
   }
 }
 
@@ -1923,7 +1923,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceReviewsRequest](../../sdk/models/operations/listcommercereviewsrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceReviews2Request](../../sdk/models/operations/listcommercereviews2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1938,13 +1938,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceSaleschannels
+## listCommerceSaleschannels2
 
 List all saleschannels
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceSaleschannels" method="get" path="/commerce/{connection_id}/saleschannel" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceSaleschannels2" method="get" path="/commerce/{connection_id}/saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1955,7 +1955,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.listCommerceSaleschannels({
+  const result = await unifiedTo.commerce.listCommerceSaleschannels2({
     connectionId: "<id>",
   });
 
@@ -1971,7 +1971,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceSaleschannels } from "@unified-api/typescript-sdk/funcs/commerceListCommerceSaleschannels.js";
+import { commerceListCommerceSaleschannels2 } from "@unified-api/typescript-sdk/funcs/commerceListCommerceSaleschannels2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1982,14 +1982,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceSaleschannels(unifiedTo, {
+  const res = await commerceListCommerceSaleschannels2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceSaleschannels failed:", res.error);
+    console.log("commerceListCommerceSaleschannels2 failed:", res.error);
   }
 }
 
@@ -2000,7 +2000,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceSaleschannelsRequest](../../sdk/models/operations/listcommercesaleschannelsrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceSaleschannels2Request](../../sdk/models/operations/listcommercesaleschannels2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2015,13 +2015,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceCollection
+## patchCommerceCollection2
 
 Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceCollection2" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2032,7 +2032,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceCollection({
+  const result = await unifiedTo.commerce.patchCommerceCollection2({
     commerceCollection: {
       name: "<value>",
     },
@@ -2052,7 +2052,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceCollection } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceCollection.js";
+import { commercePatchCommerceCollection2 } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceCollection2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2063,7 +2063,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceCollection(unifiedTo, {
+  const res = await commercePatchCommerceCollection2(unifiedTo, {
     commerceCollection: {
       name: "<value>",
     },
@@ -2074,7 +2074,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceCollection failed:", res.error);
+    console.log("commercePatchCommerceCollection2 failed:", res.error);
   }
 }
 
@@ -2085,7 +2085,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceCollectionRequest](../../sdk/models/operations/patchcommercecollectionrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceCollection2Request](../../sdk/models/operations/patchcommercecollection2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2100,13 +2100,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceInventory
+## patchCommerceInventory2
 
 Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceInventory2" method="patch" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2117,7 +2117,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceInventory({
+  const result = await unifiedTo.commerce.patchCommerceInventory2({
     commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2135,7 +2135,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceInventory } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceInventory.js";
+import { commercePatchCommerceInventory2 } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceInventory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2146,7 +2146,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceInventory(unifiedTo, {
+  const res = await commercePatchCommerceInventory2(unifiedTo, {
     commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2155,7 +2155,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceInventory failed:", res.error);
+    console.log("commercePatchCommerceInventory2 failed:", res.error);
   }
 }
 
@@ -2166,7 +2166,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceInventoryRequest](../../sdk/models/operations/patchcommerceinventoryrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceInventory2Request](../../sdk/models/operations/patchcommerceinventory2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2181,13 +2181,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceItem
+## patchCommerceItem2
 
 Update an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceItem" method="patch" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceItem2" method="patch" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2198,7 +2198,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceItem({
+  const result = await unifiedTo.commerce.patchCommerceItem2({
     commerceItem: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2216,7 +2216,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceItem } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceItem.js";
+import { commercePatchCommerceItem2 } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceItem2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2227,7 +2227,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceItem(unifiedTo, {
+  const res = await commercePatchCommerceItem2(unifiedTo, {
     commerceItem: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2236,7 +2236,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceItem failed:", res.error);
+    console.log("commercePatchCommerceItem2 failed:", res.error);
   }
 }
 
@@ -2247,7 +2247,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceItemRequest](../../sdk/models/operations/patchcommerceitemrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceItem2Request](../../sdk/models/operations/patchcommerceitem2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2262,13 +2262,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceItemvariant
+## patchCommerceItemvariant2
 
 Update an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceItemvariant" method="patch" path="/commerce/{connection_id}/itemvariant/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceItemvariant2" method="patch" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2279,7 +2279,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceItemvariant({
+  const result = await unifiedTo.commerce.patchCommerceItemvariant2({
     commerceItemvariant: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2297,7 +2297,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceItemvariant } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceItemvariant.js";
+import { commercePatchCommerceItemvariant2 } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceItemvariant2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2308,7 +2308,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceItemvariant(unifiedTo, {
+  const res = await commercePatchCommerceItemvariant2(unifiedTo, {
     commerceItemvariant: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2317,7 +2317,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceItemvariant failed:", res.error);
+    console.log("commercePatchCommerceItemvariant2 failed:", res.error);
   }
 }
 
@@ -2328,7 +2328,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceItemvariantRequest](../../sdk/models/operations/patchcommerceitemvariantrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceItemvariant2Request](../../sdk/models/operations/patchcommerceitemvariant2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2343,13 +2343,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceLocation
+## patchCommerceLocation2
 
 Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation2" method="patch" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2360,7 +2360,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceLocation({
+  const result = await unifiedTo.commerce.patchCommerceLocation2({
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2378,7 +2378,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationPatchCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationPatchCommerceLocation.js";
+import { locationPatchCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationPatchCommerceLocation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2389,7 +2389,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationPatchCommerceLocation(unifiedTo, {
+  const res = await locationPatchCommerceLocation2(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2398,7 +2398,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationPatchCommerceLocation failed:", res.error);
+    console.log("locationPatchCommerceLocation2 failed:", res.error);
   }
 }
 
@@ -2409,7 +2409,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceLocationRequest](../../sdk/models/operations/patchcommercelocationrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceLocation2Request](../../sdk/models/operations/patchcommercelocation2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2424,13 +2424,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceReservation
+## patchCommerceReservation2
 
 Update a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceReservation" method="patch" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceReservation2" method="patch" path="/commerce/{connection_id}/reservation/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2441,7 +2441,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceReservation({
+  const result = await unifiedTo.commerce.patchCommerceReservation2({
     commerceReservation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2459,7 +2459,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceReservation } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceReservation.js";
+import { commercePatchCommerceReservation2 } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceReservation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2470,7 +2470,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceReservation(unifiedTo, {
+  const res = await commercePatchCommerceReservation2(unifiedTo, {
     commerceReservation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2479,7 +2479,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceReservation failed:", res.error);
+    console.log("commercePatchCommerceReservation2 failed:", res.error);
   }
 }
 
@@ -2490,7 +2490,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceReservationRequest](../../sdk/models/operations/patchcommercereservationrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceReservation2Request](../../sdk/models/operations/patchcommercereservation2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2505,13 +2505,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceReview
+## patchCommerceReview2
 
 Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceReview2" method="patch" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2522,7 +2522,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceReview({
+  const result = await unifiedTo.commerce.patchCommerceReview2({
     commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2540,7 +2540,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceReview } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceReview.js";
+import { commercePatchCommerceReview2 } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceReview2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2551,7 +2551,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceReview(unifiedTo, {
+  const res = await commercePatchCommerceReview2(unifiedTo, {
     commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2560,7 +2560,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceReview failed:", res.error);
+    console.log("commercePatchCommerceReview2 failed:", res.error);
   }
 }
 
@@ -2571,7 +2571,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceReviewRequest](../../sdk/models/operations/patchcommercereviewrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceReview2Request](../../sdk/models/operations/patchcommercereview2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2586,13 +2586,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceSaleschannel
+## patchCommerceSaleschannel2
 
 Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceSaleschannel2" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2603,7 +2603,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.patchCommerceSaleschannel({
+  const result = await unifiedTo.commerce.patchCommerceSaleschannel2({
     commerceSaleschannel: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2621,7 +2621,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceSaleschannel } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceSaleschannel.js";
+import { commercePatchCommerceSaleschannel2 } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceSaleschannel2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2632,7 +2632,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceSaleschannel(unifiedTo, {
+  const res = await commercePatchCommerceSaleschannel2(unifiedTo, {
     commerceSaleschannel: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2641,7 +2641,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceSaleschannel failed:", res.error);
+    console.log("commercePatchCommerceSaleschannel2 failed:", res.error);
   }
 }
 
@@ -2652,7 +2652,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceSaleschannelRequest](../../sdk/models/operations/patchcommercesaleschannelrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceSaleschannel2Request](../../sdk/models/operations/patchcommercesaleschannel2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2667,13 +2667,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceCollection
+## removeCommerceCollection2
 
 Remove a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceCollection" method="delete" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceCollection2" method="delete" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2684,7 +2684,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceCollection({
+  const result = await unifiedTo.commerce.removeCommerceCollection2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2701,7 +2701,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceCollection.js";
+import { commerceRemoveCommerceCollection2 } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceCollection2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2712,7 +2712,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceCollection(unifiedTo, {
+  const res = await commerceRemoveCommerceCollection2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2720,7 +2720,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceCollection failed:", res.error);
+    console.log("commerceRemoveCommerceCollection2 failed:", res.error);
   }
 }
 
@@ -2731,14 +2731,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceCollectionRequest](../../sdk/models/operations/removecommercecollectionrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceCollection2Request](../../sdk/models/operations/removecommercecollection2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceCollectionResponse](../../sdk/models/operations/removecommercecollectionresponse.md)\>**
+**Promise\<[operations.RemoveCommerceCollection2Response](../../sdk/models/operations/removecommercecollection2response.md)\>**
 
 ### Errors
 
@@ -2746,13 +2746,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceInventory
+## removeCommerceInventory2
 
 Remove an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceInventory" method="delete" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceInventory2" method="delete" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2763,7 +2763,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceInventory({
+  const result = await unifiedTo.commerce.removeCommerceInventory2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2780,7 +2780,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceInventory.js";
+import { commerceRemoveCommerceInventory2 } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceInventory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2791,7 +2791,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceInventory(unifiedTo, {
+  const res = await commerceRemoveCommerceInventory2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2799,7 +2799,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceInventory failed:", res.error);
+    console.log("commerceRemoveCommerceInventory2 failed:", res.error);
   }
 }
 
@@ -2810,14 +2810,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceInventoryRequest](../../sdk/models/operations/removecommerceinventoryrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceInventory2Request](../../sdk/models/operations/removecommerceinventory2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceInventoryResponse](../../sdk/models/operations/removecommerceinventoryresponse.md)\>**
+**Promise\<[operations.RemoveCommerceInventory2Response](../../sdk/models/operations/removecommerceinventory2response.md)\>**
 
 ### Errors
 
@@ -2825,13 +2825,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceItem
+## removeCommerceItem2
 
 Remove an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceItem" method="delete" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceItem2" method="delete" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2842,7 +2842,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceItem({
+  const result = await unifiedTo.commerce.removeCommerceItem2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2859,7 +2859,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceItem } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceItem.js";
+import { commerceRemoveCommerceItem2 } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceItem2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2870,7 +2870,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceItem(unifiedTo, {
+  const res = await commerceRemoveCommerceItem2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2878,7 +2878,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceItem failed:", res.error);
+    console.log("commerceRemoveCommerceItem2 failed:", res.error);
   }
 }
 
@@ -2889,14 +2889,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceItemRequest](../../sdk/models/operations/removecommerceitemrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceItem2Request](../../sdk/models/operations/removecommerceitem2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceItemResponse](../../sdk/models/operations/removecommerceitemresponse.md)\>**
+**Promise\<[operations.RemoveCommerceItem2Response](../../sdk/models/operations/removecommerceitem2response.md)\>**
 
 ### Errors
 
@@ -2904,13 +2904,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceItemvariant
+## removeCommerceItemvariant2
 
 Remove an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceItemvariant" method="delete" path="/commerce/{connection_id}/itemvariant/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceItemvariant2" method="delete" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2921,7 +2921,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceItemvariant({
+  const result = await unifiedTo.commerce.removeCommerceItemvariant2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2938,7 +2938,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceItemvariant } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceItemvariant.js";
+import { commerceRemoveCommerceItemvariant2 } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceItemvariant2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2949,7 +2949,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceItemvariant(unifiedTo, {
+  const res = await commerceRemoveCommerceItemvariant2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2957,7 +2957,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceItemvariant failed:", res.error);
+    console.log("commerceRemoveCommerceItemvariant2 failed:", res.error);
   }
 }
 
@@ -2968,14 +2968,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceItemvariantRequest](../../sdk/models/operations/removecommerceitemvariantrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceItemvariant2Request](../../sdk/models/operations/removecommerceitemvariant2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceItemvariantResponse](../../sdk/models/operations/removecommerceitemvariantresponse.md)\>**
+**Promise\<[operations.RemoveCommerceItemvariant2Response](../../sdk/models/operations/removecommerceitemvariant2response.md)\>**
 
 ### Errors
 
@@ -2983,13 +2983,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceLocation
+## removeCommerceLocation2
 
 Remove a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceLocation" method="delete" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceLocation2" method="delete" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3000,7 +3000,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceLocation({
+  const result = await unifiedTo.commerce.removeCommerceLocation2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3017,7 +3017,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationRemoveCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationRemoveCommerceLocation.js";
+import { locationRemoveCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationRemoveCommerceLocation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3028,7 +3028,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationRemoveCommerceLocation(unifiedTo, {
+  const res = await locationRemoveCommerceLocation2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3036,7 +3036,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationRemoveCommerceLocation failed:", res.error);
+    console.log("locationRemoveCommerceLocation2 failed:", res.error);
   }
 }
 
@@ -3047,14 +3047,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceLocationRequest](../../sdk/models/operations/removecommercelocationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceLocation2Request](../../sdk/models/operations/removecommercelocation2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceLocationResponse](../../sdk/models/operations/removecommercelocationresponse.md)\>**
+**Promise\<[operations.RemoveCommerceLocation2Response](../../sdk/models/operations/removecommercelocation2response.md)\>**
 
 ### Errors
 
@@ -3062,13 +3062,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceReservation
+## removeCommerceReservation2
 
 Remove a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceReservation" method="delete" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceReservation2" method="delete" path="/commerce/{connection_id}/reservation/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3079,7 +3079,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceReservation({
+  const result = await unifiedTo.commerce.removeCommerceReservation2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3096,7 +3096,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceReservation } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceReservation.js";
+import { commerceRemoveCommerceReservation2 } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceReservation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3107,7 +3107,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceReservation(unifiedTo, {
+  const res = await commerceRemoveCommerceReservation2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3115,7 +3115,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceReservation failed:", res.error);
+    console.log("commerceRemoveCommerceReservation2 failed:", res.error);
   }
 }
 
@@ -3126,14 +3126,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceReservationRequest](../../sdk/models/operations/removecommercereservationrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceReservation2Request](../../sdk/models/operations/removecommercereservation2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceReservationResponse](../../sdk/models/operations/removecommercereservationresponse.md)\>**
+**Promise\<[operations.RemoveCommerceReservation2Response](../../sdk/models/operations/removecommercereservation2response.md)\>**
 
 ### Errors
 
@@ -3141,13 +3141,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceReview
+## removeCommerceReview2
 
 Remove a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceReview" method="delete" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceReview2" method="delete" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3158,7 +3158,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceReview({
+  const result = await unifiedTo.commerce.removeCommerceReview2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3175,7 +3175,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceReview.js";
+import { commerceRemoveCommerceReview2 } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceReview2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3186,7 +3186,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceReview(unifiedTo, {
+  const res = await commerceRemoveCommerceReview2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3194,7 +3194,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceReview failed:", res.error);
+    console.log("commerceRemoveCommerceReview2 failed:", res.error);
   }
 }
 
@@ -3205,14 +3205,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceReviewRequest](../../sdk/models/operations/removecommercereviewrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceReview2Request](../../sdk/models/operations/removecommercereview2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceReviewResponse](../../sdk/models/operations/removecommercereviewresponse.md)\>**
+**Promise\<[operations.RemoveCommerceReview2Response](../../sdk/models/operations/removecommercereview2response.md)\>**
 
 ### Errors
 
@@ -3220,13 +3220,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceSaleschannel
+## removeCommerceSaleschannel2
 
 Remove a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceSaleschannel" method="delete" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceSaleschannel2" method="delete" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3237,7 +3237,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.removeCommerceSaleschannel({
+  const result = await unifiedTo.commerce.removeCommerceSaleschannel2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3254,7 +3254,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceSaleschannel } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceSaleschannel.js";
+import { commerceRemoveCommerceSaleschannel2 } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceSaleschannel2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3265,7 +3265,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceSaleschannel(unifiedTo, {
+  const res = await commerceRemoveCommerceSaleschannel2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3273,7 +3273,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceSaleschannel failed:", res.error);
+    console.log("commerceRemoveCommerceSaleschannel2 failed:", res.error);
   }
 }
 
@@ -3284,14 +3284,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceSaleschannelRequest](../../sdk/models/operations/removecommercesaleschannelrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceSaleschannel2Request](../../sdk/models/operations/removecommercesaleschannel2request.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceSaleschannelResponse](../../sdk/models/operations/removecommercesaleschannelresponse.md)\>**
+**Promise\<[operations.RemoveCommerceSaleschannel2Response](../../sdk/models/operations/removecommercesaleschannel2response.md)\>**
 
 ### Errors
 
@@ -3299,13 +3299,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceCollection
+## updateCommerceCollection2
 
 Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceCollection2" method="put" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3316,7 +3316,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceCollection({
+  const result = await unifiedTo.commerce.updateCommerceCollection2({
     commerceCollection: {
       name: "<value>",
     },
@@ -3336,7 +3336,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceCollection.js";
+import { commerceUpdateCommerceCollection2 } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceCollection2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3347,7 +3347,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceCollection(unifiedTo, {
+  const res = await commerceUpdateCommerceCollection2(unifiedTo, {
     commerceCollection: {
       name: "<value>",
     },
@@ -3358,7 +3358,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceCollection failed:", res.error);
+    console.log("commerceUpdateCommerceCollection2 failed:", res.error);
   }
 }
 
@@ -3369,7 +3369,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceCollectionRequest](../../sdk/models/operations/updatecommercecollectionrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceCollection2Request](../../sdk/models/operations/updatecommercecollection2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3384,13 +3384,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceInventory
+## updateCommerceInventory2
 
 Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceInventory2" method="put" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3401,7 +3401,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceInventory({
+  const result = await unifiedTo.commerce.updateCommerceInventory2({
     commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3419,7 +3419,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceInventory.js";
+import { commerceUpdateCommerceInventory2 } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceInventory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3430,7 +3430,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceInventory(unifiedTo, {
+  const res = await commerceUpdateCommerceInventory2(unifiedTo, {
     commerceInventory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3439,7 +3439,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceInventory failed:", res.error);
+    console.log("commerceUpdateCommerceInventory2 failed:", res.error);
   }
 }
 
@@ -3450,7 +3450,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceInventoryRequest](../../sdk/models/operations/updatecommerceinventoryrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceInventory2Request](../../sdk/models/operations/updatecommerceinventory2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3465,13 +3465,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceItem
+## updateCommerceItem2
 
 Update an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceItem" method="put" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceItem2" method="put" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3482,7 +3482,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceItem({
+  const result = await unifiedTo.commerce.updateCommerceItem2({
     commerceItem: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3500,7 +3500,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceItem } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceItem.js";
+import { commerceUpdateCommerceItem2 } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceItem2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3511,7 +3511,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceItem(unifiedTo, {
+  const res = await commerceUpdateCommerceItem2(unifiedTo, {
     commerceItem: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3520,7 +3520,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceItem failed:", res.error);
+    console.log("commerceUpdateCommerceItem2 failed:", res.error);
   }
 }
 
@@ -3531,7 +3531,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceItemRequest](../../sdk/models/operations/updatecommerceitemrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceItem2Request](../../sdk/models/operations/updatecommerceitem2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3546,13 +3546,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceItemvariant
+## updateCommerceItemvariant2
 
 Update an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceItemvariant" method="put" path="/commerce/{connection_id}/itemvariant/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceItemvariant2" method="put" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3563,7 +3563,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceItemvariant({
+  const result = await unifiedTo.commerce.updateCommerceItemvariant2({
     commerceItemvariant: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3581,7 +3581,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceItemvariant } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceItemvariant.js";
+import { commerceUpdateCommerceItemvariant2 } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceItemvariant2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3592,7 +3592,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceItemvariant(unifiedTo, {
+  const res = await commerceUpdateCommerceItemvariant2(unifiedTo, {
     commerceItemvariant: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3601,7 +3601,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceItemvariant failed:", res.error);
+    console.log("commerceUpdateCommerceItemvariant2 failed:", res.error);
   }
 }
 
@@ -3612,7 +3612,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceItemvariantRequest](../../sdk/models/operations/updatecommerceitemvariantrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceItemvariant2Request](../../sdk/models/operations/updatecommerceitemvariant2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3627,13 +3627,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceLocation
+## updateCommerceLocation2
 
 Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation2" method="put" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3644,7 +3644,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceLocation({
+  const result = await unifiedTo.commerce.updateCommerceLocation2({
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3662,7 +3662,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationUpdateCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationUpdateCommerceLocation.js";
+import { locationUpdateCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationUpdateCommerceLocation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3673,7 +3673,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationUpdateCommerceLocation(unifiedTo, {
+  const res = await locationUpdateCommerceLocation2(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3682,7 +3682,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationUpdateCommerceLocation failed:", res.error);
+    console.log("locationUpdateCommerceLocation2 failed:", res.error);
   }
 }
 
@@ -3693,7 +3693,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceLocationRequest](../../sdk/models/operations/updatecommercelocationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceLocation2Request](../../sdk/models/operations/updatecommercelocation2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3708,13 +3708,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceReservation
+## updateCommerceReservation2
 
 Update a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceReservation" method="put" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceReservation2" method="put" path="/commerce/{connection_id}/reservation/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3725,7 +3725,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceReservation({
+  const result = await unifiedTo.commerce.updateCommerceReservation2({
     commerceReservation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3743,7 +3743,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceReservation } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceReservation.js";
+import { commerceUpdateCommerceReservation2 } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceReservation2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3754,7 +3754,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceReservation(unifiedTo, {
+  const res = await commerceUpdateCommerceReservation2(unifiedTo, {
     commerceReservation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3763,7 +3763,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceReservation failed:", res.error);
+    console.log("commerceUpdateCommerceReservation2 failed:", res.error);
   }
 }
 
@@ -3774,7 +3774,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceReservationRequest](../../sdk/models/operations/updatecommercereservationrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceReservation2Request](../../sdk/models/operations/updatecommercereservation2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3789,13 +3789,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceReview
+## updateCommerceReview2
 
 Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceReview2" method="put" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3806,7 +3806,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceReview({
+  const result = await unifiedTo.commerce.updateCommerceReview2({
     commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3824,7 +3824,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceReview.js";
+import { commerceUpdateCommerceReview2 } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceReview2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3835,7 +3835,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceReview(unifiedTo, {
+  const res = await commerceUpdateCommerceReview2(unifiedTo, {
     commerceReview: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3844,7 +3844,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceReview failed:", res.error);
+    console.log("commerceUpdateCommerceReview2 failed:", res.error);
   }
 }
 
@@ -3855,7 +3855,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceReviewRequest](../../sdk/models/operations/updatecommercereviewrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceReview2Request](../../sdk/models/operations/updatecommercereview2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3870,13 +3870,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceSaleschannel
+## updateCommerceSaleschannel2
 
 Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceSaleschannel2" method="put" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3887,7 +3887,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.commerce.updateCommerceSaleschannel({
+  const result = await unifiedTo.commerce.updateCommerceSaleschannel2({
     commerceSaleschannel: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3905,7 +3905,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceSaleschannel } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceSaleschannel.js";
+import { commerceUpdateCommerceSaleschannel2 } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceSaleschannel2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3916,7 +3916,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceSaleschannel(unifiedTo, {
+  const res = await commerceUpdateCommerceSaleschannel2(unifiedTo, {
     commerceSaleschannel: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3925,7 +3925,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceSaleschannel failed:", res.error);
+    console.log("commerceUpdateCommerceSaleschannel2 failed:", res.error);
   }
 }
 
@@ -3936,7 +3936,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceSaleschannelRequest](../../sdk/models/operations/updatecommercesaleschannelrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceSaleschannel2Request](../../sdk/models/operations/updatecommercesaleschannel2request.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

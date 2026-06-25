@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyConnectionCategories } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyConnectionCategories = "metadata";
+let value: PropertyConnectionCategories = "verification";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: PropertyConnectionCategories = "metadata";
 ## Values
 
 ```typescript
-"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "forms" | "shipping" | "assessment" | "signing" | "clubs" | Unrecognized<string>
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "analytics" | "forms" | "shipping" | "assessment" | "signing" | "clubs" | "datastore" | Unrecognized<string>
 ```

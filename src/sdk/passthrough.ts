@@ -3,68 +3,68 @@
  */
 
 import {
-  CreatePassthroughJsonAcceptEnum,
-  passthroughCreatePassthroughJson,
-} from "../funcs/passthroughCreatePassthroughJson.js";
+  CreatePassthrough2JsonAcceptEnum,
+  passthroughCreatePassthrough2Json,
+} from "../funcs/passthroughCreatePassthrough2Json.js";
 import {
-  CreatePassthroughRawAcceptEnum,
-  passthroughCreatePassthroughRaw,
-} from "../funcs/passthroughCreatePassthroughRaw.js";
+  CreatePassthrough2RawAcceptEnum,
+  passthroughCreatePassthrough2Raw,
+} from "../funcs/passthroughCreatePassthrough2Raw.js";
 import {
-  ListPassthroughsAcceptEnum,
-  passthroughListPassthroughs,
-} from "../funcs/passthroughListPassthroughs.js";
+  ListPassthroughs2AcceptEnum,
+  passthroughListPassthroughs2,
+} from "../funcs/passthroughListPassthroughs2.js";
 import {
-  passthroughPatchPassthroughJson,
-  PatchPassthroughJsonAcceptEnum,
-} from "../funcs/passthroughPatchPassthroughJson.js";
+  passthroughPatchPassthrough2Json,
+  PatchPassthrough2JsonAcceptEnum,
+} from "../funcs/passthroughPatchPassthrough2Json.js";
 import {
-  passthroughPatchPassthroughRaw,
-  PatchPassthroughRawAcceptEnum,
-} from "../funcs/passthroughPatchPassthroughRaw.js";
+  passthroughPatchPassthrough2Raw,
+  PatchPassthrough2RawAcceptEnum,
+} from "../funcs/passthroughPatchPassthrough2Raw.js";
 import {
-  passthroughRemovePassthrough,
-  RemovePassthroughAcceptEnum,
-} from "../funcs/passthroughRemovePassthrough.js";
+  passthroughRemovePassthrough2,
+  RemovePassthrough2AcceptEnum,
+} from "../funcs/passthroughRemovePassthrough2.js";
 import {
-  passthroughUpdatePassthroughJson,
-  UpdatePassthroughJsonAcceptEnum,
-} from "../funcs/passthroughUpdatePassthroughJson.js";
+  passthroughUpdatePassthrough2Json,
+  UpdatePassthrough2JsonAcceptEnum,
+} from "../funcs/passthroughUpdatePassthrough2Json.js";
 import {
-  passthroughUpdatePassthroughRaw,
-  UpdatePassthroughRawAcceptEnum,
-} from "../funcs/passthroughUpdatePassthroughRaw.js";
+  passthroughUpdatePassthrough2Raw,
+  UpdatePassthrough2RawAcceptEnum,
+} from "../funcs/passthroughUpdatePassthrough2Raw.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
-export { CreatePassthroughJsonAcceptEnum } from "../funcs/passthroughCreatePassthroughJson.js";
+export { CreatePassthrough2JsonAcceptEnum } from "../funcs/passthroughCreatePassthrough2Json.js";
 
-export { CreatePassthroughRawAcceptEnum } from "../funcs/passthroughCreatePassthroughRaw.js";
+export { CreatePassthrough2RawAcceptEnum } from "../funcs/passthroughCreatePassthrough2Raw.js";
 
-export { ListPassthroughsAcceptEnum } from "../funcs/passthroughListPassthroughs.js";
+export { ListPassthroughs2AcceptEnum } from "../funcs/passthroughListPassthroughs2.js";
 
-export { PatchPassthroughJsonAcceptEnum } from "../funcs/passthroughPatchPassthroughJson.js";
+export { PatchPassthrough2JsonAcceptEnum } from "../funcs/passthroughPatchPassthrough2Json.js";
 
-export { PatchPassthroughRawAcceptEnum } from "../funcs/passthroughPatchPassthroughRaw.js";
+export { PatchPassthrough2RawAcceptEnum } from "../funcs/passthroughPatchPassthrough2Raw.js";
 
-export { RemovePassthroughAcceptEnum } from "../funcs/passthroughRemovePassthrough.js";
+export { RemovePassthrough2AcceptEnum } from "../funcs/passthroughRemovePassthrough2.js";
 
-export { UpdatePassthroughJsonAcceptEnum } from "../funcs/passthroughUpdatePassthroughJson.js";
+export { UpdatePassthrough2JsonAcceptEnum } from "../funcs/passthroughUpdatePassthrough2Json.js";
 
-export { UpdatePassthroughRawAcceptEnum } from "../funcs/passthroughUpdatePassthroughRaw.js";
+export { UpdatePassthrough2RawAcceptEnum } from "../funcs/passthroughUpdatePassthrough2Raw.js";
 
 export class Passthrough extends ClientSDK {
   /**
    * Passthrough POST
    */
-  async createPassthroughJson(
-    request: operations.CreatePassthroughJsonRequest,
+  async createPassthrough2Json(
+    request: operations.CreatePassthrough2JsonRequest,
     options?: RequestOptions & {
-      acceptHeaderOverride?: CreatePassthroughJsonAcceptEnum;
+      acceptHeaderOverride?: CreatePassthrough2JsonAcceptEnum;
     },
-  ): Promise<operations.CreatePassthroughJsonResponse | undefined> {
-    return unwrapAsync(passthroughCreatePassthroughJson(
+  ): Promise<operations.CreatePassthrough2JsonResponse | undefined> {
+    return unwrapAsync(passthroughCreatePassthrough2Json(
       this,
       request,
       options,
@@ -74,13 +74,13 @@ export class Passthrough extends ClientSDK {
   /**
    * Passthrough POST
    */
-  async createPassthroughRaw(
-    request: operations.CreatePassthroughRawRequest,
+  async createPassthrough2Raw(
+    request: operations.CreatePassthrough2RawRequest,
     options?: RequestOptions & {
-      acceptHeaderOverride?: CreatePassthroughRawAcceptEnum;
+      acceptHeaderOverride?: CreatePassthrough2RawAcceptEnum;
     },
-  ): Promise<operations.CreatePassthroughRawResponse | undefined> {
-    return unwrapAsync(passthroughCreatePassthroughRaw(
+  ): Promise<operations.CreatePassthrough2RawResponse | undefined> {
+    return unwrapAsync(passthroughCreatePassthrough2Raw(
       this,
       request,
       options,
@@ -90,13 +90,13 @@ export class Passthrough extends ClientSDK {
   /**
    * Passthrough GET
    */
-  async listPassthroughs(
-    request: operations.ListPassthroughsRequest,
+  async listPassthroughs2(
+    request: operations.ListPassthroughs2Request,
     options?: RequestOptions & {
-      acceptHeaderOverride?: ListPassthroughsAcceptEnum;
+      acceptHeaderOverride?: ListPassthroughs2AcceptEnum;
     },
-  ): Promise<operations.ListPassthroughsResponse | undefined> {
-    return unwrapAsync(passthroughListPassthroughs(
+  ): Promise<operations.ListPassthroughs2Response | undefined> {
+    return unwrapAsync(passthroughListPassthroughs2(
       this,
       request,
       options,
@@ -106,13 +106,13 @@ export class Passthrough extends ClientSDK {
   /**
    * Passthrough PUT
    */
-  async patchPassthroughJson(
-    request: operations.PatchPassthroughJsonRequest,
+  async patchPassthrough2Json(
+    request: operations.PatchPassthrough2JsonRequest,
     options?: RequestOptions & {
-      acceptHeaderOverride?: PatchPassthroughJsonAcceptEnum;
+      acceptHeaderOverride?: PatchPassthrough2JsonAcceptEnum;
     },
-  ): Promise<operations.PatchPassthroughJsonResponse | undefined> {
-    return unwrapAsync(passthroughPatchPassthroughJson(
+  ): Promise<operations.PatchPassthrough2JsonResponse | undefined> {
+    return unwrapAsync(passthroughPatchPassthrough2Json(
       this,
       request,
       options,
@@ -122,13 +122,13 @@ export class Passthrough extends ClientSDK {
   /**
    * Passthrough PUT
    */
-  async patchPassthroughRaw(
-    request: operations.PatchPassthroughRawRequest,
+  async patchPassthrough2Raw(
+    request: operations.PatchPassthrough2RawRequest,
     options?: RequestOptions & {
-      acceptHeaderOverride?: PatchPassthroughRawAcceptEnum;
+      acceptHeaderOverride?: PatchPassthrough2RawAcceptEnum;
     },
-  ): Promise<operations.PatchPassthroughRawResponse | undefined> {
-    return unwrapAsync(passthroughPatchPassthroughRaw(
+  ): Promise<operations.PatchPassthrough2RawResponse | undefined> {
+    return unwrapAsync(passthroughPatchPassthrough2Raw(
       this,
       request,
       options,
@@ -138,13 +138,13 @@ export class Passthrough extends ClientSDK {
   /**
    * Passthrough DELETE
    */
-  async removePassthrough(
-    request: operations.RemovePassthroughRequest,
+  async removePassthrough2(
+    request: operations.RemovePassthrough2Request,
     options?: RequestOptions & {
-      acceptHeaderOverride?: RemovePassthroughAcceptEnum;
+      acceptHeaderOverride?: RemovePassthrough2AcceptEnum;
     },
-  ): Promise<operations.RemovePassthroughResponse | undefined> {
-    return unwrapAsync(passthroughRemovePassthrough(
+  ): Promise<operations.RemovePassthrough2Response | undefined> {
+    return unwrapAsync(passthroughRemovePassthrough2(
       this,
       request,
       options,
@@ -154,13 +154,13 @@ export class Passthrough extends ClientSDK {
   /**
    * Passthrough PUT
    */
-  async updatePassthroughJson(
-    request: operations.UpdatePassthroughJsonRequest,
+  async updatePassthrough2Json(
+    request: operations.UpdatePassthrough2JsonRequest,
     options?: RequestOptions & {
-      acceptHeaderOverride?: UpdatePassthroughJsonAcceptEnum;
+      acceptHeaderOverride?: UpdatePassthrough2JsonAcceptEnum;
     },
-  ): Promise<operations.UpdatePassthroughJsonResponse | undefined> {
-    return unwrapAsync(passthroughUpdatePassthroughJson(
+  ): Promise<operations.UpdatePassthrough2JsonResponse | undefined> {
+    return unwrapAsync(passthroughUpdatePassthrough2Json(
       this,
       request,
       options,
@@ -170,13 +170,13 @@ export class Passthrough extends ClientSDK {
   /**
    * Passthrough PUT
    */
-  async updatePassthroughRaw(
-    request: operations.UpdatePassthroughRawRequest,
+  async updatePassthrough2Raw(
+    request: operations.UpdatePassthrough2RawRequest,
     options?: RequestOptions & {
-      acceptHeaderOverride?: UpdatePassthroughRawAcceptEnum;
+      acceptHeaderOverride?: UpdatePassthrough2RawAcceptEnum;
     },
-  ): Promise<operations.UpdatePassthroughRawResponse | undefined> {
-    return unwrapAsync(passthroughUpdatePassthroughRaw(
+  ): Promise<operations.UpdatePassthrough2RawResponse | undefined> {
+    return unwrapAsync(passthroughUpdatePassthrough2Raw(
       this,
       request,
       options,

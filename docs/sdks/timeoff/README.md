@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createHrisTimeoff](#createhristimeoff) - Create a timeoff
-* [getHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
-* [listHrisTimeoffs](#listhristimeoffs) - List all timeoffs
-* [patchHrisTimeoff](#patchhristimeoff) - Update a timeoff
-* [removeHrisTimeoff](#removehristimeoff) - Remove a timeoff
-* [updateHrisTimeoff](#updatehristimeoff) - Update a timeoff
+* [createHrisTimeoff2](#createhristimeoff2) - Create a timeoff
+* [getHrisTimeoff2](#gethristimeoff2) - Retrieve a timeoff
+* [listHrisTimeoffs2](#listhristimeoffs2) - List all timeoffs
+* [patchHrisTimeoff2](#patchhristimeoff2) - Update a timeoff
+* [removeHrisTimeoff2](#removehristimeoff2) - Remove a timeoff
+* [updateHrisTimeoff2](#updatehristimeoff2) - Update a timeoff
 
-## createHrisTimeoff
+## createHrisTimeoff2
 
 Create a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisTimeoff2" method="post" path="/hris/{connection_id}/timeoff" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.timeoff.createHrisTimeoff({
+  const result = await unifiedTo.timeoff.createHrisTimeoff2({
     hrisTimeoff: {
       userId: "<id>",
     },
@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisCreateHrisTimeoff } from "@unified-api/typescript-sdk/funcs/hrisCreateHrisTimeoff.js";
+import { hrisCreateHrisTimeoff2 } from "@unified-api/typescript-sdk/funcs/hrisCreateHrisTimeoff2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisCreateHrisTimeoff(unifiedTo, {
+  const res = await hrisCreateHrisTimeoff2(unifiedTo, {
     hrisTimeoff: {
       userId: "<id>",
     },
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisCreateHrisTimeoff failed:", res.error);
+    console.log("hrisCreateHrisTimeoff2 failed:", res.error);
   }
 }
 
@@ -79,7 +79,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateHrisTimeoffRequest](../../sdk/models/operations/createhristimeoffrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateHrisTimeoff2Request](../../sdk/models/operations/createhristimeoff2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -94,13 +94,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getHrisTimeoff
+## getHrisTimeoff2
 
 Retrieve a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getHrisTimeoff" method="get" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getHrisTimeoff2" method="get" path="/hris/{connection_id}/timeoff/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -111,7 +111,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.timeoff.getHrisTimeoff({
+  const result = await unifiedTo.timeoff.getHrisTimeoff2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -128,7 +128,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisGetHrisTimeoff } from "@unified-api/typescript-sdk/funcs/hrisGetHrisTimeoff.js";
+import { hrisGetHrisTimeoff2 } from "@unified-api/typescript-sdk/funcs/hrisGetHrisTimeoff2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -139,7 +139,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisGetHrisTimeoff(unifiedTo, {
+  const res = await hrisGetHrisTimeoff2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -147,7 +147,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisGetHrisTimeoff failed:", res.error);
+    console.log("hrisGetHrisTimeoff2 failed:", res.error);
   }
 }
 
@@ -158,7 +158,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetHrisTimeoffRequest](../../sdk/models/operations/gethristimeoffrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetHrisTimeoff2Request](../../sdk/models/operations/gethristimeoff2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -173,13 +173,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listHrisTimeoffs
+## listHrisTimeoffs2
 
 List all timeoffs
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listHrisTimeoffs" method="get" path="/hris/{connection_id}/timeoff" -->
+<!-- UsageSnippet language="typescript" operationID="listHrisTimeoffs2" method="get" path="/hris/{connection_id}/timeoff" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -190,7 +190,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.timeoff.listHrisTimeoffs({
+  const result = await unifiedTo.timeoff.listHrisTimeoffs2({
     connectionId: "<id>",
   });
 
@@ -206,7 +206,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisListHrisTimeoffs } from "@unified-api/typescript-sdk/funcs/hrisListHrisTimeoffs.js";
+import { hrisListHrisTimeoffs2 } from "@unified-api/typescript-sdk/funcs/hrisListHrisTimeoffs2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,14 +217,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisListHrisTimeoffs(unifiedTo, {
+  const res = await hrisListHrisTimeoffs2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisListHrisTimeoffs failed:", res.error);
+    console.log("hrisListHrisTimeoffs2 failed:", res.error);
   }
 }
 
@@ -235,7 +235,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListHrisTimeoffsRequest](../../sdk/models/operations/listhristimeoffsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListHrisTimeoffs2Request](../../sdk/models/operations/listhristimeoffs2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -250,13 +250,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchHrisTimeoff
+## patchHrisTimeoff2
 
 Update a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisTimeoff2" method="patch" path="/hris/{connection_id}/timeoff/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -267,7 +267,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.timeoff.patchHrisTimeoff({
+  const result = await unifiedTo.timeoff.patchHrisTimeoff2({
     hrisTimeoff: {
       userId: "<id>",
     },
@@ -287,7 +287,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisPatchHrisTimeoff } from "@unified-api/typescript-sdk/funcs/hrisPatchHrisTimeoff.js";
+import { hrisPatchHrisTimeoff2 } from "@unified-api/typescript-sdk/funcs/hrisPatchHrisTimeoff2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,7 +298,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisPatchHrisTimeoff(unifiedTo, {
+  const res = await hrisPatchHrisTimeoff2(unifiedTo, {
     hrisTimeoff: {
       userId: "<id>",
     },
@@ -309,7 +309,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisPatchHrisTimeoff failed:", res.error);
+    console.log("hrisPatchHrisTimeoff2 failed:", res.error);
   }
 }
 
@@ -320,7 +320,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchHrisTimeoffRequest](../../sdk/models/operations/patchhristimeoffrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchHrisTimeoff2Request](../../sdk/models/operations/patchhristimeoff2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -335,13 +335,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeHrisTimeoff
+## removeHrisTimeoff2
 
 Remove a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeHrisTimeoff" method="delete" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeHrisTimeoff2" method="delete" path="/hris/{connection_id}/timeoff/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -352,7 +352,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.timeoff.removeHrisTimeoff({
+  const result = await unifiedTo.timeoff.removeHrisTimeoff2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisRemoveHrisTimeoff } from "@unified-api/typescript-sdk/funcs/hrisRemoveHrisTimeoff.js";
+import { hrisRemoveHrisTimeoff2 } from "@unified-api/typescript-sdk/funcs/hrisRemoveHrisTimeoff2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisRemoveHrisTimeoff(unifiedTo, {
+  const res = await hrisRemoveHrisTimeoff2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisRemoveHrisTimeoff failed:", res.error);
+    console.log("hrisRemoveHrisTimeoff2 failed:", res.error);
   }
 }
 
@@ -399,14 +399,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveHrisTimeoffRequest](../../sdk/models/operations/removehristimeoffrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveHrisTimeoff2Request](../../sdk/models/operations/removehristimeoff2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveHrisTimeoffResponse](../../sdk/models/operations/removehristimeoffresponse.md)\>**
+**Promise\<[operations.RemoveHrisTimeoff2Response](../../sdk/models/operations/removehristimeoff2response.md)\>**
 
 ### Errors
 
@@ -414,13 +414,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateHrisTimeoff
+## updateHrisTimeoff2
 
 Update a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisTimeoff2" method="put" path="/hris/{connection_id}/timeoff/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -431,7 +431,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.timeoff.updateHrisTimeoff({
+  const result = await unifiedTo.timeoff.updateHrisTimeoff2({
     hrisTimeoff: {
       userId: "<id>",
     },
@@ -451,7 +451,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisUpdateHrisTimeoff } from "@unified-api/typescript-sdk/funcs/hrisUpdateHrisTimeoff.js";
+import { hrisUpdateHrisTimeoff2 } from "@unified-api/typescript-sdk/funcs/hrisUpdateHrisTimeoff2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -462,7 +462,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisUpdateHrisTimeoff(unifiedTo, {
+  const res = await hrisUpdateHrisTimeoff2(unifiedTo, {
     hrisTimeoff: {
       userId: "<id>",
     },
@@ -473,7 +473,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisUpdateHrisTimeoff failed:", res.error);
+    console.log("hrisUpdateHrisTimeoff2 failed:", res.error);
   }
 }
 
@@ -484,7 +484,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateHrisTimeoffRequest](../../sdk/models/operations/updatehristimeoffrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateHrisTimeoff2Request](../../sdk/models/operations/updatehristimeoff2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

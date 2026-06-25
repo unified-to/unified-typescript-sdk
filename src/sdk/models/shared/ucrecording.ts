@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  UcContact,
+  UcContact$inboundSchema,
+  UcContact$Outbound,
+  UcContact$outboundSchema,
+} from "./uccontact.js";
+import {
   UcRecordingMedia,
   UcRecordingMedia$inboundSchema,
   UcRecordingMedia$Outbound,
@@ -27,6 +33,7 @@ export type UcRecording = {
   contactId?: string | undefined;
   contactName?: string | undefined;
   contactPhone?: string | undefined;
+  contacts?: Array<UcContact> | undefined;
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
   expiresAt?: Date | undefined;
@@ -65,6 +72,7 @@ export const UcRecording$inboundSchema: z.ZodType<
   contact_id: z.string().optional(),
   contact_name: z.string().optional(),
   contact_phone: z.string().optional(),
+  contacts: z.array(UcContact$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -106,6 +114,7 @@ export type UcRecording$Outbound = {
   contact_id?: string | undefined;
   contact_name?: string | undefined;
   contact_phone?: string | undefined;
+  contacts?: Array<UcContact$Outbound> | undefined;
   created_at?: string | undefined;
   end_at?: string | undefined;
   expires_at?: string | undefined;
@@ -131,6 +140,7 @@ export const UcRecording$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   contactName: z.string().optional(),
   contactPhone: z.string().optional(),
+  contacts: z.array(UcContact$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   expiresAt: z.date().transform(v => v.toISOString()).optional(),

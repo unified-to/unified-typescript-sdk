@@ -17,4 +17,4 @@ let value: AtsMetadata = {};
 | `id`                                                  | *string*                                              | :heavy_minus_sign:                                    | N/A                                                   |
 | `namespace`                                           | *string*                                              | :heavy_minus_sign:                                    | N/A                                                   |
 | `slug`                                                | *string*                                              | :heavy_minus_sign:                                    | N/A                                                   |
-| `value`                                               | *shared.Value*                                        | :heavy_minus_sign:                                    | N/A                                                   |
+| `value`                                               | *shared.AtsMetadataValue*                             | :heavy_minus_sign:                                    | N/A                                                   |

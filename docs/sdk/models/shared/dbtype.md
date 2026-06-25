@@ -5,7 +5,7 @@
 ```typescript
 import { DbType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: DbType = "supabase";
+let value: DbType = "snowflake";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: DbType = "supabase";
 ## Values
 
 ```typescript
-"mongodb" | "mysql" | "postgres" | "mssql" | "mariadb" | "supabase" | Unrecognized<string>
+"mongodb" | "mysql" | "postgres" | "mssql" | "mariadb" | "supabase" | "snowflake" | Unrecognized<string>
 ```

@@ -43,15 +43,122 @@ export const AdsReportMetricsType = {
   Shares: "SHARES",
   Comments: "COMMENTS",
   Follows: "FOLLOWS",
+  PostClickConversions: "POST_CLICK_CONVERSIONS",
+  ViewThroughConversions: "VIEW_THROUGH_CONVERSIONS",
+  AllConversions: "ALL_CONVERSIONS",
+  AllConversionValue: "ALL_CONVERSION_VALUE",
+  Interactions: "INTERACTIONS",
+  Revenue: "REVENUE",
+  MediaCost: "MEDIA_COST",
+  TotalMediaCost: "TOTAL_MEDIA_COST",
+  VideoPlays: "VIDEO_PLAYS",
+  VideoQuartile25: "VIDEO_QUARTILE_25",
+  VideoQuartile50: "VIDEO_QUARTILE_50",
+  VideoQuartile75: "VIDEO_QUARTILE_75",
+  VideoQuartile100: "VIDEO_QUARTILE_100",
+  VideoAvgTimeWatched: "VIDEO_AVG_TIME_WATCHED",
+  VideoThruplay: "VIDEO_THRUPLAY",
+  ViewableImpressions: "VIEWABLE_IMPRESSIONS",
+  MeasurableImpressions: "MEASURABLE_IMPRESSIONS",
+  ViewabilityRate: "VIEWABILITY_RATE",
+  BillableImpressions: "BILLABLE_IMPRESSIONS",
+  DataFees: "DATA_FEES",
+  PlatformFees: "PLATFORM_FEES",
+  Profit: "PROFIT",
+  LandingPageClicks: "LANDING_PAGE_CLICKS",
+  LeadFormOpens: "LEAD_FORM_OPENS",
+  AdUnitClicks: "AD_UNIT_CLICKS",
+  CardClicks: "CARD_CLICKS",
+  CardImpressions: "CARD_IMPRESSIONS",
+  CommentLikes: "COMMENT_LIKES",
+  CompanyPageClicks: "COMPANY_PAGE_CLICKS",
+  ActionClicks: "ACTION_CLICKS",
+  TextUrlClicks: "TEXT_URL_CLICKS",
+  OtherEngagements: "OTHER_ENGAGEMENTS",
+  Opens: "OPENS",
+  TotalEngagements: "TOTAL_ENGAGEMENTS",
+  UniqueImpressions: "UNIQUE_IMPRESSIONS",
+  UniqueClicks: "UNIQUE_CLICKS",
+  ViralImpressions: "VIRAL_IMPRESSIONS",
+  ViralClicks: "VIRAL_CLICKS",
+  ViralLikes: "VIRAL_LIKES",
+  ViralComments: "VIRAL_COMMENTS",
+  ViralShares: "VIRAL_SHARES",
+  ViralFollows: "VIRAL_FOLLOWS",
+  ViralVideoPlays: "VIRAL_VIDEO_PLAYS",
+  ViralVideoViews: "VIRAL_VIDEO_VIEWS",
+  ViralVideoCompletions: "VIRAL_VIDEO_COMPLETIONS",
+  ViralVideoQuartile25: "VIRAL_VIDEO_QUARTILE_25",
+  ViralVideoQuartile50: "VIRAL_VIDEO_QUARTILE_50",
+  ViralVideoQuartile75: "VIRAL_VIDEO_QUARTILE_75",
+  ViralLeads: "VIRAL_LEADS",
+  ViralLeadFormOpens: "VIRAL_LEAD_FORM_OPENS",
+  ViralLandingPageClicks: "VIRAL_LANDING_PAGE_CLICKS",
+  ViralConversions: "VIRAL_CONVERSIONS",
+  ViralPostClickConversions: "VIRAL_POST_CLICK_CONVERSIONS",
+  ViralViewThroughConversions: "VIRAL_VIEW_THROUGH_CONVERSIONS",
+  ViralEngagements: "VIRAL_ENGAGEMENTS",
+  GmailSecondaryClicks: "GMAIL_SECONDARY_CLICKS",
+  AverageCpv: "AVERAGE_CPV",
+  VideoViewsFromSearch: "VIDEO_VIEWS_FROM_SEARCH",
+  CrossDeviceConversions: "CROSS_DEVICE_CONVERSIONS",
+  AbsoluteTopImpressionShare: "ABSOLUTE_TOP_IMPRESSION_SHARE",
+  TopImpressionShare: "TOP_IMPRESSION_SHARE",
+  VideoFullscreens: "VIDEO_FULLSCREENS",
+  VideoPauses: "VIDEO_PAUSES",
+  VideoMutes: "VIDEO_MUTES",
+  VideoSkips: "VIDEO_SKIPS",
+  CompanionClicks: "COMPANION_CLICKS",
+  CompanionViews: "COMPANION_VIEWS",
+  ActiveViewAvgTime: "ACTIVE_VIEW_AVG_TIME",
+  EligibleImpressions: "ELIGIBLE_IMPRESSIONS",
+  EarnedViews: "EARNED_VIEWS",
+  UniqueViewers: "UNIQUE_VIEWERS",
+  CostUsd: "COST_USD",
+  ViralCardClicks: "VIRAL_CARD_CLICKS",
+  ViralCardImpressions: "VIRAL_CARD_IMPRESSIONS",
+  ViralCompanyPageClicks: "VIRAL_COMPANY_PAGE_CLICKS",
+  ViralVideoFullscreens: "VIRAL_VIDEO_FULLSCREENS",
+  ViralOtherEngagements: "VIRAL_OTHER_ENGAGEMENTS",
+  LeadGenContactShares: "LEAD_GEN_CONTACT_SHARES",
+  LeadGenInterestedClicks: "LEAD_GEN_INTERESTED_CLICKS",
+  Cm360PostClickRevenue: "CM360_POST_CLICK_REVENUE",
+  Cm360PostViewRevenue: "CM360_POST_VIEW_REVENUE",
+  Scrolls: "SCROLLS",
+  MediaFee1: "MEDIA_FEE_1",
+  MediaFee2: "MEDIA_FEE_2",
+  MediaFee3: "MEDIA_FEE_3",
+  MediaFee4: "MEDIA_FEE_4",
+  MediaFee5: "MEDIA_FEE_5",
+  ActiveViewDistUnmeasurable: "ACTIVE_VIEW_DIST_UNMEASURABLE",
+  ActiveViewDistUnviewable: "ACTIVE_VIEW_DIST_UNVIEWABLE",
+  ActiveViewDistViewable: "ACTIVE_VIEW_DIST_VIEWABLE",
+  ActiveViewAudibleVisibleComplete: "ACTIVE_VIEW_AUDIBLE_VISIBLE_COMPLETE",
+  ActiveViewVisible10S: "ACTIVE_VIEW_VISIBLE_10S",
+  NotMeasurableImpressions: "NOT_MEASURABLE_IMPRESSIONS",
+  NotViewableImpressions: "NOT_VIEWABLE_IMPRESSIONS",
+  PublisherPlatform: "PUBLISHER_PLATFORM",
+  PlatformPosition: "PLATFORM_POSITION",
+  ImpressionDevice: "IMPRESSION_DEVICE",
+  OneDVIEW: "1D_VIEW",
+  OneDCLICK: "1D_CLICK",
+  SevenDVIEW: "7D_VIEW",
+  SevenDCLICK: "7D_CLICK",
+  FourteenDCLICK: "14D_CLICK",
+  TwentyEightDVIEW: "28D_VIEW",
+  TwentyEightDCLICK: "28D_CLICK",
+  ThirtyDCLICK: "30D_CLICK",
 } as const;
 export type AdsReportMetricsType = OpenEnum<typeof AdsReportMetricsType>;
+
+export type Value = number | string;
 
 export type AdsReportMetrics = {
   ad?: PropertyAdsReportMetricsAd | undefined;
   campaign?: PropertyAdsReportMetricsCampaign | undefined;
   group?: PropertyAdsReportMetricsGroup | undefined;
   type?: AdsReportMetricsType | undefined;
-  value?: number | undefined;
+  value?: number | string | undefined;
 };
 
 /** @internal */
@@ -60,6 +167,20 @@ export const AdsReportMetricsType$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(AdsReportMetricsType);
+
+/** @internal */
+export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z
+  .union([z.number(), z.string()]);
+
+export function valueFromJSON(
+  jsonString: string,
+): SafeParseResult<Value, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Value$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Value' from JSON`,
+  );
+}
 
 /** @internal */
 export const AdsReportMetrics$inboundSchema: z.ZodType<
@@ -71,7 +192,7 @@ export const AdsReportMetrics$inboundSchema: z.ZodType<
   campaign: PropertyAdsReportMetricsCampaign$inboundSchema.optional(),
   group: PropertyAdsReportMetricsGroup$inboundSchema.optional(),
   type: AdsReportMetricsType$inboundSchema.optional(),
-  value: z.number().optional(),
+  value: z.union([z.number(), z.string()]).optional(),
 });
 
 export function adsReportMetricsFromJSON(

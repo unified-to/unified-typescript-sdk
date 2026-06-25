@@ -4,22 +4,22 @@
 
 ### Available Operations
 
-* [createPassthroughJson](#createpassthroughjson) - Passthrough POST
-* [createPassthroughRaw](#createpassthroughraw) - Passthrough POST
-* [listPassthroughs](#listpassthroughs) - Passthrough GET
-* [patchPassthroughJson](#patchpassthroughjson) - Passthrough PUT
-* [patchPassthroughRaw](#patchpassthroughraw) - Passthrough PUT
-* [removePassthrough](#removepassthrough) - Passthrough DELETE
-* [updatePassthroughJson](#updatepassthroughjson) - Passthrough PUT
-* [updatePassthroughRaw](#updatepassthroughraw) - Passthrough PUT
+* [createPassthrough2Json](#createpassthrough2json) - Passthrough POST
+* [createPassthrough2Raw](#createpassthrough2raw) - Passthrough POST
+* [listPassthroughs2](#listpassthroughs2) - Passthrough GET
+* [patchPassthrough2Json](#patchpassthrough2json) - Passthrough PUT
+* [patchPassthrough2Raw](#patchpassthrough2raw) - Passthrough PUT
+* [removePassthrough2](#removepassthrough2) - Passthrough DELETE
+* [updatePassthrough2Json](#updatepassthrough2json) - Passthrough PUT
+* [updatePassthrough2Raw](#updatepassthrough2raw) - Passthrough PUT
 
-## createPassthroughJson
+## createPassthrough2Json
 
 Passthrough POST
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPassthrough_json" method="post" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="createPassthrough2_json" method="post" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,9 +30,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.createPassthroughJson({
+  const result = await unifiedTo.passthrough.createPassthrough2Json({
     connectionId: "<id>",
-    path: "/var/log",
+    path: "/net",
   });
 
   console.log(result);
@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughCreatePassthroughJson } from "@unified-api/typescript-sdk/funcs/passthroughCreatePassthroughJson.js";
+import { passthroughCreatePassthrough2Json } from "@unified-api/typescript-sdk/funcs/passthroughCreatePassthrough2Json.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,15 +58,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughCreatePassthroughJson(unifiedTo, {
+  const res = await passthroughCreatePassthrough2Json(unifiedTo, {
     connectionId: "<id>",
-    path: "/var/log",
+    path: "/net",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughCreatePassthroughJson failed:", res.error);
+    console.log("passthroughCreatePassthrough2Json failed:", res.error);
   }
 }
 
@@ -77,14 +77,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreatePassthroughJsonRequest](../../sdk/models/operations/createpassthroughjsonrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreatePassthrough2JsonRequest](../../sdk/models/operations/createpassthrough2jsonrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.CreatePassthroughJsonResponse](../../sdk/models/operations/createpassthroughjsonresponse.md)\>**
+**Promise\<[operations.CreatePassthrough2JsonResponse](../../sdk/models/operations/createpassthrough2jsonresponse.md)\>**
 
 ### Errors
 
@@ -92,13 +92,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createPassthroughRaw
+## createPassthrough2Raw
 
 Passthrough POST
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPassthrough_raw" method="post" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="createPassthrough2_raw" method="post" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -109,9 +109,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.createPassthroughRaw({
+  const result = await unifiedTo.passthrough.createPassthrough2Raw({
     connectionId: "<id>",
-    path: "/var/log",
+    path: "/net",
   });
 
   console.log(result);
@@ -126,7 +126,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughCreatePassthroughRaw } from "@unified-api/typescript-sdk/funcs/passthroughCreatePassthroughRaw.js";
+import { passthroughCreatePassthrough2Raw } from "@unified-api/typescript-sdk/funcs/passthroughCreatePassthrough2Raw.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -137,15 +137,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughCreatePassthroughRaw(unifiedTo, {
+  const res = await passthroughCreatePassthrough2Raw(unifiedTo, {
     connectionId: "<id>",
-    path: "/var/log",
+    path: "/net",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughCreatePassthroughRaw failed:", res.error);
+    console.log("passthroughCreatePassthrough2Raw failed:", res.error);
   }
 }
 
@@ -156,14 +156,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreatePassthroughRawRequest](../../sdk/models/operations/createpassthroughrawrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreatePassthrough2RawRequest](../../sdk/models/operations/createpassthrough2rawrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.CreatePassthroughRawResponse](../../sdk/models/operations/createpassthroughrawresponse.md)\>**
+**Promise\<[operations.CreatePassthrough2RawResponse](../../sdk/models/operations/createpassthrough2rawresponse.md)\>**
 
 ### Errors
 
@@ -171,13 +171,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listPassthroughs
+## listPassthroughs2
 
 Passthrough GET
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listPassthroughs" method="get" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="listPassthroughs2" method="get" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -188,9 +188,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.listPassthroughs({
+  const result = await unifiedTo.passthrough.listPassthroughs2({
     connectionId: "<id>",
-    path: "/System",
+    path: "/usr/local/src",
   });
 
   console.log(result);
@@ -205,7 +205,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughListPassthroughs } from "@unified-api/typescript-sdk/funcs/passthroughListPassthroughs.js";
+import { passthroughListPassthroughs2 } from "@unified-api/typescript-sdk/funcs/passthroughListPassthroughs2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -216,15 +216,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughListPassthroughs(unifiedTo, {
+  const res = await passthroughListPassthroughs2(unifiedTo, {
     connectionId: "<id>",
-    path: "/System",
+    path: "/usr/local/src",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughListPassthroughs failed:", res.error);
+    console.log("passthroughListPassthroughs2 failed:", res.error);
   }
 }
 
@@ -235,14 +235,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListPassthroughsRequest](../../sdk/models/operations/listpassthroughsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListPassthroughs2Request](../../sdk/models/operations/listpassthroughs2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ListPassthroughsResponse](../../sdk/models/operations/listpassthroughsresponse.md)\>**
+**Promise\<[operations.ListPassthroughs2Response](../../sdk/models/operations/listpassthroughs2response.md)\>**
 
 ### Errors
 
@@ -250,13 +250,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchPassthroughJson
+## patchPassthrough2Json
 
 Passthrough PUT
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPassthrough_json" method="patch" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPassthrough2_json" method="patch" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -267,9 +267,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.patchPassthroughJson({
+  const result = await unifiedTo.passthrough.patchPassthrough2Json({
     connectionId: "<id>",
-    path: "/System",
+    path: "/usr/X11R6",
   });
 
   console.log(result);
@@ -284,7 +284,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughPatchPassthroughJson } from "@unified-api/typescript-sdk/funcs/passthroughPatchPassthroughJson.js";
+import { passthroughPatchPassthrough2Json } from "@unified-api/typescript-sdk/funcs/passthroughPatchPassthrough2Json.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,15 +295,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughPatchPassthroughJson(unifiedTo, {
+  const res = await passthroughPatchPassthrough2Json(unifiedTo, {
     connectionId: "<id>",
-    path: "/System",
+    path: "/usr/X11R6",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughPatchPassthroughJson failed:", res.error);
+    console.log("passthroughPatchPassthrough2Json failed:", res.error);
   }
 }
 
@@ -314,14 +314,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchPassthroughJsonRequest](../../sdk/models/operations/patchpassthroughjsonrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchPassthrough2JsonRequest](../../sdk/models/operations/patchpassthrough2jsonrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PatchPassthroughJsonResponse](../../sdk/models/operations/patchpassthroughjsonresponse.md)\>**
+**Promise\<[operations.PatchPassthrough2JsonResponse](../../sdk/models/operations/patchpassthrough2jsonresponse.md)\>**
 
 ### Errors
 
@@ -329,13 +329,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchPassthroughRaw
+## patchPassthrough2Raw
 
 Passthrough PUT
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPassthrough_raw" method="patch" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPassthrough2_raw" method="patch" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -346,9 +346,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.patchPassthroughRaw({
+  const result = await unifiedTo.passthrough.patchPassthrough2Raw({
     connectionId: "<id>",
-    path: "/System",
+    path: "/usr/X11R6",
   });
 
   console.log(result);
@@ -363,7 +363,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughPatchPassthroughRaw } from "@unified-api/typescript-sdk/funcs/passthroughPatchPassthroughRaw.js";
+import { passthroughPatchPassthrough2Raw } from "@unified-api/typescript-sdk/funcs/passthroughPatchPassthrough2Raw.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -374,15 +374,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughPatchPassthroughRaw(unifiedTo, {
+  const res = await passthroughPatchPassthrough2Raw(unifiedTo, {
     connectionId: "<id>",
-    path: "/System",
+    path: "/usr/X11R6",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughPatchPassthroughRaw failed:", res.error);
+    console.log("passthroughPatchPassthrough2Raw failed:", res.error);
   }
 }
 
@@ -393,14 +393,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchPassthroughRawRequest](../../sdk/models/operations/patchpassthroughrawrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchPassthrough2RawRequest](../../sdk/models/operations/patchpassthrough2rawrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PatchPassthroughRawResponse](../../sdk/models/operations/patchpassthroughrawresponse.md)\>**
+**Promise\<[operations.PatchPassthrough2RawResponse](../../sdk/models/operations/patchpassthrough2rawresponse.md)\>**
 
 ### Errors
 
@@ -408,13 +408,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removePassthrough
+## removePassthrough2
 
 Passthrough DELETE
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removePassthrough" method="delete" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="removePassthrough2" method="delete" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -425,9 +425,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.removePassthrough({
+  const result = await unifiedTo.passthrough.removePassthrough2({
     connectionId: "<id>",
-    path: "/bin",
+    path: "/usr/include",
   });
 
   console.log(result);
@@ -442,7 +442,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughRemovePassthrough } from "@unified-api/typescript-sdk/funcs/passthroughRemovePassthrough.js";
+import { passthroughRemovePassthrough2 } from "@unified-api/typescript-sdk/funcs/passthroughRemovePassthrough2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -453,15 +453,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughRemovePassthrough(unifiedTo, {
+  const res = await passthroughRemovePassthrough2(unifiedTo, {
     connectionId: "<id>",
-    path: "/bin",
+    path: "/usr/include",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughRemovePassthrough failed:", res.error);
+    console.log("passthroughRemovePassthrough2 failed:", res.error);
   }
 }
 
@@ -472,14 +472,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemovePassthroughRequest](../../sdk/models/operations/removepassthroughrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemovePassthrough2Request](../../sdk/models/operations/removepassthrough2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemovePassthroughResponse](../../sdk/models/operations/removepassthroughresponse.md)\>**
+**Promise\<[operations.RemovePassthrough2Response](../../sdk/models/operations/removepassthrough2response.md)\>**
 
 ### Errors
 
@@ -487,13 +487,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updatePassthroughJson
+## updatePassthrough2Json
 
 Passthrough PUT
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePassthrough_json" method="put" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePassthrough2_json" method="put" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -504,9 +504,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.updatePassthroughJson({
+  const result = await unifiedTo.passthrough.updatePassthrough2Json({
     connectionId: "<id>",
-    path: "/var/tmp",
+    path: "/home/user/dir",
   });
 
   console.log(result);
@@ -521,7 +521,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughUpdatePassthroughJson } from "@unified-api/typescript-sdk/funcs/passthroughUpdatePassthroughJson.js";
+import { passthroughUpdatePassthrough2Json } from "@unified-api/typescript-sdk/funcs/passthroughUpdatePassthrough2Json.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -532,15 +532,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughUpdatePassthroughJson(unifiedTo, {
+  const res = await passthroughUpdatePassthrough2Json(unifiedTo, {
     connectionId: "<id>",
-    path: "/var/tmp",
+    path: "/home/user/dir",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughUpdatePassthroughJson failed:", res.error);
+    console.log("passthroughUpdatePassthrough2Json failed:", res.error);
   }
 }
 
@@ -551,14 +551,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdatePassthroughJsonRequest](../../sdk/models/operations/updatepassthroughjsonrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdatePassthrough2JsonRequest](../../sdk/models/operations/updatepassthrough2jsonrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.UpdatePassthroughJsonResponse](../../sdk/models/operations/updatepassthroughjsonresponse.md)\>**
+**Promise\<[operations.UpdatePassthrough2JsonResponse](../../sdk/models/operations/updatepassthrough2jsonresponse.md)\>**
 
 ### Errors
 
@@ -566,13 +566,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updatePassthroughRaw
+## updatePassthrough2Raw
 
 Passthrough PUT
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePassthrough_raw" method="put" path="/passthrough/{connection_id}/{path}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePassthrough2_raw" method="put" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -583,9 +583,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.passthrough.updatePassthroughRaw({
+  const result = await unifiedTo.passthrough.updatePassthrough2Raw({
     connectionId: "<id>",
-    path: "/var/tmp",
+    path: "/home/user/dir",
   });
 
   console.log(result);
@@ -600,7 +600,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { passthroughUpdatePassthroughRaw } from "@unified-api/typescript-sdk/funcs/passthroughUpdatePassthroughRaw.js";
+import { passthroughUpdatePassthrough2Raw } from "@unified-api/typescript-sdk/funcs/passthroughUpdatePassthrough2Raw.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -611,15 +611,15 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await passthroughUpdatePassthroughRaw(unifiedTo, {
+  const res = await passthroughUpdatePassthrough2Raw(unifiedTo, {
     connectionId: "<id>",
-    path: "/var/tmp",
+    path: "/home/user/dir",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("passthroughUpdatePassthroughRaw failed:", res.error);
+    console.log("passthroughUpdatePassthrough2Raw failed:", res.error);
   }
 }
 
@@ -630,14 +630,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdatePassthroughRawRequest](../../sdk/models/operations/updatepassthroughrawrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdatePassthrough2RawRequest](../../sdk/models/operations/updatepassthrough2rawrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.UpdatePassthroughRawResponse](../../sdk/models/operations/updatepassthroughrawresponse.md)\>**
+**Promise\<[operations.UpdatePassthrough2RawResponse](../../sdk/models/operations/updatepassthrough2rawresponse.md)\>**
 
 ### Errors
 

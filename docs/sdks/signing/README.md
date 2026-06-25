@@ -4,28 +4,28 @@
 
 ### Available Operations
 
-* [createSigningDocument](#createsigningdocument) - Create a document
-* [createSigningSignatory](#createsigningsignatory) - Create a signatory
-* [getSigningDocument](#getsigningdocument) - Retrieve a document
-* [getSigningSignatory](#getsigningsignatory) - Retrieve a signatory
-* [getSigningTemplate](#getsigningtemplate) - Retrieve a template
-* [listSigningDocuments](#listsigningdocuments) - List all documents
-* [listSigningSignatories](#listsigningsignatories) - List all signatories
-* [listSigningTemplates](#listsigningtemplates) - List all templates
-* [patchSigningDocument](#patchsigningdocument) - Update a document
-* [patchSigningSignatory](#patchsigningsignatory) - Update a signatory
-* [removeSigningDocument](#removesigningdocument) - Remove a document
-* [removeSigningSignatory](#removesigningsignatory) - Remove a signatory
-* [updateSigningDocument](#updatesigningdocument) - Update a document
-* [updateSigningSignatory](#updatesigningsignatory) - Update a signatory
+* [createSigningDocument2](#createsigningdocument2) - Create a document
+* [createSigningSignatory2](#createsigningsignatory2) - Create a signatory
+* [getSigningDocument2](#getsigningdocument2) - Retrieve a document
+* [getSigningSignatory2](#getsigningsignatory2) - Retrieve a signatory
+* [getSigningTemplate2](#getsigningtemplate2) - Retrieve a template
+* [listSigningDocuments2](#listsigningdocuments2) - List all documents
+* [listSigningSignatories2](#listsigningsignatories2) - List all signatories
+* [listSigningTemplates2](#listsigningtemplates2) - List all templates
+* [patchSigningDocument2](#patchsigningdocument2) - Update a document
+* [patchSigningSignatory2](#patchsigningsignatory2) - Update a signatory
+* [removeSigningDocument2](#removesigningdocument2) - Remove a document
+* [removeSigningSignatory2](#removesigningsignatory2) - Remove a signatory
+* [updateSigningDocument2](#updatesigningdocument2) - Update a document
+* [updateSigningSignatory2](#updatesigningsignatory2) - Update a signatory
 
-## createSigningDocument
+## createSigningDocument2
 
 Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" -->
+<!-- UsageSnippet language="typescript" operationID="createSigningDocument2" method="post" path="/signing/{connection_id}/document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -36,7 +36,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.createSigningDocument({
+  const result = await unifiedTo.signing.createSigningDocument2({
     signingDocument: {},
     connectionId: "<id>",
   });
@@ -53,7 +53,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { documentCreateSigningDocument } from "@unified-api/typescript-sdk/funcs/documentCreateSigningDocument.js";
+import { documentCreateSigningDocument2 } from "@unified-api/typescript-sdk/funcs/documentCreateSigningDocument2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -64,7 +64,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await documentCreateSigningDocument(unifiedTo, {
+  const res = await documentCreateSigningDocument2(unifiedTo, {
     signingDocument: {},
     connectionId: "<id>",
   });
@@ -72,7 +72,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("documentCreateSigningDocument failed:", res.error);
+    console.log("documentCreateSigningDocument2 failed:", res.error);
   }
 }
 
@@ -83,7 +83,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateSigningDocumentRequest](../../sdk/models/operations/createsigningdocumentrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateSigningDocument2Request](../../sdk/models/operations/createsigningdocument2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -98,13 +98,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createSigningSignatory
+## createSigningSignatory2
 
 Create a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createSigningSignatory" method="post" path="/signing/{connection_id}/signatory" -->
+<!-- UsageSnippet language="typescript" operationID="createSigningSignatory2" method="post" path="/signing/{connection_id}/signatory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -115,7 +115,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.createSigningSignatory({
+  const result = await unifiedTo.signing.createSigningSignatory2({
     signingSignatory: {},
     connectionId: "<id>",
   });
@@ -132,7 +132,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingCreateSigningSignatory } from "@unified-api/typescript-sdk/funcs/signingCreateSigningSignatory.js";
+import { signingCreateSigningSignatory2 } from "@unified-api/typescript-sdk/funcs/signingCreateSigningSignatory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -143,7 +143,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingCreateSigningSignatory(unifiedTo, {
+  const res = await signingCreateSigningSignatory2(unifiedTo, {
     signingSignatory: {},
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingCreateSigningSignatory failed:", res.error);
+    console.log("signingCreateSigningSignatory2 failed:", res.error);
   }
 }
 
@@ -162,7 +162,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateSigningSignatoryRequest](../../sdk/models/operations/createsigningsignatoryrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateSigningSignatory2Request](../../sdk/models/operations/createsigningsignatory2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -177,13 +177,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getSigningDocument
+## getSigningDocument2
 
 Retrieve a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getSigningDocument" method="get" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getSigningDocument2" method="get" path="/signing/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -194,7 +194,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.getSigningDocument({
+  const result = await unifiedTo.signing.getSigningDocument2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -211,7 +211,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { documentGetSigningDocument } from "@unified-api/typescript-sdk/funcs/documentGetSigningDocument.js";
+import { documentGetSigningDocument2 } from "@unified-api/typescript-sdk/funcs/documentGetSigningDocument2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -222,7 +222,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await documentGetSigningDocument(unifiedTo, {
+  const res = await documentGetSigningDocument2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -230,7 +230,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("documentGetSigningDocument failed:", res.error);
+    console.log("documentGetSigningDocument2 failed:", res.error);
   }
 }
 
@@ -241,7 +241,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetSigningDocumentRequest](../../sdk/models/operations/getsigningdocumentrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetSigningDocument2Request](../../sdk/models/operations/getsigningdocument2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -256,13 +256,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getSigningSignatory
+## getSigningSignatory2
 
 Retrieve a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getSigningSignatory" method="get" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getSigningSignatory2" method="get" path="/signing/{connection_id}/signatory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -273,7 +273,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.getSigningSignatory({
+  const result = await unifiedTo.signing.getSigningSignatory2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -290,7 +290,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingGetSigningSignatory } from "@unified-api/typescript-sdk/funcs/signingGetSigningSignatory.js";
+import { signingGetSigningSignatory2 } from "@unified-api/typescript-sdk/funcs/signingGetSigningSignatory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -301,7 +301,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingGetSigningSignatory(unifiedTo, {
+  const res = await signingGetSigningSignatory2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -309,7 +309,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingGetSigningSignatory failed:", res.error);
+    console.log("signingGetSigningSignatory2 failed:", res.error);
   }
 }
 
@@ -320,7 +320,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetSigningSignatoryRequest](../../sdk/models/operations/getsigningsignatoryrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetSigningSignatory2Request](../../sdk/models/operations/getsigningsignatory2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -335,13 +335,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getSigningTemplate
+## getSigningTemplate2
 
 Retrieve a template
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getSigningTemplate" method="get" path="/signing/{connection_id}/template/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getSigningTemplate2" method="get" path="/signing/{connection_id}/template/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -352,7 +352,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.getSigningTemplate({
+  const result = await unifiedTo.signing.getSigningTemplate2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingGetSigningTemplate } from "@unified-api/typescript-sdk/funcs/signingGetSigningTemplate.js";
+import { signingGetSigningTemplate2 } from "@unified-api/typescript-sdk/funcs/signingGetSigningTemplate2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingGetSigningTemplate(unifiedTo, {
+  const res = await signingGetSigningTemplate2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingGetSigningTemplate failed:", res.error);
+    console.log("signingGetSigningTemplate2 failed:", res.error);
   }
 }
 
@@ -399,7 +399,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetSigningTemplateRequest](../../sdk/models/operations/getsigningtemplaterequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetSigningTemplate2Request](../../sdk/models/operations/getsigningtemplate2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -414,13 +414,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listSigningDocuments
+## listSigningDocuments2
 
 List all documents
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listSigningDocuments" method="get" path="/signing/{connection_id}/document" -->
+<!-- UsageSnippet language="typescript" operationID="listSigningDocuments2" method="get" path="/signing/{connection_id}/document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -431,7 +431,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.listSigningDocuments({
+  const result = await unifiedTo.signing.listSigningDocuments2({
     connectionId: "<id>",
   });
 
@@ -447,7 +447,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { documentListSigningDocuments } from "@unified-api/typescript-sdk/funcs/documentListSigningDocuments.js";
+import { documentListSigningDocuments2 } from "@unified-api/typescript-sdk/funcs/documentListSigningDocuments2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -458,14 +458,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await documentListSigningDocuments(unifiedTo, {
+  const res = await documentListSigningDocuments2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("documentListSigningDocuments failed:", res.error);
+    console.log("documentListSigningDocuments2 failed:", res.error);
   }
 }
 
@@ -476,7 +476,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListSigningDocumentsRequest](../../sdk/models/operations/listsigningdocumentsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListSigningDocuments2Request](../../sdk/models/operations/listsigningdocuments2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -491,13 +491,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listSigningSignatories
+## listSigningSignatories2
 
 List all signatories
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listSigningSignatories" method="get" path="/signing/{connection_id}/signatory" -->
+<!-- UsageSnippet language="typescript" operationID="listSigningSignatories2" method="get" path="/signing/{connection_id}/signatory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -508,7 +508,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.listSigningSignatories({
+  const result = await unifiedTo.signing.listSigningSignatories2({
     connectionId: "<id>",
   });
 
@@ -524,7 +524,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingListSigningSignatories } from "@unified-api/typescript-sdk/funcs/signingListSigningSignatories.js";
+import { signingListSigningSignatories2 } from "@unified-api/typescript-sdk/funcs/signingListSigningSignatories2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -535,14 +535,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingListSigningSignatories(unifiedTo, {
+  const res = await signingListSigningSignatories2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingListSigningSignatories failed:", res.error);
+    console.log("signingListSigningSignatories2 failed:", res.error);
   }
 }
 
@@ -553,7 +553,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListSigningSignatoriesRequest](../../sdk/models/operations/listsigningsignatoriesrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListSigningSignatories2Request](../../sdk/models/operations/listsigningsignatories2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -568,13 +568,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listSigningTemplates
+## listSigningTemplates2
 
 List all templates
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listSigningTemplates" method="get" path="/signing/{connection_id}/template" -->
+<!-- UsageSnippet language="typescript" operationID="listSigningTemplates2" method="get" path="/signing/{connection_id}/template" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -585,7 +585,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.listSigningTemplates({
+  const result = await unifiedTo.signing.listSigningTemplates2({
     connectionId: "<id>",
   });
 
@@ -601,7 +601,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingListSigningTemplates } from "@unified-api/typescript-sdk/funcs/signingListSigningTemplates.js";
+import { signingListSigningTemplates2 } from "@unified-api/typescript-sdk/funcs/signingListSigningTemplates2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -612,14 +612,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingListSigningTemplates(unifiedTo, {
+  const res = await signingListSigningTemplates2(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingListSigningTemplates failed:", res.error);
+    console.log("signingListSigningTemplates2 failed:", res.error);
   }
 }
 
@@ -630,7 +630,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListSigningTemplatesRequest](../../sdk/models/operations/listsigningtemplatesrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListSigningTemplates2Request](../../sdk/models/operations/listsigningtemplates2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -645,13 +645,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchSigningDocument
+## patchSigningDocument2
 
 Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchSigningDocument2" method="patch" path="/signing/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -662,7 +662,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.patchSigningDocument({
+  const result = await unifiedTo.signing.patchSigningDocument2({
     signingDocument: {},
     connectionId: "<id>",
     id: "<id>",
@@ -680,7 +680,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { documentPatchSigningDocument } from "@unified-api/typescript-sdk/funcs/documentPatchSigningDocument.js";
+import { documentPatchSigningDocument2 } from "@unified-api/typescript-sdk/funcs/documentPatchSigningDocument2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -691,7 +691,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await documentPatchSigningDocument(unifiedTo, {
+  const res = await documentPatchSigningDocument2(unifiedTo, {
     signingDocument: {},
     connectionId: "<id>",
     id: "<id>",
@@ -700,7 +700,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("documentPatchSigningDocument failed:", res.error);
+    console.log("documentPatchSigningDocument2 failed:", res.error);
   }
 }
 
@@ -711,7 +711,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchSigningDocumentRequest](../../sdk/models/operations/patchsigningdocumentrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchSigningDocument2Request](../../sdk/models/operations/patchsigningdocument2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -726,13 +726,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchSigningSignatory
+## patchSigningSignatory2
 
 Update a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchSigningSignatory" method="patch" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchSigningSignatory2" method="patch" path="/signing/{connection_id}/signatory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -743,7 +743,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.patchSigningSignatory({
+  const result = await unifiedTo.signing.patchSigningSignatory2({
     signingSignatory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -761,7 +761,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingPatchSigningSignatory } from "@unified-api/typescript-sdk/funcs/signingPatchSigningSignatory.js";
+import { signingPatchSigningSignatory2 } from "@unified-api/typescript-sdk/funcs/signingPatchSigningSignatory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -772,7 +772,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingPatchSigningSignatory(unifiedTo, {
+  const res = await signingPatchSigningSignatory2(unifiedTo, {
     signingSignatory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -781,7 +781,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingPatchSigningSignatory failed:", res.error);
+    console.log("signingPatchSigningSignatory2 failed:", res.error);
   }
 }
 
@@ -792,7 +792,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchSigningSignatoryRequest](../../sdk/models/operations/patchsigningsignatoryrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchSigningSignatory2Request](../../sdk/models/operations/patchsigningsignatory2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -807,13 +807,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeSigningDocument
+## removeSigningDocument2
 
 Remove a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeSigningDocument" method="delete" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeSigningDocument2" method="delete" path="/signing/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -824,7 +824,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.removeSigningDocument({
+  const result = await unifiedTo.signing.removeSigningDocument2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -841,7 +841,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { documentRemoveSigningDocument } from "@unified-api/typescript-sdk/funcs/documentRemoveSigningDocument.js";
+import { documentRemoveSigningDocument2 } from "@unified-api/typescript-sdk/funcs/documentRemoveSigningDocument2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -852,7 +852,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await documentRemoveSigningDocument(unifiedTo, {
+  const res = await documentRemoveSigningDocument2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -860,7 +860,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("documentRemoveSigningDocument failed:", res.error);
+    console.log("documentRemoveSigningDocument2 failed:", res.error);
   }
 }
 
@@ -871,14 +871,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveSigningDocumentRequest](../../sdk/models/operations/removesigningdocumentrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveSigningDocument2Request](../../sdk/models/operations/removesigningdocument2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveSigningDocumentResponse](../../sdk/models/operations/removesigningdocumentresponse.md)\>**
+**Promise\<[operations.RemoveSigningDocument2Response](../../sdk/models/operations/removesigningdocument2response.md)\>**
 
 ### Errors
 
@@ -886,13 +886,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeSigningSignatory
+## removeSigningSignatory2
 
 Remove a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeSigningSignatory" method="delete" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeSigningSignatory2" method="delete" path="/signing/{connection_id}/signatory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -903,7 +903,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.removeSigningSignatory({
+  const result = await unifiedTo.signing.removeSigningSignatory2({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -920,7 +920,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingRemoveSigningSignatory } from "@unified-api/typescript-sdk/funcs/signingRemoveSigningSignatory.js";
+import { signingRemoveSigningSignatory2 } from "@unified-api/typescript-sdk/funcs/signingRemoveSigningSignatory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -931,7 +931,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingRemoveSigningSignatory(unifiedTo, {
+  const res = await signingRemoveSigningSignatory2(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -939,7 +939,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingRemoveSigningSignatory failed:", res.error);
+    console.log("signingRemoveSigningSignatory2 failed:", res.error);
   }
 }
 
@@ -950,14 +950,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveSigningSignatoryRequest](../../sdk/models/operations/removesigningsignatoryrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveSigningSignatory2Request](../../sdk/models/operations/removesigningsignatory2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveSigningSignatoryResponse](../../sdk/models/operations/removesigningsignatoryresponse.md)\>**
+**Promise\<[operations.RemoveSigningSignatory2Response](../../sdk/models/operations/removesigningsignatory2response.md)\>**
 
 ### Errors
 
@@ -965,13 +965,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateSigningDocument
+## updateSigningDocument2
 
 Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateSigningDocument2" method="put" path="/signing/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -982,7 +982,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.updateSigningDocument({
+  const result = await unifiedTo.signing.updateSigningDocument2({
     signingDocument: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1000,7 +1000,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { documentUpdateSigningDocument } from "@unified-api/typescript-sdk/funcs/documentUpdateSigningDocument.js";
+import { documentUpdateSigningDocument2 } from "@unified-api/typescript-sdk/funcs/documentUpdateSigningDocument2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1011,7 +1011,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await documentUpdateSigningDocument(unifiedTo, {
+  const res = await documentUpdateSigningDocument2(unifiedTo, {
     signingDocument: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1020,7 +1020,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("documentUpdateSigningDocument failed:", res.error);
+    console.log("documentUpdateSigningDocument2 failed:", res.error);
   }
 }
 
@@ -1031,7 +1031,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateSigningDocumentRequest](../../sdk/models/operations/updatesigningdocumentrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateSigningDocument2Request](../../sdk/models/operations/updatesigningdocument2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1046,13 +1046,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateSigningSignatory
+## updateSigningSignatory2
 
 Update a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateSigningSignatory" method="put" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateSigningSignatory2" method="put" path="/signing/{connection_id}/signatory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1063,7 +1063,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.signing.updateSigningSignatory({
+  const result = await unifiedTo.signing.updateSigningSignatory2({
     signingSignatory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1081,7 +1081,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingUpdateSigningSignatory } from "@unified-api/typescript-sdk/funcs/signingUpdateSigningSignatory.js";
+import { signingUpdateSigningSignatory2 } from "@unified-api/typescript-sdk/funcs/signingUpdateSigningSignatory2.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1092,7 +1092,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingUpdateSigningSignatory(unifiedTo, {
+  const res = await signingUpdateSigningSignatory2(unifiedTo, {
     signingSignatory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1101,7 +1101,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingUpdateSigningSignatory failed:", res.error);
+    console.log("signingUpdateSigningSignatory2 failed:", res.error);
   }
 }
 
@@ -1112,7 +1112,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateSigningSignatoryRequest](../../sdk/models/operations/updatesigningsignatoryrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateSigningSignatory2Request](../../sdk/models/operations/updatesigningsignatory2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
