@@ -122,6 +122,7 @@ import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
+import { Secretsmanager } from "./secretsmanager.js";
 import { Session } from "./session.js";
 import { Shipment } from "./shipment.js";
 import { Shipping } from "./shipping.js";
@@ -881,6 +882,11 @@ export class UnifiedTo extends ClientSDK {
   private _webhook?: Webhook;
   get webhook(): Webhook {
     return (this._webhook ??= new Webhook(this._options));
+  }
+
+  private _secretsmanager?: Secretsmanager;
+  get secretsmanager(): Secretsmanager {
+    return (this._secretsmanager ??= new Secretsmanager(this._options));
   }
 
   private _verification?: Verification;

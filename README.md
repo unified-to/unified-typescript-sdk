@@ -1810,6 +1810,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedCreateUnifiedEnvironment`](docs/sdks/unified/README.md#createunifiedenvironment) - Create new environments
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/unified/README.md#createunifiedwebhook) - Create webhook subscription
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/webhook/README.md#createunifiedwebhook) - Create webhook subscription
+- [`unifiedCreateUnifiedWorkspaceSecretsmanager`](docs/sdks/secretsmanager/README.md#createunifiedworkspacesecretsmanager) - Create secrets manager
+- [`unifiedCreateUnifiedWorkspaceSecretsmanager`](docs/sdks/unified/README.md#createunifiedworkspacesecretsmanager) - Create secrets manager
 - [`unifiedGetUnifiedApicall`](docs/sdks/apicall/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 - [`unifiedGetUnifiedApicall`](docs/sdks/unified/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 - [`unifiedGetUnifiedConnection`](docs/sdks/connection/README.md#getunifiedconnection) - Retrieve connection
@@ -1821,6 +1823,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedGetUnifiedIssue`](docs/sdks/unified/README.md#getunifiedissue) - Retrieve support issue
 - [`unifiedGetUnifiedWebhook`](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 - [`unifiedGetUnifiedWebhook`](docs/sdks/webhook/README.md#getunifiedwebhook) - Retrieve webhook by its ID
+- [`unifiedGetUnifiedWorkspaceSecretsmanager`](docs/sdks/secretsmanager/README.md#getunifiedworkspacesecretsmanager) - Retrieve secrets manager
+- [`unifiedGetUnifiedWorkspaceSecretsmanager`](docs/sdks/unified/README.md#getunifiedworkspacesecretsmanager) - Retrieve secrets manager
 - [`unifiedListUnifiedApicalls`](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls
 - [`unifiedListUnifiedApicalls`](docs/sdks/unified/README.md#listunifiedapicalls) - Returns API Calls
 - [`unifiedListUnifiedConnections`](docs/sdks/connection/README.md#listunifiedconnections) - List all connections
@@ -1835,6 +1839,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedListUnifiedIssues`](docs/sdks/unified/README.md#listunifiedissues) - List support issues
 - [`unifiedListUnifiedWebhooks`](docs/sdks/unified/README.md#listunifiedwebhooks) - Returns all registered webhooks
 - [`unifiedListUnifiedWebhooks`](docs/sdks/webhook/README.md#listunifiedwebhooks) - Returns all registered webhooks
+- [`unifiedListUnifiedWorkspaceSecretsmanagers`](docs/sdks/secretsmanager/README.md#listunifiedworkspacesecretsmanagers) - List secrets managers
+- [`unifiedListUnifiedWorkspaceSecretsmanagers`](docs/sdks/unified/README.md#listunifiedworkspacesecretsmanagers) - List secrets managers
 - [`unifiedPatchUnifiedConnection`](docs/sdks/connection/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedConnection`](docs/sdks/unified/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedWebhook`](docs/sdks/unified/README.md#patchunifiedwebhook) - Update webhook subscription
@@ -1847,6 +1853,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedRemoveUnifiedEnvironment`](docs/sdks/unified/README.md#removeunifiedenvironment) - Remove an environment
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/webhook/README.md#removeunifiedwebhook) - Remove webhook subscription
+- [`unifiedRemoveUnifiedWorkspaceSecretsmanager`](docs/sdks/secretsmanager/README.md#removeunifiedworkspacesecretsmanager) - Remove secrets manager
+- [`unifiedRemoveUnifiedWorkspaceSecretsmanager`](docs/sdks/unified/README.md#removeunifiedworkspacesecretsmanager) - Remove secrets manager
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription

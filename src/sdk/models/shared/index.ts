@@ -418,6 +418,7 @@ export * from "./scimphoto.js";
 export * from "./scimrole.js";
 export * from "./scimuser.js";
 export * from "./scimusergroups.js";
+export * from "./secretsmanager.js";
 export * from "./security.js";
 export * from "./shippingcarrier.js";
 export * from "./shippingcustomsitem.js";

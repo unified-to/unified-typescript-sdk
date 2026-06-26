@@ -5,11 +5,13 @@
 import { unifiedCreateUnifiedConnection } from "../funcs/unifiedCreateUnifiedConnection.js";
 import { unifiedCreateUnifiedEnvironment } from "../funcs/unifiedCreateUnifiedEnvironment.js";
 import { unifiedCreateUnifiedWebhook } from "../funcs/unifiedCreateUnifiedWebhook.js";
+import { unifiedCreateUnifiedWorkspaceSecretsmanager } from "../funcs/unifiedCreateUnifiedWorkspaceSecretsmanager.js";
 import { unifiedGetUnifiedApicall } from "../funcs/unifiedGetUnifiedApicall.js";
 import { unifiedGetUnifiedConnection } from "../funcs/unifiedGetUnifiedConnection.js";
 import { unifiedGetUnifiedIntegrationAuth } from "../funcs/unifiedGetUnifiedIntegrationAuth.js";
 import { unifiedGetUnifiedIssue } from "../funcs/unifiedGetUnifiedIssue.js";
 import { unifiedGetUnifiedWebhook } from "../funcs/unifiedGetUnifiedWebhook.js";
+import { unifiedGetUnifiedWorkspaceSecretsmanager } from "../funcs/unifiedGetUnifiedWorkspaceSecretsmanager.js";
 import { unifiedListUnifiedApicalls } from "../funcs/unifiedListUnifiedApicalls.js";
 import { unifiedListUnifiedConnections } from "../funcs/unifiedListUnifiedConnections.js";
 import { unifiedListUnifiedEnvironments } from "../funcs/unifiedListUnifiedEnvironments.js";
@@ -17,12 +19,14 @@ import { unifiedListUnifiedIntegrations } from "../funcs/unifiedListUnifiedInteg
 import { unifiedListUnifiedIntegrationWorkspaces } from "../funcs/unifiedListUnifiedIntegrationWorkspaces.js";
 import { unifiedListUnifiedIssues } from "../funcs/unifiedListUnifiedIssues.js";
 import { unifiedListUnifiedWebhooks } from "../funcs/unifiedListUnifiedWebhooks.js";
+import { unifiedListUnifiedWorkspaceSecretsmanagers } from "../funcs/unifiedListUnifiedWorkspaceSecretsmanagers.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
 import { unifiedPatchUnifiedWebhook } from "../funcs/unifiedPatchUnifiedWebhook.js";
 import { unifiedPatchUnifiedWebhookTrigger } from "../funcs/unifiedPatchUnifiedWebhookTrigger.js";
 import { unifiedRemoveUnifiedConnection } from "../funcs/unifiedRemoveUnifiedConnection.js";
 import { unifiedRemoveUnifiedEnvironment } from "../funcs/unifiedRemoveUnifiedEnvironment.js";
 import { unifiedRemoveUnifiedWebhook } from "../funcs/unifiedRemoveUnifiedWebhook.js";
+import { unifiedRemoveUnifiedWorkspaceSecretsmanager } from "../funcs/unifiedRemoveUnifiedWorkspaceSecretsmanager.js";
 import { unifiedUpdateUnifiedConnection } from "../funcs/unifiedUpdateUnifiedConnection.js";
 import { unifiedUpdateUnifiedWebhook } from "../funcs/unifiedUpdateUnifiedWebhook.js";
 import { unifiedUpdateUnifiedWebhookTrigger } from "../funcs/unifiedUpdateUnifiedWebhookTrigger.js";
@@ -74,6 +78,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.Webhook> {
     return unwrapAsync(unifiedCreateUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create secrets manager
+   */
+  async createUnifiedWorkspaceSecretsmanager(
+    request: shared.SecretsManager,
+    options?: RequestOptions,
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedCreateUnifiedWorkspaceSecretsmanager(
       this,
       request,
       options,
@@ -147,6 +165,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.Webhook> {
     return unwrapAsync(unifiedGetUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve secrets manager
+   */
+  async getUnifiedWorkspaceSecretsmanager(
+    request: operations.GetUnifiedWorkspaceSecretsmanagerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedGetUnifiedWorkspaceSecretsmanager(
       this,
       request,
       options,
@@ -253,6 +285,20 @@ export class Unified extends ClientSDK {
   }
 
   /**
+   * List secrets managers
+   */
+  async listUnifiedWorkspaceSecretsmanagers(
+    request: operations.ListUnifiedWorkspaceSecretsmanagersRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.SecretsManager>> {
+    return unwrapAsync(unifiedListUnifiedWorkspaceSecretsmanagers(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update connection
    */
   async patchUnifiedConnection(
@@ -330,6 +376,22 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveUnifiedWebhookResponse | undefined> {
     return unwrapAsync(unifiedRemoveUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove secrets manager
+   */
+  async removeUnifiedWorkspaceSecretsmanager(
+    request: operations.RemoveUnifiedWorkspaceSecretsmanagerRequest,
+    options?: RequestOptions,
+  ): Promise<
+    operations.RemoveUnifiedWorkspaceSecretsmanagerResponse | undefined
+  > {
+    return unwrapAsync(unifiedRemoveUnifiedWorkspaceSecretsmanager(
       this,
       request,
       options,
