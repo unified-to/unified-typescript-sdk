@@ -29,6 +29,7 @@ export type MarketingMemberStatus = OpenEnum<typeof MarketingMemberStatus>;
  * A member represents a person
  */
 export type MarketingMember = {
+  company?: string | undefined;
   createdAt?: Date | undefined;
   /**
    * An array of email addresses for this member
@@ -70,6 +71,7 @@ export const MarketingMember$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  company: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   emails: z.array(MarketingEmail$inboundSchema).optional(),
@@ -94,6 +96,7 @@ export const MarketingMember$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type MarketingMember$Outbound = {
+  company?: string | undefined;
   created_at?: string | undefined;
   emails?: Array<MarketingEmail$Outbound> | undefined;
   first_name?: string | undefined;
@@ -113,6 +116,7 @@ export const MarketingMember$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   MarketingMember
 > = z.object({
+  company: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   emails: z.array(MarketingEmail$outboundSchema).optional(),
   firstName: z.string().optional(),

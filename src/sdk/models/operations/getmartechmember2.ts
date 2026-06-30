@@ -13,6 +13,7 @@ export const GetMartechMember2QueryParamFields = {
   Name: "name",
   FirstName: "first_name",
   LastName: "last_name",
+  Company: "company",
   Emails: "emails",
   ListIds: "list_ids",
   Tags: "tags",

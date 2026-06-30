@@ -11,5 +11,5 @@ let value: CreateMartechMember2QueryParamFields = "status";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "emails" | "list_ids" | "tags" | "status" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "company" | "emails" | "list_ids" | "tags" | "status" | "raw"
 ```

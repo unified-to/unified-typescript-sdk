@@ -18,12 +18,12 @@ export const PatchTicketingTicket2QueryParamFields = {
   ClosedAt: "closed_at",
   Priority: "priority",
   CategoryId: "category_id",
-  Category: "category",
   Source: "source",
   SourceRef: "source_ref",
   Tags: "tags",
   UserId: "user_id",
   Url: "url",
+  DueAt: "due_at",
   Raw: "raw",
 } as const;
 export type PatchTicketingTicket2QueryParamFields = ClosedEnum<

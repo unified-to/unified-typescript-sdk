@@ -17,12 +17,12 @@ export const TicketingTicketStatus = {
 export type TicketingTicketStatus = OpenEnum<typeof TicketingTicketStatus>;
 
 export type TicketingTicket = {
-  category?: string | undefined;
   categoryId?: string | undefined;
   closedAt?: Date | undefined;
   createdAt?: Date | undefined;
   customerId?: string | undefined;
   description?: string | undefined;
+  dueAt?: Date | undefined;
   id?: string | undefined;
   priority?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -55,7 +55,6 @@ export const TicketingTicket$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  category: z.string().optional(),
   category_id: z.string().optional(),
   closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -63,6 +62,8 @@ export const TicketingTicket$inboundSchema: z.ZodType<
     .optional(),
   customer_id: z.string().optional(),
   description: z.string().optional(),
+  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   id: z.string().optional(),
   priority: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -81,6 +82,7 @@ export const TicketingTicket$inboundSchema: z.ZodType<
     "closed_at": "closedAt",
     "created_at": "createdAt",
     "customer_id": "customerId",
+    "due_at": "dueAt",
     "source_ref": "sourceRef",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -88,12 +90,12 @@ export const TicketingTicket$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type TicketingTicket$Outbound = {
-  category?: string | undefined;
   category_id?: string | undefined;
   closed_at?: string | undefined;
   created_at?: string | undefined;
   customer_id?: string | undefined;
   description?: string | undefined;
+  due_at?: string | undefined;
   id?: string | undefined;
   priority?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -113,12 +115,12 @@ export const TicketingTicket$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   TicketingTicket
 > = z.object({
-  category: z.string().optional(),
   categoryId: z.string().optional(),
   closedAt: z.date().transform(v => v.toISOString()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   customerId: z.string().optional(),
   description: z.string().optional(),
+  dueAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   priority: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -136,6 +138,7 @@ export const TicketingTicket$outboundSchema: z.ZodType<
     closedAt: "closed_at",
     createdAt: "created_at",
     customerId: "customer_id",
+    dueAt: "due_at",
     sourceRef: "source_ref",
     updatedAt: "updated_at",
     userId: "user_id",
