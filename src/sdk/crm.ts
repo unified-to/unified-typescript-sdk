@@ -22,6 +22,7 @@ import { crmGetCrmLead2 } from "../funcs/crmGetCrmLead2.js";
 import { crmGetCrmPipeline2 } from "../funcs/crmGetCrmPipeline2.js";
 import { crmListCrmDeals2 } from "../funcs/crmListCrmDeals2.js";
 import { crmListCrmLeads2 } from "../funcs/crmListCrmLeads2.js";
+import { crmListCrmPicklists2 } from "../funcs/crmListCrmPicklists2.js";
 import { crmListCrmPipelines2 } from "../funcs/crmListCrmPipelines2.js";
 import { crmPatchCrmDeal2 } from "../funcs/crmPatchCrmDeal2.js";
 import { crmPatchCrmLead2 } from "../funcs/crmPatchCrmLead2.js";
@@ -276,6 +277,20 @@ export class Crm extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CrmLead>> {
     return unwrapAsync(crmListCrmLeads2(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all picklists
+   */
+  async listCrmPicklists2(
+    request: operations.ListCrmPicklists2Request,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmPicklist>> {
+    return unwrapAsync(crmListCrmPicklists2(
       this,
       request,
       options,

@@ -140,6 +140,7 @@ export * from "./crmeventformfield.js";
 export * from "./crmeventformoption.js";
 export * from "./crmlead.js";
 export * from "./crmmetadata.js";
+export * from "./crmpicklist.js";
 export * from "./crmpipeline.js";
 export * from "./crmreference.js";
 export * from "./crmstage.js";

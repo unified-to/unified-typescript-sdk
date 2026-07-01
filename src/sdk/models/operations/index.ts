@@ -319,6 +319,7 @@ export * from "./listcrmcontacts2.js";
 export * from "./listcrmdeals2.js";
 export * from "./listcrmevents2.js";
 export * from "./listcrmleads2.js";
+export * from "./listcrmpicklists2.js";
 export * from "./listcrmpipelines2.js";
 export * from "./listdatastoredatabases2.js";
 export * from "./listdatastorerecords2.js";

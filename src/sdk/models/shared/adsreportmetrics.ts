@@ -104,6 +104,8 @@ export const AdsReportMetricsType = {
   CrossDeviceConversions: "CROSS_DEVICE_CONVERSIONS",
   AbsoluteTopImpressionShare: "ABSOLUTE_TOP_IMPRESSION_SHARE",
   TopImpressionShare: "TOP_IMPRESSION_SHARE",
+  AbsoluteTopImpressionRatePercent: "ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT",
+  TopImpressionRatePercent: "TOP_IMPRESSION_RATE_PERCENT",
   VideoFullscreens: "VIDEO_FULLSCREENS",
   VideoPauses: "VIDEO_PAUSES",
   VideoMutes: "VIDEO_MUTES",
@@ -137,9 +139,6 @@ export const AdsReportMetricsType = {
   ActiveViewVisible10S: "ACTIVE_VIEW_VISIBLE_10S",
   NotMeasurableImpressions: "NOT_MEASURABLE_IMPRESSIONS",
   NotViewableImpressions: "NOT_VIEWABLE_IMPRESSIONS",
-  PublisherPlatform: "PUBLISHER_PLATFORM",
-  PlatformPosition: "PLATFORM_POSITION",
-  ImpressionDevice: "IMPRESSION_DEVICE",
   OneDVIEW: "1D_VIEW",
   OneDCLICK: "1D_CLICK",
   SevenDVIEW: "7D_VIEW",
@@ -151,14 +150,12 @@ export const AdsReportMetricsType = {
 } as const;
 export type AdsReportMetricsType = OpenEnum<typeof AdsReportMetricsType>;
 
-export type Value = number | string;
-
 export type AdsReportMetrics = {
   ad?: PropertyAdsReportMetricsAd | undefined;
   campaign?: PropertyAdsReportMetricsCampaign | undefined;
   group?: PropertyAdsReportMetricsGroup | undefined;
   type?: AdsReportMetricsType | undefined;
-  value?: number | string | undefined;
+  value?: number | undefined;
 };
 
 /** @internal */
@@ -167,20 +164,6 @@ export const AdsReportMetricsType$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(AdsReportMetricsType);
-
-/** @internal */
-export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z
-  .union([z.number(), z.string()]);
-
-export function valueFromJSON(
-  jsonString: string,
-): SafeParseResult<Value, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Value$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Value' from JSON`,
-  );
-}
 
 /** @internal */
 export const AdsReportMetrics$inboundSchema: z.ZodType<
@@ -192,7 +175,7 @@ export const AdsReportMetrics$inboundSchema: z.ZodType<
   campaign: PropertyAdsReportMetricsCampaign$inboundSchema.optional(),
   group: PropertyAdsReportMetricsGroup$inboundSchema.optional(),
   type: AdsReportMetricsType$inboundSchema.optional(),
-  value: z.union([z.number(), z.string()]).optional(),
+  value: z.number().optional(),
 });
 
 export function adsReportMetricsFromJSON(

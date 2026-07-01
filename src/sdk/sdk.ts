@@ -99,6 +99,7 @@ import { Payment } from "./payment.js";
 import { Payout } from "./payout.js";
 import { Payslip } from "./payslip.js";
 import { Person } from "./person.js";
+import { Picklist } from "./picklist.js";
 import { Pipeline } from "./pipeline.js";
 import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
@@ -477,6 +478,11 @@ export class UnifiedTo extends ClientSDK {
   private _lead?: Lead;
   get lead(): Lead {
     return (this._lead ??= new Lead(this._options));
+  }
+
+  private _picklist?: Picklist;
+  get picklist(): Picklist {
+    return (this._picklist ??= new Picklist(this._options));
   }
 
   private _pipeline?: Pipeline;

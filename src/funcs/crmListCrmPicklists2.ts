@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all timeoffs
+ * List all picklists
  */
-export function hrisListHrisTimeoffs2(
+export function crmListCrmPicklists2(
   client: UnifiedToCore,
-  request: operations.ListHrisTimeoffs2Request,
+  request: operations.ListCrmPicklists2Request,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.HrisTimeoff>,
+    Array<shared.CrmPicklist>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -56,12 +56,12 @@ export function hrisListHrisTimeoffs2(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListHrisTimeoffs2Request,
+  request: operations.ListCrmPicklists2Request,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.HrisTimeoff>,
+      Array<shared.CrmPicklist>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -76,7 +76,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ListHrisTimeoffs2Request$outboundSchema.parse(value),
+    (value) => operations.ListCrmPicklists2Request$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -91,11 +91,9 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/hris/{connection_id}/timeoff")(pathParams);
+  const path = pathToFunc("/crm/{connection_id}/picklist")(pathParams);
 
   const query = encodeFormQuery({
-    "company_id": payload.company_id,
-    "end_lt": payload.end_lt,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
@@ -103,10 +101,8 @@ async function $do(
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
-    "start_gte": payload.start_gte,
     "type": payload.type,
     "updated_gte": payload.updated_gte,
-    "user_id": payload.user_id,
   });
 
   const headers = new Headers(compactMap({
@@ -119,7 +115,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listHrisTimeoffs2",
+    operationID: "listCrmPicklists2",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -160,7 +156,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.HrisTimeoff>,
+    Array<shared.CrmPicklist>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -170,7 +166,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.HrisTimeoff$inboundSchema)),
+    M.json(200, z.array(shared.CrmPicklist$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

@@ -1114,6 +1114,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`crmListCrmDeals2`](docs/sdks/deal/README.md#listcrmdeals2) - List all deals
 - [`crmListCrmLeads2`](docs/sdks/crm/README.md#listcrmleads2) - List all leads
 - [`crmListCrmLeads2`](docs/sdks/lead/README.md#listcrmleads2) - List all leads
+- [`crmListCrmPicklists2`](docs/sdks/crm/README.md#listcrmpicklists2) - List all picklists
+- [`crmListCrmPicklists2`](docs/sdks/picklist/README.md#listcrmpicklists2) - List all picklists
 - [`crmListCrmPipelines2`](docs/sdks/crm/README.md#listcrmpipelines2) - List all pipelines
 - [`crmListCrmPipelines2`](docs/sdks/pipeline/README.md#listcrmpipelines2) - List all pipelines
 - [`crmPatchCrmDeal2`](docs/sdks/crm/README.md#patchcrmdeal2) - Update a deal

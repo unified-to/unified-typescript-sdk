@@ -22,6 +22,9 @@ export type MarketingReport = {
   forwardsCount?: number | undefined;
   forwardsOpens?: number | undefined;
   hardBounces?: number | undefined;
+  humanOpenRate?: number | undefined;
+  humanOpensTotal?: number | undefined;
+  humanUniqueOpens?: number | undefined;
   id?: string | undefined;
   lastClickAt?: Date | undefined;
   lastOpenAt?: Date | undefined;
@@ -59,6 +62,9 @@ export const MarketingReport$inboundSchema: z.ZodType<
   forwards_count: z.number().optional(),
   forwards_opens: z.number().optional(),
   hard_bounces: z.number().optional(),
+  human_open_rate: z.number().optional(),
+  human_opens_total: z.number().optional(),
+  human_unique_opens: z.number().optional(),
   id: z.string().optional(),
   last_click_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
@@ -92,6 +98,9 @@ export const MarketingReport$inboundSchema: z.ZodType<
     "forwards_count": "forwardsCount",
     "forwards_opens": "forwardsOpens",
     "hard_bounces": "hardBounces",
+    "human_open_rate": "humanOpenRate",
+    "human_opens_total": "humanOpensTotal",
+    "human_unique_opens": "humanUniqueOpens",
     "last_click_at": "lastClickAt",
     "last_open_at": "lastOpenAt",
     "list_id": "listId",

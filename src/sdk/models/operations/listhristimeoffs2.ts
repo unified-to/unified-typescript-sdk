@@ -62,6 +62,7 @@ export type ListHrisTimeoffs2Request = {
    * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startGte?: string | undefined;
+  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -90,6 +91,7 @@ export type ListHrisTimeoffs2Request$Outbound = {
   raw?: string | undefined;
   sort?: string | undefined;
   start_gte?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
 };
@@ -111,6 +113,7 @@ export const ListHrisTimeoffs2Request$outboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
