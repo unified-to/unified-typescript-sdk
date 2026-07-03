@@ -4,26 +4,26 @@
 
 ### Available Operations
 
-* [createAdsCampaign2](#createadscampaign2) - Create a campaign
-* [createMartechCampaign2](#createmartechcampaign2) - Create a campaign
-* [getAdsCampaign2](#getadscampaign2) - Retrieve a campaign
-* [getMartechCampaign2](#getmartechcampaign2) - Retrieve a campaign
-* [listAdsCampaigns2](#listadscampaigns2) - List all campaigns
-* [listMartechCampaigns2](#listmartechcampaigns2) - List all campaigns
-* [patchAdsCampaign2](#patchadscampaign2) - Update a campaign
-* [patchMartechCampaign2](#patchmartechcampaign2) - Update a campaign
-* [removeAdsCampaign2](#removeadscampaign2) - Remove a campaign
-* [removeMartechCampaign2](#removemartechcampaign2) - Remove a campaign
-* [updateAdsCampaign2](#updateadscampaign2) - Update a campaign
-* [updateMartechCampaign2](#updatemartechcampaign2) - Update a campaign
+* [createAdsCampaign](#createadscampaign) - Create a campaign
+* [createMartechCampaign](#createmartechcampaign) - Create a campaign
+* [getAdsCampaign](#getadscampaign) - Retrieve a campaign
+* [getMartechCampaign](#getmartechcampaign) - Retrieve a campaign
+* [listAdsCampaigns](#listadscampaigns) - List all campaigns
+* [listMartechCampaigns](#listmartechcampaigns) - List all campaigns
+* [patchAdsCampaign](#patchadscampaign) - Update a campaign
+* [patchMartechCampaign](#patchmartechcampaign) - Update a campaign
+* [removeAdsCampaign](#removeadscampaign) - Remove a campaign
+* [removeMartechCampaign](#removemartechcampaign) - Remove a campaign
+* [updateAdsCampaign](#updateadscampaign) - Update a campaign
+* [updateMartechCampaign](#updatemartechcampaign) - Update a campaign
 
-## createAdsCampaign2
+## createAdsCampaign
 
 Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsCampaign2" method="post" path="/ads/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -34,7 +34,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.createAdsCampaign2({
+  const result = await unifiedTo.campaign.createAdsCampaign({
     adsCampaign: {},
     connectionId: "<id>",
   });
@@ -51,7 +51,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsCreateAdsCampaign2 } from "@unified-api/typescript-sdk/funcs/adsCreateAdsCampaign2.js";
+import { adsCreateAdsCampaign } from "@unified-api/typescript-sdk/funcs/adsCreateAdsCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -62,7 +62,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsCreateAdsCampaign2(unifiedTo, {
+  const res = await adsCreateAdsCampaign(unifiedTo, {
     adsCampaign: {},
     connectionId: "<id>",
   });
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsCreateAdsCampaign2 failed:", res.error);
+    console.log("adsCreateAdsCampaign failed:", res.error);
   }
 }
 
@@ -81,7 +81,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateAdsCampaign2Request](../../sdk/models/operations/createadscampaign2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateAdsCampaignRequest](../../sdk/models/operations/createadscampaignrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -96,13 +96,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createMartechCampaign2
+## createMartechCampaign
 
 Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMartechCampaign2" method="post" path="/martech/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -113,7 +113,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.createMartechCampaign2({
+  const result = await unifiedTo.campaign.createMartechCampaign({
     marketingCampaign: {},
     connectionId: "<id>",
   });
@@ -130,7 +130,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { campaignCreateMartechCampaign2 } from "@unified-api/typescript-sdk/funcs/campaignCreateMartechCampaign2.js";
+import { campaignCreateMartechCampaign } from "@unified-api/typescript-sdk/funcs/campaignCreateMartechCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -141,7 +141,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await campaignCreateMartechCampaign2(unifiedTo, {
+  const res = await campaignCreateMartechCampaign(unifiedTo, {
     marketingCampaign: {},
     connectionId: "<id>",
   });
@@ -149,7 +149,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("campaignCreateMartechCampaign2 failed:", res.error);
+    console.log("campaignCreateMartechCampaign failed:", res.error);
   }
 }
 
@@ -160,7 +160,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateMartechCampaign2Request](../../sdk/models/operations/createmartechcampaign2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateMartechCampaignRequest](../../sdk/models/operations/createmartechcampaignrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -175,13 +175,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAdsCampaign2
+## getAdsCampaign
 
 Retrieve a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAdsCampaign2" method="get" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAdsCampaign" method="get" path="/ads/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -192,7 +192,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.getAdsCampaign2({
+  const result = await unifiedTo.campaign.getAdsCampaign({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -209,7 +209,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsGetAdsCampaign2 } from "@unified-api/typescript-sdk/funcs/adsGetAdsCampaign2.js";
+import { adsGetAdsCampaign } from "@unified-api/typescript-sdk/funcs/adsGetAdsCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -220,7 +220,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsGetAdsCampaign2(unifiedTo, {
+  const res = await adsGetAdsCampaign(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -228,7 +228,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsGetAdsCampaign2 failed:", res.error);
+    console.log("adsGetAdsCampaign failed:", res.error);
   }
 }
 
@@ -239,7 +239,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAdsCampaign2Request](../../sdk/models/operations/getadscampaign2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAdsCampaignRequest](../../sdk/models/operations/getadscampaignrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -254,13 +254,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getMartechCampaign2
+## getMartechCampaign
 
 Retrieve a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getMartechCampaign2" method="get" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getMartechCampaign" method="get" path="/martech/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -271,7 +271,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.getMartechCampaign2({
+  const result = await unifiedTo.campaign.getMartechCampaign({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -288,7 +288,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { campaignGetMartechCampaign2 } from "@unified-api/typescript-sdk/funcs/campaignGetMartechCampaign2.js";
+import { campaignGetMartechCampaign } from "@unified-api/typescript-sdk/funcs/campaignGetMartechCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -299,7 +299,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await campaignGetMartechCampaign2(unifiedTo, {
+  const res = await campaignGetMartechCampaign(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -307,7 +307,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("campaignGetMartechCampaign2 failed:", res.error);
+    console.log("campaignGetMartechCampaign failed:", res.error);
   }
 }
 
@@ -318,7 +318,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetMartechCampaign2Request](../../sdk/models/operations/getmartechcampaign2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetMartechCampaignRequest](../../sdk/models/operations/getmartechcampaignrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -333,13 +333,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAdsCampaigns2
+## listAdsCampaigns
 
 List all campaigns
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAdsCampaigns2" method="get" path="/ads/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="listAdsCampaigns" method="get" path="/ads/{connection_id}/campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -350,7 +350,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.listAdsCampaigns2({
+  const result = await unifiedTo.campaign.listAdsCampaigns({
     connectionId: "<id>",
   });
 
@@ -366,7 +366,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsListAdsCampaigns2 } from "@unified-api/typescript-sdk/funcs/adsListAdsCampaigns2.js";
+import { adsListAdsCampaigns } from "@unified-api/typescript-sdk/funcs/adsListAdsCampaigns.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -377,14 +377,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsListAdsCampaigns2(unifiedTo, {
+  const res = await adsListAdsCampaigns(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsListAdsCampaigns2 failed:", res.error);
+    console.log("adsListAdsCampaigns failed:", res.error);
   }
 }
 
@@ -395,7 +395,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAdsCampaigns2Request](../../sdk/models/operations/listadscampaigns2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAdsCampaignsRequest](../../sdk/models/operations/listadscampaignsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -410,13 +410,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listMartechCampaigns2
+## listMartechCampaigns
 
 List all campaigns
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listMartechCampaigns2" method="get" path="/martech/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="listMartechCampaigns" method="get" path="/martech/{connection_id}/campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -427,7 +427,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.listMartechCampaigns2({
+  const result = await unifiedTo.campaign.listMartechCampaigns({
     connectionId: "<id>",
   });
 
@@ -443,7 +443,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { campaignListMartechCampaigns2 } from "@unified-api/typescript-sdk/funcs/campaignListMartechCampaigns2.js";
+import { campaignListMartechCampaigns } from "@unified-api/typescript-sdk/funcs/campaignListMartechCampaigns.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -454,14 +454,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await campaignListMartechCampaigns2(unifiedTo, {
+  const res = await campaignListMartechCampaigns(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("campaignListMartechCampaigns2 failed:", res.error);
+    console.log("campaignListMartechCampaigns failed:", res.error);
   }
 }
 
@@ -472,7 +472,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListMartechCampaigns2Request](../../sdk/models/operations/listmartechcampaigns2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListMartechCampaignsRequest](../../sdk/models/operations/listmartechcampaignsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -487,13 +487,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAdsCampaign2
+## patchAdsCampaign
 
 Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsCampaign2" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -504,7 +504,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.patchAdsCampaign2({
+  const result = await unifiedTo.campaign.patchAdsCampaign({
     adsCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -522,7 +522,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsPatchAdsCampaign2 } from "@unified-api/typescript-sdk/funcs/adsPatchAdsCampaign2.js";
+import { adsPatchAdsCampaign } from "@unified-api/typescript-sdk/funcs/adsPatchAdsCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -533,7 +533,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsPatchAdsCampaign2(unifiedTo, {
+  const res = await adsPatchAdsCampaign(unifiedTo, {
     adsCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -542,7 +542,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsPatchAdsCampaign2 failed:", res.error);
+    console.log("adsPatchAdsCampaign failed:", res.error);
   }
 }
 
@@ -553,7 +553,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchAdsCampaign2Request](../../sdk/models/operations/patchadscampaign2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchAdsCampaignRequest](../../sdk/models/operations/patchadscampaignrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -568,13 +568,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchMartechCampaign2
+## patchMartechCampaign
 
 Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMartechCampaign2" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -585,7 +585,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.patchMartechCampaign2({
+  const result = await unifiedTo.campaign.patchMartechCampaign({
     marketingCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -603,7 +603,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { campaignPatchMartechCampaign2 } from "@unified-api/typescript-sdk/funcs/campaignPatchMartechCampaign2.js";
+import { campaignPatchMartechCampaign } from "@unified-api/typescript-sdk/funcs/campaignPatchMartechCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -614,7 +614,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await campaignPatchMartechCampaign2(unifiedTo, {
+  const res = await campaignPatchMartechCampaign(unifiedTo, {
     marketingCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -623,7 +623,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("campaignPatchMartechCampaign2 failed:", res.error);
+    console.log("campaignPatchMartechCampaign failed:", res.error);
   }
 }
 
@@ -634,7 +634,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchMartechCampaign2Request](../../sdk/models/operations/patchmartechcampaign2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchMartechCampaignRequest](../../sdk/models/operations/patchmartechcampaignrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -649,13 +649,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAdsCampaign2
+## removeAdsCampaign
 
 Remove a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeAdsCampaign2" method="delete" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeAdsCampaign" method="delete" path="/ads/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -666,7 +666,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.removeAdsCampaign2({
+  const result = await unifiedTo.campaign.removeAdsCampaign({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -683,7 +683,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsRemoveAdsCampaign2 } from "@unified-api/typescript-sdk/funcs/adsRemoveAdsCampaign2.js";
+import { adsRemoveAdsCampaign } from "@unified-api/typescript-sdk/funcs/adsRemoveAdsCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -694,7 +694,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsRemoveAdsCampaign2(unifiedTo, {
+  const res = await adsRemoveAdsCampaign(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -702,7 +702,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsRemoveAdsCampaign2 failed:", res.error);
+    console.log("adsRemoveAdsCampaign failed:", res.error);
   }
 }
 
@@ -713,14 +713,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveAdsCampaign2Request](../../sdk/models/operations/removeadscampaign2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveAdsCampaignRequest](../../sdk/models/operations/removeadscampaignrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveAdsCampaign2Response](../../sdk/models/operations/removeadscampaign2response.md)\>**
+**Promise\<[operations.RemoveAdsCampaignResponse](../../sdk/models/operations/removeadscampaignresponse.md)\>**
 
 ### Errors
 
@@ -728,13 +728,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeMartechCampaign2
+## removeMartechCampaign
 
 Remove a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeMartechCampaign2" method="delete" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeMartechCampaign" method="delete" path="/martech/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -745,7 +745,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.removeMartechCampaign2({
+  const result = await unifiedTo.campaign.removeMartechCampaign({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -762,7 +762,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { campaignRemoveMartechCampaign2 } from "@unified-api/typescript-sdk/funcs/campaignRemoveMartechCampaign2.js";
+import { campaignRemoveMartechCampaign } from "@unified-api/typescript-sdk/funcs/campaignRemoveMartechCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -773,7 +773,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await campaignRemoveMartechCampaign2(unifiedTo, {
+  const res = await campaignRemoveMartechCampaign(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -781,7 +781,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("campaignRemoveMartechCampaign2 failed:", res.error);
+    console.log("campaignRemoveMartechCampaign failed:", res.error);
   }
 }
 
@@ -792,14 +792,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveMartechCampaign2Request](../../sdk/models/operations/removemartechcampaign2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveMartechCampaignRequest](../../sdk/models/operations/removemartechcampaignrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveMartechCampaign2Response](../../sdk/models/operations/removemartechcampaign2response.md)\>**
+**Promise\<[operations.RemoveMartechCampaignResponse](../../sdk/models/operations/removemartechcampaignresponse.md)\>**
 
 ### Errors
 
@@ -807,13 +807,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAdsCampaign2
+## updateAdsCampaign
 
 Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsCampaign2" method="put" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -824,7 +824,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.updateAdsCampaign2({
+  const result = await unifiedTo.campaign.updateAdsCampaign({
     adsCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -842,7 +842,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { adsUpdateAdsCampaign2 } from "@unified-api/typescript-sdk/funcs/adsUpdateAdsCampaign2.js";
+import { adsUpdateAdsCampaign } from "@unified-api/typescript-sdk/funcs/adsUpdateAdsCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -853,7 +853,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await adsUpdateAdsCampaign2(unifiedTo, {
+  const res = await adsUpdateAdsCampaign(unifiedTo, {
     adsCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -862,7 +862,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adsUpdateAdsCampaign2 failed:", res.error);
+    console.log("adsUpdateAdsCampaign failed:", res.error);
   }
 }
 
@@ -873,7 +873,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateAdsCampaign2Request](../../sdk/models/operations/updateadscampaign2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateAdsCampaignRequest](../../sdk/models/operations/updateadscampaignrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -888,13 +888,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateMartechCampaign2
+## updateMartechCampaign
 
 Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMartechCampaign2" method="put" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -905,7 +905,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.campaign.updateMartechCampaign2({
+  const result = await unifiedTo.campaign.updateMartechCampaign({
     marketingCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -923,7 +923,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { campaignUpdateMartechCampaign2 } from "@unified-api/typescript-sdk/funcs/campaignUpdateMartechCampaign2.js";
+import { campaignUpdateMartechCampaign } from "@unified-api/typescript-sdk/funcs/campaignUpdateMartechCampaign.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -934,7 +934,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await campaignUpdateMartechCampaign2(unifiedTo, {
+  const res = await campaignUpdateMartechCampaign(unifiedTo, {
     marketingCampaign: {},
     connectionId: "<id>",
     id: "<id>",
@@ -943,7 +943,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("campaignUpdateMartechCampaign2 failed:", res.error);
+    console.log("campaignUpdateMartechCampaign failed:", res.error);
   }
 }
 
@@ -954,7 +954,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateMartechCampaign2Request](../../sdk/models/operations/updatemartechcampaign2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateMartechCampaignRequest](../../sdk/models/operations/updatemartechcampaignrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

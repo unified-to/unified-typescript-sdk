@@ -1,0 +1,23 @@
+# PatchAtsScorecardRequest
+
+## Example Usage
+
+```typescript
+import { PatchAtsScorecardRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchAtsScorecardRequest = {
+  atsScorecard: {},
+  connectionId: "<id>",
+  id: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                            | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `atsScorecard`                                                                                                                                   | [shared.AtsScorecard](../../../sdk/models/shared/atsscorecard.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `connectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields`                                                                                                                                         | [operations.PatchAtsScorecardQueryParamFields](../../../sdk/models/operations/patchatsscorecardqueryparamfields.md)[]                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Scorecard                                                                                                                              |
+| `raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |

@@ -23,6 +23,7 @@ import {
 export type AccountingLineitem = {
   accountId?: string | undefined;
   categoryIds?: Array<string> | undefined;
+  contactId?: string | undefined;
   createdAt?: Date | undefined;
   discountAmount?: number | undefined;
   fees?: Array<AccountingFee> | undefined;
@@ -52,6 +53,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
 > = z.object({
   account_id: z.string().optional(),
   category_ids: z.array(z.string()).optional(),
+  contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   discount_amount: z.number().optional(),
@@ -78,6 +80,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   return remap$(v, {
     "account_id": "accountId",
     "category_ids": "categoryIds",
+    "contact_id": "contactId",
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "item_description": "itemDescription",
@@ -99,6 +102,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
 export type AccountingLineitem$Outbound = {
   account_id?: string | undefined;
   category_ids?: Array<string> | undefined;
+  contact_id?: string | undefined;
   created_at?: string | undefined;
   discount_amount?: number | undefined;
   fees?: Array<AccountingFee$Outbound> | undefined;
@@ -128,6 +132,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
 > = z.object({
   accountId: z.string().optional(),
   categoryIds: z.array(z.string()).optional(),
+  contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   discountAmount: z.number().optional(),
   fees: z.array(AccountingFee$outboundSchema).optional(),
@@ -151,6 +156,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   return remap$(v, {
     accountId: "account_id",
     categoryIds: "category_ids",
+    contactId: "contact_id",
     createdAt: "created_at",
     discountAmount: "discount_amount",
     itemDescription: "item_description",

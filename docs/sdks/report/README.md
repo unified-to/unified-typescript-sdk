@@ -4,19 +4,19 @@
 
 ### Available Operations
 
-* [getAccountingReport2](#getaccountingreport2) - Retrieve a report
-* [listAccountingReports2](#listaccountingreports2) - List all reports
-* [listAdsReports2](#listadsreports2) - List all reports
-* [listAnalyticsReports2](#listanalyticsreports2) - List all reports
-* [listMartechReports2](#listmartechreports2) - List all reports
+* [getAccountingReport](#getaccountingreport) - Retrieve a report
+* [listAccountingReports](#listaccountingreports) - List all reports
+* [listAdsReports](#listadsreports) - List all reports
+* [listAnalyticsReports](#listanalyticsreports) - List all reports
+* [listMartechReports](#listmartechreports) - List all reports
 
-## getAccountingReport2
+## getAccountingReport
 
 Retrieve a report
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAccountingReport2" method="get" path="/accounting/{connection_id}/report/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAccountingReport" method="get" path="/accounting/{connection_id}/report/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -27,7 +27,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.report.getAccountingReport2({
+  const result = await unifiedTo.report.getAccountingReport({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -44,7 +44,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingGetAccountingReport2 } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingReport2.js";
+import { accountingGetAccountingReport } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingReport.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -55,7 +55,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingGetAccountingReport2(unifiedTo, {
+  const res = await accountingGetAccountingReport(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -63,7 +63,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingGetAccountingReport2 failed:", res.error);
+    console.log("accountingGetAccountingReport failed:", res.error);
   }
 }
 
@@ -74,7 +74,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAccountingReport2Request](../../sdk/models/operations/getaccountingreport2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAccountingReportRequest](../../sdk/models/operations/getaccountingreportrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -89,13 +89,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAccountingReports2
+## listAccountingReports
 
 List all reports
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAccountingReports2" method="get" path="/accounting/{connection_id}/report" -->
+<!-- UsageSnippet language="typescript" operationID="listAccountingReports" method="get" path="/accounting/{connection_id}/report" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -106,7 +106,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.report.listAccountingReports2({
+  const result = await unifiedTo.report.listAccountingReports({
     connectionId: "<id>",
   });
 
@@ -122,7 +122,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingListAccountingReports2 } from "@unified-api/typescript-sdk/funcs/accountingListAccountingReports2.js";
+import { accountingListAccountingReports } from "@unified-api/typescript-sdk/funcs/accountingListAccountingReports.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -133,14 +133,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingListAccountingReports2(unifiedTo, {
+  const res = await accountingListAccountingReports(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingListAccountingReports2 failed:", res.error);
+    console.log("accountingListAccountingReports failed:", res.error);
   }
 }
 
@@ -151,7 +151,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAccountingReports2Request](../../sdk/models/operations/listaccountingreports2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAccountingReportsRequest](../../sdk/models/operations/listaccountingreportsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -166,13 +166,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAdsReports2
+## listAdsReports
 
 List all reports
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAdsReports2" method="get" path="/ads/{connection_id}/report" -->
+<!-- UsageSnippet language="typescript" operationID="listAdsReports" method="get" path="/ads/{connection_id}/report" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -183,7 +183,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.report.listAdsReports2({
+  const result = await unifiedTo.report.listAdsReports({
     connectionId: "<id>",
   });
 
@@ -199,7 +199,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reportListAdsReports2 } from "@unified-api/typescript-sdk/funcs/reportListAdsReports2.js";
+import { reportListAdsReports } from "@unified-api/typescript-sdk/funcs/reportListAdsReports.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -210,14 +210,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reportListAdsReports2(unifiedTo, {
+  const res = await reportListAdsReports(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reportListAdsReports2 failed:", res.error);
+    console.log("reportListAdsReports failed:", res.error);
   }
 }
 
@@ -228,7 +228,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAdsReports2Request](../../sdk/models/operations/listadsreports2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAdsReportsRequest](../../sdk/models/operations/listadsreportsrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -243,13 +243,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAnalyticsReports2
+## listAnalyticsReports
 
 List all reports
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAnalyticsReports2" method="get" path="/analytics/{connection_id}/report" -->
+<!-- UsageSnippet language="typescript" operationID="listAnalyticsReports" method="get" path="/analytics/{connection_id}/report" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -260,7 +260,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.report.listAnalyticsReports2({
+  const result = await unifiedTo.report.listAnalyticsReports({
     connectionId: "<id>",
   });
 
@@ -276,7 +276,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reportListAnalyticsReports2 } from "@unified-api/typescript-sdk/funcs/reportListAnalyticsReports2.js";
+import { reportListAnalyticsReports } from "@unified-api/typescript-sdk/funcs/reportListAnalyticsReports.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -287,14 +287,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reportListAnalyticsReports2(unifiedTo, {
+  const res = await reportListAnalyticsReports(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reportListAnalyticsReports2 failed:", res.error);
+    console.log("reportListAnalyticsReports failed:", res.error);
   }
 }
 
@@ -305,7 +305,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAnalyticsReports2Request](../../sdk/models/operations/listanalyticsreports2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAnalyticsReportsRequest](../../sdk/models/operations/listanalyticsreportsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -320,13 +320,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listMartechReports2
+## listMartechReports
 
 List all reports
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listMartechReports2" method="get" path="/martech/{connection_id}/report" -->
+<!-- UsageSnippet language="typescript" operationID="listMartechReports" method="get" path="/martech/{connection_id}/report" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -337,7 +337,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.report.listMartechReports2({
+  const result = await unifiedTo.report.listMartechReports({
     connectionId: "<id>",
   });
 
@@ -353,7 +353,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reportListMartechReports2 } from "@unified-api/typescript-sdk/funcs/reportListMartechReports2.js";
+import { reportListMartechReports } from "@unified-api/typescript-sdk/funcs/reportListMartechReports.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -364,14 +364,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reportListMartechReports2(unifiedTo, {
+  const res = await reportListMartechReports(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reportListMartechReports2 failed:", res.error);
+    console.log("reportListMartechReports failed:", res.error);
   }
 }
 
@@ -382,7 +382,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListMartechReports2Request](../../sdk/models/operations/listmartechreports2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListMartechReportsRequest](../../sdk/models/operations/listmartechreportsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

@@ -31,6 +31,7 @@ export type AtsStatusStatus = OpenEnum<typeof AtsStatusStatus>;
 export type AtsStatus = {
   description?: string | undefined;
   id?: string | undefined;
+  jobId?: string | undefined;
   originalStatus?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: AtsStatusStatus | undefined;
@@ -51,11 +52,13 @@ export const AtsStatus$inboundSchema: z.ZodType<
 > = z.object({
   description: z.string().optional(),
   id: z.string().optional(),
+  job_id: z.string().optional(),
   original_status: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: AtsStatusStatus$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
+    "job_id": "jobId",
     "original_status": "originalStatus",
   });
 });

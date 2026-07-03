@@ -1,0 +1,19 @@
+# RemoveDatastoreTableRequest
+
+## Example Usage
+
+```typescript
+import { RemoveDatastoreTableRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveDatastoreTableRequest = {
+  connectionId: "<id>",
+  id: "<id>",
+};
+```
+
+## Fields
+
+| Field                | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `connectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `id`                 | *string*             | :heavy_check_mark:   | ID of the Table      |

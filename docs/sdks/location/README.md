@@ -4,28 +4,28 @@
 
 ### Available Operations
 
-* [createCommerceLocation2](#createcommercelocation2) - Create a location
-* [createHrisLocation2](#createhrislocation2) - Create a location
-* [getClubsLocation2](#getclubslocation2) - Retrieve a location
-* [getCommerceLocation2](#getcommercelocation2) - Retrieve a location
-* [getHrisLocation2](#gethrislocation2) - Retrieve a location
-* [listClubsLocations2](#listclubslocations2) - List all locations
-* [listCommerceLocations2](#listcommercelocations2) - List all locations
-* [listHrisLocations2](#listhrislocations2) - List all locations
-* [patchCommerceLocation2](#patchcommercelocation2) - Update a location
-* [patchHrisLocation2](#patchhrislocation2) - Update a location
-* [removeCommerceLocation2](#removecommercelocation2) - Remove a location
-* [removeHrisLocation2](#removehrislocation2) - Remove a location
-* [updateCommerceLocation2](#updatecommercelocation2) - Update a location
-* [updateHrisLocation2](#updatehrislocation2) - Update a location
+* [createCommerceLocation](#createcommercelocation) - Create a location
+* [createHrisLocation](#createhrislocation) - Create a location
+* [getClubsLocation](#getclubslocation) - Retrieve a location
+* [getCommerceLocation](#getcommercelocation) - Retrieve a location
+* [getHrisLocation](#gethrislocation) - Retrieve a location
+* [listClubsLocations](#listclubslocations) - List all locations
+* [listCommerceLocations](#listcommercelocations) - List all locations
+* [listHrisLocations](#listhrislocations) - List all locations
+* [patchCommerceLocation](#patchcommercelocation) - Update a location
+* [patchHrisLocation](#patchhrislocation) - Update a location
+* [removeCommerceLocation](#removecommercelocation) - Remove a location
+* [removeHrisLocation](#removehrislocation) - Remove a location
+* [updateCommerceLocation](#updatecommercelocation) - Update a location
+* [updateHrisLocation](#updatehrislocation) - Update a location
 
-## createCommerceLocation2
+## createCommerceLocation
 
 Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceLocation2" method="post" path="/commerce/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -36,7 +36,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.createCommerceLocation2({
+  const result = await unifiedTo.location.createCommerceLocation({
     commerceLocation: {},
     connectionId: "<id>",
   });
@@ -53,7 +53,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationCreateCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationCreateCommerceLocation2.js";
+import { locationCreateCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationCreateCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -64,7 +64,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationCreateCommerceLocation2(unifiedTo, {
+  const res = await locationCreateCommerceLocation(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
   });
@@ -72,7 +72,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationCreateCommerceLocation2 failed:", res.error);
+    console.log("locationCreateCommerceLocation failed:", res.error);
   }
 }
 
@@ -83,7 +83,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceLocation2Request](../../sdk/models/operations/createcommercelocation2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCommerceLocationRequest](../../sdk/models/operations/createcommercelocationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -98,13 +98,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createHrisLocation2
+## createHrisLocation
 
 Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisLocation2" method="post" path="/hris/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -115,7 +115,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.createHrisLocation2({
+  const result = await unifiedTo.location.createHrisLocation({
     hrisLocation: {},
     connectionId: "<id>",
   });
@@ -132,7 +132,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationCreateHrisLocation2 } from "@unified-api/typescript-sdk/funcs/locationCreateHrisLocation2.js";
+import { locationCreateHrisLocation } from "@unified-api/typescript-sdk/funcs/locationCreateHrisLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -143,7 +143,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationCreateHrisLocation2(unifiedTo, {
+  const res = await locationCreateHrisLocation(unifiedTo, {
     hrisLocation: {},
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationCreateHrisLocation2 failed:", res.error);
+    console.log("locationCreateHrisLocation failed:", res.error);
   }
 }
 
@@ -162,7 +162,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateHrisLocation2Request](../../sdk/models/operations/createhrislocation2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateHrisLocationRequest](../../sdk/models/operations/createhrislocationrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -177,13 +177,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getClubsLocation2
+## getClubsLocation
 
 Retrieve a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getClubsLocation2" method="get" path="/clubs/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getClubsLocation" method="get" path="/clubs/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -194,7 +194,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.getClubsLocation2({
+  const result = await unifiedTo.location.getClubsLocation({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -211,7 +211,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { clubsGetClubsLocation2 } from "@unified-api/typescript-sdk/funcs/clubsGetClubsLocation2.js";
+import { clubsGetClubsLocation } from "@unified-api/typescript-sdk/funcs/clubsGetClubsLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -222,7 +222,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await clubsGetClubsLocation2(unifiedTo, {
+  const res = await clubsGetClubsLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -230,7 +230,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("clubsGetClubsLocation2 failed:", res.error);
+    console.log("clubsGetClubsLocation failed:", res.error);
   }
 }
 
@@ -241,7 +241,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetClubsLocation2Request](../../sdk/models/operations/getclubslocation2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetClubsLocationRequest](../../sdk/models/operations/getclubslocationrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -256,13 +256,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceLocation2
+## getCommerceLocation
 
 Retrieve a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCommerceLocation2" method="get" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCommerceLocation" method="get" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -273,7 +273,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.getCommerceLocation2({
+  const result = await unifiedTo.location.getCommerceLocation({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -290,7 +290,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationGetCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationGetCommerceLocation2.js";
+import { locationGetCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationGetCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -301,7 +301,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationGetCommerceLocation2(unifiedTo, {
+  const res = await locationGetCommerceLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -309,7 +309,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationGetCommerceLocation2 failed:", res.error);
+    console.log("locationGetCommerceLocation failed:", res.error);
   }
 }
 
@@ -320,7 +320,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceLocation2Request](../../sdk/models/operations/getcommercelocation2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCommerceLocationRequest](../../sdk/models/operations/getcommercelocationrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -335,13 +335,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getHrisLocation2
+## getHrisLocation
 
 Retrieve a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getHrisLocation2" method="get" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getHrisLocation" method="get" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -352,7 +352,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.getHrisLocation2({
+  const result = await unifiedTo.location.getHrisLocation({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationGetHrisLocation2 } from "@unified-api/typescript-sdk/funcs/locationGetHrisLocation2.js";
+import { locationGetHrisLocation } from "@unified-api/typescript-sdk/funcs/locationGetHrisLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationGetHrisLocation2(unifiedTo, {
+  const res = await locationGetHrisLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationGetHrisLocation2 failed:", res.error);
+    console.log("locationGetHrisLocation failed:", res.error);
   }
 }
 
@@ -399,7 +399,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetHrisLocation2Request](../../sdk/models/operations/gethrislocation2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetHrisLocationRequest](../../sdk/models/operations/gethrislocationrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -414,13 +414,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listClubsLocations2
+## listClubsLocations
 
 List all locations
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listClubsLocations2" method="get" path="/clubs/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="listClubsLocations" method="get" path="/clubs/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -431,7 +431,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.listClubsLocations2({
+  const result = await unifiedTo.location.listClubsLocations({
     connectionId: "<id>",
   });
 
@@ -447,7 +447,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { clubsListClubsLocations2 } from "@unified-api/typescript-sdk/funcs/clubsListClubsLocations2.js";
+import { clubsListClubsLocations } from "@unified-api/typescript-sdk/funcs/clubsListClubsLocations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -458,14 +458,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await clubsListClubsLocations2(unifiedTo, {
+  const res = await clubsListClubsLocations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("clubsListClubsLocations2 failed:", res.error);
+    console.log("clubsListClubsLocations failed:", res.error);
   }
 }
 
@@ -476,7 +476,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListClubsLocations2Request](../../sdk/models/operations/listclubslocations2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListClubsLocationsRequest](../../sdk/models/operations/listclubslocationsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -491,13 +491,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCommerceLocations2
+## listCommerceLocations
 
 List all locations
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCommerceLocations2" method="get" path="/commerce/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="listCommerceLocations" method="get" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -508,7 +508,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.listCommerceLocations2({
+  const result = await unifiedTo.location.listCommerceLocations({
     connectionId: "<id>",
   });
 
@@ -524,7 +524,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationListCommerceLocations2 } from "@unified-api/typescript-sdk/funcs/locationListCommerceLocations2.js";
+import { locationListCommerceLocations } from "@unified-api/typescript-sdk/funcs/locationListCommerceLocations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -535,14 +535,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationListCommerceLocations2(unifiedTo, {
+  const res = await locationListCommerceLocations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationListCommerceLocations2 failed:", res.error);
+    console.log("locationListCommerceLocations failed:", res.error);
   }
 }
 
@@ -553,7 +553,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceLocations2Request](../../sdk/models/operations/listcommercelocations2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCommerceLocationsRequest](../../sdk/models/operations/listcommercelocationsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -568,13 +568,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listHrisLocations2
+## listHrisLocations
 
 List all locations
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listHrisLocations2" method="get" path="/hris/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="listHrisLocations" method="get" path="/hris/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -585,7 +585,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.listHrisLocations2({
+  const result = await unifiedTo.location.listHrisLocations({
     connectionId: "<id>",
   });
 
@@ -601,7 +601,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationListHrisLocations2 } from "@unified-api/typescript-sdk/funcs/locationListHrisLocations2.js";
+import { locationListHrisLocations } from "@unified-api/typescript-sdk/funcs/locationListHrisLocations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -612,14 +612,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationListHrisLocations2(unifiedTo, {
+  const res = await locationListHrisLocations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationListHrisLocations2 failed:", res.error);
+    console.log("locationListHrisLocations failed:", res.error);
   }
 }
 
@@ -630,7 +630,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListHrisLocations2Request](../../sdk/models/operations/listhrislocations2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListHrisLocationsRequest](../../sdk/models/operations/listhrislocationsrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -645,13 +645,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceLocation2
+## patchCommerceLocation
 
 Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation2" method="patch" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -662,7 +662,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.patchCommerceLocation2({
+  const result = await unifiedTo.location.patchCommerceLocation({
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -680,7 +680,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationPatchCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationPatchCommerceLocation2.js";
+import { locationPatchCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationPatchCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -691,7 +691,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationPatchCommerceLocation2(unifiedTo, {
+  const res = await locationPatchCommerceLocation(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -700,7 +700,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationPatchCommerceLocation2 failed:", res.error);
+    console.log("locationPatchCommerceLocation failed:", res.error);
   }
 }
 
@@ -711,7 +711,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceLocation2Request](../../sdk/models/operations/patchcommercelocation2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCommerceLocationRequest](../../sdk/models/operations/patchcommercelocationrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -726,13 +726,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchHrisLocation2
+## patchHrisLocation
 
 Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisLocation2" method="patch" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -743,7 +743,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.patchHrisLocation2({
+  const result = await unifiedTo.location.patchHrisLocation({
     hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -761,7 +761,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationPatchHrisLocation2 } from "@unified-api/typescript-sdk/funcs/locationPatchHrisLocation2.js";
+import { locationPatchHrisLocation } from "@unified-api/typescript-sdk/funcs/locationPatchHrisLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -772,7 +772,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationPatchHrisLocation2(unifiedTo, {
+  const res = await locationPatchHrisLocation(unifiedTo, {
     hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -781,7 +781,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationPatchHrisLocation2 failed:", res.error);
+    console.log("locationPatchHrisLocation failed:", res.error);
   }
 }
 
@@ -792,7 +792,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchHrisLocation2Request](../../sdk/models/operations/patchhrislocation2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchHrisLocationRequest](../../sdk/models/operations/patchhrislocationrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -807,13 +807,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceLocation2
+## removeCommerceLocation
 
 Remove a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCommerceLocation2" method="delete" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCommerceLocation" method="delete" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -824,7 +824,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.removeCommerceLocation2({
+  const result = await unifiedTo.location.removeCommerceLocation({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -841,7 +841,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationRemoveCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationRemoveCommerceLocation2.js";
+import { locationRemoveCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationRemoveCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -852,7 +852,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationRemoveCommerceLocation2(unifiedTo, {
+  const res = await locationRemoveCommerceLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -860,7 +860,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationRemoveCommerceLocation2 failed:", res.error);
+    console.log("locationRemoveCommerceLocation failed:", res.error);
   }
 }
 
@@ -871,14 +871,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceLocation2Request](../../sdk/models/operations/removecommercelocation2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCommerceLocationRequest](../../sdk/models/operations/removecommercelocationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCommerceLocation2Response](../../sdk/models/operations/removecommercelocation2response.md)\>**
+**Promise\<[operations.RemoveCommerceLocationResponse](../../sdk/models/operations/removecommercelocationresponse.md)\>**
 
 ### Errors
 
@@ -886,13 +886,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeHrisLocation2
+## removeHrisLocation
 
 Remove a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeHrisLocation2" method="delete" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeHrisLocation" method="delete" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -903,7 +903,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.removeHrisLocation2({
+  const result = await unifiedTo.location.removeHrisLocation({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -920,7 +920,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationRemoveHrisLocation2 } from "@unified-api/typescript-sdk/funcs/locationRemoveHrisLocation2.js";
+import { locationRemoveHrisLocation } from "@unified-api/typescript-sdk/funcs/locationRemoveHrisLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -931,7 +931,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationRemoveHrisLocation2(unifiedTo, {
+  const res = await locationRemoveHrisLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -939,7 +939,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationRemoveHrisLocation2 failed:", res.error);
+    console.log("locationRemoveHrisLocation failed:", res.error);
   }
 }
 
@@ -950,14 +950,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveHrisLocation2Request](../../sdk/models/operations/removehrislocation2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveHrisLocationRequest](../../sdk/models/operations/removehrislocationrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveHrisLocation2Response](../../sdk/models/operations/removehrislocation2response.md)\>**
+**Promise\<[operations.RemoveHrisLocationResponse](../../sdk/models/operations/removehrislocationresponse.md)\>**
 
 ### Errors
 
@@ -965,13 +965,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCommerceLocation2
+## updateCommerceLocation
 
 Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation2" method="put" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -982,7 +982,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.updateCommerceLocation2({
+  const result = await unifiedTo.location.updateCommerceLocation({
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1000,7 +1000,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationUpdateCommerceLocation2 } from "@unified-api/typescript-sdk/funcs/locationUpdateCommerceLocation2.js";
+import { locationUpdateCommerceLocation } from "@unified-api/typescript-sdk/funcs/locationUpdateCommerceLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1011,7 +1011,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationUpdateCommerceLocation2(unifiedTo, {
+  const res = await locationUpdateCommerceLocation(unifiedTo, {
     commerceLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1020,7 +1020,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationUpdateCommerceLocation2 failed:", res.error);
+    console.log("locationUpdateCommerceLocation failed:", res.error);
   }
 }
 
@@ -1031,7 +1031,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceLocation2Request](../../sdk/models/operations/updatecommercelocation2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCommerceLocationRequest](../../sdk/models/operations/updatecommercelocationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1046,13 +1046,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateHrisLocation2
+## updateHrisLocation
 
 Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisLocation2" method="put" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1063,7 +1063,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.location.updateHrisLocation2({
+  const result = await unifiedTo.location.updateHrisLocation({
     hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1081,7 +1081,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { locationUpdateHrisLocation2 } from "@unified-api/typescript-sdk/funcs/locationUpdateHrisLocation2.js";
+import { locationUpdateHrisLocation } from "@unified-api/typescript-sdk/funcs/locationUpdateHrisLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1092,7 +1092,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await locationUpdateHrisLocation2(unifiedTo, {
+  const res = await locationUpdateHrisLocation(unifiedTo, {
     hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1101,7 +1101,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("locationUpdateHrisLocation2 failed:", res.error);
+    console.log("locationUpdateHrisLocation failed:", res.error);
   }
 }
 
@@ -1112,7 +1112,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateHrisLocation2Request](../../sdk/models/operations/updatehrislocation2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateHrisLocationRequest](../../sdk/models/operations/updatehrislocationrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

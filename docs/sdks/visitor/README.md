@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createAnalyticsVisitor2](#createanalyticsvisitor2) - Create a visitor
-* [getAnalyticsVisitor2](#getanalyticsvisitor2) - Retrieve a visitor
-* [listAnalyticsVisitors2](#listanalyticsvisitors2) - List all visitors
-* [patchAnalyticsVisitor2](#patchanalyticsvisitor2) - Update a visitor
-* [removeAnalyticsVisitor2](#removeanalyticsvisitor2) - Remove a visitor
-* [updateAnalyticsVisitor2](#updateanalyticsvisitor2) - Update a visitor
+* [createAnalyticsVisitor](#createanalyticsvisitor) - Create a visitor
+* [getAnalyticsVisitor](#getanalyticsvisitor) - Retrieve a visitor
+* [listAnalyticsVisitors](#listanalyticsvisitors) - List all visitors
+* [patchAnalyticsVisitor](#patchanalyticsvisitor) - Update a visitor
+* [removeAnalyticsVisitor](#removeanalyticsvisitor) - Remove a visitor
+* [updateAnalyticsVisitor](#updateanalyticsvisitor) - Update a visitor
 
-## createAnalyticsVisitor2
+## createAnalyticsVisitor
 
 Create a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAnalyticsVisitor2" method="post" path="/analytics/{connection_id}/visitor" -->
+<!-- UsageSnippet language="typescript" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.visitor.createAnalyticsVisitor2({
+  const result = await unifiedTo.visitor.createAnalyticsVisitor({
     analyticsVisitor: {},
     connectionId: "<id>",
   });
@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { analyticsCreateAnalyticsVisitor2 } from "@unified-api/typescript-sdk/funcs/analyticsCreateAnalyticsVisitor2.js";
+import { analyticsCreateAnalyticsVisitor } from "@unified-api/typescript-sdk/funcs/analyticsCreateAnalyticsVisitor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await analyticsCreateAnalyticsVisitor2(unifiedTo, {
+  const res = await analyticsCreateAnalyticsVisitor(unifiedTo, {
     analyticsVisitor: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("analyticsCreateAnalyticsVisitor2 failed:", res.error);
+    console.log("analyticsCreateAnalyticsVisitor failed:", res.error);
   }
 }
 
@@ -75,7 +75,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateAnalyticsVisitor2Request](../../sdk/models/operations/createanalyticsvisitor2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateAnalyticsVisitorRequest](../../sdk/models/operations/createanalyticsvisitorrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -90,13 +90,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAnalyticsVisitor2
+## getAnalyticsVisitor
 
 Retrieve a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAnalyticsVisitor2" method="get" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAnalyticsVisitor" method="get" path="/analytics/{connection_id}/visitor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.visitor.getAnalyticsVisitor2({
+  const result = await unifiedTo.visitor.getAnalyticsVisitor({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -124,7 +124,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { analyticsGetAnalyticsVisitor2 } from "@unified-api/typescript-sdk/funcs/analyticsGetAnalyticsVisitor2.js";
+import { analyticsGetAnalyticsVisitor } from "@unified-api/typescript-sdk/funcs/analyticsGetAnalyticsVisitor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await analyticsGetAnalyticsVisitor2(unifiedTo, {
+  const res = await analyticsGetAnalyticsVisitor(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +143,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("analyticsGetAnalyticsVisitor2 failed:", res.error);
+    console.log("analyticsGetAnalyticsVisitor failed:", res.error);
   }
 }
 
@@ -154,7 +154,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAnalyticsVisitor2Request](../../sdk/models/operations/getanalyticsvisitor2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAnalyticsVisitorRequest](../../sdk/models/operations/getanalyticsvisitorrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -169,13 +169,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAnalyticsVisitors2
+## listAnalyticsVisitors
 
 List all visitors
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAnalyticsVisitors2" method="get" path="/analytics/{connection_id}/visitor" -->
+<!-- UsageSnippet language="typescript" operationID="listAnalyticsVisitors" method="get" path="/analytics/{connection_id}/visitor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -186,7 +186,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.visitor.listAnalyticsVisitors2({
+  const result = await unifiedTo.visitor.listAnalyticsVisitors({
     connectionId: "<id>",
   });
 
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { analyticsListAnalyticsVisitors2 } from "@unified-api/typescript-sdk/funcs/analyticsListAnalyticsVisitors2.js";
+import { analyticsListAnalyticsVisitors } from "@unified-api/typescript-sdk/funcs/analyticsListAnalyticsVisitors.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +213,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await analyticsListAnalyticsVisitors2(unifiedTo, {
+  const res = await analyticsListAnalyticsVisitors(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("analyticsListAnalyticsVisitors2 failed:", res.error);
+    console.log("analyticsListAnalyticsVisitors failed:", res.error);
   }
 }
 
@@ -231,7 +231,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAnalyticsVisitors2Request](../../sdk/models/operations/listanalyticsvisitors2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAnalyticsVisitorsRequest](../../sdk/models/operations/listanalyticsvisitorsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -246,13 +246,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAnalyticsVisitor2
+## patchAnalyticsVisitor
 
 Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAnalyticsVisitor2" method="patch" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -263,7 +263,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.visitor.patchAnalyticsVisitor2({
+  const result = await unifiedTo.visitor.patchAnalyticsVisitor({
     analyticsVisitor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -281,7 +281,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { analyticsPatchAnalyticsVisitor2 } from "@unified-api/typescript-sdk/funcs/analyticsPatchAnalyticsVisitor2.js";
+import { analyticsPatchAnalyticsVisitor } from "@unified-api/typescript-sdk/funcs/analyticsPatchAnalyticsVisitor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +292,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await analyticsPatchAnalyticsVisitor2(unifiedTo, {
+  const res = await analyticsPatchAnalyticsVisitor(unifiedTo, {
     analyticsVisitor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +301,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("analyticsPatchAnalyticsVisitor2 failed:", res.error);
+    console.log("analyticsPatchAnalyticsVisitor failed:", res.error);
   }
 }
 
@@ -312,7 +312,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchAnalyticsVisitor2Request](../../sdk/models/operations/patchanalyticsvisitor2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchAnalyticsVisitorRequest](../../sdk/models/operations/patchanalyticsvisitorrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -327,13 +327,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAnalyticsVisitor2
+## removeAnalyticsVisitor
 
 Remove a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeAnalyticsVisitor2" method="delete" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeAnalyticsVisitor" method="delete" path="/analytics/{connection_id}/visitor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -344,7 +344,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.visitor.removeAnalyticsVisitor2({
+  const result = await unifiedTo.visitor.removeAnalyticsVisitor({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -361,7 +361,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { analyticsRemoveAnalyticsVisitor2 } from "@unified-api/typescript-sdk/funcs/analyticsRemoveAnalyticsVisitor2.js";
+import { analyticsRemoveAnalyticsVisitor } from "@unified-api/typescript-sdk/funcs/analyticsRemoveAnalyticsVisitor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await analyticsRemoveAnalyticsVisitor2(unifiedTo, {
+  const res = await analyticsRemoveAnalyticsVisitor(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +380,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("analyticsRemoveAnalyticsVisitor2 failed:", res.error);
+    console.log("analyticsRemoveAnalyticsVisitor failed:", res.error);
   }
 }
 
@@ -391,14 +391,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveAnalyticsVisitor2Request](../../sdk/models/operations/removeanalyticsvisitor2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveAnalyticsVisitorRequest](../../sdk/models/operations/removeanalyticsvisitorrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveAnalyticsVisitor2Response](../../sdk/models/operations/removeanalyticsvisitor2response.md)\>**
+**Promise\<[operations.RemoveAnalyticsVisitorResponse](../../sdk/models/operations/removeanalyticsvisitorresponse.md)\>**
 
 ### Errors
 
@@ -406,13 +406,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAnalyticsVisitor2
+## updateAnalyticsVisitor
 
 Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAnalyticsVisitor2" method="put" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -423,7 +423,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.visitor.updateAnalyticsVisitor2({
+  const result = await unifiedTo.visitor.updateAnalyticsVisitor({
     analyticsVisitor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -441,7 +441,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { analyticsUpdateAnalyticsVisitor2 } from "@unified-api/typescript-sdk/funcs/analyticsUpdateAnalyticsVisitor2.js";
+import { analyticsUpdateAnalyticsVisitor } from "@unified-api/typescript-sdk/funcs/analyticsUpdateAnalyticsVisitor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await analyticsUpdateAnalyticsVisitor2(unifiedTo, {
+  const res = await analyticsUpdateAnalyticsVisitor(unifiedTo, {
     analyticsVisitor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +461,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("analyticsUpdateAnalyticsVisitor2 failed:", res.error);
+    console.log("analyticsUpdateAnalyticsVisitor failed:", res.error);
   }
 }
 
@@ -472,7 +472,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateAnalyticsVisitor2Request](../../sdk/models/operations/updateanalyticsvisitor2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateAnalyticsVisitorRequest](../../sdk/models/operations/updateanalyticsvisitorrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

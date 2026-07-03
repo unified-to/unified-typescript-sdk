@@ -4,15 +4,15 @@
 
 ### Available Operations
 
-* [createDatastoreQuery2](#createdatastorequery2) - Create a query
+* [createDatastoreQuery](#createdatastorequery) - Create a query
 
-## createDatastoreQuery2
+## createDatastoreQuery
 
 Create a query
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createDatastoreQuery2" method="post" path="/datastore/{connection_id}/query" -->
+<!-- UsageSnippet language="typescript" operationID="createDatastoreQuery" method="post" path="/datastore/{connection_id}/query" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -23,7 +23,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.query.createDatastoreQuery2({
+  const result = await unifiedTo.query.createDatastoreQuery({
     datastoreQuery: {},
     connectionId: "<id>",
   });
@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreCreateDatastoreQuery2 } from "@unified-api/typescript-sdk/funcs/datastoreCreateDatastoreQuery2.js";
+import { datastoreCreateDatastoreQuery } from "@unified-api/typescript-sdk/funcs/datastoreCreateDatastoreQuery.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,7 +51,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreCreateDatastoreQuery2(unifiedTo, {
+  const res = await datastoreCreateDatastoreQuery(unifiedTo, {
     datastoreQuery: {},
     connectionId: "<id>",
   });
@@ -59,7 +59,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreCreateDatastoreQuery2 failed:", res.error);
+    console.log("datastoreCreateDatastoreQuery failed:", res.error);
   }
 }
 
@@ -70,7 +70,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateDatastoreQuery2Request](../../sdk/models/operations/createdatastorequery2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateDatastoreQueryRequest](../../sdk/models/operations/createdatastorequeryrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

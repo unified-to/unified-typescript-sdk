@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createKmsPage2](#createkmspage2) - Create a page
-* [getKmsPage2](#getkmspage2) - Retrieve a page
-* [listKmsPages2](#listkmspages2) - List all pages
-* [patchKmsPage2](#patchkmspage2) - Update a page
-* [removeKmsPage2](#removekmspage2) - Remove a page
-* [updateKmsPage2](#updatekmspage2) - Update a page
+* [createKmsPage](#createkmspage) - Create a page
+* [getKmsPage](#getkmspage) - Retrieve a page
+* [listKmsPages](#listkmspages) - List all pages
+* [patchKmsPage](#patchkmspage) - Update a page
+* [removeKmsPage](#removekmspage) - Remove a page
+* [updateKmsPage](#updatekmspage) - Update a page
 
-## createKmsPage2
+## createKmsPage
 
 Create a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createKmsPage2" method="post" path="/kms/{connection_id}/page" -->
+<!-- UsageSnippet language="typescript" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,9 +28,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.page.createKmsPage2({
+  const result = await unifiedTo.page.createKmsPage({
     kmsPage: {
-      type: "OTHER",
+      type: "TEXT",
     },
     connectionId: "<id>",
   });
@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { kmsCreateKmsPage2 } from "@unified-api/typescript-sdk/funcs/kmsCreateKmsPage2.js";
+import { kmsCreateKmsPage } from "@unified-api/typescript-sdk/funcs/kmsCreateKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,9 +58,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await kmsCreateKmsPage2(unifiedTo, {
+  const res = await kmsCreateKmsPage(unifiedTo, {
     kmsPage: {
-      type: "OTHER",
+      type: "TEXT",
     },
     connectionId: "<id>",
   });
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("kmsCreateKmsPage2 failed:", res.error);
+    console.log("kmsCreateKmsPage failed:", res.error);
   }
 }
 
@@ -79,7 +79,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateKmsPage2Request](../../sdk/models/operations/createkmspage2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateKmsPageRequest](../../sdk/models/operations/createkmspagerequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -94,13 +94,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getKmsPage2
+## getKmsPage
 
 Retrieve a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getKmsPage2" method="get" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getKmsPage" method="get" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -111,7 +111,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.page.getKmsPage2({
+  const result = await unifiedTo.page.getKmsPage({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -128,7 +128,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { kmsGetKmsPage2 } from "@unified-api/typescript-sdk/funcs/kmsGetKmsPage2.js";
+import { kmsGetKmsPage } from "@unified-api/typescript-sdk/funcs/kmsGetKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -139,7 +139,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await kmsGetKmsPage2(unifiedTo, {
+  const res = await kmsGetKmsPage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -147,7 +147,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("kmsGetKmsPage2 failed:", res.error);
+    console.log("kmsGetKmsPage failed:", res.error);
   }
 }
 
@@ -158,7 +158,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetKmsPage2Request](../../sdk/models/operations/getkmspage2request.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetKmsPageRequest](../../sdk/models/operations/getkmspagerequest.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -173,13 +173,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listKmsPages2
+## listKmsPages
 
 List all pages
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listKmsPages2" method="get" path="/kms/{connection_id}/page" -->
+<!-- UsageSnippet language="typescript" operationID="listKmsPages" method="get" path="/kms/{connection_id}/page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -190,7 +190,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.page.listKmsPages2({
+  const result = await unifiedTo.page.listKmsPages({
     connectionId: "<id>",
   });
 
@@ -206,7 +206,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { kmsListKmsPages2 } from "@unified-api/typescript-sdk/funcs/kmsListKmsPages2.js";
+import { kmsListKmsPages } from "@unified-api/typescript-sdk/funcs/kmsListKmsPages.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,14 +217,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await kmsListKmsPages2(unifiedTo, {
+  const res = await kmsListKmsPages(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("kmsListKmsPages2 failed:", res.error);
+    console.log("kmsListKmsPages failed:", res.error);
   }
 }
 
@@ -235,7 +235,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListKmsPages2Request](../../sdk/models/operations/listkmspages2request.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListKmsPagesRequest](../../sdk/models/operations/listkmspagesrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -250,13 +250,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchKmsPage2
+## patchKmsPage
 
 Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchKmsPage2" method="patch" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -267,7 +267,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.page.patchKmsPage2({
+  const result = await unifiedTo.page.patchKmsPage({
     kmsPage: {
       type: "OTHER",
     },
@@ -287,7 +287,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { kmsPatchKmsPage2 } from "@unified-api/typescript-sdk/funcs/kmsPatchKmsPage2.js";
+import { kmsPatchKmsPage } from "@unified-api/typescript-sdk/funcs/kmsPatchKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,7 +298,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await kmsPatchKmsPage2(unifiedTo, {
+  const res = await kmsPatchKmsPage(unifiedTo, {
     kmsPage: {
       type: "OTHER",
     },
@@ -309,7 +309,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("kmsPatchKmsPage2 failed:", res.error);
+    console.log("kmsPatchKmsPage failed:", res.error);
   }
 }
 
@@ -320,7 +320,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchKmsPage2Request](../../sdk/models/operations/patchkmspage2request.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchKmsPageRequest](../../sdk/models/operations/patchkmspagerequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -335,13 +335,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeKmsPage2
+## removeKmsPage
 
 Remove a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeKmsPage2" method="delete" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeKmsPage" method="delete" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -352,7 +352,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.page.removeKmsPage2({
+  const result = await unifiedTo.page.removeKmsPage({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { kmsRemoveKmsPage2 } from "@unified-api/typescript-sdk/funcs/kmsRemoveKmsPage2.js";
+import { kmsRemoveKmsPage } from "@unified-api/typescript-sdk/funcs/kmsRemoveKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await kmsRemoveKmsPage2(unifiedTo, {
+  const res = await kmsRemoveKmsPage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("kmsRemoveKmsPage2 failed:", res.error);
+    console.log("kmsRemoveKmsPage failed:", res.error);
   }
 }
 
@@ -399,14 +399,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveKmsPage2Request](../../sdk/models/operations/removekmspage2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveKmsPageRequest](../../sdk/models/operations/removekmspagerequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveKmsPage2Response](../../sdk/models/operations/removekmspage2response.md)\>**
+**Promise\<[operations.RemoveKmsPageResponse](../../sdk/models/operations/removekmspageresponse.md)\>**
 
 ### Errors
 
@@ -414,13 +414,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateKmsPage2
+## updateKmsPage
 
 Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateKmsPage2" method="put" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -431,9 +431,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.page.updateKmsPage2({
+  const result = await unifiedTo.page.updateKmsPage({
     kmsPage: {
-      type: "MARKDOWN",
+      type: "OTHER",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -451,7 +451,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { kmsUpdateKmsPage2 } from "@unified-api/typescript-sdk/funcs/kmsUpdateKmsPage2.js";
+import { kmsUpdateKmsPage } from "@unified-api/typescript-sdk/funcs/kmsUpdateKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -462,9 +462,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await kmsUpdateKmsPage2(unifiedTo, {
+  const res = await kmsUpdateKmsPage(unifiedTo, {
     kmsPage: {
-      type: "MARKDOWN",
+      type: "OTHER",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -473,7 +473,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("kmsUpdateKmsPage2 failed:", res.error);
+    console.log("kmsUpdateKmsPage failed:", res.error);
   }
 }
 
@@ -484,7 +484,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateKmsPage2Request](../../sdk/models/operations/updatekmspage2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateKmsPageRequest](../../sdk/models/operations/updatekmspagerequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

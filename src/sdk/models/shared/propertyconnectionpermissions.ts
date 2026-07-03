@@ -17,6 +17,8 @@ export const PropertyConnectionPermissions = {
   AccountingInvoiceWrite: "accounting_invoice_write",
   AccountingBillRead: "accounting_bill_read",
   AccountingBillWrite: "accounting_bill_write",
+  AccountingVendorcreditRead: "accounting_vendorcredit_read",
+  AccountingVendorcreditWrite: "accounting_vendorcredit_write",
   AccountingCreditmemoRead: "accounting_creditmemo_read",
   AccountingCreditmemoWrite: "accounting_creditmemo_write",
   AccountingContactRead: "accounting_contact_read",

@@ -4,16 +4,16 @@
 
 ### Available Operations
 
-* [getUcCall2](#getuccall2) - Retrieve a call
-* [listUcCalls2](#listuccalls2) - List all calls
+* [getUcCall](#getuccall) - Retrieve a call
+* [listUcCalls](#listuccalls) - List all calls
 
-## getUcCall2
+## getUcCall
 
 Retrieve a call
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getUcCall2" method="get" path="/uc/{connection_id}/call/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getUcCall" method="get" path="/uc/{connection_id}/call/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.call.getUcCall2({
+  const result = await unifiedTo.call.getUcCall({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucGetUcCall2 } from "@unified-api/typescript-sdk/funcs/ucGetUcCall2.js";
+import { ucGetUcCall } from "@unified-api/typescript-sdk/funcs/ucGetUcCall.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucGetUcCall2(unifiedTo, {
+  const res = await ucGetUcCall(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucGetUcCall2 failed:", res.error);
+    console.log("ucGetUcCall failed:", res.error);
   }
 }
 
@@ -71,7 +71,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetUcCall2Request](../../sdk/models/operations/getuccall2request.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetUcCallRequest](../../sdk/models/operations/getuccallrequest.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -86,13 +86,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listUcCalls2
+## listUcCalls
 
 List all calls
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listUcCalls2" method="get" path="/uc/{connection_id}/call" -->
+<!-- UsageSnippet language="typescript" operationID="listUcCalls" method="get" path="/uc/{connection_id}/call" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -103,7 +103,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.call.listUcCalls2({
+  const result = await unifiedTo.call.listUcCalls({
     connectionId: "<id>",
   });
 
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucListUcCalls2 } from "@unified-api/typescript-sdk/funcs/ucListUcCalls2.js";
+import { ucListUcCalls } from "@unified-api/typescript-sdk/funcs/ucListUcCalls.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -130,14 +130,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucListUcCalls2(unifiedTo, {
+  const res = await ucListUcCalls(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucListUcCalls2 failed:", res.error);
+    console.log("ucListUcCalls failed:", res.error);
   }
 }
 
@@ -148,7 +148,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListUcCalls2Request](../../sdk/models/operations/listuccalls2request.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListUcCallsRequest](../../sdk/models/operations/listuccallsrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createDatastoreDatabase2](#createdatastoredatabase2) - Create a database
-* [getDatastoreDatabase2](#getdatastoredatabase2) - Retrieve a database
-* [listDatastoreDatabases2](#listdatastoredatabases2) - List all databases
-* [patchDatastoreDatabase2](#patchdatastoredatabase2) - Update a database
-* [removeDatastoreDatabase2](#removedatastoredatabase2) - Remove a database
-* [updateDatastoreDatabase2](#updatedatastoredatabase2) - Update a database
+* [createDatastoreDatabase](#createdatastoredatabase) - Create a database
+* [getDatastoreDatabase](#getdatastoredatabase) - Retrieve a database
+* [listDatastoreDatabases](#listdatastoredatabases) - List all databases
+* [patchDatastoreDatabase](#patchdatastoredatabase) - Update a database
+* [removeDatastoreDatabase](#removedatastoredatabase) - Remove a database
+* [updateDatastoreDatabase](#updatedatastoredatabase) - Update a database
 
-## createDatastoreDatabase2
+## createDatastoreDatabase
 
 Create a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createDatastoreDatabase2" method="post" path="/datastore/{connection_id}/database" -->
+<!-- UsageSnippet language="typescript" operationID="createDatastoreDatabase" method="post" path="/datastore/{connection_id}/database" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.database.createDatastoreDatabase2({
+  const result = await unifiedTo.database.createDatastoreDatabase({
     datastoreDatabase: {},
     connectionId: "<id>",
   });
@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreCreateDatastoreDatabase2 } from "@unified-api/typescript-sdk/funcs/datastoreCreateDatastoreDatabase2.js";
+import { datastoreCreateDatastoreDatabase } from "@unified-api/typescript-sdk/funcs/datastoreCreateDatastoreDatabase.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreCreateDatastoreDatabase2(unifiedTo, {
+  const res = await datastoreCreateDatastoreDatabase(unifiedTo, {
     datastoreDatabase: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreCreateDatastoreDatabase2 failed:", res.error);
+    console.log("datastoreCreateDatastoreDatabase failed:", res.error);
   }
 }
 
@@ -75,7 +75,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateDatastoreDatabase2Request](../../sdk/models/operations/createdatastoredatabase2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateDatastoreDatabaseRequest](../../sdk/models/operations/createdatastoredatabaserequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -90,13 +90,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getDatastoreDatabase2
+## getDatastoreDatabase
 
 Retrieve a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getDatastoreDatabase2" method="get" path="/datastore/{connection_id}/database/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getDatastoreDatabase" method="get" path="/datastore/{connection_id}/database/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.database.getDatastoreDatabase2({
+  const result = await unifiedTo.database.getDatastoreDatabase({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -124,7 +124,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreGetDatastoreDatabase2 } from "@unified-api/typescript-sdk/funcs/datastoreGetDatastoreDatabase2.js";
+import { datastoreGetDatastoreDatabase } from "@unified-api/typescript-sdk/funcs/datastoreGetDatastoreDatabase.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreGetDatastoreDatabase2(unifiedTo, {
+  const res = await datastoreGetDatastoreDatabase(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +143,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreGetDatastoreDatabase2 failed:", res.error);
+    console.log("datastoreGetDatastoreDatabase failed:", res.error);
   }
 }
 
@@ -154,7 +154,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetDatastoreDatabase2Request](../../sdk/models/operations/getdatastoredatabase2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetDatastoreDatabaseRequest](../../sdk/models/operations/getdatastoredatabaserequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -169,13 +169,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listDatastoreDatabases2
+## listDatastoreDatabases
 
 List all databases
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listDatastoreDatabases2" method="get" path="/datastore/{connection_id}/database" -->
+<!-- UsageSnippet language="typescript" operationID="listDatastoreDatabases" method="get" path="/datastore/{connection_id}/database" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -186,7 +186,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.database.listDatastoreDatabases2({
+  const result = await unifiedTo.database.listDatastoreDatabases({
     connectionId: "<id>",
   });
 
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreListDatastoreDatabases2 } from "@unified-api/typescript-sdk/funcs/datastoreListDatastoreDatabases2.js";
+import { datastoreListDatastoreDatabases } from "@unified-api/typescript-sdk/funcs/datastoreListDatastoreDatabases.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +213,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreListDatastoreDatabases2(unifiedTo, {
+  const res = await datastoreListDatastoreDatabases(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreListDatastoreDatabases2 failed:", res.error);
+    console.log("datastoreListDatastoreDatabases failed:", res.error);
   }
 }
 
@@ -231,7 +231,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListDatastoreDatabases2Request](../../sdk/models/operations/listdatastoredatabases2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListDatastoreDatabasesRequest](../../sdk/models/operations/listdatastoredatabasesrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -246,13 +246,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchDatastoreDatabase2
+## patchDatastoreDatabase
 
 Update a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchDatastoreDatabase2" method="patch" path="/datastore/{connection_id}/database/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchDatastoreDatabase" method="patch" path="/datastore/{connection_id}/database/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -263,7 +263,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.database.patchDatastoreDatabase2({
+  const result = await unifiedTo.database.patchDatastoreDatabase({
     datastoreDatabase: {},
     connectionId: "<id>",
     id: "<id>",
@@ -281,7 +281,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastorePatchDatastoreDatabase2 } from "@unified-api/typescript-sdk/funcs/datastorePatchDatastoreDatabase2.js";
+import { datastorePatchDatastoreDatabase } from "@unified-api/typescript-sdk/funcs/datastorePatchDatastoreDatabase.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +292,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastorePatchDatastoreDatabase2(unifiedTo, {
+  const res = await datastorePatchDatastoreDatabase(unifiedTo, {
     datastoreDatabase: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +301,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastorePatchDatastoreDatabase2 failed:", res.error);
+    console.log("datastorePatchDatastoreDatabase failed:", res.error);
   }
 }
 
@@ -312,7 +312,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchDatastoreDatabase2Request](../../sdk/models/operations/patchdatastoredatabase2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchDatastoreDatabaseRequest](../../sdk/models/operations/patchdatastoredatabaserequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -327,13 +327,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeDatastoreDatabase2
+## removeDatastoreDatabase
 
 Remove a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeDatastoreDatabase2" method="delete" path="/datastore/{connection_id}/database/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeDatastoreDatabase" method="delete" path="/datastore/{connection_id}/database/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -344,7 +344,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.database.removeDatastoreDatabase2({
+  const result = await unifiedTo.database.removeDatastoreDatabase({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -361,7 +361,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreRemoveDatastoreDatabase2 } from "@unified-api/typescript-sdk/funcs/datastoreRemoveDatastoreDatabase2.js";
+import { datastoreRemoveDatastoreDatabase } from "@unified-api/typescript-sdk/funcs/datastoreRemoveDatastoreDatabase.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreRemoveDatastoreDatabase2(unifiedTo, {
+  const res = await datastoreRemoveDatastoreDatabase(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +380,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreRemoveDatastoreDatabase2 failed:", res.error);
+    console.log("datastoreRemoveDatastoreDatabase failed:", res.error);
   }
 }
 
@@ -391,14 +391,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveDatastoreDatabase2Request](../../sdk/models/operations/removedatastoredatabase2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveDatastoreDatabaseRequest](../../sdk/models/operations/removedatastoredatabaserequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveDatastoreDatabase2Response](../../sdk/models/operations/removedatastoredatabase2response.md)\>**
+**Promise\<[operations.RemoveDatastoreDatabaseResponse](../../sdk/models/operations/removedatastoredatabaseresponse.md)\>**
 
 ### Errors
 
@@ -406,13 +406,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateDatastoreDatabase2
+## updateDatastoreDatabase
 
 Update a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateDatastoreDatabase2" method="put" path="/datastore/{connection_id}/database/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateDatastoreDatabase" method="put" path="/datastore/{connection_id}/database/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -423,7 +423,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.database.updateDatastoreDatabase2({
+  const result = await unifiedTo.database.updateDatastoreDatabase({
     datastoreDatabase: {},
     connectionId: "<id>",
     id: "<id>",
@@ -441,7 +441,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreUpdateDatastoreDatabase2 } from "@unified-api/typescript-sdk/funcs/datastoreUpdateDatastoreDatabase2.js";
+import { datastoreUpdateDatastoreDatabase } from "@unified-api/typescript-sdk/funcs/datastoreUpdateDatastoreDatabase.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreUpdateDatastoreDatabase2(unifiedTo, {
+  const res = await datastoreUpdateDatastoreDatabase(unifiedTo, {
     datastoreDatabase: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +461,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreUpdateDatastoreDatabase2 failed:", res.error);
+    console.log("datastoreUpdateDatastoreDatabase failed:", res.error);
   }
 }
 
@@ -472,7 +472,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateDatastoreDatabase2Request](../../sdk/models/operations/updatedatastoredatabase2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateDatastoreDatabaseRequest](../../sdk/models/operations/updatedatastoredatabaserequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

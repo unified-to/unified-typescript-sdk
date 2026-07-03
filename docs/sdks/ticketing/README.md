@@ -4,38 +4,38 @@
 
 ### Available Operations
 
-* [createTicketingCategory2](#createticketingcategory2) - Create a category
-* [createTicketingCustomer2](#createticketingcustomer2) - Create a customer
-* [createTicketingNote2](#createticketingnote2) - Create a note
-* [createTicketingTicket2](#createticketingticket2) - Create a ticket
-* [getTicketingCategory2](#getticketingcategory2) - Retrieve a category
-* [getTicketingCustomer2](#getticketingcustomer2) - Retrieve a customer
-* [getTicketingNote2](#getticketingnote2) - Retrieve a note
-* [getTicketingTicket2](#getticketingticket2) - Retrieve a ticket
-* [listTicketingCategories2](#listticketingcategories2) - List all categories
-* [listTicketingCustomers2](#listticketingcustomers2) - List all customers
-* [listTicketingNotes2](#listticketingnotes2) - List all notes
-* [listTicketingTickets2](#listticketingtickets2) - List all tickets
-* [patchTicketingCategory2](#patchticketingcategory2) - Update a category
-* [patchTicketingCustomer2](#patchticketingcustomer2) - Update a customer
-* [patchTicketingNote2](#patchticketingnote2) - Update a note
-* [patchTicketingTicket2](#patchticketingticket2) - Update a ticket
-* [removeTicketingCategory2](#removeticketingcategory2) - Remove a category
-* [removeTicketingCustomer2](#removeticketingcustomer2) - Remove a customer
-* [removeTicketingNote2](#removeticketingnote2) - Remove a note
-* [removeTicketingTicket2](#removeticketingticket2) - Remove a ticket
-* [updateTicketingCategory2](#updateticketingcategory2) - Update a category
-* [updateTicketingCustomer2](#updateticketingcustomer2) - Update a customer
-* [updateTicketingNote2](#updateticketingnote2) - Update a note
-* [updateTicketingTicket2](#updateticketingticket2) - Update a ticket
+* [createTicketingCategory](#createticketingcategory) - Create a category
+* [createTicketingCustomer](#createticketingcustomer) - Create a customer
+* [createTicketingNote](#createticketingnote) - Create a note
+* [createTicketingTicket](#createticketingticket) - Create a ticket
+* [getTicketingCategory](#getticketingcategory) - Retrieve a category
+* [getTicketingCustomer](#getticketingcustomer) - Retrieve a customer
+* [getTicketingNote](#getticketingnote) - Retrieve a note
+* [getTicketingTicket](#getticketingticket) - Retrieve a ticket
+* [listTicketingCategories](#listticketingcategories) - List all categories
+* [listTicketingCustomers](#listticketingcustomers) - List all customers
+* [listTicketingNotes](#listticketingnotes) - List all notes
+* [listTicketingTickets](#listticketingtickets) - List all tickets
+* [patchTicketingCategory](#patchticketingcategory) - Update a category
+* [patchTicketingCustomer](#patchticketingcustomer) - Update a customer
+* [patchTicketingNote](#patchticketingnote) - Update a note
+* [patchTicketingTicket](#patchticketingticket) - Update a ticket
+* [removeTicketingCategory](#removeticketingcategory) - Remove a category
+* [removeTicketingCustomer](#removeticketingcustomer) - Remove a customer
+* [removeTicketingNote](#removeticketingnote) - Remove a note
+* [removeTicketingTicket](#removeticketingticket) - Remove a ticket
+* [updateTicketingCategory](#updateticketingcategory) - Update a category
+* [updateTicketingCustomer](#updateticketingcustomer) - Update a customer
+* [updateTicketingNote](#updateticketingnote) - Update a note
+* [updateTicketingTicket](#updateticketingticket) - Update a ticket
 
-## createTicketingCategory2
+## createTicketingCategory
 
 Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingCategory2" method="post" path="/ticketing/{connection_id}/category" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -46,7 +46,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.createTicketingCategory2({
+  const result = await unifiedTo.ticketing.createTicketingCategory({
     ticketingCategory: {},
     connectionId: "<id>",
   });
@@ -63,7 +63,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { categoryCreateTicketingCategory2 } from "@unified-api/typescript-sdk/funcs/categoryCreateTicketingCategory2.js";
+import { categoryCreateTicketingCategory } from "@unified-api/typescript-sdk/funcs/categoryCreateTicketingCategory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -74,7 +74,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await categoryCreateTicketingCategory2(unifiedTo, {
+  const res = await categoryCreateTicketingCategory(unifiedTo, {
     ticketingCategory: {},
     connectionId: "<id>",
   });
@@ -82,7 +82,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("categoryCreateTicketingCategory2 failed:", res.error);
+    console.log("categoryCreateTicketingCategory failed:", res.error);
   }
 }
 
@@ -93,7 +93,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateTicketingCategory2Request](../../sdk/models/operations/createticketingcategory2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateTicketingCategoryRequest](../../sdk/models/operations/createticketingcategoryrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -108,13 +108,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createTicketingCustomer2
+## createTicketingCustomer
 
 Create a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingCustomer2" method="post" path="/ticketing/{connection_id}/customer" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -125,7 +125,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.createTicketingCustomer2({
+  const result = await unifiedTo.ticketing.createTicketingCustomer({
     ticketingCustomer: {},
     connectionId: "<id>",
   });
@@ -142,7 +142,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingCreateTicketingCustomer2 } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingCustomer2.js";
+import { ticketingCreateTicketingCustomer } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingCustomer.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -153,7 +153,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingCreateTicketingCustomer2(unifiedTo, {
+  const res = await ticketingCreateTicketingCustomer(unifiedTo, {
     ticketingCustomer: {},
     connectionId: "<id>",
   });
@@ -161,7 +161,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingCreateTicketingCustomer2 failed:", res.error);
+    console.log("ticketingCreateTicketingCustomer failed:", res.error);
   }
 }
 
@@ -172,7 +172,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateTicketingCustomer2Request](../../sdk/models/operations/createticketingcustomer2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateTicketingCustomerRequest](../../sdk/models/operations/createticketingcustomerrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -187,13 +187,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createTicketingNote2
+## createTicketingNote
 
 Create a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingNote2" method="post" path="/ticketing/{connection_id}/note" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -204,7 +204,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.createTicketingNote2({
+  const result = await unifiedTo.ticketing.createTicketingNote({
     ticketingNote: {},
     connectionId: "<id>",
   });
@@ -221,7 +221,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingCreateTicketingNote2 } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingNote2.js";
+import { ticketingCreateTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -232,7 +232,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingCreateTicketingNote2(unifiedTo, {
+  const res = await ticketingCreateTicketingNote(unifiedTo, {
     ticketingNote: {},
     connectionId: "<id>",
   });
@@ -240,7 +240,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingCreateTicketingNote2 failed:", res.error);
+    console.log("ticketingCreateTicketingNote failed:", res.error);
   }
 }
 
@@ -251,7 +251,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateTicketingNote2Request](../../sdk/models/operations/createticketingnote2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateTicketingNoteRequest](../../sdk/models/operations/createticketingnoterequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -266,13 +266,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createTicketingTicket2
+## createTicketingTicket
 
 Create a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingTicket2" method="post" path="/ticketing/{connection_id}/ticket" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -283,7 +283,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.createTicketingTicket2({
+  const result = await unifiedTo.ticketing.createTicketingTicket({
     ticketingTicket: {},
     connectionId: "<id>",
   });
@@ -300,7 +300,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingCreateTicketingTicket2 } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingTicket2.js";
+import { ticketingCreateTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -311,7 +311,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingCreateTicketingTicket2(unifiedTo, {
+  const res = await ticketingCreateTicketingTicket(unifiedTo, {
     ticketingTicket: {},
     connectionId: "<id>",
   });
@@ -319,7 +319,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingCreateTicketingTicket2 failed:", res.error);
+    console.log("ticketingCreateTicketingTicket failed:", res.error);
   }
 }
 
@@ -330,7 +330,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateTicketingTicket2Request](../../sdk/models/operations/createticketingticket2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateTicketingTicketRequest](../../sdk/models/operations/createticketingticketrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -345,13 +345,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTicketingCategory2
+## getTicketingCategory
 
 Retrieve a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTicketingCategory2" method="get" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTicketingCategory" method="get" path="/ticketing/{connection_id}/category/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -362,7 +362,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.getTicketingCategory2({
+  const result = await unifiedTo.ticketing.getTicketingCategory({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -379,7 +379,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { categoryGetTicketingCategory2 } from "@unified-api/typescript-sdk/funcs/categoryGetTicketingCategory2.js";
+import { categoryGetTicketingCategory } from "@unified-api/typescript-sdk/funcs/categoryGetTicketingCategory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -390,7 +390,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await categoryGetTicketingCategory2(unifiedTo, {
+  const res = await categoryGetTicketingCategory(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -398,7 +398,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("categoryGetTicketingCategory2 failed:", res.error);
+    console.log("categoryGetTicketingCategory failed:", res.error);
   }
 }
 
@@ -409,7 +409,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTicketingCategory2Request](../../sdk/models/operations/getticketingcategory2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTicketingCategoryRequest](../../sdk/models/operations/getticketingcategoryrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -424,13 +424,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTicketingCustomer2
+## getTicketingCustomer
 
 Retrieve a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTicketingCustomer2" method="get" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTicketingCustomer" method="get" path="/ticketing/{connection_id}/customer/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -441,7 +441,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.getTicketingCustomer2({
+  const result = await unifiedTo.ticketing.getTicketingCustomer({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -458,7 +458,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingGetTicketingCustomer2 } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingCustomer2.js";
+import { ticketingGetTicketingCustomer } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingCustomer.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -469,7 +469,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingGetTicketingCustomer2(unifiedTo, {
+  const res = await ticketingGetTicketingCustomer(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -477,7 +477,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingGetTicketingCustomer2 failed:", res.error);
+    console.log("ticketingGetTicketingCustomer failed:", res.error);
   }
 }
 
@@ -488,7 +488,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTicketingCustomer2Request](../../sdk/models/operations/getticketingcustomer2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTicketingCustomerRequest](../../sdk/models/operations/getticketingcustomerrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -503,13 +503,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTicketingNote2
+## getTicketingNote
 
 Retrieve a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTicketingNote2" method="get" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTicketingNote" method="get" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -520,7 +520,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.getTicketingNote2({
+  const result = await unifiedTo.ticketing.getTicketingNote({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -537,7 +537,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingGetTicketingNote2 } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingNote2.js";
+import { ticketingGetTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -548,7 +548,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingGetTicketingNote2(unifiedTo, {
+  const res = await ticketingGetTicketingNote(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -556,7 +556,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingGetTicketingNote2 failed:", res.error);
+    console.log("ticketingGetTicketingNote failed:", res.error);
   }
 }
 
@@ -567,7 +567,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTicketingNote2Request](../../sdk/models/operations/getticketingnote2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTicketingNoteRequest](../../sdk/models/operations/getticketingnoterequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -582,13 +582,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getTicketingTicket2
+## getTicketingTicket
 
 Retrieve a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getTicketingTicket2" method="get" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getTicketingTicket" method="get" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -599,7 +599,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.getTicketingTicket2({
+  const result = await unifiedTo.ticketing.getTicketingTicket({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -616,7 +616,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingGetTicketingTicket2 } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingTicket2.js";
+import { ticketingGetTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -627,7 +627,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingGetTicketingTicket2(unifiedTo, {
+  const res = await ticketingGetTicketingTicket(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -635,7 +635,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingGetTicketingTicket2 failed:", res.error);
+    console.log("ticketingGetTicketingTicket failed:", res.error);
   }
 }
 
@@ -646,7 +646,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetTicketingTicket2Request](../../sdk/models/operations/getticketingticket2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetTicketingTicketRequest](../../sdk/models/operations/getticketingticketrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -661,13 +661,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTicketingCategories2
+## listTicketingCategories
 
 List all categories
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTicketingCategories2" method="get" path="/ticketing/{connection_id}/category" -->
+<!-- UsageSnippet language="typescript" operationID="listTicketingCategories" method="get" path="/ticketing/{connection_id}/category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -678,7 +678,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.listTicketingCategories2({
+  const result = await unifiedTo.ticketing.listTicketingCategories({
     connectionId: "<id>",
   });
 
@@ -694,7 +694,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { categoryListTicketingCategories2 } from "@unified-api/typescript-sdk/funcs/categoryListTicketingCategories2.js";
+import { categoryListTicketingCategories } from "@unified-api/typescript-sdk/funcs/categoryListTicketingCategories.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -705,14 +705,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await categoryListTicketingCategories2(unifiedTo, {
+  const res = await categoryListTicketingCategories(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("categoryListTicketingCategories2 failed:", res.error);
+    console.log("categoryListTicketingCategories failed:", res.error);
   }
 }
 
@@ -723,7 +723,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTicketingCategories2Request](../../sdk/models/operations/listticketingcategories2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTicketingCategoriesRequest](../../sdk/models/operations/listticketingcategoriesrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -738,13 +738,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTicketingCustomers2
+## listTicketingCustomers
 
 List all customers
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTicketingCustomers2" method="get" path="/ticketing/{connection_id}/customer" -->
+<!-- UsageSnippet language="typescript" operationID="listTicketingCustomers" method="get" path="/ticketing/{connection_id}/customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -755,7 +755,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.listTicketingCustomers2({
+  const result = await unifiedTo.ticketing.listTicketingCustomers({
     connectionId: "<id>",
   });
 
@@ -771,7 +771,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingListTicketingCustomers2 } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingCustomers2.js";
+import { ticketingListTicketingCustomers } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingCustomers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -782,14 +782,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingListTicketingCustomers2(unifiedTo, {
+  const res = await ticketingListTicketingCustomers(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingListTicketingCustomers2 failed:", res.error);
+    console.log("ticketingListTicketingCustomers failed:", res.error);
   }
 }
 
@@ -800,7 +800,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTicketingCustomers2Request](../../sdk/models/operations/listticketingcustomers2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTicketingCustomersRequest](../../sdk/models/operations/listticketingcustomersrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -815,13 +815,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTicketingNotes2
+## listTicketingNotes
 
 List all notes
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTicketingNotes2" method="get" path="/ticketing/{connection_id}/note" -->
+<!-- UsageSnippet language="typescript" operationID="listTicketingNotes" method="get" path="/ticketing/{connection_id}/note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -832,7 +832,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.listTicketingNotes2({
+  const result = await unifiedTo.ticketing.listTicketingNotes({
     connectionId: "<id>",
   });
 
@@ -848,7 +848,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingListTicketingNotes2 } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingNotes2.js";
+import { ticketingListTicketingNotes } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingNotes.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -859,14 +859,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingListTicketingNotes2(unifiedTo, {
+  const res = await ticketingListTicketingNotes(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingListTicketingNotes2 failed:", res.error);
+    console.log("ticketingListTicketingNotes failed:", res.error);
   }
 }
 
@@ -877,7 +877,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTicketingNotes2Request](../../sdk/models/operations/listticketingnotes2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTicketingNotesRequest](../../sdk/models/operations/listticketingnotesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -892,13 +892,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listTicketingTickets2
+## listTicketingTickets
 
 List all tickets
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listTicketingTickets2" method="get" path="/ticketing/{connection_id}/ticket" -->
+<!-- UsageSnippet language="typescript" operationID="listTicketingTickets" method="get" path="/ticketing/{connection_id}/ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -909,7 +909,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.listTicketingTickets2({
+  const result = await unifiedTo.ticketing.listTicketingTickets({
     connectionId: "<id>",
   });
 
@@ -925,7 +925,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingListTicketingTickets2 } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingTickets2.js";
+import { ticketingListTicketingTickets } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingTickets.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -936,14 +936,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingListTicketingTickets2(unifiedTo, {
+  const res = await ticketingListTicketingTickets(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingListTicketingTickets2 failed:", res.error);
+    console.log("ticketingListTicketingTickets failed:", res.error);
   }
 }
 
@@ -954,7 +954,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListTicketingTickets2Request](../../sdk/models/operations/listticketingtickets2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListTicketingTicketsRequest](../../sdk/models/operations/listticketingticketsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -969,13 +969,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchTicketingCategory2
+## patchTicketingCategory
 
 Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingCategory2" method="patch" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -986,7 +986,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.patchTicketingCategory2({
+  const result = await unifiedTo.ticketing.patchTicketingCategory({
     ticketingCategory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1004,7 +1004,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { categoryPatchTicketingCategory2 } from "@unified-api/typescript-sdk/funcs/categoryPatchTicketingCategory2.js";
+import { categoryPatchTicketingCategory } from "@unified-api/typescript-sdk/funcs/categoryPatchTicketingCategory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1015,7 +1015,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await categoryPatchTicketingCategory2(unifiedTo, {
+  const res = await categoryPatchTicketingCategory(unifiedTo, {
     ticketingCategory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1024,7 +1024,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("categoryPatchTicketingCategory2 failed:", res.error);
+    console.log("categoryPatchTicketingCategory failed:", res.error);
   }
 }
 
@@ -1035,7 +1035,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchTicketingCategory2Request](../../sdk/models/operations/patchticketingcategory2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchTicketingCategoryRequest](../../sdk/models/operations/patchticketingcategoryrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1050,13 +1050,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchTicketingCustomer2
+## patchTicketingCustomer
 
 Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingCustomer2" method="patch" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1067,7 +1067,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.patchTicketingCustomer2({
+  const result = await unifiedTo.ticketing.patchTicketingCustomer({
     ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1085,7 +1085,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingPatchTicketingCustomer2 } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingCustomer2.js";
+import { ticketingPatchTicketingCustomer } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingCustomer.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1096,7 +1096,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingPatchTicketingCustomer2(unifiedTo, {
+  const res = await ticketingPatchTicketingCustomer(unifiedTo, {
     ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1105,7 +1105,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingPatchTicketingCustomer2 failed:", res.error);
+    console.log("ticketingPatchTicketingCustomer failed:", res.error);
   }
 }
 
@@ -1116,7 +1116,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchTicketingCustomer2Request](../../sdk/models/operations/patchticketingcustomer2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchTicketingCustomerRequest](../../sdk/models/operations/patchticketingcustomerrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1131,13 +1131,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchTicketingNote2
+## patchTicketingNote
 
 Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingNote2" method="patch" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1148,7 +1148,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.patchTicketingNote2({
+  const result = await unifiedTo.ticketing.patchTicketingNote({
     ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1166,7 +1166,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingPatchTicketingNote2 } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingNote2.js";
+import { ticketingPatchTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1177,7 +1177,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingPatchTicketingNote2(unifiedTo, {
+  const res = await ticketingPatchTicketingNote(unifiedTo, {
     ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1186,7 +1186,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingPatchTicketingNote2 failed:", res.error);
+    console.log("ticketingPatchTicketingNote failed:", res.error);
   }
 }
 
@@ -1197,7 +1197,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchTicketingNote2Request](../../sdk/models/operations/patchticketingnote2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchTicketingNoteRequest](../../sdk/models/operations/patchticketingnoterequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1212,13 +1212,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchTicketingTicket2
+## patchTicketingTicket
 
 Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingTicket2" method="patch" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1229,7 +1229,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.patchTicketingTicket2({
+  const result = await unifiedTo.ticketing.patchTicketingTicket({
     ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1247,7 +1247,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingPatchTicketingTicket2 } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingTicket2.js";
+import { ticketingPatchTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1258,7 +1258,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingPatchTicketingTicket2(unifiedTo, {
+  const res = await ticketingPatchTicketingTicket(unifiedTo, {
     ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1267,7 +1267,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingPatchTicketingTicket2 failed:", res.error);
+    console.log("ticketingPatchTicketingTicket failed:", res.error);
   }
 }
 
@@ -1278,7 +1278,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchTicketingTicket2Request](../../sdk/models/operations/patchticketingticket2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchTicketingTicketRequest](../../sdk/models/operations/patchticketingticketrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1293,13 +1293,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeTicketingCategory2
+## removeTicketingCategory
 
 Remove a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeTicketingCategory2" method="delete" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeTicketingCategory" method="delete" path="/ticketing/{connection_id}/category/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1310,7 +1310,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.removeTicketingCategory2({
+  const result = await unifiedTo.ticketing.removeTicketingCategory({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1327,7 +1327,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { categoryRemoveTicketingCategory2 } from "@unified-api/typescript-sdk/funcs/categoryRemoveTicketingCategory2.js";
+import { categoryRemoveTicketingCategory } from "@unified-api/typescript-sdk/funcs/categoryRemoveTicketingCategory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1338,7 +1338,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await categoryRemoveTicketingCategory2(unifiedTo, {
+  const res = await categoryRemoveTicketingCategory(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1346,7 +1346,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("categoryRemoveTicketingCategory2 failed:", res.error);
+    console.log("categoryRemoveTicketingCategory failed:", res.error);
   }
 }
 
@@ -1357,14 +1357,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveTicketingCategory2Request](../../sdk/models/operations/removeticketingcategory2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveTicketingCategoryRequest](../../sdk/models/operations/removeticketingcategoryrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveTicketingCategory2Response](../../sdk/models/operations/removeticketingcategory2response.md)\>**
+**Promise\<[operations.RemoveTicketingCategoryResponse](../../sdk/models/operations/removeticketingcategoryresponse.md)\>**
 
 ### Errors
 
@@ -1372,13 +1372,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeTicketingCustomer2
+## removeTicketingCustomer
 
 Remove a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeTicketingCustomer2" method="delete" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeTicketingCustomer" method="delete" path="/ticketing/{connection_id}/customer/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1389,7 +1389,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.removeTicketingCustomer2({
+  const result = await unifiedTo.ticketing.removeTicketingCustomer({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1406,7 +1406,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingRemoveTicketingCustomer2 } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingCustomer2.js";
+import { ticketingRemoveTicketingCustomer } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingCustomer.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1417,7 +1417,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingRemoveTicketingCustomer2(unifiedTo, {
+  const res = await ticketingRemoveTicketingCustomer(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1425,7 +1425,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingRemoveTicketingCustomer2 failed:", res.error);
+    console.log("ticketingRemoveTicketingCustomer failed:", res.error);
   }
 }
 
@@ -1436,14 +1436,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveTicketingCustomer2Request](../../sdk/models/operations/removeticketingcustomer2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveTicketingCustomerRequest](../../sdk/models/operations/removeticketingcustomerrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveTicketingCustomer2Response](../../sdk/models/operations/removeticketingcustomer2response.md)\>**
+**Promise\<[operations.RemoveTicketingCustomerResponse](../../sdk/models/operations/removeticketingcustomerresponse.md)\>**
 
 ### Errors
 
@@ -1451,13 +1451,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeTicketingNote2
+## removeTicketingNote
 
 Remove a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeTicketingNote2" method="delete" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeTicketingNote" method="delete" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1468,7 +1468,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.removeTicketingNote2({
+  const result = await unifiedTo.ticketing.removeTicketingNote({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1485,7 +1485,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingRemoveTicketingNote2 } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingNote2.js";
+import { ticketingRemoveTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1496,7 +1496,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingRemoveTicketingNote2(unifiedTo, {
+  const res = await ticketingRemoveTicketingNote(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1504,7 +1504,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingRemoveTicketingNote2 failed:", res.error);
+    console.log("ticketingRemoveTicketingNote failed:", res.error);
   }
 }
 
@@ -1515,14 +1515,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveTicketingNote2Request](../../sdk/models/operations/removeticketingnote2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveTicketingNoteRequest](../../sdk/models/operations/removeticketingnoterequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveTicketingNote2Response](../../sdk/models/operations/removeticketingnote2response.md)\>**
+**Promise\<[operations.RemoveTicketingNoteResponse](../../sdk/models/operations/removeticketingnoteresponse.md)\>**
 
 ### Errors
 
@@ -1530,13 +1530,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeTicketingTicket2
+## removeTicketingTicket
 
 Remove a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeTicketingTicket2" method="delete" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeTicketingTicket" method="delete" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1547,7 +1547,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.removeTicketingTicket2({
+  const result = await unifiedTo.ticketing.removeTicketingTicket({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1564,7 +1564,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingRemoveTicketingTicket2 } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingTicket2.js";
+import { ticketingRemoveTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1575,7 +1575,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingRemoveTicketingTicket2(unifiedTo, {
+  const res = await ticketingRemoveTicketingTicket(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1583,7 +1583,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingRemoveTicketingTicket2 failed:", res.error);
+    console.log("ticketingRemoveTicketingTicket failed:", res.error);
   }
 }
 
@@ -1594,14 +1594,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveTicketingTicket2Request](../../sdk/models/operations/removeticketingticket2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveTicketingTicketRequest](../../sdk/models/operations/removeticketingticketrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveTicketingTicket2Response](../../sdk/models/operations/removeticketingticket2response.md)\>**
+**Promise\<[operations.RemoveTicketingTicketResponse](../../sdk/models/operations/removeticketingticketresponse.md)\>**
 
 ### Errors
 
@@ -1609,13 +1609,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateTicketingCategory2
+## updateTicketingCategory
 
 Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingCategory2" method="put" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1626,7 +1626,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.updateTicketingCategory2({
+  const result = await unifiedTo.ticketing.updateTicketingCategory({
     ticketingCategory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1644,7 +1644,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { categoryUpdateTicketingCategory2 } from "@unified-api/typescript-sdk/funcs/categoryUpdateTicketingCategory2.js";
+import { categoryUpdateTicketingCategory } from "@unified-api/typescript-sdk/funcs/categoryUpdateTicketingCategory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1655,7 +1655,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await categoryUpdateTicketingCategory2(unifiedTo, {
+  const res = await categoryUpdateTicketingCategory(unifiedTo, {
     ticketingCategory: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1664,7 +1664,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("categoryUpdateTicketingCategory2 failed:", res.error);
+    console.log("categoryUpdateTicketingCategory failed:", res.error);
   }
 }
 
@@ -1675,7 +1675,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateTicketingCategory2Request](../../sdk/models/operations/updateticketingcategory2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateTicketingCategoryRequest](../../sdk/models/operations/updateticketingcategoryrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1690,13 +1690,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateTicketingCustomer2
+## updateTicketingCustomer
 
 Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingCustomer2" method="put" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1707,7 +1707,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.updateTicketingCustomer2({
+  const result = await unifiedTo.ticketing.updateTicketingCustomer({
     ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1725,7 +1725,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingUpdateTicketingCustomer2 } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingCustomer2.js";
+import { ticketingUpdateTicketingCustomer } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingCustomer.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1736,7 +1736,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingUpdateTicketingCustomer2(unifiedTo, {
+  const res = await ticketingUpdateTicketingCustomer(unifiedTo, {
     ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1745,7 +1745,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingUpdateTicketingCustomer2 failed:", res.error);
+    console.log("ticketingUpdateTicketingCustomer failed:", res.error);
   }
 }
 
@@ -1756,7 +1756,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateTicketingCustomer2Request](../../sdk/models/operations/updateticketingcustomer2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateTicketingCustomerRequest](../../sdk/models/operations/updateticketingcustomerrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1771,13 +1771,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateTicketingNote2
+## updateTicketingNote
 
 Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingNote2" method="put" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1788,7 +1788,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.updateTicketingNote2({
+  const result = await unifiedTo.ticketing.updateTicketingNote({
     ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1806,7 +1806,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingUpdateTicketingNote2 } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingNote2.js";
+import { ticketingUpdateTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1817,7 +1817,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingUpdateTicketingNote2(unifiedTo, {
+  const res = await ticketingUpdateTicketingNote(unifiedTo, {
     ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1826,7 +1826,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingUpdateTicketingNote2 failed:", res.error);
+    console.log("ticketingUpdateTicketingNote failed:", res.error);
   }
 }
 
@@ -1837,7 +1837,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateTicketingNote2Request](../../sdk/models/operations/updateticketingnote2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateTicketingNoteRequest](../../sdk/models/operations/updateticketingnoterequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1852,13 +1852,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateTicketingTicket2
+## updateTicketingTicket
 
 Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingTicket2" method="put" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1869,7 +1869,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.ticketing.updateTicketingTicket2({
+  const result = await unifiedTo.ticketing.updateTicketingTicket({
     ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1887,7 +1887,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketingUpdateTicketingTicket2 } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingTicket2.js";
+import { ticketingUpdateTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1898,7 +1898,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketingUpdateTicketingTicket2(unifiedTo, {
+  const res = await ticketingUpdateTicketingTicket(unifiedTo, {
     ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1907,7 +1907,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketingUpdateTicketingTicket2 failed:", res.error);
+    console.log("ticketingUpdateTicketingTicket failed:", res.error);
   }
 }
 
@@ -1918,7 +1918,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateTicketingTicket2Request](../../sdk/models/operations/updateticketingticket2request.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateTicketingTicketRequest](../../sdk/models/operations/updateticketingticketrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

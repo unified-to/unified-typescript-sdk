@@ -35,6 +35,7 @@ export const ObjectType = {
   AccountingContact: "accounting_contact",
   AccountingInvoice: "accounting_invoice",
   AccountingBill: "accounting_bill",
+  AccountingVendorcredit: "accounting_vendorcredit",
   AccountingCreditmemo: "accounting_creditmemo",
   AccountingTaxrate: "accounting_taxrate",
   AccountingOrganization: "accounting_organization",

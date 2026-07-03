@@ -4,16 +4,16 @@
 
 ### Available Operations
 
-* [getPaymentPayout2](#getpaymentpayout2) - Retrieve a payout
-* [listPaymentPayouts2](#listpaymentpayouts2) - List all payouts
+* [getPaymentPayout](#getpaymentpayout) - Retrieve a payout
+* [listPaymentPayouts](#listpaymentpayouts) - List all payouts
 
-## getPaymentPayout2
+## getPaymentPayout
 
 Retrieve a payout
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getPaymentPayout2" method="get" path="/payment/{connection_id}/payout/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getPaymentPayout" method="get" path="/payment/{connection_id}/payout/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.payout.getPaymentPayout2({
+  const result = await unifiedTo.payout.getPaymentPayout({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { paymentGetPaymentPayout2 } from "@unified-api/typescript-sdk/funcs/paymentGetPaymentPayout2.js";
+import { paymentGetPaymentPayout } from "@unified-api/typescript-sdk/funcs/paymentGetPaymentPayout.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await paymentGetPaymentPayout2(unifiedTo, {
+  const res = await paymentGetPaymentPayout(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("paymentGetPaymentPayout2 failed:", res.error);
+    console.log("paymentGetPaymentPayout failed:", res.error);
   }
 }
 
@@ -71,7 +71,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetPaymentPayout2Request](../../sdk/models/operations/getpaymentpayout2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetPaymentPayoutRequest](../../sdk/models/operations/getpaymentpayoutrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -86,13 +86,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listPaymentPayouts2
+## listPaymentPayouts
 
 List all payouts
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listPaymentPayouts2" method="get" path="/payment/{connection_id}/payout" -->
+<!-- UsageSnippet language="typescript" operationID="listPaymentPayouts" method="get" path="/payment/{connection_id}/payout" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -103,7 +103,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.payout.listPaymentPayouts2({
+  const result = await unifiedTo.payout.listPaymentPayouts({
     connectionId: "<id>",
   });
 
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { paymentListPaymentPayouts2 } from "@unified-api/typescript-sdk/funcs/paymentListPaymentPayouts2.js";
+import { paymentListPaymentPayouts } from "@unified-api/typescript-sdk/funcs/paymentListPaymentPayouts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -130,14 +130,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await paymentListPaymentPayouts2(unifiedTo, {
+  const res = await paymentListPaymentPayouts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("paymentListPaymentPayouts2 failed:", res.error);
+    console.log("paymentListPaymentPayouts failed:", res.error);
   }
 }
 
@@ -148,7 +148,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListPaymentPayouts2Request](../../sdk/models/operations/listpaymentpayouts2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListPaymentPayoutsRequest](../../sdk/models/operations/listpaymentpayoutsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

@@ -1,0 +1,15 @@
+# GetMartechMemberQueryParamFields
+
+## Example Usage
+
+```typescript
+import { GetMartechMemberQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetMartechMemberQueryParamFields = "last_name";
+```
+
+## Values
+
+```typescript
+"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "company" | "emails" | "list_ids" | "tags" | "status" | "raw"
+```

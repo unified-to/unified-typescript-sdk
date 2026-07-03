@@ -4,15 +4,15 @@
 
 ### Available Operations
 
-* [listCrmPicklists2](#listcrmpicklists2) - List all picklists
+* [listCrmPicklists](#listcrmpicklists) - List all picklists
 
-## listCrmPicklists2
+## listCrmPicklists
 
 List all picklists
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCrmPicklists2" method="get" path="/crm/{connection_id}/picklist" -->
+<!-- UsageSnippet language="typescript" operationID="listCrmPicklists" method="get" path="/crm/{connection_id}/picklist" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -23,7 +23,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.picklist.listCrmPicklists2({
+  const result = await unifiedTo.picklist.listCrmPicklists({
     connectionId: "<id>",
   });
 
@@ -39,7 +39,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmListCrmPicklists2 } from "@unified-api/typescript-sdk/funcs/crmListCrmPicklists2.js";
+import { crmListCrmPicklists } from "@unified-api/typescript-sdk/funcs/crmListCrmPicklists.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -50,14 +50,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmListCrmPicklists2(unifiedTo, {
+  const res = await crmListCrmPicklists(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmListCrmPicklists2 failed:", res.error);
+    console.log("crmListCrmPicklists failed:", res.error);
   }
 }
 
@@ -68,7 +68,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCrmPicklists2Request](../../sdk/models/operations/listcrmpicklists2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCrmPicklistsRequest](../../sdk/models/operations/listcrmpicklistsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createVerificationRequest2](#createverificationrequest2) - Create a request
-* [getVerificationRequest2](#getverificationrequest2) - Retrieve a request
-* [listVerificationRequests2](#listverificationrequests2) - List all requests
-* [patchVerificationRequest2](#patchverificationrequest2) - Update a request
-* [removeVerificationRequest2](#removeverificationrequest2) - Remove a request
-* [updateVerificationRequest2](#updateverificationrequest2) - Update a request
+* [createVerificationRequest](#createverificationrequest) - Create a request
+* [getVerificationRequest](#getverificationrequest) - Retrieve a request
+* [listVerificationRequests](#listverificationrequests) - List all requests
+* [patchVerificationRequest](#patchverificationrequest) - Update a request
+* [removeVerificationRequest](#removeverificationrequest) - Remove a request
+* [updateVerificationRequest](#updateverificationrequest) - Update a request
 
-## createVerificationRequest2
+## createVerificationRequest
 
 Create a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createVerificationRequest2" method="post" path="/verification/{connection_id}/request" -->
+<!-- UsageSnippet language="typescript" operationID="createVerificationRequest" method="post" path="/verification/{connection_id}/request" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.request.createVerificationRequest2({
+  const result = await unifiedTo.request.createVerificationRequest({
     verificationRequest: {},
     connectionId: "<id>",
   });
@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationCreateVerificationRequest2 } from "@unified-api/typescript-sdk/funcs/verificationCreateVerificationRequest2.js";
+import { verificationCreateVerificationRequest } from "@unified-api/typescript-sdk/funcs/verificationCreateVerificationRequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationCreateVerificationRequest2(unifiedTo, {
+  const res = await verificationCreateVerificationRequest(unifiedTo, {
     verificationRequest: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationCreateVerificationRequest2 failed:", res.error);
+    console.log("verificationCreateVerificationRequest failed:", res.error);
   }
 }
 
@@ -75,7 +75,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateVerificationRequest2Request](../../sdk/models/operations/createverificationrequest2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateVerificationRequestRequest](../../sdk/models/operations/createverificationrequestrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -90,13 +90,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getVerificationRequest2
+## getVerificationRequest
 
 Retrieve a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getVerificationRequest2" method="get" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getVerificationRequest" method="get" path="/verification/{connection_id}/request/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.request.getVerificationRequest2({
+  const result = await unifiedTo.request.getVerificationRequest({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -124,7 +124,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationGetVerificationRequest2 } from "@unified-api/typescript-sdk/funcs/verificationGetVerificationRequest2.js";
+import { verificationGetVerificationRequest } from "@unified-api/typescript-sdk/funcs/verificationGetVerificationRequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationGetVerificationRequest2(unifiedTo, {
+  const res = await verificationGetVerificationRequest(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +143,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationGetVerificationRequest2 failed:", res.error);
+    console.log("verificationGetVerificationRequest failed:", res.error);
   }
 }
 
@@ -154,7 +154,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetVerificationRequest2Request](../../sdk/models/operations/getverificationrequest2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetVerificationRequestRequest](../../sdk/models/operations/getverificationrequestrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -169,13 +169,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listVerificationRequests2
+## listVerificationRequests
 
 List all requests
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listVerificationRequests2" method="get" path="/verification/{connection_id}/request" -->
+<!-- UsageSnippet language="typescript" operationID="listVerificationRequests" method="get" path="/verification/{connection_id}/request" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -186,7 +186,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.request.listVerificationRequests2({
+  const result = await unifiedTo.request.listVerificationRequests({
     connectionId: "<id>",
   });
 
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationListVerificationRequests2 } from "@unified-api/typescript-sdk/funcs/verificationListVerificationRequests2.js";
+import { verificationListVerificationRequests } from "@unified-api/typescript-sdk/funcs/verificationListVerificationRequests.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +213,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationListVerificationRequests2(unifiedTo, {
+  const res = await verificationListVerificationRequests(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationListVerificationRequests2 failed:", res.error);
+    console.log("verificationListVerificationRequests failed:", res.error);
   }
 }
 
@@ -231,7 +231,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListVerificationRequests2Request](../../sdk/models/operations/listverificationrequests2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListVerificationRequestsRequest](../../sdk/models/operations/listverificationrequestsrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -246,13 +246,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchVerificationRequest2
+## patchVerificationRequest
 
 Update a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchVerificationRequest2" method="patch" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchVerificationRequest" method="patch" path="/verification/{connection_id}/request/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -263,7 +263,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.request.patchVerificationRequest2({
+  const result = await unifiedTo.request.patchVerificationRequest({
     verificationRequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -281,7 +281,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationPatchVerificationRequest2 } from "@unified-api/typescript-sdk/funcs/verificationPatchVerificationRequest2.js";
+import { verificationPatchVerificationRequest } from "@unified-api/typescript-sdk/funcs/verificationPatchVerificationRequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +292,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationPatchVerificationRequest2(unifiedTo, {
+  const res = await verificationPatchVerificationRequest(unifiedTo, {
     verificationRequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +301,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationPatchVerificationRequest2 failed:", res.error);
+    console.log("verificationPatchVerificationRequest failed:", res.error);
   }
 }
 
@@ -312,7 +312,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchVerificationRequest2Request](../../sdk/models/operations/patchverificationrequest2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchVerificationRequestRequest](../../sdk/models/operations/patchverificationrequestrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -327,13 +327,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeVerificationRequest2
+## removeVerificationRequest
 
 Remove a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeVerificationRequest2" method="delete" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeVerificationRequest" method="delete" path="/verification/{connection_id}/request/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -344,7 +344,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.request.removeVerificationRequest2({
+  const result = await unifiedTo.request.removeVerificationRequest({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -361,7 +361,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationRemoveVerificationRequest2 } from "@unified-api/typescript-sdk/funcs/verificationRemoveVerificationRequest2.js";
+import { verificationRemoveVerificationRequest } from "@unified-api/typescript-sdk/funcs/verificationRemoveVerificationRequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationRemoveVerificationRequest2(unifiedTo, {
+  const res = await verificationRemoveVerificationRequest(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +380,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationRemoveVerificationRequest2 failed:", res.error);
+    console.log("verificationRemoveVerificationRequest failed:", res.error);
   }
 }
 
@@ -391,14 +391,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveVerificationRequest2Request](../../sdk/models/operations/removeverificationrequest2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveVerificationRequestRequest](../../sdk/models/operations/removeverificationrequestrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveVerificationRequest2Response](../../sdk/models/operations/removeverificationrequest2response.md)\>**
+**Promise\<[operations.RemoveVerificationRequestResponse](../../sdk/models/operations/removeverificationrequestresponse.md)\>**
 
 ### Errors
 
@@ -406,13 +406,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateVerificationRequest2
+## updateVerificationRequest
 
 Update a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateVerificationRequest2" method="put" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateVerificationRequest" method="put" path="/verification/{connection_id}/request/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -423,7 +423,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.request.updateVerificationRequest2({
+  const result = await unifiedTo.request.updateVerificationRequest({
     verificationRequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -441,7 +441,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { verificationUpdateVerificationRequest2 } from "@unified-api/typescript-sdk/funcs/verificationUpdateVerificationRequest2.js";
+import { verificationUpdateVerificationRequest } from "@unified-api/typescript-sdk/funcs/verificationUpdateVerificationRequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await verificationUpdateVerificationRequest2(unifiedTo, {
+  const res = await verificationUpdateVerificationRequest(unifiedTo, {
     verificationRequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +461,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("verificationUpdateVerificationRequest2 failed:", res.error);
+    console.log("verificationUpdateVerificationRequest failed:", res.error);
   }
 }
 
@@ -472,7 +472,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateVerificationRequest2Request](../../sdk/models/operations/updateverificationrequest2request.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateVerificationRequestRequest](../../sdk/models/operations/updateverificationrequestrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

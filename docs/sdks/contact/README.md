@@ -4,32 +4,32 @@
 
 ### Available Operations
 
-* [createAccountingContact2](#createaccountingcontact2) - Create a contact
-* [createCrmContact2](#createcrmcontact2) - Create a contact
-* [createUcContact2](#createuccontact2) - Create a contact
-* [getAccountingContact2](#getaccountingcontact2) - Retrieve a contact
-* [getCrmContact2](#getcrmcontact2) - Retrieve a contact
-* [getUcContact2](#getuccontact2) - Retrieve a contact
-* [listAccountingContacts2](#listaccountingcontacts2) - List all contacts
-* [listCrmContacts2](#listcrmcontacts2) - List all contacts
-* [listUcContacts2](#listuccontacts2) - List all contacts
-* [patchAccountingContact2](#patchaccountingcontact2) - Update a contact
-* [patchCrmContact2](#patchcrmcontact2) - Update a contact
-* [patchUcContact2](#patchuccontact2) - Update a contact
-* [removeAccountingContact2](#removeaccountingcontact2) - Remove a contact
-* [removeCrmContact2](#removecrmcontact2) - Remove a contact
-* [removeUcContact2](#removeuccontact2) - Remove a contact
-* [updateAccountingContact2](#updateaccountingcontact2) - Update a contact
-* [updateCrmContact2](#updatecrmcontact2) - Update a contact
-* [updateUcContact2](#updateuccontact2) - Update a contact
+* [createAccountingContact](#createaccountingcontact) - Create a contact
+* [createCrmContact](#createcrmcontact) - Create a contact
+* [createUcContact](#createuccontact) - Create a contact
+* [getAccountingContact](#getaccountingcontact) - Retrieve a contact
+* [getCrmContact](#getcrmcontact) - Retrieve a contact
+* [getUcContact](#getuccontact) - Retrieve a contact
+* [listAccountingContacts](#listaccountingcontacts) - List all contacts
+* [listCrmContacts](#listcrmcontacts) - List all contacts
+* [listUcContacts](#listuccontacts) - List all contacts
+* [patchAccountingContact](#patchaccountingcontact) - Update a contact
+* [patchCrmContact](#patchcrmcontact) - Update a contact
+* [patchUcContact](#patchuccontact) - Update a contact
+* [removeAccountingContact](#removeaccountingcontact) - Remove a contact
+* [removeCrmContact](#removecrmcontact) - Remove a contact
+* [removeUcContact](#removeuccontact) - Remove a contact
+* [updateAccountingContact](#updateaccountingcontact) - Update a contact
+* [updateCrmContact](#updatecrmcontact) - Update a contact
+* [updateUcContact](#updateuccontact) - Update a contact
 
-## createAccountingContact2
+## createAccountingContact
 
 Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingContact2" method="post" path="/accounting/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -40,7 +40,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.createAccountingContact2({
+  const result = await unifiedTo.contact.createAccountingContact({
     accountingContact: {},
     connectionId: "<id>",
   });
@@ -57,7 +57,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingCreateAccountingContact2 } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingContact2.js";
+import { accountingCreateAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -68,7 +68,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingCreateAccountingContact2(unifiedTo, {
+  const res = await accountingCreateAccountingContact(unifiedTo, {
     accountingContact: {},
     connectionId: "<id>",
   });
@@ -76,7 +76,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingCreateAccountingContact2 failed:", res.error);
+    console.log("accountingCreateAccountingContact failed:", res.error);
   }
 }
 
@@ -87,7 +87,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateAccountingContact2Request](../../sdk/models/operations/createaccountingcontact2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateAccountingContactRequest](../../sdk/models/operations/createaccountingcontactrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -102,13 +102,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createCrmContact2
+## createCrmContact
 
 Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmContact2" method="post" path="/crm/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -119,7 +119,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.createCrmContact2({
+  const result = await unifiedTo.contact.createCrmContact({
     crmContact: {},
     connectionId: "<id>",
   });
@@ -136,7 +136,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactCreateCrmContact2 } from "@unified-api/typescript-sdk/funcs/contactCreateCrmContact2.js";
+import { contactCreateCrmContact } from "@unified-api/typescript-sdk/funcs/contactCreateCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -147,7 +147,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactCreateCrmContact2(unifiedTo, {
+  const res = await contactCreateCrmContact(unifiedTo, {
     crmContact: {},
     connectionId: "<id>",
   });
@@ -155,7 +155,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactCreateCrmContact2 failed:", res.error);
+    console.log("contactCreateCrmContact failed:", res.error);
   }
 }
 
@@ -166,7 +166,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCrmContact2Request](../../sdk/models/operations/createcrmcontact2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateCrmContactRequest](../../sdk/models/operations/createcrmcontactrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -181,13 +181,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createUcContact2
+## createUcContact
 
 Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createUcContact2" method="post" path="/uc/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -198,7 +198,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.createUcContact2({
+  const result = await unifiedTo.contact.createUcContact({
     ucContact: {},
     connectionId: "<id>",
   });
@@ -215,7 +215,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactCreateUcContact2 } from "@unified-api/typescript-sdk/funcs/contactCreateUcContact2.js";
+import { contactCreateUcContact } from "@unified-api/typescript-sdk/funcs/contactCreateUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -226,7 +226,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactCreateUcContact2(unifiedTo, {
+  const res = await contactCreateUcContact(unifiedTo, {
     ucContact: {},
     connectionId: "<id>",
   });
@@ -234,7 +234,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactCreateUcContact2 failed:", res.error);
+    console.log("contactCreateUcContact failed:", res.error);
   }
 }
 
@@ -245,7 +245,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateUcContact2Request](../../sdk/models/operations/createuccontact2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateUcContactRequest](../../sdk/models/operations/createuccontactrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -260,13 +260,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAccountingContact2
+## getAccountingContact
 
 Retrieve a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAccountingContact2" method="get" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAccountingContact" method="get" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -277,7 +277,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.getAccountingContact2({
+  const result = await unifiedTo.contact.getAccountingContact({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -294,7 +294,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingGetAccountingContact2 } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingContact2.js";
+import { accountingGetAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -305,7 +305,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingGetAccountingContact2(unifiedTo, {
+  const res = await accountingGetAccountingContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -313,7 +313,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingGetAccountingContact2 failed:", res.error);
+    console.log("accountingGetAccountingContact failed:", res.error);
   }
 }
 
@@ -324,7 +324,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAccountingContact2Request](../../sdk/models/operations/getaccountingcontact2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAccountingContactRequest](../../sdk/models/operations/getaccountingcontactrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -339,13 +339,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCrmContact2
+## getCrmContact
 
 Retrieve a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getCrmContact2" method="get" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getCrmContact" method="get" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -356,7 +356,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.getCrmContact2({
+  const result = await unifiedTo.contact.getCrmContact({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -373,7 +373,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactGetCrmContact2 } from "@unified-api/typescript-sdk/funcs/contactGetCrmContact2.js";
+import { contactGetCrmContact } from "@unified-api/typescript-sdk/funcs/contactGetCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -384,7 +384,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactGetCrmContact2(unifiedTo, {
+  const res = await contactGetCrmContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -392,7 +392,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactGetCrmContact2 failed:", res.error);
+    console.log("contactGetCrmContact failed:", res.error);
   }
 }
 
@@ -403,7 +403,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCrmContact2Request](../../sdk/models/operations/getcrmcontact2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetCrmContactRequest](../../sdk/models/operations/getcrmcontactrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -418,13 +418,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getUcContact2
+## getUcContact
 
 Retrieve a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getUcContact2" method="get" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getUcContact" method="get" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.getUcContact2({
+  const result = await unifiedTo.contact.getUcContact({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -452,7 +452,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactGetUcContact2 } from "@unified-api/typescript-sdk/funcs/contactGetUcContact2.js";
+import { contactGetUcContact } from "@unified-api/typescript-sdk/funcs/contactGetUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -463,7 +463,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactGetUcContact2(unifiedTo, {
+  const res = await contactGetUcContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -471,7 +471,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactGetUcContact2 failed:", res.error);
+    console.log("contactGetUcContact failed:", res.error);
   }
 }
 
@@ -482,7 +482,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetUcContact2Request](../../sdk/models/operations/getuccontact2request.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetUcContactRequest](../../sdk/models/operations/getuccontactrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -497,13 +497,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAccountingContacts2
+## listAccountingContacts
 
 List all contacts
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAccountingContacts2" method="get" path="/accounting/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="listAccountingContacts" method="get" path="/accounting/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -514,7 +514,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.listAccountingContacts2({
+  const result = await unifiedTo.contact.listAccountingContacts({
     connectionId: "<id>",
   });
 
@@ -530,7 +530,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingListAccountingContacts2 } from "@unified-api/typescript-sdk/funcs/accountingListAccountingContacts2.js";
+import { accountingListAccountingContacts } from "@unified-api/typescript-sdk/funcs/accountingListAccountingContacts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -541,14 +541,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingListAccountingContacts2(unifiedTo, {
+  const res = await accountingListAccountingContacts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingListAccountingContacts2 failed:", res.error);
+    console.log("accountingListAccountingContacts failed:", res.error);
   }
 }
 
@@ -559,7 +559,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAccountingContacts2Request](../../sdk/models/operations/listaccountingcontacts2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAccountingContactsRequest](../../sdk/models/operations/listaccountingcontactsrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -574,13 +574,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCrmContacts2
+## listCrmContacts
 
 List all contacts
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listCrmContacts2" method="get" path="/crm/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="listCrmContacts" method="get" path="/crm/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -591,7 +591,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.listCrmContacts2({
+  const result = await unifiedTo.contact.listCrmContacts({
     connectionId: "<id>",
   });
 
@@ -607,7 +607,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactListCrmContacts2 } from "@unified-api/typescript-sdk/funcs/contactListCrmContacts2.js";
+import { contactListCrmContacts } from "@unified-api/typescript-sdk/funcs/contactListCrmContacts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -618,14 +618,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactListCrmContacts2(unifiedTo, {
+  const res = await contactListCrmContacts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactListCrmContacts2 failed:", res.error);
+    console.log("contactListCrmContacts failed:", res.error);
   }
 }
 
@@ -636,7 +636,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCrmContacts2Request](../../sdk/models/operations/listcrmcontacts2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListCrmContactsRequest](../../sdk/models/operations/listcrmcontactsrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -651,13 +651,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listUcContacts2
+## listUcContacts
 
 List all contacts
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listUcContacts2" method="get" path="/uc/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="listUcContacts" method="get" path="/uc/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -668,7 +668,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.listUcContacts2({
+  const result = await unifiedTo.contact.listUcContacts({
     connectionId: "<id>",
   });
 
@@ -684,7 +684,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactListUcContacts2 } from "@unified-api/typescript-sdk/funcs/contactListUcContacts2.js";
+import { contactListUcContacts } from "@unified-api/typescript-sdk/funcs/contactListUcContacts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -695,14 +695,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactListUcContacts2(unifiedTo, {
+  const res = await contactListUcContacts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactListUcContacts2 failed:", res.error);
+    console.log("contactListUcContacts failed:", res.error);
   }
 }
 
@@ -713,7 +713,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListUcContacts2Request](../../sdk/models/operations/listuccontacts2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListUcContactsRequest](../../sdk/models/operations/listuccontactsrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -728,13 +728,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAccountingContact2
+## patchAccountingContact
 
 Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingContact2" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -745,7 +745,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.patchAccountingContact2({
+  const result = await unifiedTo.contact.patchAccountingContact({
     accountingContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -763,7 +763,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingPatchAccountingContact2 } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingContact2.js";
+import { accountingPatchAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -774,7 +774,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingPatchAccountingContact2(unifiedTo, {
+  const res = await accountingPatchAccountingContact(unifiedTo, {
     accountingContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -783,7 +783,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingPatchAccountingContact2 failed:", res.error);
+    console.log("accountingPatchAccountingContact failed:", res.error);
   }
 }
 
@@ -794,7 +794,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchAccountingContact2Request](../../sdk/models/operations/patchaccountingcontact2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchAccountingContactRequest](../../sdk/models/operations/patchaccountingcontactrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -809,13 +809,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCrmContact2
+## patchCrmContact
 
 Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmContact2" method="patch" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -826,7 +826,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.patchCrmContact2({
+  const result = await unifiedTo.contact.patchCrmContact({
     crmContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -844,7 +844,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactPatchCrmContact2 } from "@unified-api/typescript-sdk/funcs/contactPatchCrmContact2.js";
+import { contactPatchCrmContact } from "@unified-api/typescript-sdk/funcs/contactPatchCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -855,7 +855,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactPatchCrmContact2(unifiedTo, {
+  const res = await contactPatchCrmContact(unifiedTo, {
     crmContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -864,7 +864,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactPatchCrmContact2 failed:", res.error);
+    console.log("contactPatchCrmContact failed:", res.error);
   }
 }
 
@@ -875,7 +875,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCrmContact2Request](../../sdk/models/operations/patchcrmcontact2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchCrmContactRequest](../../sdk/models/operations/patchcrmcontactrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -890,13 +890,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchUcContact2
+## patchUcContact
 
 Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchUcContact2" method="patch" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -907,7 +907,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.patchUcContact2({
+  const result = await unifiedTo.contact.patchUcContact({
     ucContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -925,7 +925,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactPatchUcContact2 } from "@unified-api/typescript-sdk/funcs/contactPatchUcContact2.js";
+import { contactPatchUcContact } from "@unified-api/typescript-sdk/funcs/contactPatchUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -936,7 +936,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactPatchUcContact2(unifiedTo, {
+  const res = await contactPatchUcContact(unifiedTo, {
     ucContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -945,7 +945,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactPatchUcContact2 failed:", res.error);
+    console.log("contactPatchUcContact failed:", res.error);
   }
 }
 
@@ -956,7 +956,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchUcContact2Request](../../sdk/models/operations/patchuccontact2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchUcContactRequest](../../sdk/models/operations/patchuccontactrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -971,13 +971,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAccountingContact2
+## removeAccountingContact
 
 Remove a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeAccountingContact2" method="delete" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeAccountingContact" method="delete" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -988,7 +988,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.removeAccountingContact2({
+  const result = await unifiedTo.contact.removeAccountingContact({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1005,7 +1005,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingRemoveAccountingContact2 } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingContact2.js";
+import { accountingRemoveAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1016,7 +1016,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingRemoveAccountingContact2(unifiedTo, {
+  const res = await accountingRemoveAccountingContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1024,7 +1024,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingRemoveAccountingContact2 failed:", res.error);
+    console.log("accountingRemoveAccountingContact failed:", res.error);
   }
 }
 
@@ -1035,14 +1035,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveAccountingContact2Request](../../sdk/models/operations/removeaccountingcontact2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveAccountingContactRequest](../../sdk/models/operations/removeaccountingcontactrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveAccountingContact2Response](../../sdk/models/operations/removeaccountingcontact2response.md)\>**
+**Promise\<[operations.RemoveAccountingContactResponse](../../sdk/models/operations/removeaccountingcontactresponse.md)\>**
 
 ### Errors
 
@@ -1050,13 +1050,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCrmContact2
+## removeCrmContact
 
 Remove a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeCrmContact2" method="delete" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeCrmContact" method="delete" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1067,7 +1067,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.removeCrmContact2({
+  const result = await unifiedTo.contact.removeCrmContact({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1084,7 +1084,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactRemoveCrmContact2 } from "@unified-api/typescript-sdk/funcs/contactRemoveCrmContact2.js";
+import { contactRemoveCrmContact } from "@unified-api/typescript-sdk/funcs/contactRemoveCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1095,7 +1095,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactRemoveCrmContact2(unifiedTo, {
+  const res = await contactRemoveCrmContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1103,7 +1103,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactRemoveCrmContact2 failed:", res.error);
+    console.log("contactRemoveCrmContact failed:", res.error);
   }
 }
 
@@ -1114,14 +1114,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCrmContact2Request](../../sdk/models/operations/removecrmcontact2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveCrmContactRequest](../../sdk/models/operations/removecrmcontactrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveCrmContact2Response](../../sdk/models/operations/removecrmcontact2response.md)\>**
+**Promise\<[operations.RemoveCrmContactResponse](../../sdk/models/operations/removecrmcontactresponse.md)\>**
 
 ### Errors
 
@@ -1129,13 +1129,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeUcContact2
+## removeUcContact
 
 Remove a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeUcContact2" method="delete" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeUcContact" method="delete" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1146,7 +1146,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.removeUcContact2({
+  const result = await unifiedTo.contact.removeUcContact({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1163,7 +1163,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactRemoveUcContact2 } from "@unified-api/typescript-sdk/funcs/contactRemoveUcContact2.js";
+import { contactRemoveUcContact } from "@unified-api/typescript-sdk/funcs/contactRemoveUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1174,7 +1174,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactRemoveUcContact2(unifiedTo, {
+  const res = await contactRemoveUcContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1182,7 +1182,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactRemoveUcContact2 failed:", res.error);
+    console.log("contactRemoveUcContact failed:", res.error);
   }
 }
 
@@ -1193,14 +1193,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveUcContact2Request](../../sdk/models/operations/removeuccontact2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveUcContactRequest](../../sdk/models/operations/removeuccontactrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveUcContact2Response](../../sdk/models/operations/removeuccontact2response.md)\>**
+**Promise\<[operations.RemoveUcContactResponse](../../sdk/models/operations/removeuccontactresponse.md)\>**
 
 ### Errors
 
@@ -1208,13 +1208,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAccountingContact2
+## updateAccountingContact
 
 Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingContact2" method="put" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1225,7 +1225,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.updateAccountingContact2({
+  const result = await unifiedTo.contact.updateAccountingContact({
     accountingContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1243,7 +1243,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { accountingUpdateAccountingContact2 } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingContact2.js";
+import { accountingUpdateAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1254,7 +1254,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await accountingUpdateAccountingContact2(unifiedTo, {
+  const res = await accountingUpdateAccountingContact(unifiedTo, {
     accountingContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1263,7 +1263,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountingUpdateAccountingContact2 failed:", res.error);
+    console.log("accountingUpdateAccountingContact failed:", res.error);
   }
 }
 
@@ -1274,7 +1274,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateAccountingContact2Request](../../sdk/models/operations/updateaccountingcontact2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateAccountingContactRequest](../../sdk/models/operations/updateaccountingcontactrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1289,13 +1289,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateCrmContact2
+## updateCrmContact
 
 Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmContact2" method="put" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1306,7 +1306,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.updateCrmContact2({
+  const result = await unifiedTo.contact.updateCrmContact({
     crmContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1324,7 +1324,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactUpdateCrmContact2 } from "@unified-api/typescript-sdk/funcs/contactUpdateCrmContact2.js";
+import { contactUpdateCrmContact } from "@unified-api/typescript-sdk/funcs/contactUpdateCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1335,7 +1335,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactUpdateCrmContact2(unifiedTo, {
+  const res = await contactUpdateCrmContact(unifiedTo, {
     crmContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1344,7 +1344,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactUpdateCrmContact2 failed:", res.error);
+    console.log("contactUpdateCrmContact failed:", res.error);
   }
 }
 
@@ -1355,7 +1355,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCrmContact2Request](../../sdk/models/operations/updatecrmcontact2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateCrmContactRequest](../../sdk/models/operations/updatecrmcontactrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1370,13 +1370,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateUcContact2
+## updateUcContact
 
 Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateUcContact2" method="put" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1387,7 +1387,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.contact.updateUcContact2({
+  const result = await unifiedTo.contact.updateUcContact({
     ucContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1405,7 +1405,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactUpdateUcContact2 } from "@unified-api/typescript-sdk/funcs/contactUpdateUcContact2.js";
+import { contactUpdateUcContact } from "@unified-api/typescript-sdk/funcs/contactUpdateUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1416,7 +1416,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactUpdateUcContact2(unifiedTo, {
+  const res = await contactUpdateUcContact(unifiedTo, {
     ucContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1425,7 +1425,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactUpdateUcContact2 failed:", res.error);
+    console.log("contactUpdateUcContact failed:", res.error);
   }
 }
 
@@ -1436,7 +1436,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateUcContact2Request](../../sdk/models/operations/updateuccontact2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateUcContactRequest](../../sdk/models/operations/updateuccontactrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

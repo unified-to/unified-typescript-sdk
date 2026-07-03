@@ -41,6 +41,7 @@ export * from "./accountingtransactioncontact.js";
 export * from "./accountingtransactionlineitem.js";
 export * from "./accountingtrialbalance.js";
 export * from "./accountingtrialbalancesubitem.js";
+export * from "./accountingvendorcredit.js";
 export * from "./adsad.js";
 export * from "./adscampaign.js";
 export * from "./adschedule.js";

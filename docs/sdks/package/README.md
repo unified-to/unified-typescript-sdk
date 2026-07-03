@@ -4,22 +4,22 @@
 
 ### Available Operations
 
-* [createAssessmentPackage2](#createassessmentpackage2) - Create an assessment package
-* [getAssessmentPackage2](#getassessmentpackage2) - Get an assessment package
-* [getVerificationPackage2](#getverificationpackage2) - Retrieve a package
-* [listAssessmentPackages2](#listassessmentpackages2) - List assessment packages
-* [listVerificationPackages2](#listverificationpackages2) - List all packages
-* [patchAssessmentPackage2](#patchassessmentpackage2) - Update an assessment package
-* [removeAssessmentPackage2](#removeassessmentpackage2) - Delete an assessment package
-* [updateAssessmentPackage2](#updateassessmentpackage2) - Update an assessment package
+* [createAssessmentPackage](#createassessmentpackage) - Create an assessment package
+* [getAssessmentPackage](#getassessmentpackage) - Get an assessment package
+* [getVerificationPackage](#getverificationpackage) - Retrieve a package
+* [listAssessmentPackages](#listassessmentpackages) - List assessment packages
+* [listVerificationPackages](#listverificationpackages) - List all packages
+* [patchAssessmentPackage](#patchassessmentpackage) - Update an assessment package
+* [removeAssessmentPackage](#removeassessmentpackage) - Delete an assessment package
+* [updateAssessmentPackage](#updateassessmentpackage) - Update an assessment package
 
-## createAssessmentPackage2
+## createAssessmentPackage
 
 Create an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAssessmentPackage2" method="post" path="/assessment/{connection_id}/package" -->
+<!-- UsageSnippet language="typescript" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,9 +30,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.createAssessmentPackage2({
+  const result = await unifiedTo.package.createAssessmentPackage({
     assessmentPackage: {
-      type: "VIDEO_INTERVIEW",
+      type: "REFERENCE_CHECK",
     },
     connectionId: "<id>",
   });
@@ -49,7 +49,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { assessmentCreateAssessmentPackage2 } from "@unified-api/typescript-sdk/funcs/assessmentCreateAssessmentPackage2.js";
+import { assessmentCreateAssessmentPackage } from "@unified-api/typescript-sdk/funcs/assessmentCreateAssessmentPackage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -60,9 +60,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await assessmentCreateAssessmentPackage2(unifiedTo, {
+  const res = await assessmentCreateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "VIDEO_INTERVIEW",
+      type: "REFERENCE_CHECK",
     },
     connectionId: "<id>",
   });
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("assessmentCreateAssessmentPackage2 failed:", res.error);
+    console.log("assessmentCreateAssessmentPackage failed:", res.error);
   }
 }
 
@@ -81,7 +81,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateAssessmentPackage2Request](../../sdk/models/operations/createassessmentpackage2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateAssessmentPackageRequest](../../sdk/models/operations/createassessmentpackagerequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -96,13 +96,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAssessmentPackage2
+## getAssessmentPackage
 
 Get an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getAssessmentPackage2" method="get" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getAssessmentPackage" method="get" path="/assessment/{connection_id}/package/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -113,7 +113,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.getAssessmentPackage2({
+  const result = await unifiedTo.package.getAssessmentPackage({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -130,7 +130,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { assessmentGetAssessmentPackage2 } from "@unified-api/typescript-sdk/funcs/assessmentGetAssessmentPackage2.js";
+import { assessmentGetAssessmentPackage } from "@unified-api/typescript-sdk/funcs/assessmentGetAssessmentPackage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -141,7 +141,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await assessmentGetAssessmentPackage2(unifiedTo, {
+  const res = await assessmentGetAssessmentPackage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -149,7 +149,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("assessmentGetAssessmentPackage2 failed:", res.error);
+    console.log("assessmentGetAssessmentPackage failed:", res.error);
   }
 }
 
@@ -160,7 +160,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetAssessmentPackage2Request](../../sdk/models/operations/getassessmentpackage2request.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetAssessmentPackageRequest](../../sdk/models/operations/getassessmentpackagerequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -175,13 +175,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getVerificationPackage2
+## getVerificationPackage
 
 Retrieve a package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getVerificationPackage2" method="get" path="/verification/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getVerificationPackage" method="get" path="/verification/{connection_id}/package/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -192,7 +192,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.getVerificationPackage2({
+  const result = await unifiedTo.package.getVerificationPackage({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -209,7 +209,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { packageGetVerificationPackage2 } from "@unified-api/typescript-sdk/funcs/packageGetVerificationPackage2.js";
+import { packageGetVerificationPackage } from "@unified-api/typescript-sdk/funcs/packageGetVerificationPackage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -220,7 +220,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await packageGetVerificationPackage2(unifiedTo, {
+  const res = await packageGetVerificationPackage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -228,7 +228,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("packageGetVerificationPackage2 failed:", res.error);
+    console.log("packageGetVerificationPackage failed:", res.error);
   }
 }
 
@@ -239,7 +239,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetVerificationPackage2Request](../../sdk/models/operations/getverificationpackage2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetVerificationPackageRequest](../../sdk/models/operations/getverificationpackagerequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -254,13 +254,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAssessmentPackages2
+## listAssessmentPackages
 
 List assessment packages
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listAssessmentPackages2" method="get" path="/assessment/{connection_id}/package" -->
+<!-- UsageSnippet language="typescript" operationID="listAssessmentPackages" method="get" path="/assessment/{connection_id}/package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -271,7 +271,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.listAssessmentPackages2({
+  const result = await unifiedTo.package.listAssessmentPackages({
     connectionId: "<id>",
   });
 
@@ -287,7 +287,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { assessmentListAssessmentPackages2 } from "@unified-api/typescript-sdk/funcs/assessmentListAssessmentPackages2.js";
+import { assessmentListAssessmentPackages } from "@unified-api/typescript-sdk/funcs/assessmentListAssessmentPackages.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,14 +298,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await assessmentListAssessmentPackages2(unifiedTo, {
+  const res = await assessmentListAssessmentPackages(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("assessmentListAssessmentPackages2 failed:", res.error);
+    console.log("assessmentListAssessmentPackages failed:", res.error);
   }
 }
 
@@ -316,7 +316,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListAssessmentPackages2Request](../../sdk/models/operations/listassessmentpackages2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListAssessmentPackagesRequest](../../sdk/models/operations/listassessmentpackagesrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -331,13 +331,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listVerificationPackages2
+## listVerificationPackages
 
 List all packages
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listVerificationPackages2" method="get" path="/verification/{connection_id}/package" -->
+<!-- UsageSnippet language="typescript" operationID="listVerificationPackages" method="get" path="/verification/{connection_id}/package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -348,7 +348,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.listVerificationPackages2({
+  const result = await unifiedTo.package.listVerificationPackages({
     connectionId: "<id>",
   });
 
@@ -364,7 +364,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { packageListVerificationPackages2 } from "@unified-api/typescript-sdk/funcs/packageListVerificationPackages2.js";
+import { packageListVerificationPackages } from "@unified-api/typescript-sdk/funcs/packageListVerificationPackages.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -375,14 +375,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await packageListVerificationPackages2(unifiedTo, {
+  const res = await packageListVerificationPackages(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("packageListVerificationPackages2 failed:", res.error);
+    console.log("packageListVerificationPackages failed:", res.error);
   }
 }
 
@@ -393,7 +393,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListVerificationPackages2Request](../../sdk/models/operations/listverificationpackages2request.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListVerificationPackagesRequest](../../sdk/models/operations/listverificationpackagesrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -408,13 +408,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAssessmentPackage2
+## patchAssessmentPackage
 
 Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAssessmentPackage2" method="patch" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -425,9 +425,9 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.patchAssessmentPackage2({
+  const result = await unifiedTo.package.patchAssessmentPackage({
     assessmentPackage: {
-      type: "OTHER",
+      type: "BACKGROUND_CHECK",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -445,7 +445,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { assessmentPatchAssessmentPackage2 } from "@unified-api/typescript-sdk/funcs/assessmentPatchAssessmentPackage2.js";
+import { assessmentPatchAssessmentPackage } from "@unified-api/typescript-sdk/funcs/assessmentPatchAssessmentPackage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -456,9 +456,9 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await assessmentPatchAssessmentPackage2(unifiedTo, {
+  const res = await assessmentPatchAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "OTHER",
+      type: "BACKGROUND_CHECK",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -467,7 +467,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("assessmentPatchAssessmentPackage2 failed:", res.error);
+    console.log("assessmentPatchAssessmentPackage failed:", res.error);
   }
 }
 
@@ -478,7 +478,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchAssessmentPackage2Request](../../sdk/models/operations/patchassessmentpackage2request.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchAssessmentPackageRequest](../../sdk/models/operations/patchassessmentpackagerequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -493,13 +493,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAssessmentPackage2
+## removeAssessmentPackage
 
 Delete an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeAssessmentPackage2" method="delete" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeAssessmentPackage" method="delete" path="/assessment/{connection_id}/package/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -510,7 +510,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.removeAssessmentPackage2({
+  const result = await unifiedTo.package.removeAssessmentPackage({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -527,7 +527,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { assessmentRemoveAssessmentPackage2 } from "@unified-api/typescript-sdk/funcs/assessmentRemoveAssessmentPackage2.js";
+import { assessmentRemoveAssessmentPackage } from "@unified-api/typescript-sdk/funcs/assessmentRemoveAssessmentPackage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -538,7 +538,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await assessmentRemoveAssessmentPackage2(unifiedTo, {
+  const res = await assessmentRemoveAssessmentPackage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -546,7 +546,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("assessmentRemoveAssessmentPackage2 failed:", res.error);
+    console.log("assessmentRemoveAssessmentPackage failed:", res.error);
   }
 }
 
@@ -557,14 +557,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveAssessmentPackage2Request](../../sdk/models/operations/removeassessmentpackage2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveAssessmentPackageRequest](../../sdk/models/operations/removeassessmentpackagerequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveAssessmentPackage2Response](../../sdk/models/operations/removeassessmentpackage2response.md)\>**
+**Promise\<[operations.RemoveAssessmentPackageResponse](../../sdk/models/operations/removeassessmentpackageresponse.md)\>**
 
 ### Errors
 
@@ -572,13 +572,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAssessmentPackage2
+## updateAssessmentPackage
 
 Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAssessmentPackage2" method="put" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -589,7 +589,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.package.updateAssessmentPackage2({
+  const result = await unifiedTo.package.updateAssessmentPackage({
     assessmentPackage: {
       type: "OTHER",
     },
@@ -609,7 +609,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { assessmentUpdateAssessmentPackage2 } from "@unified-api/typescript-sdk/funcs/assessmentUpdateAssessmentPackage2.js";
+import { assessmentUpdateAssessmentPackage } from "@unified-api/typescript-sdk/funcs/assessmentUpdateAssessmentPackage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -620,7 +620,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await assessmentUpdateAssessmentPackage2(unifiedTo, {
+  const res = await assessmentUpdateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
       type: "OTHER",
     },
@@ -631,7 +631,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("assessmentUpdateAssessmentPackage2 failed:", res.error);
+    console.log("assessmentUpdateAssessmentPackage failed:", res.error);
   }
 }
 
@@ -642,7 +642,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateAssessmentPackage2Request](../../sdk/models/operations/updateassessmentpackage2request.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateAssessmentPackageRequest](../../sdk/models/operations/updateassessmentpackagerequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

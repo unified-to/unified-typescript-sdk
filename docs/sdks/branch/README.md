@@ -4,20 +4,20 @@
 
 ### Available Operations
 
-* [createRepoBranch2](#createrepobranch2) - Create a branch
-* [getRepoBranch2](#getrepobranch2) - Retrieve a branch
-* [listRepoBranches2](#listrepobranches2) - List all branches
-* [patchRepoBranch2](#patchrepobranch2) - Update a branch
-* [removeRepoBranch2](#removerepobranch2) - Remove a branch
-* [updateRepoBranch2](#updaterepobranch2) - Update a branch
+* [createRepoBranch](#createrepobranch) - Create a branch
+* [getRepoBranch](#getrepobranch) - Retrieve a branch
+* [listRepoBranches](#listrepobranches) - List all branches
+* [patchRepoBranch](#patchrepobranch) - Update a branch
+* [removeRepoBranch](#removerepobranch) - Remove a branch
+* [updateRepoBranch](#updaterepobranch) - Update a branch
 
-## createRepoBranch2
+## createRepoBranch
 
 Create a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoBranch2" method="post" path="/repo/{connection_id}/branch" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -28,7 +28,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.branch.createRepoBranch2({
+  const result = await unifiedTo.branch.createRepoBranch({
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -48,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoCreateRepoBranch2 } from "@unified-api/typescript-sdk/funcs/repoCreateRepoBranch2.js";
+import { repoCreateRepoBranch } from "@unified-api/typescript-sdk/funcs/repoCreateRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -59,7 +59,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoCreateRepoBranch2(unifiedTo, {
+  const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoCreateRepoBranch2 failed:", res.error);
+    console.log("repoCreateRepoBranch failed:", res.error);
   }
 }
 
@@ -81,7 +81,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateRepoBranch2Request](../../sdk/models/operations/createrepobranch2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateRepoBranchRequest](../../sdk/models/operations/createrepobranchrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -96,13 +96,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getRepoBranch2
+## getRepoBranch
 
 Retrieve a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getRepoBranch2" method="get" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getRepoBranch" method="get" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -113,7 +113,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.branch.getRepoBranch2({
+  const result = await unifiedTo.branch.getRepoBranch({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -130,7 +130,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoGetRepoBranch2 } from "@unified-api/typescript-sdk/funcs/repoGetRepoBranch2.js";
+import { repoGetRepoBranch } from "@unified-api/typescript-sdk/funcs/repoGetRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -141,7 +141,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoGetRepoBranch2(unifiedTo, {
+  const res = await repoGetRepoBranch(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -149,7 +149,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoGetRepoBranch2 failed:", res.error);
+    console.log("repoGetRepoBranch failed:", res.error);
   }
 }
 
@@ -160,7 +160,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetRepoBranch2Request](../../sdk/models/operations/getrepobranch2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetRepoBranchRequest](../../sdk/models/operations/getrepobranchrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -175,13 +175,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listRepoBranches2
+## listRepoBranches
 
 List all branches
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listRepoBranches2" method="get" path="/repo/{connection_id}/branch" -->
+<!-- UsageSnippet language="typescript" operationID="listRepoBranches" method="get" path="/repo/{connection_id}/branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -192,7 +192,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.branch.listRepoBranches2({
+  const result = await unifiedTo.branch.listRepoBranches({
     connectionId: "<id>",
   });
 
@@ -208,7 +208,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoListRepoBranches2 } from "@unified-api/typescript-sdk/funcs/repoListRepoBranches2.js";
+import { repoListRepoBranches } from "@unified-api/typescript-sdk/funcs/repoListRepoBranches.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -219,14 +219,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoListRepoBranches2(unifiedTo, {
+  const res = await repoListRepoBranches(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoListRepoBranches2 failed:", res.error);
+    console.log("repoListRepoBranches failed:", res.error);
   }
 }
 
@@ -237,7 +237,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListRepoBranches2Request](../../sdk/models/operations/listrepobranches2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListRepoBranchesRequest](../../sdk/models/operations/listrepobranchesrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -252,13 +252,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchRepoBranch2
+## patchRepoBranch
 
 Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoBranch2" method="patch" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,7 +269,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.branch.patchRepoBranch2({
+  const result = await unifiedTo.branch.patchRepoBranch({
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -290,7 +290,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoPatchRepoBranch2 } from "@unified-api/typescript-sdk/funcs/repoPatchRepoBranch2.js";
+import { repoPatchRepoBranch } from "@unified-api/typescript-sdk/funcs/repoPatchRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -301,7 +301,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoPatchRepoBranch2(unifiedTo, {
+  const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -313,7 +313,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoPatchRepoBranch2 failed:", res.error);
+    console.log("repoPatchRepoBranch failed:", res.error);
   }
 }
 
@@ -324,7 +324,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchRepoBranch2Request](../../sdk/models/operations/patchrepobranch2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchRepoBranchRequest](../../sdk/models/operations/patchrepobranchrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -339,13 +339,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeRepoBranch2
+## removeRepoBranch
 
 Remove a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeRepoBranch2" method="delete" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeRepoBranch" method="delete" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -356,7 +356,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.branch.removeRepoBranch2({
+  const result = await unifiedTo.branch.removeRepoBranch({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -373,7 +373,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoRemoveRepoBranch2 } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoBranch2.js";
+import { repoRemoveRepoBranch } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -384,7 +384,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoRemoveRepoBranch2(unifiedTo, {
+  const res = await repoRemoveRepoBranch(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -392,7 +392,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoRemoveRepoBranch2 failed:", res.error);
+    console.log("repoRemoveRepoBranch failed:", res.error);
   }
 }
 
@@ -403,14 +403,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveRepoBranch2Request](../../sdk/models/operations/removerepobranch2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveRepoBranchRequest](../../sdk/models/operations/removerepobranchrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveRepoBranch2Response](../../sdk/models/operations/removerepobranch2response.md)\>**
+**Promise\<[operations.RemoveRepoBranchResponse](../../sdk/models/operations/removerepobranchresponse.md)\>**
 
 ### Errors
 
@@ -418,13 +418,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateRepoBranch2
+## updateRepoBranch
 
 Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoBranch2" method="put" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.branch.updateRepoBranch2({
+  const result = await unifiedTo.branch.updateRepoBranch({
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -456,7 +456,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoUpdateRepoBranch2 } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoBranch2.js";
+import { repoUpdateRepoBranch } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -467,7 +467,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoUpdateRepoBranch2(unifiedTo, {
+  const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -479,7 +479,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoUpdateRepoBranch2 failed:", res.error);
+    console.log("repoUpdateRepoBranch failed:", res.error);
   }
 }
 
@@ -490,7 +490,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateRepoBranch2Request](../../sdk/models/operations/updaterepobranch2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateRepoBranchRequest](../../sdk/models/operations/updaterepobranchrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

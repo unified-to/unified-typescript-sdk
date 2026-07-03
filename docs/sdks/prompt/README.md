@@ -4,15 +4,15 @@
 
 ### Available Operations
 
-* [createGenaiPrompt2](#creategenaiprompt2) - Create a prompt
+* [createGenaiPrompt](#creategenaiprompt) - Create a prompt
 
-## createGenaiPrompt2
+## createGenaiPrompt
 
 Create a prompt
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createGenaiPrompt2" method="post" path="/genai/{connection_id}/prompt" -->
+<!-- UsageSnippet language="typescript" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -23,7 +23,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.prompt.createGenaiPrompt2({
+  const result = await unifiedTo.prompt.createGenaiPrompt({
     genaiPrompt: {},
     connectionId: "<id>",
   });
@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { genaiCreateGenaiPrompt2 } from "@unified-api/typescript-sdk/funcs/genaiCreateGenaiPrompt2.js";
+import { genaiCreateGenaiPrompt } from "@unified-api/typescript-sdk/funcs/genaiCreateGenaiPrompt.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,7 +51,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await genaiCreateGenaiPrompt2(unifiedTo, {
+  const res = await genaiCreateGenaiPrompt(unifiedTo, {
     genaiPrompt: {},
     connectionId: "<id>",
   });
@@ -59,7 +59,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("genaiCreateGenaiPrompt2 failed:", res.error);
+    console.log("genaiCreateGenaiPrompt failed:", res.error);
   }
 }
 
@@ -70,7 +70,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateGenaiPrompt2Request](../../sdk/models/operations/creategenaiprompt2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateGenaiPromptRequest](../../sdk/models/operations/creategenaipromptrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

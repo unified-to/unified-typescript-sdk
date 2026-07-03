@@ -149,6 +149,7 @@ import { Trialbalance } from "./trialbalance.js";
 import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
 import { User } from "./user.js";
+import { Vendorcredit } from "./vendorcredit.js";
 import { Verification } from "./verification.js";
 import { Visitor } from "./visitor.js";
 import { Webhook } from "./webhook.js";
@@ -253,6 +254,11 @@ export class UnifiedTo extends ClientSDK {
   private _trialbalance?: Trialbalance;
   get trialbalance(): Trialbalance {
     return (this._trialbalance ??= new Trialbalance(this._options));
+  }
+
+  private _vendorcredit?: Vendorcredit;
+  get vendorcredit(): Vendorcredit {
+    return (this._vendorcredit ??= new Vendorcredit(this._options));
   }
 
   private _ads?: Ads;

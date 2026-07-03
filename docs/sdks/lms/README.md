@@ -4,56 +4,56 @@
 
 ### Available Operations
 
-* [createLmsActivity2](#createlmsactivity2) - Create an activity
-* [createLmsClass2](#createlmsclass2) - Create a class
-* [createLmsCollection2](#createlmscollection2) - Create a collection
-* [createLmsContent2](#createlmscontent2) - Create a content
-* [createLmsCourse2](#createlmscourse2) - Create a course
-* [createLmsInstructor2](#createlmsinstructor2) - Create an instructor
-* [createLmsStudent2](#createlmsstudent2) - Create a student
-* [getLmsActivity2](#getlmsactivity2) - Retrieve an activity
-* [getLmsClass2](#getlmsclass2) - Retrieve a class
-* [getLmsCollection2](#getlmscollection2) - Retrieve a collection
-* [getLmsContent2](#getlmscontent2) - Retrieve a content
-* [getLmsCourse2](#getlmscourse2) - Retrieve a course
-* [getLmsInstructor2](#getlmsinstructor2) - Retrieve an instructor
-* [getLmsStudent2](#getlmsstudent2) - Retrieve a student
-* [listLmsActivities2](#listlmsactivities2) - List all activities
-* [listLmsClasses2](#listlmsclasses2) - List all classes
-* [listLmsCollections2](#listlmscollections2) - List all collections
-* [listLmsContents2](#listlmscontents2) - List all contents
-* [listLmsCourses2](#listlmscourses2) - List all courses
-* [listLmsInstructors2](#listlmsinstructors2) - List all instructors
-* [listLmsStudents2](#listlmsstudents2) - List all students
-* [patchLmsActivity2](#patchlmsactivity2) - Update an activity
-* [patchLmsClass2](#patchlmsclass2) - Update a class
-* [patchLmsCollection2](#patchlmscollection2) - Update a collection
-* [patchLmsContent2](#patchlmscontent2) - Update a content
-* [patchLmsCourse2](#patchlmscourse2) - Update a course
-* [patchLmsInstructor2](#patchlmsinstructor2) - Update an instructor
-* [patchLmsStudent2](#patchlmsstudent2) - Update a student
-* [removeLmsActivity2](#removelmsactivity2) - Remove an activity
-* [removeLmsClass2](#removelmsclass2) - Remove a class
-* [removeLmsCollection2](#removelmscollection2) - Remove a collection
-* [removeLmsContent2](#removelmscontent2) - Remove a content
-* [removeLmsCourse2](#removelmscourse2) - Remove a course
-* [removeLmsInstructor2](#removelmsinstructor2) - Remove an instructor
-* [removeLmsStudent2](#removelmsstudent2) - Remove a student
-* [updateLmsActivity2](#updatelmsactivity2) - Update an activity
-* [updateLmsClass2](#updatelmsclass2) - Update a class
-* [updateLmsCollection2](#updatelmscollection2) - Update a collection
-* [updateLmsContent2](#updatelmscontent2) - Update a content
-* [updateLmsCourse2](#updatelmscourse2) - Update a course
-* [updateLmsInstructor2](#updatelmsinstructor2) - Update an instructor
-* [updateLmsStudent2](#updatelmsstudent2) - Update a student
+* [createLmsActivity](#createlmsactivity) - Create an activity
+* [createLmsClass](#createlmsclass) - Create a class
+* [createLmsCollection](#createlmscollection) - Create a collection
+* [createLmsContent](#createlmscontent) - Create a content
+* [createLmsCourse](#createlmscourse) - Create a course
+* [createLmsInstructor](#createlmsinstructor) - Create an instructor
+* [createLmsStudent](#createlmsstudent) - Create a student
+* [getLmsActivity](#getlmsactivity) - Retrieve an activity
+* [getLmsClass](#getlmsclass) - Retrieve a class
+* [getLmsCollection](#getlmscollection) - Retrieve a collection
+* [getLmsContent](#getlmscontent) - Retrieve a content
+* [getLmsCourse](#getlmscourse) - Retrieve a course
+* [getLmsInstructor](#getlmsinstructor) - Retrieve an instructor
+* [getLmsStudent](#getlmsstudent) - Retrieve a student
+* [listLmsActivities](#listlmsactivities) - List all activities
+* [listLmsClasses](#listlmsclasses) - List all classes
+* [listLmsCollections](#listlmscollections) - List all collections
+* [listLmsContents](#listlmscontents) - List all contents
+* [listLmsCourses](#listlmscourses) - List all courses
+* [listLmsInstructors](#listlmsinstructors) - List all instructors
+* [listLmsStudents](#listlmsstudents) - List all students
+* [patchLmsActivity](#patchlmsactivity) - Update an activity
+* [patchLmsClass](#patchlmsclass) - Update a class
+* [patchLmsCollection](#patchlmscollection) - Update a collection
+* [patchLmsContent](#patchlmscontent) - Update a content
+* [patchLmsCourse](#patchlmscourse) - Update a course
+* [patchLmsInstructor](#patchlmsinstructor) - Update an instructor
+* [patchLmsStudent](#patchlmsstudent) - Update a student
+* [removeLmsActivity](#removelmsactivity) - Remove an activity
+* [removeLmsClass](#removelmsclass) - Remove a class
+* [removeLmsCollection](#removelmscollection) - Remove a collection
+* [removeLmsContent](#removelmscontent) - Remove a content
+* [removeLmsCourse](#removelmscourse) - Remove a course
+* [removeLmsInstructor](#removelmsinstructor) - Remove an instructor
+* [removeLmsStudent](#removelmsstudent) - Remove a student
+* [updateLmsActivity](#updatelmsactivity) - Update an activity
+* [updateLmsClass](#updatelmsclass) - Update a class
+* [updateLmsCollection](#updatelmscollection) - Update a collection
+* [updateLmsContent](#updatelmscontent) - Update a content
+* [updateLmsCourse](#updatelmscourse) - Update a course
+* [updateLmsInstructor](#updatelmsinstructor) - Update an instructor
+* [updateLmsStudent](#updatelmsstudent) - Update a student
 
-## createLmsActivity2
+## createLmsActivity
 
 Create an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsActivity2" method="post" path="/lms/{connection_id}/activity" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -64,7 +64,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.createLmsActivity2({
+  const result = await unifiedTo.lms.createLmsActivity({
     lmsActivity: {},
     connectionId: "<id>",
   });
@@ -81,7 +81,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { activityCreateLmsActivity2 } from "@unified-api/typescript-sdk/funcs/activityCreateLmsActivity2.js";
+import { activityCreateLmsActivity } from "@unified-api/typescript-sdk/funcs/activityCreateLmsActivity.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -92,7 +92,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await activityCreateLmsActivity2(unifiedTo, {
+  const res = await activityCreateLmsActivity(unifiedTo, {
     lmsActivity: {},
     connectionId: "<id>",
   });
@@ -100,7 +100,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityCreateLmsActivity2 failed:", res.error);
+    console.log("activityCreateLmsActivity failed:", res.error);
   }
 }
 
@@ -111,7 +111,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateLmsActivity2Request](../../sdk/models/operations/createlmsactivity2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateLmsActivityRequest](../../sdk/models/operations/createlmsactivityrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -126,13 +126,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createLmsClass2
+## createLmsClass
 
 Create a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsClass2" method="post" path="/lms/{connection_id}/class" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -143,7 +143,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.createLmsClass2({
+  const result = await unifiedTo.lms.createLmsClass({
     lmsClass: {},
     connectionId: "<id>",
   });
@@ -160,7 +160,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsCreateLmsClass2 } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsClass2.js";
+import { lmsCreateLmsClass } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -171,7 +171,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsCreateLmsClass2(unifiedTo, {
+  const res = await lmsCreateLmsClass(unifiedTo, {
     lmsClass: {},
     connectionId: "<id>",
   });
@@ -179,7 +179,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsCreateLmsClass2 failed:", res.error);
+    console.log("lmsCreateLmsClass failed:", res.error);
   }
 }
 
@@ -190,7 +190,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateLmsClass2Request](../../sdk/models/operations/createlmsclass2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateLmsClassRequest](../../sdk/models/operations/createlmsclassrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -205,13 +205,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createLmsCollection2
+## createLmsCollection
 
 Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsCollection2" method="post" path="/lms/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -222,7 +222,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.createLmsCollection2({
+  const result = await unifiedTo.lms.createLmsCollection({
     lmsCollection: {},
     connectionId: "<id>",
   });
@@ -239,7 +239,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionCreateLmsCollection2 } from "@unified-api/typescript-sdk/funcs/collectionCreateLmsCollection2.js";
+import { collectionCreateLmsCollection } from "@unified-api/typescript-sdk/funcs/collectionCreateLmsCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -250,7 +250,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionCreateLmsCollection2(unifiedTo, {
+  const res = await collectionCreateLmsCollection(unifiedTo, {
     lmsCollection: {},
     connectionId: "<id>",
   });
@@ -258,7 +258,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionCreateLmsCollection2 failed:", res.error);
+    console.log("collectionCreateLmsCollection failed:", res.error);
   }
 }
 
@@ -269,7 +269,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateLmsCollection2Request](../../sdk/models/operations/createlmscollection2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateLmsCollectionRequest](../../sdk/models/operations/createlmscollectionrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -284,13 +284,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createLmsContent2
+## createLmsContent
 
 Create a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsContent2" method="post" path="/lms/{connection_id}/content" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsContent" method="post" path="/lms/{connection_id}/content" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -301,7 +301,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.createLmsContent2({
+  const result = await unifiedTo.lms.createLmsContent({
     lmsContent: {},
     connectionId: "<id>",
   });
@@ -318,7 +318,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsCreateLmsContent2 } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsContent2.js";
+import { lmsCreateLmsContent } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsContent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -329,7 +329,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsCreateLmsContent2(unifiedTo, {
+  const res = await lmsCreateLmsContent(unifiedTo, {
     lmsContent: {},
     connectionId: "<id>",
   });
@@ -337,7 +337,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsCreateLmsContent2 failed:", res.error);
+    console.log("lmsCreateLmsContent failed:", res.error);
   }
 }
 
@@ -348,7 +348,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateLmsContent2Request](../../sdk/models/operations/createlmscontent2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateLmsContentRequest](../../sdk/models/operations/createlmscontentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -363,13 +363,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createLmsCourse2
+## createLmsCourse
 
 Create a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsCourse2" method="post" path="/lms/{connection_id}/course" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.createLmsCourse2({
+  const result = await unifiedTo.lms.createLmsCourse({
     lmsCourse: {},
     connectionId: "<id>",
   });
@@ -397,7 +397,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsCreateLmsCourse2 } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsCourse2.js";
+import { lmsCreateLmsCourse } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsCourse.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -408,7 +408,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsCreateLmsCourse2(unifiedTo, {
+  const res = await lmsCreateLmsCourse(unifiedTo, {
     lmsCourse: {},
     connectionId: "<id>",
   });
@@ -416,7 +416,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsCreateLmsCourse2 failed:", res.error);
+    console.log("lmsCreateLmsCourse failed:", res.error);
   }
 }
 
@@ -427,7 +427,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateLmsCourse2Request](../../sdk/models/operations/createlmscourse2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateLmsCourseRequest](../../sdk/models/operations/createlmscourserequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -442,13 +442,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createLmsInstructor2
+## createLmsInstructor
 
 Create an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsInstructor2" method="post" path="/lms/{connection_id}/instructor" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -459,7 +459,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.createLmsInstructor2({
+  const result = await unifiedTo.lms.createLmsInstructor({
     lmsInstructor: {},
     connectionId: "<id>",
   });
@@ -476,7 +476,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsCreateLmsInstructor2 } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsInstructor2.js";
+import { lmsCreateLmsInstructor } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsInstructor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -487,7 +487,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsCreateLmsInstructor2(unifiedTo, {
+  const res = await lmsCreateLmsInstructor(unifiedTo, {
     lmsInstructor: {},
     connectionId: "<id>",
   });
@@ -495,7 +495,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsCreateLmsInstructor2 failed:", res.error);
+    console.log("lmsCreateLmsInstructor failed:", res.error);
   }
 }
 
@@ -506,7 +506,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateLmsInstructor2Request](../../sdk/models/operations/createlmsinstructor2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateLmsInstructorRequest](../../sdk/models/operations/createlmsinstructorrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -521,13 +521,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createLmsStudent2
+## createLmsStudent
 
 Create a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsStudent2" method="post" path="/lms/{connection_id}/student" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -538,7 +538,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.createLmsStudent2({
+  const result = await unifiedTo.lms.createLmsStudent({
     lmsStudent: {},
     connectionId: "<id>",
   });
@@ -555,7 +555,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsCreateLmsStudent2 } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsStudent2.js";
+import { lmsCreateLmsStudent } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsStudent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -566,7 +566,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsCreateLmsStudent2(unifiedTo, {
+  const res = await lmsCreateLmsStudent(unifiedTo, {
     lmsStudent: {},
     connectionId: "<id>",
   });
@@ -574,7 +574,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsCreateLmsStudent2 failed:", res.error);
+    console.log("lmsCreateLmsStudent failed:", res.error);
   }
 }
 
@@ -585,7 +585,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateLmsStudent2Request](../../sdk/models/operations/createlmsstudent2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateLmsStudentRequest](../../sdk/models/operations/createlmsstudentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -600,13 +600,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getLmsActivity2
+## getLmsActivity
 
 Retrieve an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLmsActivity2" method="get" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getLmsActivity" method="get" path="/lms/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -617,7 +617,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.getLmsActivity2({
+  const result = await unifiedTo.lms.getLmsActivity({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -634,7 +634,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { activityGetLmsActivity2 } from "@unified-api/typescript-sdk/funcs/activityGetLmsActivity2.js";
+import { activityGetLmsActivity } from "@unified-api/typescript-sdk/funcs/activityGetLmsActivity.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -645,7 +645,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await activityGetLmsActivity2(unifiedTo, {
+  const res = await activityGetLmsActivity(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -653,7 +653,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityGetLmsActivity2 failed:", res.error);
+    console.log("activityGetLmsActivity failed:", res.error);
   }
 }
 
@@ -664,7 +664,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetLmsActivity2Request](../../sdk/models/operations/getlmsactivity2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetLmsActivityRequest](../../sdk/models/operations/getlmsactivityrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -679,13 +679,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getLmsClass2
+## getLmsClass
 
 Retrieve a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLmsClass2" method="get" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getLmsClass" method="get" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -696,7 +696,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.getLmsClass2({
+  const result = await unifiedTo.lms.getLmsClass({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -713,7 +713,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsGetLmsClass2 } from "@unified-api/typescript-sdk/funcs/lmsGetLmsClass2.js";
+import { lmsGetLmsClass } from "@unified-api/typescript-sdk/funcs/lmsGetLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -724,7 +724,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsGetLmsClass2(unifiedTo, {
+  const res = await lmsGetLmsClass(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -732,7 +732,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsGetLmsClass2 failed:", res.error);
+    console.log("lmsGetLmsClass failed:", res.error);
   }
 }
 
@@ -743,7 +743,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetLmsClass2Request](../../sdk/models/operations/getlmsclass2request.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetLmsClassRequest](../../sdk/models/operations/getlmsclassrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -758,13 +758,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getLmsCollection2
+## getLmsCollection
 
 Retrieve a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLmsCollection2" method="get" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getLmsCollection" method="get" path="/lms/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -775,7 +775,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.getLmsCollection2({
+  const result = await unifiedTo.lms.getLmsCollection({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -792,7 +792,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionGetLmsCollection2 } from "@unified-api/typescript-sdk/funcs/collectionGetLmsCollection2.js";
+import { collectionGetLmsCollection } from "@unified-api/typescript-sdk/funcs/collectionGetLmsCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -803,7 +803,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionGetLmsCollection2(unifiedTo, {
+  const res = await collectionGetLmsCollection(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -811,7 +811,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionGetLmsCollection2 failed:", res.error);
+    console.log("collectionGetLmsCollection failed:", res.error);
   }
 }
 
@@ -822,7 +822,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetLmsCollection2Request](../../sdk/models/operations/getlmscollection2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetLmsCollectionRequest](../../sdk/models/operations/getlmscollectionrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -837,13 +837,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getLmsContent2
+## getLmsContent
 
 Retrieve a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLmsContent2" method="get" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getLmsContent" method="get" path="/lms/{connection_id}/content/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -854,7 +854,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.getLmsContent2({
+  const result = await unifiedTo.lms.getLmsContent({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -871,7 +871,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsGetLmsContent2 } from "@unified-api/typescript-sdk/funcs/lmsGetLmsContent2.js";
+import { lmsGetLmsContent } from "@unified-api/typescript-sdk/funcs/lmsGetLmsContent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -882,7 +882,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsGetLmsContent2(unifiedTo, {
+  const res = await lmsGetLmsContent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -890,7 +890,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsGetLmsContent2 failed:", res.error);
+    console.log("lmsGetLmsContent failed:", res.error);
   }
 }
 
@@ -901,7 +901,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetLmsContent2Request](../../sdk/models/operations/getlmscontent2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetLmsContentRequest](../../sdk/models/operations/getlmscontentrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -916,13 +916,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getLmsCourse2
+## getLmsCourse
 
 Retrieve a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLmsCourse2" method="get" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getLmsCourse" method="get" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -933,7 +933,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.getLmsCourse2({
+  const result = await unifiedTo.lms.getLmsCourse({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -950,7 +950,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsGetLmsCourse2 } from "@unified-api/typescript-sdk/funcs/lmsGetLmsCourse2.js";
+import { lmsGetLmsCourse } from "@unified-api/typescript-sdk/funcs/lmsGetLmsCourse.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -961,7 +961,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsGetLmsCourse2(unifiedTo, {
+  const res = await lmsGetLmsCourse(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -969,7 +969,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsGetLmsCourse2 failed:", res.error);
+    console.log("lmsGetLmsCourse failed:", res.error);
   }
 }
 
@@ -980,7 +980,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetLmsCourse2Request](../../sdk/models/operations/getlmscourse2request.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetLmsCourseRequest](../../sdk/models/operations/getlmscourserequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -995,13 +995,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getLmsInstructor2
+## getLmsInstructor
 
 Retrieve an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLmsInstructor2" method="get" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getLmsInstructor" method="get" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1012,7 +1012,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.getLmsInstructor2({
+  const result = await unifiedTo.lms.getLmsInstructor({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1029,7 +1029,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsGetLmsInstructor2 } from "@unified-api/typescript-sdk/funcs/lmsGetLmsInstructor2.js";
+import { lmsGetLmsInstructor } from "@unified-api/typescript-sdk/funcs/lmsGetLmsInstructor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1040,7 +1040,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsGetLmsInstructor2(unifiedTo, {
+  const res = await lmsGetLmsInstructor(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1048,7 +1048,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsGetLmsInstructor2 failed:", res.error);
+    console.log("lmsGetLmsInstructor failed:", res.error);
   }
 }
 
@@ -1059,7 +1059,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetLmsInstructor2Request](../../sdk/models/operations/getlmsinstructor2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetLmsInstructorRequest](../../sdk/models/operations/getlmsinstructorrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1074,13 +1074,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getLmsStudent2
+## getLmsStudent
 
 Retrieve a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getLmsStudent2" method="get" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="getLmsStudent" method="get" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1091,7 +1091,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.getLmsStudent2({
+  const result = await unifiedTo.lms.getLmsStudent({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1108,7 +1108,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsGetLmsStudent2 } from "@unified-api/typescript-sdk/funcs/lmsGetLmsStudent2.js";
+import { lmsGetLmsStudent } from "@unified-api/typescript-sdk/funcs/lmsGetLmsStudent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1119,7 +1119,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsGetLmsStudent2(unifiedTo, {
+  const res = await lmsGetLmsStudent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1127,7 +1127,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsGetLmsStudent2 failed:", res.error);
+    console.log("lmsGetLmsStudent failed:", res.error);
   }
 }
 
@@ -1138,7 +1138,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetLmsStudent2Request](../../sdk/models/operations/getlmsstudent2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.GetLmsStudentRequest](../../sdk/models/operations/getlmsstudentrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1153,13 +1153,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listLmsActivities2
+## listLmsActivities
 
 List all activities
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLmsActivities2" method="get" path="/lms/{connection_id}/activity" -->
+<!-- UsageSnippet language="typescript" operationID="listLmsActivities" method="get" path="/lms/{connection_id}/activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1170,7 +1170,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.listLmsActivities2({
+  const result = await unifiedTo.lms.listLmsActivities({
     connectionId: "<id>",
   });
 
@@ -1186,7 +1186,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { activityListLmsActivities2 } from "@unified-api/typescript-sdk/funcs/activityListLmsActivities2.js";
+import { activityListLmsActivities } from "@unified-api/typescript-sdk/funcs/activityListLmsActivities.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1197,14 +1197,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await activityListLmsActivities2(unifiedTo, {
+  const res = await activityListLmsActivities(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityListLmsActivities2 failed:", res.error);
+    console.log("activityListLmsActivities failed:", res.error);
   }
 }
 
@@ -1215,7 +1215,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListLmsActivities2Request](../../sdk/models/operations/listlmsactivities2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListLmsActivitiesRequest](../../sdk/models/operations/listlmsactivitiesrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1230,13 +1230,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listLmsClasses2
+## listLmsClasses
 
 List all classes
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLmsClasses2" method="get" path="/lms/{connection_id}/class" -->
+<!-- UsageSnippet language="typescript" operationID="listLmsClasses" method="get" path="/lms/{connection_id}/class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1247,7 +1247,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.listLmsClasses2({
+  const result = await unifiedTo.lms.listLmsClasses({
     connectionId: "<id>",
   });
 
@@ -1263,7 +1263,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsListLmsClasses2 } from "@unified-api/typescript-sdk/funcs/lmsListLmsClasses2.js";
+import { lmsListLmsClasses } from "@unified-api/typescript-sdk/funcs/lmsListLmsClasses.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1274,14 +1274,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsListLmsClasses2(unifiedTo, {
+  const res = await lmsListLmsClasses(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsListLmsClasses2 failed:", res.error);
+    console.log("lmsListLmsClasses failed:", res.error);
   }
 }
 
@@ -1292,7 +1292,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListLmsClasses2Request](../../sdk/models/operations/listlmsclasses2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListLmsClassesRequest](../../sdk/models/operations/listlmsclassesrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1307,13 +1307,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listLmsCollections2
+## listLmsCollections
 
 List all collections
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLmsCollections2" method="get" path="/lms/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="listLmsCollections" method="get" path="/lms/{connection_id}/collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1324,7 +1324,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.listLmsCollections2({
+  const result = await unifiedTo.lms.listLmsCollections({
     connectionId: "<id>",
   });
 
@@ -1340,7 +1340,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionListLmsCollections2 } from "@unified-api/typescript-sdk/funcs/collectionListLmsCollections2.js";
+import { collectionListLmsCollections } from "@unified-api/typescript-sdk/funcs/collectionListLmsCollections.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1351,14 +1351,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionListLmsCollections2(unifiedTo, {
+  const res = await collectionListLmsCollections(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionListLmsCollections2 failed:", res.error);
+    console.log("collectionListLmsCollections failed:", res.error);
   }
 }
 
@@ -1369,7 +1369,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListLmsCollections2Request](../../sdk/models/operations/listlmscollections2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListLmsCollectionsRequest](../../sdk/models/operations/listlmscollectionsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1384,13 +1384,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listLmsContents2
+## listLmsContents
 
 List all contents
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLmsContents2" method="get" path="/lms/{connection_id}/content" -->
+<!-- UsageSnippet language="typescript" operationID="listLmsContents" method="get" path="/lms/{connection_id}/content" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1401,7 +1401,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.listLmsContents2({
+  const result = await unifiedTo.lms.listLmsContents({
     connectionId: "<id>",
   });
 
@@ -1417,7 +1417,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsListLmsContents2 } from "@unified-api/typescript-sdk/funcs/lmsListLmsContents2.js";
+import { lmsListLmsContents } from "@unified-api/typescript-sdk/funcs/lmsListLmsContents.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1428,14 +1428,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsListLmsContents2(unifiedTo, {
+  const res = await lmsListLmsContents(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsListLmsContents2 failed:", res.error);
+    console.log("lmsListLmsContents failed:", res.error);
   }
 }
 
@@ -1446,7 +1446,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListLmsContents2Request](../../sdk/models/operations/listlmscontents2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListLmsContentsRequest](../../sdk/models/operations/listlmscontentsrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1461,13 +1461,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listLmsCourses2
+## listLmsCourses
 
 List all courses
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLmsCourses2" method="get" path="/lms/{connection_id}/course" -->
+<!-- UsageSnippet language="typescript" operationID="listLmsCourses" method="get" path="/lms/{connection_id}/course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1478,7 +1478,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.listLmsCourses2({
+  const result = await unifiedTo.lms.listLmsCourses({
     connectionId: "<id>",
   });
 
@@ -1494,7 +1494,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsListLmsCourses2 } from "@unified-api/typescript-sdk/funcs/lmsListLmsCourses2.js";
+import { lmsListLmsCourses } from "@unified-api/typescript-sdk/funcs/lmsListLmsCourses.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1505,14 +1505,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsListLmsCourses2(unifiedTo, {
+  const res = await lmsListLmsCourses(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsListLmsCourses2 failed:", res.error);
+    console.log("lmsListLmsCourses failed:", res.error);
   }
 }
 
@@ -1523,7 +1523,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListLmsCourses2Request](../../sdk/models/operations/listlmscourses2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListLmsCoursesRequest](../../sdk/models/operations/listlmscoursesrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1538,13 +1538,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listLmsInstructors2
+## listLmsInstructors
 
 List all instructors
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLmsInstructors2" method="get" path="/lms/{connection_id}/instructor" -->
+<!-- UsageSnippet language="typescript" operationID="listLmsInstructors" method="get" path="/lms/{connection_id}/instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1555,7 +1555,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.listLmsInstructors2({
+  const result = await unifiedTo.lms.listLmsInstructors({
     connectionId: "<id>",
   });
 
@@ -1571,7 +1571,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsListLmsInstructors2 } from "@unified-api/typescript-sdk/funcs/lmsListLmsInstructors2.js";
+import { lmsListLmsInstructors } from "@unified-api/typescript-sdk/funcs/lmsListLmsInstructors.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1582,14 +1582,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsListLmsInstructors2(unifiedTo, {
+  const res = await lmsListLmsInstructors(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsListLmsInstructors2 failed:", res.error);
+    console.log("lmsListLmsInstructors failed:", res.error);
   }
 }
 
@@ -1600,7 +1600,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListLmsInstructors2Request](../../sdk/models/operations/listlmsinstructors2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListLmsInstructorsRequest](../../sdk/models/operations/listlmsinstructorsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1615,13 +1615,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listLmsStudents2
+## listLmsStudents
 
 List all students
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="listLmsStudents2" method="get" path="/lms/{connection_id}/student" -->
+<!-- UsageSnippet language="typescript" operationID="listLmsStudents" method="get" path="/lms/{connection_id}/student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1632,7 +1632,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.listLmsStudents2({
+  const result = await unifiedTo.lms.listLmsStudents({
     connectionId: "<id>",
   });
 
@@ -1648,7 +1648,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsListLmsStudents2 } from "@unified-api/typescript-sdk/funcs/lmsListLmsStudents2.js";
+import { lmsListLmsStudents } from "@unified-api/typescript-sdk/funcs/lmsListLmsStudents.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1659,14 +1659,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsListLmsStudents2(unifiedTo, {
+  const res = await lmsListLmsStudents(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsListLmsStudents2 failed:", res.error);
+    console.log("lmsListLmsStudents failed:", res.error);
   }
 }
 
@@ -1677,7 +1677,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListLmsStudents2Request](../../sdk/models/operations/listlmsstudents2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ListLmsStudentsRequest](../../sdk/models/operations/listlmsstudentsrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1692,13 +1692,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchLmsActivity2
+## patchLmsActivity
 
 Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsActivity2" method="patch" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1709,7 +1709,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.patchLmsActivity2({
+  const result = await unifiedTo.lms.patchLmsActivity({
     lmsActivity: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1727,7 +1727,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { activityPatchLmsActivity2 } from "@unified-api/typescript-sdk/funcs/activityPatchLmsActivity2.js";
+import { activityPatchLmsActivity } from "@unified-api/typescript-sdk/funcs/activityPatchLmsActivity.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1738,7 +1738,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await activityPatchLmsActivity2(unifiedTo, {
+  const res = await activityPatchLmsActivity(unifiedTo, {
     lmsActivity: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1747,7 +1747,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityPatchLmsActivity2 failed:", res.error);
+    console.log("activityPatchLmsActivity failed:", res.error);
   }
 }
 
@@ -1758,7 +1758,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchLmsActivity2Request](../../sdk/models/operations/patchlmsactivity2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchLmsActivityRequest](../../sdk/models/operations/patchlmsactivityrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1773,13 +1773,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchLmsClass2
+## patchLmsClass
 
 Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsClass2" method="patch" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1790,7 +1790,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.patchLmsClass2({
+  const result = await unifiedTo.lms.patchLmsClass({
     lmsClass: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1808,7 +1808,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsPatchLmsClass2 } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsClass2.js";
+import { lmsPatchLmsClass } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1819,7 +1819,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsPatchLmsClass2(unifiedTo, {
+  const res = await lmsPatchLmsClass(unifiedTo, {
     lmsClass: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1828,7 +1828,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsPatchLmsClass2 failed:", res.error);
+    console.log("lmsPatchLmsClass failed:", res.error);
   }
 }
 
@@ -1839,7 +1839,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchLmsClass2Request](../../sdk/models/operations/patchlmsclass2request.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchLmsClassRequest](../../sdk/models/operations/patchlmsclassrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1854,13 +1854,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchLmsCollection2
+## patchLmsCollection
 
 Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsCollection2" method="patch" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1871,7 +1871,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.patchLmsCollection2({
+  const result = await unifiedTo.lms.patchLmsCollection({
     lmsCollection: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1889,7 +1889,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionPatchLmsCollection2 } from "@unified-api/typescript-sdk/funcs/collectionPatchLmsCollection2.js";
+import { collectionPatchLmsCollection } from "@unified-api/typescript-sdk/funcs/collectionPatchLmsCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1900,7 +1900,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionPatchLmsCollection2(unifiedTo, {
+  const res = await collectionPatchLmsCollection(unifiedTo, {
     lmsCollection: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1909,7 +1909,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionPatchLmsCollection2 failed:", res.error);
+    console.log("collectionPatchLmsCollection failed:", res.error);
   }
 }
 
@@ -1920,7 +1920,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchLmsCollection2Request](../../sdk/models/operations/patchlmscollection2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchLmsCollectionRequest](../../sdk/models/operations/patchlmscollectionrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1935,13 +1935,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchLmsContent2
+## patchLmsContent
 
 Update a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsContent2" method="patch" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsContent" method="patch" path="/lms/{connection_id}/content/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1952,7 +1952,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.patchLmsContent2({
+  const result = await unifiedTo.lms.patchLmsContent({
     lmsContent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1970,7 +1970,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsPatchLmsContent2 } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsContent2.js";
+import { lmsPatchLmsContent } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsContent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1981,7 +1981,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsPatchLmsContent2(unifiedTo, {
+  const res = await lmsPatchLmsContent(unifiedTo, {
     lmsContent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1990,7 +1990,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsPatchLmsContent2 failed:", res.error);
+    console.log("lmsPatchLmsContent failed:", res.error);
   }
 }
 
@@ -2001,7 +2001,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchLmsContent2Request](../../sdk/models/operations/patchlmscontent2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchLmsContentRequest](../../sdk/models/operations/patchlmscontentrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2016,13 +2016,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchLmsCourse2
+## patchLmsCourse
 
 Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsCourse2" method="patch" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2033,7 +2033,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.patchLmsCourse2({
+  const result = await unifiedTo.lms.patchLmsCourse({
     lmsCourse: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2051,7 +2051,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsPatchLmsCourse2 } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsCourse2.js";
+import { lmsPatchLmsCourse } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsCourse.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2062,7 +2062,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsPatchLmsCourse2(unifiedTo, {
+  const res = await lmsPatchLmsCourse(unifiedTo, {
     lmsCourse: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2071,7 +2071,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsPatchLmsCourse2 failed:", res.error);
+    console.log("lmsPatchLmsCourse failed:", res.error);
   }
 }
 
@@ -2082,7 +2082,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchLmsCourse2Request](../../sdk/models/operations/patchlmscourse2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchLmsCourseRequest](../../sdk/models/operations/patchlmscourserequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2097,13 +2097,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchLmsInstructor2
+## patchLmsInstructor
 
 Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsInstructor2" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2114,7 +2114,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.patchLmsInstructor2({
+  const result = await unifiedTo.lms.patchLmsInstructor({
     lmsInstructor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2132,7 +2132,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsPatchLmsInstructor2 } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsInstructor2.js";
+import { lmsPatchLmsInstructor } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsInstructor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2143,7 +2143,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsPatchLmsInstructor2(unifiedTo, {
+  const res = await lmsPatchLmsInstructor(unifiedTo, {
     lmsInstructor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2152,7 +2152,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsPatchLmsInstructor2 failed:", res.error);
+    console.log("lmsPatchLmsInstructor failed:", res.error);
   }
 }
 
@@ -2163,7 +2163,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchLmsInstructor2Request](../../sdk/models/operations/patchlmsinstructor2request.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchLmsInstructorRequest](../../sdk/models/operations/patchlmsinstructorrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2178,13 +2178,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchLmsStudent2
+## patchLmsStudent
 
 Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsStudent2" method="patch" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2195,7 +2195,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.patchLmsStudent2({
+  const result = await unifiedTo.lms.patchLmsStudent({
     lmsStudent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2213,7 +2213,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsPatchLmsStudent2 } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsStudent2.js";
+import { lmsPatchLmsStudent } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsStudent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2224,7 +2224,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsPatchLmsStudent2(unifiedTo, {
+  const res = await lmsPatchLmsStudent(unifiedTo, {
     lmsStudent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2233,7 +2233,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsPatchLmsStudent2 failed:", res.error);
+    console.log("lmsPatchLmsStudent failed:", res.error);
   }
 }
 
@@ -2244,7 +2244,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchLmsStudent2Request](../../sdk/models/operations/patchlmsstudent2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.PatchLmsStudentRequest](../../sdk/models/operations/patchlmsstudentrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2259,13 +2259,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeLmsActivity2
+## removeLmsActivity
 
 Remove an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeLmsActivity2" method="delete" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeLmsActivity" method="delete" path="/lms/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2276,7 +2276,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.removeLmsActivity2({
+  const result = await unifiedTo.lms.removeLmsActivity({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2293,7 +2293,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { activityRemoveLmsActivity2 } from "@unified-api/typescript-sdk/funcs/activityRemoveLmsActivity2.js";
+import { activityRemoveLmsActivity } from "@unified-api/typescript-sdk/funcs/activityRemoveLmsActivity.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2304,7 +2304,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await activityRemoveLmsActivity2(unifiedTo, {
+  const res = await activityRemoveLmsActivity(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2312,7 +2312,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityRemoveLmsActivity2 failed:", res.error);
+    console.log("activityRemoveLmsActivity failed:", res.error);
   }
 }
 
@@ -2323,14 +2323,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveLmsActivity2Request](../../sdk/models/operations/removelmsactivity2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveLmsActivityRequest](../../sdk/models/operations/removelmsactivityrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveLmsActivity2Response](../../sdk/models/operations/removelmsactivity2response.md)\>**
+**Promise\<[operations.RemoveLmsActivityResponse](../../sdk/models/operations/removelmsactivityresponse.md)\>**
 
 ### Errors
 
@@ -2338,13 +2338,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeLmsClass2
+## removeLmsClass
 
 Remove a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeLmsClass2" method="delete" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeLmsClass" method="delete" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2355,7 +2355,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.removeLmsClass2({
+  const result = await unifiedTo.lms.removeLmsClass({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2372,7 +2372,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsRemoveLmsClass2 } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsClass2.js";
+import { lmsRemoveLmsClass } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2383,7 +2383,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsRemoveLmsClass2(unifiedTo, {
+  const res = await lmsRemoveLmsClass(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2391,7 +2391,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsRemoveLmsClass2 failed:", res.error);
+    console.log("lmsRemoveLmsClass failed:", res.error);
   }
 }
 
@@ -2402,14 +2402,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveLmsClass2Request](../../sdk/models/operations/removelmsclass2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveLmsClassRequest](../../sdk/models/operations/removelmsclassrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveLmsClass2Response](../../sdk/models/operations/removelmsclass2response.md)\>**
+**Promise\<[operations.RemoveLmsClassResponse](../../sdk/models/operations/removelmsclassresponse.md)\>**
 
 ### Errors
 
@@ -2417,13 +2417,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeLmsCollection2
+## removeLmsCollection
 
 Remove a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeLmsCollection2" method="delete" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeLmsCollection" method="delete" path="/lms/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2434,7 +2434,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.removeLmsCollection2({
+  const result = await unifiedTo.lms.removeLmsCollection({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2451,7 +2451,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionRemoveLmsCollection2 } from "@unified-api/typescript-sdk/funcs/collectionRemoveLmsCollection2.js";
+import { collectionRemoveLmsCollection } from "@unified-api/typescript-sdk/funcs/collectionRemoveLmsCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2462,7 +2462,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionRemoveLmsCollection2(unifiedTo, {
+  const res = await collectionRemoveLmsCollection(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2470,7 +2470,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionRemoveLmsCollection2 failed:", res.error);
+    console.log("collectionRemoveLmsCollection failed:", res.error);
   }
 }
 
@@ -2481,14 +2481,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveLmsCollection2Request](../../sdk/models/operations/removelmscollection2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveLmsCollectionRequest](../../sdk/models/operations/removelmscollectionrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveLmsCollection2Response](../../sdk/models/operations/removelmscollection2response.md)\>**
+**Promise\<[operations.RemoveLmsCollectionResponse](../../sdk/models/operations/removelmscollectionresponse.md)\>**
 
 ### Errors
 
@@ -2496,13 +2496,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeLmsContent2
+## removeLmsContent
 
 Remove a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeLmsContent2" method="delete" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeLmsContent" method="delete" path="/lms/{connection_id}/content/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2513,7 +2513,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.removeLmsContent2({
+  const result = await unifiedTo.lms.removeLmsContent({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2530,7 +2530,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsRemoveLmsContent2 } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsContent2.js";
+import { lmsRemoveLmsContent } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsContent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2541,7 +2541,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsRemoveLmsContent2(unifiedTo, {
+  const res = await lmsRemoveLmsContent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2549,7 +2549,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsRemoveLmsContent2 failed:", res.error);
+    console.log("lmsRemoveLmsContent failed:", res.error);
   }
 }
 
@@ -2560,14 +2560,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveLmsContent2Request](../../sdk/models/operations/removelmscontent2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveLmsContentRequest](../../sdk/models/operations/removelmscontentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveLmsContent2Response](../../sdk/models/operations/removelmscontent2response.md)\>**
+**Promise\<[operations.RemoveLmsContentResponse](../../sdk/models/operations/removelmscontentresponse.md)\>**
 
 ### Errors
 
@@ -2575,13 +2575,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeLmsCourse2
+## removeLmsCourse
 
 Remove a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeLmsCourse2" method="delete" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeLmsCourse" method="delete" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2592,7 +2592,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.removeLmsCourse2({
+  const result = await unifiedTo.lms.removeLmsCourse({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2609,7 +2609,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsRemoveLmsCourse2 } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsCourse2.js";
+import { lmsRemoveLmsCourse } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsCourse.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2620,7 +2620,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsRemoveLmsCourse2(unifiedTo, {
+  const res = await lmsRemoveLmsCourse(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2628,7 +2628,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsRemoveLmsCourse2 failed:", res.error);
+    console.log("lmsRemoveLmsCourse failed:", res.error);
   }
 }
 
@@ -2639,14 +2639,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveLmsCourse2Request](../../sdk/models/operations/removelmscourse2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveLmsCourseRequest](../../sdk/models/operations/removelmscourserequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveLmsCourse2Response](../../sdk/models/operations/removelmscourse2response.md)\>**
+**Promise\<[operations.RemoveLmsCourseResponse](../../sdk/models/operations/removelmscourseresponse.md)\>**
 
 ### Errors
 
@@ -2654,13 +2654,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeLmsInstructor2
+## removeLmsInstructor
 
 Remove an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeLmsInstructor2" method="delete" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeLmsInstructor" method="delete" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2671,7 +2671,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.removeLmsInstructor2({
+  const result = await unifiedTo.lms.removeLmsInstructor({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2688,7 +2688,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsRemoveLmsInstructor2 } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsInstructor2.js";
+import { lmsRemoveLmsInstructor } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsInstructor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2699,7 +2699,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsRemoveLmsInstructor2(unifiedTo, {
+  const res = await lmsRemoveLmsInstructor(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2707,7 +2707,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsRemoveLmsInstructor2 failed:", res.error);
+    console.log("lmsRemoveLmsInstructor failed:", res.error);
   }
 }
 
@@ -2718,14 +2718,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveLmsInstructor2Request](../../sdk/models/operations/removelmsinstructor2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveLmsInstructorRequest](../../sdk/models/operations/removelmsinstructorrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveLmsInstructor2Response](../../sdk/models/operations/removelmsinstructor2response.md)\>**
+**Promise\<[operations.RemoveLmsInstructorResponse](../../sdk/models/operations/removelmsinstructorresponse.md)\>**
 
 ### Errors
 
@@ -2733,13 +2733,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeLmsStudent2
+## removeLmsStudent
 
 Remove a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="removeLmsStudent2" method="delete" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="removeLmsStudent" method="delete" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2750,7 +2750,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.removeLmsStudent2({
+  const result = await unifiedTo.lms.removeLmsStudent({
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2767,7 +2767,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsRemoveLmsStudent2 } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsStudent2.js";
+import { lmsRemoveLmsStudent } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsStudent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2778,7 +2778,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsRemoveLmsStudent2(unifiedTo, {
+  const res = await lmsRemoveLmsStudent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2786,7 +2786,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsRemoveLmsStudent2 failed:", res.error);
+    console.log("lmsRemoveLmsStudent failed:", res.error);
   }
 }
 
@@ -2797,14 +2797,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveLmsStudent2Request](../../sdk/models/operations/removelmsstudent2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.RemoveLmsStudentRequest](../../sdk/models/operations/removelmsstudentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.RemoveLmsStudent2Response](../../sdk/models/operations/removelmsstudent2response.md)\>**
+**Promise\<[operations.RemoveLmsStudentResponse](../../sdk/models/operations/removelmsstudentresponse.md)\>**
 
 ### Errors
 
@@ -2812,13 +2812,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateLmsActivity2
+## updateLmsActivity
 
 Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsActivity2" method="put" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2829,7 +2829,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.updateLmsActivity2({
+  const result = await unifiedTo.lms.updateLmsActivity({
     lmsActivity: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2847,7 +2847,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { activityUpdateLmsActivity2 } from "@unified-api/typescript-sdk/funcs/activityUpdateLmsActivity2.js";
+import { activityUpdateLmsActivity } from "@unified-api/typescript-sdk/funcs/activityUpdateLmsActivity.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2858,7 +2858,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await activityUpdateLmsActivity2(unifiedTo, {
+  const res = await activityUpdateLmsActivity(unifiedTo, {
     lmsActivity: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2867,7 +2867,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityUpdateLmsActivity2 failed:", res.error);
+    console.log("activityUpdateLmsActivity failed:", res.error);
   }
 }
 
@@ -2878,7 +2878,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateLmsActivity2Request](../../sdk/models/operations/updatelmsactivity2request.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateLmsActivityRequest](../../sdk/models/operations/updatelmsactivityrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2893,13 +2893,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateLmsClass2
+## updateLmsClass
 
 Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsClass2" method="put" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2910,7 +2910,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.updateLmsClass2({
+  const result = await unifiedTo.lms.updateLmsClass({
     lmsClass: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2928,7 +2928,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsUpdateLmsClass2 } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsClass2.js";
+import { lmsUpdateLmsClass } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2939,7 +2939,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsUpdateLmsClass2(unifiedTo, {
+  const res = await lmsUpdateLmsClass(unifiedTo, {
     lmsClass: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2948,7 +2948,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsUpdateLmsClass2 failed:", res.error);
+    console.log("lmsUpdateLmsClass failed:", res.error);
   }
 }
 
@@ -2959,7 +2959,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateLmsClass2Request](../../sdk/models/operations/updatelmsclass2request.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateLmsClassRequest](../../sdk/models/operations/updatelmsclassrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -2974,13 +2974,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateLmsCollection2
+## updateLmsCollection
 
 Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsCollection2" method="put" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2991,7 +2991,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.updateLmsCollection2({
+  const result = await unifiedTo.lms.updateLmsCollection({
     lmsCollection: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3009,7 +3009,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionUpdateLmsCollection2 } from "@unified-api/typescript-sdk/funcs/collectionUpdateLmsCollection2.js";
+import { collectionUpdateLmsCollection } from "@unified-api/typescript-sdk/funcs/collectionUpdateLmsCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3020,7 +3020,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionUpdateLmsCollection2(unifiedTo, {
+  const res = await collectionUpdateLmsCollection(unifiedTo, {
     lmsCollection: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3029,7 +3029,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionUpdateLmsCollection2 failed:", res.error);
+    console.log("collectionUpdateLmsCollection failed:", res.error);
   }
 }
 
@@ -3040,7 +3040,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateLmsCollection2Request](../../sdk/models/operations/updatelmscollection2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateLmsCollectionRequest](../../sdk/models/operations/updatelmscollectionrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3055,13 +3055,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateLmsContent2
+## updateLmsContent
 
 Update a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsContent2" method="put" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsContent" method="put" path="/lms/{connection_id}/content/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3072,7 +3072,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.updateLmsContent2({
+  const result = await unifiedTo.lms.updateLmsContent({
     lmsContent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3090,7 +3090,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsUpdateLmsContent2 } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsContent2.js";
+import { lmsUpdateLmsContent } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsContent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3101,7 +3101,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsUpdateLmsContent2(unifiedTo, {
+  const res = await lmsUpdateLmsContent(unifiedTo, {
     lmsContent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3110,7 +3110,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsUpdateLmsContent2 failed:", res.error);
+    console.log("lmsUpdateLmsContent failed:", res.error);
   }
 }
 
@@ -3121,7 +3121,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateLmsContent2Request](../../sdk/models/operations/updatelmscontent2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateLmsContentRequest](../../sdk/models/operations/updatelmscontentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3136,13 +3136,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateLmsCourse2
+## updateLmsCourse
 
 Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsCourse2" method="put" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3153,7 +3153,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.updateLmsCourse2({
+  const result = await unifiedTo.lms.updateLmsCourse({
     lmsCourse: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3171,7 +3171,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsUpdateLmsCourse2 } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsCourse2.js";
+import { lmsUpdateLmsCourse } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsCourse.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3182,7 +3182,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsUpdateLmsCourse2(unifiedTo, {
+  const res = await lmsUpdateLmsCourse(unifiedTo, {
     lmsCourse: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3191,7 +3191,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsUpdateLmsCourse2 failed:", res.error);
+    console.log("lmsUpdateLmsCourse failed:", res.error);
   }
 }
 
@@ -3202,7 +3202,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateLmsCourse2Request](../../sdk/models/operations/updatelmscourse2request.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateLmsCourseRequest](../../sdk/models/operations/updatelmscourserequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3217,13 +3217,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateLmsInstructor2
+## updateLmsInstructor
 
 Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsInstructor2" method="put" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3234,7 +3234,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.updateLmsInstructor2({
+  const result = await unifiedTo.lms.updateLmsInstructor({
     lmsInstructor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3252,7 +3252,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsUpdateLmsInstructor2 } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsInstructor2.js";
+import { lmsUpdateLmsInstructor } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsInstructor.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3263,7 +3263,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsUpdateLmsInstructor2(unifiedTo, {
+  const res = await lmsUpdateLmsInstructor(unifiedTo, {
     lmsInstructor: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3272,7 +3272,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsUpdateLmsInstructor2 failed:", res.error);
+    console.log("lmsUpdateLmsInstructor failed:", res.error);
   }
 }
 
@@ -3283,7 +3283,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateLmsInstructor2Request](../../sdk/models/operations/updatelmsinstructor2request.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateLmsInstructorRequest](../../sdk/models/operations/updatelmsinstructorrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -3298,13 +3298,13 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateLmsStudent2
+## updateLmsStudent
 
 Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsStudent2" method="put" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3315,7 +3315,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.lms.updateLmsStudent2({
+  const result = await unifiedTo.lms.updateLmsStudent({
     lmsStudent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3333,7 +3333,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { lmsUpdateLmsStudent2 } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsStudent2.js";
+import { lmsUpdateLmsStudent } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsStudent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3344,7 +3344,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await lmsUpdateLmsStudent2(unifiedTo, {
+  const res = await lmsUpdateLmsStudent(unifiedTo, {
     lmsStudent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -3353,7 +3353,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("lmsUpdateLmsStudent2 failed:", res.error);
+    console.log("lmsUpdateLmsStudent failed:", res.error);
   }
 }
 
@@ -3364,7 +3364,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateLmsStudent2Request](../../sdk/models/operations/updatelmsstudent2request.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.UpdateLmsStudentRequest](../../sdk/models/operations/updatelmsstudentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
