@@ -23,9 +23,13 @@ export type RepoPullrequest = {
   createdAt?: Date | undefined;
   id?: string | undefined;
   labels?: Array<string> | undefined;
+  notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   repoId?: string | undefined;
+  sourceBranchId?: string | undefined;
   status?: RepoPullrequestStatus | undefined;
+  targetBranchId?: string | undefined;
+  title?: string | undefined;
   updatedAt?: Date | undefined;
   userIds?: Array<string> | undefined;
 };
@@ -56,9 +60,13 @@ export const RepoPullrequest$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   labels: z.array(z.string()).optional(),
+  notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   repo_id: z.string().optional(),
+  source_branch_id: z.string().optional(),
   status: RepoPullrequestStatus$inboundSchema.optional(),
+  target_branch_id: z.string().optional(),
+  title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_ids: z.array(z.string()).optional(),
@@ -68,6 +76,8 @@ export const RepoPullrequest$inboundSchema: z.ZodType<
     "commit_ids": "commitIds",
     "created_at": "createdAt",
     "repo_id": "repoId",
+    "source_branch_id": "sourceBranchId",
+    "target_branch_id": "targetBranchId",
     "updated_at": "updatedAt",
     "user_ids": "userIds",
   });
@@ -79,9 +89,13 @@ export type RepoPullrequest$Outbound = {
   created_at?: string | undefined;
   id?: string | undefined;
   labels?: Array<string> | undefined;
+  notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   repo_id?: string | undefined;
+  source_branch_id?: string | undefined;
   status?: string | undefined;
+  target_branch_id?: string | undefined;
+  title?: string | undefined;
   updated_at?: string | undefined;
   user_ids?: Array<string> | undefined;
 };
@@ -97,9 +111,13 @@ export const RepoPullrequest$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   labels: z.array(z.string()).optional(),
+  notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   repoId: z.string().optional(),
+  sourceBranchId: z.string().optional(),
   status: RepoPullrequestStatus$outboundSchema.optional(),
+  targetBranchId: z.string().optional(),
+  title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userIds: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -108,6 +126,8 @@ export const RepoPullrequest$outboundSchema: z.ZodType<
     commitIds: "commit_ids",
     createdAt: "created_at",
     repoId: "repo_id",
+    sourceBranchId: "source_branch_id",
+    targetBranchId: "target_branch_id",
     updatedAt: "updated_at",
     userIds: "user_ids",
   });

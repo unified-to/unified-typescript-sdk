@@ -10,6 +10,7 @@ import * as shared from "../shared/index.js";
 export const CreateAccountingBillQueryParamFields = {
   Id: "id",
   BillNumber: "bill_number",
+  Term: "term",
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
   DueAt: "due_at",

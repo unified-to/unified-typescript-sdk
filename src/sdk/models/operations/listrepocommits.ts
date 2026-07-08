@@ -14,6 +14,9 @@ export const ListRepoCommitsQueryParamFields = {
   RepoId: "repo_id",
   Message: "message",
   BranchId: "branch_id",
+  LinesAdded: "lines_added",
+  LinesDeleted: "lines_deleted",
+  LinesChanged: "lines_changed",
   Raw: "raw",
 } as const;
 export type ListRepoCommitsQueryParamFields = ClosedEnum<

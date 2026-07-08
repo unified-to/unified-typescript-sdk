@@ -12,6 +12,9 @@ export type RepoCommit = {
   branchId?: string | undefined;
   createdAt?: Date | undefined;
   id?: string | undefined;
+  linesAdded?: number | undefined;
+  linesChanged?: number | undefined;
+  linesDeleted?: number | undefined;
   message?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   repoId: string;
@@ -29,6 +32,9 @@ export const RepoCommit$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  lines_added: z.number().optional(),
+  lines_changed: z.number().optional(),
+  lines_deleted: z.number().optional(),
   message: z.string().optional(),
   raw: z.record(z.any()).optional(),
   repo_id: z.string(),
@@ -39,6 +45,9 @@ export const RepoCommit$inboundSchema: z.ZodType<
   return remap$(v, {
     "branch_id": "branchId",
     "created_at": "createdAt",
+    "lines_added": "linesAdded",
+    "lines_changed": "linesChanged",
+    "lines_deleted": "linesDeleted",
     "repo_id": "repoId",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -49,6 +58,9 @@ export type RepoCommit$Outbound = {
   branch_id?: string | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
+  lines_added?: number | undefined;
+  lines_changed?: number | undefined;
+  lines_deleted?: number | undefined;
   message?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   repo_id: string;
@@ -65,6 +77,9 @@ export const RepoCommit$outboundSchema: z.ZodType<
   branchId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  linesAdded: z.number().optional(),
+  linesChanged: z.number().optional(),
+  linesDeleted: z.number().optional(),
   message: z.string().optional(),
   raw: z.record(z.any()).optional(),
   repoId: z.string(),
@@ -74,6 +89,9 @@ export const RepoCommit$outboundSchema: z.ZodType<
   return remap$(v, {
     branchId: "branch_id",
     createdAt: "created_at",
+    linesAdded: "lines_added",
+    linesChanged: "lines_changed",
+    linesDeleted: "lines_deleted",
     repoId: "repo_id",
     updatedAt: "updated_at",
     userId: "user_id",

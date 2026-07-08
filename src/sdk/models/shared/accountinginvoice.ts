@@ -44,6 +44,15 @@ export const AccountingInvoiceStatus = {
 } as const;
 export type AccountingInvoiceStatus = OpenEnum<typeof AccountingInvoiceStatus>;
 
+export const AccountingInvoiceTerm = {
+  OnReceipt: "ON_RECEIPT",
+  Net10: "NET_10",
+  Net15: "NET_15",
+  Net30: "NET_30",
+  Net60: "NET_60",
+} as const;
+export type AccountingInvoiceTerm = OpenEnum<typeof AccountingInvoiceTerm>;
+
 export const AccountingInvoiceType = {
   Bill: "BILL",
   Invoice: "INVOICE",
@@ -79,6 +88,7 @@ export type AccountingInvoice = {
   send?: boolean | undefined;
   status?: AccountingInvoiceStatus | undefined;
   taxAmount?: number | undefined;
+  term?: AccountingInvoiceTerm | undefined;
   totalAmount?: number | undefined;
   type?: AccountingInvoiceType | undefined;
   updatedAt?: Date | undefined;
@@ -110,6 +120,19 @@ export const AccountingInvoiceStatus$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingInvoiceStatus
 > = openEnums.outboundSchema(AccountingInvoiceStatus);
+
+/** @internal */
+export const AccountingInvoiceTerm$inboundSchema: z.ZodType<
+  AccountingInvoiceTerm,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingInvoiceTerm);
+/** @internal */
+export const AccountingInvoiceTerm$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingInvoiceTerm
+> = openEnums.outboundSchema(AccountingInvoiceTerm);
 
 /** @internal */
 export const AccountingInvoiceType$inboundSchema: z.ZodType<
@@ -163,6 +186,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   send: z.boolean().optional(),
   status: AccountingInvoiceStatus$inboundSchema.optional(),
   tax_amount: z.number().optional(),
+  term: AccountingInvoiceTerm$inboundSchema.optional(),
   total_amount: z.number().optional(),
   type: AccountingInvoiceType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -217,6 +241,7 @@ export type AccountingInvoice$Outbound = {
   send?: boolean | undefined;
   status?: string | undefined;
   tax_amount?: number | undefined;
+  term?: string | undefined;
   total_amount?: number | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -255,6 +280,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   send: z.boolean().optional(),
   status: AccountingInvoiceStatus$outboundSchema.optional(),
   taxAmount: z.number().optional(),
+  term: AccountingInvoiceTerm$outboundSchema.optional(),
   totalAmount: z.number().optional(),
   type: AccountingInvoiceType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

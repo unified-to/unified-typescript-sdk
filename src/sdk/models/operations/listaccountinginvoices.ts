@@ -27,6 +27,7 @@ export const ListAccountingInvoicesQueryParamFields = {
   Currency: "currency",
   Notes: "notes",
   RefundReason: "refund_reason",
+  Term: "term",
   Lineitems: "lineitems",
   Status: "status",
   Url: "url",

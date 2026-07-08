@@ -42,6 +42,15 @@ export const AccountingBillStatus = {
 } as const;
 export type AccountingBillStatus = OpenEnum<typeof AccountingBillStatus>;
 
+export const Term = {
+  OnReceipt: "ON_RECEIPT",
+  Net10: "NET_10",
+  Net15: "NET_15",
+  Net30: "NET_30",
+  Net60: "NET_60",
+} as const;
+export type Term = OpenEnum<typeof Term>;
+
 export type AccountingBill = {
   attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
@@ -67,6 +76,7 @@ export type AccountingBill = {
   send?: boolean | undefined;
   status?: AccountingBillStatus | undefined;
   taxAmount?: number | undefined;
+  term?: Term | undefined;
   totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
   url?: string | undefined;
@@ -97,6 +107,13 @@ export const AccountingBillStatus$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingBillStatus
 > = openEnums.outboundSchema(AccountingBillStatus);
+
+/** @internal */
+export const Term$inboundSchema: z.ZodType<Term, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Term);
+/** @internal */
+export const Term$outboundSchema: z.ZodType<string, z.ZodTypeDef, Term> =
+  openEnums.outboundSchema(Term);
 
 /** @internal */
 export const AccountingBill$inboundSchema: z.ZodType<
@@ -135,6 +152,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
   send: z.boolean().optional(),
   status: AccountingBillStatus$inboundSchema.optional(),
   tax_amount: z.number().optional(),
+  term: Term$inboundSchema.optional(),
   total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -187,6 +205,7 @@ export type AccountingBill$Outbound = {
   send?: boolean | undefined;
   status?: string | undefined;
   tax_amount?: number | undefined;
+  term?: string | undefined;
   total_amount?: number | undefined;
   updated_at?: string | undefined;
   url?: string | undefined;
@@ -222,6 +241,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
   send: z.boolean().optional(),
   status: AccountingBillStatus$outboundSchema.optional(),
   taxAmount: z.number().optional(),
+  term: Term$outboundSchema.optional(),
   totalAmount: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   url: z.string().optional(),
