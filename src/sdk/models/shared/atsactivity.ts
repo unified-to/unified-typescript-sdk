@@ -16,6 +16,12 @@ import {
   AtsEmail$outboundSchema,
 } from "./atsemail.js";
 import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
+import {
   PropertyAtsActivityFrom,
   PropertyAtsActivityFrom$inboundSchema,
   PropertyAtsActivityFrom$Outbound,
@@ -46,6 +52,7 @@ export type AtsActivity = {
   interviewId?: string | undefined;
   isPrivate?: boolean | undefined;
   jobId?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   subType?: string | undefined;
   title?: string | undefined;
@@ -91,6 +98,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
   interview_id: z.string().optional(),
   is_private: z.boolean().optional(),
   job_id: z.string().optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   sub_type: z.string().optional(),
   title: z.string().optional(),
@@ -129,6 +137,7 @@ export type AtsActivity$Outbound = {
   interview_id?: string | undefined;
   is_private?: boolean | undefined;
   job_id?: string | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   sub_type?: string | undefined;
   title?: string | undefined;
@@ -157,6 +166,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
   interviewId: z.string().optional(),
   isPrivate: z.boolean().optional(),
   jobId: z.string().optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   subType: z.string().optional(),
   title: z.string().optional(),

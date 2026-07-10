@@ -26,6 +26,7 @@ export const ListAtsActivitiesQueryParamFields = {
   Bcc: "bcc",
   SubType: "sub_type",
   CompanyId: "company_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAtsActivitiesQueryParamFields = ClosedEnum<

@@ -27,6 +27,7 @@ export const PatchAtsActivityQueryParamFields = {
   Bcc: "bcc",
   SubType: "sub_type",
   CompanyId: "company_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAtsActivityQueryParamFields = ClosedEnum<

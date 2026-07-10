@@ -57,6 +57,7 @@ export type AccountingCreditmemo = {
   discountAmount?: number | undefined;
   dueAt?: Date | undefined;
   id?: string | undefined;
+  invoiceId?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
@@ -123,6 +124,7 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  invoice_id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   notes: z.string().optional(),
   organization_id: z.string().optional(),
@@ -154,6 +156,7 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
     "creditmemo_number": "creditmemoNumber",
     "discount_amount": "discountAmount",
     "due_at": "dueAt",
+    "invoice_id": "invoiceId",
     "organization_id": "organizationId",
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
@@ -179,6 +182,7 @@ export type AccountingCreditmemo$Outbound = {
   discount_amount?: number | undefined;
   due_at?: string | undefined;
   id?: string | undefined;
+  invoice_id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   notes?: string | undefined;
   organization_id?: string | undefined;
@@ -214,6 +218,7 @@ export const AccountingCreditmemo$outboundSchema: z.ZodType<
   discountAmount: z.number().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  invoiceId: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   notes: z.string().optional(),
   organizationId: z.string().optional(),
@@ -241,6 +246,7 @@ export const AccountingCreditmemo$outboundSchema: z.ZodType<
     creditmemoNumber: "creditmemo_number",
     discountAmount: "discount_amount",
     dueAt: "due_at",
+    invoiceId: "invoice_id",
     organizationId: "organization_id",
     paidAmount: "paid_amount",
     paidAt: "paid_at",
