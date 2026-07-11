@@ -32,6 +32,10 @@ export type ListTaskChangesRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The project ID to filter by (reference to TaskProject)
+   */
+  projectId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -62,6 +66,7 @@ export type ListTaskChangesRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  project_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -80,6 +85,7 @@ export const ListTaskChangesRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  projectId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -88,6 +94,7 @@ export const ListTaskChangesRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    projectId: "project_id",
     taskId: "task_id",
     updatedGte: "updated_gte",
   });

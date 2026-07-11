@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: d678a2007a56718bfb29f419fb284e0a
+  docChecksum: 765c9a8f026f994299cd84192f56c8b0
   docVersion: "1.0"
-  speakeasyVersion: 1.789.1
+  speakeasyVersion: 1.789.2
   generationVersion: 2.916.4
-  releaseVersion: 2.85.6
-  configChecksum: 78cb0d634f3db6ece542cb47ce197fa9
+  releaseVersion: 2.85.7
+  configChecksum: 54a6622dab60110c549cc56ccebe5b8b
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 77e82180-ee3b-4a69-9c86-458c9a9d76e5
-  pristine_commit_hash: 6c8f3e127e86703c2514df1d3bd5e3754569d2aa
-  pristine_tree_hash: 07e5743c75f7ed81c722d8c3da90008dfa7623f8
+  generation_id: d09dda54-226d-4388-b401-69a0cd58e0b7
+  pristine_commit_hash: 246a661df28b60dd2c3e2bc9b06d284216f8ec33
+  pristine_tree_hash: 7c53db163e815448cc01489c26bfead0842ebc6f
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -3034,8 +3034,8 @@ trackedFiles:
     pristine_git_object: 014a44db94db8744069d9a7f3edb000bb879e2ba
   docs/sdk/models/operations/listtaskchangesrequest.md:
     id: b1391b045940
-    last_write_checksum: sha1:1e069128e306ecae1b73c4a06c5954d02cde78c3
-    pristine_git_object: ff1d0196ad96b7c83e686bef6256207693f6b6ee
+    last_write_checksum: sha1:665e5856363796eb5d18f4d44234aa7589c5d722
+    pristine_git_object: eac7fff2376d5cdd88aa9d61101efff7dda92824
   docs/sdk/models/operations/listtaskcommentsqueryparamfields.md:
     id: eac0d8cf3eeb
     last_write_checksum: sha1:d3240f5557f8f02092f27a91da25583f6ff96d85
@@ -10246,12 +10246,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:d39d85ac658a0cd391debf6c25365cf0c6b43933
-    pristine_git_object: 6ab66e0294f22fd4162632ecc7b42482281c36a1
+    last_write_checksum: sha1:55f0027555d83bc989f65a03f290b50382c5bf96
+    pristine_git_object: 7048120348dc732eaeba9ad8ce22ea0388f568eb
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:925aade3379646810318dcbbc59cbe1e9fa01fc2
-    pristine_git_object: 318419a2adafc84e94fecff575140126203bfd3d
+    last_write_checksum: sha1:feb3ccafe11cb9311b73af5ca3eda8ce81d32398
+    pristine_git_object: 249da0cb1ac9be32a36d2aeb3aa23c4219ce9604
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -12946,8 +12946,8 @@ trackedFiles:
     pristine_git_object: d03ce3b279fbbf2c72072e19198e8dc82b255767
   src/funcs/taskListTaskChanges.ts:
     id: 4f141c538136
-    last_write_checksum: sha1:ee1208a6b48012bf7200a8946ec70230dcb876e6
-    pristine_git_object: f15fe8a371e4efdb0ed38f362677e3fd74e3bd63
+    last_write_checksum: sha1:95a4eba9bc59ff243d8d386505eaffc21d600570
+    pristine_git_object: cdba93883206be948a7fbd7e7598d7e04657b45e
   src/funcs/taskListTaskProjects.ts:
     id: fdbac5e42c8c
     last_write_checksum: sha1:82ade98c1502aaf051617d4fb7ca6c1c4f8b7e65
@@ -13218,8 +13218,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:b16da3915fe4c9be6f005db59849a4da30b6a9ad
-    pristine_git_object: f5f3cfabd928ee79524c66854d33c6c78568bb83
+    last_write_checksum: sha1:cc5c248b94a53d9f32c98d5b029594b8b0d0fe43
+    pristine_git_object: 42071af0131e28f06e7e4dabb4256a9e794ebed2
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -15158,8 +15158,8 @@ trackedFiles:
     pristine_git_object: 3e88efe6d66e5324eee722fb92c733ba13bce74e
   src/sdk/models/operations/listtaskchanges.ts:
     id: 2bece7064cc5
-    last_write_checksum: sha1:ea4a4ac6e3e929b05e3d7a1aae78575f9c473c46
-    pristine_git_object: 8482c2e8a1f7484aa707afd9c459abd8de08ab93
+    last_write_checksum: sha1:a0b5f022811de379277da2f2e1bb0224cadb8311
+    pristine_git_object: 279a2dc69e513b37617f0318d1639f965dbda5ea
   src/sdk/models/operations/listtaskcomments.ts:
     id: e3d85ea67ea4
     last_write_checksum: sha1:3b24adcacd6b6e11a6a78511b2b1df974da2cb79
@@ -31721,7 +31721,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.createAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.accounting.createAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.accounting.getAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.accounting.getAccountingCreditmemo()`: \n  *  `request.fields` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.accounting.listAccountingBills()`: \n  *  `request.fields` **Changed**\n* `unified-to.accounting.listAccountingCreditmemoes()`: \n  *  `request.fields` **Changed**\n  *  `response.[].invoiceId` **Added**\n* `unified-to.accounting.patchAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.accounting.patchAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.accounting.updateAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.accounting.updateAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.bill.createAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.bill.getAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.bill.listAccountingBills()`: \n  *  `request.fields` **Changed**\n* `unified-to.bill.patchAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.bill.updateAccountingBill()`: \n  *  `request.fields` **Changed**\n* `unified-to.creditmemo.createAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.creditmemo.getAccountingCreditmemo()`: \n  *  `request.fields` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.creditmemo.listAccountingCreditmemoes()`: \n  *  `request.fields` **Changed**\n  *  `response.[].invoiceId` **Added**\n* `unified-to.creditmemo.patchAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.creditmemo.updateAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response.invoiceId` **Added**\n* `unified-to.ats.createAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.ats.getAtsActivity()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.ats.listAtsActivities()`: \n  *  `request.fields` **Changed**\n  *  `response.[].metadata` **Added**\n* `unified-to.ats.patchAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.ats.updateAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.activity.createAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.activity.getAtsActivity()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.activity.listAtsActivities()`: \n  *  `request.fields` **Changed**\n  *  `response.[].metadata` **Added**\n* `unified-to.activity.patchAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.activity.updateAtsActivity()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.task.listTaskChanges()`: \n  *  `request.projectId` **Added**\n* `unified-to.change.listTaskChanges()`: \n  *  `request.projectId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
