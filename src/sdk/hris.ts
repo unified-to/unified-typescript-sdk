@@ -8,6 +8,12 @@ import { companyListHrisCompanies } from "../funcs/companyListHrisCompanies.js";
 import { companyPatchHrisCompany } from "../funcs/companyPatchHrisCompany.js";
 import { companyRemoveHrisCompany } from "../funcs/companyRemoveHrisCompany.js";
 import { companyUpdateHrisCompany } from "../funcs/companyUpdateHrisCompany.js";
+import { documentCreateHrisDocument } from "../funcs/documentCreateHrisDocument.js";
+import { documentGetHrisDocument } from "../funcs/documentGetHrisDocument.js";
+import { documentListHrisDocuments } from "../funcs/documentListHrisDocuments.js";
+import { documentPatchHrisDocument } from "../funcs/documentPatchHrisDocument.js";
+import { documentRemoveHrisDocument } from "../funcs/documentRemoveHrisDocument.js";
+import { documentUpdateHrisDocument } from "../funcs/documentUpdateHrisDocument.js";
 import { groupCreateHrisGroup } from "../funcs/groupCreateHrisGroup.js";
 import { groupGetHrisGroup } from "../funcs/groupGetHrisGroup.js";
 import { groupListHrisGroups } from "../funcs/groupListHrisGroups.js";
@@ -134,6 +140,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisDevice> {
     return unwrapAsync(hrisCreateHrisDevice(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a document
+   */
+  async createHrisDocument(
+    request: operations.CreateHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentCreateHrisDocument(
       this,
       request,
       options,
@@ -274,6 +294,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisDevice> {
     return unwrapAsync(hrisGetHrisDevice(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a document
+   */
+  async getHrisDocument(
+    request: operations.GetHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentGetHrisDocument(
       this,
       request,
       options,
@@ -435,6 +469,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all documents
+   */
+  async listHrisDocuments(
+    request: operations.ListHrisDocumentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisDocument>> {
+    return unwrapAsync(documentListHrisDocuments(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all employees
    */
   async listHrisEmployees(
@@ -589,6 +637,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update a document
+   */
+  async patchHrisDocument(
+    request: operations.PatchHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentPatchHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an employee
    */
   async patchHrisEmployee(
@@ -729,6 +791,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove a document
+   */
+  async removeHrisDocument(
+    request: operations.RemoveHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisDocumentResponse | undefined> {
+    return unwrapAsync(documentRemoveHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove an employee
    */
   async removeHrisEmployee(
@@ -862,6 +938,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisDevice> {
     return unwrapAsync(hrisUpdateHrisDevice(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a document
+   */
+  async updateHrisDocument(
+    request: operations.UpdateHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentUpdateHrisDocument(
       this,
       request,
       options,

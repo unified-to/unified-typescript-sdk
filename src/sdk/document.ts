@@ -8,11 +8,17 @@ import { atsListAtsDocuments } from "../funcs/atsListAtsDocuments.js";
 import { atsPatchAtsDocument } from "../funcs/atsPatchAtsDocument.js";
 import { atsRemoveAtsDocument } from "../funcs/atsRemoveAtsDocument.js";
 import { atsUpdateAtsDocument } from "../funcs/atsUpdateAtsDocument.js";
+import { documentCreateHrisDocument } from "../funcs/documentCreateHrisDocument.js";
 import { documentCreateSigningDocument } from "../funcs/documentCreateSigningDocument.js";
+import { documentGetHrisDocument } from "../funcs/documentGetHrisDocument.js";
 import { documentGetSigningDocument } from "../funcs/documentGetSigningDocument.js";
+import { documentListHrisDocuments } from "../funcs/documentListHrisDocuments.js";
 import { documentListSigningDocuments } from "../funcs/documentListSigningDocuments.js";
+import { documentPatchHrisDocument } from "../funcs/documentPatchHrisDocument.js";
 import { documentPatchSigningDocument } from "../funcs/documentPatchSigningDocument.js";
+import { documentRemoveHrisDocument } from "../funcs/documentRemoveHrisDocument.js";
 import { documentRemoveSigningDocument } from "../funcs/documentRemoveSigningDocument.js";
+import { documentUpdateHrisDocument } from "../funcs/documentUpdateHrisDocument.js";
 import { documentUpdateSigningDocument } from "../funcs/documentUpdateSigningDocument.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -28,6 +34,20 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsDocument> {
     return unwrapAsync(atsCreateAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a document
+   */
+  async createHrisDocument(
+    request: operations.CreateHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentCreateHrisDocument(
       this,
       request,
       options,
@@ -65,6 +85,20 @@ export class Document extends ClientSDK {
   /**
    * Retrieve a document
    */
+  async getHrisDocument(
+    request: operations.GetHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentGetHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a document
+   */
   async getSigningDocument(
     request: operations.GetSigningDocumentRequest,
     options?: RequestOptions,
@@ -84,6 +118,20 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AtsDocument>> {
     return unwrapAsync(atsListAtsDocuments(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all documents
+   */
+  async listHrisDocuments(
+    request: operations.ListHrisDocumentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisDocument>> {
+    return unwrapAsync(documentListHrisDocuments(
       this,
       request,
       options,
@@ -121,6 +169,20 @@ export class Document extends ClientSDK {
   /**
    * Update a document
    */
+  async patchHrisDocument(
+    request: operations.PatchHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentPatchHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a document
+   */
   async patchSigningDocument(
     request: operations.PatchSigningDocumentRequest,
     options?: RequestOptions,
@@ -149,6 +211,20 @@ export class Document extends ClientSDK {
   /**
    * Remove a document
    */
+  async removeHrisDocument(
+    request: operations.RemoveHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisDocumentResponse | undefined> {
+    return unwrapAsync(documentRemoveHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a document
+   */
   async removeSigningDocument(
     request: operations.RemoveSigningDocumentRequest,
     options?: RequestOptions,
@@ -168,6 +244,20 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsDocument> {
     return unwrapAsync(atsUpdateAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a document
+   */
+  async updateHrisDocument(
+    request: operations.UpdateHrisDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDocument> {
+    return unwrapAsync(documentUpdateHrisDocument(
       this,
       request,
       options,

@@ -46,6 +46,7 @@ export type ListAdsCampaignsRequest = {
    * Fields to return
    */
   fields?: Array<ListAdsCampaignsQueryParamFields> | undefined;
+  goal?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -86,6 +87,7 @@ export type ListAdsCampaignsRequest$Outbound = {
   connection_id: string;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
+  goal?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -107,6 +109,7 @@ export const ListAdsCampaignsRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   endLt: z.string().optional(),
   fields: z.array(ListAdsCampaignsQueryParamFields$outboundSchema).optional(),
+  goal: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -47,6 +47,7 @@ export type AccountingCreditmemoStatus = OpenEnum<
 >;
 
 export type AccountingCreditmemo = {
+  applyAmount?: number | undefined;
   attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
   cancelledAt?: Date | undefined;
@@ -110,6 +111,7 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  apply_amount: z.number().optional(),
   attachments: z.array(AccountingAttachment$inboundSchema).optional(),
   balance_amount: z.number().optional(),
   cancelled_at: z.string().datetime({ offset: true }).transform(v =>
@@ -149,6 +151,7 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
   url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "apply_amount": "applyAmount",
     "balance_amount": "balanceAmount",
     "cancelled_at": "cancelledAt",
     "contact_id": "contactId",
@@ -172,6 +175,7 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AccountingCreditmemo$Outbound = {
+  apply_amount?: number | undefined;
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
   balance_amount?: number | undefined;
   cancelled_at?: string | undefined;
@@ -208,6 +212,7 @@ export const AccountingCreditmemo$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingCreditmemo
 > = z.object({
+  applyAmount: z.number().optional(),
   attachments: z.array(AccountingAttachment$outboundSchema).optional(),
   balanceAmount: z.number().optional(),
   cancelledAt: z.date().transform(v => v.toISOString()).optional(),
@@ -239,6 +244,7 @@ export const AccountingCreditmemo$outboundSchema: z.ZodType<
   url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    applyAmount: "apply_amount",
     balanceAmount: "balance_amount",
     cancelledAt: "cancelled_at",
     contactId: "contact_id",

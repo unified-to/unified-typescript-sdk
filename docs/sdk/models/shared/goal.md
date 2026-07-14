@@ -13,5 +13,5 @@ let value: Goal = "SALES";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "BRAND_AWARENESS" | "REACH" | "WEBSITE_TRAFFIC" | "LEADS" | "SALES" | "APP_PROMOTION" | Unrecognized<string>
+"UNSPECIFIED" | "BRAND_AWARENESS" | "ENGAGEMENT" | "REACH" | "WEBSITE_TRAFFIC" | "LEADS" | "SALES" | "APP_PROMOTION" | Unrecognized<string>
 ```

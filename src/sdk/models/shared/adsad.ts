@@ -48,6 +48,7 @@ export type AdsAdStatus = OpenEnum<typeof AdsAdStatus>;
 export type AdsAd = {
   adCopy?: string | undefined;
   adType?: AdType | undefined;
+  advertiserName?: string | undefined;
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeAssetUrl?: string | undefined;
@@ -59,6 +60,7 @@ export type AdsAd = {
   groupId?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
+  logoCreativeId?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   path1?: string | undefined;
@@ -94,6 +96,7 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
   .object({
     ad_copy: z.string().optional(),
     ad_type: AdType$inboundSchema.optional(),
+    advertiser_name: z.string().optional(),
     campaign_id: z.string().optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
@@ -107,6 +110,7 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
     group_id: z.string().optional(),
     headline: z.string().optional(),
     id: z.string().optional(),
+    logo_creative_id: z.string().optional(),
     name: z.string().optional(),
     organization_id: z.string().optional(),
     path1: z.string().optional(),
@@ -121,6 +125,7 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
     return remap$(v, {
       "ad_copy": "adCopy",
       "ad_type": "adType",
+      "advertiser_name": "advertiserName",
       "campaign_id": "campaignId",
       "created_at": "createdAt",
       "creative_asset_url": "creativeAssetUrl",
@@ -128,6 +133,7 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
       "display_url": "displayUrl",
       "final_url": "finalUrl",
       "group_id": "groupId",
+      "logo_creative_id": "logoCreativeId",
       "organization_id": "organizationId",
       "updated_at": "updatedAt",
     });
@@ -136,6 +142,7 @@ export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
 export type AdsAd$Outbound = {
   ad_copy?: string | undefined;
   ad_type?: string | undefined;
+  advertiser_name?: string | undefined;
   campaign_id?: string | undefined;
   created_at?: string | undefined;
   creative_asset_url?: string | undefined;
@@ -147,6 +154,7 @@ export type AdsAd$Outbound = {
   group_id?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
+  logo_creative_id?: string | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   path1?: string | undefined;
@@ -165,6 +173,7 @@ export const AdsAd$outboundSchema: z.ZodType<
 > = z.object({
   adCopy: z.string().optional(),
   adType: AdType$outboundSchema.optional(),
+  advertiserName: z.string().optional(),
   campaignId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeAssetUrl: z.string().optional(),
@@ -176,6 +185,7 @@ export const AdsAd$outboundSchema: z.ZodType<
   groupId: z.string().optional(),
   headline: z.string().optional(),
   id: z.string().optional(),
+  logoCreativeId: z.string().optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   path1: z.string().optional(),
@@ -188,6 +198,7 @@ export const AdsAd$outboundSchema: z.ZodType<
   return remap$(v, {
     adCopy: "ad_copy",
     adType: "ad_type",
+    advertiserName: "advertiser_name",
     campaignId: "campaign_id",
     createdAt: "created_at",
     creativeAssetUrl: "creative_asset_url",
@@ -195,6 +206,7 @@ export const AdsAd$outboundSchema: z.ZodType<
     displayUrl: "display_url",
     finalUrl: "final_url",
     groupId: "group_id",
+    logoCreativeId: "logo_creative_id",
     organizationId: "organization_id",
     updatedAt: "updated_at",
   });

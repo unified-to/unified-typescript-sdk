@@ -34,6 +34,7 @@ export type AccountingVendorcreditStatus = OpenEnum<
 
 export type AccountingVendorcredit = {
   accountId?: string | undefined;
+  applyAmount?: number | undefined;
   balanceAmount?: number | undefined;
   billId?: string | undefined;
   contactId?: string | undefined;
@@ -71,6 +72,7 @@ export const AccountingVendorcredit$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  apply_amount: z.number().optional(),
   balance_amount: z.number().optional(),
   bill_id: z.string().optional(),
   contact_id: z.string().optional(),
@@ -93,6 +95,7 @@ export const AccountingVendorcredit$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
+    "apply_amount": "applyAmount",
     "balance_amount": "balanceAmount",
     "bill_id": "billId",
     "contact_id": "contactId",
@@ -107,6 +110,7 @@ export const AccountingVendorcredit$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingVendorcredit$Outbound = {
   account_id?: string | undefined;
+  apply_amount?: number | undefined;
   balance_amount?: number | undefined;
   bill_id?: string | undefined;
   contact_id?: string | undefined;
@@ -131,6 +135,7 @@ export const AccountingVendorcredit$outboundSchema: z.ZodType<
   AccountingVendorcredit
 > = z.object({
   accountId: z.string().optional(),
+  applyAmount: z.number().optional(),
   balanceAmount: z.number().optional(),
   billId: z.string().optional(),
   contactId: z.string().optional(),
@@ -149,6 +154,7 @@ export const AccountingVendorcredit$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
+    applyAmount: "apply_amount",
     balanceAmount: "balance_amount",
     billId: "bill_id",
     contactId: "contact_id",

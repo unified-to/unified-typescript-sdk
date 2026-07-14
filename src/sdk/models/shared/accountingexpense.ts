@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingAttachment,
+  AccountingAttachment$inboundSchema,
+  AccountingAttachment$Outbound,
+  AccountingAttachment$outboundSchema,
+} from "./accountingattachment.js";
+import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
   AccountingLineitem$Outbound,
@@ -18,6 +24,7 @@ export type AccountingExpense = {
   accountId?: string | undefined;
   approvedAt?: Date | undefined;
   approverUserId?: string | undefined;
+  attachments?: Array<AccountingAttachment> | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -46,6 +53,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   approver_user_id: z.string().optional(),
+  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -90,6 +98,7 @@ export type AccountingExpense$Outbound = {
   account_id?: string | undefined;
   approved_at?: string | undefined;
   approver_user_id?: string | undefined;
+  attachments?: Array<AccountingAttachment$Outbound> | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
@@ -117,6 +126,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   accountId: z.string().optional(),
   approvedAt: z.date().transform(v => v.toISOString()).optional(),
   approverUserId: z.string().optional(),
+  attachments: z.array(AccountingAttachment$outboundSchema).optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),

@@ -25,8 +25,9 @@ export const UpdateAccountingExpenseQueryParamFields = {
   ApprovedAt: "approved_at",
   ApproverUserId: "approver_user_id",
   Lineitems: "lineitems",
-  Raw: "raw",
+  Attachments: "attachments",
   OrganizationId: "organization_id",
+  Raw: "raw",
 } as const;
 export type UpdateAccountingExpenseQueryParamFields = ClosedEnum<
   typeof UpdateAccountingExpenseQueryParamFields

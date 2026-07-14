@@ -47,6 +47,7 @@ export type PropertyAdsReportMetricsAdStatus = OpenEnum<
 export type PropertyAdsReportMetricsAd = {
   adCopy?: string | undefined;
   adType?: PropertyAdsReportMetricsAdAdType | undefined;
+  advertiserName?: string | undefined;
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeAssetUrl?: string | undefined;
@@ -58,6 +59,7 @@ export type PropertyAdsReportMetricsAd = {
   groupId?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
+  logoCreativeId?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   path1?: string | undefined;
@@ -90,6 +92,7 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
 > = z.object({
   ad_copy: z.string().optional(),
   ad_type: PropertyAdsReportMetricsAdAdType$inboundSchema.optional(),
+  advertiser_name: z.string().optional(),
   campaign_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -102,6 +105,7 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
   group_id: z.string().optional(),
   headline: z.string().optional(),
   id: z.string().optional(),
+  logo_creative_id: z.string().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   path1: z.string().optional(),
@@ -115,6 +119,7 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
   return remap$(v, {
     "ad_copy": "adCopy",
     "ad_type": "adType",
+    "advertiser_name": "advertiserName",
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_asset_url": "creativeAssetUrl",
@@ -122,6 +127,7 @@ export const PropertyAdsReportMetricsAd$inboundSchema: z.ZodType<
     "display_url": "displayUrl",
     "final_url": "finalUrl",
     "group_id": "groupId",
+    "logo_creative_id": "logoCreativeId",
     "organization_id": "organizationId",
     "updated_at": "updatedAt",
   });

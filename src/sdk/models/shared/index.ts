@@ -175,6 +175,7 @@ export * from "./hriscompany.js";
 export * from "./hriscompensation.js";
 export * from "./hrisdeduction.js";
 export * from "./hrisdevice.js";
+export * from "./hrisdocument.js";
 export * from "./hrisemail.js";
 export * from "./hrisemployee.js";
 export * from "./hrisemployeerelationship.js";
