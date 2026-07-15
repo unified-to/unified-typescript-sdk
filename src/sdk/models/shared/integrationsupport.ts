@@ -455,6 +455,13 @@ export const ListRepoId = {
 } as const;
 export type ListRepoId = OpenEnum<typeof ListRepoId>;
 
+export const ListRoleId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListRoleId = OpenEnum<typeof ListRoleId>;
+
 export const ListRootId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1357,6 +1364,7 @@ export type IntegrationSupport = {
   listRawFields?: ListRawFields | undefined;
   listReference?: ListReference | undefined;
   listRepoId?: ListRepoId | undefined;
+  listRoleId?: ListRoleId | undefined;
   listRootId?: ListRootId | undefined;
   listSaleschannelId?: ListSaleschannelId | undefined;
   listSessionId?: ListSessionId | undefined;
@@ -1922,6 +1930,13 @@ export const ListRepoId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListRepoId);
+
+/** @internal */
+export const ListRoleId$inboundSchema: z.ZodType<
+  ListRoleId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListRoleId);
 
 /** @internal */
 export const ListRootId$inboundSchema: z.ZodType<
@@ -2798,6 +2813,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_raw_fields: ListRawFields$inboundSchema.optional(),
   list_reference: ListReference$inboundSchema.optional(),
   list_repo_id: ListRepoId$inboundSchema.optional(),
+  list_role_id: ListRoleId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
   list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
   list_session_id: ListSessionId$inboundSchema.optional(),
@@ -3001,6 +3017,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_raw_fields": "listRawFields",
     "list_reference": "listReference",
     "list_repo_id": "listRepoId",
+    "list_role_id": "listRoleId",
     "list_root_id": "listRootId",
     "list_saleschannel_id": "listSaleschannelId",
     "list_session_id": "listSessionId",

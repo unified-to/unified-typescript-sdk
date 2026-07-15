@@ -1322,6 +1322,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisEmployee`](docs/sdks/hris/README.md#gethrisemployee) - Retrieve an employee
 - [`hrisGetHrisPayslip`](docs/sdks/hris/README.md#gethrispayslip) - Retrieve a payslip
 - [`hrisGetHrisPayslip`](docs/sdks/payslip/README.md#gethrispayslip) - Retrieve a payslip
+- [`hrisGetHrisTaxonomy`](docs/sdks/hris/README.md#gethristaxonomy) - Retrieve a taxonomy
+- [`hrisGetHrisTaxonomy`](docs/sdks/taxonomy/README.md#gethristaxonomy) - Retrieve a taxonomy
 - [`hrisGetHrisTimeoff`](docs/sdks/hris/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeoff`](docs/sdks/timeoff/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeshift`](docs/sdks/hris/README.md#gethristimeshift) - Retrieve a timeshift
@@ -1338,6 +1340,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisEmployees`](docs/sdks/hris/README.md#listhrisemployees) - List all employees
 - [`hrisListHrisPayslips`](docs/sdks/hris/README.md#listhrispayslips) - List all payslips
 - [`hrisListHrisPayslips`](docs/sdks/payslip/README.md#listhrispayslips) - List all payslips
+- [`hrisListHrisTaxonomies`](docs/sdks/hris/README.md#listhristaxonomies) - List all taxonomies
+- [`hrisListHrisTaxonomies`](docs/sdks/taxonomy/README.md#listhristaxonomies) - List all taxonomies
 - [`hrisListHrisTimeoffs`](docs/sdks/hris/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeoffs`](docs/sdks/timeoff/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeshifts`](docs/sdks/hris/README.md#listhristimeshifts) - List all timeshifts

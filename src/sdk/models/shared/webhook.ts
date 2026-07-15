@@ -95,6 +95,7 @@ export const ObjectType = {
   HrisBenefit: "hris_benefit",
   HrisBankaccount: "hris_bankaccount",
   HrisDocument: "hris_document",
+  HrisTaxonomy: "hris_taxonomy",
   MartechList: "martech_list",
   MartechMember: "martech_member",
   MartechCampaign: "martech_campaign",

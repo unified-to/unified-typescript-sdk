@@ -137,6 +137,7 @@ import { Subscription } from "./subscription.js";
 import { Table } from "./table.js";
 import { Target } from "./target.js";
 import { Task } from "./task.js";
+import { Taxonomy } from "./taxonomy.js";
 import { Taxrate } from "./taxrate.js";
 import { Template } from "./template.js";
 import { Ticket } from "./ticket.js";
@@ -599,6 +600,11 @@ export class UnifiedTo extends ClientSDK {
   private _payslip?: Payslip;
   get payslip(): Payslip {
     return (this._payslip ??= new Payslip(this._options));
+  }
+
+  private _taxonomy?: Taxonomy;
+  get taxonomy(): Taxonomy {
+    return (this._taxonomy ??= new Taxonomy(this._options));
   }
 
   private _timeoff?: Timeoff;

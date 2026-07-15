@@ -39,6 +39,7 @@ export type HrisPayslip = {
   id?: string | undefined;
   netAmount?: number | undefined;
   paidAt?: Date | undefined;
+  paymentReference?: string | undefined;
   paymentType?: PaymentType | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
@@ -72,6 +73,7 @@ export const HrisPayslip$inboundSchema: z.ZodType<
   net_amount: z.number().optional(),
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  payment_reference: z.string().optional(),
   payment_type: PaymentType$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -87,6 +89,7 @@ export const HrisPayslip$inboundSchema: z.ZodType<
     "gross_amount": "grossAmount",
     "net_amount": "netAmount",
     "paid_at": "paidAt",
+    "payment_reference": "paymentReference",
     "payment_type": "paymentType",
     "start_at": "startAt",
     "updated_at": "updatedAt",

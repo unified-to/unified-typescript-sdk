@@ -33,6 +33,7 @@ import { hrisGetHrisDeduction } from "../funcs/hrisGetHrisDeduction.js";
 import { hrisGetHrisDevice } from "../funcs/hrisGetHrisDevice.js";
 import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
+import { hrisGetHrisTaxonomy } from "../funcs/hrisGetHrisTaxonomy.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
 import { hrisListHrisBankaccounts } from "../funcs/hrisListHrisBankaccounts.js";
@@ -41,6 +42,7 @@ import { hrisListHrisDeductions } from "../funcs/hrisListHrisDeductions.js";
 import { hrisListHrisDevices } from "../funcs/hrisListHrisDevices.js";
 import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
+import { hrisListHrisTaxonomies } from "../funcs/hrisListHrisTaxonomies.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
 import { hrisPatchHrisBankaccount } from "../funcs/hrisPatchHrisBankaccount.js";
@@ -371,6 +373,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Retrieve a taxonomy
+   */
+  async getHrisTaxonomy(
+    request: operations.GetHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxonomy> {
+    return unwrapAsync(hrisGetHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a timeoff
    */
   async getHrisTimeoff(
@@ -532,6 +548,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.HrisPayslip>> {
     return unwrapAsync(hrisListHrisPayslips(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all taxonomies
+   */
+  async listHrisTaxonomies(
+    request: operations.ListHrisTaxonomiesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisTaxonomy>> {
+    return unwrapAsync(hrisListHrisTaxonomies(
       this,
       request,
       options,

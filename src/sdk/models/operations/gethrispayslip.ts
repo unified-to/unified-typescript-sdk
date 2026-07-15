@@ -12,6 +12,7 @@ export const GetHrisPayslipQueryParamFields = {
   UpdatedAt: "updated_at",
   UserId: "user_id",
   CompanyId: "company_id",
+  PaymentReference: "payment_reference",
   PaymentType: "payment_type",
   PaidAt: "paid_at",
   StartAt: "start_at",

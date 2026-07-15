@@ -6,33 +6,28 @@ import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { ClosedEnum } from "../../types/enums.js";
 
-export const ListHrisPayslipsQueryParamFields = {
+export const ListHrisTaxonomiesQueryParamFields = {
   Id: "id",
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
-  UserId: "user_id",
-  CompanyId: "company_id",
-  PaymentReference: "payment_reference",
-  PaymentType: "payment_type",
-  PaidAt: "paid_at",
-  StartAt: "start_at",
-  EndAt: "end_at",
-  Currency: "currency",
-  GrossAmount: "gross_amount",
-  NetAmount: "net_amount",
-  Details: "details",
-  Deduction: "deduction",
+  Type: "type",
+  Name: "name",
+  Description: "description",
+  Domain: "domain",
+  Category: "category",
+  Subcategory: "subcategory",
+  ParentId: "parent_id",
+  AlternativeNames: "alternative_names",
+  Url: "url",
+  RoleIds: "role_ids",
+  IsActive: "is_active",
   Raw: "raw",
 } as const;
-export type ListHrisPayslipsQueryParamFields = ClosedEnum<
-  typeof ListHrisPayslipsQueryParamFields
+export type ListHrisTaxonomiesQueryParamFields = ClosedEnum<
+  typeof ListHrisTaxonomiesQueryParamFields
 >;
 
-export type ListHrisPayslipsRequest = {
-  /**
-   * The company ID to filter by (reference to HrisCompany)
-   */
-  companyId?: string | undefined;
+export type ListHrisTaxonomiesRequest = {
   /**
    * ID of the connection
    */
@@ -40,10 +35,14 @@ export type ListHrisPayslipsRequest = {
   /**
    * Fields to return
    */
-  fields?: Array<ListHrisPayslipsQueryParamFields> | undefined;
+  fields?: Array<ListHrisTaxonomiesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The parent ID to filter by
+   */
+  parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -52,67 +51,70 @@ export type ListHrisPayslipsRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
+  /**
+   * The role ID to filter by
+   */
+  roleId?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
-  /**
-   * The user/employee ID to filter by (reference to HrisEmployee)
-   */
-  userId?: string | undefined;
 };
 
 /** @internal */
-export const ListHrisPayslipsQueryParamFields$outboundSchema: z.ZodNativeEnum<
-  typeof ListHrisPayslipsQueryParamFields
-> = z.nativeEnum(ListHrisPayslipsQueryParamFields);
+export const ListHrisTaxonomiesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListHrisTaxonomiesQueryParamFields
+> = z.nativeEnum(ListHrisTaxonomiesQueryParamFields);
 
 /** @internal */
-export type ListHrisPayslipsRequest$Outbound = {
-  company_id?: string | undefined;
+export type ListHrisTaxonomiesRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
+  role_id?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
-  user_id?: string | undefined;
 };
 
 /** @internal */
-export const ListHrisPayslipsRequest$outboundSchema: z.ZodType<
-  ListHrisPayslipsRequest$Outbound,
+export const ListHrisTaxonomiesRequest$outboundSchema: z.ZodType<
+  ListHrisTaxonomiesRequest$Outbound,
   z.ZodTypeDef,
-  ListHrisPayslipsRequest
+  ListHrisTaxonomiesRequest
 > = z.object({
-  companyId: z.string().optional(),
   connectionId: z.string(),
-  fields: z.array(ListHrisPayslipsQueryParamFields$outboundSchema).optional(),
+  fields: z.array(ListHrisTaxonomiesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
+  roleId: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.string().optional(),
-  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    companyId: "company_id",
     connectionId: "connection_id",
+    parentId: "parent_id",
+    roleId: "role_id",
     updatedGte: "updated_gte",
-    userId: "user_id",
   });
 });
 
-export function listHrisPayslipsRequestToJSON(
-  listHrisPayslipsRequest: ListHrisPayslipsRequest,
+export function listHrisTaxonomiesRequestToJSON(
+  listHrisTaxonomiesRequest: ListHrisTaxonomiesRequest,
 ): string {
   return JSON.stringify(
-    ListHrisPayslipsRequest$outboundSchema.parse(listHrisPayslipsRequest),
+    ListHrisTaxonomiesRequest$outboundSchema.parse(listHrisTaxonomiesRequest),
   );
 }
