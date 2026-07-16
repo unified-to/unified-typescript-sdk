@@ -13,6 +13,7 @@ export const ListAdsCampaignsQueryParamFields = {
   Name: "name",
   OrganizationId: "organization_id",
   Status: "status",
+  EffectiveStatus: "effective_status",
   StartAt: "start_at",
   EndAt: "end_at",
   BudgetAmount: "budget_amount",
@@ -38,6 +39,7 @@ export type ListAdsCampaignsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  effectiveStatus?: string | undefined;
   /**
    * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -85,6 +87,7 @@ export const ListAdsCampaignsQueryParamFields$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export type ListAdsCampaignsRequest$Outbound = {
   connection_id: string;
+  effective_status?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   goal?: string | undefined;
@@ -107,6 +110,7 @@ export const ListAdsCampaignsRequest$outboundSchema: z.ZodType<
   ListAdsCampaignsRequest
 > = z.object({
   connectionId: z.string(),
+  effectiveStatus: z.string().optional(),
   endLt: z.string().optional(),
   fields: z.array(ListAdsCampaignsQueryParamFields$outboundSchema).optional(),
   goal: z.string().optional(),
@@ -123,6 +127,7 @@ export const ListAdsCampaignsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    effectiveStatus: "effective_status",
     endLt: "end_lt",
     orgId: "org_id",
     startGte: "start_gte",

@@ -94,6 +94,7 @@ async function $do(
   const path = pathToFunc("/ads/{connection_id}/campaign")(pathParams);
 
   const query = encodeFormQuery({
+    "effective_status": payload.effective_status,
     "end_lt": payload.end_lt,
     "fields": payload.fields,
     "goal": payload.goal,

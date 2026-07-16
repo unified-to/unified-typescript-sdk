@@ -47,6 +47,21 @@ export const BudgetPeriod = {
 } as const;
 export type BudgetPeriod = OpenEnum<typeof BudgetPeriod>;
 
+export const EffectiveStatus = {
+  Unspecified: "UNSPECIFIED",
+  Serving: "SERVING",
+  Limited: "LIMITED",
+  Learning: "LEARNING",
+  Paused: "PAUSED",
+  Pending: "PENDING",
+  Ended: "ENDED",
+  Misconfigured: "MISCONFIGURED",
+  NotEligible: "NOT_ELIGIBLE",
+  Archived: "ARCHIVED",
+  Removed: "REMOVED",
+} as const;
+export type EffectiveStatus = OpenEnum<typeof EffectiveStatus>;
+
 export const Goal = {
   Unspecified: "UNSPECIFIED",
   BrandAwareness: "BRAND_AWARENESS",
@@ -79,6 +94,7 @@ export type AdsCampaign = {
   category?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  effectiveStatus?: EffectiveStatus | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsCampaignFrequencyCap | undefined;
   goal?: Goal | undefined;
@@ -122,6 +138,19 @@ export const BudgetPeriod$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(BudgetPeriod);
 
 /** @internal */
+export const EffectiveStatus$inboundSchema: z.ZodType<
+  EffectiveStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(EffectiveStatus);
+/** @internal */
+export const EffectiveStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  EffectiveStatus
+> = openEnums.outboundSchema(EffectiveStatus);
+
+/** @internal */
 export const Goal$inboundSchema: z.ZodType<Goal, z.ZodTypeDef, unknown> =
   openEnums.inboundSchema(Goal);
 /** @internal */
@@ -155,6 +184,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
+  effective_status: EffectiveStatus$inboundSchema.optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsCampaignFrequencyCap$inboundSchema.optional(),
@@ -179,6 +209,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
     "budget_period": "budgetPeriod",
     "campaign_budget_identifier": "campaignBudgetIdentifier",
     "created_at": "createdAt",
+    "effective_status": "effectiveStatus",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
     "has_eu_political_ads": "hasEuPoliticalAds",
@@ -198,6 +229,7 @@ export type AdsCampaign$Outbound = {
   category?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
+  effective_status?: string | undefined;
   end_at?: string | undefined;
   frequency_cap?: PropertyAdsCampaignFrequencyCap$Outbound | undefined;
   goal?: string | undefined;
@@ -227,6 +259,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   category: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
+  effectiveStatus: EffectiveStatus$outboundSchema.optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   frequencyCap: PropertyAdsCampaignFrequencyCap$outboundSchema.optional(),
   goal: Goal$outboundSchema.optional(),
@@ -248,6 +281,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
     budgetPeriod: "budget_period",
     campaignBudgetIdentifier: "campaign_budget_identifier",
     createdAt: "created_at",
+    effectiveStatus: "effective_status",
     endAt: "end_at",
     frequencyCap: "frequency_cap",
     hasEuPoliticalAds: "has_eu_political_ads",
