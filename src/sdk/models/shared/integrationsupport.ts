@@ -189,6 +189,13 @@ export const ListDocumentId = {
 } as const;
 export type ListDocumentId = OpenEnum<typeof ListDocumentId>;
 
+export const ListEffectiveStatus = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListEffectiveStatus = OpenEnum<typeof ListEffectiveStatus>;
+
 export const ListEndLt = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1326,6 +1333,7 @@ export type IntegrationSupport = {
   listDealId?: ListDealId | undefined;
   listDimension?: ListDimension | undefined;
   listDocumentId?: ListDocumentId | undefined;
+  listEffectiveStatus?: ListEffectiveStatus | undefined;
   listEndLt?: ListEndLt | undefined;
   listEventId?: ListEventId | undefined;
   listExpand?: ListExpand | undefined;
@@ -1664,6 +1672,13 @@ export const ListDocumentId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListDocumentId);
+
+/** @internal */
+export const ListEffectiveStatus$inboundSchema: z.ZodType<
+  ListEffectiveStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListEffectiveStatus);
 
 /** @internal */
 export const ListEndLt$inboundSchema: z.ZodType<
@@ -2775,6 +2790,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_deal_id: ListDealId$inboundSchema.optional(),
   list_dimension: ListDimension$inboundSchema.optional(),
   list_document_id: ListDocumentId$inboundSchema.optional(),
+  list_effective_status: ListEffectiveStatus$inboundSchema.optional(),
   list_end_lt: ListEndLt$inboundSchema.optional(),
   list_event_id: ListEventId$inboundSchema.optional(),
   list_expand: ListExpand$inboundSchema.optional(),
@@ -2979,6 +2995,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_deal_id": "listDealId",
     "list_dimension": "listDimension",
     "list_document_id": "listDocumentId",
+    "list_effective_status": "listEffectiveStatus",
     "list_end_lt": "listEndLt",
     "list_event_id": "listEventId",
     "list_expand": "listExpand",

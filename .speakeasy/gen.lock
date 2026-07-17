@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 187dee688fb0a5b05b3100f79c0eab58
+  docChecksum: c20cc0103001f7589cc7477ec75e8585
   docVersion: "1.0"
   speakeasyVersion: 1.790.2
   generationVersion: 2.918.3
-  releaseVersion: 2.85.10
-  configChecksum: d95323d3bf013eb82c0051e99b086b7c
+  releaseVersion: 2.85.11
+  configChecksum: 570642b08d8240b97dfc959a181cedff
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 6943ce2b-889c-4fae-974e-13100d5a6aa9
-  pristine_commit_hash: 359107ba674aa8c5a3f88fbb30d412b3535da7be
-  pristine_tree_hash: 6731ba16be5ec3c135cfd78e0c6a232da6d43668
+  generation_id: 26996479-4303-4dae-8280-3d0eb21e02ea
+  pristine_commit_hash: 4aeef25939364ec8856c1806d7d06aac2d1fce0c
+  pristine_tree_hash: 8b2cca44081452b2d96c0bba65c8384e9af3b1a3
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -7258,8 +7258,8 @@ trackedFiles:
     pristine_git_object: 7b8e894bd2546fed0f0804df427116e850ca9f48
   docs/sdk/models/shared/integrationsupport.md:
     id: d54f7cc37476
-    last_write_checksum: sha1:ffc96873ce4d93444f4528afbbb15075b8a82cd2
-    pristine_git_object: af23509077893fd45bcf767465a0edcd482189e1
+    last_write_checksum: sha1:a883d1d36fd4c9cf9be335e3c5abcb1b5a87c37e
+    pristine_git_object: b03553ad0e056f568fee25716150cf5f7798ffd3
   docs/sdk/models/shared/intervalunit.md:
     id: febb2c2424b5
     last_write_checksum: sha1:cf6be252d3076d78aa5b51091722404cc33d66dc
@@ -7424,6 +7424,10 @@ trackedFiles:
     id: 286dd7cfb376
     last_write_checksum: sha1:3c54576e66bf0d5686fe16171b4fa8859409a10c
     pristine_git_object: 30b2390a244f50006b19816873d4ca33c963178a
+  docs/sdk/models/shared/listeffectivestatus.md:
+    id: dc8f8a3d630d
+    last_write_checksum: sha1:304f326ee26d8f5c7e4496ee86ff340f4717c608
+    pristine_git_object: b8747275313b88ad19709957027b06a5922db842
   docs/sdk/models/shared/listendlt.md:
     id: 7563b73fcfe4
     last_write_checksum: sha1:c8d84754468ed8eb5b2821f61ad407ca3aa5a073
@@ -10346,12 +10350,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:a29e88bcffb9dcddfe880299b2890414b42a047f
-    pristine_git_object: 15794cbf81a17a4ece2903b1888db4fc28526b08
+    last_write_checksum: sha1:1ad0ce43eba38d4dfc5d23fa03e3f03e4117665a
+    pristine_git_object: c57517d8f05ab9cd48e9f51bb922c23ac62b62f9
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:5194da9813b8dc8269314cd4630cf0849b68159a
-    pristine_git_object: 5e50b30b8a5a106795a6e05e00b3521f60917154
+    last_write_checksum: sha1:b7de32cc84345d0cb059ba345a1d163aa2599e4e
+    pristine_git_object: 01ca72c1d2dcae1a2ae61d6c1ffbc303fba3e34a
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -13350,8 +13354,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:d2c3f60883420ad332e72afec1488ca5ea0eab81
-    pristine_git_object: 93ec59545226857dfadb67a408ff214940d77807
+    last_write_checksum: sha1:345cf6428f627d62eb22e928724397b94b25af7e
+    pristine_git_object: 1f2dc66282e626edf08da63748bea032d41b99d0
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -17482,8 +17486,8 @@ trackedFiles:
     pristine_git_object: 3917db55dbfec7306d93dddf063d8156a282f45d
   src/sdk/models/shared/integrationsupport.ts:
     id: 7d6c3b1a29b1
-    last_write_checksum: sha1:566d5b51f58a102837e4f1829386402ea75b7628
-    pristine_git_object: db78d552891fa2ec2df1ecd0fb4782f56f9c5ee7
+    last_write_checksum: sha1:c75bb147081e9a5f95c5cb1c7e0ce877e66b815d
+    pristine_git_object: 483e2712697a0ed6919e466c2b5be270486cf3a8
   src/sdk/models/shared/issue.ts:
     id: 03d66f3fd292
     last_write_checksum: sha1:7830a0273ddd855fa53862fce9a387d3d8f882e3
@@ -31969,7 +31973,12 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.report.listAdsReports()`:  `response.[].metrics[].campaign.effectiveStatus` **Added**\n* `unified-to.ads.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.effectiveStatus` **Added**\n* `unified-to.ads.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response.effectiveStatus` **Added**\n* `unified-to.ads.listAdsCampaigns()`: \n  *  `request` **Changed**\n  *  `response.[].effectiveStatus` **Added**\n* `unified-to.ads.listAdsReports()`:  `response.[].metrics[].campaign.effectiveStatus` **Added**\n* `unified-to.ads.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.effectiveStatus` **Added**\n* `unified-to.ads.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.effectiveStatus` **Added**\n* `unified-to.campaign.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.effectiveStatus` **Added**\n* `unified-to.campaign.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response.effectiveStatus` **Added**\n* `unified-to.campaign.listAdsCampaigns()`: \n  *  `request` **Changed**\n  *  `response.[].effectiveStatus` **Added**\n* `unified-to.campaign.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.effectiveStatus` **Added**\n* `unified-to.campaign.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response.effectiveStatus` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.listEffectiveStatus` **Added**
+  * `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.listEffectiveStatus` **Added**
+  * `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.Map<IntegrationSupport>.listEffectiveStatus` **Added**
+  * `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.Map<IntegrationSupport>.listEffectiveStatus` **Added**
 generatedFiles:
   - .gitattributes
   - .npmignore

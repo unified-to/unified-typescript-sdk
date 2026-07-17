@@ -1,6 +1,6 @@
 {
   "name": "@unified-api/typescript-sdk",
-  "version": "2.85.10",
+  "version": "2.85.11",
   "author": "Unified",
   "type": "module",
   "tshy": {
