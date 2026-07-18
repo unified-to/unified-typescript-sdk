@@ -72,6 +72,23 @@ export type PropertyAdsReportMetricsGroupBudgetUnit = OpenEnum<
   typeof PropertyAdsReportMetricsGroupBudgetUnit
 >;
 
+export const PropertyAdsReportMetricsGroupEffectiveStatus = {
+  Unspecified: "UNSPECIFIED",
+  Serving: "SERVING",
+  Limited: "LIMITED",
+  Learning: "LEARNING",
+  Paused: "PAUSED",
+  Pending: "PENDING",
+  Ended: "ENDED",
+  Misconfigured: "MISCONFIGURED",
+  NotEligible: "NOT_ELIGIBLE",
+  Archived: "ARCHIVED",
+  Removed: "REMOVED",
+} as const;
+export type PropertyAdsReportMetricsGroupEffectiveStatus = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupEffectiveStatus
+>;
+
 export const PropertyAdsReportMetricsGroupOptimizationGoal = {
   Reach: "REACH",
   Impressions: "IMPRESSIONS",
@@ -141,6 +158,7 @@ export type PropertyAdsReportMetricsGroup = {
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
   currency?: string | undefined;
+  effectiveStatus?: PropertyAdsReportMetricsGroupEffectiveStatus | undefined;
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsReportMetricsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
@@ -192,6 +210,14 @@ export const PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetUnit);
 
 /** @internal */
+export const PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema:
+  z.ZodType<
+    PropertyAdsReportMetricsGroupEffectiveStatus,
+    z.ZodTypeDef,
+    unknown
+  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupEffectiveStatus);
+
+/** @internal */
 export const PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema:
   z.ZodType<
     PropertyAdsReportMetricsGroupOptimizationGoal,
@@ -236,6 +262,8 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     .optional(),
   creative_ids: z.array(z.string()).optional(),
   currency: z.string().optional(),
+  effective_status: PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema
+    .optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency_cap: PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema
@@ -271,6 +299,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
+    "effective_status": "effectiveStatus",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
     "has_eu_political_ads": "hasEuPoliticalAds",

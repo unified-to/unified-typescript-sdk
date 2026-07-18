@@ -28,6 +28,7 @@ export const CreateAtsCandidateQueryParamFields = {
   Sources: "sources",
   DateOfBirth: "date_of_birth",
   UserId: "user_id",
+  UserIds: "user_ids",
   WebUrl: "web_url",
   Experiences: "experiences",
   Education: "education",

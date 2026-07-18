@@ -16,6 +16,7 @@ export type RepoCommit = {
   linesChanged?: number | undefined;
   linesDeleted?: number | undefined;
   message?: string | undefined;
+  pullrequestIds?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
   repoId: string;
   updatedAt?: Date | undefined;
@@ -36,6 +37,7 @@ export const RepoCommit$inboundSchema: z.ZodType<
   lines_changed: z.number().optional(),
   lines_deleted: z.number().optional(),
   message: z.string().optional(),
+  pullrequest_ids: z.array(z.string()).optional(),
   raw: z.record(z.any()).optional(),
   repo_id: z.string(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -48,6 +50,7 @@ export const RepoCommit$inboundSchema: z.ZodType<
     "lines_added": "linesAdded",
     "lines_changed": "linesChanged",
     "lines_deleted": "linesDeleted",
+    "pullrequest_ids": "pullrequestIds",
     "repo_id": "repoId",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -62,6 +65,7 @@ export type RepoCommit$Outbound = {
   lines_changed?: number | undefined;
   lines_deleted?: number | undefined;
   message?: string | undefined;
+  pullrequest_ids?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
   repo_id: string;
   updated_at?: string | undefined;
@@ -81,6 +85,7 @@ export const RepoCommit$outboundSchema: z.ZodType<
   linesChanged: z.number().optional(),
   linesDeleted: z.number().optional(),
   message: z.string().optional(),
+  pullrequestIds: z.array(z.string()).optional(),
   raw: z.record(z.any()).optional(),
   repoId: z.string(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -92,6 +97,7 @@ export const RepoCommit$outboundSchema: z.ZodType<
     linesAdded: "lines_added",
     linesChanged: "lines_changed",
     linesDeleted: "lines_deleted",
+    pullrequestIds: "pullrequest_ids",
     repoId: "repo_id",
     updatedAt: "updated_at",
     userId: "user_id",

@@ -109,6 +109,7 @@ export type Integration = {
     | undefined;
   popularity?: number | undefined;
   rateLimitDescription?: string | undefined;
+  requiresCname?: boolean | undefined;
   saml?:
     | { [k: string]: any }
     | string
@@ -457,6 +458,7 @@ export const Integration$inboundSchema: z.ZodType<
   ]).optional(),
   popularity: z.number().optional(),
   rate_limit_description: z.string().optional(),
+  requires_cname: z.boolean().optional(),
   saml: z.union([
     z.record(z.any()),
     z.string(),
@@ -505,6 +507,7 @@ export const Integration$inboundSchema: z.ZodType<
     "is_hidden": "isHidden",
     "logo_url": "logoUrl",
     "rate_limit_description": "rateLimitDescription",
+    "requires_cname": "requiresCname",
     "tested_at": "testedAt",
     "text_color": "textColor",
     "token_instructions": "tokenInstructions",

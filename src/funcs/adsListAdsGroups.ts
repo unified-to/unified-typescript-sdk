@@ -95,6 +95,7 @@ async function $do(
 
   const query = encodeFormQuery({
     "campaign_id": payload.campaign_id,
+    "effective_status": payload.effective_status,
     "end_lt": payload.end_lt,
     "fields": payload.fields,
     "io_id": payload.io_id,

@@ -16,6 +16,7 @@ export const ListAdsGroupsQueryParamFields = {
   OrganizationId: "organization_id",
   InsertionorderId: "insertionorder_id",
   Status: "status",
+  EffectiveStatus: "effective_status",
   Targeting: "targeting",
   BidAmount: "bid_amount",
   BidStrategy: "bid_strategy",
@@ -50,6 +51,7 @@ export type ListAdsGroupsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  effectiveStatus?: string | undefined;
   /**
    * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -105,6 +107,7 @@ export const ListAdsGroupsQueryParamFields$outboundSchema: z.ZodNativeEnum<
 export type ListAdsGroupsRequest$Outbound = {
   campaign_id?: string | undefined;
   connection_id: string;
+  effective_status?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   io_id?: string | undefined;
@@ -129,6 +132,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
 > = z.object({
   campaignId: z.string().optional(),
   connectionId: z.string(),
+  effectiveStatus: z.string().optional(),
   endLt: z.string().optional(),
   fields: z.array(ListAdsGroupsQueryParamFields$outboundSchema).optional(),
   ioId: z.string().optional(),
@@ -147,6 +151,7 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     campaignId: "campaign_id",
     connectionId: "connection_id",
+    effectiveStatus: "effective_status",
     endLt: "end_lt",
     ioId: "io_id",
     orgId: "org_id",

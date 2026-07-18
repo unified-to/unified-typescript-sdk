@@ -11,5 +11,5 @@ let value: ListRepoCommitsQueryParamFields = "lines_changed";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "user_id" | "repo_id" | "message" | "branch_id" | "lines_added" | "lines_deleted" | "lines_changed" | "raw"
+"id" | "created_at" | "updated_at" | "user_id" | "repo_id" | "message" | "branch_id" | "pullrequest_ids" | "lines_added" | "lines_deleted" | "lines_changed" | "raw"
 ```

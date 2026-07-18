@@ -86,6 +86,10 @@ export type AtsCandidate = {
   title?: string | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
+  /**
+   * references hris employees
+   */
+  userIds?: Array<string> | undefined;
   webUrl?: string | undefined;
 };
 
@@ -132,6 +136,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
+  user_ids: z.array(z.string()).optional(),
   web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -147,6 +152,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
     "link_urls": "linkUrls",
     "updated_at": "updatedAt",
     "user_id": "userId",
+    "user_ids": "userIds",
     "web_url": "webUrl",
   });
 });
@@ -178,6 +184,7 @@ export type AtsCandidate$Outbound = {
   title?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
+  user_ids?: Array<string> | undefined;
   web_url?: string | undefined;
 };
 
@@ -213,6 +220,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
+  userIds: z.array(z.string()).optional(),
   webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -228,6 +236,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
     linkUrls: "link_urls",
     updatedAt: "updated_at",
     userId: "user_id",
+    userIds: "user_ids",
     webUrl: "web_url",
   });
 });
