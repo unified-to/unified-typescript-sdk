@@ -4,13 +4,17 @@
 
 import { eventPatchMessagingEvent } from "../funcs/eventPatchMessagingEvent.js";
 import { eventUpdateMessagingEvent } from "../funcs/eventUpdateMessagingEvent.js";
+import { messagingCreateMessagingChannel } from "../funcs/messagingCreateMessagingChannel.js";
 import { messagingCreateMessagingMessage } from "../funcs/messagingCreateMessagingMessage.js";
 import { messagingGetMessagingChannel } from "../funcs/messagingGetMessagingChannel.js";
 import { messagingGetMessagingMessage } from "../funcs/messagingGetMessagingMessage.js";
 import { messagingListMessagingChannels } from "../funcs/messagingListMessagingChannels.js";
 import { messagingListMessagingMessages } from "../funcs/messagingListMessagingMessages.js";
+import { messagingPatchMessagingChannel } from "../funcs/messagingPatchMessagingChannel.js";
 import { messagingPatchMessagingMessage } from "../funcs/messagingPatchMessagingMessage.js";
+import { messagingRemoveMessagingChannel } from "../funcs/messagingRemoveMessagingChannel.js";
 import { messagingRemoveMessagingMessage } from "../funcs/messagingRemoveMessagingMessage.js";
+import { messagingUpdateMessagingChannel } from "../funcs/messagingUpdateMessagingChannel.js";
 import { messagingUpdateMessagingMessage } from "../funcs/messagingUpdateMessagingMessage.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -18,6 +22,20 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Messaging extends ClientSDK {
+  /**
+   * Create a channel
+   */
+  async createMessagingChannel(
+    request: operations.CreateMessagingChannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MessagingChannel> {
+    return unwrapAsync(messagingCreateMessagingChannel(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Create a message
    */
@@ -89,6 +107,20 @@ export class Messaging extends ClientSDK {
   }
 
   /**
+   * Update a channel
+   */
+  async patchMessagingChannel(
+    request: operations.PatchMessagingChannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MessagingChannel> {
+    return unwrapAsync(messagingPatchMessagingChannel(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an event
    */
   async patchMessagingEvent(
@@ -117,6 +149,20 @@ export class Messaging extends ClientSDK {
   }
 
   /**
+   * Remove a channel
+   */
+  async removeMessagingChannel(
+    request: operations.RemoveMessagingChannelRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveMessagingChannelResponse | undefined> {
+    return unwrapAsync(messagingRemoveMessagingChannel(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a message
    */
   async removeMessagingMessage(
@@ -124,6 +170,20 @@ export class Messaging extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveMessagingMessageResponse | undefined> {
     return unwrapAsync(messagingRemoveMessagingMessage(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a channel
+   */
+  async updateMessagingChannel(
+    request: operations.UpdateMessagingChannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MessagingChannel> {
+    return unwrapAsync(messagingUpdateMessagingChannel(
       this,
       request,
       options,

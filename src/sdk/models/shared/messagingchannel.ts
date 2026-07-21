@@ -10,6 +10,8 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   MessagingMember,
   MessagingMember$inboundSchema,
+  MessagingMember$Outbound,
+  MessagingMember$outboundSchema,
 } from "./messagingmember.js";
 
 export type MessagingChannel = {
@@ -58,7 +60,59 @@ export const MessagingChannel$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
+/** @internal */
+export type MessagingChannel$Outbound = {
+  created_at?: string | undefined;
+  description?: string | undefined;
+  has_subchannels?: boolean | undefined;
+  id?: string | undefined;
+  is_active?: boolean | undefined;
+  is_private?: boolean | undefined;
+  members?: Array<MessagingMember$Outbound> | undefined;
+  name?: string | undefined;
+  parent_id?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
+  updated_at?: string | undefined;
+  web_url?: string | undefined;
+};
 
+/** @internal */
+export const MessagingChannel$outboundSchema: z.ZodType<
+  MessagingChannel$Outbound,
+  z.ZodTypeDef,
+  MessagingChannel
+> = z.object({
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
+  description: z.string().optional(),
+  hasSubchannels: z.boolean().optional(),
+  id: z.string().optional(),
+  isActive: z.boolean().optional(),
+  isPrivate: z.boolean().optional(),
+  members: z.array(MessagingMember$outboundSchema).optional(),
+  name: z.string().optional(),
+  parentId: z.string().optional(),
+  raw: z.record(z.any()).optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  webUrl: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    createdAt: "created_at",
+    hasSubchannels: "has_subchannels",
+    isActive: "is_active",
+    isPrivate: "is_private",
+    parentId: "parent_id",
+    updatedAt: "updated_at",
+    webUrl: "web_url",
+  });
+});
+
+export function messagingChannelToJSON(
+  messagingChannel: MessagingChannel,
+): string {
+  return JSON.stringify(
+    MessagingChannel$outboundSchema.parse(messagingChannel),
+  );
+}
 export function messagingChannelFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagingChannel, SDKValidationError> {

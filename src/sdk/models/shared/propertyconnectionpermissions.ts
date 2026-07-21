@@ -167,6 +167,7 @@ export const PropertyConnectionPermissions = {
   MessagingMessageRead: "messaging_message_read",
   MessagingMessageWrite: "messaging_message_write",
   MessagingChannelRead: "messaging_channel_read",
+  MessagingChannelWrite: "messaging_channel_write",
   MessagingEventRead: "messaging_event_read",
   MessagingEventWrite: "messaging_event_write",
   KmsSpaceRead: "kms_space_read",

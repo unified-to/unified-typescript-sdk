@@ -1544,6 +1544,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`memberRemoveMartechMember`](docs/sdks/member/README.md#removemartechmember) - Remove a member
 - [`memberUpdateMartechMember`](docs/sdks/martech/README.md#updatemartechmember) - Update a member
 - [`memberUpdateMartechMember`](docs/sdks/member/README.md#updatemartechmember) - Update a member
+- [`messagingCreateMessagingChannel`](docs/sdks/channel/README.md#createmessagingchannel) - Create a channel
+- [`messagingCreateMessagingChannel`](docs/sdks/messaging/README.md#createmessagingchannel) - Create a channel
 - [`messagingCreateMessagingMessage`](docs/sdks/message/README.md#createmessagingmessage) - Create a message
 - [`messagingCreateMessagingMessage`](docs/sdks/messaging/README.md#createmessagingmessage) - Create a message
 - [`messagingGetMessagingChannel`](docs/sdks/channel/README.md#getmessagingchannel) - Retrieve a channel
@@ -1554,10 +1556,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`messagingListMessagingChannels`](docs/sdks/messaging/README.md#listmessagingchannels) - List all channels
 - [`messagingListMessagingMessages`](docs/sdks/message/README.md#listmessagingmessages) - List all messages
 - [`messagingListMessagingMessages`](docs/sdks/messaging/README.md#listmessagingmessages) - List all messages
+- [`messagingPatchMessagingChannel`](docs/sdks/channel/README.md#patchmessagingchannel) - Update a channel
+- [`messagingPatchMessagingChannel`](docs/sdks/messaging/README.md#patchmessagingchannel) - Update a channel
 - [`messagingPatchMessagingMessage`](docs/sdks/message/README.md#patchmessagingmessage) - Update a message
 - [`messagingPatchMessagingMessage`](docs/sdks/messaging/README.md#patchmessagingmessage) - Update a message
+- [`messagingRemoveMessagingChannel`](docs/sdks/channel/README.md#removemessagingchannel) - Remove a channel
+- [`messagingRemoveMessagingChannel`](docs/sdks/messaging/README.md#removemessagingchannel) - Remove a channel
 - [`messagingRemoveMessagingMessage`](docs/sdks/message/README.md#removemessagingmessage) - Remove a message
 - [`messagingRemoveMessagingMessage`](docs/sdks/messaging/README.md#removemessagingmessage) - Remove a message
+- [`messagingUpdateMessagingChannel`](docs/sdks/channel/README.md#updatemessagingchannel) - Update a channel
+- [`messagingUpdateMessagingChannel`](docs/sdks/messaging/README.md#updatemessagingchannel) - Update a channel
 - [`messagingUpdateMessagingMessage`](docs/sdks/message/README.md#updatemessagingmessage) - Update a message
 - [`messagingUpdateMessagingMessage`](docs/sdks/messaging/README.md#updatemessagingmessage) - Update a message
 - [`metadataCreateMetadataMetadata`](docs/sdks/metadata/README.md#createmetadatametadata) - Create a metadata
