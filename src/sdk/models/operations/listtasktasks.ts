@@ -17,6 +17,8 @@ export const ListTaskTasksQueryParamFields = {
   Status: "status",
   Notes: "notes",
   DueAt: "due_at",
+  StartAt: "start_at",
+  EndAt: "end_at",
   Priority: "priority",
   AssignedUserIds: "assigned_user_ids",
   CreatorUserId: "creator_user_id",
@@ -27,6 +29,7 @@ export const ListTaskTasksQueryParamFields = {
   AttachmentIds: "attachment_ids",
   Metadata: "metadata",
   HasChildren: "has_children",
+  Type: "type",
   Raw: "raw",
 } as const;
 export type ListTaskTasksQueryParamFields = ClosedEnum<
@@ -34,6 +37,10 @@ export type ListTaskTasksQueryParamFields = ClosedEnum<
 >;
 
 export type ListTaskTasksRequest = {
+  /**
+   * The assigned user/employee ID to filter by (reference to HrisEmployee)
+   */
+  assignedUserId?: string | undefined;
   /**
    * ID of the connection
    */
@@ -91,6 +98,7 @@ export const ListTaskTasksQueryParamFields$outboundSchema: z.ZodNativeEnum<
 
 /** @internal */
 export type ListTaskTasksRequest$Outbound = {
+  assigned_user_id?: string | undefined;
   connection_id: string;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
@@ -114,6 +122,7 @@ export const ListTaskTasksRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListTaskTasksRequest
 > = z.object({
+  assignedUserId: z.string().optional(),
   connectionId: z.string(),
   endLt: z.string().optional(),
   fields: z.array(ListTaskTasksQueryParamFields$outboundSchema).optional(),
@@ -131,6 +140,7 @@ export const ListTaskTasksRequest$outboundSchema: z.ZodType<
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    assignedUserId: "assigned_user_id",
     connectionId: "connection_id",
     endLt: "end_lt",
     parentId: "parent_id",

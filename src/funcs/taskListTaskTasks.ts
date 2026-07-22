@@ -94,6 +94,7 @@ async function $do(
   const path = pathToFunc("/task/{connection_id}/task")(pathParams);
 
   const query = encodeFormQuery({
+    "assigned_user_id": payload.assigned_user_id,
     "end_lt": payload.end_lt,
     "fields": payload.fields,
     "limit": payload.limit,

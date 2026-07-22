@@ -33,6 +33,7 @@ export type TaskTask = {
   createdAt?: Date | undefined;
   creatorUserId?: string | undefined;
   dueAt?: Date | undefined;
+  endAt?: Date | undefined;
   followerUserIds?: Array<string> | undefined;
   groupIds?: Array<string> | undefined;
   hasChildren?: boolean | undefined;
@@ -44,8 +45,10 @@ export type TaskTask = {
   priority?: string | undefined;
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  startAt?: Date | undefined;
   status?: TaskTaskStatus | undefined;
   tags?: Array<string> | undefined;
+  type?: string | undefined;
   updatedAt?: Date | undefined;
   url?: string | undefined;
 };
@@ -79,6 +82,8 @@ export const TaskTask$inboundSchema: z.ZodType<
   creator_user_id: z.string().optional(),
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   follower_user_ids: z.array(z.string()).optional(),
   group_ids: z.array(z.string()).optional(),
   has_children: z.boolean().optional(),
@@ -90,8 +95,11 @@ export const TaskTask$inboundSchema: z.ZodType<
   priority: z.string().optional(),
   project_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   status: TaskTaskStatus$inboundSchema.optional(),
   tags: z.array(z.string()).optional(),
+  type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   url: z.string().optional(),
@@ -103,11 +111,13 @@ export const TaskTask$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "creator_user_id": "creatorUserId",
     "due_at": "dueAt",
+    "end_at": "endAt",
     "follower_user_ids": "followerUserIds",
     "group_ids": "groupIds",
     "has_children": "hasChildren",
     "parent_id": "parentId",
     "project_id": "projectId",
+    "start_at": "startAt",
     "updated_at": "updatedAt",
   });
 });
@@ -119,6 +129,7 @@ export type TaskTask$Outbound = {
   created_at?: string | undefined;
   creator_user_id?: string | undefined;
   due_at?: string | undefined;
+  end_at?: string | undefined;
   follower_user_ids?: Array<string> | undefined;
   group_ids?: Array<string> | undefined;
   has_children?: boolean | undefined;
@@ -130,8 +141,10 @@ export type TaskTask$Outbound = {
   priority?: string | undefined;
   project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  start_at?: string | undefined;
   status?: string | undefined;
   tags?: Array<string> | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
   url?: string | undefined;
 };
@@ -148,6 +161,7 @@ export const TaskTask$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creatorUserId: z.string().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
   followerUserIds: z.array(z.string()).optional(),
   groupIds: z.array(z.string()).optional(),
   hasChildren: z.boolean().optional(),
@@ -159,8 +173,10 @@ export const TaskTask$outboundSchema: z.ZodType<
   priority: z.string().optional(),
   projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
   status: TaskTaskStatus$outboundSchema.optional(),
   tags: z.array(z.string()).optional(),
+  type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   url: z.string().optional(),
 }).transform((v) => {
@@ -171,11 +187,13 @@ export const TaskTask$outboundSchema: z.ZodType<
     createdAt: "created_at",
     creatorUserId: "creator_user_id",
     dueAt: "due_at",
+    endAt: "end_at",
     followerUserIds: "follower_user_ids",
     groupIds: "group_ids",
     hasChildren: "has_children",
     parentId: "parent_id",
     projectId: "project_id",
+    startAt: "start_at",
     updatedAt: "updated_at",
   });
 });
