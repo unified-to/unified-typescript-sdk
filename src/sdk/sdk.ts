@@ -5,6 +5,7 @@
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
 import { Accounting } from "./accounting.js";
+import { Activation } from "./activation.js";
 import { Activity } from "./activity.js";
 import { Ad } from "./ad.js";
 import { Ads } from "./ads.js";
@@ -29,6 +30,7 @@ import { Candidate } from "./candidate.js";
 import { Carrier } from "./carrier.js";
 import { Cashflow } from "./cashflow.js";
 import { Category } from "./category.js";
+import { Cdp } from "./cdp.js";
 import { Change } from "./change.js";
 import { Channel } from "./channel.js";
 import { Class } from "./class.js";
@@ -50,6 +52,7 @@ import { Database } from "./database.js";
 import { Datastore } from "./datastore.js";
 import { Deal } from "./deal.js";
 import { Deduction } from "./deduction.js";
+import { Destination } from "./destination.js";
 import { Device } from "./device.js";
 import { Document } from "./document.js";
 import { Embedding } from "./embedding.js";
@@ -101,6 +104,7 @@ import { Payslip } from "./payslip.js";
 import { Person } from "./person.js";
 import { Picklist } from "./picklist.js";
 import { Pipeline } from "./pipeline.js";
+import { Profile } from "./profile.js";
 import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
 import { Promoted } from "./promoted.js";
@@ -124,11 +128,13 @@ import { Salesorder } from "./salesorder.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
 import { Secretsmanager } from "./secretsmanager.js";
+import { Segment } from "./segment.js";
 import { Session } from "./session.js";
 import { Shipment } from "./shipment.js";
 import { Shipping } from "./shipping.js";
 import { Signatory } from "./signatory.js";
 import { Signing } from "./signing.js";
+import { Source } from "./source.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
 import { Student } from "./student.js";
@@ -410,6 +416,36 @@ export class UnifiedTo extends ClientSDK {
   private _webinar?: Webinar;
   get webinar(): Webinar {
     return (this._webinar ??= new Webinar(this._options));
+  }
+
+  private _cdp?: Cdp;
+  get cdp(): Cdp {
+    return (this._cdp ??= new Cdp(this._options));
+  }
+
+  private _activation?: Activation;
+  get activation(): Activation {
+    return (this._activation ??= new Activation(this._options));
+  }
+
+  private _destination?: Destination;
+  get destination(): Destination {
+    return (this._destination ??= new Destination(this._options));
+  }
+
+  private _profile?: Profile;
+  get profile(): Profile {
+    return (this._profile ??= new Profile(this._options));
+  }
+
+  private _segment?: Segment;
+  get segment(): Segment {
+    return (this._segment ??= new Segment(this._options));
+  }
+
+  private _source?: Source;
+  get source(): Source {
+    return (this._source ??= new Source(this._options));
   }
 
   private _clubs?: Clubs;

@@ -19,6 +19,12 @@ import {
   LmsMedia$Outbound,
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
+import {
+  LmsSubject,
+  LmsSubject$inboundSchema,
+  LmsSubject$Outbound,
+  LmsSubject$outboundSchema,
+} from "./lmssubject.js";
 
 export type LmsContent = {
   categories?: Array<string> | undefined;
@@ -26,6 +32,7 @@ export type LmsContent = {
   courseIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
+  difficulty?: string | undefined;
   durationMinutes?: number | undefined;
   externalReference?: string | undefined;
   id?: string | undefined;
@@ -36,10 +43,16 @@ export type LmsContent = {
   media?: Array<LmsMedia> | undefined;
   name?: string | undefined;
   providerName?: string | undefined;
+  publishedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   shortDescription?: string | undefined;
   skills?: Array<string> | undefined;
   sortOrder?: number | undefined;
+  /**
+   * Topic taxonomy as {name, rank} pairs carrying the full ancestor chain (rank = depth, 0 = top level)
+   */
+  subjects?: Array<LmsSubject> | undefined;
+  tags?: Array<string> | undefined;
   updatedAt?: Date | undefined;
 };
 
@@ -55,6 +68,7 @@ export const LmsContent$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
+  difficulty: z.string().optional(),
   duration_minutes: z.number().optional(),
   external_reference: z.string().optional(),
   id: z.string().optional(),
@@ -65,10 +79,15 @@ export const LmsContent$inboundSchema: z.ZodType<
   media: z.array(LmsMedia$inboundSchema).optional(),
   name: z.string().optional(),
   provider_name: z.string().optional(),
+  published_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
   raw: z.record(z.any()).optional(),
   short_description: z.string().optional(),
   skills: z.array(z.string()).optional(),
   sort_order: z.number().optional(),
+  subjects: z.array(LmsSubject$inboundSchema).optional(),
+  tags: z.array(z.string()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -81,6 +100,7 @@ export const LmsContent$inboundSchema: z.ZodType<
     "instructor_ids": "instructorIds",
     "is_active": "isActive",
     "provider_name": "providerName",
+    "published_at": "publishedAt",
     "short_description": "shortDescription",
     "sort_order": "sortOrder",
     "updated_at": "updatedAt",
@@ -93,6 +113,7 @@ export type LmsContent$Outbound = {
   course_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
+  difficulty?: string | undefined;
   duration_minutes?: number | undefined;
   external_reference?: string | undefined;
   id?: string | undefined;
@@ -103,10 +124,13 @@ export type LmsContent$Outbound = {
   media?: Array<LmsMedia$Outbound> | undefined;
   name?: string | undefined;
   provider_name?: string | undefined;
+  published_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   short_description?: string | undefined;
   skills?: Array<string> | undefined;
   sort_order?: number | undefined;
+  subjects?: Array<LmsSubject$Outbound> | undefined;
+  tags?: Array<string> | undefined;
   updated_at?: string | undefined;
 };
 
@@ -121,6 +145,7 @@ export const LmsContent$outboundSchema: z.ZodType<
   courseIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
+  difficulty: z.string().optional(),
   durationMinutes: z.number().optional(),
   externalReference: z.string().optional(),
   id: z.string().optional(),
@@ -131,10 +156,13 @@ export const LmsContent$outboundSchema: z.ZodType<
   media: z.array(LmsMedia$outboundSchema).optional(),
   name: z.string().optional(),
   providerName: z.string().optional(),
+  publishedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   shortDescription: z.string().optional(),
   skills: z.array(z.string()).optional(),
   sortOrder: z.number().optional(),
+  subjects: z.array(LmsSubject$outboundSchema).optional(),
+  tags: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -146,6 +174,7 @@ export const LmsContent$outboundSchema: z.ZodType<
     instructorIds: "instructor_ids",
     isActive: "is_active",
     providerName: "provider_name",
+    publishedAt: "published_at",
     shortDescription: "short_description",
     sortOrder: "sort_order",
     updatedAt: "updated_at",

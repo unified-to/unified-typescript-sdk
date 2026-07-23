@@ -427,6 +427,13 @@ export const ListPipelineId = {
 } as const;
 export type ListPipelineId = OpenEnum<typeof ListPipelineId>;
 
+export const ListProfileId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListProfileId = OpenEnum<typeof ListProfileId>;
+
 export const ListProjectId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1170,6 +1177,13 @@ export type VirtualWebhookPipelineId = OpenEnum<
   typeof VirtualWebhookPipelineId
 >;
 
+export const VirtualWebhookProfileId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookProfileId = OpenEnum<typeof VirtualWebhookProfileId>;
+
 export const VirtualWebhookProjectId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1383,6 +1397,7 @@ export type IntegrationSupport = {
   listPaymentId?: ListPaymentId | undefined;
   listPayslipId?: ListPayslipId | undefined;
   listPipelineId?: ListPipelineId | undefined;
+  listProfileId?: ListProfileId | undefined;
   listProjectId?: ListProjectId | undefined;
   listPropertyId?: ListPropertyId | undefined;
   listQuery?: ListQuery | undefined;
@@ -1493,6 +1508,7 @@ export type IntegrationSupport = {
   virtualWebhookParentId?: VirtualWebhookParentId | undefined;
   virtualWebhookPaymentId?: VirtualWebhookPaymentId | undefined;
   virtualWebhookPipelineId?: VirtualWebhookPipelineId | undefined;
+  virtualWebhookProfileId?: VirtualWebhookProfileId | undefined;
   virtualWebhookProjectId?: VirtualWebhookProjectId | undefined;
   virtualWebhookPropertyId?: VirtualWebhookPropertyId | undefined;
   virtualWebhookReference?: VirtualWebhookReference | undefined;
@@ -1928,6 +1944,13 @@ export const ListPipelineId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListPipelineId);
+
+/** @internal */
+export const ListProfileId$inboundSchema: z.ZodType<
+  ListProfileId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListProfileId);
 
 /** @internal */
 export const ListProjectId$inboundSchema: z.ZodType<
@@ -2651,6 +2674,13 @@ export const VirtualWebhookPipelineId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookPipelineId);
 
 /** @internal */
+export const VirtualWebhookProfileId$inboundSchema: z.ZodType<
+  VirtualWebhookProfileId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookProfileId);
+
+/** @internal */
 export const VirtualWebhookProjectId$inboundSchema: z.ZodType<
   VirtualWebhookProjectId,
   z.ZodTypeDef,
@@ -2856,6 +2886,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_payment_id: ListPaymentId$inboundSchema.optional(),
   list_payslip_id: ListPayslipId$inboundSchema.optional(),
   list_pipeline_id: ListPipelineId$inboundSchema.optional(),
+  list_profile_id: ListProfileId$inboundSchema.optional(),
   list_project_id: ListProjectId$inboundSchema.optional(),
   list_property_id: ListPropertyId$inboundSchema.optional(),
   list_query: ListQuery$inboundSchema.optional(),
@@ -2974,6 +3005,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_payment_id: VirtualWebhookPaymentId$inboundSchema.optional(),
   virtual_webhook_pipeline_id: VirtualWebhookPipelineId$inboundSchema
     .optional(),
+  virtual_webhook_profile_id: VirtualWebhookProfileId$inboundSchema.optional(),
   virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema.optional(),
   virtual_webhook_property_id: VirtualWebhookPropertyId$inboundSchema
     .optional(),
@@ -3064,6 +3096,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_payment_id": "listPaymentId",
     "list_payslip_id": "listPayslipId",
     "list_pipeline_id": "listPipelineId",
+    "list_profile_id": "listProfileId",
     "list_project_id": "listProjectId",
     "list_property_id": "listPropertyId",
     "list_query": "listQuery",
@@ -3170,6 +3203,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_parent_id": "virtualWebhookParentId",
     "virtual_webhook_payment_id": "virtualWebhookPaymentId",
     "virtual_webhook_pipeline_id": "virtualWebhookPipelineId",
+    "virtual_webhook_profile_id": "virtualWebhookProfileId",
     "virtual_webhook_project_id": "virtualWebhookProjectId",
     "virtual_webhook_property_id": "virtualWebhookPropertyId",
     "virtual_webhook_reference": "virtualWebhookReference",

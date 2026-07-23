@@ -38,6 +38,7 @@ export const ListUnifiedIntegrationsQueryParamCategories = {
   Signing: "signing",
   Clubs: "clubs",
   Datastore: "datastore",
+  Cdp: "cdp",
 } as const;
 export type ListUnifiedIntegrationsQueryParamCategories = ClosedEnum<
   typeof ListUnifiedIntegrationsQueryParamCategories

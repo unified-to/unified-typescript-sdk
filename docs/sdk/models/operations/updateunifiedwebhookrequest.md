@@ -9,7 +9,7 @@ let value: UpdateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "repo_repository",
+    objectType: "metadata_metadata",
   },
   id: "<id>",
 };

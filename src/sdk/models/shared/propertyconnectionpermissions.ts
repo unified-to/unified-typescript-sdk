@@ -283,6 +283,18 @@ export const PropertyConnectionPermissions = {
   DatastoreRecordWrite: "datastore_record_write",
   DatastoreQueryRead: "datastore_query_read",
   DatastoreQueryWrite: "datastore_query_write",
+  CdpProfileRead: "cdp_profile_read",
+  CdpProfileWrite: "cdp_profile_write",
+  CdpSegmentRead: "cdp_segment_read",
+  CdpSegmentWrite: "cdp_segment_write",
+  CdpEventRead: "cdp_event_read",
+  CdpEventWrite: "cdp_event_write",
+  CdpSourceRead: "cdp_source_read",
+  CdpSourceWrite: "cdp_source_write",
+  CdpDestinationRead: "cdp_destination_read",
+  CdpDestinationWrite: "cdp_destination_write",
+  CdpActivationRead: "cdp_activation_read",
+  CdpActivationWrite: "cdp_activation_write",
 } as const;
 export type PropertyConnectionPermissions = OpenEnum<
   typeof PropertyConnectionPermissions

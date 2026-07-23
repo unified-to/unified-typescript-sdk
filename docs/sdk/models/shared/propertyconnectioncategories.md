@@ -13,5 +13,5 @@ let value: PropertyConnectionCategories = "verification";
 ## Values
 
 ```typescript
-"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "analytics" | "forms" | "shipping" | "assessment" | "signing" | "clubs" | "datastore" | Unrecognized<string>
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "analytics" | "forms" | "shipping" | "assessment" | "signing" | "clubs" | "datastore" | "cdp" | Unrecognized<string>
 ```

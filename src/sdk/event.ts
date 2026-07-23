@@ -6,19 +6,25 @@ import { analyticsCreateAnalyticsEvent } from "../funcs/analyticsCreateAnalytics
 import { analyticsGetAnalyticsEvent } from "../funcs/analyticsGetAnalyticsEvent.js";
 import { analyticsListAnalyticsEvents } from "../funcs/analyticsListAnalyticsEvents.js";
 import { eventCreateCalendarEvent } from "../funcs/eventCreateCalendarEvent.js";
+import { eventCreateCdpEvent } from "../funcs/eventCreateCdpEvent.js";
 import { eventCreateCrmEvent } from "../funcs/eventCreateCrmEvent.js";
 import { eventGetCalendarEvent } from "../funcs/eventGetCalendarEvent.js";
+import { eventGetCdpEvent } from "../funcs/eventGetCdpEvent.js";
 import { eventGetClubsEvent } from "../funcs/eventGetClubsEvent.js";
 import { eventGetCrmEvent } from "../funcs/eventGetCrmEvent.js";
 import { eventListCalendarEvents } from "../funcs/eventListCalendarEvents.js";
+import { eventListCdpEvents } from "../funcs/eventListCdpEvents.js";
 import { eventListClubsEvents } from "../funcs/eventListClubsEvents.js";
 import { eventListCrmEvents } from "../funcs/eventListCrmEvents.js";
 import { eventPatchCalendarEvent } from "../funcs/eventPatchCalendarEvent.js";
+import { eventPatchCdpEvent } from "../funcs/eventPatchCdpEvent.js";
 import { eventPatchCrmEvent } from "../funcs/eventPatchCrmEvent.js";
 import { eventPatchMessagingEvent } from "../funcs/eventPatchMessagingEvent.js";
 import { eventRemoveCalendarEvent } from "../funcs/eventRemoveCalendarEvent.js";
+import { eventRemoveCdpEvent } from "../funcs/eventRemoveCdpEvent.js";
 import { eventRemoveCrmEvent } from "../funcs/eventRemoveCrmEvent.js";
 import { eventUpdateCalendarEvent } from "../funcs/eventUpdateCalendarEvent.js";
+import { eventUpdateCdpEvent } from "../funcs/eventUpdateCdpEvent.js";
 import { eventUpdateCrmEvent } from "../funcs/eventUpdateCrmEvent.js";
 import { eventUpdateMessagingEvent } from "../funcs/eventUpdateMessagingEvent.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -49,6 +55,20 @@ export class Event extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarEvent> {
     return unwrapAsync(eventCreateCalendarEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create an event
+   */
+  async createCdpEvent(
+    request: operations.CreateCdpEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CdpEvent> {
+    return unwrapAsync(eventCreateCdpEvent(
       this,
       request,
       options,
@@ -91,6 +111,20 @@ export class Event extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarEvent> {
     return unwrapAsync(eventGetCalendarEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an event
+   */
+  async getCdpEvent(
+    request: operations.GetCdpEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CdpEvent> {
+    return unwrapAsync(eventGetCdpEvent(
       this,
       request,
       options,
@@ -156,6 +190,20 @@ export class Event extends ClientSDK {
   /**
    * List all events
    */
+  async listCdpEvents(
+    request: operations.ListCdpEventsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CdpEvent>> {
+    return unwrapAsync(eventListCdpEvents(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all events
+   */
   async listClubsEvents(
     request: operations.ListClubsEventsRequest,
     options?: RequestOptions,
@@ -189,6 +237,20 @@ export class Event extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarEvent> {
     return unwrapAsync(eventPatchCalendarEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an event
+   */
+  async patchCdpEvent(
+    request: operations.PatchCdpEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CdpEvent> {
+    return unwrapAsync(eventPatchCdpEvent(
       this,
       request,
       options,
@@ -240,6 +302,20 @@ export class Event extends ClientSDK {
   /**
    * Remove an event
    */
+  async removeCdpEvent(
+    request: operations.RemoveCdpEventRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveCdpEventResponse | undefined> {
+    return unwrapAsync(eventRemoveCdpEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove an event
+   */
   async removeCrmEvent(
     request: operations.RemoveCrmEventRequest,
     options?: RequestOptions,
@@ -259,6 +335,20 @@ export class Event extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarEvent> {
     return unwrapAsync(eventUpdateCalendarEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an event
+   */
+  async updateCdpEvent(
+    request: operations.UpdateCdpEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CdpEvent> {
+    return unwrapAsync(eventUpdateCdpEvent(
       this,
       request,
       options,
