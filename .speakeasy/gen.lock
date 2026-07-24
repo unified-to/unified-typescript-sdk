@@ -5,16 +5,16 @@ management:
   docVersion: "1.0"
   speakeasyVersion: 1.790.3
   generationVersion: 2.918.4
-  releaseVersion: 2.85.17
-  configChecksum: cd88339393702626c53bd1347828c691
+  releaseVersion: 2.85.18
+  configChecksum: cc52470d6c6e47a9cf8b8cacb92270ea
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 25ea0627-66fd-4f28-88aa-cbc0178d66de
-  pristine_commit_hash: 018529cb2fc925ea034585ea5e1c34a1162f8630
-  pristine_tree_hash: 0392676a6bcce164bb638dd0cab67e27fbebbec8
+  generation_id: 6f255838-5b20-4fff-9e71-768319c408a3
+  pristine_commit_hash: 2521a8666d43ed0d9ec43716bb5a0fd7e340ceb0
+  pristine_tree_hash: c1e8e7b55e1ecf82efdf54135af10211c51abd12
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -10834,12 +10834,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:3b4cfa3ca390d9e23d64fa28517fb295e7195671
-    pristine_git_object: b3a19a733d47018cc4dd57f9fe502039608495bb
+    last_write_checksum: sha1:62700b925249ddbb3146d0003de4327be14d9a11
+    pristine_git_object: 907d9f7f2b669830686a3fc6170f6fd2f463acb4
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:92ecf5503357dc2e91fe9f2fbf91381bfe5984c6
-    pristine_git_object: 946a11641e13221770d3bc9c19e1259309a39ade
+    last_write_checksum: sha1:61daa0c91ac338c50440f457108fa7bd8bd99410
+    pristine_git_object: 904d4e9fa87270f07eb51980f9e7cf5e06e6d9c8
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -13998,8 +13998,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:100f5a7a6d8638aa2f3dee4a6f5dc56c482787c0
-    pristine_git_object: 2d3a7d4aa81f140c0c821289adac6af00e961305
+    last_write_checksum: sha1:8860805333c443277aac87490bbed76c965c901a
+    pristine_git_object: 45bfaff72090ff02e26c881a561ffc1a61e3f1de
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -33217,7 +33217,6 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.createAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.accounting.getAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.accounting.listAccountingExpenses()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.accounting.patchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.accounting.updateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.createAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.getAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.listAccountingExpenses()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.expense.patchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.updateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
