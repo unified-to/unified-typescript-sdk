@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -19,11 +21,31 @@ import {
   AccountingLineitem$Outbound,
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
+import {
+  AccountingReference,
+  AccountingReference$inboundSchema,
+  AccountingReference$Outbound,
+  AccountingReference$outboundSchema,
+} from "./accountingreference.js";
+
+export const AccountingExpenseStatus = {
+  Draft: "DRAFT",
+  Submitted: "SUBMITTED",
+  Pending: "PENDING",
+  Approved: "APPROVED",
+  Rejected: "REJECTED",
+  Paid: "PAID",
+} as const;
+export type AccountingExpenseStatus = OpenEnum<typeof AccountingExpenseStatus>;
 
 export type AccountingExpense = {
   accountId?: string | undefined;
   approvedAt?: Date | undefined;
   approverUserId?: string | undefined;
+  /**
+   * expense approver(s); id is HR employee/user when resolved
+   */
+  approverUsers?: Array<AccountingReference> | undefined;
   attachments?: Array<AccountingAttachment> | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
@@ -37,11 +59,29 @@ export type AccountingExpense = {
   raw?: { [k: string]: any } | undefined;
   reimbursedAmount?: number | undefined;
   reimbursedAt?: Date | undefined;
+  status?: AccountingExpenseStatus | undefined;
   taxAmount?: number | undefined;
   totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
+  /**
+   * expense owner(s); id is HR employee/user when resolved
+   */
+  users?: Array<AccountingReference> | undefined;
 };
+
+/** @internal */
+export const AccountingExpenseStatus$inboundSchema: z.ZodType<
+  AccountingExpenseStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingExpenseStatus);
+/** @internal */
+export const AccountingExpenseStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingExpenseStatus
+> = openEnums.outboundSchema(AccountingExpenseStatus);
 
 /** @internal */
 export const AccountingExpense$inboundSchema: z.ZodType<
@@ -53,6 +93,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   approver_user_id: z.string().optional(),
+  approver_users: z.array(AccountingReference$inboundSchema).optional(),
   attachments: z.array(AccountingAttachment$inboundSchema).optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -70,16 +111,19 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   reimbursed_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
+  status: AccountingExpenseStatus$inboundSchema.optional(),
   tax_amount: z.number().optional(),
   total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
+  users: z.array(AccountingReference$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
     "approved_at": "approvedAt",
     "approver_user_id": "approverUserId",
+    "approver_users": "approverUsers",
     "contact_id": "contactId",
     "created_at": "createdAt",
     "organization_id": "organizationId",
@@ -98,6 +142,7 @@ export type AccountingExpense$Outbound = {
   account_id?: string | undefined;
   approved_at?: string | undefined;
   approver_user_id?: string | undefined;
+  approver_users?: Array<AccountingReference$Outbound> | undefined;
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
@@ -111,10 +156,12 @@ export type AccountingExpense$Outbound = {
   raw?: { [k: string]: any } | undefined;
   reimbursed_amount?: number | undefined;
   reimbursed_at?: string | undefined;
+  status?: string | undefined;
   tax_amount?: number | undefined;
   total_amount?: number | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
+  users?: Array<AccountingReference$Outbound> | undefined;
 };
 
 /** @internal */
@@ -126,6 +173,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   accountId: z.string().optional(),
   approvedAt: z.date().transform(v => v.toISOString()).optional(),
   approverUserId: z.string().optional(),
+  approverUsers: z.array(AccountingReference$outboundSchema).optional(),
   attachments: z.array(AccountingAttachment$outboundSchema).optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
@@ -139,15 +187,18 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reimbursedAmount: z.number().optional(),
   reimbursedAt: z.date().transform(v => v.toISOString()).optional(),
+  status: AccountingExpenseStatus$outboundSchema.optional(),
   taxAmount: z.number().optional(),
   totalAmount: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
+  users: z.array(AccountingReference$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
     approvedAt: "approved_at",
     approverUserId: "approver_user_id",
+    approverUsers: "approver_users",
     contactId: "contact_id",
     createdAt: "created_at",
     organizationId: "organization_id",

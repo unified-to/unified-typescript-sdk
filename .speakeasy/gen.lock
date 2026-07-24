@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 4926c88b7af5a30853ff3f6a7d37afe1
+  docChecksum: cd25e2e95b7c7fb639bf0bc045d388b8
   docVersion: "1.0"
   speakeasyVersion: 1.790.3
   generationVersion: 2.918.4
-  releaseVersion: 2.85.16
-  configChecksum: 028d1eb6262a6644f0c82ff7160352a5
+  releaseVersion: 2.85.17
+  configChecksum: cd88339393702626c53bd1347828c691
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: b723bdd4-ccc0-41ac-8955-a98afae93989
-  pristine_commit_hash: c107602ea3be41bc4f1628f6bfb59a7f3cafc84d
-  pristine_tree_hash: fd850becb01f4ac015f30aab7917602e4c068ba4
+  generation_id: 25ea0627-66fd-4f28-88aa-cbc0178d66de
+  pristine_commit_hash: 018529cb2fc925ea034585ea5e1c34a1162f8630
+  pristine_tree_hash: 0392676a6bcce164bb638dd0cab67e27fbebbec8
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -102,8 +102,8 @@ trackedFiles:
     pristine_git_object: 8fd1016ae15efbf51069c1d5894265a3cc8bd95d
   docs/sdk/models/operations/createaccountingexpensequeryparamfields.md:
     id: 8d0e19f4394a
-    last_write_checksum: sha1:0321d6e37ef1a762f95a96f6f8b0cf8cd359c5fe
-    pristine_git_object: 546da92e328b0f32f6358bdf087fe4fb37d1460e
+    last_write_checksum: sha1:818dd01cbb3c127626c47a064fc2ce33412634b1
+    pristine_git_object: 10725ef9ea3b5310195150541cd0927587584ee4
   docs/sdk/models/operations/createaccountingexpenserequest.md:
     id: 504953f0662d
     last_write_checksum: sha1:de8d860adad1eacfb95b36922237fe67bb222b88
@@ -1070,8 +1070,8 @@ trackedFiles:
     pristine_git_object: 0e0987014061cba53466b39a904eeb6b98fe60e0
   docs/sdk/models/operations/getaccountingexpensequeryparamfields.md:
     id: eb663c552420
-    last_write_checksum: sha1:8252671b411034c93c6bb206c4affc0ed5abd4a8
-    pristine_git_object: 5902272b3248b7ec450566a5461f51ee795a659d
+    last_write_checksum: sha1:b0d278ad48aee82a17a833e50b676798e39cf6ee
+    pristine_git_object: e3b9358f40b8252bec14a5776678a86a3b9181fb
   docs/sdk/models/operations/getaccountingexpenserequest.md:
     id: d65260569831
     last_write_checksum: sha1:10881a371b2c94f4f1483d7cdaba24a51303dcbc
@@ -2206,12 +2206,12 @@ trackedFiles:
     pristine_git_object: 32aeddf1b5389ed782bd2b81921121038aaba02a
   docs/sdk/models/operations/listaccountingexpensesqueryparamfields.md:
     id: f9a2e6c16a71
-    last_write_checksum: sha1:84acd825867d97f11bd9a9908706acab3a8cd9c9
-    pristine_git_object: 85c67952eb4d01cfe68114d2799fe30c84f5c3ff
+    last_write_checksum: sha1:660863a5b7ddadfef3f5424620424beefdb717fd
+    pristine_git_object: a9154732873419a9e11c2eccf35cac386828b710
   docs/sdk/models/operations/listaccountingexpensesrequest.md:
     id: 9c5c8629e28d
-    last_write_checksum: sha1:7ded748a653825e32a52c58b1929cd905b8b368a
-    pristine_git_object: 92a210e0d7a1c4370b29f3460c0178250f6deeaa
+    last_write_checksum: sha1:3bc7d18c69cacde23522010aec04d6a95befc80b
+    pristine_git_object: ae73e31700b71de7c94a2c05dee33d27b9d80abd
   docs/sdk/models/operations/listaccountinginvoicesqueryparamfields.md:
     id: 2c312a24818b
     last_write_checksum: sha1:2cd56497ee38fce96e0ef63d50fb153ee8e33bce
@@ -3406,8 +3406,8 @@ trackedFiles:
     pristine_git_object: aac687b720f469f946358d72d781c631a0884ab2
   docs/sdk/models/operations/patchaccountingexpensequeryparamfields.md:
     id: 6375111c8682
-    last_write_checksum: sha1:4f152ce6d4dc1ea738f2f3f0135546eb735e435f
-    pristine_git_object: 2d5bf61fbba37631bfb8d979a7589ac4626fa09a
+    last_write_checksum: sha1:fe41a3bf71aada0878716612e997e6d9f6d3d876
+    pristine_git_object: b8eb8a5650371912406e1ded8796229069d44584
   docs/sdk/models/operations/patchaccountingexpenserequest.md:
     id: f8327477941d
     last_write_checksum: sha1:84fec67c79c820f3fef925f10e466c42b8d91b82
@@ -5290,8 +5290,8 @@ trackedFiles:
     pristine_git_object: a3fbecb0da2a62850c3628a5fae8a64cd4ad6181
   docs/sdk/models/operations/updateaccountingexpensequeryparamfields.md:
     id: fc59f8ae34e8
-    last_write_checksum: sha1:e03f0be99767d23d27eab9cfa07c3e957fe31974
-    pristine_git_object: eba99e4f9758c96bd92ff2bce5403458e5984bbe
+    last_write_checksum: sha1:5289df2cd1aa67096e940730fa0e4613a6cf936d
+    pristine_git_object: 033a44915b03be7eba116bdd77a82ae8e0437bfe
   docs/sdk/models/operations/updateaccountingexpenserequest.md:
     id: 332a59df8092
     last_write_checksum: sha1:c4946fc4aeea93839c60e986ad64cda0b147a14c
@@ -6274,8 +6274,12 @@ trackedFiles:
     pristine_git_object: 924031f6de598cd4768c89a23783aad1ee02b4e0
   docs/sdk/models/shared/accountingexpense.md:
     id: bcd83295fe0d
-    last_write_checksum: sha1:913dc3df334590a116cb52f3cca7933c902e105f
-    pristine_git_object: 8a19682f5ad8de756f1e03ba90f5d6b6a8239a7b
+    last_write_checksum: sha1:26bddf1272e9bda555ccd08a2a41af3b8fcb6e51
+    pristine_git_object: 693c8dc81fd49c77d5d8944602d9a3066a442ad5
+  docs/sdk/models/shared/accountingexpensestatus.md:
+    id: 7d91f7e8d508
+    last_write_checksum: sha1:b14c3fb4452309c9b7a54f93192349682a9ad14c
+    pristine_git_object: ac9995465f185bf55168bceb6bb005d9a6593a41
   docs/sdk/models/shared/accountingfee.md:
     id: 10b4a5b8ac1a
     last_write_checksum: sha1:b64dd85065b01982f29c72e6561cce011796a183
@@ -10830,12 +10834,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:4812cdb0e89a36e77daabf0121d872b995d2a844
-    pristine_git_object: c18c59f32e5b42b55d0c195b2cd809a0fd6ba940
+    last_write_checksum: sha1:3b4cfa3ca390d9e23d64fa28517fb295e7195671
+    pristine_git_object: b3a19a733d47018cc4dd57f9fe502039608495bb
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:83f25f2559f738d20fda6e8f2cedaf963528d982
-    pristine_git_object: ab9e6e5e2a70fafd7feb32ac1bc2d579e8aa0334
+    last_write_checksum: sha1:92ecf5503357dc2e91fe9f2fbf91381bfe5984c6
+    pristine_git_object: 946a11641e13221770d3bc9c19e1259309a39ade
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -11006,8 +11010,8 @@ trackedFiles:
     pristine_git_object: 9910d960aa31910713fdbd35959f1d1ff54ba850
   src/funcs/accountingListAccountingExpenses.ts:
     id: a5a424d39c82
-    last_write_checksum: sha1:b2d6f4e28ed35c784f730122799c442debfb9868
-    pristine_git_object: 190a817c7a1fd3207114132abb9b435805ea75df
+    last_write_checksum: sha1:ab7ea1a33e1a06ff92750a07ff17e122724d1ab6
+    pristine_git_object: c1a1a2725f0b2ac1f05f666327342fb65a2216ab
   src/funcs/accountingListAccountingInvoices.ts:
     id: 1332e28f0922
     last_write_checksum: sha1:47dd5fe60fff8dd29478df23fbd991fcfaf54a1a
@@ -13994,8 +13998,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:6fad2f76eb3dcf4c924856bcfe085b63eebde6b5
-    pristine_git_object: e3c52c1b3ff68ef3dc969cafa6aa74c4cd90bdb5
+    last_write_checksum: sha1:100f5a7a6d8638aa2f3dee4a6f5dc56c482787c0
+    pristine_git_object: 2d3a7d4aa81f140c0c821289adac6af00e961305
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -14446,8 +14450,8 @@ trackedFiles:
     pristine_git_object: b6a9cac89edffc593d4ac112fb82228a158fe06e
   src/sdk/models/operations/createaccountingexpense.ts:
     id: 482c13547cef
-    last_write_checksum: sha1:bce0875a6b68ba2d9c1850d25c530468ad233bf3
-    pristine_git_object: 7862d7ea8e9909c7f8749c1f8788b1c12a19a361
+    last_write_checksum: sha1:407c34c44062ab98dce0295e527b42bcb3e150cc
+    pristine_git_object: 76aa3094406767a6fa742c64bec74e22583e7155
   src/sdk/models/operations/createaccountinginvoice.ts:
     id: 8eba19cc452f
     last_write_checksum: sha1:0fe1e2040eaac40b3c52283bf38ab46e4cb6e362
@@ -14934,8 +14938,8 @@ trackedFiles:
     pristine_git_object: d9f2ac9e24b1255da8ee4c12242fb21caceafeb0
   src/sdk/models/operations/getaccountingexpense.ts:
     id: d4d0ee1735db
-    last_write_checksum: sha1:126f7c1580aa6926e875206b300424ec54d30f89
-    pristine_git_object: 9ae5470314240a983276a7a9e73997efcac8d787
+    last_write_checksum: sha1:b5267213d1b2af49995ab05a08a1b2afb588ddaf
+    pristine_git_object: 1fa5ea6ea285891325acede6bab133c9f73e078d
   src/sdk/models/operations/getaccountinginvoice.ts:
     id: 5b395fc50e6a
     last_write_checksum: sha1:09beac5a3dacf5cd61de00497265d9b84edc1ff1
@@ -15526,8 +15530,8 @@ trackedFiles:
     pristine_git_object: a8888b5564822fefe1b032d8125debbfd1c72b85
   src/sdk/models/operations/listaccountingexpenses.ts:
     id: 5917434df735
-    last_write_checksum: sha1:11b32034c13b6d7dfb00f32470ad8fcb7cb8b3f4
-    pristine_git_object: 9e4008d07f9314042146d90eaa9ee5e95a042269
+    last_write_checksum: sha1:6847905fddba193797e5cdb27a9a277d1f288de1
+    pristine_git_object: ef530c9a7ce5f9fa878d06ba5f9eab0c52023912
   src/sdk/models/operations/listaccountinginvoices.ts:
     id: a990d54dbf7a
     last_write_checksum: sha1:4cb456a9f3d1301349be714e1f8ea22073c61fb5
@@ -16146,8 +16150,8 @@ trackedFiles:
     pristine_git_object: 7011d7ebaadcef5c3d91aaa34982b810486110d2
   src/sdk/models/operations/patchaccountingexpense.ts:
     id: 7833a4b08643
-    last_write_checksum: sha1:63fb9fbf056850019e72ef203303908045e8af40
-    pristine_git_object: 4f65d564248e45a275562fe497cfc5751ffbf906
+    last_write_checksum: sha1:ef287338dbda9ff69a69ff50b657143892cd5217
+    pristine_git_object: 736273aa51fa87adda28505085819fa8928cb136
   src/sdk/models/operations/patchaccountinginvoice.ts:
     id: 54b562dc564b
     last_write_checksum: sha1:89301087cc23a2cb81b241eb57c6c67397609c59
@@ -17090,8 +17094,8 @@ trackedFiles:
     pristine_git_object: 12cee7300b8fb3a37f18cc7b60d8cac15c274008
   src/sdk/models/operations/updateaccountingexpense.ts:
     id: 55b87af1eb0c
-    last_write_checksum: sha1:3cb6a8b3d3e68ce292b26a431185be7f960a09f5
-    pristine_git_object: ac19cc6ca02f2b829bcb39b56052d138d3a51075
+    last_write_checksum: sha1:2e23813cfe38ceb3a4254625133d3e9ebba2eebd
+    pristine_git_object: 29b8691a2811c4365f4d08522ed43db9970c6e66
   src/sdk/models/operations/updateaccountinginvoice.ts:
     id: 441a92778c1f
     last_write_checksum: sha1:eab399fe7526d4cad34398e3746ae9f4d57e538f
@@ -17606,8 +17610,8 @@ trackedFiles:
     pristine_git_object: 0381e074d9ac66d4dbfb532b953baba4bc66b109
   src/sdk/models/shared/accountingexpense.ts:
     id: 88b48d2ea395
-    last_write_checksum: sha1:abdf2673649d03ac0cd144e4179f7f9deeee79e7
-    pristine_git_object: 56e559d9db2446d9a60a51dfaf6cbdd2fb9c760b
+    last_write_checksum: sha1:afbaa04a3245646fa7799fff7dd428b3b9401780
+    pristine_git_object: ac17268dc1d3e5ba6be6f287abb042ebe261189c
   src/sdk/models/shared/accountingfee.ts:
     id: 31751fad9c18
     last_write_checksum: sha1:eb587a9db7fafb5f292da3573bb2a2eb3582d395
@@ -33213,10 +33217,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `unified-to.report.listAdsReports()`:  `response.[].metrics[].type` **Changed**
-  * `unified-to.ads.listAdsReports()`:  `response.[].metrics[].type` **Changed**
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.createAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.accounting.getAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.accounting.listAccountingExpenses()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.accounting.patchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.accounting.updateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.createAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.getAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.listAccountingExpenses()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.expense.patchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.expense.updateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

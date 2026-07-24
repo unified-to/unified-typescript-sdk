@@ -27,6 +27,9 @@ export const PatchAccountingExpenseQueryParamFields = {
   Lineitems: "lineitems",
   Attachments: "attachments",
   OrganizationId: "organization_id",
+  Users: "users",
+  ApproverUsers: "approver_users",
+  Status: "status",
   Raw: "raw",
 } as const;
 export type PatchAccountingExpenseQueryParamFields = ClosedEnum<

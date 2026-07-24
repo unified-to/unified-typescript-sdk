@@ -26,6 +26,9 @@ export const GetAccountingExpenseQueryParamFields = {
   Lineitems: "lineitems",
   Attachments: "attachments",
   OrganizationId: "organization_id",
+  Users: "users",
+  ApproverUsers: "approver_users",
+  Status: "status",
   Raw: "raw",
 } as const;
 export type GetAccountingExpenseQueryParamFields = ClosedEnum<
