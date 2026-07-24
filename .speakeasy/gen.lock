@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: df9d7e70f96a426fc6497f3a82fde17e
+  docChecksum: 4926c88b7af5a30853ff3f6a7d37afe1
   docVersion: "1.0"
   speakeasyVersion: 1.790.3
   generationVersion: 2.918.4
-  releaseVersion: 2.85.15
-  configChecksum: 27960e01766d33cb06bacfbe7d063e37
+  releaseVersion: 2.85.16
+  configChecksum: 028d1eb6262a6644f0c82ff7160352a5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: c77e0f23-86d1-49bc-b8c6-11d88a87c08b
-  pristine_commit_hash: ee6452a2ec68ea46a7a3f7291fbd61240a9c2bb2
-  pristine_tree_hash: b6c3a3e1f1dccd34b5046e8627774fa9db9c4cb7
+  generation_id: b723bdd4-ccc0-41ac-8955-a98afae93989
+  pristine_commit_hash: c107602ea3be41bc4f1628f6bfb59a7f3cafc84d
+  pristine_tree_hash: fd850becb01f4ac015f30aab7917602e4c068ba4
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -2370,8 +2370,8 @@ trackedFiles:
     pristine_git_object: f97cd15a1cbc3faacae75ac6b077b2de0696b09c
   docs/sdk/models/operations/listadsreportsrequest.md:
     id: eb958fb66aef
-    last_write_checksum: sha1:ee0ef7a31f85d353523015738b738c6ff454d775
-    pristine_git_object: 777ca6d46d8a5c66ebc96d91b3b19ee2a4c309bf
+    last_write_checksum: sha1:1ef26faff3714535b253457532af35588216f921
+    pristine_git_object: d147465ab03aafec2eaa33e9ec9e06a61860c091
   docs/sdk/models/operations/listadstargetsqueryparamfields.md:
     id: 350e5dfe74db
     last_write_checksum: sha1:f5e755169d998f4df61f883bcc0d48c26dc3edbe
@@ -6514,8 +6514,8 @@ trackedFiles:
     pristine_git_object: 66e73eabe1e35a9933037a1f930100096812f0e2
   docs/sdk/models/shared/adsreportmetricstype.md:
     id: e4698c5822c3
-    last_write_checksum: sha1:a3576f18f64d56c1895802b11d15c269906e6e7f
-    pristine_git_object: efae47d96351d985371b676d9bee671ba5de1069
+    last_write_checksum: sha1:1247f654d71d30f0ad3453657c307cf174b342cc
+    pristine_git_object: eb5aa429448f0b3a47623f5362d0d9a82c0fc984
   docs/sdk/models/shared/adstarget.md:
     id: 2f97c18b934b
     last_write_checksum: sha1:1f32d44ce532e686269e3b0d7ba9c9e2d4e060ee
@@ -10830,12 +10830,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:d75ecbb859c0d03666139310313bc15cc681026e
-    pristine_git_object: 100f73a45482692e3da285262b5cd1b90e322413
+    last_write_checksum: sha1:4812cdb0e89a36e77daabf0121d872b995d2a844
+    pristine_git_object: c18c59f32e5b42b55d0c195b2cd809a0fd6ba940
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:9e5ed88416054f160dd1d61091ccb4db59143050
-    pristine_git_object: c4b8a75f5534b1684cf7567c3132be755b1298d2
+    last_write_checksum: sha1:83f25f2559f738d20fda6e8f2cedaf963528d982
+    pristine_git_object: ab9e6e5e2a70fafd7feb32ac1bc2d579e8aa0334
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -13994,8 +13994,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:9c994452a3feb40bf4d83cbc5a0b952741d3fde8
-    pristine_git_object: 53635914eeaa1e3431dfee54edd6a9b6f0d25a74
+    last_write_checksum: sha1:6fad2f76eb3dcf4c924856bcfe085b63eebde6b5
+    pristine_git_object: e3c52c1b3ff68ef3dc969cafa6aa74c4cd90bdb5
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -15606,8 +15606,8 @@ trackedFiles:
     pristine_git_object: e6bdb2f9efd3057108c23caec7772df1d7cc19a3
   src/sdk/models/operations/listadsreports.ts:
     id: 18728bf16bcc
-    last_write_checksum: sha1:51a1e1d06c773241a6b3414f7c92f44a09f22f3e
-    pristine_git_object: e8266f1f46880f9c49a938d974e4a6a86a7939f3
+    last_write_checksum: sha1:12f6a71364f0e924b9903d9fe51fea45f6881b86
+    pristine_git_object: e974785201fa020c86f39195b1dd487f3e77f00f
   src/sdk/models/operations/listadstargets.ts:
     id: 12bd35ddd17c
     last_write_checksum: sha1:d7c756f55a0ca07fe0d0a58bc93a68fe8e235738
@@ -17750,8 +17750,8 @@ trackedFiles:
     pristine_git_object: 04ac992c9120c98706f499ee8dcaa378d4db19e4
   src/sdk/models/shared/adsreportmetrics.ts:
     id: 66179aaa3fcf
-    last_write_checksum: sha1:d5d101a566420847c8c58bc623115fd9c95ff888
-    pristine_git_object: 2ee8bab0260175317a3022ef55c06196ae5ae5f1
+    last_write_checksum: sha1:76e81138fb5db70e14ff482f42e3c0f25f3453b4
+    pristine_git_object: f9cf43cd6c3de91500d2433c1bea77c3d65e13c5
   src/sdk/models/shared/adstarget.ts:
     id: 2b2f66053cca
     last_write_checksum: sha1:d185983920cf6f279002382629f9f305a5e195c6
@@ -33213,7 +33213,10 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.event.createCdpEvent()`: **Added**\n* `unified-to.event.getCdpEvent()`: **Added**\n* `unified-to.event.listCdpEvents()`: **Added**\n* `unified-to.event.patchCdpEvent()`: **Added**\n* `unified-to.event.removeCdpEvent()`: **Added**\n* `unified-to.event.updateCdpEvent()`: **Added**\n* `unified-to.cdp.createCdpActivation()`: **Added**\n* `unified-to.cdp.createCdpDestination()`: **Added**\n* `unified-to.cdp.createCdpEvent()`: **Added**\n* `unified-to.cdp.createCdpProfile()`: **Added**\n* `unified-to.cdp.createCdpSegment()`: **Added**\n* `unified-to.cdp.createCdpSource()`: **Added**\n* `unified-to.cdp.getCdpActivation()`: **Added**\n* `unified-to.cdp.getCdpDestination()`: **Added**\n* `unified-to.cdp.getCdpEvent()`: **Added**\n* `unified-to.cdp.getCdpProfile()`: **Added**\n* `unified-to.cdp.getCdpSegment()`: **Added**\n* `unified-to.cdp.getCdpSource()`: **Added**\n* `unified-to.cdp.listCdpActivations()`: **Added**\n* `unified-to.cdp.listCdpDestinations()`: **Added**\n* `unified-to.cdp.listCdpEvents()`: **Added**\n* `unified-to.cdp.listCdpProfiles()`: **Added**\n* `unified-to.cdp.listCdpSegments()`: **Added**\n* `unified-to.cdp.listCdpSources()`: **Added**\n* `unified-to.cdp.patchCdpActivation()`: **Added**\n* `unified-to.cdp.patchCdpDestination()`: **Added**\n* `unified-to.cdp.patchCdpEvent()`: **Added**\n* `unified-to.cdp.patchCdpProfile()`: **Added**\n* `unified-to.cdp.patchCdpSegment()`: **Added**\n* `unified-to.cdp.patchCdpSource()`: **Added**\n* `unified-to.cdp.removeCdpActivation()`: **Added**\n* `unified-to.cdp.removeCdpDestination()`: **Added**\n* `unified-to.cdp.removeCdpEvent()`: **Added**\n* `unified-to.cdp.removeCdpProfile()`: **Added**\n* `unified-to.cdp.removeCdpSegment()`: **Added**\n* `unified-to.cdp.removeCdpSource()`: **Added**\n* `unified-to.cdp.updateCdpActivation()`: **Added**\n* `unified-to.cdp.updateCdpDestination()`: **Added**\n* `unified-to.cdp.updateCdpEvent()`: **Added**\n* `unified-to.cdp.updateCdpProfile()`: **Added**\n* `unified-to.cdp.updateCdpSegment()`: **Added**\n* `unified-to.cdp.updateCdpSource()`: **Added**\n* `unified-to.activation.createCdpActivation()`: **Added**\n* `unified-to.activation.getCdpActivation()`: **Added**\n* `unified-to.activation.listCdpActivations()`: **Added**\n* `unified-to.activation.patchCdpActivation()`: **Added**\n* `unified-to.activation.removeCdpActivation()`: **Added**\n* `unified-to.activation.updateCdpActivation()`: **Added**\n* `unified-to.destination.createCdpDestination()`: **Added**\n* `unified-to.destination.getCdpDestination()`: **Added**\n* `unified-to.destination.listCdpDestinations()`: **Added**\n* `unified-to.destination.patchCdpDestination()`: **Added**\n* `unified-to.destination.removeCdpDestination()`: **Added**\n* `unified-to.destination.updateCdpDestination()`: **Added**\n* `unified-to.profile.createCdpProfile()`: **Added**\n* `unified-to.profile.getCdpProfile()`: **Added**\n* `unified-to.profile.listCdpProfiles()`: **Added**\n* `unified-to.profile.patchCdpProfile()`: **Added**\n* `unified-to.profile.removeCdpProfile()`: **Added**\n* `unified-to.profile.updateCdpProfile()`: **Added**\n* `unified-to.segment.createCdpSegment()`: **Added**\n* `unified-to.segment.getCdpSegment()`: **Added**\n* `unified-to.segment.listCdpSegments()`: **Added**\n* `unified-to.segment.patchCdpSegment()`: **Added**\n* `unified-to.segment.removeCdpSegment()`: **Added**\n* `unified-to.segment.updateCdpSegment()`: **Added**\n* `unified-to.source.createCdpSource()`: **Added**\n* `unified-to.source.getCdpSource()`: **Added**\n* `unified-to.source.listCdpSources()`: **Added**\n* `unified-to.source.patchCdpSource()`: **Added**\n* `unified-to.source.removeCdpSource()`: **Added**\n* `unified-to.source.updateCdpSource()`: **Added**\n* `unified-to.lms.createLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.lms.getLmsContent()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.lms.listLmsContents()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.lms.patchLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.lms.updateLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.content.createLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.content.getLmsContent()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.content.listLmsContents()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.content.patchLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.content.updateLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.createUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.unified.getUnifiedConnection()`:  `response` **Changed**\n* `unified-to.unified.getUnifiedWebhook()`:  `response.objectType` **Changed**\n* `unified-to.unified.listUnifiedConnections()`: \n  *  `request.categories` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`: \n  *  `request.categories` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.unified.listUnifiedIntegrations()`: \n  *  `request.categories` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.unified.listUnifiedWebhooks()`:  `response.[].objectType` **Changed**\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `unified-to.unified.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.connection.getUnifiedConnection()`:  `response` **Changed**\n* `unified-to.connection.listUnifiedConnections()`: \n  *  `request.categories` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`: \n  *  `request.categories` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.integration.listUnifiedIntegrations()`: \n  *  `request.categories` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.webhook.createUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.webhook.getUnifiedWebhook()`:  `response.objectType` **Changed**\n* `unified-to.webhook.listUnifiedWebhooks()`:  `response.[].objectType` **Changed**\n* `unified-to.webhook.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n* `unified-to.webhook.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType` **Changed**\n  *  `response.objectType` **Changed**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `unified-to.report.listAdsReports()`:  `response.[].metrics[].type` **Changed**
+  * `unified-to.ads.listAdsReports()`:  `response.[].metrics[].type` **Changed**
 generatedFiles:
   - .gitattributes
   - .npmignore
