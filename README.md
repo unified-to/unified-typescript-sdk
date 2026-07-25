@@ -870,6 +870,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`atsUpdateAtsScorecard`](docs/sdks/scorecard/README.md#updateatsscorecard) - Update a scorecard
 - [`authGetUnifiedIntegrationLogin`](docs/sdks/auth/README.md#getunifiedintegrationlogin) - Sign in a user
 - [`authGetUnifiedIntegrationLogin`](docs/sdks/login/README.md#getunifiedintegrationlogin) - Sign in a user
+- [`authGetUnifiedIntegrationSaml`](docs/sdks/auth/README.md#getunifiedintegrationsaml) - Sign in a user via SAML
+- [`authGetUnifiedIntegrationSaml`](docs/sdks/login/README.md#getunifiedintegrationsaml) - Sign in a user via SAML
 - [`calendarCreateCalendarCalendar`](docs/sdks/calendar/README.md#createcalendarcalendar) - Create a calendar
 - [`calendarCreateCalendarLink`](docs/sdks/calendar/README.md#createcalendarlink) - Create a link
 - [`calendarCreateCalendarLink`](docs/sdks/link/README.md#createcalendarlink) - Create a link

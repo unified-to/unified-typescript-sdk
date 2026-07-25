@@ -11,6 +11,7 @@ export const Categories = {
   Hris: "hris",
   Ats: "ats",
   Auth: "auth",
+  Saml: "saml",
   Crm: "crm",
   Enrich: "enrich",
   Martech: "martech",

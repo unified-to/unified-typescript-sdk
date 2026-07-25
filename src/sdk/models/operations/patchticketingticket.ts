@@ -23,6 +23,7 @@ export const PatchTicketingTicketQueryParamFields = {
   Tags: "tags",
   UserId: "user_id",
   Url: "url",
+  AttachmentIds: "attachment_ids",
   DueAt: "due_at",
   Raw: "raw",
 } as const;

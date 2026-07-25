@@ -264,6 +264,7 @@ export * from "./getunifiedapicall.js";
 export * from "./getunifiedconnection.js";
 export * from "./getunifiedintegrationauth.js";
 export * from "./getunifiedintegrationlogin.js";
+export * from "./getunifiedintegrationsaml.js";
 export * from "./getunifiedissue.js";
 export * from "./getunifiedwebhook.js";
 export * from "./getunifiedworkspacesecretsmanager.js";

@@ -3,6 +3,7 @@
  */
 
 import { authGetUnifiedIntegrationLogin } from "../funcs/authGetUnifiedIntegrationLogin.js";
+import { authGetUnifiedIntegrationSaml } from "../funcs/authGetUnifiedIntegrationSaml.js";
 import { unifiedGetUnifiedIntegrationAuth } from "../funcs/unifiedGetUnifiedIntegrationAuth.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -37,6 +38,23 @@ export class Auth extends ClientSDK {
     options?: RequestOptions,
   ): Promise<string> {
     return unwrapAsync(authGetUnifiedIntegrationLogin(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Sign in a user via SAML
+   *
+   * @remarks
+   * Returns a SAML authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+   */
+  async getUnifiedIntegrationSaml(
+    request: operations.GetUnifiedIntegrationSamlRequest,
+    options?: RequestOptions,
+  ): Promise<string> {
+    return unwrapAsync(authGetUnifiedIntegrationSaml(
       this,
       request,
       options,

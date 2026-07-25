@@ -50,6 +50,7 @@ export type AccountingExpense = {
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  externalNumber?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   name?: string | undefined;
@@ -64,9 +65,6 @@ export type AccountingExpense = {
   totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
-  /**
-   * expense owner(s); id is HR employee/user when resolved
-   */
   users?: Array<AccountingReference> | undefined;
 };
 
@@ -99,6 +97,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
+  external_number: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   name: z.string().optional(),
@@ -126,6 +125,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
     "approver_users": "approverUsers",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "external_number": "externalNumber",
     "organization_id": "organizationId",
     "payment_method": "paymentMethod",
     "posted_at": "postedAt",
@@ -147,6 +147,7 @@ export type AccountingExpense$Outbound = {
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
+  external_number?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   name?: string | undefined;
@@ -178,6 +179,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
+  externalNumber: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   name: z.string().optional(),
@@ -201,6 +203,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
     approverUsers: "approver_users",
     contactId: "contact_id",
     createdAt: "created_at",
+    externalNumber: "external_number",
     organizationId: "organization_id",
     paymentMethod: "payment_method",
     postedAt: "posted_at",

@@ -29,6 +29,7 @@ export const ListAccountingExpensesQueryParamFields = {
   Users: "users",
   ApproverUsers: "approver_users",
   Status: "status",
+  ExternalNumber: "external_number",
   Raw: "raw",
 } as const;
 export type ListAccountingExpensesQueryParamFields = ClosedEnum<
