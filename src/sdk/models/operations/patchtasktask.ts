@@ -31,6 +31,10 @@ export const PatchTaskTaskQueryParamFields = {
   Metadata: "metadata",
   HasChildren: "has_children",
   Type: "type",
+  TimeSpent: "time_spent",
+  TimeSpentUnit: "time_spent_unit",
+  Progress: "progress",
+  StoryPoints: "story_points",
   Raw: "raw",
 } as const;
 export type PatchTaskTaskQueryParamFields = ClosedEnum<

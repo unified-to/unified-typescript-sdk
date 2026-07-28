@@ -43,11 +43,15 @@ export type TaskTask = {
   notes?: string | undefined;
   parentId?: string | undefined;
   priority?: string | undefined;
+  progress?: number | undefined;
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   status?: TaskTaskStatus | undefined;
+  storyPoints?: number | undefined;
   tags?: Array<string> | undefined;
+  timeSpent?: number | undefined;
+  timeSpentUnit?: string | undefined;
   type?: string | undefined;
   updatedAt?: Date | undefined;
   url?: string | undefined;
@@ -93,12 +97,16 @@ export const TaskTask$inboundSchema: z.ZodType<
   notes: z.string().optional(),
   parent_id: z.string().optional(),
   priority: z.string().optional(),
+  progress: z.number().optional(),
   project_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   status: TaskTaskStatus$inboundSchema.optional(),
+  story_points: z.number().optional(),
   tags: z.array(z.string()).optional(),
+  time_spent: z.number().optional(),
+  time_spent_unit: z.string().optional(),
   type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -118,6 +126,9 @@ export const TaskTask$inboundSchema: z.ZodType<
     "parent_id": "parentId",
     "project_id": "projectId",
     "start_at": "startAt",
+    "story_points": "storyPoints",
+    "time_spent": "timeSpent",
+    "time_spent_unit": "timeSpentUnit",
     "updated_at": "updatedAt",
   });
 });
@@ -139,11 +150,15 @@ export type TaskTask$Outbound = {
   notes?: string | undefined;
   parent_id?: string | undefined;
   priority?: string | undefined;
+  progress?: number | undefined;
   project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
+  story_points?: number | undefined;
   tags?: Array<string> | undefined;
+  time_spent?: number | undefined;
+  time_spent_unit?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
   url?: string | undefined;
@@ -171,11 +186,15 @@ export const TaskTask$outboundSchema: z.ZodType<
   notes: z.string().optional(),
   parentId: z.string().optional(),
   priority: z.string().optional(),
+  progress: z.number().optional(),
   projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   status: TaskTaskStatus$outboundSchema.optional(),
+  storyPoints: z.number().optional(),
   tags: z.array(z.string()).optional(),
+  timeSpent: z.number().optional(),
+  timeSpentUnit: z.string().optional(),
   type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   url: z.string().optional(),
@@ -194,6 +213,9 @@ export const TaskTask$outboundSchema: z.ZodType<
     parentId: "parent_id",
     projectId: "project_id",
     startAt: "start_at",
+    storyPoints: "story_points",
+    timeSpent: "time_spent",
+    timeSpentUnit: "time_spent_unit",
     updatedAt: "updated_at",
   });
 });
