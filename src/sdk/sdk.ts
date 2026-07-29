@@ -125,6 +125,7 @@ import { Reservation } from "./reservation.js";
 import { Review } from "./review.js";
 import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
+import { Saml } from "./saml.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
 import { Secretsmanager } from "./secretsmanager.js";
@@ -926,6 +927,11 @@ export class UnifiedTo extends ClientSDK {
   private _login?: Login;
   get login(): Login {
     return (this._login ??= new Login(this._options));
+  }
+
+  private _saml?: Saml;
+  get saml(): Saml {
+    return (this._saml ??= new Saml(this._options));
   }
 
   private _issue?: Issue;
