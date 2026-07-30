@@ -10,7 +10,7 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 let value: Webhook = {
   connectionId: "<id>",
   event: "deleted",
-  objectType: "repo_pullrequest",
+  objectType: "metadata_metadata",
 };
 ```
 
@@ -36,7 +36,7 @@ let value: Webhook = {
 | `isBeta`                                                                                      | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `isHealthy`                                                                                   | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `isPaused`                                                                                    | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `objectType`                                                                                  | [shared.ObjectType](../../../sdk/models/shared/objecttype.md)                                 | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `objectType`                                                                                  | [shared.WebhookObjectType](../../../sdk/models/shared/webhookobjecttype.md)                   | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `pageMaxLimit`                                                                                | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `runs`                                                                                        | *string*[]                                                                                    | :heavy_minus_sign:                                                                            | An array of the most revent virtual webhook runs                                              |
 | `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |

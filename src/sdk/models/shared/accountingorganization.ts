@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -12,12 +14,23 @@ import {
   PropertyAccountingOrganizationAddress$inboundSchema,
 } from "./propertyaccountingorganizationaddress.js";
 
+export const AccountingOrganizationType = {
+  Company: "COMPANY",
+  Subsidiary: "SUBSIDIARY",
+  Division: "DIVISION",
+  Location: "LOCATION",
+} as const;
+export type AccountingOrganizationType = OpenEnum<
+  typeof AccountingOrganizationType
+>;
+
 export type AccountingOrganization = {
   address?: PropertyAccountingOrganizationAddress | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   fiscalYearEndMonth?: number | undefined;
   id?: string | undefined;
+  isElimination?: boolean | undefined;
   legalName?: string | undefined;
   name?: string | undefined;
   organizationCode?: string | undefined;
@@ -25,9 +38,17 @@ export type AccountingOrganization = {
   raw?: { [k: string]: any } | undefined;
   taxNumber?: string | undefined;
   timezone?: string | undefined;
+  type?: AccountingOrganizationType | undefined;
   updatedAt?: Date | undefined;
   website?: string | undefined;
 };
+
+/** @internal */
+export const AccountingOrganizationType$inboundSchema: z.ZodType<
+  AccountingOrganizationType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingOrganizationType);
 
 /** @internal */
 export const AccountingOrganization$inboundSchema: z.ZodType<
@@ -41,6 +62,7 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   fiscal_year_end_month: z.number().optional(),
   id: z.string().optional(),
+  is_elimination: z.boolean().optional(),
   legal_name: z.string().optional(),
   name: z.string().optional(),
   organization_code: z.string().optional(),
@@ -48,6 +70,7 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   tax_number: z.string().optional(),
   timezone: z.string().optional(),
+  type: AccountingOrganizationType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   website: z.string().optional(),
@@ -55,6 +78,7 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "fiscal_year_end_month": "fiscalYearEndMonth",
+    "is_elimination": "isElimination",
     "legal_name": "legalName",
     "organization_code": "organizationCode",
     "parent_id": "parentId",

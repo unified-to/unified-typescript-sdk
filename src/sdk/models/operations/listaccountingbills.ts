@@ -33,8 +33,11 @@ export const ListAccountingBillsQueryParamFields = {
   Attachments: "attachments",
   Send: "send",
   OrganizationId: "organization_id",
-  Raw: "raw",
   Term: "term",
+  PaymentTerms: "payment_terms",
+  Payments: "payments",
+  CategoryIds: "category_ids",
+  Raw: "raw",
 } as const;
 export type ListAccountingBillsQueryParamFields = ClosedEnum<
   typeof ListAccountingBillsQueryParamFields

@@ -3,11 +3,13 @@
  */
 
 import { adsCreateAdsAd } from "../funcs/adsCreateAdsAd.js";
+import { adsCreateAdsAsset } from "../funcs/adsCreateAdsAsset.js";
 import { adsCreateAdsCampaign } from "../funcs/adsCreateAdsCampaign.js";
 import { adsCreateAdsCreative } from "../funcs/adsCreateAdsCreative.js";
 import { adsCreateAdsGroup } from "../funcs/adsCreateAdsGroup.js";
 import { adsCreateAdsInsertionorder } from "../funcs/adsCreateAdsInsertionorder.js";
 import { adsGetAdsAd } from "../funcs/adsGetAdsAd.js";
+import { adsGetAdsAsset } from "../funcs/adsGetAdsAsset.js";
 import { adsGetAdsCampaign } from "../funcs/adsGetAdsCampaign.js";
 import { adsGetAdsCreative } from "../funcs/adsGetAdsCreative.js";
 import { adsGetAdsGroup } from "../funcs/adsGetAdsGroup.js";
@@ -15,6 +17,7 @@ import { adsGetAdsInsertionorder } from "../funcs/adsGetAdsInsertionorder.js";
 import { adsGetAdsPromoted } from "../funcs/adsGetAdsPromoted.js";
 import { adsGetAdsTarget } from "../funcs/adsGetAdsTarget.js";
 import { adsListAdsAds } from "../funcs/adsListAdsAds.js";
+import { adsListAdsAssets } from "../funcs/adsListAdsAssets.js";
 import { adsListAdsCampaigns } from "../funcs/adsListAdsCampaigns.js";
 import { adsListAdsCreatives } from "../funcs/adsListAdsCreatives.js";
 import { adsListAdsGroups } from "../funcs/adsListAdsGroups.js";
@@ -57,6 +60,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsAd> {
     return unwrapAsync(adsCreateAdsAd(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create an asset
+   */
+  async createAdsAsset(
+    request: operations.CreateAdsAssetRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsAsset> {
+    return unwrapAsync(adsCreateAdsAsset(
       this,
       request,
       options,
@@ -141,6 +158,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsAd> {
     return unwrapAsync(adsGetAdsAd(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an asset
+   */
+  async getAdsAsset(
+    request: operations.GetAdsAssetRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsAsset> {
+    return unwrapAsync(adsGetAdsAsset(
       this,
       request,
       options,
@@ -253,6 +284,20 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AdsAd>> {
     return unwrapAsync(adsListAdsAds(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all assets
+   */
+  async listAdsAssets(
+    request: operations.ListAdsAssetsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsAsset>> {
+    return unwrapAsync(adsListAdsAssets(
       this,
       request,
       options,

@@ -15,6 +15,9 @@ export const CreateAccountingCategoryQueryParamFields = {
   Description: "description",
   IsActive: "is_active",
   ParentId: "parent_id",
+  Type: "type",
+  Code: "code",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type CreateAccountingCategoryQueryParamFields = ClosedEnum<

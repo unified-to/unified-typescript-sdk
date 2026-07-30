@@ -11,5 +11,5 @@ let value: UpdateAccountingCategoryQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "is_active" | "parent_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "is_active" | "parent_id" | "type" | "code" | "organization_id" | "raw"
 ```

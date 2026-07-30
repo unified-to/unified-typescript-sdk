@@ -1,0 +1,18 @@
+# PropertyAdsReportMetricsInsertionorderPacing
+
+## Example Usage
+
+```typescript
+import { PropertyAdsReportMetricsInsertionorderPacing } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyAdsReportMetricsInsertionorderPacing = {};
+```
+
+## Fields
+
+| Field                                                                                                                                         | Type                                                                                                                                          | Required                                                                                                                                      | Description                                                                                                                                   |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dailyMaxAmount`                                                                                                                              | *number*                                                                                                                                      | :heavy_minus_sign:                                                                                                                            | N/A                                                                                                                                           |
+| `dailyMaxImpressions`                                                                                                                         | *number*                                                                                                                                      | :heavy_minus_sign:                                                                                                                            | N/A                                                                                                                                           |
+| `period`                                                                                                                                      | [shared.PropertyAdsReportMetricsInsertionorderPacingPeriod](../../../sdk/models/shared/propertyadsreportmetricsinsertionorderpacingperiod.md) | :heavy_minus_sign:                                                                                                                            | N/A                                                                                                                                           |
+| `type`                                                                                                                                        | *string*                                                                                                                                      | :heavy_minus_sign:                                                                                                                            | N/A                                                                                                                                           |

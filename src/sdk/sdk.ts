@@ -14,6 +14,7 @@ import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
 import { Applicationstatus } from "./applicationstatus.js";
 import { Assessment } from "./assessment.js";
+import { Asset } from "./asset.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
 import { Availability } from "./availability.js";
@@ -277,6 +278,11 @@ export class UnifiedTo extends ClientSDK {
   private _ad?: Ad;
   get ad(): Ad {
     return (this._ad ??= new Ad(this._options));
+  }
+
+  private _asset?: Asset;
+  get asset(): Asset {
+    return (this._asset ??= new Asset(this._options));
   }
 
   private _campaign?: Campaign;

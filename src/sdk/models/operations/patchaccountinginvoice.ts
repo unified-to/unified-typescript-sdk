@@ -29,6 +29,7 @@ export const PatchAccountingInvoiceQueryParamFields = {
   Notes: "notes",
   RefundReason: "refund_reason",
   Term: "term",
+  PaymentTerms: "payment_terms",
   Lineitems: "lineitems",
   Status: "status",
   Url: "url",
@@ -37,6 +38,8 @@ export const PatchAccountingInvoiceQueryParamFields = {
   Attachments: "attachments",
   Send: "send",
   OrganizationId: "organization_id",
+  Payments: "payments",
+  CategoryIds: "category_ids",
   Raw: "raw",
 } as const;
 export type PatchAccountingInvoiceQueryParamFields = ClosedEnum<

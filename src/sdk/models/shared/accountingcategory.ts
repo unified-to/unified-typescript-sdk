@@ -5,19 +5,49 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export const AccountingCategoryType = {
+  Class: "CLASS",
+  Department: "DEPARTMENT",
+  Location: "LOCATION",
+  Project: "PROJECT",
+  Task: "TASK",
+  Custom: "CUSTOM",
+  Expense: "EXPENSE",
+  Income: "INCOME",
+} as const;
+export type AccountingCategoryType = OpenEnum<typeof AccountingCategoryType>;
+
 export type AccountingCategory = {
+  code?: string | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   name?: string | undefined;
+  organizationId?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  type?: AccountingCategoryType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingCategoryType$inboundSchema: z.ZodType<
+  AccountingCategoryType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingCategoryType);
+/** @internal */
+export const AccountingCategoryType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingCategoryType
+> = openEnums.outboundSchema(AccountingCategoryType);
 
 /** @internal */
 export const AccountingCategory$inboundSchema: z.ZodType<
@@ -25,33 +55,40 @@ export const AccountingCategory$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  code: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
+  organization_id: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  type: AccountingCategoryType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
     "is_active": "isActive",
+    "organization_id": "organizationId",
     "parent_id": "parentId",
     "updated_at": "updatedAt",
   });
 });
 /** @internal */
 export type AccountingCategory$Outbound = {
+  code?: string | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
   name?: string | undefined;
+  organization_id?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
 };
 
@@ -61,18 +98,22 @@ export const AccountingCategory$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingCategory
 > = z.object({
+  code: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   name: z.string().optional(),
+  organizationId: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  type: AccountingCategoryType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
     isActive: "is_active",
+    organizationId: "organization_id",
     parentId: "parent_id",
     updatedAt: "updated_at",
   });

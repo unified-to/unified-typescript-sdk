@@ -10,6 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingTransactionLineItem = {
   accountId?: string | undefined;
+  categoryIds?: Array<string> | undefined;
   description?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
@@ -26,6 +27,7 @@ export const AccountingTransactionLineItem$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  category_ids: z.array(z.string()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
@@ -36,6 +38,7 @@ export const AccountingTransactionLineItem$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
+    "category_ids": "categoryIds",
     "object_type": "objectType",
     "total_amount": "totalAmount",
     "unit_amount": "unitAmount",
@@ -45,6 +48,7 @@ export const AccountingTransactionLineItem$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingTransactionLineItem$Outbound = {
   account_id?: string | undefined;
+  category_ids?: Array<string> | undefined;
   description?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
@@ -61,6 +65,7 @@ export const AccountingTransactionLineItem$outboundSchema: z.ZodType<
   AccountingTransactionLineItem
 > = z.object({
   accountId: z.string().optional(),
+  categoryIds: z.array(z.string()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
@@ -71,6 +76,7 @@ export const AccountingTransactionLineItem$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
+    categoryIds: "category_ids",
     objectType: "object_type",
     totalAmount: "total_amount",
     unitAmount: "unit_amount",

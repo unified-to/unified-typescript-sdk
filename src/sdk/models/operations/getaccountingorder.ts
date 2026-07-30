@@ -20,6 +20,7 @@ export const GetAccountingOrderQueryParamFields = {
   BillingAddress: "billing_address",
   Status: "status",
   Lineitems: "lineitems",
+  OrganizationId: "organization_id",
   Raw: "raw",
 } as const;
 export type GetAccountingOrderQueryParamFields = ClosedEnum<

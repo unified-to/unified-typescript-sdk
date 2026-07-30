@@ -11,5 +11,5 @@ let value: UpdateTaskCommentQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "text" | "user_id" | "user_name" | "task_id" | "raw"
+"id" | "created_at" | "updated_at" | "text" | "user_id" | "user_name" | "task_id" | "parent_id" | "has_children" | "raw"
 ```

@@ -28,7 +28,7 @@ export const Event = {
 } as const;
 export type Event = OpenEnum<typeof Event>;
 
-export const ObjectType = {
+export const WebhookObjectType = {
   AccountingAccount: "accounting_account",
   AccountingTransaction: "accounting_transaction",
   AccountingJournal: "accounting_journal",
@@ -152,6 +152,7 @@ export const ObjectType = {
   AdsReport: "ads_report",
   AdsGroup: "ads_group",
   AdsCreative: "ads_creative",
+  AdsAsset: "ads_asset",
   AdsInsertionorder: "ads_insertionorder",
   AdsTarget: "ads_target",
   AdsPromoted: "ads_promoted",
@@ -186,7 +187,7 @@ export const ObjectType = {
   CdpDestination: "cdp_destination",
   CdpActivation: "cdp_activation",
 } as const;
-export type ObjectType = OpenEnum<typeof ObjectType>;
+export type WebhookObjectType = OpenEnum<typeof WebhookObjectType>;
 
 export const WebhookType = {
   Virtual: "virtual",
@@ -216,7 +217,7 @@ export type Webhook = {
   isBeta?: boolean | undefined;
   isHealthy?: boolean | undefined;
   isPaused?: boolean | undefined;
-  objectType: ObjectType;
+  objectType: WebhookObjectType;
   pageMaxLimit?: number | undefined;
   /**
    * An array of the most revent virtual webhook runs
@@ -242,17 +243,17 @@ export const Event$outboundSchema: z.ZodType<string, z.ZodTypeDef, Event> =
   openEnums.outboundSchema(Event);
 
 /** @internal */
-export const ObjectType$inboundSchema: z.ZodType<
-  ObjectType,
+export const WebhookObjectType$inboundSchema: z.ZodType<
+  WebhookObjectType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ObjectType);
+> = openEnums.inboundSchema(WebhookObjectType);
 /** @internal */
-export const ObjectType$outboundSchema: z.ZodType<
+export const WebhookObjectType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  ObjectType
-> = openEnums.outboundSchema(ObjectType);
+  WebhookObjectType
+> = openEnums.outboundSchema(WebhookObjectType);
 
 /** @internal */
 export const WebhookType$inboundSchema: z.ZodType<
@@ -292,7 +293,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
     is_beta: z.boolean().optional(),
     is_healthy: z.boolean().optional(),
     is_paused: z.boolean().optional(),
-    object_type: ObjectType$inboundSchema,
+    object_type: WebhookObjectType$inboundSchema,
     page_max_limit: z.number().optional(),
     runs: z.array(z.string()).optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
@@ -373,7 +374,7 @@ export const Webhook$outboundSchema: z.ZodType<
   isBeta: z.boolean().optional(),
   isHealthy: z.boolean().optional(),
   isPaused: z.boolean().optional(),
-  objectType: ObjectType$outboundSchema,
+  objectType: WebhookObjectType$outboundSchema,
   pageMaxLimit: z.number().optional(),
   runs: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

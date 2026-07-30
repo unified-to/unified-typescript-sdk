@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingAttachment,
+  AccountingAttachment$inboundSchema,
+  AccountingAttachment$Outbound,
+  AccountingAttachment$outboundSchema,
+} from "./accountingattachment.js";
+import {
   AccountingJournalLineitem,
   AccountingJournalLineitem$inboundSchema,
   AccountingJournalLineitem$Outbound,
@@ -15,6 +21,8 @@ import {
 } from "./accountingjournallineitem.js";
 
 export type AccountingJournal = {
+  attachments?: Array<AccountingAttachment> | undefined;
+  categoryIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
@@ -39,6 +47,8 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
+  category_ids: z.array(z.string()).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
@@ -57,6 +67,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "category_ids": "categoryIds",
     "created_at": "createdAt",
     "organization_id": "organizationId",
     "posted_at": "postedAt",
@@ -67,6 +78,8 @@ export const AccountingJournal$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AccountingJournal$Outbound = {
+  attachments?: Array<AccountingAttachment$Outbound> | undefined;
+  category_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   description?: string | undefined;
@@ -88,6 +101,8 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingJournal
 > = z.object({
+  attachments: z.array(AccountingAttachment$outboundSchema).optional(),
+  categoryIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
@@ -103,6 +118,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    categoryIds: "category_ids",
     createdAt: "created_at",
     organizationId: "organization_id",
     postedAt: "posted_at",

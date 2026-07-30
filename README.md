@@ -658,6 +658,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`activityUpdateLmsActivity`](docs/sdks/lms/README.md#updatelmsactivity) - Update an activity
 - [`adsCreateAdsAd`](docs/sdks/ad/README.md#createadsad) - Create an ad
 - [`adsCreateAdsAd`](docs/sdks/ads/README.md#createadsad) - Create an ad
+- [`adsCreateAdsAsset`](docs/sdks/ads/README.md#createadsasset) - Create an asset
+- [`adsCreateAdsAsset`](docs/sdks/asset/README.md#createadsasset) - Create an asset
 - [`adsCreateAdsCampaign`](docs/sdks/ads/README.md#createadscampaign) - Create a campaign
 - [`adsCreateAdsCampaign`](docs/sdks/campaign/README.md#createadscampaign) - Create a campaign
 - [`adsCreateAdsCreative`](docs/sdks/ads/README.md#createadscreative) - Create a creative
@@ -668,6 +670,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsCreateAdsInsertionorder`](docs/sdks/insertionorder/README.md#createadsinsertionorder) - Create an insertionorder
 - [`adsGetAdsAd`](docs/sdks/ad/README.md#getadsad) - Retrieve an ad
 - [`adsGetAdsAd`](docs/sdks/ads/README.md#getadsad) - Retrieve an ad
+- [`adsGetAdsAsset`](docs/sdks/ads/README.md#getadsasset) - Retrieve an asset
+- [`adsGetAdsAsset`](docs/sdks/asset/README.md#getadsasset) - Retrieve an asset
 - [`adsGetAdsCampaign`](docs/sdks/ads/README.md#getadscampaign) - Retrieve a campaign
 - [`adsGetAdsCampaign`](docs/sdks/campaign/README.md#getadscampaign) - Retrieve a campaign
 - [`adsGetAdsCreative`](docs/sdks/ads/README.md#getadscreative) - Retrieve a creative
@@ -682,6 +686,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsGetAdsTarget`](docs/sdks/target/README.md#getadstarget) - Retrieve a target
 - [`adsListAdsAds`](docs/sdks/ad/README.md#listadsads) - List all ads
 - [`adsListAdsAds`](docs/sdks/ads/README.md#listadsads) - List all ads
+- [`adsListAdsAssets`](docs/sdks/ads/README.md#listadsassets) - List all assets
+- [`adsListAdsAssets`](docs/sdks/asset/README.md#listadsassets) - List all assets
 - [`adsListAdsCampaigns`](docs/sdks/ads/README.md#listadscampaigns) - List all campaigns
 - [`adsListAdsCampaigns`](docs/sdks/campaign/README.md#listadscampaigns) - List all campaigns
 - [`adsListAdsCreatives`](docs/sdks/ads/README.md#listadscreatives) - List all creatives

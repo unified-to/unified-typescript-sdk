@@ -16,6 +16,12 @@ import {
   AccountingAttachment$outboundSchema,
 } from "./accountingattachment.js";
 import {
+  AccountingCreditApplication,
+  AccountingCreditApplication$inboundSchema,
+  AccountingCreditApplication$Outbound,
+  AccountingCreditApplication$outboundSchema,
+} from "./accountingcreditapplication.js";
+import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
   AccountingLineitem$Outbound,
@@ -47,6 +53,10 @@ export type AccountingCreditmemoStatus = OpenEnum<
 >;
 
 export type AccountingCreditmemo = {
+  /**
+   * What this credit memo was applied to (invoices/bills). Writable inline on create/update.
+   */
+  applications?: Array<AccountingCreditApplication> | undefined;
   applyAmount?: number | undefined;
   attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
@@ -111,6 +121,7 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  applications: z.array(AccountingCreditApplication$inboundSchema).optional(),
   apply_amount: z.number().optional(),
   attachments: z.array(AccountingAttachment$inboundSchema).optional(),
   balance_amount: z.number().optional(),
@@ -175,6 +186,7 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AccountingCreditmemo$Outbound = {
+  applications?: Array<AccountingCreditApplication$Outbound> | undefined;
   apply_amount?: number | undefined;
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
   balance_amount?: number | undefined;
@@ -212,6 +224,7 @@ export const AccountingCreditmemo$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingCreditmemo
 > = z.object({
+  applications: z.array(AccountingCreditApplication$outboundSchema).optional(),
   applyAmount: z.number().optional(),
   attachments: z.array(AccountingAttachment$outboundSchema).optional(),
   balanceAmount: z.number().optional(),

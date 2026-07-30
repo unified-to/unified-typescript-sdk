@@ -5,11 +5,11 @@
 ```typescript
 import { GetAccountingVendorcreditQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetAccountingVendorcreditQueryParamFields = "notes";
+let value: GetAccountingVendorcreditQueryParamFields = "lineitems";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "due_at" | "posted_at" | "total_amount" | "balance_amount" | "account_id" | "currency" | "contact_id" | "bill_id" | "notes" | "lineitems" | "status" | "organization_id" | "apply_amount" | "raw"
+"id" | "created_at" | "updated_at" | "due_at" | "posted_at" | "total_amount" | "balance_amount" | "account_id" | "currency" | "contact_id" | "bill_id" | "notes" | "lineitems" | "status" | "organization_id" | "apply_amount" | "applications" | "raw"
 ```

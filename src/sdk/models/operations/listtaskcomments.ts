@@ -14,6 +14,8 @@ export const ListTaskCommentsQueryParamFields = {
   UserId: "user_id",
   UserName: "user_name",
   TaskId: "task_id",
+  ParentId: "parent_id",
+  HasChildren: "has_children",
   Raw: "raw",
 } as const;
 export type ListTaskCommentsQueryParamFields = ClosedEnum<
@@ -32,6 +34,10 @@ export type ListTaskCommentsRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The parent ID to filter by
+   */
+  parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -63,6 +69,7 @@ export type ListTaskCommentsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -81,6 +88,7 @@ export const ListTaskCommentsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -89,6 +97,7 @@ export const ListTaskCommentsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    parentId: "parent_id",
     taskId: "task_id",
     updatedGte: "updated_gte",
   });

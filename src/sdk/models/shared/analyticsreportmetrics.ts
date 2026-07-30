@@ -10,7 +10,7 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const Dimension = {
+export const AnalyticsReportMetricsDimension = {
   Date: "DATE",
   Hour: "HOUR",
   DayOfWeek: "DAY_OF_WEEK",
@@ -32,7 +32,9 @@ export const Dimension = {
   LandingPage: "LANDING_PAGE",
   Video: "VIDEO",
 } as const;
-export type Dimension = OpenEnum<typeof Dimension>;
+export type AnalyticsReportMetricsDimension = OpenEnum<
+  typeof AnalyticsReportMetricsDimension
+>;
 
 export const AnalyticsReportMetricsType = {
   Users: "USERS",
@@ -74,18 +76,18 @@ export type AnalyticsReportMetricsType = OpenEnum<
 >;
 
 export type AnalyticsReportMetrics = {
-  dimension?: Dimension | undefined;
+  dimension?: AnalyticsReportMetricsDimension | undefined;
   dimensionValue?: string | undefined;
   type?: AnalyticsReportMetricsType | undefined;
   value?: number | undefined;
 };
 
 /** @internal */
-export const Dimension$inboundSchema: z.ZodType<
-  Dimension,
+export const AnalyticsReportMetricsDimension$inboundSchema: z.ZodType<
+  AnalyticsReportMetricsDimension,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Dimension);
+> = openEnums.inboundSchema(AnalyticsReportMetricsDimension);
 
 /** @internal */
 export const AnalyticsReportMetricsType$inboundSchema: z.ZodType<
@@ -100,7 +102,7 @@ export const AnalyticsReportMetrics$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  dimension: Dimension$inboundSchema.optional(),
+  dimension: AnalyticsReportMetricsDimension$inboundSchema.optional(),
   dimension_value: z.string().optional(),
   type: AnalyticsReportMetricsType$inboundSchema.optional(),
   value: z.number().optional(),

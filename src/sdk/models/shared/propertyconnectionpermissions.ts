@@ -237,6 +237,8 @@ export const PropertyConnectionPermissions = {
   AdsOrganizationWrite: "ads_organization_write",
   AdsCreativeRead: "ads_creative_read",
   AdsCreativeWrite: "ads_creative_write",
+  AdsAssetRead: "ads_asset_read",
+  AdsAssetWrite: "ads_asset_write",
   AdsInsertionorderRead: "ads_insertionorder_read",
   AdsInsertionorderWrite: "ads_insertionorder_write",
   AdsTargetRead: "ads_target_read",

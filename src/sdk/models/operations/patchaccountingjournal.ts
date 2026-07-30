@@ -20,6 +20,8 @@ export const PatchAccountingJournalQueryParamFields = {
   PostedAt: "posted_at",
   Source: "source",
   OrganizationId: "organization_id",
+  CategoryIds: "category_ids",
+  Attachments: "attachments",
   Raw: "raw",
 } as const;
 export type PatchAccountingJournalQueryParamFields = ClosedEnum<

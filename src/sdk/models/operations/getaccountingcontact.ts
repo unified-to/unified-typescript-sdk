@@ -29,6 +29,7 @@ export const GetAccountingContactQueryParamFields = {
   Identification: "identification",
   AssociatedContacts: "associated_contacts",
   OrganizationId: "organization_id",
+  PaymentTerms: "payment_terms",
   Raw: "raw",
 } as const;
 export type GetAccountingContactQueryParamFields = ClosedEnum<

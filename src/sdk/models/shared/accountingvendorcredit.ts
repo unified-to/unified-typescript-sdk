@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingCreditApplication,
+  AccountingCreditApplication$inboundSchema,
+  AccountingCreditApplication$Outbound,
+  AccountingCreditApplication$outboundSchema,
+} from "./accountingcreditapplication.js";
+import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
   AccountingLineitem$Outbound,
@@ -34,6 +40,10 @@ export type AccountingVendorcreditStatus = OpenEnum<
 
 export type AccountingVendorcredit = {
   accountId?: string | undefined;
+  /**
+   * What this vendor credit was applied to (invoices/bills). Writable inline on create/update.
+   */
+  applications?: Array<AccountingCreditApplication> | undefined;
   applyAmount?: number | undefined;
   balanceAmount?: number | undefined;
   billId?: string | undefined;
@@ -72,6 +82,7 @@ export const AccountingVendorcredit$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  applications: z.array(AccountingCreditApplication$inboundSchema).optional(),
   apply_amount: z.number().optional(),
   balance_amount: z.number().optional(),
   bill_id: z.string().optional(),
@@ -110,6 +121,7 @@ export const AccountingVendorcredit$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingVendorcredit$Outbound = {
   account_id?: string | undefined;
+  applications?: Array<AccountingCreditApplication$Outbound> | undefined;
   apply_amount?: number | undefined;
   balance_amount?: number | undefined;
   bill_id?: string | undefined;
@@ -135,6 +147,7 @@ export const AccountingVendorcredit$outboundSchema: z.ZodType<
   AccountingVendorcredit
 > = z.object({
   accountId: z.string().optional(),
+  applications: z.array(AccountingCreditApplication$outboundSchema).optional(),
   applyAmount: z.number().optional(),
   balanceAmount: z.number().optional(),
   billId: z.string().optional(),

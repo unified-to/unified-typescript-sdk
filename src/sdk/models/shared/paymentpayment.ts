@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PaymentAllocation,
+  PaymentAllocation$inboundSchema,
+  PaymentAllocation$Outbound,
+  PaymentAllocation$outboundSchema,
+} from "./paymentallocation.js";
 
 export const PaymentPaymentType = {
   Invoice: "INVOICE",
@@ -18,6 +24,10 @@ export type PaymentPaymentType = OpenEnum<typeof PaymentPaymentType>;
 
 export type PaymentPayment = {
   accountId?: string | undefined;
+  /**
+   * What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints.
+   */
+  allocations?: Array<PaymentAllocation> | undefined;
   billId?: string | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
@@ -55,6 +65,7 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  allocations: z.array(PaymentAllocation$inboundSchema).optional(),
   bill_id: z.string().optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -89,6 +100,7 @@ export const PaymentPayment$inboundSchema: z.ZodType<
 /** @internal */
 export type PaymentPayment$Outbound = {
   account_id?: string | undefined;
+  allocations?: Array<PaymentAllocation$Outbound> | undefined;
   bill_id?: string | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
@@ -113,6 +125,7 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   PaymentPayment
 > = z.object({
   accountId: z.string().optional(),
+  allocations: z.array(PaymentAllocation$outboundSchema).optional(),
   billId: z.string().optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),

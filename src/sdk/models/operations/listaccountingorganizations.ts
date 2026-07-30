@@ -20,6 +20,8 @@ export const ListAccountingOrganizationsQueryParamFields = {
   ParentId: "parent_id",
   FiscalYearEndMonth: "fiscal_year_end_month",
   OrganizationCode: "organization_code",
+  Type: "type",
+  IsElimination: "is_elimination",
   Raw: "raw",
 } as const;
 export type ListAccountingOrganizationsQueryParamFields = ClosedEnum<

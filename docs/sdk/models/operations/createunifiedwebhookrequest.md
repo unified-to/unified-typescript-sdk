@@ -9,7 +9,7 @@ let value: CreateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "metadata_metadata",
+    objectType: "calendar_calendar",
   },
 };
 ```

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
@@ -17,9 +18,33 @@ import {
   PropertyAdsReportMetricsCampaign$inboundSchema,
 } from "./propertyadsreportmetricscampaign.js";
 import {
+  PropertyAdsReportMetricsCreative,
+  PropertyAdsReportMetricsCreative$inboundSchema,
+} from "./propertyadsreportmetricscreative.js";
+import {
   PropertyAdsReportMetricsGroup,
   PropertyAdsReportMetricsGroup$inboundSchema,
 } from "./propertyadsreportmetricsgroup.js";
+import {
+  PropertyAdsReportMetricsInsertionorder,
+  PropertyAdsReportMetricsInsertionorder$inboundSchema,
+} from "./propertyadsreportmetricsinsertionorder.js";
+import {
+  PropertyAdsReportMetricsKeyword,
+  PropertyAdsReportMetricsKeyword$inboundSchema,
+} from "./propertyadsreportmetricskeyword.js";
+import {
+  PropertyAdsReportMetricsPlacement,
+  PropertyAdsReportMetricsPlacement$inboundSchema,
+} from "./propertyadsreportmetricsplacement.js";
+
+export const Dimension = {
+  Date: "DATE",
+  Platform: "PLATFORM",
+  PlatformPosition: "PLATFORM_POSITION",
+  Device: "DEVICE",
+} as const;
+export type Dimension = OpenEnum<typeof Dimension>;
 
 export const AdsReportMetricsType = {
   Clicks: "CLICKS",
@@ -155,10 +180,23 @@ export type AdsReportMetricsType = OpenEnum<typeof AdsReportMetricsType>;
 export type AdsReportMetrics = {
   ad?: PropertyAdsReportMetricsAd | undefined;
   campaign?: PropertyAdsReportMetricsCampaign | undefined;
+  creative?: PropertyAdsReportMetricsCreative | undefined;
+  dimension?: Dimension | undefined;
+  dimensionValue?: string | undefined;
   group?: PropertyAdsReportMetricsGroup | undefined;
+  insertionorder?: PropertyAdsReportMetricsInsertionorder | undefined;
+  keyword?: PropertyAdsReportMetricsKeyword | undefined;
+  placement?: PropertyAdsReportMetricsPlacement | undefined;
   type?: AdsReportMetricsType | undefined;
   value?: number | undefined;
 };
+
+/** @internal */
+export const Dimension$inboundSchema: z.ZodType<
+  Dimension,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(Dimension);
 
 /** @internal */
 export const AdsReportMetricsType$inboundSchema: z.ZodType<
@@ -175,9 +213,20 @@ export const AdsReportMetrics$inboundSchema: z.ZodType<
 > = z.object({
   ad: PropertyAdsReportMetricsAd$inboundSchema.optional(),
   campaign: PropertyAdsReportMetricsCampaign$inboundSchema.optional(),
+  creative: PropertyAdsReportMetricsCreative$inboundSchema.optional(),
+  dimension: Dimension$inboundSchema.optional(),
+  dimension_value: z.string().optional(),
   group: PropertyAdsReportMetricsGroup$inboundSchema.optional(),
+  insertionorder: PropertyAdsReportMetricsInsertionorder$inboundSchema
+    .optional(),
+  keyword: PropertyAdsReportMetricsKeyword$inboundSchema.optional(),
+  placement: PropertyAdsReportMetricsPlacement$inboundSchema.optional(),
   type: AdsReportMetricsType$inboundSchema.optional(),
   value: z.number().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    "dimension_value": "dimensionValue",
+  });
 });
 
 export function adsReportMetricsFromJSON(

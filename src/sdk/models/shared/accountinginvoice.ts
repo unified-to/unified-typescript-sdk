@@ -21,6 +21,12 @@ import {
   AccountingLineitem$Outbound,
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
+import {
+  AccountingPaymentReference,
+  AccountingPaymentReference$inboundSchema,
+  AccountingPaymentReference$Outbound,
+  AccountingPaymentReference$outboundSchema,
+} from "./accountingpaymentreference.js";
 
 export const AccountingInvoicePaymentCollectionMethod = {
   SendInvoice: "send_invoice",
@@ -28,6 +34,23 @@ export const AccountingInvoicePaymentCollectionMethod = {
 } as const;
 export type AccountingInvoicePaymentCollectionMethod = OpenEnum<
   typeof AccountingInvoicePaymentCollectionMethod
+>;
+
+export const AccountingInvoicePaymentTerms = {
+  OnReceipt: "ON_RECEIPT",
+  Net7: "NET_7",
+  Net10: "NET_10",
+  Net15: "NET_15",
+  Net20: "NET_20",
+  Net25: "NET_25",
+  Net30: "NET_30",
+  Net45: "NET_45",
+  Net60: "NET_60",
+  Net90: "NET_90",
+  Other: "OTHER",
+} as const;
+export type AccountingInvoicePaymentTerms = OpenEnum<
+  typeof AccountingInvoicePaymentTerms
 >;
 
 export const AccountingInvoiceStatus = {
@@ -52,7 +75,10 @@ export const AccountingInvoiceTerm = {
   Net20: "NET_20",
   Net25: "NET_25",
   Net30: "NET_30",
+  Net45: "NET_45",
   Net60: "NET_60",
+  Net90: "NET_90",
+  Other: "OTHER",
 } as const;
 export type AccountingInvoiceTerm = OpenEnum<typeof AccountingInvoiceTerm>;
 
@@ -67,6 +93,7 @@ export type AccountingInvoice = {
   attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
   cancelledAt?: Date | undefined;
+  categoryIds?: Array<string> | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -82,6 +109,11 @@ export type AccountingInvoice = {
   paymentCollectionMethod?:
     | AccountingInvoicePaymentCollectionMethod
     | undefined;
+  paymentTerms?: AccountingInvoicePaymentTerms | undefined;
+  /**
+   * ead-only reciprocal of PaymentPayment.allocations; payments applied to this invoice
+   */
+  payments?: Array<AccountingPaymentReference> | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -110,6 +142,19 @@ export const AccountingInvoicePaymentCollectionMethod$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingInvoicePaymentCollectionMethod
 > = openEnums.outboundSchema(AccountingInvoicePaymentCollectionMethod);
+
+/** @internal */
+export const AccountingInvoicePaymentTerms$inboundSchema: z.ZodType<
+  AccountingInvoicePaymentTerms,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingInvoicePaymentTerms);
+/** @internal */
+export const AccountingInvoicePaymentTerms$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingInvoicePaymentTerms
+> = openEnums.outboundSchema(AccountingInvoicePaymentTerms);
 
 /** @internal */
 export const AccountingInvoiceStatus$inboundSchema: z.ZodType<
@@ -161,6 +206,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   cancelled_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
+  category_ids: z.array(z.string()).optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -178,6 +224,8 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     .optional(),
   payment_collection_method:
     AccountingInvoicePaymentCollectionMethod$inboundSchema.optional(),
+  payment_terms: AccountingInvoicePaymentTerms$inboundSchema.optional(),
+  payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   raw: z.record(z.any()).optional(),
@@ -199,6 +247,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   return remap$(v, {
     "balance_amount": "balanceAmount",
     "cancelled_at": "cancelledAt",
+    "category_ids": "categoryIds",
     "contact_id": "contactId",
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
@@ -208,6 +257,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
     "payment_collection_method": "paymentCollectionMethod",
+    "payment_terms": "paymentTerms",
     "posted_at": "postedAt",
     "refund_amount": "refundAmount",
     "refund_reason": "refundReason",
@@ -222,6 +272,7 @@ export type AccountingInvoice$Outbound = {
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
   balance_amount?: number | undefined;
   cancelled_at?: string | undefined;
+  category_ids?: Array<string> | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
@@ -235,6 +286,8 @@ export type AccountingInvoice$Outbound = {
   paid_amount?: number | undefined;
   paid_at?: string | undefined;
   payment_collection_method?: string | undefined;
+  payment_terms?: string | undefined;
+  payments?: Array<AccountingPaymentReference$Outbound> | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -260,6 +313,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   attachments: z.array(AccountingAttachment$outboundSchema).optional(),
   balanceAmount: z.number().optional(),
   cancelledAt: z.date().transform(v => v.toISOString()).optional(),
+  categoryIds: z.array(z.string()).optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
@@ -274,6 +328,8 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   paidAt: z.date().transform(v => v.toISOString()).optional(),
   paymentCollectionMethod:
     AccountingInvoicePaymentCollectionMethod$outboundSchema.optional(),
+  paymentTerms: AccountingInvoicePaymentTerms$outboundSchema.optional(),
+  payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -292,6 +348,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   return remap$(v, {
     balanceAmount: "balance_amount",
     cancelledAt: "cancelled_at",
+    categoryIds: "category_ids",
     contactId: "contact_id",
     createdAt: "created_at",
     discountAmount: "discount_amount",
@@ -301,6 +358,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     paidAmount: "paid_amount",
     paidAt: "paid_at",
     paymentCollectionMethod: "payment_collection_method",
+    paymentTerms: "payment_terms",
     postedAt: "posted_at",
     refundAmount: "refund_amount",
     refundReason: "refund_reason",

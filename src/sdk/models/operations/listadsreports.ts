@@ -35,6 +35,10 @@ export type ListAdsReportsRequest = {
    */
   connectionId: string;
   /**
+   * One or more (comma-separated) of: DATE, PLATFORM, PLATFORM_POSITION, DEVICE
+   */
+  dimension?: string | undefined;
+  /**
    * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endLt?: string | undefined;
@@ -86,6 +90,7 @@ export type ListAdsReportsRequest$Outbound = {
   ad_id?: string | undefined;
   campaign_id?: string | undefined;
   connection_id: string;
+  dimension?: string | undefined;
   end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   group_id?: string | undefined;
@@ -110,6 +115,7 @@ export const ListAdsReportsRequest$outboundSchema: z.ZodType<
   adId: z.string().optional(),
   campaignId: z.string().optional(),
   connectionId: z.string(),
+  dimension: z.string().optional(),
   endLt: z.string().optional(),
   fields: z.array(ListAdsReportsQueryParamFields$outboundSchema).optional(),
   groupId: z.string().optional(),

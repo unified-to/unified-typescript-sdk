@@ -24,6 +24,7 @@ export const UpdateAccountingVendorcreditQueryParamFields = {
   Status: "status",
   OrganizationId: "organization_id",
   ApplyAmount: "apply_amount",
+  Applications: "applications",
   Raw: "raw",
 } as const;
 export type UpdateAccountingVendorcreditQueryParamFields = ClosedEnum<

@@ -47,6 +47,7 @@ export type AccountingExpense = {
    */
   approverUsers?: Array<AccountingReference> | undefined;
   attachments?: Array<AccountingAttachment> | undefined;
+  categoryIds?: Array<string> | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -93,6 +94,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   approver_user_id: z.string().optional(),
   approver_users: z.array(AccountingReference$inboundSchema).optional(),
   attachments: z.array(AccountingAttachment$inboundSchema).optional(),
+  category_ids: z.array(z.string()).optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -123,6 +125,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
     "approved_at": "approvedAt",
     "approver_user_id": "approverUserId",
     "approver_users": "approverUsers",
+    "category_ids": "categoryIds",
     "contact_id": "contactId",
     "created_at": "createdAt",
     "external_number": "externalNumber",
@@ -144,6 +147,7 @@ export type AccountingExpense$Outbound = {
   approver_user_id?: string | undefined;
   approver_users?: Array<AccountingReference$Outbound> | undefined;
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
+  category_ids?: Array<string> | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
@@ -176,6 +180,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   approverUserId: z.string().optional(),
   approverUsers: z.array(AccountingReference$outboundSchema).optional(),
   attachments: z.array(AccountingAttachment$outboundSchema).optional(),
+  categoryIds: z.array(z.string()).optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
@@ -201,6 +206,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
     approvedAt: "approved_at",
     approverUserId: "approver_user_id",
     approverUsers: "approver_users",
+    categoryIds: "category_ids",
     contactId: "contact_id",
     createdAt: "created_at",
     externalNumber: "external_number",

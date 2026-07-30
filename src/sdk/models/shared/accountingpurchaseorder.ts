@@ -46,6 +46,7 @@ export type AccountingPurchaseorderStatus = OpenEnum<
 export type AccountingPurchaseorder = {
   accountId?: string | undefined;
   billingAddress?: PropertyAccountingPurchaseorderBillingAddress | undefined;
+  categoryIds?: Array<string> | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -82,6 +83,7 @@ export const AccountingPurchaseorder$inboundSchema: z.ZodType<
   account_id: z.string().optional(),
   billing_address: PropertyAccountingPurchaseorderBillingAddress$inboundSchema
     .optional(),
+  category_ids: z.array(z.string()).optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -102,6 +104,7 @@ export const AccountingPurchaseorder$inboundSchema: z.ZodType<
   return remap$(v, {
     "account_id": "accountId",
     "billing_address": "billingAddress",
+    "category_ids": "categoryIds",
     "contact_id": "contactId",
     "created_at": "createdAt",
     "organization_id": "organizationId",
@@ -117,6 +120,7 @@ export type AccountingPurchaseorder$Outbound = {
   billing_address?:
     | PropertyAccountingPurchaseorderBillingAddress$Outbound
     | undefined;
+  category_ids?: Array<string> | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
@@ -142,6 +146,7 @@ export const AccountingPurchaseorder$outboundSchema: z.ZodType<
   accountId: z.string().optional(),
   billingAddress: PropertyAccountingPurchaseorderBillingAddress$outboundSchema
     .optional(),
+  categoryIds: z.array(z.string()).optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
@@ -159,6 +164,7 @@ export const AccountingPurchaseorder$outboundSchema: z.ZodType<
   return remap$(v, {
     accountId: "account_id",
     billingAddress: "billing_address",
+    categoryIds: "category_ids",
     contactId: "contact_id",
     createdAt: "created_at",
     organizationId: "organization_id",

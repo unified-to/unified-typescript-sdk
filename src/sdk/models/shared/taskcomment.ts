@@ -10,7 +10,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type TaskComment = {
   createdAt?: Date | undefined;
+  hasChildren?: boolean | undefined;
   id?: string | undefined;
+  parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   taskId?: string | undefined;
   text?: string | undefined;
@@ -27,7 +29,9 @@ export const TaskComment$inboundSchema: z.ZodType<
 > = z.object({
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  has_children: z.boolean().optional(),
   id: z.string().optional(),
+  parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   task_id: z.string().optional(),
   text: z.string().optional(),
@@ -38,6 +42,8 @@ export const TaskComment$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "has_children": "hasChildren",
+    "parent_id": "parentId",
     "task_id": "taskId",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -47,7 +53,9 @@ export const TaskComment$inboundSchema: z.ZodType<
 /** @internal */
 export type TaskComment$Outbound = {
   created_at?: string | undefined;
+  has_children?: boolean | undefined;
   id?: string | undefined;
+  parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   task_id?: string | undefined;
   text?: string | undefined;
@@ -63,7 +71,9 @@ export const TaskComment$outboundSchema: z.ZodType<
   TaskComment
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  hasChildren: z.boolean().optional(),
   id: z.string().optional(),
+  parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   taskId: z.string().optional(),
   text: z.string().optional(),
@@ -73,6 +83,8 @@ export const TaskComment$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    hasChildren: "has_children",
+    parentId: "parent_id",
     taskId: "task_id",
     updatedAt: "updated_at",
     userId: "user_id",

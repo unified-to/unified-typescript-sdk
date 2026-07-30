@@ -46,6 +46,23 @@ import {
   PropertyAccountingContactShippingAddress$outboundSchema,
 } from "./propertyaccountingcontactshippingaddress.js";
 
+export const AccountingContactPaymentTerms = {
+  OnReceipt: "ON_RECEIPT",
+  Net7: "NET_7",
+  Net10: "NET_10",
+  Net15: "NET_15",
+  Net20: "NET_20",
+  Net25: "NET_25",
+  Net30: "NET_30",
+  Net45: "NET_45",
+  Net60: "NET_60",
+  Net90: "NET_90",
+  Other: "OTHER",
+} as const;
+export type AccountingContactPaymentTerms = OpenEnum<
+  typeof AccountingContactPaymentTerms
+>;
+
 export const TaxExemption = {
   FederalGov: "FEDERAL_GOV",
   RegionGov: "REGION_GOV",
@@ -78,6 +95,7 @@ export type AccountingContact = {
   name?: string | undefined;
   organizationId?: string | undefined;
   paymentMethods?: Array<AccountingContactPaymentMethod> | undefined;
+  paymentTerms?: AccountingContactPaymentTerms | undefined;
   portalUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   shippingAddress?: PropertyAccountingContactShippingAddress | undefined;
@@ -86,6 +104,19 @@ export type AccountingContact = {
   telephones?: Array<AccountingTelephone> | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingContactPaymentTerms$inboundSchema: z.ZodType<
+  AccountingContactPaymentTerms,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingContactPaymentTerms);
+/** @internal */
+export const AccountingContactPaymentTerms$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingContactPaymentTerms
+> = openEnums.outboundSchema(AccountingContactPaymentTerms);
 
 /** @internal */
 export const TaxExemption$inboundSchema: z.ZodType<
@@ -126,6 +157,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
   organization_id: z.string().optional(),
   payment_methods: z.array(AccountingContactPaymentMethod$inboundSchema)
     .optional(),
+  payment_terms: AccountingContactPaymentTerms$inboundSchema.optional(),
   portal_url: z.string().optional(),
   raw: z.record(z.any()).optional(),
   shipping_address: PropertyAccountingContactShippingAddress$inboundSchema
@@ -148,6 +180,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
     "last_name": "lastName",
     "organization_id": "organizationId",
     "payment_methods": "paymentMethods",
+    "payment_terms": "paymentTerms",
     "portal_url": "portalUrl",
     "shipping_address": "shippingAddress",
     "tax_exemption": "taxExemption",
@@ -175,6 +208,7 @@ export type AccountingContact$Outbound = {
   name?: string | undefined;
   organization_id?: string | undefined;
   payment_methods?: Array<AccountingContactPaymentMethod$Outbound> | undefined;
+  payment_terms?: string | undefined;
   portal_url?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   shipping_address?:
@@ -211,6 +245,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   organizationId: z.string().optional(),
   paymentMethods: z.array(AccountingContactPaymentMethod$outboundSchema)
     .optional(),
+  paymentTerms: AccountingContactPaymentTerms$outboundSchema.optional(),
   portalUrl: z.string().optional(),
   raw: z.record(z.any()).optional(),
   shippingAddress: PropertyAccountingContactShippingAddress$outboundSchema
@@ -232,6 +267,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
     lastName: "last_name",
     organizationId: "organization_id",
     paymentMethods: "payment_methods",
+    paymentTerms: "payment_terms",
     portalUrl: "portal_url",
     shippingAddress: "shipping_address",
     taxExemption: "tax_exemption",
