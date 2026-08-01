@@ -17,6 +17,7 @@ export const GetPaymentSubscriptionQueryParamFields = {
   CurrentPeriodStartAt: "current_period_start_at",
   CanceledAt: "canceled_at",
   Currency: "currency",
+  TotalAmount: "total_amount",
   StartAt: "start_at",
   EndAt: "end_at",
   Status: "status",

@@ -25,6 +25,9 @@ export const PropertyAdsReportMetricsAdAdType = {
   Search: "SEARCH",
   Audio: "AUDIO",
   Youtube: "YOUTUBE",
+  Native: "NATIVE",
+  Ctv: "CTV",
+  Dooh: "DOOH",
 } as const;
 export type PropertyAdsReportMetricsAdAdType = OpenEnum<
   typeof PropertyAdsReportMetricsAdAdType

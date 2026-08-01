@@ -36,6 +36,9 @@ export const AdvertisingChannelType = {
   Search: "SEARCH",
   Audio: "AUDIO",
   Youtube: "YOUTUBE",
+  Native: "NATIVE",
+  Ctv: "CTV",
+  Dooh: "DOOH",
 } as const;
 export type AdvertisingChannelType = OpenEnum<typeof AdvertisingChannelType>;
 
@@ -46,6 +49,13 @@ export const BudgetPeriod = {
   Lifetime: "LIFETIME",
 } as const;
 export type BudgetPeriod = OpenEnum<typeof BudgetPeriod>;
+
+export const BudgetUnit = {
+  Unspecified: "UNSPECIFIED",
+  Currency: "CURRENCY",
+  Impressions: "IMPRESSIONS",
+} as const;
+export type BudgetUnit = OpenEnum<typeof BudgetUnit>;
 
 export const EffectiveStatus = {
   Unspecified: "UNSPECIFIED",
@@ -90,6 +100,7 @@ export type AdsCampaign = {
   advertisingChannelType?: AdvertisingChannelType | undefined;
   budgetAmount?: number | undefined;
   budgetPeriod?: BudgetPeriod | undefined;
+  budgetUnit?: BudgetUnit | undefined;
   campaignBudgetIdentifier?: string | undefined;
   category?: string | undefined;
   createdAt?: Date | undefined;
@@ -138,6 +149,19 @@ export const BudgetPeriod$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(BudgetPeriod);
 
 /** @internal */
+export const BudgetUnit$inboundSchema: z.ZodType<
+  BudgetUnit,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(BudgetUnit);
+/** @internal */
+export const BudgetUnit$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  BudgetUnit
+> = openEnums.outboundSchema(BudgetUnit);
+
+/** @internal */
 export const EffectiveStatus$inboundSchema: z.ZodType<
   EffectiveStatus,
   z.ZodTypeDef,
@@ -179,6 +203,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
   advertising_channel_type: AdvertisingChannelType$inboundSchema.optional(),
   budget_amount: z.number().optional(),
   budget_period: BudgetPeriod$inboundSchema.optional(),
+  budget_unit: BudgetUnit$inboundSchema.optional(),
   campaign_budget_identifier: z.string().optional(),
   category: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -207,6 +232,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
     "advertising_channel_type": "advertisingChannelType",
     "budget_amount": "budgetAmount",
     "budget_period": "budgetPeriod",
+    "budget_unit": "budgetUnit",
     "campaign_budget_identifier": "campaignBudgetIdentifier",
     "created_at": "createdAt",
     "effective_status": "effectiveStatus",
@@ -225,6 +251,7 @@ export type AdsCampaign$Outbound = {
   advertising_channel_type?: string | undefined;
   budget_amount?: number | undefined;
   budget_period?: string | undefined;
+  budget_unit?: string | undefined;
   campaign_budget_identifier?: string | undefined;
   category?: string | undefined;
   created_at?: string | undefined;
@@ -255,6 +282,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   advertisingChannelType: AdvertisingChannelType$outboundSchema.optional(),
   budgetAmount: z.number().optional(),
   budgetPeriod: BudgetPeriod$outboundSchema.optional(),
+  budgetUnit: BudgetUnit$outboundSchema.optional(),
   campaignBudgetIdentifier: z.string().optional(),
   category: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
@@ -279,6 +307,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
     advertisingChannelType: "advertising_channel_type",
     budgetAmount: "budget_amount",
     budgetPeriod: "budget_period",
+    budgetUnit: "budget_unit",
     campaignBudgetIdentifier: "campaign_budget_identifier",
     createdAt: "created_at",
     effectiveStatus: "effective_status",

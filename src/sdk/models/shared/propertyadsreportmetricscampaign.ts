@@ -32,6 +32,9 @@ export const PropertyAdsReportMetricsCampaignAdvertisingChannelType = {
   Search: "SEARCH",
   Audio: "AUDIO",
   Youtube: "YOUTUBE",
+  Native: "NATIVE",
+  Ctv: "CTV",
+  Dooh: "DOOH",
 } as const;
 export type PropertyAdsReportMetricsCampaignAdvertisingChannelType = OpenEnum<
   typeof PropertyAdsReportMetricsCampaignAdvertisingChannelType
@@ -45,6 +48,15 @@ export const PropertyAdsReportMetricsCampaignBudgetPeriod = {
 } as const;
 export type PropertyAdsReportMetricsCampaignBudgetPeriod = OpenEnum<
   typeof PropertyAdsReportMetricsCampaignBudgetPeriod
+>;
+
+export const PropertyAdsReportMetricsCampaignBudgetUnit = {
+  Unspecified: "UNSPECIFIED",
+  Currency: "CURRENCY",
+  Impressions: "IMPRESSIONS",
+} as const;
+export type PropertyAdsReportMetricsCampaignBudgetUnit = OpenEnum<
+  typeof PropertyAdsReportMetricsCampaignBudgetUnit
 >;
 
 export const PropertyAdsReportMetricsCampaignEffectiveStatus = {
@@ -98,6 +110,7 @@ export type PropertyAdsReportMetricsCampaign = {
     | undefined;
   budgetAmount?: number | undefined;
   budgetPeriod?: PropertyAdsReportMetricsCampaignBudgetPeriod | undefined;
+  budgetUnit?: PropertyAdsReportMetricsCampaignBudgetUnit | undefined;
   campaignBudgetIdentifier?: string | undefined;
   category?: string | undefined;
   createdAt?: Date | undefined;
@@ -138,6 +151,11 @@ export const PropertyAdsReportMetricsCampaignBudgetPeriod$inboundSchema:
   > = openEnums.inboundSchema(PropertyAdsReportMetricsCampaignBudgetPeriod);
 
 /** @internal */
+export const PropertyAdsReportMetricsCampaignBudgetUnit$inboundSchema:
+  z.ZodType<PropertyAdsReportMetricsCampaignBudgetUnit, z.ZodTypeDef, unknown> =
+    openEnums.inboundSchema(PropertyAdsReportMetricsCampaignBudgetUnit);
+
+/** @internal */
 export const PropertyAdsReportMetricsCampaignEffectiveStatus$inboundSchema:
   z.ZodType<
     PropertyAdsReportMetricsCampaignEffectiveStatus,
@@ -171,6 +189,8 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   budget_amount: z.number().optional(),
   budget_period: PropertyAdsReportMetricsCampaignBudgetPeriod$inboundSchema
     .optional(),
+  budget_unit: PropertyAdsReportMetricsCampaignBudgetUnit$inboundSchema
+    .optional(),
   campaign_budget_identifier: z.string().optional(),
   category: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -201,6 +221,7 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
     "advertising_channel_type": "advertisingChannelType",
     "budget_amount": "budgetAmount",
     "budget_period": "budgetPeriod",
+    "budget_unit": "budgetUnit",
     "campaign_budget_identifier": "campaignBudgetIdentifier",
     "created_at": "createdAt",
     "effective_status": "effectiveStatus",

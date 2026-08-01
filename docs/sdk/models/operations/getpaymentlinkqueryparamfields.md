@@ -11,5 +11,5 @@ let value: GetPaymentLinkQueryParamFields = "is_active";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "is_active" | "lineitems" | "currency" | "amount" | "payment_id" | "contact_id" | "url" | "is_chargeable_now" | "success_url" | "raw"
+"id" | "created_at" | "updated_at" | "is_active" | "lineitems" | "currency" | "amount" | "payment_id" | "contact_id" | "url" | "description" | "is_chargeable_now" | "success_url" | "raw"
 ```

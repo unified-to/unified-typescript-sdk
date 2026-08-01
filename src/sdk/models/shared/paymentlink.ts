@@ -19,6 +19,7 @@ export type PaymentLink = {
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   isChargeableNow?: boolean | undefined;
@@ -41,6 +42,7 @@ export const PaymentLink$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
+  description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   is_chargeable_now: z.boolean().optional(),
@@ -68,6 +70,7 @@ export type PaymentLink$Outbound = {
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
+  description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
   is_chargeable_now?: boolean | undefined;
@@ -89,6 +92,7 @@ export const PaymentLink$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
+  description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   isChargeableNow: z.boolean().optional(),

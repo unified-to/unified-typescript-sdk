@@ -23,6 +23,7 @@ export type IssueStatus = OpenEnum<typeof IssueStatus>;
 
 export type Issue = {
   createdAt?: string | undefined;
+  customerNote?: string | undefined;
   id?: string | undefined;
   importance?: number | undefined;
   resolutionTime?: number | undefined;
@@ -47,6 +48,7 @@ export const IssueStatus$inboundSchema: z.ZodType<
 export const Issue$inboundSchema: z.ZodType<Issue, z.ZodTypeDef, unknown> = z
   .object({
     created_at: z.string().optional(),
+    customer_note: z.string().optional(),
     id: z.string().optional(),
     importance: z.number().optional(),
     resolution_time: z.number().optional(),
@@ -61,6 +63,7 @@ export const Issue$inboundSchema: z.ZodType<Issue, z.ZodTypeDef, unknown> = z
   }).transform((v) => {
     return remap$(v, {
       "created_at": "createdAt",
+      "customer_note": "customerNote",
       "resolution_time": "resolutionTime",
       "ticket_ref": "ticketRef",
       "updated_at": "updatedAt",

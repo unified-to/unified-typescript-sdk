@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyAdsReportMetricsAdAdType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyAdsReportMetricsAdAdType = "AUDIO";
+let value: PropertyAdsReportMetricsAdAdType = "CTV";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: PropertyAdsReportMetricsAdAdType = "AUDIO";
 ## Values
 
 ```typescript
-"TEXT" | "IMAGE" | "VIDEO" | "RESPONSIVE" | "SHOPPING" | "APP" | "CALL" | "CAROUSEL" | "SOCIAL" | "DISPLAY" | "SEARCH" | "AUDIO" | "YOUTUBE" | Unrecognized<string>
+"TEXT" | "IMAGE" | "VIDEO" | "RESPONSIVE" | "SHOPPING" | "APP" | "CALL" | "CAROUSEL" | "SOCIAL" | "DISPLAY" | "SEARCH" | "AUDIO" | "YOUTUBE" | "NATIVE" | "CTV" | "DOOH" | Unrecognized<string>
 ```

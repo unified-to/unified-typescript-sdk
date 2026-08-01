@@ -54,6 +54,7 @@ export type PaymentSubscription = {
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   status?: PaymentSubscriptionStatus | undefined;
+  totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
 };
 
@@ -116,6 +117,7 @@ export const PaymentSubscription$inboundSchema: z.ZodType<
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   status: PaymentSubscriptionStatus$inboundSchema.optional(),
+  total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -131,6 +133,7 @@ export const PaymentSubscription$inboundSchema: z.ZodType<
     "interval_unit": "intervalUnit",
     "invoice_id": "invoiceId",
     "start_at": "startAt",
+    "total_amount": "totalAmount",
     "updated_at": "updatedAt",
   });
 });
@@ -155,6 +158,7 @@ export type PaymentSubscription$Outbound = {
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
+  total_amount?: number | undefined;
   updated_at?: string | undefined;
 };
 
@@ -183,6 +187,7 @@ export const PaymentSubscription$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   status: PaymentSubscriptionStatus$outboundSchema.optional(),
+  totalAmount: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -197,6 +202,7 @@ export const PaymentSubscription$outboundSchema: z.ZodType<
     intervalUnit: "interval_unit",
     invoiceId: "invoice_id",
     startAt: "start_at",
+    totalAmount: "total_amount",
     updatedAt: "updated_at",
   });
 });

@@ -70,12 +70,12 @@ export const AdsGroupBudgetPeriod = {
 } as const;
 export type AdsGroupBudgetPeriod = OpenEnum<typeof AdsGroupBudgetPeriod>;
 
-export const BudgetUnit = {
+export const AdsGroupBudgetUnit = {
   Unspecified: "UNSPECIFIED",
   Currency: "CURRENCY",
   Impressions: "IMPRESSIONS",
 } as const;
-export type BudgetUnit = OpenEnum<typeof BudgetUnit>;
+export type AdsGroupBudgetUnit = OpenEnum<typeof AdsGroupBudgetUnit>;
 
 export const AdsGroupEffectiveStatus = {
   Unspecified: "UNSPECIFIED",
@@ -134,6 +134,9 @@ export const AdsGroupType = {
   Search: "SEARCH",
   Audio: "AUDIO",
   Youtube: "YOUTUBE",
+  Native: "NATIVE",
+  Ctv: "CTV",
+  Dooh: "DOOH",
 } as const;
 export type AdsGroupType = OpenEnum<typeof AdsGroupType>;
 
@@ -148,7 +151,7 @@ export type AdsGroup = {
   budgetAmount?: number | undefined;
   budgetMaxAmount?: number | undefined;
   budgetPeriod?: AdsGroupBudgetPeriod | undefined;
-  budgetUnit?: BudgetUnit | undefined;
+  budgetUnit?: AdsGroupBudgetUnit | undefined;
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
@@ -213,17 +216,17 @@ export const AdsGroupBudgetPeriod$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(AdsGroupBudgetPeriod);
 
 /** @internal */
-export const BudgetUnit$inboundSchema: z.ZodType<
-  BudgetUnit,
+export const AdsGroupBudgetUnit$inboundSchema: z.ZodType<
+  AdsGroupBudgetUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(BudgetUnit);
+> = openEnums.inboundSchema(AdsGroupBudgetUnit);
 /** @internal */
-export const BudgetUnit$outboundSchema: z.ZodType<
+export const AdsGroupBudgetUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  BudgetUnit
-> = openEnums.outboundSchema(BudgetUnit);
+  AdsGroupBudgetUnit
+> = openEnums.outboundSchema(AdsGroupBudgetUnit);
 
 /** @internal */
 export const AdsGroupEffectiveStatus$inboundSchema: z.ZodType<
@@ -290,7 +293,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   budget_amount: z.number().optional(),
   budget_max_amount: z.number().optional(),
   budget_period: AdsGroupBudgetPeriod$inboundSchema.optional(),
-  budget_unit: BudgetUnit$inboundSchema.optional(),
+  budget_unit: AdsGroupBudgetUnit$inboundSchema.optional(),
   campaign_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -389,7 +392,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   budgetAmount: z.number().optional(),
   budgetMaxAmount: z.number().optional(),
   budgetPeriod: AdsGroupBudgetPeriod$outboundSchema.optional(),
-  budgetUnit: BudgetUnit$outboundSchema.optional(),
+  budgetUnit: AdsGroupBudgetUnit$outboundSchema.optional(),
   campaignId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeIds: z.array(z.string()).optional(),

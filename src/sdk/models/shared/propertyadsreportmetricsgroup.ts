@@ -135,6 +135,9 @@ export const PropertyAdsReportMetricsGroupType = {
   Search: "SEARCH",
   Audio: "AUDIO",
   Youtube: "YOUTUBE",
+  Native: "NATIVE",
+  Ctv: "CTV",
+  Dooh: "DOOH",
 } as const;
 export type PropertyAdsReportMetricsGroupType = OpenEnum<
   typeof PropertyAdsReportMetricsGroupType
