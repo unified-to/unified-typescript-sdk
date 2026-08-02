@@ -30,6 +30,10 @@ export type ListCommerceInventoriesRequest = {
    */
   fields?: Array<ListCommerceInventoriesQueryParamFields> | undefined;
   /**
+   * The item ID to filter by (reference to CommerceItem)
+   */
+  itemId?: string | undefined;
+  /**
    * The item variant ID to filter by (reference to CommerceCommerceItemvariant)
    */
   itemVariantId?: string | undefined;
@@ -64,6 +68,7 @@ export const ListCommerceInventoriesQueryParamFields$outboundSchema:
 export type ListCommerceInventoriesRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
+  item_id?: string | undefined;
   item_variant_id?: string | undefined;
   limit?: number | undefined;
   location_id?: string | undefined;
@@ -84,6 +89,7 @@ export const ListCommerceInventoriesRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   fields: z.array(ListCommerceInventoriesQueryParamFields$outboundSchema)
     .optional(),
+  itemId: z.string().optional(),
   itemVariantId: z.string().optional(),
   limit: z.number().optional(),
   locationId: z.string().optional(),
@@ -96,6 +102,7 @@ export const ListCommerceInventoriesRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    itemId: "item_id",
     itemVariantId: "item_variant_id",
     locationId: "location_id",
     updatedGte: "updated_gte",

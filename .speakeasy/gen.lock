@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 2261a49528204f202086da5d7c5d3ba5
+  docChecksum: eaa7c7c10c6b862aff52c98e1484ea59
   docVersion: "1.0"
   speakeasyVersion: 1.791.0
   generationVersion: 2.924.0
-  releaseVersion: 2.85.23
-  configChecksum: 0387117241dfa67b2707f12936ef31d5
+  releaseVersion: 2.85.24
+  configChecksum: d6fd83159fabaec913d1edf5e1da5177
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 45c38375-7786-46a5-97ee-f8f75d71d96e
-  pristine_commit_hash: 5796025f0eebfcd6ea090e5aac52ee7581559b8e
-  pristine_tree_hash: d87d44ce06b98eb068b0111d6cf2f09011f3a8aa
+  generation_id: e7ca6226-f908-486f-b773-7cfaede561a8
+  pristine_commit_hash: 0f655fc6d7efc1c7e3cd5f2d4815aa6cc5a33bbe
+  pristine_tree_hash: 7c75e78a969b42f85be465cf96ef32fe09191074
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -2682,8 +2682,8 @@ trackedFiles:
     pristine_git_object: 17388aefdccd236d2009985dc25a5553b23896ed
   docs/sdk/models/operations/listcommerceinventoriesrequest.md:
     id: 150b7938d1c6
-    last_write_checksum: sha1:0865bdd94eeac040d0619a52349b39adcbfc046b
-    pristine_git_object: c05be41d32b2e15ccd95206815849fedbf51b751
+    last_write_checksum: sha1:ba8b185aca02115fc58e65cb09bd8afc60491461
+    pristine_git_object: 63378d7eb2e17166875373f4cd1dda5347c5bf06
   docs/sdk/models/operations/listcommerceitemsqueryparamfields.md:
     id: b80be2b1cfa3
     last_write_checksum: sha1:f77d32925decd36a22045c42b3fb999d1f725012
@@ -7710,8 +7710,8 @@ trackedFiles:
     pristine_git_object: 69211a0e384316a023c5ef0229a29ade618f4777
   docs/sdk/models/shared/hristimeoffstatus.md:
     id: db9795a0253a
-    last_write_checksum: sha1:096500aa563b670d4c93f982a6e2db95b6931fe2
-    pristine_git_object: 282ea5cdff27f53d007a58a0a0b541d8ba7456ee
+    last_write_checksum: sha1:9e347f877c4315502e94d421cde44bada30b15fc
+    pristine_git_object: 7a8a5bec5cc8e208cd6aae8f25f97fbbdda4baf2
   docs/sdk/models/shared/hristimeofftype.md:
     id: 217604c7a24a
     last_write_checksum: sha1:7a0307f734a0fcce9a1748d85ee6c954d1778086
@@ -11006,12 +11006,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:cd8408f2dfb6bb61af0303f440fadb1428ef9336
-    pristine_git_object: 4062c40b6c0a21df9cf2f35138e9ad18b4698bd6
+    last_write_checksum: sha1:6b2ac7300450c0b224cb50c76ef60047c933320f
+    pristine_git_object: 0d50735d6b3132c28d8610de5ea7e979d67503e9
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:306c15d6b28ff080e026d4a6521bf7729b7b6f7a
-    pristine_git_object: 218f25487340d3cba562517043953b6921a68865
+    last_write_checksum: sha1:50eedecc2926d6e429b60943a82e0440d3338689
+    pristine_git_object: c53a3a55c1a4ac9cfc575f18af21d512beb42ab5
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -12282,8 +12282,8 @@ trackedFiles:
     pristine_git_object: cbcce609eaaa386e030e352938fff5e86c6e2dd0
   src/funcs/commerceListCommerceInventories.ts:
     id: fd20dd56c30d
-    last_write_checksum: sha1:1c1289f56fa5a95f9d9630a95c1c6e6132dd55d2
-    pristine_git_object: b55b4cceb7fdabf208d53e00b479ccbbea50a87b
+    last_write_checksum: sha1:96ae869b6dc7cfc466b9a03b7090814e52fd162c
+    pristine_git_object: 62091c737188256f43185be80b38ee8bd6c5b09e
   src/funcs/commerceListCommerceItems.ts:
     id: afa2c58812c3
     last_write_checksum: sha1:3d83fc5271e282d3bf9c208c826cbfc5984b4093
@@ -14186,8 +14186,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:30e3b6200178b0034ce3fa48211238e5d0d395da
-    pristine_git_object: cd865e90a64c665bc54e2f83469c783003025810
+    last_write_checksum: sha1:78a5cb2ad2a436f3659449d398b6466418c884b3
+    pristine_git_object: b8a85f4afbba4fa7674d9f22a1937079f5d6ee34
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -15962,8 +15962,8 @@ trackedFiles:
     pristine_git_object: 2a3bd73ec670cfadb12cd9a60d881752150f36cc
   src/sdk/models/operations/listcommerceinventories.ts:
     id: aab0694532f9
-    last_write_checksum: sha1:2048254c09717b976b46add34afd47bce8200c29
-    pristine_git_object: 3985d6f06924070957d42cc4b419aac6882a4201
+    last_write_checksum: sha1:16423fadb3d64157235c20fe6e227012e780cb3f
+    pristine_git_object: d6a81f53c754a10356f4eb1205e1bfdf9e5017c8
   src/sdk/models/operations/listcommerceitems.ts:
     id: 7b8532384233
     last_write_checksum: sha1:527c9fcf953f3bc28d734f0f3dff996e5fabd6c4
@@ -18546,8 +18546,8 @@ trackedFiles:
     pristine_git_object: 3b1c95405ab45695ce221d451f0794ad8b66e59b
   src/sdk/models/shared/hristimeoff.ts:
     id: 0606163023f2
-    last_write_checksum: sha1:0d8b2aedc74919bc874f899893b6472cd83d87c9
-    pristine_git_object: 46051c275d6d94f9c130866145c1c9aa822297e2
+    last_write_checksum: sha1:5471038df37da45b83ce22f3712cd78af8176099
+    pristine_git_object: 82a87bd50d034c4319b0989849592e30598609f8
   src/sdk/models/shared/hristimeshift.ts:
     id: dbead5c4ebfd
     last_write_checksum: sha1:ee9f5e24104e7557f7598c5c08bbdff990c795ed
@@ -33513,7 +33513,7 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.report.listAdsReports()`:  `response.[].metrics[]` **Changed**\n* `unified-to.ads.createAdsAd()`: \n  *  `request.adsAd.adType` **Changed**\n  *  `response.adType` **Changed**\n* `unified-to.ads.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.createAdsGroup()`: \n  *  `request.adsGroup.type` **Changed**\n  *  `response.type` **Changed**\n* `unified-to.ads.getAdsAd()`:  `response.adType` **Changed**\n* `unified-to.ads.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.getAdsGroup()`:  `response.type` **Changed**\n* `unified-to.ads.listAdsAds()`:  `response.[].adType` **Changed**\n* `unified-to.ads.listAdsCampaigns()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.ads.listAdsGroups()`:  `response.[].type` **Changed**\n* `unified-to.ads.listAdsReports()`:  `response.[].metrics[]` **Changed**\n* `unified-to.ads.patchAdsAd()`: \n  *  `request.adsAd.adType` **Changed**\n  *  `response.adType` **Changed**\n* `unified-to.ads.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.patchAdsGroup()`: \n  *  `request.adsGroup.type` **Changed**\n  *  `response.type` **Changed**\n* `unified-to.ads.updateAdsAd()`: \n  *  `request.adsAd.adType` **Changed**\n  *  `response.adType` **Changed**\n* `unified-to.ads.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.ads.updateAdsGroup()`: \n  *  `request.adsGroup.type` **Changed**\n  *  `response.type` **Changed**\n* `unified-to.ad.createAdsAd()`: \n  *  `request.adsAd.adType` **Changed**\n  *  `response.adType` **Changed**\n* `unified-to.ad.getAdsAd()`:  `response.adType` **Changed**\n* `unified-to.ad.listAdsAds()`:  `response.[].adType` **Changed**\n* `unified-to.ad.patchAdsAd()`: \n  *  `request.adsAd.adType` **Changed**\n  *  `response.adType` **Changed**\n* `unified-to.ad.updateAdsAd()`: \n  *  `request.adsAd.adType` **Changed**\n  *  `response.adType` **Changed**\n* `unified-to.campaign.createAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.campaign.getAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.campaign.listAdsCampaigns()`: \n  *  `request.fields` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.campaign.patchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.campaign.updateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.group.createAdsGroup()`: \n  *  `request.adsGroup.type` **Changed**\n  *  `response.type` **Changed**\n* `unified-to.group.getAdsGroup()`:  `response.type` **Changed**\n* `unified-to.group.listAdsGroups()`:  `response.[].type` **Changed**\n* `unified-to.group.patchAdsGroup()`: \n  *  `request.adsGroup.type` **Changed**\n  *  `response.type` **Changed**\n* `unified-to.group.updateAdsGroup()`: \n  *  `request.adsGroup.type` **Changed**\n  *  `response.type` **Changed**\n* `unified-to.link.createPaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `unified-to.link.getPaymentLink()`: \n  *  `request.fields` **Changed**\n  *  `response.description` **Added**\n* `unified-to.link.listPaymentLinks()`: \n  *  `request.fields` **Changed**\n  *  `response.[].description` **Added**\n* `unified-to.link.patchPaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `unified-to.link.updatePaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `unified-to.payment.createPaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `unified-to.payment.createPaymentPayment()`: \n  *  `request.fields` **Changed**\n* `unified-to.payment.createPaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.payment.getPaymentLink()`: \n  *  `request.fields` **Changed**\n  *  `response.description` **Added**\n* `unified-to.payment.getPaymentPayment()`: \n  *  `request.fields` **Changed**\n* `unified-to.payment.getPaymentSubscription()`: \n  *  `request.fields` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.payment.listPaymentLinks()`: \n  *  `request.fields` **Changed**\n  *  `response.[].description` **Added**\n* `unified-to.payment.listPaymentPayments()`: \n  *  `request.fields` **Changed**\n* `unified-to.payment.listPaymentSubscriptions()`: \n  *  `request.fields` **Changed**\n  *  `response.[].totalAmount` **Added**\n* `unified-to.payment.patchPaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `unified-to.payment.patchPaymentPayment()`: \n  *  `request.fields` **Changed**\n* `unified-to.payment.patchPaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.payment.updatePaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `unified-to.payment.updatePaymentPayment()`: \n  *  `request.fields` **Changed**\n* `unified-to.payment.updatePaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.subscription.createPaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.subscription.getPaymentSubscription()`: \n  *  `request.fields` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.subscription.listPaymentSubscriptions()`: \n  *  `request.fields` **Changed**\n  *  `response.[].totalAmount` **Added**\n* `unified-to.subscription.patchPaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.subscription.updatePaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request.permissions[].enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.unified.getUnifiedConnection()`:  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.unified.getUnifiedIssue()`:  `response.customerNote` **Added**\n* `unified-to.unified.listUnifiedConnections()`:  `response.[].permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.unified.listUnifiedIssues()`:  `response.[].customerNote` **Added**\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection.permissions[].enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection.permissions[].enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request.permissions[].enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.connection.getUnifiedConnection()`:  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.connection.listUnifiedConnections()`:  `response.[].permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection.permissions[].enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection.permissions[].enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].enum(shippingRateWrite)` **Added**\n* `unified-to.issue.getUnifiedIssue()`:  `response.customerNote` **Added**\n* `unified-to.issue.listUnifiedIssues()`:  `response.[].customerNote` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.commerce.listCommerceInventories()`: \n  *  `request.itemId` **Added**\n* `unified-to.inventory.listCommerceInventories()`: \n  *  `request.itemId` **Added**\n* `unified-to.hris.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.hris.getHrisTimeoff()`:  `response.status.enum(cancelled)` **Added**\n* `unified-to.hris.listHrisTimeoffs()`:  `response.[].status.enum(cancelled)` **Added**\n* `unified-to.hris.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.hris.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.getHrisTimeoff()`:  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.listHrisTimeoffs()`:  `response.[].status.enum(cancelled)` **Added**\n* `unified-to.timeoff.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

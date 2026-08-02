@@ -13,5 +13,5 @@ let value: HrisTimeoffStatus = "APPROVED";
 ## Values
 
 ```typescript
-"APPROVED" | "PENDING" | "DENIED" | Unrecognized<string>
+"APPROVED" | "PENDING" | "DENIED" | "CANCELLED" | Unrecognized<string>
 ```

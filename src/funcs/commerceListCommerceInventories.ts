@@ -96,6 +96,7 @@ async function $do(
 
   const query = encodeFormQuery({
     "fields": payload.fields,
+    "item_id": payload.item_id,
     "item_variant_id": payload.item_variant_id,
     "limit": payload.limit,
     "location_id": payload.location_id,

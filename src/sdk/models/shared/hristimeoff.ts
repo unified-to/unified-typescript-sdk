@@ -20,6 +20,7 @@ export const HrisTimeoffStatus = {
   Approved: "APPROVED",
   Pending: "PENDING",
   Denied: "DENIED",
+  Cancelled: "CANCELLED",
 } as const;
 export type HrisTimeoffStatus = OpenEnum<typeof HrisTimeoffStatus>;
 
