@@ -45,6 +45,7 @@ export type Connection = {
   isPaused?: boolean | undefined;
   lastHealthyAt?: Date | undefined;
   lastUnhealthyAt?: Date | undefined;
+  lastUnhealthyCode?: string | undefined;
   permissions: Array<PropertyConnectionPermissions>;
   secretsmanagerId?: string | undefined;
   secretsmanagerKey?: string | undefined;
@@ -74,6 +75,7 @@ export const Connection$inboundSchema: z.ZodType<
   last_unhealthy_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
+  last_unhealthy_code: z.string().optional(),
   permissions: z.array(PropertyConnectionPermissions$inboundSchema),
   secretsmanager_id: z.string().optional(),
   secretsmanager_key: z.string().optional(),
@@ -89,6 +91,7 @@ export const Connection$inboundSchema: z.ZodType<
     "is_paused": "isPaused",
     "last_healthy_at": "lastHealthyAt",
     "last_unhealthy_at": "lastUnhealthyAt",
+    "last_unhealthy_code": "lastUnhealthyCode",
     "secretsmanager_id": "secretsmanagerId",
     "secretsmanager_key": "secretsmanagerKey",
     "updated_at": "updatedAt",
@@ -108,6 +111,7 @@ export type Connection$Outbound = {
   is_paused?: boolean | undefined;
   last_healthy_at?: string | undefined;
   last_unhealthy_at?: string | undefined;
+  last_unhealthy_code?: string | undefined;
   permissions: Array<string>;
   secretsmanager_id?: string | undefined;
   secretsmanager_key?: string | undefined;
@@ -132,6 +136,7 @@ export const Connection$outboundSchema: z.ZodType<
   isPaused: z.boolean().optional(),
   lastHealthyAt: z.date().transform(v => v.toISOString()).optional(),
   lastUnhealthyAt: z.date().transform(v => v.toISOString()).optional(),
+  lastUnhealthyCode: z.string().optional(),
   permissions: z.array(PropertyConnectionPermissions$outboundSchema),
   secretsmanagerId: z.string().optional(),
   secretsmanagerKey: z.string().optional(),
@@ -146,6 +151,7 @@ export const Connection$outboundSchema: z.ZodType<
     isPaused: "is_paused",
     lastHealthyAt: "last_healthy_at",
     lastUnhealthyAt: "last_unhealthy_at",
+    lastUnhealthyCode: "last_unhealthy_code",
     secretsmanagerId: "secretsmanager_id",
     secretsmanagerKey: "secretsmanager_key",
     updatedAt: "updated_at",

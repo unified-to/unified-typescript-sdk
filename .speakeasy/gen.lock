@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: eaa7c7c10c6b862aff52c98e1484ea59
+  docChecksum: 6bf7f9e899b77c356d345eaaf87bb444
   docVersion: "1.0"
-  speakeasyVersion: 1.791.0
-  generationVersion: 2.924.0
-  releaseVersion: 2.85.24
-  configChecksum: d6fd83159fabaec913d1edf5e1da5177
+  speakeasyVersion: 1.791.4
+  generationVersion: 2.926.8
+  releaseVersion: 2.85.25
+  configChecksum: 2dea9dac09f0d0a5c47e647eb20c8b83
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: e7ca6226-f908-486f-b773-7cfaede561a8
-  pristine_commit_hash: 0f655fc6d7efc1c7e3cd5f2d4815aa6cc5a33bbe
-  pristine_tree_hash: 7c75e78a969b42f85be465cf96ef32fe09191074
+  generation_id: cce3c9c7-d510-47f6-87fb-13037f2f2070
+  pristine_commit_hash: 1068a4d10415f6516616b7df840a35c5f1b38f04
+  pristine_tree_hash: e67fb64d0fdd98d2c5b2fbddbaf50276fec31baa
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -7210,8 +7210,8 @@ trackedFiles:
     pristine_git_object: ed4c25fd66b883eb5de5ea03b4c7e768915e8bcb
   docs/sdk/models/shared/connection.md:
     id: 1c171381dd82
-    last_write_checksum: sha1:67db4909ee9404eed24ff7d3b0c0224fa2dbcaee
-    pristine_git_object: 22ddc05d5172024cd84da30513ffee7048237fcf
+    last_write_checksum: sha1:1625c69d51397307098b95bf20e4250fa08a8438
+    pristine_git_object: 7f88070edad1e9554460fb33dc5724f69efe6e66
   docs/sdk/models/shared/contentstype.md:
     id: 6da131716566
     last_write_checksum: sha1:6aa0050165f402b3f03c747ac79f8e4cc14cac9c
@@ -11006,12 +11006,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:6b2ac7300450c0b224cb50c76ef60047c933320f
-    pristine_git_object: 0d50735d6b3132c28d8610de5ea7e979d67503e9
+    last_write_checksum: sha1:5ae4a508fccd9259c92f5f57e4b058d460193d77
+    pristine_git_object: 3e04ea422da888b7b526ea00db633964c4905045
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:50eedecc2926d6e429b60943a82e0440d3338689
-    pristine_git_object: c53a3a55c1a4ac9cfc575f18af21d512beb42ab5
+    last_write_checksum: sha1:4730d445fe375c0cc6dbc9db8b67a758d5ae416a
+    pristine_git_object: bd510abadb8fe480f1e135fffc752743fb7c0f12
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -14186,8 +14186,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:78a5cb2ad2a436f3659449d398b6466418c884b3
-    pristine_git_object: b8a85f4afbba4fa7674d9f22a1937079f5d6ee34
+    last_write_checksum: sha1:d7c673ee5ee0de5b4cf5b7387dbb11364138f7a3
+    pristine_git_object: b1199b7a71490042c18aa4c316a66dcaadb17724
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -18326,8 +18326,8 @@ trackedFiles:
     pristine_git_object: 73813f3cbdab1f349c6de1c7c6a3b975e02da546
   src/sdk/models/shared/connection.ts:
     id: 18ea99cdadfb
-    last_write_checksum: sha1:58007f1a5b40392c454ffeee6e3a3a0597a6bbc9
-    pristine_git_object: 169c6f57b77f944f83a5289e84bbb6e056acefde
+    last_write_checksum: sha1:e1f009c001834074dfc95a5d7b56352ec42abb33
+    pristine_git_object: e30062dd9e71cafc581e49ed4594f4cc5dba61ac
   src/sdk/models/shared/crmcompany.ts:
     id: fdb0cee06281
     last_write_checksum: sha1:798971352d3243e500c415613d6b61e9a91895b2
@@ -33513,7 +33513,7 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.commerce.listCommerceInventories()`: \n  *  `request.itemId` **Added**\n* `unified-to.inventory.listCommerceInventories()`: \n  *  `request.itemId` **Added**\n* `unified-to.hris.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.hris.getHrisTimeoff()`:  `response.status.enum(cancelled)` **Added**\n* `unified-to.hris.listHrisTimeoffs()`:  `response.[].status.enum(cancelled)` **Added**\n* `unified-to.hris.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.hris.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.createHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.getHrisTimeoff()`:  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.listHrisTimeoffs()`:  `response.[].status.enum(cancelled)` **Added**\n* `unified-to.timeoff.patchHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n* `unified-to.timeoff.updateHrisTimeoff()`: \n  *  `request.hrisTimeoff.status.enum(cancelled)` **Added**\n  *  `response.status.enum(cancelled)` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request.lastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `unified-to.unified.getUnifiedConnection()`:  `response.lastUnhealthyCode` **Added**\n* `unified-to.unified.listUnifiedConnections()`:  `response.[].lastUnhealthyCode` **Added**\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection.lastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection.lastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request.lastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `unified-to.connection.getUnifiedConnection()`:  `response.lastUnhealthyCode` **Added**\n* `unified-to.connection.listUnifiedConnections()`:  `response.[].lastUnhealthyCode` **Added**\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection.lastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection.lastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
