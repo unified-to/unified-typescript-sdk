@@ -497,6 +497,13 @@ export const ListSaleschannelId = {
 } as const;
 export type ListSaleschannelId = OpenEnum<typeof ListSaleschannelId>;
 
+export const ListSegmentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListSegmentId = OpenEnum<typeof ListSegmentId>;
+
 export const ListSessionId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -755,6 +762,13 @@ export const NativeWebhookPropertyId = {
   NotSupported: "not-supported",
 } as const;
 export type NativeWebhookPropertyId = OpenEnum<typeof NativeWebhookPropertyId>;
+
+export const NativeWebhookSegmentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookSegmentId = OpenEnum<typeof NativeWebhookSegmentId>;
 
 export const NativeWebhookSessionId = {
   SupportedRequired: "supported-required",
@@ -1223,6 +1237,13 @@ export type VirtualWebhookSaleschannelId = OpenEnum<
   typeof VirtualWebhookSaleschannelId
 >;
 
+export const VirtualWebhookSegmentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookSegmentId = OpenEnum<typeof VirtualWebhookSegmentId>;
+
 export const VirtualWebhookSessionId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1407,6 +1428,7 @@ export type IntegrationSupport = {
   listRoleId?: ListRoleId | undefined;
   listRootId?: ListRootId | undefined;
   listSaleschannelId?: ListSaleschannelId | undefined;
+  listSegmentId?: ListSegmentId | undefined;
   listSessionId?: ListSessionId | undefined;
   listShipmentId?: ListShipmentId | undefined;
   listSize?: ListSize | undefined;
@@ -1445,6 +1467,7 @@ export type IntegrationSupport = {
   nativeWebhookParentId?: NativeWebhookParentId | undefined;
   nativeWebhookProjectId?: NativeWebhookProjectId | undefined;
   nativeWebhookPropertyId?: NativeWebhookPropertyId | undefined;
+  nativeWebhookSegmentId?: NativeWebhookSegmentId | undefined;
   nativeWebhookSessionId?: NativeWebhookSessionId | undefined;
   nativeWebhookShipmentId?: NativeWebhookShipmentId | undefined;
   nativeWebhookStudentId?: NativeWebhookStudentId | undefined;
@@ -1514,6 +1537,7 @@ export type IntegrationSupport = {
   virtualWebhookReference?: VirtualWebhookReference | undefined;
   virtualWebhookRepoId?: VirtualWebhookRepoId | undefined;
   virtualWebhookSaleschannelId?: VirtualWebhookSaleschannelId | undefined;
+  virtualWebhookSegmentId?: VirtualWebhookSegmentId | undefined;
   virtualWebhookSessionId?: VirtualWebhookSessionId | undefined;
   virtualWebhookShipmentId?: VirtualWebhookShipmentId | undefined;
   virtualWebhookSpaceId?: VirtualWebhookSpaceId | undefined;
@@ -2016,6 +2040,13 @@ export const ListSaleschannelId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListSaleschannelId);
 
 /** @internal */
+export const ListSegmentId$inboundSchema: z.ZodType<
+  ListSegmentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListSegmentId);
+
+/** @internal */
 export const ListSessionId$inboundSchema: z.ZodType<
   ListSessionId,
   z.ZodTypeDef,
@@ -2273,6 +2304,13 @@ export const NativeWebhookPropertyId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(NativeWebhookPropertyId);
+
+/** @internal */
+export const NativeWebhookSegmentId$inboundSchema: z.ZodType<
+  NativeWebhookSegmentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookSegmentId);
 
 /** @internal */
 export const NativeWebhookSessionId$inboundSchema: z.ZodType<
@@ -2716,6 +2754,13 @@ export const VirtualWebhookSaleschannelId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookSaleschannelId);
 
 /** @internal */
+export const VirtualWebhookSegmentId$inboundSchema: z.ZodType<
+  VirtualWebhookSegmentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookSegmentId);
+
+/** @internal */
 export const VirtualWebhookSessionId$inboundSchema: z.ZodType<
   VirtualWebhookSessionId,
   z.ZodTypeDef,
@@ -2896,6 +2941,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_role_id: ListRoleId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
   list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
+  list_segment_id: ListSegmentId$inboundSchema.optional(),
   list_session_id: ListSessionId$inboundSchema.optional(),
   list_shipment_id: ListShipmentId$inboundSchema.optional(),
   list_size: ListSize$inboundSchema.optional(),
@@ -2934,6 +2980,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
   native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
   native_webhook_property_id: NativeWebhookPropertyId$inboundSchema.optional(),
+  native_webhook_segment_id: NativeWebhookSegmentId$inboundSchema.optional(),
   native_webhook_session_id: NativeWebhookSessionId$inboundSchema.optional(),
   native_webhook_shipment_id: NativeWebhookShipmentId$inboundSchema.optional(),
   native_webhook_student_id: NativeWebhookStudentId$inboundSchema.optional(),
@@ -3013,6 +3060,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_repo_id: VirtualWebhookRepoId$inboundSchema.optional(),
   virtual_webhook_saleschannel_id: VirtualWebhookSaleschannelId$inboundSchema
     .optional(),
+  virtual_webhook_segment_id: VirtualWebhookSegmentId$inboundSchema.optional(),
   virtual_webhook_session_id: VirtualWebhookSessionId$inboundSchema.optional(),
   virtual_webhook_shipment_id: VirtualWebhookShipmentId$inboundSchema
     .optional(),
@@ -3106,6 +3154,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_role_id": "listRoleId",
     "list_root_id": "listRootId",
     "list_saleschannel_id": "listSaleschannelId",
+    "list_segment_id": "listSegmentId",
     "list_session_id": "listSessionId",
     "list_shipment_id": "listShipmentId",
     "list_size": "listSize",
@@ -3143,6 +3192,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_parent_id": "nativeWebhookParentId",
     "native_webhook_project_id": "nativeWebhookProjectId",
     "native_webhook_property_id": "nativeWebhookPropertyId",
+    "native_webhook_segment_id": "nativeWebhookSegmentId",
     "native_webhook_session_id": "nativeWebhookSessionId",
     "native_webhook_shipment_id": "nativeWebhookShipmentId",
     "native_webhook_student_id": "nativeWebhookStudentId",
@@ -3209,6 +3259,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_reference": "virtualWebhookReference",
     "virtual_webhook_repo_id": "virtualWebhookRepoId",
     "virtual_webhook_saleschannel_id": "virtualWebhookSaleschannelId",
+    "virtual_webhook_segment_id": "virtualWebhookSegmentId",
     "virtual_webhook_session_id": "virtualWebhookSessionId",
     "virtual_webhook_shipment_id": "virtualWebhookShipmentId",
     "virtual_webhook_space_id": "virtualWebhookSpaceId",

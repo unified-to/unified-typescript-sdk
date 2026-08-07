@@ -45,6 +45,9 @@ export type ListCdpActivationsRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
+  /**
+   * The segment ID to filter by
+   */
   segmentId?: string | undefined;
   sort?: string | undefined;
   /**
