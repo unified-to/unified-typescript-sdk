@@ -27,15 +27,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve a project
+ * Retrieve an agedpayable
  */
-export function taskGetTaskProject(
+export function accountingGetAccountingAgedpayable(
   client: UnifiedToCore,
-  request: operations.GetTaskProjectRequest,
+  request: operations.GetAccountingAgedpayableRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.TaskProject,
+    shared.AccountingAgedpayable,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -55,12 +55,12 @@ export function taskGetTaskProject(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.GetTaskProjectRequest,
+  request: operations.GetAccountingAgedpayableRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.TaskProject,
+      shared.AccountingAgedpayable,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -75,7 +75,8 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetTaskProjectRequest$outboundSchema.parse(value),
+    (value) =>
+      operations.GetAccountingAgedpayableRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -94,7 +95,9 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/task/{connection_id}/project/{id}")(pathParams);
+  const path = pathToFunc("/accounting/{connection_id}/agedpayable/{id}")(
+    pathParams,
+  );
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -111,7 +114,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getTaskProject",
+    operationID: "getAccountingAgedpayable",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -152,7 +155,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.TaskProject,
+    shared.AccountingAgedpayable,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -162,7 +165,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.TaskProject$inboundSchema),
+    M.json(200, shared.AccountingAgedpayable$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

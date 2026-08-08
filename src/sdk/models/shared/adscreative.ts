@@ -71,6 +71,7 @@ export type AdsCreative = {
   hostingSource?: HostingSource | undefined;
   id?: string | undefined;
   itemId?: string | undefined;
+  labels?: Array<string> | undefined;
   linkUrl?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
@@ -82,6 +83,7 @@ export type AdsCreative = {
   thirdPartyTag?: string | undefined;
   title?: string | undefined;
   updatedAt?: Date | undefined;
+  urlTags?: string | undefined;
   vastTagUrl?: string | undefined;
   width?: number | undefined;
 };
@@ -147,6 +149,7 @@ export const AdsCreative$inboundSchema: z.ZodType<
   hosting_source: HostingSource$inboundSchema.optional(),
   id: z.string().optional(),
   item_id: z.string().optional(),
+  labels: z.array(z.string()).optional(),
   link_url: z.string().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
@@ -159,6 +162,7 @@ export const AdsCreative$inboundSchema: z.ZodType<
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  url_tags: z.string().optional(),
   vast_tag_url: z.string().optional(),
   width: z.number().optional(),
 }).transform((v) => {
@@ -177,6 +181,7 @@ export const AdsCreative$inboundSchema: z.ZodType<
     "organization_id": "organizationId",
     "third_party_tag": "thirdPartyTag",
     "updated_at": "updatedAt",
+    "url_tags": "urlTags",
     "vast_tag_url": "vastTagUrl",
   });
 });
@@ -197,6 +202,7 @@ export type AdsCreative$Outbound = {
   hosting_source?: string | undefined;
   id?: string | undefined;
   item_id?: string | undefined;
+  labels?: Array<string> | undefined;
   link_url?: string | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
@@ -208,6 +214,7 @@ export type AdsCreative$Outbound = {
   third_party_tag?: string | undefined;
   title?: string | undefined;
   updated_at?: string | undefined;
+  url_tags?: string | undefined;
   vast_tag_url?: string | undefined;
   width?: number | undefined;
 };
@@ -233,6 +240,7 @@ export const AdsCreative$outboundSchema: z.ZodType<
   hostingSource: HostingSource$outboundSchema.optional(),
   id: z.string().optional(),
   itemId: z.string().optional(),
+  labels: z.array(z.string()).optional(),
   linkUrl: z.string().optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
@@ -244,6 +252,7 @@ export const AdsCreative$outboundSchema: z.ZodType<
   thirdPartyTag: z.string().optional(),
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  urlTags: z.string().optional(),
   vastTagUrl: z.string().optional(),
   width: z.number().optional(),
 }).transform((v) => {
@@ -262,6 +271,7 @@ export const AdsCreative$outboundSchema: z.ZodType<
     organizationId: "organization_id",
     thirdPartyTag: "third_party_tag",
     updatedAt: "updated_at",
+    urlTags: "url_tags",
     vastTagUrl: "vast_tag_url",
   });
 });

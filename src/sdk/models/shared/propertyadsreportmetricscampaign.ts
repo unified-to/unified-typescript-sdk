@@ -121,6 +121,7 @@ export type PropertyAdsReportMetricsCampaign = {
   goal?: PropertyAdsReportMetricsCampaignGoal | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
+  labels?: Array<string> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
@@ -205,6 +206,7 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   goal: PropertyAdsReportMetricsCampaignGoal$inboundSchema.optional(),
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
+  labels: z.array(z.string()).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   planned_spend_amount: z.number().optional(),

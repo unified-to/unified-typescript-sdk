@@ -33,6 +33,7 @@ export type AccountingJournal = {
   lineitems?: Array<AccountingJournalLineitem> | undefined;
   organizationId?: string | undefined;
   postedAt?: Date | undefined;
+  projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   source?: string | undefined;
@@ -58,6 +59,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  project_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   source: z.string().optional(),
@@ -71,6 +73,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "organization_id": "organizationId",
     "posted_at": "postedAt",
+    "project_id": "projectId",
     "tax_amount": "taxAmount",
     "taxrate_id": "taxrateId",
     "updated_at": "updatedAt",
@@ -87,6 +90,7 @@ export type AccountingJournal$Outbound = {
   lineitems?: Array<AccountingJournalLineitem$Outbound> | undefined;
   organization_id?: string | undefined;
   posted_at?: string | undefined;
+  project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   source?: string | undefined;
@@ -110,6 +114,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
   organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
+  projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   source: z.string().optional(),
@@ -122,6 +127,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
     createdAt: "created_at",
     organizationId: "organization_id",
     postedAt: "posted_at",
+    projectId: "project_id",
     taxAmount: "tax_amount",
     taxrateId: "taxrate_id",
     updatedAt: "updated_at",

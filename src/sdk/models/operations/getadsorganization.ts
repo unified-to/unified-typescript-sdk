@@ -14,6 +14,9 @@ export const GetAdsOrganizationQueryParamFields = {
   Currency: "currency",
   Timezone: "timezone",
   ParentId: "parent_id",
+  Status: "status",
+  AccountNumber: "account_number",
+  Managers: "managers",
   Raw: "raw",
 } as const;
 export type GetAdsOrganizationQueryParamFields = ClosedEnum<

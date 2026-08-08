@@ -22,6 +22,7 @@ export const ListAdsCreativesQueryParamFields = {
   Height: "height",
   AssetUrls: "asset_urls",
   LinkUrl: "link_url",
+  UrlTags: "url_tags",
   Body: "body",
   Title: "title",
   Cta: "cta",
@@ -34,6 +35,7 @@ export const ListAdsCreativesQueryParamFields = {
   Path1: "path1",
   Path2: "path2",
   Data: "data",
+  Labels: "labels",
   Raw: "raw",
 } as const;
 export type ListAdsCreativesQueryParamFields = ClosedEnum<

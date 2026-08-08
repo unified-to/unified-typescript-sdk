@@ -42,6 +42,7 @@ export type StorageFile = {
   raw?: { [k: string]: any } | undefined;
   references?: Array<StorageReference> | undefined;
   size?: number | undefined;
+  tags?: Array<string> | undefined;
   type?: StorageFileType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
@@ -82,6 +83,7 @@ export const StorageFile$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   references: z.array(StorageReference$inboundSchema).optional(),
   size: z.number().optional(),
+  tags: z.array(z.string()).optional(),
   type: StorageFileType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -114,6 +116,7 @@ export type StorageFile$Outbound = {
   raw?: { [k: string]: any } | undefined;
   references?: Array<StorageReference$Outbound> | undefined;
   size?: number | undefined;
+  tags?: Array<string> | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -140,6 +143,7 @@ export const StorageFile$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   references: z.array(StorageReference$outboundSchema).optional(),
   size: z.number().optional(),
+  tags: z.array(z.string()).optional(),
   type: StorageFileType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),

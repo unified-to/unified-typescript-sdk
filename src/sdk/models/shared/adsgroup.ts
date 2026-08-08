@@ -77,6 +77,12 @@ export const AdsGroupBudgetUnit = {
 } as const;
 export type AdsGroupBudgetUnit = OpenEnum<typeof AdsGroupBudgetUnit>;
 
+export const CreativeSelection = {
+  Optimized: "OPTIMIZED",
+  RoundRobin: "ROUND_ROBIN",
+} as const;
+export type CreativeSelection = OpenEnum<typeof CreativeSelection>;
+
 export const AdsGroupEffectiveStatus = {
   Unspecified: "UNSPECIFIED",
   Serving: "SERVING",
@@ -155,6 +161,7 @@ export type AdsGroup = {
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
+  creativeSelection?: CreativeSelection | undefined;
   currency?: string | undefined;
   effectiveStatus?: AdsGroupEffectiveStatus | undefined;
   endAt?: Date | undefined;
@@ -162,6 +169,7 @@ export type AdsGroup = {
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
+  languageLocale?: string | undefined;
   name?: string | undefined;
   optimizationGoal?: OptimizationGoal | undefined;
   organizationId?: string | undefined;
@@ -227,6 +235,19 @@ export const AdsGroupBudgetUnit$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AdsGroupBudgetUnit
 > = openEnums.outboundSchema(AdsGroupBudgetUnit);
+
+/** @internal */
+export const CreativeSelection$inboundSchema: z.ZodType<
+  CreativeSelection,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(CreativeSelection);
+/** @internal */
+export const CreativeSelection$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  CreativeSelection
+> = openEnums.outboundSchema(CreativeSelection);
 
 /** @internal */
 export const AdsGroupEffectiveStatus$inboundSchema: z.ZodType<
@@ -298,6 +319,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_ids: z.array(z.string()).optional(),
+  creative_selection: CreativeSelection$inboundSchema.optional(),
   currency: z.string().optional(),
   effective_status: AdsGroupEffectiveStatus$inboundSchema.optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -306,6 +328,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
+  language_locale: z.string().optional(),
   name: z.string().optional(),
   optimization_goal: OptimizationGoal$inboundSchema.optional(),
   organization_id: z.string().optional(),
@@ -333,11 +356,13 @@ export const AdsGroup$inboundSchema: z.ZodType<
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
+    "creative_selection": "creativeSelection",
     "effective_status": "effectiveStatus",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
     "has_eu_political_ads": "hasEuPoliticalAds",
     "insertionorder_id": "insertionorderId",
+    "language_locale": "languageLocale",
     "optimization_goal": "optimizationGoal",
     "organization_id": "organizationId",
     "parent_id": "parentId",
@@ -358,6 +383,7 @@ export type AdsGroup$Outbound = {
   campaign_id?: string | undefined;
   created_at?: string | undefined;
   creative_ids?: Array<string> | undefined;
+  creative_selection?: string | undefined;
   currency?: string | undefined;
   effective_status?: string | undefined;
   end_at?: string | undefined;
@@ -365,6 +391,7 @@ export type AdsGroup$Outbound = {
   has_eu_political_ads?: boolean | undefined;
   id?: string | undefined;
   insertionorder_id?: string | undefined;
+  language_locale?: string | undefined;
   name?: string | undefined;
   optimization_goal?: string | undefined;
   organization_id?: string | undefined;
@@ -396,6 +423,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   campaignId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeIds: z.array(z.string()).optional(),
+  creativeSelection: CreativeSelection$outboundSchema.optional(),
   currency: z.string().optional(),
   effectiveStatus: AdsGroupEffectiveStatus$outboundSchema.optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
@@ -403,6 +431,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   hasEuPoliticalAds: z.boolean().optional(),
   id: z.string().optional(),
   insertionorderId: z.string().optional(),
+  languageLocale: z.string().optional(),
   name: z.string().optional(),
   optimizationGoal: OptimizationGoal$outboundSchema.optional(),
   organizationId: z.string().optional(),
@@ -428,11 +457,13 @@ export const AdsGroup$outboundSchema: z.ZodType<
     campaignId: "campaign_id",
     createdAt: "created_at",
     creativeIds: "creative_ids",
+    creativeSelection: "creative_selection",
     effectiveStatus: "effective_status",
     endAt: "end_at",
     frequencyCap: "frequency_cap",
     hasEuPoliticalAds: "has_eu_political_ads",
     insertionorderId: "insertionorder_id",
+    languageLocale: "language_locale",
     optimizationGoal: "optimization_goal",
     organizationId: "organization_id",
     parentId: "parent_id",

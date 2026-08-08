@@ -102,6 +102,7 @@ export type AccountingBill = {
    */
   payments?: Array<AccountingPaymentReference> | undefined;
   postedAt?: Date | undefined;
+  projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
@@ -193,6 +194,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
   payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  project_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   refund_amount: z.number().optional(),
   refund_reason: z.string().optional(),
@@ -222,6 +224,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
     "payment_collection_method": "paymentCollectionMethod",
     "payment_terms": "paymentTerms",
     "posted_at": "postedAt",
+    "project_id": "projectId",
     "refund_amount": "refundAmount",
     "refund_reason": "refundReason",
     "refunded_at": "refundedAt",
@@ -252,6 +255,7 @@ export type AccountingBill$Outbound = {
   payment_terms?: string | undefined;
   payments?: Array<AccountingPaymentReference$Outbound> | undefined;
   posted_at?: string | undefined;
+  project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   refund_amount?: number | undefined;
   refund_reason?: string | undefined;
@@ -291,6 +295,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
   paymentTerms: PaymentTerms$outboundSchema.optional(),
   payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
+  projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   refundAmount: z.number().optional(),
   refundReason: z.string().optional(),
@@ -318,6 +323,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
     paymentCollectionMethod: "payment_collection_method",
     paymentTerms: "payment_terms",
     postedAt: "posted_at",
+    projectId: "project_id",
     refundAmount: "refund_amount",
     refundReason: "refund_reason",
     refundedAt: "refunded_at",

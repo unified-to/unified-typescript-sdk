@@ -5,19 +5,58 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AdsManager,
+  AdsManager$inboundSchema,
+  AdsManager$Outbound,
+  AdsManager$outboundSchema,
+} from "./adsmanager.js";
+
+export const AdsOrganizationStatus = {
+  Unspecified: "UNSPECIFIED",
+  Active: "ACTIVE",
+  Paused: "PAUSED",
+  Archived: "ARCHIVED",
+  Draft: "DRAFT",
+  ScheduledForDeletion: "SCHEDULED_FOR_DELETION",
+  Processing: "PROCESSING",
+  ProcessingFailed: "PROCESSING_FAILED",
+} as const;
+export type AdsOrganizationStatus = OpenEnum<typeof AdsOrganizationStatus>;
 
 export type AdsOrganization = {
+  accountNumber?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
+  /**
+   * Manager/agency chain, top-most manager first, closest manager last (SA360 manager/sub_manager)
+   */
+  managers?: Array<AdsManager> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  status?: AdsOrganizationStatus | undefined;
   timezone?: string | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AdsOrganizationStatus$inboundSchema: z.ZodType<
+  AdsOrganizationStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AdsOrganizationStatus);
+/** @internal */
+export const AdsOrganizationStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AdsOrganizationStatus
+> = openEnums.outboundSchema(AdsOrganizationStatus);
 
 /** @internal */
 export const AdsOrganization$inboundSchema: z.ZodType<
@@ -25,18 +64,22 @@ export const AdsOrganization$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  account_number: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
   id: z.string().optional(),
+  managers: z.array(AdsManager$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  status: AdsOrganizationStatus$inboundSchema.optional(),
   timezone: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "account_number": "accountNumber",
     "created_at": "createdAt",
     "parent_id": "parentId",
     "updated_at": "updatedAt",
@@ -44,12 +87,15 @@ export const AdsOrganization$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type AdsOrganization$Outbound = {
+  account_number?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   id?: string | undefined;
+  managers?: Array<AdsManager$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  status?: string | undefined;
   timezone?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -60,16 +106,20 @@ export const AdsOrganization$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AdsOrganization
 > = z.object({
+  accountNumber: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   id: z.string().optional(),
+  managers: z.array(AdsManager$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  status: AdsOrganizationStatus$outboundSchema.optional(),
   timezone: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    accountNumber: "account_number",
     createdAt: "created_at",
     parentId: "parent_id",
     updatedAt: "updated_at",

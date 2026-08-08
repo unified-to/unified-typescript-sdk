@@ -9,6 +9,8 @@ import { Activation } from "./activation.js";
 import { Activity } from "./activity.js";
 import { Ad } from "./ad.js";
 import { Ads } from "./ads.js";
+import { Agedpayable } from "./agedpayable.js";
+import { Agedreceivable } from "./agedreceivable.js";
 import { Analytics } from "./analytics.js";
 import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
@@ -114,6 +116,7 @@ import { Property } from "./property.js";
 import { Pullrequest } from "./pullrequest.js";
 import { Purchaseorder } from "./purchaseorder.js";
 import { Query } from "./query.js";
+import { Quote } from "./quote.js";
 import { Rate } from "./rate.js";
 import { RecordT } from "./record.js";
 import { Recording } from "./recording.js";
@@ -173,6 +176,16 @@ export class UnifiedTo extends ClientSDK {
   private _account?: Account;
   get account(): Account {
     return (this._account ??= new Account(this._options));
+  }
+
+  private _agedpayable?: Agedpayable;
+  get agedpayable(): Agedpayable {
+    return (this._agedpayable ??= new Agedpayable(this._options));
+  }
+
+  private _agedreceivable?: Agedreceivable;
+  get agedreceivable(): Agedreceivable {
+    return (this._agedreceivable ??= new Agedreceivable(this._options));
   }
 
   private _balancesheet?: Balancesheet;
@@ -235,9 +248,19 @@ export class UnifiedTo extends ClientSDK {
     return (this._profitloss ??= new Profitloss(this._options));
   }
 
+  private _project?: Project;
+  get project(): Project {
+    return (this._project ??= new Project(this._options));
+  }
+
   private _purchaseorder?: Purchaseorder;
   get purchaseorder(): Purchaseorder {
     return (this._purchaseorder ??= new Purchaseorder(this._options));
+  }
+
+  private _quote?: Quote;
+  get quote(): Quote {
+    return (this._quote ??= new Quote(this._options));
   }
 
   private _report?: Report;
@@ -863,11 +886,6 @@ export class UnifiedTo extends ClientSDK {
   private _change?: Change;
   get change(): Change {
     return (this._change ??= new Change(this._options));
-  }
-
-  private _project?: Project;
-  get project(): Project {
-    return (this._project ??= new Project(this._options));
   }
 
   private _ticketing?: Ticketing;

@@ -30,6 +30,7 @@ export const CreateAdsCampaignQueryParamFields = {
   Currency: "currency",
   Category: "category",
   HasEuPoliticalAds: "has_eu_political_ads",
+  Labels: "labels",
   Raw: "raw",
 } as const;
 export type CreateAdsCampaignQueryParamFields = ClosedEnum<

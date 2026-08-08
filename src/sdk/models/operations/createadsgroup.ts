@@ -37,6 +37,8 @@ export const CreateAdsGroupQueryParamFields = {
   BillingEvent: "billing_event",
   Currency: "currency",
   Promoted: "promoted",
+  LanguageLocale: "language_locale",
+  CreativeSelection: "creative_selection",
   Raw: "raw",
 } as const;
 export type CreateAdsGroupQueryParamFields = ClosedEnum<

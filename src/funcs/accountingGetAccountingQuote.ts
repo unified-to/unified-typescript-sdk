@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -27,15 +27,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Create a project
+ * Retrieve a quote
  */
-export function taskCreateTaskProject(
+export function accountingGetAccountingQuote(
   client: UnifiedToCore,
-  request: operations.CreateTaskProjectRequest,
+  request: operations.GetAccountingQuoteRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.TaskProject,
+    shared.AccountingQuote,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -55,12 +55,12 @@ export function taskCreateTaskProject(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.CreateTaskProjectRequest,
+  request: operations.GetAccountingQuoteRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.TaskProject,
+      shared.AccountingQuote,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -75,22 +75,26 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.CreateTaskProjectRequest$outboundSchema.parse(value),
+    (value) => operations.GetAccountingQuoteRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.TaskProject, { explode: true });
+  const body = null;
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
       explode: false,
       charEncoding: "percent",
     }),
+    id: encodeSimple("id", payload.id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
   };
-  const path = pathToFunc("/task/{connection_id}/project")(pathParams);
+  const path = pathToFunc("/accounting/{connection_id}/quote/{id}")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -98,7 +102,6 @@ async function $do(
   });
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -108,7 +111,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "createTaskProject",
+    operationID: "getAccountingQuote",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -122,7 +125,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "POST",
+    method: "GET",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
@@ -149,7 +152,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.TaskProject,
+    shared.AccountingQuote,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -159,7 +162,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.TaskProject$inboundSchema),
+    M.json(200, shared.AccountingQuote$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

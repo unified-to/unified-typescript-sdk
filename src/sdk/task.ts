@@ -8,19 +8,19 @@ import { commentListTaskComments } from "../funcs/commentListTaskComments.js";
 import { commentPatchTaskComment } from "../funcs/commentPatchTaskComment.js";
 import { commentRemoveTaskComment } from "../funcs/commentRemoveTaskComment.js";
 import { commentUpdateTaskComment } from "../funcs/commentUpdateTaskComment.js";
-import { taskCreateTaskProject } from "../funcs/taskCreateTaskProject.js";
+import { projectCreateTaskProject } from "../funcs/projectCreateTaskProject.js";
+import { projectGetTaskProject } from "../funcs/projectGetTaskProject.js";
+import { projectListTaskProjects } from "../funcs/projectListTaskProjects.js";
+import { projectPatchTaskProject } from "../funcs/projectPatchTaskProject.js";
+import { projectRemoveTaskProject } from "../funcs/projectRemoveTaskProject.js";
+import { projectUpdateTaskProject } from "../funcs/projectUpdateTaskProject.js";
 import { taskCreateTaskTask } from "../funcs/taskCreateTaskTask.js";
 import { taskGetTaskChange } from "../funcs/taskGetTaskChange.js";
-import { taskGetTaskProject } from "../funcs/taskGetTaskProject.js";
 import { taskGetTaskTask } from "../funcs/taskGetTaskTask.js";
 import { taskListTaskChanges } from "../funcs/taskListTaskChanges.js";
-import { taskListTaskProjects } from "../funcs/taskListTaskProjects.js";
 import { taskListTaskTasks } from "../funcs/taskListTaskTasks.js";
-import { taskPatchTaskProject } from "../funcs/taskPatchTaskProject.js";
 import { taskPatchTaskTask } from "../funcs/taskPatchTaskTask.js";
-import { taskRemoveTaskProject } from "../funcs/taskRemoveTaskProject.js";
 import { taskRemoveTaskTask } from "../funcs/taskRemoveTaskTask.js";
-import { taskUpdateTaskProject } from "../funcs/taskUpdateTaskProject.js";
 import { taskUpdateTaskTask } from "../funcs/taskUpdateTaskTask.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -49,7 +49,7 @@ export class Task extends ClientSDK {
     request: operations.CreateTaskProjectRequest,
     options?: RequestOptions,
   ): Promise<shared.TaskProject> {
-    return unwrapAsync(taskCreateTaskProject(
+    return unwrapAsync(projectCreateTaskProject(
       this,
       request,
       options,
@@ -105,7 +105,7 @@ export class Task extends ClientSDK {
     request: operations.GetTaskProjectRequest,
     options?: RequestOptions,
   ): Promise<shared.TaskProject> {
-    return unwrapAsync(taskGetTaskProject(
+    return unwrapAsync(projectGetTaskProject(
       this,
       request,
       options,
@@ -161,7 +161,7 @@ export class Task extends ClientSDK {
     request: operations.ListTaskProjectsRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.TaskProject>> {
-    return unwrapAsync(taskListTaskProjects(
+    return unwrapAsync(projectListTaskProjects(
       this,
       request,
       options,
@@ -203,7 +203,7 @@ export class Task extends ClientSDK {
     request: operations.PatchTaskProjectRequest,
     options?: RequestOptions,
   ): Promise<shared.TaskProject> {
-    return unwrapAsync(taskPatchTaskProject(
+    return unwrapAsync(projectPatchTaskProject(
       this,
       request,
       options,
@@ -245,7 +245,7 @@ export class Task extends ClientSDK {
     request: operations.RemoveTaskProjectRequest,
     options?: RequestOptions,
   ): Promise<operations.RemoveTaskProjectResponse | undefined> {
-    return unwrapAsync(taskRemoveTaskProject(
+    return unwrapAsync(projectRemoveTaskProject(
       this,
       request,
       options,
@@ -287,7 +287,7 @@ export class Task extends ClientSDK {
     request: operations.UpdateTaskProjectRequest,
     options?: RequestOptions,
   ): Promise<shared.TaskProject> {
-    return unwrapAsync(taskUpdateTaskProject(
+    return unwrapAsync(projectUpdateTaskProject(
       this,
       request,
       options,

@@ -115,6 +115,7 @@ export type AccountingInvoice = {
    */
   payments?: Array<AccountingPaymentReference> | undefined;
   postedAt?: Date | undefined;
+  projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   refundAmount?: number | undefined;
@@ -228,6 +229,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  project_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   refund_amount: z.number().optional(),
@@ -259,6 +261,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "payment_collection_method": "paymentCollectionMethod",
     "payment_terms": "paymentTerms",
     "posted_at": "postedAt",
+    "project_id": "projectId",
     "refund_amount": "refundAmount",
     "refund_reason": "refundReason",
     "refunded_at": "refundedAt",
@@ -289,6 +292,7 @@ export type AccountingInvoice$Outbound = {
   payment_terms?: string | undefined;
   payments?: Array<AccountingPaymentReference$Outbound> | undefined;
   posted_at?: string | undefined;
+  project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   refund_amount?: number | undefined;
@@ -331,6 +335,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   paymentTerms: AccountingInvoicePaymentTerms$outboundSchema.optional(),
   payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
+  projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   refundAmount: z.number().optional(),
@@ -360,6 +365,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     paymentCollectionMethod: "payment_collection_method",
     paymentTerms: "payment_terms",
     postedAt: "posted_at",
+    projectId: "project_id",
     refundAmount: "refund_amount",
     refundReason: "refund_reason",
     refundedAt: "refunded_at",

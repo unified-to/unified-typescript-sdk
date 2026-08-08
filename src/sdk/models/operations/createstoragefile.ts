@@ -25,6 +25,7 @@ export const CreateStorageFileQueryParamFields = {
   Version: "version",
   WebUrl: "web_url",
   References: "references",
+  Tags: "tags",
   Raw: "raw",
 } as const;
 export type CreateStorageFileQueryParamFields = ClosedEnum<

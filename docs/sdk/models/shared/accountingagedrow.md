@@ -1,0 +1,20 @@
+# AccountingAgedRow
+
+## Example Usage
+
+```typescript
+import { AccountingAgedRow } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingAgedRow = {};
+```
+
+## Fields
+
+| Field                                                                                                             | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `balanceAmount`                                                                                                   | *number*                                                                                                          | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `contact`                                                                                                         | [shared.PropertyAccountingAgedRowContact](../../../sdk/models/shared/propertyaccountingagedrowcontact.md)         | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `dueAt`                                                                                                           | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                     | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `postedAt`                                                                                                        | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                     | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `totalAmount`                                                                                                     | *number*                                                                                                          | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `transaction`                                                                                                     | [shared.PropertyAccountingAgedRowTransaction](../../../sdk/models/shared/propertyaccountingagedrowtransaction.md) | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |

@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all projects
+ * List all agedpayables
  */
-export function taskListTaskProjects(
+export function accountingListAccountingAgedpayables(
   client: UnifiedToCore,
-  request: operations.ListTaskProjectsRequest,
+  request: operations.ListAccountingAgedpayablesRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.TaskProject>,
+    Array<shared.AccountingAgedpayable>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -56,12 +56,12 @@ export function taskListTaskProjects(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListTaskProjectsRequest,
+  request: operations.ListAccountingAgedpayablesRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.TaskProject>,
+      Array<shared.AccountingAgedpayable>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -76,7 +76,8 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ListTaskProjectsRequest$outboundSchema.parse(value),
+    (value) =>
+      operations.ListAccountingAgedpayablesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -91,20 +92,23 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/task/{connection_id}/project")(pathParams);
+  const path = pathToFunc("/accounting/{connection_id}/agedpayable")(
+    pathParams,
+  );
 
   const query = encodeFormQuery({
-    "company_id": payload.company_id,
+    "contact_id": payload.contact_id,
+    "end_lt": payload.end_lt,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
-    "parent_id": payload.parent_id,
+    "org_id": payload.org_id,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "start_gte": payload.start_gte,
     "updated_gte": payload.updated_gte,
-    "user_id": payload.user_id,
   });
 
   const headers = new Headers(compactMap({
@@ -117,7 +121,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listTaskProjects",
+    operationID: "listAccountingAgedpayables",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -158,7 +162,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.TaskProject>,
+    Array<shared.AccountingAgedpayable>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -168,7 +172,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.TaskProject$inboundSchema)),
+    M.json(200, z.array(shared.AccountingAgedpayable$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

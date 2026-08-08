@@ -72,6 +72,14 @@ export type PropertyAdsReportMetricsGroupBudgetUnit = OpenEnum<
   typeof PropertyAdsReportMetricsGroupBudgetUnit
 >;
 
+export const PropertyAdsReportMetricsGroupCreativeSelection = {
+  Optimized: "OPTIMIZED",
+  RoundRobin: "ROUND_ROBIN",
+} as const;
+export type PropertyAdsReportMetricsGroupCreativeSelection = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupCreativeSelection
+>;
+
 export const PropertyAdsReportMetricsGroupEffectiveStatus = {
   Unspecified: "UNSPECIFIED",
   Serving: "SERVING",
@@ -160,6 +168,9 @@ export type PropertyAdsReportMetricsGroup = {
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
+  creativeSelection?:
+    | PropertyAdsReportMetricsGroupCreativeSelection
+    | undefined;
   currency?: string | undefined;
   effectiveStatus?: PropertyAdsReportMetricsGroupEffectiveStatus | undefined;
   endAt?: Date | undefined;
@@ -167,6 +178,7 @@ export type PropertyAdsReportMetricsGroup = {
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
+  languageLocale?: string | undefined;
   name?: string | undefined;
   optimizationGoal?: PropertyAdsReportMetricsGroupOptimizationGoal | undefined;
   organizationId?: string | undefined;
@@ -211,6 +223,14 @@ export const PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetUnit);
+
+/** @internal */
+export const PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema:
+  z.ZodType<
+    PropertyAdsReportMetricsGroupCreativeSelection,
+    z.ZodTypeDef,
+    unknown
+  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupCreativeSelection);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema:
@@ -264,6 +284,8 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_ids: z.array(z.string()).optional(),
+  creative_selection:
+    PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema.optional(),
   currency: z.string().optional(),
   effective_status: PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema
     .optional(),
@@ -274,6 +296,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
+  language_locale: z.string().optional(),
   name: z.string().optional(),
   optimization_goal: PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema
     .optional(),
@@ -302,11 +325,13 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     "campaign_id": "campaignId",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
+    "creative_selection": "creativeSelection",
     "effective_status": "effectiveStatus",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
     "has_eu_political_ads": "hasEuPoliticalAds",
     "insertionorder_id": "insertionorderId",
+    "language_locale": "languageLocale",
     "optimization_goal": "optimizationGoal",
     "organization_id": "organizationId",
     "parent_id": "parentId",

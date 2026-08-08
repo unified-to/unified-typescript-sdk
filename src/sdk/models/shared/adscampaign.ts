@@ -111,6 +111,7 @@ export type AdsCampaign = {
   goal?: Goal | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
+  labels?: Array<string> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
@@ -216,6 +217,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
   goal: Goal$inboundSchema.optional(),
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
+  labels: z.array(z.string()).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   planned_spend_amount: z.number().optional(),
@@ -262,6 +264,7 @@ export type AdsCampaign$Outbound = {
   goal?: string | undefined;
   has_eu_political_ads?: boolean | undefined;
   id?: string | undefined;
+  labels?: Array<string> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   planned_spend_amount?: number | undefined;
@@ -293,6 +296,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   goal: Goal$outboundSchema.optional(),
   hasEuPoliticalAds: z.boolean().optional(),
   id: z.string().optional(),
+  labels: z.array(z.string()).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   plannedSpendAmount: z.number().optional(),

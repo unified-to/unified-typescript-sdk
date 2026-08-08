@@ -4,12 +4,97 @@
 
 ### Available Operations
 
+* [createAccountingProject](#createaccountingproject) - Create a project
 * [createTaskProject](#createtaskproject) - Create a project
+* [getAccountingProject](#getaccountingproject) - Retrieve a project
 * [getTaskProject](#gettaskproject) - Retrieve a project
+* [listAccountingProjects](#listaccountingprojects) - List all projects
 * [listTaskProjects](#listtaskprojects) - List all projects
+* [patchAccountingProject](#patchaccountingproject) - Update a project
 * [patchTaskProject](#patchtaskproject) - Update a project
+* [removeAccountingProject](#removeaccountingproject) - Remove a project
 * [removeTaskProject](#removetaskproject) - Remove a project
+* [updateAccountingProject](#updateaccountingproject) - Update a project
 * [updateTaskProject](#updatetaskproject) - Update a project
+
+## createAccountingProject
+
+Create a project
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createAccountingProject" method="post" path="/accounting/{connection_id}/project" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.project.createAccountingProject({
+    accountingProject: {},
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingCreateAccountingProject } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingProject.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingCreateAccountingProject(unifiedTo, {
+    accountingProject: {},
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingCreateAccountingProject failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateAccountingProjectRequest](../../sdk/models/operations/createaccountingprojectrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingProject](../../sdk/models/shared/accountingproject.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## createTaskProject
 
@@ -45,7 +130,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskCreateTaskProject } from "@unified-api/typescript-sdk/funcs/taskCreateTaskProject.js";
+import { projectCreateTaskProject } from "@unified-api/typescript-sdk/funcs/projectCreateTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +141,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskCreateTaskProject(unifiedTo, {
+  const res = await projectCreateTaskProject(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
   });
@@ -64,7 +149,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskCreateTaskProject failed:", res.error);
+    console.log("projectCreateTaskProject failed:", res.error);
   }
 }
 
@@ -83,6 +168,85 @@ run();
 ### Response
 
 **Promise\<[shared.TaskProject](../../sdk/models/shared/taskproject.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getAccountingProject
+
+Retrieve a project
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAccountingProject" method="get" path="/accounting/{connection_id}/project/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.project.getAccountingProject({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingGetAccountingProject } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingProject.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingGetAccountingProject(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingGetAccountingProject failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAccountingProjectRequest](../../sdk/models/operations/getaccountingprojectrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingProject](../../sdk/models/shared/accountingproject.md)\>**
 
 ### Errors
 
@@ -124,7 +288,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskGetTaskProject } from "@unified-api/typescript-sdk/funcs/taskGetTaskProject.js";
+import { projectGetTaskProject } from "@unified-api/typescript-sdk/funcs/projectGetTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -135,7 +299,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskGetTaskProject(unifiedTo, {
+  const res = await projectGetTaskProject(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -143,7 +307,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskGetTaskProject failed:", res.error);
+    console.log("projectGetTaskProject failed:", res.error);
   }
 }
 
@@ -162,6 +326,83 @@ run();
 ### Response
 
 **Promise\<[shared.TaskProject](../../sdk/models/shared/taskproject.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listAccountingProjects
+
+List all projects
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listAccountingProjects" method="get" path="/accounting/{connection_id}/project" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.project.listAccountingProjects({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingListAccountingProjects } from "@unified-api/typescript-sdk/funcs/accountingListAccountingProjects.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingListAccountingProjects(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingListAccountingProjects failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListAccountingProjectsRequest](../../sdk/models/operations/listaccountingprojectsrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingProject[]](../../models/.md)\>**
 
 ### Errors
 
@@ -202,7 +443,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskListTaskProjects } from "@unified-api/typescript-sdk/funcs/taskListTaskProjects.js";
+import { projectListTaskProjects } from "@unified-api/typescript-sdk/funcs/projectListTaskProjects.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,14 +454,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskListTaskProjects(unifiedTo, {
+  const res = await projectListTaskProjects(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskListTaskProjects failed:", res.error);
+    console.log("projectListTaskProjects failed:", res.error);
   }
 }
 
@@ -239,6 +480,87 @@ run();
 ### Response
 
 **Promise\<[shared.TaskProject[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchAccountingProject
+
+Update a project
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchAccountingProject" method="patch" path="/accounting/{connection_id}/project/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.project.patchAccountingProject({
+    accountingProject: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingPatchAccountingProject } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingProject.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingPatchAccountingProject(unifiedTo, {
+    accountingProject: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingPatchAccountingProject failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchAccountingProjectRequest](../../sdk/models/operations/patchaccountingprojectrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingProject](../../sdk/models/shared/accountingproject.md)\>**
 
 ### Errors
 
@@ -281,7 +603,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskPatchTaskProject } from "@unified-api/typescript-sdk/funcs/taskPatchTaskProject.js";
+import { projectPatchTaskProject } from "@unified-api/typescript-sdk/funcs/projectPatchTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +614,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskPatchTaskProject(unifiedTo, {
+  const res = await projectPatchTaskProject(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -301,7 +623,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskPatchTaskProject failed:", res.error);
+    console.log("projectPatchTaskProject failed:", res.error);
   }
 }
 
@@ -320,6 +642,85 @@ run();
 ### Response
 
 **Promise\<[shared.TaskProject](../../sdk/models/shared/taskproject.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## removeAccountingProject
+
+Remove a project
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeAccountingProject" method="delete" path="/accounting/{connection_id}/project/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.project.removeAccountingProject({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingRemoveAccountingProject } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingProject.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingRemoveAccountingProject(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingRemoveAccountingProject failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveAccountingProjectRequest](../../sdk/models/operations/removeaccountingprojectrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveAccountingProjectResponse](../../sdk/models/operations/removeaccountingprojectresponse.md)\>**
 
 ### Errors
 
@@ -361,7 +762,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskRemoveTaskProject } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskProject.js";
+import { projectRemoveTaskProject } from "@unified-api/typescript-sdk/funcs/projectRemoveTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +773,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskRemoveTaskProject(unifiedTo, {
+  const res = await projectRemoveTaskProject(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -380,7 +781,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskRemoveTaskProject failed:", res.error);
+    console.log("projectRemoveTaskProject failed:", res.error);
   }
 }
 
@@ -399,6 +800,87 @@ run();
 ### Response
 
 **Promise\<[operations.RemoveTaskProjectResponse](../../sdk/models/operations/removetaskprojectresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateAccountingProject
+
+Update a project
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateAccountingProject" method="put" path="/accounting/{connection_id}/project/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.project.updateAccountingProject({
+    accountingProject: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingUpdateAccountingProject } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingProject.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingUpdateAccountingProject(unifiedTo, {
+    accountingProject: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingUpdateAccountingProject failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateAccountingProjectRequest](../../sdk/models/operations/updateaccountingprojectrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingProject](../../sdk/models/shared/accountingproject.md)\>**
 
 ### Errors
 
@@ -441,7 +923,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskUpdateTaskProject } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskProject.js";
+import { projectUpdateTaskProject } from "@unified-api/typescript-sdk/funcs/projectUpdateTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +934,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskUpdateTaskProject(unifiedTo, {
+  const res = await projectUpdateTaskProject(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -461,7 +943,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskUpdateTaskProject failed:", res.error);
+    console.log("projectUpdateTaskProject failed:", res.error);
   }
 }
 

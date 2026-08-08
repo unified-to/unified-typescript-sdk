@@ -72,6 +72,7 @@ export type PropertyAdsReportMetricsCreative = {
   hostingSource?: PropertyAdsReportMetricsCreativeHostingSource | undefined;
   id?: string | undefined;
   itemId?: string | undefined;
+  labels?: Array<string> | undefined;
   linkUrl?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
@@ -83,6 +84,7 @@ export type PropertyAdsReportMetricsCreative = {
   thirdPartyTag?: string | undefined;
   title?: string | undefined;
   updatedAt?: Date | undefined;
+  urlTags?: string | undefined;
   vastTagUrl?: string | undefined;
   width?: number | undefined;
 };
@@ -134,6 +136,7 @@ export const PropertyAdsReportMetricsCreative$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   item_id: z.string().optional(),
+  labels: z.array(z.string()).optional(),
   link_url: z.string().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
@@ -146,6 +149,7 @@ export const PropertyAdsReportMetricsCreative$inboundSchema: z.ZodType<
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  url_tags: z.string().optional(),
   vast_tag_url: z.string().optional(),
   width: z.number().optional(),
 }).transform((v) => {
@@ -164,6 +168,7 @@ export const PropertyAdsReportMetricsCreative$inboundSchema: z.ZodType<
     "organization_id": "organizationId",
     "third_party_tag": "thirdPartyTag",
     "updated_at": "updatedAt",
+    "url_tags": "urlTags",
     "vast_tag_url": "vastTagUrl",
   });
 });

@@ -138,7 +138,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskCreateTaskProject } from "@unified-api/typescript-sdk/funcs/taskCreateTaskProject.js";
+import { projectCreateTaskProject } from "@unified-api/typescript-sdk/funcs/projectCreateTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -149,7 +149,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskCreateTaskProject(unifiedTo, {
+  const res = await projectCreateTaskProject(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
   });
@@ -157,7 +157,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskCreateTaskProject failed:", res.error);
+    console.log("projectCreateTaskProject failed:", res.error);
   }
 }
 
@@ -454,7 +454,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskGetTaskProject } from "@unified-api/typescript-sdk/funcs/taskGetTaskProject.js";
+import { projectGetTaskProject } from "@unified-api/typescript-sdk/funcs/projectGetTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -465,7 +465,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskGetTaskProject(unifiedTo, {
+  const res = await projectGetTaskProject(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -473,7 +473,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskGetTaskProject failed:", res.error);
+    console.log("projectGetTaskProject failed:", res.error);
   }
 }
 
@@ -765,7 +765,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskListTaskProjects } from "@unified-api/typescript-sdk/funcs/taskListTaskProjects.js";
+import { projectListTaskProjects } from "@unified-api/typescript-sdk/funcs/projectListTaskProjects.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -776,14 +776,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskListTaskProjects(unifiedTo, {
+  const res = await projectListTaskProjects(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskListTaskProjects failed:", res.error);
+    console.log("projectListTaskProjects failed:", res.error);
   }
 }
 
@@ -1002,7 +1002,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskPatchTaskProject } from "@unified-api/typescript-sdk/funcs/taskPatchTaskProject.js";
+import { projectPatchTaskProject } from "@unified-api/typescript-sdk/funcs/projectPatchTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1013,7 +1013,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskPatchTaskProject(unifiedTo, {
+  const res = await projectPatchTaskProject(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1022,7 +1022,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskPatchTaskProject failed:", res.error);
+    console.log("projectPatchTaskProject failed:", res.error);
   }
 }
 
@@ -1242,7 +1242,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskRemoveTaskProject } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskProject.js";
+import { projectRemoveTaskProject } from "@unified-api/typescript-sdk/funcs/projectRemoveTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1253,7 +1253,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskRemoveTaskProject(unifiedTo, {
+  const res = await projectRemoveTaskProject(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1261,7 +1261,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskRemoveTaskProject failed:", res.error);
+    console.log("projectRemoveTaskProject failed:", res.error);
   }
 }
 
@@ -1482,7 +1482,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskUpdateTaskProject } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskProject.js";
+import { projectUpdateTaskProject } from "@unified-api/typescript-sdk/funcs/projectUpdateTaskProject.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1493,7 +1493,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskUpdateTaskProject(unifiedTo, {
+  const res = await projectUpdateTaskProject(unifiedTo, {
     taskProject: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1502,7 +1502,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskUpdateTaskProject failed:", res.error);
+    console.log("projectUpdateTaskProject failed:", res.error);
   }
 }
 

@@ -11,12 +11,16 @@ import { accountingCreateAccountingExpense } from "../funcs/accountingCreateAcco
 import { accountingCreateAccountingInvoice } from "../funcs/accountingCreateAccountingInvoice.js";
 import { accountingCreateAccountingJournal } from "../funcs/accountingCreateAccountingJournal.js";
 import { accountingCreateAccountingOrder } from "../funcs/accountingCreateAccountingOrder.js";
+import { accountingCreateAccountingProject } from "../funcs/accountingCreateAccountingProject.js";
 import { accountingCreateAccountingPurchaseorder } from "../funcs/accountingCreateAccountingPurchaseorder.js";
+import { accountingCreateAccountingQuote } from "../funcs/accountingCreateAccountingQuote.js";
 import { accountingCreateAccountingSalesorder } from "../funcs/accountingCreateAccountingSalesorder.js";
 import { accountingCreateAccountingTaxrate } from "../funcs/accountingCreateAccountingTaxrate.js";
 import { accountingCreateAccountingTransaction } from "../funcs/accountingCreateAccountingTransaction.js";
 import { accountingCreateAccountingVendorcredit } from "../funcs/accountingCreateAccountingVendorcredit.js";
 import { accountingGetAccountingAccount } from "../funcs/accountingGetAccountingAccount.js";
+import { accountingGetAccountingAgedpayable } from "../funcs/accountingGetAccountingAgedpayable.js";
+import { accountingGetAccountingAgedreceivable } from "../funcs/accountingGetAccountingAgedreceivable.js";
 import { accountingGetAccountingBalancesheet } from "../funcs/accountingGetAccountingBalancesheet.js";
 import { accountingGetAccountingBill } from "../funcs/accountingGetAccountingBill.js";
 import { accountingGetAccountingCashflow } from "../funcs/accountingGetAccountingCashflow.js";
@@ -29,7 +33,9 @@ import { accountingGetAccountingJournal } from "../funcs/accountingGetAccounting
 import { accountingGetAccountingOrder } from "../funcs/accountingGetAccountingOrder.js";
 import { accountingGetAccountingOrganization } from "../funcs/accountingGetAccountingOrganization.js";
 import { accountingGetAccountingProfitloss } from "../funcs/accountingGetAccountingProfitloss.js";
+import { accountingGetAccountingProject } from "../funcs/accountingGetAccountingProject.js";
 import { accountingGetAccountingPurchaseorder } from "../funcs/accountingGetAccountingPurchaseorder.js";
+import { accountingGetAccountingQuote } from "../funcs/accountingGetAccountingQuote.js";
 import { accountingGetAccountingReport } from "../funcs/accountingGetAccountingReport.js";
 import { accountingGetAccountingSalesorder } from "../funcs/accountingGetAccountingSalesorder.js";
 import { accountingGetAccountingTaxrate } from "../funcs/accountingGetAccountingTaxrate.js";
@@ -37,6 +43,8 @@ import { accountingGetAccountingTransaction } from "../funcs/accountingGetAccoun
 import { accountingGetAccountingTrialbalance } from "../funcs/accountingGetAccountingTrialbalance.js";
 import { accountingGetAccountingVendorcredit } from "../funcs/accountingGetAccountingVendorcredit.js";
 import { accountingListAccountingAccounts } from "../funcs/accountingListAccountingAccounts.js";
+import { accountingListAccountingAgedpayables } from "../funcs/accountingListAccountingAgedpayables.js";
+import { accountingListAccountingAgedreceivables } from "../funcs/accountingListAccountingAgedreceivables.js";
 import { accountingListAccountingBalancesheets } from "../funcs/accountingListAccountingBalancesheets.js";
 import { accountingListAccountingBills } from "../funcs/accountingListAccountingBills.js";
 import { accountingListAccountingCashflows } from "../funcs/accountingListAccountingCashflows.js";
@@ -49,7 +57,9 @@ import { accountingListAccountingJournals } from "../funcs/accountingListAccount
 import { accountingListAccountingOrders } from "../funcs/accountingListAccountingOrders.js";
 import { accountingListAccountingOrganizations } from "../funcs/accountingListAccountingOrganizations.js";
 import { accountingListAccountingProfitlosses } from "../funcs/accountingListAccountingProfitlosses.js";
+import { accountingListAccountingProjects } from "../funcs/accountingListAccountingProjects.js";
 import { accountingListAccountingPurchaseorders } from "../funcs/accountingListAccountingPurchaseorders.js";
+import { accountingListAccountingQuotes } from "../funcs/accountingListAccountingQuotes.js";
 import { accountingListAccountingReports } from "../funcs/accountingListAccountingReports.js";
 import { accountingListAccountingSalesorders } from "../funcs/accountingListAccountingSalesorders.js";
 import { accountingListAccountingTaxrates } from "../funcs/accountingListAccountingTaxrates.js";
@@ -65,7 +75,9 @@ import { accountingPatchAccountingExpense } from "../funcs/accountingPatchAccoun
 import { accountingPatchAccountingInvoice } from "../funcs/accountingPatchAccountingInvoice.js";
 import { accountingPatchAccountingJournal } from "../funcs/accountingPatchAccountingJournal.js";
 import { accountingPatchAccountingOrder } from "../funcs/accountingPatchAccountingOrder.js";
+import { accountingPatchAccountingProject } from "../funcs/accountingPatchAccountingProject.js";
 import { accountingPatchAccountingPurchaseorder } from "../funcs/accountingPatchAccountingPurchaseorder.js";
+import { accountingPatchAccountingQuote } from "../funcs/accountingPatchAccountingQuote.js";
 import { accountingPatchAccountingSalesorder } from "../funcs/accountingPatchAccountingSalesorder.js";
 import { accountingPatchAccountingTaxrate } from "../funcs/accountingPatchAccountingTaxrate.js";
 import { accountingPatchAccountingTransaction } from "../funcs/accountingPatchAccountingTransaction.js";
@@ -79,7 +91,9 @@ import { accountingRemoveAccountingExpense } from "../funcs/accountingRemoveAcco
 import { accountingRemoveAccountingInvoice } from "../funcs/accountingRemoveAccountingInvoice.js";
 import { accountingRemoveAccountingJournal } from "../funcs/accountingRemoveAccountingJournal.js";
 import { accountingRemoveAccountingOrder } from "../funcs/accountingRemoveAccountingOrder.js";
+import { accountingRemoveAccountingProject } from "../funcs/accountingRemoveAccountingProject.js";
 import { accountingRemoveAccountingPurchaseorder } from "../funcs/accountingRemoveAccountingPurchaseorder.js";
+import { accountingRemoveAccountingQuote } from "../funcs/accountingRemoveAccountingQuote.js";
 import { accountingRemoveAccountingSalesorder } from "../funcs/accountingRemoveAccountingSalesorder.js";
 import { accountingRemoveAccountingTaxrate } from "../funcs/accountingRemoveAccountingTaxrate.js";
 import { accountingRemoveAccountingTransaction } from "../funcs/accountingRemoveAccountingTransaction.js";
@@ -93,7 +107,9 @@ import { accountingUpdateAccountingExpense } from "../funcs/accountingUpdateAcco
 import { accountingUpdateAccountingInvoice } from "../funcs/accountingUpdateAccountingInvoice.js";
 import { accountingUpdateAccountingJournal } from "../funcs/accountingUpdateAccountingJournal.js";
 import { accountingUpdateAccountingOrder } from "../funcs/accountingUpdateAccountingOrder.js";
+import { accountingUpdateAccountingProject } from "../funcs/accountingUpdateAccountingProject.js";
 import { accountingUpdateAccountingPurchaseorder } from "../funcs/accountingUpdateAccountingPurchaseorder.js";
+import { accountingUpdateAccountingQuote } from "../funcs/accountingUpdateAccountingQuote.js";
 import { accountingUpdateAccountingSalesorder } from "../funcs/accountingUpdateAccountingSalesorder.js";
 import { accountingUpdateAccountingTaxrate } from "../funcs/accountingUpdateAccountingTaxrate.js";
 import { accountingUpdateAccountingTransaction } from "../funcs/accountingUpdateAccountingTransaction.js";
@@ -231,6 +247,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Create a project
+   */
+  async createAccountingProject(
+    request: operations.CreateAccountingProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingProject> {
+    return unwrapAsync(accountingCreateAccountingProject(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Create a purchaseorder
    */
   async createAccountingPurchaseorder(
@@ -238,6 +268,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingPurchaseorder> {
     return unwrapAsync(accountingCreateAccountingPurchaseorder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a quote
+   */
+  async createAccountingQuote(
+    request: operations.CreateAccountingQuoteRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingQuote> {
+    return unwrapAsync(accountingCreateAccountingQuote(
       this,
       request,
       options,
@@ -308,6 +352,34 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingAccount> {
     return unwrapAsync(accountingGetAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an agedpayable
+   */
+  async getAccountingAgedpayable(
+    request: operations.GetAccountingAgedpayableRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAgedpayable> {
+    return unwrapAsync(accountingGetAccountingAgedpayable(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an agedreceivable
+   */
+  async getAccountingAgedreceivable(
+    request: operations.GetAccountingAgedreceivableRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAgedreceivable> {
+    return unwrapAsync(accountingGetAccountingAgedreceivable(
       this,
       request,
       options,
@@ -483,6 +555,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Retrieve a project
+   */
+  async getAccountingProject(
+    request: operations.GetAccountingProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingProject> {
+    return unwrapAsync(accountingGetAccountingProject(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a purchaseorder
    */
   async getAccountingPurchaseorder(
@@ -490,6 +576,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingPurchaseorder> {
     return unwrapAsync(accountingGetAccountingPurchaseorder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a quote
+   */
+  async getAccountingQuote(
+    request: operations.GetAccountingQuoteRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingQuote> {
+    return unwrapAsync(accountingGetAccountingQuote(
       this,
       request,
       options,
@@ -588,6 +688,34 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AccountingAccount>> {
     return unwrapAsync(accountingListAccountingAccounts(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all agedpayables
+   */
+  async listAccountingAgedpayables(
+    request: operations.ListAccountingAgedpayablesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingAgedpayable>> {
+    return unwrapAsync(accountingListAccountingAgedpayables(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all agedreceivables
+   */
+  async listAccountingAgedreceivables(
+    request: operations.ListAccountingAgedreceivablesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingAgedreceivable>> {
+    return unwrapAsync(accountingListAccountingAgedreceivables(
       this,
       request,
       options,
@@ -763,6 +891,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * List all projects
+   */
+  async listAccountingProjects(
+    request: operations.ListAccountingProjectsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingProject>> {
+    return unwrapAsync(accountingListAccountingProjects(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all purchaseorders
    */
   async listAccountingPurchaseorders(
@@ -770,6 +912,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AccountingPurchaseorder>> {
     return unwrapAsync(accountingListAccountingPurchaseorders(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all quotes
+   */
+  async listAccountingQuotes(
+    request: operations.ListAccountingQuotesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingQuote>> {
+    return unwrapAsync(accountingListAccountingQuotes(
       this,
       request,
       options,
@@ -987,6 +1143,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Update a project
+   */
+  async patchAccountingProject(
+    request: operations.PatchAccountingProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingProject> {
+    return unwrapAsync(accountingPatchAccountingProject(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a purchaseorder
    */
   async patchAccountingPurchaseorder(
@@ -994,6 +1164,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingPurchaseorder> {
     return unwrapAsync(accountingPatchAccountingPurchaseorder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a quote
+   */
+  async patchAccountingQuote(
+    request: operations.PatchAccountingQuoteRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingQuote> {
+    return unwrapAsync(accountingPatchAccountingQuote(
       this,
       request,
       options,
@@ -1183,6 +1367,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Remove a project
+   */
+  async removeAccountingProject(
+    request: operations.RemoveAccountingProjectRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAccountingProjectResponse | undefined> {
+    return unwrapAsync(accountingRemoveAccountingProject(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a purchaseorder
    */
   async removeAccountingPurchaseorder(
@@ -1190,6 +1388,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveAccountingPurchaseorderResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingPurchaseorder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a quote
+   */
+  async removeAccountingQuote(
+    request: operations.RemoveAccountingQuoteRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAccountingQuoteResponse | undefined> {
+    return unwrapAsync(accountingRemoveAccountingQuote(
       this,
       request,
       options,
@@ -1379,6 +1591,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Update a project
+   */
+  async updateAccountingProject(
+    request: operations.UpdateAccountingProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingProject> {
+    return unwrapAsync(accountingUpdateAccountingProject(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a purchaseorder
    */
   async updateAccountingPurchaseorder(
@@ -1386,6 +1612,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingPurchaseorder> {
     return unwrapAsync(accountingUpdateAccountingPurchaseorder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a quote
+   */
+  async updateAccountingQuote(
+    request: operations.UpdateAccountingQuoteRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingQuote> {
+    return unwrapAsync(accountingUpdateAccountingQuote(
       this,
       request,
       options,

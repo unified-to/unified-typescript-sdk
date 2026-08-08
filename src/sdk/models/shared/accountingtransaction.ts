@@ -33,6 +33,7 @@ export type AccountingTransaction = {
   organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   paymentTerms?: string | undefined;
+  projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   splitAccountId?: string | undefined;
@@ -62,6 +63,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
   organization_id: z.string().optional(),
   payment_method: z.string().optional(),
   payment_terms: z.string().optional(),
+  project_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   split_account_id: z.string().optional(),
@@ -80,6 +82,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
     "organization_id": "organizationId",
     "payment_method": "paymentMethod",
     "payment_terms": "paymentTerms",
+    "project_id": "projectId",
     "split_account_id": "splitAccountId",
     "sub_total_amount": "subTotalAmount",
     "tax_amount": "taxAmount",
@@ -101,6 +104,7 @@ export type AccountingTransaction$Outbound = {
   organization_id?: string | undefined;
   payment_method?: string | undefined;
   payment_terms?: string | undefined;
+  project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   split_account_id?: string | undefined;
@@ -129,6 +133,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
   organizationId: z.string().optional(),
   paymentMethod: z.string().optional(),
   paymentTerms: z.string().optional(),
+  projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   splitAccountId: z.string().optional(),
@@ -146,6 +151,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
     organizationId: "organization_id",
     paymentMethod: "payment_method",
     paymentTerms: "payment_terms",
+    projectId: "project_id",
     splitAccountId: "split_account_id",
     subTotalAmount: "sub_total_amount",
     taxAmount: "tax_amount",

@@ -58,6 +58,7 @@ export type AccountingExpense = {
   organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   postedAt?: Date | undefined;
+  projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reimbursedAmount?: number | undefined;
   reimbursedAt?: Date | undefined;
@@ -107,6 +108,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   payment_method: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  project_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reimbursed_amount: z.number().optional(),
   reimbursed_at: z.string().datetime({ offset: true }).transform(v =>
@@ -132,6 +134,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
     "organization_id": "organizationId",
     "payment_method": "paymentMethod",
     "posted_at": "postedAt",
+    "project_id": "projectId",
     "reimbursed_amount": "reimbursedAmount",
     "reimbursed_at": "reimbursedAt",
     "tax_amount": "taxAmount",
@@ -158,6 +161,7 @@ export type AccountingExpense$Outbound = {
   organization_id?: string | undefined;
   payment_method?: string | undefined;
   posted_at?: string | undefined;
+  project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reimbursed_amount?: number | undefined;
   reimbursed_at?: string | undefined;
@@ -191,6 +195,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   organizationId: z.string().optional(),
   paymentMethod: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
+  projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reimbursedAmount: z.number().optional(),
   reimbursedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -213,6 +218,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
     organizationId: "organization_id",
     paymentMethod: "payment_method",
     postedAt: "posted_at",
+    projectId: "project_id",
     reimbursedAmount: "reimbursed_amount",
     reimbursedAt: "reimbursed_at",
     taxAmount: "tax_amount",

@@ -25,6 +25,7 @@ export const PatchStorageFileQueryParamFields = {
   Version: "version",
   WebUrl: "web_url",
   References: "references",
+  Tags: "tags",
   Raw: "raw",
 } as const;
 export type PatchStorageFileQueryParamFields = ClosedEnum<

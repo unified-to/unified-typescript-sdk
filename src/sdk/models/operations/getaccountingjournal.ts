@@ -20,6 +20,7 @@ export const GetAccountingJournalQueryParamFields = {
   Source: "source",
   OrganizationId: "organization_id",
   CategoryIds: "category_ids",
+  ProjectId: "project_id",
   Attachments: "attachments",
   Raw: "raw",
 } as const;
