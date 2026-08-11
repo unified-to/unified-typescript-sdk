@@ -168,6 +168,13 @@ export const ListCustomerId = {
 } as const;
 export type ListCustomerId = OpenEnum<typeof ListCustomerId>;
 
+export const ListCycleId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListCycleId = OpenEnum<typeof ListCycleId>;
+
 export const ListDatabaseId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -994,6 +1001,13 @@ export type VirtualWebhookCustomerId = OpenEnum<
   typeof VirtualWebhookCustomerId
 >;
 
+export const VirtualWebhookCycleId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookCycleId = OpenEnum<typeof VirtualWebhookCycleId>;
+
 export const VirtualWebhookDatabaseId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1367,6 +1381,7 @@ export type IntegrationSupport = {
   listContentId?: ListContentId | undefined;
   listCourseId?: ListCourseId | undefined;
   listCustomerId?: ListCustomerId | undefined;
+  listCycleId?: ListCycleId | undefined;
   listDatabaseId?: ListDatabaseId | undefined;
   listDealId?: ListDealId | undefined;
   listDimension?: ListDimension | undefined;
@@ -1490,6 +1505,7 @@ export type IntegrationSupport = {
   virtualWebhookContactId?: VirtualWebhookContactId | undefined;
   virtualWebhookCourseId?: VirtualWebhookCourseId | undefined;
   virtualWebhookCustomerId?: VirtualWebhookCustomerId | undefined;
+  virtualWebhookCycleId?: VirtualWebhookCycleId | undefined;
   virtualWebhookDatabaseId?: VirtualWebhookDatabaseId | undefined;
   virtualWebhookDealId?: VirtualWebhookDealId | undefined;
   virtualWebhookEndLt?: VirtualWebhookEndLt | undefined;
@@ -1693,6 +1709,13 @@ export const ListCustomerId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListCustomerId);
+
+/** @internal */
+export const ListCycleId$inboundSchema: z.ZodType<
+  ListCycleId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListCycleId);
 
 /** @internal */
 export const ListDatabaseId$inboundSchema: z.ZodType<
@@ -2507,6 +2530,13 @@ export const VirtualWebhookCustomerId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookCustomerId);
 
 /** @internal */
+export const VirtualWebhookCycleId$inboundSchema: z.ZodType<
+  VirtualWebhookCycleId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookCycleId);
+
+/** @internal */
 export const VirtualWebhookDatabaseId$inboundSchema: z.ZodType<
   VirtualWebhookDatabaseId,
   z.ZodTypeDef,
@@ -2864,6 +2894,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_content_id: ListContentId$inboundSchema.optional(),
   list_course_id: ListCourseId$inboundSchema.optional(),
   list_customer_id: ListCustomerId$inboundSchema.optional(),
+  list_cycle_id: ListCycleId$inboundSchema.optional(),
   list_database_id: ListDatabaseId$inboundSchema.optional(),
   list_deal_id: ListDealId$inboundSchema.optional(),
   list_dimension: ListDimension$inboundSchema.optional(),
@@ -2991,6 +3022,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_course_id: VirtualWebhookCourseId$inboundSchema.optional(),
   virtual_webhook_customer_id: VirtualWebhookCustomerId$inboundSchema
     .optional(),
+  virtual_webhook_cycle_id: VirtualWebhookCycleId$inboundSchema.optional(),
   virtual_webhook_database_id: VirtualWebhookDatabaseId$inboundSchema
     .optional(),
   virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
@@ -3075,6 +3107,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_content_id": "listContentId",
     "list_course_id": "listCourseId",
     "list_customer_id": "listCustomerId",
+    "list_cycle_id": "listCycleId",
     "list_database_id": "listDatabaseId",
     "list_deal_id": "listDealId",
     "list_dimension": "listDimension",
@@ -3194,6 +3227,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_contact_id": "virtualWebhookContactId",
     "virtual_webhook_course_id": "virtualWebhookCourseId",
     "virtual_webhook_customer_id": "virtualWebhookCustomerId",
+    "virtual_webhook_cycle_id": "virtualWebhookCycleId",
     "virtual_webhook_database_id": "virtualWebhookDatabaseId",
     "virtual_webhook_deal_id": "virtualWebhookDealId",
     "virtual_webhook_end_lt": "virtualWebhookEndLt",

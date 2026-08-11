@@ -12,6 +12,8 @@ export const PropertyHrisEmployeeEmployeeRoles = {
   Recruiter: "RECRUITER",
   Salesrep: "SALESREP",
   Interviewer: "INTERVIEWER",
+  User: "USER",
+  Employee: "EMPLOYEE",
 } as const;
 export type PropertyHrisEmployeeEmployeeRoles = OpenEnum<
   typeof PropertyHrisEmployeeEmployeeRoles

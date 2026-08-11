@@ -13,5 +13,5 @@ let value: PropertyHrisEmployeeEmployeeRoles = "MANAGER";
 ## Values
 
 ```typescript
-"ADMIN" | "MANAGER" | "RECRUITER" | "SALESREP" | "INTERVIEWER" | Unrecognized<string>
+"ADMIN" | "MANAGER" | "RECRUITER" | "SALESREP" | "INTERVIEWER" | "USER" | "EMPLOYEE" | Unrecognized<string>
 ```

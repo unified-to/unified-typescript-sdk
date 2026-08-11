@@ -58,7 +58,6 @@ export type ListAccountingProjectsRequest = {
    * Fields to return
    */
   fields?: Array<ListAccountingProjectsQueryParamFields> | undefined;
-  isActive?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -97,7 +96,6 @@ export type ListAccountingProjectsRequest$Outbound = {
   connection_id: string;
   contact_id?: string | undefined;
   fields?: Array<string> | undefined;
-  is_active?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -120,7 +118,6 @@ export const ListAccountingProjectsRequest$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   fields: z.array(ListAccountingProjectsQueryParamFields$outboundSchema)
     .optional(),
-  isActive: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -135,7 +132,6 @@ export const ListAccountingProjectsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     connectionId: "connection_id",
     contactId: "contact_id",
-    isActive: "is_active",
     orgId: "org_id",
     parentId: "parent_id",
     updatedGte: "updated_gte",

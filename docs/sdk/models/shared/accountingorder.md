@@ -1,5 +1,7 @@
 # AccountingOrder
 
+@deprecated; use AccountingSalesorder or AccountingPurchaseorder
+
 ## Example Usage
 
 ```typescript

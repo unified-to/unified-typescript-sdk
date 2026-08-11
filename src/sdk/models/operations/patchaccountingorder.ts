@@ -29,6 +29,9 @@ export type PatchAccountingOrderQueryParamFields = ClosedEnum<
 >;
 
 export type PatchAccountingOrderRequest = {
+  /**
+   * @deprecated; use AccountingSalesorder or AccountingPurchaseorder
+   */
   accountingOrder: shared.AccountingOrder;
   /**
    * ID of the connection

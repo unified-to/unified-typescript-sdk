@@ -9,7 +9,7 @@ let value: PatchUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "repo_pullrequest",
+    objectType: "calendar_event",
   },
   id: "<id>",
 };

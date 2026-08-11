@@ -51,6 +51,7 @@ import { Creative } from "./creative.js";
 import { Creditmemo } from "./creditmemo.js";
 import { Crm } from "./crm.js";
 import { Customer } from "./customer.js";
+import { Cycle } from "./cycle.js";
 import { Database } from "./database.js";
 import { Datastore } from "./datastore.js";
 import { Deal } from "./deal.js";
@@ -64,10 +65,12 @@ import { Enrich } from "./enrich.js";
 import { Environment } from "./environment.js";
 import { Event } from "./event.js";
 import { Expense } from "./expense.js";
+import { Feedback } from "./feedback.js";
 import { FileT } from "./file.js";
 import { Form } from "./form.js";
 import { Forms } from "./forms.js";
 import { Genai } from "./genai.js";
+import { Goal } from "./goal.js";
 import { Group } from "./group.js";
 import { Hris } from "./hris.js";
 import { Insertionorder } from "./insertionorder.js";
@@ -104,6 +107,7 @@ import { Passthrough } from "./passthrough.js";
 import { Payment } from "./payment.js";
 import { Payout } from "./payout.js";
 import { Payslip } from "./payslip.js";
+import { Performance } from "./performance.js";
 import { Person } from "./person.js";
 import { Picklist } from "./picklist.js";
 import { Pipeline } from "./pipeline.js";
@@ -786,6 +790,26 @@ export class UnifiedTo extends ClientSDK {
   private _subscription?: Subscription;
   get subscription(): Subscription {
     return (this._subscription ??= new Subscription(this._options));
+  }
+
+  private _performance?: Performance;
+  get performance(): Performance {
+    return (this._performance ??= new Performance(this._options));
+  }
+
+  private _cycle?: Cycle;
+  get cycle(): Cycle {
+    return (this._cycle ??= new Cycle(this._options));
+  }
+
+  private _feedback?: Feedback;
+  get feedback(): Feedback {
+    return (this._feedback ??= new Feedback(this._options));
+  }
+
+  private _goal?: Goal;
+  get goal(): Goal {
+    return (this._goal ??= new Goal(this._options));
   }
 
   private _repo?: Repo;

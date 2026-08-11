@@ -29,6 +29,9 @@ export type CreateAccountingOrderQueryParamFields = ClosedEnum<
 >;
 
 export type CreateAccountingOrderRequest = {
+  /**
+   * @deprecated; use AccountingSalesorder or AccountingPurchaseorder
+   */
   accountingOrder: shared.AccountingOrder;
   /**
    * ID of the connection

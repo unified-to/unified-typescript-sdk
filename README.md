@@ -1752,6 +1752,28 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`paymentUpdatePaymentPayment`](docs/sdks/payment/README.md#updatepaymentpayment) - Update a payment
 - [`paymentUpdatePaymentSubscription`](docs/sdks/payment/README.md#updatepaymentsubscription) - Update a subscription
 - [`paymentUpdatePaymentSubscription`](docs/sdks/subscription/README.md#updatepaymentsubscription) - Update a subscription
+- [`performanceCreatePerformanceFeedback`](docs/sdks/feedback/README.md#createperformancefeedback) - Create a feedback
+- [`performanceCreatePerformanceFeedback`](docs/sdks/performance/README.md#createperformancefeedback) - Create a feedback
+- [`performanceCreatePerformanceGoal`](docs/sdks/goal/README.md#createperformancegoal) - Create a goal
+- [`performanceCreatePerformanceGoal`](docs/sdks/performance/README.md#createperformancegoal) - Create a goal
+- [`performanceGetPerformanceCycle`](docs/sdks/cycle/README.md#getperformancecycle) - Retrieve a cycle
+- [`performanceGetPerformanceCycle`](docs/sdks/performance/README.md#getperformancecycle) - Retrieve a cycle
+- [`performanceGetPerformanceFeedback`](docs/sdks/feedback/README.md#getperformancefeedback) - Retrieve a feedback
+- [`performanceGetPerformanceFeedback`](docs/sdks/performance/README.md#getperformancefeedback) - Retrieve a feedback
+- [`performanceGetPerformanceGoal`](docs/sdks/goal/README.md#getperformancegoal) - Retrieve a goal
+- [`performanceGetPerformanceGoal`](docs/sdks/performance/README.md#getperformancegoal) - Retrieve a goal
+- [`performanceListPerformanceCycles`](docs/sdks/cycle/README.md#listperformancecycles) - List all cycles
+- [`performanceListPerformanceCycles`](docs/sdks/performance/README.md#listperformancecycles) - List all cycles
+- [`performanceListPerformanceFeedbacks`](docs/sdks/feedback/README.md#listperformancefeedbacks) - List all feedbacks
+- [`performanceListPerformanceFeedbacks`](docs/sdks/performance/README.md#listperformancefeedbacks) - List all feedbacks
+- [`performanceListPerformanceGoals`](docs/sdks/goal/README.md#listperformancegoals) - List all goals
+- [`performanceListPerformanceGoals`](docs/sdks/performance/README.md#listperformancegoals) - List all goals
+- [`performancePatchPerformanceGoal`](docs/sdks/goal/README.md#patchperformancegoal) - Update a goal
+- [`performancePatchPerformanceGoal`](docs/sdks/performance/README.md#patchperformancegoal) - Update a goal
+- [`performanceRemovePerformanceGoal`](docs/sdks/goal/README.md#removeperformancegoal) - Remove a goal
+- [`performanceRemovePerformanceGoal`](docs/sdks/performance/README.md#removeperformancegoal) - Remove a goal
+- [`performanceUpdatePerformanceGoal`](docs/sdks/goal/README.md#updateperformancegoal) - Update a goal
+- [`performanceUpdatePerformanceGoal`](docs/sdks/performance/README.md#updateperformancegoal) - Update a goal
 - [`projectCreateTaskProject`](docs/sdks/project/README.md#createtaskproject) - Create a project
 - [`projectCreateTaskProject`](docs/sdks/task/README.md#createtaskproject) - Create a project
 - [`projectGetTaskProject`](docs/sdks/project/README.md#gettaskproject) - Retrieve a project
@@ -1830,6 +1852,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoUpdateRepoPullrequest`](docs/sdks/repo/README.md#updaterepopullrequest) - Update a pullrequest
 - [`repoUpdateRepoRepository`](docs/sdks/repo/README.md#updatereporepository) - Update a repository
 - [`repoUpdateRepoRepository`](docs/sdks/repository/README.md#updatereporepository) - Update a repository
+- [`reviewGetPerformanceReview`](docs/sdks/performance/README.md#getperformancereview) - Retrieve a review
+- [`reviewGetPerformanceReview`](docs/sdks/review/README.md#getperformancereview) - Retrieve a review
+- [`reviewListPerformanceReviews`](docs/sdks/performance/README.md#listperformancereviews) - List all reviews
+- [`reviewListPerformanceReviews`](docs/sdks/review/README.md#listperformancereviews) - List all reviews
 - [`scimCreateScimUsers`](docs/sdks/scim/README.md#createscimusers) - Create user
 - [`scimCreateScimUsers`](docs/sdks/user/README.md#createscimusers) - Create user
 - [`scimGetScimUsers`](docs/sdks/scim/README.md#getscimusers) - Get user

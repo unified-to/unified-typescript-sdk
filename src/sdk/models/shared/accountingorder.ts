@@ -47,6 +47,9 @@ export const AccountingOrderType = {
 } as const;
 export type AccountingOrderType = OpenEnum<typeof AccountingOrderType>;
 
+/**
+ * @deprecated; use AccountingSalesorder or AccountingPurchaseorder
+ */
 export type AccountingOrder = {
   accountId?: string | undefined;
   billingAddress?: PropertyAccountingOrderBillingAddress | undefined;

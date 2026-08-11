@@ -8,6 +8,8 @@ import { commerceListCommerceReviews } from "../funcs/commerceListCommerceReview
 import { commercePatchCommerceReview } from "../funcs/commercePatchCommerceReview.js";
 import { commerceRemoveCommerceReview } from "../funcs/commerceRemoveCommerceReview.js";
 import { commerceUpdateCommerceReview } from "../funcs/commerceUpdateCommerceReview.js";
+import { reviewGetPerformanceReview } from "../funcs/reviewGetPerformanceReview.js";
+import { reviewListPerformanceReviews } from "../funcs/reviewListPerformanceReviews.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -43,6 +45,20 @@ export class Review extends ClientSDK {
   }
 
   /**
+   * Retrieve a review
+   */
+  async getPerformanceReview(
+    request: operations.GetPerformanceReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PerformanceReview> {
+    return unwrapAsync(reviewGetPerformanceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all reviews
    */
   async listCommerceReviews(
@@ -50,6 +66,20 @@ export class Review extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CommerceReview>> {
     return unwrapAsync(commerceListCommerceReviews(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all reviews
+   */
+  async listPerformanceReviews(
+    request: operations.ListPerformanceReviewsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PerformanceReview>> {
+    return unwrapAsync(reviewListPerformanceReviews(
       this,
       request,
       options,

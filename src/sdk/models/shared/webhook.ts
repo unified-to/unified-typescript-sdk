@@ -190,6 +190,10 @@ export const WebhookObjectType = {
   CdpSource: "cdp_source",
   CdpDestination: "cdp_destination",
   CdpActivation: "cdp_activation",
+  PerformanceCycle: "performance_cycle",
+  PerformanceReview: "performance_review",
+  PerformanceGoal: "performance_goal",
+  PerformanceFeedback: "performance_feedback",
 } as const;
 export type WebhookObjectType = OpenEnum<typeof WebhookObjectType>;
 
