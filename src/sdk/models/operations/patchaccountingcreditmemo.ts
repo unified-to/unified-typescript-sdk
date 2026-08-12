@@ -37,6 +37,7 @@ export const PatchAccountingCreditmemoQueryParamFields = {
   OrganizationId: "organization_id",
   ApplyAmount: "apply_amount",
   Applications: "applications",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAccountingCreditmemoQueryParamFields = ClosedEnum<

@@ -22,6 +22,7 @@ export const PatchAccountingPurchaseorderQueryParamFields = {
   Lineitems: "lineitems",
   OrganizationId: "organization_id",
   CategoryIds: "category_ids",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAccountingPurchaseorderQueryParamFields = ClosedEnum<

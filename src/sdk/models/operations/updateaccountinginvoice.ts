@@ -41,6 +41,7 @@ export const UpdateAccountingInvoiceQueryParamFields = {
   Payments: "payments",
   CategoryIds: "category_ids",
   ProjectId: "project_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateAccountingInvoiceQueryParamFields = ClosedEnum<

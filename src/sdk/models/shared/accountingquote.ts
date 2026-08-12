@@ -16,6 +16,12 @@ import {
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
+import {
   AccountingTransactionContact,
   AccountingTransactionContact$inboundSchema,
   AccountingTransactionContact$Outbound,
@@ -82,6 +88,7 @@ export type AccountingQuote = {
   issuedAt?: Date | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   memo?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
   paymentTerms?: AccountingQuotePaymentTerms | undefined;
   projectId?: string | undefined;
@@ -161,6 +168,7 @@ export const AccountingQuote$inboundSchema: z.ZodType<
     .optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   memo: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   organization_id: z.string().optional(),
   payment_terms: AccountingQuotePaymentTerms$inboundSchema.optional(),
   project_id: z.string().optional(),
@@ -224,6 +232,7 @@ export type AccountingQuote$Outbound = {
   issued_at?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   memo?: string | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   organization_id?: string | undefined;
   payment_terms?: string | undefined;
   project_id?: string | undefined;
@@ -265,6 +274,7 @@ export const AccountingQuote$outboundSchema: z.ZodType<
   issuedAt: z.date().transform(v => v.toISOString()).optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   memo: z.string().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   organizationId: z.string().optional(),
   paymentTerms: AccountingQuotePaymentTerms$outboundSchema.optional(),
   projectId: z.string().optional(),

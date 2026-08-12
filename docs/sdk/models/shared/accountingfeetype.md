@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingFeeType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingFeeType = "DISCOUNT";
+let value: AccountingFeeType = "PROMOTION";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AccountingFeeType = "DISCOUNT";
 ## Values
 
 ```typescript
-"TAX" | "DISCOUNT" | "PROMOTION" | "SHIPPING" | "GIFT_WRAP" | "COD" | "SURCHARGE" | "OTHER" | Unrecognized<string>
+"TAX" | "DISCOUNT" | "PROMOTION" | "SHIPPING" | "GIFT_WRAP" | "COD" | "SURCHARGE" | "TIP" | "SERVICE_CHARGE" | "OTHER" | Unrecognized<string>
 ```

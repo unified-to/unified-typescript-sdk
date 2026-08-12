@@ -7,7 +7,7 @@ import { AccountingFee } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AccountingFee = {
   amount: 4261.46,
-  type: "COD",
+  type: "TIP",
 };
 ```
 

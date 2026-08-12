@@ -16,6 +16,12 @@ import {
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
+import {
   PropertyAccountingPurchaseorderBillingAddress,
   PropertyAccountingPurchaseorderBillingAddress$inboundSchema,
   PropertyAccountingPurchaseorderBillingAddress$Outbound,
@@ -38,6 +44,9 @@ export const AccountingPurchaseorderStatus = {
   Refunded: "REFUNDED",
   Submitted: "SUBMITTED",
   Deleted: "DELETED",
+  Open: "OPEN",
+  Completed: "COMPLETED",
+  Canceled: "CANCELED",
 } as const;
 export type AccountingPurchaseorderStatus = OpenEnum<
   typeof AccountingPurchaseorderStatus
@@ -52,6 +61,7 @@ export type AccountingPurchaseorder = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -90,6 +100,7 @@ export const AccountingPurchaseorder$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -126,6 +137,7 @@ export type AccountingPurchaseorder$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   organization_id?: string | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -152,6 +164,7 @@ export const AccountingPurchaseorder$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),

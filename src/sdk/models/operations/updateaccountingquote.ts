@@ -40,6 +40,7 @@ export const UpdateAccountingQuoteQueryParamFields = {
   CategoryIds: "category_ids",
   Url: "url",
   OrganizationId: "organization_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateAccountingQuoteQueryParamFields = ClosedEnum<

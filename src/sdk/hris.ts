@@ -20,6 +20,7 @@ import { groupListHrisGroups } from "../funcs/groupListHrisGroups.js";
 import { groupPatchHrisGroup } from "../funcs/groupPatchHrisGroup.js";
 import { groupRemoveHrisGroup } from "../funcs/groupRemoveHrisGroup.js";
 import { groupUpdateHrisGroup } from "../funcs/groupUpdateHrisGroup.js";
+import { hrisCreateHrisAttendance } from "../funcs/hrisCreateHrisAttendance.js";
 import { hrisCreateHrisBankaccount } from "../funcs/hrisCreateHrisBankaccount.js";
 import { hrisCreateHrisBenefit } from "../funcs/hrisCreateHrisBenefit.js";
 import { hrisCreateHrisDeduction } from "../funcs/hrisCreateHrisDeduction.js";
@@ -27,6 +28,7 @@ import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
 import { hrisCreateHrisTimeoff } from "../funcs/hrisCreateHrisTimeoff.js";
 import { hrisCreateHrisTimeshift } from "../funcs/hrisCreateHrisTimeshift.js";
+import { hrisGetHrisAttendance } from "../funcs/hrisGetHrisAttendance.js";
 import { hrisGetHrisBankaccount } from "../funcs/hrisGetHrisBankaccount.js";
 import { hrisGetHrisBenefit } from "../funcs/hrisGetHrisBenefit.js";
 import { hrisGetHrisDeduction } from "../funcs/hrisGetHrisDeduction.js";
@@ -36,6 +38,7 @@ import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
 import { hrisGetHrisTaxonomy } from "../funcs/hrisGetHrisTaxonomy.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
+import { hrisListHrisAttendances } from "../funcs/hrisListHrisAttendances.js";
 import { hrisListHrisBankaccounts } from "../funcs/hrisListHrisBankaccounts.js";
 import { hrisListHrisBenefits } from "../funcs/hrisListHrisBenefits.js";
 import { hrisListHrisDeductions } from "../funcs/hrisListHrisDeductions.js";
@@ -45,6 +48,7 @@ import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
 import { hrisListHrisTaxonomies } from "../funcs/hrisListHrisTaxonomies.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
+import { hrisPatchHrisAttendance } from "../funcs/hrisPatchHrisAttendance.js";
 import { hrisPatchHrisBankaccount } from "../funcs/hrisPatchHrisBankaccount.js";
 import { hrisPatchHrisBenefit } from "../funcs/hrisPatchHrisBenefit.js";
 import { hrisPatchHrisDeduction } from "../funcs/hrisPatchHrisDeduction.js";
@@ -52,6 +56,7 @@ import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
 import { hrisPatchHrisTimeoff } from "../funcs/hrisPatchHrisTimeoff.js";
 import { hrisPatchHrisTimeshift } from "../funcs/hrisPatchHrisTimeshift.js";
+import { hrisRemoveHrisAttendance } from "../funcs/hrisRemoveHrisAttendance.js";
 import { hrisRemoveHrisBankaccount } from "../funcs/hrisRemoveHrisBankaccount.js";
 import { hrisRemoveHrisBenefit } from "../funcs/hrisRemoveHrisBenefit.js";
 import { hrisRemoveHrisDeduction } from "../funcs/hrisRemoveHrisDeduction.js";
@@ -59,6 +64,7 @@ import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
 import { hrisRemoveHrisTimeoff } from "../funcs/hrisRemoveHrisTimeoff.js";
 import { hrisRemoveHrisTimeshift } from "../funcs/hrisRemoveHrisTimeshift.js";
+import { hrisUpdateHrisAttendance } from "../funcs/hrisUpdateHrisAttendance.js";
 import { hrisUpdateHrisBankaccount } from "../funcs/hrisUpdateHrisBankaccount.js";
 import { hrisUpdateHrisBenefit } from "../funcs/hrisUpdateHrisBenefit.js";
 import { hrisUpdateHrisDeduction } from "../funcs/hrisUpdateHrisDeduction.js";
@@ -78,6 +84,20 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Hris extends ClientSDK {
+  /**
+   * Create an attendance
+   */
+  async createHrisAttendance(
+    request: operations.CreateHrisAttendanceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisAttendance> {
+    return unwrapAsync(hrisCreateHrisAttendance(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Create a bankaccount
    */
@@ -226,6 +246,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisTimeshift> {
     return unwrapAsync(hrisCreateHrisTimeshift(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an attendance
+   */
+  async getHrisAttendance(
+    request: operations.GetHrisAttendanceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisAttendance> {
+    return unwrapAsync(hrisGetHrisAttendance(
       this,
       request,
       options,
@@ -415,6 +449,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all attendances
+   */
+  async listHrisAttendances(
+    request: operations.ListHrisAttendancesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisAttendance>> {
+    return unwrapAsync(hrisListHrisAttendances(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all bankaccounts
    */
   async listHrisBankaccounts(
@@ -597,6 +645,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update an attendance
+   */
+  async patchHrisAttendance(
+    request: operations.PatchHrisAttendanceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisAttendance> {
+    return unwrapAsync(hrisPatchHrisAttendance(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a bankaccount
    */
   async patchHrisBankaccount(
@@ -751,6 +813,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove an attendance
+   */
+  async removeHrisAttendance(
+    request: operations.RemoveHrisAttendanceRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisAttendanceResponse | undefined> {
+    return unwrapAsync(hrisRemoveHrisAttendance(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a bankaccount
    */
   async removeHrisBankaccount(
@@ -898,6 +974,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveHrisTimeshiftResponse | undefined> {
     return unwrapAsync(hrisRemoveHrisTimeshift(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an attendance
+   */
+  async updateHrisAttendance(
+    request: operations.UpdateHrisAttendanceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisAttendance> {
+    return unwrapAsync(hrisUpdateHrisAttendance(
       this,
       request,
       options,

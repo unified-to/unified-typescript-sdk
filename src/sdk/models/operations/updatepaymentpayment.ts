@@ -23,8 +23,17 @@ export const UpdatePaymentPaymentQueryParamFields = {
   AccountId: "account_id",
   Reference: "reference",
   OrganizationId: "organization_id",
-  Raw: "raw",
   Allocations: "allocations",
+  Status: "status",
+  SalesorderId: "salesorder_id",
+  TenderType: "tender_type",
+  TipAmount: "tip_amount",
+  FeeAmount: "fee_amount",
+  LocationId: "location_id",
+  DeviceId: "device_id",
+  CardBrand: "card_brand",
+  CardLast4: "card_last4",
+  Raw: "raw",
 } as const;
 export type UpdatePaymentPaymentQueryParamFields = ClosedEnum<
   typeof UpdatePaymentPaymentQueryParamFields

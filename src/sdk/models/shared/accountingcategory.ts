@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 export const AccountingCategoryType = {
   Class: "CLASS",
@@ -28,6 +34,7 @@ export type AccountingCategory = {
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   parentId?: string | undefined;
@@ -61,6 +68,7 @@ export const AccountingCategory$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   parent_id: z.string().optional(),
@@ -84,6 +92,7 @@ export type AccountingCategory$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   parent_id?: string | undefined;
@@ -103,6 +112,7 @@ export const AccountingCategory$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   parentId: z.string().optional(),

@@ -18,6 +18,7 @@ export const PatchAccountingCategoryQueryParamFields = {
   Type: "type",
   Code: "code",
   OrganizationId: "organization_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAccountingCategoryQueryParamFields = ClosedEnum<

@@ -1408,6 +1408,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`groupUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 - [`groupUpdateScimGroups`](docs/sdks/group/README.md#updatescimgroups) - Update group
 - [`groupUpdateScimGroups`](docs/sdks/scim/README.md#updatescimgroups) - Update group
+- [`hrisCreateHrisAttendance`](docs/sdks/attendance/README.md#createhrisattendance) - Create an attendance
+- [`hrisCreateHrisAttendance`](docs/sdks/hris/README.md#createhrisattendance) - Create an attendance
 - [`hrisCreateHrisBankaccount`](docs/sdks/bankaccount/README.md#createhrisbankaccount) - Create a bankaccount
 - [`hrisCreateHrisBankaccount`](docs/sdks/hris/README.md#createhrisbankaccount) - Create a bankaccount
 - [`hrisCreateHrisBenefit`](docs/sdks/benefit/README.md#createhrisbenefit) - Create a benefit
@@ -1422,6 +1424,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisCreateHrisTimeoff`](docs/sdks/timeoff/README.md#createhristimeoff) - Create a timeoff
 - [`hrisCreateHrisTimeshift`](docs/sdks/hris/README.md#createhristimeshift) - Create a timeshift
 - [`hrisCreateHrisTimeshift`](docs/sdks/timeshift/README.md#createhristimeshift) - Create a timeshift
+- [`hrisGetHrisAttendance`](docs/sdks/attendance/README.md#gethrisattendance) - Retrieve an attendance
+- [`hrisGetHrisAttendance`](docs/sdks/hris/README.md#gethrisattendance) - Retrieve an attendance
 - [`hrisGetHrisBankaccount`](docs/sdks/bankaccount/README.md#gethrisbankaccount) - Retrieve a bankaccount
 - [`hrisGetHrisBankaccount`](docs/sdks/hris/README.md#gethrisbankaccount) - Retrieve a bankaccount
 - [`hrisGetHrisBenefit`](docs/sdks/benefit/README.md#gethrisbenefit) - Retrieve a benefit
@@ -1440,6 +1444,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisTimeoff`](docs/sdks/timeoff/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeshift`](docs/sdks/hris/README.md#gethristimeshift) - Retrieve a timeshift
 - [`hrisGetHrisTimeshift`](docs/sdks/timeshift/README.md#gethristimeshift) - Retrieve a timeshift
+- [`hrisListHrisAttendances`](docs/sdks/attendance/README.md#listhrisattendances) - List all attendances
+- [`hrisListHrisAttendances`](docs/sdks/hris/README.md#listhrisattendances) - List all attendances
 - [`hrisListHrisBankaccounts`](docs/sdks/bankaccount/README.md#listhrisbankaccounts) - List all bankaccounts
 - [`hrisListHrisBankaccounts`](docs/sdks/hris/README.md#listhrisbankaccounts) - List all bankaccounts
 - [`hrisListHrisBenefits`](docs/sdks/benefit/README.md#listhrisbenefits) - List all benefits
@@ -1458,6 +1464,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisTimeoffs`](docs/sdks/timeoff/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeshifts`](docs/sdks/hris/README.md#listhristimeshifts) - List all timeshifts
 - [`hrisListHrisTimeshifts`](docs/sdks/timeshift/README.md#listhristimeshifts) - List all timeshifts
+- [`hrisPatchHrisAttendance`](docs/sdks/attendance/README.md#patchhrisattendance) - Update an attendance
+- [`hrisPatchHrisAttendance`](docs/sdks/hris/README.md#patchhrisattendance) - Update an attendance
 - [`hrisPatchHrisBankaccount`](docs/sdks/bankaccount/README.md#patchhrisbankaccount) - Update a bankaccount
 - [`hrisPatchHrisBankaccount`](docs/sdks/hris/README.md#patchhrisbankaccount) - Update a bankaccount
 - [`hrisPatchHrisBenefit`](docs/sdks/benefit/README.md#patchhrisbenefit) - Update a benefit
@@ -1472,6 +1480,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisPatchHrisTimeoff`](docs/sdks/timeoff/README.md#patchhristimeoff) - Update a timeoff
 - [`hrisPatchHrisTimeshift`](docs/sdks/hris/README.md#patchhristimeshift) - Update a timeshift
 - [`hrisPatchHrisTimeshift`](docs/sdks/timeshift/README.md#patchhristimeshift) - Update a timeshift
+- [`hrisRemoveHrisAttendance`](docs/sdks/attendance/README.md#removehrisattendance) - Remove an attendance
+- [`hrisRemoveHrisAttendance`](docs/sdks/hris/README.md#removehrisattendance) - Remove an attendance
 - [`hrisRemoveHrisBankaccount`](docs/sdks/bankaccount/README.md#removehrisbankaccount) - Remove a bankaccount
 - [`hrisRemoveHrisBankaccount`](docs/sdks/hris/README.md#removehrisbankaccount) - Remove a bankaccount
 - [`hrisRemoveHrisBenefit`](docs/sdks/benefit/README.md#removehrisbenefit) - Remove a benefit
@@ -1486,6 +1496,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisRemoveHrisTimeoff`](docs/sdks/timeoff/README.md#removehristimeoff) - Remove a timeoff
 - [`hrisRemoveHrisTimeshift`](docs/sdks/hris/README.md#removehristimeshift) - Remove a timeshift
 - [`hrisRemoveHrisTimeshift`](docs/sdks/timeshift/README.md#removehristimeshift) - Remove a timeshift
+- [`hrisUpdateHrisAttendance`](docs/sdks/attendance/README.md#updatehrisattendance) - Update an attendance
+- [`hrisUpdateHrisAttendance`](docs/sdks/hris/README.md#updatehrisattendance) - Update an attendance
 - [`hrisUpdateHrisBankaccount`](docs/sdks/bankaccount/README.md#updatehrisbankaccount) - Update a bankaccount
 - [`hrisUpdateHrisBankaccount`](docs/sdks/hris/README.md#updatehrisbankaccount) - Update a bankaccount
 - [`hrisUpdateHrisBenefit`](docs/sdks/benefit/README.md#updatehrisbenefit) - Update a benefit

@@ -18,6 +18,7 @@ import { Applicationstatus } from "./applicationstatus.js";
 import { Assessment } from "./assessment.js";
 import { Asset } from "./asset.js";
 import { Ats } from "./ats.js";
+import { Attendance } from "./attendance.js";
 import { Auth } from "./auth.js";
 import { Availability } from "./availability.js";
 import { Balancesheet } from "./balancesheet.js";
@@ -640,6 +641,11 @@ export class UnifiedTo extends ClientSDK {
   private _hris?: Hris;
   get hris(): Hris {
     return (this._hris ??= new Hris(this._options));
+  }
+
+  private _attendance?: Attendance;
+  get attendance(): Attendance {
+    return (this._attendance ??= new Attendance(this._options));
   }
 
   private _bankaccount?: Bankaccount;

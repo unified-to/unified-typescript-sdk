@@ -16,6 +16,29 @@ import {
   PaymentAllocation$outboundSchema,
 } from "./paymentallocation.js";
 
+export const PaymentPaymentStatus = {
+  Succeeded: "SUCCEEDED",
+  Pending: "PENDING",
+  Authorized: "AUTHORIZED",
+  Failed: "FAILED",
+  Canceled: "CANCELED",
+} as const;
+export type PaymentPaymentStatus = OpenEnum<typeof PaymentPaymentStatus>;
+
+export const TenderType = {
+  Card: "CARD",
+  Cash: "CASH",
+  GiftCard: "GIFT_CARD",
+  BankTransfer: "BANK_TRANSFER",
+  Wallet: "WALLET",
+  Check: "CHECK",
+  StoreCredit: "STORE_CREDIT",
+  BuyNowPayLater: "BUY_NOW_PAY_LATER",
+  External: "EXTERNAL",
+  Other: "OTHER",
+} as const;
+export type TenderType = OpenEnum<typeof TenderType>;
+
 export const PaymentPaymentType = {
   Invoice: "INVOICE",
   Bill: "BILL",
@@ -29,21 +52,56 @@ export type PaymentPayment = {
    */
   allocations?: Array<PaymentAllocation> | undefined;
   billId?: string | undefined;
+  cardBrand?: string | undefined;
+  cardLast4?: string | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  deviceId?: string | undefined;
+  feeAmount?: number | undefined;
   id?: string | undefined;
   invoiceId?: string | undefined;
   linkId?: string | undefined;
+  locationId?: string | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
+  salesorderId?: string | undefined;
+  status?: PaymentPaymentStatus | undefined;
+  tenderType?: TenderType | undefined;
+  tipAmount?: number | undefined;
   totalAmount?: number | undefined;
   type?: PaymentPaymentType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const PaymentPaymentStatus$inboundSchema: z.ZodType<
+  PaymentPaymentStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PaymentPaymentStatus);
+/** @internal */
+export const PaymentPaymentStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  PaymentPaymentStatus
+> = openEnums.outboundSchema(PaymentPaymentStatus);
+
+/** @internal */
+export const TenderType$inboundSchema: z.ZodType<
+  TenderType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(TenderType);
+/** @internal */
+export const TenderType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  TenderType
+> = openEnums.outboundSchema(TenderType);
 
 /** @internal */
 export const PaymentPaymentType$inboundSchema: z.ZodType<
@@ -67,18 +125,27 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   account_id: z.string().optional(),
   allocations: z.array(PaymentAllocation$inboundSchema).optional(),
   bill_id: z.string().optional(),
+  card_brand: z.string().optional(),
+  card_last4: z.string().optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().default("USD"),
+  device_id: z.string().optional(),
+  fee_amount: z.number().optional(),
   id: z.string().optional(),
   invoice_id: z.string().optional(),
   link_id: z.string().optional(),
+  location_id: z.string().optional(),
   notes: z.string().optional(),
   organization_id: z.string().optional(),
   payment_method: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
+  salesorder_id: z.string().optional(),
+  status: PaymentPaymentStatus$inboundSchema.optional(),
+  tender_type: TenderType$inboundSchema.optional(),
+  tip_amount: z.number().optional(),
   total_amount: z.number().optional(),
   type: PaymentPaymentType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -87,12 +154,20 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   return remap$(v, {
     "account_id": "accountId",
     "bill_id": "billId",
+    "card_brand": "cardBrand",
+    "card_last4": "cardLast4",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "device_id": "deviceId",
+    "fee_amount": "feeAmount",
     "invoice_id": "invoiceId",
     "link_id": "linkId",
+    "location_id": "locationId",
     "organization_id": "organizationId",
     "payment_method": "paymentMethod",
+    "salesorder_id": "salesorderId",
+    "tender_type": "tenderType",
+    "tip_amount": "tipAmount",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
   });
@@ -102,17 +177,26 @@ export type PaymentPayment$Outbound = {
   account_id?: string | undefined;
   allocations?: Array<PaymentAllocation$Outbound> | undefined;
   bill_id?: string | undefined;
+  card_brand?: string | undefined;
+  card_last4?: string | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency: string;
+  device_id?: string | undefined;
+  fee_amount?: number | undefined;
   id?: string | undefined;
   invoice_id?: string | undefined;
   link_id?: string | undefined;
+  location_id?: string | undefined;
   notes?: string | undefined;
   organization_id?: string | undefined;
   payment_method?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
+  salesorder_id?: string | undefined;
+  status?: string | undefined;
+  tender_type?: string | undefined;
+  tip_amount?: number | undefined;
   total_amount?: number | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -127,17 +211,26 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   accountId: z.string().optional(),
   allocations: z.array(PaymentAllocation$outboundSchema).optional(),
   billId: z.string().optional(),
+  cardBrand: z.string().optional(),
+  cardLast4: z.string().optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().default("USD"),
+  deviceId: z.string().optional(),
+  feeAmount: z.number().optional(),
   id: z.string().optional(),
   invoiceId: z.string().optional(),
   linkId: z.string().optional(),
+  locationId: z.string().optional(),
   notes: z.string().optional(),
   organizationId: z.string().optional(),
   paymentMethod: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
+  salesorderId: z.string().optional(),
+  status: PaymentPaymentStatus$outboundSchema.optional(),
+  tenderType: TenderType$outboundSchema.optional(),
+  tipAmount: z.number().optional(),
   totalAmount: z.number().optional(),
   type: PaymentPaymentType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -145,12 +238,20 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   return remap$(v, {
     accountId: "account_id",
     billId: "bill_id",
+    cardBrand: "card_brand",
+    cardLast4: "card_last4",
     contactId: "contact_id",
     createdAt: "created_at",
+    deviceId: "device_id",
+    feeAmount: "fee_amount",
     invoiceId: "invoice_id",
     linkId: "link_id",
+    locationId: "location_id",
     organizationId: "organization_id",
     paymentMethod: "payment_method",
+    salesorderId: "salesorder_id",
+    tenderType: "tender_type",
+    tipAmount: "tip_amount",
     totalAmount: "total_amount",
     updatedAt: "updated_at",
   });

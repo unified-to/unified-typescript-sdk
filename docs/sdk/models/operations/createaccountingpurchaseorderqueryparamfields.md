@@ -11,5 +11,5 @@ let value: CreateAccountingPurchaseorderQueryParamFields = "created_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "posted_at" | "contact_id" | "account_id" | "currency" | "total_amount" | "shipping_address" | "billing_address" | "status" | "lineitems" | "organization_id" | "category_ids" | "raw"
+"id" | "created_at" | "updated_at" | "posted_at" | "contact_id" | "account_id" | "currency" | "total_amount" | "shipping_address" | "billing_address" | "status" | "lineitems" | "organization_id" | "category_ids" | "metadata" | "raw"
 ```

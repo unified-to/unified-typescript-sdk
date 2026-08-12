@@ -22,6 +22,12 @@ import {
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
+import {
   AccountingPaymentReference,
   AccountingPaymentReference$inboundSchema,
   AccountingPaymentReference$Outbound,
@@ -102,6 +108,7 @@ export type AccountingInvoice = {
   id?: string | undefined;
   invoiceNumber?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
   paidAmount?: number | undefined;
@@ -218,6 +225,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   id: z.string().optional(),
   invoice_number: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   organization_id: z.string().optional(),
   paid_amount: z.number().optional(),
@@ -284,6 +292,7 @@ export type AccountingInvoice$Outbound = {
   id?: string | undefined;
   invoice_number?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   notes?: string | undefined;
   organization_id?: string | undefined;
   paid_amount?: number | undefined;
@@ -326,6 +335,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   id: z.string().optional(),
   invoiceNumber: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   organizationId: z.string().optional(),
   paidAmount: z.number().optional(),

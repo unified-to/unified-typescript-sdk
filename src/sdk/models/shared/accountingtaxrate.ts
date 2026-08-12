@@ -7,12 +7,19 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 export type AccountingTaxrate = {
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   rate?: number | undefined;
@@ -31,6 +38,7 @@ export const AccountingTaxrate$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   rate: z.number().optional(),
@@ -51,6 +59,7 @@ export type AccountingTaxrate$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   rate?: number | undefined;
@@ -68,6 +77,7 @@ export const AccountingTaxrate$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   rate: z.number().optional(),

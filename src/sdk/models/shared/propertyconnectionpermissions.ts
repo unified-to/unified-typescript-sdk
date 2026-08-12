@@ -140,6 +140,8 @@ export const PropertyConnectionPermissions = {
   HrisTimeoffWrite: "hris_timeoff_write",
   HrisTimeshiftRead: "hris_timeshift_read",
   HrisTimeshiftWrite: "hris_timeshift_write",
+  HrisAttendanceRead: "hris_attendance_read",
+  HrisAttendanceWrite: "hris_attendance_write",
   HrisCompanyRead: "hris_company_read",
   HrisCompanyWrite: "hris_company_write",
   HrisLocationRead: "hris_location_read",

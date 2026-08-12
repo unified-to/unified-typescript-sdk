@@ -21,6 +21,12 @@ import {
   AccountingLineitem$Outbound,
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 export const AccountingVendorcreditStatus = {
   Draft: "DRAFT",
@@ -53,6 +59,7 @@ export type AccountingVendorcredit = {
   dueAt?: Date | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
   postedAt?: Date | undefined;
@@ -94,6 +101,7 @@ export const AccountingVendorcredit$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -131,6 +139,7 @@ export type AccountingVendorcredit$Outbound = {
   due_at?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   notes?: string | undefined;
   organization_id?: string | undefined;
   posted_at?: string | undefined;
@@ -157,6 +166,7 @@ export const AccountingVendorcredit$outboundSchema: z.ZodType<
   dueAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),

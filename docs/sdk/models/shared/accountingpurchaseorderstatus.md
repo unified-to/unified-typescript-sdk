@@ -13,5 +13,5 @@ let value: AccountingPurchaseorderStatus = "DRAFT";
 ## Values
 
 ```typescript
-"DRAFT" | "VOIDED" | "AUTHORIZED" | "PAID" | "PARTIALLY_PAID" | "PARTIALLY_REFUNDED" | "REFUNDED" | "SUBMITTED" | "DELETED" | Unrecognized<string>
+"DRAFT" | "VOIDED" | "AUTHORIZED" | "PAID" | "PARTIALLY_PAID" | "PARTIALLY_REFUNDED" | "REFUNDED" | "SUBMITTED" | "DELETED" | "OPEN" | "COMPLETED" | "CANCELED" | Unrecognized<string>
 ```

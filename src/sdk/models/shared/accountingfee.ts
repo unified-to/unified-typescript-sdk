@@ -18,6 +18,8 @@ export const AccountingFeeType = {
   GiftWrap: "GIFT_WRAP",
   Cod: "COD",
   Surcharge: "SURCHARGE",
+  Tip: "TIP",
+  ServiceCharge: "SERVICE_CHARGE",
   Other: "OTHER",
 } as const;
 export type AccountingFeeType = OpenEnum<typeof AccountingFeeType>;

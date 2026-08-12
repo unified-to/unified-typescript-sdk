@@ -22,6 +22,18 @@ import {
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
+import {
+  AccountingPaymentReference,
+  AccountingPaymentReference$inboundSchema,
+  AccountingPaymentReference$Outbound,
+  AccountingPaymentReference$outboundSchema,
+} from "./accountingpaymentreference.js";
+import {
   PropertyAccountingSalesorderBillingAddress,
   PropertyAccountingSalesorderBillingAddress$inboundSchema,
   PropertyAccountingSalesorderBillingAddress$Outbound,
@@ -34,6 +46,18 @@ import {
   PropertyAccountingSalesorderShippingAddress$outboundSchema,
 } from "./propertyaccountingsalesordershippingaddress.js";
 
+export const FulfillmentType = {
+  DineIn: "DINE_IN",
+  Takeout: "TAKEOUT",
+  Delivery: "DELIVERY",
+  Pickup: "PICKUP",
+  Curbside: "CURBSIDE",
+  Shipping: "SHIPPING",
+  Digital: "DIGITAL",
+  Other: "OTHER",
+} as const;
+export type FulfillmentType = OpenEnum<typeof FulfillmentType>;
+
 export const AccountingSalesorderStatus = {
   Draft: "DRAFT",
   Voided: "VOIDED",
@@ -44,6 +68,9 @@ export const AccountingSalesorderStatus = {
   Refunded: "REFUNDED",
   Submitted: "SUBMITTED",
   Deleted: "DELETED",
+  Open: "OPEN",
+  Completed: "COMPLETED",
+  Canceled: "CANCELED",
 } as const;
 export type AccountingSalesorderStatus = OpenEnum<
   typeof AccountingSalesorderStatus
@@ -53,21 +80,53 @@ export type AccountingSalesorder = {
   accountId?: string | undefined;
   billingAddress?: PropertyAccountingSalesorderBillingAddress | undefined;
   categoryIds?: Array<string> | undefined;
+  closedAt?: Date | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  deviceId?: string | undefined;
+  discountAmount?: number | undefined;
+  employeeUserId?: string | undefined;
   fees?: Array<AccountingFee> | undefined;
+  fulfillmentType?: FulfillmentType | undefined;
+  guestCount?: number | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  locationId?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
+  orderNumber?: string | undefined;
   organizationId?: string | undefined;
+  /**
+   * read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order
+   */
+  payments?: Array<AccountingPaymentReference> | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
+  refundedAmount?: number | undefined;
   salesChannel?: string | undefined;
+  serviceChargeAmount?: number | undefined;
   shippingAddress?: PropertyAccountingSalesorderShippingAddress | undefined;
   status?: AccountingSalesorderStatus | undefined;
+  subscriptionId?: string | undefined;
+  subtotalAmount?: number | undefined;
+  taxAmount?: number | undefined;
+  tipAmount?: number | undefined;
   totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const FulfillmentType$inboundSchema: z.ZodType<
+  FulfillmentType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(FulfillmentType);
+/** @internal */
+export const FulfillmentType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  FulfillmentType
+> = openEnums.outboundSchema(FulfillmentType);
 
 /** @internal */
 export const AccountingSalesorderStatus$inboundSchema: z.ZodType<
@@ -92,21 +151,38 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
   billing_address: PropertyAccountingSalesorderBillingAddress$inboundSchema
     .optional(),
   category_ids: z.array(z.string()).optional(),
+  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
+  device_id: z.string().optional(),
+  discount_amount: z.number().optional(),
+  employee_user_id: z.string().optional(),
   fees: z.array(AccountingFee$inboundSchema).optional(),
+  fulfillment_type: FulfillmentType$inboundSchema.optional(),
+  guest_count: z.number().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+  location_id: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+  order_number: z.string().optional(),
   organization_id: z.string().optional(),
+  payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   raw: z.record(z.any()).optional(),
+  refunded_amount: z.number().optional(),
   sales_channel: z.string().optional(),
+  service_charge_amount: z.number().optional(),
   shipping_address: PropertyAccountingSalesorderShippingAddress$inboundSchema
     .optional(),
   status: AccountingSalesorderStatus$inboundSchema.optional(),
+  subscription_id: z.string().optional(),
+  subtotal_amount: z.number().optional(),
+  tax_amount: z.number().optional(),
+  tip_amount: z.number().optional(),
   total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -115,12 +191,26 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
     "account_id": "accountId",
     "billing_address": "billingAddress",
     "category_ids": "categoryIds",
+    "closed_at": "closedAt",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "device_id": "deviceId",
+    "discount_amount": "discountAmount",
+    "employee_user_id": "employeeUserId",
+    "fulfillment_type": "fulfillmentType",
+    "guest_count": "guestCount",
+    "location_id": "locationId",
+    "order_number": "orderNumber",
     "organization_id": "organizationId",
     "posted_at": "postedAt",
+    "refunded_amount": "refundedAmount",
     "sales_channel": "salesChannel",
+    "service_charge_amount": "serviceChargeAmount",
     "shipping_address": "shippingAddress",
+    "subscription_id": "subscriptionId",
+    "subtotal_amount": "subtotalAmount",
+    "tax_amount": "taxAmount",
+    "tip_amount": "tipAmount",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
   });
@@ -132,20 +222,36 @@ export type AccountingSalesorder$Outbound = {
     | PropertyAccountingSalesorderBillingAddress$Outbound
     | undefined;
   category_ids?: Array<string> | undefined;
+  closed_at?: string | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
+  device_id?: string | undefined;
+  discount_amount?: number | undefined;
+  employee_user_id?: string | undefined;
   fees?: Array<AccountingFee$Outbound> | undefined;
+  fulfillment_type?: string | undefined;
+  guest_count?: number | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
+  location_id?: string | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
+  order_number?: string | undefined;
   organization_id?: string | undefined;
+  payments?: Array<AccountingPaymentReference$Outbound> | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  refunded_amount?: number | undefined;
   sales_channel?: string | undefined;
+  service_charge_amount?: number | undefined;
   shipping_address?:
     | PropertyAccountingSalesorderShippingAddress$Outbound
     | undefined;
   status?: string | undefined;
+  subscription_id?: string | undefined;
+  subtotal_amount?: number | undefined;
+  tax_amount?: number | undefined;
+  tip_amount?: number | undefined;
   total_amount?: number | undefined;
   updated_at?: string | undefined;
 };
@@ -160,19 +266,35 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   billingAddress: PropertyAccountingSalesorderBillingAddress$outboundSchema
     .optional(),
   categoryIds: z.array(z.string()).optional(),
+  closedAt: z.date().transform(v => v.toISOString()).optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
+  deviceId: z.string().optional(),
+  discountAmount: z.number().optional(),
+  employeeUserId: z.string().optional(),
   fees: z.array(AccountingFee$outboundSchema).optional(),
+  fulfillmentType: FulfillmentType$outboundSchema.optional(),
+  guestCount: z.number().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+  locationId: z.string().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+  orderNumber: z.string().optional(),
   organizationId: z.string().optional(),
+  payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
+  refundedAmount: z.number().optional(),
   salesChannel: z.string().optional(),
+  serviceChargeAmount: z.number().optional(),
   shippingAddress: PropertyAccountingSalesorderShippingAddress$outboundSchema
     .optional(),
   status: AccountingSalesorderStatus$outboundSchema.optional(),
+  subscriptionId: z.string().optional(),
+  subtotalAmount: z.number().optional(),
+  taxAmount: z.number().optional(),
+  tipAmount: z.number().optional(),
   totalAmount: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
@@ -180,12 +302,26 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
     accountId: "account_id",
     billingAddress: "billing_address",
     categoryIds: "category_ids",
+    closedAt: "closed_at",
     contactId: "contact_id",
     createdAt: "created_at",
+    deviceId: "device_id",
+    discountAmount: "discount_amount",
+    employeeUserId: "employee_user_id",
+    fulfillmentType: "fulfillment_type",
+    guestCount: "guest_count",
+    locationId: "location_id",
+    orderNumber: "order_number",
     organizationId: "organization_id",
     postedAt: "posted_at",
+    refundedAmount: "refunded_amount",
     salesChannel: "sales_channel",
+    serviceChargeAmount: "service_charge_amount",
     shippingAddress: "shipping_address",
+    subscriptionId: "subscription_id",
+    subtotalAmount: "subtotal_amount",
+    taxAmount: "tax_amount",
+    tipAmount: "tip_amount",
     totalAmount: "total_amount",
     updatedAt: "updated_at",
   });

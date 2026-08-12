@@ -31,11 +31,11 @@ const value: number = 1284.03;
 const value: boolean = true;
 ```
 
-### `shared.AtsMetadata5[]`
+### `shared.AccountingMetadata5[]`
 
 ```typescript
-const value: shared.AtsMetadata5[] = [
-  799.42,
+const value: shared.AccountingMetadata5[] = [
+  "<value>",
 ];
 ```
 

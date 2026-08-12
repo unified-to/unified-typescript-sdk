@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 export const BillingType = {
   FixedPrice: "FIXED_PRICE",
@@ -51,6 +57,7 @@ export type AccountingProject = {
   isBillable?: boolean | undefined;
   locationId?: string | undefined;
   managerUserId?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   minutesLogged?: number | undefined;
   minutesToBeInvoiced?: number | undefined;
   name?: string | undefined;
@@ -121,6 +128,7 @@ export const AccountingProject$inboundSchema: z.ZodType<
   is_billable: z.boolean().optional(),
   location_id: z.string().optional(),
   manager_user_id: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   minutes_logged: z.number().optional(),
   minutes_to_be_invoiced: z.number().optional(),
   name: z.string().optional(),
@@ -188,6 +196,7 @@ export type AccountingProject$Outbound = {
   is_billable?: boolean | undefined;
   location_id?: string | undefined;
   manager_user_id?: string | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   minutes_logged?: number | undefined;
   minutes_to_be_invoiced?: number | undefined;
   name?: string | undefined;
@@ -229,6 +238,7 @@ export const AccountingProject$outboundSchema: z.ZodType<
   isBillable: z.boolean().optional(),
   locationId: z.string().optional(),
   managerUserId: z.string().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   minutesLogged: z.number().optional(),
   minutesToBeInvoiced: z.number().optional(),
   name: z.string().optional(),

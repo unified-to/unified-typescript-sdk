@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingSalesorderStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingSalesorderStatus = "PAID";
+let value: AccountingSalesorderStatus = "PARTIALLY_PAID";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AccountingSalesorderStatus = "PAID";
 ## Values
 
 ```typescript
-"DRAFT" | "VOIDED" | "AUTHORIZED" | "PAID" | "PARTIALLY_PAID" | "PARTIALLY_REFUNDED" | "REFUNDED" | "SUBMITTED" | "DELETED" | Unrecognized<string>
+"DRAFT" | "VOIDED" | "AUTHORIZED" | "PAID" | "PARTIALLY_PAID" | "PARTIALLY_REFUNDED" | "REFUNDED" | "SUBMITTED" | "DELETED" | "OPEN" | "COMPLETED" | "CANCELED" | Unrecognized<string>
 ```
