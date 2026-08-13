@@ -55,6 +55,10 @@ export type ListAccountingBillsRequest = {
    */
   contactId?: string | undefined;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListAccountingBillsQueryParamFields> | undefined;
@@ -75,6 +79,10 @@ export type ListAccountingBillsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedGte?: string | undefined;
@@ -90,6 +98,7 @@ export const ListAccountingBillsQueryParamFields$outboundSchema:
 export type ListAccountingBillsRequest$Outbound = {
   connection_id: string;
   contact_id?: string | undefined;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -98,6 +107,7 @@ export type ListAccountingBillsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -109,6 +119,7 @@ export const ListAccountingBillsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   contactId: z.string().optional(),
+  endLt: z.string().optional(),
   fields: z.array(ListAccountingBillsQueryParamFields$outboundSchema)
     .optional(),
   limit: z.number().optional(),
@@ -118,12 +129,15 @@ export const ListAccountingBillsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
     contactId: "contact_id",
+    endLt: "end_lt",
     orgId: "org_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });

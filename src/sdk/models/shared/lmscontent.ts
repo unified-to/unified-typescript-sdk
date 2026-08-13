@@ -20,6 +20,12 @@ import {
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
 import {
+  LmsReference,
+  LmsReference$inboundSchema,
+  LmsReference$Outbound,
+  LmsReference$outboundSchema,
+} from "./lmsreference.js";
+import {
   LmsSubject,
   LmsSubject$inboundSchema,
   LmsSubject$Outbound,
@@ -36,7 +42,11 @@ export type LmsContent = {
   durationMinutes?: number | undefined;
   externalReference?: string | undefined;
   id?: string | undefined;
+  /**
+   * @deprecated; use instructors
+   */
   instructorIds?: Array<string> | undefined;
+  instructors?: Array<LmsReference> | undefined;
   isActive?: boolean | undefined;
   languages?: Array<string> | undefined;
   localizations?: Array<LmsContentLocalization> | undefined;
@@ -73,6 +83,7 @@ export const LmsContent$inboundSchema: z.ZodType<
   external_reference: z.string().optional(),
   id: z.string().optional(),
   instructor_ids: z.array(z.string()).optional(),
+  instructors: z.array(LmsReference$inboundSchema).optional(),
   is_active: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
   localizations: z.array(LmsContentLocalization$inboundSchema).optional(),
@@ -118,6 +129,7 @@ export type LmsContent$Outbound = {
   external_reference?: string | undefined;
   id?: string | undefined;
   instructor_ids?: Array<string> | undefined;
+  instructors?: Array<LmsReference$Outbound> | undefined;
   is_active?: boolean | undefined;
   languages?: Array<string> | undefined;
   localizations?: Array<LmsContentLocalization$Outbound> | undefined;
@@ -150,6 +162,7 @@ export const LmsContent$outboundSchema: z.ZodType<
   externalReference: z.string().optional(),
   id: z.string().optional(),
   instructorIds: z.array(z.string()).optional(),
+  instructors: z.array(LmsReference$outboundSchema).optional(),
   isActive: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
   localizations: z.array(LmsContentLocalization$outboundSchema).optional(),

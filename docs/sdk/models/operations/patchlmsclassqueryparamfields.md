@@ -5,11 +5,11 @@
 ```typescript
 import { PatchLmsClassQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: PatchLmsClassQueryParamFields = "instructor_ids";
+let value: PatchLmsClassQueryParamFields = "student_ids";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "media" | "course_id" | "instructor_ids" | "student_ids" | "languages" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "media" | "course_id" | "instructor_ids" | "student_ids" | "languages" | "instructors" | "students" | "raw"
 ```

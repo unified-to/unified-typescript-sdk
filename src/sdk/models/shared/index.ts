@@ -227,6 +227,7 @@ export * from "./lmscourse.js";
 export * from "./lmsemail.js";
 export * from "./lmsinstructor.js";
 export * from "./lmsmedia.js";
+export * from "./lmsreference.js";
 export * from "./lmsstudent.js";
 export * from "./lmssubject.js";
 export * from "./lmstelephone.js";

@@ -8,23 +8,17 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  LmsInstructor,
-  LmsInstructor$inboundSchema,
-  LmsInstructor$Outbound,
-  LmsInstructor$outboundSchema,
-} from "./lmsinstructor.js";
-import {
   LmsMedia,
   LmsMedia$inboundSchema,
   LmsMedia$Outbound,
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
 import {
-  LmsStudent,
-  LmsStudent$inboundSchema,
-  LmsStudent$Outbound,
-  LmsStudent$outboundSchema,
-} from "./lmsstudent.js";
+  LmsReference,
+  LmsReference$inboundSchema,
+  LmsReference$Outbound,
+  LmsReference$outboundSchema,
+} from "./lmsreference.js";
 
 export type LmsCourse = {
   categories?: Array<string> | undefined;
@@ -38,7 +32,7 @@ export type LmsCourse = {
    * @deprecated; use instructors
    */
   instructorIds?: Array<string> | undefined;
-  instructors?: Array<LmsInstructor> | undefined;
+  instructors?: Array<LmsReference> | undefined;
   isActive?: boolean | undefined;
   isPrivate?: boolean | undefined;
   languages?: Array<string> | undefined;
@@ -53,7 +47,7 @@ export type LmsCourse = {
    * @deprecated; use students
    */
   studentIds?: Array<string> | undefined;
-  students?: Array<LmsStudent> | undefined;
+  students?: Array<LmsReference> | undefined;
   timeEstimateMinutes?: number | undefined;
   updatedAt?: Date | undefined;
 };
@@ -73,7 +67,7 @@ export const LmsCourse$inboundSchema: z.ZodType<
   duration_minutes: z.number().optional(),
   id: z.string().optional(),
   instructor_ids: z.array(z.string()).optional(),
-  instructors: z.array(LmsInstructor$inboundSchema).optional(),
+  instructors: z.array(LmsReference$inboundSchema).optional(),
   is_active: z.boolean().optional(),
   is_private: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
@@ -87,7 +81,7 @@ export const LmsCourse$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   student_ids: z.array(z.string()).optional(),
-  students: z.array(LmsStudent$inboundSchema).optional(),
+  students: z.array(LmsReference$inboundSchema).optional(),
   time_estimate_minutes: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -117,7 +111,7 @@ export type LmsCourse$Outbound = {
   duration_minutes?: number | undefined;
   id?: string | undefined;
   instructor_ids?: Array<string> | undefined;
-  instructors?: Array<LmsInstructor$Outbound> | undefined;
+  instructors?: Array<LmsReference$Outbound> | undefined;
   is_active?: boolean | undefined;
   is_private?: boolean | undefined;
   languages?: Array<string> | undefined;
@@ -129,7 +123,7 @@ export type LmsCourse$Outbound = {
   raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   student_ids?: Array<string> | undefined;
-  students?: Array<LmsStudent$Outbound> | undefined;
+  students?: Array<LmsReference$Outbound> | undefined;
   time_estimate_minutes?: number | undefined;
   updated_at?: string | undefined;
 };
@@ -148,7 +142,7 @@ export const LmsCourse$outboundSchema: z.ZodType<
   durationMinutes: z.number().optional(),
   id: z.string().optional(),
   instructorIds: z.array(z.string()).optional(),
-  instructors: z.array(LmsInstructor$outboundSchema).optional(),
+  instructors: z.array(LmsReference$outboundSchema).optional(),
   isActive: z.boolean().optional(),
   isPrivate: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
@@ -160,7 +154,7 @@ export const LmsCourse$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   studentIds: z.array(z.string()).optional(),
-  students: z.array(LmsStudent$outboundSchema).optional(),
+  students: z.array(LmsReference$outboundSchema).optional(),
   timeEstimateMinutes: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
