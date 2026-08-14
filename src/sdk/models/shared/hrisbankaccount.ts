@@ -10,16 +10,18 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const AccountType = {
+export const HrisBankaccountAccountType = {
   Checking: "CHECKING",
   Savings: "SAVINGS",
 } as const;
-export type AccountType = OpenEnum<typeof AccountType>;
+export type HrisBankaccountAccountType = OpenEnum<
+  typeof HrisBankaccountAccountType
+>;
 
 export type HrisBankaccount = {
   accountNumber?: string | undefined;
   accountNumberLast4?: string | undefined;
-  accountType?: AccountType | undefined;
+  accountType?: HrisBankaccountAccountType | undefined;
   bankName?: string | undefined;
   companyId?: string | undefined;
   createdAt?: Date | undefined;
@@ -33,17 +35,17 @@ export type HrisBankaccount = {
 };
 
 /** @internal */
-export const AccountType$inboundSchema: z.ZodType<
-  AccountType,
+export const HrisBankaccountAccountType$inboundSchema: z.ZodType<
+  HrisBankaccountAccountType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountType);
+> = openEnums.inboundSchema(HrisBankaccountAccountType);
 /** @internal */
-export const AccountType$outboundSchema: z.ZodType<
+export const HrisBankaccountAccountType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  AccountType
-> = openEnums.outboundSchema(AccountType);
+  HrisBankaccountAccountType
+> = openEnums.outboundSchema(HrisBankaccountAccountType);
 
 /** @internal */
 export const HrisBankaccount$inboundSchema: z.ZodType<
@@ -53,7 +55,7 @@ export const HrisBankaccount$inboundSchema: z.ZodType<
 > = z.object({
   account_number: z.string().optional(),
   account_number_last4: z.string().optional(),
-  account_type: AccountType$inboundSchema.optional(),
+  account_type: HrisBankaccountAccountType$inboundSchema.optional(),
   bank_name: z.string().optional(),
   company_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -105,7 +107,7 @@ export const HrisBankaccount$outboundSchema: z.ZodType<
 > = z.object({
   accountNumber: z.string().optional(),
   accountNumberLast4: z.string().optional(),
-  accountType: AccountType$outboundSchema.optional(),
+  accountType: HrisBankaccountAccountType$outboundSchema.optional(),
   bankName: z.string().optional(),
   companyId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),

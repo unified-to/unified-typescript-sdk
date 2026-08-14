@@ -12,6 +12,8 @@ export * from "./accountingassociatedcontact.js";
 export * from "./accountingattachment.js";
 export * from "./accountingbalancesheet.js";
 export * from "./accountingbalancesheetitem.js";
+export * from "./accountingbankfeedaccount.js";
+export * from "./accountingbankfeedtransaction.js";
 export * from "./accountingbill.js";
 export * from "./accountingcashflow.js";
 export * from "./accountingcashflowitem.js";

@@ -450,6 +450,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 - [`accountingCreateAccountingAccount`](docs/sdks/account/README.md#createaccountingaccount) - Create an account
 - [`accountingCreateAccountingAccount`](docs/sdks/accounting/README.md#createaccountingaccount) - Create an account
+- [`accountingCreateAccountingBankfeedaccount`](docs/sdks/accounting/README.md#createaccountingbankfeedaccount) - Create a bankfeedaccount
+- [`accountingCreateAccountingBankfeedaccount`](docs/sdks/bankfeedaccount/README.md#createaccountingbankfeedaccount) - Create a bankfeedaccount
+- [`accountingCreateAccountingBankfeedtransaction`](docs/sdks/accounting/README.md#createaccountingbankfeedtransaction) - Create a bankfeedtransaction
+- [`accountingCreateAccountingBankfeedtransaction`](docs/sdks/bankfeedtransaction/README.md#createaccountingbankfeedtransaction) - Create a bankfeedtransaction
 - [`accountingCreateAccountingBill`](docs/sdks/accounting/README.md#createaccountingbill) - Create a bill
 - [`accountingCreateAccountingBill`](docs/sdks/bill/README.md#createaccountingbill) - Create a bill
 - [`accountingCreateAccountingCategory`](docs/sdks/accounting/README.md#createaccountingcategory) - Create a category
@@ -488,6 +492,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingAgedreceivable`](docs/sdks/agedreceivable/README.md#getaccountingagedreceivable) - Retrieve an agedreceivable
 - [`accountingGetAccountingBalancesheet`](docs/sdks/accounting/README.md#getaccountingbalancesheet) - Retrieve a balancesheet
 - [`accountingGetAccountingBalancesheet`](docs/sdks/balancesheet/README.md#getaccountingbalancesheet) - Retrieve a balancesheet
+- [`accountingGetAccountingBankfeedaccount`](docs/sdks/accounting/README.md#getaccountingbankfeedaccount) - Retrieve a bankfeedaccount
+- [`accountingGetAccountingBankfeedaccount`](docs/sdks/bankfeedaccount/README.md#getaccountingbankfeedaccount) - Retrieve a bankfeedaccount
+- [`accountingGetAccountingBankfeedtransaction`](docs/sdks/accounting/README.md#getaccountingbankfeedtransaction) - Retrieve a bankfeedtransaction
+- [`accountingGetAccountingBankfeedtransaction`](docs/sdks/bankfeedtransaction/README.md#getaccountingbankfeedtransaction) - Retrieve a bankfeedtransaction
 - [`accountingGetAccountingBill`](docs/sdks/accounting/README.md#getaccountingbill) - Retrieve a bill
 - [`accountingGetAccountingBill`](docs/sdks/bill/README.md#getaccountingbill) - Retrieve a bill
 - [`accountingGetAccountingCashflow`](docs/sdks/accounting/README.md#getaccountingcashflow) - Retrieve a cashflow
@@ -536,6 +544,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingAgedreceivables`](docs/sdks/agedreceivable/README.md#listaccountingagedreceivables) - List all agedreceivables
 - [`accountingListAccountingBalancesheets`](docs/sdks/accounting/README.md#listaccountingbalancesheets) - List all balancesheets
 - [`accountingListAccountingBalancesheets`](docs/sdks/balancesheet/README.md#listaccountingbalancesheets) - List all balancesheets
+- [`accountingListAccountingBankfeedaccounts`](docs/sdks/accounting/README.md#listaccountingbankfeedaccounts) - List all bankfeedaccounts
+- [`accountingListAccountingBankfeedaccounts`](docs/sdks/bankfeedaccount/README.md#listaccountingbankfeedaccounts) - List all bankfeedaccounts
+- [`accountingListAccountingBankfeedtransactions`](docs/sdks/accounting/README.md#listaccountingbankfeedtransactions) - List all bankfeedtransactions
+- [`accountingListAccountingBankfeedtransactions`](docs/sdks/bankfeedtransaction/README.md#listaccountingbankfeedtransactions) - List all bankfeedtransactions
 - [`accountingListAccountingBills`](docs/sdks/accounting/README.md#listaccountingbills) - List all bills
 - [`accountingListAccountingBills`](docs/sdks/bill/README.md#listaccountingbills) - List all bills
 - [`accountingListAccountingCashflows`](docs/sdks/accounting/README.md#listaccountingcashflows) - List all cashflows
@@ -578,6 +590,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingVendorcredits`](docs/sdks/vendorcredit/README.md#listaccountingvendorcredits) - List all vendorcredits
 - [`accountingPatchAccountingAccount`](docs/sdks/account/README.md#patchaccountingaccount) - Update an account
 - [`accountingPatchAccountingAccount`](docs/sdks/accounting/README.md#patchaccountingaccount) - Update an account
+- [`accountingPatchAccountingBankfeedaccount`](docs/sdks/accounting/README.md#patchaccountingbankfeedaccount) - Update a bankfeedaccount
+- [`accountingPatchAccountingBankfeedaccount`](docs/sdks/bankfeedaccount/README.md#patchaccountingbankfeedaccount) - Update a bankfeedaccount
+- [`accountingPatchAccountingBankfeedtransaction`](docs/sdks/accounting/README.md#patchaccountingbankfeedtransaction) - Update a bankfeedtransaction
+- [`accountingPatchAccountingBankfeedtransaction`](docs/sdks/bankfeedtransaction/README.md#patchaccountingbankfeedtransaction) - Update a bankfeedtransaction
 - [`accountingPatchAccountingBill`](docs/sdks/accounting/README.md#patchaccountingbill) - Update a bill
 - [`accountingPatchAccountingBill`](docs/sdks/bill/README.md#patchaccountingbill) - Update a bill
 - [`accountingPatchAccountingCategory`](docs/sdks/accounting/README.md#patchaccountingcategory) - Update a category
@@ -610,6 +626,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingPatchAccountingVendorcredit`](docs/sdks/vendorcredit/README.md#patchaccountingvendorcredit) - Update a vendorcredit
 - [`accountingRemoveAccountingAccount`](docs/sdks/account/README.md#removeaccountingaccount) - Remove an account
 - [`accountingRemoveAccountingAccount`](docs/sdks/accounting/README.md#removeaccountingaccount) - Remove an account
+- [`accountingRemoveAccountingBankfeedaccount`](docs/sdks/accounting/README.md#removeaccountingbankfeedaccount) - Remove a bankfeedaccount
+- [`accountingRemoveAccountingBankfeedaccount`](docs/sdks/bankfeedaccount/README.md#removeaccountingbankfeedaccount) - Remove a bankfeedaccount
+- [`accountingRemoveAccountingBankfeedtransaction`](docs/sdks/accounting/README.md#removeaccountingbankfeedtransaction) - Remove a bankfeedtransaction
+- [`accountingRemoveAccountingBankfeedtransaction`](docs/sdks/bankfeedtransaction/README.md#removeaccountingbankfeedtransaction) - Remove a bankfeedtransaction
 - [`accountingRemoveAccountingBill`](docs/sdks/accounting/README.md#removeaccountingbill) - Remove a bill
 - [`accountingRemoveAccountingBill`](docs/sdks/bill/README.md#removeaccountingbill) - Remove a bill
 - [`accountingRemoveAccountingCategory`](docs/sdks/accounting/README.md#removeaccountingcategory) - Remove a category
@@ -642,6 +662,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingRemoveAccountingVendorcredit`](docs/sdks/vendorcredit/README.md#removeaccountingvendorcredit) - Remove a vendorcredit
 - [`accountingUpdateAccountingAccount`](docs/sdks/account/README.md#updateaccountingaccount) - Update an account
 - [`accountingUpdateAccountingAccount`](docs/sdks/accounting/README.md#updateaccountingaccount) - Update an account
+- [`accountingUpdateAccountingBankfeedaccount`](docs/sdks/accounting/README.md#updateaccountingbankfeedaccount) - Update a bankfeedaccount
+- [`accountingUpdateAccountingBankfeedaccount`](docs/sdks/bankfeedaccount/README.md#updateaccountingbankfeedaccount) - Update a bankfeedaccount
+- [`accountingUpdateAccountingBankfeedtransaction`](docs/sdks/accounting/README.md#updateaccountingbankfeedtransaction) - Update a bankfeedtransaction
+- [`accountingUpdateAccountingBankfeedtransaction`](docs/sdks/bankfeedtransaction/README.md#updateaccountingbankfeedtransaction) - Update a bankfeedtransaction
 - [`accountingUpdateAccountingBill`](docs/sdks/accounting/README.md#updateaccountingbill) - Update a bill
 - [`accountingUpdateAccountingBill`](docs/sdks/bill/README.md#updateaccountingbill) - Update a bill
 - [`accountingUpdateAccountingCategory`](docs/sdks/accounting/README.md#updateaccountingcategory) - Update a category

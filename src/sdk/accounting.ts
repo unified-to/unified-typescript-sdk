@@ -3,6 +3,8 @@
  */
 
 import { accountingCreateAccountingAccount } from "../funcs/accountingCreateAccountingAccount.js";
+import { accountingCreateAccountingBankfeedaccount } from "../funcs/accountingCreateAccountingBankfeedaccount.js";
+import { accountingCreateAccountingBankfeedtransaction } from "../funcs/accountingCreateAccountingBankfeedtransaction.js";
 import { accountingCreateAccountingBill } from "../funcs/accountingCreateAccountingBill.js";
 import { accountingCreateAccountingCategory } from "../funcs/accountingCreateAccountingCategory.js";
 import { accountingCreateAccountingContact } from "../funcs/accountingCreateAccountingContact.js";
@@ -22,6 +24,8 @@ import { accountingGetAccountingAccount } from "../funcs/accountingGetAccounting
 import { accountingGetAccountingAgedpayable } from "../funcs/accountingGetAccountingAgedpayable.js";
 import { accountingGetAccountingAgedreceivable } from "../funcs/accountingGetAccountingAgedreceivable.js";
 import { accountingGetAccountingBalancesheet } from "../funcs/accountingGetAccountingBalancesheet.js";
+import { accountingGetAccountingBankfeedaccount } from "../funcs/accountingGetAccountingBankfeedaccount.js";
+import { accountingGetAccountingBankfeedtransaction } from "../funcs/accountingGetAccountingBankfeedtransaction.js";
 import { accountingGetAccountingBill } from "../funcs/accountingGetAccountingBill.js";
 import { accountingGetAccountingCashflow } from "../funcs/accountingGetAccountingCashflow.js";
 import { accountingGetAccountingCategory } from "../funcs/accountingGetAccountingCategory.js";
@@ -46,6 +50,8 @@ import { accountingListAccountingAccounts } from "../funcs/accountingListAccount
 import { accountingListAccountingAgedpayables } from "../funcs/accountingListAccountingAgedpayables.js";
 import { accountingListAccountingAgedreceivables } from "../funcs/accountingListAccountingAgedreceivables.js";
 import { accountingListAccountingBalancesheets } from "../funcs/accountingListAccountingBalancesheets.js";
+import { accountingListAccountingBankfeedaccounts } from "../funcs/accountingListAccountingBankfeedaccounts.js";
+import { accountingListAccountingBankfeedtransactions } from "../funcs/accountingListAccountingBankfeedtransactions.js";
 import { accountingListAccountingBills } from "../funcs/accountingListAccountingBills.js";
 import { accountingListAccountingCashflows } from "../funcs/accountingListAccountingCashflows.js";
 import { accountingListAccountingCategories } from "../funcs/accountingListAccountingCategories.js";
@@ -67,6 +73,8 @@ import { accountingListAccountingTransactions } from "../funcs/accountingListAcc
 import { accountingListAccountingTrialbalances } from "../funcs/accountingListAccountingTrialbalances.js";
 import { accountingListAccountingVendorcredits } from "../funcs/accountingListAccountingVendorcredits.js";
 import { accountingPatchAccountingAccount } from "../funcs/accountingPatchAccountingAccount.js";
+import { accountingPatchAccountingBankfeedaccount } from "../funcs/accountingPatchAccountingBankfeedaccount.js";
+import { accountingPatchAccountingBankfeedtransaction } from "../funcs/accountingPatchAccountingBankfeedtransaction.js";
 import { accountingPatchAccountingBill } from "../funcs/accountingPatchAccountingBill.js";
 import { accountingPatchAccountingCategory } from "../funcs/accountingPatchAccountingCategory.js";
 import { accountingPatchAccountingContact } from "../funcs/accountingPatchAccountingContact.js";
@@ -83,6 +91,8 @@ import { accountingPatchAccountingTaxrate } from "../funcs/accountingPatchAccoun
 import { accountingPatchAccountingTransaction } from "../funcs/accountingPatchAccountingTransaction.js";
 import { accountingPatchAccountingVendorcredit } from "../funcs/accountingPatchAccountingVendorcredit.js";
 import { accountingRemoveAccountingAccount } from "../funcs/accountingRemoveAccountingAccount.js";
+import { accountingRemoveAccountingBankfeedaccount } from "../funcs/accountingRemoveAccountingBankfeedaccount.js";
+import { accountingRemoveAccountingBankfeedtransaction } from "../funcs/accountingRemoveAccountingBankfeedtransaction.js";
 import { accountingRemoveAccountingBill } from "../funcs/accountingRemoveAccountingBill.js";
 import { accountingRemoveAccountingCategory } from "../funcs/accountingRemoveAccountingCategory.js";
 import { accountingRemoveAccountingContact } from "../funcs/accountingRemoveAccountingContact.js";
@@ -99,6 +109,8 @@ import { accountingRemoveAccountingTaxrate } from "../funcs/accountingRemoveAcco
 import { accountingRemoveAccountingTransaction } from "../funcs/accountingRemoveAccountingTransaction.js";
 import { accountingRemoveAccountingVendorcredit } from "../funcs/accountingRemoveAccountingVendorcredit.js";
 import { accountingUpdateAccountingAccount } from "../funcs/accountingUpdateAccountingAccount.js";
+import { accountingUpdateAccountingBankfeedaccount } from "../funcs/accountingUpdateAccountingBankfeedaccount.js";
+import { accountingUpdateAccountingBankfeedtransaction } from "../funcs/accountingUpdateAccountingBankfeedtransaction.js";
 import { accountingUpdateAccountingBill } from "../funcs/accountingUpdateAccountingBill.js";
 import { accountingUpdateAccountingCategory } from "../funcs/accountingUpdateAccountingCategory.js";
 import { accountingUpdateAccountingContact } from "../funcs/accountingUpdateAccountingContact.js";
@@ -128,6 +140,34 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingAccount> {
     return unwrapAsync(accountingCreateAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a bankfeedaccount
+   */
+  async createAccountingBankfeedaccount(
+    request: operations.CreateAccountingBankfeedaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedaccount> {
+    return unwrapAsync(accountingCreateAccountingBankfeedaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a bankfeedtransaction
+   */
+  async createAccountingBankfeedtransaction(
+    request: operations.CreateAccountingBankfeedtransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedtransaction> {
+    return unwrapAsync(accountingCreateAccountingBankfeedtransaction(
       this,
       request,
       options,
@@ -394,6 +434,34 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingBalancesheet> {
     return unwrapAsync(accountingGetAccountingBalancesheet(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a bankfeedaccount
+   */
+  async getAccountingBankfeedaccount(
+    request: operations.GetAccountingBankfeedaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedaccount> {
+    return unwrapAsync(accountingGetAccountingBankfeedaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a bankfeedtransaction
+   */
+  async getAccountingBankfeedtransaction(
+    request: operations.GetAccountingBankfeedtransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedtransaction> {
+    return unwrapAsync(accountingGetAccountingBankfeedtransaction(
       this,
       request,
       options,
@@ -737,6 +805,34 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * List all bankfeedaccounts
+   */
+  async listAccountingBankfeedaccounts(
+    request: operations.ListAccountingBankfeedaccountsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingBankfeedaccount>> {
+    return unwrapAsync(accountingListAccountingBankfeedaccounts(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all bankfeedtransactions
+   */
+  async listAccountingBankfeedtransactions(
+    request: operations.ListAccountingBankfeedtransactionsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingBankfeedtransaction>> {
+    return unwrapAsync(accountingListAccountingBankfeedtransactions(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all bills
    */
   async listAccountingBills(
@@ -1031,6 +1127,34 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Update a bankfeedaccount
+   */
+  async patchAccountingBankfeedaccount(
+    request: operations.PatchAccountingBankfeedaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedaccount> {
+    return unwrapAsync(accountingPatchAccountingBankfeedaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a bankfeedtransaction
+   */
+  async patchAccountingBankfeedtransaction(
+    request: operations.PatchAccountingBankfeedtransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedtransaction> {
+    return unwrapAsync(accountingPatchAccountingBankfeedtransaction(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a bill
    */
   async patchAccountingBill(
@@ -1255,6 +1379,36 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Remove a bankfeedaccount
+   */
+  async removeAccountingBankfeedaccount(
+    request: operations.RemoveAccountingBankfeedaccountRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAccountingBankfeedaccountResponse | undefined> {
+    return unwrapAsync(accountingRemoveAccountingBankfeedaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a bankfeedtransaction
+   */
+  async removeAccountingBankfeedtransaction(
+    request: operations.RemoveAccountingBankfeedtransactionRequest,
+    options?: RequestOptions,
+  ): Promise<
+    operations.RemoveAccountingBankfeedtransactionResponse | undefined
+  > {
+    return unwrapAsync(accountingRemoveAccountingBankfeedtransaction(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a bill
    */
   async removeAccountingBill(
@@ -1472,6 +1626,34 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingAccount> {
     return unwrapAsync(accountingUpdateAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a bankfeedaccount
+   */
+  async updateAccountingBankfeedaccount(
+    request: operations.UpdateAccountingBankfeedaccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedaccount> {
+    return unwrapAsync(accountingUpdateAccountingBankfeedaccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a bankfeedtransaction
+   */
+  async updateAccountingBankfeedtransaction(
+    request: operations.UpdateAccountingBankfeedtransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingBankfeedtransaction> {
+    return unwrapAsync(accountingUpdateAccountingBankfeedtransaction(
       this,
       request,
       options,

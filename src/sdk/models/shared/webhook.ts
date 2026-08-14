@@ -53,6 +53,8 @@ export const WebhookObjectType = {
   AccountingAgedreceivable: "accounting_agedreceivable",
   AccountingAgedpayable: "accounting_agedpayable",
   AccountingProject: "accounting_project",
+  AccountingBankfeedaccount: "accounting_bankfeedaccount",
+  AccountingBankfeedtransaction: "accounting_bankfeedtransaction",
   PaymentPayment: "payment_payment",
   PaymentLink: "payment_link",
   PaymentPayout: "payment_payout",

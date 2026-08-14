@@ -23,6 +23,8 @@ import { Auth } from "./auth.js";
 import { Availability } from "./availability.js";
 import { Balancesheet } from "./balancesheet.js";
 import { Bankaccount } from "./bankaccount.js";
+import { Bankfeedaccount } from "./bankfeedaccount.js";
+import { Bankfeedtransaction } from "./bankfeedtransaction.js";
 import { Benefit } from "./benefit.js";
 import { Bill } from "./bill.js";
 import { Branch } from "./branch.js";
@@ -196,6 +198,18 @@ export class UnifiedTo extends ClientSDK {
   private _balancesheet?: Balancesheet;
   get balancesheet(): Balancesheet {
     return (this._balancesheet ??= new Balancesheet(this._options));
+  }
+
+  private _bankfeedaccount?: Bankfeedaccount;
+  get bankfeedaccount(): Bankfeedaccount {
+    return (this._bankfeedaccount ??= new Bankfeedaccount(this._options));
+  }
+
+  private _bankfeedtransaction?: Bankfeedtransaction;
+  get bankfeedtransaction(): Bankfeedtransaction {
+    return (this._bankfeedtransaction ??= new Bankfeedtransaction(
+      this._options,
+    ));
   }
 
   private _bill?: Bill;

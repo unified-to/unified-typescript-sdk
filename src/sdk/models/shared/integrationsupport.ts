@@ -49,6 +49,13 @@ export const ListAssignedUserId = {
 } as const;
 export type ListAssignedUserId = OpenEnum<typeof ListAssignedUserId>;
 
+export const ListBankfeedaccountId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListBankfeedaccountId = OpenEnum<typeof ListBankfeedaccountId>;
+
 export const ListBenefitId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -893,6 +900,15 @@ export type VirtualWebhookAssignedUserId = OpenEnum<
   typeof VirtualWebhookAssignedUserId
 >;
 
+export const VirtualWebhookBankfeedaccountId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookBankfeedaccountId = OpenEnum<
+  typeof VirtualWebhookBankfeedaccountId
+>;
+
 export const VirtualWebhookBenefitId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1364,6 +1380,7 @@ export type IntegrationSupport = {
   listAdId?: ListAdId | undefined;
   listApplicationId?: ListApplicationId | undefined;
   listAssignedUserId?: ListAssignedUserId | undefined;
+  listBankfeedaccountId?: ListBankfeedaccountId | undefined;
   listBenefitId?: ListBenefitId | undefined;
   listBillId?: ListBillId | undefined;
   listBranchId?: ListBranchId | undefined;
@@ -1491,6 +1508,7 @@ export type IntegrationSupport = {
   virtualWebhookAdId?: VirtualWebhookAdId | undefined;
   virtualWebhookApplicationId?: VirtualWebhookApplicationId | undefined;
   virtualWebhookAssignedUserId?: VirtualWebhookAssignedUserId | undefined;
+  virtualWebhookBankfeedaccountId?: VirtualWebhookBankfeedaccountId | undefined;
   virtualWebhookBenefitId?: VirtualWebhookBenefitId | undefined;
   virtualWebhookBillId?: VirtualWebhookBillId | undefined;
   virtualWebhookBranchId?: VirtualWebhookBranchId | undefined;
@@ -1590,6 +1608,13 @@ export const ListAssignedUserId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListAssignedUserId);
+
+/** @internal */
+export const ListBankfeedaccountId$inboundSchema: z.ZodType<
+  ListBankfeedaccountId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListBankfeedaccountId);
 
 /** @internal */
 export const ListBenefitId$inboundSchema: z.ZodType<
@@ -2432,6 +2457,13 @@ export const VirtualWebhookAssignedUserId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookAssignedUserId);
 
 /** @internal */
+export const VirtualWebhookBankfeedaccountId$inboundSchema: z.ZodType<
+  VirtualWebhookBankfeedaccountId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookBankfeedaccountId);
+
+/** @internal */
 export const VirtualWebhookBenefitId$inboundSchema: z.ZodType<
   VirtualWebhookBenefitId,
   z.ZodTypeDef,
@@ -2877,6 +2909,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_ad_id: ListAdId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
   list_assigned_user_id: ListAssignedUserId$inboundSchema.optional(),
+  list_bankfeedaccount_id: ListBankfeedaccountId$inboundSchema.optional(),
   list_benefit_id: ListBenefitId$inboundSchema.optional(),
   list_bill_id: ListBillId$inboundSchema.optional(),
   list_branch_id: ListBranchId$inboundSchema.optional(),
@@ -3003,6 +3036,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     .optional(),
   virtual_webhook_assigned_user_id: VirtualWebhookAssignedUserId$inboundSchema
     .optional(),
+  virtual_webhook_bankfeedaccount_id:
+    VirtualWebhookBankfeedaccountId$inboundSchema.optional(),
   virtual_webhook_benefit_id: VirtualWebhookBenefitId$inboundSchema.optional(),
   virtual_webhook_bill_id: VirtualWebhookBillId$inboundSchema.optional(),
   virtual_webhook_branch_id: VirtualWebhookBranchId$inboundSchema.optional(),
@@ -3090,6 +3125,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_ad_id": "listAdId",
     "list_application_id": "listApplicationId",
     "list_assigned_user_id": "listAssignedUserId",
+    "list_bankfeedaccount_id": "listBankfeedaccountId",
     "list_benefit_id": "listBenefitId",
     "list_bill_id": "listBillId",
     "list_branch_id": "listBranchId",
@@ -3213,6 +3249,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_ad_id": "virtualWebhookAdId",
     "virtual_webhook_application_id": "virtualWebhookApplicationId",
     "virtual_webhook_assigned_user_id": "virtualWebhookAssignedUserId",
+    "virtual_webhook_bankfeedaccount_id": "virtualWebhookBankfeedaccountId",
     "virtual_webhook_benefit_id": "virtualWebhookBenefitId",
     "virtual_webhook_bill_id": "virtualWebhookBillId",
     "virtual_webhook_branch_id": "virtualWebhookBranchId",

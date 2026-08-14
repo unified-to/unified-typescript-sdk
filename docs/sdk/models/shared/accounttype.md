@@ -5,7 +5,7 @@
 ```typescript
 import { AccountType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountType = "SAVINGS";
+let value: AccountType = "OTHER";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AccountType = "SAVINGS";
 ## Values
 
 ```typescript
-"CHECKING" | "SAVINGS" | Unrecognized<string>
+"CHECKING" | "SAVINGS" | "CREDIT_CARD" | "LOAN" | "OTHER" | Unrecognized<string>
 ```
