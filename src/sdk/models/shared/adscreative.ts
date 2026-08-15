@@ -26,6 +26,7 @@ export const CreativeType = {
   PublisherHosted: "PUBLISHER_HOSTED",
   AssetBased: "ASSET_BASED",
   Image: "IMAGE",
+  Share: "SHARE",
   Document: "DOCUMENT",
 } as const;
 export type CreativeType = OpenEnum<typeof CreativeType>;

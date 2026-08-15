@@ -13,5 +13,5 @@ let value: PropertyAdsReportMetricsCreativeCreativeType = "UNSPECIFIED";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "STANDARD" | "EXPANDABLE" | "VIDEO" | "NATIVE" | "AUDIO" | "PUBLISHER_HOSTED" | "ASSET_BASED" | "IMAGE" | "DOCUMENT" | Unrecognized<string>
+"UNSPECIFIED" | "STANDARD" | "EXPANDABLE" | "VIDEO" | "NATIVE" | "AUDIO" | "PUBLISHER_HOSTED" | "ASSET_BASED" | "IMAGE" | "SHARE" | "DOCUMENT" | Unrecognized<string>
 ```
