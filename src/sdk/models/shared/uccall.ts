@@ -14,6 +14,7 @@ import {
   PropertyUcCallTelephone$inboundSchema,
 } from "./propertyuccalltelephone.js";
 import { UcContact, UcContact$inboundSchema } from "./uccontact.js";
+import { UcMetadata, UcMetadata$inboundSchema } from "./ucmetadata.js";
 
 export const UcCallType = {
   Inbound: "INBOUND",
@@ -28,6 +29,7 @@ export type UcCall = {
   endAt?: Date | undefined;
   id?: string | undefined;
   isPrivate?: boolean | undefined;
+  metadata?: Array<UcMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   /**
@@ -60,6 +62,7 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
       .optional(),
     id: z.string().optional(),
     is_private: z.boolean().optional(),
+    metadata: z.array(UcMetadata$inboundSchema).optional(),
     raw: z.record(z.any()).optional(),
     start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),

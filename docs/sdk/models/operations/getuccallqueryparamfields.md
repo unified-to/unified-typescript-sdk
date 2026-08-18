@@ -11,5 +11,5 @@ let value: GetUcCallQueryParamFields = "end_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "contact_id" | "telephone" | "start_at" | "end_at" | "user_id" | "contacts" | "is_private" | "user_name" | "user_phone" | "type" | "raw"
+"id" | "created_at" | "updated_at" | "contact_id" | "telephone" | "start_at" | "end_at" | "user_id" | "contacts" | "is_private" | "user_name" | "user_phone" | "type" | "metadata" | "raw"
 ```

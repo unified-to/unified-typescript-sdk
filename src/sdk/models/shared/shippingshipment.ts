@@ -45,6 +45,12 @@ import {
   ShippingPackage$Outbound,
   ShippingPackage$outboundSchema,
 } from "./shippingpackage.js";
+import {
+  ShippingShipmentLineitem,
+  ShippingShipmentLineitem$inboundSchema,
+  ShippingShipmentLineitem$Outbound,
+  ShippingShipmentLineitem$outboundSchema,
+} from "./shippingshipmentlineitem.js";
 
 export const ReturnTypeT = {
   Customer: "CUSTOMER",
@@ -75,6 +81,7 @@ export type ShippingShipmentStatus = OpenEnum<typeof ShippingShipmentStatus>;
 
 export type ShippingShipment = {
   carrierId?: string | undefined;
+  carrierName?: string | undefined;
   createdAt?: Date | undefined;
   /**
    * Customs information
@@ -95,7 +102,12 @@ export type ShippingShipment = {
   isReturn?: boolean | undefined;
   isSignatureRequired?: boolean | undefined;
   labelId?: string | undefined;
+  /**
+   * Item-level fulfillment lines (what shipped); used by commerce-platform fulfillments
+   */
+  lineitems?: Array<ShippingShipmentLineitem> | undefined;
   orderId?: string | undefined;
+  organizationId?: string | undefined;
   originalShipmentId?: string | undefined;
   /**
    * Array of packages in this shipment
@@ -128,6 +140,7 @@ export type ShippingShipment = {
    */
   toAddress?: PropertyShippingShipmentToAddress | undefined;
   trackingId?: string | undefined;
+  trackingUrl?: string | undefined;
   updatedAt?: Date | undefined;
   warehouseLocationId?: string | undefined;
   warehouseLocationName?: string | undefined;
@@ -166,6 +179,7 @@ export const ShippingShipment$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   carrier_id: z.string().optional(),
+  carrier_name: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   customs: PropertyShippingShipmentCustoms$inboundSchema.optional(),
@@ -178,7 +192,9 @@ export const ShippingShipment$inboundSchema: z.ZodType<
   is_return: z.boolean().optional(),
   is_signature_required: z.boolean().optional(),
   label_id: z.string().optional(),
+  lineitems: z.array(ShippingShipmentLineitem$inboundSchema).optional(),
   order_id: z.string().optional(),
+  organization_id: z.string().optional(),
   original_shipment_id: z.string().optional(),
   packages: z.array(ShippingPackage$inboundSchema).optional(),
   rate_amount: z.number().optional(),
@@ -203,6 +219,7 @@ export const ShippingShipment$inboundSchema: z.ZodType<
   status: ShippingShipmentStatus$inboundSchema.optional(),
   to_address: PropertyShippingShipmentToAddress$inboundSchema.optional(),
   tracking_id: z.string().optional(),
+  tracking_url: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   warehouse_location_id: z.string().optional(),
@@ -210,6 +227,7 @@ export const ShippingShipment$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "carrier_id": "carrierId",
+    "carrier_name": "carrierName",
     "created_at": "createdAt",
     "from_address": "fromAddress",
     "is_adult_signature_required": "isAdultSignatureRequired",
@@ -219,6 +237,7 @@ export const ShippingShipment$inboundSchema: z.ZodType<
     "is_signature_required": "isSignatureRequired",
     "label_id": "labelId",
     "order_id": "orderId",
+    "organization_id": "organizationId",
     "original_shipment_id": "originalShipmentId",
     "rate_amount": "rateAmount",
     "rate_currency": "rateCurrency",
@@ -236,6 +255,7 @@ export const ShippingShipment$inboundSchema: z.ZodType<
     "special_instructions": "specialInstructions",
     "to_address": "toAddress",
     "tracking_id": "trackingId",
+    "tracking_url": "trackingUrl",
     "updated_at": "updatedAt",
     "warehouse_location_id": "warehouseLocationId",
     "warehouse_location_name": "warehouseLocationName",
@@ -244,6 +264,7 @@ export const ShippingShipment$inboundSchema: z.ZodType<
 /** @internal */
 export type ShippingShipment$Outbound = {
   carrier_id?: string | undefined;
+  carrier_name?: string | undefined;
   created_at?: string | undefined;
   customs?: PropertyShippingShipmentCustoms$Outbound | undefined;
   from_address?: PropertyShippingShipmentFromAddress$Outbound | undefined;
@@ -255,7 +276,9 @@ export type ShippingShipment$Outbound = {
   is_return?: boolean | undefined;
   is_signature_required?: boolean | undefined;
   label_id?: string | undefined;
+  lineitems?: Array<ShippingShipmentLineitem$Outbound> | undefined;
   order_id?: string | undefined;
+  organization_id?: string | undefined;
   original_shipment_id?: string | undefined;
   packages?: Array<ShippingPackage$Outbound> | undefined;
   rate_amount?: number | undefined;
@@ -276,6 +299,7 @@ export type ShippingShipment$Outbound = {
   status?: string | undefined;
   to_address?: PropertyShippingShipmentToAddress$Outbound | undefined;
   tracking_id?: string | undefined;
+  tracking_url?: string | undefined;
   updated_at?: string | undefined;
   warehouse_location_id?: string | undefined;
   warehouse_location_name?: string | undefined;
@@ -288,6 +312,7 @@ export const ShippingShipment$outboundSchema: z.ZodType<
   ShippingShipment
 > = z.object({
   carrierId: z.string().optional(),
+  carrierName: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   customs: PropertyShippingShipmentCustoms$outboundSchema.optional(),
   fromAddress: PropertyShippingShipmentFromAddress$outboundSchema.optional(),
@@ -299,7 +324,9 @@ export const ShippingShipment$outboundSchema: z.ZodType<
   isReturn: z.boolean().optional(),
   isSignatureRequired: z.boolean().optional(),
   labelId: z.string().optional(),
+  lineitems: z.array(ShippingShipmentLineitem$outboundSchema).optional(),
   orderId: z.string().optional(),
+  organizationId: z.string().optional(),
   originalShipmentId: z.string().optional(),
   packages: z.array(ShippingPackage$outboundSchema).optional(),
   rateAmount: z.number().optional(),
@@ -321,12 +348,14 @@ export const ShippingShipment$outboundSchema: z.ZodType<
   status: ShippingShipmentStatus$outboundSchema.optional(),
   toAddress: PropertyShippingShipmentToAddress$outboundSchema.optional(),
   trackingId: z.string().optional(),
+  trackingUrl: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   warehouseLocationId: z.string().optional(),
   warehouseLocationName: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     carrierId: "carrier_id",
+    carrierName: "carrier_name",
     createdAt: "created_at",
     fromAddress: "from_address",
     isAdultSignatureRequired: "is_adult_signature_required",
@@ -336,6 +365,7 @@ export const ShippingShipment$outboundSchema: z.ZodType<
     isSignatureRequired: "is_signature_required",
     labelId: "label_id",
     orderId: "order_id",
+    organizationId: "organization_id",
     originalShipmentId: "original_shipment_id",
     rateAmount: "rate_amount",
     rateCurrency: "rate_currency",
@@ -353,6 +383,7 @@ export const ShippingShipment$outboundSchema: z.ZodType<
     specialInstructions: "special_instructions",
     toAddress: "to_address",
     trackingId: "tracking_id",
+    trackingUrl: "tracking_url",
     updatedAt: "updated_at",
     warehouseLocationId: "warehouse_location_id",
     warehouseLocationName: "warehouse_location_name",

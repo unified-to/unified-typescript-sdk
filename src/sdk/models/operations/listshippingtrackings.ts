@@ -39,6 +39,10 @@ export type ListShippingTrackingsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The AccountingOrder ID to filter by
+   */
+  orderId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -66,6 +70,7 @@ export type ListShippingTrackingsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  order_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -84,6 +89,7 @@ export const ListShippingTrackingsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orderId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -91,6 +97,7 @@ export const ListShippingTrackingsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    orderId: "order_id",
     updatedGte: "updated_gte",
   });
 });

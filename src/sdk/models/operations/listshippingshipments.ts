@@ -11,6 +11,7 @@ export const ListShippingShipmentsQueryParamFields = {
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
   OrderId: "order_id",
+  OrganizationId: "organization_id",
   FromAddress: "from_address",
   ToAddress: "to_address",
   Packages: "packages",
@@ -42,6 +43,9 @@ export const ListShippingShipmentsQueryParamFields = {
   OriginalShipmentId: "original_shipment_id",
   ReturnReason: "return_reason",
   ReturnType: "return_type",
+  CarrierName: "carrier_name",
+  TrackingUrl: "tracking_url",
+  Lineitems: "lineitems",
   Raw: "raw",
 } as const;
 export type ListShippingShipmentsQueryParamFields = ClosedEnum<
@@ -68,6 +72,10 @@ export type ListShippingShipmentsRequest = {
    * The AccountingOrder ID to filter by
    */
   orderId?: string | undefined;
+  /**
+   * The org ID to filter by
+   */
+  orgId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -98,6 +106,7 @@ export type ListShippingShipmentsRequest$Outbound = {
   offset?: number | undefined;
   order?: string | undefined;
   order_id?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -118,6 +127,7 @@ export const ListShippingShipmentsRequest$outboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   orderId: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -127,6 +137,7 @@ export const ListShippingShipmentsRequest$outboundSchema: z.ZodType<
     carrierId: "carrier_id",
     connectionId: "connection_id",
     orderId: "order_id",
+    orgId: "org_id",
     updatedGte: "updated_gte",
   });
 });
