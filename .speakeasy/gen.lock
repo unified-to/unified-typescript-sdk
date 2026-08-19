@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 0c936c60770ab094bb7fea41b06b41b6
+  docChecksum: 886b4ea0644bd8b8175e53cfbdd19e43
   docVersion: "1.0"
-  speakeasyVersion: 1.794.1
+  speakeasyVersion: 1.795.0
   generationVersion: 2.931.0
-  releaseVersion: 2.85.33
-  configChecksum: c292e36cac00a813b138b4876b117d02
+  releaseVersion: 2.85.34
+  configChecksum: 7c8d8559b65c82921406f056192ba958
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 08242328-2f19-4e37-aa51-7c3d0735094a
-  pristine_commit_hash: f097ba3bed73fc8eb70ba8b7d170424f7fd5e5f6
-  pristine_tree_hash: d51532f960031561d5bf83333f26e28314b040df
+  generation_id: e9206e3f-6029-47a2-8cd0-3f6279886a0c
+  pristine_commit_hash: 251f885164d3958420067216d8f8868c951e4f05
+  pristine_tree_hash: 2c82e086a00b7e173e4c5f607319776523cd31a4
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -2666,8 +2666,8 @@ trackedFiles:
     pristine_git_object: 20735c4797a3205c16ae3ec463ad991aa666a1ab
   docs/sdk/models/operations/listatsapplicationstatusesrequest.md:
     id: 6eda091ea31c
-    last_write_checksum: sha1:092bfd9bba0a740c9fcd0be3738148bb71a84cbb
-    pristine_git_object: f86d1324a6a926345eb73c4060572e667c6b9fca
+    last_write_checksum: sha1:337a8d344d564016d9178b53d2f14e912bf8ad10
+    pristine_git_object: 80280ae8bca6e0ee91602d2975a7f4909623c0d1
   docs/sdk/models/operations/listatscandidatesqueryparamfields.md:
     id: efe93391a2a4
     last_write_checksum: sha1:4529c1df6872d9e769681faf9970002242c23d94
@@ -11686,12 +11686,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:f588e7bf3e79ec4c3b63538e5a66bd5064f1bdf2
-    pristine_git_object: 3408598704c418b5e68efd49391f192d28f9efe7
+    last_write_checksum: sha1:098d5dc69ab0779928a155d1aef896151aafacdc
+    pristine_git_object: f23478c814c117718518beb2bf128c5a78cea08d
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:92f5b3f5e44eff22e2d10307e4d796dd9fab69a0
-    pristine_git_object: 52d513852a31dc13b63f85da4a9c46531aa744e6
+    last_write_checksum: sha1:ed239a0cd4b8cb80e20243331c35ef08dd5ea112
+    pristine_git_object: 348b346c5b247a6c03b8d7e2c93ff405002a141c
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -12538,8 +12538,8 @@ trackedFiles:
     pristine_git_object: a250531dda51ad4a16915426195cc7546c67fe11
   src/funcs/atsListAtsApplicationstatuses.ts:
     id: 565705d55a93
-    last_write_checksum: sha1:3f1914b1f0c6a5569984bcfe18c662fb7176c5fc
-    pristine_git_object: 7c1d692ef24b3fb23df5323f1bd6deaeeedeebb6
+    last_write_checksum: sha1:1205ae9bcaca11f6808b3a487313bb15417b3a87
+    pristine_git_object: 5aa22b2ad5682a51785c22d332fad30f82fd5721
   src/funcs/atsListAtsCandidates.ts:
     id: 3d1d64ffc64e
     last_write_checksum: sha1:621631c5688eed8fe29e0a2ed4f6fdfcdd615694
@@ -15054,8 +15054,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:96f6318b2bbcbd2c148fe31baa51634f8b454c07
-    pristine_git_object: 9889e5510666ce5e8302190a97cbc4a3c04b74fa
+    last_write_checksum: sha1:e3a3ae27f4ff6609e182818cdd71e9690de695f9
+    pristine_git_object: 94adde9a31a362332e9649ec863cfee303a283e7
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -16854,8 +16854,8 @@ trackedFiles:
     pristine_git_object: b947b8c66a844776ffe14cde68c60c6e462063ec
   src/sdk/models/operations/listatsapplicationstatuses.ts:
     id: e47fe68a00d0
-    last_write_checksum: sha1:28d8182d262051139647cf49eba0dac167b2eaeb
-    pristine_git_object: 6f153d86afbfac850c546f88f2ce3b0b3e253be5
+    last_write_checksum: sha1:8d017830e30e25f289ed071f22d1f72efce6f426
+    pristine_git_object: 6610827d7b41c3eb5f76cc938508e4f06069b09c
   src/sdk/models/operations/listatscandidates.ts:
     id: 6cb17a453747
     last_write_checksum: sha1:a1301d970c24e06190120199c54ec3793de40065
@@ -35130,7 +35130,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.shipping.createShippingShipment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.shipping.getShippingShipment()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.shipping.listShippingShipments()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.shipping.listShippingTrackings()`: \n  *  `request.orderId` **Added**\n* `unified-to.shipping.patchShippingShipment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.shipping.updateShippingShipment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.shipment.createShippingShipment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.shipment.getShippingShipment()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `unified-to.shipment.listShippingShipments()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `unified-to.shipment.patchShippingShipment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.shipment.updateShippingShipment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `unified-to.tracking.listShippingTrackings()`: \n  *  `request.orderId` **Added**\n* `unified-to.uc.getUcCall()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.uc.listUcCalls()`: \n  *  `request.fields` **Changed**\n  *  `response.[].metadata` **Added**\n* `unified-to.call.getUcCall()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `unified-to.call.listUcCalls()`: \n  *  `request.fields` **Changed**\n  *  `response.[].metadata` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.ats.listAtsApplicationstatuses()`: \n  *  `request.jobId` **Added**\n* `unified-to.applicationstatus.listAtsApplicationstatuses()`: \n  *  `request.jobId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

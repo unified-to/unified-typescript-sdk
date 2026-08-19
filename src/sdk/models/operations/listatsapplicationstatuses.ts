@@ -27,6 +27,10 @@ export type ListAtsApplicationstatusesRequest = {
    * Fields to return
    */
   fields?: Array<ListAtsApplicationstatusesQueryParamFields> | undefined;
+  /**
+   * The job ID to filter by
+   */
+  jobId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -54,6 +58,7 @@ export const ListAtsApplicationstatusesQueryParamFields$outboundSchema:
 export type ListAtsApplicationstatusesRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
+  job_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -72,6 +77,7 @@ export const ListAtsApplicationstatusesRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   fields: z.array(ListAtsApplicationstatusesQueryParamFields$outboundSchema)
     .optional(),
+  jobId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -82,6 +88,7 @@ export const ListAtsApplicationstatusesRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    jobId: "job_id",
     updatedGte: "updated_gte",
   });
 });
