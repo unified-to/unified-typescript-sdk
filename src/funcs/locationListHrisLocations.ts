@@ -99,6 +99,7 @@ async function $do(
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
+    "parent_id": payload.parent_id,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,

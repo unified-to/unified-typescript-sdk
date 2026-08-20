@@ -45,6 +45,10 @@ export type ListHrisLocationsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The parent ID to filter by
+   */
+  parentId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -72,6 +76,7 @@ export type ListHrisLocationsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -90,6 +95,7 @@ export const ListHrisLocationsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -98,6 +104,7 @@ export const ListHrisLocationsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     companyId: "company_id",
     connectionId: "connection_id",
+    parentId: "parent_id",
     updatedGte: "updated_gte",
   });
 });

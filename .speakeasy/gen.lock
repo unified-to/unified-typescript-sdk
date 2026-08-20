@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 886b4ea0644bd8b8175e53cfbdd19e43
+  docChecksum: f1b21bdacc13bdae2d4bb40a40b83aba
   docVersion: "1.0"
   speakeasyVersion: 1.795.0
   generationVersion: 2.931.0
-  releaseVersion: 2.85.34
-  configChecksum: 7c8d8559b65c82921406f056192ba958
+  releaseVersion: 2.85.35
+  configChecksum: f332e7c135ab0c911a3a1aa02b4893bf
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: e9206e3f-6029-47a2-8cd0-3f6279886a0c
-  pristine_commit_hash: 251f885164d3958420067216d8f8868c951e4f05
-  pristine_tree_hash: 2c82e086a00b7e173e4c5f607319776523cd31a4
+  generation_id: 71290510-3a10-4008-8f32-66b2c9a55f7c
+  pristine_commit_hash: 9b3c74f95789061127e0fa2b77fe11b71d545e41
+  pristine_tree_hash: a37f0203495dac303d2787e8e3073820ce7f25d2
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -3114,8 +3114,8 @@ trackedFiles:
     pristine_git_object: 0c7bf8eca6ee5ff8aeb21f24b0a7d29f727e2588
   docs/sdk/models/operations/listhrislocationsrequest.md:
     id: c579626b2b94
-    last_write_checksum: sha1:b5795310da347a0caaae8421b7783cf02fb7b03b
-    pristine_git_object: 7eaaf5a7c22c3149eda9f17779785be11a390bfa
+    last_write_checksum: sha1:9738289f268bad0e815e7f5608a1c0706b5e357b
+    pristine_git_object: 667687fd3e4ecb3987b0141c81536024e73d7547
   docs/sdk/models/operations/listhrispayslipsqueryparamfields.md:
     id: e87f353ea454
     last_write_checksum: sha1:e8674996b8d18e25077a658b87c0b2b3782d16a9
@@ -11686,12 +11686,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:098d5dc69ab0779928a155d1aef896151aafacdc
-    pristine_git_object: f23478c814c117718518beb2bf128c5a78cea08d
+    last_write_checksum: sha1:e186983b82afd8976397157f3c04a7abbef6df8a
+    pristine_git_object: d6a82a2bbdc272aaa6444c5fe2a825a12dcc8956
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:ed239a0cd4b8cb80e20243331c35ef08dd5ea112
-    pristine_git_object: 348b346c5b247a6c03b8d7e2c93ff405002a141c
+    last_write_checksum: sha1:55344f01ea7b073c9094c5564b5b1a5f0e18da7b
+    pristine_git_object: cfe563c805f94eb61944a12b8c6db10e21bfa0ae
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -14122,8 +14122,8 @@ trackedFiles:
     pristine_git_object: f6b76aacdc2b5d5aeb1f5fd13ea4d8f9a45ab0e7
   src/funcs/locationListHrisLocations.ts:
     id: 09d47f45f9b9
-    last_write_checksum: sha1:5d46ab1e083f8f48890cd0428de1c614ff974d57
-    pristine_git_object: 506c609ca2ce00a9e411dab347c56f6c1ce5a5b1
+    last_write_checksum: sha1:ef859e4b92824078b92f2c9eac1bc78e66213418
+    pristine_git_object: d058b687d273eed0766dbc1fc52a74abc8ed7f4e
   src/funcs/locationPatchCommerceLocation.ts:
     id: 387656133c38
     last_write_checksum: sha1:c7266c4e63364d12993ea5ec5d5fa4e31c8c9ad4
@@ -15054,8 +15054,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:e3a3ae27f4ff6609e182818cdd71e9690de695f9
-    pristine_git_object: 94adde9a31a362332e9649ec863cfee303a283e7
+    last_write_checksum: sha1:aa7201c7436823ad49dc2d243c0840153e2351b5
+    pristine_git_object: 552bbd12ed5ceb87458eddc879d6257ba2922e91
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -17082,8 +17082,8 @@ trackedFiles:
     pristine_git_object: 6c7a798c112f6ee5c78afa4ad124a8340a6d1230
   src/sdk/models/operations/listhrislocations.ts:
     id: 7a01907ca2a2
-    last_write_checksum: sha1:c1c8e4a3718087f15a58f4035d1c097cdfbf71d9
-    pristine_git_object: 70bd7df41377d51d843c115a2e96c23f69dcb187
+    last_write_checksum: sha1:b9c09115a6dab3bc3c2836be3ca41f0d0234e504
+    pristine_git_object: 6c9bb9a4da10eec0ace9b4cc227964ce39b6e78a
   src/sdk/models/operations/listhrispayslips.ts:
     id: bfb04cc0cca6
     last_write_checksum: sha1:05220d8a84bc9a3427ac93a8b2ab7761d90b9b2c
@@ -35130,7 +35130,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.ats.listAtsApplicationstatuses()`: \n  *  `request.jobId` **Added**\n* `unified-to.applicationstatus.listAtsApplicationstatuses()`: \n  *  `request.jobId` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.location.listHrisLocations()`: \n  *  `request.parentId` **Added**\n* `unified-to.hris.listHrisLocations()`: \n  *  `request.parentId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
