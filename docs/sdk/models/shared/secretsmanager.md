@@ -12,7 +12,7 @@ let value: SecretsManager = {
     "key2": "<value>",
   },
   name: "<value>",
-  type: "composio",
+  type: "pipedream",
 };
 ```
 

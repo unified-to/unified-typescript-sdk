@@ -5,7 +5,7 @@
 ```typescript
 import { SecretsManagerType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: SecretsManagerType = "gcp";
+let value: SecretsManagerType = "bitwarden";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: SecretsManagerType = "gcp";
 ## Values
 
 ```typescript
-"aws" | "azure" | "gcp" | "hashicorp" | "composio" | Unrecognized<string>
+"aws" | "azure" | "gcp" | "hashicorp" | "composio" | "1password" | "bitwarden" | "doppler" | "akeyless" | "pipedream" | "alibabacloud" | Unrecognized<string>
 ```

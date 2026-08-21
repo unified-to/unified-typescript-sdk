@@ -42,6 +42,9 @@ export type StorageFile = {
   raw?: { [k: string]: any } | undefined;
   references?: Array<StorageReference> | undefined;
   size?: number | undefined;
+  /**
+   * labels
+   */
   tags?: Array<string> | undefined;
   type?: StorageFileType | undefined;
   updatedAt?: Date | undefined;

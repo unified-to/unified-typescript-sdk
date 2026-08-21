@@ -13,5 +13,5 @@ let value: HrisTaxonomyType = "ROLE";
 ## Values
 
 ```typescript
-"SKILL" | "KNOWLEDGE" | "COMPETENCE" | "ABILITY" | "CERTIFICATION" | "ROLE" | Unrecognized<string>
+"SKILL" | "KNOWLEDGE" | "COMPETENCE" | "ABILITY" | "CERTIFICATION" | "ROLE" | "HOLIDAY" | Unrecognized<string>
 ```

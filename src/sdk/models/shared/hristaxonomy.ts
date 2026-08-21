@@ -17,6 +17,7 @@ export const HrisTaxonomyType = {
   Ability: "ABILITY",
   Certification: "CERTIFICATION",
   Role: "ROLE",
+  Holiday: "HOLIDAY",
 } as const;
 export type HrisTaxonomyType = OpenEnum<typeof HrisTaxonomyType>;
 
