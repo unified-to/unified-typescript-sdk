@@ -21,12 +21,12 @@ export const DbType = {
 } as const;
 export type DbType = OpenEnum<typeof DbType>;
 
-export const Event = {
+export const WebhookEvent = {
   Updated: "updated",
   Created: "created",
   Deleted: "deleted",
 } as const;
-export type Event = OpenEnum<typeof Event>;
+export type WebhookEvent = OpenEnum<typeof WebhookEvent>;
 
 export const WebhookObjectType = {
   AccountingAccount: "accounting_account",
@@ -218,7 +218,7 @@ export type Webhook = {
   dbType?: DbType | undefined;
   dbUrl?: string | undefined;
   environment?: string | undefined;
-  event: Event;
+  event: WebhookEvent;
   fields?: string | undefined;
   filters?: { [k: string]: string } | undefined;
   hookUrl?: string | undefined;
@@ -247,11 +247,17 @@ export const DbType$outboundSchema: z.ZodType<string, z.ZodTypeDef, DbType> =
   openEnums.outboundSchema(DbType);
 
 /** @internal */
-export const Event$inboundSchema: z.ZodType<Event, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Event);
+export const WebhookEvent$inboundSchema: z.ZodType<
+  WebhookEvent,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(WebhookEvent);
 /** @internal */
-export const Event$outboundSchema: z.ZodType<string, z.ZodTypeDef, Event> =
-  openEnums.outboundSchema(Event);
+export const WebhookEvent$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  WebhookEvent
+> = openEnums.outboundSchema(WebhookEvent);
 
 /** @internal */
 export const WebhookObjectType$inboundSchema: z.ZodType<
@@ -294,7 +300,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
     db_type: DbType$inboundSchema.optional(),
     db_url: z.string().optional(),
     environment: z.string().default("Production"),
-    event: Event$inboundSchema,
+    event: WebhookEvent$inboundSchema,
     fields: z.string().optional(),
     filters: z.record(z.string()).optional(),
     hook_url: z.string().optional(),
@@ -375,7 +381,7 @@ export const Webhook$outboundSchema: z.ZodType<
   dbType: DbType$outboundSchema.optional(),
   dbUrl: z.string().optional(),
   environment: z.string().default("Production"),
-  event: Event$outboundSchema,
+  event: WebhookEvent$outboundSchema,
   fields: z.string().optional(),
   filters: z.record(z.string()).optional(),
   hookUrl: z.string().optional(),

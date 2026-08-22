@@ -102,6 +102,7 @@ import { Messaging } from "./messaging.js";
 import { Metadata } from "./metadata.js";
 import { Model } from "./model.js";
 import { Note } from "./note.js";
+import { Notification } from "./notification.js";
 import { Order } from "./order.js";
 import { Organization } from "./organization.js";
 import { Package } from "./package.js";
@@ -1005,6 +1006,11 @@ export class UnifiedTo extends ClientSDK {
   private _issue?: Issue;
   get issue(): Issue {
     return (this._issue ??= new Issue(this._options));
+  }
+
+  private _notification?: Notification;
+  get notification(): Notification {
+    return (this._notification ??= new Notification(this._options));
   }
 
   private _webhook?: Webhook;

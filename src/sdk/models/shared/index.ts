@@ -249,6 +249,7 @@ export * from "./messagingmessage.js";
 export * from "./messagingreaction.js";
 export * from "./messagingreference.js";
 export * from "./metadatametadata.js";
+export * from "./notification.js";
 export * from "./paymentallocation.js";
 export * from "./paymentlineitem.js";
 export * from "./paymentlink.js";

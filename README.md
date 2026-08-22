@@ -2049,6 +2049,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedListUnifiedIntegrationWorkspaces`](docs/sdks/unified/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 - [`unifiedListUnifiedIssues`](docs/sdks/issue/README.md#listunifiedissues) - List support issues
 - [`unifiedListUnifiedIssues`](docs/sdks/unified/README.md#listunifiedissues) - List support issues
+- [`unifiedListUnifiedNotifications`](docs/sdks/notification/README.md#listunifiednotifications) - List event notifications
+- [`unifiedListUnifiedNotifications`](docs/sdks/unified/README.md#listunifiednotifications) - List event notifications
 - [`unifiedListUnifiedWebhooks`](docs/sdks/unified/README.md#listunifiedwebhooks) - Returns all registered webhooks
 - [`unifiedListUnifiedWebhooks`](docs/sdks/webhook/README.md#listunifiedwebhooks) - Returns all registered webhooks
 - [`unifiedListUnifiedWorkspaceSecretsmanagers`](docs/sdks/secretsmanager/README.md#listunifiedworkspacesecretsmanagers) - List secrets managers

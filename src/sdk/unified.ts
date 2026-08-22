@@ -18,6 +18,7 @@ import { unifiedListUnifiedEnvironments } from "../funcs/unifiedListUnifiedEnvir
 import { unifiedListUnifiedIntegrations } from "../funcs/unifiedListUnifiedIntegrations.js";
 import { unifiedListUnifiedIntegrationWorkspaces } from "../funcs/unifiedListUnifiedIntegrationWorkspaces.js";
 import { unifiedListUnifiedIssues } from "../funcs/unifiedListUnifiedIssues.js";
+import { unifiedListUnifiedNotifications } from "../funcs/unifiedListUnifiedNotifications.js";
 import { unifiedListUnifiedWebhooks } from "../funcs/unifiedListUnifiedWebhooks.js";
 import { unifiedListUnifiedWorkspaceSecretsmanagers } from "../funcs/unifiedListUnifiedWorkspaceSecretsmanagers.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
@@ -264,6 +265,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.Issue>> {
     return unwrapAsync(unifiedListUnifiedIssues(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List event notifications
+   */
+  async listUnifiedNotifications(
+    request: operations.ListUnifiedNotificationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Notification>> {
+    return unwrapAsync(unifiedListUnifiedNotifications(
       this,
       request,
       options,

@@ -455,6 +455,7 @@ export * from "./listunifiedconnections.js";
 export * from "./listunifiedintegrations.js";
 export * from "./listunifiedintegrationworkspaces.js";
 export * from "./listunifiedissues.js";
+export * from "./listunifiednotifications.js";
 export * from "./listunifiedwebhooks.js";
 export * from "./listunifiedworkspacesecretsmanagers.js";
 export * from "./listverificationpackages.js";
