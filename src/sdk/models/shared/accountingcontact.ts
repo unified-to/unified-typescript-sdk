@@ -96,6 +96,7 @@ export type AccountingContact = {
   organizationId?: string | undefined;
   paymentMethods?: Array<AccountingContactPaymentMethod> | undefined;
   paymentTerms?: AccountingContactPaymentTerms | undefined;
+  paymenttermId?: string | undefined;
   portalUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   shippingAddress?: PropertyAccountingContactShippingAddress | undefined;
@@ -158,6 +159,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
   payment_methods: z.array(AccountingContactPaymentMethod$inboundSchema)
     .optional(),
   payment_terms: AccountingContactPaymentTerms$inboundSchema.optional(),
+  paymentterm_id: z.string().optional(),
   portal_url: z.string().optional(),
   raw: z.record(z.any()).optional(),
   shipping_address: PropertyAccountingContactShippingAddress$inboundSchema
@@ -181,6 +183,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
     "organization_id": "organizationId",
     "payment_methods": "paymentMethods",
     "payment_terms": "paymentTerms",
+    "paymentterm_id": "paymenttermId",
     "portal_url": "portalUrl",
     "shipping_address": "shippingAddress",
     "tax_exemption": "taxExemption",
@@ -209,6 +212,7 @@ export type AccountingContact$Outbound = {
   organization_id?: string | undefined;
   payment_methods?: Array<AccountingContactPaymentMethod$Outbound> | undefined;
   payment_terms?: string | undefined;
+  paymentterm_id?: string | undefined;
   portal_url?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   shipping_address?:
@@ -246,6 +250,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   paymentMethods: z.array(AccountingContactPaymentMethod$outboundSchema)
     .optional(),
   paymentTerms: AccountingContactPaymentTerms$outboundSchema.optional(),
+  paymenttermId: z.string().optional(),
   portalUrl: z.string().optional(),
   raw: z.record(z.any()).optional(),
   shippingAddress: PropertyAccountingContactShippingAddress$outboundSchema
@@ -268,6 +273,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
     organizationId: "organization_id",
     paymentMethods: "payment_methods",
     paymentTerms: "payment_terms",
+    paymenttermId: "paymentterm_id",
     portalUrl: "portal_url",
     shippingAddress: "shipping_address",
     taxExemption: "tax_exemption",

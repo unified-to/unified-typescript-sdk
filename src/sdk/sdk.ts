@@ -109,6 +109,7 @@ import { Package } from "./package.js";
 import { Page } from "./page.js";
 import { Passthrough } from "./passthrough.js";
 import { Payment } from "./payment.js";
+import { Paymentterm } from "./paymentterm.js";
 import { Payout } from "./payout.js";
 import { Payslip } from "./payslip.js";
 import { Performance } from "./performance.js";
@@ -261,6 +262,11 @@ export class UnifiedTo extends ClientSDK {
   private _organization?: Organization;
   get organization(): Organization {
     return (this._organization ??= new Organization(this._options));
+  }
+
+  private _paymentterm?: Paymentterm;
+  get paymentterm(): Paymentterm {
+    return (this._paymentterm ??= new Paymentterm(this._options));
   }
 
   private _profitloss?: Profitloss;

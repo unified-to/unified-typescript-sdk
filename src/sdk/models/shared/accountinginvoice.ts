@@ -121,6 +121,7 @@ export type AccountingInvoice = {
    * ead-only reciprocal of PaymentPayment.allocations; payments applied to this invoice
    */
   payments?: Array<AccountingPaymentReference> | undefined;
+  paymenttermId?: string | undefined;
   postedAt?: Date | undefined;
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -235,6 +236,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     AccountingInvoicePaymentCollectionMethod$inboundSchema.optional(),
   payment_terms: AccountingInvoicePaymentTerms$inboundSchema.optional(),
   payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
+  paymentterm_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   project_id: z.string().optional(),
@@ -268,6 +270,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "paid_at": "paidAt",
     "payment_collection_method": "paymentCollectionMethod",
     "payment_terms": "paymentTerms",
+    "paymentterm_id": "paymenttermId",
     "posted_at": "postedAt",
     "project_id": "projectId",
     "refund_amount": "refundAmount",
@@ -300,6 +303,7 @@ export type AccountingInvoice$Outbound = {
   payment_collection_method?: string | undefined;
   payment_terms?: string | undefined;
   payments?: Array<AccountingPaymentReference$Outbound> | undefined;
+  paymentterm_id?: string | undefined;
   posted_at?: string | undefined;
   project_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -344,6 +348,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     AccountingInvoicePaymentCollectionMethod$outboundSchema.optional(),
   paymentTerms: AccountingInvoicePaymentTerms$outboundSchema.optional(),
   payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
+  paymenttermId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   projectId: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -374,6 +379,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     paidAt: "paid_at",
     paymentCollectionMethod: "payment_collection_method",
     paymentTerms: "payment_terms",
+    paymenttermId: "paymentterm_id",
     postedAt: "posted_at",
     projectId: "project_id",
     refundAmount: "refund_amount",

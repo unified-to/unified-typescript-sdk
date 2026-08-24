@@ -38,6 +38,7 @@ export const WebhookObjectType = {
   AccountingVendorcredit: "accounting_vendorcredit",
   AccountingCreditmemo: "accounting_creditmemo",
   AccountingTaxrate: "accounting_taxrate",
+  AccountingPaymentterm: "accounting_paymentterm",
   AccountingOrganization: "accounting_organization",
   AccountingOrder: "accounting_order",
   AccountingSalesorder: "accounting_salesorder",

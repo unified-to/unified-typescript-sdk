@@ -34,6 +34,7 @@ export * from "./accountingmetadata.js";
 export * from "./accountingorder.js";
 export * from "./accountingorganization.js";
 export * from "./accountingpaymentreference.js";
+export * from "./accountingpaymentterm.js";
 export * from "./accountingprofitloss.js";
 export * from "./accountingprofitlossaccount.js";
 export * from "./accountingprofitlosscategory.js";

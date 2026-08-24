@@ -470,6 +470,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingCreateAccountingJournal`](docs/sdks/journal/README.md#createaccountingjournal) - Create a journal
 - [`accountingCreateAccountingOrder`](docs/sdks/accounting/README.md#createaccountingorder) - Create an order
 - [`accountingCreateAccountingOrder`](docs/sdks/order/README.md#createaccountingorder) - Create an order
+- [`accountingCreateAccountingPaymentterm`](docs/sdks/accounting/README.md#createaccountingpaymentterm) - Create a paymentterm
+- [`accountingCreateAccountingPaymentterm`](docs/sdks/paymentterm/README.md#createaccountingpaymentterm) - Create a paymentterm
 - [`accountingCreateAccountingProject`](docs/sdks/accounting/README.md#createaccountingproject) - Create a project
 - [`accountingCreateAccountingProject`](docs/sdks/project/README.md#createaccountingproject) - Create a project
 - [`accountingCreateAccountingPurchaseorder`](docs/sdks/accounting/README.md#createaccountingpurchaseorder) - Create a purchaseorder
@@ -516,6 +518,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingOrder`](docs/sdks/order/README.md#getaccountingorder) - Retrieve an order
 - [`accountingGetAccountingOrganization`](docs/sdks/accounting/README.md#getaccountingorganization) - Retrieve an organization
 - [`accountingGetAccountingOrganization`](docs/sdks/organization/README.md#getaccountingorganization) - Retrieve an organization
+- [`accountingGetAccountingPaymentterm`](docs/sdks/accounting/README.md#getaccountingpaymentterm) - Retrieve a paymentterm
+- [`accountingGetAccountingPaymentterm`](docs/sdks/paymentterm/README.md#getaccountingpaymentterm) - Retrieve a paymentterm
 - [`accountingGetAccountingProfitloss`](docs/sdks/accounting/README.md#getaccountingprofitloss) - Retrieve a profitloss
 - [`accountingGetAccountingProfitloss`](docs/sdks/profitloss/README.md#getaccountingprofitloss) - Retrieve a profitloss
 - [`accountingGetAccountingProject`](docs/sdks/accounting/README.md#getaccountingproject) - Retrieve a project
@@ -568,6 +572,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingOrders`](docs/sdks/order/README.md#listaccountingorders) - List all orders
 - [`accountingListAccountingOrganizations`](docs/sdks/accounting/README.md#listaccountingorganizations) - List all organizations
 - [`accountingListAccountingOrganizations`](docs/sdks/organization/README.md#listaccountingorganizations) - List all organizations
+- [`accountingListAccountingPaymentterms`](docs/sdks/accounting/README.md#listaccountingpaymentterms) - List all paymentterms
+- [`accountingListAccountingPaymentterms`](docs/sdks/paymentterm/README.md#listaccountingpaymentterms) - List all paymentterms
 - [`accountingListAccountingProfitlosses`](docs/sdks/accounting/README.md#listaccountingprofitlosses) - List all profitlosses
 - [`accountingListAccountingProfitlosses`](docs/sdks/profitloss/README.md#listaccountingprofitlosses) - List all profitlosses
 - [`accountingListAccountingProjects`](docs/sdks/accounting/README.md#listaccountingprojects) - List all projects
@@ -610,6 +616,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingPatchAccountingJournal`](docs/sdks/journal/README.md#patchaccountingjournal) - Update a journal
 - [`accountingPatchAccountingOrder`](docs/sdks/accounting/README.md#patchaccountingorder) - Update an order
 - [`accountingPatchAccountingOrder`](docs/sdks/order/README.md#patchaccountingorder) - Update an order
+- [`accountingPatchAccountingPaymentterm`](docs/sdks/accounting/README.md#patchaccountingpaymentterm) - Update a paymentterm
+- [`accountingPatchAccountingPaymentterm`](docs/sdks/paymentterm/README.md#patchaccountingpaymentterm) - Update a paymentterm
 - [`accountingPatchAccountingProject`](docs/sdks/accounting/README.md#patchaccountingproject) - Update a project
 - [`accountingPatchAccountingProject`](docs/sdks/project/README.md#patchaccountingproject) - Update a project
 - [`accountingPatchAccountingPurchaseorder`](docs/sdks/accounting/README.md#patchaccountingpurchaseorder) - Update a purchaseorder
@@ -646,6 +654,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingRemoveAccountingJournal`](docs/sdks/journal/README.md#removeaccountingjournal) - Remove a journal
 - [`accountingRemoveAccountingOrder`](docs/sdks/accounting/README.md#removeaccountingorder) - Remove an order
 - [`accountingRemoveAccountingOrder`](docs/sdks/order/README.md#removeaccountingorder) - Remove an order
+- [`accountingRemoveAccountingPaymentterm`](docs/sdks/accounting/README.md#removeaccountingpaymentterm) - Remove a paymentterm
+- [`accountingRemoveAccountingPaymentterm`](docs/sdks/paymentterm/README.md#removeaccountingpaymentterm) - Remove a paymentterm
 - [`accountingRemoveAccountingProject`](docs/sdks/accounting/README.md#removeaccountingproject) - Remove a project
 - [`accountingRemoveAccountingProject`](docs/sdks/project/README.md#removeaccountingproject) - Remove a project
 - [`accountingRemoveAccountingPurchaseorder`](docs/sdks/accounting/README.md#removeaccountingpurchaseorder) - Remove a purchaseorder
@@ -682,6 +692,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingUpdateAccountingJournal`](docs/sdks/journal/README.md#updateaccountingjournal) - Update a journal
 - [`accountingUpdateAccountingOrder`](docs/sdks/accounting/README.md#updateaccountingorder) - Update an order
 - [`accountingUpdateAccountingOrder`](docs/sdks/order/README.md#updateaccountingorder) - Update an order
+- [`accountingUpdateAccountingPaymentterm`](docs/sdks/accounting/README.md#updateaccountingpaymentterm) - Update a paymentterm
+- [`accountingUpdateAccountingPaymentterm`](docs/sdks/paymentterm/README.md#updateaccountingpaymentterm) - Update a paymentterm
 - [`accountingUpdateAccountingProject`](docs/sdks/accounting/README.md#updateaccountingproject) - Update a project
 - [`accountingUpdateAccountingProject`](docs/sdks/project/README.md#updateaccountingproject) - Update a project
 - [`accountingUpdateAccountingPurchaseorder`](docs/sdks/accounting/README.md#updateaccountingpurchaseorder) - Update a purchaseorder
