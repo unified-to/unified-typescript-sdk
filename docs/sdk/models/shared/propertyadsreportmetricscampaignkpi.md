@@ -1,0 +1,19 @@
+# PropertyAdsReportMetricsCampaignKpi
+
+## Example Usage
+
+```typescript
+import { PropertyAdsReportMetricsCampaignKpi } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyAdsReportMetricsCampaignKpi = {};
+```
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `algorithmId`                                                                                                           | *string*                                                                                                                | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
+| `amount`                                                                                                                | *number*                                                                                                                | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
+| `percentage`                                                                                                            | *number*                                                                                                                | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
+| `stringValue`                                                                                                           | *string*                                                                                                                | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |
+| `type`                                                                                                                  | [shared.PropertyAdsReportMetricsCampaignKpiType](../../../sdk/models/shared/propertyadsreportmetricscampaignkpitype.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |

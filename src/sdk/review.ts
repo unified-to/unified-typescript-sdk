@@ -9,7 +9,11 @@ import { commercePatchCommerceReview } from "../funcs/commercePatchCommerceRevie
 import { commerceRemoveCommerceReview } from "../funcs/commerceRemoveCommerceReview.js";
 import { commerceUpdateCommerceReview } from "../funcs/commerceUpdateCommerceReview.js";
 import { reviewGetPerformanceReview } from "../funcs/reviewGetPerformanceReview.js";
+import { reviewGetSocialReview } from "../funcs/reviewGetSocialReview.js";
 import { reviewListPerformanceReviews } from "../funcs/reviewListPerformanceReviews.js";
+import { reviewListSocialReviews } from "../funcs/reviewListSocialReviews.js";
+import { reviewPatchSocialReview } from "../funcs/reviewPatchSocialReview.js";
+import { reviewUpdateSocialReview } from "../funcs/reviewUpdateSocialReview.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -59,6 +63,20 @@ export class Review extends ClientSDK {
   }
 
   /**
+   * Retrieve a review
+   */
+  async getSocialReview(
+    request: operations.GetSocialReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SocialReview> {
+    return unwrapAsync(reviewGetSocialReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all reviews
    */
   async listCommerceReviews(
@@ -87,6 +105,20 @@ export class Review extends ClientSDK {
   }
 
   /**
+   * List all reviews
+   */
+  async listSocialReviews(
+    request: operations.ListSocialReviewsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.SocialReview>> {
+    return unwrapAsync(reviewListSocialReviews(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a review
    */
   async patchCommerceReview(
@@ -94,6 +126,20 @@ export class Review extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReview> {
     return unwrapAsync(commercePatchCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   */
+  async patchSocialReview(
+    request: operations.PatchSocialReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SocialReview> {
+    return unwrapAsync(reviewPatchSocialReview(
       this,
       request,
       options,
@@ -122,6 +168,20 @@ export class Review extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReview> {
     return unwrapAsync(commerceUpdateCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   */
+  async updateSocialReview(
+    request: operations.UpdateSocialReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SocialReview> {
+    return unwrapAsync(reviewUpdateSocialReview(
       this,
       request,
       options,

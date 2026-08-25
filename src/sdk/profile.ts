@@ -8,6 +8,8 @@ import { cdpListCdpProfiles } from "../funcs/cdpListCdpProfiles.js";
 import { cdpPatchCdpProfile } from "../funcs/cdpPatchCdpProfile.js";
 import { cdpRemoveCdpProfile } from "../funcs/cdpRemoveCdpProfile.js";
 import { cdpUpdateCdpProfile } from "../funcs/cdpUpdateCdpProfile.js";
+import { profileGetSocialProfile } from "../funcs/profileGetSocialProfile.js";
+import { profileListSocialProfiles } from "../funcs/profileListSocialProfiles.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -43,6 +45,20 @@ export class Profile extends ClientSDK {
   }
 
   /**
+   * Retrieve a profile
+   */
+  async getSocialProfile(
+    request: operations.GetSocialProfileRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SocialProfile> {
+    return unwrapAsync(profileGetSocialProfile(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all profiles
    */
   async listCdpProfiles(
@@ -50,6 +66,20 @@ export class Profile extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CdpProfile>> {
     return unwrapAsync(cdpListCdpProfiles(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all profiles
+   */
+  async listSocialProfiles(
+    request: operations.ListSocialProfilesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.SocialProfile>> {
+    return unwrapAsync(profileListSocialProfiles(
       this,
       request,
       options,

@@ -5,7 +5,7 @@
 ```typescript
 import { CreativeType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CreativeType = "DOCUMENT";
+let value: CreativeType = "SHARE";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: CreativeType = "DOCUMENT";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "STANDARD" | "EXPANDABLE" | "VIDEO" | "NATIVE" | "AUDIO" | "PUBLISHER_HOSTED" | "ASSET_BASED" | "IMAGE" | "SHARE" | "DOCUMENT" | Unrecognized<string>
+"UNSPECIFIED" | "STANDARD" | "EXPANDABLE" | "VIDEO" | "NATIVE" | "AUDIO" | "PUBLISHER_HOSTED" | "ASSET_BASED" | "IMAGE" | "DOCUMENT" | "SHARE" | Unrecognized<string>
 ```

@@ -77,6 +77,7 @@ import { Goal } from "./goal.js";
 import { Group } from "./group.js";
 import { Hris } from "./hris.js";
 import { Insertionorder } from "./insertionorder.js";
+import { Insight } from "./insight.js";
 import { Instructor } from "./instructor.js";
 import { Integration } from "./integration.js";
 import { Interview } from "./interview.js";
@@ -116,6 +117,7 @@ import { Performance } from "./performance.js";
 import { Person } from "./person.js";
 import { Picklist } from "./picklist.js";
 import { Pipeline } from "./pipeline.js";
+import { Post } from "./post.js";
 import { Profile } from "./profile.js";
 import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
@@ -148,6 +150,7 @@ import { Shipment } from "./shipment.js";
 import { Shipping } from "./shipping.js";
 import { Signatory } from "./signatory.js";
 import { Signing } from "./signing.js";
+import { Social } from "./social.js";
 import { Source } from "./source.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
@@ -917,6 +920,21 @@ export class UnifiedTo extends ClientSDK {
   private _template?: Template;
   get template(): Template {
     return (this._template ??= new Template(this._options));
+  }
+
+  private _social?: Social;
+  get social(): Social {
+    return (this._social ??= new Social(this._options));
+  }
+
+  private _insight?: Insight;
+  get insight(): Insight {
+    return (this._insight ??= new Insight(this._options));
+  }
+
+  private _post?: Post;
+  get post(): Post {
+    return (this._post ??= new Post(this._options));
   }
 
   private _storage?: Storage;

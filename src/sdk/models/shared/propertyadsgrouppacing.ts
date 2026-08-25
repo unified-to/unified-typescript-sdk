@@ -10,26 +10,34 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const Period = {
+export const PropertyAdsGroupPacingPeriod = {
   Unspecified: "UNSPECIFIED",
   Daily: "DAILY",
   Flight: "FLIGHT",
 } as const;
-export type Period = OpenEnum<typeof Period>;
+export type PropertyAdsGroupPacingPeriod = OpenEnum<
+  typeof PropertyAdsGroupPacingPeriod
+>;
 
 export type PropertyAdsGroupPacing = {
   dailyMaxAmount?: number | undefined;
   dailyMaxImpressions?: number | undefined;
-  period?: Period | undefined;
+  period?: PropertyAdsGroupPacingPeriod | undefined;
   type?: string | undefined;
 };
 
 /** @internal */
-export const Period$inboundSchema: z.ZodType<Period, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Period);
+export const PropertyAdsGroupPacingPeriod$inboundSchema: z.ZodType<
+  PropertyAdsGroupPacingPeriod,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsGroupPacingPeriod);
 /** @internal */
-export const Period$outboundSchema: z.ZodType<string, z.ZodTypeDef, Period> =
-  openEnums.outboundSchema(Period);
+export const PropertyAdsGroupPacingPeriod$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  PropertyAdsGroupPacingPeriod
+> = openEnums.outboundSchema(PropertyAdsGroupPacingPeriod);
 
 /** @internal */
 export const PropertyAdsGroupPacing$inboundSchema: z.ZodType<
@@ -39,7 +47,7 @@ export const PropertyAdsGroupPacing$inboundSchema: z.ZodType<
 > = z.object({
   daily_max_amount: z.number().optional(),
   daily_max_impressions: z.number().optional(),
-  period: Period$inboundSchema.optional(),
+  period: PropertyAdsGroupPacingPeriod$inboundSchema.optional(),
   type: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -63,7 +71,7 @@ export const PropertyAdsGroupPacing$outboundSchema: z.ZodType<
 > = z.object({
   dailyMaxAmount: z.number().optional(),
   dailyMaxImpressions: z.number().optional(),
-  period: Period$outboundSchema.optional(),
+  period: PropertyAdsGroupPacingPeriod$outboundSchema.optional(),
   type: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

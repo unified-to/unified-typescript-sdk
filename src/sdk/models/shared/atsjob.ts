@@ -96,6 +96,7 @@ export type AtsJob = {
   hiringManagerIds?: Array<string> | undefined;
   hiringManagers?: Array<AtsReference> | undefined;
   id?: string | undefined;
+  industry?: string | undefined;
   languageLocale?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
   minimumDegree?: string | undefined;
@@ -164,6 +165,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     hiring_manager_ids: z.array(z.string()).optional(),
     hiring_managers: z.array(AtsReference$inboundSchema).optional(),
     id: z.string().optional(),
+    industry: z.string().optional(),
     language_locale: z.string().optional(),
     metadata: z.array(AtsMetadata$inboundSchema).optional(),
     minimum_degree: z.string().optional(),
@@ -214,6 +216,7 @@ export type AtsJob$Outbound = {
   hiring_manager_ids?: Array<string> | undefined;
   hiring_managers?: Array<AtsReference$Outbound> | undefined;
   id?: string | undefined;
+  industry?: string | undefined;
   language_locale?: string | undefined;
   metadata?: Array<AtsMetadata$Outbound> | undefined;
   minimum_degree?: string | undefined;
@@ -250,6 +253,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   hiringManagerIds: z.array(z.string()).optional(),
   hiringManagers: z.array(AtsReference$outboundSchema).optional(),
   id: z.string().optional(),
+  industry: z.string().optional(),
   languageLocale: z.string().optional(),
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
   minimumDegree: z.string().optional(),

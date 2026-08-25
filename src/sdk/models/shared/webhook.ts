@@ -198,6 +198,10 @@ export const WebhookObjectType = {
   PerformanceReview: "performance_review",
   PerformanceGoal: "performance_goal",
   PerformanceFeedback: "performance_feedback",
+  SocialPost: "social_post",
+  SocialProfile: "social_profile",
+  SocialReview: "social_review",
+  SocialInsight: "social_insight",
 } as const;
 export type WebhookObjectType = OpenEnum<typeof WebhookObjectType>;
 

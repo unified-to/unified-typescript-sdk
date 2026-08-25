@@ -41,6 +41,7 @@ export const Categories = {
   Datastore: "datastore",
   Cdp: "cdp",
   Performance: "performance",
+  Social: "social",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 

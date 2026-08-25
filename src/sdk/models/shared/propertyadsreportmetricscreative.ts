@@ -21,8 +21,8 @@ export const PropertyAdsReportMetricsCreativeCreativeType = {
   PublisherHosted: "PUBLISHER_HOSTED",
   AssetBased: "ASSET_BASED",
   Image: "IMAGE",
-  Share: "SHARE",
   Document: "DOCUMENT",
+  Share: "SHARE",
 } as const;
 export type PropertyAdsReportMetricsCreativeCreativeType = OpenEnum<
   typeof PropertyAdsReportMetricsCreativeCreativeType

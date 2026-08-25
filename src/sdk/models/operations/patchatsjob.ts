@@ -35,6 +35,7 @@ export const PatchAtsJobQueryParamFields = {
   Skills: "skills",
   Metadata: "metadata",
   UserId: "user_id",
+  Industry: "industry",
   Raw: "raw",
 } as const;
 export type PatchAtsJobQueryParamFields = ClosedEnum<

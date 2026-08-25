@@ -1,0 +1,23 @@
+# SocialInsight
+
+## Example Usage
+
+```typescript
+import { SocialInsight } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: SocialInsight = {};
+```
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `date`                                                                                        | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `metric`                                                                                      | [shared.Metric](../../../sdk/models/shared/metric.md)                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `period`                                                                                      | [shared.Period](../../../sdk/models/shared/period.md)                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `postId`                                                                                      | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `profileId`                                                                                   | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `value`                                                                                       | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

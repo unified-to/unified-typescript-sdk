@@ -6,7 +6,9 @@
 
 * [createCdpProfile](#createcdpprofile) - Create a profile
 * [getCdpProfile](#getcdpprofile) - Retrieve a profile
+* [getSocialProfile](#getsocialprofile) - Retrieve a profile
 * [listCdpProfiles](#listcdpprofiles) - List all profiles
+* [listSocialProfiles](#listsocialprofiles) - List all profiles
 * [patchCdpProfile](#patchcdpprofile) - Update a profile
 * [removeCdpProfile](#removecdpprofile) - Remove a profile
 * [updateCdpProfile](#updatecdpprofile) - Update a profile
@@ -169,6 +171,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getSocialProfile
+
+Retrieve a profile
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getSocialProfile" method="get" path="/social/{connection_id}/profile/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.profile.getSocialProfile({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { profileGetSocialProfile } from "@unified-api/typescript-sdk/funcs/profileGetSocialProfile.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await profileGetSocialProfile(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("profileGetSocialProfile failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetSocialProfileRequest](../../sdk/models/operations/getsocialprofilerequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SocialProfile](../../sdk/models/shared/socialprofile.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listCdpProfiles
 
 List all profiles
@@ -239,6 +320,83 @@ run();
 ### Response
 
 **Promise\<[shared.CdpProfile[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listSocialProfiles
+
+List all profiles
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listSocialProfiles" method="get" path="/social/{connection_id}/profile" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.profile.listSocialProfiles({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { profileListSocialProfiles } from "@unified-api/typescript-sdk/funcs/profileListSocialProfiles.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await profileListSocialProfiles(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("profileListSocialProfiles failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListSocialProfilesRequest](../../sdk/models/operations/listsocialprofilesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SocialProfile[]](../../models/.md)\>**
 
 ### Errors
 

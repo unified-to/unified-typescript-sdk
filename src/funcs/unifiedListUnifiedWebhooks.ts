@@ -93,6 +93,7 @@ async function $do(
     "created_lte": payload.created_lte,
     "env": payload.env,
     "integration_type": payload.integration_type,
+    "is_healthy": payload.is_healthy,
     "limit": payload.limit,
     "object": payload.object,
     "offset": payload.offset,

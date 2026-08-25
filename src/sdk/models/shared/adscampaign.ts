@@ -16,6 +16,12 @@ import {
   PropertyAdsCampaignFrequencyCap$outboundSchema,
 } from "./propertyadscampaignfrequencycap.js";
 import {
+  PropertyAdsCampaignKpi,
+  PropertyAdsCampaignKpi$inboundSchema,
+  PropertyAdsCampaignKpi$Outbound,
+  PropertyAdsCampaignKpi$outboundSchema,
+} from "./propertyadscampaignkpi.js";
+import {
   PropertyAdsCampaignTargeting,
   PropertyAdsCampaignTargeting$inboundSchema,
   PropertyAdsCampaignTargeting$Outbound,
@@ -111,6 +117,7 @@ export type AdsCampaign = {
   goal?: Goal | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
+  kpi?: PropertyAdsCampaignKpi | undefined;
   labels?: Array<string> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
@@ -217,6 +224,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
   goal: Goal$inboundSchema.optional(),
   has_eu_political_ads: z.boolean().optional(),
   id: z.string().optional(),
+  kpi: PropertyAdsCampaignKpi$inboundSchema.optional(),
   labels: z.array(z.string()).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
@@ -264,6 +272,7 @@ export type AdsCampaign$Outbound = {
   goal?: string | undefined;
   has_eu_political_ads?: boolean | undefined;
   id?: string | undefined;
+  kpi?: PropertyAdsCampaignKpi$Outbound | undefined;
   labels?: Array<string> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
@@ -296,6 +305,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   goal: Goal$outboundSchema.optional(),
   hasEuPoliticalAds: z.boolean().optional(),
   id: z.string().optional(),
+  kpi: PropertyAdsCampaignKpi$outboundSchema.optional(),
   labels: z.array(z.string()).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),

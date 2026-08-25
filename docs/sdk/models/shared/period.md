@@ -5,7 +5,7 @@
 ```typescript
 import { Period } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Period = "DAILY";
+let value: Period = "MONTH";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: Period = "DAILY";
 ## Values
 
 ```typescript
-"UNSPECIFIED" | "DAILY" | "FLIGHT" | Unrecognized<string>
+"DAY" | "WEEK" | "MONTH" | "LIFETIME" | "TOTAL" | "OTHER" | Unrecognized<string>
 ```

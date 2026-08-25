@@ -19,6 +19,10 @@ export type ListUnifiedWebhooksRequest = {
    * Filter the results to just this integration
    */
   integrationType?: string | undefined;
+  /**
+   * Filter by health. Omit to return all.
+   */
+  isHealthy?: boolean | undefined;
   limit?: number | undefined;
   /**
    * Filter the results for webhooks for only this object
@@ -39,6 +43,7 @@ export type ListUnifiedWebhooksRequest$Outbound = {
   created_lte?: string | undefined;
   env?: string | undefined;
   integration_type?: string | undefined;
+  is_healthy?: boolean | undefined;
   limit?: number | undefined;
   object?: string | undefined;
   offset?: number | undefined;
@@ -57,6 +62,7 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
   createdLte: z.string().optional(),
   env: z.string().optional(),
   integrationType: z.string().optional(),
+  isHealthy: z.boolean().optional(),
   limit: z.number().optional(),
   object: z.string().optional(),
   offset: z.number().optional(),
@@ -68,6 +74,7 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
     connectionId: "connection_id",
     createdLte: "created_lte",
     integrationType: "integration_type",
+    isHealthy: "is_healthy",
     updatedGte: "updated_gte",
   });
 });

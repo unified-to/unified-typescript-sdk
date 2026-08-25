@@ -35,6 +35,7 @@ export const CreateAtsJobQueryParamFields = {
   Skills: "skills",
   Metadata: "metadata",
   UserId: "user_id",
+  Industry: "industry",
   Raw: "raw",
 } as const;
 export type CreateAtsJobQueryParamFields = ClosedEnum<

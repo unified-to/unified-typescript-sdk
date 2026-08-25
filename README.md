@@ -1822,6 +1822,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`performanceRemovePerformanceGoal`](docs/sdks/performance/README.md#removeperformancegoal) - Remove a goal
 - [`performanceUpdatePerformanceGoal`](docs/sdks/goal/README.md#updateperformancegoal) - Update a goal
 - [`performanceUpdatePerformanceGoal`](docs/sdks/performance/README.md#updateperformancegoal) - Update a goal
+- [`profileGetSocialProfile`](docs/sdks/profile/README.md#getsocialprofile) - Retrieve a profile
+- [`profileGetSocialProfile`](docs/sdks/social/README.md#getsocialprofile) - Retrieve a profile
+- [`profileListSocialProfiles`](docs/sdks/profile/README.md#listsocialprofiles) - List all profiles
+- [`profileListSocialProfiles`](docs/sdks/social/README.md#listsocialprofiles) - List all profiles
 - [`projectCreateTaskProject`](docs/sdks/project/README.md#createtaskproject) - Create a project
 - [`projectCreateTaskProject`](docs/sdks/task/README.md#createtaskproject) - Create a project
 - [`projectGetTaskProject`](docs/sdks/project/README.md#gettaskproject) - Retrieve a project
@@ -1902,8 +1906,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoUpdateRepoRepository`](docs/sdks/repository/README.md#updatereporepository) - Update a repository
 - [`reviewGetPerformanceReview`](docs/sdks/performance/README.md#getperformancereview) - Retrieve a review
 - [`reviewGetPerformanceReview`](docs/sdks/review/README.md#getperformancereview) - Retrieve a review
+- [`reviewGetSocialReview`](docs/sdks/review/README.md#getsocialreview) - Retrieve a review
+- [`reviewGetSocialReview`](docs/sdks/social/README.md#getsocialreview) - Retrieve a review
 - [`reviewListPerformanceReviews`](docs/sdks/performance/README.md#listperformancereviews) - List all reviews
 - [`reviewListPerformanceReviews`](docs/sdks/review/README.md#listperformancereviews) - List all reviews
+- [`reviewListSocialReviews`](docs/sdks/review/README.md#listsocialreviews) - List all reviews
+- [`reviewListSocialReviews`](docs/sdks/social/README.md#listsocialreviews) - List all reviews
+- [`reviewPatchSocialReview`](docs/sdks/review/README.md#patchsocialreview) - Update a review
+- [`reviewPatchSocialReview`](docs/sdks/social/README.md#patchsocialreview) - Update a review
+- [`reviewUpdateSocialReview`](docs/sdks/review/README.md#updatesocialreview) - Update a review
+- [`reviewUpdateSocialReview`](docs/sdks/social/README.md#updatesocialreview) - Update a review
 - [`scimCreateScimUsers`](docs/sdks/scim/README.md#createscimusers) - Create user
 - [`scimCreateScimUsers`](docs/sdks/user/README.md#createscimusers) - Create user
 - [`scimGetScimUsers`](docs/sdks/scim/README.md#getscimusers) - Get user
@@ -1966,6 +1978,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`signingRemoveSigningSignatory`](docs/sdks/signing/README.md#removesigningsignatory) - Remove a signatory
 - [`signingUpdateSigningSignatory`](docs/sdks/signatory/README.md#updatesigningsignatory) - Update a signatory
 - [`signingUpdateSigningSignatory`](docs/sdks/signing/README.md#updatesigningsignatory) - Update a signatory
+- [`socialCreateSocialPost`](docs/sdks/post/README.md#createsocialpost) - Create a post
+- [`socialCreateSocialPost`](docs/sdks/social/README.md#createsocialpost) - Create a post
+- [`socialGetSocialInsight`](docs/sdks/insight/README.md#getsocialinsight) - Retrieve an insight
+- [`socialGetSocialInsight`](docs/sdks/social/README.md#getsocialinsight) - Retrieve an insight
+- [`socialGetSocialPost`](docs/sdks/post/README.md#getsocialpost) - Retrieve a post
+- [`socialGetSocialPost`](docs/sdks/social/README.md#getsocialpost) - Retrieve a post
+- [`socialListSocialInsights`](docs/sdks/insight/README.md#listsocialinsights) - List all insights
+- [`socialListSocialInsights`](docs/sdks/social/README.md#listsocialinsights) - List all insights
+- [`socialListSocialPosts`](docs/sdks/post/README.md#listsocialposts) - List all posts
+- [`socialListSocialPosts`](docs/sdks/social/README.md#listsocialposts) - List all posts
+- [`socialPatchSocialPost`](docs/sdks/post/README.md#patchsocialpost) - Update a post
+- [`socialPatchSocialPost`](docs/sdks/social/README.md#patchsocialpost) - Update a post
+- [`socialRemoveSocialPost`](docs/sdks/post/README.md#removesocialpost) - Remove a post
+- [`socialRemoveSocialPost`](docs/sdks/social/README.md#removesocialpost) - Remove a post
+- [`socialUpdateSocialPost`](docs/sdks/post/README.md#updatesocialpost) - Update a post
+- [`socialUpdateSocialPost`](docs/sdks/social/README.md#updatesocialpost) - Update a post
 - [`storageCreateStorageFile`](docs/sdks/file/README.md#createstoragefile) - Create a file
 - [`storageCreateStorageFile`](docs/sdks/storage/README.md#createstoragefile) - Create a file
 - [`storageGetStorageFile`](docs/sdks/file/README.md#getstoragefile) - Retrieve a file

@@ -41,6 +41,7 @@ export const QueryParamCategories = {
   Datastore: "datastore",
   Cdp: "cdp",
   Performance: "performance",
+  Social: "social",
 } as const;
 export type QueryParamCategories = ClosedEnum<typeof QueryParamCategories>;
 
