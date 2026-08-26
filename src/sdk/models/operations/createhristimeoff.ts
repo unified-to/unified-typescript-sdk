@@ -21,6 +21,7 @@ export const CreateHrisTimeoffQueryParamFields = {
   ApprovedAt: "approved_at",
   Comments: "comments",
   Reason: "reason",
+  OriginalType: "original_type",
   Type: "type",
   Duration: "duration",
   DurationType: "duration_type",

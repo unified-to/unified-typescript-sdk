@@ -115,7 +115,6 @@ import { Payout } from "./payout.js";
 import { Payslip } from "./payslip.js";
 import { Performance } from "./performance.js";
 import { Person } from "./person.js";
-import { Picklist } from "./picklist.js";
 import { Pipeline } from "./pipeline.js";
 import { Post } from "./post.js";
 import { Profile } from "./profile.js";
@@ -582,14 +581,14 @@ export class UnifiedTo extends ClientSDK {
     return (this._lead ??= new Lead(this._options));
   }
 
-  private _picklist?: Picklist;
-  get picklist(): Picklist {
-    return (this._picklist ??= new Picklist(this._options));
-  }
-
   private _pipeline?: Pipeline;
   get pipeline(): Pipeline {
     return (this._pipeline ??= new Pipeline(this._options));
+  }
+
+  private _taxonomy?: Taxonomy;
+  get taxonomy(): Taxonomy {
+    return (this._taxonomy ??= new Taxonomy(this._options));
   }
 
   private _datastore?: Datastore;
@@ -700,11 +699,6 @@ export class UnifiedTo extends ClientSDK {
   private _payslip?: Payslip;
   get payslip(): Payslip {
     return (this._payslip ??= new Payslip(this._options));
-  }
-
-  private _taxonomy?: Taxonomy;
-  get taxonomy(): Taxonomy {
-    return (this._taxonomy ??= new Taxonomy(this._options));
   }
 
   private _timeoff?: Timeoff;

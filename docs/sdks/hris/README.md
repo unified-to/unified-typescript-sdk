@@ -1948,7 +1948,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisGetHrisTaxonomy } from "@unified-api/typescript-sdk/funcs/hrisGetHrisTaxonomy.js";
+import { taxonomyGetHrisTaxonomy } from "@unified-api/typescript-sdk/funcs/taxonomyGetHrisTaxonomy.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1959,7 +1959,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisGetHrisTaxonomy(unifiedTo, {
+  const res = await taxonomyGetHrisTaxonomy(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1967,7 +1967,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisGetHrisTaxonomy failed:", res.error);
+    console.log("taxonomyGetHrisTaxonomy failed:", res.error);
   }
 }
 
@@ -3031,7 +3031,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { hrisListHrisTaxonomies } from "@unified-api/typescript-sdk/funcs/hrisListHrisTaxonomies.js";
+import { taxonomyListHrisTaxonomies } from "@unified-api/typescript-sdk/funcs/taxonomyListHrisTaxonomies.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3042,14 +3042,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await hrisListHrisTaxonomies(unifiedTo, {
+  const res = await taxonomyListHrisTaxonomies(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("hrisListHrisTaxonomies failed:", res.error);
+    console.log("taxonomyListHrisTaxonomies failed:", res.error);
   }
 }
 

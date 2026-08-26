@@ -6,18 +6,18 @@ import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { ClosedEnum } from "../../types/enums.js";
 
-export const ListCrmPicklistsQueryParamFields = {
+export const ListCrmTaxonomiesQueryParamFields = {
   Id: "id",
   Name: "name",
   Label: "label",
   Type: "type",
   Raw: "raw",
 } as const;
-export type ListCrmPicklistsQueryParamFields = ClosedEnum<
-  typeof ListCrmPicklistsQueryParamFields
+export type ListCrmTaxonomiesQueryParamFields = ClosedEnum<
+  typeof ListCrmTaxonomiesQueryParamFields
 >;
 
-export type ListCrmPicklistsRequest = {
+export type ListCrmTaxonomiesRequest = {
   /**
    * ID of the connection
    */
@@ -25,7 +25,7 @@ export type ListCrmPicklistsRequest = {
   /**
    * Fields to return
    */
-  fields?: Array<ListCrmPicklistsQueryParamFields> | undefined;
+  fields?: Array<ListCrmTaxonomiesQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -46,12 +46,12 @@ export type ListCrmPicklistsRequest = {
 };
 
 /** @internal */
-export const ListCrmPicklistsQueryParamFields$outboundSchema: z.ZodNativeEnum<
-  typeof ListCrmPicklistsQueryParamFields
-> = z.nativeEnum(ListCrmPicklistsQueryParamFields);
+export const ListCrmTaxonomiesQueryParamFields$outboundSchema: z.ZodNativeEnum<
+  typeof ListCrmTaxonomiesQueryParamFields
+> = z.nativeEnum(ListCrmTaxonomiesQueryParamFields);
 
 /** @internal */
-export type ListCrmPicklistsRequest$Outbound = {
+export type ListCrmTaxonomiesRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -65,13 +65,13 @@ export type ListCrmPicklistsRequest$Outbound = {
 };
 
 /** @internal */
-export const ListCrmPicklistsRequest$outboundSchema: z.ZodType<
-  ListCrmPicklistsRequest$Outbound,
+export const ListCrmTaxonomiesRequest$outboundSchema: z.ZodType<
+  ListCrmTaxonomiesRequest$Outbound,
   z.ZodTypeDef,
-  ListCrmPicklistsRequest
+  ListCrmTaxonomiesRequest
 > = z.object({
   connectionId: z.string(),
-  fields: z.array(ListCrmPicklistsQueryParamFields$outboundSchema).optional(),
+  fields: z.array(ListCrmTaxonomiesQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -87,10 +87,10 @@ export const ListCrmPicklistsRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function listCrmPicklistsRequestToJSON(
-  listCrmPicklistsRequest: ListCrmPicklistsRequest,
+export function listCrmTaxonomiesRequestToJSON(
+  listCrmTaxonomiesRequest: ListCrmTaxonomiesRequest,
 ): string {
   return JSON.stringify(
-    ListCrmPicklistsRequest$outboundSchema.parse(listCrmPicklistsRequest),
+    ListCrmTaxonomiesRequest$outboundSchema.parse(listCrmTaxonomiesRequest),
   );
 }

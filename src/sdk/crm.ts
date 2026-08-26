@@ -22,8 +22,8 @@ import { crmGetCrmLead } from "../funcs/crmGetCrmLead.js";
 import { crmGetCrmPipeline } from "../funcs/crmGetCrmPipeline.js";
 import { crmListCrmDeals } from "../funcs/crmListCrmDeals.js";
 import { crmListCrmLeads } from "../funcs/crmListCrmLeads.js";
-import { crmListCrmPicklists } from "../funcs/crmListCrmPicklists.js";
 import { crmListCrmPipelines } from "../funcs/crmListCrmPipelines.js";
+import { crmListCrmTaxonomies } from "../funcs/crmListCrmTaxonomies.js";
 import { crmPatchCrmDeal } from "../funcs/crmPatchCrmDeal.js";
 import { crmPatchCrmLead } from "../funcs/crmPatchCrmLead.js";
 import { crmPatchCrmPipeline } from "../funcs/crmPatchCrmPipeline.js";
@@ -284,20 +284,6 @@ export class Crm extends ClientSDK {
   }
 
   /**
-   * List all picklists
-   */
-  async listCrmPicklists(
-    request: operations.ListCrmPicklistsRequest,
-    options?: RequestOptions,
-  ): Promise<Array<shared.CrmPicklist>> {
-    return unwrapAsync(crmListCrmPicklists(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
    * List all pipelines
    */
   async listCrmPipelines(
@@ -305,6 +291,20 @@ export class Crm extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CrmPipeline>> {
     return unwrapAsync(crmListCrmPipelines(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all taxonomies
+   */
+  async listCrmTaxonomies(
+    request: operations.ListCrmTaxonomiesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmTaxonomy>> {
+    return unwrapAsync(crmListCrmTaxonomies(
       this,
       request,
       options,

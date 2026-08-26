@@ -35,7 +35,6 @@ import { hrisGetHrisDeduction } from "../funcs/hrisGetHrisDeduction.js";
 import { hrisGetHrisDevice } from "../funcs/hrisGetHrisDevice.js";
 import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
-import { hrisGetHrisTaxonomy } from "../funcs/hrisGetHrisTaxonomy.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
 import { hrisListHrisAttendances } from "../funcs/hrisListHrisAttendances.js";
@@ -45,7 +44,6 @@ import { hrisListHrisDeductions } from "../funcs/hrisListHrisDeductions.js";
 import { hrisListHrisDevices } from "../funcs/hrisListHrisDevices.js";
 import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
-import { hrisListHrisTaxonomies } from "../funcs/hrisListHrisTaxonomies.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
 import { hrisPatchHrisAttendance } from "../funcs/hrisPatchHrisAttendance.js";
@@ -78,6 +76,8 @@ import { locationListHrisLocations } from "../funcs/locationListHrisLocations.js
 import { locationPatchHrisLocation } from "../funcs/locationPatchHrisLocation.js";
 import { locationRemoveHrisLocation } from "../funcs/locationRemoveHrisLocation.js";
 import { locationUpdateHrisLocation } from "../funcs/locationUpdateHrisLocation.js";
+import { taxonomyGetHrisTaxonomy } from "../funcs/taxonomyGetHrisTaxonomy.js";
+import { taxonomyListHrisTaxonomies } from "../funcs/taxonomyListHrisTaxonomies.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -413,7 +413,7 @@ export class Hris extends ClientSDK {
     request: operations.GetHrisTaxonomyRequest,
     options?: RequestOptions,
   ): Promise<shared.HrisTaxonomy> {
-    return unwrapAsync(hrisGetHrisTaxonomy(
+    return unwrapAsync(taxonomyGetHrisTaxonomy(
       this,
       request,
       options,
@@ -609,7 +609,7 @@ export class Hris extends ClientSDK {
     request: operations.ListHrisTaxonomiesRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.HrisTaxonomy>> {
-    return unwrapAsync(hrisListHrisTaxonomies(
+    return unwrapAsync(taxonomyListHrisTaxonomies(
       this,
       request,
       options,

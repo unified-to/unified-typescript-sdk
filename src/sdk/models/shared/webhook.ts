@@ -89,7 +89,7 @@ export const WebhookObjectType = {
   CrmEvent: "crm_event",
   CrmLead: "crm_lead",
   CrmPipeline: "crm_pipeline",
-  CrmPicklist: "crm_picklist",
+  CrmTaxonomy: "crm_taxonomy",
   HrisEmployee: "hris_employee",
   HrisGroup: "hris_group",
   HrisPayslip: "hris_payslip",

@@ -21,8 +21,8 @@
 * [listCrmDeals](#listcrmdeals) - List all deals
 * [listCrmEvents](#listcrmevents) - List all events
 * [listCrmLeads](#listcrmleads) - List all leads
-* [listCrmPicklists](#listcrmpicklists) - List all picklists
 * [listCrmPipelines](#listcrmpipelines) - List all pipelines
+* [listCrmTaxonomies](#listcrmtaxonomies) - List all taxonomies
 * [patchCrmCompany](#patchcrmcompany) - Update a company
 * [patchCrmContact](#patchcrmcontact) - Update a contact
 * [patchCrmDeal](#patchcrmdeal) - Update a deal
@@ -1375,83 +1375,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listCrmPicklists
-
-List all picklists
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="listCrmPicklists" method="get" path="/crm/{connection_id}/picklist" -->
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.crm.listCrmPicklists({
-    connectionId: "<id>",
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmListCrmPicklists } from "@unified-api/typescript-sdk/funcs/crmListCrmPicklists.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await crmListCrmPicklists(unifiedTo, {
-    connectionId: "<id>",
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("crmListCrmPicklists failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCrmPicklistsRequest](../../sdk/models/operations/listcrmpicklistsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.CrmPicklist[]](../../models/.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
 ## listCrmPipelines
 
 List all pipelines
@@ -1522,6 +1445,83 @@ run();
 ### Response
 
 **Promise\<[shared.CrmPipeline[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listCrmTaxonomies
+
+List all taxonomies
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listCrmTaxonomies" method="get" path="/crm/{connection_id}/taxonomy" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.crm.listCrmTaxonomies({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { crmListCrmTaxonomies } from "@unified-api/typescript-sdk/funcs/crmListCrmTaxonomies.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await crmListCrmTaxonomies(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("crmListCrmTaxonomies failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListCrmTaxonomiesRequest](../../sdk/models/operations/listcrmtaxonomiesrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CrmTaxonomy[]](../../models/.md)\>**
 
 ### Errors
 

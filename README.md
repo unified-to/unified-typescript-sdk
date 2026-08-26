@@ -1262,10 +1262,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`crmListCrmDeals`](docs/sdks/deal/README.md#listcrmdeals) - List all deals
 - [`crmListCrmLeads`](docs/sdks/crm/README.md#listcrmleads) - List all leads
 - [`crmListCrmLeads`](docs/sdks/lead/README.md#listcrmleads) - List all leads
-- [`crmListCrmPicklists`](docs/sdks/crm/README.md#listcrmpicklists) - List all picklists
-- [`crmListCrmPicklists`](docs/sdks/picklist/README.md#listcrmpicklists) - List all picklists
 - [`crmListCrmPipelines`](docs/sdks/crm/README.md#listcrmpipelines) - List all pipelines
 - [`crmListCrmPipelines`](docs/sdks/pipeline/README.md#listcrmpipelines) - List all pipelines
+- [`crmListCrmTaxonomies`](docs/sdks/crm/README.md#listcrmtaxonomies) - List all taxonomies
+- [`crmListCrmTaxonomies`](docs/sdks/taxonomy/README.md#listcrmtaxonomies) - List all taxonomies
 - [`crmPatchCrmDeal`](docs/sdks/crm/README.md#patchcrmdeal) - Update a deal
 - [`crmPatchCrmDeal`](docs/sdks/deal/README.md#patchcrmdeal) - Update a deal
 - [`crmPatchCrmLead`](docs/sdks/crm/README.md#patchcrmlead) - Update a lead
@@ -1474,8 +1474,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisEmployee`](docs/sdks/hris/README.md#gethrisemployee) - Retrieve an employee
 - [`hrisGetHrisPayslip`](docs/sdks/hris/README.md#gethrispayslip) - Retrieve a payslip
 - [`hrisGetHrisPayslip`](docs/sdks/payslip/README.md#gethrispayslip) - Retrieve a payslip
-- [`hrisGetHrisTaxonomy`](docs/sdks/hris/README.md#gethristaxonomy) - Retrieve a taxonomy
-- [`hrisGetHrisTaxonomy`](docs/sdks/taxonomy/README.md#gethristaxonomy) - Retrieve a taxonomy
 - [`hrisGetHrisTimeoff`](docs/sdks/hris/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeoff`](docs/sdks/timeoff/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeshift`](docs/sdks/hris/README.md#gethristimeshift) - Retrieve a timeshift
@@ -1494,8 +1492,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisEmployees`](docs/sdks/hris/README.md#listhrisemployees) - List all employees
 - [`hrisListHrisPayslips`](docs/sdks/hris/README.md#listhrispayslips) - List all payslips
 - [`hrisListHrisPayslips`](docs/sdks/payslip/README.md#listhrispayslips) - List all payslips
-- [`hrisListHrisTaxonomies`](docs/sdks/hris/README.md#listhristaxonomies) - List all taxonomies
-- [`hrisListHrisTaxonomies`](docs/sdks/taxonomy/README.md#listhristaxonomies) - List all taxonomies
 - [`hrisListHrisTimeoffs`](docs/sdks/hris/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeoffs`](docs/sdks/timeoff/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeshifts`](docs/sdks/hris/README.md#listhristimeshifts) - List all timeshifts
@@ -2016,6 +2012,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`taskPatchTaskTask`](docs/sdks/task/README.md#patchtasktask) - Update a task
 - [`taskRemoveTaskTask`](docs/sdks/task/README.md#removetasktask) - Remove a task
 - [`taskUpdateTaskTask`](docs/sdks/task/README.md#updatetasktask) - Update a task
+- [`taxonomyGetHrisTaxonomy`](docs/sdks/hris/README.md#gethristaxonomy) - Retrieve a taxonomy
+- [`taxonomyGetHrisTaxonomy`](docs/sdks/taxonomy/README.md#gethristaxonomy) - Retrieve a taxonomy
+- [`taxonomyListHrisTaxonomies`](docs/sdks/hris/README.md#listhristaxonomies) - List all taxonomies
+- [`taxonomyListHrisTaxonomies`](docs/sdks/taxonomy/README.md#listhristaxonomies) - List all taxonomies
 - [`ticketingCreateTicketingCustomer`](docs/sdks/customer/README.md#createticketingcustomer) - Create a customer
 - [`ticketingCreateTicketingCustomer`](docs/sdks/ticketing/README.md#createticketingcustomer) - Create a customer
 - [`ticketingCreateTicketingNote`](docs/sdks/note/README.md#createticketingnote) - Create a note

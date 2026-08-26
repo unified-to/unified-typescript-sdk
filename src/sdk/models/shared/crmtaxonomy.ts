@@ -9,29 +9,29 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const CrmPicklistType = {
+export const CrmTaxonomyType = {
   Industry: "INDUSTRY",
 } as const;
-export type CrmPicklistType = OpenEnum<typeof CrmPicklistType>;
+export type CrmTaxonomyType = OpenEnum<typeof CrmTaxonomyType>;
 
-export type CrmPicklist = {
+export type CrmTaxonomy = {
   id: string;
   label?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  type?: CrmPicklistType | undefined;
+  type?: CrmTaxonomyType | undefined;
 };
 
 /** @internal */
-export const CrmPicklistType$inboundSchema: z.ZodType<
-  CrmPicklistType,
+export const CrmTaxonomyType$inboundSchema: z.ZodType<
+  CrmTaxonomyType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CrmPicklistType);
+> = openEnums.inboundSchema(CrmTaxonomyType);
 
 /** @internal */
-export const CrmPicklist$inboundSchema: z.ZodType<
-  CrmPicklist,
+export const CrmTaxonomy$inboundSchema: z.ZodType<
+  CrmTaxonomy,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -39,15 +39,15 @@ export const CrmPicklist$inboundSchema: z.ZodType<
   label: z.string().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  type: CrmPicklistType$inboundSchema.optional(),
+  type: CrmTaxonomyType$inboundSchema.optional(),
 });
 
-export function crmPicklistFromJSON(
+export function crmTaxonomyFromJSON(
   jsonString: string,
-): SafeParseResult<CrmPicklist, SDKValidationError> {
+): SafeParseResult<CrmTaxonomy, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => CrmPicklist$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CrmPicklist' from JSON`,
+    (x) => CrmTaxonomy$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmTaxonomy' from JSON`,
   );
 }

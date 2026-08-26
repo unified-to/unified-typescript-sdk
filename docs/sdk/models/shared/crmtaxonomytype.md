@@ -1,11 +1,11 @@
-# CrmPicklistType
+# CrmTaxonomyType
 
 ## Example Usage
 
 ```typescript
-import { CrmPicklistType } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { CrmTaxonomyType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CrmPicklistType = "INDUSTRY";
+let value: CrmTaxonomyType = "INDUSTRY";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```

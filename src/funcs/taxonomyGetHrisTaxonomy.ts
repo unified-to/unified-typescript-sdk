@@ -29,7 +29,7 @@ import { Result } from "../sdk/types/fp.js";
 /**
  * Retrieve a taxonomy
  */
-export function hrisGetHrisTaxonomy(
+export function taxonomyGetHrisTaxonomy(
   client: UnifiedToCore,
   request: operations.GetHrisTaxonomyRequest,
   options?: RequestOptions,

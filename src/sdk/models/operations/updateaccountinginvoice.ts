@@ -27,6 +27,7 @@ export const UpdateAccountingInvoiceQueryParamFields = {
   ContactId: "contact_id",
   Currency: "currency",
   Notes: "notes",
+  ExtendedNotes: "extended_notes",
   RefundReason: "refund_reason",
   Term: "term",
   PaymentTerms: "payment_terms",

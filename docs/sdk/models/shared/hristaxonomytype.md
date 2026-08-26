@@ -5,7 +5,7 @@
 ```typescript
 import { HrisTaxonomyType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisTaxonomyType = "ROLE";
+let value: HrisTaxonomyType = "HOLIDAY";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: HrisTaxonomyType = "ROLE";
 ## Values
 
 ```typescript
-"SKILL" | "KNOWLEDGE" | "COMPETENCE" | "ABILITY" | "CERTIFICATION" | "ROLE" | "HOLIDAY" | Unrecognized<string>
+"SKILL" | "KNOWLEDGE" | "COMPETENCE" | "ABILITY" | "CERTIFICATION" | "ROLE" | "HOLIDAY" | "LEAVE" | Unrecognized<string>
 ```

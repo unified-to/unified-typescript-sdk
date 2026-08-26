@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all picklists
+ * List all taxonomies
  */
-export function crmListCrmPicklists(
+export function taxonomyListHrisTaxonomies(
   client: UnifiedToCore,
-  request: operations.ListCrmPicklistsRequest,
+  request: operations.ListHrisTaxonomiesRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.CrmPicklist>,
+    Array<shared.HrisTaxonomy>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -56,12 +56,12 @@ export function crmListCrmPicklists(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListCrmPicklistsRequest,
+  request: operations.ListHrisTaxonomiesRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.CrmPicklist>,
+      Array<shared.HrisTaxonomy>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -76,7 +76,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ListCrmPicklistsRequest$outboundSchema.parse(value),
+    (value) => operations.ListHrisTaxonomiesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -91,15 +91,17 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/crm/{connection_id}/picklist")(pathParams);
+  const path = pathToFunc("/hris/{connection_id}/taxonomy")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
+    "parent_id": payload.parent_id,
     "query": payload.query,
     "raw": payload.raw,
+    "role_id": payload.role_id,
     "sort": payload.sort,
     "type": payload.type,
     "updated_gte": payload.updated_gte,
@@ -115,7 +117,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listCrmPicklists",
+    operationID: "listHrisTaxonomies",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -156,7 +158,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.CrmPicklist>,
+    Array<shared.HrisTaxonomy>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -166,7 +168,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.CrmPicklist$inboundSchema)),
+    M.json(200, z.array(shared.HrisTaxonomy$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

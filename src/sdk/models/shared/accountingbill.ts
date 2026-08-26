@@ -16,6 +16,12 @@ import {
   AccountingAttachment$outboundSchema,
 } from "./accountingattachment.js";
 import {
+  AccountingExtendedNote,
+  AccountingExtendedNote$inboundSchema,
+  AccountingExtendedNote$Outbound,
+  AccountingExtendedNote$outboundSchema,
+} from "./accountingextendednote.js";
+import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
   AccountingLineitem$Outbound,
@@ -95,6 +101,7 @@ export type AccountingBill = {
   currency?: string | undefined;
   discountAmount?: number | undefined;
   dueAt?: Date | undefined;
+  extendedNotes?: Array<AccountingExtendedNote> | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
@@ -190,6 +197,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
   discount_amount: z.number().optional(),
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  extended_notes: z.array(AccountingExtendedNote$inboundSchema).optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   metadata: z.array(AccountingMetadata$inboundSchema).optional(),
@@ -228,6 +236,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "due_at": "dueAt",
+    "extended_notes": "extendedNotes",
     "organization_id": "organizationId",
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
@@ -256,6 +265,7 @@ export type AccountingBill$Outbound = {
   currency?: string | undefined;
   discount_amount?: number | undefined;
   due_at?: string | undefined;
+  extended_notes?: Array<AccountingExtendedNote$Outbound> | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   metadata?: Array<AccountingMetadata$Outbound> | undefined;
@@ -298,6 +308,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   discountAmount: z.number().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
+  extendedNotes: z.array(AccountingExtendedNote$outboundSchema).optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   metadata: z.array(AccountingMetadata$outboundSchema).optional(),
@@ -332,6 +343,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
     createdAt: "created_at",
     discountAmount: "discount_amount",
     dueAt: "due_at",
+    extendedNotes: "extended_notes",
     organizationId: "organization_id",
     paidAmount: "paid_amount",
     paidAt: "paid_at",

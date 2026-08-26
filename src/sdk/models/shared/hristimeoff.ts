@@ -47,6 +47,7 @@ export type HrisTimeoff = {
   endAt?: Date | undefined;
   id?: string | undefined;
   isPaid?: boolean | undefined;
+  originalType?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reason?: string | undefined;
   startAt?: Date | undefined;
@@ -114,6 +115,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   is_paid: z.boolean().optional(),
+  original_type: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reason: z.string().optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -132,6 +134,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     "duration_type": "durationType",
     "end_at": "endAt",
     "is_paid": "isPaid",
+    "original_type": "originalType",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -149,6 +152,7 @@ export type HrisTimeoff$Outbound = {
   end_at?: string | undefined;
   id?: string | undefined;
   is_paid?: boolean | undefined;
+  original_type?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reason?: string | undefined;
   start_at?: string | undefined;
@@ -174,6 +178,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   isPaid: z.boolean().optional(),
+  originalType: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reason: z.string().optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
@@ -190,6 +195,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
     durationType: "duration_type",
     endAt: "end_at",
     isPaid: "is_paid",
+    originalType: "original_type",
     startAt: "start_at",
     updatedAt: "updated_at",
     userId: "user_id",
