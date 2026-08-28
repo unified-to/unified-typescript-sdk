@@ -1730,6 +1730,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`metadataPatchMetadataMetadata`](docs/sdks/metadata/README.md#patchmetadatametadata) - Update a metadata
 - [`metadataRemoveMetadataMetadata`](docs/sdks/metadata/README.md#removemetadatametadata) - Remove a metadata
 - [`metadataUpdateMetadataMetadata`](docs/sdks/metadata/README.md#updatemetadatametadata) - Update a metadata
+- [`orderCreateAssessmentOrder`](docs/sdks/assessment/README.md#createassessmentorder) - Create an order
+- [`orderCreateAssessmentOrder`](docs/sdks/order/README.md#createassessmentorder) - Create an order
+- [`orderGetAssessmentOrder`](docs/sdks/assessment/README.md#getassessmentorder) - Retrieve an order
+- [`orderGetAssessmentOrder`](docs/sdks/order/README.md#getassessmentorder) - Retrieve an order
 - [`orderPatchAssessmentOrder`](docs/sdks/assessment/README.md#patchassessmentorder) - Update an order
 - [`orderPatchAssessmentOrder`](docs/sdks/order/README.md#patchassessmentorder) - Update an order
 - [`orderUpdateAssessmentOrder`](docs/sdks/assessment/README.md#updateassessmentorder) - Update an order

@@ -5,7 +5,9 @@
 ### Available Operations
 
 * [createAccountingOrder](#createaccountingorder) - Create an order
+* [createAssessmentOrder](#createassessmentorder) - Create an order
 * [getAccountingOrder](#getaccountingorder) - Retrieve an order
+* [getAssessmentOrder](#getassessmentorder) - Retrieve an order
 * [listAccountingOrders](#listaccountingorders) - List all orders
 * [patchAccountingOrder](#patchaccountingorder) - Update an order
 * [patchAssessmentOrder](#patchassessmentorder) - Update an order
@@ -92,6 +94,91 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createAssessmentOrder
+
+Create an order
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createAssessmentOrder" method="post" path="/assessment/{connection_id}/order" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.createAssessmentOrder({
+    assessmentOrder: {
+      connectionId: "<id>",
+      workspaceId: "<id>",
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderCreateAssessmentOrder } from "@unified-api/typescript-sdk/funcs/orderCreateAssessmentOrder.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderCreateAssessmentOrder(unifiedTo, {
+    assessmentOrder: {
+      connectionId: "<id>",
+      workspaceId: "<id>",
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderCreateAssessmentOrder failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateAssessmentOrderRequest](../../sdk/models/operations/createassessmentorderrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AssessmentOrder](../../sdk/models/shared/assessmentorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getAccountingOrder
 
 Retrieve an order
@@ -164,6 +251,85 @@ run();
 ### Response
 
 **Promise\<[shared.AccountingOrder](../../sdk/models/shared/accountingorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getAssessmentOrder
+
+Retrieve an order
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAssessmentOrder" method="get" path="/assessment/{connection_id}/order/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.getAssessmentOrder({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderGetAssessmentOrder } from "@unified-api/typescript-sdk/funcs/orderGetAssessmentOrder.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderGetAssessmentOrder(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderGetAssessmentOrder failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAssessmentOrderRequest](../../sdk/models/operations/getassessmentorderrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AssessmentOrder](../../sdk/models/shared/assessmentorder.md)\>**
 
 ### Errors
 

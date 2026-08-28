@@ -8,6 +8,8 @@ import { assessmentListAssessmentPackages } from "../funcs/assessmentListAssessm
 import { assessmentPatchAssessmentPackage } from "../funcs/assessmentPatchAssessmentPackage.js";
 import { assessmentRemoveAssessmentPackage } from "../funcs/assessmentRemoveAssessmentPackage.js";
 import { assessmentUpdateAssessmentPackage } from "../funcs/assessmentUpdateAssessmentPackage.js";
+import { orderCreateAssessmentOrder } from "../funcs/orderCreateAssessmentOrder.js";
+import { orderGetAssessmentOrder } from "../funcs/orderGetAssessmentOrder.js";
 import { orderPatchAssessmentOrder } from "../funcs/orderPatchAssessmentOrder.js";
 import { orderUpdateAssessmentOrder } from "../funcs/orderUpdateAssessmentOrder.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -17,6 +19,20 @@ import { unwrapAsync } from "./types/fp.js";
 
 export class Assessment extends ClientSDK {
   /**
+   * Create an order
+   */
+  async createAssessmentOrder(
+    request: operations.CreateAssessmentOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AssessmentOrder> {
+    return unwrapAsync(orderCreateAssessmentOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Create an assessment package
    */
   async createAssessmentPackage(
@@ -24,6 +40,20 @@ export class Assessment extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AssessmentPackage> {
     return unwrapAsync(assessmentCreateAssessmentPackage(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an order
+   */
+  async getAssessmentOrder(
+    request: operations.GetAssessmentOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AssessmentOrder> {
+    return unwrapAsync(orderGetAssessmentOrder(
       this,
       request,
       options,

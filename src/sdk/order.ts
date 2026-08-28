@@ -8,6 +8,8 @@ import { accountingListAccountingOrders } from "../funcs/accountingListAccountin
 import { accountingPatchAccountingOrder } from "../funcs/accountingPatchAccountingOrder.js";
 import { accountingRemoveAccountingOrder } from "../funcs/accountingRemoveAccountingOrder.js";
 import { accountingUpdateAccountingOrder } from "../funcs/accountingUpdateAccountingOrder.js";
+import { orderCreateAssessmentOrder } from "../funcs/orderCreateAssessmentOrder.js";
+import { orderGetAssessmentOrder } from "../funcs/orderGetAssessmentOrder.js";
 import { orderPatchAssessmentOrder } from "../funcs/orderPatchAssessmentOrder.js";
 import { orderUpdateAssessmentOrder } from "../funcs/orderUpdateAssessmentOrder.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -31,6 +33,20 @@ export class Order extends ClientSDK {
   }
 
   /**
+   * Create an order
+   */
+  async createAssessmentOrder(
+    request: operations.CreateAssessmentOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AssessmentOrder> {
+    return unwrapAsync(orderCreateAssessmentOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve an order
    */
   async getAccountingOrder(
@@ -38,6 +54,20 @@ export class Order extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingOrder> {
     return unwrapAsync(accountingGetAccountingOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an order
+   */
+  async getAssessmentOrder(
+    request: operations.GetAssessmentOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AssessmentOrder> {
+    return unwrapAsync(orderGetAssessmentOrder(
       this,
       request,
       options,
