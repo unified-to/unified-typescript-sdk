@@ -41,6 +41,10 @@ export type ListAccountingExpensesQueryParamFields = ClosedEnum<
 
 export type ListAccountingExpensesRequest = {
   /**
+   * The expense approver user/employee ID to filter by (reference to HrisEmployee)
+   */
+  approverUserId?: string | undefined;
+  /**
    * The category ID to filter by (reference to AccountingCategory)
    */
   categoryId?: string | undefined;
@@ -106,6 +110,7 @@ export const ListAccountingExpensesQueryParamFields$outboundSchema:
 
 /** @internal */
 export type ListAccountingExpensesRequest$Outbound = {
+  approver_user_id?: string | undefined;
   category_id?: string | undefined;
   connection_id: string;
   contact_id?: string | undefined;
@@ -131,6 +136,7 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAccountingExpensesRequest
 > = z.object({
+  approverUserId: z.string().optional(),
   categoryId: z.string().optional(),
   connectionId: z.string(),
   contactId: z.string().optional(),
@@ -151,6 +157,7 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    approverUserId: "approver_user_id",
     categoryId: "category_id",
     connectionId: "connection_id",
     contactId: "contact_id",

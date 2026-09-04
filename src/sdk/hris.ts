@@ -76,6 +76,7 @@ import { locationListHrisLocations } from "../funcs/locationListHrisLocations.js
 import { locationPatchHrisLocation } from "../funcs/locationPatchHrisLocation.js";
 import { locationRemoveHrisLocation } from "../funcs/locationRemoveHrisLocation.js";
 import { locationUpdateHrisLocation } from "../funcs/locationUpdateHrisLocation.js";
+import { taxonomyCreateHrisTaxonomy } from "../funcs/taxonomyCreateHrisTaxonomy.js";
 import { taxonomyGetHrisTaxonomy } from "../funcs/taxonomyGetHrisTaxonomy.js";
 import { taxonomyListHrisTaxonomies } from "../funcs/taxonomyListHrisTaxonomies.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -218,6 +219,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(locationCreateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a taxonomy
+   */
+  async createHrisTaxonomy(
+    request: operations.CreateHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxonomy> {
+    return unwrapAsync(taxonomyCreateHrisTaxonomy(
       this,
       request,
       options,

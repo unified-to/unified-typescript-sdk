@@ -42,6 +42,13 @@ export const ListApplicationId = {
 } as const;
 export type ListApplicationId = OpenEnum<typeof ListApplicationId>;
 
+export const ListApproverUserId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListApproverUserId = OpenEnum<typeof ListApproverUserId>;
+
 export const ListAssignedUserId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -898,6 +905,15 @@ export type VirtualWebhookApplicationId = OpenEnum<
   typeof VirtualWebhookApplicationId
 >;
 
+export const VirtualWebhookApproverUserId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookApproverUserId = OpenEnum<
+  typeof VirtualWebhookApproverUserId
+>;
+
 export const VirtualWebhookAssignedUserId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1393,6 +1409,7 @@ export type IntegrationSupport = {
   listAccountId?: ListAccountId | undefined;
   listAdId?: ListAdId | undefined;
   listApplicationId?: ListApplicationId | undefined;
+  listApproverUserId?: ListApproverUserId | undefined;
   listAssignedUserId?: ListAssignedUserId | undefined;
   listBankfeedaccountId?: ListBankfeedaccountId | undefined;
   listBenefitId?: ListBenefitId | undefined;
@@ -1522,6 +1539,7 @@ export type IntegrationSupport = {
   virtualWebhookAccountId?: VirtualWebhookAccountId | undefined;
   virtualWebhookAdId?: VirtualWebhookAdId | undefined;
   virtualWebhookApplicationId?: VirtualWebhookApplicationId | undefined;
+  virtualWebhookApproverUserId?: VirtualWebhookApproverUserId | undefined;
   virtualWebhookAssignedUserId?: VirtualWebhookAssignedUserId | undefined;
   virtualWebhookBankfeedaccountId?: VirtualWebhookBankfeedaccountId | undefined;
   virtualWebhookBenefitId?: VirtualWebhookBenefitId | undefined;
@@ -1617,6 +1635,13 @@ export const ListApplicationId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListApplicationId);
+
+/** @internal */
+export const ListApproverUserId$inboundSchema: z.ZodType<
+  ListApproverUserId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListApproverUserId);
 
 /** @internal */
 export const ListAssignedUserId$inboundSchema: z.ZodType<
@@ -2473,6 +2498,13 @@ export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookApplicationId);
 
 /** @internal */
+export const VirtualWebhookApproverUserId$inboundSchema: z.ZodType<
+  VirtualWebhookApproverUserId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookApproverUserId);
+
+/** @internal */
 export const VirtualWebhookAssignedUserId$inboundSchema: z.ZodType<
   VirtualWebhookAssignedUserId,
   z.ZodTypeDef,
@@ -2938,6 +2970,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_account_id: ListAccountId$inboundSchema.optional(),
   list_ad_id: ListAdId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
+  list_approver_user_id: ListApproverUserId$inboundSchema.optional(),
   list_assigned_user_id: ListAssignedUserId$inboundSchema.optional(),
   list_bankfeedaccount_id: ListBankfeedaccountId$inboundSchema.optional(),
   list_benefit_id: ListBenefitId$inboundSchema.optional(),
@@ -3065,6 +3098,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_ad_id: VirtualWebhookAdId$inboundSchema.optional(),
   virtual_webhook_application_id: VirtualWebhookApplicationId$inboundSchema
     .optional(),
+  virtual_webhook_approver_user_id: VirtualWebhookApproverUserId$inboundSchema
+    .optional(),
   virtual_webhook_assigned_user_id: VirtualWebhookAssignedUserId$inboundSchema
     .optional(),
   virtual_webhook_bankfeedaccount_id:
@@ -3156,6 +3191,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_account_id": "listAccountId",
     "list_ad_id": "listAdId",
     "list_application_id": "listApplicationId",
+    "list_approver_user_id": "listApproverUserId",
     "list_assigned_user_id": "listAssignedUserId",
     "list_bankfeedaccount_id": "listBankfeedaccountId",
     "list_benefit_id": "listBenefitId",
@@ -3281,6 +3317,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_account_id": "virtualWebhookAccountId",
     "virtual_webhook_ad_id": "virtualWebhookAdId",
     "virtual_webhook_application_id": "virtualWebhookApplicationId",
+    "virtual_webhook_approver_user_id": "virtualWebhookApproverUserId",
     "virtual_webhook_assigned_user_id": "virtualWebhookAssignedUserId",
     "virtual_webhook_bankfeedaccount_id": "virtualWebhookBankfeedaccountId",
     "virtual_webhook_benefit_id": "virtualWebhookBenefitId",

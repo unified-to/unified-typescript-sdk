@@ -82,6 +82,7 @@ export * from "./createhrisdocument.js";
 export * from "./createhrisemployee.js";
 export * from "./createhrisgroup.js";
 export * from "./createhrislocation.js";
+export * from "./createhristaxonomy.js";
 export * from "./createhristimeoff.js";
 export * from "./createhristimeshift.js";
 export * from "./createkmscomment.js";

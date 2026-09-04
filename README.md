@@ -2016,6 +2016,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`taskPatchTaskTask`](docs/sdks/task/README.md#patchtasktask) - Update a task
 - [`taskRemoveTaskTask`](docs/sdks/task/README.md#removetasktask) - Remove a task
 - [`taskUpdateTaskTask`](docs/sdks/task/README.md#updatetasktask) - Update a task
+- [`taxonomyCreateHrisTaxonomy`](docs/sdks/hris/README.md#createhristaxonomy) - Create a taxonomy
+- [`taxonomyCreateHrisTaxonomy`](docs/sdks/taxonomy/README.md#createhristaxonomy) - Create a taxonomy
 - [`taxonomyGetHrisTaxonomy`](docs/sdks/hris/README.md#gethristaxonomy) - Retrieve a taxonomy
 - [`taxonomyGetHrisTaxonomy`](docs/sdks/taxonomy/README.md#gethristaxonomy) - Retrieve a taxonomy
 - [`taxonomyListHrisTaxonomies`](docs/sdks/hris/README.md#listhristaxonomies) - List all taxonomies

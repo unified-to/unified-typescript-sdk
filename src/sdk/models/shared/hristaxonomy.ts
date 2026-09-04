@@ -52,6 +52,12 @@ export const HrisTaxonomyType$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(HrisTaxonomyType);
+/** @internal */
+export const HrisTaxonomyType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  HrisTaxonomyType
+> = openEnums.outboundSchema(HrisTaxonomyType);
 
 /** @internal */
 export const HrisTaxonomy$inboundSchema: z.ZodType<
@@ -86,7 +92,60 @@ export const HrisTaxonomy$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
+/** @internal */
+export type HrisTaxonomy$Outbound = {
+  alternative_names?: Array<string> | undefined;
+  category?: string | undefined;
+  created_at?: string | undefined;
+  description?: string | undefined;
+  domain?: string | undefined;
+  id?: string | undefined;
+  is_active?: boolean | undefined;
+  name?: string | undefined;
+  parent_id?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
+  role_ids?: Array<string> | undefined;
+  subcategory?: string | undefined;
+  type?: string | undefined;
+  updated_at?: string | undefined;
+  url?: string | undefined;
+};
 
+/** @internal */
+export const HrisTaxonomy$outboundSchema: z.ZodType<
+  HrisTaxonomy$Outbound,
+  z.ZodTypeDef,
+  HrisTaxonomy
+> = z.object({
+  alternativeNames: z.array(z.string()).optional(),
+  category: z.string().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
+  description: z.string().optional(),
+  domain: z.string().optional(),
+  id: z.string().optional(),
+  isActive: z.boolean().optional(),
+  name: z.string().optional(),
+  parentId: z.string().optional(),
+  raw: z.record(z.any()).optional(),
+  roleIds: z.array(z.string()).optional(),
+  subcategory: z.string().optional(),
+  type: HrisTaxonomyType$outboundSchema.optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  url: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    alternativeNames: "alternative_names",
+    createdAt: "created_at",
+    isActive: "is_active",
+    parentId: "parent_id",
+    roleIds: "role_ids",
+    updatedAt: "updated_at",
+  });
+});
+
+export function hrisTaxonomyToJSON(hrisTaxonomy: HrisTaxonomy): string {
+  return JSON.stringify(HrisTaxonomy$outboundSchema.parse(hrisTaxonomy));
+}
 export function hrisTaxonomyFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisTaxonomy, SDKValidationError> {

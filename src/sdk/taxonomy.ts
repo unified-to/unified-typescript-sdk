@@ -3,6 +3,7 @@
  */
 
 import { crmListCrmTaxonomies } from "../funcs/crmListCrmTaxonomies.js";
+import { taxonomyCreateHrisTaxonomy } from "../funcs/taxonomyCreateHrisTaxonomy.js";
 import { taxonomyGetHrisTaxonomy } from "../funcs/taxonomyGetHrisTaxonomy.js";
 import { taxonomyListHrisTaxonomies } from "../funcs/taxonomyListHrisTaxonomies.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -11,6 +12,20 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Taxonomy extends ClientSDK {
+  /**
+   * Create a taxonomy
+   */
+  async createHrisTaxonomy(
+    request: operations.CreateHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxonomy> {
+    return unwrapAsync(taxonomyCreateHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Retrieve a taxonomy
    */
