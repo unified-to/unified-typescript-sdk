@@ -30,9 +30,6 @@ export type UcRecordingType = OpenEnum<typeof UcRecordingType>;
 
 export type UcRecording = {
   callId?: string | undefined;
-  contactId?: string | undefined;
-  contactName?: string | undefined;
-  contactPhone?: string | undefined;
   contacts?: Array<UcContact> | undefined;
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
@@ -69,9 +66,6 @@ export const UcRecording$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   call_id: z.string().optional(),
-  contact_id: z.string().optional(),
-  contact_name: z.string().optional(),
-  contact_phone: z.string().optional(),
   contacts: z.array(UcContact$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -94,9 +88,6 @@ export const UcRecording$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "call_id": "callId",
-    "contact_id": "contactId",
-    "contact_name": "contactName",
-    "contact_phone": "contactPhone",
     "created_at": "createdAt",
     "end_at": "endAt",
     "expires_at": "expiresAt",
@@ -111,9 +102,6 @@ export const UcRecording$inboundSchema: z.ZodType<
 /** @internal */
 export type UcRecording$Outbound = {
   call_id?: string | undefined;
-  contact_id?: string | undefined;
-  contact_name?: string | undefined;
-  contact_phone?: string | undefined;
   contacts?: Array<UcContact$Outbound> | undefined;
   created_at?: string | undefined;
   end_at?: string | undefined;
@@ -137,9 +125,6 @@ export const UcRecording$outboundSchema: z.ZodType<
   UcRecording
 > = z.object({
   callId: z.string().optional(),
-  contactId: z.string().optional(),
-  contactName: z.string().optional(),
-  contactPhone: z.string().optional(),
   contacts: z.array(UcContact$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
@@ -157,9 +142,6 @@ export const UcRecording$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     callId: "call_id",
-    contactId: "contact_id",
-    contactName: "contact_name",
-    contactPhone: "contact_phone",
     createdAt: "created_at",
     endAt: "end_at",
     expiresAt: "expires_at",

@@ -8,42 +8,24 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AccountingProfitlossCategory,
-  AccountingProfitlossCategory$inboundSchema,
-} from "./accountingprofitlosscategory.js";
-import {
   AccountingProfitlossSection,
   AccountingProfitlossSection$inboundSchema,
 } from "./accountingprofitlosssection.js";
 
 export type PropertyAccountingReportProfitAndLoss = {
   categoryIds?: Array<string> | undefined;
-  /**
-   * @deprecated – use cost_of_goods_sold_sections instead
-   */
-  costOfGoodsSold?: Array<AccountingProfitlossCategory> | undefined;
   costOfGoodsSoldSections?: Array<AccountingProfitlossSection> | undefined;
   costOfGoodsSoldTotalAmount?: number | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   endAt?: Date | undefined;
-  /**
-   * @deprecated – use expenses_sections instead
-   */
-  expenses?: Array<AccountingProfitlossCategory> | undefined;
   expensesSections?: Array<AccountingProfitlossSection> | undefined;
   expensesTotalAmount?: number | undefined;
-  grossProfitAmount?: number | undefined;
   id?: string | undefined;
-  /**
-   * @deprecated – use income_sections instead
-   */
-  income?: Array<AccountingProfitlossCategory> | undefined;
   incomeSections?: Array<AccountingProfitlossSection> | undefined;
   incomeTotalAmount?: number | undefined;
   name?: string | undefined;
   netIncomeAmount?: number | undefined;
-  netProfitAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   updatedAt?: Date | undefined;
@@ -56,8 +38,6 @@ export const PropertyAccountingReportProfitAndLoss$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   category_ids: z.array(z.string()).optional(),
-  cost_of_goods_sold: z.array(AccountingProfitlossCategory$inboundSchema)
-    .optional(),
   cost_of_goods_sold_sections: z.array(
     AccountingProfitlossSection$inboundSchema,
   ).optional(),
@@ -67,19 +47,15 @@ export const PropertyAccountingReportProfitAndLoss$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  expenses: z.array(AccountingProfitlossCategory$inboundSchema).optional(),
   expenses_sections: z.array(AccountingProfitlossSection$inboundSchema)
     .optional(),
   expenses_total_amount: z.number().optional(),
-  gross_profit_amount: z.number().optional(),
   id: z.string().optional(),
-  income: z.array(AccountingProfitlossCategory$inboundSchema).optional(),
   income_sections: z.array(AccountingProfitlossSection$inboundSchema)
     .optional(),
   income_total_amount: z.number().optional(),
   name: z.string().optional(),
   net_income_amount: z.number().optional(),
-  net_profit_amount: z.number().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -88,18 +64,15 @@ export const PropertyAccountingReportProfitAndLoss$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "category_ids": "categoryIds",
-    "cost_of_goods_sold": "costOfGoodsSold",
     "cost_of_goods_sold_sections": "costOfGoodsSoldSections",
     "cost_of_goods_sold_total_amount": "costOfGoodsSoldTotalAmount",
     "created_at": "createdAt",
     "end_at": "endAt",
     "expenses_sections": "expensesSections",
     "expenses_total_amount": "expensesTotalAmount",
-    "gross_profit_amount": "grossProfitAmount",
     "income_sections": "incomeSections",
     "income_total_amount": "incomeTotalAmount",
     "net_income_amount": "netIncomeAmount",
-    "net_profit_amount": "netProfitAmount",
     "start_at": "startAt",
     "updated_at": "updatedAt",
   });

@@ -25,19 +25,11 @@ export type LmsClass = {
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
-  /**
-   * @deprecated; use instructors
-   */
-  instructorIds?: Array<string> | undefined;
   instructors?: Array<LmsReference> | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  /**
-   * @deprecated; use students
-   */
-  studentIds?: Array<string> | undefined;
   students?: Array<LmsReference> | undefined;
   updatedAt?: Date | undefined;
 };
@@ -53,13 +45,11 @@ export const LmsClass$inboundSchema: z.ZodType<
     .optional(),
   description: z.string().optional(),
   id: z.string().optional(),
-  instructor_ids: z.array(z.string()).optional(),
   instructors: z.array(LmsReference$inboundSchema).optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  student_ids: z.array(z.string()).optional(),
   students: z.array(LmsReference$inboundSchema).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -67,8 +57,6 @@ export const LmsClass$inboundSchema: z.ZodType<
   return remap$(v, {
     "course_id": "courseId",
     "created_at": "createdAt",
-    "instructor_ids": "instructorIds",
-    "student_ids": "studentIds",
     "updated_at": "updatedAt",
   });
 });
@@ -78,13 +66,11 @@ export type LmsClass$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
-  instructor_ids?: Array<string> | undefined;
   instructors?: Array<LmsReference$Outbound> | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  student_ids?: Array<string> | undefined;
   students?: Array<LmsReference$Outbound> | undefined;
   updated_at?: string | undefined;
 };
@@ -99,21 +85,17 @@ export const LmsClass$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
-  instructorIds: z.array(z.string()).optional(),
   instructors: z.array(LmsReference$outboundSchema).optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  studentIds: z.array(z.string()).optional(),
   students: z.array(LmsReference$outboundSchema).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     courseId: "course_id",
     createdAt: "created_at",
-    instructorIds: "instructor_ids",
-    studentIds: "student_ids",
     updatedAt: "updated_at",
   });
 });

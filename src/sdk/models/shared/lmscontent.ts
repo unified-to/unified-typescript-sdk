@@ -42,10 +42,6 @@ export type LmsContent = {
   durationMinutes?: number | undefined;
   externalReference?: string | undefined;
   id?: string | undefined;
-  /**
-   * @deprecated; use instructors
-   */
-  instructorIds?: Array<string> | undefined;
   instructors?: Array<LmsReference> | undefined;
   isActive?: boolean | undefined;
   languages?: Array<string> | undefined;
@@ -82,7 +78,6 @@ export const LmsContent$inboundSchema: z.ZodType<
   duration_minutes: z.number().optional(),
   external_reference: z.string().optional(),
   id: z.string().optional(),
-  instructor_ids: z.array(z.string()).optional(),
   instructors: z.array(LmsReference$inboundSchema).optional(),
   is_active: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
@@ -108,7 +103,6 @@ export const LmsContent$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "duration_minutes": "durationMinutes",
     "external_reference": "externalReference",
-    "instructor_ids": "instructorIds",
     "is_active": "isActive",
     "provider_name": "providerName",
     "published_at": "publishedAt",
@@ -128,7 +122,6 @@ export type LmsContent$Outbound = {
   duration_minutes?: number | undefined;
   external_reference?: string | undefined;
   id?: string | undefined;
-  instructor_ids?: Array<string> | undefined;
   instructors?: Array<LmsReference$Outbound> | undefined;
   is_active?: boolean | undefined;
   languages?: Array<string> | undefined;
@@ -161,7 +154,6 @@ export const LmsContent$outboundSchema: z.ZodType<
   durationMinutes: z.number().optional(),
   externalReference: z.string().optional(),
   id: z.string().optional(),
-  instructorIds: z.array(z.string()).optional(),
   instructors: z.array(LmsReference$outboundSchema).optional(),
   isActive: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
@@ -184,7 +176,6 @@ export const LmsContent$outboundSchema: z.ZodType<
     createdAt: "created_at",
     durationMinutes: "duration_minutes",
     externalReference: "external_reference",
-    instructorIds: "instructor_ids",
     isActive: "is_active",
     providerName: "provider_name",
     publishedAt: "published_at",

@@ -27,7 +27,6 @@ export const ListLmsContentsQueryParamFields = {
   ProviderName: "provider_name",
   ShortDescription: "short_description",
   Localizations: "localizations",
-  InstructorIds: "instructor_ids",
   CollectionIds: "collection_ids",
   Instructors: "instructors",
   PublishedAt: "published_at",

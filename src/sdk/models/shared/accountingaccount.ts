@@ -45,17 +45,13 @@ export type AccountingAccount = {
   currency?: string | undefined;
   customerDefinedCode?: string | undefined;
   description?: string | undefined;
-  group?: string | undefined;
   id?: string | undefined;
   isPayable?: boolean | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  section?: string | undefined;
   status?: Status | undefined;
-  subgroup?: string | undefined;
-  subsection?: string | undefined;
   taxonomy?: Array<AccountingAccountTaxonomy> | undefined;
   type?: Type | undefined;
   updatedAt?: Date | undefined;
@@ -87,17 +83,13 @@ export const AccountingAccount$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   customer_defined_code: z.string().optional(),
   description: z.string().optional(),
-  group: z.string().optional(),
   id: z.string().optional(),
   is_payable: z.boolean().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  section: z.string().optional(),
   status: Status$inboundSchema.optional(),
-  subgroup: z.string().optional(),
-  subsection: z.string().optional(),
   taxonomy: z.array(AccountingAccountTaxonomy$inboundSchema).optional(),
   type: Type$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -119,17 +111,13 @@ export type AccountingAccount$Outbound = {
   currency?: string | undefined;
   customer_defined_code?: string | undefined;
   description?: string | undefined;
-  group?: string | undefined;
   id?: string | undefined;
   is_payable?: boolean | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  section?: string | undefined;
   status?: string | undefined;
-  subgroup?: string | undefined;
-  subsection?: string | undefined;
   taxonomy?: Array<AccountingAccountTaxonomy$Outbound> | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -146,17 +134,13 @@ export const AccountingAccount$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   customerDefinedCode: z.string().optional(),
   description: z.string().optional(),
-  group: z.string().optional(),
   id: z.string().optional(),
   isPayable: z.boolean().optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  section: z.string().optional(),
   status: Status$outboundSchema.optional(),
-  subgroup: z.string().optional(),
-  subsection: z.string().optional(),
   taxonomy: z.array(AccountingAccountTaxonomy$outboundSchema).optional(),
   type: Type$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

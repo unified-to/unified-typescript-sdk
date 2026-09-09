@@ -20,7 +20,7 @@ export type ListCalendarBusiesQueryParamFields = ClosedEnum<
 
 export type ListCalendarBusiesRequest = {
   /**
-   * The calendar ID to filter by (reference to CalendarCalendar)
+   * The calendar ID to get availability for. Typically user's email or user ID. (reference to CalendarCalendar)
    */
   calendarId?: string | undefined;
   /**

@@ -51,10 +51,6 @@ export type WeightUnit = OpenEnum<typeof WeightUnit>;
 export type CommerceItem = {
   accountId?: string | undefined;
   /**
-   *  @deprecated; use collections instead
-   */
-  collectionIds?: Array<string> | undefined;
-  /**
    * points to Collection with id, name, and type fields
    */
   collections?: Array<CommerceReference> | undefined;
@@ -112,7 +108,6 @@ export const CommerceItem$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
-  collection_ids: z.array(z.string()).optional(),
   collections: z.array(CommerceReference$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -148,7 +143,6 @@ export const CommerceItem$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
-    "collection_ids": "collectionIds",
     "created_at": "createdAt",
     "global_code": "globalCode",
     "inventory_id": "inventoryId",
@@ -170,7 +164,6 @@ export const CommerceItem$inboundSchema: z.ZodType<
 /** @internal */
 export type CommerceItem$Outbound = {
   account_id?: string | undefined;
-  collection_ids?: Array<string> | undefined;
   collections?: Array<CommerceReference$Outbound> | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
@@ -210,7 +203,6 @@ export const CommerceItem$outboundSchema: z.ZodType<
   CommerceItem
 > = z.object({
   accountId: z.string().optional(),
-  collectionIds: z.array(z.string()).optional(),
   collections: z.array(CommerceReference$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
@@ -244,7 +236,6 @@ export const CommerceItem$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
-    collectionIds: "collection_ids",
     createdAt: "created_at",
     globalCode: "global_code",
     inventoryId: "inventory_id",

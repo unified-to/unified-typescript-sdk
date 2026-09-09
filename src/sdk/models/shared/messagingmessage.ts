@@ -51,11 +51,6 @@ export type MessagingMessage = {
    */
   authorMember?: PropertyMessagingMessageAuthorMember | undefined;
   buttons?: Array<MessagingButton> | undefined;
-  channelId?: string | undefined;
-  /**
-   * @deprecated; use channels instead
-   */
-  channelIds?: Array<string> | undefined;
   /**
    * Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.
    */
@@ -84,7 +79,6 @@ export type MessagingMessage = {
   raw?: { [k: string]: any } | undefined;
   reactions?: Array<MessagingReaction> | undefined;
   reference?: string | undefined;
-  rootMessageId?: string | undefined;
   subject?: string | undefined;
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
@@ -99,8 +93,6 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   attachments: z.array(MessagingAttachment$inboundSchema).optional(),
   author_member: PropertyMessagingMessageAuthorMember$inboundSchema.optional(),
   buttons: z.array(MessagingButton$inboundSchema).optional(),
-  channel_id: z.string().optional(),
-  channel_ids: z.array(z.string()).optional(),
   channels: z.array(MessagingReference$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -118,7 +110,6 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reactions: z.array(MessagingReaction$inboundSchema).optional(),
   reference: z.string().optional(),
-  root_message_id: z.string().optional(),
   subject: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -126,8 +117,6 @@ export const MessagingMessage$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "author_member": "authorMember",
-    "channel_id": "channelId",
-    "channel_ids": "channelIds",
     "created_at": "createdAt",
     "destination_members": "destinationMembers",
     "has_children": "hasChildren",
@@ -138,7 +127,6 @@ export const MessagingMessage$inboundSchema: z.ZodType<
     "message_markdown": "messageMarkdown",
     "message_thread_identifier": "messageThreadIdentifier",
     "parent_id": "parentId",
-    "root_message_id": "rootMessageId",
     "updated_at": "updatedAt",
     "web_url": "webUrl",
   });
@@ -148,8 +136,6 @@ export type MessagingMessage$Outbound = {
   attachments?: Array<MessagingAttachment$Outbound> | undefined;
   author_member?: PropertyMessagingMessageAuthorMember$Outbound | undefined;
   buttons?: Array<MessagingButton$Outbound> | undefined;
-  channel_id?: string | undefined;
-  channel_ids?: Array<string> | undefined;
   channels?: Array<MessagingReference$Outbound> | undefined;
   created_at?: string | undefined;
   destination_members?: Array<MessagingMember$Outbound> | undefined;
@@ -166,7 +152,6 @@ export type MessagingMessage$Outbound = {
   raw?: { [k: string]: any } | undefined;
   reactions?: Array<MessagingReaction$Outbound> | undefined;
   reference?: string | undefined;
-  root_message_id?: string | undefined;
   subject?: string | undefined;
   updated_at?: string | undefined;
   web_url?: string | undefined;
@@ -181,8 +166,6 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   attachments: z.array(MessagingAttachment$outboundSchema).optional(),
   authorMember: PropertyMessagingMessageAuthorMember$outboundSchema.optional(),
   buttons: z.array(MessagingButton$outboundSchema).optional(),
-  channelId: z.string().optional(),
-  channelIds: z.array(z.string()).optional(),
   channels: z.array(MessagingReference$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   destinationMembers: z.array(MessagingMember$outboundSchema).optional(),
@@ -199,15 +182,12 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reactions: z.array(MessagingReaction$outboundSchema).optional(),
   reference: z.string().optional(),
-  rootMessageId: z.string().optional(),
   subject: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     authorMember: "author_member",
-    channelId: "channel_id",
-    channelIds: "channel_ids",
     createdAt: "created_at",
     destinationMembers: "destination_members",
     hasChildren: "has_children",
@@ -218,7 +198,6 @@ export const MessagingMessage$outboundSchema: z.ZodType<
     messageMarkdown: "message_markdown",
     messageThreadIdentifier: "message_thread_identifier",
     parentId: "parent_id",
-    rootMessageId: "root_message_id",
     updatedAt: "updated_at",
     webUrl: "web_url",
   });

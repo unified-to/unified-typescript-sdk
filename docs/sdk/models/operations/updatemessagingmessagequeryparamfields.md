@@ -5,11 +5,11 @@
 ```typescript
 import { UpdateMessagingMessageQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: UpdateMessagingMessageQueryParamFields = "subject";
+let value: UpdateMessagingMessageQueryParamFields = "message";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "channel_id" | "channel_ids" | "channels" | "parent_id" | "root_message_id" | "message_thread_identifier" | "author_member" | "destination_members" | "hidden_members" | "mentioned_members" | "reactions" | "subject" | "message" | "message_html" | "message_markdown" | "attachments" | "web_url" | "reference" | "has_children" | "is_unread" | "buttons" | "raw"
+"id" | "created_at" | "updated_at" | "channels" | "parent_id" | "message_thread_identifier" | "author_member" | "destination_members" | "hidden_members" | "mentioned_members" | "reactions" | "subject" | "message" | "message_html" | "message_markdown" | "attachments" | "web_url" | "reference" | "has_children" | "is_unread" | "buttons" | "raw"
 ```

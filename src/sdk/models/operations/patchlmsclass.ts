@@ -15,8 +15,6 @@ export const PatchLmsClassQueryParamFields = {
   Description: "description",
   Media: "media",
   CourseId: "course_id",
-  InstructorIds: "instructor_ids",
-  StudentIds: "student_ids",
   Languages: "languages",
   Instructors: "instructors",
   Students: "students",

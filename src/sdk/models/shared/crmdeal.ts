@@ -31,18 +31,15 @@ export type CrmDeal = {
   contactIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  description?: string | undefined;
   id?: string | undefined;
   lostReason?: string | undefined;
   metadata?: Array<CrmMetadata> | undefined;
   name?: string | undefined;
-  pipeline?: string | undefined;
-  pipelineId?: string | undefined;
   pipelines?: Array<CrmReference> | undefined;
   probability?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
-  stage?: string | undefined;
-  stageId?: string | undefined;
   stages?: Array<CrmReference> | undefined;
   tags?: Array<string> | undefined;
   updatedAt?: Date | undefined;
@@ -65,18 +62,15 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
       new Date(v)
     ).optional(),
     currency: z.string().optional(),
+    description: z.string().optional(),
     id: z.string().optional(),
     lost_reason: z.string().optional(),
     metadata: z.array(CrmMetadata$inboundSchema).optional(),
     name: z.string().optional(),
-    pipeline: z.string().optional(),
-    pipeline_id: z.string().optional(),
     pipelines: z.array(CrmReference$inboundSchema).optional(),
     probability: z.number().optional(),
     raw: z.record(z.any()).optional(),
     source: z.string().optional(),
-    stage: z.string().optional(),
-    stage_id: z.string().optional(),
     stages: z.array(CrmReference$inboundSchema).optional(),
     tags: z.array(z.string()).optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
@@ -92,8 +86,6 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
       "contact_ids": "contactIds",
       "created_at": "createdAt",
       "lost_reason": "lostReason",
-      "pipeline_id": "pipelineId",
-      "stage_id": "stageId",
       "updated_at": "updatedAt",
       "user_id": "userId",
       "won_reason": "wonReason",
@@ -108,18 +100,15 @@ export type CrmDeal$Outbound = {
   contact_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
+  description?: string | undefined;
   id?: string | undefined;
   lost_reason?: string | undefined;
   metadata?: Array<CrmMetadata$Outbound> | undefined;
   name?: string | undefined;
-  pipeline?: string | undefined;
-  pipeline_id?: string | undefined;
   pipelines?: Array<CrmReference$Outbound> | undefined;
   probability?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
-  stage?: string | undefined;
-  stage_id?: string | undefined;
   stages?: Array<CrmReference$Outbound> | undefined;
   tags?: Array<string> | undefined;
   updated_at?: string | undefined;
@@ -140,18 +129,15 @@ export const CrmDeal$outboundSchema: z.ZodType<
   contactIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
+  description: z.string().optional(),
   id: z.string().optional(),
   lostReason: z.string().optional(),
   metadata: z.array(CrmMetadata$outboundSchema).optional(),
   name: z.string().optional(),
-  pipeline: z.string().optional(),
-  pipelineId: z.string().optional(),
   pipelines: z.array(CrmReference$outboundSchema).optional(),
   probability: z.number().optional(),
   raw: z.record(z.any()).optional(),
   source: z.string().optional(),
-  stage: z.string().optional(),
-  stageId: z.string().optional(),
   stages: z.array(CrmReference$outboundSchema).optional(),
   tags: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -165,8 +151,6 @@ export const CrmDeal$outboundSchema: z.ZodType<
     contactIds: "contact_ids",
     createdAt: "created_at",
     lostReason: "lost_reason",
-    pipelineId: "pipeline_id",
-    stageId: "stage_id",
     updatedAt: "updated_at",
     userId: "user_id",
     wonReason: "won_reason",

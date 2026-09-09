@@ -15,10 +15,6 @@ export const ListCrmDealsQueryParamFields = {
   Currency: "currency",
   ClosedAt: "closed_at",
   ClosingAt: "closing_at",
-  Stage: "stage",
-  StageId: "stage_id",
-  Pipeline: "pipeline",
-  PipelineId: "pipeline_id",
   Stages: "stages",
   Pipelines: "pipelines",
   Source: "source",
@@ -30,6 +26,7 @@ export const ListCrmDealsQueryParamFields = {
   ContactIds: "contact_ids",
   CompanyIds: "company_ids",
   Metadata: "metadata",
+  Description: "description",
   Raw: "raw",
 } as const;
 export type ListCrmDealsQueryParamFields = ClosedEnum<
