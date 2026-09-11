@@ -23,6 +23,7 @@ import { adsListAdsCreatives } from "../funcs/adsListAdsCreatives.js";
 import { adsListAdsGroups } from "../funcs/adsListAdsGroups.js";
 import { adsListAdsInsertionorders } from "../funcs/adsListAdsInsertionorders.js";
 import { adsListAdsPromoteds } from "../funcs/adsListAdsPromoteds.js";
+import { adsListAdsReports } from "../funcs/adsListAdsReports.js";
 import { adsListAdsTargets } from "../funcs/adsListAdsTargets.js";
 import { adsPatchAdsAd } from "../funcs/adsPatchAdsAd.js";
 import { adsPatchAdsCampaign } from "../funcs/adsPatchAdsCampaign.js";
@@ -45,7 +46,6 @@ import { organizationListAdsOrganizations } from "../funcs/organizationListAdsOr
 import { organizationPatchAdsOrganization } from "../funcs/organizationPatchAdsOrganization.js";
 import { organizationRemoveAdsOrganization } from "../funcs/organizationRemoveAdsOrganization.js";
 import { organizationUpdateAdsOrganization } from "../funcs/organizationUpdateAdsOrganization.js";
-import { reportListAdsReports } from "../funcs/reportListAdsReports.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -395,7 +395,7 @@ export class Ads extends ClientSDK {
     request: operations.ListAdsReportsRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.AdsReport>> {
-    return unwrapAsync(reportListAdsReports(
+    return unwrapAsync(adsListAdsReports(
       this,
       request,
       options,

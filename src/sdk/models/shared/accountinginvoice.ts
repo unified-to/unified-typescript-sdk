@@ -95,7 +95,6 @@ export const AccountingInvoiceTerm = {
 export type AccountingInvoiceTerm = OpenEnum<typeof AccountingInvoiceTerm>;
 
 export const AccountingInvoiceType = {
-  Bill: "BILL",
   Invoice: "INVOICE",
   Creditmemo: "CREDITMEMO",
 } as const;

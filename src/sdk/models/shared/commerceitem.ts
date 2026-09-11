@@ -22,12 +22,6 @@ import {
   CommerceItemPrice$outboundSchema,
 } from "./commerceitemprice.js";
 import {
-  CommerceItemvariant,
-  CommerceItemvariant$inboundSchema,
-  CommerceItemvariant$Outbound,
-  CommerceItemvariant$outboundSchema,
-} from "./commerceitemvariant.js";
-import {
   CommerceMetadata,
   CommerceMetadata$inboundSchema,
   CommerceMetadata$Outbound,
@@ -79,10 +73,6 @@ export type CommerceItem = {
   totalStock?: number | undefined;
   type?: string | undefined;
   updatedAt?: Date | undefined;
-  /**
-   * first variant is the default variant
-   */
-  variants?: Array<CommerceItemvariant> | undefined;
   vendorName?: string | undefined;
   weight?: number | undefined;
   weightUnit?: WeightUnit | undefined;
@@ -136,7 +126,6 @@ export const CommerceItem$inboundSchema: z.ZodType<
   type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  variants: z.array(CommerceItemvariant$inboundSchema).optional(),
   vendor_name: z.string().optional(),
   weight: z.number().optional(),
   weight_unit: WeightUnit$inboundSchema.optional(),
@@ -190,7 +179,6 @@ export type CommerceItem$Outbound = {
   total_stock?: number | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
-  variants?: Array<CommerceItemvariant$Outbound> | undefined;
   vendor_name?: string | undefined;
   weight?: number | undefined;
   weight_unit?: string | undefined;
@@ -229,7 +217,6 @@ export const CommerceItem$outboundSchema: z.ZodType<
   totalStock: z.number().optional(),
   type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  variants: z.array(CommerceItemvariant$outboundSchema).optional(),
   vendorName: z.string().optional(),
   weight: z.number().optional(),
   weightUnit: WeightUnit$outboundSchema.optional(),

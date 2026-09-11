@@ -291,11 +291,6 @@ export class UnifiedTo extends ClientSDK {
     return (this._quote ??= new Quote(this._options));
   }
 
-  private _report?: Report;
-  get report(): Report {
-    return (this._report ??= new Report(this._options));
-  }
-
   private _salesorder?: Salesorder;
   get salesorder(): Salesorder {
     return (this._salesorder ??= new Salesorder(this._options));
@@ -359,6 +354,11 @@ export class UnifiedTo extends ClientSDK {
   private _promoted?: Promoted;
   get promoted(): Promoted {
     return (this._promoted ??= new Promoted(this._options));
+  }
+
+  private _report?: Report;
+  get report(): Report {
+    return (this._report ??= new Report(this._options));
   }
 
   private _target?: Target;

@@ -30,7 +30,7 @@ import { Result } from "../sdk/types/fp.js";
 /**
  * List all reports
  */
-export function reportListAdsReports(
+export function adsListAdsReports(
   client: UnifiedToCore,
   request: operations.ListAdsReportsRequest,
   options?: RequestOptions,

@@ -528,8 +528,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingPurchaseorder`](docs/sdks/purchaseorder/README.md#getaccountingpurchaseorder) - Retrieve a purchaseorder
 - [`accountingGetAccountingQuote`](docs/sdks/accounting/README.md#getaccountingquote) - Retrieve a quote
 - [`accountingGetAccountingQuote`](docs/sdks/quote/README.md#getaccountingquote) - Retrieve a quote
-- [`accountingGetAccountingReport`](docs/sdks/accounting/README.md#getaccountingreport) - Retrieve a report
-- [`accountingGetAccountingReport`](docs/sdks/report/README.md#getaccountingreport) - Retrieve a report
 - [`accountingGetAccountingSalesorder`](docs/sdks/accounting/README.md#getaccountingsalesorder) - Retrieve a salesorder
 - [`accountingGetAccountingSalesorder`](docs/sdks/salesorder/README.md#getaccountingsalesorder) - Retrieve a salesorder
 - [`accountingGetAccountingTaxrate`](docs/sdks/accounting/README.md#getaccountingtaxrate) - Retrieve a taxrate
@@ -582,8 +580,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingPurchaseorders`](docs/sdks/purchaseorder/README.md#listaccountingpurchaseorders) - List all purchaseorders
 - [`accountingListAccountingQuotes`](docs/sdks/accounting/README.md#listaccountingquotes) - List all quotes
 - [`accountingListAccountingQuotes`](docs/sdks/quote/README.md#listaccountingquotes) - List all quotes
-- [`accountingListAccountingReports`](docs/sdks/accounting/README.md#listaccountingreports) - List all reports
-- [`accountingListAccountingReports`](docs/sdks/report/README.md#listaccountingreports) - List all reports
 - [`accountingListAccountingSalesorders`](docs/sdks/accounting/README.md#listaccountingsalesorders) - List all salesorders
 - [`accountingListAccountingSalesorders`](docs/sdks/salesorder/README.md#listaccountingsalesorders) - List all salesorders
 - [`accountingListAccountingTaxrates`](docs/sdks/accounting/README.md#listaccountingtaxrates) - List all taxrates
@@ -766,6 +762,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsListAdsInsertionorders`](docs/sdks/insertionorder/README.md#listadsinsertionorders) - List all insertionorders
 - [`adsListAdsPromoteds`](docs/sdks/ads/README.md#listadspromoteds) - List all promoteds
 - [`adsListAdsPromoteds`](docs/sdks/promoted/README.md#listadspromoteds) - List all promoteds
+- [`adsListAdsReports`](docs/sdks/ads/README.md#listadsreports) - List all reports
+- [`adsListAdsReports`](docs/sdks/report/README.md#listadsreports) - List all reports
 - [`adsListAdsTargets`](docs/sdks/ads/README.md#listadstargets) - List all targets
 - [`adsListAdsTargets`](docs/sdks/target/README.md#listadstargets) - List all targets
 - [`adsPatchAdsAd`](docs/sdks/ad/README.md#patchadsad) - Update an ad
@@ -1890,8 +1888,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoRemoveRepoPullrequest`](docs/sdks/repo/README.md#removerepopullrequest) - Remove a pullrequest
 - [`repoRemoveRepoRepository`](docs/sdks/repo/README.md#removereporepository) - Remove a repository
 - [`repoRemoveRepoRepository`](docs/sdks/repository/README.md#removereporepository) - Remove a repository
-- [`reportListAdsReports`](docs/sdks/ads/README.md#listadsreports) - List all reports
-- [`reportListAdsReports`](docs/sdks/report/README.md#listadsreports) - List all reports
 - [`reportListAnalyticsReports`](docs/sdks/analytics/README.md#listanalyticsreports) - List all reports
 - [`reportListAnalyticsReports`](docs/sdks/report/README.md#listanalyticsreports) - List all reports
 - [`reportListMartechReports`](docs/sdks/martech/README.md#listmartechreports) - List all reports

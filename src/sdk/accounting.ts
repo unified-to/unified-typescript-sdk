@@ -42,7 +42,6 @@ import { accountingGetAccountingProfitloss } from "../funcs/accountingGetAccount
 import { accountingGetAccountingProject } from "../funcs/accountingGetAccountingProject.js";
 import { accountingGetAccountingPurchaseorder } from "../funcs/accountingGetAccountingPurchaseorder.js";
 import { accountingGetAccountingQuote } from "../funcs/accountingGetAccountingQuote.js";
-import { accountingGetAccountingReport } from "../funcs/accountingGetAccountingReport.js";
 import { accountingGetAccountingSalesorder } from "../funcs/accountingGetAccountingSalesorder.js";
 import { accountingGetAccountingTaxrate } from "../funcs/accountingGetAccountingTaxrate.js";
 import { accountingGetAccountingTransaction } from "../funcs/accountingGetAccountingTransaction.js";
@@ -69,7 +68,6 @@ import { accountingListAccountingProfitlosses } from "../funcs/accountingListAcc
 import { accountingListAccountingProjects } from "../funcs/accountingListAccountingProjects.js";
 import { accountingListAccountingPurchaseorders } from "../funcs/accountingListAccountingPurchaseorders.js";
 import { accountingListAccountingQuotes } from "../funcs/accountingListAccountingQuotes.js";
-import { accountingListAccountingReports } from "../funcs/accountingListAccountingReports.js";
 import { accountingListAccountingSalesorders } from "../funcs/accountingListAccountingSalesorders.js";
 import { accountingListAccountingTaxrates } from "../funcs/accountingListAccountingTaxrates.js";
 import { accountingListAccountingTransactions } from "../funcs/accountingListAccountingTransactions.js";
@@ -699,20 +697,6 @@ export class Accounting extends ClientSDK {
   }
 
   /**
-   * Retrieve a report
-   */
-  async getAccountingReport(
-    request: operations.GetAccountingReportRequest,
-    options?: RequestOptions,
-  ): Promise<shared.AccountingReport> {
-    return unwrapAsync(accountingGetAccountingReport(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
    * Retrieve a salesorder
    */
   async getAccountingSalesorder(
@@ -1070,20 +1054,6 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AccountingQuote>> {
     return unwrapAsync(accountingListAccountingQuotes(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * List all reports
-   */
-  async listAccountingReports(
-    request: operations.ListAccountingReportsRequest,
-    options?: RequestOptions,
-  ): Promise<Array<shared.AccountingReport>> {
-    return unwrapAsync(accountingListAccountingReports(
       this,
       request,
       options,

@@ -43,7 +43,6 @@ export const WebhookObjectType = {
   AccountingOrder: "accounting_order",
   AccountingSalesorder: "accounting_salesorder",
   AccountingPurchaseorder: "accounting_purchaseorder",
-  AccountingReport: "accounting_report",
   AccountingBalancesheet: "accounting_balancesheet",
   AccountingProfitloss: "accounting_profitloss",
   AccountingTrialbalance: "accounting_trialbalance",

@@ -1962,7 +1962,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reportListAdsReports } from "@unified-api/typescript-sdk/funcs/reportListAdsReports.js";
+import { adsListAdsReports } from "@unified-api/typescript-sdk/funcs/adsListAdsReports.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1973,14 +1973,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reportListAdsReports(unifiedTo, {
+  const res = await adsListAdsReports(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reportListAdsReports failed:", res.error);
+    console.log("adsListAdsReports failed:", res.error);
   }
 }
 

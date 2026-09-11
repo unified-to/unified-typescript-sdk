@@ -13,5 +13,5 @@ let value: AccountingInvoiceType = "INVOICE";
 ## Values
 
 ```typescript
-"BILL" | "INVOICE" | "CREDITMEMO" | Unrecognized<string>
+"INVOICE" | "CREDITMEMO" | Unrecognized<string>
 ```
