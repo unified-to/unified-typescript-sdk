@@ -12,7 +12,7 @@ export type CreateUnifiedWebhookRequest = {
    */
   webhook: shared.Webhook;
   /**
-   * When set, all of the existing data will sent back to your server.
+   * When true, send existing/historic data. When false, no historic data is sent.
    */
   includeAll?: boolean | undefined;
 };

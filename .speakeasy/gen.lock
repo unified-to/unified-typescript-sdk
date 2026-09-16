@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 2603dd36aa034d8cef9a411c0f95cad1
+  docChecksum: d97af36e486283112b42dc840ba12587
   docVersion: "1.0"
-  speakeasyVersion: 1.796.4
-  generationVersion: 2.935.1
-  releaseVersion: 2.85.44
-  configChecksum: 24a0eb5b6d6863b6a0ba171ac53a5284
+  speakeasyVersion: 1.797.0
+  generationVersion: 2.937.18
+  releaseVersion: 2.85.45
+  configChecksum: 452c0778493b4a0ebd5c5dcd9f317516
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 5f5edf67-852c-4676-9495-e760d389ce2a
-  pristine_commit_hash: dc2d3df5788a3e4c181075b9301afcdbda5b8b24
-  pristine_tree_hash: 99fc5c511a9be7e0b6abcd6437f52856eff6c257
+  generation_id: 81ec5a13-b759-41b3-9567-32f7ec6f8c3c
+  pristine_commit_hash: c941c840f8d056f303fe7d23dc66d154f9d43bd4
+  pristine_tree_hash: 3560d7c117c1df03cf862f6499b6d47059ec00ba
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -1098,8 +1098,8 @@ trackedFiles:
     pristine_git_object: 72f0c404849ddce3a3f3f683f07d19b7b23d707f
   docs/sdk/models/operations/createunifiedwebhookrequest.md:
     id: 8f62530ee789
-    last_write_checksum: sha1:9e84101cdc92dd92ad1644a2bde2f1da7ac1deb8
-    pristine_git_object: f1fe05d33ad5795adad645aa07be38e62881b683
+    last_write_checksum: sha1:3620f7a4be9347a7305572efb4fe10af8c1e6942
+    pristine_git_object: 1b7c982f2433ff385977310c3a9c8877c3466be7
   docs/sdk/models/operations/createverificationrequestqueryparamfields.md:
     id: f9ffa1599bee
     last_write_checksum: sha1:1666324430cc2f4a4d06b992a22f973abfd62f6f
@@ -11974,12 +11974,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:2101659da1621e7ebe0a07f8f2c87092754fd742
-    pristine_git_object: 8d0ac25faa8513d119f9b47fa0b3e51746857968
+    last_write_checksum: sha1:fe54338ecbf5f83d69ec2099178b5dd69530be3a
+    pristine_git_object: e0f55195ffa1548b17675dcc40f4728f2be70cb2
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:d13cc625a2264762854f24b1207c7f56664d508e
-    pristine_git_object: 092c45316299f877e0f2223a64a60ff96fb8d985
+    last_write_checksum: sha1:a4627734d1fc180cbc555cfc22c9577a363f7f3f
+    pristine_git_object: 0024e9a17ba4cc44528859b29ef47f41a4d5067e
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -15430,8 +15430,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:f3acee49ad1d52e9c2f1ea7a0e0d1d8c235942ae
-    pristine_git_object: 28d381eb916d2c8869429689f78b09a82a38fd41
+    last_write_checksum: sha1:68751c0b2e8799f33c41606797951b96ec4996da
+    pristine_git_object: 481e31c9791079d1489fec076cac1402ae8ecc8a
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -16422,8 +16422,8 @@ trackedFiles:
     pristine_git_object: fe1f16ece3cc83f1685ddfa9b506360888f772cf
   src/sdk/models/operations/createunifiedwebhook.ts:
     id: 59c07696eba2
-    last_write_checksum: sha1:e85ae85b350443a8a98616b48ad9266260e8bc9d
-    pristine_git_object: 0647e7aaba94e09c1ef694c3d0f184bca0e1f6c9
+    last_write_checksum: sha1:f7d3eef892f697faab322354c20598437db4405d
+    pristine_git_object: 9cb7ae5b37b189c5c4fcf4ef9d0facafe7c5debc
   src/sdk/models/operations/createverificationrequest.ts:
     id: fc530c98120b
     last_write_checksum: sha1:a14bff5fb201a03c0f7b1aa55dc61d1f1d5feec0
@@ -35875,7 +35875,6 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.item.patchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.unified.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.webhook.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.webhook.patchUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.accounting.createAccountingInvoice()`: \n  *  `request.accountingInvoice.type.enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.accounting.getAccountingInvoice()`:  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.accounting.listAccountingInvoices()`:  `response.[].type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.accounting.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.type.enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.accounting.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.type.enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.invoice.createAccountingInvoice()`: \n  *  `request.accountingInvoice.type.enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.invoice.getAccountingInvoice()`:  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.invoice.listAccountingInvoices()`:  `response.[].type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.invoice.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.type.enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.invoice.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.type.enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.enum(bill)` **Removed** (Breaking ⚠️)\n* `unified-to.commerce.createCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.commerce.getCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.commerce.listCommerceItems()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.[].variants` **Removed** (Breaking ⚠️)\n* `unified-to.commerce.patchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.commerce.updateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.item.createCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.webhook.listUnifiedWebhooks()`:  `response.[].objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.webhook.getUnifiedWebhook()`:  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.item.listCommerceItems()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.[].variants` **Removed** (Breaking ⚠️)\n* `unified-to.item.updateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.unified.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.unified.createUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.unified.getUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.unified.getUnifiedWebhook()`:  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.unified.listUnifiedConnections()`:  `response.[].permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.unified.listUnifiedWebhooks()`:  `response.[].objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.unified.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.item.getCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `unified-to.unified.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.unified.updateUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.connection.createUnifiedConnection()`: \n  *  `request.permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.connection.getUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.connection.listUnifiedConnections()`:  `response.[].permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.connection.patchUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.connection.updateUnifiedConnection()`: \n  *  `request.connection.permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `unified-to.webhook.createUnifiedWebhook()`: \n  *  `request.webhook.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `unified-to.accounting.listAccountingReports()`: **Removed** (Breaking ⚠️)\n* `unified-to.accounting.getAccountingReport()`: **Removed** (Breaking ⚠️)\n* `unified-to.report.listAccountingReports()`: **Removed** (Breaking ⚠️)\n* `unified-to.report.getAccountingReport()`: **Removed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
