@@ -17,7 +17,7 @@ Create a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" -->
+<!-- UsageSnippet language="typescript" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" example="shipping_shipment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.shipment.createShippingShipment({
-    shippingShipment: {},
+    shippingShipment: {
+      carrierName: "Bogisich, Franey and Koelpin",
+      createdAt: new Date("2022-09-12T03:11:28.960Z"),
+      id: "aeba27e5-5821-4e2a-9407-bb494f9559b5",
+      rateAmount: 8.86546263936907,
+      rateCurrency: "USD",
+      rateEstimatedDays: 8,
+      rateServiceName: "Fisher - Kilback",
+      serviceCode: "F7U",
+      shippedAt: new Date("2025-08-24T18:20:41.033Z"),
+      status: "PENDING",
+      trackingUrl: "https://shallow-secrecy.info/",
+      updatedAt: new Date("2025-07-03T02:07:43.627Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +70,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await shippingCreateShippingShipment(unifiedTo, {
-    shippingShipment: {},
+    shippingShipment: {
+      carrierName: "Bogisich, Franey and Koelpin",
+      createdAt: new Date("2022-09-12T03:11:28.960Z"),
+      id: "aeba27e5-5821-4e2a-9407-bb494f9559b5",
+      rateAmount: 8.86546263936907,
+      rateCurrency: "USD",
+      rateEstimatedDays: 8,
+      rateServiceName: "Fisher - Kilback",
+      serviceCode: "F7U",
+      shippedAt: new Date("2025-08-24T18:20:41.033Z"),
+      status: "PENDING",
+      trackingUrl: "https://shallow-secrecy.info/",
+      updatedAt: new Date("2025-07-03T02:07:43.627Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +278,7 @@ Update a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +290,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.shipment.patchShippingShipment({
-    shippingShipment: {},
+    shippingShipment: {
+      carrierName: "Bogisich, Franey and Koelpin",
+      createdAt: new Date("2022-09-12T03:11:28.960Z"),
+      id: "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+      rateAmount: 8.86546263936907,
+      rateCurrency: "USD",
+      rateEstimatedDays: 8,
+      rateServiceName: "Fisher - Kilback",
+      serviceCode: "F7U",
+      shippedAt: new Date("2025-08-24T18:20:41.092Z"),
+      status: "PENDING",
+      trackingUrl: "https://shallow-secrecy.info/",
+      updatedAt: new Date("2025-07-03T02:07:43.683Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +332,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await shippingPatchShippingShipment(unifiedTo, {
-    shippingShipment: {},
+    shippingShipment: {
+      carrierName: "Bogisich, Franey and Koelpin",
+      createdAt: new Date("2022-09-12T03:11:28.960Z"),
+      id: "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+      rateAmount: 8.86546263936907,
+      rateCurrency: "USD",
+      rateEstimatedDays: 8,
+      rateServiceName: "Fisher - Kilback",
+      serviceCode: "F7U",
+      shippedAt: new Date("2025-08-24T18:20:41.092Z"),
+      status: "PENDING",
+      trackingUrl: "https://shallow-secrecy.info/",
+      updatedAt: new Date("2025-07-03T02:07:43.683Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +464,7 @@ Update a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +476,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.shipment.updateShippingShipment({
-    shippingShipment: {},
+    shippingShipment: {
+      carrierName: "Bogisich, Franey and Koelpin",
+      createdAt: new Date("2022-09-12T03:11:28.960Z"),
+      id: "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+      rateAmount: 8.86546263936907,
+      rateCurrency: "USD",
+      rateEstimatedDays: 8,
+      rateServiceName: "Fisher - Kilback",
+      serviceCode: "F7U",
+      shippedAt: new Date("2025-08-24T18:20:41.092Z"),
+      status: "PENDING",
+      trackingUrl: "https://shallow-secrecy.info/",
+      updatedAt: new Date("2025-07-03T02:07:43.683Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +518,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await shippingUpdateShippingShipment(unifiedTo, {
-    shippingShipment: {},
+    shippingShipment: {
+      carrierName: "Bogisich, Franey and Koelpin",
+      createdAt: new Date("2022-09-12T03:11:28.960Z"),
+      id: "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+      rateAmount: 8.86546263936907,
+      rateCurrency: "USD",
+      rateEstimatedDays: 8,
+      rateServiceName: "Fisher - Kilback",
+      serviceCode: "F7U",
+      shippedAt: new Date("2025-08-24T18:20:41.092Z"),
+      status: "PENDING",
+      trackingUrl: "https://shallow-secrecy.info/",
+      updatedAt: new Date("2025-07-03T02:07:43.683Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

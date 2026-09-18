@@ -17,7 +17,7 @@ Create a device
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" example="hris_device" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.device.createHrisDevice({
-    hrisDevice: {},
+    hrisDevice: {
+      adminUserIds: [],
+      assetTag: "dpho9OuFNG",
+      createdAt: new Date("2019-04-04T17:11:40.322Z"),
+      hasAntivirus: false,
+      hasFirewall: true,
+      hasHdEncrypted: true,
+      hasPasswordManager: true,
+      hasScreenlock: true,
+      id: "bcac94b2-e48a-44d8-85bb-72b920f6ac73",
+      isMissing: false,
+      manufacturer: "Sanford - Hamill",
+      model: "Refined",
+      name: "cross_contamination_if.rar",
+      os: "monitor",
+      osVersion: "1.12.16",
+      updatedAt: new Date("2023-05-21T00:56:51.337Z"),
+      version: "2.20.17",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +75,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisDevice(unifiedTo, {
-    hrisDevice: {},
+    hrisDevice: {
+      adminUserIds: [],
+      assetTag: "dpho9OuFNG",
+      createdAt: new Date("2019-04-04T17:11:40.322Z"),
+      hasAntivirus: false,
+      hasFirewall: true,
+      hasHdEncrypted: true,
+      hasPasswordManager: true,
+      hasScreenlock: true,
+      id: "bcac94b2-e48a-44d8-85bb-72b920f6ac73",
+      isMissing: false,
+      manufacturer: "Sanford - Hamill",
+      model: "Refined",
+      name: "cross_contamination_if.rar",
+      os: "monitor",
+      osVersion: "1.12.16",
+      updatedAt: new Date("2023-05-21T00:56:51.337Z"),
+      version: "2.20.17",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +288,7 @@ Update a device
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" example="hris_device" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +300,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.device.patchHrisDevice({
-    hrisDevice: {},
+    hrisDevice: {
+      adminUserIds: [],
+      assetTag: "dpho9OuFNG",
+      createdAt: new Date("2019-04-04T17:11:40.322Z"),
+      hasAntivirus: false,
+      hasFirewall: true,
+      hasHdEncrypted: true,
+      hasPasswordManager: true,
+      hasScreenlock: true,
+      id: "74d52d31-891f-476a-a3b5-8c9f384a35b9",
+      isMissing: false,
+      manufacturer: "Sanford - Hamill",
+      model: "Refined",
+      name: "cross_contamination_if.rar",
+      os: "monitor",
+      osVersion: "1.12.16",
+      updatedAt: new Date("2023-05-21T00:56:51.342Z"),
+      version: "2.20.17",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +347,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisDevice(unifiedTo, {
-    hrisDevice: {},
+    hrisDevice: {
+      adminUserIds: [],
+      assetTag: "dpho9OuFNG",
+      createdAt: new Date("2019-04-04T17:11:40.322Z"),
+      hasAntivirus: false,
+      hasFirewall: true,
+      hasHdEncrypted: true,
+      hasPasswordManager: true,
+      hasScreenlock: true,
+      id: "74d52d31-891f-476a-a3b5-8c9f384a35b9",
+      isMissing: false,
+      manufacturer: "Sanford - Hamill",
+      model: "Refined",
+      name: "cross_contamination_if.rar",
+      os: "monitor",
+      osVersion: "1.12.16",
+      updatedAt: new Date("2023-05-21T00:56:51.342Z"),
+      version: "2.20.17",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +484,7 @@ Update a device
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" example="hris_device" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +496,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.device.updateHrisDevice({
-    hrisDevice: {},
+    hrisDevice: {
+      adminUserIds: [],
+      assetTag: "dpho9OuFNG",
+      createdAt: new Date("2019-04-04T17:11:40.322Z"),
+      hasAntivirus: false,
+      hasFirewall: true,
+      hasHdEncrypted: true,
+      hasPasswordManager: true,
+      hasScreenlock: true,
+      id: "74d52d31-891f-476a-a3b5-8c9f384a35b9",
+      isMissing: false,
+      manufacturer: "Sanford - Hamill",
+      model: "Refined",
+      name: "cross_contamination_if.rar",
+      os: "monitor",
+      osVersion: "1.12.16",
+      updatedAt: new Date("2023-05-21T00:56:51.342Z"),
+      version: "2.20.17",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +543,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisDevice(unifiedTo, {
-    hrisDevice: {},
+    hrisDevice: {
+      adminUserIds: [],
+      assetTag: "dpho9OuFNG",
+      createdAt: new Date("2019-04-04T17:11:40.322Z"),
+      hasAntivirus: false,
+      hasFirewall: true,
+      hasHdEncrypted: true,
+      hasPasswordManager: true,
+      hasScreenlock: true,
+      id: "74d52d31-891f-476a-a3b5-8c9f384a35b9",
+      isMissing: false,
+      manufacturer: "Sanford - Hamill",
+      model: "Refined",
+      name: "cross_contamination_if.rar",
+      os: "monitor",
+      osVersion: "1.12.16",
+      updatedAt: new Date("2023-05-21T00:56:51.342Z"),
+      version: "2.20.17",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

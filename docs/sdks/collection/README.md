@@ -23,7 +23,7 @@ Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" example="commerce_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -36,7 +36,48 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.collection.createCommerceCollection({
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "b58ab754-d3cc-453d-aada-355042e8429d",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "18cba18e-9245-49d1-baee-4d1edc732151",
+          metadata: [
+            {
+              id: "7ff7cc76-3780-4284-a689-c0d9dbc99f01",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "be526e0e-67e5-4c68-a5f3-c51c1391d4aa",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.878Z"),
     },
     connectionId: "<id>",
   });
@@ -66,7 +107,48 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await commerceCreateCommerceCollection(unifiedTo, {
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "b58ab754-d3cc-453d-aada-355042e8429d",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "18cba18e-9245-49d1-baee-4d1edc732151",
+          metadata: [
+            {
+              id: "7ff7cc76-3780-4284-a689-c0d9dbc99f01",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "be526e0e-67e5-4c68-a5f3-c51c1391d4aa",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.878Z"),
     },
     connectionId: "<id>",
   });
@@ -106,7 +188,7 @@ Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" example="lms_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -118,7 +200,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.collection.createLmsCollection({
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "8844ee01-dfb0-4ad4-af18-6b5beedaa703",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.217Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -146,7 +248,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await collectionCreateLmsCollection(unifiedTo, {
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "8844ee01-dfb0-4ad4-af18-6b5beedaa703",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.217Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -497,7 +619,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" example="commerce_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -510,7 +632,48 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.collection.patchCommerceCollection({
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -541,7 +704,48 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await commercePatchCommerceCollection(unifiedTo, {
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -582,7 +786,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -594,7 +798,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.collection.patchLmsCollection({
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -623,7 +847,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await collectionPatchLmsCollection(unifiedTo, {
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -821,7 +1065,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" example="commerce_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -834,7 +1078,48 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.collection.updateCommerceCollection({
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -865,7 +1150,48 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await commerceUpdateCommerceCollection(unifiedTo, {
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -906,7 +1232,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -918,7 +1244,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.collection.updateLmsCollection({
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -947,7 +1293,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await collectionUpdateLmsCollection(unifiedTo, {
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

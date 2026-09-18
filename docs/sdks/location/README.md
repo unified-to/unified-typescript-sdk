@@ -25,7 +25,7 @@ Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" example="commerce_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -37,7 +37,61 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.createCommerceLocation({
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "cc586ecd-1c4e-4aae-99e6-a4f89fb0e1cb",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "f83a47f5-2eed-42eb-b7d4-efe96e7e4980",
+          metadata: [
+            {
+              id: "8348bb1a-aebf-4aba-926f-e7bf46c18d55",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.351Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
   });
 
@@ -65,7 +119,61 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationCreateCommerceLocation(unifiedTo, {
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "cc586ecd-1c4e-4aae-99e6-a4f89fb0e1cb",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "f83a47f5-2eed-42eb-b7d4-efe96e7e4980",
+          metadata: [
+            {
+              id: "8348bb1a-aebf-4aba-926f-e7bf46c18d55",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.351Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -104,7 +212,7 @@ Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" example="hris_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -116,7 +224,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.createHrisLocation({
-    hrisLocation: {},
+    hrisLocation: {
+      address: {
+        address1: "2743 Connelly Summit",
+        address2: "Apt. 350",
+        city: "Titusville",
+        countryCode: "US",
+        postalCode: "16154-1095",
+        region: "Oregon",
+        regionCode: "AL",
+      },
+      createdAt: new Date("2021-07-18T10:32:01.414Z"),
+      currency: "MUR",
+      description: "Acervus caries.",
+      externalIdentifier: "76a05081-d11e-4359-8f85-19fd2875e804",
+      id: "48338c1d-ca7f-4eb0-bc12-a5468160ffea",
+      isActive: true,
+      isHq: false,
+      languageLocale: "fr",
+      name: "adhuc",
+      telephones: [
+        {
+          telephone: "(710) 550-6997",
+          type: "FAX",
+        },
+        {
+          telephone: "(208) 555-8542",
+          type: "HOME",
+        },
+        {
+          telephone: "(712) 473-5482",
+          type: "FAX",
+        },
+      ],
+      timezone: "America/Guyana",
+      updatedAt: new Date("2023-06-09T00:40:22.393Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -144,7 +287,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationCreateHrisLocation(unifiedTo, {
-    hrisLocation: {},
+    hrisLocation: {
+      address: {
+        address1: "2743 Connelly Summit",
+        address2: "Apt. 350",
+        city: "Titusville",
+        countryCode: "US",
+        postalCode: "16154-1095",
+        region: "Oregon",
+        regionCode: "AL",
+      },
+      createdAt: new Date("2021-07-18T10:32:01.414Z"),
+      currency: "MUR",
+      description: "Acervus caries.",
+      externalIdentifier: "76a05081-d11e-4359-8f85-19fd2875e804",
+      id: "48338c1d-ca7f-4eb0-bc12-a5468160ffea",
+      isActive: true,
+      isHq: false,
+      languageLocale: "fr",
+      name: "adhuc",
+      telephones: [
+        {
+          telephone: "(710) 550-6997",
+          type: "FAX",
+        },
+        {
+          telephone: "(208) 555-8542",
+          type: "HOME",
+        },
+        {
+          telephone: "(712) 473-5482",
+          type: "FAX",
+        },
+      ],
+      timezone: "America/Guyana",
+      updatedAt: new Date("2023-06-09T00:40:22.393Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -651,7 +829,7 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" example="commerce_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -663,7 +841,61 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.patchCommerceLocation({
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -692,7 +924,61 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationPatchCommerceLocation(unifiedTo, {
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -732,7 +1018,7 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" example="hris_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -744,7 +1030,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.patchHrisLocation({
-    hrisLocation: {},
+    hrisLocation: {
+      address: {
+        address1: "2743 Connelly Summit",
+        address2: "Apt. 350",
+        city: "Titusville",
+        countryCode: "US",
+        postalCode: "16154-1095",
+        region: "Oregon",
+        regionCode: "AL",
+      },
+      createdAt: new Date("2021-07-18T10:32:01.414Z"),
+      currency: "MUR",
+      description: "Acervus caries.",
+      externalIdentifier: "99f0dbdd-df2b-4d49-9e82-00a607a43d9f",
+      id: "445b1f3e-80ff-43ad-a8af-2ca6e1046fd7",
+      isActive: true,
+      isHq: false,
+      languageLocale: "fr",
+      name: "adhuc",
+      telephones: [
+        {
+          telephone: "(710) 550-6997",
+          type: "FAX",
+        },
+        {
+          telephone: "(208) 555-8542",
+          type: "HOME",
+        },
+        {
+          telephone: "(712) 473-5482",
+          type: "FAX",
+        },
+      ],
+      timezone: "America/Guyana",
+      updatedAt: new Date("2023-06-09T00:40:22.398Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -773,7 +1094,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationPatchHrisLocation(unifiedTo, {
-    hrisLocation: {},
+    hrisLocation: {
+      address: {
+        address1: "2743 Connelly Summit",
+        address2: "Apt. 350",
+        city: "Titusville",
+        countryCode: "US",
+        postalCode: "16154-1095",
+        region: "Oregon",
+        regionCode: "AL",
+      },
+      createdAt: new Date("2021-07-18T10:32:01.414Z"),
+      currency: "MUR",
+      description: "Acervus caries.",
+      externalIdentifier: "99f0dbdd-df2b-4d49-9e82-00a607a43d9f",
+      id: "445b1f3e-80ff-43ad-a8af-2ca6e1046fd7",
+      isActive: true,
+      isHq: false,
+      languageLocale: "fr",
+      name: "adhuc",
+      telephones: [
+        {
+          telephone: "(710) 550-6997",
+          type: "FAX",
+        },
+        {
+          telephone: "(208) 555-8542",
+          type: "HOME",
+        },
+        {
+          telephone: "(712) 473-5482",
+          type: "FAX",
+        },
+      ],
+      timezone: "America/Guyana",
+      updatedAt: new Date("2023-06-09T00:40:22.398Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -971,7 +1327,7 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" example="commerce_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -983,7 +1339,61 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.updateCommerceLocation({
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1012,7 +1422,61 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationUpdateCommerceLocation(unifiedTo, {
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1052,7 +1516,7 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" example="hris_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1064,7 +1528,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.updateHrisLocation({
-    hrisLocation: {},
+    hrisLocation: {
+      address: {
+        address1: "2743 Connelly Summit",
+        address2: "Apt. 350",
+        city: "Titusville",
+        countryCode: "US",
+        postalCode: "16154-1095",
+        region: "Oregon",
+        regionCode: "AL",
+      },
+      createdAt: new Date("2021-07-18T10:32:01.414Z"),
+      currency: "MUR",
+      description: "Acervus caries.",
+      externalIdentifier: "99f0dbdd-df2b-4d49-9e82-00a607a43d9f",
+      id: "445b1f3e-80ff-43ad-a8af-2ca6e1046fd7",
+      isActive: true,
+      isHq: false,
+      languageLocale: "fr",
+      name: "adhuc",
+      telephones: [
+        {
+          telephone: "(710) 550-6997",
+          type: "FAX",
+        },
+        {
+          telephone: "(208) 555-8542",
+          type: "HOME",
+        },
+        {
+          telephone: "(712) 473-5482",
+          type: "FAX",
+        },
+      ],
+      timezone: "America/Guyana",
+      updatedAt: new Date("2023-06-09T00:40:22.398Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1093,7 +1592,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationUpdateHrisLocation(unifiedTo, {
-    hrisLocation: {},
+    hrisLocation: {
+      address: {
+        address1: "2743 Connelly Summit",
+        address2: "Apt. 350",
+        city: "Titusville",
+        countryCode: "US",
+        postalCode: "16154-1095",
+        region: "Oregon",
+        regionCode: "AL",
+      },
+      createdAt: new Date("2021-07-18T10:32:01.414Z"),
+      currency: "MUR",
+      description: "Acervus caries.",
+      externalIdentifier: "99f0dbdd-df2b-4d49-9e82-00a607a43d9f",
+      id: "445b1f3e-80ff-43ad-a8af-2ca6e1046fd7",
+      isActive: true,
+      isHq: false,
+      languageLocale: "fr",
+      name: "adhuc",
+      telephones: [
+        {
+          telephone: "(710) 550-6997",
+          type: "FAX",
+        },
+        {
+          telephone: "(208) 555-8542",
+          type: "HOME",
+        },
+        {
+          telephone: "(712) 473-5482",
+          type: "FAX",
+        },
+      ],
+      timezone: "America/Guyana",
+      updatedAt: new Date("2023-06-09T00:40:22.398Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

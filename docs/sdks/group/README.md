@@ -31,7 +31,7 @@ Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" example="ads_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -43,7 +43,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.createAdsGroup({
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.102Z"),
+      id: "e888dea0-f654-41b9-92b4-9bed6e836d63",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.512Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.565Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -71,7 +86,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsGroup(unifiedTo, {
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.102Z"),
+      id: "e888dea0-f654-41b9-92b4-9bed6e836d63",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.512Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.565Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -110,7 +140,7 @@ Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" example="hris_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -122,7 +152,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.createHrisGroup({
-    hrisGroup: {},
+    hrisGroup: {
+      createdAt: new Date("2023-11-01T13:13:40.714Z"),
+      description: "Absorbeo casso.",
+      id: "929982e7-4f14-49ea-83cc-de83a6e8059c",
+      isActive: false,
+      name: "Games",
+      type: "BUSINESS_UNIT",
+      updatedAt: new Date("2026-04-23T14:25:48.389Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -150,7 +188,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupCreateHrisGroup(unifiedTo, {
-    hrisGroup: {},
+    hrisGroup: {
+      createdAt: new Date("2023-11-01T13:13:40.714Z"),
+      description: "Absorbeo casso.",
+      id: "929982e7-4f14-49ea-83cc-de83a6e8059c",
+      isActive: false,
+      name: "Games",
+      type: "BUSINESS_UNIT",
+      updatedAt: new Date("2026-04-23T14:25:48.389Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -896,7 +942,7 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -908,7 +954,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.patchAdsGroup({
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -937,7 +998,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsGroup(unifiedTo, {
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -977,7 +1053,7 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -989,7 +1065,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.patchHrisGroup({
-    hrisGroup: {},
+    hrisGroup: {
+      createdAt: new Date("2023-11-01T13:13:40.714Z"),
+      description: "Absorbeo casso.",
+      id: "e6f510a5-a158-4c0b-ac94-6d68578b4e95",
+      isActive: false,
+      name: "Games",
+      type: "BUSINESS_UNIT",
+      updatedAt: new Date("2026-04-23T14:25:48.395Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1018,7 +1102,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupPatchHrisGroup(unifiedTo, {
-    hrisGroup: {},
+    hrisGroup: {
+      createdAt: new Date("2023-11-01T13:13:40.714Z"),
+      description: "Absorbeo casso.",
+      id: "e6f510a5-a158-4c0b-ac94-6d68578b4e95",
+      isActive: false,
+      name: "Games",
+      type: "BUSINESS_UNIT",
+      updatedAt: new Date("2026-04-23T14:25:48.395Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1380,7 +1472,7 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1392,7 +1484,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.updateAdsGroup({
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1421,7 +1528,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsGroup(unifiedTo, {
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1461,7 +1583,7 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1473,7 +1595,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.updateHrisGroup({
-    hrisGroup: {},
+    hrisGroup: {
+      createdAt: new Date("2023-11-01T13:13:40.714Z"),
+      description: "Absorbeo casso.",
+      id: "e6f510a5-a158-4c0b-ac94-6d68578b4e95",
+      isActive: false,
+      name: "Games",
+      type: "BUSINESS_UNIT",
+      updatedAt: new Date("2026-04-23T14:25:48.395Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1502,7 +1632,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupUpdateHrisGroup(unifiedTo, {
-    hrisGroup: {},
+    hrisGroup: {
+      createdAt: new Date("2023-11-01T13:13:40.714Z"),
+      description: "Absorbeo casso.",
+      id: "e6f510a5-a158-4c0b-ac94-6d68578b4e95",
+      isActive: false,
+      name: "Games",
+      type: "BUSINESS_UNIT",
+      updatedAt: new Date("2026-04-23T14:25:48.395Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -21,7 +21,7 @@ Create an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" example="accounting_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -33,7 +33,35 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.order.createAccountingOrder({
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "62016142-db21-434b-8958-592eefe46e72",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.752Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.749Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -61,7 +89,35 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingOrder(unifiedTo, {
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "62016142-db21-434b-8958-592eefe46e72",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.752Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.749Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -100,7 +156,7 @@ Create an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAssessmentOrder" method="post" path="/assessment/{connection_id}/order" -->
+<!-- UsageSnippet language="typescript" operationID="createAssessmentOrder" method="post" path="/assessment/{connection_id}/order" example="assessment_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -114,6 +170,34 @@ async function run() {
   const result = await unifiedTo.order.createAssessmentOrder({
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "eb559378-8a4c-4147-b0b6-108e9aa26caa",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.097Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -145,6 +229,34 @@ async function run() {
   const res = await orderCreateAssessmentOrder(unifiedTo, {
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "eb559378-8a4c-4147-b0b6-108e9aa26caa",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.097Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -420,7 +532,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" example="accounting_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -432,7 +544,35 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.order.patchAccountingOrder({
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -461,7 +601,35 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingOrder(unifiedTo, {
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -501,7 +669,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" example="assessment_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -515,6 +683,34 @@ async function run() {
   const result = await unifiedTo.order.patchAssessmentOrder({
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -547,6 +743,34 @@ async function run() {
   const res = await orderPatchAssessmentOrder(unifiedTo, {
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -667,7 +891,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" example="accounting_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -679,7 +903,35 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.order.updateAccountingOrder({
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -708,7 +960,35 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingOrder(unifiedTo, {
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -748,7 +1028,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" example="assessment_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -762,6 +1042,34 @@ async function run() {
   const result = await unifiedTo.order.updateAssessmentOrder({
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -794,6 +1102,34 @@ async function run() {
   const res = await orderUpdateAssessmentOrder(unifiedTo, {
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",

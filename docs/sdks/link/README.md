@@ -23,7 +23,7 @@ Create a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCalendarLink" method="post" path="/calendar/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="createCalendarLink" method="post" path="/calendar/{connection_id}/link" example="calendar_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -36,7 +36,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.link.createCalendarLink({
     calendarLink: {
-      url: "https://misguided-thongs.info",
+      createdAt: "2023-03-07T13:34:11.959Z",
+      description: "Vitium clibanus laboriosam uxor denuncio.",
+      duration: 74,
+      id: "47ed2366-68b3-49ca-bd9b-2dcf05eb2965",
+      isActive: true,
+      name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
+      priceAmount: 44,
+      priceCurrency: "USD",
+      updatedAt: "2024-03-06T05:12:36.154Z",
+      url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
   });
@@ -66,7 +75,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await calendarCreateCalendarLink(unifiedTo, {
     calendarLink: {
-      url: "https://misguided-thongs.info",
+      createdAt: "2023-03-07T13:34:11.959Z",
+      description: "Vitium clibanus laboriosam uxor denuncio.",
+      duration: 74,
+      id: "47ed2366-68b3-49ca-bd9b-2dcf05eb2965",
+      isActive: true,
+      name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
+      priceAmount: 44,
+      priceCurrency: "USD",
+      updatedAt: "2024-03-06T05:12:36.154Z",
+      url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
   });
@@ -106,7 +124,7 @@ Create a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" example="payment_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -118,7 +136,84 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.link.createPaymentLink({
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "b6f6ca2e-e1cc-4005-8fd1-bbbf3e301533",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "542a1868-424f-4d59-8020-678870334cdc",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "8d826834-e2c6-40fa-a93f-46269b34c77b",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "828a583d-f269-4125-ac29-cc3ac667cffd",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "8dfb021c-78fb-420d-ba19-22fdc69f2aea",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "fff39870-54ae-4af2-91aa-005bc9e727fd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.966Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
   });
 
@@ -146,7 +241,84 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await linkCreatePaymentLink(unifiedTo, {
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "b6f6ca2e-e1cc-4005-8fd1-bbbf3e301533",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "542a1868-424f-4d59-8020-678870334cdc",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "8d826834-e2c6-40fa-a93f-46269b34c77b",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "828a583d-f269-4125-ac29-cc3ac667cffd",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "8dfb021c-78fb-420d-ba19-22fdc69f2aea",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "fff39870-54ae-4af2-91aa-005bc9e727fd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.966Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -497,7 +669,7 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCalendarLink" method="patch" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCalendarLink" method="patch" path="/calendar/{connection_id}/link/{id}" example="calendar_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -510,7 +682,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.link.patchCalendarLink({
     calendarLink: {
-      url: "https://warm-hexagon.name/",
+      createdAt: "2023-03-07T13:34:11.959Z",
+      description: "Vitium clibanus laboriosam uxor denuncio.",
+      duration: 74,
+      id: "c3d15abd-61d3-47f1-afba-077bd7c28cb5",
+      isActive: true,
+      name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
+      priceAmount: 44,
+      priceCurrency: "USD",
+      updatedAt: "2024-03-06T05:12:36.156Z",
+      url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -541,7 +722,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await calendarPatchCalendarLink(unifiedTo, {
     calendarLink: {
-      url: "https://warm-hexagon.name/",
+      createdAt: "2023-03-07T13:34:11.959Z",
+      description: "Vitium clibanus laboriosam uxor denuncio.",
+      duration: 74,
+      id: "c3d15abd-61d3-47f1-afba-077bd7c28cb5",
+      isActive: true,
+      name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
+      priceAmount: 44,
+      priceCurrency: "USD",
+      updatedAt: "2024-03-06T05:12:36.156Z",
+      url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -582,7 +772,7 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" example="payment_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -594,7 +784,84 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.link.patchPaymentLink({
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -623,7 +890,84 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await linkPatchPaymentLink(unifiedTo, {
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -821,7 +1165,7 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCalendarLink" method="put" path="/calendar/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCalendarLink" method="put" path="/calendar/{connection_id}/link/{id}" example="calendar_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -834,7 +1178,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.link.updateCalendarLink({
     calendarLink: {
-      url: "https://partial-hydrocarbon.info",
+      createdAt: "2023-03-07T13:34:11.959Z",
+      description: "Vitium clibanus laboriosam uxor denuncio.",
+      duration: 74,
+      id: "c3d15abd-61d3-47f1-afba-077bd7c28cb5",
+      isActive: true,
+      name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
+      priceAmount: 44,
+      priceCurrency: "USD",
+      updatedAt: "2024-03-06T05:12:36.156Z",
+      url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -865,7 +1218,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await calendarUpdateCalendarLink(unifiedTo, {
     calendarLink: {
-      url: "https://partial-hydrocarbon.info",
+      createdAt: "2023-03-07T13:34:11.959Z",
+      description: "Vitium clibanus laboriosam uxor denuncio.",
+      duration: 74,
+      id: "c3d15abd-61d3-47f1-afba-077bd7c28cb5",
+      isActive: true,
+      name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
+      priceAmount: 44,
+      priceCurrency: "USD",
+      updatedAt: "2024-03-06T05:12:36.156Z",
+      url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -906,7 +1268,7 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" example="payment_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -918,7 +1280,84 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.link.updatePaymentLink({
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -947,7 +1386,84 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await linkUpdatePaymentLink(unifiedTo, {
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

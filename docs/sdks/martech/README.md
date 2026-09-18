@@ -30,7 +30,7 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" example="martech_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -42,7 +42,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.createMartechCampaign({
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "1d47a766-5cc6-4e40-959e-2dc9f36995c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -70,7 +86,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await campaignCreateMartechCampaign(unifiedTo, {
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "1d47a766-5cc6-4e40-959e-2dc9f36995c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -109,7 +141,7 @@ Create a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" -->
+<!-- UsageSnippet language="typescript" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" example="martech_list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -121,7 +153,28 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.createMartechList({
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "8d9f0783-8b3b-4844-871c-a335856a11fa",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.884Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -149,7 +202,28 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechCreateMartechList(unifiedTo, {
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "8d9f0783-8b3b-4844-871c-a335856a11fa",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.884Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -188,7 +262,7 @@ Create a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" -->
+<!-- UsageSnippet language="typescript" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" example="martech_member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -200,7 +274,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.createMartechMember({
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "a0a955df-e281-46e9-af34-0bcaf970081d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.559Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -228,7 +329,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await memberCreateMartechMember(unifiedTo, {
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "a0a955df-e281-46e9-af34-0bcaf970081d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.559Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -812,7 +940,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -824,7 +952,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.patchMartechCampaign({
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -853,7 +997,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await campaignPatchMartechCampaign(unifiedTo, {
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -893,7 +1053,7 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -905,7 +1065,28 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.patchMartechList({
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -934,7 +1115,28 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechPatchMartechList(unifiedTo, {
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -974,7 +1176,7 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -986,7 +1188,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.patchMartechMember({
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1015,7 +1244,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await memberPatchMartechMember(unifiedTo, {
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1292,7 +1548,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1304,7 +1560,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.updateMartechCampaign({
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1333,7 +1605,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await campaignUpdateMartechCampaign(unifiedTo, {
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1373,7 +1661,7 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1385,7 +1673,28 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.updateMartechList({
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1414,7 +1723,28 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechUpdateMartechList(unifiedTo, {
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1454,7 +1784,7 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1466,7 +1796,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.updateMartechMember({
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1495,7 +1852,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await memberUpdateMartechMember(unifiedTo, {
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

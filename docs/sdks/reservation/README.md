@@ -17,7 +17,7 @@ Create a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceReservation" method="post" path="/commerce/{connection_id}/reservation" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceReservation" method="post" path="/commerce/{connection_id}/reservation" example="commerce_reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.reservation.createCommerceReservation({
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "b1514204-b55f-4d24-9c48-521dda801623",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.030Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +72,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceReservation(unifiedTo, {
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "b1514204-b55f-4d24-9c48-521dda801623",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.030Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +282,7 @@ Update a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceReservation" method="patch" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceReservation" method="patch" path="/commerce/{connection_id}/reservation/{id}" example="commerce_reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +294,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.reservation.patchCommerceReservation({
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +338,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceReservation(unifiedTo, {
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +472,7 @@ Update a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceReservation" method="put" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceReservation" method="put" path="/commerce/{connection_id}/reservation/{id}" example="commerce_reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +484,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.reservation.updateCommerceReservation({
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +528,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceReservation(unifiedTo, {
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

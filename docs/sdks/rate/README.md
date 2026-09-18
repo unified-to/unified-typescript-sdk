@@ -12,7 +12,7 @@ Create a rate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" -->
+<!-- UsageSnippet language="typescript" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" example="shipping_rate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.rate.createShippingRate({
-    shippingRate: {},
+    shippingRate: {
+      currency: "USD",
+      id: "08ea0d8f-f20c-4b47-9e57-6901e9b38266",
+      rates: [
+        {
+          amount: 54.679719475097954,
+          baseAmount: 76.45537888631225,
+          currency: "USD",
+          deliveryDays: 8,
+          description: "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
+          estimatedDays: 10,
+          estimatedDeliveryEndAt: new Date("2024-01-31T23:12:25.475Z"),
+          isGuaranteed: true,
+          isNegotiatedRate: true,
+          taxAmount: 2.2701712837442756,
+          title: "Turcotte Inc",
+        },
+      ],
+    },
     connectionId: "<id>",
   });
 
@@ -52,7 +70,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await shippingCreateShippingRate(unifiedTo, {
-    shippingRate: {},
+    shippingRate: {
+      currency: "USD",
+      id: "08ea0d8f-f20c-4b47-9e57-6901e9b38266",
+      rates: [
+        {
+          amount: 54.679719475097954,
+          baseAmount: 76.45537888631225,
+          currency: "USD",
+          deliveryDays: 8,
+          description: "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
+          estimatedDays: 10,
+          estimatedDeliveryEndAt: new Date("2024-01-31T23:12:25.475Z"),
+          isGuaranteed: true,
+          isNegotiatedRate: true,
+          taxAmount: 2.2701712837442756,
+          title: "Turcotte Inc",
+        },
+      ],
+    },
     connectionId: "<id>",
   });
   if (res.ok) {

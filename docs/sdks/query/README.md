@@ -12,7 +12,7 @@ Create a query
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createDatastoreQuery" method="post" path="/datastore/{connection_id}/query" -->
+<!-- UsageSnippet language="typescript" operationID="createDatastoreQuery" method="post" path="/datastore/{connection_id}/query" example="datastore_query" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.query.createDatastoreQuery({
-    datastoreQuery: {},
+    datastoreQuery: {
+      query: {
+        filter: {
+          type: "OR",
+        },
+        select: [
+          "*",
+        ],
+        sql: "",
+      },
+    },
     connectionId: "<id>",
   });
 
@@ -52,7 +62,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await datastoreCreateDatastoreQuery(unifiedTo, {
-    datastoreQuery: {},
+    datastoreQuery: {
+      query: {
+        filter: {
+          type: "OR",
+        },
+        select: [
+          "*",
+        ],
+        sql: "",
+      },
+    },
     connectionId: "<id>",
   });
   if (res.ok) {

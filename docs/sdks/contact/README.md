@@ -29,7 +29,7 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" example="accounting_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -41,7 +41,74 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.createAccountingContact({
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "849cd11b-c680-45ef-8e37-e9a24def34b8",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "b7ba795b-96e2-4c00-b11d-7ad43dd15877",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "d501ead1-d963-4360-9d14-5fc86506b5d5",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "38ac4078-e7eb-4d4a-938e-3a6293a46e62",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.517Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -69,7 +136,74 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingContact(unifiedTo, {
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "849cd11b-c680-45ef-8e37-e9a24def34b8",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "b7ba795b-96e2-4c00-b11d-7ad43dd15877",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "d501ead1-d963-4360-9d14-5fc86506b5d5",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "38ac4078-e7eb-4d4a-938e-3a6293a46e62",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.517Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -108,7 +242,7 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" example="crm_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -120,7 +254,71 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.createCrmContact({
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "4b00e4e9-fd2c-4c85-904a-2f9fbb538aab",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "f5133e22-9032-4da2-b390-6d9b7c942b49",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.758Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -148,7 +346,71 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactCreateCrmContact(unifiedTo, {
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "4b00e4e9-fd2c-4c85-904a-2f9fbb538aab",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "f5133e22-9032-4da2-b390-6d9b7c942b49",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.758Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -187,7 +449,7 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" example="uc_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -199,7 +461,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.createUcContact({
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "39e5f225-c2fe-448f-9931-c96c7bd540e7",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.346Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -227,7 +518,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactCreateUcContact(unifiedTo, {
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "39e5f225-c2fe-448f-9931-c96c7bd540e7",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.346Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -734,7 +1054,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -746,7 +1066,74 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.patchAccountingContact({
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -775,7 +1162,74 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingContact(unifiedTo, {
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -815,7 +1269,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -827,7 +1281,71 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.patchCrmContact({
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -856,7 +1374,71 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactPatchCrmContact(unifiedTo, {
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -896,7 +1478,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -908,7 +1490,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.patchUcContact({
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -937,7 +1548,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactPatchUcContact(unifiedTo, {
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1214,7 +1854,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1226,7 +1866,74 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.updateAccountingContact({
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1255,7 +1962,74 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingContact(unifiedTo, {
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1295,7 +2069,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1307,7 +2081,71 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.updateCrmContact({
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1336,7 +2174,71 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactUpdateCrmContact(unifiedTo, {
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1376,7 +2278,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1388,7 +2290,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.updateUcContact({
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1417,7 +2348,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactUpdateUcContact(unifiedTo, {
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -17,7 +17,7 @@ Create a benefit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" example="hris_benefit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.benefit.createHrisBenefit({
-    hrisBenefit: {},
+    hrisBenefit: {
+      coverageLevel: "EMPLOYEE_SPOUSE",
+      createdAt: new Date("2020-06-11T01:24:05.654Z"),
+      currency: "JOD",
+      description: "Vomito voluptas dolor sed.",
+      employerContributionAmount: 185006,
+      employerContributionMaxAmount: 179093,
+      employerContributionType: "PERCENTAGE",
+      frequency: "HOUR",
+      id: "56df050c-d73e-477d-a39f-341eca6ae236",
+      isActive: false,
+      name: "Frozen Wooden Ball",
+      tax: "PRE_TAX",
+      type: "GARNISHMENT",
+      updatedAt: new Date("2023-03-06T11:00:57.658Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +72,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisBenefit(unifiedTo, {
-    hrisBenefit: {},
+    hrisBenefit: {
+      coverageLevel: "EMPLOYEE_SPOUSE",
+      createdAt: new Date("2020-06-11T01:24:05.654Z"),
+      currency: "JOD",
+      description: "Vomito voluptas dolor sed.",
+      employerContributionAmount: 185006,
+      employerContributionMaxAmount: 179093,
+      employerContributionType: "PERCENTAGE",
+      frequency: "HOUR",
+      id: "56df050c-d73e-477d-a39f-341eca6ae236",
+      isActive: false,
+      name: "Frozen Wooden Ball",
+      tax: "PRE_TAX",
+      type: "GARNISHMENT",
+      updatedAt: new Date("2023-03-06T11:00:57.658Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +282,7 @@ Update a benefit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +294,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.benefit.patchHrisBenefit({
-    hrisBenefit: {},
+    hrisBenefit: {
+      coverageLevel: "EMPLOYEE_SPOUSE",
+      createdAt: new Date("2020-06-11T01:24:05.654Z"),
+      currency: "JOD",
+      description: "Vomito voluptas dolor sed.",
+      employerContributionAmount: 185006,
+      employerContributionMaxAmount: 179093,
+      employerContributionType: "PERCENTAGE",
+      frequency: "HOUR",
+      id: "c01bd534-fa42-44cf-a806-ff9377fd25be",
+      isActive: false,
+      name: "Frozen Wooden Ball",
+      tax: "PRE_TAX",
+      type: "GARNISHMENT",
+      updatedAt: new Date("2023-03-06T11:00:57.663Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +338,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisBenefit(unifiedTo, {
-    hrisBenefit: {},
+    hrisBenefit: {
+      coverageLevel: "EMPLOYEE_SPOUSE",
+      createdAt: new Date("2020-06-11T01:24:05.654Z"),
+      currency: "JOD",
+      description: "Vomito voluptas dolor sed.",
+      employerContributionAmount: 185006,
+      employerContributionMaxAmount: 179093,
+      employerContributionType: "PERCENTAGE",
+      frequency: "HOUR",
+      id: "c01bd534-fa42-44cf-a806-ff9377fd25be",
+      isActive: false,
+      name: "Frozen Wooden Ball",
+      tax: "PRE_TAX",
+      type: "GARNISHMENT",
+      updatedAt: new Date("2023-03-06T11:00:57.663Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +472,7 @@ Update a benefit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +484,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.benefit.updateHrisBenefit({
-    hrisBenefit: {},
+    hrisBenefit: {
+      coverageLevel: "EMPLOYEE_SPOUSE",
+      createdAt: new Date("2020-06-11T01:24:05.654Z"),
+      currency: "JOD",
+      description: "Vomito voluptas dolor sed.",
+      employerContributionAmount: 185006,
+      employerContributionMaxAmount: 179093,
+      employerContributionType: "PERCENTAGE",
+      frequency: "HOUR",
+      id: "c01bd534-fa42-44cf-a806-ff9377fd25be",
+      isActive: false,
+      name: "Frozen Wooden Ball",
+      tax: "PRE_TAX",
+      type: "GARNISHMENT",
+      updatedAt: new Date("2023-03-06T11:00:57.663Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +528,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisBenefit(unifiedTo, {
-    hrisBenefit: {},
+    hrisBenefit: {
+      coverageLevel: "EMPLOYEE_SPOUSE",
+      createdAt: new Date("2020-06-11T01:24:05.654Z"),
+      currency: "JOD",
+      description: "Vomito voluptas dolor sed.",
+      employerContributionAmount: 185006,
+      employerContributionMaxAmount: 179093,
+      employerContributionType: "PERCENTAGE",
+      frequency: "HOUR",
+      id: "c01bd534-fa42-44cf-a806-ff9377fd25be",
+      isActive: false,
+      name: "Frozen Wooden Ball",
+      tax: "PRE_TAX",
+      type: "GARNISHMENT",
+      updatedAt: new Date("2023-03-06T11:00:57.663Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

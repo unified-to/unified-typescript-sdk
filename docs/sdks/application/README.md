@@ -17,7 +17,7 @@ Create an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsApplication" method="post" path="/ats/{connection_id}/application" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsApplication" method="post" path="/ats/{connection_id}/application" example="ats_application" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,33 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.application.createAtsApplication({
-    atsApplication: {},
+    atsApplication: {
+      answers: [],
+      appliedAt: new Date("2025-09-08T08:48:32.240Z"),
+      createdAt: new Date("2023-10-17T07:19:48.787Z"),
+      hiredAt: new Date("2026-04-14T14:34:12.048Z"),
+      id: "85d62f00-b2a0-42db-8c72-8ee24f2b01fd",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "a1302a79-0341-40e6-b91a-daeb95584617",
+          namespace: "application",
+          slug: "despecto",
+          value: "Argentum decretum cultellus aveho distinctio verecundia stella depono.",
+        },
+      ],
+      offers: [],
+      originalStatus: "vomica",
+      originalSubstatus: "allatus",
+      rejectedAt: new Date("2026-09-08T19:51:38.295Z"),
+      rejectedReason: "Cometes amplitudo videlicet talio.",
+      source: "credo",
+      status: "REVIEWING",
+      updatedAt: new Date("2026-09-15T11:10:10.512Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +83,33 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsApplication(unifiedTo, {
-    atsApplication: {},
+    atsApplication: {
+      answers: [],
+      appliedAt: new Date("2025-09-08T08:48:32.240Z"),
+      createdAt: new Date("2023-10-17T07:19:48.787Z"),
+      hiredAt: new Date("2026-04-14T14:34:12.048Z"),
+      id: "85d62f00-b2a0-42db-8c72-8ee24f2b01fd",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "a1302a79-0341-40e6-b91a-daeb95584617",
+          namespace: "application",
+          slug: "despecto",
+          value: "Argentum decretum cultellus aveho distinctio verecundia stella depono.",
+        },
+      ],
+      offers: [],
+      originalStatus: "vomica",
+      originalSubstatus: "allatus",
+      rejectedAt: new Date("2026-09-08T19:51:38.295Z"),
+      rejectedReason: "Cometes amplitudo videlicet talio.",
+      source: "credo",
+      status: "REVIEWING",
+      updatedAt: new Date("2026-09-15T11:10:10.512Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +304,7 @@ Update an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsApplication" method="patch" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsApplication" method="patch" path="/ats/{connection_id}/application/{id}" example="ats_application" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +316,33 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.application.patchAtsApplication({
-    atsApplication: {},
+    atsApplication: {
+      answers: [],
+      appliedAt: new Date("2025-09-08T08:48:32.256Z"),
+      createdAt: new Date("2023-10-17T07:19:48.787Z"),
+      hiredAt: new Date("2026-04-14T14:34:12.068Z"),
+      id: "b1876d77-92f7-4377-8a74-00bdf3ad20d2",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "a1302a79-0341-40e6-b91a-daeb95584617",
+          namespace: "application",
+          slug: "despecto",
+          value: "Argentum decretum cultellus aveho distinctio verecundia stella depono.",
+        },
+      ],
+      offers: [],
+      originalStatus: "vomica",
+      originalSubstatus: "allatus",
+      rejectedAt: new Date("2026-09-08T19:51:38.319Z"),
+      rejectedReason: "Cometes amplitudo videlicet talio.",
+      source: "credo",
+      status: "REVIEWING",
+      updatedAt: new Date("2026-09-15T11:10:10.536Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +371,33 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsApplication(unifiedTo, {
-    atsApplication: {},
+    atsApplication: {
+      answers: [],
+      appliedAt: new Date("2025-09-08T08:48:32.256Z"),
+      createdAt: new Date("2023-10-17T07:19:48.787Z"),
+      hiredAt: new Date("2026-04-14T14:34:12.068Z"),
+      id: "b1876d77-92f7-4377-8a74-00bdf3ad20d2",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "a1302a79-0341-40e6-b91a-daeb95584617",
+          namespace: "application",
+          slug: "despecto",
+          value: "Argentum decretum cultellus aveho distinctio verecundia stella depono.",
+        },
+      ],
+      offers: [],
+      originalStatus: "vomica",
+      originalSubstatus: "allatus",
+      rejectedAt: new Date("2026-09-08T19:51:38.319Z"),
+      rejectedReason: "Cometes amplitudo videlicet talio.",
+      source: "credo",
+      status: "REVIEWING",
+      updatedAt: new Date("2026-09-15T11:10:10.536Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +516,7 @@ Update an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsApplication" method="put" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsApplication" method="put" path="/ats/{connection_id}/application/{id}" example="ats_application" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +528,33 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.application.updateAtsApplication({
-    atsApplication: {},
+    atsApplication: {
+      answers: [],
+      appliedAt: new Date("2025-09-08T08:48:32.256Z"),
+      createdAt: new Date("2023-10-17T07:19:48.787Z"),
+      hiredAt: new Date("2026-04-14T14:34:12.068Z"),
+      id: "b1876d77-92f7-4377-8a74-00bdf3ad20d2",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "a1302a79-0341-40e6-b91a-daeb95584617",
+          namespace: "application",
+          slug: "despecto",
+          value: "Argentum decretum cultellus aveho distinctio verecundia stella depono.",
+        },
+      ],
+      offers: [],
+      originalStatus: "vomica",
+      originalSubstatus: "allatus",
+      rejectedAt: new Date("2026-09-08T19:51:38.319Z"),
+      rejectedReason: "Cometes amplitudo videlicet talio.",
+      source: "credo",
+      status: "REVIEWING",
+      updatedAt: new Date("2026-09-15T11:10:10.536Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +583,33 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsApplication(unifiedTo, {
-    atsApplication: {},
+    atsApplication: {
+      answers: [],
+      appliedAt: new Date("2025-09-08T08:48:32.256Z"),
+      createdAt: new Date("2023-10-17T07:19:48.787Z"),
+      hiredAt: new Date("2026-04-14T14:34:12.068Z"),
+      id: "b1876d77-92f7-4377-8a74-00bdf3ad20d2",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "a1302a79-0341-40e6-b91a-daeb95584617",
+          namespace: "application",
+          slug: "despecto",
+          value: "Argentum decretum cultellus aveho distinctio verecundia stella depono.",
+        },
+      ],
+      offers: [],
+      originalStatus: "vomica",
+      originalSubstatus: "allatus",
+      rejectedAt: new Date("2026-09-08T19:51:38.319Z"),
+      rejectedReason: "Cometes amplitudo videlicet talio.",
+      source: "credo",
+      status: "REVIEWING",
+      updatedAt: new Date("2026-09-15T11:10:10.536Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

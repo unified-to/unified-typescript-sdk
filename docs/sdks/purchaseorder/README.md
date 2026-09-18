@@ -17,7 +17,7 @@ Create a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" example="accounting_purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.purchaseorder.createAccountingPurchaseorder({
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "870e6384-1e12-4bea-9790-0e4ac7a373f1",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.967Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.829Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +84,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingPurchaseorder(unifiedTo, {
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "870e6384-1e12-4bea-9790-0e4ac7a373f1",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.967Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.829Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +306,7 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +318,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.purchaseorder.patchAccountingPurchaseorder({
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +374,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingPurchaseorder(unifiedTo, {
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +520,7 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +532,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.purchaseorder.updateAccountingPurchaseorder({
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +588,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingPurchaseorder(unifiedTo, {
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

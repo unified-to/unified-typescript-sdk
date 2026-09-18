@@ -17,7 +17,7 @@ Create a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createDatastoreDatabase" method="post" path="/datastore/{connection_id}/database" -->
+<!-- UsageSnippet language="typescript" operationID="createDatastoreDatabase" method="post" path="/datastore/{connection_id}/database" example="datastore_database" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.database.createDatastoreDatabase({
-    datastoreDatabase: {},
+    datastoreDatabase: {
+      createdAt: new Date("2019-03-05T14:31:00.223Z"),
+      description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
+      id: "aaacb13f-e629-4b0c-b081-10401d4bdd94",
+      isActive: true,
+      name: "Rau - O'Reilly",
+      password: "iYLhYwOHm0NLDvI",
+      region: "France",
+      updatedAt: new Date("2023-06-12T03:11:14.485Z"),
+      webUrl: "https://optimal-signature.name",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +67,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await datastoreCreateDatastoreDatabase(unifiedTo, {
-    datastoreDatabase: {},
+    datastoreDatabase: {
+      createdAt: new Date("2019-03-05T14:31:00.223Z"),
+      description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
+      id: "aaacb13f-e629-4b0c-b081-10401d4bdd94",
+      isActive: true,
+      name: "Rau - O'Reilly",
+      password: "iYLhYwOHm0NLDvI",
+      region: "France",
+      updatedAt: new Date("2023-06-12T03:11:14.485Z"),
+      webUrl: "https://optimal-signature.name",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +272,7 @@ Update a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchDatastoreDatabase" method="patch" path="/datastore/{connection_id}/database/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchDatastoreDatabase" method="patch" path="/datastore/{connection_id}/database/{id}" example="datastore_database" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +284,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.database.patchDatastoreDatabase({
-    datastoreDatabase: {},
+    datastoreDatabase: {
+      createdAt: new Date("2019-03-05T14:31:00.223Z"),
+      description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
+      id: "3de5cadd-7da8-44ec-a411-0f4fca1cd849",
+      isActive: true,
+      name: "Rau - O'Reilly",
+      password: "iYLhYwOHm0NLDvI",
+      region: "France",
+      updatedAt: new Date("2023-06-12T03:11:14.489Z"),
+      webUrl: "https://optimal-signature.name",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +323,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await datastorePatchDatastoreDatabase(unifiedTo, {
-    datastoreDatabase: {},
+    datastoreDatabase: {
+      createdAt: new Date("2019-03-05T14:31:00.223Z"),
+      description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
+      id: "3de5cadd-7da8-44ec-a411-0f4fca1cd849",
+      isActive: true,
+      name: "Rau - O'Reilly",
+      password: "iYLhYwOHm0NLDvI",
+      region: "France",
+      updatedAt: new Date("2023-06-12T03:11:14.489Z"),
+      webUrl: "https://optimal-signature.name",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +452,7 @@ Update a database
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateDatastoreDatabase" method="put" path="/datastore/{connection_id}/database/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateDatastoreDatabase" method="put" path="/datastore/{connection_id}/database/{id}" example="datastore_database" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +464,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.database.updateDatastoreDatabase({
-    datastoreDatabase: {},
+    datastoreDatabase: {
+      createdAt: new Date("2019-03-05T14:31:00.223Z"),
+      description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
+      id: "3de5cadd-7da8-44ec-a411-0f4fca1cd849",
+      isActive: true,
+      name: "Rau - O'Reilly",
+      password: "iYLhYwOHm0NLDvI",
+      region: "France",
+      updatedAt: new Date("2023-06-12T03:11:14.489Z"),
+      webUrl: "https://optimal-signature.name",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +503,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await datastoreUpdateDatastoreDatabase(unifiedTo, {
-    datastoreDatabase: {},
+    datastoreDatabase: {
+      createdAt: new Date("2019-03-05T14:31:00.223Z"),
+      description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
+      id: "3de5cadd-7da8-44ec-a411-0f4fca1cd849",
+      isActive: true,
+      name: "Rau - O'Reilly",
+      password: "iYLhYwOHm0NLDvI",
+      region: "France",
+      updatedAt: new Date("2023-06-12T03:11:14.489Z"),
+      webUrl: "https://optimal-signature.name",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

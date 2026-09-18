@@ -21,7 +21,7 @@ Create an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAssessmentOrder" method="post" path="/assessment/{connection_id}/order" -->
+<!-- UsageSnippet language="typescript" operationID="createAssessmentOrder" method="post" path="/assessment/{connection_id}/order" example="assessment_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -35,6 +35,34 @@ async function run() {
   const result = await unifiedTo.assessment.createAssessmentOrder({
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "eb559378-8a4c-4147-b0b6-108e9aa26caa",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.097Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -66,6 +94,34 @@ async function run() {
   const res = await orderCreateAssessmentOrder(unifiedTo, {
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "eb559378-8a4c-4147-b0b6-108e9aa26caa",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.097Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -106,7 +162,7 @@ Create an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" -->
+<!-- UsageSnippet language="typescript" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" example="assessment_package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -119,7 +175,28 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.assessment.createAssessmentPackage({
     assessmentPackage: {
-      type: "REFERENCE_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "399d78b0-643b-4379-b5fc-7a3efac3d6b6",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.659Z"),
     },
     connectionId: "<id>",
   });
@@ -149,7 +226,28 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentCreateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "REFERENCE_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "399d78b0-643b-4379-b5fc-7a3efac3d6b6",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.659Z"),
     },
     connectionId: "<id>",
   });
@@ -424,7 +522,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" example="assessment_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -438,6 +536,34 @@ async function run() {
   const result = await unifiedTo.assessment.patchAssessmentOrder({
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -470,6 +596,34 @@ async function run() {
   const res = await orderPatchAssessmentOrder(unifiedTo, {
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -511,7 +665,7 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -524,7 +678,28 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.assessment.patchAssessmentPackage({
     assessmentPackage: {
-      type: "BACKGROUND_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -555,7 +730,28 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentPatchAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "BACKGROUND_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -675,7 +871,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" example="assessment_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -689,6 +885,34 @@ async function run() {
   const result = await unifiedTo.assessment.updateAssessmentOrder({
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -721,6 +945,34 @@ async function run() {
   const res = await orderUpdateAssessmentOrder(unifiedTo, {
     assessmentOrder: {
       connectionId: "<id>",
+      createdAt: new Date("2021-09-18T10:33:57.803Z"),
+      id: "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+      parameters: [],
+      profileAddresses: [],
+      profileDateOfBirth: "1989-07-22T16:18:37.650Z",
+      profileEmails: [
+        "Cleta.Daugherty@gmail.com",
+      ],
+      profileFirstName: "Amy",
+      profileGender: "NON_BINARY",
+      profileLastName: "Kris-Windler",
+      profileName: "Amy Kris-Windler",
+      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileSocialMediaUrls: [],
+      profileTelephones: [
+        "(828) 263-1594 x5248",
+      ],
+      reference: "ab",
+      responseAttributes: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseMaxScore: 82,
+      responseScore: 92,
+      responseStatus: "FAILED",
+      responseUrl: "https://irresponsible-trench.info/",
+      status: "REJECTED",
+      targetUrl: "https://cautious-turret.info",
+      updatedAt: new Date("2023-01-17T01:52:25.109Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -762,7 +1014,7 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -775,7 +1027,28 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.assessment.updateAssessmentPackage({
     assessmentPackage: {
-      type: "OTHER",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -806,7 +1079,28 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentUpdateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "OTHER",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",

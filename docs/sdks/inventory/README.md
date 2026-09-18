@@ -17,7 +17,7 @@ Create an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" example="commerce_inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.createCommerceInventory({
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.813Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +60,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.813Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +258,7 @@ Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +270,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.patchCommerceInventory({
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +302,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +424,7 @@ Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +436,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.updateCommerceInventory({
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +468,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

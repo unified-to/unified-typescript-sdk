@@ -17,7 +17,7 @@ Create a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" -->
+<!-- UsageSnippet language="typescript" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" example="payment_subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.subscription.createPaymentSubscription({
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "f7519009-e6cd-4e12-b266-7782c6582fdd",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.051Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +73,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentCreatePaymentSubscription(unifiedTo, {
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "f7519009-e6cd-4e12-b266-7782c6582fdd",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.051Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +284,7 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +296,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.subscription.patchPaymentSubscription({
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +341,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentPatchPaymentSubscription(unifiedTo, {
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +476,7 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +488,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.subscription.updatePaymentSubscription({
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +533,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentUpdatePaymentSubscription(unifiedTo, {
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

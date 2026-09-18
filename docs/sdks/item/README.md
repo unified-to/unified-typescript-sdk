@@ -17,7 +17,7 @@ Create an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceItem" method="post" path="/commerce/{connection_id}/item" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceItem" method="post" path="/commerce/{connection_id}/item" example="commerce_item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,86 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.item.createCommerceItem({
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "23090db9-7ccf-46cb-b053-f981ec30d350",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "df38e7d4-177d-4a11-9351-edb82721e558",
+          metadata: [
+            {
+              id: "62ae3b90-450c-4470-8bd4-3656daad8a61",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "1e7ccccd-c5c4-4323-a3ec-f400b6d589db",
+          metadata: [
+            {
+              id: "3e60902e-dc47-4c52-90fd-ddbe50defa70",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "78ecb334-053f-4a97-b54d-0696bdd8e2e7",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.724Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +136,86 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceItem(unifiedTo, {
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "23090db9-7ccf-46cb-b053-f981ec30d350",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "df38e7d4-177d-4a11-9351-edb82721e558",
+          metadata: [
+            {
+              id: "62ae3b90-450c-4470-8bd4-3656daad8a61",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "1e7ccccd-c5c4-4323-a3ec-f400b6d589db",
+          metadata: [
+            {
+              id: "3e60902e-dc47-4c52-90fd-ddbe50defa70",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "78ecb334-053f-4a97-b54d-0696bdd8e2e7",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.724Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +410,7 @@ Update an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceItem" method="patch" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceItem" method="patch" path="/commerce/{connection_id}/item/{id}" example="commerce_item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +422,86 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.item.patchCommerceItem({
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +530,86 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceItem(unifiedTo, {
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +728,7 @@ Update an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceItem" method="put" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceItem" method="put" path="/commerce/{connection_id}/item/{id}" example="commerce_item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +740,86 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.item.updateCommerceItem({
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +848,86 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceItem(unifiedTo, {
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

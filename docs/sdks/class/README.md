@@ -17,7 +17,7 @@ Create a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" example="lms_class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.class.createLmsClass({
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "c1f27f80-7668-4b4b-9265-b1894eb6243a",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.026Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +82,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsClass(unifiedTo, {
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "c1f27f80-7668-4b4b-9265-b1894eb6243a",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.026Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +302,7 @@ Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" example="lms_class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +314,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.class.patchLmsClass({
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +368,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsClass(unifiedTo, {
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +512,7 @@ Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" example="lms_class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +524,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.class.updateLmsClass({
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +578,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsClass(unifiedTo, {
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

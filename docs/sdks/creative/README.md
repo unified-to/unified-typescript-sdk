@@ -17,7 +17,7 @@ Create a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" example="ads_creative" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.creative.createAdsCreative({
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "5dd7b3ce-88d6-4c92-965d-a4f57ced5201",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.446Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +68,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsCreative(unifiedTo, {
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "5dd7b3ce-88d6-4c92-965d-a4f57ced5201",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.446Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +274,7 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +286,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.creative.patchAdsCreative({
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +326,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsCreative(unifiedTo, {
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +456,7 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +468,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.creative.updateAdsCreative({
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +508,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsCreative(unifiedTo, {
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

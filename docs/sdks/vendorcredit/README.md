@@ -17,7 +17,7 @@ Create a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" example="accounting_vendorcredit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.vendorcredit.createAccountingVendorcredit({
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "e53c082c-1aa1-4192-be20-f4cdfd0cea57",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.445Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.369Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +72,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingVendorcredit(unifiedTo, {
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "e53c082c-1aa1-4192-be20-f4cdfd0cea57",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.445Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.369Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +282,7 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +294,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.vendorcredit.patchAccountingVendorcredit({
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +338,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingVendorcredit(unifiedTo, {
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +472,7 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +484,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.vendorcredit.updateAccountingVendorcredit({
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +528,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingVendorcredit(unifiedTo, {
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

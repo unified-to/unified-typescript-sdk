@@ -17,7 +17,7 @@ Create a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" example="lms_course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.course.createLmsCourse({
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "950aba61-f261-4a01-9c64-0ed9cde2416e",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.571Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +100,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsCourse(unifiedTo, {
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "950aba61-f261-4a01-9c64-0ed9cde2416e",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.571Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +338,7 @@ Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" example="lms_course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +350,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.course.patchLmsCourse({
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +422,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsCourse(unifiedTo, {
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +584,7 @@ Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" example="lms_course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +596,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.course.updateLmsCourse({
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +668,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsCourse(unifiedTo, {
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

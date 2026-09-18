@@ -25,7 +25,7 @@ Create an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" example="ads_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -37,7 +37,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.createAdsOrganization({
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "0ca7207a-a860-45e9-87da-94e04e0f06a4",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.767Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -65,7 +80,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationCreateAdsOrganization(unifiedTo, {
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "0ca7207a-a860-45e9-87da-94e04e0f06a4",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.767Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -104,7 +134,7 @@ Create an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" example="repo_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -116,7 +146,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.createRepoOrganization({
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "94512032-1bb0-446e-b197-d5b971050f38",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.193Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
   });
 
@@ -144,7 +182,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationCreateRepoOrganization(unifiedTo, {
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "94512032-1bb0-446e-b197-d5b971050f38",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.193Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -651,7 +697,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" example="ads_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -663,7 +709,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.patchAdsOrganization({
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -692,7 +753,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationPatchAdsOrganization(unifiedTo, {
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -732,7 +808,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -744,7 +820,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.patchRepoOrganization({
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -773,7 +857,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationPatchRepoOrganization(unifiedTo, {
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -971,7 +1063,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" example="ads_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -983,7 +1075,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.updateAdsOrganization({
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1012,7 +1119,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationUpdateAdsOrganization(unifiedTo, {
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1052,7 +1174,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1064,7 +1186,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.updateRepoOrganization({
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1093,7 +1223,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationUpdateRepoOrganization(unifiedTo, {
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

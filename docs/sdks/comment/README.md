@@ -29,7 +29,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" example="kms_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -41,7 +41,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.createKmsComment({
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "7a7c211f-0d0c-4de6-8fa9-150729e7b4a3",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.752Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -69,7 +76,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsCreateKmsComment(unifiedTo, {
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "7a7c211f-0d0c-4de6-8fa9-150729e7b4a3",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.752Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -108,7 +122,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" example="task_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -120,7 +134,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.createTaskComment({
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8b5be59d-1fbb-4870-9365-2a2f4ab8abf2",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.569Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
   });
 
@@ -148,7 +169,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentCreateTaskComment(unifiedTo, {
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8b5be59d-1fbb-4870-9365-2a2f4ab8abf2",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.569Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -187,7 +215,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" example="uc_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -199,7 +227,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.createUcComment({
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f6c71223-2280-4fde-a2f8-4750d07d5346",
+      updatedAt: "2024-02-01T19:29:21.734Z",
+    },
     connectionId: "<id>",
   });
 
@@ -227,7 +260,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentCreateUcComment(unifiedTo, {
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f6c71223-2280-4fde-a2f8-4750d07d5346",
+      updatedAt: "2024-02-01T19:29:21.734Z",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -734,7 +772,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -746,7 +784,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.patchKmsComment({
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -775,7 +820,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsPatchKmsComment(unifiedTo, {
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -815,7 +867,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -827,7 +879,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.patchTaskComment({
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -856,7 +915,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentPatchTaskComment(unifiedTo, {
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -896,7 +962,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -908,7 +974,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.patchUcComment({
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -937,7 +1008,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentPatchUcComment(unifiedTo, {
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1214,7 +1290,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1226,7 +1302,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.updateKmsComment({
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1255,7 +1338,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsUpdateKmsComment(unifiedTo, {
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1295,7 +1385,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1307,7 +1397,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.updateTaskComment({
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1336,7 +1433,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentUpdateTaskComment(unifiedTo, {
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1376,7 +1480,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1388,7 +1492,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.comment.updateUcComment({
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1417,7 +1526,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentUpdateUcComment(unifiedTo, {
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

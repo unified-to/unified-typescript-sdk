@@ -17,7 +17,7 @@ Create a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" example="accounting_taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.taxrate.createAccountingTaxrate({
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "4e784882-93ea-4586-bc43-026743ba6449",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.715Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +66,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingTaxrate(unifiedTo, {
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "4e784882-93ea-4586-bc43-026743ba6449",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.715Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +270,7 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +282,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.taxrate.patchAccountingTaxrate({
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +320,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingTaxrate(unifiedTo, {
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +448,7 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +460,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.taxrate.updateAccountingTaxrate({
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +498,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingTaxrate(unifiedTo, {
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

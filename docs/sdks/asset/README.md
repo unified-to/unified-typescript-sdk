@@ -14,7 +14,7 @@ Create an asset
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" example="ads_asset" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -26,7 +26,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.asset.createAdsAsset({
-    adsAsset: {},
+    adsAsset: {
+      createdAt: new Date("2020-03-27T20:14:38.603Z"),
+      height: 400,
+      id: "9ce96283-25c4-4289-92f8-bb2dfdba3c58",
+      mimeType: "IMAGE_PNG",
+      name: "Lockman - DuBuque",
+      type: "IMAGE",
+      updatedAt: new Date("2022-03-15T04:25:20.538Z"),
+      url: "https://informal-perfection.com/",
+      width: 600,
+    },
     connectionId: "<id>",
   });
 
@@ -54,7 +64,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsAsset(unifiedTo, {
-    adsAsset: {},
+    adsAsset: {
+      createdAt: new Date("2020-03-27T20:14:38.603Z"),
+      height: 400,
+      id: "9ce96283-25c4-4289-92f8-bb2dfdba3c58",
+      mimeType: "IMAGE_PNG",
+      name: "Lockman - DuBuque",
+      type: "IMAGE",
+      updatedAt: new Date("2022-03-15T04:25:20.538Z"),
+      url: "https://informal-perfection.com/",
+      width: 600,
+    },
     connectionId: "<id>",
   });
   if (res.ok) {

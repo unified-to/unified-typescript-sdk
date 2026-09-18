@@ -17,7 +17,7 @@ Create a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" example="accounting_paymentterm" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.paymentterm.createAccountingPaymentterm({
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "48745512-c4a4-4ba5-964e-784f73ff4ff1",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.854Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +73,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingPaymentterm(unifiedTo, {
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "48745512-c4a4-4ba5-964e-784f73ff4ff1",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.854Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +284,7 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +296,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.paymentterm.patchAccountingPaymentterm({
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +341,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingPaymentterm(unifiedTo, {
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +476,7 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +488,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.paymentterm.updateAccountingPaymentterm({
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +533,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingPaymentterm(unifiedTo, {
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -31,7 +31,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" example="uc_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -43,7 +43,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.createUcComment({
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f6c71223-2280-4fde-a2f8-4750d07d5346",
+      updatedAt: "2024-02-01T19:29:21.734Z",
+    },
     connectionId: "<id>",
   });
 
@@ -71,7 +76,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentCreateUcComment(unifiedTo, {
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f6c71223-2280-4fde-a2f8-4750d07d5346",
+      updatedAt: "2024-02-01T19:29:21.734Z",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -110,7 +120,7 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" example="uc_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -122,7 +132,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.createUcContact({
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "39e5f225-c2fe-448f-9931-c96c7bd540e7",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.346Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -150,7 +189,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactCreateUcContact(unifiedTo, {
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "39e5f225-c2fe-448f-9931-c96c7bd540e7",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.346Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -189,7 +257,7 @@ Create a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" -->
+<!-- UsageSnippet language="typescript" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" example="uc_recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -201,7 +269,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.createUcRecording({
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.089Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.272Z"),
+      id: "f159e1de-c6df-4fca-b181-b2205dd29d42",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.818Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.608Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
   });
 
@@ -229,7 +310,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await recordingCreateUcRecording(unifiedTo, {
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.089Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.272Z"),
+      id: "f159e1de-c6df-4fca-b181-b2205dd29d42",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.818Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.608Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -892,7 +986,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -904,7 +998,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.patchUcComment({
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -933,7 +1032,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentPatchUcComment(unifiedTo, {
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -973,7 +1077,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -985,7 +1089,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.patchUcContact({
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1014,7 +1147,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactPatchUcContact(unifiedTo, {
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1054,7 +1216,7 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1066,7 +1228,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.patchUcRecording({
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1095,7 +1270,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await recordingPatchUcRecording(unifiedTo, {
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1372,7 +1560,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1384,7 +1572,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.updateUcComment({
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1413,7 +1606,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentUpdateUcComment(unifiedTo, {
-    ucComment: {},
+    ucComment: {
+      content: "Vociferor vitiosus.",
+      createdAt: "2023-04-02T23:42:31.571Z",
+      id: "f43b76fb-3830-472f-9736-ae94a1787acd",
+      updatedAt: "2024-02-01T19:29:21.735Z",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1453,7 +1651,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1465,7 +1663,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.updateUcContact({
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1494,7 +1721,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactUpdateUcContact(unifiedTo, {
-    ucContact: {},
+    ucContact: {
+      company: "Tillman Group",
+      createdAt: new Date("2019-10-28T11:06:56.460Z"),
+      emails: [
+        {
+          email: "Luther_Rogahn32@yahoo.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Luther",
+      id: "356575db-851d-45e5-bbd6-3069bcf46bdb",
+      lastName: "Rogahn",
+      name: "Luther Rogahn",
+      telephones: [
+        {
+          telephone: "(809) 992-1681",
+          type: "FAX",
+        },
+        {
+          telephone: "(868) 238-2746",
+          type: "HOME",
+        },
+        {
+          telephone: "(219) 736-0357",
+          type: "MOBILE",
+        },
+      ],
+      title: "Chief Optimization Executive",
+      updatedAt: new Date("2023-11-18T22:30:46.355Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1534,7 +1790,7 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1546,7 +1802,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.updateUcRecording({
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1575,7 +1844,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await recordingUpdateUcRecording(unifiedTo, {
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

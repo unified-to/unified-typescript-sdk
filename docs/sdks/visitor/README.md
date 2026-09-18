@@ -17,7 +17,7 @@ Create a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" -->
+<!-- UsageSnippet language="typescript" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" example="analytics_visitor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.visitor.createAnalyticsVisitor({
-    analyticsVisitor: {},
+    analyticsVisitor: {
+      createdAt: new Date("2020-04-16T20:29:48.281Z"),
+      email: "Dallas_Mitchell@yahoo.com",
+      firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
+      id: "420ee3a3-c06b-4e84-aeb3-75a564a396af",
+      lastSeenAt: new Date("2021-12-04T18:09:30.380Z"),
+      metadata: {
+        "segment": {},
+      },
+      name: "Desiree O'Hara",
+      totalEvents: 3639,
+      updatedAt: new Date("2025-06-03T08:28:54.986Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +69,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await analyticsCreateAnalyticsVisitor(unifiedTo, {
-    analyticsVisitor: {},
+    analyticsVisitor: {
+      createdAt: new Date("2020-04-16T20:29:48.281Z"),
+      email: "Dallas_Mitchell@yahoo.com",
+      firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
+      id: "420ee3a3-c06b-4e84-aeb3-75a564a396af",
+      lastSeenAt: new Date("2021-12-04T18:09:30.380Z"),
+      metadata: {
+        "segment": {},
+      },
+      name: "Desiree O'Hara",
+      totalEvents: 3639,
+      updatedAt: new Date("2025-06-03T08:28:54.986Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +276,7 @@ Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" example="analytics_visitor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +288,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.visitor.patchAnalyticsVisitor({
-    analyticsVisitor: {},
+    analyticsVisitor: {
+      createdAt: new Date("2020-04-16T20:29:48.281Z"),
+      email: "Dallas_Mitchell@yahoo.com",
+      firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
+      id: "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+      lastSeenAt: new Date("2021-12-04T18:09:30.384Z"),
+      metadata: {
+        "segment": {},
+      },
+      name: "Desiree O'Hara",
+      totalEvents: 3639,
+      updatedAt: new Date("2025-06-03T08:28:54.997Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +329,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await analyticsPatchAnalyticsVisitor(unifiedTo, {
-    analyticsVisitor: {},
+    analyticsVisitor: {
+      createdAt: new Date("2020-04-16T20:29:48.281Z"),
+      email: "Dallas_Mitchell@yahoo.com",
+      firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
+      id: "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+      lastSeenAt: new Date("2021-12-04T18:09:30.384Z"),
+      metadata: {
+        "segment": {},
+      },
+      name: "Desiree O'Hara",
+      totalEvents: 3639,
+      updatedAt: new Date("2025-06-03T08:28:54.997Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +460,7 @@ Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" example="analytics_visitor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +472,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.visitor.updateAnalyticsVisitor({
-    analyticsVisitor: {},
+    analyticsVisitor: {
+      createdAt: new Date("2020-04-16T20:29:48.281Z"),
+      email: "Dallas_Mitchell@yahoo.com",
+      firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
+      id: "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+      lastSeenAt: new Date("2021-12-04T18:09:30.384Z"),
+      metadata: {
+        "segment": {},
+      },
+      name: "Desiree O'Hara",
+      totalEvents: 3639,
+      updatedAt: new Date("2025-06-03T08:28:54.997Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +513,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await analyticsUpdateAnalyticsVisitor(unifiedTo, {
-    analyticsVisitor: {},
+    analyticsVisitor: {
+      createdAt: new Date("2020-04-16T20:29:48.281Z"),
+      email: "Dallas_Mitchell@yahoo.com",
+      firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
+      id: "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+      lastSeenAt: new Date("2021-12-04T18:09:30.384Z"),
+      metadata: {
+        "segment": {},
+      },
+      name: "Desiree O'Hara",
+      totalEvents: 3639,
+      updatedAt: new Date("2025-06-03T08:28:54.997Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

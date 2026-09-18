@@ -17,7 +17,7 @@ Create a record
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createDatastoreRecord" method="post" path="/datastore/{connection_id}/record" -->
+<!-- UsageSnippet language="typescript" operationID="createDatastoreRecord" method="post" path="/datastore/{connection_id}/record" example="datastore_record" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,9 +30,13 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.record.createDatastoreRecord({
     datastoreRecord: {
+      createdAt: new Date("2022-07-10T04:42:03.076Z"),
       fields: {
 
       },
+      id: "83da1f22-b6e0-4c15-b368-0120600e09ae",
+      rowNumber: 33,
+      updatedAt: new Date("2025-02-12T16:24:34.144Z"),
     },
     connectionId: "<id>",
   });
@@ -62,9 +66,13 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await datastoreCreateDatastoreRecord(unifiedTo, {
     datastoreRecord: {
+      createdAt: new Date("2022-07-10T04:42:03.076Z"),
       fields: {
   
       },
+      id: "83da1f22-b6e0-4c15-b368-0120600e09ae",
+      rowNumber: 33,
+      updatedAt: new Date("2025-02-12T16:24:34.144Z"),
     },
     connectionId: "<id>",
   });
@@ -260,7 +268,7 @@ Update a record
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchDatastoreRecord" method="patch" path="/datastore/{connection_id}/record/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchDatastoreRecord" method="patch" path="/datastore/{connection_id}/record/{id}" example="datastore_record" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -273,9 +281,13 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.record.patchDatastoreRecord({
     datastoreRecord: {
+      createdAt: new Date("2022-07-10T04:42:03.076Z"),
       fields: {
 
       },
+      id: "3cf612c8-52e2-46e9-849b-2e77ec060dfd",
+      rowNumber: 33,
+      updatedAt: new Date("2025-02-12T16:24:34.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -306,9 +318,13 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await datastorePatchDatastoreRecord(unifiedTo, {
     datastoreRecord: {
+      createdAt: new Date("2022-07-10T04:42:03.076Z"),
       fields: {
   
       },
+      id: "3cf612c8-52e2-46e9-849b-2e77ec060dfd",
+      rowNumber: 33,
+      updatedAt: new Date("2025-02-12T16:24:34.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -428,7 +444,7 @@ Update a record
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateDatastoreRecord" method="put" path="/datastore/{connection_id}/record/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateDatastoreRecord" method="put" path="/datastore/{connection_id}/record/{id}" example="datastore_record" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -441,9 +457,13 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.record.updateDatastoreRecord({
     datastoreRecord: {
+      createdAt: new Date("2022-07-10T04:42:03.076Z"),
       fields: {
 
       },
+      id: "3cf612c8-52e2-46e9-849b-2e77ec060dfd",
+      rowNumber: 33,
+      updatedAt: new Date("2025-02-12T16:24:34.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -474,9 +494,13 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await datastoreUpdateDatastoreRecord(unifiedTo, {
     datastoreRecord: {
+      createdAt: new Date("2022-07-10T04:42:03.076Z"),
       fields: {
   
       },
+      id: "3cf612c8-52e2-46e9-849b-2e77ec060dfd",
+      rowNumber: 33,
+      updatedAt: new Date("2025-02-12T16:24:34.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -17,7 +17,7 @@ Create a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" example="repo_commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,7 +30,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.commit.createRepoCommit({
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "537657d4-be2d-4530-82aa-c8046846968a",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.478Z"),
     },
     connectionId: "<id>",
   });
@@ -60,7 +67,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoCommit(unifiedTo, {
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "537657d4-be2d-4530-82aa-c8046846968a",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.478Z"),
     },
     connectionId: "<id>",
   });
@@ -256,7 +270,7 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,7 +283,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.commit.patchRepoCommit({
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -300,7 +321,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoCommit(unifiedTo, {
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -420,7 +448,7 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -433,7 +461,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.commit.updateRepoCommit({
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -464,7 +499,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoCommit(unifiedTo, {
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",

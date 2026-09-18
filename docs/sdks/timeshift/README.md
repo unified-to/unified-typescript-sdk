@@ -17,7 +17,7 @@ Create a timeshift
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" example="hris_timeshift" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,7 +30,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.createHrisTimeshift({
     hrisTimeshift: {
+      approvedAt: new Date("2023-06-05T14:32:23.860Z"),
+      compensation: [
+        {
+          amount: 76761,
+          currency: "JPY",
+          frequency: "HOUR",
+          notes: "Annus adficio suasoria architecto aggero.",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
+      endAt: new Date("2026-08-25T08:29:34.504Z"),
+      hours: 8,
+      id: "edb7e65d-ee9c-4de9-bf02-4dccb2d29377",
+      isApproved: true,
+      startAt: new Date("2023-06-24T19:30:14.691Z"),
+      updatedAt: new Date("2021-06-22T20:53:37.144Z"),
     },
     connectionId: "<id>",
   });
@@ -60,7 +77,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
+      approvedAt: new Date("2023-06-05T14:32:23.860Z"),
+      compensation: [
+        {
+          amount: 76761,
+          currency: "JPY",
+          frequency: "HOUR",
+          notes: "Annus adficio suasoria architecto aggero.",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
+      endAt: new Date("2026-08-25T08:29:34.504Z"),
+      hours: 8,
+      id: "edb7e65d-ee9c-4de9-bf02-4dccb2d29377",
+      isApproved: true,
+      startAt: new Date("2023-06-24T19:30:14.691Z"),
+      updatedAt: new Date("2021-06-22T20:53:37.144Z"),
     },
     connectionId: "<id>",
   });
@@ -256,7 +290,7 @@ Update a timeshift
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" example="hris_timeshift" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,7 +303,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.patchHrisTimeshift({
     hrisTimeshift: {
+      approvedAt: new Date("2023-06-05T14:32:23.868Z"),
+      compensation: [
+        {
+          amount: 76761,
+          currency: "JPY",
+          frequency: "HOUR",
+          notes: "Annus adficio suasoria architecto aggero.",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
+      endAt: new Date("2026-08-25T08:29:34.519Z"),
+      hours: 8,
+      id: "c51bdd14-5147-4def-afb6-882c8f97c0df",
+      isApproved: true,
+      startAt: new Date("2023-06-24T19:30:14.699Z"),
+      updatedAt: new Date("2021-06-22T20:53:37.148Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -300,7 +351,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
+      approvedAt: new Date("2023-06-05T14:32:23.868Z"),
+      compensation: [
+        {
+          amount: 76761,
+          currency: "JPY",
+          frequency: "HOUR",
+          notes: "Annus adficio suasoria architecto aggero.",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
+      endAt: new Date("2026-08-25T08:29:34.519Z"),
+      hours: 8,
+      id: "c51bdd14-5147-4def-afb6-882c8f97c0df",
+      isApproved: true,
+      startAt: new Date("2023-06-24T19:30:14.699Z"),
+      updatedAt: new Date("2021-06-22T20:53:37.148Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -420,7 +488,7 @@ Update a timeshift
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" example="hris_timeshift" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -433,7 +501,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.updateHrisTimeshift({
     hrisTimeshift: {
+      approvedAt: new Date("2023-06-05T14:32:23.868Z"),
+      compensation: [
+        {
+          amount: 76761,
+          currency: "JPY",
+          frequency: "HOUR",
+          notes: "Annus adficio suasoria architecto aggero.",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
+      endAt: new Date("2026-08-25T08:29:34.519Z"),
+      hours: 8,
+      id: "c51bdd14-5147-4def-afb6-882c8f97c0df",
+      isApproved: true,
+      startAt: new Date("2023-06-24T19:30:14.699Z"),
+      updatedAt: new Date("2021-06-22T20:53:37.148Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -464,7 +549,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
+      approvedAt: new Date("2023-06-05T14:32:23.868Z"),
+      compensation: [
+        {
+          amount: 76761,
+          currency: "JPY",
+          frequency: "HOUR",
+          notes: "Annus adficio suasoria architecto aggero.",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
+      endAt: new Date("2026-08-25T08:29:34.519Z"),
+      hours: 8,
+      id: "c51bdd14-5147-4def-afb6-882c8f97c0df",
+      isApproved: true,
+      startAt: new Date("2023-06-24T19:30:14.699Z"),
+      updatedAt: new Date("2021-06-22T20:53:37.148Z"),
     },
     connectionId: "<id>",
     id: "<id>",

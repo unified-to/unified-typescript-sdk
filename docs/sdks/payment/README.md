@@ -33,7 +33,7 @@ Create a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" -->
+<!-- UsageSnippet language="typescript" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" example="payment_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -45,7 +45,84 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.createPaymentLink({
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "b6f6ca2e-e1cc-4005-8fd1-bbbf3e301533",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "542a1868-424f-4d59-8020-678870334cdc",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "8d826834-e2c6-40fa-a93f-46269b34c77b",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "828a583d-f269-4125-ac29-cc3ac667cffd",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "8dfb021c-78fb-420d-ba19-22fdc69f2aea",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "fff39870-54ae-4af2-91aa-005bc9e727fd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.966Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
   });
 
@@ -73,7 +150,84 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await linkCreatePaymentLink(unifiedTo, {
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "b6f6ca2e-e1cc-4005-8fd1-bbbf3e301533",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "542a1868-424f-4d59-8020-678870334cdc",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "8d826834-e2c6-40fa-a93f-46269b34c77b",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "828a583d-f269-4125-ac29-cc3ac667cffd",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "8dfb021c-78fb-420d-ba19-22fdc69f2aea",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "fff39870-54ae-4af2-91aa-005bc9e727fd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.966Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -112,7 +266,7 @@ Create a payment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPaymentPayment" method="post" path="/payment/{connection_id}/payment" -->
+<!-- UsageSnippet language="typescript" operationID="createPaymentPayment" method="post" path="/payment/{connection_id}/payment" example="payment_payment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -124,7 +278,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.createPaymentPayment({
-    paymentPayment: {},
+    paymentPayment: {
+      allocations: [],
+      cardBrand: "AMEX",
+      cardLast4: "0819",
+      createdAt: new Date("2022-03-10T00:19:42.086Z"),
+      currency: "BIF",
+      feeAmount: 3,
+      id: "cb697617-f4a2-4c61-8f37-8585acb1a595",
+      locationId: "94f7c68e-07de-40d1-9d6f-a0896363913f",
+      notes: "Tactus vilicus.",
+      paymentMethod: "BANK_TRANSFER",
+      reference: "auctus",
+      status: "SUCCEEDED",
+      tenderType: "CHECK",
+      tipAmount: 2,
+      totalAmount: 44219,
+      type: "INVOICE",
+      updatedAt: new Date("2025-05-24T15:11:03.135Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -152,7 +324,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentCreatePaymentPayment(unifiedTo, {
-    paymentPayment: {},
+    paymentPayment: {
+      allocations: [],
+      cardBrand: "AMEX",
+      cardLast4: "0819",
+      createdAt: new Date("2022-03-10T00:19:42.086Z"),
+      currency: "BIF",
+      feeAmount: 3,
+      id: "cb697617-f4a2-4c61-8f37-8585acb1a595",
+      locationId: "94f7c68e-07de-40d1-9d6f-a0896363913f",
+      notes: "Tactus vilicus.",
+      paymentMethod: "BANK_TRANSFER",
+      reference: "auctus",
+      status: "SUCCEEDED",
+      tenderType: "CHECK",
+      tipAmount: 2,
+      totalAmount: 44219,
+      type: "INVOICE",
+      updatedAt: new Date("2025-05-24T15:11:03.135Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -191,7 +381,7 @@ Create a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" -->
+<!-- UsageSnippet language="typescript" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" example="payment_subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -203,7 +393,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.createPaymentSubscription({
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "f7519009-e6cd-4e12-b266-7782c6582fdd",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.051Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -231,7 +437,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentCreatePaymentSubscription(unifiedTo, {
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "f7519009-e6cd-4e12-b266-7782c6582fdd",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.051Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1050,7 +1272,7 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" example="payment_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1062,7 +1284,84 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.patchPaymentLink({
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1091,7 +1390,84 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await linkPatchPaymentLink(unifiedTo, {
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1131,7 +1507,7 @@ Update a payment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPaymentPayment" method="patch" path="/payment/{connection_id}/payment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPaymentPayment" method="patch" path="/payment/{connection_id}/payment/{id}" example="payment_payment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1143,7 +1519,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.patchPaymentPayment({
-    paymentPayment: {},
+    paymentPayment: {
+      allocations: [],
+      cardBrand: "AMEX",
+      cardLast4: "0819",
+      createdAt: new Date("2022-03-10T00:19:42.086Z"),
+      currency: "BIF",
+      feeAmount: 3,
+      id: "88f67501-63d9-4d34-9f8b-4ae8b27c5ae5",
+      locationId: "94f7c68e-07de-40d1-9d6f-a0896363913f",
+      notes: "Tactus vilicus.",
+      paymentMethod: "BANK_TRANSFER",
+      reference: "auctus",
+      status: "SUCCEEDED",
+      tenderType: "CHECK",
+      tipAmount: 2,
+      totalAmount: 44219,
+      type: "INVOICE",
+      updatedAt: new Date("2025-05-24T15:11:03.152Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1172,7 +1566,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentPatchPaymentPayment(unifiedTo, {
-    paymentPayment: {},
+    paymentPayment: {
+      allocations: [],
+      cardBrand: "AMEX",
+      cardLast4: "0819",
+      createdAt: new Date("2022-03-10T00:19:42.086Z"),
+      currency: "BIF",
+      feeAmount: 3,
+      id: "88f67501-63d9-4d34-9f8b-4ae8b27c5ae5",
+      locationId: "94f7c68e-07de-40d1-9d6f-a0896363913f",
+      notes: "Tactus vilicus.",
+      paymentMethod: "BANK_TRANSFER",
+      reference: "auctus",
+      status: "SUCCEEDED",
+      tenderType: "CHECK",
+      tipAmount: 2,
+      totalAmount: 44219,
+      type: "INVOICE",
+      updatedAt: new Date("2025-05-24T15:11:03.152Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1212,7 +1624,7 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1224,7 +1636,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.patchPaymentSubscription({
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1253,7 +1681,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentPatchPaymentSubscription(unifiedTo, {
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1530,7 +1974,7 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" example="payment_link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1542,7 +1986,84 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.updatePaymentLink({
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1571,7 +2092,84 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await linkUpdatePaymentLink(unifiedTo, {
-    paymentLink: {},
+    paymentLink: {
+      amount: 81211,
+      createdAt: new Date("2023-06-04T16:11:45.685Z"),
+      currency: "GYD",
+      description: "Adfero ipsa terreo benevolentia utrum.",
+      id: "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+      isActive: true,
+      isChargeableNow: false,
+      lineitems: [
+        {
+          createdAt: new Date("2023-08-21T00:45:53.202Z"),
+          id: "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+          itemDescription: "Experience the white brilliance of our Hat, perfect for aggravating environments",
+          itemName: "Licensed Marble Mouse",
+          itemSku: "TAD4EYLVRI",
+          notes: "Charisma theca video verus conduco attollo cervus decretum viridis.",
+          taxAmount: 221,
+          totalAmount: 1841,
+          unitAmount: 270,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-02-12T17:31:25.507Z"),
+        },
+        {
+          createdAt: new Date("2023-09-30T05:29:29.258Z"),
+          discountAmount: 15,
+          id: "2adb9164-4288-4862-91c5-ce845917c5fe",
+          itemDescription: "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+          itemName: "Intelligent Steel Table",
+          itemSku: "V8HQCDQYUZ",
+          taxAmount: 150,
+          totalAmount: 2037,
+          unitAmount: 317,
+          unitQuantity: 6,
+          updatedAt: new Date("2023-05-31T11:10:09.190Z"),
+        },
+        {
+          createdAt: new Date("2023-12-16T13:52:52.341Z"),
+          id: "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+          itemDescription: "Dach - Wolff's most advanced Car technology increases dense capabilities",
+          itemName: "Modern Gold Soap",
+          itemSku: "DYGKCTCLDJ",
+          taxAmount: 41,
+          totalAmount: 281,
+          unitAmount: 30,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-05-22T16:35:07.583Z"),
+        },
+        {
+          createdAt: new Date("2023-08-12T19:45:39.705Z"),
+          id: "b7fff63f-7cf2-4186-8893-214575cfac8a",
+          itemDescription: "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+          itemName: "Generic Aluminum Ball",
+          itemSku: "BSBAXWAAFF",
+          notes: "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+          taxAmount: 6,
+          totalAmount: 78,
+          unitAmount: 24,
+          unitQuantity: 3,
+          updatedAt: new Date("2023-11-13T12:39:15.951Z"),
+        },
+        {
+          createdAt: new Date("2023-02-14T06:21:13.641Z"),
+          discountAmount: 171,
+          id: "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+          itemDescription: "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+          itemName: "Incredible Aluminum Chicken",
+          itemSku: "6ERMJK20HE",
+          taxAmount: 263,
+          totalAmount: 3708,
+          unitAmount: 452,
+          unitQuantity: 8,
+          updatedAt: new Date("2023-01-31T21:39:30.894Z"),
+        },
+      ],
+      successUrl: "https://parched-kettledrum.com/",
+      updatedAt: new Date("2025-12-10T19:02:34.976Z"),
+      url: "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1611,7 +2209,7 @@ Update a payment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePaymentPayment" method="put" path="/payment/{connection_id}/payment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePaymentPayment" method="put" path="/payment/{connection_id}/payment/{id}" example="payment_payment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1623,7 +2221,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.updatePaymentPayment({
-    paymentPayment: {},
+    paymentPayment: {
+      allocations: [],
+      cardBrand: "AMEX",
+      cardLast4: "0819",
+      createdAt: new Date("2022-03-10T00:19:42.086Z"),
+      currency: "BIF",
+      feeAmount: 3,
+      id: "88f67501-63d9-4d34-9f8b-4ae8b27c5ae5",
+      locationId: "94f7c68e-07de-40d1-9d6f-a0896363913f",
+      notes: "Tactus vilicus.",
+      paymentMethod: "BANK_TRANSFER",
+      reference: "auctus",
+      status: "SUCCEEDED",
+      tenderType: "CHECK",
+      tipAmount: 2,
+      totalAmount: 44219,
+      type: "INVOICE",
+      updatedAt: new Date("2025-05-24T15:11:03.152Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1652,7 +2268,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentUpdatePaymentPayment(unifiedTo, {
-    paymentPayment: {},
+    paymentPayment: {
+      allocations: [],
+      cardBrand: "AMEX",
+      cardLast4: "0819",
+      createdAt: new Date("2022-03-10T00:19:42.086Z"),
+      currency: "BIF",
+      feeAmount: 3,
+      id: "88f67501-63d9-4d34-9f8b-4ae8b27c5ae5",
+      locationId: "94f7c68e-07de-40d1-9d6f-a0896363913f",
+      notes: "Tactus vilicus.",
+      paymentMethod: "BANK_TRANSFER",
+      reference: "auctus",
+      status: "SUCCEEDED",
+      tenderType: "CHECK",
+      tipAmount: 2,
+      totalAmount: 44219,
+      type: "INVOICE",
+      updatedAt: new Date("2025-05-24T15:11:03.152Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1692,7 +2326,7 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1704,7 +2338,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.updatePaymentSubscription({
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1733,7 +2383,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentUpdatePaymentSubscription(unifiedTo, {
-    paymentSubscription: {},
+    paymentSubscription: {
+      createdAt: new Date("2023-05-08T10:11:03.414Z"),
+      currency: "WST",
+      currentPeriodEndAt: new Date("2023-06-03T04:20:29.157Z"),
+      currentPeriodStartAt: new Date("2023-05-21T03:55:58.846Z"),
+      dayOfMonth: 1,
+      description: "Innovative Mouse featuring important technology and Bamboo construction",
+      endAt: new Date("2023-05-21T12:36:09.234Z"),
+      id: "c599db6f-2bd5-4178-ab21-33a523666043",
+      interval: 1,
+      intervalUnit: "MONTH",
+      lineitems: [],
+      startAt: new Date("2023-05-29T06:04:51.030Z"),
+      status: "ACTIVE",
+      totalAmount: 75616,
+      updatedAt: new Date("2023-12-15T22:33:27.054Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

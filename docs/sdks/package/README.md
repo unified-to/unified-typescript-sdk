@@ -19,7 +19,7 @@ Create an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" -->
+<!-- UsageSnippet language="typescript" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" example="assessment_package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -32,7 +32,28 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.package.createAssessmentPackage({
     assessmentPackage: {
-      type: "REFERENCE_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "399d78b0-643b-4379-b5fc-7a3efac3d6b6",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.659Z"),
     },
     connectionId: "<id>",
   });
@@ -62,7 +83,28 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentCreateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "REFERENCE_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "399d78b0-643b-4379-b5fc-7a3efac3d6b6",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.659Z"),
     },
     connectionId: "<id>",
   });
@@ -414,7 +456,7 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -427,7 +469,28 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.package.patchAssessmentPackage({
     assessmentPackage: {
-      type: "BACKGROUND_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -458,7 +521,28 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentPatchAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "BACKGROUND_CHECK",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -578,7 +662,7 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -591,7 +675,28 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.package.updateAssessmentPackage({
     assessmentPackage: {
-      type: "OTHER",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -622,7 +727,28 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await assessmentUpdateAssessmentPackage(unifiedTo, {
     assessmentPackage: {
-      type: "OTHER",
+      aliases: [
+        "quia",
+      ],
+      createdAt: new Date("2022-11-18T19:48:39.433Z"),
+      description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+      hasRedirectUrl: true,
+      hasTargetUrl: false,
+      id: "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+      infoUrl: "https://ugly-instance.biz/",
+      integrationTypes: [
+        "viridis",
+      ],
+      maxScore: 22,
+      name: "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+      needsIpAddress: true,
+      parameters: [],
+      regions: [],
+      tags: [
+        "clamo",
+      ],
+      type: "VIDEO_INTERVIEW",
+      updatedAt: new Date("2023-09-18T05:29:15.663Z"),
     },
     connectionId: "<id>",
     id: "<id>",

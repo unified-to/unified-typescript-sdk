@@ -17,7 +17,7 @@ Create a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" example="commerce_saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.saleschannel.createCommerceSaleschannel({
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "40686ae3-40d6-4f84-a18c-43ea22fc7e79",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.036Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +65,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceSaleschannel(unifiedTo, {
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "40686ae3-40d6-4f84-a18c-43ea22fc7e79",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.036Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +268,7 @@ Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" example="commerce_saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +280,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.saleschannel.patchCommerceSaleschannel({
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +317,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceSaleschannel(unifiedTo, {
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +444,7 @@ Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" example="commerce_saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +456,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.saleschannel.updateCommerceSaleschannel({
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +493,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceSaleschannel(unifiedTo, {
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

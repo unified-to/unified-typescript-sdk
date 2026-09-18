@@ -25,7 +25,7 @@ Create an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsActivity" method="post" path="/ats/{connection_id}/activity" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsActivity" method="post" path="/ats/{connection_id}/activity" example="ats_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -37,7 +37,79 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.activity.createAtsActivity({
-    atsActivity: {},
+    atsActivity: {
+      bcc: [
+        {
+          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
+          name: "Rochelle Franey-Bechtelar",
+          type: "HOME",
+        },
+      ],
+      cc: [
+        {
+          email: "Sasha24@hotmail.com",
+          name: "Dr. Elbert Kuvalis",
+          type: "HOME",
+        },
+        {
+          email: "Rosetta_Donnelly@gmail.com",
+          name: "Ramon Daniel",
+          type: "OTHER",
+        },
+        {
+          email: "Kathryne_Jast@yahoo.com",
+          name: "Christian Jacobson",
+          type: "OTHER",
+        },
+        {
+          email: "Eldred95@yahoo.com",
+          name: "Edna Bogan",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2022-08-07T03:16:43.865Z"),
+      description: "Amplus.",
+      from: {
+        email: "Norwood.Wiza47@yahoo.com",
+        name: "Toby Grant",
+        type: "OTHER",
+      },
+      id: "34ae8842-dcf7-45f0-9cdc-100db1b422ed",
+      isPrivate: false,
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "fd2b6fa7-74c6-44bf-81a4-e535ef6f7c90",
+          namespace: "activity",
+          slug: "acer",
+          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "897647b8-f316-4d78-a7bd-41bf9028f3f8",
+          namespace: "activity",
+          slug: "tremo",
+          value: "Amita delectus dicta temptatio utroque ex.",
+        },
+      ],
+      subType: "TASK",
+      title: "Senior Interactions Manager",
+      to: [
+        {
+          email: "Sister91@hotmail.com",
+          name: "Eddie Nienow PhD",
+          type: "WORK",
+        },
+      ],
+      type: "TASK",
+      updatedAt: new Date("2026-03-06T13:34:25.451Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -65,7 +137,79 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsActivity(unifiedTo, {
-    atsActivity: {},
+    atsActivity: {
+      bcc: [
+        {
+          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
+          name: "Rochelle Franey-Bechtelar",
+          type: "HOME",
+        },
+      ],
+      cc: [
+        {
+          email: "Sasha24@hotmail.com",
+          name: "Dr. Elbert Kuvalis",
+          type: "HOME",
+        },
+        {
+          email: "Rosetta_Donnelly@gmail.com",
+          name: "Ramon Daniel",
+          type: "OTHER",
+        },
+        {
+          email: "Kathryne_Jast@yahoo.com",
+          name: "Christian Jacobson",
+          type: "OTHER",
+        },
+        {
+          email: "Eldred95@yahoo.com",
+          name: "Edna Bogan",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2022-08-07T03:16:43.865Z"),
+      description: "Amplus.",
+      from: {
+        email: "Norwood.Wiza47@yahoo.com",
+        name: "Toby Grant",
+        type: "OTHER",
+      },
+      id: "34ae8842-dcf7-45f0-9cdc-100db1b422ed",
+      isPrivate: false,
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "fd2b6fa7-74c6-44bf-81a4-e535ef6f7c90",
+          namespace: "activity",
+          slug: "acer",
+          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "897647b8-f316-4d78-a7bd-41bf9028f3f8",
+          namespace: "activity",
+          slug: "tremo",
+          value: "Amita delectus dicta temptatio utroque ex.",
+        },
+      ],
+      subType: "TASK",
+      title: "Senior Interactions Manager",
+      to: [
+        {
+          email: "Sister91@hotmail.com",
+          name: "Eddie Nienow PhD",
+          type: "WORK",
+        },
+      ],
+      type: "TASK",
+      updatedAt: new Date("2026-03-06T13:34:25.451Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -104,7 +248,7 @@ Create an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" example="lms_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -116,7 +260,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.activity.createLmsActivity({
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.423Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "3c4a7fe6-f616-4cb1-b6f1-b07ad7470920",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.318Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -144,7 +298,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await activityCreateLmsActivity(unifiedTo, {
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.423Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "3c4a7fe6-f616-4cb1-b6f1-b07ad7470920",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.318Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -651,7 +815,7 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsActivity" method="patch" path="/ats/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsActivity" method="patch" path="/ats/{connection_id}/activity/{id}" example="ats_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -663,7 +827,79 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.activity.patchAtsActivity({
-    atsActivity: {},
+    atsActivity: {
+      bcc: [
+        {
+          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
+          name: "Rochelle Franey-Bechtelar",
+          type: "HOME",
+        },
+      ],
+      cc: [
+        {
+          email: "Sasha24@hotmail.com",
+          name: "Dr. Elbert Kuvalis",
+          type: "HOME",
+        },
+        {
+          email: "Rosetta_Donnelly@gmail.com",
+          name: "Ramon Daniel",
+          type: "OTHER",
+        },
+        {
+          email: "Kathryne_Jast@yahoo.com",
+          name: "Christian Jacobson",
+          type: "OTHER",
+        },
+        {
+          email: "Eldred95@yahoo.com",
+          name: "Edna Bogan",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2022-08-07T03:16:43.865Z"),
+      description: "Amplus.",
+      from: {
+        email: "Norwood.Wiza47@yahoo.com",
+        name: "Toby Grant",
+        type: "OTHER",
+      },
+      id: "689be512-24fa-4780-ac65-f4994fa849b7",
+      isPrivate: false,
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "ea8212f7-8ed7-40cb-98a8-770a6000e86a",
+          namespace: "activity",
+          slug: "acer",
+          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "c3da64cc-3932-4c45-b713-1f3eef03925a",
+          namespace: "activity",
+          slug: "tremo",
+          value: "Amita delectus dicta temptatio utroque ex.",
+        },
+      ],
+      subType: "TASK",
+      title: "Senior Interactions Manager",
+      to: [
+        {
+          email: "Sister91@hotmail.com",
+          name: "Eddie Nienow PhD",
+          type: "WORK",
+        },
+      ],
+      type: "TASK",
+      updatedAt: new Date("2026-03-06T13:34:25.485Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -692,7 +928,79 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsActivity(unifiedTo, {
-    atsActivity: {},
+    atsActivity: {
+      bcc: [
+        {
+          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
+          name: "Rochelle Franey-Bechtelar",
+          type: "HOME",
+        },
+      ],
+      cc: [
+        {
+          email: "Sasha24@hotmail.com",
+          name: "Dr. Elbert Kuvalis",
+          type: "HOME",
+        },
+        {
+          email: "Rosetta_Donnelly@gmail.com",
+          name: "Ramon Daniel",
+          type: "OTHER",
+        },
+        {
+          email: "Kathryne_Jast@yahoo.com",
+          name: "Christian Jacobson",
+          type: "OTHER",
+        },
+        {
+          email: "Eldred95@yahoo.com",
+          name: "Edna Bogan",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2022-08-07T03:16:43.865Z"),
+      description: "Amplus.",
+      from: {
+        email: "Norwood.Wiza47@yahoo.com",
+        name: "Toby Grant",
+        type: "OTHER",
+      },
+      id: "689be512-24fa-4780-ac65-f4994fa849b7",
+      isPrivate: false,
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "ea8212f7-8ed7-40cb-98a8-770a6000e86a",
+          namespace: "activity",
+          slug: "acer",
+          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "c3da64cc-3932-4c45-b713-1f3eef03925a",
+          namespace: "activity",
+          slug: "tremo",
+          value: "Amita delectus dicta temptatio utroque ex.",
+        },
+      ],
+      subType: "TASK",
+      title: "Senior Interactions Manager",
+      to: [
+        {
+          email: "Sister91@hotmail.com",
+          name: "Eddie Nienow PhD",
+          type: "WORK",
+        },
+      ],
+      type: "TASK",
+      updatedAt: new Date("2026-03-06T13:34:25.485Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -732,7 +1040,7 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -744,7 +1052,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.activity.patchLmsActivity({
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -773,7 +1091,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await activityPatchLmsActivity(unifiedTo, {
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -971,7 +1299,7 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsActivity" method="put" path="/ats/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsActivity" method="put" path="/ats/{connection_id}/activity/{id}" example="ats_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -983,7 +1311,79 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.activity.updateAtsActivity({
-    atsActivity: {},
+    atsActivity: {
+      bcc: [
+        {
+          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
+          name: "Rochelle Franey-Bechtelar",
+          type: "HOME",
+        },
+      ],
+      cc: [
+        {
+          email: "Sasha24@hotmail.com",
+          name: "Dr. Elbert Kuvalis",
+          type: "HOME",
+        },
+        {
+          email: "Rosetta_Donnelly@gmail.com",
+          name: "Ramon Daniel",
+          type: "OTHER",
+        },
+        {
+          email: "Kathryne_Jast@yahoo.com",
+          name: "Christian Jacobson",
+          type: "OTHER",
+        },
+        {
+          email: "Eldred95@yahoo.com",
+          name: "Edna Bogan",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2022-08-07T03:16:43.865Z"),
+      description: "Amplus.",
+      from: {
+        email: "Norwood.Wiza47@yahoo.com",
+        name: "Toby Grant",
+        type: "OTHER",
+      },
+      id: "689be512-24fa-4780-ac65-f4994fa849b7",
+      isPrivate: false,
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "ea8212f7-8ed7-40cb-98a8-770a6000e86a",
+          namespace: "activity",
+          slug: "acer",
+          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "c3da64cc-3932-4c45-b713-1f3eef03925a",
+          namespace: "activity",
+          slug: "tremo",
+          value: "Amita delectus dicta temptatio utroque ex.",
+        },
+      ],
+      subType: "TASK",
+      title: "Senior Interactions Manager",
+      to: [
+        {
+          email: "Sister91@hotmail.com",
+          name: "Eddie Nienow PhD",
+          type: "WORK",
+        },
+      ],
+      type: "TASK",
+      updatedAt: new Date("2026-03-06T13:34:25.485Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1012,7 +1412,79 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsActivity(unifiedTo, {
-    atsActivity: {},
+    atsActivity: {
+      bcc: [
+        {
+          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
+          name: "Rochelle Franey-Bechtelar",
+          type: "HOME",
+        },
+      ],
+      cc: [
+        {
+          email: "Sasha24@hotmail.com",
+          name: "Dr. Elbert Kuvalis",
+          type: "HOME",
+        },
+        {
+          email: "Rosetta_Donnelly@gmail.com",
+          name: "Ramon Daniel",
+          type: "OTHER",
+        },
+        {
+          email: "Kathryne_Jast@yahoo.com",
+          name: "Christian Jacobson",
+          type: "OTHER",
+        },
+        {
+          email: "Eldred95@yahoo.com",
+          name: "Edna Bogan",
+          type: "OTHER",
+        },
+      ],
+      createdAt: new Date("2022-08-07T03:16:43.865Z"),
+      description: "Amplus.",
+      from: {
+        email: "Norwood.Wiza47@yahoo.com",
+        name: "Toby Grant",
+        type: "OTHER",
+      },
+      id: "689be512-24fa-4780-ac65-f4994fa849b7",
+      isPrivate: false,
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "ea8212f7-8ed7-40cb-98a8-770a6000e86a",
+          namespace: "activity",
+          slug: "acer",
+          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "c3da64cc-3932-4c45-b713-1f3eef03925a",
+          namespace: "activity",
+          slug: "tremo",
+          value: "Amita delectus dicta temptatio utroque ex.",
+        },
+      ],
+      subType: "TASK",
+      title: "Senior Interactions Manager",
+      to: [
+        {
+          email: "Sister91@hotmail.com",
+          name: "Eddie Nienow PhD",
+          type: "WORK",
+        },
+      ],
+      type: "TASK",
+      updatedAt: new Date("2026-03-06T13:34:25.485Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1052,7 +1524,7 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1064,7 +1536,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.activity.updateLmsActivity({
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1093,7 +1575,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await activityUpdateLmsActivity(unifiedTo, {
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

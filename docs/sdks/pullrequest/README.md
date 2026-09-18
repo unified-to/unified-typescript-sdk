@@ -17,7 +17,7 @@ Create a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" example="repo_pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pullrequest.createRepoPullrequest({
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.705Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "a371259c-921a-4ab7-8890-66df1900e75a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.473Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +71,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoCreateRepoPullrequest(unifiedTo, {
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.705Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "a371259c-921a-4ab7-8890-66df1900e75a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.473Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +280,7 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +292,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pullrequest.patchRepoPullrequest({
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +335,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoPatchRepoPullrequest(unifiedTo, {
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +468,7 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +480,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pullrequest.updateRepoPullrequest({
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +523,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoUpdateRepoPullrequest(unifiedTo, {
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

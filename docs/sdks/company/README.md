@@ -30,7 +30,7 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" example="ats_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -42,7 +42,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.createAtsCompany({
-    atsCompany: {},
+    atsCompany: {
+      createdAt: new Date("2019-04-22T03:50:02.920Z"),
+      id: "56afd204-7f7a-49b5-99da-923b6a432b67",
+      name: "Gulgowski, Dibbert and Wilderman",
+      phone: "1-602-210-4548",
+      updatedAt: new Date("2020-09-24T19:30:24.553Z"),
+      websiteUrl: "https://somber-substitution.com/",
+    },
     connectionId: "<id>",
   });
 
@@ -70,7 +77,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsCompany(unifiedTo, {
-    atsCompany: {},
+    atsCompany: {
+      createdAt: new Date("2019-04-22T03:50:02.920Z"),
+      id: "56afd204-7f7a-49b5-99da-923b6a432b67",
+      name: "Gulgowski, Dibbert and Wilderman",
+      phone: "1-602-210-4548",
+      updatedAt: new Date("2020-09-24T19:30:24.553Z"),
+      websiteUrl: "https://somber-substitution.com/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -109,7 +123,7 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" example="crm_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -121,7 +135,83 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.createCrmCompany({
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "878a4579-b9a2-4c57-8199-2ead09812aa8",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "011e5f4e-5ac6-4bab-bc6e-ad1927085f0f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.282Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
   });
 
@@ -149,7 +239,83 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyCreateCrmCompany(unifiedTo, {
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "878a4579-b9a2-4c57-8199-2ead09812aa8",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "011e5f4e-5ac6-4bab-bc6e-ad1927085f0f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.282Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -188,7 +354,7 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" example="hris_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -200,7 +366,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.createHrisCompany({
-    hrisCompany: {},
+    hrisCompany: {
+      address: {
+        address1: "2549 Church Walk",
+        city: "Lake Nettiebury",
+        countryCode: "US",
+        postalCode: "32877-4898",
+        region: "Idaho",
+        regionCode: "PA",
+      },
+      createdAt: new Date("2021-05-02T22:27:38.970Z"),
+      id: "698ffe76-ccdf-460f-8855-4518977a5977",
+      legalName: "Schultz LLC",
+      name: "Gottlieb Group",
+      updatedAt: new Date("2026-09-05T21:12:19.808Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -228,7 +408,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyCreateHrisCompany(unifiedTo, {
-    hrisCompany: {},
+    hrisCompany: {
+      address: {
+        address1: "2549 Church Walk",
+        city: "Lake Nettiebury",
+        countryCode: "US",
+        postalCode: "32877-4898",
+        region: "Idaho",
+        regionCode: "PA",
+      },
+      createdAt: new Date("2021-05-02T22:27:38.970Z"),
+      id: "698ffe76-ccdf-460f-8855-4518977a5977",
+      legalName: "Schultz LLC",
+      name: "Gottlieb Group",
+      updatedAt: new Date("2026-09-05T21:12:19.808Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -812,7 +1006,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" example="ats_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -824,7 +1018,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.patchAtsCompany({
-    atsCompany: {},
+    atsCompany: {
+      createdAt: new Date("2019-04-22T03:50:02.920Z"),
+      id: "690c8c51-afd0-48c0-af3f-6cbe5db597c6",
+      name: "Gulgowski, Dibbert and Wilderman",
+      phone: "1-602-210-4548",
+      updatedAt: new Date("2020-09-24T19:30:24.557Z"),
+      websiteUrl: "https://somber-substitution.com/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -853,7 +1054,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsCompany(unifiedTo, {
-    atsCompany: {},
+    atsCompany: {
+      createdAt: new Date("2019-04-22T03:50:02.920Z"),
+      id: "690c8c51-afd0-48c0-af3f-6cbe5db597c6",
+      name: "Gulgowski, Dibbert and Wilderman",
+      phone: "1-602-210-4548",
+      updatedAt: new Date("2020-09-24T19:30:24.557Z"),
+      websiteUrl: "https://somber-substitution.com/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -893,7 +1101,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -905,7 +1113,83 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.patchCrmCompany({
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -934,7 +1218,83 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyPatchCrmCompany(unifiedTo, {
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -974,7 +1334,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -986,7 +1346,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.patchHrisCompany({
-    hrisCompany: {},
+    hrisCompany: {
+      address: {
+        address1: "2549 Church Walk",
+        city: "Lake Nettiebury",
+        countryCode: "US",
+        postalCode: "32877-4898",
+        region: "Idaho",
+        regionCode: "PA",
+      },
+      createdAt: new Date("2021-05-02T22:27:38.970Z"),
+      id: "fa4b8143-5f86-4d31-8b32-f1197757c6cf",
+      legalName: "Schultz LLC",
+      name: "Gottlieb Group",
+      updatedAt: new Date("2026-09-05T21:12:19.828Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1015,7 +1389,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyPatchHrisCompany(unifiedTo, {
-    hrisCompany: {},
+    hrisCompany: {
+      address: {
+        address1: "2549 Church Walk",
+        city: "Lake Nettiebury",
+        countryCode: "US",
+        postalCode: "32877-4898",
+        region: "Idaho",
+        regionCode: "PA",
+      },
+      createdAt: new Date("2021-05-02T22:27:38.970Z"),
+      id: "fa4b8143-5f86-4d31-8b32-f1197757c6cf",
+      legalName: "Schultz LLC",
+      name: "Gottlieb Group",
+      updatedAt: new Date("2026-09-05T21:12:19.828Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1292,7 +1680,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" example="ats_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1304,7 +1692,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.updateAtsCompany({
-    atsCompany: {},
+    atsCompany: {
+      createdAt: new Date("2019-04-22T03:50:02.920Z"),
+      id: "690c8c51-afd0-48c0-af3f-6cbe5db597c6",
+      name: "Gulgowski, Dibbert and Wilderman",
+      phone: "1-602-210-4548",
+      updatedAt: new Date("2020-09-24T19:30:24.557Z"),
+      websiteUrl: "https://somber-substitution.com/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1333,7 +1728,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsCompany(unifiedTo, {
-    atsCompany: {},
+    atsCompany: {
+      createdAt: new Date("2019-04-22T03:50:02.920Z"),
+      id: "690c8c51-afd0-48c0-af3f-6cbe5db597c6",
+      name: "Gulgowski, Dibbert and Wilderman",
+      phone: "1-602-210-4548",
+      updatedAt: new Date("2020-09-24T19:30:24.557Z"),
+      websiteUrl: "https://somber-substitution.com/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1373,7 +1775,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1385,7 +1787,83 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.updateCrmCompany({
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1414,7 +1892,83 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyUpdateCrmCompany(unifiedTo, {
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1454,7 +2008,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1466,7 +2020,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.updateHrisCompany({
-    hrisCompany: {},
+    hrisCompany: {
+      address: {
+        address1: "2549 Church Walk",
+        city: "Lake Nettiebury",
+        countryCode: "US",
+        postalCode: "32877-4898",
+        region: "Idaho",
+        regionCode: "PA",
+      },
+      createdAt: new Date("2021-05-02T22:27:38.970Z"),
+      id: "fa4b8143-5f86-4d31-8b32-f1197757c6cf",
+      legalName: "Schultz LLC",
+      name: "Gottlieb Group",
+      updatedAt: new Date("2026-09-05T21:12:19.828Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1495,7 +2063,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyUpdateHrisCompany(unifiedTo, {
-    hrisCompany: {},
+    hrisCompany: {
+      address: {
+        address1: "2549 Church Walk",
+        city: "Lake Nettiebury",
+        countryCode: "US",
+        postalCode: "32877-4898",
+        region: "Idaho",
+        regionCode: "PA",
+      },
+      createdAt: new Date("2021-05-02T22:27:38.970Z"),
+      id: "fa4b8143-5f86-4d31-8b32-f1197757c6cf",
+      legalName: "Schultz LLC",
+      name: "Gottlieb Group",
+      updatedAt: new Date("2026-09-05T21:12:19.828Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

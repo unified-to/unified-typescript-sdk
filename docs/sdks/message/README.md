@@ -17,7 +17,7 @@ Create a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" -->
+<!-- UsageSnippet language="typescript" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" example="messaging_message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,39 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.message.createMessagingMessage({
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1c72f1d5-f6e4-4ed8-a96a-02a4102f79f4",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "222cedb6-3d1c-47ba-982b-2520c268f506",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "337e2909-4d4a-4452-8eee-916bebb29ae2",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "222cedb6-3d1c-47ba-982b-2520c268f506",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.621Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +89,39 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingCreateMessagingMessage(unifiedTo, {
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1c72f1d5-f6e4-4ed8-a96a-02a4102f79f4",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "222cedb6-3d1c-47ba-982b-2520c268f506",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "337e2909-4d4a-4452-8eee-916bebb29ae2",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "222cedb6-3d1c-47ba-982b-2520c268f506",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.621Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +316,7 @@ Update a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" example="messaging_message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +328,39 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.message.patchMessagingMessage({
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +389,39 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingPatchMessagingMessage(unifiedTo, {
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +540,7 @@ Update a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" example="messaging_message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +552,39 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.message.updateMessagingMessage({
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +613,39 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingUpdateMessagingMessage(unifiedTo, {
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

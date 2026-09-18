@@ -17,7 +17,7 @@ Create a bankaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" example="hris_bankaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankaccount.createHrisBankaccount({
-    hrisBankaccount: {},
+    hrisBankaccount: {
+      accountNumber: "****3777",
+      accountNumberLast4: "3777",
+      accountType: "CHECKING",
+      bankName: "Huel Group",
+      createdAt: new Date("2019-11-16T16:43:45.976Z"),
+      id: "0ba01940-59d2-4fcb-a5b2-8633146c7a07",
+      isPrimary: false,
+      name: "Checking Account",
+      routingNumber: "448650724",
+      updatedAt: new Date("2025-06-04T11:31:37.518Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +68,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisBankaccount(unifiedTo, {
-    hrisBankaccount: {},
+    hrisBankaccount: {
+      accountNumber: "****3777",
+      accountNumberLast4: "3777",
+      accountType: "CHECKING",
+      bankName: "Huel Group",
+      createdAt: new Date("2019-11-16T16:43:45.976Z"),
+      id: "0ba01940-59d2-4fcb-a5b2-8633146c7a07",
+      isPrimary: false,
+      name: "Checking Account",
+      routingNumber: "448650724",
+      updatedAt: new Date("2025-06-04T11:31:37.518Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +274,7 @@ Update a bankaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +286,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankaccount.patchHrisBankaccount({
-    hrisBankaccount: {},
+    hrisBankaccount: {
+      accountNumber: "****3777",
+      accountNumberLast4: "3777",
+      accountType: "CHECKING",
+      bankName: "Huel Group",
+      createdAt: new Date("2019-11-16T16:43:45.976Z"),
+      id: "48efbe5b-f668-403e-9979-a07b0ec0a98a",
+      isPrimary: false,
+      name: "Checking Account",
+      routingNumber: "448650724",
+      updatedAt: new Date("2025-06-04T11:31:37.525Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +326,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisBankaccount(unifiedTo, {
-    hrisBankaccount: {},
+    hrisBankaccount: {
+      accountNumber: "****3777",
+      accountNumberLast4: "3777",
+      accountType: "CHECKING",
+      bankName: "Huel Group",
+      createdAt: new Date("2019-11-16T16:43:45.976Z"),
+      id: "48efbe5b-f668-403e-9979-a07b0ec0a98a",
+      isPrimary: false,
+      name: "Checking Account",
+      routingNumber: "448650724",
+      updatedAt: new Date("2025-06-04T11:31:37.525Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +456,7 @@ Update a bankaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +468,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankaccount.updateHrisBankaccount({
-    hrisBankaccount: {},
+    hrisBankaccount: {
+      accountNumber: "****3777",
+      accountNumberLast4: "3777",
+      accountType: "CHECKING",
+      bankName: "Huel Group",
+      createdAt: new Date("2019-11-16T16:43:45.976Z"),
+      id: "48efbe5b-f668-403e-9979-a07b0ec0a98a",
+      isPrimary: false,
+      name: "Checking Account",
+      routingNumber: "448650724",
+      updatedAt: new Date("2025-06-04T11:31:37.525Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +508,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisBankaccount(unifiedTo, {
-    hrisBankaccount: {},
+    hrisBankaccount: {
+      accountNumber: "****3777",
+      accountNumberLast4: "3777",
+      accountType: "CHECKING",
+      bankName: "Huel Group",
+      createdAt: new Date("2019-11-16T16:43:45.976Z"),
+      id: "48efbe5b-f668-403e-9979-a07b0ec0a98a",
+      isPrimary: false,
+      name: "Checking Account",
+      routingNumber: "448650724",
+      updatedAt: new Date("2025-06-04T11:31:37.525Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -14,7 +14,7 @@ Create a feedback
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPerformanceFeedback" method="post" path="/performance/{connection_id}/feedback" -->
+<!-- UsageSnippet language="typescript" operationID="createPerformanceFeedback" method="post" path="/performance/{connection_id}/feedback" example="performance_feedback" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -27,6 +27,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.feedback.createPerformanceFeedback({
     performanceFeedback: {
+      createdAt: new Date("2023-04-11T16:21:53.862Z"),
+      id: "f5fce0fb-e6d4-4627-b15e-106baf0e1fee",
+      isVisible: true,
+      message: "Tabernus corpus voluptate aestus.",
+      tags: [
+        "well-to-do",
+        "hexagon",
+      ],
+      type: "PRAISE",
+      updatedAt: new Date("2025-08-12T15:38:19.904Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -57,6 +67,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await performanceCreatePerformanceFeedback(unifiedTo, {
     performanceFeedback: {
+      createdAt: new Date("2023-04-11T16:21:53.862Z"),
+      id: "f5fce0fb-e6d4-4627-b15e-106baf0e1fee",
+      isVisible: true,
+      message: "Tabernus corpus voluptate aestus.",
+      tags: [
+        "well-to-do",
+        "hexagon",
+      ],
+      type: "PRAISE",
+      updatedAt: new Date("2025-08-12T15:38:19.904Z"),
       userId: "<id>",
     },
     connectionId: "<id>",

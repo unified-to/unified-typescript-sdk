@@ -17,7 +17,7 @@ Create an interview
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" example="ats_interview" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.interview.createAtsInterview({
-    atsInterview: {},
+    atsInterview: {
+      createdAt: new Date("2021-11-28T03:14:47.774Z"),
+      endAt: new Date("2025-09-23T08:18:31.424Z"),
+      externalEventXref: "22437263-a3c4-4bef-9da5-8a0a2814ab05",
+      id: "97378090-9e36-41ba-b377-0bf55ead9114",
+      location: "26596 Halle Trafficway",
+      startAt: new Date("2025-05-19T06:26:28.146Z"),
+      status: "SCHEDULED",
+      updatedAt: new Date("2026-02-04T00:38:00.419Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +66,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsInterview(unifiedTo, {
-    atsInterview: {},
+    atsInterview: {
+      createdAt: new Date("2021-11-28T03:14:47.774Z"),
+      endAt: new Date("2025-09-23T08:18:31.424Z"),
+      externalEventXref: "22437263-a3c4-4bef-9da5-8a0a2814ab05",
+      id: "97378090-9e36-41ba-b377-0bf55ead9114",
+      location: "26596 Halle Trafficway",
+      startAt: new Date("2025-05-19T06:26:28.146Z"),
+      status: "SCHEDULED",
+      updatedAt: new Date("2026-02-04T00:38:00.419Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +270,7 @@ Update an interview
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" example="ats_interview" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +282,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.interview.patchAtsInterview({
-    atsInterview: {},
+    atsInterview: {
+      createdAt: new Date("2021-11-28T03:14:47.774Z"),
+      endAt: new Date("2025-09-23T08:18:31.430Z"),
+      externalEventXref: "d69449a5-d6ad-4010-a31f-49b8e650458b",
+      id: "342cb8a4-20e4-4c9a-afd7-ca235b04f094",
+      location: "26596 Halle Trafficway",
+      startAt: new Date("2025-05-19T06:26:28.151Z"),
+      status: "SCHEDULED",
+      updatedAt: new Date("2026-02-04T00:38:00.426Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +320,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsInterview(unifiedTo, {
-    atsInterview: {},
+    atsInterview: {
+      createdAt: new Date("2021-11-28T03:14:47.774Z"),
+      endAt: new Date("2025-09-23T08:18:31.430Z"),
+      externalEventXref: "d69449a5-d6ad-4010-a31f-49b8e650458b",
+      id: "342cb8a4-20e4-4c9a-afd7-ca235b04f094",
+      location: "26596 Halle Trafficway",
+      startAt: new Date("2025-05-19T06:26:28.151Z"),
+      status: "SCHEDULED",
+      updatedAt: new Date("2026-02-04T00:38:00.426Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +448,7 @@ Update an interview
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" example="ats_interview" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +460,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.interview.updateAtsInterview({
-    atsInterview: {},
+    atsInterview: {
+      createdAt: new Date("2021-11-28T03:14:47.774Z"),
+      endAt: new Date("2025-09-23T08:18:31.430Z"),
+      externalEventXref: "d69449a5-d6ad-4010-a31f-49b8e650458b",
+      id: "342cb8a4-20e4-4c9a-afd7-ca235b04f094",
+      location: "26596 Halle Trafficway",
+      startAt: new Date("2025-05-19T06:26:28.151Z"),
+      status: "SCHEDULED",
+      updatedAt: new Date("2026-02-04T00:38:00.426Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +498,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsInterview(unifiedTo, {
-    atsInterview: {},
+    atsInterview: {
+      createdAt: new Date("2021-11-28T03:14:47.774Z"),
+      endAt: new Date("2025-09-23T08:18:31.430Z"),
+      externalEventXref: "d69449a5-d6ad-4010-a31f-49b8e650458b",
+      id: "342cb8a4-20e4-4c9a-afd7-ca235b04f094",
+      location: "26596 Halle Trafficway",
+      startAt: new Date("2025-05-19T06:26:28.151Z"),
+      status: "SCHEDULED",
+      updatedAt: new Date("2026-02-04T00:38:00.426Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -48,7 +48,7 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" example="crm_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -60,7 +60,83 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmCompany({
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "878a4579-b9a2-4c57-8199-2ead09812aa8",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "011e5f4e-5ac6-4bab-bc6e-ad1927085f0f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.282Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
   });
 
@@ -88,7 +164,83 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyCreateCrmCompany(unifiedTo, {
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "878a4579-b9a2-4c57-8199-2ead09812aa8",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "011e5f4e-5ac6-4bab-bc6e-ad1927085f0f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.282Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -127,7 +279,7 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" example="crm_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -139,7 +291,71 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmContact({
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "4b00e4e9-fd2c-4c85-904a-2f9fbb538aab",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "f5133e22-9032-4da2-b390-6d9b7c942b49",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.758Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -167,7 +383,71 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactCreateCrmContact(unifiedTo, {
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "4b00e4e9-fd2c-4c85-904a-2f9fbb538aab",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "f5133e22-9032-4da2-b390-6d9b7c942b49",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.758Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -206,7 +486,7 @@ Create a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" example="crm_deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -218,7 +498,52 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmDeal({
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.203Z"),
+      closingAt: new Date("2025-08-09T21:47:04.909Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "fb9d739e-e46a-4253-80ea-9c4e45eb3f96",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "3a2e4850-fb79-4e6a-958a-abab7bbc81dc",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "eff2b7cd-af8e-4f47-aa85-163272ccc4d9",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "1a391e21-a554-4075-9436-04b11d9c2f35",
+          name: "tubineus",
+        },
+        {
+          id: "d764d0a0-f44d-482e-9090-04e20aedf149",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.578Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
   });
 
@@ -246,7 +571,52 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmDeal(unifiedTo, {
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.203Z"),
+      closingAt: new Date("2025-08-09T21:47:04.909Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "fb9d739e-e46a-4253-80ea-9c4e45eb3f96",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "3a2e4850-fb79-4e6a-958a-abab7bbc81dc",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "eff2b7cd-af8e-4f47-aa85-163272ccc4d9",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "1a391e21-a554-4075-9436-04b11d9c2f35",
+          name: "tubineus",
+        },
+        {
+          id: "d764d0a0-f44d-482e-9090-04e20aedf149",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.578Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -285,7 +655,7 @@ Create an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmEvent" method="post" path="/crm/{connection_id}/event" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmEvent" method="post" path="/crm/{connection_id}/event" example="crm_event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -297,7 +667,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmEvent({
-    crmEvent: {},
+    crmEvent: {
+      call: {
+        description: "Arbitro aptus.",
+        duration: 64,
+        startAt: new Date("2024-11-17T19:36:18.647Z"),
+      },
+      createdAt: new Date("2020-07-14T04:53:23.784Z"),
+      id: "bc6b1939-6879-4e6a-a90b-2a4f3acae555",
+      type: "CALL",
+      updatedAt: new Date("2026-09-08T16:08:26.484Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -325,7 +705,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventCreateCrmEvent(unifiedTo, {
-    crmEvent: {},
+    crmEvent: {
+      call: {
+        description: "Arbitro aptus.",
+        duration: 64,
+        startAt: new Date("2024-11-17T19:36:18.647Z"),
+      },
+      createdAt: new Date("2020-07-14T04:53:23.784Z"),
+      id: "bc6b1939-6879-4e6a-a90b-2a4f3acae555",
+      type: "CALL",
+      updatedAt: new Date("2026-09-08T16:08:26.484Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -364,7 +754,7 @@ Create a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" example="crm_lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -376,7 +766,62 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmLead({
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "5c399df0-ebd2-46ff-8824-c35785883216",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "fbe45a6a-3689-4115-9e09-6d36f037697e",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.275Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -404,7 +849,62 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmLead(unifiedTo, {
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "5c399df0-ebd2-46ff-8824-c35785883216",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "fbe45a6a-3689-4115-9e09-6d36f037697e",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.275Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -443,7 +943,7 @@ Create a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" example="crm_pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -455,7 +955,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmPipeline({
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "0212937f-ae58-406d-83a3-81d26a8e6868",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "9ca5b3e9-1498-4027-8f0a-c108c9557292",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.930Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.495Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -483,7 +1003,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmPipeline(unifiedTo, {
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "0212937f-ae58-406d-83a3-81d26a8e6868",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "9ca5b3e9-1498-4027-8f0a-c108c9557292",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.930Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.495Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1535,7 +2075,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1547,7 +2087,83 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmCompany({
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1576,7 +2192,83 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyPatchCrmCompany(unifiedTo, {
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1616,7 +2308,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1628,7 +2320,71 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmContact({
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1657,7 +2413,71 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactPatchCrmContact(unifiedTo, {
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1697,7 +2517,7 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1709,7 +2529,52 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmDeal({
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1738,7 +2603,52 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmDeal(unifiedTo, {
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1778,7 +2688,7 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmEvent" method="patch" path="/crm/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmEvent" method="patch" path="/crm/{connection_id}/event/{id}" example="crm_event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1790,7 +2700,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmEvent({
-    crmEvent: {},
+    crmEvent: {
+      call: {
+        description: "Arbitro aptus.",
+        duration: 64,
+        startAt: new Date("2024-11-17T19:36:18.679Z"),
+      },
+      createdAt: new Date("2020-07-14T04:53:23.784Z"),
+      id: "17e150e0-763c-4553-8b13-2eb74d8d88fb",
+      type: "CALL",
+      updatedAt: new Date("2026-09-08T16:08:26.529Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1819,7 +2739,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventPatchCrmEvent(unifiedTo, {
-    crmEvent: {},
+    crmEvent: {
+      call: {
+        description: "Arbitro aptus.",
+        duration: 64,
+        startAt: new Date("2024-11-17T19:36:18.679Z"),
+      },
+      createdAt: new Date("2020-07-14T04:53:23.784Z"),
+      id: "17e150e0-763c-4553-8b13-2eb74d8d88fb",
+      type: "CALL",
+      updatedAt: new Date("2026-09-08T16:08:26.529Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1859,7 +2789,7 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1871,7 +2801,62 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmLead({
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1900,7 +2885,62 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmLead(unifiedTo, {
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1940,7 +2980,7 @@ Update a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" example="crm_pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1952,7 +2992,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmPipeline({
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1981,7 +3041,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmPipeline(unifiedTo, {
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2495,7 +3575,7 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2507,7 +3587,83 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmCompany({
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2536,7 +3692,83 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyUpdateCrmCompany(unifiedTo, {
-    crmCompany: {},
+    crmCompany: {
+      address: {
+        address1: "7261 Salisbury Road",
+        address2: "Apt. 778",
+        city: "Harrisburg",
+        countryCode: "US",
+        postalCode: "56293-3678",
+        region: "Pennsylvania",
+        regionCode: "ID",
+      },
+      createdAt: new Date("2020-05-11T18:26:32.925Z"),
+      description: "Balbus crapula spiculum.",
+      domains: [
+        "fussy-nerve.info",
+        "sturdy-lobster.org",
+        "greedy-offset.name",
+      ],
+      emails: [
+        {
+          email: "Sandrine_Jacobi@hotmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine_Jacobi@gmail.com",
+          type: "WORK",
+        },
+        {
+          email: "Sandrine.Jacobi@yahoo.com",
+          type: "OTHER",
+        },
+      ],
+      employees: 967,
+      id: "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+      industry: "Infrastructure",
+      isActive: true,
+      linkUrls: [
+        "https://blue-license.org",
+        "https://minor-formation.com",
+        "https://ecstatic-hammock.com",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "esse",
+        },
+      ],
+      name: "Goodwin and Sons",
+      tags: [
+        "quaerat",
+        "valeo",
+      ],
+      telephones: [
+        {
+          telephone: "(432) 849-2690",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(606) 871-2046",
+          type: "OTHER",
+        },
+        {
+          telephone: "(842) 258-9395",
+          type: "MOBILE",
+        },
+      ],
+      timezone: "Europe/San_Marino",
+      updatedAt: new Date("2025-02-06T12:34:04.305Z"),
+      websites: [
+        "https://wise-possession.org",
+      ],
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2576,7 +3808,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2588,7 +3820,71 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmContact({
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2617,7 +3913,71 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactUpdateCrmContact(unifiedTo, {
-    crmContact: {},
+    crmContact: {
+      address: {
+        address1: "518 Brannon Burg",
+        city: "East Helenebury",
+        countryCode: "US",
+        postalCode: "92622-2406",
+        region: "Vermont",
+        regionCode: "AZ",
+      },
+      company: "Lowe - Jakubowski",
+      createdAt: new Date("2021-01-02T00:41:38.885Z"),
+      department: "systematic",
+      emails: [
+        {
+          email: "Mohammad.Bartell45@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad.Bartell90@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Mohammad_Bartell@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Mohammad",
+      id: "926522c8-4fea-4b31-870c-dbb458b14cb0",
+      imageUrl: "https://picsum.photos/seed/zmbPeg/2905/378",
+      lastName: "Bartell",
+      linkUrls: [
+        "https://limited-parade.info",
+        "https://faint-papa.com/",
+        "https://windy-accountability.name",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "24067b18-8e42-4ed3-bb17-00f11628302f",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "autem",
+        },
+      ],
+      name: "Mohammad Bartell",
+      telephones: [
+        {
+          telephone: "(975) 986-1658",
+          type: "WORK",
+        },
+        {
+          telephone: "(489) 332-3509",
+          type: "HOME",
+        },
+        {
+          telephone: "(205) 880-8886",
+          type: "HOME",
+        },
+      ],
+      title: "National Tactics Analyst",
+      updatedAt: new Date("2021-02-23T09:13:10.759Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2657,7 +4017,7 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2669,7 +4029,52 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmDeal({
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2698,7 +4103,52 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmDeal(unifiedTo, {
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2738,7 +4188,7 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmEvent" method="put" path="/crm/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmEvent" method="put" path="/crm/{connection_id}/event/{id}" example="crm_event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2750,7 +4200,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmEvent({
-    crmEvent: {},
+    crmEvent: {
+      call: {
+        description: "Arbitro aptus.",
+        duration: 64,
+        startAt: new Date("2024-11-17T19:36:18.679Z"),
+      },
+      createdAt: new Date("2020-07-14T04:53:23.784Z"),
+      id: "17e150e0-763c-4553-8b13-2eb74d8d88fb",
+      type: "CALL",
+      updatedAt: new Date("2026-09-08T16:08:26.529Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2779,7 +4239,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventUpdateCrmEvent(unifiedTo, {
-    crmEvent: {},
+    crmEvent: {
+      call: {
+        description: "Arbitro aptus.",
+        duration: 64,
+        startAt: new Date("2024-11-17T19:36:18.679Z"),
+      },
+      createdAt: new Date("2020-07-14T04:53:23.784Z"),
+      id: "17e150e0-763c-4553-8b13-2eb74d8d88fb",
+      type: "CALL",
+      updatedAt: new Date("2026-09-08T16:08:26.529Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2819,7 +4289,7 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2831,7 +4301,62 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmLead({
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2860,7 +4385,62 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmLead(unifiedTo, {
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2900,7 +4480,7 @@ Update a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" example="crm_pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2912,7 +4492,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmPipeline({
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2941,7 +4541,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmPipeline(unifiedTo, {
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

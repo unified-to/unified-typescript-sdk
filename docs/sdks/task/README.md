@@ -31,7 +31,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" example="task_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -43,7 +43,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.createTaskComment({
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8b5be59d-1fbb-4870-9365-2a2f4ab8abf2",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.569Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
   });
 
@@ -71,7 +78,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentCreateTaskComment(unifiedTo, {
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8b5be59d-1fbb-4870-9365-2a2f4ab8abf2",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.569Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -110,7 +124,7 @@ Create a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" example="task_project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -122,7 +136,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.createTaskProject({
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "b89dd93c-edbd-47f7-8077-f16b2f9cf4a1",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "db969ea0-9310-4a66-a696-8fceb5ef1409",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "f2df3bed-7357-48cd-bf87-bd708995401a",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.709Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -150,7 +194,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await projectCreateTaskProject(unifiedTo, {
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "b89dd93c-edbd-47f7-8077-f16b2f9cf4a1",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "db969ea0-9310-4a66-a696-8fceb5ef1409",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "f2df3bed-7357-48cd-bf87-bd708995401a",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.709Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -189,7 +263,7 @@ Create a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskTask" method="post" path="/task/{connection_id}/task" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskTask" method="post" path="/task/{connection_id}/task" example="task_task" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -201,7 +275,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.createTaskTask({
-    taskTask: {},
+    taskTask: {
+      attachmentIds: [],
+      completedAt: new Date("2022-03-24T11:51:32.317Z"),
+      createdAt: new Date("2019-01-31T08:34:55.626Z"),
+      dueAt: new Date("2026-04-23T08:41:57.045Z"),
+      endAt: new Date("2022-10-13T17:22:28.033Z"),
+      hasChildren: true,
+      id: "819ad665-4bd4-4280-a9da-e2b3fb56cfc5",
+      metadata: [],
+      name: "Direct Markets Architect",
+      notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+      priority: "LOW",
+      progress: 2,
+      startAt: new Date("2022-01-19T11:23:51.489Z"),
+      status: "IN_PROGRESS",
+      storyPoints: 0,
+      tags: [
+        "concido",
+        "rerum",
+      ],
+      timeSpent: 957,
+      timeSpentUnit: "SECONDS",
+      type: "tubineus",
+      updatedAt: new Date("2019-07-13T10:49:11.153Z"),
+      url: "https://dismal-silk.net/",
+    },
     connectionId: "<id>",
   });
 
@@ -229,7 +328,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskCreateTaskTask(unifiedTo, {
-    taskTask: {},
+    taskTask: {
+      attachmentIds: [],
+      completedAt: new Date("2022-03-24T11:51:32.317Z"),
+      createdAt: new Date("2019-01-31T08:34:55.626Z"),
+      dueAt: new Date("2026-04-23T08:41:57.045Z"),
+      endAt: new Date("2022-10-13T17:22:28.033Z"),
+      hasChildren: true,
+      id: "819ad665-4bd4-4280-a9da-e2b3fb56cfc5",
+      metadata: [],
+      name: "Direct Markets Architect",
+      notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+      priority: "LOW",
+      progress: 2,
+      startAt: new Date("2022-01-19T11:23:51.489Z"),
+      status: "IN_PROGRESS",
+      storyPoints: 0,
+      tags: [
+        "concido",
+        "rerum",
+      ],
+      timeSpent: 957,
+      timeSpentUnit: "SECONDS",
+      type: "tubineus",
+      updatedAt: new Date("2019-07-13T10:49:11.153Z"),
+      url: "https://dismal-silk.net/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -892,7 +1016,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -904,7 +1028,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.patchTaskComment({
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -933,7 +1064,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentPatchTaskComment(unifiedTo, {
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -973,7 +1111,7 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -985,7 +1123,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.patchTaskProject({
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1014,7 +1182,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await projectPatchTaskProject(unifiedTo, {
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1054,7 +1252,7 @@ Update a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskTask" method="patch" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskTask" method="patch" path="/task/{connection_id}/task/{id}" example="task_task" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1066,7 +1264,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.patchTaskTask({
-    taskTask: {},
+    taskTask: {
+      attachmentIds: [],
+      completedAt: new Date("2022-03-24T11:51:32.324Z"),
+      createdAt: new Date("2019-01-31T08:34:55.626Z"),
+      dueAt: new Date("2026-04-23T08:41:57.062Z"),
+      endAt: new Date("2022-10-13T17:22:28.042Z"),
+      hasChildren: true,
+      id: "1cb76329-5f4e-4d8f-8693-4e3550fc5a92",
+      metadata: [],
+      name: "Direct Markets Architect",
+      notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+      priority: "LOW",
+      progress: 2,
+      startAt: new Date("2022-01-19T11:23:51.496Z"),
+      status: "IN_PROGRESS",
+      storyPoints: 0,
+      tags: [
+        "concido",
+        "rerum",
+      ],
+      timeSpent: 957,
+      timeSpentUnit: "SECONDS",
+      type: "tubineus",
+      updatedAt: new Date("2019-07-13T10:49:11.154Z"),
+      url: "https://dismal-silk.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1095,7 +1318,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskPatchTaskTask(unifiedTo, {
-    taskTask: {},
+    taskTask: {
+      attachmentIds: [],
+      completedAt: new Date("2022-03-24T11:51:32.324Z"),
+      createdAt: new Date("2019-01-31T08:34:55.626Z"),
+      dueAt: new Date("2026-04-23T08:41:57.062Z"),
+      endAt: new Date("2022-10-13T17:22:28.042Z"),
+      hasChildren: true,
+      id: "1cb76329-5f4e-4d8f-8693-4e3550fc5a92",
+      metadata: [],
+      name: "Direct Markets Architect",
+      notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+      priority: "LOW",
+      progress: 2,
+      startAt: new Date("2022-01-19T11:23:51.496Z"),
+      status: "IN_PROGRESS",
+      storyPoints: 0,
+      tags: [
+        "concido",
+        "rerum",
+      ],
+      timeSpent: 957,
+      timeSpentUnit: "SECONDS",
+      type: "tubineus",
+      updatedAt: new Date("2019-07-13T10:49:11.154Z"),
+      url: "https://dismal-silk.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1372,7 +1620,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1384,7 +1632,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.updateTaskComment({
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1413,7 +1668,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commentUpdateTaskComment(unifiedTo, {
-    taskComment: {},
+    taskComment: {
+      createdAt: new Date("2019-10-12T20:33:37.879Z"),
+      hasChildren: true,
+      id: "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+      text: "Colo ulciscor sublime tabernus.",
+      updatedAt: new Date("2021-09-24T01:13:00.571Z"),
+      userName: "Santina Abbott",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1453,7 +1715,7 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1465,7 +1727,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.updateTaskProject({
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1494,7 +1786,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await projectUpdateTaskProject(unifiedTo, {
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1534,7 +1856,7 @@ Update a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskTask" method="put" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskTask" method="put" path="/task/{connection_id}/task/{id}" example="task_task" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1546,7 +1868,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.updateTaskTask({
-    taskTask: {},
+    taskTask: {
+      attachmentIds: [],
+      completedAt: new Date("2022-03-24T11:51:32.324Z"),
+      createdAt: new Date("2019-01-31T08:34:55.626Z"),
+      dueAt: new Date("2026-04-23T08:41:57.062Z"),
+      endAt: new Date("2022-10-13T17:22:28.042Z"),
+      hasChildren: true,
+      id: "1cb76329-5f4e-4d8f-8693-4e3550fc5a92",
+      metadata: [],
+      name: "Direct Markets Architect",
+      notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+      priority: "LOW",
+      progress: 2,
+      startAt: new Date("2022-01-19T11:23:51.496Z"),
+      status: "IN_PROGRESS",
+      storyPoints: 0,
+      tags: [
+        "concido",
+        "rerum",
+      ],
+      timeSpent: 957,
+      timeSpentUnit: "SECONDS",
+      type: "tubineus",
+      updatedAt: new Date("2019-07-13T10:49:11.154Z"),
+      url: "https://dismal-silk.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1575,7 +1922,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskUpdateTaskTask(unifiedTo, {
-    taskTask: {},
+    taskTask: {
+      attachmentIds: [],
+      completedAt: new Date("2022-03-24T11:51:32.324Z"),
+      createdAt: new Date("2019-01-31T08:34:55.626Z"),
+      dueAt: new Date("2026-04-23T08:41:57.062Z"),
+      endAt: new Date("2022-10-13T17:22:28.042Z"),
+      hasChildren: true,
+      id: "1cb76329-5f4e-4d8f-8693-4e3550fc5a92",
+      metadata: [],
+      name: "Direct Markets Architect",
+      notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+      priority: "LOW",
+      progress: 2,
+      startAt: new Date("2022-01-19T11:23:51.496Z"),
+      status: "IN_PROGRESS",
+      storyPoints: 0,
+      tags: [
+        "concido",
+        "rerum",
+      ],
+      timeSpent: 957,
+      timeSpentUnit: "SECONDS",
+      type: "tubineus",
+      updatedAt: new Date("2019-07-13T10:49:11.154Z"),
+      url: "https://dismal-silk.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

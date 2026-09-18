@@ -17,7 +17,7 @@ Create a form
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createFormsForm" method="post" path="/forms/{connection_id}/form" -->
+<!-- UsageSnippet language="typescript" operationID="createFormsForm" method="post" path="/forms/{connection_id}/form" example="forms_form" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,72 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.form.createFormsForm({
-    formsForm: {},
+    formsForm: {
+      confirmationMessage: "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+      createdAt: new Date("2023-10-05T21:34:29.094Z"),
+      description: "Sodalitas cupiditas terebro conduco.",
+      fields: [
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "565f27cf-2cf7-4c30-ad97-4340d859b584",
+          isActive: true,
+          isRequired: true,
+          maxLength: 146,
+          name: "vulgivagus audio accendo",
+          order: 0,
+          type: "TEXTAREA",
+          updatedAt: new Date("2025-04-11T17:17:35.689Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+          isActive: true,
+          isRequired: false,
+          name: "alo crebro vado",
+          order: 1,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-08-23T07:10:16.251Z"),
+        },
+        {
+          choices: [
+            "vallum",
+            "vae",
+            "nesciunt",
+            "commodi",
+            "appositus",
+          ],
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          defaultValue: "cattus",
+          id: "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+          isActive: true,
+          isRequired: false,
+          name: "casso tenus nesciunt",
+          order: 2,
+          type: "MULTIPLE_SELECT",
+          updatedAt: new Date("2024-02-22T02:14:33.063Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          description: "Sequi antea delectatio.",
+          id: "e45efb8f-439b-40f6-8370-99c8ec66b065",
+          isActive: true,
+          isRequired: false,
+          name: "comburo utique ipsa",
+          order: 3,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-11-14T23:43:34.255Z"),
+        },
+      ],
+      hasMultipleSubmissions: false,
+      hasProgressBar: false,
+      hasShuffleQuestions: true,
+      id: "d0766382-50db-4bb3-a245-eaefe22f656b",
+      isActive: false,
+      name: "voluptatibus omnis audax Form",
+      publishedUrl: "https://impartial-institute.org/",
+      responseCount: 423,
+      updatedAt: new Date("2024-08-15T04:23:40.243Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +122,72 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await formsCreateFormsForm(unifiedTo, {
-    formsForm: {},
+    formsForm: {
+      confirmationMessage: "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+      createdAt: new Date("2023-10-05T21:34:29.094Z"),
+      description: "Sodalitas cupiditas terebro conduco.",
+      fields: [
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "565f27cf-2cf7-4c30-ad97-4340d859b584",
+          isActive: true,
+          isRequired: true,
+          maxLength: 146,
+          name: "vulgivagus audio accendo",
+          order: 0,
+          type: "TEXTAREA",
+          updatedAt: new Date("2025-04-11T17:17:35.689Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+          isActive: true,
+          isRequired: false,
+          name: "alo crebro vado",
+          order: 1,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-08-23T07:10:16.251Z"),
+        },
+        {
+          choices: [
+            "vallum",
+            "vae",
+            "nesciunt",
+            "commodi",
+            "appositus",
+          ],
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          defaultValue: "cattus",
+          id: "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+          isActive: true,
+          isRequired: false,
+          name: "casso tenus nesciunt",
+          order: 2,
+          type: "MULTIPLE_SELECT",
+          updatedAt: new Date("2024-02-22T02:14:33.063Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          description: "Sequi antea delectatio.",
+          id: "e45efb8f-439b-40f6-8370-99c8ec66b065",
+          isActive: true,
+          isRequired: false,
+          name: "comburo utique ipsa",
+          order: 3,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-11-14T23:43:34.255Z"),
+        },
+      ],
+      hasMultipleSubmissions: false,
+      hasProgressBar: false,
+      hasShuffleQuestions: true,
+      id: "d0766382-50db-4bb3-a245-eaefe22f656b",
+      isActive: false,
+      name: "voluptatibus omnis audax Form",
+      publishedUrl: "https://impartial-institute.org/",
+      responseCount: 423,
+      updatedAt: new Date("2024-08-15T04:23:40.243Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +382,7 @@ Update a form
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchFormsForm" method="patch" path="/forms/{connection_id}/form/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchFormsForm" method="patch" path="/forms/{connection_id}/form/{id}" example="forms_form" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +394,72 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.form.patchFormsForm({
-    formsForm: {},
+    formsForm: {
+      confirmationMessage: "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+      createdAt: new Date("2023-10-05T21:34:29.094Z"),
+      description: "Sodalitas cupiditas terebro conduco.",
+      fields: [
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "565f27cf-2cf7-4c30-ad97-4340d859b584",
+          isActive: true,
+          isRequired: true,
+          maxLength: 146,
+          name: "vulgivagus audio accendo",
+          order: 0,
+          type: "TEXTAREA",
+          updatedAt: new Date("2025-04-11T17:17:35.699Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+          isActive: true,
+          isRequired: false,
+          name: "alo crebro vado",
+          order: 1,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-08-23T07:10:16.257Z"),
+        },
+        {
+          choices: [
+            "vallum",
+            "vae",
+            "nesciunt",
+            "commodi",
+            "appositus",
+          ],
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          defaultValue: "cattus",
+          id: "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+          isActive: true,
+          isRequired: false,
+          name: "casso tenus nesciunt",
+          order: 2,
+          type: "MULTIPLE_SELECT",
+          updatedAt: new Date("2024-02-22T02:14:33.065Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          description: "Sequi antea delectatio.",
+          id: "e45efb8f-439b-40f6-8370-99c8ec66b065",
+          isActive: true,
+          isRequired: false,
+          name: "comburo utique ipsa",
+          order: 3,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-11-14T23:43:34.262Z"),
+        },
+      ],
+      hasMultipleSubmissions: false,
+      hasProgressBar: false,
+      hasShuffleQuestions: true,
+      id: "5938349a-6b1c-42b1-9d6c-d5641aa72d7a",
+      isActive: false,
+      name: "voluptatibus omnis audax Form",
+      publishedUrl: "https://impartial-institute.org/",
+      responseCount: 423,
+      updatedAt: new Date("2024-08-15T04:23:40.249Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +488,72 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await formsPatchFormsForm(unifiedTo, {
-    formsForm: {},
+    formsForm: {
+      confirmationMessage: "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+      createdAt: new Date("2023-10-05T21:34:29.094Z"),
+      description: "Sodalitas cupiditas terebro conduco.",
+      fields: [
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "565f27cf-2cf7-4c30-ad97-4340d859b584",
+          isActive: true,
+          isRequired: true,
+          maxLength: 146,
+          name: "vulgivagus audio accendo",
+          order: 0,
+          type: "TEXTAREA",
+          updatedAt: new Date("2025-04-11T17:17:35.699Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+          isActive: true,
+          isRequired: false,
+          name: "alo crebro vado",
+          order: 1,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-08-23T07:10:16.257Z"),
+        },
+        {
+          choices: [
+            "vallum",
+            "vae",
+            "nesciunt",
+            "commodi",
+            "appositus",
+          ],
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          defaultValue: "cattus",
+          id: "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+          isActive: true,
+          isRequired: false,
+          name: "casso tenus nesciunt",
+          order: 2,
+          type: "MULTIPLE_SELECT",
+          updatedAt: new Date("2024-02-22T02:14:33.065Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          description: "Sequi antea delectatio.",
+          id: "e45efb8f-439b-40f6-8370-99c8ec66b065",
+          isActive: true,
+          isRequired: false,
+          name: "comburo utique ipsa",
+          order: 3,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-11-14T23:43:34.262Z"),
+        },
+      ],
+      hasMultipleSubmissions: false,
+      hasProgressBar: false,
+      hasShuffleQuestions: true,
+      id: "5938349a-6b1c-42b1-9d6c-d5641aa72d7a",
+      isActive: false,
+      name: "voluptatibus omnis audax Form",
+      publishedUrl: "https://impartial-institute.org/",
+      responseCount: 423,
+      updatedAt: new Date("2024-08-15T04:23:40.249Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +672,7 @@ Update a form
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateFormsForm" method="put" path="/forms/{connection_id}/form/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateFormsForm" method="put" path="/forms/{connection_id}/form/{id}" example="forms_form" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +684,72 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.form.updateFormsForm({
-    formsForm: {},
+    formsForm: {
+      confirmationMessage: "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+      createdAt: new Date("2023-10-05T21:34:29.094Z"),
+      description: "Sodalitas cupiditas terebro conduco.",
+      fields: [
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "565f27cf-2cf7-4c30-ad97-4340d859b584",
+          isActive: true,
+          isRequired: true,
+          maxLength: 146,
+          name: "vulgivagus audio accendo",
+          order: 0,
+          type: "TEXTAREA",
+          updatedAt: new Date("2025-04-11T17:17:35.699Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+          isActive: true,
+          isRequired: false,
+          name: "alo crebro vado",
+          order: 1,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-08-23T07:10:16.257Z"),
+        },
+        {
+          choices: [
+            "vallum",
+            "vae",
+            "nesciunt",
+            "commodi",
+            "appositus",
+          ],
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          defaultValue: "cattus",
+          id: "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+          isActive: true,
+          isRequired: false,
+          name: "casso tenus nesciunt",
+          order: 2,
+          type: "MULTIPLE_SELECT",
+          updatedAt: new Date("2024-02-22T02:14:33.065Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          description: "Sequi antea delectatio.",
+          id: "e45efb8f-439b-40f6-8370-99c8ec66b065",
+          isActive: true,
+          isRequired: false,
+          name: "comburo utique ipsa",
+          order: 3,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-11-14T23:43:34.262Z"),
+        },
+      ],
+      hasMultipleSubmissions: false,
+      hasProgressBar: false,
+      hasShuffleQuestions: true,
+      id: "5938349a-6b1c-42b1-9d6c-d5641aa72d7a",
+      isActive: false,
+      name: "voluptatibus omnis audax Form",
+      publishedUrl: "https://impartial-institute.org/",
+      responseCount: 423,
+      updatedAt: new Date("2024-08-15T04:23:40.249Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +778,72 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await formsUpdateFormsForm(unifiedTo, {
-    formsForm: {},
+    formsForm: {
+      confirmationMessage: "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+      createdAt: new Date("2023-10-05T21:34:29.094Z"),
+      description: "Sodalitas cupiditas terebro conduco.",
+      fields: [
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "565f27cf-2cf7-4c30-ad97-4340d859b584",
+          isActive: true,
+          isRequired: true,
+          maxLength: 146,
+          name: "vulgivagus audio accendo",
+          order: 0,
+          type: "TEXTAREA",
+          updatedAt: new Date("2025-04-11T17:17:35.699Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          id: "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+          isActive: true,
+          isRequired: false,
+          name: "alo crebro vado",
+          order: 1,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-08-23T07:10:16.257Z"),
+        },
+        {
+          choices: [
+            "vallum",
+            "vae",
+            "nesciunt",
+            "commodi",
+            "appositus",
+          ],
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          defaultValue: "cattus",
+          id: "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+          isActive: true,
+          isRequired: false,
+          name: "casso tenus nesciunt",
+          order: 2,
+          type: "MULTIPLE_SELECT",
+          updatedAt: new Date("2024-02-22T02:14:33.065Z"),
+        },
+        {
+          createdAt: new Date("2023-10-05T21:34:29.094Z"),
+          description: "Sequi antea delectatio.",
+          id: "e45efb8f-439b-40f6-8370-99c8ec66b065",
+          isActive: true,
+          isRequired: false,
+          name: "comburo utique ipsa",
+          order: 3,
+          type: "TEXTAREA",
+          updatedAt: new Date("2024-11-14T23:43:34.262Z"),
+        },
+      ],
+      hasMultipleSubmissions: false,
+      hasProgressBar: false,
+      hasShuffleQuestions: true,
+      id: "5938349a-6b1c-42b1-9d6c-d5641aa72d7a",
+      isActive: false,
+      name: "voluptatibus omnis audax Form",
+      publishedUrl: "https://impartial-institute.org/",
+      responseCount: 423,
+      updatedAt: new Date("2024-08-15T04:23:40.249Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -41,7 +41,7 @@ Create a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" example="repo_branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -54,8 +54,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.createRepoBranch({
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "597e1772-7923-4e1d-875c-e660983871be",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.083Z"),
     },
     connectionId: "<id>",
   });
@@ -85,8 +88,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "597e1772-7923-4e1d-875c-e660983871be",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.083Z"),
     },
     connectionId: "<id>",
   });
@@ -126,7 +132,7 @@ Create a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" example="repo_commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -139,7 +145,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.createRepoCommit({
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "537657d4-be2d-4530-82aa-c8046846968a",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.478Z"),
     },
     connectionId: "<id>",
   });
@@ -169,7 +182,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoCommit(unifiedTo, {
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "537657d4-be2d-4530-82aa-c8046846968a",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.478Z"),
     },
     connectionId: "<id>",
   });
@@ -209,7 +229,7 @@ Create an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" example="repo_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -221,7 +241,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.createRepoOrganization({
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "94512032-1bb0-446e-b197-d5b971050f38",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.193Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
   });
 
@@ -249,7 +277,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationCreateRepoOrganization(unifiedTo, {
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "94512032-1bb0-446e-b197-d5b971050f38",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.193Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -288,7 +324,7 @@ Create a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" example="repo_pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -300,7 +336,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.createRepoPullrequest({
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.705Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "a371259c-921a-4ab7-8890-66df1900e75a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.473Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -328,7 +378,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoCreateRepoPullrequest(unifiedTo, {
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.705Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "a371259c-921a-4ab7-8890-66df1900e75a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.473Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -367,7 +431,7 @@ Create a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" example="repo_repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -380,7 +444,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.createRepoRepository({
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "2b8e1ef3-d009-4d87-9a50-495da886c6d8",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.873Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
   });
@@ -410,7 +481,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoRepository(unifiedTo, {
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "2b8e1ef3-d009-4d87-9a50-495da886c6d8",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.873Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
   });
@@ -1230,7 +1308,7 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1243,8 +1321,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.patchRepoBranch({
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1275,8 +1356,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1317,7 +1401,7 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1330,7 +1414,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.patchRepoCommit({
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1361,7 +1452,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoCommit(unifiedTo, {
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1402,7 +1500,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1414,7 +1512,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.patchRepoOrganization({
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1443,7 +1549,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationPatchRepoOrganization(unifiedTo, {
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1483,7 +1597,7 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1495,7 +1609,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.patchRepoPullrequest({
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1524,7 +1652,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoPatchRepoPullrequest(unifiedTo, {
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1564,7 +1706,7 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1577,7 +1719,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.patchRepoRepository({
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1608,7 +1757,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoRepository(unifiedTo, {
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2044,7 +2200,7 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2057,8 +2213,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.updateRepoBranch({
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2089,8 +2248,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2131,7 +2293,7 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2144,7 +2306,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.updateRepoCommit({
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2175,7 +2344,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoCommit(unifiedTo, {
     repoCommit: {
+      createdAt: new Date("2020-07-12T16:20:42.520Z"),
+      id: "2b617b64-dffb-430e-8378-1009b9baedcf",
+      linesAdded: 313,
+      linesChanged: 659,
+      linesDeleted: 482,
+      message: "Auctus ascisco esse attollo clarus odio tum bis rerum.",
       repoId: "<id>",
+      updatedAt: new Date("2023-05-16T02:59:38.482Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2216,7 +2392,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2228,7 +2404,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.updateRepoOrganization({
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2257,7 +2441,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationUpdateRepoOrganization(unifiedTo, {
-    repoOrganization: {},
+    repoOrganization: {
+      avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
+      createdAt: new Date("2022-07-07T00:18:40.748Z"),
+      description: "Trepide defendo supra testimonium ager.",
+      id: "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+      name: "Denesik - Lemke",
+      updatedAt: new Date("2023-08-12T23:35:02.195Z"),
+      webUrl: "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2297,7 +2489,7 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2309,7 +2501,21 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.updateRepoPullrequest({
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2338,7 +2544,21 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoUpdateRepoPullrequest(unifiedTo, {
-    repoPullrequest: {},
+    repoPullrequest: {
+      closedAt: new Date("2025-04-11T21:29:15.711Z"),
+      createdAt: new Date("2023-02-27T09:37:13.663Z"),
+      id: "047c6837-52d0-4609-a236-614e474b832a",
+      labels: [
+        "adhuc",
+        "quaerat",
+      ],
+      notes: "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+      sourceBranchId: "microchip-navigate",
+      status: "REJECTED",
+      targetBranchId: "feed-reboot",
+      title: "Cunae aegrus averto texo advoco bibo amet asporto.",
+      updatedAt: new Date("2024-12-30T23:43:16.479Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2378,7 +2598,7 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2391,7 +2611,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.updateRepoRepository({
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2422,7 +2649,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoRepository(unifiedTo, {
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",

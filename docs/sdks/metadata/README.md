@@ -17,7 +17,7 @@ Create a metadata
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMetadataMetadata" method="post" path="/metadata/{connection_id}/metadata" -->
+<!-- UsageSnippet language="typescript" operationID="createMetadataMetadata" method="post" path="/metadata/{connection_id}/metadata" example="metadata_metadata" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,8 +30,19 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.metadata.createMetadataMetadata({
     metadataMetadata: {
-      name: "<value>",
-      objectType: "<value>",
+      createdAt: new Date("2021-03-25T03:02:17.656Z"),
+      format: "PRICE",
+      id: "ac11f5d2-602e-41dc-b187-ad043957c105",
+      isRequired: false,
+      name: "autem",
+      objectType: "clubs_group",
+      objects: {
+
+      },
+      options: [],
+      originalFormat: "advoco",
+      slug: "arbustum",
+      updatedAt: new Date("2025-02-26T08:01:01.682Z"),
     },
     connectionId: "<id>",
   });
@@ -61,8 +72,19 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await metadataCreateMetadataMetadata(unifiedTo, {
     metadataMetadata: {
-      name: "<value>",
-      objectType: "<value>",
+      createdAt: new Date("2021-03-25T03:02:17.656Z"),
+      format: "PRICE",
+      id: "ac11f5d2-602e-41dc-b187-ad043957c105",
+      isRequired: false,
+      name: "autem",
+      objectType: "clubs_group",
+      objects: {
+  
+      },
+      options: [],
+      originalFormat: "advoco",
+      slug: "arbustum",
+      updatedAt: new Date("2025-02-26T08:01:01.682Z"),
     },
     connectionId: "<id>",
   });
@@ -258,7 +280,7 @@ Update a metadata
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMetadataMetadata" method="patch" path="/metadata/{connection_id}/metadata/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMetadataMetadata" method="patch" path="/metadata/{connection_id}/metadata/{id}" example="metadata_metadata" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -271,8 +293,19 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.metadata.patchMetadataMetadata({
     metadataMetadata: {
-      name: "<value>",
-      objectType: "<value>",
+      createdAt: new Date("2021-03-25T03:02:17.656Z"),
+      format: "PRICE",
+      id: "5070526c-4324-4c87-bebf-a9f8aed68f09",
+      isRequired: false,
+      name: "autem",
+      objectType: "clubs_group",
+      objects: {
+
+      },
+      options: [],
+      originalFormat: "advoco",
+      slug: "arbustum",
+      updatedAt: new Date("2025-02-26T08:01:01.690Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -303,8 +336,19 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await metadataPatchMetadataMetadata(unifiedTo, {
     metadataMetadata: {
-      name: "<value>",
-      objectType: "<value>",
+      createdAt: new Date("2021-03-25T03:02:17.656Z"),
+      format: "PRICE",
+      id: "5070526c-4324-4c87-bebf-a9f8aed68f09",
+      isRequired: false,
+      name: "autem",
+      objectType: "clubs_group",
+      objects: {
+  
+      },
+      options: [],
+      originalFormat: "advoco",
+      slug: "arbustum",
+      updatedAt: new Date("2025-02-26T08:01:01.690Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -424,7 +468,7 @@ Update a metadata
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMetadataMetadata" method="put" path="/metadata/{connection_id}/metadata/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMetadataMetadata" method="put" path="/metadata/{connection_id}/metadata/{id}" example="metadata_metadata" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -437,8 +481,19 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.metadata.updateMetadataMetadata({
     metadataMetadata: {
-      name: "<value>",
-      objectType: "<value>",
+      createdAt: new Date("2021-03-25T03:02:17.656Z"),
+      format: "PRICE",
+      id: "5070526c-4324-4c87-bebf-a9f8aed68f09",
+      isRequired: false,
+      name: "autem",
+      objectType: "clubs_group",
+      objects: {
+
+      },
+      options: [],
+      originalFormat: "advoco",
+      slug: "arbustum",
+      updatedAt: new Date("2025-02-26T08:01:01.690Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -469,8 +524,19 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await metadataUpdateMetadataMetadata(unifiedTo, {
     metadataMetadata: {
-      name: "<value>",
-      objectType: "<value>",
+      createdAt: new Date("2021-03-25T03:02:17.656Z"),
+      format: "PRICE",
+      id: "5070526c-4324-4c87-bebf-a9f8aed68f09",
+      isRequired: false,
+      name: "autem",
+      objectType: "clubs_group",
+      objects: {
+  
+      },
+      options: [],
+      originalFormat: "advoco",
+      slug: "arbustum",
+      updatedAt: new Date("2025-02-26T08:01:01.690Z"),
     },
     connectionId: "<id>",
     id: "<id>",

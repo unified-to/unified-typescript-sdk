@@ -17,7 +17,7 @@ Create an attendance
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisAttendance" method="post" path="/hris/{connection_id}/attendance" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisAttendance" method="post" path="/hris/{connection_id}/attendance" example="hris_attendance" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,9 +30,39 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.attendance.createHrisAttendance({
     hrisAttendance: {
+      address: {
+        address1: "14108 Allie Flats",
+        city: "Kearaborough",
+        countryCode: "US",
+        postalCode: "23844-2344",
+        region: "Tennessee",
+        regionCode: "CA",
+      },
+      approvedAt: new Date("2021-08-13T10:36:02.699Z"),
+      breaks: [
+        {
+          durationMinutes: 12,
+          endAt: new Date("2023-10-22T16:22:57.211Z"),
+          id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+          isPaid: true,
+          name: "Lunch",
+          startAt: new Date("2023-10-15T20:49:16.476Z"),
+        },
+      ],
+      createdAt: new Date("2021-08-10T19:43:18.452Z"),
+      currency: "UGX",
+      declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2026-07-01T14:10:09.942Z"),
-      startAt: new Date("2026-03-31T03:51:43.280Z"),
+      endAt: new Date("2024-04-06T03:56:34.906Z"),
+      hourlyRate: 53,
+      hours: 10,
+      id: "e9e33831-f1ad-4fd0-8ca4-1a008527e535",
+      jobName: "Global Creative Supervisor",
+      nonCashTipsAmount: 54,
+      startAt: new Date("2021-11-09T10:26:01.081Z"),
+      status: "CLOSED",
+      timezone: "America/Atikokan",
+      updatedAt: new Date("2022-01-17T01:25:06.883Z"),
     },
     connectionId: "<id>",
   });
@@ -62,9 +92,39 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisAttendance(unifiedTo, {
     hrisAttendance: {
+      address: {
+        address1: "14108 Allie Flats",
+        city: "Kearaborough",
+        countryCode: "US",
+        postalCode: "23844-2344",
+        region: "Tennessee",
+        regionCode: "CA",
+      },
+      approvedAt: new Date("2021-08-13T10:36:02.699Z"),
+      breaks: [
+        {
+          durationMinutes: 12,
+          endAt: new Date("2023-10-22T16:22:57.211Z"),
+          id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+          isPaid: true,
+          name: "Lunch",
+          startAt: new Date("2023-10-15T20:49:16.476Z"),
+        },
+      ],
+      createdAt: new Date("2021-08-10T19:43:18.452Z"),
+      currency: "UGX",
+      declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2026-07-01T14:10:09.942Z"),
-      startAt: new Date("2026-03-31T03:51:43.280Z"),
+      endAt: new Date("2024-04-06T03:56:34.906Z"),
+      hourlyRate: 53,
+      hours: 10,
+      id: "e9e33831-f1ad-4fd0-8ca4-1a008527e535",
+      jobName: "Global Creative Supervisor",
+      nonCashTipsAmount: 54,
+      startAt: new Date("2021-11-09T10:26:01.081Z"),
+      status: "CLOSED",
+      timezone: "America/Atikokan",
+      updatedAt: new Date("2022-01-17T01:25:06.883Z"),
     },
     connectionId: "<id>",
   });
@@ -260,7 +320,7 @@ Update an attendance
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisAttendance" method="patch" path="/hris/{connection_id}/attendance/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisAttendance" method="patch" path="/hris/{connection_id}/attendance/{id}" example="hris_attendance" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -273,9 +333,39 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.attendance.patchHrisAttendance({
     hrisAttendance: {
+      address: {
+        address1: "14108 Allie Flats",
+        city: "Kearaborough",
+        countryCode: "US",
+        postalCode: "23844-2344",
+        region: "Tennessee",
+        regionCode: "CA",
+      },
+      approvedAt: new Date("2021-08-13T10:36:02.699Z"),
+      breaks: [
+        {
+          durationMinutes: 12,
+          endAt: new Date("2023-10-22T16:22:57.221Z"),
+          id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+          isPaid: true,
+          name: "Lunch",
+          startAt: new Date("2023-10-15T20:49:16.485Z"),
+        },
+      ],
+      createdAt: new Date("2021-08-10T19:43:18.452Z"),
+      currency: "UGX",
+      declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-09-28T22:23:28.906Z"),
-      startAt: new Date("2025-01-18T09:17:09.936Z"),
+      endAt: new Date("2024-04-06T03:56:34.918Z"),
+      hourlyRate: 53,
+      hours: 10,
+      id: "34ef1ed7-4863-409e-bd2a-2522d8f43302",
+      jobName: "Global Creative Supervisor",
+      nonCashTipsAmount: 54,
+      startAt: new Date("2021-11-09T10:26:01.082Z"),
+      status: "CLOSED",
+      timezone: "America/Atikokan",
+      updatedAt: new Date("2022-01-17T01:25:06.885Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -306,9 +396,39 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisAttendance(unifiedTo, {
     hrisAttendance: {
+      address: {
+        address1: "14108 Allie Flats",
+        city: "Kearaborough",
+        countryCode: "US",
+        postalCode: "23844-2344",
+        region: "Tennessee",
+        regionCode: "CA",
+      },
+      approvedAt: new Date("2021-08-13T10:36:02.699Z"),
+      breaks: [
+        {
+          durationMinutes: 12,
+          endAt: new Date("2023-10-22T16:22:57.221Z"),
+          id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+          isPaid: true,
+          name: "Lunch",
+          startAt: new Date("2023-10-15T20:49:16.485Z"),
+        },
+      ],
+      createdAt: new Date("2021-08-10T19:43:18.452Z"),
+      currency: "UGX",
+      declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-09-28T22:23:28.906Z"),
-      startAt: new Date("2025-01-18T09:17:09.936Z"),
+      endAt: new Date("2024-04-06T03:56:34.918Z"),
+      hourlyRate: 53,
+      hours: 10,
+      id: "34ef1ed7-4863-409e-bd2a-2522d8f43302",
+      jobName: "Global Creative Supervisor",
+      nonCashTipsAmount: 54,
+      startAt: new Date("2021-11-09T10:26:01.082Z"),
+      status: "CLOSED",
+      timezone: "America/Atikokan",
+      updatedAt: new Date("2022-01-17T01:25:06.885Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -428,7 +548,7 @@ Update an attendance
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisAttendance" method="put" path="/hris/{connection_id}/attendance/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisAttendance" method="put" path="/hris/{connection_id}/attendance/{id}" example="hris_attendance" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -441,9 +561,39 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.attendance.updateHrisAttendance({
     hrisAttendance: {
+      address: {
+        address1: "14108 Allie Flats",
+        city: "Kearaborough",
+        countryCode: "US",
+        postalCode: "23844-2344",
+        region: "Tennessee",
+        regionCode: "CA",
+      },
+      approvedAt: new Date("2021-08-13T10:36:02.699Z"),
+      breaks: [
+        {
+          durationMinutes: 12,
+          endAt: new Date("2023-10-22T16:22:57.221Z"),
+          id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+          isPaid: true,
+          name: "Lunch",
+          startAt: new Date("2023-10-15T20:49:16.485Z"),
+        },
+      ],
+      createdAt: new Date("2021-08-10T19:43:18.452Z"),
+      currency: "UGX",
+      declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-07-06T19:51:15.352Z"),
-      startAt: new Date("2024-05-22T08:12:53.996Z"),
+      endAt: new Date("2024-04-06T03:56:34.918Z"),
+      hourlyRate: 53,
+      hours: 10,
+      id: "34ef1ed7-4863-409e-bd2a-2522d8f43302",
+      jobName: "Global Creative Supervisor",
+      nonCashTipsAmount: 54,
+      startAt: new Date("2021-11-09T10:26:01.082Z"),
+      status: "CLOSED",
+      timezone: "America/Atikokan",
+      updatedAt: new Date("2022-01-17T01:25:06.885Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -474,9 +624,39 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisAttendance(unifiedTo, {
     hrisAttendance: {
+      address: {
+        address1: "14108 Allie Flats",
+        city: "Kearaborough",
+        countryCode: "US",
+        postalCode: "23844-2344",
+        region: "Tennessee",
+        regionCode: "CA",
+      },
+      approvedAt: new Date("2021-08-13T10:36:02.699Z"),
+      breaks: [
+        {
+          durationMinutes: 12,
+          endAt: new Date("2023-10-22T16:22:57.221Z"),
+          id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+          isPaid: true,
+          name: "Lunch",
+          startAt: new Date("2023-10-15T20:49:16.485Z"),
+        },
+      ],
+      createdAt: new Date("2021-08-10T19:43:18.452Z"),
+      currency: "UGX",
+      declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-07-06T19:51:15.352Z"),
-      startAt: new Date("2024-05-22T08:12:53.996Z"),
+      endAt: new Date("2024-04-06T03:56:34.918Z"),
+      hourlyRate: 53,
+      hours: 10,
+      id: "34ef1ed7-4863-409e-bd2a-2522d8f43302",
+      jobName: "Global Creative Supervisor",
+      nonCashTipsAmount: 54,
+      startAt: new Date("2021-11-09T10:26:01.082Z"),
+      status: "CLOSED",
+      timezone: "America/Atikokan",
+      updatedAt: new Date("2022-01-17T01:25:06.885Z"),
     },
     connectionId: "<id>",
     id: "<id>",

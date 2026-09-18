@@ -17,7 +17,7 @@ Create a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" example="repo_branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,8 +30,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.branch.createRepoBranch({
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "597e1772-7923-4e1d-875c-e660983871be",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.083Z"),
     },
     connectionId: "<id>",
   });
@@ -61,8 +64,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "597e1772-7923-4e1d-875c-e660983871be",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.083Z"),
     },
     connectionId: "<id>",
   });
@@ -258,7 +264,7 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -271,8 +277,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.branch.patchRepoBranch({
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -303,8 +312,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -424,7 +436,7 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -437,8 +449,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.branch.updateRepoBranch({
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -469,8 +484,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
-      name: "<value>",
+      createdAt: new Date("2019-02-24T09:33:48.540Z"),
+      id: "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+      name: "voluptas",
       repoId: "<id>",
+      updatedAt: new Date("2020-01-03T14:15:11.084Z"),
     },
     connectionId: "<id>",
     id: "<id>",

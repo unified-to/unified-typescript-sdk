@@ -25,7 +25,7 @@ Create a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" -->
+<!-- UsageSnippet language="typescript" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" example="messaging_channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -37,7 +37,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.createMessagingChannel({
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "021b0aa2-c26f-46af-9ab5-aa8b3668976b",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.912Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
   });
 
@@ -65,7 +76,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingCreateMessagingChannel(unifiedTo, {
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "021b0aa2-c26f-46af-9ab5-aa8b3668976b",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.912Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -104,7 +126,7 @@ Create a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" -->
+<!-- UsageSnippet language="typescript" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" example="messaging_message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -116,7 +138,39 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.createMessagingMessage({
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1c72f1d5-f6e4-4ed8-a96a-02a4102f79f4",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "222cedb6-3d1c-47ba-982b-2520c268f506",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "337e2909-4d4a-4452-8eee-916bebb29ae2",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "222cedb6-3d1c-47ba-982b-2520c268f506",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.621Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
   });
 
@@ -144,7 +198,39 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingCreateMessagingMessage(unifiedTo, {
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1c72f1d5-f6e4-4ed8-a96a-02a4102f79f4",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "222cedb6-3d1c-47ba-982b-2520c268f506",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "337e2909-4d4a-4452-8eee-916bebb29ae2",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "222cedb6-3d1c-47ba-982b-2520c268f506",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.621Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -495,7 +581,7 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -507,7 +593,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.patchMessagingChannel({
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -536,7 +633,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingPatchMessagingChannel(unifiedTo, {
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -576,7 +684,7 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMessagingEvent" method="patch" path="/messaging/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMessagingEvent" method="patch" path="/messaging/{connection_id}/event/{id}" example="messaging_event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -588,7 +696,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.patchMessagingEvent({
-    messagingEvent: {},
+    messagingEvent: {
+      channel: {
+        id: "",
+        name: "",
+      },
+      createdAt: new Date("2019-05-30T19:44:46.461Z"),
+      id: "edcbbf0d-0281-47f1-a49d-9cf2a55c7d48",
+      isReplacingOriginal: false,
+      type: "BUTTON_CLICK",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -617,7 +734,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventPatchMessagingEvent(unifiedTo, {
-    messagingEvent: {},
+    messagingEvent: {
+      channel: {
+        id: "",
+        name: "",
+      },
+      createdAt: new Date("2019-05-30T19:44:46.461Z"),
+      id: "edcbbf0d-0281-47f1-a49d-9cf2a55c7d48",
+      isReplacingOriginal: false,
+      type: "BUTTON_CLICK",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -657,7 +783,7 @@ Update a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" example="messaging_message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -669,7 +795,39 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.patchMessagingMessage({
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -698,7 +856,39 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingPatchMessagingMessage(unifiedTo, {
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -896,7 +1086,7 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -908,7 +1098,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.updateMessagingChannel({
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -937,7 +1138,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingUpdateMessagingChannel(unifiedTo, {
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -977,7 +1189,7 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMessagingEvent" method="put" path="/messaging/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMessagingEvent" method="put" path="/messaging/{connection_id}/event/{id}" example="messaging_event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -989,7 +1201,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.updateMessagingEvent({
-    messagingEvent: {},
+    messagingEvent: {
+      channel: {
+        id: "",
+        name: "",
+      },
+      createdAt: new Date("2019-05-30T19:44:46.461Z"),
+      id: "edcbbf0d-0281-47f1-a49d-9cf2a55c7d48",
+      isReplacingOriginal: false,
+      type: "BUTTON_CLICK",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1018,7 +1239,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventUpdateMessagingEvent(unifiedTo, {
-    messagingEvent: {},
+    messagingEvent: {
+      channel: {
+        id: "",
+        name: "",
+      },
+      createdAt: new Date("2019-05-30T19:44:46.461Z"),
+      id: "edcbbf0d-0281-47f1-a49d-9cf2a55c7d48",
+      isReplacingOriginal: false,
+      type: "BUTTON_CLICK",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1058,7 +1288,7 @@ Update a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" example="messaging_message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1070,7 +1300,39 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.updateMessagingMessage({
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1099,7 +1361,39 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingUpdateMessagingMessage(unifiedTo, {
-    messagingMessage: {},
+    messagingMessage: {
+      attachments: [
+        {
+          contentIdentifier: "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+          contentType: "coaegresco",
+          downloadUrl: "https://rotating-advertisement.org",
+          filename: "super",
+          messageId: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+          size: 327,
+        },
+      ],
+      buttons: [
+        {
+          id: "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+          text: "denuo",
+        },
+      ],
+      createdAt: new Date("2021-11-26T09:26:33.973Z"),
+      destinationMembers: [],
+      hasChildren: true,
+      hiddenMembers: [],
+      id: "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+      isUnread: false,
+      mentionedMembers: [],
+      message: "Sum utique aliquid.",
+      messageHtml: "Articulus tardus tergiversatio.",
+      messageMarkdown: "Territo uterque tergo curiositas.",
+      reactions: [],
+      reference: "571483f2-d95b-4f06-8b78-d35e7046bb74",
+      subject: "Cernuus optio cohaero summisse in.",
+      updatedAt: new Date("2023-07-06T11:13:40.638Z"),
+      webUrl: "https://grumpy-kit.net",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

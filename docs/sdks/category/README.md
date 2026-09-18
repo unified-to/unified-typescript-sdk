@@ -23,7 +23,7 @@ Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" example="accounting_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -35,7 +35,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.category.createAccountingCategory({
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "dc380b5b-a085-47f0-80e6-a0450e68adcf",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.170Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -63,7 +71,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingCategory(unifiedTo, {
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "dc380b5b-a085-47f0-80e6-a0450e68adcf",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.170Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -102,7 +118,7 @@ Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" example="ticketing_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -114,7 +130,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.category.createTicketingCategory({
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "f105db66-81f5-4fe1-bc51-33918f354917",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.224Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -142,7 +165,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await categoryCreateTicketingCategory(unifiedTo, {
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "f105db66-81f5-4fe1-bc51-33918f354917",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.224Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -493,7 +523,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -505,7 +535,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.category.patchAccountingCategory({
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -534,7 +572,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingCategory(unifiedTo, {
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -574,7 +620,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -586,7 +632,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.category.patchTicketingCategory({
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -615,7 +668,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await categoryPatchTicketingCategory(unifiedTo, {
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -813,7 +873,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -825,7 +885,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.category.updateAccountingCategory({
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -854,7 +922,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingCategory(unifiedTo, {
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -894,7 +970,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -906,7 +982,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.category.updateTicketingCategory({
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -935,7 +1018,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await categoryUpdateTicketingCategory(unifiedTo, {
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -15,7 +15,7 @@ Create a taxonomy
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisTaxonomy" method="post" path="/hris/{connection_id}/taxonomy" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisTaxonomy" method="post" path="/hris/{connection_id}/taxonomy" example="hris_taxonomy" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -27,7 +27,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.taxonomy.createHrisTaxonomy({
-    hrisTaxonomy: {},
+    hrisTaxonomy: {
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Apto demonstro audacia adstringo cursim tristis solio careo.",
+      domain: "Electronics",
+      id: "ede085db-5709-4d53-a490-746f3de5be17",
+      isActive: false,
+      name: "International Functionality Architect",
+      parentId: "6524b2a7-6520-4e15-8c4e-1aa6793db837",
+      roleIds: [
+        "2b1ef757-eb4c-4207-8af1-929afe49cd65",
+      ],
+      subcategory: "Bamboo",
+      type: "KNOWLEDGE",
+      updatedAt: new Date("2023-05-22T04:57:43.336Z"),
+      url: "https://our-polarisation.name",
+    },
     connectionId: "<id>",
   });
 
@@ -55,7 +70,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taxonomyCreateHrisTaxonomy(unifiedTo, {
-    hrisTaxonomy: {},
+    hrisTaxonomy: {
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Apto demonstro audacia adstringo cursim tristis solio careo.",
+      domain: "Electronics",
+      id: "ede085db-5709-4d53-a490-746f3de5be17",
+      isActive: false,
+      name: "International Functionality Architect",
+      parentId: "6524b2a7-6520-4e15-8c4e-1aa6793db837",
+      roleIds: [
+        "2b1ef757-eb4c-4207-8af1-929afe49cd65",
+      ],
+      subcategory: "Bamboo",
+      type: "KNOWLEDGE",
+      updatedAt: new Date("2023-05-22T04:57:43.336Z"),
+      url: "https://our-polarisation.name",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {

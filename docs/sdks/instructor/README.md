@@ -17,7 +17,7 @@ Create an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" example="lms_instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.instructor.createLmsInstructor({
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "dfe83772-691a-4931-8ea8-97260a0c5abf",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.774Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +76,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsInstructor(unifiedTo, {
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "dfe83772-691a-4931-8ea8-97260a0c5abf",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.774Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +290,7 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +302,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.instructor.patchLmsInstructor({
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +350,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsInstructor(unifiedTo, {
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +488,7 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +500,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.instructor.updateLmsInstructor({
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +548,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsInstructor(unifiedTo, {
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

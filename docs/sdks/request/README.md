@@ -17,7 +17,7 @@ Create a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createVerificationRequest" method="post" path="/verification/{connection_id}/request" -->
+<!-- UsageSnippet language="typescript" operationID="createVerificationRequest" method="post" path="/verification/{connection_id}/request" example="verification_request" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.request.createVerificationRequest({
-    verificationRequest: {},
+    verificationRequest: {
+      createdAt: new Date("2023-11-20T08:17:29.950Z"),
+      id: "f7756dc2-2c83-421a-b2e4-dc10eefb914d",
+      parameters: [],
+      profileAddresses: [],
+      profileEmails: [],
+      profileTelephones: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseSource: "Implemented regional protocol",
+      responseStatus: "PENDING",
+      updatedAt: new Date("2023-12-26T03:33:26.786Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +69,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await verificationCreateVerificationRequest(unifiedTo, {
-    verificationRequest: {},
+    verificationRequest: {
+      createdAt: new Date("2023-11-20T08:17:29.950Z"),
+      id: "f7756dc2-2c83-421a-b2e4-dc10eefb914d",
+      parameters: [],
+      profileAddresses: [],
+      profileEmails: [],
+      profileTelephones: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseSource: "Implemented regional protocol",
+      responseStatus: "PENDING",
+      updatedAt: new Date("2023-12-26T03:33:26.786Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +276,7 @@ Update a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchVerificationRequest" method="patch" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchVerificationRequest" method="patch" path="/verification/{connection_id}/request/{id}" example="verification_request" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +288,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.request.patchVerificationRequest({
-    verificationRequest: {},
+    verificationRequest: {
+      createdAt: new Date("2023-11-20T08:17:29.950Z"),
+      id: "b3679484-2e6a-4545-b4f5-140c9f7b4ee6",
+      parameters: [],
+      profileAddresses: [],
+      profileEmails: [],
+      profileTelephones: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseSource: "Implemented regional protocol",
+      responseStatus: "PENDING",
+      updatedAt: new Date("2023-12-26T03:33:26.787Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +329,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await verificationPatchVerificationRequest(unifiedTo, {
-    verificationRequest: {},
+    verificationRequest: {
+      createdAt: new Date("2023-11-20T08:17:29.950Z"),
+      id: "b3679484-2e6a-4545-b4f5-140c9f7b4ee6",
+      parameters: [],
+      profileAddresses: [],
+      profileEmails: [],
+      profileTelephones: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseSource: "Implemented regional protocol",
+      responseStatus: "PENDING",
+      updatedAt: new Date("2023-12-26T03:33:26.787Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +460,7 @@ Update a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateVerificationRequest" method="put" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateVerificationRequest" method="put" path="/verification/{connection_id}/request/{id}" example="verification_request" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +472,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.request.updateVerificationRequest({
-    verificationRequest: {},
+    verificationRequest: {
+      createdAt: new Date("2023-11-20T08:17:29.950Z"),
+      id: "b3679484-2e6a-4545-b4f5-140c9f7b4ee6",
+      parameters: [],
+      profileAddresses: [],
+      profileEmails: [],
+      profileTelephones: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseSource: "Implemented regional protocol",
+      responseStatus: "PENDING",
+      updatedAt: new Date("2023-12-26T03:33:26.787Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +513,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await verificationUpdateVerificationRequest(unifiedTo, {
-    verificationRequest: {},
+    verificationRequest: {
+      createdAt: new Date("2023-11-20T08:17:29.950Z"),
+      id: "b3679484-2e6a-4545-b4f5-140c9f7b4ee6",
+      parameters: [],
+      profileAddresses: [],
+      profileEmails: [],
+      profileTelephones: [],
+      responseDetails: [],
+      responseDownloadUrls: [],
+      responseSource: "Implemented regional protocol",
+      responseStatus: "PENDING",
+      updatedAt: new Date("2023-12-26T03:33:26.787Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

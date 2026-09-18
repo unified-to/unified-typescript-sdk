@@ -17,7 +17,7 @@ Create an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" example="accounting_invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.invoice.createAccountingInvoice({
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "645358a0-c05a-4486-b89b-0a0ed2a6c979",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "b81b0ef0-2818-4301-b28e-b6b0df003dc3",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.726Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.536Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +92,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingInvoice(unifiedTo, {
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "645358a0-c05a-4486-b89b-0a0ed2a6c979",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "b81b0ef0-2818-4301-b28e-b6b0df003dc3",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.726Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.536Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +322,7 @@ Update an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" example="accounting_invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +334,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.invoice.patchAccountingInvoice({
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +398,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingInvoice(unifiedTo, {
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +552,7 @@ Update an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" example="accounting_invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +564,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.invoice.updateAccountingInvoice({
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +628,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingInvoice(unifiedTo, {
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

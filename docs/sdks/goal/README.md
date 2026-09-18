@@ -17,7 +17,7 @@ Create a goal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createPerformanceGoal" method="post" path="/performance/{connection_id}/goal" -->
+<!-- UsageSnippet language="typescript" operationID="createPerformanceGoal" method="post" path="/performance/{connection_id}/goal" example="performance_goal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.goal.createPerformanceGoal({
-    performanceGoal: {},
+    performanceGoal: {
+      createdAt: new Date("2020-01-09T20:43:07.380Z"),
+      description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
+      dueAt: new Date("2026-06-27T20:58:33.713Z"),
+      id: "acafe340-8dc1-489e-8f54-8a8085a9ded3",
+      milestones: [
+        {
+          currentValue: 10,
+          dueAt: new Date("2026-05-03T17:33:02.180Z"),
+          id: "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
+          isCompleted: true,
+          name: "Front-line asynchronous hub",
+          targetValue: 32,
+          unit: "%",
+          weight: 7,
+        },
+        {
+          currentValue: 0,
+          dueAt: new Date("2026-07-07T10:43:09.591Z"),
+          id: "09e04b09-7197-4fc4-9c32-077230408c26",
+          isCompleted: true,
+          name: "Organized encompassing archive",
+          targetValue: 32,
+          weight: 5,
+        },
+        {
+          currentValue: 31,
+          description: "Nobis tremo debitis.",
+          dueAt: new Date("2026-09-07T13:24:57.437Z"),
+          id: "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
+          isCompleted: true,
+          name: "Devolved directional middleware",
+          targetValue: 32,
+          weight: 5,
+        },
+      ],
+      name: "Proactive national protocol",
+      progress: 3,
+      startAt: new Date("2025-06-26T10:33:31.577Z"),
+      status: "CLOSED",
+      type: "COMPANY",
+      updatedAt: new Date("2022-08-31T00:54:02.388Z"),
+      weight: 5,
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +100,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await performanceCreatePerformanceGoal(unifiedTo, {
-    performanceGoal: {},
+    performanceGoal: {
+      createdAt: new Date("2020-01-09T20:43:07.380Z"),
+      description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
+      dueAt: new Date("2026-06-27T20:58:33.713Z"),
+      id: "acafe340-8dc1-489e-8f54-8a8085a9ded3",
+      milestones: [
+        {
+          currentValue: 10,
+          dueAt: new Date("2026-05-03T17:33:02.180Z"),
+          id: "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
+          isCompleted: true,
+          name: "Front-line asynchronous hub",
+          targetValue: 32,
+          unit: "%",
+          weight: 7,
+        },
+        {
+          currentValue: 0,
+          dueAt: new Date("2026-07-07T10:43:09.591Z"),
+          id: "09e04b09-7197-4fc4-9c32-077230408c26",
+          isCompleted: true,
+          name: "Organized encompassing archive",
+          targetValue: 32,
+          weight: 5,
+        },
+        {
+          currentValue: 31,
+          description: "Nobis tremo debitis.",
+          dueAt: new Date("2026-09-07T13:24:57.437Z"),
+          id: "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
+          isCompleted: true,
+          name: "Devolved directional middleware",
+          targetValue: 32,
+          weight: 5,
+        },
+      ],
+      name: "Proactive national protocol",
+      progress: 3,
+      startAt: new Date("2025-06-26T10:33:31.577Z"),
+      status: "CLOSED",
+      type: "COMPANY",
+      updatedAt: new Date("2022-08-31T00:54:02.388Z"),
+      weight: 5,
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +338,7 @@ Update a goal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchPerformanceGoal" method="patch" path="/performance/{connection_id}/goal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchPerformanceGoal" method="patch" path="/performance/{connection_id}/goal/{id}" example="performance_goal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +350,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.goal.patchPerformanceGoal({
-    performanceGoal: {},
+    performanceGoal: {
+      createdAt: new Date("2020-01-09T20:43:07.380Z"),
+      description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
+      dueAt: new Date("2026-06-27T20:58:33.727Z"),
+      id: "a48153d9-a081-46df-92f7-0287d23ec5db",
+      milestones: [
+        {
+          currentValue: 10,
+          dueAt: new Date("2026-05-03T17:33:02.194Z"),
+          id: "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
+          isCompleted: true,
+          name: "Front-line asynchronous hub",
+          targetValue: 32,
+          unit: "%",
+          weight: 7,
+        },
+        {
+          currentValue: 0,
+          dueAt: new Date("2026-07-07T10:43:09.604Z"),
+          id: "09e04b09-7197-4fc4-9c32-077230408c26",
+          isCompleted: true,
+          name: "Organized encompassing archive",
+          targetValue: 32,
+          weight: 5,
+        },
+        {
+          currentValue: 31,
+          description: "Nobis tremo debitis.",
+          dueAt: new Date("2026-09-07T13:24:57.451Z"),
+          id: "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
+          isCompleted: true,
+          name: "Devolved directional middleware",
+          targetValue: 32,
+          weight: 5,
+        },
+      ],
+      name: "Proactive national protocol",
+      progress: 3,
+      startAt: new Date("2025-06-26T10:33:31.589Z"),
+      status: "CLOSED",
+      type: "COMPANY",
+      updatedAt: new Date("2022-08-31T00:54:02.393Z"),
+      weight: 5,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +422,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await performancePatchPerformanceGoal(unifiedTo, {
-    performanceGoal: {},
+    performanceGoal: {
+      createdAt: new Date("2020-01-09T20:43:07.380Z"),
+      description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
+      dueAt: new Date("2026-06-27T20:58:33.727Z"),
+      id: "a48153d9-a081-46df-92f7-0287d23ec5db",
+      milestones: [
+        {
+          currentValue: 10,
+          dueAt: new Date("2026-05-03T17:33:02.194Z"),
+          id: "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
+          isCompleted: true,
+          name: "Front-line asynchronous hub",
+          targetValue: 32,
+          unit: "%",
+          weight: 7,
+        },
+        {
+          currentValue: 0,
+          dueAt: new Date("2026-07-07T10:43:09.604Z"),
+          id: "09e04b09-7197-4fc4-9c32-077230408c26",
+          isCompleted: true,
+          name: "Organized encompassing archive",
+          targetValue: 32,
+          weight: 5,
+        },
+        {
+          currentValue: 31,
+          description: "Nobis tremo debitis.",
+          dueAt: new Date("2026-09-07T13:24:57.451Z"),
+          id: "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
+          isCompleted: true,
+          name: "Devolved directional middleware",
+          targetValue: 32,
+          weight: 5,
+        },
+      ],
+      name: "Proactive national protocol",
+      progress: 3,
+      startAt: new Date("2025-06-26T10:33:31.589Z"),
+      status: "CLOSED",
+      type: "COMPANY",
+      updatedAt: new Date("2022-08-31T00:54:02.393Z"),
+      weight: 5,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +584,7 @@ Update a goal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updatePerformanceGoal" method="put" path="/performance/{connection_id}/goal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updatePerformanceGoal" method="put" path="/performance/{connection_id}/goal/{id}" example="performance_goal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +596,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.goal.updatePerformanceGoal({
-    performanceGoal: {},
+    performanceGoal: {
+      createdAt: new Date("2020-01-09T20:43:07.380Z"),
+      description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
+      dueAt: new Date("2026-06-27T20:58:33.727Z"),
+      id: "a48153d9-a081-46df-92f7-0287d23ec5db",
+      milestones: [
+        {
+          currentValue: 10,
+          dueAt: new Date("2026-05-03T17:33:02.194Z"),
+          id: "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
+          isCompleted: true,
+          name: "Front-line asynchronous hub",
+          targetValue: 32,
+          unit: "%",
+          weight: 7,
+        },
+        {
+          currentValue: 0,
+          dueAt: new Date("2026-07-07T10:43:09.604Z"),
+          id: "09e04b09-7197-4fc4-9c32-077230408c26",
+          isCompleted: true,
+          name: "Organized encompassing archive",
+          targetValue: 32,
+          weight: 5,
+        },
+        {
+          currentValue: 31,
+          description: "Nobis tremo debitis.",
+          dueAt: new Date("2026-09-07T13:24:57.451Z"),
+          id: "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
+          isCompleted: true,
+          name: "Devolved directional middleware",
+          targetValue: 32,
+          weight: 5,
+        },
+      ],
+      name: "Proactive national protocol",
+      progress: 3,
+      startAt: new Date("2025-06-26T10:33:31.589Z"),
+      status: "CLOSED",
+      type: "COMPANY",
+      updatedAt: new Date("2022-08-31T00:54:02.393Z"),
+      weight: 5,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +668,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await performanceUpdatePerformanceGoal(unifiedTo, {
-    performanceGoal: {},
+    performanceGoal: {
+      createdAt: new Date("2020-01-09T20:43:07.380Z"),
+      description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
+      dueAt: new Date("2026-06-27T20:58:33.727Z"),
+      id: "a48153d9-a081-46df-92f7-0287d23ec5db",
+      milestones: [
+        {
+          currentValue: 10,
+          dueAt: new Date("2026-05-03T17:33:02.194Z"),
+          id: "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
+          isCompleted: true,
+          name: "Front-line asynchronous hub",
+          targetValue: 32,
+          unit: "%",
+          weight: 7,
+        },
+        {
+          currentValue: 0,
+          dueAt: new Date("2026-07-07T10:43:09.604Z"),
+          id: "09e04b09-7197-4fc4-9c32-077230408c26",
+          isCompleted: true,
+          name: "Organized encompassing archive",
+          targetValue: 32,
+          weight: 5,
+        },
+        {
+          currentValue: 31,
+          description: "Nobis tremo debitis.",
+          dueAt: new Date("2026-09-07T13:24:57.451Z"),
+          id: "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
+          isCompleted: true,
+          name: "Devolved directional middleware",
+          targetValue: 32,
+          weight: 5,
+        },
+      ],
+      name: "Proactive national protocol",
+      progress: 3,
+      startAt: new Date("2025-06-26T10:33:31.589Z"),
+      status: "CLOSED",
+      type: "COMPANY",
+      updatedAt: new Date("2022-08-31T00:54:02.393Z"),
+      weight: 5,
+    },
     connectionId: "<id>",
     id: "<id>",
   });

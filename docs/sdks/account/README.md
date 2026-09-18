@@ -17,7 +17,7 @@ Create an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" example="accounting_account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,31 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.createAccountingAccount({
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "35991572-6b6d-4a7b-a883-101be82c839d",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.602Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +81,31 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingAccount(unifiedTo, {
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "35991572-6b6d-4a7b-a883-101be82c839d",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.602Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +300,7 @@ Update an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" example="accounting_account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +312,31 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.patchAccountingAccount({
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +365,31 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingAccount(unifiedTo, {
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +508,7 @@ Update an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" example="accounting_account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +520,31 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.updateAccountingAccount({
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +573,31 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingAccount(unifiedTo, {
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

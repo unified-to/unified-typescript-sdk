@@ -17,7 +17,7 @@ Create a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" example="ticketing_note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.note.createTicketingNote({
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4cee47af-266b-4309-8b76-7cebe1a0cd2c",
+      updatedAt: new Date("2024-09-05T15:39:07.495Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +62,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingNote(unifiedTo, {
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4cee47af-266b-4309-8b76-7cebe1a0cd2c",
+      updatedAt: new Date("2024-09-05T15:39:07.495Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +262,7 @@ Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +274,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.note.patchTicketingNote({
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +308,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingNote(unifiedTo, {
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +432,7 @@ Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +444,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.note.updateTicketingNote({
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +478,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingNote(unifiedTo, {
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -17,7 +17,7 @@ Create a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" example="crm_lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,62 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lead.createCrmLead({
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "5c399df0-ebd2-46ff-8824-c35785883216",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "fbe45a6a-3689-4115-9e09-6d36f037697e",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.275Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +112,62 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmLead(unifiedTo, {
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "5c399df0-ebd2-46ff-8824-c35785883216",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "fbe45a6a-3689-4115-9e09-6d36f037697e",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.275Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +362,7 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +374,62 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lead.patchCrmLead({
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +458,62 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmLead(unifiedTo, {
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +632,7 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +644,62 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lead.updateCrmLead({
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +728,62 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmLead(unifiedTo, {
-    crmLead: {},
+    crmLead: {
+      address: {
+        address1: "528 Forest Road",
+        address2: "Apt. 643",
+        city: "Palm Springs",
+        countryCode: "US",
+        postalCode: "55624-6499",
+        region: "New Jersey",
+        regionCode: "LA",
+      },
+      companyName: "Tillman - Wiegand",
+      createdAt: new Date("2019-10-12T11:27:59.003Z"),
+      emails: [
+        {
+          email: "Velda.Sporer16@yahoo.com",
+          type: "OTHER",
+        },
+        {
+          email: "Velda.Sporer@yahoo.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Velda",
+      id: "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+      isActive: true,
+      lastName: "Sporer",
+      linkUrls: [
+        "https://classic-sightseeing.com/",
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "sublime",
+        },
+      ],
+      name: "Velda Sporer",
+      source: "aetas",
+      status: "vesco",
+      telephones: [
+        {
+          telephone: "(955) 643-9849",
+          type: "OTHER",
+        },
+        {
+          telephone: "(621) 811-8800",
+          type: "WORK",
+        },
+      ],
+      updatedAt: new Date("2020-05-15T02:08:48.278Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

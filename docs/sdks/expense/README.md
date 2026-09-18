@@ -17,7 +17,7 @@ Create an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" example="accounting_expense" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,44 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.expense.createAccountingExpense({
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.313Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "bfba31e4-33ae-4dea-b8e5-edc2181608ec",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "049777da-55cf-41fb-866d-0a574a19b0eb",
+      lineitems: [
+        {
+          id: "f26d5412-51c5-4471-95e4-ce3041eb1194",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.308Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.313Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +94,44 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingExpense(unifiedTo, {
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.313Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "bfba31e4-33ae-4dea-b8e5-edc2181608ec",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "049777da-55cf-41fb-866d-0a574a19b0eb",
+      lineitems: [
+        {
+          id: "f26d5412-51c5-4471-95e4-ce3041eb1194",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.308Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.313Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +326,7 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +338,44 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.expense.patchAccountingExpense({
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +404,44 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingExpense(unifiedTo, {
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +560,7 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +572,44 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.expense.updateAccountingExpense({
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +638,44 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingExpense(unifiedTo, {
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

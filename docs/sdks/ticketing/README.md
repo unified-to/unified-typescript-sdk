@@ -35,7 +35,7 @@ Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" example="ticketing_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -47,7 +47,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingCategory({
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "f105db66-81f5-4fe1-bc51-33918f354917",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.224Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -75,7 +82,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await categoryCreateTicketingCategory(unifiedTo, {
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "f105db66-81f5-4fe1-bc51-33918f354917",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.224Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -114,7 +128,7 @@ Create a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" example="ticketing_customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -126,7 +140,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingCustomer({
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "e4eda98a-50de-46a3-969f-b9ed09d9be62",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.066Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -154,7 +197,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingCustomer(unifiedTo, {
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "e4eda98a-50de-46a3-969f-b9ed09d9be62",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.066Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -193,7 +265,7 @@ Create a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" example="ticketing_note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -205,7 +277,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingNote({
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4cee47af-266b-4309-8b76-7cebe1a0cd2c",
+      updatedAt: new Date("2024-09-05T15:39:07.495Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -233,7 +310,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingNote(unifiedTo, {
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4cee47af-266b-4309-8b76-7cebe1a0cd2c",
+      updatedAt: new Date("2024-09-05T15:39:07.495Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -272,7 +354,7 @@ Create a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" example="ticketing_ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -284,7 +366,29 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingTicket({
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "54d062bd-6a74-4ef8-bc70-dc824a2e49fd",
+        "33196987-bf69-447f-b801-4dc7d0300c6e",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.236Z"),
+      id: "d06273e9-21f7-41fb-af1f-e6e23ba3756a",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "ca9c1ed1-8fbe-47fa-9a41-de23adbe14c3",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.682Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
   });
 
@@ -312,7 +416,29 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingTicket(unifiedTo, {
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "54d062bd-6a74-4ef8-bc70-dc824a2e49fd",
+        "33196987-bf69-447f-b801-4dc7d0300c6e",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.236Z"),
+      id: "d06273e9-21f7-41fb-af1f-e6e23ba3756a",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "ca9c1ed1-8fbe-47fa-9a41-de23adbe14c3",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.682Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -975,7 +1101,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -987,7 +1113,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingCategory({
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1016,7 +1149,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await categoryPatchTicketingCategory(unifiedTo, {
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1056,7 +1196,7 @@ Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" example="ticketing_customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1068,7 +1208,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingCustomer({
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1097,7 +1266,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingCustomer(unifiedTo, {
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1137,7 +1335,7 @@ Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1149,7 +1347,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingNote({
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1178,7 +1381,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingNote(unifiedTo, {
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1218,7 +1426,7 @@ Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" example="ticketing_ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1230,7 +1438,29 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingTicket({
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1259,7 +1489,29 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingTicket(unifiedTo, {
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1615,7 +1867,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1627,7 +1879,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingCategory({
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1656,7 +1915,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await categoryUpdateTicketingCategory(unifiedTo, {
-    ticketingCategory: {},
+    ticketingCategory: {
+      createdAt: new Date("2019-10-19T22:02:51.067Z"),
+      description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+      id: "607d0b35-27ed-4c77-9ff7-e384812051f9",
+      isActive: true,
+      name: "amicitia",
+      updatedAt: new Date("2025-12-15T15:11:45.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1696,7 +1962,7 @@ Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" example="ticketing_customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1708,7 +1974,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingCustomer({
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1737,7 +2032,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingCustomer(unifiedTo, {
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1777,7 +2101,7 @@ Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1789,7 +2113,12 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingNote({
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1818,7 +2147,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingNote(unifiedTo, {
-    ticketingNote: {},
+    ticketingNote: {
+      createdAt: new Date("2019-07-23T15:05:03.241Z"),
+      description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+      id: "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+      updatedAt: new Date("2024-09-05T15:39:07.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1858,7 +2192,7 @@ Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" example="ticketing_ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1870,7 +2204,29 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingTicket({
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1899,7 +2255,29 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingTicket(unifiedTo, {
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

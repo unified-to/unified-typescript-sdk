@@ -19,7 +19,7 @@ Create a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" -->
+<!-- UsageSnippet language="typescript" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" example="martech_member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -31,7 +31,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.member.createMartechMember({
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "a0a955df-e281-46e9-af34-0bcaf970081d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.559Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -59,7 +86,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await memberCreateMartechMember(unifiedTo, {
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "a0a955df-e281-46e9-af34-0bcaf970081d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.559Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -410,7 +464,7 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -422,7 +476,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.member.patchMartechMember({
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -451,7 +532,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await memberPatchMartechMember(unifiedTo, {
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -570,7 +678,7 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -582,7 +690,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.member.updateMartechMember({
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -611,7 +746,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await memberUpdateMartechMember(unifiedTo, {
-    marketingMember: {},
+    marketingMember: {
+      company: "Miller - Franecki",
+      createdAt: new Date("2022-04-15T15:32:38.496Z"),
+      emails: [
+        {
+          email: "Thalia.Abernathy61@gmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Maymie59@hotmail.com",
+          type: "HOME",
+        },
+        {
+          email: "Coty27@hotmail.com",
+          type: "WORK",
+        },
+      ],
+      firstName: "Jude",
+      id: "5cfa6758-bd0c-4077-8934-7357d115348d",
+      lastName: "Leffler",
+      name: "Jude Leffler",
+      status: "UNSUBSCRIBED",
+      tags: [
+        "vinco",
+        "ceno",
+      ],
+      updatedAt: new Date("2025-06-15T05:07:12.567Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

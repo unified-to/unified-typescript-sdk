@@ -55,7 +55,7 @@ Create an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" example="ads_ad" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -67,7 +67,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.createAdsAd({
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "6630dd45-9b8c-481f-8b7b-6e77084f0597",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.051Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -95,7 +107,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsAd(unifiedTo, {
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "6630dd45-9b8c-481f-8b7b-6e77084f0597",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.051Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -134,7 +158,7 @@ Create an asset
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" example="ads_asset" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -146,7 +170,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.createAdsAsset({
-    adsAsset: {},
+    adsAsset: {
+      createdAt: new Date("2020-03-27T20:14:38.603Z"),
+      height: 400,
+      id: "9ce96283-25c4-4289-92f8-bb2dfdba3c58",
+      mimeType: "IMAGE_PNG",
+      name: "Lockman - DuBuque",
+      type: "IMAGE",
+      updatedAt: new Date("2022-03-15T04:25:20.538Z"),
+      url: "https://informal-perfection.com/",
+      width: 600,
+    },
     connectionId: "<id>",
   });
 
@@ -174,7 +208,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsAsset(unifiedTo, {
-    adsAsset: {},
+    adsAsset: {
+      createdAt: new Date("2020-03-27T20:14:38.603Z"),
+      height: 400,
+      id: "9ce96283-25c4-4289-92f8-bb2dfdba3c58",
+      mimeType: "IMAGE_PNG",
+      name: "Lockman - DuBuque",
+      type: "IMAGE",
+      updatedAt: new Date("2022-03-15T04:25:20.538Z"),
+      url: "https://informal-perfection.com/",
+      width: 600,
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -213,7 +257,7 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" example="ads_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -225,7 +269,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.createAdsCampaign({
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.015Z"),
+      id: "812fa2fe-ecf0-4a07-af47-1f4eeb74cfdd",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.303Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.497Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -253,7 +315,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsCampaign(unifiedTo, {
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.015Z"),
+      id: "812fa2fe-ecf0-4a07-af47-1f4eeb74cfdd",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.303Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.497Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -292,7 +372,7 @@ Create a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" example="ads_creative" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -304,7 +384,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.createAdsCreative({
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "5dd7b3ce-88d6-4c92-965d-a4f57ced5201",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.446Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -332,7 +423,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsCreative(unifiedTo, {
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "5dd7b3ce-88d6-4c92-965d-a4f57ced5201",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.446Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -371,7 +473,7 @@ Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" example="ads_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -383,7 +485,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.createAdsGroup({
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.102Z"),
+      id: "e888dea0-f654-41b9-92b4-9bed6e836d63",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.512Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.565Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -411,7 +528,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsGroup(unifiedTo, {
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.102Z"),
+      id: "e888dea0-f654-41b9-92b4-9bed6e836d63",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.512Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.565Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -450,7 +582,7 @@ Create an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" example="ads_insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -462,7 +594,13 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.createAdsInsertionorder({
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "d470068f-65ac-407c-8545-0d0e7170e34e",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -490,7 +628,13 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsInsertionorder(unifiedTo, {
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "d470068f-65ac-407c-8545-0d0e7170e34e",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -529,7 +673,7 @@ Create an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" example="ads_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -541,7 +685,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.createAdsOrganization({
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "0ca7207a-a860-45e9-87da-94e04e0f06a4",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.767Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -569,7 +728,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationCreateAdsOrganization(unifiedTo, {
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "0ca7207a-a860-45e9-87da-94e04e0f06a4",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.767Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -2089,7 +2263,7 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2101,7 +2275,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.patchAdsAd({
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2130,7 +2316,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsAd(unifiedTo, {
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2170,7 +2368,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2182,7 +2380,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.patchAdsCampaign({
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2211,7 +2427,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsCampaign(unifiedTo, {
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2251,7 +2485,7 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2263,7 +2497,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.patchAdsCreative({
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2292,7 +2537,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsCreative(unifiedTo, {
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2332,7 +2588,7 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2344,7 +2600,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.patchAdsGroup({
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2373,7 +2644,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsGroup(unifiedTo, {
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2413,7 +2699,7 @@ Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2425,7 +2711,13 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.patchAdsInsertionorder({
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2454,7 +2746,13 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsInsertionorder(unifiedTo, {
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2494,7 +2792,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" example="ads_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2506,7 +2804,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.patchAdsOrganization({
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2535,7 +2848,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationPatchAdsOrganization(unifiedTo, {
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3049,7 +3377,7 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3061,7 +3389,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.updateAdsAd({
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3090,7 +3430,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsAd(unifiedTo, {
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3130,7 +3482,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3142,7 +3494,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.updateAdsCampaign({
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3171,7 +3541,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsCampaign(unifiedTo, {
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3211,7 +3599,7 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3223,7 +3611,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.updateAdsCreative({
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3252,7 +3651,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsCreative(unifiedTo, {
-    adsCreative: {},
+    adsCreative: {
+      createdAt: new Date("2020-02-17T11:24:51.093Z"),
+      id: "d118ec82-e89d-4441-8941-08ef9518487f",
+      labels: [
+        "coma",
+        "accedo",
+        "termes",
+      ],
+      name: "Brekke, Bradtke and Robel",
+      status: "PAUSED",
+      updatedAt: new Date("2021-06-21T01:01:35.450Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3292,7 +3702,7 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3304,7 +3714,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.updateAdsGroup({
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3333,7 +3758,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsGroup(unifiedTo, {
-    adsGroup: {},
+    adsGroup: {
+      bidAmount: 26.16030164062977,
+      budgetAmount: 5099.175239447504,
+      budgetPeriod: "MONTHLY",
+      createdAt: new Date("2019-08-29T17:59:41.045Z"),
+      currency: "USD",
+      effectiveStatus: "PAUSED",
+      endAt: new Date("2026-05-24T13:19:12.211Z"),
+      id: "696ee368-be46-4fed-aede-f2ef993e2ea4",
+      languageLocale: "fr-FR",
+      name: "Stark - Baumbach",
+      startAt: new Date("2025-12-10T21:11:12.613Z"),
+      status: "PROCESSING",
+      targeting: {},
+      updatedAt: new Date("2022-01-02T16:46:00.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3373,7 +3813,7 @@ Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3385,7 +3825,13 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.updateAdsInsertionorder({
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3414,7 +3860,13 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsInsertionorder(unifiedTo, {
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3454,7 +3906,7 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" example="ads_organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3466,7 +3918,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ads.updateAdsOrganization({
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3495,7 +3962,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationUpdateAdsOrganization(unifiedTo, {
-    adsOrganization: {},
+    adsOrganization: {
+      accountNumber: "LQUJx8zQBW",
+      createdAt: new Date("2020-07-23T21:47:11.440Z"),
+      currency: "USD",
+      id: "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+      managers: [
+        {
+          id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+          name: "Parker, Leannon and Gibson",
+        },
+      ],
+      name: "Ankunding Inc",
+      status: "PROCESSING",
+      timezone: "Europe/Chisinau",
+      updatedAt: new Date("2026-02-27T02:32:02.778Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

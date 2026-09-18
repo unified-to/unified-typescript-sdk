@@ -17,7 +17,7 @@ Create a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" example="lms_student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.student.createLmsStudent({
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "f7f415ad-d6a4-49ee-b6f4-6823b04af952",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.319Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +84,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsStudent(unifiedTo, {
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "f7f415ad-d6a4-49ee-b6f4-6823b04af952",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.319Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +306,7 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +318,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.student.patchLmsStudent({
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +374,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsStudent(unifiedTo, {
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +520,7 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +532,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.student.updateLmsStudent({
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +588,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsStudent(unifiedTo, {
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

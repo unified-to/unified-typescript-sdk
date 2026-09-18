@@ -17,7 +17,7 @@ Create an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" example="ads_ad" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ad.createAdsAd({
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "6630dd45-9b8c-481f-8b7b-6e77084f0597",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.051Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +69,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsAd(unifiedTo, {
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "6630dd45-9b8c-481f-8b7b-6e77084f0597",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.051Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +276,7 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +288,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ad.patchAdsAd({
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +329,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsAd(unifiedTo, {
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +460,7 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +472,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ad.updateAdsAd({
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +513,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsAd(unifiedTo, {
-    adsAd: {},
+    adsAd: {
+      adCopy: "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+      adType: "SOCIAL",
+      advertiserName: "Robel, Nader and Rau",
+      createdAt: new Date("2022-11-08T03:38:20.978Z"),
+      creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
+      description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+      finalUrl: "https://improbable-sanity.com",
+      id: "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+      name: "Hermiston Group",
+      status: "ARCHIVED",
+      updatedAt: new Date("2024-06-05T02:38:36.059Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -29,7 +29,7 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" example="ats_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -41,7 +41,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.createAtsDocument({
-    atsDocument: {},
+    atsDocument: {
+      createdAt: new Date("2021-08-20T08:00:27.437Z"),
+      documentUrl: "https://vengeful-lashes.biz",
+      filename: "bah_white_frantically.bz",
+      id: "8aa6ddb8-a765-430a-b6cb-cbdbc0120932",
+      type: "RESUME",
+      updatedAt: new Date("2022-11-28T22:09:41.296Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -69,7 +76,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsDocument(unifiedTo, {
-    atsDocument: {},
+    atsDocument: {
+      createdAt: new Date("2021-08-20T08:00:27.437Z"),
+      documentUrl: "https://vengeful-lashes.biz",
+      filename: "bah_white_frantically.bz",
+      id: "8aa6ddb8-a765-430a-b6cb-cbdbc0120932",
+      type: "RESUME",
+      updatedAt: new Date("2022-11-28T22:09:41.296Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -108,7 +122,7 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisDocument" method="post" path="/hris/{connection_id}/document" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisDocument" method="post" path="/hris/{connection_id}/document" example="hris_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -120,7 +134,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.createHrisDocument({
-    hrisDocument: {},
+    hrisDocument: {
+      createdAt: new Date("2022-10-27T11:47:26.086Z"),
+      documentUrl: "https://sore-decision.biz/",
+      filename: "ridge_forager.xsl",
+      id: "8e78f38f-1432-40b1-b0e2-deaf6644714c",
+      type: "POLICY",
+      updatedAt: new Date("2025-09-17T01:55:35.563Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -148,7 +169,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentCreateHrisDocument(unifiedTo, {
-    hrisDocument: {},
+    hrisDocument: {
+      createdAt: new Date("2022-10-27T11:47:26.086Z"),
+      documentUrl: "https://sore-decision.biz/",
+      filename: "ridge_forager.xsl",
+      id: "8e78f38f-1432-40b1-b0e2-deaf6644714c",
+      type: "POLICY",
+      updatedAt: new Date("2025-09-17T01:55:35.563Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -187,7 +215,7 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" -->
+<!-- UsageSnippet language="typescript" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" example="signing_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -199,7 +227,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.createSigningDocument({
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.172Z"),
+      id: "b56bffa4-89ef-4341-a673-29b95dfc4140",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.485Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -227,7 +262,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentCreateSigningDocument(unifiedTo, {
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.172Z"),
+      id: "b56bffa4-89ef-4341-a673-29b95dfc4140",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.485Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -734,7 +776,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" example="ats_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -746,7 +788,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.patchAtsDocument({
-    atsDocument: {},
+    atsDocument: {
+      createdAt: new Date("2021-08-20T08:00:27.437Z"),
+      documentUrl: "https://vengeful-lashes.biz",
+      filename: "bah_white_frantically.bz",
+      id: "a9316274-2e60-4f01-8b33-73b6249fd4ca",
+      type: "RESUME",
+      updatedAt: new Date("2022-11-28T22:09:41.297Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -775,7 +824,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsDocument(unifiedTo, {
-    atsDocument: {},
+    atsDocument: {
+      createdAt: new Date("2021-08-20T08:00:27.437Z"),
+      documentUrl: "https://vengeful-lashes.biz",
+      filename: "bah_white_frantically.bz",
+      id: "a9316274-2e60-4f01-8b33-73b6249fd4ca",
+      type: "RESUME",
+      updatedAt: new Date("2022-11-28T22:09:41.297Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -815,7 +871,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisDocument" method="patch" path="/hris/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisDocument" method="patch" path="/hris/{connection_id}/document/{id}" example="hris_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -827,7 +883,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.patchHrisDocument({
-    hrisDocument: {},
+    hrisDocument: {
+      createdAt: new Date("2022-10-27T11:47:26.086Z"),
+      documentUrl: "https://sore-decision.biz/",
+      filename: "ridge_forager.xsl",
+      id: "872f8d50-e1c5-40c1-af71-1bf3cbaa734c",
+      type: "POLICY",
+      updatedAt: new Date("2025-09-17T01:55:35.570Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -856,7 +919,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentPatchHrisDocument(unifiedTo, {
-    hrisDocument: {},
+    hrisDocument: {
+      createdAt: new Date("2022-10-27T11:47:26.086Z"),
+      documentUrl: "https://sore-decision.biz/",
+      filename: "ridge_forager.xsl",
+      id: "872f8d50-e1c5-40c1-af71-1bf3cbaa734c",
+      type: "POLICY",
+      updatedAt: new Date("2025-09-17T01:55:35.570Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -896,7 +966,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -908,7 +978,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.patchSigningDocument({
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -937,7 +1014,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentPatchSigningDocument(unifiedTo, {
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1214,7 +1298,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" example="ats_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1226,7 +1310,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.updateAtsDocument({
-    atsDocument: {},
+    atsDocument: {
+      createdAt: new Date("2021-08-20T08:00:27.437Z"),
+      documentUrl: "https://vengeful-lashes.biz",
+      filename: "bah_white_frantically.bz",
+      id: "a9316274-2e60-4f01-8b33-73b6249fd4ca",
+      type: "RESUME",
+      updatedAt: new Date("2022-11-28T22:09:41.297Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1255,7 +1346,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsDocument(unifiedTo, {
-    atsDocument: {},
+    atsDocument: {
+      createdAt: new Date("2021-08-20T08:00:27.437Z"),
+      documentUrl: "https://vengeful-lashes.biz",
+      filename: "bah_white_frantically.bz",
+      id: "a9316274-2e60-4f01-8b33-73b6249fd4ca",
+      type: "RESUME",
+      updatedAt: new Date("2022-11-28T22:09:41.297Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1295,7 +1393,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisDocument" method="put" path="/hris/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisDocument" method="put" path="/hris/{connection_id}/document/{id}" example="hris_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1307,7 +1405,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.updateHrisDocument({
-    hrisDocument: {},
+    hrisDocument: {
+      createdAt: new Date("2022-10-27T11:47:26.086Z"),
+      documentUrl: "https://sore-decision.biz/",
+      filename: "ridge_forager.xsl",
+      id: "872f8d50-e1c5-40c1-af71-1bf3cbaa734c",
+      type: "POLICY",
+      updatedAt: new Date("2025-09-17T01:55:35.570Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1336,7 +1441,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentUpdateHrisDocument(unifiedTo, {
-    hrisDocument: {},
+    hrisDocument: {
+      createdAt: new Date("2022-10-27T11:47:26.086Z"),
+      documentUrl: "https://sore-decision.biz/",
+      filename: "ridge_forager.xsl",
+      id: "872f8d50-e1c5-40c1-af71-1bf3cbaa734c",
+      type: "POLICY",
+      updatedAt: new Date("2025-09-17T01:55:35.570Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1376,7 +1488,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1388,7 +1500,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.document.updateSigningDocument({
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1417,7 +1536,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentUpdateSigningDocument(unifiedTo, {
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

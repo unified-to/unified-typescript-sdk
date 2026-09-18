@@ -60,7 +60,7 @@ Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" example="commerce_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -73,7 +73,48 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.commerce.createCommerceCollection({
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "b58ab754-d3cc-453d-aada-355042e8429d",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "18cba18e-9245-49d1-baee-4d1edc732151",
+          metadata: [
+            {
+              id: "7ff7cc76-3780-4284-a689-c0d9dbc99f01",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "be526e0e-67e5-4c68-a5f3-c51c1391d4aa",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.878Z"),
     },
     connectionId: "<id>",
   });
@@ -103,7 +144,48 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await commerceCreateCommerceCollection(unifiedTo, {
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "b58ab754-d3cc-453d-aada-355042e8429d",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "18cba18e-9245-49d1-baee-4d1edc732151",
+          metadata: [
+            {
+              id: "7ff7cc76-3780-4284-a689-c0d9dbc99f01",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "be526e0e-67e5-4c68-a5f3-c51c1391d4aa",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.878Z"),
     },
     connectionId: "<id>",
   });
@@ -143,7 +225,7 @@ Create an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" example="commerce_inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -155,7 +237,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceInventory({
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.813Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -183,7 +268,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.813Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -222,7 +310,7 @@ Create an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceItem" method="post" path="/commerce/{connection_id}/item" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceItem" method="post" path="/commerce/{connection_id}/item" example="commerce_item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -234,7 +322,86 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceItem({
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "23090db9-7ccf-46cb-b053-f981ec30d350",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "df38e7d4-177d-4a11-9351-edb82721e558",
+          metadata: [
+            {
+              id: "62ae3b90-450c-4470-8bd4-3656daad8a61",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "1e7ccccd-c5c4-4323-a3ec-f400b6d589db",
+          metadata: [
+            {
+              id: "3e60902e-dc47-4c52-90fd-ddbe50defa70",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "78ecb334-053f-4a97-b54d-0696bdd8e2e7",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.724Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
   });
 
@@ -262,7 +429,86 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceItem(unifiedTo, {
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "23090db9-7ccf-46cb-b053-f981ec30d350",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "df38e7d4-177d-4a11-9351-edb82721e558",
+          metadata: [
+            {
+              id: "62ae3b90-450c-4470-8bd4-3656daad8a61",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "1e7ccccd-c5c4-4323-a3ec-f400b6d589db",
+          metadata: [
+            {
+              id: "3e60902e-dc47-4c52-90fd-ddbe50defa70",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "78ecb334-053f-4a97-b54d-0696bdd8e2e7",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.724Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -301,7 +547,7 @@ Create an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceItemvariant" method="post" path="/commerce/{connection_id}/itemvariant" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceItemvariant" method="post" path="/commerce/{connection_id}/itemvariant" example="commerce_itemvariant" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -313,7 +559,106 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceItemvariant({
-    commerceItemvariant: {},
+    commerceItemvariant: {
+      availableAt: new Date("2022-02-02T16:10:33.503Z"),
+      createdAt: new Date("2022-01-20T13:49:12.968Z"),
+      description: "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
+      height: 52,
+      id: "48b4957f-e8b6-4ba3-a06c-a45dd5867b05",
+      isActive: false,
+      isFeatured: false,
+      isVisible: false,
+      length: 94,
+      media: [
+        {
+          alt: "Calcar delibero cursim summisse.",
+          height: 394,
+          id: "f52ec4ee-b703-4d4c-8fea-913f886b4d7a",
+          metadata: [
+            {
+              id: "39a4c045-3e1e-4cda-9668-a3cb976e2379",
+              slug: "illo",
+              value: "quia",
+            },
+          ],
+          position: 92,
+          type: "image",
+          url: "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
+          width: 54,
+        },
+        {
+          alt: "Civitas acies substantia tergo.",
+          height: 351,
+          id: "626daf66-b291-40b0-b6d4-c63174b895ba",
+          metadata: [
+            {
+              id: "856051be-359e-48f3-9b51-30bad31c932d",
+              slug: "libero",
+              value: "capitulus",
+            },
+          ],
+          position: 44,
+          type: "image",
+          url: "https://loremflickr.com/2230/1237?lock=8628070842159966",
+          width: 55,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "41d90981-57ef-492a-b062-35da1f7689c3",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "nihil",
+        },
+      ],
+      name: "Keyboard",
+      options: [
+        {
+          id: "2ae8bbd9-abcc-4a84-8328-9788566dfbcd",
+          name: "Steel",
+          position: 97,
+          values: [
+            "Granite",
+            "Plastic",
+          ],
+        },
+      ],
+      prices: [
+        {
+          compareAtPrice: 3745,
+          currency: "COP",
+          price: 4913,
+        },
+        {
+          compareAtPrice: 438,
+          currency: "PHP",
+          price: 1378,
+        },
+        {
+          compareAtPrice: 1614,
+          currency: "PHP",
+          price: 8702,
+        },
+      ],
+      publicDescription: "Stylish Soap designed to make you stand out with insistent looks",
+      publicName: "Keyboard",
+      requiresShipping: false,
+      sizeUnit: "cm",
+      sku: "978-0-7051-0955-0",
+      tags: [
+        "vomito",
+        "custodia",
+      ],
+      totalStock: 929,
+      updatedAt: new Date("2025-05-24T09:44:44.304Z"),
+      weight: 61,
+      weightUnit: "oz",
+      width: 26,
+    },
     connectionId: "<id>",
   });
 
@@ -341,7 +686,106 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceItemvariant(unifiedTo, {
-    commerceItemvariant: {},
+    commerceItemvariant: {
+      availableAt: new Date("2022-02-02T16:10:33.503Z"),
+      createdAt: new Date("2022-01-20T13:49:12.968Z"),
+      description: "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
+      height: 52,
+      id: "48b4957f-e8b6-4ba3-a06c-a45dd5867b05",
+      isActive: false,
+      isFeatured: false,
+      isVisible: false,
+      length: 94,
+      media: [
+        {
+          alt: "Calcar delibero cursim summisse.",
+          height: 394,
+          id: "f52ec4ee-b703-4d4c-8fea-913f886b4d7a",
+          metadata: [
+            {
+              id: "39a4c045-3e1e-4cda-9668-a3cb976e2379",
+              slug: "illo",
+              value: "quia",
+            },
+          ],
+          position: 92,
+          type: "image",
+          url: "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
+          width: 54,
+        },
+        {
+          alt: "Civitas acies substantia tergo.",
+          height: 351,
+          id: "626daf66-b291-40b0-b6d4-c63174b895ba",
+          metadata: [
+            {
+              id: "856051be-359e-48f3-9b51-30bad31c932d",
+              slug: "libero",
+              value: "capitulus",
+            },
+          ],
+          position: 44,
+          type: "image",
+          url: "https://loremflickr.com/2230/1237?lock=8628070842159966",
+          width: 55,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "41d90981-57ef-492a-b062-35da1f7689c3",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "nihil",
+        },
+      ],
+      name: "Keyboard",
+      options: [
+        {
+          id: "2ae8bbd9-abcc-4a84-8328-9788566dfbcd",
+          name: "Steel",
+          position: 97,
+          values: [
+            "Granite",
+            "Plastic",
+          ],
+        },
+      ],
+      prices: [
+        {
+          compareAtPrice: 3745,
+          currency: "COP",
+          price: 4913,
+        },
+        {
+          compareAtPrice: 438,
+          currency: "PHP",
+          price: 1378,
+        },
+        {
+          compareAtPrice: 1614,
+          currency: "PHP",
+          price: 8702,
+        },
+      ],
+      publicDescription: "Stylish Soap designed to make you stand out with insistent looks",
+      publicName: "Keyboard",
+      requiresShipping: false,
+      sizeUnit: "cm",
+      sku: "978-0-7051-0955-0",
+      tags: [
+        "vomito",
+        "custodia",
+      ],
+      totalStock: 929,
+      updatedAt: new Date("2025-05-24T09:44:44.304Z"),
+      weight: 61,
+      weightUnit: "oz",
+      width: 26,
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -380,7 +824,7 @@ Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" example="commerce_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -392,7 +836,61 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceLocation({
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "cc586ecd-1c4e-4aae-99e6-a4f89fb0e1cb",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "f83a47f5-2eed-42eb-b7d4-efe96e7e4980",
+          metadata: [
+            {
+              id: "8348bb1a-aebf-4aba-926f-e7bf46c18d55",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.351Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
   });
 
@@ -420,7 +918,61 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationCreateCommerceLocation(unifiedTo, {
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "cc586ecd-1c4e-4aae-99e6-a4f89fb0e1cb",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "f83a47f5-2eed-42eb-b7d4-efe96e7e4980",
+          metadata: [
+            {
+              id: "8348bb1a-aebf-4aba-926f-e7bf46c18d55",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.351Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -459,7 +1011,7 @@ Create a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceReservation" method="post" path="/commerce/{connection_id}/reservation" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceReservation" method="post" path="/commerce/{connection_id}/reservation" example="commerce_reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -471,7 +1023,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceReservation({
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "b1514204-b55f-4d24-9c48-521dda801623",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.030Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
   });
 
@@ -499,7 +1066,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceReservation(unifiedTo, {
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "b1514204-b55f-4d24-9c48-521dda801623",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.030Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -538,7 +1120,7 @@ Create a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" example="commerce_review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -550,7 +1132,78 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceReview({
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "9c5b7e6f-0f4b-4750-8f10-b86d80073fd4",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "816efc1a-4423-4d51-a391-83385253bc8f",
+          metadata: [
+            {
+              id: "a6ebfdaa-8dfe-407d-b0d6-346a84dad5ca",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "12020720-c152-456e-80bf-005ca92e532d",
+          metadata: [
+            {
+              id: "4ede0b6b-5898-4c43-93eb-87357417ecee",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "c6d2eb71-13f9-4cda-a26e-4bd7a3e27f52",
+          metadata: [
+            {
+              id: "6ad69a11-2786-4752-a369-6f863517d900",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.947Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
   });
 
@@ -578,7 +1231,78 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceReview(unifiedTo, {
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "9c5b7e6f-0f4b-4750-8f10-b86d80073fd4",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "816efc1a-4423-4d51-a391-83385253bc8f",
+          metadata: [
+            {
+              id: "a6ebfdaa-8dfe-407d-b0d6-346a84dad5ca",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "12020720-c152-456e-80bf-005ca92e532d",
+          metadata: [
+            {
+              id: "4ede0b6b-5898-4c43-93eb-87357417ecee",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "c6d2eb71-13f9-4cda-a26e-4bd7a3e27f52",
+          metadata: [
+            {
+              id: "6ad69a11-2786-4752-a369-6f863517d900",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.947Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -617,7 +1341,7 @@ Create a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" example="commerce_saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -629,7 +1353,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.createCommerceSaleschannel({
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "40686ae3-40d6-4f84-a18c-43ea22fc7e79",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.036Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -657,7 +1389,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceSaleschannel(unifiedTo, {
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "40686ae3-40d6-4f84-a18c-43ea22fc7e79",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.036Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -2021,7 +2761,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" example="commerce_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2034,7 +2774,48 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceCollection({
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2065,7 +2846,48 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await commercePatchCommerceCollection(unifiedTo, {
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2106,7 +2928,7 @@ Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2118,7 +2940,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceInventory({
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2147,7 +2972,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2187,7 +3015,7 @@ Update an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceItem" method="patch" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceItem" method="patch" path="/commerce/{connection_id}/item/{id}" example="commerce_item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2199,7 +3027,86 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceItem({
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2228,7 +3135,86 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceItem(unifiedTo, {
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2268,7 +3254,7 @@ Update an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceItemvariant" method="patch" path="/commerce/{connection_id}/itemvariant/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceItemvariant" method="patch" path="/commerce/{connection_id}/itemvariant/{id}" example="commerce_itemvariant" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2280,7 +3266,106 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceItemvariant({
-    commerceItemvariant: {},
+    commerceItemvariant: {
+      availableAt: new Date("2022-02-02T16:10:33.503Z"),
+      createdAt: new Date("2022-01-20T13:49:12.968Z"),
+      description: "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
+      height: 52,
+      id: "2f763bd8-da3d-419c-b32a-7d24091fc79d",
+      isActive: false,
+      isFeatured: false,
+      isVisible: false,
+      length: 94,
+      media: [
+        {
+          alt: "Calcar delibero cursim summisse.",
+          height: 394,
+          id: "57746b9e-9179-45e4-be60-158aa127a360",
+          metadata: [
+            {
+              id: "6e336998-5959-4fa9-b514-a114730915a3",
+              slug: "illo",
+              value: "quia",
+            },
+          ],
+          position: 92,
+          type: "image",
+          url: "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
+          width: 54,
+        },
+        {
+          alt: "Civitas acies substantia tergo.",
+          height: 351,
+          id: "3c7b82db-8546-4f3e-ae14-9582efacbf51",
+          metadata: [
+            {
+              id: "93fab157-5c50-4c4a-96c6-e5560763576f",
+              slug: "libero",
+              value: "capitulus",
+            },
+          ],
+          position: 44,
+          type: "image",
+          url: "https://loremflickr.com/2230/1237?lock=8628070842159966",
+          width: 55,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "bf04635e-fb96-44b4-8c74-ee4dfcfadd7a",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "nihil",
+        },
+      ],
+      name: "Keyboard",
+      options: [
+        {
+          id: "8829fd93-3c04-42e6-b136-9c2cb28d86da",
+          name: "Steel",
+          position: 97,
+          values: [
+            "Granite",
+            "Plastic",
+          ],
+        },
+      ],
+      prices: [
+        {
+          compareAtPrice: 3745,
+          currency: "COP",
+          price: 4913,
+        },
+        {
+          compareAtPrice: 438,
+          currency: "PHP",
+          price: 1378,
+        },
+        {
+          compareAtPrice: 1614,
+          currency: "PHP",
+          price: 8702,
+        },
+      ],
+      publicDescription: "Stylish Soap designed to make you stand out with insistent looks",
+      publicName: "Keyboard",
+      requiresShipping: false,
+      sizeUnit: "cm",
+      sku: "978-0-7051-0955-0",
+      tags: [
+        "vomito",
+        "custodia",
+      ],
+      totalStock: 929,
+      updatedAt: new Date("2025-05-24T09:44:44.334Z"),
+      weight: 61,
+      weightUnit: "oz",
+      width: 26,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2309,7 +3394,106 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceItemvariant(unifiedTo, {
-    commerceItemvariant: {},
+    commerceItemvariant: {
+      availableAt: new Date("2022-02-02T16:10:33.503Z"),
+      createdAt: new Date("2022-01-20T13:49:12.968Z"),
+      description: "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
+      height: 52,
+      id: "2f763bd8-da3d-419c-b32a-7d24091fc79d",
+      isActive: false,
+      isFeatured: false,
+      isVisible: false,
+      length: 94,
+      media: [
+        {
+          alt: "Calcar delibero cursim summisse.",
+          height: 394,
+          id: "57746b9e-9179-45e4-be60-158aa127a360",
+          metadata: [
+            {
+              id: "6e336998-5959-4fa9-b514-a114730915a3",
+              slug: "illo",
+              value: "quia",
+            },
+          ],
+          position: 92,
+          type: "image",
+          url: "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
+          width: 54,
+        },
+        {
+          alt: "Civitas acies substantia tergo.",
+          height: 351,
+          id: "3c7b82db-8546-4f3e-ae14-9582efacbf51",
+          metadata: [
+            {
+              id: "93fab157-5c50-4c4a-96c6-e5560763576f",
+              slug: "libero",
+              value: "capitulus",
+            },
+          ],
+          position: 44,
+          type: "image",
+          url: "https://loremflickr.com/2230/1237?lock=8628070842159966",
+          width: 55,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "bf04635e-fb96-44b4-8c74-ee4dfcfadd7a",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "nihil",
+        },
+      ],
+      name: "Keyboard",
+      options: [
+        {
+          id: "8829fd93-3c04-42e6-b136-9c2cb28d86da",
+          name: "Steel",
+          position: 97,
+          values: [
+            "Granite",
+            "Plastic",
+          ],
+        },
+      ],
+      prices: [
+        {
+          compareAtPrice: 3745,
+          currency: "COP",
+          price: 4913,
+        },
+        {
+          compareAtPrice: 438,
+          currency: "PHP",
+          price: 1378,
+        },
+        {
+          compareAtPrice: 1614,
+          currency: "PHP",
+          price: 8702,
+        },
+      ],
+      publicDescription: "Stylish Soap designed to make you stand out with insistent looks",
+      publicName: "Keyboard",
+      requiresShipping: false,
+      sizeUnit: "cm",
+      sku: "978-0-7051-0955-0",
+      tags: [
+        "vomito",
+        "custodia",
+      ],
+      totalStock: 929,
+      updatedAt: new Date("2025-05-24T09:44:44.334Z"),
+      weight: 61,
+      weightUnit: "oz",
+      width: 26,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2349,7 +3533,7 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" example="commerce_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2361,7 +3545,61 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceLocation({
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2390,7 +3628,61 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationPatchCommerceLocation(unifiedTo, {
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2430,7 +3722,7 @@ Update a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceReservation" method="patch" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceReservation" method="patch" path="/commerce/{connection_id}/reservation/{id}" example="commerce_reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2442,7 +3734,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceReservation({
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2471,7 +3778,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceReservation(unifiedTo, {
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2511,7 +3833,7 @@ Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" example="commerce_review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2523,7 +3845,78 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceReview({
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2552,7 +3945,78 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceReview(unifiedTo, {
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2592,7 +4056,7 @@ Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" example="commerce_saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2604,7 +4068,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.patchCommerceSaleschannel({
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2633,7 +4105,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceSaleschannel(unifiedTo, {
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3305,7 +4785,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" example="commerce_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3318,7 +4798,48 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceCollection({
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3349,7 +4870,48 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await commerceUpdateCommerceCollection(unifiedTo, {
     commerceCollection: {
-      name: "<value>",
+      createdAt: new Date("2023-07-14T00:42:54.742Z"),
+      description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
+      id: "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+      isActive: true,
+      isFeatured: false,
+      isVisible: false,
+      itemMetadata: [],
+      media: [
+        {
+          alt: "Defungo adopto thorax.",
+          height: 759,
+          id: "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+          metadata: [
+            {
+              id: "b9ddff2c-2954-4722-b137-f457e95332ca",
+              slug: "censura",
+              value: "toties",
+            },
+          ],
+          position: 80,
+          type: "video",
+          url: "https://loremflickr.com/1319/1257?lock=7280448425732025",
+          width: 40,
+        },
+      ],
+      metadata: [
+        {
+          id: "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+          slug: "aetas",
+          value: "consuasor",
+        },
+      ],
+      name: "Small Marble Chips",
+      publicDescription: "Generic Gloves designed with Cotton for miserable performance",
+      publicName: "Small Marble Chips",
+      tags: [
+        "ambulo",
+        "adeptio",
+        "contego",
+      ],
+      type: "COLLECTION",
+      updatedAt: new Date("2025-02-26T04:57:40.898Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3390,7 +4952,7 @@ Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3402,7 +4964,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceInventory({
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3431,7 +4996,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
-    commerceInventory: {},
+    commerceInventory: {
+      available: 337,
+      updatedAt: new Date("2025-10-24T19:37:09.818Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3471,7 +5039,7 @@ Update an item
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceItem" method="put" path="/commerce/{connection_id}/item/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceItem" method="put" path="/commerce/{connection_id}/item/{id}" example="commerce_item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3483,7 +5051,86 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceItem({
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3512,7 +5159,86 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceItem(unifiedTo, {
-    commerceItem: {},
+    commerceItem: {
+      collections: [],
+      createdAt: new Date("2019-06-21T20:16:18.628Z"),
+      description: "Vulnero ustulo abeo.",
+      duration: 87,
+      globalCode: "calamitas",
+      id: "02558b58-ae12-40a8-9b05-e2d84d452e45",
+      isActive: false,
+      isFeatured: true,
+      isTaxable: true,
+      isVisible: true,
+      media: [
+        {
+          alt: "Caterva eveniet acies candidus.",
+          height: 663,
+          id: "e5b9651b-1231-4b3d-95ee-2cbcab6d1f05",
+          metadata: [
+            {
+              id: "e329fdcd-189f-4e16-89ca-c7c3a485734c",
+              slug: "doloremque",
+              value: "allatus",
+            },
+          ],
+          position: 67,
+          type: "video",
+          url: "https://picsum.photos/seed/73y0uzyK/972/3753",
+          width: 88,
+        },
+        {
+          alt: "Comedo.",
+          height: 189,
+          id: "df6059bd-0d6f-485b-acd5-5e118987847d",
+          metadata: [
+            {
+              id: "5e7d4efa-7cb6-4883-ae2e-a6103bdc8d57",
+              slug: "bis",
+              value: "somniculosus",
+            },
+          ],
+          position: 3,
+          type: "image",
+          url: "https://picsum.photos/seed/Ao4iatfO/771/3906",
+          width: 66,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "d86dadc2-4b67-4596-aa45-72634e1b38e1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "terebro",
+        },
+      ],
+      name: "Handcrafted Rubber Tuna",
+      prices: [
+        {
+          compareAtPrice: 474,
+          currency: "OMR",
+          price: 1438,
+        },
+      ],
+      publicDescription: "Custodia ventus solio compono.",
+      publicName: "Handcrafted Rubber Tuna",
+      requiresShipping: true,
+      slug: "cohors-turba-optio",
+      tags: [
+        "blanditiis",
+        "tandem",
+      ],
+      totalStock: 579,
+      type: "beatae",
+      updatedAt: new Date("2022-04-06T18:37:08.741Z"),
+      vendorName: "Mayer - Flatley",
+      weight: 22,
+      weightUnit: "kg",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3552,7 +5278,7 @@ Update an itemvariant
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceItemvariant" method="put" path="/commerce/{connection_id}/itemvariant/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceItemvariant" method="put" path="/commerce/{connection_id}/itemvariant/{id}" example="commerce_itemvariant" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3564,7 +5290,106 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceItemvariant({
-    commerceItemvariant: {},
+    commerceItemvariant: {
+      availableAt: new Date("2022-02-02T16:10:33.503Z"),
+      createdAt: new Date("2022-01-20T13:49:12.968Z"),
+      description: "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
+      height: 52,
+      id: "2f763bd8-da3d-419c-b32a-7d24091fc79d",
+      isActive: false,
+      isFeatured: false,
+      isVisible: false,
+      length: 94,
+      media: [
+        {
+          alt: "Calcar delibero cursim summisse.",
+          height: 394,
+          id: "57746b9e-9179-45e4-be60-158aa127a360",
+          metadata: [
+            {
+              id: "6e336998-5959-4fa9-b514-a114730915a3",
+              slug: "illo",
+              value: "quia",
+            },
+          ],
+          position: 92,
+          type: "image",
+          url: "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
+          width: 54,
+        },
+        {
+          alt: "Civitas acies substantia tergo.",
+          height: 351,
+          id: "3c7b82db-8546-4f3e-ae14-9582efacbf51",
+          metadata: [
+            {
+              id: "93fab157-5c50-4c4a-96c6-e5560763576f",
+              slug: "libero",
+              value: "capitulus",
+            },
+          ],
+          position: 44,
+          type: "image",
+          url: "https://loremflickr.com/2230/1237?lock=8628070842159966",
+          width: 55,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "bf04635e-fb96-44b4-8c74-ee4dfcfadd7a",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "nihil",
+        },
+      ],
+      name: "Keyboard",
+      options: [
+        {
+          id: "8829fd93-3c04-42e6-b136-9c2cb28d86da",
+          name: "Steel",
+          position: 97,
+          values: [
+            "Granite",
+            "Plastic",
+          ],
+        },
+      ],
+      prices: [
+        {
+          compareAtPrice: 3745,
+          currency: "COP",
+          price: 4913,
+        },
+        {
+          compareAtPrice: 438,
+          currency: "PHP",
+          price: 1378,
+        },
+        {
+          compareAtPrice: 1614,
+          currency: "PHP",
+          price: 8702,
+        },
+      ],
+      publicDescription: "Stylish Soap designed to make you stand out with insistent looks",
+      publicName: "Keyboard",
+      requiresShipping: false,
+      sizeUnit: "cm",
+      sku: "978-0-7051-0955-0",
+      tags: [
+        "vomito",
+        "custodia",
+      ],
+      totalStock: 929,
+      updatedAt: new Date("2025-05-24T09:44:44.334Z"),
+      weight: 61,
+      weightUnit: "oz",
+      width: 26,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3593,7 +5418,106 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceItemvariant(unifiedTo, {
-    commerceItemvariant: {},
+    commerceItemvariant: {
+      availableAt: new Date("2022-02-02T16:10:33.503Z"),
+      createdAt: new Date("2022-01-20T13:49:12.968Z"),
+      description: "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
+      height: 52,
+      id: "2f763bd8-da3d-419c-b32a-7d24091fc79d",
+      isActive: false,
+      isFeatured: false,
+      isVisible: false,
+      length: 94,
+      media: [
+        {
+          alt: "Calcar delibero cursim summisse.",
+          height: 394,
+          id: "57746b9e-9179-45e4-be60-158aa127a360",
+          metadata: [
+            {
+              id: "6e336998-5959-4fa9-b514-a114730915a3",
+              slug: "illo",
+              value: "quia",
+            },
+          ],
+          position: 92,
+          type: "image",
+          url: "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
+          width: 54,
+        },
+        {
+          alt: "Civitas acies substantia tergo.",
+          height: 351,
+          id: "3c7b82db-8546-4f3e-ae14-9582efacbf51",
+          metadata: [
+            {
+              id: "93fab157-5c50-4c4a-96c6-e5560763576f",
+              slug: "libero",
+              value: "capitulus",
+            },
+          ],
+          position: 44,
+          type: "image",
+          url: "https://loremflickr.com/2230/1237?lock=8628070842159966",
+          width: 55,
+        },
+      ],
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "bf04635e-fb96-44b4-8c74-ee4dfcfadd7a",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "nihil",
+        },
+      ],
+      name: "Keyboard",
+      options: [
+        {
+          id: "8829fd93-3c04-42e6-b136-9c2cb28d86da",
+          name: "Steel",
+          position: 97,
+          values: [
+            "Granite",
+            "Plastic",
+          ],
+        },
+      ],
+      prices: [
+        {
+          compareAtPrice: 3745,
+          currency: "COP",
+          price: 4913,
+        },
+        {
+          compareAtPrice: 438,
+          currency: "PHP",
+          price: 1378,
+        },
+        {
+          compareAtPrice: 1614,
+          currency: "PHP",
+          price: 8702,
+        },
+      ],
+      publicDescription: "Stylish Soap designed to make you stand out with insistent looks",
+      publicName: "Keyboard",
+      requiresShipping: false,
+      sizeUnit: "cm",
+      sku: "978-0-7051-0955-0",
+      tags: [
+        "vomito",
+        "custodia",
+      ],
+      totalStock: 929,
+      updatedAt: new Date("2025-05-24T09:44:44.334Z"),
+      weight: 61,
+      weightUnit: "oz",
+      width: 26,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3633,7 +5557,7 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" example="commerce_location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3645,7 +5569,61 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceLocation({
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3674,7 +5652,61 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationUpdateCommerceLocation(unifiedTo, {
-    commerceLocation: {},
+    commerceLocation: {
+      address: {
+        address1: "29896 The Limes",
+        city: "New Kenny",
+        countryCode: "US",
+        postalCode: "14490-0609",
+        region: "Virginia",
+        regionCode: "MS",
+      },
+      categories: [],
+      createdAt: new Date("2022-12-29T04:15:21.195Z"),
+      currency: "XCD",
+      description: "Adsidue audentia.",
+      id: "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+      imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
+      isActive: false,
+      languageLocale: "vulgaris",
+      latitude: 0,
+      locationType: "RESTAURANT",
+      longitude: 0,
+      media: [
+        {
+          alt: "Addo.",
+          height: 283,
+          id: "3909acdf-2cde-4603-8361-fd936c020e65",
+          metadata: [
+            {
+              id: "2d33a074-28fe-493c-981d-888616925162",
+              slug: "abutor",
+              value: "damno",
+            },
+          ],
+          position: 40,
+          type: "image",
+          url: "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+          width: 1,
+        },
+      ],
+      name: "Olson - Mraz",
+      priceLevel: "",
+      rating: 0,
+      reviewCount: 0,
+      telephones: [
+        {
+          telephone: "(872) 522-3201",
+          type: "OTHER",
+        },
+        {
+          telephone: "(236) 274-2445",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2024-04-09T09:36:01.364Z"),
+      webUrl: "https://chilly-edge.info",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3714,7 +5746,7 @@ Update a reservation
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceReservation" method="put" path="/commerce/{connection_id}/reservation/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceReservation" method="put" path="/commerce/{connection_id}/reservation/{id}" example="commerce_reservation" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3726,7 +5758,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceReservation({
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3755,7 +5802,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceReservation(unifiedTo, {
-    commerceReservation: {},
+    commerceReservation: {
+      createdAt: new Date("2021-12-14T19:50:31.151Z"),
+      endAt: new Date("2022-01-01T22:00:17.868Z"),
+      guestEmail: "Sunny.Strosin77@yahoo.com",
+      guestName: "Annette Franecki",
+      guestPhone: "(990) 317-6213",
+      id: "ff096c0b-9130-4e0d-ba80-e903199080ed",
+      itemName: "Practical Ceramic Shoes",
+      notes: "Adsum textilis ipsum despecto.",
+      size: 10,
+      staffName: "Vickie Fahey",
+      startAt: new Date("2021-12-18T00:40:25.125Z"),
+      status: "PENDING",
+      updatedAt: new Date("2022-12-27T17:11:51.033Z"),
+      url: "https://cluttered-pine.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3795,7 +5857,7 @@ Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" example="commerce_review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3807,7 +5869,78 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceReview({
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3836,7 +5969,78 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceReview(unifiedTo, {
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3876,7 +6080,7 @@ Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" example="commerce_saleschannel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3888,7 +6092,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.commerce.updateCommerceSaleschannel({
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3917,7 +6129,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceSaleschannel(unifiedTo, {
-    commerceSaleschannel: {},
+    commerceSaleschannel: {
+      collections: [],
+      createdAt: new Date("2021-12-12T06:19:55.421Z"),
+      description: "Utroque denuncio solutio.",
+      id: "9c75c38f-b43b-4042-a122-482b994e374f",
+      isActive: false,
+      slug: "amiculum-congregatio-suspendo",
+      updatedAt: new Date("2025-01-06T17:44:30.042Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

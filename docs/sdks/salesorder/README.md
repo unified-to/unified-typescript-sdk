@@ -17,7 +17,7 @@ Create a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" example="accounting_salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,56 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.salesorder.createAccountingSalesorder({
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.013Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "4b4b8374-641e-4c7b-84dc-48bb2da0c7fe",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.222Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.489Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +106,56 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingSalesorder(unifiedTo, {
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.013Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "4b4b8374-641e-4c7b-84dc-48bb2da0c7fe",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.222Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.489Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +350,7 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +362,56 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.salesorder.patchAccountingSalesorder({
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +440,56 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingSalesorder(unifiedTo, {
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +608,7 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +620,56 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.salesorder.updateAccountingSalesorder({
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +698,56 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingSalesorder(unifiedTo, {
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

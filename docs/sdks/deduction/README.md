@@ -17,7 +17,7 @@ Create a deduction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" example="hris_deduction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.deduction.createHrisDeduction({
-    hrisDeduction: {},
+    hrisDeduction: {
+      amount: 139655,
+      coverageLevel: "EMPLOYEE_ONLY",
+      createdAt: new Date("2020-02-05T01:46:31.384Z"),
+      endAt: new Date("2026-05-22T22:53:01.272Z"),
+      frequency: "MONTH",
+      id: "53b67e29-3fbf-4518-9dc8-46caa54fd502",
+      isActive: false,
+      notes: "Carmen desidero.",
+      startAt: new Date("2025-02-18T04:38:44.652Z"),
+      type: "FIXED",
+      updatedAt: new Date("2024-03-01T23:42:32.713Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +69,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisDeduction(unifiedTo, {
-    hrisDeduction: {},
+    hrisDeduction: {
+      amount: 139655,
+      coverageLevel: "EMPLOYEE_ONLY",
+      createdAt: new Date("2020-02-05T01:46:31.384Z"),
+      endAt: new Date("2026-05-22T22:53:01.272Z"),
+      frequency: "MONTH",
+      id: "53b67e29-3fbf-4518-9dc8-46caa54fd502",
+      isActive: false,
+      notes: "Carmen desidero.",
+      startAt: new Date("2025-02-18T04:38:44.652Z"),
+      type: "FIXED",
+      updatedAt: new Date("2024-03-01T23:42:32.713Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +276,7 @@ Update a deduction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +288,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.deduction.patchHrisDeduction({
-    hrisDeduction: {},
+    hrisDeduction: {
+      amount: 139655,
+      coverageLevel: "EMPLOYEE_ONLY",
+      createdAt: new Date("2020-02-05T01:46:31.384Z"),
+      endAt: new Date("2026-05-22T22:53:01.279Z"),
+      frequency: "MONTH",
+      id: "97cd633a-aa8b-4099-b8f8-f1467cc7eb2c",
+      isActive: false,
+      notes: "Carmen desidero.",
+      startAt: new Date("2025-02-18T04:38:44.658Z"),
+      type: "FIXED",
+      updatedAt: new Date("2024-03-01T23:42:32.717Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +329,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisDeduction(unifiedTo, {
-    hrisDeduction: {},
+    hrisDeduction: {
+      amount: 139655,
+      coverageLevel: "EMPLOYEE_ONLY",
+      createdAt: new Date("2020-02-05T01:46:31.384Z"),
+      endAt: new Date("2026-05-22T22:53:01.279Z"),
+      frequency: "MONTH",
+      id: "97cd633a-aa8b-4099-b8f8-f1467cc7eb2c",
+      isActive: false,
+      notes: "Carmen desidero.",
+      startAt: new Date("2025-02-18T04:38:44.658Z"),
+      type: "FIXED",
+      updatedAt: new Date("2024-03-01T23:42:32.717Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +460,7 @@ Update a deduction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +472,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.deduction.updateHrisDeduction({
-    hrisDeduction: {},
+    hrisDeduction: {
+      amount: 139655,
+      coverageLevel: "EMPLOYEE_ONLY",
+      createdAt: new Date("2020-02-05T01:46:31.384Z"),
+      endAt: new Date("2026-05-22T22:53:01.279Z"),
+      frequency: "MONTH",
+      id: "97cd633a-aa8b-4099-b8f8-f1467cc7eb2c",
+      isActive: false,
+      notes: "Carmen desidero.",
+      startAt: new Date("2025-02-18T04:38:44.658Z"),
+      type: "FIXED",
+      updatedAt: new Date("2024-03-01T23:42:32.717Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +513,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisDeduction(unifiedTo, {
-    hrisDeduction: {},
+    hrisDeduction: {
+      amount: 139655,
+      coverageLevel: "EMPLOYEE_ONLY",
+      createdAt: new Date("2020-02-05T01:46:31.384Z"),
+      endAt: new Date("2026-05-22T22:53:01.279Z"),
+      frequency: "MONTH",
+      id: "97cd633a-aa8b-4099-b8f8-f1467cc7eb2c",
+      isActive: false,
+      notes: "Carmen desidero.",
+      startAt: new Date("2025-02-18T04:38:44.658Z"),
+      type: "FIXED",
+      updatedAt: new Date("2024-03-01T23:42:32.717Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

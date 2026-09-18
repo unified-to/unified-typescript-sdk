@@ -17,7 +17,7 @@ Create a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" -->
+<!-- UsageSnippet language="typescript" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" example="martech_list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,28 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.list.createMartechList({
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "8d9f0783-8b3b-4844-871c-a335856a11fa",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.884Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +78,28 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechCreateMartechList(unifiedTo, {
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "8d9f0783-8b3b-4844-871c-a335856a11fa",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.884Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +294,7 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +306,28 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.list.patchMartechList({
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +356,28 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechPatchMartechList(unifiedTo, {
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +496,7 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +508,28 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.list.updateMartechList({
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +558,28 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechUpdateMartechList(unifiedTo, {
-    marketingList: {},
+    marketingList: {
+      address: {
+        address1: "922 Elmore Manor",
+        address2: "Suite 925",
+        city: "Deerfield Beach",
+        country: "Bahrain",
+        postalCode: "30765-6471",
+        region: "FL",
+      },
+      createdAt: new Date("2019-09-18T02:01:36.950Z"),
+      description: "Currus.",
+      id: "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+      isActive: true,
+      language: "it",
+      name: "Annette Nolan",
+      senderCompany: "Hickle - Homenick",
+      senderEmail: "Matt_Steuber@hotmail.com",
+      senderName: "Salvatore Roob",
+      senderPhone: "896-328-1153 x4957",
+      subject: "Tenetur thymum circumvenio triumphus celo.",
+      updatedAt: new Date("2022-08-30T12:23:12.891Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

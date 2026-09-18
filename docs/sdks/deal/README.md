@@ -17,7 +17,7 @@ Create a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" example="crm_deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,52 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.deal.createCrmDeal({
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.203Z"),
+      closingAt: new Date("2025-08-09T21:47:04.909Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "fb9d739e-e46a-4253-80ea-9c4e45eb3f96",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "3a2e4850-fb79-4e6a-958a-abab7bbc81dc",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "eff2b7cd-af8e-4f47-aa85-163272ccc4d9",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "1a391e21-a554-4075-9436-04b11d9c2f35",
+          name: "tubineus",
+        },
+        {
+          id: "d764d0a0-f44d-482e-9090-04e20aedf149",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.578Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +102,52 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmDeal(unifiedTo, {
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.203Z"),
+      closingAt: new Date("2025-08-09T21:47:04.909Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "fb9d739e-e46a-4253-80ea-9c4e45eb3f96",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "3a2e4850-fb79-4e6a-958a-abab7bbc81dc",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "eff2b7cd-af8e-4f47-aa85-163272ccc4d9",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "1a391e21-a554-4075-9436-04b11d9c2f35",
+          name: "tubineus",
+        },
+        {
+          id: "d764d0a0-f44d-482e-9090-04e20aedf149",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.578Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +342,7 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +354,52 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.deal.patchCrmDeal({
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +428,52 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmDeal(unifiedTo, {
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +592,7 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +604,52 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.deal.updateCrmDeal({
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +678,52 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmDeal(unifiedTo, {
-    crmDeal: {},
+    crmDeal: {
+      amount: 98162,
+      closedAt: new Date("2024-03-03T13:46:56.208Z"),
+      closingAt: new Date("2025-08-09T21:47:04.924Z"),
+      createdAt: new Date("2023-07-04T12:48:48.470Z"),
+      currency: "IQD",
+      description: "Tabula cicuta sophismata comis tepidus sit cavus.",
+      id: "c48de371-a2f9-40ba-b242-a1d9ef638384",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "conatus",
+        },
+      ],
+      name: "Frozen Silk Chicken",
+      pipelines: [
+        {
+          id: "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+          name: "trans",
+        },
+      ],
+      probability: 65,
+      source: "cubo",
+      stages: [
+        {
+          id: "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+          name: "tubineus",
+        },
+        {
+          id: "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+          name: "adfectus",
+        },
+      ],
+      tags: [
+        "causa",
+        "suus",
+      ],
+      updatedAt: new Date("2024-09-29T03:11:55.587Z"),
+      wonReason: "Usque libero soleo.",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

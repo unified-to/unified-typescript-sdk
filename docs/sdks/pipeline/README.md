@@ -17,7 +17,7 @@ Create a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" -->
+<!-- UsageSnippet language="typescript" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" example="crm_pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pipeline.createCrmPipeline({
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "0212937f-ae58-406d-83a3-81d26a8e6868",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "9ca5b3e9-1498-4027-8f0a-c108c9557292",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.930Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.495Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +77,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmPipeline(unifiedTo, {
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "0212937f-ae58-406d-83a3-81d26a8e6868",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "9ca5b3e9-1498-4027-8f0a-c108c9557292",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.930Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.495Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +292,7 @@ Update a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" example="crm_pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +304,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pipeline.patchCrmPipeline({
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +353,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmPipeline(unifiedTo, {
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +492,7 @@ Update a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" example="crm_pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +504,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pipeline.updateCrmPipeline({
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +553,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmPipeline(unifiedTo, {
-    crmPipeline: {},
+    crmPipeline: {
+      createdAt: new Date("2022-12-28T13:45:38.446Z"),
+      dealProbability: 99,
+      displayOrder: 8,
+      id: "00265dd3-4115-4cab-b919-ae3bbd699676",
+      isActive: true,
+      name: "Small Steel Bacon",
+      stages: [
+        {
+          active: false,
+          createdAt: new Date("2022-12-28T13:45:38.446Z"),
+          dealProbability: 84,
+          displayOrder: 72,
+          id: "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+          isClosed: true,
+          name: "Veniam.",
+          updatedAt: new Date("2025-09-16T09:59:54.936Z"),
+        },
+      ],
+      updatedAt: new Date("2025-10-07T15:04:42.501Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

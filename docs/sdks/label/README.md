@@ -17,7 +17,7 @@ Create a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" -->
+<!-- UsageSnippet language="typescript" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" example="shipping_label" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.label.createShippingLabel({
-    shippingLabel: {},
+    shippingLabel: {
+      createdAt: new Date("2022-11-18T16:45:38.067Z"),
+      id: "b1a2cbe7-daa0-4fe1-a4db-10b32f67618f",
+      isVoided: false,
+      labelCost: 40.83653403213248,
+      labelCostCurrency: "USD",
+      labelFormat: "PNG",
+      labelUrl: "https://optimal-meadow.net",
+      serviceCode: "GIz",
+      status: "EXCEPTION",
+      trackingNumber: "zYv60FOIBUJ6",
+      updatedAt: new Date("2024-04-16T18:20:50.737Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +69,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await shippingCreateShippingLabel(unifiedTo, {
-    shippingLabel: {},
+    shippingLabel: {
+      createdAt: new Date("2022-11-18T16:45:38.067Z"),
+      id: "b1a2cbe7-daa0-4fe1-a4db-10b32f67618f",
+      isVoided: false,
+      labelCost: 40.83653403213248,
+      labelCostCurrency: "USD",
+      labelFormat: "PNG",
+      labelUrl: "https://optimal-meadow.net",
+      serviceCode: "GIz",
+      status: "EXCEPTION",
+      trackingNumber: "zYv60FOIBUJ6",
+      updatedAt: new Date("2024-04-16T18:20:50.737Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +276,7 @@ Update a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +288,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.label.patchShippingLabel({
-    shippingLabel: {},
+    shippingLabel: {
+      createdAt: new Date("2022-11-18T16:45:38.067Z"),
+      id: "0936a3b6-f849-46e3-a10d-946d76091c5d",
+      isVoided: false,
+      labelCost: 40.83653403213248,
+      labelCostCurrency: "USD",
+      labelFormat: "PNG",
+      labelUrl: "https://optimal-meadow.net",
+      serviceCode: "GIz",
+      status: "EXCEPTION",
+      trackingNumber: "zYv60FOIBUJ6",
+      updatedAt: new Date("2024-04-16T18:20:50.742Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +329,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await shippingPatchShippingLabel(unifiedTo, {
-    shippingLabel: {},
+    shippingLabel: {
+      createdAt: new Date("2022-11-18T16:45:38.067Z"),
+      id: "0936a3b6-f849-46e3-a10d-946d76091c5d",
+      isVoided: false,
+      labelCost: 40.83653403213248,
+      labelCostCurrency: "USD",
+      labelFormat: "PNG",
+      labelUrl: "https://optimal-meadow.net",
+      serviceCode: "GIz",
+      status: "EXCEPTION",
+      trackingNumber: "zYv60FOIBUJ6",
+      updatedAt: new Date("2024-04-16T18:20:50.742Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +460,7 @@ Update a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +472,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.label.updateShippingLabel({
-    shippingLabel: {},
+    shippingLabel: {
+      createdAt: new Date("2022-11-18T16:45:38.067Z"),
+      id: "0936a3b6-f849-46e3-a10d-946d76091c5d",
+      isVoided: false,
+      labelCost: 40.83653403213248,
+      labelCostCurrency: "USD",
+      labelFormat: "PNG",
+      labelUrl: "https://optimal-meadow.net",
+      serviceCode: "GIz",
+      status: "EXCEPTION",
+      trackingNumber: "zYv60FOIBUJ6",
+      updatedAt: new Date("2024-04-16T18:20:50.742Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +513,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await shippingUpdateShippingLabel(unifiedTo, {
-    shippingLabel: {},
+    shippingLabel: {
+      createdAt: new Date("2022-11-18T16:45:38.067Z"),
+      id: "0936a3b6-f849-46e3-a10d-946d76091c5d",
+      isVoided: false,
+      labelCost: 40.83653403213248,
+      labelCostCurrency: "USD",
+      labelFormat: "PNG",
+      labelUrl: "https://optimal-meadow.net",
+      serviceCode: "GIz",
+      status: "EXCEPTION",
+      trackingNumber: "zYv60FOIBUJ6",
+      updatedAt: new Date("2024-04-16T18:20:50.742Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

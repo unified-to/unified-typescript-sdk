@@ -17,7 +17,7 @@ Create a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" example="accounting_journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.journal.createAccountingJournal({
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "3d392f10-878d-46c4-a59b-f5250068e316",
+      postedAt: new Date("2023-10-19T01:52:16.859Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.238Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +69,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingJournal(unifiedTo, {
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "3d392f10-878d-46c4-a59b-f5250068e316",
+      postedAt: new Date("2023-10-19T01:52:16.859Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.238Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +276,7 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +288,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.journal.patchAccountingJournal({
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +329,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingJournal(unifiedTo, {
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +460,7 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +472,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.journal.updateAccountingJournal({
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +513,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingJournal(unifiedTo, {
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

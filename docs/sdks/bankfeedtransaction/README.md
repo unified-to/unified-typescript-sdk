@@ -17,7 +17,7 @@ Create a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" example="accounting_bankfeedtransaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankfeedtransaction.createAccountingBankfeedtransaction({
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "30fb790d-3f8e-48ab-8f69-cfc3c408e989",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.066Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.221Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.834Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +75,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingBankfeedtransaction(unifiedTo, {
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "30fb790d-3f8e-48ab-8f69-cfc3c408e989",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.066Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.221Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.834Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +288,7 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +300,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankfeedtransaction.patchAccountingBankfeedtransaction({
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +347,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingBankfeedtransaction(unifiedTo, {
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +484,7 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +496,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankfeedtransaction.updateAccountingBankfeedtransaction({
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +543,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingBankfeedtransaction(unifiedTo, {
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

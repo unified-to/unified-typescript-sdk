@@ -23,7 +23,7 @@ Create a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" -->
+<!-- UsageSnippet language="typescript" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" example="commerce_review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -35,7 +35,78 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.review.createCommerceReview({
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "9c5b7e6f-0f4b-4750-8f10-b86d80073fd4",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "816efc1a-4423-4d51-a391-83385253bc8f",
+          metadata: [
+            {
+              id: "a6ebfdaa-8dfe-407d-b0d6-346a84dad5ca",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "12020720-c152-456e-80bf-005ca92e532d",
+          metadata: [
+            {
+              id: "4ede0b6b-5898-4c43-93eb-87357417ecee",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "c6d2eb71-13f9-4cda-a26e-4bd7a3e27f52",
+          metadata: [
+            {
+              id: "6ad69a11-2786-4752-a369-6f863517d900",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.947Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
   });
 
@@ -63,7 +134,78 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceCreateCommerceReview(unifiedTo, {
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "9c5b7e6f-0f4b-4750-8f10-b86d80073fd4",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "816efc1a-4423-4d51-a391-83385253bc8f",
+          metadata: [
+            {
+              id: "a6ebfdaa-8dfe-407d-b0d6-346a84dad5ca",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "12020720-c152-456e-80bf-005ca92e532d",
+          metadata: [
+            {
+              id: "4ede0b6b-5898-4c43-93eb-87357417ecee",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "c6d2eb71-13f9-4cda-a26e-4bd7a3e27f52",
+          metadata: [
+            {
+              id: "6ad69a11-2786-4752-a369-6f863517d900",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.947Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -570,7 +712,7 @@ Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" example="commerce_review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -582,7 +724,78 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.review.patchCommerceReview({
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -611,7 +824,78 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commercePatchCommerceReview(unifiedTo, {
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -811,7 +1095,7 @@ Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" example="commerce_review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -823,7 +1107,78 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.review.updateCommerceReview({
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -852,7 +1207,78 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await commerceUpdateCommerceReview(unifiedTo, {
-    commerceReview: {},
+    commerceReview: {
+      authorAvatarUrl: "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+      authorEmail: "Cleve_Yundt@hotmail.com",
+      authorLocation: "ipsum",
+      authorName: "Marsha Krajcik",
+      comments: [],
+      content: "Taedium thymum adipiscor amicitia cui.",
+      createdAt: new Date("2019-12-12T18:10:22.988Z"),
+      helpfulVotes: 26,
+      id: "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+      isFeatured: true,
+      isPublic: true,
+      isVerified: false,
+      media: [
+        {
+          alt: "Adulescens.",
+          height: 519,
+          id: "146b7d74-0d7e-4beb-941b-44c501241294",
+          metadata: [
+            {
+              id: "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+              slug: "aggero",
+              value: "tero",
+            },
+          ],
+          position: 72,
+          type: "video",
+          url: "https://loremflickr.com/882/1004?lock=7448492654002422",
+          width: 75,
+        },
+        {
+          alt: "Pauci timidus sol comburo thema.",
+          height: 297,
+          id: "87af2377-5bc7-415f-994c-28d4bcb0c263",
+          metadata: [
+            {
+              id: "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+              slug: "vito",
+              value: "cuppedia",
+            },
+          ],
+          position: 61,
+          type: "image",
+          url: "https://picsum.photos/seed/3QDZ8/1208/2171",
+          width: 96,
+        },
+        {
+          alt: "Cuppedia vestrum patruus.",
+          height: 6,
+          id: "d5697010-23e7-4425-b385-99c308679379",
+          metadata: [
+            {
+              id: "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+              slug: "arbitro",
+              value: "villa",
+            },
+          ],
+          position: 60,
+          type: "video",
+          url: "https://picsum.photos/seed/ytybC/2616/710",
+          width: 74,
+        },
+      ],
+      metadata: [],
+      rating: 3,
+      status: "APPROVED",
+      title: "Coepi adamo amicitia auxilium toties.",
+      unhelpfulVotes: 49,
+      updatedAt: new Date("2025-07-24T23:16:21.986Z"),
+      url: "https://excitable-underneath.com",
+      verifiedPurchase: false,
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -12,7 +12,7 @@ Create an embedding
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" -->
+<!-- UsageSnippet language="typescript" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" example="genai_embedding" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.embedding.createGenaiEmbedding({
-    genaiEmbedding: {},
+    genaiEmbedding: {
+      content: [
+        {
+          text: "Utrimque temptatio pecco demulceo.",
+        },
+      ],
+      dimension: 423,
+      embeddings: "Est.",
+      encondingFormat: "FLOAT",
+      id: "7fd5d308-20f8-4679-bdfa-0da51e707b1c",
+      maxTokens: 223,
+      tokensUsed: 836,
+      type: "classification",
+    },
     connectionId: "<id>",
   });
 
@@ -52,7 +65,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await genaiCreateGenaiEmbedding(unifiedTo, {
-    genaiEmbedding: {},
+    genaiEmbedding: {
+      content: [
+        {
+          text: "Utrimque temptatio pecco demulceo.",
+        },
+      ],
+      dimension: 423,
+      embeddings: "Est.",
+      encondingFormat: "FLOAT",
+      id: "7fd5d308-20f8-4679-bdfa-0da51e707b1c",
+      maxTokens: 223,
+      tokensUsed: 836,
+      type: "classification",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {

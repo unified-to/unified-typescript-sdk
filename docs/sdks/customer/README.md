@@ -17,7 +17,7 @@ Create a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" example="ticketing_customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.customer.createTicketingCustomer({
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "e4eda98a-50de-46a3-969f-b9ed09d9be62",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.066Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +86,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingCustomer(unifiedTo, {
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "e4eda98a-50de-46a3-969f-b9ed09d9be62",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.066Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +310,7 @@ Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" example="ticketing_customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +322,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.customer.patchTicketingCustomer({
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +380,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingCustomer(unifiedTo, {
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +528,7 @@ Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" example="ticketing_customer" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +540,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.customer.updateTicketingCustomer({
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +598,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingCustomer(unifiedTo, {
-    ticketingCustomer: {},
+    ticketingCustomer: {
+      createdAt: new Date("2021-03-15T12:33:14.875Z"),
+      emails: [
+        {
+          email: "Christian_Windler@gmail.com",
+          type: "HOME",
+        },
+      ],
+      id: "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+      name: "Christian Windler",
+      tags: [
+        "casso",
+        "peccatus",
+      ],
+      telephones: [
+        {
+          telephone: "(532) 242-0482",
+          type: "OTHER",
+        },
+        {
+          telephone: "(826) 283-7431",
+          type: "MOBILE",
+        },
+        {
+          telephone: "(483) 314-6826",
+          type: "MOBILE",
+        },
+      ],
+      updatedAt: new Date("2026-05-04T07:40:10.076Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

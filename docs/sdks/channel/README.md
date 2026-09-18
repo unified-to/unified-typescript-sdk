@@ -17,7 +17,7 @@ Create a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" -->
+<!-- UsageSnippet language="typescript" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" example="messaging_channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.channel.createMessagingChannel({
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "021b0aa2-c26f-46af-9ab5-aa8b3668976b",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.912Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +68,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingCreateMessagingChannel(unifiedTo, {
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "021b0aa2-c26f-46af-9ab5-aa8b3668976b",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.912Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +274,7 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +286,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.channel.patchMessagingChannel({
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +326,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingPatchMessagingChannel(unifiedTo, {
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +456,7 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +468,18 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.channel.updateMessagingChannel({
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +508,18 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingUpdateMessagingChannel(unifiedTo, {
-    messagingChannel: {},
+    messagingChannel: {
+      createdAt: new Date("2023-10-05T02:09:22.795Z"),
+      description: "Dolores tutis.",
+      hasSubchannels: true,
+      id: "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+      isActive: false,
+      isPrivate: true,
+      members: [],
+      name: "tego",
+      updatedAt: new Date("2026-04-23T02:24:13.920Z"),
+      webUrl: "https://svelte-rule.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

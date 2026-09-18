@@ -12,7 +12,7 @@ Create a prompt
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" -->
+<!-- UsageSnippet language="typescript" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" example="genai_prompt" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -24,7 +24,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.prompt.createGenaiPrompt({
-    genaiPrompt: {},
+    genaiPrompt: {
+      maxTokens: 0.4677782787475735,
+      mcpAuthorizationToken: "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
+      mcpDeferredTools: [],
+      mcpUrl: "https://unsung-dusk.info/",
+      messages: [
+        {
+          content: "Aegre repudiandae verecundia facere statua.",
+          role: "ASSISTANT",
+        },
+        {
+          content: "Speciosus xiphias soleo trepide crinis.",
+          role: "SYSTEM",
+        },
+      ],
+      responses: [
+        "Balbus vobis circumvenio una.",
+      ],
+      temperature: 0,
+      tokensUsed: 975,
+    },
     connectionId: "<id>",
   });
 
@@ -52,7 +72,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await genaiCreateGenaiPrompt(unifiedTo, {
-    genaiPrompt: {},
+    genaiPrompt: {
+      maxTokens: 0.4677782787475735,
+      mcpAuthorizationToken: "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
+      mcpDeferredTools: [],
+      mcpUrl: "https://unsung-dusk.info/",
+      messages: [
+        {
+          content: "Aegre repudiandae verecundia facere statua.",
+          role: "ASSISTANT",
+        },
+        {
+          content: "Speciosus xiphias soleo trepide crinis.",
+          role: "SYSTEM",
+        },
+      ],
+      responses: [
+        "Balbus vobis circumvenio una.",
+      ],
+      temperature: 0,
+      tokensUsed: 975,
+    },
     connectionId: "<id>",
   });
   if (res.ok) {

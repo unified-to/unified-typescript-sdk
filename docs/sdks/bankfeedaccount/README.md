@@ -17,7 +17,7 @@ Create a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" example="accounting_bankfeedaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankfeedaccount.createAccountingBankfeedaccount({
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "2ea876a9-ab62-403d-b280-b8bd398c21a5",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.381Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +72,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingBankfeedaccount(unifiedTo, {
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "2ea876a9-ab62-403d-b280-b8bd398c21a5",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.381Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +282,7 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +294,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankfeedaccount.patchAccountingBankfeedaccount({
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +338,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingBankfeedaccount(unifiedTo, {
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +472,7 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +484,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bankfeedaccount.updateAccountingBankfeedaccount({
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +528,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingBankfeedaccount(unifiedTo, {
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

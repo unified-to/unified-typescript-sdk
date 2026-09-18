@@ -17,7 +17,7 @@ Create a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
+<!-- UsageSnippet language="typescript" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" example="kms_page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,7 +30,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.page.createKmsPage({
     kmsPage: {
-      type: "TEXT",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "f498e686-b37b-400a-8b10-93a6bc4e18f4",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.373Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
   });
@@ -60,7 +69,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsCreateKmsPage(unifiedTo, {
     kmsPage: {
-      type: "TEXT",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "f498e686-b37b-400a-8b10-93a6bc4e18f4",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.373Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
   });
@@ -256,7 +274,7 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,7 +287,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.page.patchKmsPage({
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -300,7 +327,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsPatchKmsPage(unifiedTo, {
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -420,7 +456,7 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -433,7 +469,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.page.updateKmsPage({
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -464,7 +509,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsUpdateKmsPage(unifiedTo, {
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",

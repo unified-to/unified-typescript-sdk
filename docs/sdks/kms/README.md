@@ -29,7 +29,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
+<!-- UsageSnippet language="typescript" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" example="kms_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -41,7 +41,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.kms.createKmsComment({
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "7a7c211f-0d0c-4de6-8fa9-150729e7b4a3",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.752Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -69,7 +76,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsCreateKmsComment(unifiedTo, {
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "7a7c211f-0d0c-4de6-8fa9-150729e7b4a3",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.752Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -108,7 +122,7 @@ Create a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
+<!-- UsageSnippet language="typescript" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" example="kms_page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -121,7 +135,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.kms.createKmsPage({
     kmsPage: {
-      type: "TEXT",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "f498e686-b37b-400a-8b10-93a6bc4e18f4",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.373Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
   });
@@ -151,7 +174,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsCreateKmsPage(unifiedTo, {
     kmsPage: {
-      type: "TEXT",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "f498e686-b37b-400a-8b10-93a6bc4e18f4",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.373Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
   });
@@ -191,7 +223,7 @@ Create a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" -->
+<!-- UsageSnippet language="typescript" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" example="kms_space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -203,7 +235,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.kms.createKmsSpace({
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "72f6d852-9f5b-447f-928a-dd6a6ca5a5f6",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.170Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -231,7 +270,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsCreateKmsSpace(unifiedTo, {
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "72f6d852-9f5b-447f-928a-dd6a6ca5a5f6",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.170Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -738,7 +784,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -750,7 +796,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.kms.patchKmsComment({
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -779,7 +832,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsPatchKmsComment(unifiedTo, {
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -819,7 +879,7 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -832,7 +892,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.kms.patchKmsPage({
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -863,7 +932,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsPatchKmsPage(unifiedTo, {
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -904,7 +982,7 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -916,7 +994,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.kms.patchKmsSpace({
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -945,7 +1030,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsPatchKmsSpace(unifiedTo, {
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1222,7 +1314,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1234,7 +1326,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.kms.updateKmsComment({
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1263,7 +1362,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsUpdateKmsComment(unifiedTo, {
-    kmsComment: {},
+    kmsComment: {
+      content: "Decimus tolero viriliter usque.",
+      contentType: "HTML",
+      createdAt: new Date("2022-08-26T14:40:49.732Z"),
+      id: "6fddf474-4bea-4611-a88d-4d3410024ce8",
+      type: "PAGE",
+      updatedAt: new Date("2023-11-16T08:15:30.755Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1303,7 +1409,7 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1316,7 +1422,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.kms.updateKmsPage({
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1347,7 +1462,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await kmsUpdateKmsPage(unifiedTo, {
     kmsPage: {
-      type: "OTHER",
+      createdAt: new Date("2019-05-20T18:06:50.749Z"),
+      downloadUrl: "https://agitated-validity.info",
+      hasChildren: true,
+      id: "0636844d-0893-488b-ae20-1aa19425e5d6",
+      isActive: true,
+      metadata: [],
+      title: "even minister extract",
+      type: "HTML",
+      updatedAt: new Date("2025-09-10T18:26:23.386Z"),
+      webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1388,7 +1512,7 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1400,7 +1524,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.kms.updateKmsSpace({
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1429,7 +1560,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsUpdateKmsSpace(unifiedTo, {
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

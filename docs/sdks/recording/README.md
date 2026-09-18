@@ -19,7 +19,7 @@ Create a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" -->
+<!-- UsageSnippet language="typescript" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" example="uc_recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -31,7 +31,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.recording.createUcRecording({
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.089Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.272Z"),
+      id: "f159e1de-c6df-4fca-b181-b2205dd29d42",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.818Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.608Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
   });
 
@@ -59,7 +72,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await recordingCreateUcRecording(unifiedTo, {
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.089Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.272Z"),
+      id: "f159e1de-c6df-4fca-b181-b2205dd29d42",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.818Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.608Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -410,7 +436,7 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -422,7 +448,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.recording.patchUcRecording({
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -451,7 +490,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await recordingPatchUcRecording(unifiedTo, {
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -570,7 +622,7 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -582,7 +634,20 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.recording.updateUcRecording({
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -611,7 +676,20 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await recordingUpdateUcRecording(unifiedTo, {
-    ucRecording: {},
+    ucRecording: {
+      contacts: [],
+      createdAt: new Date("2022-09-17T19:41:46.956Z"),
+      endAt: new Date("2024-04-21T20:25:37.108Z"),
+      expiresAt: new Date("2026-03-28T16:21:59.313Z"),
+      id: "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+      media: [],
+      startAt: new Date("2023-04-22T20:25:31.825Z"),
+      type: "INBOUND",
+      updatedAt: new Date("2025-02-24T08:24:25.637Z"),
+      userName: "Melyna Larson",
+      userPhone: "1-915-327-0429 x509",
+      webUrl: "https://spherical-comparison.org",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -17,7 +17,7 @@ Create a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" -->
+<!-- UsageSnippet language="typescript" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" example="analytics_property" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.property.createAnalyticsProperty({
-    analyticsProperty: {},
+    analyticsProperty: {
+      createdAt: new Date("2021-09-05T19:04:58.430Z"),
+      currency: "USD",
+      id: "839e126a-c1d9-48e4-94de-156419a6be61",
+      name: "Daniel, Goldner and Dickinson",
+      timezone: "UTC",
+      updatedAt: new Date("2021-09-14T16:36:17.635Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +64,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await analyticsCreateAnalyticsProperty(unifiedTo, {
-    analyticsProperty: {},
+    analyticsProperty: {
+      createdAt: new Date("2021-09-05T19:04:58.430Z"),
+      currency: "USD",
+      id: "839e126a-c1d9-48e4-94de-156419a6be61",
+      name: "Daniel, Goldner and Dickinson",
+      timezone: "UTC",
+      updatedAt: new Date("2021-09-14T16:36:17.635Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +266,7 @@ Update a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" example="analytics_property" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +278,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.property.patchAnalyticsProperty({
-    analyticsProperty: {},
+    analyticsProperty: {
+      createdAt: new Date("2021-09-05T19:04:58.430Z"),
+      currency: "USD",
+      id: "5958e741-450a-4284-88c1-af3528148dcf",
+      name: "Daniel, Goldner and Dickinson",
+      timezone: "UTC",
+      updatedAt: new Date("2021-09-14T16:36:17.635Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +314,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await analyticsPatchAnalyticsProperty(unifiedTo, {
-    analyticsProperty: {},
+    analyticsProperty: {
+      createdAt: new Date("2021-09-05T19:04:58.430Z"),
+      currency: "USD",
+      id: "5958e741-450a-4284-88c1-af3528148dcf",
+      name: "Daniel, Goldner and Dickinson",
+      timezone: "UTC",
+      updatedAt: new Date("2021-09-14T16:36:17.635Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +440,7 @@ Update a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" example="analytics_property" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +452,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.property.updateAnalyticsProperty({
-    analyticsProperty: {},
+    analyticsProperty: {
+      createdAt: new Date("2021-09-05T19:04:58.430Z"),
+      currency: "USD",
+      id: "5958e741-450a-4284-88c1-af3528148dcf",
+      name: "Daniel, Goldner and Dickinson",
+      timezone: "UTC",
+      updatedAt: new Date("2021-09-14T16:36:17.635Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +488,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await analyticsUpdateAnalyticsProperty(unifiedTo, {
-    analyticsProperty: {},
+    analyticsProperty: {
+      createdAt: new Date("2021-09-05T19:04:58.430Z"),
+      currency: "USD",
+      id: "5958e741-450a-4284-88c1-af3528148dcf",
+      name: "Daniel, Goldner and Dickinson",
+      timezone: "UTC",
+      updatedAt: new Date("2021-09-14T16:36:17.635Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

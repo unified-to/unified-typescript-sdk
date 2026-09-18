@@ -17,7 +17,7 @@ Create a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" example="hris_timeoff" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,6 +30,20 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.createHrisTimeoff({
     hrisTimeoff: {
+      approvedAt: new Date("2022-02-20T21:02:44.024Z"),
+      comments: "Blandior ventus curiositas amplitudo.",
+      createdAt: new Date("2021-10-06T18:00:20.615Z"),
+      duration: 4,
+      durationType: "DAY",
+      endAt: new Date("2024-12-07T13:51:48.890Z"),
+      id: "f08121ee-1d8f-478a-89f5-5a8d207ad122",
+      isPaid: true,
+      originalType: "acerbitas ut",
+      reason: "verto",
+      startAt: new Date("2023-08-23T06:57:16.399Z"),
+      status: "DENIED",
+      type: "IN_LIEU",
+      updatedAt: new Date("2022-07-07T19:35:06.898Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -60,6 +74,20 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
+      approvedAt: new Date("2022-02-20T21:02:44.024Z"),
+      comments: "Blandior ventus curiositas amplitudo.",
+      createdAt: new Date("2021-10-06T18:00:20.615Z"),
+      duration: 4,
+      durationType: "DAY",
+      endAt: new Date("2024-12-07T13:51:48.890Z"),
+      id: "f08121ee-1d8f-478a-89f5-5a8d207ad122",
+      isPaid: true,
+      originalType: "acerbitas ut",
+      reason: "verto",
+      startAt: new Date("2023-08-23T06:57:16.399Z"),
+      status: "DENIED",
+      type: "IN_LIEU",
+      updatedAt: new Date("2022-07-07T19:35:06.898Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -256,7 +284,7 @@ Update a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,6 +297,20 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.patchHrisTimeoff({
     hrisTimeoff: {
+      approvedAt: new Date("2022-02-20T21:02:44.025Z"),
+      comments: "Blandior ventus curiositas amplitudo.",
+      createdAt: new Date("2021-10-06T18:00:20.615Z"),
+      duration: 4,
+      durationType: "DAY",
+      endAt: new Date("2024-12-07T13:51:48.897Z"),
+      id: "f1c287db-49ea-4bb1-92e3-bfac8aaa9194",
+      isPaid: true,
+      originalType: "acerbitas ut",
+      reason: "verto",
+      startAt: new Date("2023-08-23T06:57:16.403Z"),
+      status: "DENIED",
+      type: "IN_LIEU",
+      updatedAt: new Date("2022-07-07T19:35:06.900Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -300,6 +342,20 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
+      approvedAt: new Date("2022-02-20T21:02:44.025Z"),
+      comments: "Blandior ventus curiositas amplitudo.",
+      createdAt: new Date("2021-10-06T18:00:20.615Z"),
+      duration: 4,
+      durationType: "DAY",
+      endAt: new Date("2024-12-07T13:51:48.897Z"),
+      id: "f1c287db-49ea-4bb1-92e3-bfac8aaa9194",
+      isPaid: true,
+      originalType: "acerbitas ut",
+      reason: "verto",
+      startAt: new Date("2023-08-23T06:57:16.403Z"),
+      status: "DENIED",
+      type: "IN_LIEU",
+      updatedAt: new Date("2022-07-07T19:35:06.900Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -420,7 +476,7 @@ Update a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -433,6 +489,20 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.updateHrisTimeoff({
     hrisTimeoff: {
+      approvedAt: new Date("2022-02-20T21:02:44.025Z"),
+      comments: "Blandior ventus curiositas amplitudo.",
+      createdAt: new Date("2021-10-06T18:00:20.615Z"),
+      duration: 4,
+      durationType: "DAY",
+      endAt: new Date("2024-12-07T13:51:48.897Z"),
+      id: "f1c287db-49ea-4bb1-92e3-bfac8aaa9194",
+      isPaid: true,
+      originalType: "acerbitas ut",
+      reason: "verto",
+      startAt: new Date("2023-08-23T06:57:16.403Z"),
+      status: "DENIED",
+      type: "IN_LIEU",
+      updatedAt: new Date("2022-07-07T19:35:06.900Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -464,6 +534,20 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
+      approvedAt: new Date("2022-02-20T21:02:44.025Z"),
+      comments: "Blandior ventus curiositas amplitudo.",
+      createdAt: new Date("2021-10-06T18:00:20.615Z"),
+      duration: 4,
+      durationType: "DAY",
+      endAt: new Date("2024-12-07T13:51:48.897Z"),
+      id: "f1c287db-49ea-4bb1-92e3-bfac8aaa9194",
+      isPaid: true,
+      originalType: "acerbitas ut",
+      reason: "verto",
+      startAt: new Date("2023-08-23T06:57:16.403Z"),
+      status: "DENIED",
+      type: "IN_LIEU",
+      updatedAt: new Date("2022-07-07T19:35:06.900Z"),
       userId: "<id>",
     },
     connectionId: "<id>",

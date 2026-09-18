@@ -25,7 +25,7 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" -->
+<!-- UsageSnippet language="typescript" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" example="signing_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -37,7 +37,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.signing.createSigningDocument({
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.172Z"),
+      id: "b56bffa4-89ef-4341-a673-29b95dfc4140",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.485Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -65,7 +72,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentCreateSigningDocument(unifiedTo, {
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.172Z"),
+      id: "b56bffa4-89ef-4341-a673-29b95dfc4140",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.485Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -104,7 +118,7 @@ Create a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createSigningSignatory" method="post" path="/signing/{connection_id}/signatory" -->
+<!-- UsageSnippet language="typescript" operationID="createSigningSignatory" method="post" path="/signing/{connection_id}/signatory" example="signing_signatory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -116,7 +130,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.signing.createSigningSignatory({
-    signingSignatory: {},
+    signingSignatory: {
+      createdAt: new Date("2022-04-16T19:25:01.966Z"),
+      email: "Hardy.Wehner@gmail.com",
+      id: "99b615fd-9943-4e49-b351-51ff875f2002",
+      order: 5,
+      role: "SIGNER",
+      status: "SIGNED",
+      updatedAt: new Date("2026-08-10T19:04:00.900Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -144,7 +166,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await signingCreateSigningSignatory(unifiedTo, {
-    signingSignatory: {},
+    signingSignatory: {
+      createdAt: new Date("2022-04-16T19:25:01.966Z"),
+      email: "Hardy.Wehner@gmail.com",
+      id: "99b615fd-9943-4e49-b351-51ff875f2002",
+      order: 5,
+      role: "SIGNER",
+      status: "SIGNED",
+      updatedAt: new Date("2026-08-10T19:04:00.900Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -651,7 +681,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -663,7 +693,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.signing.patchSigningDocument({
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -692,7 +729,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentPatchSigningDocument(unifiedTo, {
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -732,7 +776,7 @@ Update a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchSigningSignatory" method="patch" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchSigningSignatory" method="patch" path="/signing/{connection_id}/signatory/{id}" example="signing_signatory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -744,7 +788,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.signing.patchSigningSignatory({
-    signingSignatory: {},
+    signingSignatory: {
+      createdAt: new Date("2022-04-16T19:25:01.966Z"),
+      email: "Hardy.Wehner@gmail.com",
+      id: "cbd3dc66-366a-4130-bd27-8e78a1a7f9f8",
+      order: 5,
+      role: "SIGNER",
+      status: "SIGNED",
+      updatedAt: new Date("2026-08-10T19:04:00.911Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -773,7 +825,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await signingPatchSigningSignatory(unifiedTo, {
-    signingSignatory: {},
+    signingSignatory: {
+      createdAt: new Date("2022-04-16T19:25:01.966Z"),
+      email: "Hardy.Wehner@gmail.com",
+      id: "cbd3dc66-366a-4130-bd27-8e78a1a7f9f8",
+      order: 5,
+      role: "SIGNER",
+      status: "SIGNED",
+      updatedAt: new Date("2026-08-10T19:04:00.911Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -971,7 +1031,7 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -983,7 +1043,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.signing.updateSigningDocument({
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1012,7 +1079,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await documentUpdateSigningDocument(unifiedTo, {
-    signingDocument: {},
+    signingDocument: {
+      createdAt: new Date("2021-05-02T09:35:23.679Z"),
+      expiresAt: new Date("2026-12-16T10:17:24.183Z"),
+      id: "92c73198-9b1c-4527-b4de-ec85322f1a73",
+      name: "nam audax absens",
+      status: "VOIDED",
+      updatedAt: new Date("2025-08-07T18:12:00.493Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1052,7 +1126,7 @@ Update a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateSigningSignatory" method="put" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateSigningSignatory" method="put" path="/signing/{connection_id}/signatory/{id}" example="signing_signatory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1064,7 +1138,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.signing.updateSigningSignatory({
-    signingSignatory: {},
+    signingSignatory: {
+      createdAt: new Date("2022-04-16T19:25:01.966Z"),
+      email: "Hardy.Wehner@gmail.com",
+      id: "cbd3dc66-366a-4130-bd27-8e78a1a7f9f8",
+      order: 5,
+      role: "SIGNER",
+      status: "SIGNED",
+      updatedAt: new Date("2026-08-10T19:04:00.911Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1093,7 +1175,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await signingUpdateSigningSignatory(unifiedTo, {
-    signingSignatory: {},
+    signingSignatory: {
+      createdAt: new Date("2022-04-16T19:25:01.966Z"),
+      email: "Hardy.Wehner@gmail.com",
+      id: "cbd3dc66-366a-4130-bd27-8e78a1a7f9f8",
+      order: 5,
+      role: "SIGNER",
+      status: "SIGNED",
+      updatedAt: new Date("2026-08-10T19:04:00.911Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

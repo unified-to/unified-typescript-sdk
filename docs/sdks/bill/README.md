@@ -17,7 +17,7 @@ Create a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" example="accounting_bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,30 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bill.createAccountingBill({
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "100144ed-c290-4ba0-8c70-172d5b231a02",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.049Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.612Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +80,30 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingBill(unifiedTo, {
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "100144ed-c290-4ba0-8c70-172d5b231a02",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.049Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.612Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +298,7 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +310,30 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bill.patchAccountingBill({
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +362,30 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingBill(unifiedTo, {
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +504,7 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +516,30 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.bill.updateAccountingBill({
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +568,30 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingBill(unifiedTo, {
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

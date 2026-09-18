@@ -17,7 +17,7 @@ Create a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" example="accounting_transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.createAccountingTransaction({
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "530ce73e-3ab8-48ff-a572-81a47cf56dc1",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "88ce3554-fb4d-4ad0-9ace-6d2c3af152cc",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.519Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +76,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingTransaction(unifiedTo, {
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "530ce73e-3ab8-48ff-a572-81a47cf56dc1",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "88ce3554-fb4d-4ad0-9ace-6d2c3af152cc",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.519Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +290,7 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +302,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.patchAccountingTransaction({
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +350,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingTransaction(unifiedTo, {
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +488,7 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +500,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.updateAccountingTransaction({
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +548,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingTransaction(unifiedTo, {
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

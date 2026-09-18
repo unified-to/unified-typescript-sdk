@@ -17,7 +17,7 @@ Create an employee
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createHrisEmployee" method="post" path="/hris/{connection_id}/employee" -->
+<!-- UsageSnippet language="typescript" operationID="createHrisEmployee" method="post" path="/hris/{connection_id}/employee" example="hris_employee" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,121 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.employee.createHrisEmployee({
-    hrisEmployee: {},
+    hrisEmployee: {
+      address: {
+        address1: "52008 Lansdowne Road",
+        address2: "Apt. 101",
+        city: "Connellyberg",
+        countryCode: "US",
+        postalCode: "18978",
+        region: "South Dakota",
+        regionCode: "NM",
+      },
+      bio: "sushi devotee, singer",
+      compensation: [
+        {
+          amount: 69148,
+          currency: "CRC",
+          frequency: "QUARTER",
+          notes: "Tergeo laborum laboriosam tutis.",
+          type: "EQUITY",
+        },
+      ],
+      createdAt: new Date("2019-09-16T15:08:53.262Z"),
+      currency: "IDR",
+      dateOfBirth: new Date("2001-04-22"),
+      emails: [
+        {
+          email: "Zetta_Prohaska67@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      employeeNumber: "YuOt169CGu",
+      employmentStatus: "ACTIVE",
+      employmentType: "VOLUNTEER",
+      firstName: "Zetta",
+      gender: "INTERSEX",
+      hasMfa: true,
+      hiredAt: new Date("2023-05-10T16:15:07.653Z"),
+      id: "1dfdcf05-413d-4fb8-82f1-fe4ed9681c02",
+      imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
+      languageLocale: "es",
+      lastName: "Prohaska",
+      locations: [],
+      maritalStatus: "MARRIED",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "1af6cea0-5868-4220-b922-55797633b82d",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "tenetur",
+        },
+      ],
+      name: "Zetta Prohaska",
+      pronouns: "she/her",
+      relationships: [
+        {
+          emails: [
+            {
+              email: "Deshaun.Sanford24@yahoo.com",
+            },
+            {
+              email: "Rebeca.Dibbert11@hotmail.com",
+            },
+            {
+              email: "Hester80@gmail.com",
+            },
+          ],
+          name: "Automotive",
+          type: "EMERGENCY",
+        },
+        {
+          emails: [
+            {
+              email: "Benedict_Wisozk83@hotmail.com",
+            },
+            {
+              email: "Princess_Rath43@gmail.com",
+            },
+            {
+              email: "Elmira92@yahoo.com",
+            },
+          ],
+          name: "Music",
+          type: "FRIEND",
+        },
+        {
+          emails: [
+            {
+              email: "Jane30@gmail.com",
+            },
+          ],
+          name: "Jewelry",
+          type: "SIBLING",
+        },
+      ],
+      salutation: "Miss",
+      ssnSin: "yMRtj0Q3xO",
+      storageQuotaAllocated: 3674489,
+      storageQuotaAvailable: 7748057,
+      storageQuotaUsed: 301727,
+      telephones: [
+        {
+          telephone: "(409) 801-3705",
+          type: "FAX",
+        },
+      ],
+      terminationReason: "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+      timeoffDaysTotal: 12,
+      timeoffDaysUsed: 6,
+      timezone: "Africa/Harare",
+      title: "Investor Paradigm Liaison",
+      updatedAt: new Date("2022-02-19T07:02:15.352Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +171,121 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisEmployee(unifiedTo, {
-    hrisEmployee: {},
+    hrisEmployee: {
+      address: {
+        address1: "52008 Lansdowne Road",
+        address2: "Apt. 101",
+        city: "Connellyberg",
+        countryCode: "US",
+        postalCode: "18978",
+        region: "South Dakota",
+        regionCode: "NM",
+      },
+      bio: "sushi devotee, singer",
+      compensation: [
+        {
+          amount: 69148,
+          currency: "CRC",
+          frequency: "QUARTER",
+          notes: "Tergeo laborum laboriosam tutis.",
+          type: "EQUITY",
+        },
+      ],
+      createdAt: new Date("2019-09-16T15:08:53.262Z"),
+      currency: "IDR",
+      dateOfBirth: new Date("2001-04-22"),
+      emails: [
+        {
+          email: "Zetta_Prohaska67@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      employeeNumber: "YuOt169CGu",
+      employmentStatus: "ACTIVE",
+      employmentType: "VOLUNTEER",
+      firstName: "Zetta",
+      gender: "INTERSEX",
+      hasMfa: true,
+      hiredAt: new Date("2023-05-10T16:15:07.653Z"),
+      id: "1dfdcf05-413d-4fb8-82f1-fe4ed9681c02",
+      imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
+      languageLocale: "es",
+      lastName: "Prohaska",
+      locations: [],
+      maritalStatus: "MARRIED",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "1af6cea0-5868-4220-b922-55797633b82d",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "tenetur",
+        },
+      ],
+      name: "Zetta Prohaska",
+      pronouns: "she/her",
+      relationships: [
+        {
+          emails: [
+            {
+              email: "Deshaun.Sanford24@yahoo.com",
+            },
+            {
+              email: "Rebeca.Dibbert11@hotmail.com",
+            },
+            {
+              email: "Hester80@gmail.com",
+            },
+          ],
+          name: "Automotive",
+          type: "EMERGENCY",
+        },
+        {
+          emails: [
+            {
+              email: "Benedict_Wisozk83@hotmail.com",
+            },
+            {
+              email: "Princess_Rath43@gmail.com",
+            },
+            {
+              email: "Elmira92@yahoo.com",
+            },
+          ],
+          name: "Music",
+          type: "FRIEND",
+        },
+        {
+          emails: [
+            {
+              email: "Jane30@gmail.com",
+            },
+          ],
+          name: "Jewelry",
+          type: "SIBLING",
+        },
+      ],
+      salutation: "Miss",
+      ssnSin: "yMRtj0Q3xO",
+      storageQuotaAllocated: 3674489,
+      storageQuotaAvailable: 7748057,
+      storageQuotaUsed: 301727,
+      telephones: [
+        {
+          telephone: "(409) 801-3705",
+          type: "FAX",
+        },
+      ],
+      terminationReason: "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+      timeoffDaysTotal: 12,
+      timeoffDaysUsed: 6,
+      timezone: "Africa/Harare",
+      title: "Investor Paradigm Liaison",
+      updatedAt: new Date("2022-02-19T07:02:15.352Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +480,7 @@ Update an employee
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchHrisEmployee" method="patch" path="/hris/{connection_id}/employee/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchHrisEmployee" method="patch" path="/hris/{connection_id}/employee/{id}" example="hris_employee" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +492,121 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.employee.patchHrisEmployee({
-    hrisEmployee: {},
+    hrisEmployee: {
+      address: {
+        address1: "52008 Lansdowne Road",
+        address2: "Apt. 101",
+        city: "Connellyberg",
+        countryCode: "US",
+        postalCode: "18978",
+        region: "South Dakota",
+        regionCode: "NM",
+      },
+      bio: "sushi devotee, singer",
+      compensation: [
+        {
+          amount: 69148,
+          currency: "CRC",
+          frequency: "QUARTER",
+          notes: "Tergeo laborum laboriosam tutis.",
+          type: "EQUITY",
+        },
+      ],
+      createdAt: new Date("2019-09-16T15:08:53.262Z"),
+      currency: "IDR",
+      dateOfBirth: new Date("2001-04-22"),
+      emails: [
+        {
+          email: "Zetta_Prohaska67@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      employeeNumber: "YuOt169CGu",
+      employmentStatus: "ACTIVE",
+      employmentType: "VOLUNTEER",
+      firstName: "Zetta",
+      gender: "INTERSEX",
+      hasMfa: true,
+      hiredAt: new Date("2023-05-10T16:15:07.690Z"),
+      id: "f48de0fa-eaf1-4dda-a822-85ff56964d2a",
+      imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
+      languageLocale: "es",
+      lastName: "Prohaska",
+      locations: [],
+      maritalStatus: "MARRIED",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a70413d9-b815-4ba9-8f48-c242e3ecee27",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "tenetur",
+        },
+      ],
+      name: "Zetta Prohaska",
+      pronouns: "she/her",
+      relationships: [
+        {
+          emails: [
+            {
+              email: "Deshaun.Sanford24@yahoo.com",
+            },
+            {
+              email: "Rebeca.Dibbert11@hotmail.com",
+            },
+            {
+              email: "Hester80@gmail.com",
+            },
+          ],
+          name: "Automotive",
+          type: "EMERGENCY",
+        },
+        {
+          emails: [
+            {
+              email: "Benedict_Wisozk83@hotmail.com",
+            },
+            {
+              email: "Princess_Rath43@gmail.com",
+            },
+            {
+              email: "Elmira92@yahoo.com",
+            },
+          ],
+          name: "Music",
+          type: "FRIEND",
+        },
+        {
+          emails: [
+            {
+              email: "Jane30@gmail.com",
+            },
+          ],
+          name: "Jewelry",
+          type: "SIBLING",
+        },
+      ],
+      salutation: "Miss",
+      ssnSin: "yMRtj0Q3xO",
+      storageQuotaAllocated: 3674489,
+      storageQuotaAvailable: 7748057,
+      storageQuotaUsed: 301727,
+      telephones: [
+        {
+          telephone: "(409) 801-3705",
+          type: "FAX",
+        },
+      ],
+      terminationReason: "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+      timeoffDaysTotal: 12,
+      timeoffDaysUsed: 6,
+      timezone: "Africa/Harare",
+      title: "Investor Paradigm Liaison",
+      updatedAt: new Date("2022-02-19T07:02:15.376Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +635,121 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisEmployee(unifiedTo, {
-    hrisEmployee: {},
+    hrisEmployee: {
+      address: {
+        address1: "52008 Lansdowne Road",
+        address2: "Apt. 101",
+        city: "Connellyberg",
+        countryCode: "US",
+        postalCode: "18978",
+        region: "South Dakota",
+        regionCode: "NM",
+      },
+      bio: "sushi devotee, singer",
+      compensation: [
+        {
+          amount: 69148,
+          currency: "CRC",
+          frequency: "QUARTER",
+          notes: "Tergeo laborum laboriosam tutis.",
+          type: "EQUITY",
+        },
+      ],
+      createdAt: new Date("2019-09-16T15:08:53.262Z"),
+      currency: "IDR",
+      dateOfBirth: new Date("2001-04-22"),
+      emails: [
+        {
+          email: "Zetta_Prohaska67@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      employeeNumber: "YuOt169CGu",
+      employmentStatus: "ACTIVE",
+      employmentType: "VOLUNTEER",
+      firstName: "Zetta",
+      gender: "INTERSEX",
+      hasMfa: true,
+      hiredAt: new Date("2023-05-10T16:15:07.690Z"),
+      id: "f48de0fa-eaf1-4dda-a822-85ff56964d2a",
+      imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
+      languageLocale: "es",
+      lastName: "Prohaska",
+      locations: [],
+      maritalStatus: "MARRIED",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a70413d9-b815-4ba9-8f48-c242e3ecee27",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "tenetur",
+        },
+      ],
+      name: "Zetta Prohaska",
+      pronouns: "she/her",
+      relationships: [
+        {
+          emails: [
+            {
+              email: "Deshaun.Sanford24@yahoo.com",
+            },
+            {
+              email: "Rebeca.Dibbert11@hotmail.com",
+            },
+            {
+              email: "Hester80@gmail.com",
+            },
+          ],
+          name: "Automotive",
+          type: "EMERGENCY",
+        },
+        {
+          emails: [
+            {
+              email: "Benedict_Wisozk83@hotmail.com",
+            },
+            {
+              email: "Princess_Rath43@gmail.com",
+            },
+            {
+              email: "Elmira92@yahoo.com",
+            },
+          ],
+          name: "Music",
+          type: "FRIEND",
+        },
+        {
+          emails: [
+            {
+              email: "Jane30@gmail.com",
+            },
+          ],
+          name: "Jewelry",
+          type: "SIBLING",
+        },
+      ],
+      salutation: "Miss",
+      ssnSin: "yMRtj0Q3xO",
+      storageQuotaAllocated: 3674489,
+      storageQuotaAvailable: 7748057,
+      storageQuotaUsed: 301727,
+      telephones: [
+        {
+          telephone: "(409) 801-3705",
+          type: "FAX",
+        },
+      ],
+      terminationReason: "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+      timeoffDaysTotal: 12,
+      timeoffDaysUsed: 6,
+      timezone: "Africa/Harare",
+      title: "Investor Paradigm Liaison",
+      updatedAt: new Date("2022-02-19T07:02:15.376Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +868,7 @@ Update an employee
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateHrisEmployee" method="put" path="/hris/{connection_id}/employee/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateHrisEmployee" method="put" path="/hris/{connection_id}/employee/{id}" example="hris_employee" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +880,121 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.employee.updateHrisEmployee({
-    hrisEmployee: {},
+    hrisEmployee: {
+      address: {
+        address1: "52008 Lansdowne Road",
+        address2: "Apt. 101",
+        city: "Connellyberg",
+        countryCode: "US",
+        postalCode: "18978",
+        region: "South Dakota",
+        regionCode: "NM",
+      },
+      bio: "sushi devotee, singer",
+      compensation: [
+        {
+          amount: 69148,
+          currency: "CRC",
+          frequency: "QUARTER",
+          notes: "Tergeo laborum laboriosam tutis.",
+          type: "EQUITY",
+        },
+      ],
+      createdAt: new Date("2019-09-16T15:08:53.262Z"),
+      currency: "IDR",
+      dateOfBirth: new Date("2001-04-22"),
+      emails: [
+        {
+          email: "Zetta_Prohaska67@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      employeeNumber: "YuOt169CGu",
+      employmentStatus: "ACTIVE",
+      employmentType: "VOLUNTEER",
+      firstName: "Zetta",
+      gender: "INTERSEX",
+      hasMfa: true,
+      hiredAt: new Date("2023-05-10T16:15:07.690Z"),
+      id: "f48de0fa-eaf1-4dda-a822-85ff56964d2a",
+      imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
+      languageLocale: "es",
+      lastName: "Prohaska",
+      locations: [],
+      maritalStatus: "MARRIED",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a70413d9-b815-4ba9-8f48-c242e3ecee27",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "tenetur",
+        },
+      ],
+      name: "Zetta Prohaska",
+      pronouns: "she/her",
+      relationships: [
+        {
+          emails: [
+            {
+              email: "Deshaun.Sanford24@yahoo.com",
+            },
+            {
+              email: "Rebeca.Dibbert11@hotmail.com",
+            },
+            {
+              email: "Hester80@gmail.com",
+            },
+          ],
+          name: "Automotive",
+          type: "EMERGENCY",
+        },
+        {
+          emails: [
+            {
+              email: "Benedict_Wisozk83@hotmail.com",
+            },
+            {
+              email: "Princess_Rath43@gmail.com",
+            },
+            {
+              email: "Elmira92@yahoo.com",
+            },
+          ],
+          name: "Music",
+          type: "FRIEND",
+        },
+        {
+          emails: [
+            {
+              email: "Jane30@gmail.com",
+            },
+          ],
+          name: "Jewelry",
+          type: "SIBLING",
+        },
+      ],
+      salutation: "Miss",
+      ssnSin: "yMRtj0Q3xO",
+      storageQuotaAllocated: 3674489,
+      storageQuotaAvailable: 7748057,
+      storageQuotaUsed: 301727,
+      telephones: [
+        {
+          telephone: "(409) 801-3705",
+          type: "FAX",
+        },
+      ],
+      terminationReason: "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+      timeoffDaysTotal: 12,
+      timeoffDaysUsed: 6,
+      timezone: "Africa/Harare",
+      title: "Investor Paradigm Liaison",
+      updatedAt: new Date("2022-02-19T07:02:15.376Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +1023,121 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisEmployee(unifiedTo, {
-    hrisEmployee: {},
+    hrisEmployee: {
+      address: {
+        address1: "52008 Lansdowne Road",
+        address2: "Apt. 101",
+        city: "Connellyberg",
+        countryCode: "US",
+        postalCode: "18978",
+        region: "South Dakota",
+        regionCode: "NM",
+      },
+      bio: "sushi devotee, singer",
+      compensation: [
+        {
+          amount: 69148,
+          currency: "CRC",
+          frequency: "QUARTER",
+          notes: "Tergeo laborum laboriosam tutis.",
+          type: "EQUITY",
+        },
+      ],
+      createdAt: new Date("2019-09-16T15:08:53.262Z"),
+      currency: "IDR",
+      dateOfBirth: new Date("2001-04-22"),
+      emails: [
+        {
+          email: "Zetta_Prohaska67@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      employeeNumber: "YuOt169CGu",
+      employmentStatus: "ACTIVE",
+      employmentType: "VOLUNTEER",
+      firstName: "Zetta",
+      gender: "INTERSEX",
+      hasMfa: true,
+      hiredAt: new Date("2023-05-10T16:15:07.690Z"),
+      id: "f48de0fa-eaf1-4dda-a822-85ff56964d2a",
+      imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
+      languageLocale: "es",
+      lastName: "Prohaska",
+      locations: [],
+      maritalStatus: "MARRIED",
+      metadata: [
+        {
+          extraData: {
+            "display_name": "Custom Property",
+          },
+          format: "TEXT",
+          id: "a70413d9-b815-4ba9-8f48-c242e3ecee27",
+          namespace: "custom",
+          slug: "custom_property",
+          value: "tenetur",
+        },
+      ],
+      name: "Zetta Prohaska",
+      pronouns: "she/her",
+      relationships: [
+        {
+          emails: [
+            {
+              email: "Deshaun.Sanford24@yahoo.com",
+            },
+            {
+              email: "Rebeca.Dibbert11@hotmail.com",
+            },
+            {
+              email: "Hester80@gmail.com",
+            },
+          ],
+          name: "Automotive",
+          type: "EMERGENCY",
+        },
+        {
+          emails: [
+            {
+              email: "Benedict_Wisozk83@hotmail.com",
+            },
+            {
+              email: "Princess_Rath43@gmail.com",
+            },
+            {
+              email: "Elmira92@yahoo.com",
+            },
+          ],
+          name: "Music",
+          type: "FRIEND",
+        },
+        {
+          emails: [
+            {
+              email: "Jane30@gmail.com",
+            },
+          ],
+          name: "Jewelry",
+          type: "SIBLING",
+        },
+      ],
+      salutation: "Miss",
+      ssnSin: "yMRtj0Q3xO",
+      storageQuotaAllocated: 3674489,
+      storageQuotaAvailable: 7748057,
+      storageQuotaUsed: 301727,
+      telephones: [
+        {
+          telephone: "(409) 801-3705",
+          type: "FAX",
+        },
+      ],
+      terminationReason: "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+      timeoffDaysTotal: 12,
+      timeoffDaysUsed: 6,
+      timezone: "Africa/Harare",
+      title: "Investor Paradigm Liaison",
+      updatedAt: new Date("2022-02-19T07:02:15.376Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

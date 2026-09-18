@@ -17,7 +17,7 @@ Create a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" example="accounting_creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.creditmemo.createAccountingCreditmemo({
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "b6973779-c8a8-4f1a-9b1a-3f847c624aa4",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "7fc36458-5758-4a49-9b68-4665d4871b26",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.426Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.006Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +87,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingCreditmemo(unifiedTo, {
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "b6973779-c8a8-4f1a-9b1a-3f847c624aa4",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "7fc36458-5758-4a49-9b68-4665d4871b26",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.426Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.006Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +312,7 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +324,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.creditmemo.patchAccountingCreditmemo({
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +383,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingCreditmemo(unifiedTo, {
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +532,7 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +544,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.creditmemo.updateAccountingCreditmemo({
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +603,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingCreditmemo(unifiedTo, {
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

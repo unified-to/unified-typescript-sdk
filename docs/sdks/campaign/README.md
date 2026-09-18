@@ -23,7 +23,7 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" example="ads_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -35,7 +35,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.campaign.createAdsCampaign({
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.015Z"),
+      id: "812fa2fe-ecf0-4a07-af47-1f4eeb74cfdd",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.303Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.497Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -63,7 +81,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsCampaign(unifiedTo, {
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.015Z"),
+      id: "812fa2fe-ecf0-4a07-af47-1f4eeb74cfdd",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.303Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.497Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -102,7 +138,7 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" -->
+<!-- UsageSnippet language="typescript" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" example="martech_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -114,7 +150,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.campaign.createMartechCampaign({
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "1d47a766-5cc6-4e40-959e-2dc9f36995c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -142,7 +194,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await campaignCreateMartechCampaign(unifiedTo, {
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "1d47a766-5cc6-4e40-959e-2dc9f36995c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -493,7 +561,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -505,7 +573,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.campaign.patchAdsCampaign({
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -534,7 +620,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsCampaign(unifiedTo, {
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -574,7 +678,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -586,7 +690,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.campaign.patchMartechCampaign({
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -615,7 +735,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await campaignPatchMartechCampaign(unifiedTo, {
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -813,7 +949,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -825,7 +961,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.campaign.updateAdsCampaign({
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -854,7 +1008,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsCampaign(unifiedTo, {
-    adsCampaign: {},
+    adsCampaign: {
+      budgetAmount: 8743.179536121897,
+      budgetPeriod: "MONTHLY",
+      category: "CREDIT",
+      createdAt: new Date("2022-05-21T08:51:41.868Z"),
+      currency: "USD",
+      effectiveStatus: "NOT_ELIGIBLE",
+      endAt: new Date("2025-05-09T08:19:05.103Z"),
+      id: "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+      labels: [
+        "comedo",
+      ],
+      name: "Emard Inc",
+      startAt: new Date("2022-07-20T04:51:23.308Z"),
+      status: "PROCESSING_FAILED",
+      targeting: {},
+      totalSpendAmount: 2349.8642875347286,
+      updatedAt: new Date("2025-12-05T13:35:57.603Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -894,7 +1066,7 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -906,7 +1078,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.campaign.updateMartechCampaign({
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -935,7 +1123,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await campaignUpdateMartechCampaign(unifiedTo, {
-    marketingCampaign: {},
+    marketingCampaign: {
+      createdAt: new Date("2023-08-01T22:29:12.121Z"),
+      fromEmail: "Nick.Beahan@hotmail.com",
+      fromName: "Javier Rempel",
+      id: "a65cd827-3a78-44a7-846e-2bca453f14c1",
+      listIds: [
+        "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+      ],
+      name: "Consequatur atqui sustineo.",
+      previewText: "Bellicus tener cinis causa cavus toties.",
+      replyToEmail: "Antwan.Abshire@hotmail.com",
+      sendAt: new Date("2023-03-28T12:33:25.052Z"),
+      status: "SENT",
+      subjectLine: "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+      type: "plaintext",
+      updatedAt: new Date("2023-12-17T22:11:31.702Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

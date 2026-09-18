@@ -53,7 +53,7 @@ Create an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" example="lms_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -65,7 +65,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.createLmsActivity({
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.423Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "3c4a7fe6-f616-4cb1-b6f1-b07ad7470920",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.318Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -93,7 +103,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await activityCreateLmsActivity(unifiedTo, {
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.423Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "3c4a7fe6-f616-4cb1-b6f1-b07ad7470920",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.318Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -132,7 +152,7 @@ Create a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" example="lms_class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -144,7 +164,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.createLmsClass({
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "c1f27f80-7668-4b4b-9265-b1894eb6243a",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.026Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -172,7 +217,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsClass(unifiedTo, {
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "c1f27f80-7668-4b4b-9265-b1894eb6243a",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.026Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -211,7 +281,7 @@ Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" example="lms_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -223,7 +293,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.createLmsCollection({
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "8844ee01-dfb0-4ad4-af18-6b5beedaa703",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.217Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -251,7 +341,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await collectionCreateLmsCollection(unifiedTo, {
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "8844ee01-dfb0-4ad4-af18-6b5beedaa703",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.217Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -290,7 +400,7 @@ Create a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsContent" method="post" path="/lms/{connection_id}/content" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsContent" method="post" path="/lms/{connection_id}/content" example="lms_content" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -302,7 +412,96 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.createLmsContent({
-    lmsContent: {},
+    lmsContent: {
+      categories: [
+        "territo",
+      ],
+      createdAt: new Date("2020-10-22T22:30:50.963Z"),
+      description: "Usque laboriosam ventosus adflicto.",
+      difficulty: "Beginner",
+      durationMinutes: 19,
+      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+      id: "09b21f68-cdb1-4147-bb3e-6d70468ec346",
+      instructors: [
+        {
+          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
+          name: "Winston Ferry",
+        },
+      ],
+      isActive: true,
+      languages: [
+        "despecto",
+        "suppellex",
+      ],
+      localizations: [
+        {
+          description: "Numquam.",
+          language: "es",
+          name: "validus",
+        },
+        {
+          description: "Callide.",
+          language: "fr",
+          name: "crux",
+        },
+      ],
+      media: [
+        {
+          content: "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+          description: "Venia aeternus tandem spargo.",
+          languages: [
+            "zu",
+            "ba",
+          ],
+          name: "subiungo",
+          thumbnailUrl: "https://loremflickr.com/2056/3712?lock=5644845642923518",
+          type: "OTHER",
+          url: "https://loremflickr.com/2593/1553?lock=8591263400111785",
+        },
+        {
+          content: "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+          description: "Comedo valde caste combibo.",
+          languages: [
+            "it",
+            "hu",
+          ],
+          name: "beneficium",
+          thumbnailUrl: "https://picsum.photos/seed/pNFr1/2597/885",
+          type: "WEB",
+          url: "https://loremflickr.com/3597/239?lock=7142808124990633",
+        },
+        {
+          content: "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+          description: "Tunc barba decens.",
+          languages: [
+            "bn",
+            "yo",
+          ],
+          name: "qui",
+          thumbnailUrl: "https://loremflickr.com/1375/3377?lock=6601832177607674",
+          type: "IMAGE",
+          url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
+        },
+      ],
+      name: "ut",
+      providerName: "Berge LLC",
+      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
+      shortDescription: "Commemoro.",
+      skills: [
+        "trucido",
+      ],
+      sortOrder: 3,
+      subjects: [
+        {
+          name: "tibi",
+          rank: 1,
+        },
+      ],
+      tags: [
+        "dens",
+      ],
+      updatedAt: new Date("2022-09-23T11:13:51.788Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -330,7 +529,96 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsContent(unifiedTo, {
-    lmsContent: {},
+    lmsContent: {
+      categories: [
+        "territo",
+      ],
+      createdAt: new Date("2020-10-22T22:30:50.963Z"),
+      description: "Usque laboriosam ventosus adflicto.",
+      difficulty: "Beginner",
+      durationMinutes: 19,
+      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+      id: "09b21f68-cdb1-4147-bb3e-6d70468ec346",
+      instructors: [
+        {
+          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
+          name: "Winston Ferry",
+        },
+      ],
+      isActive: true,
+      languages: [
+        "despecto",
+        "suppellex",
+      ],
+      localizations: [
+        {
+          description: "Numquam.",
+          language: "es",
+          name: "validus",
+        },
+        {
+          description: "Callide.",
+          language: "fr",
+          name: "crux",
+        },
+      ],
+      media: [
+        {
+          content: "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+          description: "Venia aeternus tandem spargo.",
+          languages: [
+            "zu",
+            "ba",
+          ],
+          name: "subiungo",
+          thumbnailUrl: "https://loremflickr.com/2056/3712?lock=5644845642923518",
+          type: "OTHER",
+          url: "https://loremflickr.com/2593/1553?lock=8591263400111785",
+        },
+        {
+          content: "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+          description: "Comedo valde caste combibo.",
+          languages: [
+            "it",
+            "hu",
+          ],
+          name: "beneficium",
+          thumbnailUrl: "https://picsum.photos/seed/pNFr1/2597/885",
+          type: "WEB",
+          url: "https://loremflickr.com/3597/239?lock=7142808124990633",
+        },
+        {
+          content: "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+          description: "Tunc barba decens.",
+          languages: [
+            "bn",
+            "yo",
+          ],
+          name: "qui",
+          thumbnailUrl: "https://loremflickr.com/1375/3377?lock=6601832177607674",
+          type: "IMAGE",
+          url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
+        },
+      ],
+      name: "ut",
+      providerName: "Berge LLC",
+      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
+      shortDescription: "Commemoro.",
+      skills: [
+        "trucido",
+      ],
+      sortOrder: 3,
+      subjects: [
+        {
+          name: "tibi",
+          rank: 1,
+        },
+      ],
+      tags: [
+        "dens",
+      ],
+      updatedAt: new Date("2022-09-23T11:13:51.788Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -369,7 +657,7 @@ Create a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" example="lms_course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -381,7 +669,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.createLmsCourse({
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "950aba61-f261-4a01-9c64-0ed9cde2416e",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.571Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -409,7 +740,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsCourse(unifiedTo, {
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "950aba61-f261-4a01-9c64-0ed9cde2416e",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.571Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -448,7 +822,7 @@ Create an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" example="lms_instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -460,7 +834,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.createLmsInstructor({
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "dfe83772-691a-4931-8ea8-97260a0c5abf",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.774Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -488,7 +881,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsInstructor(unifiedTo, {
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "dfe83772-691a-4931-8ea8-97260a0c5abf",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.774Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -527,7 +939,7 @@ Create a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" -->
+<!-- UsageSnippet language="typescript" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" example="lms_student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -539,7 +951,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.createLmsStudent({
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "f7f415ad-d6a4-49ee-b6f4-6823b04af952",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.319Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -567,7 +1006,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsCreateLmsStudent(unifiedTo, {
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "f7f415ad-d6a4-49ee-b6f4-6823b04af952",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.319Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1698,7 +2164,7 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1710,7 +2176,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.patchLmsActivity({
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1739,7 +2215,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await activityPatchLmsActivity(unifiedTo, {
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1779,7 +2265,7 @@ Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" example="lms_class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1791,7 +2277,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.patchLmsClass({
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1820,7 +2331,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsClass(unifiedTo, {
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1860,7 +2396,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1872,7 +2408,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.patchLmsCollection({
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1901,7 +2457,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await collectionPatchLmsCollection(unifiedTo, {
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1941,7 +2517,7 @@ Update a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsContent" method="patch" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsContent" method="patch" path="/lms/{connection_id}/content/{id}" example="lms_content" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1953,7 +2529,96 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.patchLmsContent({
-    lmsContent: {},
+    lmsContent: {
+      categories: [
+        "territo",
+      ],
+      createdAt: new Date("2020-10-22T22:30:50.963Z"),
+      description: "Usque laboriosam ventosus adflicto.",
+      difficulty: "Beginner",
+      durationMinutes: 19,
+      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      instructors: [
+        {
+          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
+          name: "Winston Ferry",
+        },
+      ],
+      isActive: true,
+      languages: [
+        "despecto",
+        "suppellex",
+      ],
+      localizations: [
+        {
+          description: "Numquam.",
+          language: "es",
+          name: "validus",
+        },
+        {
+          description: "Callide.",
+          language: "fr",
+          name: "crux",
+        },
+      ],
+      media: [
+        {
+          content: "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+          description: "Venia aeternus tandem spargo.",
+          languages: [
+            "zu",
+            "ba",
+          ],
+          name: "subiungo",
+          thumbnailUrl: "https://loremflickr.com/2056/3712?lock=5644845642923518",
+          type: "OTHER",
+          url: "https://loremflickr.com/2593/1553?lock=8591263400111785",
+        },
+        {
+          content: "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+          description: "Comedo valde caste combibo.",
+          languages: [
+            "it",
+            "hu",
+          ],
+          name: "beneficium",
+          thumbnailUrl: "https://picsum.photos/seed/pNFr1/2597/885",
+          type: "WEB",
+          url: "https://loremflickr.com/3597/239?lock=7142808124990633",
+        },
+        {
+          content: "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+          description: "Tunc barba decens.",
+          languages: [
+            "bn",
+            "yo",
+          ],
+          name: "qui",
+          thumbnailUrl: "https://loremflickr.com/1375/3377?lock=6601832177607674",
+          type: "IMAGE",
+          url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
+        },
+      ],
+      name: "ut",
+      providerName: "Berge LLC",
+      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
+      shortDescription: "Commemoro.",
+      skills: [
+        "trucido",
+      ],
+      sortOrder: 3,
+      subjects: [
+        {
+          name: "tibi",
+          rank: 1,
+        },
+      ],
+      tags: [
+        "dens",
+      ],
+      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1982,7 +2647,96 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsContent(unifiedTo, {
-    lmsContent: {},
+    lmsContent: {
+      categories: [
+        "territo",
+      ],
+      createdAt: new Date("2020-10-22T22:30:50.963Z"),
+      description: "Usque laboriosam ventosus adflicto.",
+      difficulty: "Beginner",
+      durationMinutes: 19,
+      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      instructors: [
+        {
+          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
+          name: "Winston Ferry",
+        },
+      ],
+      isActive: true,
+      languages: [
+        "despecto",
+        "suppellex",
+      ],
+      localizations: [
+        {
+          description: "Numquam.",
+          language: "es",
+          name: "validus",
+        },
+        {
+          description: "Callide.",
+          language: "fr",
+          name: "crux",
+        },
+      ],
+      media: [
+        {
+          content: "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+          description: "Venia aeternus tandem spargo.",
+          languages: [
+            "zu",
+            "ba",
+          ],
+          name: "subiungo",
+          thumbnailUrl: "https://loremflickr.com/2056/3712?lock=5644845642923518",
+          type: "OTHER",
+          url: "https://loremflickr.com/2593/1553?lock=8591263400111785",
+        },
+        {
+          content: "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+          description: "Comedo valde caste combibo.",
+          languages: [
+            "it",
+            "hu",
+          ],
+          name: "beneficium",
+          thumbnailUrl: "https://picsum.photos/seed/pNFr1/2597/885",
+          type: "WEB",
+          url: "https://loremflickr.com/3597/239?lock=7142808124990633",
+        },
+        {
+          content: "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+          description: "Tunc barba decens.",
+          languages: [
+            "bn",
+            "yo",
+          ],
+          name: "qui",
+          thumbnailUrl: "https://loremflickr.com/1375/3377?lock=6601832177607674",
+          type: "IMAGE",
+          url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
+        },
+      ],
+      name: "ut",
+      providerName: "Berge LLC",
+      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
+      shortDescription: "Commemoro.",
+      skills: [
+        "trucido",
+      ],
+      sortOrder: 3,
+      subjects: [
+        {
+          name: "tibi",
+          rank: 1,
+        },
+      ],
+      tags: [
+        "dens",
+      ],
+      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2022,7 +2776,7 @@ Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" example="lms_course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2034,7 +2788,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.patchLmsCourse({
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2063,7 +2860,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsCourse(unifiedTo, {
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2103,7 +2943,7 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2115,7 +2955,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.patchLmsInstructor({
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2144,7 +3003,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsInstructor(unifiedTo, {
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2184,7 +3062,7 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2196,7 +3074,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.patchLmsStudent({
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2225,7 +3130,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsPatchLmsStudent(unifiedTo, {
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2818,7 +3750,7 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2830,7 +3762,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.updateLmsActivity({
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2859,7 +3801,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await activityUpdateLmsActivity(unifiedTo, {
-    lmsActivity: {},
+    lmsActivity: {
+      assignedGrade: "summopere",
+      completedAt: new Date("2025-04-12T21:08:39.427Z"),
+      createdAt: new Date("2020-10-17T01:25:21.745Z"),
+      durationMinutes: 55,
+      id: "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+      isCompleted: true,
+      progressPercentage: 100,
+      startedAt: new Date("2023-12-24T04:54:05.825Z"),
+      updatedAt: new Date("2022-01-23T21:45:04.320Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2899,7 +3851,7 @@ Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" example="lms_class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2911,7 +3863,32 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.updateLmsClass({
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2940,7 +3917,32 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsClass(unifiedTo, {
-    lmsClass: {},
+    lmsClass: {
+      createdAt: new Date("2020-02-20T14:48:51.845Z"),
+      description: "Anser sperno decerno.",
+      id: "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+      instructors: [],
+      languages: [
+        "in",
+      ],
+      media: [
+        {
+          content: "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+          description: "Esse confido.",
+          languages: [
+            "fa",
+            "da",
+          ],
+          name: "illo",
+          thumbnailUrl: "https://loremflickr.com/199/1934?lock=4323325966476891",
+          type: "VIDEO",
+          url: "https://loremflickr.com/487/921?lock=5127962071241632",
+        },
+      ],
+      name: "virtus",
+      students: [],
+      updatedAt: new Date("2025-07-07T21:37:16.038Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2980,7 +3982,7 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2992,7 +3994,27 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.updateLmsCollection({
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3021,7 +4043,27 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await collectionUpdateLmsCollection(unifiedTo, {
-    lmsCollection: {},
+    lmsCollection: {
+      createdAt: new Date("2019-08-19T14:40:29.227Z"),
+      description: "Ab.",
+      id: "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+      isActive: true,
+      media: [
+        {
+          content: "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+          description: "Aliquam tardus careo hic umbra.",
+          languages: [
+            "gl",
+          ],
+          name: "thymum",
+          thumbnailUrl: "https://picsum.photos/seed/15O5EfV/2982/752",
+          type: "HEADSHOT",
+          url: "https://loremflickr.com/2679/70?lock=6078357625960554",
+        },
+      ],
+      name: "ara",
+      updatedAt: new Date("2026-06-28T08:01:49.226Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3061,7 +4103,7 @@ Update a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsContent" method="put" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsContent" method="put" path="/lms/{connection_id}/content/{id}" example="lms_content" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3073,7 +4115,96 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.updateLmsContent({
-    lmsContent: {},
+    lmsContent: {
+      categories: [
+        "territo",
+      ],
+      createdAt: new Date("2020-10-22T22:30:50.963Z"),
+      description: "Usque laboriosam ventosus adflicto.",
+      difficulty: "Beginner",
+      durationMinutes: 19,
+      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      instructors: [
+        {
+          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
+          name: "Winston Ferry",
+        },
+      ],
+      isActive: true,
+      languages: [
+        "despecto",
+        "suppellex",
+      ],
+      localizations: [
+        {
+          description: "Numquam.",
+          language: "es",
+          name: "validus",
+        },
+        {
+          description: "Callide.",
+          language: "fr",
+          name: "crux",
+        },
+      ],
+      media: [
+        {
+          content: "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+          description: "Venia aeternus tandem spargo.",
+          languages: [
+            "zu",
+            "ba",
+          ],
+          name: "subiungo",
+          thumbnailUrl: "https://loremflickr.com/2056/3712?lock=5644845642923518",
+          type: "OTHER",
+          url: "https://loremflickr.com/2593/1553?lock=8591263400111785",
+        },
+        {
+          content: "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+          description: "Comedo valde caste combibo.",
+          languages: [
+            "it",
+            "hu",
+          ],
+          name: "beneficium",
+          thumbnailUrl: "https://picsum.photos/seed/pNFr1/2597/885",
+          type: "WEB",
+          url: "https://loremflickr.com/3597/239?lock=7142808124990633",
+        },
+        {
+          content: "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+          description: "Tunc barba decens.",
+          languages: [
+            "bn",
+            "yo",
+          ],
+          name: "qui",
+          thumbnailUrl: "https://loremflickr.com/1375/3377?lock=6601832177607674",
+          type: "IMAGE",
+          url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
+        },
+      ],
+      name: "ut",
+      providerName: "Berge LLC",
+      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
+      shortDescription: "Commemoro.",
+      skills: [
+        "trucido",
+      ],
+      sortOrder: 3,
+      subjects: [
+        {
+          name: "tibi",
+          rank: 1,
+        },
+      ],
+      tags: [
+        "dens",
+      ],
+      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3102,7 +4233,96 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsContent(unifiedTo, {
-    lmsContent: {},
+    lmsContent: {
+      categories: [
+        "territo",
+      ],
+      createdAt: new Date("2020-10-22T22:30:50.963Z"),
+      description: "Usque laboriosam ventosus adflicto.",
+      difficulty: "Beginner",
+      durationMinutes: 19,
+      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      instructors: [
+        {
+          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
+          name: "Winston Ferry",
+        },
+      ],
+      isActive: true,
+      languages: [
+        "despecto",
+        "suppellex",
+      ],
+      localizations: [
+        {
+          description: "Numquam.",
+          language: "es",
+          name: "validus",
+        },
+        {
+          description: "Callide.",
+          language: "fr",
+          name: "crux",
+        },
+      ],
+      media: [
+        {
+          content: "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+          description: "Venia aeternus tandem spargo.",
+          languages: [
+            "zu",
+            "ba",
+          ],
+          name: "subiungo",
+          thumbnailUrl: "https://loremflickr.com/2056/3712?lock=5644845642923518",
+          type: "OTHER",
+          url: "https://loremflickr.com/2593/1553?lock=8591263400111785",
+        },
+        {
+          content: "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+          description: "Comedo valde caste combibo.",
+          languages: [
+            "it",
+            "hu",
+          ],
+          name: "beneficium",
+          thumbnailUrl: "https://picsum.photos/seed/pNFr1/2597/885",
+          type: "WEB",
+          url: "https://loremflickr.com/3597/239?lock=7142808124990633",
+        },
+        {
+          content: "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+          description: "Tunc barba decens.",
+          languages: [
+            "bn",
+            "yo",
+          ],
+          name: "qui",
+          thumbnailUrl: "https://loremflickr.com/1375/3377?lock=6601832177607674",
+          type: "IMAGE",
+          url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
+        },
+      ],
+      name: "ut",
+      providerName: "Berge LLC",
+      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
+      shortDescription: "Commemoro.",
+      skills: [
+        "trucido",
+      ],
+      sortOrder: 3,
+      subjects: [
+        {
+          name: "tibi",
+          rank: 1,
+        },
+      ],
+      tags: [
+        "dens",
+      ],
+      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3142,7 +4362,7 @@ Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" example="lms_course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3154,7 +4374,50 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.updateLmsCourse({
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3183,7 +4446,50 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsCourse(unifiedTo, {
-    lmsCourse: {},
+    lmsCourse: {
+      categories: [
+        "tergiversatio",
+        "tumultus",
+      ],
+      createdAt: new Date("2022-10-06T09:58:53.559Z"),
+      currency: "FJD",
+      description: "Vinco alias aut capitulus.",
+      durationMinutes: 148,
+      id: "f50e97ee-407a-40a1-911f-7d1283bbb122",
+      instructors: [],
+      isActive: true,
+      isPrivate: false,
+      languages: [
+        "desparatus",
+        "earum",
+        "deripio",
+      ],
+      media: [
+        {
+          content: "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+          description: "Adipiscor.",
+          languages: [
+            "ms",
+            "te",
+          ],
+          name: "tandem",
+          thumbnailUrl: "https://picsum.photos/seed/syTatRhK03/928/273",
+          type: "OTHER",
+          url: "https://picsum.photos/seed/fQAbsk/2472/1671",
+        },
+      ],
+      name: "comptus",
+      priceAmount: 84,
+      providerName: "Homenick - Wunsch",
+      publishedAt: new Date("2023-12-30T03:35:03.902Z"),
+      skills: [
+        "adiuvo",
+        "tam",
+      ],
+      students: [],
+      timeEstimateMinutes: 100,
+      updatedAt: new Date("2023-02-06T22:30:52.572Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3223,7 +4529,7 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3235,7 +4541,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.updateLmsInstructor({
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3264,7 +4589,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsInstructor(unifiedTo, {
-    lmsInstructor: {},
+    lmsInstructor: {
+      createdAt: new Date("2021-10-12T16:38:54.979Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Deangelo",
+      id: "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+      imageUrl: "https://avatars.githubusercontent.com/u/20232618",
+      lastName: "Ritchie",
+      name: "Deangelo Ritchie",
+      telephones: [
+        {
+          telephone: "(352) 551-7989",
+          type: "HOME",
+        },
+      ],
+      title: "Product Solutions Engineer",
+      updatedAt: new Date("2025-06-29T14:07:16.781Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3304,7 +4648,7 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3316,7 +4660,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lms.updateLmsStudent({
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3345,7 +4716,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await lmsUpdateLmsStudent(unifiedTo, {
-    lmsStudent: {},
+    lmsStudent: {
+      address: {
+        address1: "94082 Kassandra Camp",
+        address2: "Apt. 461",
+        city: "New Ibrahimmouth",
+        countryCode: "US",
+        postalCode: "52851",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      createdAt: new Date("2020-03-23T06:59:29.777Z"),
+      emails: [
+        {},
+        {},
+      ],
+      firstName: "Marcella",
+      id: "d41ddae1-7a51-41a8-8179-becbb620c443",
+      imageUrl: "https://avatars.githubusercontent.com/u/36301374",
+      lastName: "Murazik",
+      name: "Marcella Murazik",
+      telephones: [
+        {
+          telephone: "(482) 469-8067",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2022-06-19T13:56:16.323Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

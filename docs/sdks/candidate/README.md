@@ -17,7 +17,7 @@ Create a candidate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsCandidate" method="post" path="/ats/{connection_id}/candidate" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsCandidate" method="post" path="/ats/{connection_id}/candidate" example="ats_candidate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,92 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.candidate.createAtsCandidate({
-    atsCandidate: {},
+    atsCandidate: {
+      address: {
+        address1: "802 Roberts Squares",
+        address2: "Suite 550",
+        city: "Lake Raeganside",
+        countryCode: "US",
+        postalCode: "44530-0054",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      companyName: "Ferry, Legros and Feest",
+      createdAt: new Date("2023-10-16T05:42:56.049Z"),
+      education: [
+        {
+          degree: "mouser throughout",
+          endAt: new Date("1992-11-28T20:23:20.311Z"),
+          fieldOfStudy: "solutio",
+          institution: "Heller - Lubowitz",
+          level: "phd",
+          startAt: new Date("2001-03-26T08:12:11.510Z"),
+        },
+      ],
+      emails: [
+        {
+          email: "Ardith.Beatty@hotmail.com",
+          name: "Opal Lindgren",
+          type: "WORK",
+        },
+        {
+          email: "Ardith_Beatty@gmail.com",
+          name: "Kristi Nader",
+          type: "OTHER",
+        },
+      ],
+      experiences: [
+        {
+          companyName: "Donnelly, Buckridge and Steuber",
+          endAt: new Date("1978-06-20T02:53:48.383Z"),
+          startAt: new Date("1980-02-06T17:16:53.798Z"),
+          title: "Principal Brand Strategist",
+        },
+      ],
+      firstName: "Ardith",
+      id: "59cebc0f-3274-48fe-b456-efe66f9ff211",
+      imageUrl: "https://loremflickr.com/40/3693?lock=5634712403880328",
+      jobIds: [],
+      lastName: "Beatty",
+      linkUrls: [
+        "https://sizzling-legislature.com",
+        "https://soupy-interchange.net",
+        "https://troubled-substitution.info",
+      ],
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "6b842011-54cc-4549-9976-9af27f096a6d",
+          namespace: "custom",
+          slug: "custom_field",
+          value: "cariosus",
+        },
+      ],
+      name: "Ardith Beatty",
+      origin: "SOURCED",
+      skills: [
+        "vita",
+        "cohors",
+      ],
+      sources: [
+        "tactus",
+      ],
+      tags: [
+        "aliquid",
+      ],
+      telephones: [
+        {
+          telephone: "(779) 296-5994",
+          type: "HOME",
+        },
+      ],
+      title: "Principal Implementation Analyst",
+      updatedAt: new Date("2024-04-22T21:06:56.351Z"),
+      webUrl: "https://expert-lender.name/",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +142,92 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsCandidate(unifiedTo, {
-    atsCandidate: {},
+    atsCandidate: {
+      address: {
+        address1: "802 Roberts Squares",
+        address2: "Suite 550",
+        city: "Lake Raeganside",
+        countryCode: "US",
+        postalCode: "44530-0054",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      companyName: "Ferry, Legros and Feest",
+      createdAt: new Date("2023-10-16T05:42:56.049Z"),
+      education: [
+        {
+          degree: "mouser throughout",
+          endAt: new Date("1992-11-28T20:23:20.311Z"),
+          fieldOfStudy: "solutio",
+          institution: "Heller - Lubowitz",
+          level: "phd",
+          startAt: new Date("2001-03-26T08:12:11.510Z"),
+        },
+      ],
+      emails: [
+        {
+          email: "Ardith.Beatty@hotmail.com",
+          name: "Opal Lindgren",
+          type: "WORK",
+        },
+        {
+          email: "Ardith_Beatty@gmail.com",
+          name: "Kristi Nader",
+          type: "OTHER",
+        },
+      ],
+      experiences: [
+        {
+          companyName: "Donnelly, Buckridge and Steuber",
+          endAt: new Date("1978-06-20T02:53:48.383Z"),
+          startAt: new Date("1980-02-06T17:16:53.798Z"),
+          title: "Principal Brand Strategist",
+        },
+      ],
+      firstName: "Ardith",
+      id: "59cebc0f-3274-48fe-b456-efe66f9ff211",
+      imageUrl: "https://loremflickr.com/40/3693?lock=5634712403880328",
+      jobIds: [],
+      lastName: "Beatty",
+      linkUrls: [
+        "https://sizzling-legislature.com",
+        "https://soupy-interchange.net",
+        "https://troubled-substitution.info",
+      ],
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "6b842011-54cc-4549-9976-9af27f096a6d",
+          namespace: "custom",
+          slug: "custom_field",
+          value: "cariosus",
+        },
+      ],
+      name: "Ardith Beatty",
+      origin: "SOURCED",
+      skills: [
+        "vita",
+        "cohors",
+      ],
+      sources: [
+        "tactus",
+      ],
+      tags: [
+        "aliquid",
+      ],
+      telephones: [
+        {
+          telephone: "(779) 296-5994",
+          type: "HOME",
+        },
+      ],
+      title: "Principal Implementation Analyst",
+      updatedAt: new Date("2024-04-22T21:06:56.351Z"),
+      webUrl: "https://expert-lender.name/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +422,7 @@ Update a candidate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsCandidate" method="patch" path="/ats/{connection_id}/candidate/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsCandidate" method="patch" path="/ats/{connection_id}/candidate/{id}" example="ats_candidate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +434,92 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.candidate.patchAtsCandidate({
-    atsCandidate: {},
+    atsCandidate: {
+      address: {
+        address1: "802 Roberts Squares",
+        address2: "Suite 550",
+        city: "Lake Raeganside",
+        countryCode: "US",
+        postalCode: "44530-0054",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      companyName: "Ferry, Legros and Feest",
+      createdAt: new Date("2023-10-16T05:42:56.049Z"),
+      education: [
+        {
+          degree: "mouser throughout",
+          endAt: new Date("1992-11-28T20:23:20.311Z"),
+          fieldOfStudy: "solutio",
+          institution: "Heller - Lubowitz",
+          level: "phd",
+          startAt: new Date("2001-03-26T08:12:11.510Z"),
+        },
+      ],
+      emails: [
+        {
+          email: "Ardith.Beatty@hotmail.com",
+          name: "Opal Lindgren",
+          type: "WORK",
+        },
+        {
+          email: "Ardith_Beatty@gmail.com",
+          name: "Kristi Nader",
+          type: "OTHER",
+        },
+      ],
+      experiences: [
+        {
+          companyName: "Donnelly, Buckridge and Steuber",
+          endAt: new Date("1978-06-20T02:53:48.383Z"),
+          startAt: new Date("1980-02-06T17:16:53.798Z"),
+          title: "Principal Brand Strategist",
+        },
+      ],
+      firstName: "Ardith",
+      id: "367e2ce4-a89b-4076-a673-be58f32632cd",
+      imageUrl: "https://loremflickr.com/40/3693?lock=5634712403880328",
+      jobIds: [],
+      lastName: "Beatty",
+      linkUrls: [
+        "https://sizzling-legislature.com",
+        "https://soupy-interchange.net",
+        "https://troubled-substitution.info",
+      ],
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+          namespace: "custom",
+          slug: "custom_field",
+          value: "cariosus",
+        },
+      ],
+      name: "Ardith Beatty",
+      origin: "SOURCED",
+      skills: [
+        "vita",
+        "cohors",
+      ],
+      sources: [
+        "tactus",
+      ],
+      tags: [
+        "aliquid",
+      ],
+      telephones: [
+        {
+          telephone: "(779) 296-5994",
+          type: "HOME",
+        },
+      ],
+      title: "Principal Implementation Analyst",
+      updatedAt: new Date("2024-04-22T21:06:56.360Z"),
+      webUrl: "https://expert-lender.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +548,92 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsCandidate(unifiedTo, {
-    atsCandidate: {},
+    atsCandidate: {
+      address: {
+        address1: "802 Roberts Squares",
+        address2: "Suite 550",
+        city: "Lake Raeganside",
+        countryCode: "US",
+        postalCode: "44530-0054",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      companyName: "Ferry, Legros and Feest",
+      createdAt: new Date("2023-10-16T05:42:56.049Z"),
+      education: [
+        {
+          degree: "mouser throughout",
+          endAt: new Date("1992-11-28T20:23:20.311Z"),
+          fieldOfStudy: "solutio",
+          institution: "Heller - Lubowitz",
+          level: "phd",
+          startAt: new Date("2001-03-26T08:12:11.510Z"),
+        },
+      ],
+      emails: [
+        {
+          email: "Ardith.Beatty@hotmail.com",
+          name: "Opal Lindgren",
+          type: "WORK",
+        },
+        {
+          email: "Ardith_Beatty@gmail.com",
+          name: "Kristi Nader",
+          type: "OTHER",
+        },
+      ],
+      experiences: [
+        {
+          companyName: "Donnelly, Buckridge and Steuber",
+          endAt: new Date("1978-06-20T02:53:48.383Z"),
+          startAt: new Date("1980-02-06T17:16:53.798Z"),
+          title: "Principal Brand Strategist",
+        },
+      ],
+      firstName: "Ardith",
+      id: "367e2ce4-a89b-4076-a673-be58f32632cd",
+      imageUrl: "https://loremflickr.com/40/3693?lock=5634712403880328",
+      jobIds: [],
+      lastName: "Beatty",
+      linkUrls: [
+        "https://sizzling-legislature.com",
+        "https://soupy-interchange.net",
+        "https://troubled-substitution.info",
+      ],
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+          namespace: "custom",
+          slug: "custom_field",
+          value: "cariosus",
+        },
+      ],
+      name: "Ardith Beatty",
+      origin: "SOURCED",
+      skills: [
+        "vita",
+        "cohors",
+      ],
+      sources: [
+        "tactus",
+      ],
+      tags: [
+        "aliquid",
+      ],
+      telephones: [
+        {
+          telephone: "(779) 296-5994",
+          type: "HOME",
+        },
+      ],
+      title: "Principal Implementation Analyst",
+      updatedAt: new Date("2024-04-22T21:06:56.360Z"),
+      webUrl: "https://expert-lender.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +752,7 @@ Update a candidate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsCandidate" method="put" path="/ats/{connection_id}/candidate/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsCandidate" method="put" path="/ats/{connection_id}/candidate/{id}" example="ats_candidate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +764,92 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.candidate.updateAtsCandidate({
-    atsCandidate: {},
+    atsCandidate: {
+      address: {
+        address1: "802 Roberts Squares",
+        address2: "Suite 550",
+        city: "Lake Raeganside",
+        countryCode: "US",
+        postalCode: "44530-0054",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      companyName: "Ferry, Legros and Feest",
+      createdAt: new Date("2023-10-16T05:42:56.049Z"),
+      education: [
+        {
+          degree: "mouser throughout",
+          endAt: new Date("1992-11-28T20:23:20.311Z"),
+          fieldOfStudy: "solutio",
+          institution: "Heller - Lubowitz",
+          level: "phd",
+          startAt: new Date("2001-03-26T08:12:11.510Z"),
+        },
+      ],
+      emails: [
+        {
+          email: "Ardith.Beatty@hotmail.com",
+          name: "Opal Lindgren",
+          type: "WORK",
+        },
+        {
+          email: "Ardith_Beatty@gmail.com",
+          name: "Kristi Nader",
+          type: "OTHER",
+        },
+      ],
+      experiences: [
+        {
+          companyName: "Donnelly, Buckridge and Steuber",
+          endAt: new Date("1978-06-20T02:53:48.383Z"),
+          startAt: new Date("1980-02-06T17:16:53.798Z"),
+          title: "Principal Brand Strategist",
+        },
+      ],
+      firstName: "Ardith",
+      id: "367e2ce4-a89b-4076-a673-be58f32632cd",
+      imageUrl: "https://loremflickr.com/40/3693?lock=5634712403880328",
+      jobIds: [],
+      lastName: "Beatty",
+      linkUrls: [
+        "https://sizzling-legislature.com",
+        "https://soupy-interchange.net",
+        "https://troubled-substitution.info",
+      ],
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+          namespace: "custom",
+          slug: "custom_field",
+          value: "cariosus",
+        },
+      ],
+      name: "Ardith Beatty",
+      origin: "SOURCED",
+      skills: [
+        "vita",
+        "cohors",
+      ],
+      sources: [
+        "tactus",
+      ],
+      tags: [
+        "aliquid",
+      ],
+      telephones: [
+        {
+          telephone: "(779) 296-5994",
+          type: "HOME",
+        },
+      ],
+      title: "Principal Implementation Analyst",
+      updatedAt: new Date("2024-04-22T21:06:56.360Z"),
+      webUrl: "https://expert-lender.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +878,92 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsCandidate(unifiedTo, {
-    atsCandidate: {},
+    atsCandidate: {
+      address: {
+        address1: "802 Roberts Squares",
+        address2: "Suite 550",
+        city: "Lake Raeganside",
+        countryCode: "US",
+        postalCode: "44530-0054",
+        region: "Tennessee",
+        regionCode: "NV",
+      },
+      companyName: "Ferry, Legros and Feest",
+      createdAt: new Date("2023-10-16T05:42:56.049Z"),
+      education: [
+        {
+          degree: "mouser throughout",
+          endAt: new Date("1992-11-28T20:23:20.311Z"),
+          fieldOfStudy: "solutio",
+          institution: "Heller - Lubowitz",
+          level: "phd",
+          startAt: new Date("2001-03-26T08:12:11.510Z"),
+        },
+      ],
+      emails: [
+        {
+          email: "Ardith.Beatty@hotmail.com",
+          name: "Opal Lindgren",
+          type: "WORK",
+        },
+        {
+          email: "Ardith_Beatty@gmail.com",
+          name: "Kristi Nader",
+          type: "OTHER",
+        },
+      ],
+      experiences: [
+        {
+          companyName: "Donnelly, Buckridge and Steuber",
+          endAt: new Date("1978-06-20T02:53:48.383Z"),
+          startAt: new Date("1980-02-06T17:16:53.798Z"),
+          title: "Principal Brand Strategist",
+        },
+      ],
+      firstName: "Ardith",
+      id: "367e2ce4-a89b-4076-a673-be58f32632cd",
+      imageUrl: "https://loremflickr.com/40/3693?lock=5634712403880328",
+      jobIds: [],
+      lastName: "Beatty",
+      linkUrls: [
+        "https://sizzling-legislature.com",
+        "https://soupy-interchange.net",
+        "https://troubled-substitution.info",
+      ],
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+          namespace: "custom",
+          slug: "custom_field",
+          value: "cariosus",
+        },
+      ],
+      name: "Ardith Beatty",
+      origin: "SOURCED",
+      skills: [
+        "vita",
+        "cohors",
+      ],
+      sources: [
+        "tactus",
+      ],
+      tags: [
+        "aliquid",
+      ],
+      telephones: [
+        {
+          telephone: "(779) 296-5994",
+          type: "HOME",
+        },
+      ],
+      title: "Principal Implementation Analyst",
+      updatedAt: new Date("2024-04-22T21:06:56.360Z"),
+      webUrl: "https://expert-lender.name/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

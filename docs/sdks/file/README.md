@@ -17,7 +17,7 @@ Create a file
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createStorageFile" method="post" path="/storage/{connection_id}/file" -->
+<!-- UsageSnippet language="typescript" operationID="createStorageFile" method="post" path="/storage/{connection_id}/file" example="storage_file" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.file.createStorageFile({
-    storageFile: {},
+    storageFile: {
+      createdAt: new Date("2021-09-12T16:48:23.774Z"),
+      data: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+      description: "Crastinus cupiditate debilito cimentarius virgo.",
+      downloadUrl: "https://stingy-casement.name/",
+      hash: "fe6a659e-75cd-4079-9b76-351f9af2205a",
+      id: "53dc27e2-0030-4501-8b1b-6e9e4b170adb",
+      mimeType: "FOLDER",
+      name: "softly.tiff",
+      references: [
+        {
+          id: "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+          name: "tamisium viduo odio cauda",
+          type: "accounting_bill",
+        },
+        {
+          id: "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+          name: "quia",
+          type: "accounting_expense",
+        },
+      ],
+      size: 10276,
+      tags: [
+        "spoliatio",
+      ],
+      type: "FILE",
+      updatedAt: new Date("2023-01-27T11:58:12.326Z"),
+      version: "1",
+      webUrl: "https://sandy-distinction.info/",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +86,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storageCreateStorageFile(unifiedTo, {
-    storageFile: {},
+    storageFile: {
+      createdAt: new Date("2021-09-12T16:48:23.774Z"),
+      data: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+      description: "Crastinus cupiditate debilito cimentarius virgo.",
+      downloadUrl: "https://stingy-casement.name/",
+      hash: "fe6a659e-75cd-4079-9b76-351f9af2205a",
+      id: "53dc27e2-0030-4501-8b1b-6e9e4b170adb",
+      mimeType: "FOLDER",
+      name: "softly.tiff",
+      references: [
+        {
+          id: "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+          name: "tamisium viduo odio cauda",
+          type: "accounting_bill",
+        },
+        {
+          id: "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+          name: "quia",
+          type: "accounting_expense",
+        },
+      ],
+      size: 10276,
+      tags: [
+        "spoliatio",
+      ],
+      type: "FILE",
+      updatedAt: new Date("2023-01-27T11:58:12.326Z"),
+      version: "1",
+      webUrl: "https://sandy-distinction.info/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +310,7 @@ Update a file
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchStorageFile" method="patch" path="/storage/{connection_id}/file/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchStorageFile" method="patch" path="/storage/{connection_id}/file/{id}" example="storage_file" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +322,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.file.patchStorageFile({
-    storageFile: {},
+    storageFile: {
+      createdAt: new Date("2021-09-12T16:48:23.774Z"),
+      data: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+      description: "Crastinus cupiditate debilito cimentarius virgo.",
+      downloadUrl: "https://stingy-casement.name/",
+      hash: "fe6a659e-75cd-4079-9b76-351f9af2205a",
+      id: "d475f153-100a-4257-a6ad-70f276ab57ff",
+      mimeType: "FOLDER",
+      name: "softly.tiff",
+      references: [
+        {
+          id: "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+          name: "tamisium viduo odio cauda",
+          type: "accounting_bill",
+        },
+        {
+          id: "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+          name: "quia",
+          type: "accounting_expense",
+        },
+      ],
+      size: 10276,
+      tags: [
+        "spoliatio",
+      ],
+      type: "FILE",
+      updatedAt: new Date("2023-01-27T11:58:12.331Z"),
+      version: "1",
+      webUrl: "https://sandy-distinction.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +380,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storagePatchStorageFile(unifiedTo, {
-    storageFile: {},
+    storageFile: {
+      createdAt: new Date("2021-09-12T16:48:23.774Z"),
+      data: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+      description: "Crastinus cupiditate debilito cimentarius virgo.",
+      downloadUrl: "https://stingy-casement.name/",
+      hash: "fe6a659e-75cd-4079-9b76-351f9af2205a",
+      id: "d475f153-100a-4257-a6ad-70f276ab57ff",
+      mimeType: "FOLDER",
+      name: "softly.tiff",
+      references: [
+        {
+          id: "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+          name: "tamisium viduo odio cauda",
+          type: "accounting_bill",
+        },
+        {
+          id: "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+          name: "quia",
+          type: "accounting_expense",
+        },
+      ],
+      size: 10276,
+      tags: [
+        "spoliatio",
+      ],
+      type: "FILE",
+      updatedAt: new Date("2023-01-27T11:58:12.331Z"),
+      version: "1",
+      webUrl: "https://sandy-distinction.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +528,7 @@ Update a file
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateStorageFile" method="put" path="/storage/{connection_id}/file/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateStorageFile" method="put" path="/storage/{connection_id}/file/{id}" example="storage_file" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +540,36 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.file.updateStorageFile({
-    storageFile: {},
+    storageFile: {
+      createdAt: new Date("2021-09-12T16:48:23.774Z"),
+      data: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+      description: "Crastinus cupiditate debilito cimentarius virgo.",
+      downloadUrl: "https://stingy-casement.name/",
+      hash: "fe6a659e-75cd-4079-9b76-351f9af2205a",
+      id: "d475f153-100a-4257-a6ad-70f276ab57ff",
+      mimeType: "FOLDER",
+      name: "softly.tiff",
+      references: [
+        {
+          id: "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+          name: "tamisium viduo odio cauda",
+          type: "accounting_bill",
+        },
+        {
+          id: "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+          name: "quia",
+          type: "accounting_expense",
+        },
+      ],
+      size: 10276,
+      tags: [
+        "spoliatio",
+      ],
+      type: "FILE",
+      updatedAt: new Date("2023-01-27T11:58:12.331Z"),
+      version: "1",
+      webUrl: "https://sandy-distinction.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +598,36 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storageUpdateStorageFile(unifiedTo, {
-    storageFile: {},
+    storageFile: {
+      createdAt: new Date("2021-09-12T16:48:23.774Z"),
+      data: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+      description: "Crastinus cupiditate debilito cimentarius virgo.",
+      downloadUrl: "https://stingy-casement.name/",
+      hash: "fe6a659e-75cd-4079-9b76-351f9af2205a",
+      id: "d475f153-100a-4257-a6ad-70f276ab57ff",
+      mimeType: "FOLDER",
+      name: "softly.tiff",
+      references: [
+        {
+          id: "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+          name: "tamisium viduo odio cauda",
+          type: "accounting_bill",
+        },
+        {
+          id: "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+          name: "quia",
+          type: "accounting_expense",
+        },
+      ],
+      size: 10276,
+      tags: [
+        "spoliatio",
+      ],
+      type: "FILE",
+      updatedAt: new Date("2023-01-27T11:58:12.331Z"),
+      version: "1",
+      webUrl: "https://sandy-distinction.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

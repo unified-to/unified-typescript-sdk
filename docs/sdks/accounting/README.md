@@ -139,7 +139,7 @@ Create an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" example="accounting_account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -151,7 +151,31 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "35991572-6b6d-4a7b-a883-101be82c839d",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.602Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -179,7 +203,31 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingAccount(unifiedTo, {
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "35991572-6b6d-4a7b-a883-101be82c839d",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.602Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -218,7 +266,7 @@ Create a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" example="accounting_bankfeedaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -230,7 +278,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingBankfeedaccount({
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "2ea876a9-ab62-403d-b280-b8bd398c21a5",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.381Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -258,7 +321,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingBankfeedaccount(unifiedTo, {
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "2ea876a9-ab62-403d-b280-b8bd398c21a5",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.381Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -297,7 +375,7 @@ Create a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" example="accounting_bankfeedtransaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -309,7 +387,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingBankfeedtransaction({
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "30fb790d-3f8e-48ab-8f69-cfc3c408e989",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.066Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.221Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.834Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -337,7 +433,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingBankfeedtransaction(unifiedTo, {
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "30fb790d-3f8e-48ab-8f69-cfc3c408e989",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.066Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.221Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.834Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -376,7 +490,7 @@ Create a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" example="accounting_bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -388,7 +502,30 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingBill({
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "100144ed-c290-4ba0-8c70-172d5b231a02",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.049Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.612Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
   });
 
@@ -416,7 +553,30 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingBill(unifiedTo, {
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "100144ed-c290-4ba0-8c70-172d5b231a02",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.049Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.612Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -455,7 +615,7 @@ Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" example="accounting_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -467,7 +627,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingCategory({
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "dc380b5b-a085-47f0-80e6-a0450e68adcf",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.170Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -495,7 +663,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingCategory(unifiedTo, {
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "dc380b5b-a085-47f0-80e6-a0450e68adcf",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.170Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -534,7 +710,7 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" example="accounting_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -546,7 +722,74 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingContact({
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "849cd11b-c680-45ef-8e37-e9a24def34b8",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "b7ba795b-96e2-4c00-b11d-7ad43dd15877",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "d501ead1-d963-4360-9d14-5fc86506b5d5",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "38ac4078-e7eb-4d4a-938e-3a6293a46e62",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.517Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -574,7 +817,74 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingContact(unifiedTo, {
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "849cd11b-c680-45ef-8e37-e9a24def34b8",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "b7ba795b-96e2-4c00-b11d-7ad43dd15877",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "d501ead1-d963-4360-9d14-5fc86506b5d5",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "38ac4078-e7eb-4d4a-938e-3a6293a46e62",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.517Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -613,7 +923,7 @@ Create a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" example="accounting_creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -625,7 +935,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingCreditmemo({
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "b6973779-c8a8-4f1a-9b1a-3f847c624aa4",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "7fc36458-5758-4a49-9b68-4665d4871b26",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.426Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.006Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
   });
 
@@ -653,7 +993,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingCreditmemo(unifiedTo, {
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "b6973779-c8a8-4f1a-9b1a-3f847c624aa4",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "7fc36458-5758-4a49-9b68-4665d4871b26",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.426Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.006Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -692,7 +1062,7 @@ Create an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" example="accounting_expense" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -704,7 +1074,44 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingExpense({
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.313Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "bfba31e4-33ae-4dea-b8e5-edc2181608ec",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "049777da-55cf-41fb-866d-0a574a19b0eb",
+      lineitems: [
+        {
+          id: "f26d5412-51c5-4471-95e4-ce3041eb1194",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.308Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.313Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -732,7 +1139,44 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingExpense(unifiedTo, {
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.313Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "bfba31e4-33ae-4dea-b8e5-edc2181608ec",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "049777da-55cf-41fb-866d-0a574a19b0eb",
+      lineitems: [
+        {
+          id: "f26d5412-51c5-4471-95e4-ce3041eb1194",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.308Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.313Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -771,7 +1215,7 @@ Create an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" example="accounting_invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -783,7 +1227,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingInvoice({
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "645358a0-c05a-4486-b89b-0a0ed2a6c979",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "b81b0ef0-2818-4301-b28e-b6b0df003dc3",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.726Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.536Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
   });
 
@@ -811,7 +1290,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingInvoice(unifiedTo, {
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "645358a0-c05a-4486-b89b-0a0ed2a6c979",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "b81b0ef0-2818-4301-b28e-b6b0df003dc3",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.726Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.536Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -850,7 +1364,7 @@ Create a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" example="accounting_journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -862,7 +1376,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingJournal({
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "3d392f10-878d-46c4-a59b-f5250068e316",
+      postedAt: new Date("2023-10-19T01:52:16.859Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.238Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -890,7 +1416,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingJournal(unifiedTo, {
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "3d392f10-878d-46c4-a59b-f5250068e316",
+      postedAt: new Date("2023-10-19T01:52:16.859Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.238Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -929,7 +1467,7 @@ Create an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" example="accounting_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -941,7 +1479,35 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingOrder({
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "62016142-db21-434b-8958-592eefe46e72",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.752Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.749Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -969,7 +1535,35 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingOrder(unifiedTo, {
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "62016142-db21-434b-8958-592eefe46e72",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.752Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.749Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1008,7 +1602,7 @@ Create a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" example="accounting_paymentterm" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1020,7 +1614,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingPaymentterm({
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "48745512-c4a4-4ba5-964e-784f73ff4ff1",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.854Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -1048,7 +1658,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingPaymentterm(unifiedTo, {
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "48745512-c4a4-4ba5-964e-784f73ff4ff1",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.854Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1166,7 +1792,7 @@ Create a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" example="accounting_purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1178,7 +1804,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingPurchaseorder({
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "870e6384-1e12-4bea-9790-0e4ac7a373f1",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.967Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.829Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -1206,7 +1859,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingPurchaseorder(unifiedTo, {
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "870e6384-1e12-4bea-9790-0e4ac7a373f1",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.967Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.829Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1324,7 +2004,7 @@ Create a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" example="accounting_salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1336,7 +2016,56 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingSalesorder({
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.013Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "4b4b8374-641e-4c7b-84dc-48bb2da0c7fe",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.222Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.489Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -1364,7 +2093,56 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingSalesorder(unifiedTo, {
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.013Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "4b4b8374-641e-4c7b-84dc-48bb2da0c7fe",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.222Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.489Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1403,7 +2181,7 @@ Create a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" example="accounting_taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1415,7 +2193,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingTaxrate({
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "4e784882-93ea-4586-bc43-026743ba6449",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.715Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -1443,7 +2230,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingTaxrate(unifiedTo, {
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "4e784882-93ea-4586-bc43-026743ba6449",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.715Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1482,7 +2278,7 @@ Create a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" example="accounting_transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1494,7 +2290,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingTransaction({
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "530ce73e-3ab8-48ff-a572-81a47cf56dc1",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "88ce3554-fb4d-4ad0-9ace-6d2c3af152cc",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.519Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -1522,7 +2337,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingTransaction(unifiedTo, {
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "530ce73e-3ab8-48ff-a572-81a47cf56dc1",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "88ce3554-fb4d-4ad0-9ace-6d2c3af152cc",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.519Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -1561,7 +2395,7 @@ Create a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" -->
+<!-- UsageSnippet language="typescript" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" example="accounting_vendorcredit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1573,7 +2407,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingVendorcredit({
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "e53c082c-1aa1-4192-be20-f4cdfd0cea57",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.445Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.369Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -1601,7 +2450,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingVendorcredit(unifiedTo, {
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "e53c082c-1aa1-4192-be20-f4cdfd0cea57",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.445Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.369Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -5696,7 +6560,7 @@ Update an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" example="accounting_account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5708,7 +6572,31 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingAccount({
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -5737,7 +6625,31 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingAccount(unifiedTo, {
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -5777,7 +6689,7 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5789,7 +6701,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingBankfeedaccount({
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -5818,7 +6745,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingBankfeedaccount(unifiedTo, {
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -5858,7 +6800,7 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5870,7 +6812,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingBankfeedtransaction({
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -5899,7 +6859,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingBankfeedtransaction(unifiedTo, {
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -5939,7 +6917,7 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5951,7 +6929,30 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingBill({
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -5980,7 +6981,30 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingBill(unifiedTo, {
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6020,7 +7044,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6032,7 +7056,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingCategory({
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6061,7 +7093,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingCategory(unifiedTo, {
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6101,7 +7141,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6113,7 +7153,74 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingContact({
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6142,7 +7249,74 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingContact(unifiedTo, {
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6182,7 +7356,7 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6194,7 +7368,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingCreditmemo({
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6223,7 +7427,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingCreditmemo(unifiedTo, {
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6263,7 +7497,7 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6275,7 +7509,44 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingExpense({
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6304,7 +7575,44 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingExpense(unifiedTo, {
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6344,7 +7652,7 @@ Update an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" example="accounting_invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6356,7 +7664,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingInvoice({
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6385,7 +7728,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingInvoice(unifiedTo, {
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6425,7 +7803,7 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6437,7 +7815,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingJournal({
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6466,7 +7856,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingJournal(unifiedTo, {
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6506,7 +7908,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" example="accounting_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6518,7 +7920,35 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingOrder({
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6547,7 +7977,35 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingOrder(unifiedTo, {
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6587,7 +8045,7 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6599,7 +8057,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingPaymentterm({
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6628,7 +8102,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingPaymentterm(unifiedTo, {
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6749,7 +8239,7 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6761,7 +8251,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingPurchaseorder({
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6790,7 +8307,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingPurchaseorder(unifiedTo, {
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6911,7 +8455,7 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -6923,7 +8467,56 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingSalesorder({
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6952,7 +8545,56 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingSalesorder(unifiedTo, {
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -6992,7 +8634,7 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -7004,7 +8646,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingTaxrate({
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -7033,7 +8684,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingTaxrate(unifiedTo, {
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -7073,7 +8733,7 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -7085,7 +8745,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingTransaction({
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -7114,7 +8793,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingTransaction(unifiedTo, {
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -7154,7 +8852,7 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -7166,7 +8864,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingVendorcredit({
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -7195,7 +8908,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingPatchAccountingVendorcredit(unifiedTo, {
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -8736,7 +10464,7 @@ Update an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" example="accounting_account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -8748,7 +10476,31 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingAccount({
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -8777,7 +10529,31 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingAccount(unifiedTo, {
-    accountingAccount: {},
+    accountingAccount: {
+      balance: 12092,
+      createdAt: new Date("2022-07-03T17:57:07.391Z"),
+      currency: "BOB",
+      customerDefinedCode: "quo",
+      description: "Spoliatio comedo vilitas harum cupiditate.",
+      id: "31484143-f94a-4590-89ec-16b156e6b177",
+      isPayable: true,
+      name: "Electronic Aluminum Tuna",
+      status: "ARCHIVED",
+      taxonomy: [
+        {
+          originalType: "vesper",
+          type: "SUBGROUP",
+          value: "iste",
+        },
+        {
+          originalType: "adamo",
+          type: "SUBGROUP",
+          value: "peccatus",
+        },
+      ],
+      type: "BANK",
+      updatedAt: new Date("2023-01-03T03:11:26.604Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -8817,7 +10593,7 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -8829,7 +10605,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingBankfeedaccount({
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -8858,7 +10649,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingBankfeedaccount(unifiedTo, {
-    accountingBankfeedaccount: {},
+    accountingBankfeedaccount: {
+      accountId: "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+      accountNumber: "30369722",
+      accountNumberLast4: "9722",
+      accountType: "LOAN",
+      balance: 90358,
+      bankName: "Weissnat Inc",
+      createdAt: new Date("2022-10-31T16:42:19.277Z"),
+      currency: "SSP",
+      feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
+      id: "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+      name: "Corwin, Donnelly and Connelly Savings",
+      routingNumber: "667753156",
+      status: "ACTIVE",
+      updatedAt: new Date("2024-04-11T12:57:07.387Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -8898,7 +10704,7 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -8910,7 +10716,25 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingBankfeedtransaction({
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -8939,7 +10763,25 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingBankfeedtransaction(unifiedTo, {
-    accountingBankfeedtransaction: {},
+    accountingBankfeedtransaction: {
+      accountId: "b7dc4175-1368-4b89-a700-d621b6666648",
+      amount: 60889,
+      bankCategory: "Games",
+      bankfeedaccountId: "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+      categoryIds: [],
+      contactId: "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+      createdAt: new Date("2022-03-24T23:41:08.374Z"),
+      currency: "SRD",
+      description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+      id: "99973f58-3052-444a-a355-5b7ffb177172",
+      isPending: true,
+      merchantName: "Reichert, Erdman and Tillman",
+      postedAt: new Date("2025-03-23T18:34:48.075Z"),
+      reference: "93642593",
+      transactionAt: new Date("2022-07-27T19:48:15.222Z"),
+      type: "CREDIT",
+      updatedAt: new Date("2022-05-23T20:47:21.835Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -8979,7 +10821,7 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -8991,7 +10833,30 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingBill({
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9020,7 +10885,30 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingBill(unifiedTo, {
-    accountingBill: {},
+    accountingBill: {
+      attachments: [],
+      billNumber: "vitae",
+      categoryIds: [],
+      createdAt: new Date("2019-08-08T23:03:14.104Z"),
+      currency: "AUD",
+      discountAmount: 0,
+      dueAt: new Date("2019-08-11T20:52:55.321Z"),
+      extendedNotes: [],
+      id: "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+      lineitems: [],
+      metadata: [],
+      notes: "Tutamen cilicium infit.",
+      paymentCollectionMethod: "charge_automatically",
+      payments: [],
+      postedAt: new Date("2024-04-04T07:23:49.078Z"),
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_10",
+      totalAmount: 0,
+      updatedAt: new Date("2025-01-29T00:58:28.647Z"),
+      url: "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9060,7 +10948,7 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9072,7 +10960,15 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingCategory({
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9101,7 +10997,15 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingCategory(unifiedTo, {
-    accountingCategory: {},
+    accountingCategory: {
+      createdAt: new Date("2023-05-30T12:29:04.257Z"),
+      description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
+      id: "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+      isActive: false,
+      metadata: [],
+      name: "Electronic Cotton Shoes",
+      updatedAt: new Date("2025-08-20T06:36:05.177Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9141,7 +11045,7 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9153,7 +11057,74 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingContact({
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9182,7 +11153,74 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingContact(unifiedTo, {
-    accountingContact: {},
+    accountingContact: {
+      associatedContacts: [
+        {
+          id: "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+          name: "Delores Reynolds",
+        },
+        {
+          id: "866874f1-a317-404b-9ee2-18708e6d0dd7",
+          name: "Delores Reynolds",
+        },
+      ],
+      billingAddress: {
+        address1: "2633 Stoney Lane",
+        address2: "Suite 176",
+        city: "Ladariusboro",
+        countryCode: "US",
+        postalCode: "70131-2908",
+        region: "Illinois",
+        regionCode: "NV",
+      },
+      companyName: "Marquardt Inc",
+      createdAt: new Date("2021-08-15T14:56:50.258Z"),
+      currency: "ISK",
+      emails: [
+        {
+          email: "Delores.Reynolds10@hotmail.com",
+          type: "HOME",
+        },
+      ],
+      firstName: "Delores",
+      id: "568c731f-d6db-4131-8722-72c16c80c495",
+      identification: "amicitia",
+      isActive: true,
+      isCustomer: true,
+      lastName: "Reynolds",
+      name: "Delores Reynolds",
+      paymentMethods: [
+        {
+          default: true,
+          id: "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+          name: "Visa 1234",
+          type: "CARD",
+        },
+      ],
+      portalUrl: "https://scented-t-shirt.info/",
+      shippingAddress: {
+        address1: "786 Renner Stream",
+        address2: "Apt. 555",
+        city: "Roanoke",
+        countryCode: "US",
+        postalCode: "80686-7556",
+        region: "Vermont",
+        regionCode: "NE",
+      },
+      taxExemption: "RESALE",
+      taxNumber: "amplexus",
+      telephones: [
+        {
+          telephone: "(427) 701-7160",
+          type: "HOME",
+        },
+        {
+          telephone: "(540) 913-9171",
+          type: "FAX",
+        },
+      ],
+      updatedAt: new Date("2023-12-04T22:28:17.531Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9222,7 +11260,7 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9234,7 +11272,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingCreditmemo({
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9263,7 +11331,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingCreditmemo(unifiedTo, {
-    accountingCreditmemo: {},
+    accountingCreditmemo: {
+      applications: [],
+      attachments: [
+        {
+          downloadUrl: "https://enlightened-chairperson.com/",
+          id: "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+          mimeType: "complectus",
+          name: "thesis",
+        },
+      ],
+      createdAt: new Date("2023-09-20T01:47:01.571Z"),
+      creditmemoNumber: "ulterius",
+      currency: "MKD",
+      discountAmount: 0,
+      dueAt: new Date("2023-10-18T04:35:00.543Z"),
+      id: "c0f30724-dec9-4210-8706-4c3a535e2f65",
+      lineitems: [],
+      metadata: [],
+      notes: "Dedecor amo adfero torqueo quas.",
+      paymentCollectionMethod: "charge_automatically",
+      postedAt: new Date("2025-11-15T11:03:17.458Z"),
+      refundAmount: 0,
+      refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
+      refundedAt: new Date("2023-10-23T00:35:36.814Z"),
+      send: false,
+      status: "PAID",
+      taxAmount: 0,
+      totalAmount: 0,
+      updatedAt: new Date("2024-11-15T13:32:51.023Z"),
+      url: "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9303,7 +11401,7 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9315,7 +11413,44 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingExpense({
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9344,7 +11479,44 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingExpense(unifiedTo, {
-    accountingExpense: {},
+    accountingExpense: {
+      approvedAt: new Date("2026-05-09T18:24:02.349Z"),
+      attachments: [
+        {
+          downloadUrl: "https://ripe-napkin.biz/",
+          id: "4298778d-022a-4392-aa3b-287ddb9df4eb",
+          mimeType: "annus",
+          name: "cohibeo",
+        },
+      ],
+      categoryIds: [],
+      createdAt: new Date("2020-06-11T03:39:37.305Z"),
+      currency: "SSP",
+      externalNumber: "necessitatibus",
+      id: "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+      lineitems: [
+        {
+          id: "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+          itemDescription: "Innovative Table featuring left technology and Rubber construction",
+          itemName: "Luxurious Cotton Pizza",
+          itemSku: "978-0-8324-6620-5",
+          notes: "Degusto conventus defendo valetudo.",
+          taxAmount: 2501,
+          totalAmount: 168,
+          unitAmount: 3059,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Refined Steel Shoes",
+      paymentMethod: "CASH",
+      postedAt: new Date("2021-06-04T05:04:02.315Z"),
+      reimbursedAmount: 1833,
+      status: "SUBMITTED",
+      taxAmount: 2602,
+      totalAmount: 3580,
+      updatedAt: new Date("2026-05-09T18:24:02.349Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9384,7 +11556,7 @@ Update an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" example="accounting_invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9396,7 +11568,42 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingInvoice({
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9425,7 +11632,42 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingInvoice(unifiedTo, {
-    accountingInvoice: {},
+    accountingInvoice: {
+      attachments: [
+        {
+          downloadUrl: "https://glossy-markup.net/",
+          id: "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+          mimeType: "benevolentia",
+          name: "vespillo",
+        },
+      ],
+      balanceAmount: -1,
+      categoryIds: [],
+      createdAt: new Date("2022-11-07T14:17:29.587Z"),
+      currency: "RWF",
+      discountAmount: 0,
+      dueAt: new Date("2022-11-27T21:25:37.363Z"),
+      extendedNotes: [],
+      id: "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+      invoiceNumber: "vinco",
+      lineitems: [],
+      metadata: [],
+      notes: "Auctus comburo clarus ubi.",
+      paidAmount: 0,
+      paidAt: new Date("2022-11-25T15:00:28.871Z"),
+      paymentCollectionMethod: "send_invoice",
+      payments: [],
+      postedAt: new Date("2026-03-26T22:47:33.772Z"),
+      reference: "adinventitias",
+      send: true,
+      status: "DELETED",
+      taxAmount: 0,
+      term: "NET_45",
+      totalAmount: 0,
+      type: "CREDITMEMO",
+      updatedAt: new Date("2023-02-06T06:48:48.540Z"),
+      url: "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9465,7 +11707,7 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9477,7 +11719,19 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingJournal({
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9506,7 +11760,19 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingJournal(unifiedTo, {
-    accountingJournal: {},
+    accountingJournal: {
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-02-20T15:14:55.881Z"),
+      currency: "FKP",
+      description: "Calco constans adipisci.",
+      id: "92900846-008d-4177-9d82-d2c7a3f578e0",
+      postedAt: new Date("2023-10-19T01:52:16.870Z"),
+      reference: "ullam",
+      source: "crustulum",
+      taxAmount: 78672,
+      updatedAt: new Date("2022-01-01T11:09:03.243Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9546,7 +11812,7 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" example="accounting_order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9558,7 +11824,35 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingOrder({
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9587,7 +11881,35 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingOrder(unifiedTo, {
-    accountingOrder: {},
+    accountingOrder: {
+      billingAddress: {
+        address1: "802 Bechtelar Park",
+        address2: "Apt. 436",
+        city: "Daniellaville",
+        countryCode: "US",
+        postalCode: "36947",
+        region: "Wisconsin",
+        regionCode: "NY",
+      },
+      createdAt: new Date("2020-11-20T03:46:49.837Z"),
+      currency: "USD",
+      id: "ef699eb0-0563-4717-9061-214486399828",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2022-04-05T00:14:38.762Z"),
+      shippingAddress: {
+        address1: "9745 Betty Shore",
+        city: "South Alainaland",
+        countryCode: "US",
+        postalCode: "25274-7654",
+        region: "New Hampshire",
+        regionCode: "LA",
+      },
+      status: "SUBMITTED",
+      totalAmount: 0,
+      type: "PURCHASE",
+      updatedAt: new Date("2021-06-17T22:40:42.753Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9627,7 +11949,7 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9639,7 +11961,23 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingPaymentterm({
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9668,7 +12006,23 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingPaymentterm(unifiedTo, {
-    accountingPaymentterm: {},
+    accountingPaymentterm: {
+      category: "STANDARD",
+      createdAt: new Date("2021-08-22T22:42:42.265Z"),
+      dayOfMonthDue: 4,
+      description: "Cogito pecco eos cultura.",
+      discountDayOfMonth: 13,
+      discountDays: 4,
+      discountPercent: 5,
+      dueDays: 57,
+      dueNextMonthDays: 9,
+      id: "2142d448-2276-437b-83d4-9bf9154c041a",
+      isActive: false,
+      metadata: [],
+      name: "Net 30",
+      type: "NET_15",
+      updatedAt: new Date("2025-12-11T11:07:31.864Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9789,7 +12143,7 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9801,7 +12155,34 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingPurchaseorder({
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9830,7 +12211,34 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingPurchaseorder(unifiedTo, {
-    accountingPurchaseorder: {},
+    accountingPurchaseorder: {
+      billingAddress: {
+        address1: "37214 Tanya Walks",
+        city: "South Annabelleton",
+        countryCode: "US",
+        postalCode: "30337",
+        region: "Nevada",
+        regionCode: "MA",
+      },
+      categoryIds: [],
+      createdAt: new Date("2020-12-12T07:17:47.021Z"),
+      currency: "ZMW",
+      id: "54658ca1-f723-459d-901f-9dc45e6da571",
+      lineitems: [],
+      metadata: [],
+      postedAt: new Date("2025-04-25T03:32:03.994Z"),
+      shippingAddress: {
+        address1: "649 Maggio Overpass",
+        city: "Lake Jaylan",
+        countryCode: "US",
+        postalCode: "99211-6547",
+        region: "North Carolina",
+        regionCode: "ID",
+      },
+      status: "PARTIALLY_REFUNDED",
+      totalAmount: 0,
+      updatedAt: new Date("2021-02-26T03:18:48.830Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9951,7 +12359,7 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -9963,7 +12371,56 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingSalesorder({
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -9992,7 +12449,56 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingSalesorder(unifiedTo, {
-    accountingSalesorder: {},
+    accountingSalesorder: {
+      billingAddress: {
+        address1: "26530 Stroman Rest",
+        address2: "Suite 801",
+        city: "Pocatello",
+        countryCode: "US",
+        postalCode: "05015-8546",
+        region: "Louisiana",
+        regionCode: "MO",
+      },
+      categoryIds: [],
+      closedAt: new Date("2023-08-16T21:47:45.033Z"),
+      createdAt: new Date("2022-01-17T16:11:50.310Z"),
+      currency: "ANG",
+      discountAmount: 99,
+      employeeUserId: "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+      fees: [
+        {
+          amount: 519,
+          currency: "XCD",
+          type: "PROMOTION",
+        },
+      ],
+      fulfillmentType: "TAKEOUT",
+      guestCount: 8,
+      id: "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+      lineitems: [],
+      metadata: [],
+      orderNumber: "988187",
+      payments: [],
+      postedAt: new Date("2026-01-11T02:11:41.271Z"),
+      refundedAmount: 0,
+      salesChannel: "Harvey, Collier and Weimann",
+      serviceChargeAmount: 63,
+      shippingAddress: {
+        address1: "9878 Bradley Mill",
+        address2: "Apt. 215",
+        city: "Port Matildestad",
+        countryCode: "US",
+        postalCode: "07989-2148",
+        region: "Arkansas",
+        regionCode: "AK",
+      },
+      status: "REFUNDED",
+      subtotalAmount: 0,
+      taxAmount: 63,
+      tipAmount: 34,
+      totalAmount: 0,
+      updatedAt: new Date("2022-02-10T18:49:09.490Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -10032,7 +12538,7 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -10044,7 +12550,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingTaxrate({
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -10073,7 +12588,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingTaxrate(unifiedTo, {
-    accountingTaxrate: {},
+    accountingTaxrate: {
+      createdAt: new Date("2020-01-04T10:37:56.894Z"),
+      description: "Nemo atrox tricesimus creator aranea.",
+      id: "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+      isActive: false,
+      metadata: [],
+      name: "cogo",
+      rate: 1,
+      updatedAt: new Date("2025-11-04T07:54:19.725Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -10113,7 +12637,7 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -10125,7 +12649,26 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingTransaction({
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -10154,7 +12697,26 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingTransaction(unifiedTo, {
-    accountingTransaction: {},
+    accountingTransaction: {
+      createdAt: new Date("2019-09-25T11:40:42.574Z"),
+      id: "21b69be7-0166-4233-91c4-e92eff66f31e",
+      lineitems: [
+        {
+          categoryIds: [],
+          description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+          id: "3dab4bec-d436-4800-9b97-68628a55b5e0",
+          name: "Salad",
+          objectType: "delicate",
+          totalAmount: 58531,
+          unitAmount: 536,
+          unitQuantity: 91,
+        },
+      ],
+      memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      taxAmount: 0,
+      totalAmount: 94452,
+      updatedAt: new Date("2021-09-10T02:36:49.523Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -10194,7 +12756,7 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -10206,7 +12768,22 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingVendorcredit({
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -10235,7 +12812,22 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingUpdateAccountingVendorcredit(unifiedTo, {
-    accountingVendorcredit: {},
+    accountingVendorcredit: {
+      applications: [],
+      applyAmount: 1,
+      balanceAmount: 0,
+      createdAt: new Date("2023-04-15T21:14:08.197Z"),
+      currency: "KGS",
+      dueAt: new Date("2023-05-06T20:38:46.775Z"),
+      id: "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+      lineitems: [],
+      metadata: [],
+      notes: "Conatus cruciamentum decor avaritia tantum.",
+      postedAt: new Date("2023-09-28T16:43:46.448Z"),
+      status: "SUBMITTED",
+      totalAmount: 0,
+      updatedAt: new Date("2023-11-26T14:35:53.374Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

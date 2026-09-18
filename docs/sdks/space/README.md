@@ -17,7 +17,7 @@ Create a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" -->
+<!-- UsageSnippet language="typescript" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" example="kms_space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.space.createKmsSpace({
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "72f6d852-9f5b-447f-928a-dd6a6ca5a5f6",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.170Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +64,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsCreateKmsSpace(unifiedTo, {
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "72f6d852-9f5b-447f-928a-dd6a6ca5a5f6",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.170Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +266,7 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +278,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.space.patchKmsSpace({
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +314,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsPatchKmsSpace(unifiedTo, {
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +440,7 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +452,14 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.space.updateKmsSpace({
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +488,14 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await kmsUpdateKmsSpace(unifiedTo, {
-    kmsSpace: {},
+    kmsSpace: {
+      createdAt: new Date("2022-10-31T00:56:54.246Z"),
+      description: "Acer.",
+      id: "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+      isActive: false,
+      name: "into nor afore",
+      updatedAt: new Date("2025-12-03T15:52:28.175Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

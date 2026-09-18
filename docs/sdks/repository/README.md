@@ -17,7 +17,7 @@ Create a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
+<!-- UsageSnippet language="typescript" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" example="repo_repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -30,7 +30,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repository.createRepoRepository({
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "2b8e1ef3-d009-4d87-9a50-495da886c6d8",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.873Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
   });
@@ -60,7 +67,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoRepository(unifiedTo, {
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "2b8e1ef3-d009-4d87-9a50-495da886c6d8",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.873Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
   });
@@ -256,7 +270,7 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,7 +283,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repository.patchRepoRepository({
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -300,7 +321,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoRepository(unifiedTo, {
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -420,7 +448,7 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -433,7 +461,14 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repository.updateRepoRepository({
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -464,7 +499,14 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoRepository(unifiedTo, {
     repoRepository: {
-      name: "<value>",
+      createdAt: new Date("2023-06-12T09:42:00.080Z"),
+      description: "Tribuo torqueo aetas ustulo illum.",
+      id: "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+      isPrivate: false,
+      name: "suggero",
+      owner: "Marcella Kuhic",
+      updatedAt: new Date("2024-02-23T00:27:33.875Z"),
+      webUrl: "https://brown-phrase.info",
     },
     connectionId: "<id>",
     id: "<id>",

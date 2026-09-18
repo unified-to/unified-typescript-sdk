@@ -17,7 +17,7 @@ Create a scorecard
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAtsScorecard" method="post" path="/ats/{connection_id}/scorecard" -->
+<!-- UsageSnippet language="typescript" operationID="createAtsScorecard" method="post" path="/ats/{connection_id}/scorecard" example="ats_scorecard" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,24 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.createAtsScorecard({
-    atsScorecard: {},
+    atsScorecard: {
+      comment: "Maiores enim.",
+      createdAt: new Date("2022-02-20T17:09:45.498Z"),
+      id: "47bb49f0-71b5-4a4f-9469-1344ea1e4870",
+      questions: [
+        {
+          description: "Sulum textor eveniet facere vita.",
+          text: "Aliquam.",
+        },
+        {
+          answer: "Decretum.",
+          description: "Conatus cicuta doloremque statua bonus.",
+          text: "Pecto vulpes libero vomer comburo.",
+        },
+      ],
+      recommendation: "STRONG_YES",
+      updatedAt: new Date("2023-05-27T11:10:32.892Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +74,24 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsScorecard(unifiedTo, {
-    atsScorecard: {},
+    atsScorecard: {
+      comment: "Maiores enim.",
+      createdAt: new Date("2022-02-20T17:09:45.498Z"),
+      id: "47bb49f0-71b5-4a4f-9469-1344ea1e4870",
+      questions: [
+        {
+          description: "Sulum textor eveniet facere vita.",
+          text: "Aliquam.",
+        },
+        {
+          answer: "Decretum.",
+          description: "Conatus cicuta doloremque statua bonus.",
+          text: "Pecto vulpes libero vomer comburo.",
+        },
+      ],
+      recommendation: "STRONG_YES",
+      updatedAt: new Date("2023-05-27T11:10:32.892Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +286,7 @@ Update a scorecard
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAtsScorecard" method="patch" path="/ats/{connection_id}/scorecard/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAtsScorecard" method="patch" path="/ats/{connection_id}/scorecard/{id}" example="ats_scorecard" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +298,24 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.patchAtsScorecard({
-    atsScorecard: {},
+    atsScorecard: {
+      comment: "Maiores enim.",
+      createdAt: new Date("2022-02-20T17:09:45.498Z"),
+      id: "324dfa59-f358-4841-a28e-b7836ff6d9e4",
+      questions: [
+        {
+          description: "Sulum textor eveniet facere vita.",
+          text: "Aliquam.",
+        },
+        {
+          answer: "Decretum.",
+          description: "Conatus cicuta doloremque statua bonus.",
+          text: "Pecto vulpes libero vomer comburo.",
+        },
+      ],
+      recommendation: "STRONG_YES",
+      updatedAt: new Date("2023-05-27T11:10:32.894Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +344,24 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsScorecard(unifiedTo, {
-    atsScorecard: {},
+    atsScorecard: {
+      comment: "Maiores enim.",
+      createdAt: new Date("2022-02-20T17:09:45.498Z"),
+      id: "324dfa59-f358-4841-a28e-b7836ff6d9e4",
+      questions: [
+        {
+          description: "Sulum textor eveniet facere vita.",
+          text: "Aliquam.",
+        },
+        {
+          answer: "Decretum.",
+          description: "Conatus cicuta doloremque statua bonus.",
+          text: "Pecto vulpes libero vomer comburo.",
+        },
+      ],
+      recommendation: "STRONG_YES",
+      updatedAt: new Date("2023-05-27T11:10:32.894Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +480,7 @@ Update a scorecard
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAtsScorecard" method="put" path="/ats/{connection_id}/scorecard/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAtsScorecard" method="put" path="/ats/{connection_id}/scorecard/{id}" example="ats_scorecard" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +492,24 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.updateAtsScorecard({
-    atsScorecard: {},
+    atsScorecard: {
+      comment: "Maiores enim.",
+      createdAt: new Date("2022-02-20T17:09:45.498Z"),
+      id: "324dfa59-f358-4841-a28e-b7836ff6d9e4",
+      questions: [
+        {
+          description: "Sulum textor eveniet facere vita.",
+          text: "Aliquam.",
+        },
+        {
+          answer: "Decretum.",
+          description: "Conatus cicuta doloremque statua bonus.",
+          text: "Pecto vulpes libero vomer comburo.",
+        },
+      ],
+      recommendation: "STRONG_YES",
+      updatedAt: new Date("2023-05-27T11:10:32.894Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +538,24 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsScorecard(unifiedTo, {
-    atsScorecard: {},
+    atsScorecard: {
+      comment: "Maiores enim.",
+      createdAt: new Date("2022-02-20T17:09:45.498Z"),
+      id: "324dfa59-f358-4841-a28e-b7836ff6d9e4",
+      questions: [
+        {
+          description: "Sulum textor eveniet facere vita.",
+          text: "Aliquam.",
+        },
+        {
+          answer: "Decretum.",
+          description: "Conatus cicuta doloremque statua bonus.",
+          text: "Pecto vulpes libero vomer comburo.",
+        },
+      ],
+      recommendation: "STRONG_YES",
+      updatedAt: new Date("2023-05-27T11:10:32.894Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -102,7 +102,7 @@ Create a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" -->
+<!-- UsageSnippet language="typescript" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" example="task_project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -114,7 +114,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.project.createTaskProject({
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "b89dd93c-edbd-47f7-8077-f16b2f9cf4a1",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "db969ea0-9310-4a66-a696-8fceb5ef1409",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "f2df3bed-7357-48cd-bf87-bd708995401a",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.709Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -142,7 +172,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await projectCreateTaskProject(unifiedTo, {
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "b89dd93c-edbd-47f7-8077-f16b2f9cf4a1",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "db969ea0-9310-4a66-a696-8fceb5ef1409",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "f2df3bed-7357-48cd-bf87-bd708995401a",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.709Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -574,7 +634,7 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -586,7 +646,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.project.patchTaskProject({
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -615,7 +705,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await projectPatchTaskProject(unifiedTo, {
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -894,7 +1014,7 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -906,7 +1026,37 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.project.updateTaskProject({
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -935,7 +1085,37 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await projectUpdateTaskProject(unifiedTo, {
-    taskProject: {},
+    taskProject: {
+      createdAt: new Date("2023-06-23T16:39:40.446Z"),
+      description: "Valetudo aggredior accommodo curiositas vox.",
+      hasChildren: false,
+      hasTasks: false,
+      id: "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+      metadata: [
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "5783b242-6b8f-46b3-8562-811ab290f6b2",
+          namespace: "custom",
+          slug: "decens",
+          value: "uterque",
+        },
+        {
+          extraData: {
+  
+          },
+          format: "TEXT",
+          id: "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+          namespace: "custom",
+          slug: "benevolentia",
+          value: "pariatur",
+        },
+      ],
+      name: "Garden",
+      updatedAt: new Date("2023-10-08T14:52:33.710Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

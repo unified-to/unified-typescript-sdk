@@ -17,7 +17,7 @@ Create an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" -->
+<!-- UsageSnippet language="typescript" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" example="ads_insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,13 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.insertionorder.createAdsInsertionorder({
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "d470068f-65ac-407c-8545-0d0e7170e34e",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +63,13 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsCreateAdsInsertionorder(unifiedTo, {
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "d470068f-65ac-407c-8545-0d0e7170e34e",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +264,7 @@ Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +276,13 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.insertionorder.patchAdsInsertionorder({
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +311,13 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsPatchAdsInsertionorder(unifiedTo, {
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +436,7 @@ Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +448,13 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.insertionorder.updateAdsInsertionorder({
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +483,13 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await adsUpdateAdsInsertionorder(unifiedTo, {
-    adsInsertionorder: {},
+    adsInsertionorder: {
+      createdAt: new Date("2021-04-10T06:57:36.611Z"),
+      id: "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+      name: "Kunde, Smith and Reinger",
+      status: "UNSPECIFIED",
+      updatedAt: new Date("2021-04-28T12:31:22.446Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

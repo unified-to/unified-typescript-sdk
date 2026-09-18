@@ -17,7 +17,7 @@ Create a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" -->
+<!-- UsageSnippet language="typescript" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" example="ticketing_ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -29,7 +29,29 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticket.createTicketingTicket({
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "54d062bd-6a74-4ef8-bc70-dc824a2e49fd",
+        "33196987-bf69-447f-b801-4dc7d0300c6e",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.236Z"),
+      id: "d06273e9-21f7-41fb-af1f-e6e23ba3756a",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "ca9c1ed1-8fbe-47fa-9a41-de23adbe14c3",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.682Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
   });
 
@@ -57,7 +79,29 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingTicket(unifiedTo, {
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "54d062bd-6a74-4ef8-bc70-dc824a2e49fd",
+        "33196987-bf69-447f-b801-4dc7d0300c6e",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.236Z"),
+      id: "d06273e9-21f7-41fb-af1f-e6e23ba3756a",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "ca9c1ed1-8fbe-47fa-9a41-de23adbe14c3",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.682Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -252,7 +296,7 @@ Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" example="ticketing_ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,7 +308,29 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticket.patchTicketingTicket({
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -293,7 +359,29 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingTicket(unifiedTo, {
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +500,7 @@ Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="typescript" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" example="ticketing_ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,7 +512,29 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticket.updateTicketingTicket({
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -453,7 +563,29 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingTicket(unifiedTo, {
-    ticketingTicket: {},
+    ticketingTicket: {
+      attachmentIds: [
+        "9197eddb-0952-47e3-9d92-bde276596617",
+        "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+      ],
+      categoryId: "vilicus",
+      createdAt: new Date("2021-06-25T19:19:31.279Z"),
+      description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+      dueAt: new Date("2025-07-20T03:58:02.245Z"),
+      id: "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+      priority: "LOW",
+      source: "atavus",
+      sourceRef: "f4065406-3997-493a-915a-e6e2f051cab8",
+      status: "ACTIVE",
+      subject: "Thymbra ratione minus arbitro tricesimus cetera validus.",
+      tags: [
+        "tamen",
+        "vitae",
+        "torrens",
+      ],
+      updatedAt: new Date("2023-05-28T07:25:49.687Z"),
+      url: "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
