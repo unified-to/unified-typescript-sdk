@@ -146,6 +146,7 @@ export const PropertyAdsReportMetricsGroupType = {
   Native: "NATIVE",
   Ctv: "CTV",
   Dooh: "DOOH",
+  PerformanceMax: "PERFORMANCE_MAX",
 } as const;
 export type PropertyAdsReportMetricsGroupType = OpenEnum<
   typeof PropertyAdsReportMetricsGroupType

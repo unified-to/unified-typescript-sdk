@@ -45,6 +45,7 @@ export const AdvertisingChannelType = {
   Native: "NATIVE",
   Ctv: "CTV",
   Dooh: "DOOH",
+  PerformanceMax: "PERFORMANCE_MAX",
 } as const;
 export type AdvertisingChannelType = OpenEnum<typeof AdvertisingChannelType>;
 

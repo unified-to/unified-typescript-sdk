@@ -13,5 +13,5 @@ let value: PropertyAdsReportMetricsGroupType = "SEARCH";
 ## Values
 
 ```typescript
-"TEXT" | "IMAGE" | "VIDEO" | "RESPONSIVE" | "SHOPPING" | "APP" | "CALL" | "CAROUSEL" | "SOCIAL" | "DISPLAY" | "SEARCH" | "AUDIO" | "YOUTUBE" | "NATIVE" | "CTV" | "DOOH" | Unrecognized<string>
+"TEXT" | "IMAGE" | "VIDEO" | "RESPONSIVE" | "SHOPPING" | "APP" | "CALL" | "CAROUSEL" | "SOCIAL" | "DISPLAY" | "SEARCH" | "AUDIO" | "YOUTUBE" | "NATIVE" | "CTV" | "DOOH" | "PERFORMANCE_MAX" | Unrecognized<string>
 ```

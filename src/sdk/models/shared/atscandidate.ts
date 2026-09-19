@@ -81,6 +81,7 @@ export type AtsCandidate = {
   raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   sources?: Array<string> | undefined;
+  summary?: string | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<AtsTelephone> | undefined;
   title?: string | undefined;
@@ -130,6 +131,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   sources: z.array(z.string()).optional(),
+  summary: z.string().optional(),
   tags: z.array(z.string()).optional(),
   telephones: z.array(AtsTelephone$inboundSchema).optional(),
   title: z.string().optional(),
@@ -179,6 +181,7 @@ export type AtsCandidate$Outbound = {
   raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   sources?: Array<string> | undefined;
+  summary?: string | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<AtsTelephone$Outbound> | undefined;
   title?: string | undefined;
@@ -215,6 +218,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   sources: z.array(z.string()).optional(),
+  summary: z.string().optional(),
   tags: z.array(z.string()).optional(),
   telephones: z.array(AtsTelephone$outboundSchema).optional(),
   title: z.string().optional(),

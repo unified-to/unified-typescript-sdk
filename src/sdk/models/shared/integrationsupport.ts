@@ -203,6 +203,13 @@ export const ListDealId = {
 } as const;
 export type ListDealId = OpenEnum<typeof ListDealId>;
 
+export const ListDestinationId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListDestinationId = OpenEnum<typeof ListDestinationId>;
+
 export const ListDimension = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -840,6 +847,13 @@ export const NativeWebhookType = {
 } as const;
 export type NativeWebhookType = OpenEnum<typeof NativeWebhookType>;
 
+export const NativeWebhookUpdatedGte = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookUpdatedGte = OpenEnum<typeof NativeWebhookUpdatedGte>;
+
 export const NativeWebhookVisitorId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1062,6 +1076,15 @@ export const VirtualWebhookDealId = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookDealId = OpenEnum<typeof VirtualWebhookDealId>;
+
+export const VirtualWebhookEffectiveStatus = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookEffectiveStatus = OpenEnum<
+  typeof VirtualWebhookEffectiveStatus
+>;
 
 export const VirtualWebhookEndLt = {
   SupportedRequired: "supported-required",
@@ -1432,6 +1455,7 @@ export type IntegrationSupport = {
   listCycleId?: ListCycleId | undefined;
   listDatabaseId?: ListDatabaseId | undefined;
   listDealId?: ListDealId | undefined;
+  listDestinationId?: ListDestinationId | undefined;
   listDimension?: ListDimension | undefined;
   listDocumentId?: ListDocumentId | undefined;
   listEffectiveStatus?: ListEffectiveStatus | undefined;
@@ -1524,6 +1548,7 @@ export type IntegrationSupport = {
   nativeWebhookTaskId?: NativeWebhookTaskId | undefined;
   nativeWebhookTemplateId?: NativeWebhookTemplateId | undefined;
   nativeWebhookType?: NativeWebhookType | undefined;
+  nativeWebhookUpdatedGte?: NativeWebhookUpdatedGte | undefined;
   nativeWebhookVisitorId?: NativeWebhookVisitorId | undefined;
   outboundFields?: { [k: string]: string } | undefined;
   /**
@@ -1559,6 +1584,7 @@ export type IntegrationSupport = {
   virtualWebhookCycleId?: VirtualWebhookCycleId | undefined;
   virtualWebhookDatabaseId?: VirtualWebhookDatabaseId | undefined;
   virtualWebhookDealId?: VirtualWebhookDealId | undefined;
+  virtualWebhookEffectiveStatus?: VirtualWebhookEffectiveStatus | undefined;
   virtualWebhookEndLt?: VirtualWebhookEndLt | undefined;
   virtualWebhookEventId?: VirtualWebhookEventId | undefined;
   virtualWebhookExpand?: VirtualWebhookExpand | undefined;
@@ -1796,6 +1822,13 @@ export const ListDealId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListDealId);
+
+/** @internal */
+export const ListDestinationId$inboundSchema: z.ZodType<
+  ListDestinationId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListDestinationId);
 
 /** @internal */
 export const ListDimension$inboundSchema: z.ZodType<
@@ -2435,6 +2468,13 @@ export const NativeWebhookType$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(NativeWebhookType);
 
 /** @internal */
+export const NativeWebhookUpdatedGte$inboundSchema: z.ZodType<
+  NativeWebhookUpdatedGte,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NativeWebhookUpdatedGte);
+
+/** @internal */
 export const NativeWebhookVisitorId$inboundSchema: z.ZodType<
   NativeWebhookVisitorId,
   z.ZodTypeDef,
@@ -2636,6 +2676,13 @@ export const VirtualWebhookDealId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookDealId);
+
+/** @internal */
+export const VirtualWebhookEffectiveStatus$inboundSchema: z.ZodType<
+  VirtualWebhookEffectiveStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookEffectiveStatus);
 
 /** @internal */
 export const VirtualWebhookEndLt$inboundSchema: z.ZodType<
@@ -2993,6 +3040,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_cycle_id: ListCycleId$inboundSchema.optional(),
   list_database_id: ListDatabaseId$inboundSchema.optional(),
   list_deal_id: ListDealId$inboundSchema.optional(),
+  list_destination_id: ListDestinationId$inboundSchema.optional(),
   list_dimension: ListDimension$inboundSchema.optional(),
   list_document_id: ListDocumentId$inboundSchema.optional(),
   list_effective_status: ListEffectiveStatus$inboundSchema.optional(),
@@ -3085,6 +3133,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_task_id: NativeWebhookTaskId$inboundSchema.optional(),
   native_webhook_template_id: NativeWebhookTemplateId$inboundSchema.optional(),
   native_webhook_type: NativeWebhookType$inboundSchema.optional(),
+  native_webhook_updated_gte: NativeWebhookUpdatedGte$inboundSchema.optional(),
   native_webhook_visitor_id: NativeWebhookVisitorId$inboundSchema.optional(),
   outbound_fields: z.record(z.string()).optional(),
   raw_objects: z.array(z.string()).optional(),
@@ -3127,6 +3176,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_database_id: VirtualWebhookDatabaseId$inboundSchema
     .optional(),
   virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
+  virtual_webhook_effective_status: VirtualWebhookEffectiveStatus$inboundSchema
+    .optional(),
   virtual_webhook_end_lt: VirtualWebhookEndLt$inboundSchema.optional(),
   virtual_webhook_event_id: VirtualWebhookEventId$inboundSchema.optional(),
   virtual_webhook_expand: VirtualWebhookExpand$inboundSchema.optional(),
@@ -3214,6 +3265,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_cycle_id": "listCycleId",
     "list_database_id": "listDatabaseId",
     "list_deal_id": "listDealId",
+    "list_destination_id": "listDestinationId",
     "list_dimension": "listDimension",
     "list_document_id": "listDocumentId",
     "list_effective_status": "listEffectiveStatus",
@@ -3305,6 +3357,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "native_webhook_task_id": "nativeWebhookTaskId",
     "native_webhook_template_id": "nativeWebhookTemplateId",
     "native_webhook_type": "nativeWebhookType",
+    "native_webhook_updated_gte": "nativeWebhookUpdatedGte",
     "native_webhook_visitor_id": "nativeWebhookVisitorId",
     "outbound_fields": "outboundFields",
     "raw_objects": "rawObjects",
@@ -3337,6 +3390,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_cycle_id": "virtualWebhookCycleId",
     "virtual_webhook_database_id": "virtualWebhookDatabaseId",
     "virtual_webhook_deal_id": "virtualWebhookDealId",
+    "virtual_webhook_effective_status": "virtualWebhookEffectiveStatus",
     "virtual_webhook_end_lt": "virtualWebhookEndLt",
     "virtual_webhook_event_id": "virtualWebhookEventId",
     "virtual_webhook_expand": "virtualWebhookExpand",

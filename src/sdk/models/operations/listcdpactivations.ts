@@ -29,6 +29,9 @@ export type ListCdpActivationsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The destination ID to filter by
+   */
   destinationId?: string | undefined;
   /**
    * Fields to return

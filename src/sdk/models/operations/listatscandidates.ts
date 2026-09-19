@@ -34,6 +34,7 @@ export const ListAtsCandidatesQueryParamFields = {
   Skills: "skills",
   JobIds: "job_ids",
   Metadata: "metadata",
+  Summary: "summary",
   Raw: "raw",
 } as const;
 export type ListAtsCandidatesQueryParamFields = ClosedEnum<
@@ -53,6 +54,10 @@ export type ListAtsCandidatesRequest = {
    * Fields to return
    */
   fields?: Array<ListAtsCandidatesQueryParamFields> | undefined;
+  /**
+   * The job ID to filter by
+   */
+  jobId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -81,6 +86,7 @@ export type ListAtsCandidatesRequest$Outbound = {
   company_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
+  job_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -99,6 +105,7 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
   companyId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(ListAtsCandidatesQueryParamFields$outboundSchema).optional(),
+  jobId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -110,6 +117,7 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     companyId: "company_id",
     connectionId: "connection_id",
+    jobId: "job_id",
     updatedGte: "updated_gte",
   });
 });

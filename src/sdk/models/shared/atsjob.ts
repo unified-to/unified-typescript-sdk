@@ -118,6 +118,7 @@ export type AtsJob = {
   remote?: boolean | undefined;
   skills?: Array<string> | undefined;
   status?: AtsJobStatus | undefined;
+  summary?: string | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
@@ -181,6 +182,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     remote: z.boolean().optional(),
     skills: z.array(z.string()).optional(),
     status: AtsJobStatus$inboundSchema.optional(),
+    summary: z.string().optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
@@ -232,6 +234,7 @@ export type AtsJob$Outbound = {
   remote?: boolean | undefined;
   skills?: Array<string> | undefined;
   status?: string | undefined;
+  summary?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
 };
@@ -269,6 +272,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   remote: z.boolean().optional(),
   skills: z.array(z.string()).optional(),
   status: AtsJobStatus$outboundSchema.optional(),
+  summary: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {

@@ -33,6 +33,7 @@ export const AdType = {
   Native: "NATIVE",
   Ctv: "CTV",
   Dooh: "DOOH",
+  PerformanceMax: "PERFORMANCE_MAX",
 } as const;
 export type AdType = OpenEnum<typeof AdType>;
 

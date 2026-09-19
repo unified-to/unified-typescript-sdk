@@ -5,11 +5,11 @@
 ```typescript
 import { GetAtsCandidateQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetAtsCandidateQueryParamFields = "title";
+let value: GetAtsCandidateQueryParamFields = "telephones";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "emails" | "title" | "telephones" | "company_name" | "image_url" | "tags" | "address" | "external_identifier" | "link_urls" | "origin" | "company_id" | "sources" | "date_of_birth" | "user_id" | "user_ids" | "web_url" | "experiences" | "education" | "skills" | "job_ids" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "emails" | "title" | "telephones" | "company_name" | "image_url" | "tags" | "address" | "external_identifier" | "link_urls" | "origin" | "company_id" | "sources" | "date_of_birth" | "user_id" | "user_ids" | "web_url" | "experiences" | "education" | "skills" | "job_ids" | "metadata" | "summary" | "raw"
 ```

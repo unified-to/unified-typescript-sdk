@@ -63,6 +63,7 @@ export type AtsApplication = {
   rejectedReason?: string | undefined;
   source?: string | undefined;
   status?: AtsApplicationStatus | undefined;
+  summary?: string | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
@@ -106,6 +107,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
   rejected_reason: z.string().optional(),
   source: z.string().optional(),
   status: AtsApplicationStatus$inboundSchema.optional(),
+  summary: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -142,6 +144,7 @@ export type AtsApplication$Outbound = {
   rejected_reason?: string | undefined;
   source?: string | undefined;
   status?: string | undefined;
+  summary?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
 };
@@ -168,6 +171,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
   rejectedReason: z.string().optional(),
   source: z.string().optional(),
   status: AtsApplicationStatus$outboundSchema.optional(),
+  summary: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {

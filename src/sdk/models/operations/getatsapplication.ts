@@ -24,6 +24,7 @@ export const GetAtsApplicationQueryParamFields = {
   UserId: "user_id",
   Metadata: "metadata",
   OriginalSubstatus: "original_substatus",
+  Summary: "summary",
   Raw: "raw",
 } as const;
 export type GetAtsApplicationQueryParamFields = ClosedEnum<

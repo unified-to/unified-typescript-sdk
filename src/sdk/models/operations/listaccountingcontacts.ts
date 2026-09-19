@@ -31,6 +31,9 @@ export const ListAccountingContactsQueryParamFields = {
   OrganizationId: "organization_id",
   PaymentTerms: "payment_terms",
   PaymenttermId: "paymentterm_id",
+  BalanceAmount: "balance_amount",
+  Website: "website",
+  Notes: "notes",
   Raw: "raw",
 } as const;
 export type ListAccountingContactsQueryParamFields = ClosedEnum<

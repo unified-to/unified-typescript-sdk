@@ -143,6 +143,7 @@ export const AdsGroupType = {
   Native: "NATIVE",
   Ctv: "CTV",
   Dooh: "DOOH",
+  PerformanceMax: "PERFORMANCE_MAX",
 } as const;
 export type AdsGroupType = OpenEnum<typeof AdsGroupType>;
 

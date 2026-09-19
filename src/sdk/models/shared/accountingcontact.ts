@@ -80,6 +80,7 @@ export type TaxExemption = OpenEnum<typeof TaxExemption>;
 
 export type AccountingContact = {
   associatedContacts?: Array<AccountingAssociatedContact> | undefined;
+  balanceAmount?: number | undefined;
   billingAddress?: PropertyAccountingContactBillingAddress | undefined;
   companyName?: string | undefined;
   createdAt?: Date | undefined;
@@ -93,6 +94,7 @@ export type AccountingContact = {
   isSupplier?: boolean | undefined;
   lastName?: string | undefined;
   name?: string | undefined;
+  notes?: string | undefined;
   organizationId?: string | undefined;
   paymentMethods?: Array<AccountingContactPaymentMethod> | undefined;
   paymentTerms?: AccountingContactPaymentTerms | undefined;
@@ -104,6 +106,7 @@ export type AccountingContact = {
   taxNumber?: string | undefined;
   telephones?: Array<AccountingTelephone> | undefined;
   updatedAt?: Date | undefined;
+  website?: string | undefined;
 };
 
 /** @internal */
@@ -140,6 +143,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
 > = z.object({
   associated_contacts: z.array(AccountingAssociatedContact$inboundSchema)
     .optional(),
+  balance_amount: z.number().optional(),
   billing_address: PropertyAccountingContactBillingAddress$inboundSchema
     .optional(),
   company_name: z.string().optional(),
@@ -155,6 +159,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
   is_supplier: z.boolean().optional(),
   last_name: z.string().optional(),
   name: z.string().optional(),
+  notes: z.string().optional(),
   organization_id: z.string().optional(),
   payment_methods: z.array(AccountingContactPaymentMethod$inboundSchema)
     .optional(),
@@ -169,9 +174,11 @@ export const AccountingContact$inboundSchema: z.ZodType<
   telephones: z.array(AccountingTelephone$inboundSchema).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  website: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "associated_contacts": "associatedContacts",
+    "balance_amount": "balanceAmount",
     "billing_address": "billingAddress",
     "company_name": "companyName",
     "created_at": "createdAt",
@@ -194,6 +201,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingContact$Outbound = {
   associated_contacts?: Array<AccountingAssociatedContact$Outbound> | undefined;
+  balance_amount?: number | undefined;
   billing_address?:
     | PropertyAccountingContactBillingAddress$Outbound
     | undefined;
@@ -209,6 +217,7 @@ export type AccountingContact$Outbound = {
   is_supplier?: boolean | undefined;
   last_name?: string | undefined;
   name?: string | undefined;
+  notes?: string | undefined;
   organization_id?: string | undefined;
   payment_methods?: Array<AccountingContactPaymentMethod$Outbound> | undefined;
   payment_terms?: string | undefined;
@@ -222,6 +231,7 @@ export type AccountingContact$Outbound = {
   tax_number?: string | undefined;
   telephones?: Array<AccountingTelephone$Outbound> | undefined;
   updated_at?: string | undefined;
+  website?: string | undefined;
 };
 
 /** @internal */
@@ -232,6 +242,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
 > = z.object({
   associatedContacts: z.array(AccountingAssociatedContact$outboundSchema)
     .optional(),
+  balanceAmount: z.number().optional(),
   billingAddress: PropertyAccountingContactBillingAddress$outboundSchema
     .optional(),
   companyName: z.string().optional(),
@@ -246,6 +257,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   isSupplier: z.boolean().optional(),
   lastName: z.string().optional(),
   name: z.string().optional(),
+  notes: z.string().optional(),
   organizationId: z.string().optional(),
   paymentMethods: z.array(AccountingContactPaymentMethod$outboundSchema)
     .optional(),
@@ -259,9 +271,11 @@ export const AccountingContact$outboundSchema: z.ZodType<
   taxNumber: z.string().optional(),
   telephones: z.array(AccountingTelephone$outboundSchema).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  website: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     associatedContacts: "associated_contacts",
+    balanceAmount: "balance_amount",
     billingAddress: "billing_address",
     companyName: "company_name",
     createdAt: "created_at",

@@ -38,7 +38,7 @@ async function run() {
       difficulty: "Beginner",
       durationMinutes: 19,
       externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "09b21f68-cdb1-4147-bb3e-6d70468ec346",
+      id: "894c5dff-670c-4685-bc8c-6d367600c064",
       instructors: [
         {
           id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -117,7 +117,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-09-23T11:13:51.788Z"),
+      updatedAt: new Date("2022-09-23T17:59:49.051Z"),
     },
     connectionId: "<id>",
   });
@@ -155,7 +155,7 @@ async function run() {
       difficulty: "Beginner",
       durationMinutes: 19,
       externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "09b21f68-cdb1-4147-bb3e-6d70468ec346",
+      id: "894c5dff-670c-4685-bc8c-6d367600c064",
       instructors: [
         {
           id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -234,7 +234,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-09-23T11:13:51.788Z"),
+      updatedAt: new Date("2022-09-23T17:59:49.051Z"),
     },
     connectionId: "<id>",
   });
@@ -451,7 +451,7 @@ async function run() {
       difficulty: "Beginner",
       durationMinutes: 19,
       externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      id: "8cc5813e-f98d-4b09-9716-4bad43b58fd2",
       instructors: [
         {
           id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -530,7 +530,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+      updatedAt: new Date("2022-09-23T17:59:49.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -569,7 +569,7 @@ async function run() {
       difficulty: "Beginner",
       durationMinutes: 19,
       externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      id: "8cc5813e-f98d-4b09-9716-4bad43b58fd2",
       instructors: [
         {
           id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -648,7 +648,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+      updatedAt: new Date("2022-09-23T17:59:49.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -789,7 +789,7 @@ async function run() {
       difficulty: "Beginner",
       durationMinutes: 19,
       externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      id: "8cc5813e-f98d-4b09-9716-4bad43b58fd2",
       instructors: [
         {
           id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -868,7 +868,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+      updatedAt: new Date("2022-09-23T17:59:49.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -907,7 +907,7 @@ async function run() {
       difficulty: "Beginner",
       durationMinutes: 19,
       externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+      id: "8cc5813e-f98d-4b09-9716-4bad43b58fd2",
       instructors: [
         {
           id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -986,7 +986,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-09-23T11:13:51.798Z"),
+      updatedAt: new Date("2022-09-23T17:59:49.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",

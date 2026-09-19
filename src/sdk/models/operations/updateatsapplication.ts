@@ -25,6 +25,7 @@ export const UpdateAtsApplicationQueryParamFields = {
   UserId: "user_id",
   Metadata: "metadata",
   OriginalSubstatus: "original_substatus",
+  Summary: "summary",
   Raw: "raw",
 } as const;
 export type UpdateAtsApplicationQueryParamFields = ClosedEnum<
