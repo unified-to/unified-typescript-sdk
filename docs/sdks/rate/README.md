@@ -26,7 +26,7 @@ async function run() {
   const result = await unifiedTo.rate.createShippingRate({
     shippingRate: {
       currency: "USD",
-      id: "1c367db6-bd7c-4d36-b7a5-716be616ebcc",
+      id: "52b7ebb3-d2c2-4908-9a7c-fb74016a2c27",
       rates: [
         {
           amount: 54.679719475097954,
@@ -35,7 +35,7 @@ async function run() {
           deliveryDays: 8,
           description: "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
           estimatedDays: 10,
-          estimatedDeliveryEndAt: new Date("2024-02-01T09:10:19.993Z"),
+          estimatedDeliveryEndAt: new Date("2024-02-01T14:18:25.664Z"),
           isGuaranteed: true,
           isNegotiatedRate: true,
           taxAmount: 2.2701712837442756,
@@ -72,7 +72,7 @@ async function run() {
   const res = await shippingCreateShippingRate(unifiedTo, {
     shippingRate: {
       currency: "USD",
-      id: "1c367db6-bd7c-4d36-b7a5-716be616ebcc",
+      id: "52b7ebb3-d2c2-4908-9a7c-fb74016a2c27",
       rates: [
         {
           amount: 54.679719475097954,
@@ -81,7 +81,7 @@ async function run() {
           deliveryDays: 8,
           description: "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
           estimatedDays: 10,
-          estimatedDeliveryEndAt: new Date("2024-02-01T09:10:19.993Z"),
+          estimatedDeliveryEndAt: new Date("2024-02-01T14:18:25.664Z"),
           isGuaranteed: true,
           isNegotiatedRate: true,
           taxAmount: 2.2701712837442756,

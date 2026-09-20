@@ -32,7 +32,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "3b978b44-6f78-4af1-b164-1f5676593ecf",
+      id: "952c8cd0-b71d-4987-a436-295323e73323",
       instructors: [],
       languages: [
         "in",
@@ -53,7 +53,7 @@ async function run() {
       ],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-07-08T14:39:16.508Z"),
+      updatedAt: new Date("2025-07-08T23:25:54.003Z"),
     },
     connectionId: "<id>",
   });
@@ -85,7 +85,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "3b978b44-6f78-4af1-b164-1f5676593ecf",
+      id: "952c8cd0-b71d-4987-a436-295323e73323",
       instructors: [],
       languages: [
         "in",
@@ -106,7 +106,7 @@ async function run() {
       ],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-07-08T14:39:16.508Z"),
+      updatedAt: new Date("2025-07-08T23:25:54.003Z"),
     },
     connectionId: "<id>",
   });
@@ -317,7 +317,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "fa4e07dc-8d83-4295-9889-8b5ff739066a",
+      id: "70cf1ed2-3269-4bc4-a792-7b52c9667cd3",
       instructors: [],
       languages: [
         "in",
@@ -338,7 +338,7 @@ async function run() {
       ],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-07-08T14:39:16.517Z"),
+      updatedAt: new Date("2025-07-08T23:25:54.011Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -371,7 +371,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "fa4e07dc-8d83-4295-9889-8b5ff739066a",
+      id: "70cf1ed2-3269-4bc4-a792-7b52c9667cd3",
       instructors: [],
       languages: [
         "in",
@@ -392,7 +392,7 @@ async function run() {
       ],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-07-08T14:39:16.517Z"),
+      updatedAt: new Date("2025-07-08T23:25:54.011Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -527,7 +527,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "fa4e07dc-8d83-4295-9889-8b5ff739066a",
+      id: "70cf1ed2-3269-4bc4-a792-7b52c9667cd3",
       instructors: [],
       languages: [
         "in",
@@ -548,7 +548,7 @@ async function run() {
       ],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-07-08T14:39:16.517Z"),
+      updatedAt: new Date("2025-07-08T23:25:54.011Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -581,7 +581,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "fa4e07dc-8d83-4295-9889-8b5ff739066a",
+      id: "70cf1ed2-3269-4bc4-a792-7b52c9667cd3",
       instructors: [],
       languages: [
         "in",
@@ -602,7 +602,7 @@ async function run() {
       ],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-07-08T14:39:16.517Z"),
+      updatedAt: new Date("2025-07-08T23:25:54.011Z"),
     },
     connectionId: "<id>",
     id: "<id>",
