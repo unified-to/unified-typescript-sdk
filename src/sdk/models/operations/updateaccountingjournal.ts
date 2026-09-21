@@ -23,6 +23,10 @@ export const UpdateAccountingJournalQueryParamFields = {
   CategoryIds: "category_ids",
   ProjectId: "project_id",
   Attachments: "attachments",
+  TotalAmount: "total_amount",
+  ExchangeRate: "exchange_rate",
+  Status: "status",
+  IsInclusiveOfTax: "is_inclusive_of_tax",
   Raw: "raw",
 } as const;
 export type UpdateAccountingJournalQueryParamFields = ClosedEnum<

@@ -26,6 +26,7 @@ export type AccountingOrganizationType = OpenEnum<
 
 export type AccountingOrganization = {
   address?: PropertyAccountingOrganizationAddress | undefined;
+  booksCloseAt?: Date | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   fiscalYearEndMonth?: number | undefined;
@@ -57,6 +58,9 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   address: PropertyAccountingOrganizationAddress$inboundSchema.optional(),
+  books_close_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
@@ -76,6 +80,7 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   website: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "books_close_at": "booksCloseAt",
     "created_at": "createdAt",
     "fiscal_year_end_month": "fiscalYearEndMonth",
     "is_elimination": "isElimination",

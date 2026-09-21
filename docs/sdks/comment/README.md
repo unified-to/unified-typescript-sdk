@@ -45,9 +45,9 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "05c21ada-23b3-4982-a60b-3838774f35dc",
+      id: "30d3f3cc-b753-4748-9916-96e018b1a819",
       type: "PAGE",
-      updatedAt: new Date("2023-11-16T17:45:40.664Z"),
+      updatedAt: new Date("2023-11-17T04:28:29.168Z"),
     },
     connectionId: "<id>",
   });
@@ -80,9 +80,9 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "05c21ada-23b3-4982-a60b-3838774f35dc",
+      id: "30d3f3cc-b753-4748-9916-96e018b1a819",
       type: "PAGE",
-      updatedAt: new Date("2023-11-16T17:45:40.664Z"),
+      updatedAt: new Date("2023-11-17T04:28:29.168Z"),
     },
     connectionId: "<id>",
   });
@@ -137,9 +137,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "dd91651e-99c7-4898-be5e-217b704012ac",
+      id: "0df5753a-ad90-4d22-bca0-59412dfde752",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.314Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.704Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -157,7 +157,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentCreateTaskComment } from "@unified-api/typescript-sdk/funcs/commentCreateTaskComment.js";
+import { taskCreateTaskComment } from "@unified-api/typescript-sdk/funcs/taskCreateTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -168,13 +168,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentCreateTaskComment(unifiedTo, {
+  const res = await taskCreateTaskComment(unifiedTo, {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "dd91651e-99c7-4898-be5e-217b704012ac",
+      id: "0df5753a-ad90-4d22-bca0-59412dfde752",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.314Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.704Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -183,7 +183,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentCreateTaskComment failed:", res.error);
+    console.log("taskCreateTaskComment failed:", res.error);
   }
 }
 
@@ -230,8 +230,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "9fa92287-ba7a-4540-b6a6-86273e9918dc",
-      updatedAt: "2024-02-02T03:05:56.095Z",
+      id: "d421c4ff-cae4-4a9f-82dc-4b463f68c6e2",
+      updatedAt: "2024-02-02T11:40:40.170Z",
     },
     connectionId: "<id>",
   });
@@ -263,8 +263,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "9fa92287-ba7a-4540-b6a6-86273e9918dc",
-      updatedAt: "2024-02-02T03:05:56.095Z",
+      id: "d421c4ff-cae4-4a9f-82dc-4b463f68c6e2",
+      updatedAt: "2024-02-02T11:40:40.170Z",
     },
     connectionId: "<id>",
   });
@@ -411,7 +411,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentGetTaskComment } from "@unified-api/typescript-sdk/funcs/commentGetTaskComment.js";
+import { taskGetTaskComment } from "@unified-api/typescript-sdk/funcs/taskGetTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -422,7 +422,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentGetTaskComment(unifiedTo, {
+  const res = await taskGetTaskComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -430,7 +430,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentGetTaskComment failed:", res.error);
+    console.log("taskGetTaskComment failed:", res.error);
   }
 }
 
@@ -645,7 +645,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentListTaskComments } from "@unified-api/typescript-sdk/funcs/commentListTaskComments.js";
+import { taskListTaskComments } from "@unified-api/typescript-sdk/funcs/taskListTaskComments.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -656,14 +656,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentListTaskComments(unifiedTo, {
+  const res = await taskListTaskComments(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentListTaskComments failed:", res.error);
+    console.log("taskListTaskComments failed:", res.error);
   }
 }
 
@@ -788,9 +788,9 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "eaf0fd86-608f-4c49-98b2-95576d362543",
+      id: "dc097808-b17e-49d3-a3d7-7d3c2d3ecb3d",
       type: "PAGE",
-      updatedAt: new Date("2023-11-16T17:45:40.667Z"),
+      updatedAt: new Date("2023-11-17T04:28:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -824,9 +824,9 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "eaf0fd86-608f-4c49-98b2-95576d362543",
+      id: "dc097808-b17e-49d3-a3d7-7d3c2d3ecb3d",
       type: "PAGE",
-      updatedAt: new Date("2023-11-16T17:45:40.667Z"),
+      updatedAt: new Date("2023-11-17T04:28:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -882,9 +882,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -903,7 +903,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentPatchTaskComment } from "@unified-api/typescript-sdk/funcs/commentPatchTaskComment.js";
+import { taskPatchTaskComment } from "@unified-api/typescript-sdk/funcs/taskPatchTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -914,13 +914,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentPatchTaskComment(unifiedTo, {
+  const res = await taskPatchTaskComment(unifiedTo, {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -930,7 +930,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentPatchTaskComment failed:", res.error);
+    console.log("taskPatchTaskComment failed:", res.error);
   }
 }
 
@@ -977,8 +977,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "dc59735f-eb3c-47c4-872b-b799a99cefb2",
-      updatedAt: "2024-02-02T03:05:56.096Z",
+      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
+      updatedAt: "2024-02-02T11:40:40.172Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1011,8 +1011,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "dc59735f-eb3c-47c4-872b-b799a99cefb2",
-      updatedAt: "2024-02-02T03:05:56.096Z",
+      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
+      updatedAt: "2024-02-02T11:40:40.172Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1160,7 +1160,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentRemoveTaskComment } from "@unified-api/typescript-sdk/funcs/commentRemoveTaskComment.js";
+import { taskRemoveTaskComment } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1171,7 +1171,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentRemoveTaskComment(unifiedTo, {
+  const res = await taskRemoveTaskComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1179,7 +1179,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentRemoveTaskComment failed:", res.error);
+    console.log("taskRemoveTaskComment failed:", res.error);
   }
 }
 
@@ -1306,9 +1306,9 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "eaf0fd86-608f-4c49-98b2-95576d362543",
+      id: "dc097808-b17e-49d3-a3d7-7d3c2d3ecb3d",
       type: "PAGE",
-      updatedAt: new Date("2023-11-16T17:45:40.667Z"),
+      updatedAt: new Date("2023-11-17T04:28:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1342,9 +1342,9 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "eaf0fd86-608f-4c49-98b2-95576d362543",
+      id: "dc097808-b17e-49d3-a3d7-7d3c2d3ecb3d",
       type: "PAGE",
-      updatedAt: new Date("2023-11-16T17:45:40.667Z"),
+      updatedAt: new Date("2023-11-17T04:28:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1400,9 +1400,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1421,7 +1421,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentUpdateTaskComment } from "@unified-api/typescript-sdk/funcs/commentUpdateTaskComment.js";
+import { taskUpdateTaskComment } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1432,13 +1432,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentUpdateTaskComment(unifiedTo, {
+  const res = await taskUpdateTaskComment(unifiedTo, {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1448,7 +1448,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentUpdateTaskComment failed:", res.error);
+    console.log("taskUpdateTaskComment failed:", res.error);
   }
 }
 
@@ -1495,8 +1495,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "dc59735f-eb3c-47c4-872b-b799a99cefb2",
-      updatedAt: "2024-02-02T03:05:56.096Z",
+      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
+      updatedAt: "2024-02-02T11:40:40.172Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1529,8 +1529,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "dc59735f-eb3c-47c4-872b-b799a99cefb2",
-      updatedAt: "2024-02-02T03:05:56.096Z",
+      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
+      updatedAt: "2024-02-02T11:40:40.172Z",
     },
     connectionId: "<id>",
     id: "<id>",

@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -20,6 +22,16 @@ import {
   AccountingTransactionLineItem$outboundSchema,
 } from "./accountingtransactionlineitem.js";
 
+export const AccountingTransactionStatus = {
+  Pending: "PENDING",
+  Posted: "POSTED",
+  Void: "VOID",
+  Other: "OTHER",
+} as const;
+export type AccountingTransactionStatus = OpenEnum<
+  typeof AccountingTransactionStatus
+>;
+
 export type AccountingTransaction = {
   accountId?: string | undefined;
   categoryIds?: Array<string> | undefined;
@@ -27,6 +39,7 @@ export type AccountingTransaction = {
   createdAt?: Date | undefined;
   currency?: string | undefined;
   customerMessage?: string | undefined;
+  exchangeRate?: number | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingTransactionLineItem> | undefined;
   memo?: string | undefined;
@@ -37,12 +50,27 @@ export type AccountingTransaction = {
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   splitAccountId?: string | undefined;
+  status?: AccountingTransactionStatus | undefined;
   subTotalAmount?: number | undefined;
   taxAmount?: number | undefined;
   totalAmount?: number | undefined;
+  transactionAt?: Date | undefined;
   type?: string | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingTransactionStatus$inboundSchema: z.ZodType<
+  AccountingTransactionStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingTransactionStatus);
+/** @internal */
+export const AccountingTransactionStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingTransactionStatus
+> = openEnums.outboundSchema(AccountingTransactionStatus);
 
 /** @internal */
 export const AccountingTransaction$inboundSchema: z.ZodType<
@@ -57,6 +85,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
     .optional(),
   currency: z.string().optional(),
   customer_message: z.string().optional(),
+  exchange_rate: z.number().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingTransactionLineItem$inboundSchema).optional(),
   memo: z.string().optional(),
@@ -67,9 +96,13 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   split_account_id: z.string().optional(),
+  status: AccountingTransactionStatus$inboundSchema.optional(),
   sub_total_amount: z.number().optional(),
   tax_amount: z.number().optional(),
   total_amount: z.number().optional(),
+  transaction_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
   type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -79,6 +112,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
     "category_ids": "categoryIds",
     "created_at": "createdAt",
     "customer_message": "customerMessage",
+    "exchange_rate": "exchangeRate",
     "organization_id": "organizationId",
     "payment_method": "paymentMethod",
     "payment_terms": "paymentTerms",
@@ -87,6 +121,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
     "sub_total_amount": "subTotalAmount",
     "tax_amount": "taxAmount",
     "total_amount": "totalAmount",
+    "transaction_at": "transactionAt",
     "updated_at": "updatedAt",
   });
 });
@@ -98,6 +133,7 @@ export type AccountingTransaction$Outbound = {
   created_at?: string | undefined;
   currency?: string | undefined;
   customer_message?: string | undefined;
+  exchange_rate?: number | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingTransactionLineItem$Outbound> | undefined;
   memo?: string | undefined;
@@ -108,9 +144,11 @@ export type AccountingTransaction$Outbound = {
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   split_account_id?: string | undefined;
+  status?: string | undefined;
   sub_total_amount?: number | undefined;
   tax_amount?: number | undefined;
   total_amount?: number | undefined;
+  transaction_at?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -127,6 +165,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   customerMessage: z.string().optional(),
+  exchangeRate: z.number().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingTransactionLineItem$outboundSchema).optional(),
   memo: z.string().optional(),
@@ -137,9 +176,11 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   splitAccountId: z.string().optional(),
+  status: AccountingTransactionStatus$outboundSchema.optional(),
   subTotalAmount: z.number().optional(),
   taxAmount: z.number().optional(),
   totalAmount: z.number().optional(),
+  transactionAt: z.date().transform(v => v.toISOString()).optional(),
   type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
@@ -148,6 +189,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
     categoryIds: "category_ids",
     createdAt: "created_at",
     customerMessage: "customer_message",
+    exchangeRate: "exchange_rate",
     organizationId: "organization_id",
     paymentMethod: "payment_method",
     paymentTerms: "payment_terms",
@@ -156,6 +198,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
     subTotalAmount: "sub_total_amount",
     taxAmount: "tax_amount",
     totalAmount: "total_amount",
+    transactionAt: "transaction_at",
     updatedAt: "updated_at",
   });
 });

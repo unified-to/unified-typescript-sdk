@@ -11,6 +11,7 @@ import { Ad } from "./ad.js";
 import { Ads } from "./ads.js";
 import { Agedpayable } from "./agedpayable.js";
 import { Agedreceivable } from "./agedreceivable.js";
+import { Agent } from "./agent.js";
 import { Analytics } from "./analytics.js";
 import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
@@ -646,6 +647,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._genai ??= new Genai(this._options));
   }
 
+  private _agent?: Agent;
+  get agent(): Agent {
+    return (this._agent ??= new Agent(this._options));
+  }
+
   private _embedding?: Embedding;
   get embedding(): Embedding {
     return (this._embedding ??= new Embedding(this._options));
@@ -659,6 +665,11 @@ export class UnifiedTo extends ClientSDK {
   private _prompt?: Prompt;
   get prompt(): Prompt {
     return (this._prompt ??= new Prompt(this._options));
+  }
+
+  private _task?: Task;
+  get task(): Task {
+    return (this._task ??= new Task(this._options));
   }
 
   private _hris?: Hris;
@@ -939,11 +950,6 @@ export class UnifiedTo extends ClientSDK {
   private _file?: FileT;
   get file(): FileT {
     return (this._file ??= new FileT(this._options));
-  }
-
-  private _task?: Task;
-  get task(): Task {
-    return (this._task ??= new Task(this._options));
   }
 
   private _change?: Change;

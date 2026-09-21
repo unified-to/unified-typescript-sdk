@@ -22,6 +22,7 @@ export const GetAccountingOrganizationQueryParamFields = {
   OrganizationCode: "organization_code",
   Type: "type",
   IsElimination: "is_elimination",
+  BooksCloseAt: "books_close_at",
   Raw: "raw",
 } as const;
 export type GetAccountingOrganizationQueryParamFields = ClosedEnum<

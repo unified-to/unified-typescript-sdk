@@ -31,12 +31,13 @@ async function run() {
   const result = await unifiedTo.transaction.createAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "8f9b0d06-7a63-4f31-8b49-f198a780da28",
+      exchangeRate: 0.5674,
+      id: "17615f5e-0ebb-445a-b676-67eeac8b692b",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "5871c683-1027-4942-b61b-d24b323174b9",
+          id: "211e7819-c286-480e-bcae-2c7237cdef02",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -45,9 +46,11 @@ async function run() {
         },
       ],
       memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      status: "VOID",
       taxAmount: 0,
       totalAmount: 94452,
-      updatedAt: new Date("2021-09-10T11:28:14.473Z"),
+      transactionAt: new Date("2019-09-25T11:40:42.574Z"),
+      updatedAt: new Date("2021-09-10T21:27:21.377Z"),
     },
     connectionId: "<id>",
   });
@@ -78,12 +81,13 @@ async function run() {
   const res = await accountingCreateAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "8f9b0d06-7a63-4f31-8b49-f198a780da28",
+      exchangeRate: 0.5674,
+      id: "17615f5e-0ebb-445a-b676-67eeac8b692b",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "5871c683-1027-4942-b61b-d24b323174b9",
+          id: "211e7819-c286-480e-bcae-2c7237cdef02",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -92,9 +96,11 @@ async function run() {
         },
       ],
       memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      status: "VOID",
       taxAmount: 0,
       totalAmount: 94452,
-      updatedAt: new Date("2021-09-10T11:28:14.473Z"),
+      transactionAt: new Date("2019-09-25T11:40:42.574Z"),
+      updatedAt: new Date("2021-09-10T21:27:21.377Z"),
     },
     connectionId: "<id>",
   });
@@ -304,12 +310,13 @@ async function run() {
   const result = await unifiedTo.transaction.patchAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "9e28a763-11e7-44f7-b1e4-a0fd4069ee4f",
+      exchangeRate: 0.5674,
+      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "9a3ce522-d314-4436-950f-654be1d75a15",
+          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -318,9 +325,11 @@ async function run() {
         },
       ],
       memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      status: "VOID",
       taxAmount: 0,
       totalAmount: 94452,
-      updatedAt: new Date("2021-09-10T11:28:14.476Z"),
+      transactionAt: new Date("2019-09-25T11:40:42.574Z"),
+      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -352,12 +361,13 @@ async function run() {
   const res = await accountingPatchAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "9e28a763-11e7-44f7-b1e4-a0fd4069ee4f",
+      exchangeRate: 0.5674,
+      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "9a3ce522-d314-4436-950f-654be1d75a15",
+          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -366,9 +376,11 @@ async function run() {
         },
       ],
       memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      status: "VOID",
       taxAmount: 0,
       totalAmount: 94452,
-      updatedAt: new Date("2021-09-10T11:28:14.476Z"),
+      transactionAt: new Date("2019-09-25T11:40:42.574Z"),
+      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -502,12 +514,13 @@ async function run() {
   const result = await unifiedTo.transaction.updateAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "9e28a763-11e7-44f7-b1e4-a0fd4069ee4f",
+      exchangeRate: 0.5674,
+      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "9a3ce522-d314-4436-950f-654be1d75a15",
+          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -516,9 +529,11 @@ async function run() {
         },
       ],
       memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      status: "VOID",
       taxAmount: 0,
       totalAmount: 94452,
-      updatedAt: new Date("2021-09-10T11:28:14.476Z"),
+      transactionAt: new Date("2019-09-25T11:40:42.574Z"),
+      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -550,12 +565,13 @@ async function run() {
   const res = await accountingUpdateAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "9e28a763-11e7-44f7-b1e4-a0fd4069ee4f",
+      exchangeRate: 0.5674,
+      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "9a3ce522-d314-4436-950f-654be1d75a15",
+          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -564,9 +580,11 @@ async function run() {
         },
       ],
       memo: "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+      status: "VOID",
       taxAmount: 0,
       totalAmount: 94452,
-      updatedAt: new Date("2021-09-10T11:28:14.476Z"),
+      transactionAt: new Date("2019-09-25T11:40:42.574Z"),
+      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",

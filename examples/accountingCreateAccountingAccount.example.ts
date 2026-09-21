@@ -27,7 +27,7 @@ async function main() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "83739f72-9953-46a9-aedd-877d0667d16d",
+      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -44,7 +44,7 @@ async function main() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T06:57:17.864Z"),
+      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
     },
     connectionId: "<id>",
   });

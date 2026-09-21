@@ -57,6 +57,7 @@ export type AccountingExpense = {
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  exchangeRate?: number | undefined;
   externalNumber?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
@@ -71,6 +72,7 @@ export type AccountingExpense = {
   reimbursedAt?: Date | undefined;
   status?: AccountingExpenseStatus | undefined;
   taxAmount?: number | undefined;
+  taxrateId?: string | undefined;
   totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
@@ -107,6 +109,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
+  exchange_rate: z.number().optional(),
   external_number: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
@@ -124,6 +127,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   ).optional(),
   status: AccountingExpenseStatus$inboundSchema.optional(),
   tax_amount: z.number().optional(),
+  taxrate_id: z.string().optional(),
   total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -138,6 +142,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
     "category_ids": "categoryIds",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "exchange_rate": "exchangeRate",
     "external_number": "externalNumber",
     "organization_id": "organizationId",
     "payment_method": "paymentMethod",
@@ -146,6 +151,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
     "reimbursed_amount": "reimbursedAmount",
     "reimbursed_at": "reimbursedAt",
     "tax_amount": "taxAmount",
+    "taxrate_id": "taxrateId",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -162,6 +168,7 @@ export type AccountingExpense$Outbound = {
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
+  exchange_rate?: number | undefined;
   external_number?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
@@ -176,6 +183,7 @@ export type AccountingExpense$Outbound = {
   reimbursed_at?: string | undefined;
   status?: string | undefined;
   tax_amount?: number | undefined;
+  taxrate_id?: string | undefined;
   total_amount?: number | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -197,6 +205,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
+  exchangeRate: z.number().optional(),
   externalNumber: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
@@ -211,6 +220,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   reimbursedAt: z.date().transform(v => v.toISOString()).optional(),
   status: AccountingExpenseStatus$outboundSchema.optional(),
   taxAmount: z.number().optional(),
+  taxrateId: z.string().optional(),
   totalAmount: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
@@ -224,6 +234,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
     categoryIds: "category_ids",
     contactId: "contact_id",
     createdAt: "created_at",
+    exchangeRate: "exchange_rate",
     externalNumber: "external_number",
     organizationId: "organization_id",
     paymentMethod: "payment_method",
@@ -232,6 +243,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
     reimbursedAmount: "reimbursed_amount",
     reimbursedAt: "reimbursed_at",
     taxAmount: "tax_amount",
+    taxrateId: "taxrate_id",
     totalAmount: "total_amount",
     updatedAt: "updated_at",
     userId: "user_id",

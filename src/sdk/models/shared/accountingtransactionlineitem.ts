@@ -15,6 +15,7 @@ export type AccountingTransactionLineItem = {
   id?: string | undefined;
   name?: string | undefined;
   objectType?: string | undefined;
+  taxrateId?: string | undefined;
   totalAmount?: number | undefined;
   unitAmount?: number | undefined;
   unitQuantity?: number | undefined;
@@ -32,6 +33,7 @@ export const AccountingTransactionLineItem$inboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string().optional(),
   object_type: z.string().optional(),
+  taxrate_id: z.string().optional(),
   total_amount: z.number().optional(),
   unit_amount: z.number().optional(),
   unit_quantity: z.number().optional(),
@@ -40,6 +42,7 @@ export const AccountingTransactionLineItem$inboundSchema: z.ZodType<
     "account_id": "accountId",
     "category_ids": "categoryIds",
     "object_type": "objectType",
+    "taxrate_id": "taxrateId",
     "total_amount": "totalAmount",
     "unit_amount": "unitAmount",
     "unit_quantity": "unitQuantity",
@@ -53,6 +56,7 @@ export type AccountingTransactionLineItem$Outbound = {
   id?: string | undefined;
   name?: string | undefined;
   object_type?: string | undefined;
+  taxrate_id?: string | undefined;
   total_amount?: number | undefined;
   unit_amount?: number | undefined;
   unit_quantity?: number | undefined;
@@ -70,6 +74,7 @@ export const AccountingTransactionLineItem$outboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string().optional(),
   objectType: z.string().optional(),
+  taxrateId: z.string().optional(),
   totalAmount: z.number().optional(),
   unitAmount: z.number().optional(),
   unitQuantity: z.number().optional(),
@@ -78,6 +83,7 @@ export const AccountingTransactionLineItem$outboundSchema: z.ZodType<
     accountId: "account_id",
     categoryIds: "category_ids",
     objectType: "object_type",
+    taxrateId: "taxrate_id",
     totalAmount: "total_amount",
     unitAmount: "unit_amount",
     unitQuantity: "unit_quantity",

@@ -101,6 +101,7 @@ export type AccountingBill = {
   currency?: string | undefined;
   discountAmount?: number | undefined;
   dueAt?: Date | undefined;
+  exchangeRate?: number | undefined;
   extendedNotes?: Array<AccountingExtendedNote> | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
@@ -118,12 +119,17 @@ export type AccountingBill = {
   paymenttermId?: string | undefined;
   postedAt?: Date | undefined;
   projectId?: string | undefined;
+  /**
+   * refs -> AccountingPurchaseorder; the purchase orders this bill was raised from
+   */
+  purchaseorderIds?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
   refundedAt?: Date | undefined;
   send?: boolean | undefined;
   status?: AccountingBillStatus | undefined;
+  subTotalAmount?: number | undefined;
   taxAmount?: number | undefined;
   term?: Term | undefined;
   totalAmount?: number | undefined;
@@ -197,6 +203,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
   discount_amount: z.number().optional(),
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  exchange_rate: z.number().optional(),
   extended_notes: z.array(AccountingExtendedNote$inboundSchema).optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
@@ -213,6 +220,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   project_id: z.string().optional(),
+  purchaseorder_ids: z.array(z.string()).optional(),
   raw: z.record(z.any()).optional(),
   refund_amount: z.number().optional(),
   refund_reason: z.string().optional(),
@@ -220,6 +228,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
     .optional(),
   send: z.boolean().optional(),
   status: AccountingBillStatus$inboundSchema.optional(),
+  sub_total_amount: z.number().optional(),
   tax_amount: z.number().optional(),
   term: Term$inboundSchema.optional(),
   total_amount: z.number().optional(),
@@ -236,6 +245,7 @@ export const AccountingBill$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "due_at": "dueAt",
+    "exchange_rate": "exchangeRate",
     "extended_notes": "extendedNotes",
     "organization_id": "organizationId",
     "paid_amount": "paidAmount",
@@ -245,9 +255,11 @@ export const AccountingBill$inboundSchema: z.ZodType<
     "paymentterm_id": "paymenttermId",
     "posted_at": "postedAt",
     "project_id": "projectId",
+    "purchaseorder_ids": "purchaseorderIds",
     "refund_amount": "refundAmount",
     "refund_reason": "refundReason",
     "refunded_at": "refundedAt",
+    "sub_total_amount": "subTotalAmount",
     "tax_amount": "taxAmount",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
@@ -265,6 +277,7 @@ export type AccountingBill$Outbound = {
   currency?: string | undefined;
   discount_amount?: number | undefined;
   due_at?: string | undefined;
+  exchange_rate?: number | undefined;
   extended_notes?: Array<AccountingExtendedNote$Outbound> | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
@@ -279,12 +292,14 @@ export type AccountingBill$Outbound = {
   paymentterm_id?: string | undefined;
   posted_at?: string | undefined;
   project_id?: string | undefined;
+  purchaseorder_ids?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
   refund_amount?: number | undefined;
   refund_reason?: string | undefined;
   refunded_at?: string | undefined;
   send?: boolean | undefined;
   status?: string | undefined;
+  sub_total_amount?: number | undefined;
   tax_amount?: number | undefined;
   term?: string | undefined;
   total_amount?: number | undefined;
@@ -308,6 +323,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   discountAmount: z.number().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
+  exchangeRate: z.number().optional(),
   extendedNotes: z.array(AccountingExtendedNote$outboundSchema).optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
@@ -322,12 +338,14 @@ export const AccountingBill$outboundSchema: z.ZodType<
   paymenttermId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   projectId: z.string().optional(),
+  purchaseorderIds: z.array(z.string()).optional(),
   raw: z.record(z.any()).optional(),
   refundAmount: z.number().optional(),
   refundReason: z.string().optional(),
   refundedAt: z.date().transform(v => v.toISOString()).optional(),
   send: z.boolean().optional(),
   status: AccountingBillStatus$outboundSchema.optional(),
+  subTotalAmount: z.number().optional(),
   taxAmount: z.number().optional(),
   term: Term$outboundSchema.optional(),
   totalAmount: z.number().optional(),
@@ -343,6 +361,7 @@ export const AccountingBill$outboundSchema: z.ZodType<
     createdAt: "created_at",
     discountAmount: "discount_amount",
     dueAt: "due_at",
+    exchangeRate: "exchange_rate",
     extendedNotes: "extended_notes",
     organizationId: "organization_id",
     paidAmount: "paid_amount",
@@ -352,9 +371,11 @@ export const AccountingBill$outboundSchema: z.ZodType<
     paymenttermId: "paymentterm_id",
     postedAt: "posted_at",
     projectId: "project_id",
+    purchaseorderIds: "purchaseorder_ids",
     refundAmount: "refund_amount",
     refundReason: "refund_reason",
     refundedAt: "refunded_at",
+    subTotalAmount: "sub_total_amount",
     taxAmount: "tax_amount",
     totalAmount: "total_amount",
     updatedAt: "updated_at",

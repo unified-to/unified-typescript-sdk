@@ -18,6 +18,7 @@ let value: AccountingTransactionLineItem = {};
 | `id`               | *string*           | :heavy_minus_sign: | N/A                |
 | `name`             | *string*           | :heavy_minus_sign: | N/A                |
 | `objectType`       | *string*           | :heavy_minus_sign: | N/A                |
+| `taxrateId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `totalAmount`      | *number*           | :heavy_minus_sign: | N/A                |
 | `unitAmount`       | *number*           | :heavy_minus_sign: | N/A                |
 | `unitQuantity`     | *number*           | :heavy_minus_sign: | N/A                |

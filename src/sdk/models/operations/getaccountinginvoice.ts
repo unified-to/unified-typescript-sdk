@@ -43,6 +43,10 @@ export const GetAccountingInvoiceQueryParamFields = {
   CategoryIds: "category_ids",
   ProjectId: "project_id",
   Metadata: "metadata",
+  SubTotalAmount: "sub_total_amount",
+  ExchangeRate: "exchange_rate",
+  IsInclusiveOfTax: "is_inclusive_of_tax",
+  SalesorderIds: "salesorder_ids",
   Raw: "raw",
 } as const;
 export type GetAccountingInvoiceQueryParamFields = ClosedEnum<

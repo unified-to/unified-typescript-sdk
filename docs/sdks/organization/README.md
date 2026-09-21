@@ -5,18 +5,24 @@
 ### Available Operations
 
 * [createAdsOrganization](#createadsorganization) - Create an organization
+* [createGenaiOrganization](#creategenaiorganization) - Create an organization
 * [createRepoOrganization](#createrepoorganization) - Create an organization
 * [getAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [getAdsOrganization](#getadsorganization) - Retrieve an organization
+* [getGenaiOrganization](#getgenaiorganization) - Retrieve an organization
 * [getRepoOrganization](#getrepoorganization) - Retrieve an organization
 * [listAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [listAdsOrganizations](#listadsorganizations) - List all organizations
+* [listGenaiOrganizations](#listgenaiorganizations) - List all organizations
 * [listRepoOrganizations](#listrepoorganizations) - List all organizations
 * [patchAdsOrganization](#patchadsorganization) - Update an organization
+* [patchGenaiOrganization](#patchgenaiorganization) - Update an organization
 * [patchRepoOrganization](#patchrepoorganization) - Update an organization
 * [removeAdsOrganization](#removeadsorganization) - Remove an organization
+* [removeGenaiOrganization](#removegenaiorganization) - Remove an organization
 * [removeRepoOrganization](#removerepoorganization) - Remove an organization
 * [updateAdsOrganization](#updateadsorganization) - Update an organization
+* [updateGenaiOrganization](#updategenaiorganization) - Update an organization
 * [updateRepoOrganization](#updaterepoorganization) - Update an organization
 
 ## createAdsOrganization
@@ -41,7 +47,7 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "c21f2578-6a34-4670-b243-2d396178fb84",
+      id: "7aa99529-0bf9-46b7-8885-0326ecbc4707",
       managers: [
         {
           id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -51,7 +57,7 @@ async function run() {
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-02-28T07:14:20.654Z"),
+      updatedAt: new Date("2026-03-01T15:36:04.753Z"),
     },
     connectionId: "<id>",
   });
@@ -84,7 +90,7 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "c21f2578-6a34-4670-b243-2d396178fb84",
+      id: "7aa99529-0bf9-46b7-8885-0326ecbc4707",
       managers: [
         {
           id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -94,7 +100,7 @@ async function run() {
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-02-28T07:14:20.654Z"),
+      updatedAt: new Date("2026-03-01T15:36:04.753Z"),
     },
     connectionId: "<id>",
   });
@@ -128,6 +134,99 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createGenaiOrganization
+
+Create an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createGenaiOrganization" method="post" path="/genai/{connection_id}/organization" example="genai_organization" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.organization.createGenaiOrganization({
+    genaiOrganization: {
+      createdAt: new Date("2020-10-27T16:03:47.122Z"),
+      description: "Voluptates abeo subseco.",
+      id: "c6b6737d-7782-41e3-a20e-674fb9c33d86",
+      isActive: false,
+      name: "officially about",
+      updatedAt: new Date("2023-01-15T02:14:43.003Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { organizationCreateGenaiOrganization } from "@unified-api/typescript-sdk/funcs/organizationCreateGenaiOrganization.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await organizationCreateGenaiOrganization(unifiedTo, {
+    genaiOrganization: {
+      createdAt: new Date("2020-10-27T16:03:47.122Z"),
+      description: "Voluptates abeo subseco.",
+      id: "c6b6737d-7782-41e3-a20e-674fb9c33d86",
+      isActive: false,
+      name: "officially about",
+      updatedAt: new Date("2023-01-15T02:14:43.003Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationCreateGenaiOrganization failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateGenaiOrganizationRequest](../../sdk/models/operations/creategenaiorganizationrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiOrganization](../../sdk/models/shared/genaiorganization.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## createRepoOrganization
 
 Create an organization
@@ -150,9 +249,9 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "848bb497-b731-4e29-b897-7b9b82bc33e7",
+      id: "e5e80293-ffea-4c50-8f72-f34ace46e72d",
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-13T07:51:08.849Z"),
+      updatedAt: new Date("2023-08-13T17:10:28.255Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -186,9 +285,9 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "848bb497-b731-4e29-b897-7b9b82bc33e7",
+      id: "e5e80293-ffea-4c50-8f72-f34ace46e72d",
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-13T07:51:08.849Z"),
+      updatedAt: new Date("2023-08-13T17:10:28.255Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -374,6 +473,85 @@ run();
 ### Response
 
 **Promise\<[shared.AdsOrganization](../../sdk/models/shared/adsorganization.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getGenaiOrganization
+
+Retrieve an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getGenaiOrganization" method="get" path="/genai/{connection_id}/organization/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.organization.getGenaiOrganization({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { organizationGetGenaiOrganization } from "@unified-api/typescript-sdk/funcs/organizationGetGenaiOrganization.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await organizationGetGenaiOrganization(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationGetGenaiOrganization failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetGenaiOrganizationRequest](../../sdk/models/operations/getgenaiorganizationrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiOrganization](../../sdk/models/shared/genaiorganization.md)\>**
 
 ### Errors
 
@@ -614,6 +792,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listGenaiOrganizations
+
+List all organizations
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listGenaiOrganizations" method="get" path="/genai/{connection_id}/organization" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.organization.listGenaiOrganizations({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { organizationListGenaiOrganizations } from "@unified-api/typescript-sdk/funcs/organizationListGenaiOrganizations.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await organizationListGenaiOrganizations(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationListGenaiOrganizations failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListGenaiOrganizationsRequest](../../sdk/models/operations/listgenaiorganizationsrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiOrganization[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listRepoOrganizations
 
 List all organizations
@@ -713,7 +968,7 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f27f7a1e-55e1-4c73-a272-7696f720a705",
+      id: "efbf089b-dc01-4dbe-bdc5-3d5f86e0b1c3",
       managers: [
         {
           id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -723,7 +978,7 @@ async function run() {
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-02-28T07:14:20.664Z"),
+      updatedAt: new Date("2026-03-01T15:36:04.765Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -757,7 +1012,7 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f27f7a1e-55e1-4c73-a272-7696f720a705",
+      id: "efbf089b-dc01-4dbe-bdc5-3d5f86e0b1c3",
       managers: [
         {
           id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -767,7 +1022,7 @@ async function run() {
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-02-28T07:14:20.664Z"),
+      updatedAt: new Date("2026-03-01T15:36:04.765Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -802,6 +1057,101 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchGenaiOrganization
+
+Update an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchGenaiOrganization" method="patch" path="/genai/{connection_id}/organization/{id}" example="genai_organization" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.organization.patchGenaiOrganization({
+    genaiOrganization: {
+      createdAt: new Date("2020-10-27T16:03:47.122Z"),
+      description: "Voluptates abeo subseco.",
+      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      isActive: false,
+      name: "officially about",
+      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { organizationPatchGenaiOrganization } from "@unified-api/typescript-sdk/funcs/organizationPatchGenaiOrganization.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await organizationPatchGenaiOrganization(unifiedTo, {
+    genaiOrganization: {
+      createdAt: new Date("2020-10-27T16:03:47.122Z"),
+      description: "Voluptates abeo subseco.",
+      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      isActive: false,
+      name: "officially about",
+      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationPatchGenaiOrganization failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchGenaiOrganizationRequest](../../sdk/models/operations/patchgenaiorganizationrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiOrganization](../../sdk/models/shared/genaiorganization.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchRepoOrganization
 
 Update an organization
@@ -824,9 +1174,9 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "ba6a9834-a347-4a9e-84eb-28ede12866bf",
+      id: "2c0e48fb-7221-429b-aeed-0a403672f821",
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-13T07:51:08.851Z"),
+      updatedAt: new Date("2023-08-13T17:10:28.257Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -861,9 +1211,9 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "ba6a9834-a347-4a9e-84eb-28ede12866bf",
+      id: "2c0e48fb-7221-429b-aeed-0a403672f821",
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-13T07:51:08.851Z"),
+      updatedAt: new Date("2023-08-13T17:10:28.257Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -978,6 +1328,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeGenaiOrganization
+
+Remove an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeGenaiOrganization" method="delete" path="/genai/{connection_id}/organization/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.organization.removeGenaiOrganization({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { organizationRemoveGenaiOrganization } from "@unified-api/typescript-sdk/funcs/organizationRemoveGenaiOrganization.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await organizationRemoveGenaiOrganization(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationRemoveGenaiOrganization failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveGenaiOrganizationRequest](../../sdk/models/operations/removegenaiorganizationrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveGenaiOrganizationResponse](../../sdk/models/operations/removegenaiorganizationresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removeRepoOrganization
 
 Remove an organization
@@ -1079,7 +1508,7 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f27f7a1e-55e1-4c73-a272-7696f720a705",
+      id: "efbf089b-dc01-4dbe-bdc5-3d5f86e0b1c3",
       managers: [
         {
           id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -1089,7 +1518,7 @@ async function run() {
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-02-28T07:14:20.664Z"),
+      updatedAt: new Date("2026-03-01T15:36:04.765Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1123,7 +1552,7 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f27f7a1e-55e1-4c73-a272-7696f720a705",
+      id: "efbf089b-dc01-4dbe-bdc5-3d5f86e0b1c3",
       managers: [
         {
           id: "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -1133,7 +1562,7 @@ async function run() {
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-02-28T07:14:20.664Z"),
+      updatedAt: new Date("2026-03-01T15:36:04.765Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1168,6 +1597,101 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateGenaiOrganization
+
+Update an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateGenaiOrganization" method="put" path="/genai/{connection_id}/organization/{id}" example="genai_organization" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.organization.updateGenaiOrganization({
+    genaiOrganization: {
+      createdAt: new Date("2020-10-27T16:03:47.122Z"),
+      description: "Voluptates abeo subseco.",
+      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      isActive: false,
+      name: "officially about",
+      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { organizationUpdateGenaiOrganization } from "@unified-api/typescript-sdk/funcs/organizationUpdateGenaiOrganization.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await organizationUpdateGenaiOrganization(unifiedTo, {
+    genaiOrganization: {
+      createdAt: new Date("2020-10-27T16:03:47.122Z"),
+      description: "Voluptates abeo subseco.",
+      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      isActive: false,
+      name: "officially about",
+      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationUpdateGenaiOrganization failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateGenaiOrganizationRequest](../../sdk/models/operations/updategenaiorganizationrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiOrganization](../../sdk/models/shared/genaiorganization.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateRepoOrganization
 
 Update an organization
@@ -1190,9 +1714,9 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "ba6a9834-a347-4a9e-84eb-28ede12866bf",
+      id: "2c0e48fb-7221-429b-aeed-0a403672f821",
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-13T07:51:08.851Z"),
+      updatedAt: new Date("2023-08-13T17:10:28.257Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -1227,9 +1751,9 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "ba6a9834-a347-4a9e-84eb-28ede12866bf",
+      id: "2c0e48fb-7221-429b-aeed-0a403672f821",
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-13T07:51:08.851Z"),
+      updatedAt: new Date("2023-08-13T17:10:28.257Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",

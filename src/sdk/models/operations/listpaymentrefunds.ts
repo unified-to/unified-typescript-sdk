@@ -16,6 +16,9 @@ export const ListPaymentRefundsQueryParamFields = {
   Notes: "notes",
   Status: "status",
   Reference: "reference",
+  RefundedAt: "refunded_at",
+  Reason: "reason",
+  TenderType: "tender_type",
   Raw: "raw",
 } as const;
 export type ListPaymentRefundsQueryParamFields = ClosedEnum<

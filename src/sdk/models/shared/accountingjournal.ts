@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -20,13 +22,23 @@ import {
   AccountingJournalLineitem$outboundSchema,
 } from "./accountingjournallineitem.js";
 
+export const AccountingJournalStatus = {
+  Draft: "DRAFT",
+  Posted: "POSTED",
+  Void: "VOID",
+  Other: "OTHER",
+} as const;
+export type AccountingJournalStatus = OpenEnum<typeof AccountingJournalStatus>;
+
 export type AccountingJournal = {
   attachments?: Array<AccountingAttachment> | undefined;
   categoryIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
+  exchangeRate?: number | undefined;
   id?: string | undefined;
+  isInclusiveOfTax?: boolean | undefined;
   /**
    * new field name
    */
@@ -37,10 +49,25 @@ export type AccountingJournal = {
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   source?: string | undefined;
+  status?: AccountingJournalStatus | undefined;
   taxAmount?: number | undefined;
   taxrateId?: string | undefined;
+  totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingJournalStatus$inboundSchema: z.ZodType<
+  AccountingJournalStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingJournalStatus);
+/** @internal */
+export const AccountingJournalStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingJournalStatus
+> = openEnums.outboundSchema(AccountingJournalStatus);
 
 /** @internal */
 export const AccountingJournal$inboundSchema: z.ZodType<
@@ -54,7 +81,9 @@ export const AccountingJournal$inboundSchema: z.ZodType<
     .optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
+  exchange_rate: z.number().optional(),
   id: z.string().optional(),
+  is_inclusive_of_tax: z.boolean().optional(),
   lineitems: z.array(AccountingJournalLineitem$inboundSchema).optional(),
   organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -63,19 +92,24 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   source: z.string().optional(),
+  status: AccountingJournalStatus$inboundSchema.optional(),
   tax_amount: z.number().optional(),
   taxrate_id: z.string().optional(),
+  total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "category_ids": "categoryIds",
     "created_at": "createdAt",
+    "exchange_rate": "exchangeRate",
+    "is_inclusive_of_tax": "isInclusiveOfTax",
     "organization_id": "organizationId",
     "posted_at": "postedAt",
     "project_id": "projectId",
     "tax_amount": "taxAmount",
     "taxrate_id": "taxrateId",
+    "total_amount": "totalAmount",
     "updated_at": "updatedAt",
   });
 });
@@ -86,7 +120,9 @@ export type AccountingJournal$Outbound = {
   created_at?: string | undefined;
   currency?: string | undefined;
   description?: string | undefined;
+  exchange_rate?: number | undefined;
   id?: string | undefined;
+  is_inclusive_of_tax?: boolean | undefined;
   lineitems?: Array<AccountingJournalLineitem$Outbound> | undefined;
   organization_id?: string | undefined;
   posted_at?: string | undefined;
@@ -94,8 +130,10 @@ export type AccountingJournal$Outbound = {
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   source?: string | undefined;
+  status?: string | undefined;
   tax_amount?: number | undefined;
   taxrate_id?: string | undefined;
+  total_amount?: number | undefined;
   updated_at?: string | undefined;
 };
 
@@ -110,7 +148,9 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
+  exchangeRate: z.number().optional(),
   id: z.string().optional(),
+  isInclusiveOfTax: z.boolean().optional(),
   lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
   organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -118,18 +158,23 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   source: z.string().optional(),
+  status: AccountingJournalStatus$outboundSchema.optional(),
   taxAmount: z.number().optional(),
   taxrateId: z.string().optional(),
+  totalAmount: z.number().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     categoryIds: "category_ids",
     createdAt: "created_at",
+    exchangeRate: "exchange_rate",
+    isInclusiveOfTax: "is_inclusive_of_tax",
     organizationId: "organization_id",
     postedAt: "posted_at",
     projectId: "project_id",
     taxAmount: "tax_amount",
     taxrateId: "taxrate_id",
+    totalAmount: "total_amount",
     updatedAt: "updated_at",
   });
 });

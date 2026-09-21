@@ -10,6 +10,14 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export const Reason = {
+  Duplicate: "DUPLICATE",
+  Fraudulent: "FRAUDULENT",
+  RequestedByCustomer: "REQUESTED_BY_CUSTOMER",
+  Other: "OTHER",
+} as const;
+export type Reason = OpenEnum<typeof Reason>;
+
 export const PaymentRefundStatus = {
   Succeeded: "SUCCEEDED",
   Pending: "PENDING",
@@ -18,6 +26,20 @@ export const PaymentRefundStatus = {
 } as const;
 export type PaymentRefundStatus = OpenEnum<typeof PaymentRefundStatus>;
 
+export const PaymentRefundTenderType = {
+  Card: "CARD",
+  Cash: "CASH",
+  GiftCard: "GIFT_CARD",
+  BankTransfer: "BANK_TRANSFER",
+  Wallet: "WALLET",
+  Check: "CHECK",
+  StoreCredit: "STORE_CREDIT",
+  BuyNowPayLater: "BUY_NOW_PAY_LATER",
+  External: "EXTERNAL",
+  Other: "OTHER",
+} as const;
+export type PaymentRefundTenderType = OpenEnum<typeof PaymentRefundTenderType>;
+
 export type PaymentRefund = {
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -25,11 +47,18 @@ export type PaymentRefund = {
   notes?: string | undefined;
   paymentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  reason?: Reason | undefined;
   reference?: string | undefined;
+  refundedAt?: Date | undefined;
   status?: PaymentRefundStatus | undefined;
+  tenderType?: PaymentRefundTenderType | undefined;
   totalAmount?: number | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const Reason$inboundSchema: z.ZodType<Reason, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Reason);
 
 /** @internal */
 export const PaymentRefundStatus$inboundSchema: z.ZodType<
@@ -37,6 +66,13 @@ export const PaymentRefundStatus$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(PaymentRefundStatus);
+
+/** @internal */
+export const PaymentRefundTenderType$inboundSchema: z.ZodType<
+  PaymentRefundTenderType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PaymentRefundTenderType);
 
 /** @internal */
 export const PaymentRefund$inboundSchema: z.ZodType<
@@ -51,8 +87,12 @@ export const PaymentRefund$inboundSchema: z.ZodType<
   notes: z.string().optional(),
   payment_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  reason: Reason$inboundSchema.optional(),
   reference: z.string().optional(),
+  refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   status: PaymentRefundStatus$inboundSchema.optional(),
+  tender_type: PaymentRefundTenderType$inboundSchema.optional(),
   total_amount: z.number().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -60,6 +100,8 @@ export const PaymentRefund$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "payment_id": "paymentId",
+    "refunded_at": "refundedAt",
+    "tender_type": "tenderType",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
   });

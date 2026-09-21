@@ -30,9 +30,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.pullrequest.createRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-04-12T16:18:24.621Z"),
+      closedAt: new Date("2025-04-13T13:31:25.872Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "9cc53e43-a570-48f4-b32a-a58295a287f3",
+      id: "180cb6d6-bd73-4c3a-a6aa-fe91dcbcbe6c",
       labels: [
         "adhuc",
         "quaerat",
@@ -42,7 +42,7 @@ async function run() {
       status: "REJECTED",
       targetBranchId: "feed-reboot",
       title: "Cunae aegrus averto texo advoco bibo amet asporto.",
-      updatedAt: new Date("2024-12-31T16:03:51.078Z"),
+      updatedAt: new Date("2025-01-01T10:29:22.188Z"),
     },
     connectionId: "<id>",
   });
@@ -72,9 +72,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-04-12T16:18:24.621Z"),
+      closedAt: new Date("2025-04-13T13:31:25.872Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "9cc53e43-a570-48f4-b32a-a58295a287f3",
+      id: "180cb6d6-bd73-4c3a-a6aa-fe91dcbcbe6c",
       labels: [
         "adhuc",
         "quaerat",
@@ -84,7 +84,7 @@ async function run() {
       status: "REJECTED",
       targetBranchId: "feed-reboot",
       title: "Cunae aegrus averto texo advoco bibo amet asporto.",
-      updatedAt: new Date("2024-12-31T16:03:51.078Z"),
+      updatedAt: new Date("2025-01-01T10:29:22.188Z"),
     },
     connectionId: "<id>",
   });
@@ -293,9 +293,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.pullrequest.patchRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-04-12T16:18:24.627Z"),
+      closedAt: new Date("2025-04-13T13:31:25.880Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "423fd64d-d195-404f-b811-1ef3c05dac37",
+      id: "52711ad8-d8ff-496a-839b-5a2193de9d59",
       labels: [
         "adhuc",
         "quaerat",
@@ -305,7 +305,7 @@ async function run() {
       status: "REJECTED",
       targetBranchId: "feed-reboot",
       title: "Cunae aegrus averto texo advoco bibo amet asporto.",
-      updatedAt: new Date("2024-12-31T16:03:51.084Z"),
+      updatedAt: new Date("2025-01-01T10:29:22.195Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -336,9 +336,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-04-12T16:18:24.627Z"),
+      closedAt: new Date("2025-04-13T13:31:25.880Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "423fd64d-d195-404f-b811-1ef3c05dac37",
+      id: "52711ad8-d8ff-496a-839b-5a2193de9d59",
       labels: [
         "adhuc",
         "quaerat",
@@ -348,7 +348,7 @@ async function run() {
       status: "REJECTED",
       targetBranchId: "feed-reboot",
       title: "Cunae aegrus averto texo advoco bibo amet asporto.",
-      updatedAt: new Date("2024-12-31T16:03:51.084Z"),
+      updatedAt: new Date("2025-01-01T10:29:22.195Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -481,9 +481,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.pullrequest.updateRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-04-12T16:18:24.627Z"),
+      closedAt: new Date("2025-04-13T13:31:25.880Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "423fd64d-d195-404f-b811-1ef3c05dac37",
+      id: "52711ad8-d8ff-496a-839b-5a2193de9d59",
       labels: [
         "adhuc",
         "quaerat",
@@ -493,7 +493,7 @@ async function run() {
       status: "REJECTED",
       targetBranchId: "feed-reboot",
       title: "Cunae aegrus averto texo advoco bibo amet asporto.",
-      updatedAt: new Date("2024-12-31T16:03:51.084Z"),
+      updatedAt: new Date("2025-01-01T10:29:22.195Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -524,9 +524,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-04-12T16:18:24.627Z"),
+      closedAt: new Date("2025-04-13T13:31:25.880Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "423fd64d-d195-404f-b811-1ef3c05dac37",
+      id: "52711ad8-d8ff-496a-839b-5a2193de9d59",
       labels: [
         "adhuc",
         "quaerat",
@@ -536,7 +536,7 @@ async function run() {
       status: "REJECTED",
       targetBranchId: "feed-reboot",
       title: "Cunae aegrus averto texo advoco bibo amet asporto.",
-      updatedAt: new Date("2024-12-31T16:03:51.084Z"),
+      updatedAt: new Date("2025-01-01T10:29:22.195Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -105,7 +105,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "83739f72-9953-46a9-aedd-877d0667d16d",
+      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -122,7 +122,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T06:57:17.864Z"),
+      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
     },
     connectionId: "<id>",
   });
@@ -155,7 +155,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "83739f72-9953-46a9-aedd-877d0667d16d",
+      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -172,7 +172,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T06:57:17.864Z"),
+      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
     },
     connectionId: "<id>",
   });
@@ -271,7 +271,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "83739f72-9953-46a9-aedd-877d0667d16d",
+      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -288,7 +288,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T06:57:17.864Z"),
+      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
     },
     connectionId: "<id>",
   });
@@ -337,7 +337,7 @@ async function run() {
         currency: "BOB",
         customerDefinedCode: "quo",
         description: "Spoliatio comedo vilitas harum cupiditate.",
-        id: "83739f72-9953-46a9-aedd-877d0667d16d",
+        id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
         isPayable: true,
         name: "Electronic Aluminum Tuna",
         status: "ARCHIVED",
@@ -354,7 +354,7 @@ async function run() {
           },
         ],
         type: "BANK",
-        updatedAt: new Date("2023-01-03T06:57:17.864Z"),
+        updatedAt: new Date("2023-01-03T11:11:55.467Z"),
       },
       connectionId: "<id>",
     });
@@ -462,7 +462,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "83739f72-9953-46a9-aedd-877d0667d16d",
+      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -479,7 +479,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T06:57:17.864Z"),
+      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
     },
     connectionId: "<id>",
   }, {
@@ -530,7 +530,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "83739f72-9953-46a9-aedd-877d0667d16d",
+      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -547,7 +547,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T06:57:17.864Z"),
+      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
     },
     connectionId: "<id>",
   });
@@ -1228,28 +1228,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`collectionRemoveLmsCollection`](docs/sdks/lms/README.md#removelmscollection) - Remove a collection
 - [`collectionUpdateLmsCollection`](docs/sdks/collection/README.md#updatelmscollection) - Update a collection
 - [`collectionUpdateLmsCollection`](docs/sdks/lms/README.md#updatelmscollection) - Update a collection
-- [`commentCreateTaskComment`](docs/sdks/comment/README.md#createtaskcomment) - Create a comment
-- [`commentCreateTaskComment`](docs/sdks/task/README.md#createtaskcomment) - Create a comment
 - [`commentCreateUcComment`](docs/sdks/comment/README.md#createuccomment) - Create a comment
 - [`commentCreateUcComment`](docs/sdks/uc/README.md#createuccomment) - Create a comment
-- [`commentGetTaskComment`](docs/sdks/comment/README.md#gettaskcomment) - Retrieve a comment
-- [`commentGetTaskComment`](docs/sdks/task/README.md#gettaskcomment) - Retrieve a comment
 - [`commentGetUcComment`](docs/sdks/comment/README.md#getuccomment) - Retrieve a comment
 - [`commentGetUcComment`](docs/sdks/uc/README.md#getuccomment) - Retrieve a comment
-- [`commentListTaskComments`](docs/sdks/comment/README.md#listtaskcomments) - List all comments
-- [`commentListTaskComments`](docs/sdks/task/README.md#listtaskcomments) - List all comments
 - [`commentListUcComments`](docs/sdks/comment/README.md#listuccomments) - List all comments
 - [`commentListUcComments`](docs/sdks/uc/README.md#listuccomments) - List all comments
-- [`commentPatchTaskComment`](docs/sdks/comment/README.md#patchtaskcomment) - Update a comment
-- [`commentPatchTaskComment`](docs/sdks/task/README.md#patchtaskcomment) - Update a comment
 - [`commentPatchUcComment`](docs/sdks/comment/README.md#patchuccomment) - Update a comment
 - [`commentPatchUcComment`](docs/sdks/uc/README.md#patchuccomment) - Update a comment
-- [`commentRemoveTaskComment`](docs/sdks/comment/README.md#removetaskcomment) - Remove a comment
-- [`commentRemoveTaskComment`](docs/sdks/task/README.md#removetaskcomment) - Remove a comment
 - [`commentRemoveUcComment`](docs/sdks/comment/README.md#removeuccomment) - Remove a comment
 - [`commentRemoveUcComment`](docs/sdks/uc/README.md#removeuccomment) - Remove a comment
-- [`commentUpdateTaskComment`](docs/sdks/comment/README.md#updatetaskcomment) - Update a comment
-- [`commentUpdateTaskComment`](docs/sdks/task/README.md#updatetaskcomment) - Update a comment
 - [`commentUpdateUcComment`](docs/sdks/comment/README.md#updateuccomment) - Update a comment
 - [`commentUpdateUcComment`](docs/sdks/uc/README.md#updateuccomment) - Update a comment
 - [`commerceCreateCommerceCollection`](docs/sdks/collection/README.md#createcommercecollection) - Create a collection
@@ -1550,14 +1538,34 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`formsRemoveFormsForm`](docs/sdks/forms/README.md#removeformsform) - Remove a form
 - [`formsUpdateFormsForm`](docs/sdks/form/README.md#updateformsform) - Update a form
 - [`formsUpdateFormsForm`](docs/sdks/forms/README.md#updateformsform) - Update a form
+- [`genaiCreateGenaiAgent`](docs/sdks/agent/README.md#creategenaiagent) - Create an agent
+- [`genaiCreateGenaiAgent`](docs/sdks/genai/README.md#creategenaiagent) - Create an agent
 - [`genaiCreateGenaiEmbedding`](docs/sdks/embedding/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiEmbedding`](docs/sdks/genai/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiPrompt`](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt
 - [`genaiCreateGenaiPrompt`](docs/sdks/prompt/README.md#creategenaiprompt) - Create a prompt
+- [`genaiCreateGenaiTask`](docs/sdks/genai/README.md#creategenaitask) - Create a task
+- [`genaiCreateGenaiTask`](docs/sdks/task/README.md#creategenaitask) - Create a task
+- [`genaiGetGenaiAgent`](docs/sdks/agent/README.md#getgenaiagent) - Retrieve an agent
+- [`genaiGetGenaiAgent`](docs/sdks/genai/README.md#getgenaiagent) - Retrieve an agent
 - [`genaiGetGenaiModel`](docs/sdks/genai/README.md#getgenaimodel) - Retrieve a model
 - [`genaiGetGenaiModel`](docs/sdks/model/README.md#getgenaimodel) - Retrieve a model
+- [`genaiGetGenaiTask`](docs/sdks/genai/README.md#getgenaitask) - Retrieve a task
+- [`genaiGetGenaiTask`](docs/sdks/task/README.md#getgenaitask) - Retrieve a task
+- [`genaiListGenaiAgents`](docs/sdks/agent/README.md#listgenaiagents) - List all agents
+- [`genaiListGenaiAgents`](docs/sdks/genai/README.md#listgenaiagents) - List all agents
 - [`genaiListGenaiModels`](docs/sdks/genai/README.md#listgenaimodels) - List all models
 - [`genaiListGenaiModels`](docs/sdks/model/README.md#listgenaimodels) - List all models
+- [`genaiListGenaiTasks`](docs/sdks/genai/README.md#listgenaitasks) - List all tasks
+- [`genaiListGenaiTasks`](docs/sdks/task/README.md#listgenaitasks) - List all tasks
+- [`genaiPatchGenaiAgent`](docs/sdks/agent/README.md#patchgenaiagent) - Update an agent
+- [`genaiPatchGenaiAgent`](docs/sdks/genai/README.md#patchgenaiagent) - Update an agent
+- [`genaiRemoveGenaiAgent`](docs/sdks/agent/README.md#removegenaiagent) - Remove an agent
+- [`genaiRemoveGenaiAgent`](docs/sdks/genai/README.md#removegenaiagent) - Remove an agent
+- [`genaiRemoveGenaiTask`](docs/sdks/genai/README.md#removegenaitask) - Remove a task
+- [`genaiRemoveGenaiTask`](docs/sdks/task/README.md#removegenaitask) - Remove a task
+- [`genaiUpdateGenaiAgent`](docs/sdks/agent/README.md#updategenaiagent) - Update an agent
+- [`genaiUpdateGenaiAgent`](docs/sdks/genai/README.md#updategenaiagent) - Update an agent
 - [`groupCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group
 - [`groupCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 - [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group
@@ -1882,26 +1890,38 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`orderUpdateAssessmentOrder`](docs/sdks/order/README.md#updateassessmentorder) - Update an order
 - [`organizationCreateAdsOrganization`](docs/sdks/ads/README.md#createadsorganization) - Create an organization
 - [`organizationCreateAdsOrganization`](docs/sdks/organization/README.md#createadsorganization) - Create an organization
+- [`organizationCreateGenaiOrganization`](docs/sdks/genai/README.md#creategenaiorganization) - Create an organization
+- [`organizationCreateGenaiOrganization`](docs/sdks/organization/README.md#creategenaiorganization) - Create an organization
 - [`organizationCreateRepoOrganization`](docs/sdks/organization/README.md#createrepoorganization) - Create an organization
 - [`organizationCreateRepoOrganization`](docs/sdks/repo/README.md#createrepoorganization) - Create an organization
 - [`organizationGetAdsOrganization`](docs/sdks/ads/README.md#getadsorganization) - Retrieve an organization
 - [`organizationGetAdsOrganization`](docs/sdks/organization/README.md#getadsorganization) - Retrieve an organization
+- [`organizationGetGenaiOrganization`](docs/sdks/genai/README.md#getgenaiorganization) - Retrieve an organization
+- [`organizationGetGenaiOrganization`](docs/sdks/organization/README.md#getgenaiorganization) - Retrieve an organization
 - [`organizationGetRepoOrganization`](docs/sdks/organization/README.md#getrepoorganization) - Retrieve an organization
 - [`organizationGetRepoOrganization`](docs/sdks/repo/README.md#getrepoorganization) - Retrieve an organization
 - [`organizationListAdsOrganizations`](docs/sdks/ads/README.md#listadsorganizations) - List all organizations
 - [`organizationListAdsOrganizations`](docs/sdks/organization/README.md#listadsorganizations) - List all organizations
+- [`organizationListGenaiOrganizations`](docs/sdks/genai/README.md#listgenaiorganizations) - List all organizations
+- [`organizationListGenaiOrganizations`](docs/sdks/organization/README.md#listgenaiorganizations) - List all organizations
 - [`organizationListRepoOrganizations`](docs/sdks/organization/README.md#listrepoorganizations) - List all organizations
 - [`organizationListRepoOrganizations`](docs/sdks/repo/README.md#listrepoorganizations) - List all organizations
 - [`organizationPatchAdsOrganization`](docs/sdks/ads/README.md#patchadsorganization) - Update an organization
 - [`organizationPatchAdsOrganization`](docs/sdks/organization/README.md#patchadsorganization) - Update an organization
+- [`organizationPatchGenaiOrganization`](docs/sdks/genai/README.md#patchgenaiorganization) - Update an organization
+- [`organizationPatchGenaiOrganization`](docs/sdks/organization/README.md#patchgenaiorganization) - Update an organization
 - [`organizationPatchRepoOrganization`](docs/sdks/organization/README.md#patchrepoorganization) - Update an organization
 - [`organizationPatchRepoOrganization`](docs/sdks/repo/README.md#patchrepoorganization) - Update an organization
 - [`organizationRemoveAdsOrganization`](docs/sdks/ads/README.md#removeadsorganization) - Remove an organization
 - [`organizationRemoveAdsOrganization`](docs/sdks/organization/README.md#removeadsorganization) - Remove an organization
+- [`organizationRemoveGenaiOrganization`](docs/sdks/genai/README.md#removegenaiorganization) - Remove an organization
+- [`organizationRemoveGenaiOrganization`](docs/sdks/organization/README.md#removegenaiorganization) - Remove an organization
 - [`organizationRemoveRepoOrganization`](docs/sdks/organization/README.md#removerepoorganization) - Remove an organization
 - [`organizationRemoveRepoOrganization`](docs/sdks/repo/README.md#removerepoorganization) - Remove an organization
 - [`organizationUpdateAdsOrganization`](docs/sdks/ads/README.md#updateadsorganization) - Update an organization
 - [`organizationUpdateAdsOrganization`](docs/sdks/organization/README.md#updateadsorganization) - Update an organization
+- [`organizationUpdateGenaiOrganization`](docs/sdks/genai/README.md#updategenaiorganization) - Update an organization
+- [`organizationUpdateGenaiOrganization`](docs/sdks/organization/README.md#updategenaiorganization) - Update an organization
 - [`organizationUpdateRepoOrganization`](docs/sdks/organization/README.md#updaterepoorganization) - Update an organization
 - [`organizationUpdateRepoOrganization`](docs/sdks/repo/README.md#updaterepoorganization) - Update an organization
 - [`packageGetVerificationPackage`](docs/sdks/package/README.md#getverificationpackage) - Retrieve a package
@@ -2146,15 +2166,27 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`storageRemoveStorageFile`](docs/sdks/storage/README.md#removestoragefile) - Remove a file
 - [`storageUpdateStorageFile`](docs/sdks/file/README.md#updatestoragefile) - Update a file
 - [`storageUpdateStorageFile`](docs/sdks/storage/README.md#updatestoragefile) - Update a file
+- [`taskCreateTaskComment`](docs/sdks/comment/README.md#createtaskcomment) - Create a comment
+- [`taskCreateTaskComment`](docs/sdks/task/README.md#createtaskcomment) - Create a comment
 - [`taskCreateTaskTask`](docs/sdks/task/README.md#createtasktask) - Create a task
 - [`taskGetTaskChange`](docs/sdks/change/README.md#gettaskchange) - Retrieve a change
 - [`taskGetTaskChange`](docs/sdks/task/README.md#gettaskchange) - Retrieve a change
+- [`taskGetTaskComment`](docs/sdks/comment/README.md#gettaskcomment) - Retrieve a comment
+- [`taskGetTaskComment`](docs/sdks/task/README.md#gettaskcomment) - Retrieve a comment
 - [`taskGetTaskTask`](docs/sdks/task/README.md#gettasktask) - Retrieve a task
 - [`taskListTaskChanges`](docs/sdks/change/README.md#listtaskchanges) - List all changes
 - [`taskListTaskChanges`](docs/sdks/task/README.md#listtaskchanges) - List all changes
+- [`taskListTaskComments`](docs/sdks/comment/README.md#listtaskcomments) - List all comments
+- [`taskListTaskComments`](docs/sdks/task/README.md#listtaskcomments) - List all comments
 - [`taskListTaskTasks`](docs/sdks/task/README.md#listtasktasks) - List all tasks
+- [`taskPatchTaskComment`](docs/sdks/comment/README.md#patchtaskcomment) - Update a comment
+- [`taskPatchTaskComment`](docs/sdks/task/README.md#patchtaskcomment) - Update a comment
 - [`taskPatchTaskTask`](docs/sdks/task/README.md#patchtasktask) - Update a task
+- [`taskRemoveTaskComment`](docs/sdks/comment/README.md#removetaskcomment) - Remove a comment
+- [`taskRemoveTaskComment`](docs/sdks/task/README.md#removetaskcomment) - Remove a comment
 - [`taskRemoveTaskTask`](docs/sdks/task/README.md#removetasktask) - Remove a task
+- [`taskUpdateTaskComment`](docs/sdks/comment/README.md#updatetaskcomment) - Update a comment
+- [`taskUpdateTaskComment`](docs/sdks/task/README.md#updatetaskcomment) - Update a comment
 - [`taskUpdateTaskTask`](docs/sdks/task/README.md#updatetasktask) - Update a task
 - [`taxonomyCreateHrisTaxonomy`](docs/sdks/hris/README.md#createhristaxonomy) - Create a taxonomy
 - [`taxonomyCreateHrisTaxonomy`](docs/sdks/taxonomy/README.md#createhristaxonomy) - Create a taxonomy

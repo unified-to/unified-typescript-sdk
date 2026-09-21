@@ -5,16 +5,22 @@
 import { accountingGetAccountingOrganization } from "../funcs/accountingGetAccountingOrganization.js";
 import { accountingListAccountingOrganizations } from "../funcs/accountingListAccountingOrganizations.js";
 import { organizationCreateAdsOrganization } from "../funcs/organizationCreateAdsOrganization.js";
+import { organizationCreateGenaiOrganization } from "../funcs/organizationCreateGenaiOrganization.js";
 import { organizationCreateRepoOrganization } from "../funcs/organizationCreateRepoOrganization.js";
 import { organizationGetAdsOrganization } from "../funcs/organizationGetAdsOrganization.js";
+import { organizationGetGenaiOrganization } from "../funcs/organizationGetGenaiOrganization.js";
 import { organizationGetRepoOrganization } from "../funcs/organizationGetRepoOrganization.js";
 import { organizationListAdsOrganizations } from "../funcs/organizationListAdsOrganizations.js";
+import { organizationListGenaiOrganizations } from "../funcs/organizationListGenaiOrganizations.js";
 import { organizationListRepoOrganizations } from "../funcs/organizationListRepoOrganizations.js";
 import { organizationPatchAdsOrganization } from "../funcs/organizationPatchAdsOrganization.js";
+import { organizationPatchGenaiOrganization } from "../funcs/organizationPatchGenaiOrganization.js";
 import { organizationPatchRepoOrganization } from "../funcs/organizationPatchRepoOrganization.js";
 import { organizationRemoveAdsOrganization } from "../funcs/organizationRemoveAdsOrganization.js";
+import { organizationRemoveGenaiOrganization } from "../funcs/organizationRemoveGenaiOrganization.js";
 import { organizationRemoveRepoOrganization } from "../funcs/organizationRemoveRepoOrganization.js";
 import { organizationUpdateAdsOrganization } from "../funcs/organizationUpdateAdsOrganization.js";
+import { organizationUpdateGenaiOrganization } from "../funcs/organizationUpdateGenaiOrganization.js";
 import { organizationUpdateRepoOrganization } from "../funcs/organizationUpdateRepoOrganization.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -30,6 +36,20 @@ export class Organization extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsOrganization> {
     return unwrapAsync(organizationCreateAdsOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create an organization
+   */
+  async createGenaiOrganization(
+    request: operations.CreateGenaiOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiOrganization> {
+    return unwrapAsync(organizationCreateGenaiOrganization(
       this,
       request,
       options,
@@ -81,6 +101,20 @@ export class Organization extends ClientSDK {
   /**
    * Retrieve an organization
    */
+  async getGenaiOrganization(
+    request: operations.GetGenaiOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiOrganization> {
+    return unwrapAsync(organizationGetGenaiOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an organization
+   */
   async getRepoOrganization(
     request: operations.GetRepoOrganizationRequest,
     options?: RequestOptions,
@@ -123,6 +157,20 @@ export class Organization extends ClientSDK {
   /**
    * List all organizations
    */
+  async listGenaiOrganizations(
+    request: operations.ListGenaiOrganizationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.GenaiOrganization>> {
+    return unwrapAsync(organizationListGenaiOrganizations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all organizations
+   */
   async listRepoOrganizations(
     request: operations.ListRepoOrganizationsRequest,
     options?: RequestOptions,
@@ -142,6 +190,20 @@ export class Organization extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsOrganization> {
     return unwrapAsync(organizationPatchAdsOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an organization
+   */
+  async patchGenaiOrganization(
+    request: operations.PatchGenaiOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiOrganization> {
+    return unwrapAsync(organizationPatchGenaiOrganization(
       this,
       request,
       options,
@@ -179,6 +241,20 @@ export class Organization extends ClientSDK {
   /**
    * Remove an organization
    */
+  async removeGenaiOrganization(
+    request: operations.RemoveGenaiOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveGenaiOrganizationResponse | undefined> {
+    return unwrapAsync(organizationRemoveGenaiOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove an organization
+   */
   async removeRepoOrganization(
     request: operations.RemoveRepoOrganizationRequest,
     options?: RequestOptions,
@@ -198,6 +274,20 @@ export class Organization extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AdsOrganization> {
     return unwrapAsync(organizationUpdateAdsOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an organization
+   */
+  async updateGenaiOrganization(
+    request: operations.UpdateGenaiOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiOrganization> {
+    return unwrapAsync(organizationUpdateGenaiOrganization(
       this,
       request,
       options,

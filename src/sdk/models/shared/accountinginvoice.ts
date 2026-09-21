@@ -110,9 +110,11 @@ export type AccountingInvoice = {
   currency?: string | undefined;
   discountAmount?: number | undefined;
   dueAt?: Date | undefined;
+  exchangeRate?: number | undefined;
   extendedNotes?: Array<AccountingExtendedNote> | undefined;
   id?: string | undefined;
   invoiceNumber?: string | undefined;
+  isInclusiveOfTax?: boolean | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;
@@ -135,8 +137,13 @@ export type AccountingInvoice = {
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
   refundedAt?: Date | undefined;
+  /**
+   * refs -> AccountingSalesorder; the sales orders this invoice was raised from
+   */
+  salesorderIds?: Array<string> | undefined;
   send?: boolean | undefined;
   status?: AccountingInvoiceStatus | undefined;
+  subTotalAmount?: number | undefined;
   taxAmount?: number | undefined;
   term?: AccountingInvoiceTerm | undefined;
   totalAmount?: number | undefined;
@@ -229,9 +236,11 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   discount_amount: z.number().optional(),
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  exchange_rate: z.number().optional(),
   extended_notes: z.array(AccountingExtendedNote$inboundSchema).optional(),
   id: z.string().optional(),
   invoice_number: z.string().optional(),
+  is_inclusive_of_tax: z.boolean().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
@@ -253,8 +262,10 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   refund_reason: z.string().optional(),
   refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  salesorder_ids: z.array(z.string()).optional(),
   send: z.boolean().optional(),
   status: AccountingInvoiceStatus$inboundSchema.optional(),
+  sub_total_amount: z.number().optional(),
   tax_amount: z.number().optional(),
   term: AccountingInvoiceTerm$inboundSchema.optional(),
   total_amount: z.number().optional(),
@@ -271,8 +282,10 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "due_at": "dueAt",
+    "exchange_rate": "exchangeRate",
     "extended_notes": "extendedNotes",
     "invoice_number": "invoiceNumber",
+    "is_inclusive_of_tax": "isInclusiveOfTax",
     "organization_id": "organizationId",
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
@@ -284,6 +297,8 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "refund_amount": "refundAmount",
     "refund_reason": "refundReason",
     "refunded_at": "refundedAt",
+    "salesorder_ids": "salesorderIds",
+    "sub_total_amount": "subTotalAmount",
     "tax_amount": "taxAmount",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
@@ -300,9 +315,11 @@ export type AccountingInvoice$Outbound = {
   currency?: string | undefined;
   discount_amount?: number | undefined;
   due_at?: string | undefined;
+  exchange_rate?: number | undefined;
   extended_notes?: Array<AccountingExtendedNote$Outbound> | undefined;
   id?: string | undefined;
   invoice_number?: string | undefined;
+  is_inclusive_of_tax?: boolean | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   metadata?: Array<AccountingMetadata$Outbound> | undefined;
   notes?: string | undefined;
@@ -320,8 +337,10 @@ export type AccountingInvoice$Outbound = {
   refund_amount?: number | undefined;
   refund_reason?: string | undefined;
   refunded_at?: string | undefined;
+  salesorder_ids?: Array<string> | undefined;
   send?: boolean | undefined;
   status?: string | undefined;
+  sub_total_amount?: number | undefined;
   tax_amount?: number | undefined;
   term?: string | undefined;
   total_amount?: number | undefined;
@@ -345,9 +364,11 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   discountAmount: z.number().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
+  exchangeRate: z.number().optional(),
   extendedNotes: z.array(AccountingExtendedNote$outboundSchema).optional(),
   id: z.string().optional(),
   invoiceNumber: z.string().optional(),
+  isInclusiveOfTax: z.boolean().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
@@ -366,8 +387,10 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   refundAmount: z.number().optional(),
   refundReason: z.string().optional(),
   refundedAt: z.date().transform(v => v.toISOString()).optional(),
+  salesorderIds: z.array(z.string()).optional(),
   send: z.boolean().optional(),
   status: AccountingInvoiceStatus$outboundSchema.optional(),
+  subTotalAmount: z.number().optional(),
   taxAmount: z.number().optional(),
   term: AccountingInvoiceTerm$outboundSchema.optional(),
   totalAmount: z.number().optional(),
@@ -383,8 +406,10 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     createdAt: "created_at",
     discountAmount: "discount_amount",
     dueAt: "due_at",
+    exchangeRate: "exchange_rate",
     extendedNotes: "extended_notes",
     invoiceNumber: "invoice_number",
+    isInclusiveOfTax: "is_inclusive_of_tax",
     organizationId: "organization_id",
     paidAmount: "paid_amount",
     paidAt: "paid_at",
@@ -396,6 +421,8 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     refundAmount: "refund_amount",
     refundReason: "refund_reason",
     refundedAt: "refunded_at",
+    salesorderIds: "salesorder_ids",
+    subTotalAmount: "sub_total_amount",
     taxAmount: "tax_amount",
     totalAmount: "total_amount",
     updatedAt: "updated_at",

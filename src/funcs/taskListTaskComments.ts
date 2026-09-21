@@ -30,7 +30,7 @@ import { Result } from "../sdk/types/fp.js";
 /**
  * List all comments
  */
-export function commentListTaskComments(
+export function taskListTaskComments(
   client: UnifiedToCore,
   request: operations.ListTaskCommentsRequest,
   options?: RequestOptions,

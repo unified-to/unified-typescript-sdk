@@ -25,4 +25,5 @@ let value: AccountingJournalLineitem = {};
 | `paymentId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `projectId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `taxAmount`        | *number*           | :heavy_minus_sign: | N/A                |
+| `taxrateId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `totalAmount`      | *number*           | :heavy_minus_sign: | N/A                |

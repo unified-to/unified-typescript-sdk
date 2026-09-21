@@ -32,6 +32,10 @@ export const ListPaymentPaymentsQueryParamFields = {
   DeviceId: "device_id",
   CardBrand: "card_brand",
   CardLast4: "card_last4",
+  PaidAt: "paid_at",
+  ExchangeRate: "exchange_rate",
+  CategoryIds: "category_ids",
+  NetAmount: "net_amount",
   Raw: "raw",
 } as const;
 export type ListPaymentPaymentsQueryParamFields = ClosedEnum<

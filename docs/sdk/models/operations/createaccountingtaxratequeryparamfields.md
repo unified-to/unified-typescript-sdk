@@ -5,11 +5,11 @@
 ```typescript
 import { CreateAccountingTaxrateQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateAccountingTaxrateQueryParamFields = "organization_id";
+let value: CreateAccountingTaxrateQueryParamFields = "type";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "rate" | "is_active" | "organization_id" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "rate" | "is_active" | "organization_id" | "metadata" | "effective_rate" | "total_rate" | "components" | "type" | "is_compound" | "country" | "region" | "raw"
 ```

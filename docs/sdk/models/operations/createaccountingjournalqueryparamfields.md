@@ -5,11 +5,11 @@
 ```typescript
 import { CreateAccountingJournalQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateAccountingJournalQueryParamFields = "created_at";
+let value: CreateAccountingJournalQueryParamFields = "updated_at";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "reference" | "tax_amount" | "currency" | "lineitems" | "taxrate_id" | "description" | "posted_at" | "source" | "organization_id" | "category_ids" | "project_id" | "attachments" | "raw"
+"id" | "created_at" | "updated_at" | "reference" | "tax_amount" | "currency" | "lineitems" | "taxrate_id" | "description" | "posted_at" | "source" | "organization_id" | "category_ids" | "project_id" | "attachments" | "total_amount" | "exchange_rate" | "status" | "is_inclusive_of_tax" | "raw"
 ```

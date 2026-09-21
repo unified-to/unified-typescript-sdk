@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PaymentPayoutLineitem,
+  PaymentPayoutLineitem$inboundSchema,
+} from "./paymentpayoutlineitem.js";
 
 export const PaymentPayoutStatus = {
   Succeeded: "SUCCEEDED",
@@ -19,9 +23,17 @@ export const PaymentPayoutStatus = {
 export type PaymentPayoutStatus = OpenEnum<typeof PaymentPayoutStatus>;
 
 export type PaymentPayout = {
+  accountId?: string | undefined;
+  arrivalAt?: Date | undefined;
   createdAt?: string | undefined;
   currency?: string | undefined;
+  feeAmount?: number | undefined;
   id?: string | undefined;
+  /**
+   * The transactions included in this payout
+   */
+  lineitems?: Array<PaymentPayoutLineitem> | undefined;
+  netAmount?: number | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: PaymentPayoutStatus | undefined;
@@ -42,9 +54,15 @@ export const PaymentPayout$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  account_id: z.string().optional(),
+  arrival_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   created_at: z.string().optional(),
   currency: z.string().optional(),
+  fee_amount: z.number().optional(),
   id: z.string().optional(),
+  lineitems: z.array(PaymentPayoutLineitem$inboundSchema).optional(),
+  net_amount: z.number().optional(),
   notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: PaymentPayoutStatus$inboundSchema.optional(),
@@ -52,7 +70,11 @@ export const PaymentPayout$inboundSchema: z.ZodType<
   updated_at: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "account_id": "accountId",
+    "arrival_at": "arrivalAt",
     "created_at": "createdAt",
+    "fee_amount": "feeAmount",
+    "net_amount": "netAmount",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
   });

@@ -31,10 +31,10 @@ async function run() {
   const result = await unifiedTo.application.createAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-09T05:16:52.369Z"),
+      appliedAt: new Date("2025-09-10T04:21:41.152Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-04-15T17:29:53.343Z"),
-      id: "091f1a23-525e-432e-8e7b-28d195a23c50",
+      hiredAt: new Date("2026-04-16T23:51:23.983Z"),
+      id: "1381dd6c-8d9a-41d9-ba88-09f1237737fa",
       metadata: [
         {
           extraData: {
@@ -50,12 +50,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-09-10T03:08:37.624Z"),
+      rejectedAt: new Date("2026-09-11T14:24:43.523Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-      updatedAt: new Date("2026-09-16T18:38:56.733Z"),
+      updatedAt: new Date("2026-09-18T06:08:19.573Z"),
     },
     connectionId: "<id>",
   });
@@ -86,10 +86,10 @@ async function run() {
   const res = await atsCreateAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-09T05:16:52.369Z"),
+      appliedAt: new Date("2025-09-10T04:21:41.152Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-04-15T17:29:53.343Z"),
-      id: "091f1a23-525e-432e-8e7b-28d195a23c50",
+      hiredAt: new Date("2026-04-16T23:51:23.983Z"),
+      id: "1381dd6c-8d9a-41d9-ba88-09f1237737fa",
       metadata: [
         {
           extraData: {
@@ -105,12 +105,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-09-10T03:08:37.624Z"),
+      rejectedAt: new Date("2026-09-11T14:24:43.523Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-      updatedAt: new Date("2026-09-16T18:38:56.733Z"),
+      updatedAt: new Date("2026-09-18T06:08:19.573Z"),
     },
     connectionId: "<id>",
   });
@@ -320,10 +320,10 @@ async function run() {
   const result = await unifiedTo.application.patchAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-09T05:16:52.383Z"),
+      appliedAt: new Date("2025-09-10T04:21:41.175Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-04-15T17:29:53.362Z"),
-      id: "890bf22e-404a-482a-b8f7-17745a18cc22",
+      hiredAt: new Date("2026-04-16T23:51:24.014Z"),
+      id: "7804ab67-d0f8-4d65-81e6-61d7ed0f8ac7",
       metadata: [
         {
           extraData: {
@@ -339,12 +339,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-09-10T03:08:37.646Z"),
+      rejectedAt: new Date("2026-09-11T14:24:43.558Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-      updatedAt: new Date("2026-09-16T18:38:56.755Z"),
+      updatedAt: new Date("2026-09-18T06:08:19.609Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -376,10 +376,10 @@ async function run() {
   const res = await atsPatchAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-09T05:16:52.383Z"),
+      appliedAt: new Date("2025-09-10T04:21:41.175Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-04-15T17:29:53.362Z"),
-      id: "890bf22e-404a-482a-b8f7-17745a18cc22",
+      hiredAt: new Date("2026-04-16T23:51:24.014Z"),
+      id: "7804ab67-d0f8-4d65-81e6-61d7ed0f8ac7",
       metadata: [
         {
           extraData: {
@@ -395,12 +395,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-09-10T03:08:37.646Z"),
+      rejectedAt: new Date("2026-09-11T14:24:43.558Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-      updatedAt: new Date("2026-09-16T18:38:56.755Z"),
+      updatedAt: new Date("2026-09-18T06:08:19.609Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -534,10 +534,10 @@ async function run() {
   const result = await unifiedTo.application.updateAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-09T05:16:52.383Z"),
+      appliedAt: new Date("2025-09-10T04:21:41.175Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-04-15T17:29:53.362Z"),
-      id: "890bf22e-404a-482a-b8f7-17745a18cc22",
+      hiredAt: new Date("2026-04-16T23:51:24.014Z"),
+      id: "7804ab67-d0f8-4d65-81e6-61d7ed0f8ac7",
       metadata: [
         {
           extraData: {
@@ -553,12 +553,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-09-10T03:08:37.646Z"),
+      rejectedAt: new Date("2026-09-11T14:24:43.558Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-      updatedAt: new Date("2026-09-16T18:38:56.755Z"),
+      updatedAt: new Date("2026-09-18T06:08:19.609Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -590,10 +590,10 @@ async function run() {
   const res = await atsUpdateAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-09T05:16:52.383Z"),
+      appliedAt: new Date("2025-09-10T04:21:41.175Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-04-15T17:29:53.362Z"),
-      id: "890bf22e-404a-482a-b8f7-17745a18cc22",
+      hiredAt: new Date("2026-04-16T23:51:24.014Z"),
+      id: "7804ab67-d0f8-4d65-81e6-61d7ed0f8ac7",
       metadata: [
         {
           extraData: {
@@ -609,12 +609,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-09-10T03:08:37.646Z"),
+      rejectedAt: new Date("2026-09-11T14:24:43.558Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-      updatedAt: new Date("2026-09-16T18:38:56.755Z"),
+      updatedAt: new Date("2026-09-18T06:08:19.609Z"),
     },
     connectionId: "<id>",
     id: "<id>",

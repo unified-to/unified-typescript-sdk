@@ -26,8 +26,10 @@ export type AccountingLineitem = {
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   discountAmount?: number | undefined;
+  exchangeRate?: number | undefined;
   fees?: Array<AccountingFee> | undefined;
   id?: string | undefined;
+  isBillable?: boolean | undefined;
   itemDescription?: string | undefined;
   itemId?: string | undefined;
   itemName?: string | undefined;
@@ -35,6 +37,7 @@ export type AccountingLineitem = {
   itemVariants?: Array<AccountingReference> | undefined;
   locations?: Array<AccountingReference> | undefined;
   notes?: string | undefined;
+  projectId?: string | undefined;
   refundAmount?: number | undefined;
   refundedAt?: Date | undefined;
   taxAmount?: number | undefined;
@@ -57,8 +60,10 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   discount_amount: z.number().optional(),
+  exchange_rate: z.number().optional(),
   fees: z.array(AccountingFee$inboundSchema).optional(),
   id: z.string().optional(),
+  is_billable: z.boolean().optional(),
   item_description: z.string().optional(),
   item_id: z.string().optional(),
   item_name: z.string().optional(),
@@ -66,6 +71,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   item_variants: z.array(AccountingReference$inboundSchema).optional(),
   locations: z.array(AccountingReference$inboundSchema).optional(),
   notes: z.string().optional(),
+  project_id: z.string().optional(),
   refund_amount: z.number().optional(),
   refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -83,11 +89,14 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
     "contact_id": "contactId",
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
+    "exchange_rate": "exchangeRate",
+    "is_billable": "isBillable",
     "item_description": "itemDescription",
     "item_id": "itemId",
     "item_name": "itemName",
     "item_sku": "itemSku",
     "item_variants": "itemVariants",
+    "project_id": "projectId",
     "refund_amount": "refundAmount",
     "refunded_at": "refundedAt",
     "tax_amount": "taxAmount",
@@ -105,8 +114,10 @@ export type AccountingLineitem$Outbound = {
   contact_id?: string | undefined;
   created_at?: string | undefined;
   discount_amount?: number | undefined;
+  exchange_rate?: number | undefined;
   fees?: Array<AccountingFee$Outbound> | undefined;
   id?: string | undefined;
+  is_billable?: boolean | undefined;
   item_description?: string | undefined;
   item_id?: string | undefined;
   item_name?: string | undefined;
@@ -114,6 +125,7 @@ export type AccountingLineitem$Outbound = {
   item_variants?: Array<AccountingReference$Outbound> | undefined;
   locations?: Array<AccountingReference$Outbound> | undefined;
   notes?: string | undefined;
+  project_id?: string | undefined;
   refund_amount?: number | undefined;
   refunded_at?: string | undefined;
   tax_amount?: number | undefined;
@@ -135,8 +147,10 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   discountAmount: z.number().optional(),
+  exchangeRate: z.number().optional(),
   fees: z.array(AccountingFee$outboundSchema).optional(),
   id: z.string().optional(),
+  isBillable: z.boolean().optional(),
   itemDescription: z.string().optional(),
   itemId: z.string().optional(),
   itemName: z.string().optional(),
@@ -144,6 +158,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   itemVariants: z.array(AccountingReference$outboundSchema).optional(),
   locations: z.array(AccountingReference$outboundSchema).optional(),
   notes: z.string().optional(),
+  projectId: z.string().optional(),
   refundAmount: z.number().optional(),
   refundedAt: z.date().transform(v => v.toISOString()).optional(),
   taxAmount: z.number().optional(),
@@ -159,11 +174,14 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
     contactId: "contact_id",
     createdAt: "created_at",
     discountAmount: "discount_amount",
+    exchangeRate: "exchange_rate",
+    isBillable: "is_billable",
     itemDescription: "item_description",
     itemId: "item_id",
     itemName: "item_name",
     itemSku: "item_sku",
     itemVariants: "item_variants",
+    projectId: "project_id",
     refundAmount: "refund_amount",
     refundedAt: "refunded_at",
     taxAmount: "tax_amount",

@@ -14,6 +14,11 @@ export const GetPaymentPayoutQueryParamFields = {
   Currency: "currency",
   Notes: "notes",
   Status: "status",
+  ArrivalAt: "arrival_at",
+  FeeAmount: "fee_amount",
+  NetAmount: "net_amount",
+  AccountId: "account_id",
+  Lineitems: "lineitems",
   Raw: "raw",
 } as const;
 export type GetPaymentPayoutQueryParamFields = ClosedEnum<

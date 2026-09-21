@@ -33,6 +33,8 @@ export const GetAccountingExpenseQueryParamFields = {
   CategoryIds: "category_ids",
   ProjectId: "project_id",
   Metadata: "metadata",
+  TaxrateId: "taxrate_id",
+  ExchangeRate: "exchange_rate",
   Raw: "raw",
 } as const;
 export type GetAccountingExpenseQueryParamFields = ClosedEnum<

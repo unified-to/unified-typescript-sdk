@@ -4,13 +4,16 @@
 
 ### Available Operations
 
+* [createGenaiTask](#creategenaitask) - Create a task
 * [createTaskComment](#createtaskcomment) - Create a comment
 * [createTaskProject](#createtaskproject) - Create a project
 * [createTaskTask](#createtasktask) - Create a task
+* [getGenaiTask](#getgenaitask) - Retrieve a task
 * [getTaskChange](#gettaskchange) - Retrieve a change
 * [getTaskComment](#gettaskcomment) - Retrieve a comment
 * [getTaskProject](#gettaskproject) - Retrieve a project
 * [getTaskTask](#gettasktask) - Retrieve a task
+* [listGenaiTasks](#listgenaitasks) - List all tasks
 * [listTaskChanges](#listtaskchanges) - List all changes
 * [listTaskComments](#listtaskcomments) - List all comments
 * [listTaskProjects](#listtaskprojects) - List all projects
@@ -18,12 +21,142 @@
 * [patchTaskComment](#patchtaskcomment) - Update a comment
 * [patchTaskProject](#patchtaskproject) - Update a project
 * [patchTaskTask](#patchtasktask) - Update a task
+* [removeGenaiTask](#removegenaitask) - Remove a task
 * [removeTaskComment](#removetaskcomment) - Remove a comment
 * [removeTaskProject](#removetaskproject) - Remove a project
 * [removeTaskTask](#removetasktask) - Remove a task
 * [updateTaskComment](#updatetaskcomment) - Update a comment
 * [updateTaskProject](#updatetaskproject) - Update a project
 * [updateTaskTask](#updatetasktask) - Update a task
+
+## createGenaiTask
+
+Create a task
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createGenaiTask" method="post" path="/genai/{connection_id}/task" example="genai_task" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.task.createGenaiTask({
+    genaiTask: {
+      completedAt: new Date("2025-09-06T09:18:49.674Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "586f6326-fe69-435c-8548-3150816342b0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-03T10:13:29.849Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-14T12:14:43.464Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiCreateGenaiTask } from "@unified-api/typescript-sdk/funcs/genaiCreateGenaiTask.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiCreateGenaiTask(unifiedTo, {
+    genaiTask: {
+      completedAt: new Date("2025-09-06T09:18:49.674Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "586f6326-fe69-435c-8548-3150816342b0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-03T10:13:29.849Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-14T12:14:43.464Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiCreateGenaiTask failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateGenaiTaskRequest](../../sdk/models/operations/creategenaitaskrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiTask](../../sdk/models/shared/genaitask.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## createTaskComment
 
@@ -46,9 +179,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "dd91651e-99c7-4898-be5e-217b704012ac",
+      id: "0df5753a-ad90-4d22-bca0-59412dfde752",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.314Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.704Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -66,7 +199,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentCreateTaskComment } from "@unified-api/typescript-sdk/funcs/commentCreateTaskComment.js";
+import { taskCreateTaskComment } from "@unified-api/typescript-sdk/funcs/taskCreateTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -77,13 +210,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentCreateTaskComment(unifiedTo, {
+  const res = await taskCreateTaskComment(unifiedTo, {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "dd91651e-99c7-4898-be5e-217b704012ac",
+      id: "0df5753a-ad90-4d22-bca0-59412dfde752",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.314Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.704Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -92,7 +225,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentCreateTaskComment failed:", res.error);
+    console.log("taskCreateTaskComment failed:", res.error);
   }
 }
 
@@ -141,14 +274,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "1812b40f-b8eb-4fa7-8e68-4c615664f0b3",
+      id: "19df8b1d-5ab7-42af-b402-22c0efd2b9cc",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "1d5b3dea-f08a-41fb-be76-5267dc7f456a",
+          id: "69b253d6-578b-4ee7-a0c8-82f2a3568e17",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -158,14 +291,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "652359a0-c809-461d-8669-27885845e4a5",
+          id: "bac38dfa-2149-4334-b944-5ba4dff681d3",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T17:43:47.069Z"),
+      updatedAt: new Date("2023-10-08T20:56:49.330Z"),
     },
     connectionId: "<id>",
   });
@@ -199,14 +332,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "1812b40f-b8eb-4fa7-8e68-4c615664f0b3",
+      id: "19df8b1d-5ab7-42af-b402-22c0efd2b9cc",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "1d5b3dea-f08a-41fb-be76-5267dc7f456a",
+          id: "69b253d6-578b-4ee7-a0c8-82f2a3568e17",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -216,14 +349,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "652359a0-c809-461d-8669-27885845e4a5",
+          id: "bac38dfa-2149-4334-b944-5ba4dff681d3",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T17:43:47.069Z"),
+      updatedAt: new Date("2023-10-08T20:56:49.330Z"),
     },
     connectionId: "<id>",
   });
@@ -277,18 +410,18 @@ async function run() {
   const result = await unifiedTo.task.createTaskTask({
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T00:51:34.854Z"),
+      completedAt: new Date("2022-03-25T15:31:00.389Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-24T14:34:53.210Z"),
-      endAt: new Date("2022-10-14T08:40:35.013Z"),
+      dueAt: new Date("2026-04-26T00:16:15.392Z"),
+      endAt: new Date("2022-10-15T01:55:40.491Z"),
       hasChildren: true,
-      id: "4af7da43-e710-49ed-9a66-871d725e4588",
+      id: "8764a502-52ee-4c02-bded-d8e164ceba6e",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-19T23:40:24.353Z"),
+      startAt: new Date("2022-01-20T13:30:47.721Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -298,7 +431,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T12:39:59.471Z"),
+      updatedAt: new Date("2019-07-13T14:44:54.836Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -330,18 +463,18 @@ async function run() {
   const res = await taskCreateTaskTask(unifiedTo, {
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T00:51:34.854Z"),
+      completedAt: new Date("2022-03-25T15:31:00.389Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-24T14:34:53.210Z"),
-      endAt: new Date("2022-10-14T08:40:35.013Z"),
+      dueAt: new Date("2026-04-26T00:16:15.392Z"),
+      endAt: new Date("2022-10-15T01:55:40.491Z"),
       hasChildren: true,
-      id: "4af7da43-e710-49ed-9a66-871d725e4588",
+      id: "8764a502-52ee-4c02-bded-d8e164ceba6e",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-19T23:40:24.353Z"),
+      startAt: new Date("2022-01-20T13:30:47.721Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -351,7 +484,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T12:39:59.471Z"),
+      updatedAt: new Date("2019-07-13T14:44:54.836Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -379,6 +512,85 @@ run();
 ### Response
 
 **Promise\<[shared.TaskTask](../../sdk/models/shared/tasktask.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getGenaiTask
+
+Retrieve a task
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getGenaiTask" method="get" path="/genai/{connection_id}/task/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.task.getGenaiTask({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiGetGenaiTask } from "@unified-api/typescript-sdk/funcs/genaiGetGenaiTask.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiGetGenaiTask(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiGetGenaiTask failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetGenaiTaskRequest](../../sdk/models/operations/getgenaitaskrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiTask](../../sdk/models/shared/genaitask.md)\>**
 
 ### Errors
 
@@ -499,7 +711,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentGetTaskComment } from "@unified-api/typescript-sdk/funcs/commentGetTaskComment.js";
+import { taskGetTaskComment } from "@unified-api/typescript-sdk/funcs/taskGetTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -510,7 +722,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentGetTaskComment(unifiedTo, {
+  const res = await taskGetTaskComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -518,7 +730,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentGetTaskComment failed:", res.error);
+    console.log("taskGetTaskComment failed:", res.error);
   }
 }
 
@@ -702,6 +914,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listGenaiTasks
+
+List all tasks
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listGenaiTasks" method="get" path="/genai/{connection_id}/task" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.task.listGenaiTasks({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiListGenaiTasks } from "@unified-api/typescript-sdk/funcs/genaiListGenaiTasks.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiListGenaiTasks(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiListGenaiTasks failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListGenaiTasksRequest](../../sdk/models/operations/listgenaitasksrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiTask[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listTaskChanges
 
 List all changes
@@ -812,7 +1101,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentListTaskComments } from "@unified-api/typescript-sdk/funcs/commentListTaskComments.js";
+import { taskListTaskComments } from "@unified-api/typescript-sdk/funcs/taskListTaskComments.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -823,14 +1112,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentListTaskComments(unifiedTo, {
+  const res = await taskListTaskComments(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentListTaskComments failed:", res.error);
+    console.log("taskListTaskComments failed:", res.error);
   }
 }
 
@@ -1031,9 +1320,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1052,7 +1341,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentPatchTaskComment } from "@unified-api/typescript-sdk/funcs/commentPatchTaskComment.js";
+import { taskPatchTaskComment } from "@unified-api/typescript-sdk/funcs/taskPatchTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1063,13 +1352,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentPatchTaskComment(unifiedTo, {
+  const res = await taskPatchTaskComment(unifiedTo, {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1079,7 +1368,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentPatchTaskComment failed:", res.error);
+    console.log("taskPatchTaskComment failed:", res.error);
   }
 }
 
@@ -1128,14 +1417,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "c81cf2e7-d7ae-4cd5-96c6-010f301f25b6",
+      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "500001c1-e9e6-4bff-b28e-ff7e87e827ab",
+          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1145,14 +1434,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "0d19d358-d37a-48e6-b3b2-0a48f98ccbdf",
+          id: "be30191d-043c-42e2-bb97-f5c110e47983",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T17:43:47.070Z"),
+      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1187,14 +1476,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "c81cf2e7-d7ae-4cd5-96c6-010f301f25b6",
+      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "500001c1-e9e6-4bff-b28e-ff7e87e827ab",
+          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1204,14 +1493,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "0d19d358-d37a-48e6-b3b2-0a48f98ccbdf",
+          id: "be30191d-043c-42e2-bb97-f5c110e47983",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T17:43:47.070Z"),
+      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1266,18 +1555,18 @@ async function run() {
   const result = await unifiedTo.task.patchTaskTask({
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T00:51:34.860Z"),
+      completedAt: new Date("2022-03-25T15:31:00.401Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-24T14:34:53.223Z"),
-      endAt: new Date("2022-10-14T08:40:35.020Z"),
+      dueAt: new Date("2026-04-26T00:16:15.419Z"),
+      endAt: new Date("2022-10-15T01:55:40.505Z"),
       hasChildren: true,
-      id: "ce280840-19a5-4ddf-81f3-1c423a918c05",
+      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-19T23:40:24.358Z"),
+      startAt: new Date("2022-01-20T13:30:47.733Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -1287,7 +1576,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T12:39:59.472Z"),
+      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -1320,18 +1609,18 @@ async function run() {
   const res = await taskPatchTaskTask(unifiedTo, {
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T00:51:34.860Z"),
+      completedAt: new Date("2022-03-25T15:31:00.401Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-24T14:34:53.223Z"),
-      endAt: new Date("2022-10-14T08:40:35.020Z"),
+      dueAt: new Date("2026-04-26T00:16:15.419Z"),
+      endAt: new Date("2022-10-15T01:55:40.505Z"),
       hasChildren: true,
-      id: "ce280840-19a5-4ddf-81f3-1c423a918c05",
+      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-19T23:40:24.358Z"),
+      startAt: new Date("2022-01-20T13:30:47.733Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -1341,7 +1630,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T12:39:59.472Z"),
+      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -1370,6 +1659,85 @@ run();
 ### Response
 
 **Promise\<[shared.TaskTask](../../sdk/models/shared/tasktask.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## removeGenaiTask
+
+Remove a task
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeGenaiTask" method="delete" path="/genai/{connection_id}/task/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.task.removeGenaiTask({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiRemoveGenaiTask } from "@unified-api/typescript-sdk/funcs/genaiRemoveGenaiTask.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiRemoveGenaiTask(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiRemoveGenaiTask failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveGenaiTaskRequest](../../sdk/models/operations/removegenaitaskrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveGenaiTaskResponse](../../sdk/models/operations/removegenaitaskresponse.md)\>**
 
 ### Errors
 
@@ -1411,7 +1779,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentRemoveTaskComment } from "@unified-api/typescript-sdk/funcs/commentRemoveTaskComment.js";
+import { taskRemoveTaskComment } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1422,7 +1790,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentRemoveTaskComment(unifiedTo, {
+  const res = await taskRemoveTaskComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1430,7 +1798,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentRemoveTaskComment failed:", res.error);
+    console.log("taskRemoveTaskComment failed:", res.error);
   }
 }
 
@@ -1635,9 +2003,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1656,7 +2024,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentUpdateTaskComment } from "@unified-api/typescript-sdk/funcs/commentUpdateTaskComment.js";
+import { taskUpdateTaskComment } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1667,13 +2035,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentUpdateTaskComment(unifiedTo, {
+  const res = await taskUpdateTaskComment(unifiedTo, {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "ce156dcf-89dc-474c-b3cd-93df5762f354",
+      id: "381761fa-8766-492d-97d4-83c75cda22e0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T10:05:30.315Z"),
+      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1683,7 +2051,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentUpdateTaskComment failed:", res.error);
+    console.log("taskUpdateTaskComment failed:", res.error);
   }
 }
 
@@ -1732,14 +2100,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "c81cf2e7-d7ae-4cd5-96c6-010f301f25b6",
+      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "500001c1-e9e6-4bff-b28e-ff7e87e827ab",
+          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1749,14 +2117,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "0d19d358-d37a-48e6-b3b2-0a48f98ccbdf",
+          id: "be30191d-043c-42e2-bb97-f5c110e47983",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T17:43:47.070Z"),
+      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1791,14 +2159,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "c81cf2e7-d7ae-4cd5-96c6-010f301f25b6",
+      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "500001c1-e9e6-4bff-b28e-ff7e87e827ab",
+          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1808,14 +2176,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "0d19d358-d37a-48e6-b3b2-0a48f98ccbdf",
+          id: "be30191d-043c-42e2-bb97-f5c110e47983",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T17:43:47.070Z"),
+      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1870,18 +2238,18 @@ async function run() {
   const result = await unifiedTo.task.updateTaskTask({
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T00:51:34.860Z"),
+      completedAt: new Date("2022-03-25T15:31:00.401Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-24T14:34:53.223Z"),
-      endAt: new Date("2022-10-14T08:40:35.020Z"),
+      dueAt: new Date("2026-04-26T00:16:15.419Z"),
+      endAt: new Date("2022-10-15T01:55:40.505Z"),
       hasChildren: true,
-      id: "ce280840-19a5-4ddf-81f3-1c423a918c05",
+      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-19T23:40:24.358Z"),
+      startAt: new Date("2022-01-20T13:30:47.733Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -1891,7 +2259,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T12:39:59.472Z"),
+      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -1924,18 +2292,18 @@ async function run() {
   const res = await taskUpdateTaskTask(unifiedTo, {
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T00:51:34.860Z"),
+      completedAt: new Date("2022-03-25T15:31:00.401Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-24T14:34:53.223Z"),
-      endAt: new Date("2022-10-14T08:40:35.020Z"),
+      dueAt: new Date("2026-04-26T00:16:15.419Z"),
+      endAt: new Date("2022-10-15T01:55:40.505Z"),
       hasChildren: true,
-      id: "ce280840-19a5-4ddf-81f3-1c423a918c05",
+      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-19T23:40:24.358Z"),
+      startAt: new Date("2022-01-20T13:30:47.733Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -1945,7 +2313,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T12:39:59.472Z"),
+      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",

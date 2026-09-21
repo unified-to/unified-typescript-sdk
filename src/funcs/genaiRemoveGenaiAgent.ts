@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
+import { encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -22,20 +22,19 @@ import { ResponseValidationError } from "../sdk/models/errors/responsevalidation
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
-import * as shared from "../sdk/models/shared/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve a comment
+ * Remove an agent
  */
-export function commentGetTaskComment(
+export function genaiRemoveGenaiAgent(
   client: UnifiedToCore,
-  request: operations.GetTaskCommentRequest,
+  request: operations.RemoveGenaiAgentRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.TaskComment,
+    operations.RemoveGenaiAgentResponse | undefined,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -55,12 +54,12 @@ export function commentGetTaskComment(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.GetTaskCommentRequest,
+  request: operations.RemoveGenaiAgentRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.TaskComment,
+      operations.RemoveGenaiAgentResponse | undefined,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -75,7 +74,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetTaskCommentRequest$outboundSchema.parse(value),
+    (value) => operations.RemoveGenaiAgentRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -94,15 +93,10 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/task/{connection_id}/comment/{id}")(pathParams);
-
-  const query = encodeFormQuery({
-    "fields": payload.fields,
-    "raw": payload.raw,
-  });
+  const path = pathToFunc("/genai/{connection_id}/agent/{id}")(pathParams);
 
   const headers = new Headers(compactMap({
-    Accept: "application/json",
+    Accept: "*/*",
   }));
 
   const securityInput = await extractSecurity(client._options.security);
@@ -111,7 +105,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getTaskComment",
+    operationID: "removeGenaiAgent",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -125,11 +119,10 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "DELETE",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    query: query,
     body: body,
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -151,8 +144,12 @@ async function $do(
   }
   const response = doResult.value;
 
+  const responseFields = {
+    HttpMeta: { Response: response, Request: req },
+  };
+
   const [result] = await M.match<
-    shared.TaskComment,
+    operations.RemoveGenaiAgentResponse | undefined,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -162,10 +159,15 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.TaskComment$inboundSchema),
+    M.nil(200, operations.RemoveGenaiAgentResponse$inboundSchema.optional()),
     M.fail("4XX"),
     M.fail("5XX"),
-  )(response, req);
+    M.nil(
+      "default",
+      operations.RemoveGenaiAgentResponse$inboundSchema.optional(),
+      { hdrs: true },
+    ),
+  )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

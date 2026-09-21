@@ -54,17 +54,24 @@ export type PaymentPayment = {
   billId?: string | undefined;
   cardBrand?: string | undefined;
   cardLast4?: string | undefined;
+  /**
+   * dimension refs -> AccountingCategory
+   */
+  categoryIds?: Array<string> | undefined;
   contactId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   deviceId?: string | undefined;
+  exchangeRate?: number | undefined;
   feeAmount?: number | undefined;
   id?: string | undefined;
   invoiceId?: string | undefined;
   linkId?: string | undefined;
   locationId?: string | undefined;
+  netAmount?: number | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
+  paidAt?: Date | undefined;
   paymentMethod?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -127,18 +134,23 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   bill_id: z.string().optional(),
   card_brand: z.string().optional(),
   card_last4: z.string().optional(),
+  category_ids: z.array(z.string()).optional(),
   contact_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().default("USD"),
   device_id: z.string().optional(),
+  exchange_rate: z.number().optional(),
   fee_amount: z.number().optional(),
   id: z.string().optional(),
   invoice_id: z.string().optional(),
   link_id: z.string().optional(),
   location_id: z.string().optional(),
+  net_amount: z.number().optional(),
   notes: z.string().optional(),
   organization_id: z.string().optional(),
+  paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   payment_method: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -156,14 +168,18 @@ export const PaymentPayment$inboundSchema: z.ZodType<
     "bill_id": "billId",
     "card_brand": "cardBrand",
     "card_last4": "cardLast4",
+    "category_ids": "categoryIds",
     "contact_id": "contactId",
     "created_at": "createdAt",
     "device_id": "deviceId",
+    "exchange_rate": "exchangeRate",
     "fee_amount": "feeAmount",
     "invoice_id": "invoiceId",
     "link_id": "linkId",
     "location_id": "locationId",
+    "net_amount": "netAmount",
     "organization_id": "organizationId",
+    "paid_at": "paidAt",
     "payment_method": "paymentMethod",
     "salesorder_id": "salesorderId",
     "tender_type": "tenderType",
@@ -179,17 +195,21 @@ export type PaymentPayment$Outbound = {
   bill_id?: string | undefined;
   card_brand?: string | undefined;
   card_last4?: string | undefined;
+  category_ids?: Array<string> | undefined;
   contact_id?: string | undefined;
   created_at?: string | undefined;
   currency: string;
   device_id?: string | undefined;
+  exchange_rate?: number | undefined;
   fee_amount?: number | undefined;
   id?: string | undefined;
   invoice_id?: string | undefined;
   link_id?: string | undefined;
   location_id?: string | undefined;
+  net_amount?: number | undefined;
   notes?: string | undefined;
   organization_id?: string | undefined;
+  paid_at?: string | undefined;
   payment_method?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -213,17 +233,21 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   billId: z.string().optional(),
   cardBrand: z.string().optional(),
   cardLast4: z.string().optional(),
+  categoryIds: z.array(z.string()).optional(),
   contactId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().default("USD"),
   deviceId: z.string().optional(),
+  exchangeRate: z.number().optional(),
   feeAmount: z.number().optional(),
   id: z.string().optional(),
   invoiceId: z.string().optional(),
   linkId: z.string().optional(),
   locationId: z.string().optional(),
+  netAmount: z.number().optional(),
   notes: z.string().optional(),
   organizationId: z.string().optional(),
+  paidAt: z.date().transform(v => v.toISOString()).optional(),
   paymentMethod: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -240,14 +264,18 @@ export const PaymentPayment$outboundSchema: z.ZodType<
     billId: "bill_id",
     cardBrand: "card_brand",
     cardLast4: "card_last4",
+    categoryIds: "category_ids",
     contactId: "contact_id",
     createdAt: "created_at",
     deviceId: "device_id",
+    exchangeRate: "exchange_rate",
     feeAmount: "fee_amount",
     invoiceId: "invoice_id",
     linkId: "link_id",
     locationId: "location_id",
+    netAmount: "net_amount",
     organizationId: "organization_id",
+    paidAt: "paid_at",
     paymentMethod: "payment_method",
     salesorderId: "salesorder_id",
     tenderType: "tender_type",

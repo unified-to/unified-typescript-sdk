@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -13,19 +15,56 @@ import {
   AccountingMetadata$Outbound,
   AccountingMetadata$outboundSchema,
 } from "./accountingmetadata.js";
+import {
+  AccountingTaxrateComponent,
+  AccountingTaxrateComponent$inboundSchema,
+  AccountingTaxrateComponent$Outbound,
+  AccountingTaxrateComponent$outboundSchema,
+} from "./accountingtaxratecomponent.js";
+
+export const AccountingTaxrateType = {
+  Sales: "SALES",
+  Purchase: "PURCHASE",
+  Both: "BOTH",
+  Other: "OTHER",
+} as const;
+export type AccountingTaxrateType = OpenEnum<typeof AccountingTaxrateType>;
 
 export type AccountingTaxrate = {
+  /**
+   * Component parts of a compound or multi-component tax
+   */
+  components?: Array<AccountingTaxrateComponent> | undefined;
+  country?: string | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
+  effectiveRate?: number | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  isCompound?: boolean | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   rate?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  region?: string | undefined;
+  totalRate?: number | undefined;
+  type?: AccountingTaxrateType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingTaxrateType$inboundSchema: z.ZodType<
+  AccountingTaxrateType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingTaxrateType);
+/** @internal */
+export const AccountingTaxrateType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingTaxrateType
+> = openEnums.outboundSchema(AccountingTaxrateType);
 
 /** @internal */
 export const AccountingTaxrate$inboundSchema: z.ZodType<
@@ -33,37 +72,54 @@ export const AccountingTaxrate$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  components: z.array(AccountingTaxrateComponent$inboundSchema).optional(),
+  country: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
+  effective_rate: z.number().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  is_compound: z.boolean().optional(),
   metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   rate: z.number().optional(),
   raw: z.record(z.any()).optional(),
+  region: z.string().optional(),
+  total_rate: z.number().optional(),
+  type: AccountingTaxrateType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "effective_rate": "effectiveRate",
     "is_active": "isActive",
+    "is_compound": "isCompound",
     "organization_id": "organizationId",
+    "total_rate": "totalRate",
     "updated_at": "updatedAt",
   });
 });
 /** @internal */
 export type AccountingTaxrate$Outbound = {
+  components?: Array<AccountingTaxrateComponent$Outbound> | undefined;
+  country?: string | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
+  effective_rate?: number | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  is_compound?: boolean | undefined;
   metadata?: Array<AccountingMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   rate?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  region?: string | undefined;
+  total_rate?: number | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
 };
 
@@ -73,21 +129,31 @@ export const AccountingTaxrate$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingTaxrate
 > = z.object({
+  components: z.array(AccountingTaxrateComponent$outboundSchema).optional(),
+  country: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
+  effectiveRate: z.number().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  isCompound: z.boolean().optional(),
   metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   rate: z.number().optional(),
   raw: z.record(z.any()).optional(),
+  region: z.string().optional(),
+  totalRate: z.number().optional(),
+  type: AccountingTaxrateType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    effectiveRate: "effective_rate",
     isActive: "is_active",
+    isCompound: "is_compound",
     organizationId: "organization_id",
+    totalRate: "total_rate",
     updatedAt: "updated_at",
   });
 });

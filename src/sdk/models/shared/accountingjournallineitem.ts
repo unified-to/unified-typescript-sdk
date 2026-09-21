@@ -22,6 +22,7 @@ export type AccountingJournalLineitem = {
   paymentId?: string | undefined;
   projectId?: string | undefined;
   taxAmount?: number | undefined;
+  taxrateId?: string | undefined;
   totalAmount?: number | undefined;
 };
 
@@ -44,6 +45,7 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
   payment_id: z.string().optional(),
   project_id: z.string().optional(),
   tax_amount: z.number().optional(),
+  taxrate_id: z.string().optional(),
   total_amount: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -58,6 +60,7 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
     "payment_id": "paymentId",
     "project_id": "projectId",
     "tax_amount": "taxAmount",
+    "taxrate_id": "taxrateId",
     "total_amount": "totalAmount",
   });
 });
@@ -76,6 +79,7 @@ export type AccountingJournalLineitem$Outbound = {
   payment_id?: string | undefined;
   project_id?: string | undefined;
   tax_amount?: number | undefined;
+  taxrate_id?: string | undefined;
   total_amount?: number | undefined;
 };
 
@@ -98,6 +102,7 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
   paymentId: z.string().optional(),
   projectId: z.string().optional(),
   taxAmount: z.number().optional(),
+  taxrateId: z.string().optional(),
   totalAmount: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -112,6 +117,7 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
     paymentId: "payment_id",
     projectId: "project_id",
     taxAmount: "tax_amount",
+    taxrateId: "taxrate_id",
     totalAmount: "total_amount",
   });
 });
