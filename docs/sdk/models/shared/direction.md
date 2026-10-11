@@ -1,5 +1,7 @@
 # Direction
 
+DESTINATION, or BIDIRECTIONAL for import+export connectors
+
 ## Example Usage
 
 ```typescript

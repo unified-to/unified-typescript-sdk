@@ -20,8 +20,12 @@ import { recordingListUcRecordings } from "../funcs/recordingListUcRecordings.js
 import { recordingPatchUcRecording } from "../funcs/recordingPatchUcRecording.js";
 import { recordingRemoveUcRecording } from "../funcs/recordingRemoveUcRecording.js";
 import { recordingUpdateUcRecording } from "../funcs/recordingUpdateUcRecording.js";
+import { scorecardGetUcScorecard } from "../funcs/scorecardGetUcScorecard.js";
+import { scorecardListUcScorecards } from "../funcs/scorecardListUcScorecards.js";
 import { ucGetUcCall } from "../funcs/ucGetUcCall.js";
+import { ucGetUcScorecardtemplate } from "../funcs/ucGetUcScorecardtemplate.js";
 import { ucListUcCalls } from "../funcs/ucListUcCalls.js";
+import { ucListUcScorecardtemplates } from "../funcs/ucListUcScorecardtemplates.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -127,6 +131,34 @@ export class Uc extends ClientSDK {
   }
 
   /**
+   * Retrieve a scorecard
+   */
+  async getUcScorecard(
+    request: operations.GetUcScorecardRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcScorecard> {
+    return unwrapAsync(scorecardGetUcScorecard(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a scorecardtemplate
+   */
+  async getUcScorecardtemplate(
+    request: operations.GetUcScorecardtemplateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcScorecardtemplate> {
+    return unwrapAsync(ucGetUcScorecardtemplate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all calls
    */
   async listUcCalls(
@@ -176,6 +208,34 @@ export class Uc extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.UcRecording>> {
     return unwrapAsync(recordingListUcRecordings(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all scorecards
+   */
+  async listUcScorecards(
+    request: operations.ListUcScorecardsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.UcScorecard>> {
+    return unwrapAsync(scorecardListUcScorecards(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all scorecardtemplates
+   */
+  async listUcScorecardtemplates(
+    request: operations.ListUcScorecardtemplatesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.UcScorecardtemplate>> {
+    return unwrapAsync(ucListUcScorecardtemplates(
       this,
       request,
       options,

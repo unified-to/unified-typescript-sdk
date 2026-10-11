@@ -10,11 +10,17 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The member's membership status
+ */
 export const ClubsMemberMembershipStatus = {
   Member: "MEMBER",
   Pending: "PENDING",
   None: "NONE",
 } as const;
+/**
+ * The member's membership status
+ */
 export type ClubsMemberMembershipStatus = OpenEnum<
   typeof ClubsMemberMembershipStatus
 >;
@@ -23,16 +29,49 @@ export type ClubsMemberMembershipStatus = OpenEnum<
  * `lastname` is only a single initial. We do not synthesize an id, so `id` is typically absent.
  */
 export type ClubsMember = {
+  /**
+   * The date that this member was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The member's first name
+   */
   firstName?: string | undefined;
+  /**
+   * The group this member belongs to (reference to HrisGroup)
+   */
   groupId?: string | undefined;
+  /**
+   * Unique identifier for this member (not provided by Strava)
+   */
   id?: string | undefined;
+  /**
+   * Whether the member is an admin of the group
+   */
   isAdmin?: boolean | undefined;
+  /**
+   * Whether the member is the owner of the group
+   */
   isOwner?: boolean | undefined;
+  /**
+   * The member's last name (a single initial for Strava)
+   */
   lastName?: string | undefined;
+  /**
+   * The member's membership status
+   */
   membershipStatus?: ClubsMemberMembershipStatus | undefined;
+  /**
+   * The full name of the member (first name + last initial for Strava)
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this member
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The last date that this member was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

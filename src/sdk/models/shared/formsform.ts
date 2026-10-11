@@ -17,6 +17,9 @@ import {
 export type FormsForm = {
   confirmationMessage?: string | undefined;
   confirmationRedirectUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   fields?: Array<FormField> | undefined;
@@ -29,6 +32,9 @@ export type FormsForm = {
   publishedUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   responseCount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

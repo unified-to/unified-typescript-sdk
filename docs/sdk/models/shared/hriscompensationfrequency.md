@@ -5,7 +5,7 @@
 ```typescript
 import { HrisCompensationFrequency } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisCompensationFrequency = "HOUR";
+let value: HrisCompensationFrequency = "WEEK";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: HrisCompensationFrequency = "HOUR";
 ## Values
 
 ```typescript
-"ONE_TIME" | "DAY" | "QUARTER" | "YEAR" | "HOUR" | "MONTH" | "WEEK" | Unrecognized<string>
+"ONE_TIME" | "DAY" | "QUARTER" | "YEAR" | "HOUR" | "MONTH" | "WEEK" | "BIWEEKLY" | "SEMIMONTHLY" | Unrecognized<string>
 ```

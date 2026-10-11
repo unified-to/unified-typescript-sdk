@@ -28,7 +28,13 @@ export type EncondingFormat = OpenEnum<typeof EncondingFormat>;
 
 export type GenaiEmbedding = {
   content?: Array<GenaiEmbeddingContent> | undefined;
+  /**
+   * 256, 512, 1024, and 1536
+   */
   dimension?: number | undefined;
+  /**
+   * JSON string based off of the format
+   */
   embeddings?: string | undefined;
   encondingFormat?: EncondingFormat | undefined;
   id?: string | undefined;
@@ -36,6 +42,9 @@ export type GenaiEmbedding = {
   modelId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   tokensUsed?: number | undefined;
+  /**
+   * 'SEARCH_DOC' | 'SEARCH_QUERY' | 'CLUSTERING' | 'CLASSIFICATION';
+   */
   type?: string | undefined;
 };
 

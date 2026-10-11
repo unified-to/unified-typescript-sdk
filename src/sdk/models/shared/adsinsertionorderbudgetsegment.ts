@@ -11,7 +11,13 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type AdsInsertionorderBudgetSegment = {
   budgetAmount?: number | undefined;
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
 };
 

@@ -44,6 +44,9 @@ export type PropertyDatastoreQueryQuery = {
   select?: Array<string> | undefined;
   sortFields?: Array<string> | undefined;
   sortOrder?: SortOrder | undefined;
+  /**
+   * Raw SQL – when set, executed directly (table_id optional)
+   */
   sql?: string | undefined;
 };
 

@@ -9,10 +9,22 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type UcRecordingTranscript = {
+  /**
+   * (reference to UcContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   text: string;
+  /**
+   * reference to HrisEmployee (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

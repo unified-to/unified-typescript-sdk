@@ -1,5 +1,7 @@
 # ShippingPackageSizeUnit
 
+Unit for dimensions (cm, inch)
+
 ## Example Usage
 
 ```typescript

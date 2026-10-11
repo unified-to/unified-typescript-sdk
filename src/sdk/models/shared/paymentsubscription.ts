@@ -35,26 +35,65 @@ export type PaymentSubscriptionStatus = OpenEnum<
 >;
 
 export type PaymentSubscription = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   canceledAt?: Date | undefined;
+  /**
+   * a reference to an Accounting Contact (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   currentPeriodEndAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   currentPeriodStartAt?: Date | undefined;
+  /**
+   * The day of the month to charge customers on. 1-28 or -1 to indicate the last day of the month. Only applies when the interval_unit is MONTH.
+   */
   dayOfMonth?: number | undefined;
+  /**
+   * The day of the week to charge customers on. 1-7 or -1 to indicate the last day of the week. Only applies when the interval_unit is WEEK.
+   */
   dayOfWeek?: number | undefined;
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   id?: string | undefined;
+  /**
+   * The number of intervals between charges within the interval_unit. Defaults to 1.
+   */
   interval?: number | undefined;
   intervalUnit?: IntervalUnit | undefined;
+  /**
+   * a reference to an Accounting Invoice (reference to AccountingInvoice)
+   */
   invoiceId?: string | undefined;
   lineitems?: Array<PaymentLineitem> | undefined;
+  /**
+   * the month on which to charge a customer (1-12). Only applies when the interval_unit is YEAR.
+   */
   month?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: PaymentSubscriptionStatus | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

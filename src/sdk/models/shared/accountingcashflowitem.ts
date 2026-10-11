@@ -9,8 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingCashflowItem = {
+  /**
+   * If attributable to a specific GL account (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
+  /**
+   * Positive = inflow, Negative = outflow
+   */
   amount?: number | undefined;
+  /**
+   * e.g. "Net Income", "Depreciation", "Equipment"
+   */
   name?: string | undefined;
   subItems?: Array<AccountingCashflowItem> | undefined;
   /**

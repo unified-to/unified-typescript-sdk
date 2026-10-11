@@ -31,6 +31,9 @@ export type AtsStatusStatus = OpenEnum<typeof AtsStatusStatus>;
 export type AtsStatus = {
   description?: string | undefined;
   id?: string | undefined;
+  /**
+   * The ID of the job this status/stage belongs to, when the provider scopes statuses per job.
+   */
   jobId?: string | undefined;
   originalStatus?: string | undefined;
   raw?: { [k: string]: any } | undefined;

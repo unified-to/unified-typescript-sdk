@@ -39,6 +39,10 @@ export type ListGenaiTasksQueryParamFields = ClosedEnum<
 
 export type ListGenaiTasksRequest = {
   /**
+   * The agent ID to filter by
+   */
+  agentId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
@@ -72,6 +76,7 @@ export const ListGenaiTasksQueryParamFields$outboundSchema: z.ZodNativeEnum<
 
 /** @internal */
 export type ListGenaiTasksRequest$Outbound = {
+  agent_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -90,6 +95,7 @@ export const ListGenaiTasksRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListGenaiTasksRequest
 > = z.object({
+  agentId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(ListGenaiTasksQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
@@ -102,6 +108,7 @@ export const ListGenaiTasksRequest$outboundSchema: z.ZodType<
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    agentId: "agent_id",
     connectionId: "connection_id",
     updatedGte: "updated_gte",
   });

@@ -16,21 +16,54 @@ import {
  * Sections
  */
 export type AccountingCashflow = {
+  /**
+   * Cash at beginning of period
+   */
   cashBeginningAmount?: number | undefined;
+  /**
+   * Cash at end of period
+   */
   cashEndingAmount?: number | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217, e.g. "USD"
+   */
   currency?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   financingSections?: Array<AccountingCashflowSection> | undefined;
   id?: string | undefined;
   investingSections?: Array<AccountingCashflowSection> | undefined;
+  /**
+   * e.g. "Cash Flow Statement Q1 2020"
+   */
   name?: string | undefined;
+  /**
+   * Usually ending - beginning
+   */
   netChangeInCashAmount?: number | undefined;
   operatingSections?: Array<AccountingCashflowSection> | undefined;
+  /**
+   * Original data from the integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

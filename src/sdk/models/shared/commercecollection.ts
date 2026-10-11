@@ -33,6 +33,9 @@ export type CommerceCollectionType = OpenEnum<typeof CommerceCollectionType>;
  * A collection of items/products/services
  */
 export type CommerceCollection = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
@@ -49,6 +52,9 @@ export type CommerceCollection = {
   raw?: { [k: string]: any } | undefined;
   tags?: Array<string> | undefined;
   type?: CommerceCollectionType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

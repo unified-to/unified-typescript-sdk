@@ -12,8 +12,17 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * Audience metrics for the profile
  */
 export type PropertySocialProfileMetrics = {
+  /**
+   * Number of followers
+   */
   followerCount?: number | undefined;
+  /**
+   * Number of accounts this profile follows
+   */
   followingCount?: number | undefined;
+  /**
+   * Total number of posts published by this profile
+   */
   postCount?: number | undefined;
 };
 

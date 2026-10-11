@@ -12,9 +12,21 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * The meeting object, when type = meeting
  */
 export type PropertyCrmEventMeeting = {
+  /**
+   * The event meeting's agendadescription
+   */
   description?: string | undefined;
+  /**
+   * The event meeting's end datetime (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * The event meeting's start datetime (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * The event meeting's topicsubject
+   */
   title?: string | undefined;
 };
 

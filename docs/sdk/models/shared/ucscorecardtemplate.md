@@ -1,0 +1,23 @@
+# UcScorecardtemplate
+
+## Example Usage
+
+```typescript
+import { UcScorecardtemplate } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: UcScorecardtemplate = {};
+```
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `createdAt`                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)     | :heavy_minus_sign:                                                                                | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                                                          |
+| `description`                                                                                     | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `id`                                                                                              | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `isActive`                                                                                        | *boolean*                                                                                         | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `metadata`                                                                                        | [shared.UcMetadata](../../../sdk/models/shared/ucmetadata.md)[]                                   | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `name`                                                                                            | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `questions`                                                                                       | [shared.UcScorecardtemplateQuestion](../../../sdk/models/shared/ucscorecardtemplatequestion.md)[] | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `raw`                                                                                             | Record<string, *any*>                                                                             | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `updatedAt`                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)     | :heavy_minus_sign:                                                                                | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                                                          |

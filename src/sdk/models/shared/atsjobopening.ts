@@ -17,9 +17,18 @@ export const AtsJobOpeningStatus = {
 export type AtsJobOpeningStatus = OpenEnum<typeof AtsJobOpeningStatus>;
 
 export type AtsJobOpening = {
+  /**
+   * points to an application
+   */
   applicationId?: string | undefined;
   closeReason?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   closedAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   openedAt?: Date | undefined;
   status?: AtsJobOpeningStatus | undefined;
 };

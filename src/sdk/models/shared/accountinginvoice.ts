@@ -40,10 +40,16 @@ import {
   AccountingPaymentReference$outboundSchema,
 } from "./accountingpaymentreference.js";
 
+/**
+ * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+ */
 export const AccountingInvoicePaymentCollectionMethod = {
   SendInvoice: "send_invoice",
   ChargeAutomatically: "charge_automatically",
 } as const;
+/**
+ * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+ */
 export type AccountingInvoicePaymentCollectionMethod = OpenEnum<
   typeof AccountingInvoicePaymentCollectionMethod
 >;
@@ -79,6 +85,9 @@ export const AccountingInvoiceStatus = {
 } as const;
 export type AccountingInvoiceStatus = OpenEnum<typeof AccountingInvoiceStatus>;
 
+/**
+ * @deprecated use payment_terms instead
+ */
 export const AccountingInvoiceTerm = {
   OnReceipt: "ON_RECEIPT",
   Net7: "NET_7",
@@ -92,35 +101,71 @@ export const AccountingInvoiceTerm = {
   Net90: "NET_90",
   Other: "OTHER",
 } as const;
+/**
+ * @deprecated use payment_terms instead
+ */
 export type AccountingInvoiceTerm = OpenEnum<typeof AccountingInvoiceTerm>;
 
+/**
+ * BILL removed (use AccountingBill); remaining values: INVOICE, CREDITMEMO
+ */
 export const AccountingInvoiceType = {
   Invoice: "INVOICE",
   Creditmemo: "CREDITMEMO",
 } as const;
+/**
+ * BILL removed (use AccountingBill); remaining values: INVOICE, CREDITMEMO
+ */
 export type AccountingInvoiceType = OpenEnum<typeof AccountingInvoiceType>;
 
 export type AccountingInvoice = {
   attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   cancelledAt?: Date | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   discountAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
+  /**
+   * Exchange rate to the base/home currency at the document date
+   */
   exchangeRate?: number | undefined;
   extendedNotes?: Array<AccountingExtendedNote> | undefined;
   id?: string | undefined;
+  /**
+   * External identifier (ie. reference) for this invoice
+   */
   invoiceNumber?: string | undefined;
+  /**
+   * True when the document amounts already include tax
+   */
   isInclusiveOfTax?: boolean | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
   paidAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   paidAt?: Date | undefined;
+  /**
+   * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+   */
   paymentCollectionMethod?:
     | AccountingInvoicePaymentCollectionMethod
     | undefined;
@@ -130,12 +175,21 @@ export type AccountingInvoice = {
    */
   payments?: Array<AccountingPaymentReference> | undefined;
   paymenttermId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
+  /**
+   * (reference to TaskProject)
+   */
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   refundedAt?: Date | undefined;
   /**
    * refs -> AccountingSalesorder; the sales orders this invoice was raised from
@@ -143,12 +197,27 @@ export type AccountingInvoice = {
   salesorderIds?: Array<string> | undefined;
   send?: boolean | undefined;
   status?: AccountingInvoiceStatus | undefined;
+  /**
+   * Total before tax
+   */
   subTotalAmount?: number | undefined;
   taxAmount?: number | undefined;
+  /**
+   * @deprecated use payment_terms instead
+   */
   term?: AccountingInvoiceTerm | undefined;
   totalAmount?: number | undefined;
+  /**
+   * BILL removed (use AccountingBill); remaining values: INVOICE, CREDITMEMO
+   */
   type?: AccountingInvoiceType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The public URL for the invoice to send to a customer to view or pay.
+   */
   url?: string | undefined;
 };
 

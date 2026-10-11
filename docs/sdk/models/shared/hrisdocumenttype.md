@@ -1,5 +1,7 @@
 # HrisDocumentType
 
+unified, normalized document type (OTHER when unmappable)
+
 ## Example Usage
 
 ```typescript

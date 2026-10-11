@@ -13,36 +13,117 @@ import {
 } from "./marketingreportlink.js";
 
 export type MarketingReport = {
+  /**
+   * Number of abuse reports
+   */
   abuseReports?: number | undefined;
+  /**
+   * Associated campaign ID
+   */
   campaignId?: string | undefined;
+  /**
+   * Click rate (decimal)
+   */
   clickRate?: number | undefined;
+  /**
+   * Total clicks
+   */
   clicksTotal?: number | undefined;
+  /**
+   * Total emails sent
+   */
   emailsSent?: number | undefined;
+  /**
+   * End time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * Forward count
+   */
   forwardsCount?: number | undefined;
+  /**
+   * Forwards opened
+   */
   forwardsOpens?: number | undefined;
+  /**
+   * Hard bounce count
+   */
   hardBounces?: number | undefined;
+  /**
+   * Open rate (decimal) excluding automated/bot/proxy opens
+   */
   humanOpenRate?: number | undefined;
+  /**
+   * Total opens excluding automated/bot/proxy (e.g. Apple Mail Privacy Protection) opens
+   */
   humanOpensTotal?: number | undefined;
+  /**
+   * Unique opens excluding automated/bot/proxy opens
+   */
   humanUniqueOpens?: number | undefined;
+  /**
+   * Unique identifier for the campaign report
+   */
   id?: string | undefined;
+  /**
+   * Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   lastClickAt?: Date | undefined;
+  /**
+   * Last open timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   lastOpenAt?: Date | undefined;
   /**
    * URL-specific click data
    */
   links?: Array<MarketingReportLink> | undefined;
+  /**
+   * Associated list ID
+   */
   listId?: string | undefined;
+  /**
+   * Open rate (decimal)
+   */
   openRate?: number | undefined;
+  /**
+   * Total opens
+   */
   opensTotal?: number | undefined;
+  /**
+   * Raw data from integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Send time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   sentAt?: Date | undefined;
+  /**
+   * Soft bounce count
+   */
   softBounces?: number | undefined;
+  /**
+   * Start time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * Syntax error count
+   */
   syntaxErrors?: number | undefined;
+  /**
+   * Unique clicks
+   */
   uniqueClicks?: number | undefined;
+  /**
+   * Unique opens
+   */
   uniqueOpens?: number | undefined;
+  /**
+   * Unique subscriber clicks
+   */
   uniqueSubscriberClicks?: number | undefined;
+  /**
+   * Number of unsubscribes
+   */
   unsubscribed?: number | undefined;
 };
 

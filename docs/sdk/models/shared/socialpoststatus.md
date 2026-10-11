@@ -1,5 +1,7 @@
 # SocialPostStatus
 
+Publication status of the post
+
 ## Example Usage
 
 ```typescript

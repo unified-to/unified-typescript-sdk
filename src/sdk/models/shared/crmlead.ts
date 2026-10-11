@@ -34,10 +34,22 @@ import {
 
 export type CrmLead = {
   address?: PropertyCrmLeadAddress | undefined;
+  /**
+   * (reference to CrmCompany)
+   */
   companyId?: string | undefined;
   companyName?: string | undefined;
+  /**
+   * (reference to CrmContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   creatorUserId?: string | undefined;
   emails?: Array<CrmEmail> | undefined;
   firstName?: string | undefined;
@@ -51,7 +63,17 @@ export type CrmLead = {
   source?: string | undefined;
   status?: string | undefined;
   telephones?: Array<CrmTelephone> | undefined;
+  /**
+   * The job title of the lead
+   */
+  title?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 
@@ -78,6 +100,7 @@ export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
     source: z.string().optional(),
     status: z.string().optional(),
     telephones: z.array(CrmTelephone$inboundSchema).optional(),
+    title: z.string().optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
@@ -117,6 +140,7 @@ export type CrmLead$Outbound = {
   source?: string | undefined;
   status?: string | undefined;
   telephones?: Array<CrmTelephone$Outbound> | undefined;
+  title?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
 };
@@ -145,6 +169,7 @@ export const CrmLead$outboundSchema: z.ZodType<
   source: z.string().optional(),
   status: z.string().optional(),
   telephones: z.array(CrmTelephone$outboundSchema).optional(),
+  title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {

@@ -38,9 +38,17 @@ export type ListHrisDevicesRequest = {
    */
   connectionId: string;
   /**
+   * The email address to filter by
+   */
+  email?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListHrisDevicesQueryParamFields> | undefined;
+  /**
+   * The group ID to filter by (reference to HrisGroup)
+   */
+  groupId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -71,7 +79,9 @@ export const ListHrisDevicesQueryParamFields$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export type ListHrisDevicesRequest$Outbound = {
   connection_id: string;
+  email?: string | undefined;
   fields?: Array<string> | undefined;
+  group_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -89,7 +99,9 @@ export const ListHrisDevicesRequest$outboundSchema: z.ZodType<
   ListHrisDevicesRequest
 > = z.object({
   connectionId: z.string(),
+  email: z.string().optional(),
   fields: z.array(ListHrisDevicesQueryParamFields$outboundSchema).optional(),
+  groupId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -101,6 +113,7 @@ export const ListHrisDevicesRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    groupId: "group_id",
     updatedGte: "updated_gte",
     userId: "user_id",
   });

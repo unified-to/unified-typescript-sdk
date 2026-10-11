@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The activity type
+ */
 export const ClubsActivityType = {
   Running: "RUNNING",
   Cycling: "CYCLING",
@@ -19,54 +22,186 @@ export const ClubsActivityType = {
   Hiking: "HIKING",
   Other: "OTHER",
 } as const;
+/**
+ * The activity type
+ */
 export type ClubsActivityType = OpenEnum<typeof ClubsActivityType>;
 
 /**
  * ClubActivity (getClubActivitiesById, NO id) and the full DetailedActivity (getActivityById).
  */
 export type ClubsActivity = {
+  /**
+   * The number of achievements gained during this activity
+   */
   achievementCount?: number | undefined;
+  /**
+   * The number of athletes that took part in this activity
+   */
   athleteCount?: number | undefined;
+  /**
+   * The id of the athlete who performed the activity (DetailedActivity only)
+   */
   athleteId?: string | undefined;
+  /**
+   * The full name of the athlete
+   */
   athleteName?: string | undefined;
+  /**
+   * The activity's average cadence
+   */
   averageCadence?: number | undefined;
+  /**
+   * The activity's average heart rate, in beats per minute
+   */
   averageHeartrate?: number | undefined;
+  /**
+   * The activity's average speed, in meters per second
+   */
   averageSpeed?: number | undefined;
+  /**
+   * The activity's average power output, in watts
+   */
   averageWatts?: number | undefined;
+  /**
+   * The number of kilocalories consumed during this activity
+   */
   calories?: number | undefined;
+  /**
+   * The number of comments for this activity
+   */
   commentCount?: number | undefined;
+  /**
+   * The date that this activity was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The description of the activity (DetailedActivity only)
+   */
   description?: string | undefined;
+  /**
+   * The activity's distance, in meters
+   */
   distance?: number | undefined;
+  /**
+   * The activity's elapsed time, in seconds
+   */
   elapsedTime?: number | undefined;
+  /**
+   * The activity's highest elevation, in meters (DetailedActivity only)
+   */
   elevationHigh?: number | undefined;
+  /**
+   * The activity's lowest elevation, in meters (DetailedActivity only)
+   */
   elevationLow?: number | undefined;
+  /**
+   * The group this activity was listed under (reference to HrisGroup)
+   */
   groupId?: string | undefined;
+  /**
+   * Whether the activity has heart rate data
+   */
   hasHeartrate?: boolean | undefined;
+  /**
+   * Unique identifier for this activity (not provided by ClubActivity)
+   */
   id?: string | undefined;
+  /**
+   * Whether this activity is a commute
+   */
   isCommute?: boolean | undefined;
+  /**
+   * Whether this activity was created manually
+   */
   isManual?: boolean | undefined;
+  /**
+   * Whether this activity is private
+   */
   isPrivate?: boolean | undefined;
+  /**
+   * Whether this activity was recorded on a training machine
+   */
   isTrainer?: boolean | undefined;
+  /**
+   * The total work done, in kilojoules
+   */
   kilojoules?: number | undefined;
+  /**
+   * The number of kudos given for this activity
+   */
   kudosCount?: number | undefined;
+  /**
+   * The detailed polyline of the activity's map
+   */
   mapPolyline?: string | undefined;
+  /**
+   * The summary polyline of the activity's map
+   */
   mapSummaryPolyline?: string | undefined;
+  /**
+   * The activity's max heart rate, in beats per minute
+   */
   maxHeartrate?: number | undefined;
+  /**
+   * The activity's max speed, in meters per second
+   */
   maxSpeed?: number | undefined;
+  /**
+   * The activity's max power output, in watts
+   */
   maxWatts?: number | undefined;
+  /**
+   * The activity's moving time, in seconds
+   */
   movingTime?: number | undefined;
+  /**
+   * The name of the activity
+   */
   name?: string | undefined;
+  /**
+   * The number of Instagram photos for this activity
+   */
   photoCount?: number | undefined;
+  /**
+   * The number of personal records set during this activity
+   */
   prCount?: number | undefined;
+  /**
+   * The raw data returned by the integration for this activity
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * When the activity started (UTC) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * The activity's relative effort score
+   */
   sufferScore?: number | undefined;
+  /**
+   * The timezone of the activity
+   */
   timezone?: string | undefined;
+  /**
+   * The activity's total elevation gain, in meters
+   */
   totalElevationGain?: number | undefined;
+  /**
+   * The activity type
+   */
   type?: ClubsActivityType | undefined;
+  /**
+   * The last date that this activity was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The activity's weighted average power output, in watts
+   */
   weightedAverageWatts?: number | undefined;
+  /**
+   * The activity's workout type
+   */
   workoutType?: number | undefined;
 };
 

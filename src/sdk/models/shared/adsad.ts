@@ -54,6 +54,9 @@ export type AdsAd = {
   adType?: AdType | undefined;
   advertiserName?: string | undefined;
   campaignId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   creativeAssetUrl?: string | undefined;
   creativeIds?: Array<string> | undefined;
@@ -61,6 +64,9 @@ export type AdsAd = {
   description?: string | undefined;
   displayUrl?: string | undefined;
   finalUrl?: string | undefined;
+  /**
+   * (reference to AdsGroup)
+   */
   groupId?: string | undefined;
   headline?: string | undefined;
   id?: string | undefined;
@@ -72,6 +78,9 @@ export type AdsAd = {
   promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: AdsAdStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

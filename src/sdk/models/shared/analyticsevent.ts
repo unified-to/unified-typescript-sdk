@@ -41,6 +41,9 @@ export type AnalyticsEvent = {
   city?: string | undefined;
   country?: string | undefined;
   countryCode?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   device?: string | undefined;
@@ -52,10 +55,19 @@ export type AnalyticsEvent = {
   pageReferrer?: string | undefined;
   pageTitle?: string | undefined;
   pageUrl?: string | undefined;
+  /**
+   * points to AnalyticsProperty
+   */
   propertyId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   region?: string | undefined;
+  /**
+   * points to AnalyticsSession
+   */
   sessionId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   utmCampaign?: string | undefined;
   utmContent?: string | undefined;
@@ -63,6 +75,9 @@ export type AnalyticsEvent = {
   utmSource?: string | undefined;
   utmTerm?: string | undefined;
   value?: number | undefined;
+  /**
+   * points to AnalyticsVisitor
+   */
   visitorId?: string | undefined;
 };
 

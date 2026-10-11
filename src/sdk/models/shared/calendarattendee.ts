@@ -23,6 +23,9 @@ export type CalendarAttendee = {
   name?: string | undefined;
   required?: boolean | undefined;
   status?: CalendarAttendeeStatus | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

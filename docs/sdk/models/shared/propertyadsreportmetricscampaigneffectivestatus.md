@@ -1,5 +1,7 @@
 # PropertyAdsReportMetricsCampaignEffectiveStatus
 
+read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status
+
 ## Example Usage
 
 ```typescript

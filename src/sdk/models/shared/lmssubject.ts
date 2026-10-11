@@ -9,6 +9,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LmsSubject = {
   name?: string | undefined;
+  /**
+   * Depth of this subject in the provider's topic hierarchy (0 = top level)
+   */
   rank?: number | undefined;
 };
 

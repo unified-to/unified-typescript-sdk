@@ -18,19 +18,81 @@ export type HrisBankaccountAccountType = OpenEnum<
   typeof HrisBankaccountAccountType
 >;
 
+/**
+ * how net pay is split into this account when an employee has several accounts
+ */
+export const SplitType = {
+  Percentage: "PERCENTAGE",
+  Fixed: "FIXED",
+  Remainder: "REMAINDER",
+} as const;
+/**
+ * how net pay is split into this account when an employee has several accounts
+ */
+export type SplitType = OpenEnum<typeof SplitType>;
+
 export type HrisBankaccount = {
   accountNumber?: string | undefined;
+  /**
+   * when full number not returned
+   */
   accountNumberLast4?: string | undefined;
   accountType?: HrisBankaccountAccountType | undefined;
   bankName?: string | undefined;
+  /**
+   * BIC / SWIFT code
+   */
+  bic?: string | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * ISO 2-digit country code of the bank account
+   */
+  countryCode?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  currency?: string | undefined;
+  /**
+   * International Bank Account Number (non-US accounts)
+   */
+  iban?: string | undefined;
   id?: string | undefined;
+  /**
+   * primary for direct deposit
+   */
   isPrimary?: boolean | undefined;
+  /**
+   * account nickname (e.g. "BoA Checking")
+   */
   name?: string | undefined;
+  /**
+   * order in which split accounts are funded (1 = first)
+   */
+  priority?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * 9-digit US routing number
+   */
   routingNumber?: string | undefined;
+  /**
+   * percentage (when split_type is PERCENTAGE) or money (when FIXED)
+   */
+  splitAmount?: number | undefined;
+  /**
+   * how net pay is split into this account when an employee has several accounts
+   */
+  splitType?: SplitType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * employee ID (required for listcreate) (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 
@@ -48,6 +110,19 @@ export const HrisBankaccountAccountType$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(HrisBankaccountAccountType);
 
 /** @internal */
+export const SplitType$inboundSchema: z.ZodType<
+  SplitType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(SplitType);
+/** @internal */
+export const SplitType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  SplitType
+> = openEnums.outboundSchema(SplitType);
+
+/** @internal */
 export const HrisBankaccount$inboundSchema: z.ZodType<
   HrisBankaccount,
   z.ZodTypeDef,
@@ -57,14 +132,21 @@ export const HrisBankaccount$inboundSchema: z.ZodType<
   account_number_last4: z.string().optional(),
   account_type: HrisBankaccountAccountType$inboundSchema.optional(),
   bank_name: z.string().optional(),
+  bic: z.string().optional(),
   company_id: z.string().optional(),
+  country_code: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  currency: z.string().optional(),
+  iban: z.string().optional(),
   id: z.string().optional(),
   is_primary: z.boolean().optional(),
   name: z.string().optional(),
+  priority: z.number().optional(),
   raw: z.record(z.any()).optional(),
   routing_number: z.string().optional(),
+  split_amount: z.number().optional(),
+  split_type: SplitType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -75,9 +157,12 @@ export const HrisBankaccount$inboundSchema: z.ZodType<
     "account_type": "accountType",
     "bank_name": "bankName",
     "company_id": "companyId",
+    "country_code": "countryCode",
     "created_at": "createdAt",
     "is_primary": "isPrimary",
     "routing_number": "routingNumber",
+    "split_amount": "splitAmount",
+    "split_type": "splitType",
     "updated_at": "updatedAt",
     "user_id": "userId",
   });
@@ -88,13 +173,20 @@ export type HrisBankaccount$Outbound = {
   account_number_last4?: string | undefined;
   account_type?: string | undefined;
   bank_name?: string | undefined;
+  bic?: string | undefined;
   company_id?: string | undefined;
+  country_code?: string | undefined;
   created_at?: string | undefined;
+  currency?: string | undefined;
+  iban?: string | undefined;
   id?: string | undefined;
   is_primary?: boolean | undefined;
   name?: string | undefined;
+  priority?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   routing_number?: string | undefined;
+  split_amount?: number | undefined;
+  split_type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
 };
@@ -109,13 +201,20 @@ export const HrisBankaccount$outboundSchema: z.ZodType<
   accountNumberLast4: z.string().optional(),
   accountType: HrisBankaccountAccountType$outboundSchema.optional(),
   bankName: z.string().optional(),
+  bic: z.string().optional(),
   companyId: z.string().optional(),
+  countryCode: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  currency: z.string().optional(),
+  iban: z.string().optional(),
   id: z.string().optional(),
   isPrimary: z.boolean().optional(),
   name: z.string().optional(),
+  priority: z.number().optional(),
   raw: z.record(z.any()).optional(),
   routingNumber: z.string().optional(),
+  splitAmount: z.number().optional(),
+  splitType: SplitType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {
@@ -125,9 +224,12 @@ export const HrisBankaccount$outboundSchema: z.ZodType<
     accountType: "account_type",
     bankName: "bank_name",
     companyId: "company_id",
+    countryCode: "country_code",
     createdAt: "created_at",
     isPrimary: "is_primary",
     routingNumber: "routing_number",
+    splitAmount: "split_amount",
+    splitType: "split_type",
     updatedAt: "updated_at",
     userId: "user_id",
   });

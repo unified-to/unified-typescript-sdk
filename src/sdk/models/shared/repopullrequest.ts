@@ -18,18 +18,30 @@ export const RepoPullrequestStatus = {
 export type RepoPullrequestStatus = OpenEnum<typeof RepoPullrequestStatus>;
 
 export type RepoPullrequest = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   closedAt?: Date | undefined;
   commitIds?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
   labels?: Array<string> | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (reference to RepoRepository)
+   */
   repoId?: string | undefined;
   sourceBranchId?: string | undefined;
   status?: RepoPullrequestStatus | undefined;
   targetBranchId?: string | undefined;
   title?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   userIds?: Array<string> | undefined;
 };

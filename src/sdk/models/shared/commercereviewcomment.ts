@@ -32,15 +32,24 @@ export type CommerceReviewComment = {
   authorLocation?: string | undefined;
   authorName?: string | undefined;
   content?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   helpfulVotes?: number | undefined;
   id?: string | undefined;
   isPublic?: boolean | undefined;
   isVerified?: boolean | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
+  /**
+   * Original review data from source platform
+   */
   raw?: { [k: string]: any } | undefined;
   status?: CommerceReviewCommentStatus | undefined;
   unhelpfulVotes?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -13,12 +13,21 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  */
 export type PropertyCrmEventEmail = {
   attachmentFileIds?: Array<string> | undefined;
+  /**
+   * The event email's body
+   */
   body?: string | undefined;
   /**
    * The event email's cc name & email (name <test@test.com>)
    */
   cc?: Array<string> | undefined;
+  /**
+   * The event email's from name & email address (name <test@test.com>)
+   */
   from?: string | undefined;
+  /**
+   * The event email's subject
+   */
   subject?: string | undefined;
   /**
    * The event email's "to" name & email (name <test@test.com>)

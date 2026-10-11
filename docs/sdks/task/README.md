@@ -18,6 +18,7 @@
 * [listTaskComments](#listtaskcomments) - List all comments
 * [listTaskProjects](#listtaskprojects) - List all projects
 * [listTaskTasks](#listtasktasks) - List all tasks
+* [patchGenaiTask](#patchgenaitask) - Update a task
 * [patchTaskComment](#patchtaskcomment) - Update a comment
 * [patchTaskProject](#patchtaskproject) - Update a project
 * [patchTaskTask](#patchtasktask) - Update a task
@@ -25,6 +26,7 @@
 * [removeTaskComment](#removetaskcomment) - Remove a comment
 * [removeTaskProject](#removetaskproject) - Remove a project
 * [removeTaskTask](#removetasktask) - Remove a task
+* [updateGenaiTask](#updategenaitask) - Update a task
 * [updateTaskComment](#updatetaskcomment) - Update a comment
 * [updateTaskProject](#updatetaskproject) - Update a project
 * [updateTaskTask](#updatetasktask) - Update a task
@@ -48,16 +50,17 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.task.createGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-09-06T09:18:49.674Z"),
+      completedAt: new Date("2025-09-23T00:58:59.988Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "586f6326-fe69-435c-8548-3150816342b0",
+      id: "6daef881-a5fd-464e-a22c-3c5bc1b30b5e",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
       messages: [
         {
           content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
           role: "ASSISTANT",
         },
       ],
@@ -65,12 +68,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-03T10:13:29.849Z"),
+      startedAt: new Date("2024-05-15T11:26:32.878Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-14T12:14:43.464Z"),
+      updatedAt: new Date("2023-02-22T09:35:41.667Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -101,16 +104,17 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-09-06T09:18:49.674Z"),
+      completedAt: new Date("2025-09-23T00:58:59.988Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "586f6326-fe69-435c-8548-3150816342b0",
+      id: "6daef881-a5fd-464e-a22c-3c5bc1b30b5e",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
       messages: [
         {
           content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
           role: "ASSISTANT",
         },
       ],
@@ -118,12 +122,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-03T10:13:29.849Z"),
+      startedAt: new Date("2024-05-15T11:26:32.878Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-14T12:14:43.464Z"),
+      updatedAt: new Date("2023-02-22T09:35:41.667Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -179,9 +183,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "0df5753a-ad90-4d22-bca0-59412dfde752",
+      id: "232ef9cb-69e7-4b16-8b86-881c75468eb0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T20:05:50.704Z"),
+      updatedAt: new Date("2021-09-30T12:30:58.153Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -214,9 +218,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "0df5753a-ad90-4d22-bca0-59412dfde752",
+      id: "232ef9cb-69e7-4b16-8b86-881c75468eb0",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T20:05:50.704Z"),
+      updatedAt: new Date("2021-09-30T12:30:58.153Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -274,14 +278,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "19df8b1d-5ab7-42af-b402-22c0efd2b9cc",
+      id: "0ac4dea5-ee3c-45d9-aab1-6c3fc7c3c11d",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "69b253d6-578b-4ee7-a0c8-82f2a3568e17",
+          id: "c7ae0dae-fafc-4a70-b0c6-c6dc216456dd",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -291,14 +295,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "bac38dfa-2149-4334-b944-5ba4dff681d3",
+          id: "70e2a1d1-6f8b-4605-be0a-006a076185ea",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T20:56:49.330Z"),
+      updatedAt: new Date("2023-10-10T16:48:43.684Z"),
     },
     connectionId: "<id>",
   });
@@ -332,14 +336,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "19df8b1d-5ab7-42af-b402-22c0efd2b9cc",
+      id: "0ac4dea5-ee3c-45d9-aab1-6c3fc7c3c11d",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "69b253d6-578b-4ee7-a0c8-82f2a3568e17",
+          id: "c7ae0dae-fafc-4a70-b0c6-c6dc216456dd",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -349,14 +353,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "bac38dfa-2149-4334-b944-5ba4dff681d3",
+          id: "70e2a1d1-6f8b-4605-be0a-006a076185ea",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T20:56:49.330Z"),
+      updatedAt: new Date("2023-10-10T16:48:43.684Z"),
     },
     connectionId: "<id>",
   });
@@ -410,18 +414,18 @@ async function run() {
   const result = await unifiedTo.task.createTaskTask({
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T15:31:00.389Z"),
+      completedAt: new Date("2022-04-02T23:21:13.798Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-26T00:16:15.392Z"),
-      endAt: new Date("2022-10-15T01:55:40.491Z"),
+      dueAt: new Date("2026-05-15T03:35:55.288Z"),
+      endAt: new Date("2022-10-24T21:08:16.116Z"),
       hasChildren: true,
-      id: "8764a502-52ee-4c02-bded-d8e164ceba6e",
+      id: "81440840-676e-4b0b-9160-e29f9f6c0b03",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-20T13:30:47.721Z"),
+      startAt: new Date("2022-01-28T10:12:27.184Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -431,7 +435,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T14:44:54.836Z"),
+      updatedAt: new Date("2019-07-14T19:08:07.786Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -463,18 +467,18 @@ async function run() {
   const res = await taskCreateTaskTask(unifiedTo, {
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T15:31:00.389Z"),
+      completedAt: new Date("2022-04-02T23:21:13.798Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-26T00:16:15.392Z"),
-      endAt: new Date("2022-10-15T01:55:40.491Z"),
+      dueAt: new Date("2026-05-15T03:35:55.288Z"),
+      endAt: new Date("2022-10-24T21:08:16.116Z"),
       hasChildren: true,
-      id: "8764a502-52ee-4c02-bded-d8e164ceba6e",
+      id: "81440840-676e-4b0b-9160-e29f9f6c0b03",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-20T13:30:47.721Z"),
+      startAt: new Date("2022-01-28T10:12:27.184Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -484,7 +488,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T14:44:54.836Z"),
+      updatedAt: new Date("2019-07-14T19:08:07.786Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -1299,6 +1303,139 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchGenaiTask
+
+Update a task
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchGenaiTask" method="patch" path="/genai/{connection_id}/task/{id}" example="genai_task" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.task.patchGenaiTask({
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiPatchGenaiTask } from "@unified-api/typescript-sdk/funcs/genaiPatchGenaiTask.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiPatchGenaiTask(unifiedTo, {
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiPatchGenaiTask failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchGenaiTaskRequest](../../sdk/models/operations/patchgenaitaskrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiTask](../../sdk/models/shared/genaitask.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchTaskComment
 
 Update a comment
@@ -1320,9 +1457,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "381761fa-8766-492d-97d4-83c75cda22e0",
+      id: "6885e2b9-2c24-4225-9a0c-33d994d13054",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
+      updatedAt: new Date("2021-09-30T12:30:58.155Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1356,9 +1493,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "381761fa-8766-492d-97d4-83c75cda22e0",
+      id: "6885e2b9-2c24-4225-9a0c-33d994d13054",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
+      updatedAt: new Date("2021-09-30T12:30:58.155Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -1417,14 +1554,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
+      id: "2d46e250-d730-46b0-8c7f-001389d5a4f1",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
+          id: "7c098459-e5a4-4f58-b74c-d028faef1593",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1434,14 +1571,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "be30191d-043c-42e2-bb97-f5c110e47983",
+          id: "3ed00eb8-964b-4dd6-a870-f359d08a22f6",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
+      updatedAt: new Date("2023-10-10T16:48:43.685Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1476,14 +1613,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
+      id: "2d46e250-d730-46b0-8c7f-001389d5a4f1",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
+          id: "7c098459-e5a4-4f58-b74c-d028faef1593",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1493,14 +1630,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "be30191d-043c-42e2-bb97-f5c110e47983",
+          id: "3ed00eb8-964b-4dd6-a870-f359d08a22f6",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
+      updatedAt: new Date("2023-10-10T16:48:43.685Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1555,18 +1692,18 @@ async function run() {
   const result = await unifiedTo.task.patchTaskTask({
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T15:31:00.401Z"),
+      completedAt: new Date("2022-04-02T23:21:13.808Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-26T00:16:15.419Z"),
-      endAt: new Date("2022-10-15T01:55:40.505Z"),
+      dueAt: new Date("2026-05-15T03:35:55.311Z"),
+      endAt: new Date("2022-10-24T21:08:16.128Z"),
       hasChildren: true,
-      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
+      id: "e7fa94fb-a9c8-4a89-9834-f18a748892df",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-20T13:30:47.733Z"),
+      startAt: new Date("2022-01-28T10:12:27.193Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -1576,7 +1713,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
+      updatedAt: new Date("2019-07-14T19:08:07.788Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -1609,18 +1746,18 @@ async function run() {
   const res = await taskPatchTaskTask(unifiedTo, {
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T15:31:00.401Z"),
+      completedAt: new Date("2022-04-02T23:21:13.808Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-26T00:16:15.419Z"),
-      endAt: new Date("2022-10-15T01:55:40.505Z"),
+      dueAt: new Date("2026-05-15T03:35:55.311Z"),
+      endAt: new Date("2022-10-24T21:08:16.128Z"),
       hasChildren: true,
-      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
+      id: "e7fa94fb-a9c8-4a89-9834-f18a748892df",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-20T13:30:47.733Z"),
+      startAt: new Date("2022-01-28T10:12:27.193Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -1630,7 +1767,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
+      updatedAt: new Date("2019-07-14T19:08:07.788Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -1982,6 +2119,139 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateGenaiTask
+
+Update a task
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateGenaiTask" method="put" path="/genai/{connection_id}/task/{id}" example="genai_task" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.task.updateGenaiTask({
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiUpdateGenaiTask } from "@unified-api/typescript-sdk/funcs/genaiUpdateGenaiTask.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiUpdateGenaiTask(unifiedTo, {
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiUpdateGenaiTask failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateGenaiTaskRequest](../../sdk/models/operations/updategenaitaskrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiTask](../../sdk/models/shared/genaitask.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateTaskComment
 
 Update a comment
@@ -2003,9 +2273,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "381761fa-8766-492d-97d4-83c75cda22e0",
+      id: "6885e2b9-2c24-4225-9a0c-33d994d13054",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
+      updatedAt: new Date("2021-09-30T12:30:58.155Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -2039,9 +2309,9 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "381761fa-8766-492d-97d4-83c75cda22e0",
+      id: "6885e2b9-2c24-4225-9a0c-33d994d13054",
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-09-24T20:05:50.706Z"),
+      updatedAt: new Date("2021-09-30T12:30:58.155Z"),
       userName: "Santina Abbott",
     },
     connectionId: "<id>",
@@ -2100,14 +2370,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
+      id: "2d46e250-d730-46b0-8c7f-001389d5a4f1",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
+          id: "7c098459-e5a4-4f58-b74c-d028faef1593",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -2117,14 +2387,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "be30191d-043c-42e2-bb97-f5c110e47983",
+          id: "3ed00eb8-964b-4dd6-a870-f359d08a22f6",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
+      updatedAt: new Date("2023-10-10T16:48:43.685Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2159,14 +2429,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "15f47efb-fcb7-4b67-81e2-a0d26a9da494",
+      id: "2d46e250-d730-46b0-8c7f-001389d5a4f1",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "b5927698-96fc-4eac-bf28-dc286ccc3b89",
+          id: "7c098459-e5a4-4f58-b74c-d028faef1593",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -2176,14 +2446,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "be30191d-043c-42e2-bb97-f5c110e47983",
+          id: "3ed00eb8-964b-4dd6-a870-f359d08a22f6",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-08T20:56:49.332Z"),
+      updatedAt: new Date("2023-10-10T16:48:43.685Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2238,18 +2508,18 @@ async function run() {
   const result = await unifiedTo.task.updateTaskTask({
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T15:31:00.401Z"),
+      completedAt: new Date("2022-04-02T23:21:13.808Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-26T00:16:15.419Z"),
-      endAt: new Date("2022-10-15T01:55:40.505Z"),
+      dueAt: new Date("2026-05-15T03:35:55.311Z"),
+      endAt: new Date("2022-10-24T21:08:16.128Z"),
       hasChildren: true,
-      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
+      id: "e7fa94fb-a9c8-4a89-9834-f18a748892df",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-20T13:30:47.733Z"),
+      startAt: new Date("2022-01-28T10:12:27.193Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -2259,7 +2529,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
+      updatedAt: new Date("2019-07-14T19:08:07.788Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",
@@ -2292,18 +2562,18 @@ async function run() {
   const res = await taskUpdateTaskTask(unifiedTo, {
     taskTask: {
       attachmentIds: [],
-      completedAt: new Date("2022-03-25T15:31:00.401Z"),
+      completedAt: new Date("2022-04-02T23:21:13.808Z"),
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2026-04-26T00:16:15.419Z"),
-      endAt: new Date("2022-10-15T01:55:40.505Z"),
+      dueAt: new Date("2026-05-15T03:35:55.311Z"),
+      endAt: new Date("2022-10-24T21:08:16.128Z"),
       hasChildren: true,
-      id: "a9e4eaee-df24-473b-ac7f-b4f1605269c2",
+      id: "e7fa94fb-a9c8-4a89-9834-f18a748892df",
       metadata: [],
       name: "Direct Markets Architect",
       notes: "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
       priority: "LOW",
       progress: 2,
-      startAt: new Date("2022-01-20T13:30:47.733Z"),
+      startAt: new Date("2022-01-28T10:12:27.193Z"),
       status: "IN_PROGRESS",
       storyPoints: 0,
       tags: [
@@ -2313,7 +2583,7 @@ async function run() {
       timeSpent: 957,
       timeSpentUnit: "SECONDS",
       type: "tubineus",
-      updatedAt: new Date("2019-07-13T14:44:54.838Z"),
+      updatedAt: new Date("2019-07-14T19:08:07.788Z"),
       url: "https://dismal-silk.net/",
     },
     connectionId: "<id>",

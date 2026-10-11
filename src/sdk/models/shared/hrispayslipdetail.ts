@@ -28,16 +28,63 @@ export const HrisPayslipDetailType = {
   PosttaxBenefit: "POSTTAX_BENEFIT",
   PosttaxGarnishment: "POSTTAX_GARNISHMENT",
   Reimbursement: "REIMBURSEMENT",
+  EarningRegular: "EARNING_REGULAR",
+  EarningDoubleOvertime: "EARNING_DOUBLE_OVERTIME",
+  EarningPto: "EARNING_PTO",
+  EarningSick: "EARNING_SICK",
+  EarningHoliday: "EARNING_HOLIDAY",
+  EarningSeverance: "EARNING_SEVERANCE",
+  EarningReimbursement: "EARNING_REIMBURSEMENT",
+  TaxSocialSecurity: "TAX_SOCIAL_SECURITY",
+  TaxMedicare: "TAX_MEDICARE",
+  TaxUnemployment: "TAX_UNEMPLOYMENT",
+  TaxEmployer: "TAX_EMPLOYER",
+  PretaxDeductionHsa: "PRETAX_DEDUCTION_HSA",
+  PretaxDeductionFsa: "PRETAX_DEDUCTION_FSA",
+  PretaxDeductionDependentCare: "PRETAX_DEDUCTION_DEPENDENT_CARE",
+  PretaxDeductionCommuter: "PRETAX_DEDUCTION_COMMUTER",
+  PretaxDeductionDental: "PRETAX_DEDUCTION_DENTAL",
+  PretaxDeductionVision: "PRETAX_DEDUCTION_VISION",
+  PosttaxDeduction: "POSTTAX_DEDUCTION",
+  PosttaxRetirementRoth: "POSTTAX_RETIREMENT_ROTH",
+  PosttaxLoanRepayment: "POSTTAX_LOAN_REPAYMENT",
+  EmployerContribution: "EMPLOYER_CONTRIBUTION",
+  Pension: "PENSION",
+  EarningCashInLieu: "EARNING_CASH_IN_LIEU",
 } as const;
 export type HrisPayslipDetailType = OpenEnum<typeof HrisPayslipDetailType>;
 
 export type HrisPayslipDetail = {
   amount: number;
+  benefitId?: string | undefined;
   companyAmount?: number | undefined;
+  deductionId?: string | undefined;
   description?: string | undefined;
   employeeAmount?: number | undefined;
+  hours?: number | undefined;
+  /**
+   * true when this line is paid by the employer (employer tax or contribution)
+   */
+  isEmployer?: boolean | undefined;
+  isPreTax?: boolean | undefined;
   name?: string | undefined;
+  /**
+   * integration pay-code label before normalization
+   */
+  originalType?: string | undefined;
+  /**
+   * the hris_paycode for this line
+   */
+  paycodeId?: string | undefined;
+  /**
+   * pay rate for hourly/unit-based lines
+   */
+  rateAmount?: number | undefined;
   type?: HrisPayslipDetailType | undefined;
+  /**
+   * year-to-date amount for this line
+   */
+  ytdAmount?: number | undefined;
 };
 
 /** @internal */
@@ -54,15 +101,32 @@ export const HrisPayslipDetail$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   amount: z.number(),
+  benefit_id: z.string().optional(),
   company_amount: z.number().optional(),
+  deduction_id: z.string().optional(),
   description: z.string().optional(),
   employee_amount: z.number().optional(),
+  hours: z.number().optional(),
+  is_employer: z.boolean().optional(),
+  is_pre_tax: z.boolean().optional(),
   name: z.string().optional(),
+  original_type: z.string().optional(),
+  paycode_id: z.string().optional(),
+  rate_amount: z.number().optional(),
   type: HrisPayslipDetailType$inboundSchema.optional(),
+  ytd_amount: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "benefit_id": "benefitId",
     "company_amount": "companyAmount",
+    "deduction_id": "deductionId",
     "employee_amount": "employeeAmount",
+    "is_employer": "isEmployer",
+    "is_pre_tax": "isPreTax",
+    "original_type": "originalType",
+    "paycode_id": "paycodeId",
+    "rate_amount": "rateAmount",
+    "ytd_amount": "ytdAmount",
   });
 });
 

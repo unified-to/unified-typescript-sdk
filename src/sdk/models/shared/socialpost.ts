@@ -28,6 +28,9 @@ import {
   SocialMedia$outboundSchema,
 } from "./socialmedia.js";
 
+/**
+ * Publication status of the post
+ */
 export const SocialPostStatus = {
   Draft: "DRAFT",
   Scheduled: "SCHEDULED",
@@ -37,8 +40,14 @@ export const SocialPostStatus = {
   Deleted: "DELETED",
   Other: "OTHER",
 } as const;
+/**
+ * Publication status of the post
+ */
 export type SocialPostStatus = OpenEnum<typeof SocialPostStatus>;
 
+/**
+ * The kind of post
+ */
 export const SocialPostType = {
   Post: "POST",
   Reply: "REPLY",
@@ -50,16 +59,31 @@ export const SocialPostType = {
   Story: "STORY",
   Other: "OTHER",
 } as const;
+/**
+ * The kind of post
+ */
 export type SocialPostType = OpenEnum<typeof SocialPostType>;
 
 export type SocialPost = {
+  /**
+   * The main text content of the post
+   */
   body?: string | undefined;
   /**
    * Call-to-action button on the post
    */
   callToAction?: PropertySocialPostCallToAction | undefined;
+  /**
+   * When the post was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Unique identifier for the post
+   */
   id?: string | undefined;
+  /**
+   * Language code of the post content
+   */
   language?: string | undefined;
   /**
    * Media assets attached to the post
@@ -69,14 +93,41 @@ export type SocialPost = {
    * Engagement metrics for the post
    */
   metrics?: PropertySocialPostMetrics | undefined;
+  /**
+   * The post this one replies to or references
+   */
   parentPostId?: string | undefined;
+  /**
+   * The social profile (page/handle/listing) that owns this post
+   */
   profileId?: string | undefined;
+  /**
+   * Raw data from integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * When the post is scheduled to publish (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   scheduledAt?: Date | undefined;
+  /**
+   * Publication status of the post
+   */
   status?: SocialPostStatus | undefined;
+  /**
+   * Optional post title/headline
+   */
   title?: string | undefined;
+  /**
+   * The kind of post
+   */
   type?: SocialPostType | undefined;
+  /**
+   * When the post was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Public permalink to the post
+   */
   url?: string | undefined;
 };
 

@@ -1,5 +1,7 @@
 # PropertySocialPostCallToActionType
 
+The call-to-action button type
+
 ## Example Usage
 
 ```typescript

@@ -1,5 +1,7 @@
 # AnalyticsReportMetricsType
 
+Traffic metrics
+
 ## Example Usage
 
 ```typescript

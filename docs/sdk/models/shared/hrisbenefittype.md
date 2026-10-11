@@ -5,7 +5,7 @@
 ```typescript
 import { HrisBenefitType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisBenefitType = "LONG_TERM_DISABILITY";
+let value: HrisBenefitType = "EMPLOYER_TAX_CONTRIBUTION";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: HrisBenefitType = "LONG_TERM_DISABILITY";
 ## Values
 
 ```typescript
-"RETIREMENT" | "HEALTH" | "DENTAL" | "VISION" | "LIFE" | "HSA" | "FSA" | "SHORT_TERM_DISABILITY" | "LONG_TERM_DISABILITY" | "WORKERS_COMP" | "HOUSING_STIPEND" | "EMPLOYER_TAX_CONTRIBUTION" | "GARNISHMENT" | "LOAN_REPAYMENT" | "CHARITABLE_CONTRIBUTION" | "OTHER" | Unrecognized<string>
+"RETIREMENT" | "HEALTH" | "DENTAL" | "VISION" | "LIFE" | "HSA" | "FSA" | "SHORT_TERM_DISABILITY" | "LONG_TERM_DISABILITY" | "WORKERS_COMP" | "HOUSING_STIPEND" | "EMPLOYER_TAX_CONTRIBUTION" | "GARNISHMENT" | "LOAN_REPAYMENT" | "CHARITABLE_CONTRIBUTION" | "OTHER" | "RETIREMENT_ROTH" | "COMMUTER" | "DEPENDENT_CARE" | "PENSION" | Unrecognized<string>
 ```

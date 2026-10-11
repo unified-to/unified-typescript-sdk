@@ -1,5 +1,7 @@
 # SocialPostType
 
+The kind of post
+
 ## Example Usage
 
 ```typescript

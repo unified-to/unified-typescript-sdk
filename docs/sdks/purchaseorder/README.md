@@ -30,6 +30,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.purchaseorder.createAccountingPurchaseorder({
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -41,10 +42,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "2c15629f-d92a-450f-9a90-c739019fa131",
+      id: "fcb307fc-6c22-47df-b1ec-904ef8da0eb8",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.375Z"),
+      postedAt: new Date("2025-05-12T13:43:58.288Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -55,7 +56,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.981Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.329Z"),
     },
     connectionId: "<id>",
   });
@@ -85,6 +86,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingPurchaseorder(unifiedTo, {
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -96,10 +98,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "2c15629f-d92a-450f-9a90-c739019fa131",
+      id: "fcb307fc-6c22-47df-b1ec-904ef8da0eb8",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.375Z"),
+      postedAt: new Date("2025-05-12T13:43:58.288Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -110,7 +112,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.981Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.329Z"),
     },
     connectionId: "<id>",
   });
@@ -319,6 +321,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.purchaseorder.patchAccountingPurchaseorder({
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -330,10 +333,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -344,7 +347,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -375,6 +378,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingPurchaseorder(unifiedTo, {
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -386,10 +390,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -400,7 +404,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -533,6 +537,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.purchaseorder.updateAccountingPurchaseorder({
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -544,10 +549,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -558,7 +563,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -589,6 +594,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingPurchaseorder(unifiedTo, {
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -600,10 +606,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -614,7 +620,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",

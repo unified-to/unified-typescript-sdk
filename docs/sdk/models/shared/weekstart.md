@@ -1,5 +1,7 @@
 # WeekStart
 
+week start day, defaults to undefined (no week start day)
+
 ## Example Usage
 
 ```typescript

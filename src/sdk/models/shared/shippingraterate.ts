@@ -16,20 +16,59 @@ import {
 
 export type ShippingRateRate = {
   amount?: number | undefined;
+  /**
+   * Base shipping rate
+   */
   baseAmount?: number | undefined;
   currency?: string | undefined;
+  /**
+   * Delivery days (integer)
+   */
   deliveryDays?: number | undefined;
+  /**
+   * Delivery duration terms (e.g., "3-5 business days")
+   */
   deliveryTerms?: string | undefined;
   description?: string | undefined;
+  /**
+   * Applied discount
+   */
   discountAmount?: number | undefined;
+  /**
+   * Estimated delivery time in days
+   */
   estimatedDays?: number | undefined;
+  /**
+   * Specific delivery date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   estimatedDeliveryEndAt?: Date | undefined;
+  /**
+   * Time window (e.g., "10:00 AM - 2:00 PM") (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   estimatedDeliveryStartAt?: Date | undefined;
+  /**
+   * Whether rate is currently available
+   */
   isActive?: boolean | undefined;
+  /**
+   * Whether delivery is guaranteed
+   */
   isGuaranteed?: boolean | undefined;
+  /**
+   * Whether this is a negotiated rate
+   */
   isNegotiatedRate?: boolean | undefined;
+  /**
+   * Whether shipment is trackable
+   */
   isTrackable?: boolean | undefined;
+  /**
+   * Package type (e.g., "package", "envelope", "flat")
+   */
   packageType?: string | undefined;
+  /**
+   * Source of rate (e.g., "carrier", "negotiated", "account")
+   */
   rateSource?: string | undefined;
   /**
    * Additional charges
@@ -37,6 +76,9 @@ export type ShippingRateRate = {
   surcharges?: Array<ShippingRateSurcharge> | undefined;
   taxAmount?: number | undefined;
   title: string;
+  /**
+   * Transit time in hours
+   */
   transitHours?: number | undefined;
 };
 

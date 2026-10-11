@@ -1,5 +1,7 @@
 # CdpMetadataFormat
 
+The data type of the attribute value
+
 ## Example Usage
 
 ```typescript

@@ -50,9 +50,15 @@ export type TaxesPaidBy = OpenEnum<typeof TaxesPaidBy>;
  * Customs information
  */
 export type PropertyShippingShipmentCustoms = {
+  /**
+   * Customs declared value
+   */
   amount?: number | undefined;
   contentsType?: ContentsType | undefined;
   currency?: string | undefined;
+  /**
+   * Explanation of contents
+   */
   description?: string | undefined;
   dutiesPaidBy?: DutiesPaidBy | undefined;
   /**
@@ -60,13 +66,25 @@ export type PropertyShippingShipmentCustoms = {
    */
   items?: Array<ShippingCustomsItem> | undefined;
   nonDeliveryOption?: NonDeliveryOption | undefined;
+  /**
+   * Importer EORI number
+   */
   recipientEori?: string | undefined;
+  /**
+   * Importer tax ID
+   */
   recipientTaxNumber?: string | undefined;
   /**
    * Any restrictions
    */
   restrictions?: Array<string> | undefined;
+  /**
+   * Exporter EORI number
+   */
   shipperEori?: string | undefined;
+  /**
+   * Exporter tax ID
+   */
   shipperTaxNumber?: string | undefined;
   taxesPaidBy?: TaxesPaidBy | undefined;
 };

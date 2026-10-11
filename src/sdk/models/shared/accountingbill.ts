@@ -40,10 +40,16 @@ import {
   AccountingPaymentReference$outboundSchema,
 } from "./accountingpaymentreference.js";
 
+/**
+ * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+ */
 export const PaymentCollectionMethod = {
   SendInvoice: "send_invoice",
   ChargeAutomatically: "charge_automatically",
 } as const;
+/**
+ * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+ */
 export type PaymentCollectionMethod = OpenEnum<typeof PaymentCollectionMethod>;
 
 export const PaymentTerms = {
@@ -75,6 +81,9 @@ export const AccountingBillStatus = {
 } as const;
 export type AccountingBillStatus = OpenEnum<typeof AccountingBillStatus>;
 
+/**
+ * @deprecated use payment_terms instead
+ */
 export const Term = {
   OnReceipt: "ON_RECEIPT",
   Net7: "NET_7",
@@ -88,19 +97,40 @@ export const Term = {
   Net90: "NET_90",
   Other: "OTHER",
 } as const;
+/**
+ * @deprecated use payment_terms instead
+ */
 export type Term = OpenEnum<typeof Term>;
 
 export type AccountingBill = {
   attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
+  /**
+   * External identifier for this invoice
+   */
   billNumber?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   cancelledAt?: Date | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   discountAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
+  /**
+   * Exchange rate to the base/home currency at the document date
+   */
   exchangeRate?: number | undefined;
   extendedNotes?: Array<AccountingExtendedNote> | undefined;
   id?: string | undefined;
@@ -109,7 +139,13 @@ export type AccountingBill = {
   notes?: string | undefined;
   organizationId?: string | undefined;
   paidAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   paidAt?: Date | undefined;
+  /**
+   * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+   */
   paymentCollectionMethod?: PaymentCollectionMethod | undefined;
   paymentTerms?: PaymentTerms | undefined;
   /**
@@ -117,7 +153,13 @@ export type AccountingBill = {
    */
   payments?: Array<AccountingPaymentReference> | undefined;
   paymenttermId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
+  /**
+   * (reference to TaskProject)
+   */
   projectId?: string | undefined;
   /**
    * refs -> AccountingPurchaseorder; the purchase orders this bill was raised from
@@ -126,14 +168,29 @@ export type AccountingBill = {
   raw?: { [k: string]: any } | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   refundedAt?: Date | undefined;
   send?: boolean | undefined;
   status?: AccountingBillStatus | undefined;
+  /**
+   * Total before tax
+   */
   subTotalAmount?: number | undefined;
   taxAmount?: number | undefined;
+  /**
+   * @deprecated use payment_terms instead
+   */
   term?: Term | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The public URL for the invoice to send to a customer to view or pay.
+   */
   url?: string | undefined;
 };
 

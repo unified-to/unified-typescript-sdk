@@ -1,5 +1,7 @@
 # ObjectType
 
+The type of object this credit was applied to
+
 ## Example Usage
 
 ```typescript

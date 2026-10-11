@@ -95,7 +95,9 @@ async function $do(
 
   const query = encodeFormQuery({
     "application_id": payload.application_id,
+    "candidate_id": payload.candidate_id,
     "fields": payload.fields,
+    "job_id": payload.job_id,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,

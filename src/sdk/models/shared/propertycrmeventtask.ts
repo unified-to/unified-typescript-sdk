@@ -17,12 +17,18 @@ export const Priority = {
 } as const;
 export type Priority = OpenEnum<typeof Priority>;
 
+/**
+ * The event task's status
+ */
 export const PropertyCrmEventTaskStatus = {
   Completed: "COMPLETED",
   NotStarted: "NOT_STARTED",
   WorkInProgress: "WORK_IN_PROGRESS",
   Deferred: "DEFERRED",
 } as const;
+/**
+ * The event task's status
+ */
 export type PropertyCrmEventTaskStatus = OpenEnum<
   typeof PropertyCrmEventTaskStatus
 >;
@@ -31,10 +37,22 @@ export type PropertyCrmEventTaskStatus = OpenEnum<
  * The task object, when type = task
  */
 export type PropertyCrmEventTask = {
+  /**
+   * The event task's descriptionnote
+   */
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
+  /**
+   * The event task's nametitle/subject
+   */
   name?: string | undefined;
   priority?: Priority | undefined;
+  /**
+   * The event task's status
+   */
   status?: PropertyCrmEventTaskStatus | undefined;
 };
 

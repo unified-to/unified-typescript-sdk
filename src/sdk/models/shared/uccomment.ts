@@ -11,10 +11,19 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type UcComment = {
   callId?: string | undefined;
   content?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: string | undefined;
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: string | undefined;
+  /**
+   * reference to HrisEmployee (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

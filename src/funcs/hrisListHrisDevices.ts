@@ -94,7 +94,9 @@ async function $do(
   const path = pathToFunc("/hris/{connection_id}/device")(pathParams);
 
   const query = encodeFormQuery({
+    "email": payload.email,
     "fields": payload.fields,
+    "group_id": payload.group_id,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,

@@ -10,32 +10,83 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * How the segment membership is computed (REALTIME or BATCH)
+ */
 export const ComputeMode = {
   Realtime: "REALTIME",
   Batch: "BATCH",
 } as const;
+/**
+ * How the segment membership is computed (REALTIME or BATCH)
+ */
 export type ComputeMode = OpenEnum<typeof ComputeMode>;
 
+/**
+ * The type of entity the segment targets (USERS, ACCOUNTS, LINKED)
+ */
 export const CdpSegmentType = {
   Users: "USERS",
   Accounts: "ACCOUNTS",
   Linked: "LINKED",
 } as const;
+/**
+ * The type of entity the segment targets (USERS, ACCOUNTS, LINKED)
+ */
 export type CdpSegmentType = OpenEnum<typeof CdpSegmentType>;
 
 export type CdpSegment = {
+  /**
+   * How the segment membership is computed (REALTIME or BATCH)
+   */
   computeMode?: ComputeMode | undefined;
+  /**
+   * The date that this segment object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The membership rule/query that defines the segment
+   */
   definition?: string | undefined;
+  /**
+   * The description of the segment/audience
+   */
   description?: string | undefined;
+  /**
+   * Unique identifier for this segment object
+   */
   id?: string | undefined;
+  /**
+   * Whether the segment is active/enabled
+   */
   isActive?: boolean | undefined;
+  /**
+   * The name of the segment/audience
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this segment
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The number of profiles currently in the segment
+   */
   size?: number | undefined;
+  /**
+   * The data-plane handle/key used to identify segment membership in profiles and destinations
+   */
   slug?: string | undefined;
+  /**
+   * The cdp_source this segment originated from; points to CdpSource
+   */
   sourceId?: string | undefined;
+  /**
+   * The type of entity the segment targets (USERS, ACCOUNTS, LINKED)
+   */
   type?: CdpSegmentType | undefined;
+  /**
+   * The last date that this segment object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

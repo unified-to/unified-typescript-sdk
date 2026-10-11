@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Current status of the signing document
+ */
 export const SigningDocumentStatus = {
   Draft: "DRAFT",
   Sent: "SENT",
@@ -20,21 +23,63 @@ export const SigningDocumentStatus = {
   Voided: "VOIDED",
   Expired: "EXPIRED",
 } as const;
+/**
+ * Current status of the signing document
+ */
 export type SigningDocumentStatus = OpenEnum<typeof SigningDocumentStatus>;
 
 export type SigningDocument = {
+  /**
+   * When all signatures were collected (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   completedAt?: Date | undefined;
+  /**
+   * The date that this signing document was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * User who created the signing document
+   */
   creatorId?: string | undefined;
+  /**
+   * Message to signers
+   */
   description?: string | undefined;
+  /**
+   * URL to download the signed document
+   */
   downloadUrl?: string | undefined;
+  /**
+   * Signing deadline (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   expiresAt?: Date | undefined;
+  /**
+   * Unique identifier for this signing document
+   */
   id?: string | undefined;
+  /**
+   * Document/envelope title
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * When sent for signature (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   sentAt?: Date | undefined;
+  /**
+   * Current status of the signing document
+   */
   status?: SigningDocumentStatus | undefined;
+  /**
+   * If created from a template; points to SigningTemplate
+   */
   templateId?: string | undefined;
+  /**
+   * The last date that this signing document was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

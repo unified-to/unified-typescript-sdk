@@ -11,6 +11,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type HrisDevice = {
   adminUserIds?: Array<string> | undefined;
   assetTag?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   hasAntivirus?: boolean | undefined;
   hasFirewall?: boolean | undefined;
@@ -19,18 +22,36 @@ export type HrisDevice = {
   hasScreenlock?: boolean | undefined;
   id?: string | undefined;
   isMissing?: boolean | undefined;
+  /**
+   * pointer to HR Location object (reference to HrisLocation)
+   */
   locationId?: string | undefined;
+  /**
+   * device manufacturer
+   */
   manufacturer?: string | undefined;
+  /**
+   * device model
+   */
   model?: string | undefined;
   name?: string | undefined;
+  /**
+   * operating system name
+   */
   os?: string | undefined;
   osVersion?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   /**
    * users who have this device
    */
   userIds?: Array<string> | undefined;
+  /**
+   * device version
+   */
   version?: string | undefined;
 };
 

@@ -130,6 +130,9 @@ export type ScimUser = {
     | PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User
     | undefined;
   userName?: string | undefined;
+  /**
+   * 'Employee','Super Admin', 'General Admin', 'Account Manager', 'User Manager', 'Workflow Manager', 'Experience Manager', 'Author','Reporter','Contractor,'Intern','Temp','External','Unknown']
+   */
   userType?: string | undefined;
   x509Certificates?: Array<ScimRole> | undefined;
 };

@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * unified, normalized document type (OTHER when unmappable)
+ */
 export const HrisDocumentType = {
   Contract: "CONTRACT",
   OfferLetter: "OFFER_LETTER",
@@ -26,18 +29,42 @@ export const HrisDocumentType = {
   Medical: "MEDICAL",
   Other: "OTHER",
 } as const;
+/**
+ * unified, normalized document type (OTHER when unmappable)
+ */
 export type HrisDocumentType = OpenEnum<typeof HrisDocumentType>;
 
 export type HrisDocument = {
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * base64 encoded file contents for create/update
+   */
   documentData?: string | undefined;
+  /**
+   * download link, expires after 1 hour
+   */
   documentUrl?: string | undefined;
   filename?: string | undefined;
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * unified, normalized document type (OTHER when unmappable)
+   */
   type?: HrisDocumentType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * pointer to the HR Employee object that owns this document (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

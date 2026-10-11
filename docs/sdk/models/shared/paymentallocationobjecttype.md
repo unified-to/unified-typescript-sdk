@@ -1,5 +1,7 @@
 # PaymentAllocationObjectType
 
+The type of object this payment was applied to
+
 ## Example Usage
 
 ```typescript

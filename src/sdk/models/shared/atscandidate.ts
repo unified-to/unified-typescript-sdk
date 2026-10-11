@@ -58,8 +58,17 @@ export type Origin = OpenEnum<typeof Origin>;
 
 export type AtsCandidate = {
   address?: PropertyAtsCandidateAddress | undefined;
+  /**
+   * (reference to AtsCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * Name of company where candidate currently works
+   */
   companyName?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   dateOfBirth?: Date | undefined;
   education?: Array<AtsCandidateEducation> | undefined;
@@ -81,11 +90,23 @@ export type AtsCandidate = {
   raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   sources?: Array<string> | undefined;
+  /**
+   * Personal / professional bio
+   */
   summary?: string | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<AtsTelephone> | undefined;
+  /**
+   * Candidate’s current job title
+   */
   title?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Employee ID that owns the relationship for this candidate (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   /**
    * references hris employees

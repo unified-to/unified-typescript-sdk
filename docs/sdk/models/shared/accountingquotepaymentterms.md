@@ -1,5 +1,7 @@
 # AccountingQuotePaymentTerms
 
+unified payment terms enum, as on accounting_invoice / accounting_bill
+
 ## Example Usage
 
 ```typescript

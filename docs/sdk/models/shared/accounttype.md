@@ -1,5 +1,7 @@
 # AccountType
 
+CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER
+
 ## Example Usage
 
 ```typescript

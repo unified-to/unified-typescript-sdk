@@ -21,6 +21,7 @@ export const GetUcRecordingQueryParamFields = {
   UserName: "user_name",
   UserPhone: "user_phone",
   Type: "type",
+  ConversationIdentifier: "conversation_identifier",
   Raw: "raw",
 } as const;
 export type GetUcRecordingQueryParamFields = ClosedEnum<

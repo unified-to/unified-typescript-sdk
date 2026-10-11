@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The metric being reported
+ */
 export const Metric = {
   Followers: "FOLLOWERS",
   Following: "FOLLOWING",
@@ -26,8 +29,14 @@ export const Metric = {
   Saves: "SAVES",
   Other: "OTHER",
 } as const;
+/**
+ * The metric being reported
+ */
 export type Metric = OpenEnum<typeof Metric>;
 
+/**
+ * The aggregation period of the value
+ */
 export const Period = {
   Day: "DAY",
   Week: "WEEK",
@@ -36,17 +45,47 @@ export const Period = {
   Total: "TOTAL",
   Other: "OTHER",
 } as const;
+/**
+ * The aggregation period of the value
+ */
 export type Period = OpenEnum<typeof Period>;
 
 export type SocialInsight = {
+  /**
+   * When the insight was recorded (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The day/timestamp of the data point
+   */
   date?: Date | undefined;
+  /**
+   * Unique identifier for the insight data point
+   */
   id?: string | undefined;
+  /**
+   * The metric being reported
+   */
   metric?: Metric | undefined;
+  /**
+   * The aggregation period of the value
+   */
   period?: Period | undefined;
+  /**
+   * Optional: the post these stats belong to
+   */
   postId?: string | undefined;
+  /**
+   * The social profile these stats belong to
+   */
   profileId?: string | undefined;
+  /**
+   * Raw data from integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The metric value
+   */
   value?: number | undefined;
 };
 

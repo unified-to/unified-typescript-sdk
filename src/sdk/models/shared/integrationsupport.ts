@@ -35,6 +35,13 @@ export const ListAdId = {
 } as const;
 export type ListAdId = OpenEnum<typeof ListAdId>;
 
+export const ListAgentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListAgentId = OpenEnum<typeof ListAgentId>;
+
 export const ListApplicationId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -230,6 +237,13 @@ export const ListEffectiveStatus = {
   NotSupported: "not-supported",
 } as const;
 export type ListEffectiveStatus = OpenEnum<typeof ListEffectiveStatus>;
+
+export const ListEmail = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListEmail = OpenEnum<typeof ListEmail>;
 
 export const ListEndLt = {
   SupportedRequired: "supported-required",
@@ -1431,6 +1445,7 @@ export type IntegrationSupport = {
   inboundFields?: { [k: string]: string } | undefined;
   listAccountId?: ListAccountId | undefined;
   listAdId?: ListAdId | undefined;
+  listAgentId?: ListAgentId | undefined;
   listApplicationId?: ListApplicationId | undefined;
   listApproverUserId?: ListApproverUserId | undefined;
   listAssignedUserId?: ListAssignedUserId | undefined;
@@ -1459,6 +1474,7 @@ export type IntegrationSupport = {
   listDimension?: ListDimension | undefined;
   listDocumentId?: ListDocumentId | undefined;
   listEffectiveStatus?: ListEffectiveStatus | undefined;
+  listEmail?: ListEmail | undefined;
   listEndLt?: ListEndLt | undefined;
   listEventId?: ListEventId | undefined;
   listExpand?: ListExpand | undefined;
@@ -1554,7 +1570,7 @@ export type IntegrationSupport = {
   /**
    * objects that we map from in the integration
    */
-  rawObjects?: Array<string> | undefined;
+  rawObjects: Array<string>;
   searchDomain?: SearchDomain | undefined;
   searchEmail?: SearchEmail | undefined;
   searchLinkedinurl?: SearchLinkedinurl | undefined;
@@ -1654,6 +1670,13 @@ export const ListAdId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListAdId);
+
+/** @internal */
+export const ListAgentId$inboundSchema: z.ZodType<
+  ListAgentId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListAgentId);
 
 /** @internal */
 export const ListApplicationId$inboundSchema: z.ZodType<
@@ -1850,6 +1873,13 @@ export const ListEffectiveStatus$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListEffectiveStatus);
+
+/** @internal */
+export const ListEmail$inboundSchema: z.ZodType<
+  ListEmail,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListEmail);
 
 /** @internal */
 export const ListEndLt$inboundSchema: z.ZodType<
@@ -3016,6 +3046,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   inbound_fields: z.record(z.string()).optional(),
   list_account_id: ListAccountId$inboundSchema.optional(),
   list_ad_id: ListAdId$inboundSchema.optional(),
+  list_agent_id: ListAgentId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
   list_approver_user_id: ListApproverUserId$inboundSchema.optional(),
   list_assigned_user_id: ListAssignedUserId$inboundSchema.optional(),
@@ -3044,6 +3075,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_dimension: ListDimension$inboundSchema.optional(),
   list_document_id: ListDocumentId$inboundSchema.optional(),
   list_effective_status: ListEffectiveStatus$inboundSchema.optional(),
+  list_email: ListEmail$inboundSchema.optional(),
   list_end_lt: ListEndLt$inboundSchema.optional(),
   list_event_id: ListEventId$inboundSchema.optional(),
   list_expand: ListExpand$inboundSchema.optional(),
@@ -3136,7 +3168,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   native_webhook_updated_gte: NativeWebhookUpdatedGte$inboundSchema.optional(),
   native_webhook_visitor_id: NativeWebhookVisitorId$inboundSchema.optional(),
   outbound_fields: z.record(z.string()).optional(),
-  raw_objects: z.array(z.string()).optional(),
+  raw_objects: z.array(z.string()),
   search_domain: SearchDomain$inboundSchema.optional(),
   search_email: SearchEmail$inboundSchema.optional(),
   search_linkedinurl: SearchLinkedinurl$inboundSchema.optional(),
@@ -3241,6 +3273,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "inbound_fields": "inboundFields",
     "list_account_id": "listAccountId",
     "list_ad_id": "listAdId",
+    "list_agent_id": "listAgentId",
     "list_application_id": "listApplicationId",
     "list_approver_user_id": "listApproverUserId",
     "list_assigned_user_id": "listAssignedUserId",
@@ -3269,6 +3302,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_dimension": "listDimension",
     "list_document_id": "listDocumentId",
     "list_effective_status": "listEffectiveStatus",
+    "list_email": "listEmail",
     "list_end_lt": "listEndLt",
     "list_event_id": "listEventId",
     "list_expand": "listExpand",

@@ -97,6 +97,7 @@ async function $do(
     "company_id": payload.company_id,
     "fields": payload.fields,
     "group_id": payload.group_id,
+    "job_id": payload.job_id,
     "limit": payload.limit,
     "location_id": payload.location_id,
     "offset": payload.offset,

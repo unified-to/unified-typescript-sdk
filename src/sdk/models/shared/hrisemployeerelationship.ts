@@ -44,12 +44,18 @@ export type HrisEmployeerelationshipType = OpenEnum<
 export type HrisEmployeerelationship = {
   address?: PropertyHrisEmployeerelationshipAddress | undefined;
   emails?: Array<HrisEmail> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   firstName?: string | undefined;
   isBeneficiary?: boolean | undefined;
   isDependent?: boolean | undefined;
   lastName?: string | undefined;
   name?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   telephones?: Array<HrisTelephone> | undefined;
   type?: HrisEmployeerelationshipType | undefined;

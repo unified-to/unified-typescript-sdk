@@ -25,6 +25,9 @@ export type PropertyCalendarWebinarOrganizer = {
   name?: string | undefined;
   required?: boolean | undefined;
   status?: PropertyCalendarWebinarOrganizerStatus | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

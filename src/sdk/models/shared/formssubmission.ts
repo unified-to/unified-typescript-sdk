@@ -11,12 +11,18 @@ import { FormAnswer, FormAnswer$inboundSchema } from "./formanswer.js";
 
 export type FormsSubmission = {
   answers: Array<FormAnswer>;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   formId: string;
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   respondentEmail?: string | undefined;
   respondentName?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -25,25 +25,93 @@ export const PaymentType = {
 } as const;
 export type PaymentType = OpenEnum<typeof PaymentType>;
 
+export const HrisPayslipType = {
+  Regular: "REGULAR",
+  OffCycle: "OFF_CYCLE",
+  Bonus: "BONUS",
+  Correction: "CORRECTION",
+  Termination: "TERMINATION",
+  Contractor: "CONTRACTOR",
+} as const;
+export type HrisPayslipType = OpenEnum<typeof HrisPayslipType>;
+
 export type HrisPayslip = {
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   /**
    * The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
    */
   deduction?: PropertyHrisPayslipDeduction | undefined;
+  /**
+   * total employee deductions (pre and post-tax)
+   */
+  deductionAmount?: number | undefined;
   details?: Array<HrisPayslipDetail> | undefined;
+  /**
+   * total taxes withheld from the employee
+   */
+  employeeTaxAmount?: number | undefined;
+  /**
+   * total employer benefit contributions
+   */
+  employerContributionAmount?: number | undefined;
+  /**
+   * total employer-paid taxes
+   */
+  employerTaxAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   grossAmount?: number | undefined;
+  /**
+   * year-to-date gross pay as of this payslip
+   */
+  grossYtdAmount?: number | undefined;
+  /**
+   * the pay group (hris_group of type PAY_GROUP) (reference to HrisGroup)
+   */
+  groupId?: string | undefined;
+  /**
+   * total hours paid on this payslip
+   */
+  hours?: number | undefined;
   id?: string | undefined;
   netAmount?: number | undefined;
+  /**
+   * year-to-date net pay as of this payslip
+   */
+  netYtdAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   paidAt?: Date | undefined;
   paymentReference?: string | undefined;
   paymentType?: PaymentType | undefined;
+  /**
+   * the hris_payroll (pay run) this payslip belongs to
+   */
+  payrollId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  type?: HrisPayslipType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * the employee (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 
@@ -53,6 +121,13 @@ export const PaymentType$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(PaymentType);
+
+/** @internal */
+export const HrisPayslipType$inboundSchema: z.ZodType<
+  HrisPayslipType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(HrisPayslipType);
 
 /** @internal */
 export const HrisPayslip$inboundSchema: z.ZodType<
@@ -65,19 +140,29 @@ export const HrisPayslip$inboundSchema: z.ZodType<
     .optional(),
   currency: z.string().optional(),
   deduction: PropertyHrisPayslipDeduction$inboundSchema.optional(),
+  deduction_amount: z.number().optional(),
   details: z.array(HrisPayslipDetail$inboundSchema).optional(),
+  employee_tax_amount: z.number().optional(),
+  employer_contribution_amount: z.number().optional(),
+  employer_tax_amount: z.number().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   gross_amount: z.number().optional(),
+  gross_ytd_amount: z.number().optional(),
+  group_id: z.string().optional(),
+  hours: z.number().optional(),
   id: z.string().optional(),
   net_amount: z.number().optional(),
+  net_ytd_amount: z.number().optional(),
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   payment_reference: z.string().optional(),
   payment_type: PaymentType$inboundSchema.optional(),
+  payroll_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  type: HrisPayslipType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -85,12 +170,20 @@ export const HrisPayslip$inboundSchema: z.ZodType<
   return remap$(v, {
     "company_id": "companyId",
     "created_at": "createdAt",
+    "deduction_amount": "deductionAmount",
+    "employee_tax_amount": "employeeTaxAmount",
+    "employer_contribution_amount": "employerContributionAmount",
+    "employer_tax_amount": "employerTaxAmount",
     "end_at": "endAt",
     "gross_amount": "grossAmount",
+    "gross_ytd_amount": "grossYtdAmount",
+    "group_id": "groupId",
     "net_amount": "netAmount",
+    "net_ytd_amount": "netYtdAmount",
     "paid_at": "paidAt",
     "payment_reference": "paymentReference",
     "payment_type": "paymentType",
+    "payroll_id": "payrollId",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",

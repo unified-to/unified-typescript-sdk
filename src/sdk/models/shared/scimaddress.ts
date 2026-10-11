@@ -19,9 +19,18 @@ export type ScimAddressType = OpenEnum<typeof ScimAddressType>;
 export type ScimAddress = {
   country?: string | undefined;
   formatted?: string | undefined;
+  /**
+   * city
+   */
   locality?: string | undefined;
   postalCode?: string | undefined;
+  /**
+   * stateprovince
+   */
   region?: string | undefined;
+  /**
+   * could be multi-line
+   */
   streetAddress?: string | undefined;
   type?: ScimAddressType | undefined;
 };

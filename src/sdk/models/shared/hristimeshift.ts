@@ -15,20 +15,50 @@ import {
 } from "./hriscompensation.js";
 
 export type HrisTimeshift = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   approvedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   approverUserId?: string | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
   compensation?: Array<HrisCompensation> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   employeeUserId: string;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * department, team, etc. (reference to HrisGroup)
+   */
   groupId?: string | undefined;
   hours?: number | undefined;
   id?: string | undefined;
   isApproved?: boolean | undefined;
+  /**
+   * (reference to HrisLocation)
+   */
   locationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -21,6 +21,9 @@ export type DatastoreRelationshipType = OpenEnum<
 export type DatastoreRelationship = {
   field: string;
   name: string;
+  /**
+   * target Database Table ID
+   */
   tableId: string;
   type: DatastoreRelationshipType;
 };

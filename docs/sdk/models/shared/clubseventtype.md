@@ -1,5 +1,7 @@
 # ClubsEventType
 
+The event type
+
 ## Example Usage
 
 ```typescript

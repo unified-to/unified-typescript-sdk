@@ -10,12 +10,12 @@ let value: UcComment = {};
 
 ## Fields
 
-| Field                 | Type                  | Required              | Description           |
-| --------------------- | --------------------- | --------------------- | --------------------- |
-| `callId`              | *string*              | :heavy_minus_sign:    | N/A                   |
-| `content`             | *string*              | :heavy_minus_sign:    | N/A                   |
-| `createdAt`           | *string*              | :heavy_minus_sign:    | N/A                   |
-| `id`                  | *string*              | :heavy_minus_sign:    | N/A                   |
-| `raw`                 | Record<string, *any*> | :heavy_minus_sign:    | N/A                   |
-| `updatedAt`           | *string*              | :heavy_minus_sign:    | N/A                   |
-| `userId`              | *string*              | :heavy_minus_sign:    | N/A                   |
+| Field                                                 | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `callId`                                              | *string*                                              | :heavy_minus_sign:                                    | N/A                                                   |
+| `content`                                             | *string*                                              | :heavy_minus_sign:                                    | N/A                                                   |
+| `createdAt`                                           | *string*                                              | :heavy_minus_sign:                                    | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)              |
+| `id`                                                  | *string*                                              | :heavy_minus_sign:                                    | N/A                                                   |
+| `raw`                                                 | Record<string, *any*>                                 | :heavy_minus_sign:                                    | N/A                                                   |
+| `updatedAt`                                           | *string*                                              | :heavy_minus_sign:                                    | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)              |
+| `userId`                                              | *string*                                              | :heavy_minus_sign:                                    | reference to HrisEmployee (reference to HrisEmployee) |

@@ -15,6 +15,7 @@ export const ListHrisEmployeesQueryParamFields = {
   LastName: "last_name",
   Emails: "emails",
   Title: "title",
+  JobId: "job_id",
   ManagerId: "manager_id",
   EmploymentStatus: "employment_status",
   Gender: "gender",
@@ -48,6 +49,8 @@ export const ListHrisEmployeesQueryParamFields = {
   HasMfa: "has_mfa",
   TimeoffDaysTotal: "timeoff_days_total",
   TimeoffDaysUsed: "timeoff_days_used",
+  FlsaStatus: "flsa_status",
+  PayFrequency: "pay_frequency",
   Raw: "raw",
 } as const;
 export type ListHrisEmployeesQueryParamFields = ClosedEnum<
@@ -71,6 +74,10 @@ export type ListHrisEmployeesRequest = {
    * The group ID to filter by (reference to HrisGroup)
    */
   groupId?: string | undefined;
+  /**
+   * The job ID to filter by
+   */
+  jobId?: string | undefined;
   limit?: number | undefined;
   /**
    * The location ID to filter by (reference to HrisLocation)
@@ -104,6 +111,7 @@ export type ListHrisEmployeesRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   group_id?: string | undefined;
+  job_id?: string | undefined;
   limit?: number | undefined;
   location_id?: string | undefined;
   offset?: number | undefined;
@@ -124,6 +132,7 @@ export const ListHrisEmployeesRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   fields: z.array(ListHrisEmployeesQueryParamFields$outboundSchema).optional(),
   groupId: z.string().optional(),
+  jobId: z.string().optional(),
   limit: z.number().optional(),
   locationId: z.string().optional(),
   offset: z.number().optional(),
@@ -137,6 +146,7 @@ export const ListHrisEmployeesRequest$outboundSchema: z.ZodType<
     companyId: "company_id",
     connectionId: "connection_id",
     groupId: "group_id",
+    jobId: "job_id",
     locationId: "location_id",
     updatedGte: "updated_gte",
   });

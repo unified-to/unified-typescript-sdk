@@ -28,6 +28,9 @@ import {
   AccountingTransactionContact$outboundSchema,
 } from "./accountingtransactioncontact.js";
 
+/**
+ * unified payment terms enum, as on accounting_invoice / accounting_bill
+ */
 export const AccountingQuotePaymentTerms = {
   OnReceipt: "ON_RECEIPT",
   Net7: "NET_7",
@@ -41,10 +44,16 @@ export const AccountingQuotePaymentTerms = {
   Net90: "NET_90",
   Other: "OTHER",
 } as const;
+/**
+ * unified payment terms enum, as on accounting_invoice / accounting_bill
+ */
 export type AccountingQuotePaymentTerms = OpenEnum<
   typeof AccountingQuotePaymentTerms
 >;
 
+/**
+ * where EXPIRED is derived (expires_at < now), the source status is preserved in raw
+ */
 export const AccountingQuoteStatus = {
   Draft: "DRAFT",
   Sent: "SENT",
@@ -55,55 +64,130 @@ export const AccountingQuoteStatus = {
   Voided: "VOIDED",
   Deleted: "DELETED",
 } as const;
+/**
+ * where EXPIRED is derived (expires_at < now), the source status is preserved in raw
+ */
 export type AccountingQuoteStatus = OpenEnum<typeof AccountingQuoteStatus>;
 
+/**
+ * INCLUSIVE / EXCLUSIVE / NONE; maps Xero LineAmountTypes (a boolean cannot represent NoTax)
+ */
 export const TaxMode = {
   Inclusive: "INCLUSIVE",
   Exclusive: "EXCLUSIVE",
   None: "NONE",
 } as const;
+/**
+ * INCLUSIVE / EXCLUSIVE / NONE; maps Xero LineAmountTypes (a boolean cannot represent NoTax)
+ */
 export type TaxMode = OpenEnum<typeof TaxMode>;
 
 export type AccountingQuote = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   acceptedAt?: Date | undefined;
   /**
    * tracking categories / classes (AccountingCategory dimensions)
    */
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
   /**
    * denormalized parties, reusing the transaction contact shape
    */
   contacts?: Array<AccountingTransactionContact> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * exchange rate to the organization's base currency
+   */
   currencyRate?: number | undefined;
+  /**
+   * customer-visible message
+   */
   customerMessage?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   declinedAt?: Date | undefined;
   discountAmount?: number | undefined;
+  /**
+   * Xero ExpiryDate, QBO ExpirationDate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   expiresAt?: Date | undefined;
+  /**
+   * points to a HRIS Group (reference to HrisGroup)
+   */
   groupId?: string | undefined;
   id?: string | undefined;
+  /**
+   * populated once the quote is converted to an invoice; left null when the source cannot supply it (reference to AccountingInvoice)
+   */
   invoiceId?: string | undefined;
+  /**
+   * Xero Date, QBO TxnDate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   issuedAt?: Date | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  /**
+   * internal note, not customer-visible
+   */
   memo?: string | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
+  /**
+   * unified payment terms enum, as on accounting_invoice / accounting_bill
+   */
   paymentTerms?: AccountingQuotePaymentTerms | undefined;
+  /**
+   * points to an AccountingProject (accounting costing project) (reference to TaskProject)
+   */
   projectId?: string | undefined;
+  /**
+   * External identifier for this quote (Xero QuoteNumber, QBO DocNumber, NetSuite tranId)
+   */
   quoteNumber?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * customer-side reference / PO number
+   */
   reference?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   sentAt?: Date | undefined;
+  /**
+   * where EXPIRED is derived (expires_at < now), the source status is preserved in raw
+   */
   status?: AccountingQuoteStatus | undefined;
   subTotalAmount?: number | undefined;
+  /**
+   * longer summary (Xero Summary, max 3000)
+   */
   summary?: string | undefined;
   taxAmount?: number | undefined;
+  /**
+   * INCLUSIVE / EXCLUSIVE / NONE; maps Xero LineAmountTypes (a boolean cannot represent NoTax)
+   */
   taxMode?: TaxMode | undefined;
+  /**
+   * short title (Xero Title, max 100)
+   */
   title?: string | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * public online-quote link where exposed
+   */
   url?: string | undefined;
 };
 

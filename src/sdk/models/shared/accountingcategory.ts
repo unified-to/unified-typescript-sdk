@@ -16,6 +16,9 @@ import {
   AccountingMetadata$outboundSchema,
 } from "./accountingmetadata.js";
 
+/**
+ * The kind of dimension
+ */
 export const AccountingCategoryType = {
   Class: "CLASS",
   Department: "DEPARTMENT",
@@ -26,10 +29,19 @@ export const AccountingCategoryType = {
   Expense: "EXPENSE",
   Income: "INCOME",
 } as const;
+/**
+ * The kind of dimension
+ */
 export type AccountingCategoryType = OpenEnum<typeof AccountingCategoryType>;
 
 export type AccountingCategory = {
+  /**
+   * platform-side tracking code
+   */
   code?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
@@ -39,7 +51,13 @@ export type AccountingCategory = {
   organizationId?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The kind of dimension
+   */
   type?: AccountingCategoryType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

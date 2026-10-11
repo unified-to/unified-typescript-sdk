@@ -22,15 +22,30 @@ export type AtsInterviewStatus = OpenEnum<typeof AtsInterviewStatus>;
 export type AtsInterview = {
   applicationId?: string | undefined;
   candidateId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * the ID of the event in a calendar
+   */
   externalEventXref?: string | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
   location?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: AtsInterviewStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   userIds?: Array<string> | undefined;
 };

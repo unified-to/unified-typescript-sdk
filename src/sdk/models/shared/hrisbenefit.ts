@@ -29,6 +29,9 @@ export type EmployerContributionType = OpenEnum<
   typeof EmployerContributionType
 >;
 
+/**
+ * Frequency that costs accrue for this benefit. For insurance/benefits, usually "MONTHLY". For compensation, matches pay cycle (WEEKLY, BIWEEKLY, etc).
+ */
 export const HrisBenefitFrequency = {
   OneTime: "ONE_TIME",
   Day: "DAY",
@@ -37,9 +40,17 @@ export const HrisBenefitFrequency = {
   Hour: "HOUR",
   Month: "MONTH",
   Week: "WEEK",
+  Biweekly: "BIWEEKLY",
+  Semimonthly: "SEMIMONTHLY",
 } as const;
+/**
+ * Frequency that costs accrue for this benefit. For insurance/benefits, usually "MONTHLY". For compensation, matches pay cycle (WEEKLY, BIWEEKLY, etc).
+ */
 export type HrisBenefitFrequency = OpenEnum<typeof HrisBenefitFrequency>;
 
+/**
+ * Tax describes the tax treatment of the benefit
+ */
 export const Tax = {
   PreTax: "PRE_TAX",
   PostTax: "POST_TAX",
@@ -47,6 +58,9 @@ export const Tax = {
   NonTaxable: "NON_TAXABLE",
   Tax: "TAX",
 } as const;
+/**
+ * Tax describes the tax treatment of the benefit
+ */
 export type Tax = OpenEnum<typeof Tax>;
 
 export const HrisBenefitType = {
@@ -66,6 +80,10 @@ export const HrisBenefitType = {
   LoanRepayment: "LOAN_REPAYMENT",
   CharitableContribution: "CHARITABLE_CONTRIBUTION",
   Other: "OTHER",
+  RetirementRoth: "RETIREMENT_ROTH",
+  Commuter: "COMMUTER",
+  DependentCare: "DEPENDENT_CARE",
+  Pension: "PENSION",
 } as const;
 export type HrisBenefitType = OpenEnum<typeof HrisBenefitType>;
 
@@ -73,21 +91,48 @@ export type HrisBenefitType = OpenEnum<typeof HrisBenefitType>;
  * Company-wide benefit plans available to employees.
  */
 export type HrisBenefit = {
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
   coverageLevel?: CoverageLevel | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * e.g. "Company 401(k) retirement plan"
+   */
   description?: string | undefined;
+  /**
+   * percentage or money
+   */
   employerContributionAmount?: number | undefined;
+  /**
+   * always money
+   */
   employerContributionMaxAmount?: number | undefined;
   employerContributionType?: EmployerContributionType | undefined;
+  /**
+   * Frequency that costs accrue for this benefit. For insurance/benefits, usually "MONTHLY". For compensation, matches pay cycle (WEEKLY, BIWEEKLY, etc).
+   */
   frequency?: HrisBenefitFrequency | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * e.g. "401(k) Plan"
+   */
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Tax describes the tax treatment of the benefit
+   */
   tax?: Tax | undefined;
   type?: HrisBenefitType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

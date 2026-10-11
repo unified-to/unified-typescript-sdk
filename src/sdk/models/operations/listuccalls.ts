@@ -22,6 +22,7 @@ export const ListUcCallsQueryParamFields = {
   Type: "type",
   Metadata: "metadata",
   Raw: "raw",
+  ConversationIdentifier: "conversation_identifier",
 } as const;
 export type ListUcCallsQueryParamFields = ClosedEnum<
   typeof ListUcCallsQueryParamFields

@@ -25,6 +25,9 @@ export const PaymentPaymentStatus = {
 } as const;
 export type PaymentPaymentStatus = OpenEnum<typeof PaymentPaymentStatus>;
 
+/**
+ * normalized tender category; the provider's original label stays in payment_method
+ */
 export const TenderType = {
   Card: "CARD",
   Cash: "CASH",
@@ -37,6 +40,9 @@ export const TenderType = {
   External: "EXTERNAL",
   Other: "OTHER",
 } as const;
+/**
+ * normalized tender category; the provider's original label stays in payment_method
+ */
 export type TenderType = OpenEnum<typeof TenderType>;
 
 export const PaymentPaymentType = {
@@ -46,11 +52,17 @@ export const PaymentPaymentType = {
 export type PaymentPaymentType = OpenEnum<typeof PaymentPaymentType>;
 
 export type PaymentPayment = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   /**
    * What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints.
    */
   allocations?: Array<PaymentAllocation> | undefined;
+  /**
+   * references AccountingBill
+   */
   billId?: string | undefined;
   cardBrand?: string | undefined;
   cardLast4?: string | undefined;
@@ -58,29 +70,68 @@ export type PaymentPayment = {
    * dimension refs -> AccountingCategory
    */
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * POS terminal/register/device (hr device)
+   */
   deviceId?: string | undefined;
+  /**
+   * Exchange rate to the base/home currency at the payment date
+   */
   exchangeRate?: number | undefined;
+  /**
+   * processing/processor fee
+   */
   feeAmount?: number | undefined;
   id?: string | undefined;
+  /**
+   * (reference to AccountingInvoice)
+   */
   invoiceId?: string | undefined;
   linkId?: string | undefined;
+  /**
+   * store/site where the payment was taken (commerce_location)
+   */
   locationId?: string | undefined;
+  /**
+   * total_amount minus fee_amount
+   */
   netAmount?: number | undefined;
   notes?: string | undefined;
+  /**
+   * reference to an AccountingOrganization
+   */
   organizationId?: string | undefined;
+  /**
+   * Date and time the payment was made (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   paidAt?: Date | undefined;
   paymentMethod?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
+  /**
+   * reference to an AccountingSalesorder, e.g. the POS order this payment settled
+   */
   salesorderId?: string | undefined;
   status?: PaymentPaymentStatus | undefined;
+  /**
+   * normalized tender category; the provider's original label stays in payment_method
+   */
   tenderType?: TenderType | undefined;
   tipAmount?: number | undefined;
   totalAmount?: number | undefined;
   type?: PaymentPaymentType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

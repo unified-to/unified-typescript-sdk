@@ -15,9 +15,18 @@ import {
 } from "./ucrecordingtranscript.js";
 
 export type UcRecordingMedia = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * two digit ISO code
+   */
   language?: string | undefined;
   recordingDownloadUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   transcriptDownloadUrl?: string | undefined;
   transcripts?: Array<UcRecordingTranscript> | undefined;

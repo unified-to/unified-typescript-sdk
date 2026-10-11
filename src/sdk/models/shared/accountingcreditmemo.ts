@@ -34,10 +34,16 @@ import {
   AccountingMetadata$outboundSchema,
 } from "./accountingmetadata.js";
 
+/**
+ * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+ */
 export const AccountingCreditmemoPaymentCollectionMethod = {
   SendInvoice: "send_invoice",
   ChargeAutomatically: "charge_automatically",
 } as const;
+/**
+ * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+ */
 export type AccountingCreditmemoPaymentCollectionMethod = OpenEnum<
   typeof AccountingCreditmemoPaymentCollectionMethod
 >;
@@ -66,34 +72,70 @@ export type AccountingCreditmemo = {
   applyAmount?: number | undefined;
   attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   cancelledAt?: Date | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * External identifier for this invoice
+   */
   creditmemoNumber?: string | undefined;
   currency?: string | undefined;
   discountAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
   id?: string | undefined;
+  /**
+   * (reference to AccountingInvoice)
+   */
   invoiceId?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
   paidAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   paidAt?: Date | undefined;
+  /**
+   * When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+   */
   paymentCollectionMethod?:
     | AccountingCreditmemoPaymentCollectionMethod
     | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   refundedAt?: Date | undefined;
   send?: boolean | undefined;
   status?: AccountingCreditmemoStatus | undefined;
   taxAmount?: number | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The public URL for the invoice to send to a customer to view or pay.
+   */
   url?: string | undefined;
 };
 

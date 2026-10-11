@@ -13,9 +13,18 @@ export type AssessmentAddress = {
   address2?: string | undefined;
   city?: string | undefined;
   country?: string | undefined;
+  /**
+   * Country code in ISO 3166 A-2 format
+   */
   countryCode?: string | undefined;
   postalCode?: string | undefined;
+  /**
+   * Regional area (e.g., state in the U.S., province in Canada)
+   */
   region?: string | undefined;
+  /**
+   * Short form for regional area (e.g., two-letter stateprovince abbreviation)
+   */
   regionCode?: string | undefined;
 };
 

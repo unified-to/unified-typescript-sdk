@@ -21,7 +21,13 @@ import {
 } from "./datastorerelationship.js";
 
 export type DatastoreTable = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * source Database ID
+   */
   databaseId?: string | undefined;
   description?: string | undefined;
   fields?: Array<DatastoreField> | undefined;
@@ -30,6 +36,9 @@ export type DatastoreTable = {
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   relationships?: Array<DatastoreRelationship> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };

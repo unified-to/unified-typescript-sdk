@@ -9,13 +9,22 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingTransactionLineItem = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   categoryIds?: Array<string> | undefined;
   description?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
   objectType?: string | undefined;
+  /**
+   * ref -> AccountingTaxrate applied to the line
+   */
   taxrateId?: string | undefined;
+  /**
+   * will be a positive value for a debit and negative for a credit
+   */
   totalAmount?: number | undefined;
   unitAmount?: number | undefined;
   unitQuantity?: number | undefined;

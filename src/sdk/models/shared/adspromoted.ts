@@ -9,6 +9,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Promoted entity types for ads_promoted list endpoint
+ */
 export const AdsPromotedType = {
   PageId: "PAGE_ID",
   AppId: "APP_ID",
@@ -26,6 +29,9 @@ export const AdsPromotedType = {
   TweetId: "TWEET_ID",
   AdGroupType: "AD_GROUP_TYPE",
 } as const;
+/**
+ * Promoted entity types for ads_promoted list endpoint
+ */
 export type AdsPromotedType = OpenEnum<typeof AdsPromotedType>;
 
 /**
@@ -35,6 +41,9 @@ export type AdsPromoted = {
   id: string;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Promoted entity types for ads_promoted list endpoint
+   */
   type: AdsPromotedType;
 };
 

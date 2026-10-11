@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * For SUB_RESULT type
+ */
 export const AssessmentAttributeStatus = {
   Open: "OPEN",
   InProgress: "IN_PROGRESS",
@@ -17,6 +20,9 @@ export const AssessmentAttributeStatus = {
   Failed: "FAILED",
   Rejected: "REJECTED",
 } as const;
+/**
+ * For SUB_RESULT type
+ */
 export type AssessmentAttributeStatus = OpenEnum<
   typeof AssessmentAttributeStatus
 >;
@@ -30,11 +36,20 @@ export type AssessmentAttributeType = OpenEnum<typeof AssessmentAttributeType>;
 
 export type AssessmentAttribute = {
   label: string;
+  /**
+   * For SUB_RESULT type
+   */
   reference?: string | undefined;
   scoreMax?: number | undefined;
   scoreValue?: number | undefined;
+  /**
+   * For SUB_RESULT type
+   */
   status?: AssessmentAttributeStatus | undefined;
   type: AssessmentAttributeType;
+  /**
+   * For TEXT and NUMBER types
+   */
   value?: string | undefined;
 };
 

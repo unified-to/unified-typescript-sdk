@@ -15,17 +15,41 @@ export type PropertyShippingShipmentFromAddress = {
   address1?: string | undefined;
   address2?: string | undefined;
   city?: string | undefined;
+  /**
+   * Company name (for commercial addresses)
+   */
   companyName?: string | undefined;
   country?: string | undefined;
+  /**
+   * ISO 2-digit country code
+   */
   countryCode?: string | undefined;
+  /**
+   * Special delivery notes
+   */
   deliveryInstructions?: string | undefined;
+  /**
+   * Email address (for delivery notifications)
+   */
   email?: string | undefined;
+  /**
+   * Alias for address_type === 'RESIDENTIAL'
+   */
   isResidential?: boolean | undefined;
+  /**
+   * Whether address has been validated
+   */
   isValidated?: boolean | undefined;
+  /**
+   * Recipientsender name
+   */
   name?: string | undefined;
   postalCode?: string | undefined;
   region?: string | undefined;
   regionCode?: string | undefined;
+  /**
+   * Phone number (required by FedEx, UPS, DHL)
+   */
   telephone?: string | undefined;
 };
 

@@ -10,11 +10,17 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CalendarConference = {
   conferenceIdentifier?: string | undefined;
+  /**
+   * ISO 2-digit country code
+   */
   countryCode?: string | undefined;
   hostAccessCode?: string | undefined;
   label?: string | undefined;
   notes?: string | undefined;
   participantAccessCode?: string | undefined;
+  /**
+   * ISO 2-digit region code
+   */
   regionCode?: string | undefined;
   telephone?: string | undefined;
   url?: string | undefined;

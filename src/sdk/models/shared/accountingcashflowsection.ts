@@ -14,7 +14,13 @@ import {
 
 export type AccountingCashflowSection = {
   items?: Array<AccountingCashflowItem> | undefined;
+  /**
+   * e.g. "Operating Activities"
+   */
   sectionName?: string | undefined;
+  /**
+   * Net cash providedused by this section
+   */
   totalAmount?: number | undefined;
 };
 

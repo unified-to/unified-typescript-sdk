@@ -29,9 +29,18 @@ export const StorageFileType = {
 export type StorageFileType = OpenEnum<typeof StorageFileType>;
 
 export type StorageFile = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * base64 encoded file contents used to create/update only
+   */
   data?: string | undefined;
   description?: string | undefined;
+  /**
+   * This link expires after 1 hour. When you need to retrieve the contents of a file, call the "Retrieve a file" endpoint again to get a new download_url.
+   */
   downloadUrl?: string | undefined;
   hash?: string | undefined;
   id?: string | undefined;
@@ -47,7 +56,13 @@ export type StorageFile = {
    */
   tags?: Array<string> | undefined;
   type?: StorageFileType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   version?: string | undefined;
   webUrl?: string | undefined;

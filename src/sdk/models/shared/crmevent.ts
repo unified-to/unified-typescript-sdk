@@ -58,6 +58,9 @@ import {
   PropertyCrmEventTask$outboundSchema,
 } from "./propertycrmeventtask.js";
 
+/**
+ * The type of event
+ */
 export const CrmEventType = {
   Note: "NOTE",
   Email: "EMAIL",
@@ -68,6 +71,9 @@ export const CrmEventType = {
   Form: "FORM",
   PageView: "PAGE_VIEW",
 } as const;
+/**
+ * The type of event
+ */
 export type CrmEventType = OpenEnum<typeof CrmEventType>;
 
 /**
@@ -86,6 +92,9 @@ export type CrmEvent = {
    * An array of contact IDs associated with this event
    */
   contactIds?: Array<string> | undefined;
+  /**
+   * The date that this event object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * An array of deal IDs associated with this event
@@ -96,6 +105,9 @@ export type CrmEvent = {
    */
   email?: PropertyCrmEventEmail | undefined;
   form?: PropertyCrmEventForm | undefined;
+  /**
+   * Unique identifier for this event object
+   */
   id?: string | undefined;
   leadIds?: Array<string> | undefined;
   marketingEmail?: PropertyCrmEventMarketingEmail | undefined;
@@ -108,13 +120,25 @@ export type CrmEvent = {
    */
   note?: PropertyCrmEventNote | undefined;
   pageView?: PropertyCrmEventPageView | undefined;
+  /**
+   * The raw data returned by the integration for this event.
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * The task object, when type = task
    */
   task?: PropertyCrmEventTask | undefined;
+  /**
+   * The type of event
+   */
   type?: CrmEventType | undefined;
+  /**
+   * The last date that this event object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

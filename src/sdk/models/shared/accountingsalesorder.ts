@@ -77,29 +77,56 @@ export type AccountingSalesorderStatus = OpenEnum<
 >;
 
 export type AccountingSalesorder = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   billingAddress?: PropertyAccountingSalesorderBillingAddress | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   closedAt?: Date | undefined;
+  /**
+   * Customer, Supplier (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * POS register/terminal/device (HRIS Device)
+   */
   deviceId?: string | undefined;
   discountAmount?: number | undefined;
+  /**
+   * selling/serving HR employee (server, cashier) (reference to HrisEmployee)
+   */
   employeeUserId?: string | undefined;
   fees?: Array<AccountingFee> | undefined;
   fulfillmentType?: FulfillmentType | undefined;
   guestCount?: number | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  /**
+   * store/site; reference to a commerce_location or hris_location
+   */
   locationId?: string | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
+  /**
+   * human-facing receipt/ticket/check number, distinct from id
+   */
   orderNumber?: string | undefined;
   organizationId?: string | undefined;
   /**
    * read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order
    */
   payments?: Array<AccountingPaymentReference> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   refundedAmount?: number | undefined;
@@ -107,11 +134,20 @@ export type AccountingSalesorder = {
   serviceChargeAmount?: number | undefined;
   shippingAddress?: PropertyAccountingSalesorderShippingAddress | undefined;
   status?: AccountingSalesorderStatus | undefined;
+  /**
+   * payment_subscription that generated this order, if recurring
+   */
   subscriptionId?: string | undefined;
+  /**
+   * pre-tax, pre-tip amount
+   */
   subtotalAmount?: number | undefined;
   taxAmount?: number | undefined;
   tipAmount?: number | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

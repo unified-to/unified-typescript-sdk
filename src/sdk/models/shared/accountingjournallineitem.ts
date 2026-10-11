@@ -9,20 +9,50 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingJournalLineitem = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
   creditAmount?: number | undefined;
+  /**
+   * will replace total_amount (absolute value)
+   */
   debitAmount?: number | undefined;
   description?: string | undefined;
+  /**
+   * points to a HRIS Group (reference to HrisGroup)
+   */
   groupId?: string | undefined;
   id?: string | undefined;
+  /**
+   * (reference to AccountingInvoice)
+   */
   invoiceId?: string | undefined;
+  /**
+   * points to a AccountingOrganization
+   */
   organizationId?: string | undefined;
+  /**
+   * link to PaymentPayment (reference to PaymentPayment)
+   */
   paymentId?: string | undefined;
+  /**
+   * (reference to TaskProject)
+   */
   projectId?: string | undefined;
   taxAmount?: number | undefined;
+  /**
+   * ref -> AccountingTaxrate applied to the line
+   */
   taxrateId?: string | undefined;
+  /**
+   * will be a positive value for a debit and negative for a credit
+   */
   totalAmount?: number | undefined;
 };
 

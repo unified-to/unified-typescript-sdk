@@ -1,5 +1,7 @@
 # MembershipStatus
 
+The authenticated user's membership status
+
 ## Example Usage
 
 ```typescript

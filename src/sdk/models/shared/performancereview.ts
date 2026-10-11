@@ -35,23 +35,62 @@ export const PerformanceReviewType = {
 export type PerformanceReviewType = OpenEnum<typeof PerformanceReviewType>;
 
 export type PerformanceReview = {
+  /**
+   * the overall/summary comment of this review
+   */
   comment?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   completedAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * pointer to the Performance Cycle object
+   */
   cycleId?: string | undefined;
   id?: string | undefined;
+  /**
+   * whether the reviewee acknowledged this review
+   */
   isAcknowledged?: boolean | undefined;
   questions?: Array<PerformanceReviewQuestion> | undefined;
+  /**
+   * the overall rating/score of this review
+   */
   rating?: number | undefined;
+  /**
+   * label of the rating on the provider's scale (e.g. "Exceeds expectations")
+   */
   ratingDescription?: string | undefined;
+  /**
+   * the maximum possible rating/score on the provider's scale
+   */
   ratingMaximum?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * the HR Employee that wrote this review (reference to HrisEmployee)
+   */
   reviewerUserId?: string | undefined;
   status?: PerformanceReviewStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   submittedAt?: Date | undefined;
+  /**
+   * id of the review template/form this review is based on
+   */
   templateIdentifier?: string | undefined;
   type?: PerformanceReviewType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * the HR Employee being reviewed (reference to HrisEmployee)
+   */
   userId: string;
 };
 

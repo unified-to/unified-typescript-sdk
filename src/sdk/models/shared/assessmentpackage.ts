@@ -40,19 +40,49 @@ export type AssessmentPackage = {
    * Alternative namesidentifiers for this package
    */
   aliases?: Array<string> | undefined;
+  /**
+   * Connection ID that this package belongs to
+   */
   connectionId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Detailed description
+   */
   description?: string | undefined;
+  /**
+   * Whether provider redirects user to complete assessment
+   */
   hasRedirectUrl?: boolean | undefined;
+  /**
+   * Where provider redirects user after completion
+   */
   hasTargetUrl?: boolean | undefined;
+  /**
+   * Unique identifier for the assessment package
+   */
   id?: string | undefined;
+  /**
+   * URL to find additional information about this package
+   */
   infoUrl?: string | undefined;
   /**
    * Integration types that support this package
    */
   integrationTypes?: Array<string> | undefined;
+  /**
+   * Maximum possible score if this assessment returns a score
+   */
   maxScore?: number | undefined;
+  /**
+   * Name of the assessment package
+   */
   name?: string | undefined;
+  /**
+   * Whether IP address is required
+   */
   needsIpAddress?: boolean | undefined;
   /**
    * Questionsinputs needed for this assessment (aligned with verification)
@@ -65,7 +95,13 @@ export type AssessmentPackage = {
    */
   tags?: Array<string> | undefined;
   type: AssessmentPackageType;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Workspace ID that this package belongs to (reference to KmsSpace)
+   */
   workspaceId?: string | undefined;
 };
 

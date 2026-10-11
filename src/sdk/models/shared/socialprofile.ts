@@ -21,25 +21,73 @@ export type SocialProfile = {
    * Structured postal address
    */
   address?: PropertySocialProfileAddress | undefined;
+  /**
+   * Profile image URL
+   */
   avatarUrl?: string | undefined;
+  /**
+   * Primary category of the profile
+   */
   category?: string | undefined;
+  /**
+   * When the profile was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Bio or description of the profile
+   */
   description?: string | undefined;
+  /**
+   * Unique identifier for the profile
+   */
   id?: string | undefined;
+  /**
+   * Whether the profile is private/protected
+   */
   isPrivate?: boolean | undefined;
+  /**
+   * Whether the profile is verified
+   */
   isVerified?: boolean | undefined;
+  /**
+   * Free-text location/locale string
+   */
   location?: string | undefined;
   /**
    * Audience metrics for the profile
    */
   metrics?: PropertySocialProfileMetrics | undefined;
+  /**
+   * Display name of the profile
+   */
   name?: string | undefined;
+  /**
+   * Parent profile id when profiles are nested (e.g. account → location)
+   */
   parentId?: string | undefined;
+  /**
+   * Contact phone number
+   */
   phone?: string | undefined;
+  /**
+   * Raw data from integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * When the profile was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Public URL of the profile
+   */
   url?: string | undefined;
+  /**
+   * Handle/username/store code
+   */
   username?: string | undefined;
+  /**
+   * External website linked from the profile
+   */
   websiteUrl?: string | undefined;
 };
 

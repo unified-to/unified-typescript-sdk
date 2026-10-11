@@ -1,5 +1,7 @@
 # Tax
 
+Tax describes the tax treatment of the benefit
+
 ## Example Usage
 
 ```typescript

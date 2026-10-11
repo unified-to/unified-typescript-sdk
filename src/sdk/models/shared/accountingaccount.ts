@@ -16,12 +16,21 @@ import {
   AccountingAccountTaxonomy$outboundSchema,
 } from "./accountingaccounttaxonomy.js";
 
+/**
+ * Account status, such as ACTIVE or ARCHIVED
+ */
 export const Status = {
   Active: "ACTIVE",
   Archived: "ARCHIVED",
 } as const;
+/**
+ * Account status, such as ACTIVE or ARCHIVED
+ */
 export type Status = OpenEnum<typeof Status>;
 
+/**
+ * Account type, such as BANK. EQUITY, ASSET, ...
+ */
 export const Type = {
   AccountsPayable: "ACCOUNTS_PAYABLE",
   AccountsReceivable: "ACCOUNTS_RECEIVABLE",
@@ -34,26 +43,68 @@ export const Type = {
   Revenue: "REVENUE",
   Other: "OTHER",
 } as const;
+/**
+ * Account type, such as BANK. EQUITY, ASSET, ...
+ */
 export type Type = OpenEnum<typeof Type>;
 
 /**
  * Chart of accounts
  */
 export type AccountingAccount = {
+  /**
+   * Balance of the account.
+   */
   balance?: number | undefined;
+  /**
+   * Date and time when the Account was created, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Account’s currency, in ISO 4217 format (e.g. U.S. dollars is USD)
+   */
   currency?: string | undefined;
+  /**
+   * Identifier for tracking and categorizing accounts for reporting or analysis purposes that is defined by the end-customer
+   */
   customerDefinedCode?: string | undefined;
+  /**
+   * Account description
+   */
   description?: string | undefined;
+  /**
+   * Identifier used by the SaaS application to uniquely identify the Account
+   */
   id?: string | undefined;
+  /**
+   * True if the account is an “accounts payable” account
+   */
   isPayable?: boolean | undefined;
+  /**
+   * Account name
+   */
   name?: string | undefined;
   organizationId?: string | undefined;
+  /**
+   * The parent account ID for this account
+   */
   parentId?: string | undefined;
+  /**
+   * The original data from the integration's API
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Account status, such as ACTIVE or ARCHIVED
+   */
   status?: Status | undefined;
   taxonomy?: Array<AccountingAccountTaxonomy> | undefined;
+  /**
+   * Account type, such as BANK. EQUITY, ASSET, ...
+   */
   type?: Type | undefined;
+  /**
+   * Date and time when the Account was last updated, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -1,5 +1,7 @@
 # AccountingJournalStatus
 
+Posting state of the journal entry
+
 ## Example Usage
 
 ```typescript

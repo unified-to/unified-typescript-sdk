@@ -39,17 +39,38 @@ export type Event = OpenEnum<typeof Event>;
  */
 export type Notification = {
   connectionId?: string | undefined;
+  /**
+   * The date that this integration object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Longer description of this notification
+   */
   description?: string | undefined;
   event?: Event | undefined;
+  /**
+   * Unique identifier for this notification object
+   */
   id?: string | undefined;
   integrationName?: string | undefined;
   integrationType?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   sentAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   userName?: string | undefined;
   webhookId?: string | undefined;
+  /**
+   * (reference to KmsSpace)
+   */
   workspaceId?: string | undefined;
   workspaceName?: string | undefined;
 };

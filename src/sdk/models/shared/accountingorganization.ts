@@ -14,32 +14,65 @@ import {
   PropertyAccountingOrganizationAddress$inboundSchema,
 } from "./propertyaccountingorganizationaddress.js";
 
+/**
+ * Entity type within a consolidation hierarchy
+ */
 export const AccountingOrganizationType = {
   Company: "COMPANY",
   Subsidiary: "SUBSIDIARY",
   Division: "DIVISION",
   Location: "LOCATION",
 } as const;
+/**
+ * Entity type within a consolidation hierarchy
+ */
 export type AccountingOrganizationType = OpenEnum<
   typeof AccountingOrganizationType
 >;
 
 export type AccountingOrganization = {
   address?: PropertyAccountingOrganizationAddress | undefined;
+  /**
+   * Company-wide books close / lock date; transactions on or before this date fall in a closed accounting period (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   booksCloseAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Currency primarily used by the organization, in ISO 4217 format (e.g. U.S. dollars is USD).
+   */
   currency?: string | undefined;
+  /**
+   * Month of the year when the organization’s fiscal year ends (1 - 12, where January is 1)
+   */
   fiscalYearEndMonth?: number | undefined;
   id?: string | undefined;
+  /**
+   * True for consolidation/elimination entities
+   */
   isElimination?: boolean | undefined;
   legalName?: string | undefined;
   name?: string | undefined;
+  /**
+   * Identifier for tracking and categorizing organizations for reporting or analysis purposes that is defined by the end-customer
+   */
   organizationCode?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Organization's tax number.  For example, in the U.S., this is an Employer Identification Number (EIN).
+   */
   taxNumber?: string | undefined;
   timezone?: string | undefined;
+  /**
+   * Entity type within a consolidation hierarchy
+   */
   type?: AccountingOrganizationType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   website?: string | undefined;
 };

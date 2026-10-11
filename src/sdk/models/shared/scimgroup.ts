@@ -25,9 +25,21 @@ import {
 } from "./scimgroupmember.js";
 
 export type ScimGroup = {
+  /**
+   * The group's display name
+   */
   displayName: string;
+  /**
+   * A groups id in an external system
+   */
   externalId?: string | undefined;
+  /**
+   * Organization [NOT STANDARD]
+   */
   groupType?: string | undefined;
+  /**
+   * The group's unique id
+   */
   id?: string | undefined;
   /**
    * An array of members

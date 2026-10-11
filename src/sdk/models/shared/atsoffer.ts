@@ -25,19 +25,43 @@ export const AtsOfferStatus = {
 export type AtsOfferStatus = OpenEnum<typeof AtsOfferStatus>;
 
 export type AtsOffer = {
+  /**
+   * date the offer was accepted (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   acceptedAt?: Date | undefined;
   /**
    * compensation details for the offer
    */
   compensation?: Array<AtsCompensation> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * user id of the recruiter who created the offer (reference to HrisEmployee)
+   */
   creatorUserId?: string | undefined;
+  /**
+   * newly hired employee id (reference to HrisEmployee)
+   */
   employeeUserId?: string | undefined;
   id?: string | undefined;
+  /**
+   * date the offer was rejected (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   rejectedAt?: Date | undefined;
+  /**
+   * date the offer was sent (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   sentAt?: Date | undefined;
+  /**
+   * date the employee starts (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: AtsOfferStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -9,8 +9,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CalendarLink = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: string | undefined;
   description?: string | undefined;
+  /**
+   * minutes
+   */
   duration?: number | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
@@ -18,6 +24,9 @@ export type CalendarLink = {
   priceAmount?: number | undefined;
   priceCurrency?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: string | undefined;
   url: string;
 };

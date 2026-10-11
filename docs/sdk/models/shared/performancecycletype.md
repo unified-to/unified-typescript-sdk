@@ -1,5 +1,7 @@
 # PerformanceCycleType
 
+whether this is a review cycle or a goal cycle/timeframe
+
 ## Example Usage
 
 ```typescript

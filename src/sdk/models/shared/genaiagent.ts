@@ -9,14 +9,26 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GenaiAgent = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
+  /**
+   * The system prompt or stored procedure that the agent follows.
+   */
   instructions?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * The model that the agent runs on.
+   */
   modelId?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

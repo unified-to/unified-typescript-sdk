@@ -10,7 +10,13 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AssessmentPackageRegion = {
   costAmount?: number | undefined;
+  /**
+   * ISO 4217 format
+   */
   currency?: string | undefined;
+  /**
+   * Processing time in milliseconds
+   */
   processingTime?: number | undefined;
   /**
    * Countryregion codes where this package is available ({country}-{state} or {country})

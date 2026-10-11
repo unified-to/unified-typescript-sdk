@@ -11,11 +11,23 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type CommerceInventory = {
   available?: number | undefined;
   id?: string | undefined;
+  /**
+   * (reference to CommerceItem)
+   */
   itemId?: string | undefined;
   itemOptionId?: string | undefined;
+  /**
+   * (reference to CommerceCommerceItemvariant)
+   */
   itemVariantId?: string | undefined;
+  /**
+   * (reference to CommerceLocation)
+   */
   locationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

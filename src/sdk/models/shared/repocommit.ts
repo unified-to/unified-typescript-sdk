@@ -9,7 +9,13 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RepoCommit = {
+  /**
+   * (reference to RepoBranch)
+   */
   branchId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
   linesAdded?: number | undefined;
@@ -18,8 +24,17 @@ export type RepoCommit = {
   message?: string | undefined;
   pullrequestIds?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (reference to RepoRepository)
+   */
   repoId: string;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

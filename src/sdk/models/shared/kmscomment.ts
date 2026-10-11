@@ -27,13 +27,25 @@ export type KmsCommentType = OpenEnum<typeof KmsCommentType>;
 export type KmsComment = {
   content?: string | undefined;
   contentType?: ContentType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
+  /**
+   * (reference to KmsPage)
+   */
   pageId?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: KmsCommentType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

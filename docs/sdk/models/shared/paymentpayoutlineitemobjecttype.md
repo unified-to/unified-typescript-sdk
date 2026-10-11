@@ -1,5 +1,7 @@
 # PaymentPayoutLineitemObjectType
 
+What this payout line settles
+
 ## Example Usage
 
 ```typescript

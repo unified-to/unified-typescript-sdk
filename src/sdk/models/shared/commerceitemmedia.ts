@@ -26,6 +26,9 @@ export type CommerceItemMedia = {
   height?: number | undefined;
   id?: string | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
+  /**
+   * 1 is the first
+   */
   position?: number | undefined;
   type?: CommerceItemMediaType | undefined;
   url: string;

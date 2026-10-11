@@ -24,34 +24,109 @@ export type EnrichCompany = {
    * The address of the company
    */
   address?: PropertyEnrichCompanyAddress | undefined;
+  /**
+   * The Alexa rank of the company
+   */
   alexaRank?: number | undefined;
+  /**
+   * The date that this company object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The Crunchbase URL of the company
+   */
   crunchbaseUrl?: string | undefined;
+  /**
+   * The description of the company
+   */
   description?: string | undefined;
+  /**
+   * The webmail domain of the company
+   */
   domain?: string | undefined;
+  /**
+   * The number of employees at the company
+   */
   employees?: string | undefined;
+  /**
+   * The public exchange of the company (eg. NASDAQ)
+   */
   exchange?: string | undefined;
+  /**
+   * The Facebook URL of the company
+   */
   facebookUrl?: string | undefined;
+  /**
+   * Unique identifier for this company object
+   */
   id?: string | undefined;
+  /**
+   * The industry of the company
+   */
   industry?: string | undefined;
+  /**
+   * The Crunchbase URL of the company
+   */
   instagramUrl?: string | undefined;
+  /**
+   * The LinkedIn URL of the company
+   */
   linkedinUrl?: string | undefined;
+  /**
+   * The URL of the logo of the company
+   */
   logoUrl?: string | undefined;
+  /**
+   * The NAICS code of the company
+   */
   naicsCode?: number | undefined;
+  /**
+   * The name of the company
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this company
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The approximate revenue of the company
+   */
   revenue?: string | undefined;
+  /**
+   * The SIC code of the company
+   */
   sicCode?: number | undefined;
+  /**
+   * The stock ticker of the company (eg. AMZN)
+   */
   stock?: string | undefined;
   /**
    * An array of telephones for this company
    */
   telephones?: Array<EnrichTelephone> | undefined;
+  /**
+   * The twitter handle of the company
+   */
   twitterHandle?: string | undefined;
+  /**
+   * The twitter URL of the company
+   */
   twitterUrl?: string | undefined;
+  /**
+   * The last date that this company object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The year that the company was founded
+   */
   yearFounded?: number | undefined;
+  /**
+   * The Yelp URL of the company
+   */
   yelpUrl?: string | undefined;
+  /**
+   * The Youtube URL of the company
+   */
   youtubeUrl?: string | undefined;
 };
 

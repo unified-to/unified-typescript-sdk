@@ -1,5 +1,7 @@
 # PropertyAdsReportMetricsGroupTargetingOptimizationMode
 
+Google: bid_only falsetrue
+
 ## Example Usage
 
 ```typescript

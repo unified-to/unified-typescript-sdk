@@ -1,5 +1,7 @@
 # AssessmentAttributeStatus
 
+For SUB_RESULT type
+
 ## Example Usage
 
 ```typescript

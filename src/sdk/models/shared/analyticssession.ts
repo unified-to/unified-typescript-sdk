@@ -13,23 +13,59 @@ export type AnalyticsSession = {
   campaign?: string | undefined;
   city?: string | undefined;
   country?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   device?: string | undefined;
   durationSeconds?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * Session attributes
+   */
   eventsCount?: number | undefined;
+  /**
+   * Session attributes
+   */
   exitPage?: string | undefined;
   id?: string | undefined;
+  /**
+   * Engagement
+   */
   isBounce?: boolean | undefined;
+  /**
+   * Engagement
+   */
   isConversion?: boolean | undefined;
+  /**
+   * Session attributes
+   */
   landingPage?: string | undefined;
   medium?: string | undefined;
   os?: string | undefined;
+  /**
+   * Session attributes
+   */
   pageViews?: number | undefined;
+  /**
+   * points to AnalyticsProperty
+   */
   propertyId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Acquisition
+   */
   source?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   visitorId?: string | undefined;
 };

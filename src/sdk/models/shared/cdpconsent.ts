@@ -10,16 +10,31 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The consent status for this purpose
+ */
 export const CdpConsentStatus = {
   Granted: "GRANTED",
   Denied: "DENIED",
   Pending: "PENDING",
 } as const;
+/**
+ * The consent status for this purpose
+ */
 export type CdpConsentStatus = OpenEnum<typeof CdpConsentStatus>;
 
 export type CdpConsent = {
+  /**
+   * The consent purpose or objective (eg. marketing, analytics)
+   */
   purpose?: string | undefined;
+  /**
+   * The consent status for this purpose
+   */
   status?: CdpConsentStatus | undefined;
+  /**
+   * When the consent status was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

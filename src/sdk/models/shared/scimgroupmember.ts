@@ -10,23 +10,50 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * ONLY USED ON UPDATES
+ */
 export const Operation = {
   Add: "add",
   Delete: "delete",
 } as const;
+/**
+ * ONLY USED ON UPDATES
+ */
 export type Operation = OpenEnum<typeof Operation>;
 
+/**
+ * NOT STANDARD
+ */
 export const ScimGroupMemberType = {
   User: "User",
   Group: "Group",
 } as const;
+/**
+ * NOT STANDARD
+ */
 export type ScimGroupMemberType = OpenEnum<typeof ScimGroupMemberType>;
 
 export type ScimGroupMember = {
+  /**
+   * url to user
+   */
   dollarRef?: string | undefined;
+  /**
+   * user name
+   */
   display?: string | undefined;
+  /**
+   * ONLY USED ON UPDATES
+   */
   operation?: Operation | undefined;
+  /**
+   * NOT STANDARD
+   */
   type?: ScimGroupMemberType | undefined;
+  /**
+   * ID of user
+   */
   value: string;
 };
 

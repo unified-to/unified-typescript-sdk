@@ -54,7 +54,13 @@ export type MessagingEventType = OpenEnum<typeof MessagingEventType>;
 export type MessagingEvent = {
   button?: PropertyMessagingEventButton | undefined;
   channel?: PropertyMessagingEventChannel | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * not used
+   */
   id?: string | undefined;
   isReplacingOriginal?: boolean | undefined;
   message?: PropertyMessagingEventMessage | undefined;

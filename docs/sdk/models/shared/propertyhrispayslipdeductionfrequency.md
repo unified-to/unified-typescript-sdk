@@ -1,11 +1,13 @@
 # PropertyHrisPayslipDeductionFrequency
 
+Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+
 ## Example Usage
 
 ```typescript
 import { PropertyHrisPayslipDeductionFrequency } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyHrisPayslipDeductionFrequency = "DAY";
+let value: PropertyHrisPayslipDeductionFrequency = "QUARTER";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +15,5 @@ let value: PropertyHrisPayslipDeductionFrequency = "DAY";
 ## Values
 
 ```typescript
-"ONE_TIME" | "DAY" | "QUARTER" | "YEAR" | "HOUR" | "MONTH" | "WEEK" | Unrecognized<string>
+"ONE_TIME" | "DAY" | "QUARTER" | "YEAR" | "HOUR" | "MONTH" | "WEEK" | "BIWEEKLY" | "SEMIMONTHLY" | Unrecognized<string>
 ```

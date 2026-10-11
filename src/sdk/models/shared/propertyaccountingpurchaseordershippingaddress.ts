@@ -13,9 +13,18 @@ export type PropertyAccountingPurchaseorderShippingAddress = {
   address2?: string | undefined;
   city?: string | undefined;
   country?: string | undefined;
+  /**
+   * Country code for the country, in ISO 3166 A-2 format
+   */
   countryCode?: string | undefined;
   postalCode?: string | undefined;
+  /**
+   * Regional area of the employee's address.  For example, in the U.S., the region is the employee's state; in Canada, the region is the employee’s province.
+   */
   region?: string | undefined;
+  /**
+   * Short form for the regional area of the employee's address.   For example, in the U.S., the region code is the two-letter abbreviation for the employee’s state; in Canada, the region is the two-letter abbreviation for the employee's province.
+   */
   regionCode?: string | undefined;
 };
 

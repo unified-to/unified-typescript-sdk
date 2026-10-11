@@ -10,12 +10,18 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Why the refund was issued
+ */
 export const Reason = {
   Duplicate: "DUPLICATE",
   Fraudulent: "FRAUDULENT",
   RequestedByCustomer: "REQUESTED_BY_CUSTOMER",
   Other: "OTHER",
 } as const;
+/**
+ * Why the refund was issued
+ */
 export type Reason = OpenEnum<typeof Reason>;
 
 export const PaymentRefundStatus = {
@@ -26,6 +32,9 @@ export const PaymentRefundStatus = {
 } as const;
 export type PaymentRefundStatus = OpenEnum<typeof PaymentRefundStatus>;
 
+/**
+ * Normalized tender category the refund was returned to; mirrors PaymentPayment.tender_type
+ */
 export const PaymentRefundTenderType = {
   Card: "CARD",
   Cash: "CASH",
@@ -38,21 +47,42 @@ export const PaymentRefundTenderType = {
   External: "EXTERNAL",
   Other: "OTHER",
 } as const;
+/**
+ * Normalized tender category the refund was returned to; mirrors PaymentPayment.tender_type
+ */
 export type PaymentRefundTenderType = OpenEnum<typeof PaymentRefundTenderType>;
 
 export type PaymentRefund = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
   notes?: string | undefined;
+  /**
+   * (reference to PaymentPayment)
+   */
   paymentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Why the refund was issued
+   */
   reason?: Reason | undefined;
   reference?: string | undefined;
+  /**
+   * Date and time the refund occurred (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   refundedAt?: Date | undefined;
   status?: PaymentRefundStatus | undefined;
+  /**
+   * Normalized tender category the refund was returned to; mirrors PaymentPayment.tender_type
+   */
   tenderType?: PaymentRefundTenderType | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

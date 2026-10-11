@@ -29,26 +29,44 @@ export type MarketingMemberStatus = OpenEnum<typeof MarketingMemberStatus>;
  * A member represents a person
  */
 export type MarketingMember = {
+  /**
+   * The name of the company/organization the member belongs to
+   */
   company?: string | undefined;
+  /**
+   * The date that this member object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * An array of email addresses for this member
    */
   emails?: Array<MarketingEmail> | undefined;
   firstName?: string | undefined;
+  /**
+   * Unique identifier for this member object
+   */
   id?: string | undefined;
   lastName?: string | undefined;
   /**
    * An array of list IDs associated with this member
    */
   listIds?: Array<string> | undefined;
+  /**
+   * The name of the member
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this member
+   */
   raw?: { [k: string]: any } | undefined;
   status?: MarketingMemberStatus | undefined;
   /**
    * An array of tags associated with this member
    */
   tags?: Array<string> | undefined;
+  /**
+   * The last date that this member object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

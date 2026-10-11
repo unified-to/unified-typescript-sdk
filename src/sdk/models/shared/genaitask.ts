@@ -29,12 +29,27 @@ export const GenaiTaskStatus = {
 export type GenaiTaskStatus = OpenEnum<typeof GenaiTaskStatus>;
 
 export type GenaiTask = {
+  /**
+   * id of the genai_agent (the reusable agent/preset configuration) that runs this task.
+   */
   agentId?: string | undefined;
+  /**
+   * When the coding agent stopped working on the task. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   completedAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The failure description (when the status is FAILED).
+   */
   error?: string | undefined;
   filesChanged?: number | undefined;
   id?: string | undefined;
+  /**
+   * The natural-language instructions given to the coding agent.
+   */
   instructions?: string | undefined;
   linesAdded?: number | undefined;
   linesDeleted?: number | undefined;
@@ -43,19 +58,52 @@ export type GenaiTask = {
    */
   messages?: Array<GenaiContent> | undefined;
   modelId?: string | undefined;
+  /**
+   * A short human-readable title for the coding agent task.
+   */
   name?: string | undefined;
+  /**
+   * id of the genai_organization (the organization or execution environment) that this task runs under.
+   */
   organizationId?: string | undefined;
+  /**
+   * The pull/merge request that the coding agent opened for its work.
+   */
   pullrequestUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The git repository that the coding agent works in.
+   */
   repoUrl?: string | undefined;
+  /**
+   * The name of the branch that the coding agent starts its work from.
+   */
   sourceBranchIdentifier?: string | undefined;
+  /**
+   * When the coding agent started working on the task. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startedAt?: Date | undefined;
   status?: GenaiTaskStatus | undefined;
+  /**
+   * The coding agent's summary of the work that it performed.
+   */
   summary?: string | undefined;
+  /**
+   * The name of the branch that the coding agent pushed its work to.
+   */
   targetBranchIdentifier?: string | undefined;
   tokensUsed?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
+  /**
+   * The provider's own web page for this task.
+   */
   webUrl?: string | undefined;
 };
 

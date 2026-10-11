@@ -13,8 +13,14 @@ import {
 } from "./accountingagedrow.js";
 
 export type AccountingAgedPeriod = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   name?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   subItems?: Array<AccountingAgedRow> | undefined;
   totalAmount?: number | undefined;

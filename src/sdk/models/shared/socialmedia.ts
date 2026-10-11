@@ -9,21 +9,48 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Type of media
+ */
 export const SocialMediaType = {
   Photo: "PHOTO",
   Video: "VIDEO",
   Gif: "GIF",
   Other: "OTHER",
 } as const;
+/**
+ * Type of media
+ */
 export type SocialMediaType = OpenEnum<typeof SocialMediaType>;
 
 export type SocialMedia = {
+  /**
+   * Accessibility caption / alt text
+   */
   alt?: string | undefined;
+  /**
+   * Media height in pixels
+   */
   height?: number | undefined;
+  /**
+   * Provider media id, when the media is individually addressable
+   */
   id?: string | undefined;
+  /**
+   * Ordering of the media within the post; 1 is the first
+   */
   position?: number | undefined;
+  /**
+   * Type of media
+   */
   type?: SocialMediaType | undefined;
+  /**
+   * URL of the media asset
+   */
   url: string;
+  /**
+   * Media width in pixels
+   */
   width?: number | undefined;
 };
 

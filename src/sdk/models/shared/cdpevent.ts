@@ -22,6 +22,9 @@ import {
   CdpMetadata$outboundSchema,
 } from "./cdpmetadata.js";
 
+/**
+ * The unified structural category of the event
+ */
 export const CdpEventType = {
   Track: "TRACK",
   Page: "PAGE",
@@ -30,10 +33,19 @@ export const CdpEventType = {
   Group: "GROUP",
   Alias: "ALIAS",
 } as const;
+/**
+ * The unified structural category of the event
+ */
 export type CdpEventType = OpenEnum<typeof CdpEventType>;
 
 export type CdpEvent = {
+  /**
+   * The date that this event object was ingested (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Unique identifier for this event object
+   */
   id?: string | undefined;
   /**
    * The identifiers that link this event to a profile
@@ -43,12 +55,33 @@ export type CdpEvent = {
    * The event payload/properties
    */
   metadata?: Array<CdpMetadata> | undefined;
+  /**
+   * The specific event name (eg. "Product Purchased")
+   */
   name?: string | undefined;
+  /**
+   * When the event actually happened (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   occurredAt?: Date | undefined;
+  /**
+   * The profile this event is associated with; points to CdpProfile
+   */
   profileId?: string | undefined;
+  /**
+   * The raw data returned by the integration for this event
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The source that produced this event
+   */
   source?: string | undefined;
+  /**
+   * The cdp_source this event originated from; points to CdpSource
+   */
   sourceId?: string | undefined;
+  /**
+   * The unified structural category of the event
+   */
   type?: CdpEventType | undefined;
 };
 

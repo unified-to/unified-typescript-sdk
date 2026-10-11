@@ -40,6 +40,9 @@ import {
   PropertyAdsGroupTargeting$outboundSchema,
 } from "./propertyadsgrouptargeting.js";
 
+/**
+ * Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)
+ */
 export const BillingEvent = {
   Impressions: "IMPRESSIONS",
   LinkClicks: "LINK_CLICKS",
@@ -52,6 +55,9 @@ export const BillingEvent = {
   Purchase: "PURCHASE",
   None: "NONE",
 } as const;
+/**
+ * Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)
+ */
 export type BillingEvent = OpenEnum<typeof BillingEvent>;
 
 export const BudgetAllocationType = {
@@ -77,10 +83,16 @@ export const AdsGroupBudgetUnit = {
 } as const;
 export type AdsGroupBudgetUnit = OpenEnum<typeof AdsGroupBudgetUnit>;
 
+/**
+ * Creative rotation strategy (LinkedIn creativeSelection)
+ */
 export const CreativeSelection = {
   Optimized: "OPTIMIZED",
   RoundRobin: "ROUND_ROBIN",
 } as const;
+/**
+ * Creative rotation strategy (LinkedIn creativeSelection)
+ */
 export type CreativeSelection = OpenEnum<typeof CreativeSelection>;
 
 export const AdsGroupEffectiveStatus = {
@@ -98,6 +110,9 @@ export const AdsGroupEffectiveStatus = {
 } as const;
 export type AdsGroupEffectiveStatus = OpenEnum<typeof AdsGroupEffectiveStatus>;
 
+/**
+ * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
+ */
 export const OptimizationGoal = {
   Reach: "REACH",
   Impressions: "IMPRESSIONS",
@@ -112,6 +127,9 @@ export const OptimizationGoal = {
   PageLikes: "PAGE_LIKES",
   Messages: "MESSAGES",
 } as const;
+/**
+ * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
+ */
 export type OptimizationGoal = OpenEnum<typeof OptimizationGoal>;
 
 export const AdsGroupStatus = {
@@ -153,6 +171,9 @@ export type AdsGroup = {
    * YOUTUBE_AND_PARTNERS
    */
   bidStrategy?: PropertyAdsGroupBidStrategy | undefined;
+  /**
+   * Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)
+   */
   billingEvent?: BillingEvent | undefined;
   budgetAllocationType?: BudgetAllocationType | undefined;
   budgetAmount?: number | undefined;
@@ -160,28 +181,49 @@ export type AdsGroup = {
   budgetPeriod?: AdsGroupBudgetPeriod | undefined;
   budgetUnit?: AdsGroupBudgetUnit | undefined;
   campaignId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
+  /**
+   * Creative rotation strategy (LinkedIn creativeSelection)
+   */
   creativeSelection?: CreativeSelection | undefined;
   currency?: string | undefined;
   effectiveStatus?: AdsGroupEffectiveStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
+  /**
+   * Language + region, ISO 639-1 with region (e.g. en-US); LinkedIn locale
+   */
   languageLocale?: string | undefined;
   name?: string | undefined;
+  /**
+   * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
+   */
   optimizationGoal?: OptimizationGoal | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsGroupPacing | undefined;
   parentId?: string | undefined;
   promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: AdsGroupStatus | undefined;
   targeting?: PropertyAdsGroupTargeting | undefined;
   type?: AdsGroupType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

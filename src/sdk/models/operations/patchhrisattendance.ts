@@ -37,6 +37,9 @@ export type PatchHrisAttendanceQueryParamFields = ClosedEnum<
 >;
 
 export type PatchHrisAttendanceRequest = {
+  /**
+   * Also called timesheets
+   */
   hrisAttendance: shared.HrisAttendance;
   /**
    * ID of the connection

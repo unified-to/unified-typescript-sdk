@@ -10,10 +10,19 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type HrisAttendanceBreak = {
   durationMinutes?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   id?: string | undefined;
   isPaid?: boolean | undefined;
+  /**
+   * break type label, e.g. "Lunch"
+   */
   name?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
 };
 

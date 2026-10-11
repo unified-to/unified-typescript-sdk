@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER
+ */
 export const AccountType = {
   Checking: "CHECKING",
   Savings: "SAVINGS",
@@ -17,32 +20,86 @@ export const AccountType = {
   Loan: "LOAN",
   Other: "OTHER",
 } as const;
+/**
+ * CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER
+ */
 export type AccountType = OpenEnum<typeof AccountType>;
 
+/**
+ * feed state: ACTIVE, INACTIVE
+ */
 export const AccountingBankfeedaccountStatus = {
   Active: "ACTIVE",
   Inactive: "INACTIVE",
 } as const;
+/**
+ * feed state: ACTIVE, INACTIVE
+ */
 export type AccountingBankfeedaccountStatus = OpenEnum<
   typeof AccountingBankfeedaccountStatus
 >;
 
 export type AccountingBankfeedaccount = {
+  /**
+   * ref -> AccountingAccount: the target GL account the feed posts into (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
+  /**
+   * full account number where available
+   */
   accountNumber?: string | undefined;
+  /**
+   * last-4 when the full number isn't returned
+   */
   accountNumberLast4?: string | undefined;
+  /**
+   * CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER
+   */
   accountType?: AccountType | undefined;
+  /**
+   * current balance of the source account
+   */
   balance?: number | undefined;
+  /**
+   * bank / institution name
+   */
   bankName?: string | undefined;
+  /**
+   * creation timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217 currency of the account
+   */
   currency?: string | undefined;
+  /**
+   * date the feed begins delivering transactions (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   feedStartAt?: Date | undefined;
   id?: string | undefined;
+  /**
+   * account nickname / source name
+   */
   name?: string | undefined;
+  /**
+   * ref -> accounting Organization this record belongs to
+   */
   organizationId?: string | undefined;
+  /**
+   * The original data from the integration's API
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * bank routing number
+   */
   routingNumber?: string | undefined;
+  /**
+   * feed state: ACTIVE, INACTIVE
+   */
   status?: AccountingBankfeedaccountStatus | undefined;
+  /**
+   * last-update timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

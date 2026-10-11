@@ -1,5 +1,7 @@
 # AccountingBankfeedaccountStatus
 
+feed state: ACTIVE, INACTIVE
+
 ## Example Usage
 
 ```typescript

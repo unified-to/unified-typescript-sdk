@@ -22,11 +22,26 @@ export const DayOfWeek = {
 export type DayOfWeek = OpenEnum<typeof DayOfWeek>;
 
 export type AdSchedule = {
+  /**
+   * 0.1-10.0
+   */
   bidModifier?: number | undefined;
   dayOfWeek: DayOfWeek;
+  /**
+   * 0-24 (24 = end of day)
+   */
   endHour: number;
+  /**
+   * 0, 15, 30, 45
+   */
   endMinute?: number | undefined;
+  /**
+   * 0-23
+   */
   startHour: number;
+  /**
+   * 0, 15, 30, 45
+   */
   startMinute?: number | undefined;
 };
 

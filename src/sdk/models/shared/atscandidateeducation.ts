@@ -10,10 +10,16 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AtsCandidateEducation = {
   degree?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   fieldOfStudy?: string | undefined;
   institution?: string | undefined;
   level?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
 };
 

@@ -1,5 +1,7 @@
 # HrisTaxonomyType
 
+the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation
+
 ## Example Usage
 
 ```typescript

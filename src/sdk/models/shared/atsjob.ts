@@ -83,9 +83,18 @@ export type AtsJobStatus = OpenEnum<typeof AtsJobStatus>;
 
 export type AtsJob = {
   addresses?: Array<AtsAddress> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   closedAt?: Date | undefined;
+  /**
+   * id value of the company associated with the job in the ATS (reference to AtsCompany)
+   */
   companyId?: string | undefined;
   compensation?: Array<AtsCompensation> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   employmentType?: EmploymentType | undefined;
@@ -97,11 +106,17 @@ export type AtsJob = {
   hiringManagers?: Array<AtsReference> | undefined;
   id?: string | undefined;
   industry?: string | undefined;
+  /**
+   * Preferred language for the job, in ISO 639-1 format (e.g., U.S. English is en-us)
+   */
   languageLocale?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
   minimumDegree?: string | undefined;
   minimumExperienceYears?: number | undefined;
   name?: string | undefined;
+  /**
+   * Number of openings for the job
+   */
   numberOfOpenings?: number | undefined;
   openings?: Array<AtsJobOpening> | undefined;
   /**
@@ -118,8 +133,17 @@ export type AtsJob = {
   remote?: boolean | undefined;
   skills?: Array<string> | undefined;
   status?: AtsJobStatus | undefined;
+  /**
+   * Short job blurb (distinct from full description when both exist)
+   */
   summary?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * User id of the job owner in the ATS (references an HRIS employee) (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

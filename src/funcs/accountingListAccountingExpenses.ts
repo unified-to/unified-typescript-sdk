@@ -110,6 +110,7 @@ async function $do(
     "sort": payload.sort,
     "start_gte": payload.start_gte,
     "status": payload.status,
+    "type": payload.type,
     "updated_gte": payload.updated_gte,
     "user_id": payload.user_id,
   });

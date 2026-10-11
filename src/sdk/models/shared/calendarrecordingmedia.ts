@@ -18,11 +18,26 @@ import {
 
 export type CalendarRecordingMedia = {
   attendees?: Array<CalendarAttendee> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * two digit ISO code
+   */
   language?: string | undefined;
   recordingDownloadUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * provider AI-generated meeting summary
+   */
   summary?: string | undefined;
+  /**
+   * download/export link for a provider AI summary document (e.g. Google Meet smart notes)
+   */
   summaryDownloadUrl?: string | undefined;
   transcriptDownloadUrl?: string | undefined;
   transcripts?: Array<CalendarRecordingTranscript> | undefined;

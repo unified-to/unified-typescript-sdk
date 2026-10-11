@@ -64,6 +64,9 @@ export const BudgetUnit = {
 } as const;
 export type BudgetUnit = OpenEnum<typeof BudgetUnit>;
 
+/**
+ * read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status
+ */
 export const EffectiveStatus = {
   Unspecified: "UNSPECIFIED",
   Serving: "SERVING",
@@ -77,6 +80,9 @@ export const EffectiveStatus = {
   Archived: "ARCHIVED",
   Removed: "REMOVED",
 } as const;
+/**
+ * read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status
+ */
 export type EffectiveStatus = OpenEnum<typeof EffectiveStatus>;
 
 export const Goal = {
@@ -108,11 +114,26 @@ export type AdsCampaign = {
   budgetAmount?: number | undefined;
   budgetPeriod?: BudgetPeriod | undefined;
   budgetUnit?: BudgetUnit | undefined;
+  /**
+   * Resource name for existing/shared budget (Google)
+   */
   campaignBudgetIdentifier?: string | undefined;
+  /**
+   * Housing, employment, credit, NONE (Meta)
+   */
   category?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status
+   */
   effectiveStatus?: EffectiveStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsCampaignFrequencyCap | undefined;
   goal?: Goal | undefined;
@@ -124,10 +145,16 @@ export type AdsCampaign = {
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: AdsCampaignStatus | undefined;
   targeting?: PropertyAdsCampaignTargeting | undefined;
   totalSpendAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

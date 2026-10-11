@@ -85,6 +85,20 @@ export type HrisEmployeeEmploymentType = OpenEnum<
   typeof HrisEmployeeEmploymentType
 >;
 
+/**
+ * US Fair Labor Standards Act classification
+ */
+export const FlsaStatus = {
+  Exempt: "EXEMPT",
+  NonExempt: "NON_EXEMPT",
+  SalariedNonexempt: "SALARIED_NONEXEMPT",
+  Owner: "OWNER",
+} as const;
+/**
+ * US Fair Labor Standards Act classification
+ */
+export type FlsaStatus = OpenEnum<typeof FlsaStatus>;
+
 export const HrisEmployeeGender = {
   Male: "MALE",
   Female: "FEMALE",
@@ -100,29 +114,77 @@ export const MaritalStatus = {
 } as const;
 export type MaritalStatus = OpenEnum<typeof MaritalStatus>;
 
+/**
+ * how often the employee is paid (eg. BIWEEKLY)
+ */
+export const PayFrequency = {
+  OneTime: "ONE_TIME",
+  Day: "DAY",
+  Quarter: "QUARTER",
+  Year: "YEAR",
+  Hour: "HOUR",
+  Month: "MONTH",
+  Week: "WEEK",
+  Biweekly: "BIWEEKLY",
+  Semimonthly: "SEMIMONTHLY",
+} as const;
+/**
+ * how often the employee is paid (eg. BIWEEKLY)
+ */
+export type PayFrequency = OpenEnum<typeof PayFrequency>;
+
 export type HrisEmployee = {
   address?: PropertyHrisEmployeeAddress | undefined;
   bio?: string | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
   compensation?: Array<HrisCompensation> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * YYYYMM/DD
+   */
   dateOfBirth?: Date | undefined;
   emails?: Array<HrisEmail> | undefined;
+  /**
+   * the company's ID for this employee
+   */
   employeeNumber?: string | undefined;
   employeeRoles?: Array<PropertyHrisEmployeeEmployeeRoles> | undefined;
   employmentStatus?: EmploymentStatus | undefined;
   employmentType?: HrisEmployeeEmploymentType | undefined;
   firstName?: string | undefined;
+  /**
+   * US Fair Labor Standards Act classification
+   */
+  flsaStatus?: FlsaStatus | undefined;
   gender?: HrisEmployeeGender | undefined;
   /**
    * Which groups/teams/units that this employee/user belongs to.  May not have all of the Group fields present, but should have id, name, or email.
    */
   groups?: Array<HrisGroup> | undefined;
+  /**
+   * does the user/employee have multi-factor authentication enabled
+   */
   hasMfa?: boolean | undefined;
+  /**
+   * The employee's start date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   hiredAt?: Date | undefined;
   id?: string | undefined;
+  /**
+   * This link expires after 1 hour.
+   */
   imageUrl?: string | undefined;
+  /**
+   * the hris_job (position) this employee holds; their primary job when they hold more than one
+   */
+  jobId?: string | undefined;
   languageLocale?: string | undefined;
   lastName?: string | undefined;
   locations?: Array<HrisLocation> | undefined;
@@ -130,24 +192,43 @@ export type HrisEmployee = {
   maritalStatus?: MaritalStatus | undefined;
   metadata?: Array<HrisMetadata> | undefined;
   name?: string | undefined;
+  /**
+   * how often the employee is paid (eg. BIWEEKLY)
+   */
+  payFrequency?: PayFrequency | undefined;
   pronouns?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * the employee's personal relationships (eg. emergency contacts, spouse, dependants, ...)
    */
   relationships?: Array<HrisEmployeerelationship> | undefined;
+  /**
+   * Mr. Mrs. Ms.
+   */
   salutation?: string | undefined;
   ssnSin?: string | undefined;
   storageQuotaAllocated?: number | undefined;
   storageQuotaAvailable?: number | undefined;
   storageQuotaUsed?: number | undefined;
   telephones?: Array<HrisTelephone> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   terminatedAt?: Date | undefined;
   terminationReason?: string | undefined;
+  /**
+   * Total time off allowance for the current leave period, in days (when reported by the provider)
+   */
   timeoffDaysTotal?: number | undefined;
+  /**
+   * Time off days used or booked in the current leave period (when reported by the provider)
+   */
   timeoffDaysUsed?: number | undefined;
   timezone?: string | undefined;
   title?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 
@@ -178,6 +259,19 @@ export const HrisEmployeeEmploymentType$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(HrisEmployeeEmploymentType);
 
 /** @internal */
+export const FlsaStatus$inboundSchema: z.ZodType<
+  FlsaStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(FlsaStatus);
+/** @internal */
+export const FlsaStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  FlsaStatus
+> = openEnums.outboundSchema(FlsaStatus);
+
+/** @internal */
 export const HrisEmployeeGender$inboundSchema: z.ZodType<
   HrisEmployeeGender,
   z.ZodTypeDef,
@@ -204,6 +298,19 @@ export const MaritalStatus$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(MaritalStatus);
 
 /** @internal */
+export const PayFrequency$inboundSchema: z.ZodType<
+  PayFrequency,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PayFrequency);
+/** @internal */
+export const PayFrequency$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  PayFrequency
+> = openEnums.outboundSchema(PayFrequency);
+
+/** @internal */
 export const HrisEmployee$inboundSchema: z.ZodType<
   HrisEmployee,
   z.ZodTypeDef,
@@ -226,6 +333,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   employment_status: EmploymentStatus$inboundSchema.optional(),
   employment_type: HrisEmployeeEmploymentType$inboundSchema.optional(),
   first_name: z.string().optional(),
+  flsa_status: FlsaStatus$inboundSchema.optional(),
   gender: HrisEmployeeGender$inboundSchema.optional(),
   groups: z.array(HrisGroup$inboundSchema).optional(),
   has_mfa: z.boolean().optional(),
@@ -233,6 +341,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   image_url: z.string().optional(),
+  job_id: z.string().optional(),
   language_locale: z.string().optional(),
   last_name: z.string().optional(),
   locations: z.array(HrisLocation$inboundSchema).optional(),
@@ -240,6 +349,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   marital_status: MaritalStatus$inboundSchema.optional(),
   metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
+  pay_frequency: PayFrequency$inboundSchema.optional(),
   pronouns: z.string().optional(),
   raw: z.record(z.any()).optional(),
   relationships: z.array(HrisEmployeerelationship$inboundSchema).optional(),
@@ -269,13 +379,16 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "employment_status": "employmentStatus",
     "employment_type": "employmentType",
     "first_name": "firstName",
+    "flsa_status": "flsaStatus",
     "has_mfa": "hasMfa",
     "hired_at": "hiredAt",
     "image_url": "imageUrl",
+    "job_id": "jobId",
     "language_locale": "languageLocale",
     "last_name": "lastName",
     "manager_id": "managerId",
     "marital_status": "maritalStatus",
+    "pay_frequency": "payFrequency",
     "ssn_sin": "ssnSin",
     "storage_quota_allocated": "storageQuotaAllocated",
     "storage_quota_available": "storageQuotaAvailable",
@@ -302,12 +415,14 @@ export type HrisEmployee$Outbound = {
   employment_status?: string | undefined;
   employment_type?: string | undefined;
   first_name?: string | undefined;
+  flsa_status?: string | undefined;
   gender?: string | undefined;
   groups?: Array<HrisGroup$Outbound> | undefined;
   has_mfa?: boolean | undefined;
   hired_at?: string | undefined;
   id?: string | undefined;
   image_url?: string | undefined;
+  job_id?: string | undefined;
   language_locale?: string | undefined;
   last_name?: string | undefined;
   locations?: Array<HrisLocation$Outbound> | undefined;
@@ -315,6 +430,7 @@ export type HrisEmployee$Outbound = {
   marital_status?: string | undefined;
   metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
+  pay_frequency?: string | undefined;
   pronouns?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   relationships?: Array<HrisEmployeerelationship$Outbound> | undefined;
@@ -353,12 +469,14 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   employmentStatus: EmploymentStatus$outboundSchema.optional(),
   employmentType: HrisEmployeeEmploymentType$outboundSchema.optional(),
   firstName: z.string().optional(),
+  flsaStatus: FlsaStatus$outboundSchema.optional(),
   gender: HrisEmployeeGender$outboundSchema.optional(),
   groups: z.array(HrisGroup$outboundSchema).optional(),
   hasMfa: z.boolean().optional(),
   hiredAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   imageUrl: z.string().optional(),
+  jobId: z.string().optional(),
   languageLocale: z.string().optional(),
   lastName: z.string().optional(),
   locations: z.array(HrisLocation$outboundSchema).optional(),
@@ -366,6 +484,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   maritalStatus: MaritalStatus$outboundSchema.optional(),
   metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
+  payFrequency: PayFrequency$outboundSchema.optional(),
   pronouns: z.string().optional(),
   raw: z.record(z.any()).optional(),
   relationships: z.array(HrisEmployeerelationship$outboundSchema).optional(),
@@ -392,13 +511,16 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     employmentStatus: "employment_status",
     employmentType: "employment_type",
     firstName: "first_name",
+    flsaStatus: "flsa_status",
     hasMfa: "has_mfa",
     hiredAt: "hired_at",
     imageUrl: "image_url",
+    jobId: "job_id",
     languageLocale: "language_locale",
     lastName: "last_name",
     managerId: "manager_id",
     maritalStatus: "marital_status",
+    payFrequency: "pay_frequency",
     ssnSin: "ssn_sin",
     storageQuotaAllocated: "storage_quota_allocated",
     storageQuotaAvailable: "storage_quota_available",

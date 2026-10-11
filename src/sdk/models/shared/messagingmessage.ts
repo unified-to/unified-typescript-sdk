@@ -52,9 +52,12 @@ export type MessagingMessage = {
   authorMember?: PropertyMessagingMessageAuthorMember | undefined;
   buttons?: Array<MessagingButton> | undefined;
   /**
-   * Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.
+   * Represents all channels to which the message is sent. Identifies the channels where the message is posted.  To send to the "Draft" channel/folder, use a channel ID "DRAFT".
    */
   channels?: Array<MessagingReference> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * for email systems, this field represents the To value
@@ -74,12 +77,24 @@ export type MessagingMessage = {
   message?: string | undefined;
   messageHtml?: string | undefined;
   messageMarkdown?: string | undefined;
+  /**
+   * the opaque identifier for the first message in a thread
+   */
   messageThreadIdentifier?: string | undefined;
+  /**
+   * Represents the ID of the immediate predecessor message in the thread. Identifies a specific message to which the current message directly replies.
+   */
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reactions?: Array<MessagingReaction> | undefined;
+  /**
+   * eg. RFC822 MessageID
+   */
   reference?: string | undefined;
   subject?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };

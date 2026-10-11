@@ -29,7 +29,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.85.49
+  version: 2.85.50
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -76,6 +76,7 @@ typescript:
   modelPropertyCasing: camel
   moduleFormat: dual
   multipartArrayFormat: legacy
+  numericEnumMemberNames: legacy
   outputModelSuffix: output
   packageName: '@unified-api/typescript-sdk'
   preApplyUnionDiscriminators: true

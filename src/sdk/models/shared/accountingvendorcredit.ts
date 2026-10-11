@@ -45,6 +45,9 @@ export type AccountingVendorcreditStatus = OpenEnum<
 >;
 
 export type AccountingVendorcredit = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   /**
    * What this vendor credit was applied to (invoices/bills). Writable inline on create/update.
@@ -53,19 +56,34 @@ export type AccountingVendorcredit = {
   applyAmount?: number | undefined;
   balanceAmount?: number | undefined;
   billId?: string | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: AccountingVendorcreditStatus | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

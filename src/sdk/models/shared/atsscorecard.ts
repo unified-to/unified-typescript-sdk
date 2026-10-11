@@ -28,6 +28,9 @@ export type AtsScorecard = {
   applicationId?: string | undefined;
   candidateId?: string | undefined;
   comment?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
   interviewId?: string | undefined;
@@ -36,6 +39,9 @@ export type AtsScorecard = {
   questions?: Array<AtsScorecardQuestion> | undefined;
   raw?: { [k: string]: any } | undefined;
   recommendation?: Recommendation | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -50,9 +50,18 @@ export type CalendarEventStatus = OpenEnum<typeof CalendarEventStatus>;
 export type CalendarEvent = {
   attachments?: Array<CalendarAttachment> | undefined;
   attendees?: Array<CalendarAttendee> | undefined;
+  /**
+   * (reference to CalendarCalendar)
+   */
   calendarId?: string | undefined;
   conference?: Array<CalendarConference> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: string | undefined;
   hasConference?: boolean | undefined;
   id?: string | undefined;
@@ -64,12 +73,21 @@ export type CalendarEvent = {
   organizer?: PropertyCalendarEventOrganizer | undefined;
   raw?: { [k: string]: any } | undefined;
   recurrence?: Array<CalendarEventRecurrence> | undefined;
+  /**
+   * (reference to CalendarEvent)
+   */
   recurringEventId?: string | undefined;
   sendNotifications?: boolean | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: string | undefined;
   status?: CalendarEventStatus | undefined;
   subject?: string | undefined;
   timezone?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: string | undefined;
   webUrl?: string | undefined;
 };

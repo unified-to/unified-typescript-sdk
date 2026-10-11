@@ -15,13 +15,25 @@ import {
 } from "./datastorefieldvalue.js";
 
 export type DatastoreRecord = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * source Database ID
+   */
   databaseId?: string | undefined;
   fields: { [k: string]: DatastoreFieldValue };
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   rowNumber?: number | undefined;
+  /**
+   * source Database Table ID
+   */
   tableId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -63,12 +63,14 @@ import { Deduction } from "./deduction.js";
 import { Destination } from "./destination.js";
 import { Device } from "./device.js";
 import { Document } from "./document.js";
+import { Earning } from "./earning.js";
 import { Embedding } from "./embedding.js";
 import { Employee } from "./employee.js";
 import { Enrich } from "./enrich.js";
 import { Environment } from "./environment.js";
 import { Event } from "./event.js";
 import { Expense } from "./expense.js";
+import { Expensereport } from "./expensereport.js";
 import { Feedback } from "./feedback.js";
 import { FileT } from "./file.js";
 import { Form } from "./form.js";
@@ -110,9 +112,11 @@ import { Organization } from "./organization.js";
 import { Package } from "./package.js";
 import { Page } from "./page.js";
 import { Passthrough } from "./passthrough.js";
+import { Paycode } from "./paycode.js";
 import { Payment } from "./payment.js";
 import { Paymentterm } from "./paymentterm.js";
 import { Payout } from "./payout.js";
+import { Payroll } from "./payroll.js";
 import { Payslip } from "./payslip.js";
 import { Performance } from "./performance.js";
 import { Person } from "./person.js";
@@ -126,6 +130,7 @@ import { Prompt } from "./prompt.js";
 import { Property } from "./property.js";
 import { Pullrequest } from "./pullrequest.js";
 import { Purchaseorder } from "./purchaseorder.js";
+import { Purchasereceipt } from "./purchasereceipt.js";
 import { Query } from "./query.js";
 import { Quote } from "./quote.js";
 import { Rate } from "./rate.js";
@@ -140,9 +145,11 @@ import { Reservation } from "./reservation.js";
 import { Review } from "./review.js";
 import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
+import { Salesreceipt } from "./salesreceipt.js";
 import { Saml } from "./saml.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
+import { Scorecardtemplate } from "./scorecardtemplate.js";
 import { Secretsmanager } from "./secretsmanager.js";
 import { Segment } from "./segment.js";
 import { Session } from "./session.js";
@@ -150,6 +157,7 @@ import { Shipment } from "./shipment.js";
 import { Shipping } from "./shipping.js";
 import { Signatory } from "./signatory.js";
 import { Signing } from "./signing.js";
+import { Skill } from "./skill.js";
 import { Social } from "./social.js";
 import { Source } from "./source.js";
 import { Space } from "./space.js";
@@ -247,6 +255,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._expense ??= new Expense(this._options));
   }
 
+  private _expensereport?: Expensereport;
+  get expensereport(): Expensereport {
+    return (this._expensereport ??= new Expensereport(this._options));
+  }
+
   private _invoice?: Invoice;
   get invoice(): Invoice {
     return (this._invoice ??= new Invoice(this._options));
@@ -287,6 +300,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._purchaseorder ??= new Purchaseorder(this._options));
   }
 
+  private _purchasereceipt?: Purchasereceipt;
+  get purchasereceipt(): Purchasereceipt {
+    return (this._purchasereceipt ??= new Purchasereceipt(this._options));
+  }
+
   private _quote?: Quote;
   get quote(): Quote {
     return (this._quote ??= new Quote(this._options));
@@ -295,6 +313,11 @@ export class UnifiedTo extends ClientSDK {
   private _salesorder?: Salesorder;
   get salesorder(): Salesorder {
     return (this._salesorder ??= new Salesorder(this._options));
+  }
+
+  private _salesreceipt?: Salesreceipt;
+  get salesreceipt(): Salesreceipt {
+    return (this._salesreceipt ??= new Salesreceipt(this._options));
   }
 
   private _taxrate?: Taxrate;
@@ -667,6 +690,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._prompt ??= new Prompt(this._options));
   }
 
+  private _skill?: Skill;
+  get skill(): Skill {
+    return (this._skill ??= new Skill(this._options));
+  }
+
   private _task?: Task;
   get task(): Task {
     return (this._task ??= new Task(this._options));
@@ -702,9 +730,24 @@ export class UnifiedTo extends ClientSDK {
     return (this._device ??= new Device(this._options));
   }
 
+  private _earning?: Earning;
+  get earning(): Earning {
+    return (this._earning ??= new Earning(this._options));
+  }
+
   private _employee?: Employee;
   get employee(): Employee {
     return (this._employee ??= new Employee(this._options));
+  }
+
+  private _paycode?: Paycode;
+  get paycode(): Paycode {
+    return (this._paycode ??= new Paycode(this._options));
+  }
+
+  private _payroll?: Payroll;
+  get payroll(): Payroll {
+    return (this._payroll ??= new Payroll(this._options));
   }
 
   private _payslip?: Payslip;
@@ -987,6 +1030,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._call ??= new Call(this._options));
   }
 
+  private _scorecardtemplate?: Scorecardtemplate;
+  get scorecardtemplate(): Scorecardtemplate {
+    return (this._scorecardtemplate ??= new Scorecardtemplate(this._options));
+  }
+
   private _unified?: Unified;
   get unified(): Unified {
     return (this._unified ??= new Unified(this._options));
@@ -1037,14 +1085,14 @@ export class UnifiedTo extends ClientSDK {
     return (this._notification ??= new Notification(this._options));
   }
 
-  private _webhook?: Webhook;
-  get webhook(): Webhook {
-    return (this._webhook ??= new Webhook(this._options));
-  }
-
   private _secretsmanager?: Secretsmanager;
   get secretsmanager(): Secretsmanager {
     return (this._secretsmanager ??= new Secretsmanager(this._options));
+  }
+
+  private _webhook?: Webhook;
+  get webhook(): Webhook {
+    return (this._webhook ??= new Webhook(this._options));
   }
 
   private _verification?: Verification;

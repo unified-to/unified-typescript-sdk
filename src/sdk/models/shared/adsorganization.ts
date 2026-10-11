@@ -29,7 +29,13 @@ export const AdsOrganizationStatus = {
 export type AdsOrganizationStatus = OpenEnum<typeof AdsOrganizationStatus>;
 
 export type AdsOrganization = {
+  /**
+   * Integration-specific account number distinct from id (Microsoft AccountNumber)
+   */
   accountNumber?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
@@ -42,6 +48,9 @@ export type AdsOrganization = {
   raw?: { [k: string]: any } | undefined;
   status?: AdsOrganizationStatus | undefined;
   timezone?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

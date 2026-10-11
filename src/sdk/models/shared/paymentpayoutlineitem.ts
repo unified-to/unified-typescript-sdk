@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * What this payout line settles
+ */
 export const PaymentPayoutLineitemObjectType = {
   Payment: "PAYMENT",
   Refund: "REFUND",
@@ -18,16 +21,37 @@ export const PaymentPayoutLineitemObjectType = {
   Transfer: "TRANSFER",
   Other: "OTHER",
 } as const;
+/**
+ * What this payout line settles
+ */
 export type PaymentPayoutLineitemObjectType = OpenEnum<
   typeof PaymentPayoutLineitemObjectType
 >;
 
 export type PaymentPayoutLineitem = {
+  /**
+   * Gross amount of this line
+   */
   amount?: number | undefined;
+  /**
+   * ISO 4217 currency code of the line amount
+   */
   currency?: string | undefined;
+  /**
+   * Processor fee attributed to this line
+   */
   feeAmount?: number | undefined;
+  /**
+   * amount minus fee_amount
+   */
   netAmount?: number | undefined;
+  /**
+   * id of the settled object -- a PaymentPayment or PaymentRefund for PAYMENT / REFUND lines
+   */
   objectId?: string | undefined;
+  /**
+   * What this payout line settles
+   */
   objectType?: PaymentPayoutLineitemObjectType | undefined;
 };
 

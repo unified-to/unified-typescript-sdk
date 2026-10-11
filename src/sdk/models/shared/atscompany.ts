@@ -22,6 +22,9 @@ import {
 
 export type AtsCompany = {
   address?: PropertyAtsCompanyAddress | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
@@ -30,6 +33,9 @@ export type AtsCompany = {
   phone?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   recruiterIds?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   websiteUrl?: string | undefined;
 };

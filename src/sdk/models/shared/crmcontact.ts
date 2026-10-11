@@ -37,11 +37,17 @@ import {
  */
 export type CrmContact = {
   address?: PropertyCrmContactAddress | undefined;
+  /**
+   * The companyorganization name  of the contact
+   */
   company?: string | undefined;
   /**
    * An array of company IDs associated with this contact
    */
   companyIds?: Array<string> | undefined;
+  /**
+   * The date that this contact object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * An array of deal IDs associated with this contact
@@ -53,6 +59,9 @@ export type CrmContact = {
    */
   emails?: Array<CrmEmail> | undefined;
   firstName?: string | undefined;
+  /**
+   * Unique identifier for this contact object
+   */
   id?: string | undefined;
   imageUrl?: string | undefined;
   lastName?: string | undefined;
@@ -61,14 +70,29 @@ export type CrmContact = {
    */
   linkUrls?: Array<string> | undefined;
   metadata?: Array<CrmMetadata> | undefined;
+  /**
+   * The name of the contact
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this contact
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * An array of telephones for this contact
    */
   telephones?: Array<CrmTelephone> | undefined;
+  /**
+   * The job title of the contact
+   */
   title?: string | undefined;
+  /**
+   * The last date that this contact object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

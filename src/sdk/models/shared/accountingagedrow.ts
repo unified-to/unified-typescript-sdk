@@ -19,7 +19,13 @@ import {
 export type AccountingAgedRow = {
   balanceAmount?: number | undefined;
   contact?: PropertyAccountingAgedRowContact | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
   totalAmount?: number | undefined;
   transaction?: PropertyAccountingAgedRowTransaction | undefined;

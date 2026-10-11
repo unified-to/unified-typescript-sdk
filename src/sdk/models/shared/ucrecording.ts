@@ -31,15 +31,37 @@ export type UcRecordingType = OpenEnum<typeof UcRecordingType>;
 export type UcRecording = {
   callId?: string | undefined;
   contacts?: Array<UcContact> | undefined;
+  /**
+   * opaque identifier shared across legs of one interaction
+   */
+  conversationIdentifier?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   expiresAt?: Date | undefined;
   id?: string | undefined;
   media?: Array<UcRecordingMedia> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   type?: UcRecordingType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * reference to HrisEmployee (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   userName?: string | undefined;
   userPhone?: string | undefined;
@@ -67,6 +89,7 @@ export const UcRecording$inboundSchema: z.ZodType<
 > = z.object({
   call_id: z.string().optional(),
   contacts: z.array(UcContact$inboundSchema).optional(),
+  conversation_identifier: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -88,6 +111,7 @@ export const UcRecording$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "call_id": "callId",
+    "conversation_identifier": "conversationIdentifier",
     "created_at": "createdAt",
     "end_at": "endAt",
     "expires_at": "expiresAt",
@@ -103,6 +127,7 @@ export const UcRecording$inboundSchema: z.ZodType<
 export type UcRecording$Outbound = {
   call_id?: string | undefined;
   contacts?: Array<UcContact$Outbound> | undefined;
+  conversation_identifier?: string | undefined;
   created_at?: string | undefined;
   end_at?: string | undefined;
   expires_at?: string | undefined;
@@ -126,6 +151,7 @@ export const UcRecording$outboundSchema: z.ZodType<
 > = z.object({
   callId: z.string().optional(),
   contacts: z.array(UcContact$outboundSchema).optional(),
+  conversationIdentifier: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   expiresAt: z.date().transform(v => v.toISOString()).optional(),
@@ -142,6 +168,7 @@ export const UcRecording$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     callId: "call_id",
+    conversationIdentifier: "conversation_identifier",
     createdAt: "created_at",
     endAt: "end_at",
     expiresAt: "expires_at",

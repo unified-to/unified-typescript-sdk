@@ -13,6 +13,9 @@ export type PropertyHrisLocationAddress = {
   address2?: string | undefined;
   city?: string | undefined;
   country?: string | undefined;
+  /**
+   * ISO 2-digit country code
+   */
   countryCode?: string | undefined;
   postalCode?: string | undefined;
   region?: string | undefined;

@@ -29,10 +29,25 @@ export type TaskTask = {
    * Array of attachment IDs retrieved from StorageFile.Get endpoint
    */
   attachmentIds?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   completedAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The user who created this task (reference to HrisEmployee)
+   */
   creatorUserId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
+  /**
+   * Scheduled/planned end of the task (distinct from due_at and completed_at) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   followerUserIds?: Array<string> | undefined;
   groupIds?: Array<string> | undefined;
@@ -43,16 +58,31 @@ export type TaskTask = {
   notes?: string | undefined;
   parentId?: string | undefined;
   priority?: string | undefined;
+  /**
+   * 0-100
+   */
   progress?: number | undefined;
+  /**
+   * (reference to TaskProject)
+   */
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Scheduled/planned start of the task (distinct from created_at) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: TaskTaskStatus | undefined;
   storyPoints?: number | undefined;
   tags?: Array<string> | undefined;
   timeSpent?: number | undefined;
   timeSpentUnit?: string | undefined;
+  /**
+   * The task/issue type name (e.g. Jira issue type).
+   */
   type?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   url?: string | undefined;
 };

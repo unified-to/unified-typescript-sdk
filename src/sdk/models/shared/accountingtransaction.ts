@@ -22,23 +22,38 @@ import {
   AccountingTransactionLineItem$outboundSchema,
 } from "./accountingtransactionlineitem.js";
 
+/**
+ * Posting state of the transaction
+ */
 export const AccountingTransactionStatus = {
   Pending: "PENDING",
   Posted: "POSTED",
   Void: "VOID",
   Other: "OTHER",
 } as const;
+/**
+ * Posting state of the transaction
+ */
 export type AccountingTransactionStatus = OpenEnum<
   typeof AccountingTransactionStatus
 >;
 
 export type AccountingTransaction = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   categoryIds?: Array<string> | undefined;
   contacts?: Array<AccountingTransactionContact> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   customerMessage?: string | undefined;
+  /**
+   * Exchange rate to the base/home currency at the transaction date
+   */
   exchangeRate?: number | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingTransactionLineItem> | undefined;
@@ -46,16 +61,37 @@ export type AccountingTransaction = {
   organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   paymentTerms?: string | undefined;
+  /**
+   * (reference to TaskProject)
+   */
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   splitAccountId?: string | undefined;
+  /**
+   * Posting state of the transaction
+   */
   status?: AccountingTransactionStatus | undefined;
   subTotalAmount?: number | undefined;
+  /**
+   * negative for CREDIT, positive for DEBIT
+   */
   taxAmount?: number | undefined;
+  /**
+   * negative for CREDIT, positive for DEBIT
+   */
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   transactionAt?: Date | undefined;
+  /**
+   * eg. CreditCardCharge, Check, Invoice, ReceivePayment, JournalEntry, Bill, CreditCardCredit, VendorCredit, Credit, BillPaymentCheck, BillPaymentCreditCard, Charge, Transfer, Deposit, BANK_DEPOSIT, BANK_TRANSFER, Statement, BillableCharge, TimeActivity, CashPurchase, SalesReceipt, CreditMemo, CreditRefund, Estimate, InventoryQuantityAdjustment, PurchaseOrder, GlobalTaxPayment, GlobalTaxAdjustment, Service Tax Refund, Service Tax Gross Adjustment, Service Tax Reversal, Service Tax Defer, Service Tax Partial Utilisation
+   */
   type?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

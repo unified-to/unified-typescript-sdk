@@ -21,6 +21,11 @@ export const GetHrisDeductionQueryParamFields = {
   EndAt: "end_at",
   IsActive: "is_active",
   Notes: "notes",
+  EmployerAmount: "employer_amount",
+  EmployerType: "employer_type",
+  MaxAmount: "max_amount",
+  PaycodeId: "paycode_id",
+  GarnishmentType: "garnishment_type",
   Raw: "raw",
 } as const;
 export type GetHrisDeductionQueryParamFields = ClosedEnum<

@@ -1,5 +1,7 @@
 # AccountingOrganizationType
 
+Entity type within a consolidation hierarchy
+
 ## Example Usage
 
 ```typescript

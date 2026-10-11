@@ -29,7 +29,7 @@ import { Result } from "../sdk/types/fp.js";
  * Create connection
  *
  * @remarks
- * Used only to import existing customer credentials; use "Authorize new connection" instead
+ * Used only to import existing customer credentials. To connect a new account, use the "Authorize or re-authorize a connection" auth URL instead. To change credentials on an existing connection, use "Update connection".
  */
 export function unifiedCreateUnifiedConnection(
   client: UnifiedToCore,

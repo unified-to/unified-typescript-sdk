@@ -80,14 +80,23 @@ export type TaxExemption = OpenEnum<typeof TaxExemption>;
 
 export type AccountingContact = {
   associatedContacts?: Array<AccountingAssociatedContact> | undefined;
+  /**
+   * Outstanding AR/AP balance for this contact
+   */
   balanceAmount?: number | undefined;
   billingAddress?: PropertyAccountingContactBillingAddress | undefined;
   companyName?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   emails?: Array<AccountingEmail> | undefined;
   firstName?: string | undefined;
   id?: string | undefined;
+  /**
+   * contact account numbers such as registration, A membership or identification reference to help to identify and search customers
+   */
   identification?: string | undefined;
   isActive?: boolean | undefined;
   isCustomer?: boolean | undefined;
@@ -99,12 +108,21 @@ export type AccountingContact = {
   paymentMethods?: Array<AccountingContactPaymentMethod> | undefined;
   paymentTerms?: AccountingContactPaymentTerms | undefined;
   paymenttermId?: string | undefined;
+  /**
+   * URL for the contact’s portal
+   */
   portalUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   shippingAddress?: PropertyAccountingContactShippingAddress | undefined;
   taxExemption?: TaxExemption | undefined;
+  /**
+   * The ID/number of the customer's tax number.  This is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global).
+   */
   taxNumber?: string | undefined;
   telephones?: Array<AccountingTelephone> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   website?: string | undefined;
 };

@@ -1,5 +1,7 @@
 # PropertyHrisPayslipDeductionCoverageLevel
 
+Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
+
 ## Example Usage
 
 ```typescript

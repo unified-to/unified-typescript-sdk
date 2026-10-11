@@ -84,21 +84,48 @@ export type Integration = {
     | boolean
     | Array<Integration1 | string | number | boolean>
     | undefined;
+  /**
+   * The URL of the integration's API documentation
+   */
   apiDocsUrl?: string | undefined;
+  /**
+   * This integration is new and is still considered "beta"
+   */
   beta?: boolean | undefined;
   /**
    * The categories of support solutions that this integration has
    */
   categories: Array<PropertyIntegrationCategories>;
+  /**
+   * button background color for AUTH
+   */
   color?: string | undefined;
+  /**
+   * Date that this integration was supported (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: string | undefined;
   description?: string | undefined;
+  /**
+   * font-awesome icon
+   */
   faIcon?: string | undefined;
   featured?: boolean | undefined;
+  /**
+   * If this integration is not yet available as it is currently being built by unified.to
+   */
   inProgress?: boolean | undefined;
+  /**
+   * Is this integration active in this workspace
+   */
   isActive?: boolean | undefined;
   isHidden?: boolean | undefined;
+  /**
+   * The URL of the integration's logo
+   */
   logoUrl?: string | undefined;
+  /**
+   * The integration's name
+   */
   name: string;
   partnership?:
     | { [k: string]: any }
@@ -109,6 +136,9 @@ export type Integration = {
     | undefined;
   popularity?: number | undefined;
   rateLimitDescription?: string | undefined;
+  /**
+   * OAuth requires a custom API domain (CNAME) for provider verification
+   */
   requiresCname?: boolean | undefined;
   saml?:
     | { [k: string]: any }
@@ -125,7 +155,13 @@ export type Integration = {
     | Array<IntegrationSchemasSandbox1 | string | number | boolean>
     | undefined;
   support?: { [k: string]: IntegrationSupport } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   testedAt?: Date | undefined;
+  /**
+   * text color for AUTH
+   */
   textColor?: string | undefined;
   /**
    * instructions for the user on how to find the token/key
@@ -135,8 +171,17 @@ export type Integration = {
    * if auth_types = 'token'
    */
   tokenNames?: Array<string> | undefined;
+  /**
+   * Identifier for this integration
+   */
   type: string;
+  /**
+   * YYYY-MM-DD (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: string | undefined;
+  /**
+   * URL for the software vendor
+   */
   webUrl?: string | undefined;
 };
 

@@ -9,14 +9,41 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ShippingCarrier = {
+  /**
+   * Carrier code (e.g., "usps", "fedex", "ups")
+   */
   code?: string | undefined;
+  /**
+   * The date that this carrier object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Unique identifier for this carrier object
+   */
   id?: string | undefined;
+  /**
+   * Whether the carrier is currently active
+   */
   isActive?: boolean | undefined;
+  /**
+   * Carrier logo URL
+   */
   logoUrl?: string | undefined;
+  /**
+   * The name of the carrier
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this carrier
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The last date that this carrier object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Carrier website
+   */
   websiteUrl?: string | undefined;
 };
 

@@ -27,10 +27,10 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Authorize new connection
+ * Authorize or re-authorize a connection
  *
  * @remarks
- * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+ * Returns an authorization URL for the specified integration. After successful authorization, a new connection is created unless connection_id and reauth_token are provided, in which case the existing connection is updated in place.
  */
 export function unifiedGetUnifiedIntegrationAuth(
   client: UnifiedToCore,
@@ -104,10 +104,12 @@ async function $do(
   )(pathParams);
 
   const query = encodeFormQuery({
+    "connection_id": payload.connection_id,
     "env": payload.env,
     "external_xref": payload.external_xref,
     "failure_redirect": payload.failure_redirect,
     "lang": payload.lang,
+    "reauth_token": payload.reauth_token,
     "redirect": payload.redirect,
     "region": payload.region,
     "scopes": payload.scopes,

@@ -11,10 +11,14 @@
 * [getUcComment](#getuccomment) - Retrieve a comment
 * [getUcContact](#getuccontact) - Retrieve a contact
 * [getUcRecording](#getucrecording) - Retrieve a recording
+* [getUcScorecard](#getucscorecard) - Retrieve a scorecard
+* [getUcScorecardtemplate](#getucscorecardtemplate) - Retrieve a scorecardtemplate
 * [listUcCalls](#listuccalls) - List all calls
 * [listUcComments](#listuccomments) - List all comments
 * [listUcContacts](#listuccontacts) - List all contacts
 * [listUcRecordings](#listucrecordings) - List all recordings
+* [listUcScorecards](#listucscorecards) - List all scorecards
+* [listUcScorecardtemplates](#listucscorecardtemplates) - List all scorecardtemplates
 * [patchUcComment](#patchuccomment) - Update a comment
 * [patchUcContact](#patchuccontact) - Update a contact
 * [patchUcRecording](#patchucrecording) - Update a recording
@@ -46,8 +50,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "d421c4ff-cae4-4a9f-82dc-4b463f68c6e2",
-      updatedAt: "2024-02-02T11:40:40.170Z",
+      id: "fc6270af-bd1b-498b-84a1-417a917e6b23",
+      updatedAt: "2024-02-07T08:38:42.961Z",
     },
     connectionId: "<id>",
   });
@@ -79,8 +83,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "d421c4ff-cae4-4a9f-82dc-4b463f68c6e2",
-      updatedAt: "2024-02-02T11:40:40.170Z",
+      id: "fc6270af-bd1b-498b-84a1-417a917e6b23",
+      updatedAt: "2024-02-07T08:38:42.961Z",
     },
     connectionId: "<id>",
   });
@@ -142,7 +146,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "a07b6979-089e-4649-be28-728229ad5c33",
+      id: "31fb04bf-aa72-4a3f-8368-1a735f9cbb23",
       lastName: "Rogahn",
       name: "Luther Rogahn",
       telephones: [
@@ -160,7 +164,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-11-20T14:03:27.338Z"),
+      updatedAt: new Date("2023-12-02T11:46:56.959Z"),
     },
     connectionId: "<id>",
   });
@@ -199,7 +203,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "a07b6979-089e-4649-be28-728229ad5c33",
+      id: "31fb04bf-aa72-4a3f-8368-1a735f9cbb23",
       lastName: "Rogahn",
       name: "Luther Rogahn",
       telephones: [
@@ -217,7 +221,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-11-20T14:03:27.338Z"),
+      updatedAt: new Date("2023-12-02T11:46:56.959Z"),
     },
     connectionId: "<id>",
   });
@@ -271,34 +275,35 @@ async function run() {
   const result = await unifiedTo.uc.createUcRecording({
     ucRecording: {
       contacts: [],
+      conversationIdentifier: "2e7a6215-9283-4485-97f2-7432efab202c",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-04-22T23:09:58.257Z"),
-      expiresAt: new Date("2026-03-31T03:31:56.772Z"),
-      id: "8b9b82d0-2e7d-4849-acf6-98a4606897db",
+      endAt: new Date("2024-05-01T00:22:00.036Z"),
+      expiresAt: new Date("2026-04-17T23:01:40.794Z"),
+      id: "2e7a6215-9283-4485-97f2-7432efab202c",
       media: [
         {
-          endAt: new Date("2024-03-21T10:55:57.895Z"),
+          endAt: new Date("2024-03-29T01:21:45.031Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-04-18T10:32:22.668Z"),
+          startAt: new Date("2026-05-06T12:05:43.683Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-01-30T03:04:30.679Z"),
-              startAt: new Date("2024-05-20T15:35:59.030Z"),
+              endAt: new Date("2026-02-16T02:41:09.438Z"),
+              startAt: new Date("2024-05-29T01:58:20.637Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-09-27T06:32:59.084Z"),
-              startAt: new Date("2026-07-05T06:34:34.659Z"),
+              endAt: new Date("2024-10-07T11:52:03.109Z"),
+              startAt: new Date("2026-07-24T09:55:10.013Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
-      startAt: new Date("2023-04-23T06:23:46.157Z"),
+      startAt: new Date("2023-04-26T06:26:15.747Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-02-26T01:19:09.006Z"),
+      updatedAt: new Date("2025-03-10T08:55:24.859Z"),
       userName: "Melyna Larson",
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
@@ -332,34 +337,35 @@ async function run() {
   const res = await recordingCreateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
+      conversationIdentifier: "2e7a6215-9283-4485-97f2-7432efab202c",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-04-22T23:09:58.257Z"),
-      expiresAt: new Date("2026-03-31T03:31:56.772Z"),
-      id: "8b9b82d0-2e7d-4849-acf6-98a4606897db",
+      endAt: new Date("2024-05-01T00:22:00.036Z"),
+      expiresAt: new Date("2026-04-17T23:01:40.794Z"),
+      id: "2e7a6215-9283-4485-97f2-7432efab202c",
       media: [
         {
-          endAt: new Date("2024-03-21T10:55:57.895Z"),
+          endAt: new Date("2024-03-29T01:21:45.031Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-04-18T10:32:22.668Z"),
+          startAt: new Date("2026-05-06T12:05:43.683Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-01-30T03:04:30.679Z"),
-              startAt: new Date("2024-05-20T15:35:59.030Z"),
+              endAt: new Date("2026-02-16T02:41:09.438Z"),
+              startAt: new Date("2024-05-29T01:58:20.637Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-09-27T06:32:59.084Z"),
-              startAt: new Date("2026-07-05T06:34:34.659Z"),
+              endAt: new Date("2024-10-07T11:52:03.109Z"),
+              startAt: new Date("2026-07-24T09:55:10.013Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
-      startAt: new Date("2023-04-23T06:23:46.157Z"),
+      startAt: new Date("2023-04-26T06:26:15.747Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-02-26T01:19:09.006Z"),
+      updatedAt: new Date("2025-03-10T08:55:24.859Z"),
       userName: "Melyna Larson",
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
@@ -712,6 +718,164 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getUcScorecard
+
+Retrieve a scorecard
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getUcScorecard" method="get" path="/uc/{connection_id}/scorecard/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.getUcScorecard({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { scorecardGetUcScorecard } from "@unified-api/typescript-sdk/funcs/scorecardGetUcScorecard.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await scorecardGetUcScorecard(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("scorecardGetUcScorecard failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetUcScorecardRequest](../../sdk/models/operations/getucscorecardrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcScorecard](../../sdk/models/shared/ucscorecard.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getUcScorecardtemplate
+
+Retrieve a scorecardtemplate
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getUcScorecardtemplate" method="get" path="/uc/{connection_id}/scorecardtemplate/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.getUcScorecardtemplate({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { ucGetUcScorecardtemplate } from "@unified-api/typescript-sdk/funcs/ucGetUcScorecardtemplate.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await ucGetUcScorecardtemplate(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ucGetUcScorecardtemplate failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetUcScorecardtemplateRequest](../../sdk/models/operations/getucscorecardtemplaterequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcScorecardtemplate](../../sdk/models/shared/ucscorecardtemplate.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listUcCalls
 
 List all calls
@@ -1020,6 +1184,160 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listUcScorecards
+
+List all scorecards
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listUcScorecards" method="get" path="/uc/{connection_id}/scorecard" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.listUcScorecards({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { scorecardListUcScorecards } from "@unified-api/typescript-sdk/funcs/scorecardListUcScorecards.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await scorecardListUcScorecards(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("scorecardListUcScorecards failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListUcScorecardsRequest](../../sdk/models/operations/listucscorecardsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcScorecard[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listUcScorecardtemplates
+
+List all scorecardtemplates
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listUcScorecardtemplates" method="get" path="/uc/{connection_id}/scorecardtemplate" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.listUcScorecardtemplates({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { ucListUcScorecardtemplates } from "@unified-api/typescript-sdk/funcs/ucListUcScorecardtemplates.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await ucListUcScorecardtemplates(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ucListUcScorecardtemplates failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListUcScorecardtemplatesRequest](../../sdk/models/operations/listucscorecardtemplatesrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcScorecardtemplate[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchUcComment
 
 Update a comment
@@ -1041,8 +1359,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
-      updatedAt: "2024-02-02T11:40:40.172Z",
+      id: "73d793f2-5f14-4302-8493-7d95a2346b41",
+      updatedAt: "2024-02-07T08:38:42.962Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1075,8 +1393,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
-      updatedAt: "2024-02-02T11:40:40.172Z",
+      id: "73d793f2-5f14-4302-8493-7d95a2346b41",
+      updatedAt: "2024-02-07T08:38:42.962Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1139,7 +1457,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+      id: "00486aef-8875-463a-8659-4aefd5642aa0",
       lastName: "Rogahn",
       name: "Luther Rogahn",
       telephones: [
@@ -1157,7 +1475,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-11-20T14:03:27.344Z"),
+      updatedAt: new Date("2023-12-02T11:46:56.965Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1197,7 +1515,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+      id: "00486aef-8875-463a-8659-4aefd5642aa0",
       lastName: "Rogahn",
       name: "Luther Rogahn",
       telephones: [
@@ -1215,7 +1533,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-11-20T14:03:27.344Z"),
+      updatedAt: new Date("2023-12-02T11:46:56.965Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1270,34 +1588,35 @@ async function run() {
   const result = await unifiedTo.uc.patchUcRecording({
     ucRecording: {
       contacts: [],
+      conversationIdentifier: "5bba1e37-d623-4332-bed9-2a60befe0081",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-04-22T23:09:58.269Z"),
-      expiresAt: new Date("2026-03-31T03:31:56.797Z"),
-      id: "76e6eeb7-e7fc-4942-a26e-c387b757090d",
+      endAt: new Date("2024-05-01T00:22:00.045Z"),
+      expiresAt: new Date("2026-04-17T23:01:40.814Z"),
+      id: "5bba1e37-d623-4332-bed9-2a60befe0081",
       media: [
         {
-          endAt: new Date("2024-03-21T10:55:57.906Z"),
+          endAt: new Date("2024-03-29T01:21:45.040Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-04-18T10:32:22.694Z"),
+          startAt: new Date("2026-05-06T12:05:43.704Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-01-30T03:04:30.702Z"),
-              startAt: new Date("2024-05-20T15:35:59.042Z"),
+              endAt: new Date("2026-02-16T02:41:09.457Z"),
+              startAt: new Date("2024-05-29T01:58:20.646Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-09-27T06:32:59.098Z"),
-              startAt: new Date("2026-07-05T06:34:34.685Z"),
+              endAt: new Date("2024-10-07T11:52:03.120Z"),
+              startAt: new Date("2026-07-24T09:55:10.033Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
-      startAt: new Date("2023-04-23T06:23:46.161Z"),
+      startAt: new Date("2023-04-26T06:26:15.750Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-02-26T01:19:09.024Z"),
+      updatedAt: new Date("2025-03-10T08:55:24.873Z"),
       userName: "Melyna Larson",
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
@@ -1332,34 +1651,35 @@ async function run() {
   const res = await recordingPatchUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
+      conversationIdentifier: "5bba1e37-d623-4332-bed9-2a60befe0081",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-04-22T23:09:58.269Z"),
-      expiresAt: new Date("2026-03-31T03:31:56.797Z"),
-      id: "76e6eeb7-e7fc-4942-a26e-c387b757090d",
+      endAt: new Date("2024-05-01T00:22:00.045Z"),
+      expiresAt: new Date("2026-04-17T23:01:40.814Z"),
+      id: "5bba1e37-d623-4332-bed9-2a60befe0081",
       media: [
         {
-          endAt: new Date("2024-03-21T10:55:57.906Z"),
+          endAt: new Date("2024-03-29T01:21:45.040Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-04-18T10:32:22.694Z"),
+          startAt: new Date("2026-05-06T12:05:43.704Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-01-30T03:04:30.702Z"),
-              startAt: new Date("2024-05-20T15:35:59.042Z"),
+              endAt: new Date("2026-02-16T02:41:09.457Z"),
+              startAt: new Date("2024-05-29T01:58:20.646Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-09-27T06:32:59.098Z"),
-              startAt: new Date("2026-07-05T06:34:34.685Z"),
+              endAt: new Date("2024-10-07T11:52:03.120Z"),
+              startAt: new Date("2026-07-24T09:55:10.033Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
-      startAt: new Date("2023-04-23T06:23:46.161Z"),
+      startAt: new Date("2023-04-26T06:26:15.750Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-02-26T01:19:09.024Z"),
+      updatedAt: new Date("2025-03-10T08:55:24.873Z"),
       userName: "Melyna Larson",
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
@@ -1655,8 +1975,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
-      updatedAt: "2024-02-02T11:40:40.172Z",
+      id: "73d793f2-5f14-4302-8493-7d95a2346b41",
+      updatedAt: "2024-02-07T08:38:42.962Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1689,8 +2009,8 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
-      updatedAt: "2024-02-02T11:40:40.172Z",
+      id: "73d793f2-5f14-4302-8493-7d95a2346b41",
+      updatedAt: "2024-02-07T08:38:42.962Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1753,7 +2073,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+      id: "00486aef-8875-463a-8659-4aefd5642aa0",
       lastName: "Rogahn",
       name: "Luther Rogahn",
       telephones: [
@@ -1771,7 +2091,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-11-20T14:03:27.344Z"),
+      updatedAt: new Date("2023-12-02T11:46:56.965Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1811,7 +2131,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+      id: "00486aef-8875-463a-8659-4aefd5642aa0",
       lastName: "Rogahn",
       name: "Luther Rogahn",
       telephones: [
@@ -1829,7 +2149,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-11-20T14:03:27.344Z"),
+      updatedAt: new Date("2023-12-02T11:46:56.965Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1884,34 +2204,35 @@ async function run() {
   const result = await unifiedTo.uc.updateUcRecording({
     ucRecording: {
       contacts: [],
+      conversationIdentifier: "5bba1e37-d623-4332-bed9-2a60befe0081",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-04-22T23:09:58.269Z"),
-      expiresAt: new Date("2026-03-31T03:31:56.797Z"),
-      id: "76e6eeb7-e7fc-4942-a26e-c387b757090d",
+      endAt: new Date("2024-05-01T00:22:00.045Z"),
+      expiresAt: new Date("2026-04-17T23:01:40.814Z"),
+      id: "5bba1e37-d623-4332-bed9-2a60befe0081",
       media: [
         {
-          endAt: new Date("2024-03-21T10:55:57.906Z"),
+          endAt: new Date("2024-03-29T01:21:45.040Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-04-18T10:32:22.694Z"),
+          startAt: new Date("2026-05-06T12:05:43.704Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-01-30T03:04:30.702Z"),
-              startAt: new Date("2024-05-20T15:35:59.042Z"),
+              endAt: new Date("2026-02-16T02:41:09.457Z"),
+              startAt: new Date("2024-05-29T01:58:20.646Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-09-27T06:32:59.098Z"),
-              startAt: new Date("2026-07-05T06:34:34.685Z"),
+              endAt: new Date("2024-10-07T11:52:03.120Z"),
+              startAt: new Date("2026-07-24T09:55:10.033Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
-      startAt: new Date("2023-04-23T06:23:46.161Z"),
+      startAt: new Date("2023-04-26T06:26:15.750Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-02-26T01:19:09.024Z"),
+      updatedAt: new Date("2025-03-10T08:55:24.873Z"),
       userName: "Melyna Larson",
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
@@ -1946,34 +2267,35 @@ async function run() {
   const res = await recordingUpdateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
+      conversationIdentifier: "5bba1e37-d623-4332-bed9-2a60befe0081",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-04-22T23:09:58.269Z"),
-      expiresAt: new Date("2026-03-31T03:31:56.797Z"),
-      id: "76e6eeb7-e7fc-4942-a26e-c387b757090d",
+      endAt: new Date("2024-05-01T00:22:00.045Z"),
+      expiresAt: new Date("2026-04-17T23:01:40.814Z"),
+      id: "5bba1e37-d623-4332-bed9-2a60befe0081",
       media: [
         {
-          endAt: new Date("2024-03-21T10:55:57.906Z"),
+          endAt: new Date("2024-03-29T01:21:45.040Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-04-18T10:32:22.694Z"),
+          startAt: new Date("2026-05-06T12:05:43.704Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-01-30T03:04:30.702Z"),
-              startAt: new Date("2024-05-20T15:35:59.042Z"),
+              endAt: new Date("2026-02-16T02:41:09.457Z"),
+              startAt: new Date("2024-05-29T01:58:20.646Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-09-27T06:32:59.098Z"),
-              startAt: new Date("2026-07-05T06:34:34.685Z"),
+              endAt: new Date("2024-10-07T11:52:03.120Z"),
+              startAt: new Date("2026-07-24T09:55:10.033Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
-      startAt: new Date("2023-04-23T06:23:46.161Z"),
+      startAt: new Date("2023-04-26T06:26:15.750Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-02-26T01:19:09.024Z"),
+      updatedAt: new Date("2025-03-10T08:55:24.873Z"),
       userName: "Melyna Larson",
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",

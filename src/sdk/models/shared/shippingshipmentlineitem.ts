@@ -9,12 +9,33 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ShippingShipmentLineitem = {
+  /**
+   * Unique identifier for this fulfillment line
+   */
   id?: string | undefined;
+  /**
+   * Reference to the CommerceItem being fulfilled (reference to CommerceItem)
+   */
   itemId?: string | undefined;
+  /**
+   * Item name (for display)
+   */
   itemName?: string | undefined;
+  /**
+   * Reference to the CommerceItemvariant being fulfilled (reference to CommerceCommerceItemvariant)
+   */
   itemVariantId?: string | undefined;
+  /**
+   * The order line being fulfilled
+   */
   orderLineitemId?: string | undefined;
+  /**
+   * Units fulfilled on this line
+   */
   quantity?: number | undefined;
+  /**
+   * Item SKU
+   */
   sku?: string | undefined;
 };
 

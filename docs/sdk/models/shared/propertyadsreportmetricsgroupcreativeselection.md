@@ -1,5 +1,7 @@
 # PropertyAdsReportMetricsGroupCreativeSelection
 
+Creative rotation strategy (LinkedIn creativeSelection)
+
 ## Example Usage
 
 ```typescript

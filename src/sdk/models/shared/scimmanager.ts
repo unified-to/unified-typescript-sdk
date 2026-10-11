@@ -20,10 +20,22 @@ export type ScimManagerType = OpenEnum<typeof ScimManagerType>;
  * "id" attribute of another User.
  */
 export type ScimManager = {
+  /**
+   * The URI of the SCIM resource representing the User's manager.  RECOMMENDED.
+   */
   dollarRef?: string | undefined;
+  /**
+   * The displayName of the user's manager.  This attribute is OPTIONAL, and mutability is "readOnly".
+   */
   displayName?: string | undefined;
+  /**
+   * alias for value?
+   */
   managerId?: string | undefined;
   type?: ScimManagerType | undefined;
+  /**
+   * The "id" of the SCIM resource representing the user's manager.  RECOMMENDED.
+   */
   value?: string | undefined;
 };
 

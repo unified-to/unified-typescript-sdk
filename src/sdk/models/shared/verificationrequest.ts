@@ -39,44 +39,83 @@ export type VerificationRequestProfileGender = OpenEnum<
   typeof VerificationRequestProfileGender
 >;
 
+/**
+ * Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO
+ */
 export const VerificationRequestResponseStatus = {
   Completed: "COMPLETED",
   Failed: "FAILED",
   Passed: "PASSED",
   Pending: "PENDING",
 } as const;
+/**
+ * Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO
+ */
 export type VerificationRequestResponseStatus = OpenEnum<
   typeof VerificationRequestResponseStatus
 >;
 
 export type VerificationRequest = {
+  /**
+   * points to ATS Candidate
+   */
   candidateId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
   packageId?: string | undefined;
   parameters?: Array<VerificationParameterInput> | undefined;
   profileAddresses?: Array<VerificationAddress> | undefined;
+  /**
+   * YYYY-MM-DD
+   */
   profileDateOfBirth?: string | undefined;
   profileEmails?: Array<string> | undefined;
   profileGender?: VerificationRequestProfileGender | undefined;
+  /**
+   * XXX.XXX.XXX.XXX
+   */
   profileIpAddress?: string | undefined;
   profileName?: string | undefined;
   profileNationalIdentifier?: string | undefined;
   profileTelephones?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   responseCompletedAt?: Date | undefined;
   responseDetails?: Array<VerificationResponseDetail> | undefined;
   /**
    * report download
    */
   responseDownloadUrls?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   responseExpiresAt?: Date | undefined;
+  /**
+   * datetime that identify was issued (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   responseIssuedAt?: Date | undefined;
+  /**
+   * Most modern IDV providers (like Onfido, Veriff, Jumio, ID.me). Background Check Providers, such as Checkr, GoodHire, Sterling, and HireRight. Credit bureaus and services often require direct user consent and information. This allows them to properly handle disclosures required by regulations like FCRA. Employment and Education Verification need users to confirm previous employers and schools.
+   */
   responseRedirectUrl?: string | undefined;
+  /**
+   * Identity verification services provide confidence scores (e.g., 0-100), Credit checks return specific numeric scores (e.g., FICO score 300-850), Fraud prevention tools use risk scores (e.g., 1-999)
+   */
   responseScore?: number | undefined;
   responseSource?: string | undefined;
+  /**
+   * Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO
+   */
   responseStatus?: VerificationRequestResponseStatus | undefined;
   targetUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

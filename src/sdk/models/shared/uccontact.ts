@@ -24,22 +24,43 @@ import {
  * A contact represents a person that optionally is associated with a call
  */
 export type UcContact = {
+  /**
+   * The company/organization name  of the contact
+   */
   company?: string | undefined;
+  /**
+   * The date that this contact object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * An array of email addresses for this contact
    */
   emails?: Array<UcEmail> | undefined;
   firstName?: string | undefined;
+  /**
+   * Unique identifier for this contact object
+   */
   id?: string | undefined;
   lastName?: string | undefined;
+  /**
+   * The name of the contact
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this contact
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * An array of telephones for this contact
    */
   telephones?: Array<UcTelephone> | undefined;
+  /**
+   * The job title of the contact
+   */
   title?: string | undefined;
+  /**
+   * The last date that this contact object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

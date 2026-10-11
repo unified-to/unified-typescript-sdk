@@ -37,23 +37,50 @@ export const HrisTimeoffType = {
 export type HrisTimeoffType = OpenEnum<typeof HrisTimeoffType>;
 
 export type HrisTimeoff = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   approvedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   approverUserId?: string | undefined;
   comments?: string | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   duration?: number | undefined;
   durationType?: DurationType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   id?: string | undefined;
   isPaid?: boolean | undefined;
+  /**
+   * integration leave-type label before normalization
+   */
   originalType?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reason?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: HrisTimeoffStatus | undefined;
   type?: HrisTimeoffType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * employee ID (reference to HrisEmployee)
+   */
   userId: string;
 };
 

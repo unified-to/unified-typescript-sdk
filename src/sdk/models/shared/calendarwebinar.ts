@@ -48,10 +48,19 @@ export const CalendarWebinarStatus = {
 export type CalendarWebinarStatus = OpenEnum<typeof CalendarWebinarStatus>;
 
 export type CalendarWebinar = {
+  /**
+   * (reference to CalendarCalendar)
+   */
   calendarId?: string | undefined;
   capacity?: number | undefined;
   conference?: Array<CalendarConference> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   hasPolls?: boolean | undefined;
   hasQa?: boolean | undefined;
@@ -76,11 +85,20 @@ export type CalendarWebinar = {
   requireJobTitle?: boolean | undefined;
   requireLastName?: boolean | undefined;
   requirePhone?: boolean | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: CalendarWebinarStatus | undefined;
   subject?: string | undefined;
   timezone?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * information
+   */
   webUrl?: string | undefined;
 };
 

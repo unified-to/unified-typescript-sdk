@@ -8,8 +8,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AtsScorecardQuestion = {
+  /**
+   * Candidate’s answer to the question
+   */
   answer?: string | undefined;
   description?: string | undefined;
+  /**
+   * The question to ask the interviewer
+   */
   text: string;
 };
 

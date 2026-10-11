@@ -36,20 +36,56 @@ export type Connection = {
    * The Integration categories that this connection supports
    */
   categories: Array<PropertyConnectionCategories>;
+  /**
+   * The date that this integration object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   environment?: string | undefined;
+  /**
+   * customer's user ID
+   */
   externalXref?: string | undefined;
+  /**
+   * Unique identifier for this integration object
+   */
   id?: string | undefined;
   integrationName?: string | undefined;
+  /**
+   * The integration type
+   */
   integrationType: string;
+  /**
+   * Whether this integration has exceed the monthly limit of the plan
+   */
   isPaused?: boolean | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   lastHealthyAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   lastUnhealthyAt?: Date | undefined;
+  /**
+   * The HTTP status code that caused the last unhealthy status
+   */
   lastUnhealthyCode?: string | undefined;
   permissions: Array<PropertyConnectionPermissions>;
+  /**
+   * the ID of the SecretsManager object
+   */
   secretsmanagerId?: string | undefined;
+  /**
+   * the key/path/name of the secret within the vault
+   */
   secretsmanagerKey?: string | undefined;
+  /**
+   * The last date that this integration object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to KmsSpace)
+   */
   workspaceId?: string | undefined;
 };
 

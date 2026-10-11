@@ -11,5 +11,5 @@ let value: ListGenaiModelsQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"id" | "name" | "description" | "max_tokens" | "web_url" | "has_temperature" | "raw"
+"id" | "name" | "description" | "max_tokens" | "web_url" | "has_temperature" | "has_questions" | "has_vision" | "raw"
 ```

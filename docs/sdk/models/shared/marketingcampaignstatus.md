@@ -1,5 +1,7 @@
 # MarketingCampaignStatus
 
+Campaign status
+
 ## Example Usage
 
 ```typescript

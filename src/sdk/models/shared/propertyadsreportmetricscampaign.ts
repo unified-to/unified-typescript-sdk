@@ -64,6 +64,9 @@ export type PropertyAdsReportMetricsCampaignBudgetUnit = OpenEnum<
   typeof PropertyAdsReportMetricsCampaignBudgetUnit
 >;
 
+/**
+ * read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status
+ */
 export const PropertyAdsReportMetricsCampaignEffectiveStatus = {
   Unspecified: "UNSPECIFIED",
   Serving: "SERVING",
@@ -77,6 +80,9 @@ export const PropertyAdsReportMetricsCampaignEffectiveStatus = {
   Archived: "ARCHIVED",
   Removed: "REMOVED",
 } as const;
+/**
+ * read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status
+ */
 export type PropertyAdsReportMetricsCampaignEffectiveStatus = OpenEnum<
   typeof PropertyAdsReportMetricsCampaignEffectiveStatus
 >;
@@ -116,11 +122,26 @@ export type PropertyAdsReportMetricsCampaign = {
   budgetAmount?: number | undefined;
   budgetPeriod?: PropertyAdsReportMetricsCampaignBudgetPeriod | undefined;
   budgetUnit?: PropertyAdsReportMetricsCampaignBudgetUnit | undefined;
+  /**
+   * Resource name for existing/shared budget (Google)
+   */
   campaignBudgetIdentifier?: string | undefined;
+  /**
+   * Housing, employment, credit, NONE (Meta)
+   */
   category?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status
+   */
   effectiveStatus?: PropertyAdsReportMetricsCampaignEffectiveStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsReportMetricsCampaignFrequencyCap | undefined;
   goal?: PropertyAdsReportMetricsCampaignGoal | undefined;
@@ -132,10 +153,16 @@ export type PropertyAdsReportMetricsCampaign = {
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: PropertyAdsReportMetricsCampaignStatus | undefined;
   targeting?: PropertyAdsReportMetricsCampaignTargeting | undefined;
   totalSpendAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

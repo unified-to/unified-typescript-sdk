@@ -19,12 +19,21 @@ export type CommerceSaleschannel = {
    * points to a CommerceCollection
    */
   collections?: Array<CommerceReference> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * maps to code (name)  a stable identifier per channel
+   */
   slug?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -1,5 +1,7 @@
 # ShippingTrackingEventStatus
 
+Status at the time of this event
+
 ## Example Usage
 
 ```typescript

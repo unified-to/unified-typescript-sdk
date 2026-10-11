@@ -29,29 +29,77 @@ export const HrisAttendanceStatus = {
 } as const;
 export type HrisAttendanceStatus = OpenEnum<typeof HrisAttendanceStatus>;
 
+/**
+ * Also called timesheets
+ */
 export type HrisAttendance = {
   address?: PropertyHrisAttendanceAddress | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   approvedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   approverUserId?: string | undefined;
   breaks?: Array<HrisAttendanceBreak> | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * pairs with hourly_rate and tip amounts
+   */
   currency?: string | undefined;
+  /**
+   * cash tips declared by the employee for this attendance record
+   */
   declaredTipsAmount?: number | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   employeeUserId: string;
+  /**
+   * clock-out (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt: Date;
+  /**
+   * department, team, etc. (reference to HrisGroup)
+   */
   groupId?: string | undefined;
   hourlyRate?: number | undefined;
+  /**
+   * worked hours
+   */
   hours?: number | undefined;
   id?: string | undefined;
   jobName?: string | undefined;
+  /**
+   * (reference to HrisLocation)
+   */
   locationId?: string | undefined;
+  /**
+   * card/non-cash tips attributed to this attendance record
+   */
   nonCashTipsAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * clock-in (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt: Date;
   status?: HrisAttendanceStatus | undefined;
+  /**
+   * the scheduled hris_timeshift this attendance record fulfils
+   */
   timeshiftId?: string | undefined;
   timezone?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

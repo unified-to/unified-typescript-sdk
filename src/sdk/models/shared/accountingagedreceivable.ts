@@ -13,17 +13,41 @@ import {
 } from "./accountingagedperiod.js";
 
 export type AccountingAgedreceivable = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217
+   */
   currency?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * synthetic, one row per currency / date window
+   */
   id?: string | undefined;
   organizationId?: string | undefined;
   periods?: Array<AccountingAgedPeriod> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   totalAmount?: number | undefined;
+  /**
+   * open balances not yet past due; distinct from the first past-due period
+   */
   totalCurrentAmount?: number | undefined;
+  /**
+   * sum of open balances across all past-due periods
+   */
   totalOverdueAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

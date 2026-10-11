@@ -43,13 +43,22 @@ export const WeightUnit = {
 export type WeightUnit = OpenEnum<typeof WeightUnit>;
 
 export type CommerceItem = {
+  /**
+   * Reference to Accounting Account (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   /**
    * points to Collection with id, name, and type fields
    */
   collections?: Array<CommerceReference> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
+  /**
+   * minutes
+   */
   duration?: number | undefined;
   globalCode?: string | undefined;
   id?: string | undefined;
@@ -58,6 +67,9 @@ export type CommerceItem = {
   isFeatured?: boolean | undefined;
   isTaxable?: boolean | undefined;
   isVisible?: boolean | undefined;
+  /**
+   * (reference to CommerceLocation)
+   */
   locationId?: string | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
@@ -69,9 +81,18 @@ export type CommerceItem = {
   requiresShipping?: boolean | undefined;
   slug?: string | undefined;
   tags?: Array<string> | undefined;
+  /**
+   * references AccountingTaxrate
+   */
   taxrateId?: string | undefined;
   totalStock?: number | undefined;
+  /**
+   * product, service, digital-download, ...
+   */
   type?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   vendorName?: string | undefined;
   weight?: number | undefined;

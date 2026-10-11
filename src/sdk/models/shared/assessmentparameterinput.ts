@@ -10,6 +10,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AssessmentParameterInput = {
   inputs?: Array<string> | undefined;
+  /**
+   * Name of parameter
+   */
   name?: string | undefined;
   parameterId?: string | undefined;
 };

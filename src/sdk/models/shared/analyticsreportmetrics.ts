@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * new vs returning
+ */
 export const AnalyticsReportMetricsDimension = {
   Date: "DATE",
   Hour: "HOUR",
@@ -32,10 +35,16 @@ export const AnalyticsReportMetricsDimension = {
   LandingPage: "LANDING_PAGE",
   Video: "VIDEO",
 } as const;
+/**
+ * new vs returning
+ */
 export type AnalyticsReportMetricsDimension = OpenEnum<
   typeof AnalyticsReportMetricsDimension
 >;
 
+/**
+ * Traffic metrics
+ */
 export const AnalyticsReportMetricsType = {
   Users: "USERS",
   NewUsers: "NEW_USERS",
@@ -71,13 +80,22 @@ export const AnalyticsReportMetricsType = {
   SubscribersGained: "SUBSCRIBERS_GAINED",
   SubscribersLost: "SUBSCRIBERS_LOST",
 } as const;
+/**
+ * Traffic metrics
+ */
 export type AnalyticsReportMetricsType = OpenEnum<
   typeof AnalyticsReportMetricsType
 >;
 
 export type AnalyticsReportMetrics = {
+  /**
+   * new vs returning
+   */
   dimension?: AnalyticsReportMetricsDimension | undefined;
   dimensionValue?: string | undefined;
+  /**
+   * Traffic metrics
+   */
   type?: AnalyticsReportMetricsType | undefined;
   value?: number | undefined;
 };

@@ -1,0 +1,17 @@
+# SecretsManagerInstructionsType
+
+## Example Usage
+
+```typescript
+import { SecretsManagerInstructionsType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: SecretsManagerInstructionsType = "gcp";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
+```
+
+## Values
+
+```typescript
+"aws" | "azure" | "gcp" | "hashicorp" | "composio" | "1password" | "bitwarden" | "doppler" | "akeyless" | "pipedream" | "alibabacloud" | Unrecognized<string>
+```

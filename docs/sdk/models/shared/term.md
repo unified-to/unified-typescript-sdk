@@ -1,5 +1,7 @@
 # Term
 
+@deprecated use payment_terms instead
+
 ## Example Usage
 
 ```typescript

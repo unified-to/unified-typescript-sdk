@@ -16,8 +16,14 @@ export type AccountingProfitloss = {
   categoryIds?: Array<string> | undefined;
   costOfGoodsSoldSections?: Array<AccountingProfitlossSection> | undefined;
   costOfGoodsSoldTotalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   expensesSections?: Array<AccountingProfitlossSection> | undefined;
   expensesTotalAmount?: number | undefined;
@@ -27,7 +33,13 @@ export type AccountingProfitloss = {
   name?: string | undefined;
   netIncomeAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

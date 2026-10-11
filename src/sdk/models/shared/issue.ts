@@ -22,18 +22,33 @@ export const IssueStatus = {
 export type IssueStatus = OpenEnum<typeof IssueStatus>;
 
 export type Issue = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: string | undefined;
   customerNote?: string | undefined;
   id?: string | undefined;
+  /**
+   * 1-5, 1 is lowest
+   */
   importance?: number | undefined;
   resolutionTime?: number | undefined;
+  /**
+   * 1-5, 1 is lowest
+   */
   size?: number | undefined;
   status: IssueStatus;
   ticketRef: string;
   title: string;
   type?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: string | undefined;
   url?: string | undefined;
+  /**
+   * (reference to KmsSpace)
+   */
   workspaceId: string;
 };
 

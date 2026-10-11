@@ -1,5 +1,7 @@
 # Operation
 
+ONLY USED ON UPDATES
+
 ## Example Usage
 
 ```typescript

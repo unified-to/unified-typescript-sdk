@@ -25,6 +25,9 @@ export type CalendarEventRecurrenceFrequency = OpenEnum<
   typeof CalendarEventRecurrenceFrequency
 >;
 
+/**
+ * week start day, defaults to undefined (no week start day)
+ */
 export const WeekStart = {
   Su: "SU",
   Mo: "MO",
@@ -34,10 +37,19 @@ export const WeekStart = {
   Fr: "FR",
   Sa: "SA",
 } as const;
+/**
+ * week start day, defaults to undefined (no week start day)
+ */
 export type WeekStart = OpenEnum<typeof WeekStart>;
 
 export type CalendarEventRecurrence = {
+  /**
+   * how many occurrences, defaults to undefined (no limit)
+   */
   count?: number | undefined;
+  /**
+   * until date, defaults to undefined (no end date) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   /**
    * dates to exclude from the recurrence, defaults to undefined (no exclusions)
@@ -48,6 +60,9 @@ export type CalendarEventRecurrence = {
    * dates to include in the recurrence, defaults to undefined (no inclusions)
    */
   includedDates?: Array<string> | undefined;
+  /**
+   * how many "units" between occurrences, defaults to 1
+   */
   interval?: number | undefined;
   /**
    * days of the week to repeat on, defaults to undefined (every day), only used if frequency is WEEKLY
@@ -69,7 +84,13 @@ export type CalendarEventRecurrence = {
    * days of the year to repeat on, defaults to undefined (every day), only used if frequency is YEARLY
    */
   onYearDays?: Array<number> | undefined;
+  /**
+   * timezone, defaults to undefined (no timezone)
+   */
   timezone?: string | undefined;
+  /**
+   * week start day, defaults to undefined (no week start day)
+   */
   weekStart?: WeekStart | undefined;
 };
 

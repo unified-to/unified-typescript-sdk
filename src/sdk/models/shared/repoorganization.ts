@@ -10,11 +10,17 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RepoOrganization = {
   avatarUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   /**
    * id values of the users/employees associated with this organization

@@ -25,6 +25,9 @@ export type PropertyCalendarRecordingTranscriptAttendee = {
   name?: string | undefined;
   required?: boolean | undefined;
   status?: PropertyCalendarRecordingTranscriptAttendeeStatus | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

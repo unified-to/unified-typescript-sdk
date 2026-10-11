@@ -23,21 +23,49 @@ export const UcCallType = {
 export type UcCallType = OpenEnum<typeof UcCallType>;
 
 export type UcCall = {
+  /**
+   * The contact ID for call (reference to UcContact)
+   */
   contactId?: string | undefined;
   contacts?: Array<UcContact> | undefined;
+  /**
+   * opaque identifier shared across legs of one interaction
+   */
+  conversationIdentifier?: string | undefined;
+  /**
+   * The date that this call object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The end time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * Unique identifier for this call object
+   */
   id?: string | undefined;
   isPrivate?: boolean | undefined;
   metadata?: Array<UcMetadata> | undefined;
+  /**
+   * The raw data returned by the integration for this call
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The start time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   /**
    * The telephone number called
    */
   telephone?: PropertyUcCallTelephone | undefined;
   type?: UcCallType | undefined;
+  /**
+   * The last date that this call object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   userName?: string | undefined;
   userPhone?: string | undefined;
@@ -55,6 +83,7 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
   .object({
     contact_id: z.string().optional(),
     contacts: z.array(UcContact$inboundSchema).optional(),
+    conversation_identifier: z.string().optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
@@ -77,6 +106,7 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
   }).transform((v) => {
     return remap$(v, {
       "contact_id": "contactId",
+      "conversation_identifier": "conversationIdentifier",
       "created_at": "createdAt",
       "end_at": "endAt",
       "is_private": "isPrivate",

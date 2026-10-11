@@ -10,34 +10,73 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The type of API Call being logged
+ */
 export const ApiCallType = {
   Login: "login",
   Webhook: "webhook",
   Inbound: "inbound",
   Mcp: "mcp",
 } as const;
+/**
+ * The type of API Call being logged
+ */
 export type ApiCallType = OpenEnum<typeof ApiCallType>;
 
 export type ApiCall = {
   connectionId?: string | undefined;
+  /**
+   * The date that this object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   endapiResponseTime?: number | undefined;
   environment: string;
+  /**
+   * The error description (if status code is >= 400)
+   */
   error?: string | undefined;
+  /**
+   * your customer's user ID
+   */
   externalXref?: string | undefined;
+  /**
+   * Unique identifier for this API call
+   */
   id?: string | undefined;
+  /**
+   * The integration type
+   */
   integrationType: string;
   ipAddress?: string | undefined;
   isBillable?: boolean | undefined;
   method: string;
+  /**
+   * The called name of the API method
+   */
   name: string;
+  /**
+   * The called API method's HTTP verb and route path (PUT /crm/{integration}/deak/{id})
+   */
   path: string;
+  /**
+   * The size of the response
+   */
   size?: number | undefined;
+  /**
+   * The resulting HTTP status code (200)
+   */
   status: string;
+  /**
+   * The type of API Call being logged
+   */
   type: ApiCallType;
   unifiedResponseTime?: number | undefined;
   userAgent?: string | undefined;
   webhookId?: string | undefined;
+  /**
+   * (reference to KmsSpace)
+   */
   workspaceId?: string | undefined;
 };
 

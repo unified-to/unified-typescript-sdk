@@ -60,21 +60,36 @@ export type AccountingOrderType = OpenEnum<typeof AccountingOrderType>;
  * @deprecated; use AccountingSalesorder or AccountingPurchaseorder
  */
 export type AccountingOrder = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   billingAddress?: PropertyAccountingOrderBillingAddress | undefined;
+  /**
+   * Customer, Supplier (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   shippingAddress?: PropertyAccountingOrderShippingAddress | undefined;
   status?: AccountingOrderStatus | undefined;
   totalAmount?: number | undefined;
   type?: AccountingOrderType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

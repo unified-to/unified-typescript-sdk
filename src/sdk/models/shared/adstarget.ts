@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant)
+ */
 export const AdsTargetType = {
   Interest: "INTEREST",
   Behavior: "BEHAVIOR",
@@ -25,6 +28,9 @@ export const AdsTargetType = {
   DeviceModel: "DEVICE_MODEL",
   OsVersion: "OS_VERSION",
 } as const;
+/**
+ * Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant)
+ */
 export type AdsTargetType = OpenEnum<typeof AdsTargetType>;
 
 /**
@@ -38,6 +44,9 @@ export type AdsTarget = {
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant)
+   */
   type?: AdsTargetType | undefined;
 };
 

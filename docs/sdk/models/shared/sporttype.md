@@ -1,5 +1,7 @@
 # SportType
 
+The primary sport of the group
+
 ## Example Usage
 
 ```typescript

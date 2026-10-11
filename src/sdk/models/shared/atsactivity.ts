@@ -40,7 +40,13 @@ export type AtsActivity = {
   bcc?: Array<AtsEmail> | undefined;
   candidateId?: string | undefined;
   cc?: Array<AtsEmail> | undefined;
+  /**
+   * (reference to AtsCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   /**
@@ -58,6 +64,9 @@ export type AtsActivity = {
   title?: string | undefined;
   to?: Array<AtsEmail> | undefined;
   type?: AtsActivityType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   /**
    * id values of the recruiters associated with the activity.

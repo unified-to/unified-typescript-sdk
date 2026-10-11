@@ -1,5 +1,7 @@
 # PerformanceFeedbackType
 
+praise/recognition, constructive feedback, or a response to a feedback request
+
 ## Example Usage
 
 ```typescript

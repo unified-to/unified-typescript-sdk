@@ -14,6 +14,9 @@ import {
   ShippingTrackingEvent$inboundSchema,
 } from "./shippingtrackingevent.js";
 
+/**
+ * Current status of the shipment
+ */
 export const ShippingTrackingStatus = {
   Pending: "PENDING",
   Processing: "PROCESSING",
@@ -30,25 +33,67 @@ export const ShippingTrackingStatus = {
   CustomsClearance: "CUSTOMS_CLEARANCE",
   ExceptionResolved: "EXCEPTION_RESOLVED",
 } as const;
+/**
+ * Current status of the shipment
+ */
 export type ShippingTrackingStatus = OpenEnum<typeof ShippingTrackingStatus>;
 
 export type ShippingTracking = {
+  /**
+   * Actual delivery timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   actualDeliveryAt?: Date | undefined;
+  /**
+   * Reference to the carrier
+   */
   carrierId?: string | undefined;
+  /**
+   * Carrier's status code
+   */
   carrierStatusCode?: string | undefined;
+  /**
+   * Carrier's status description
+   */
   carrierStatusDescription?: string | undefined;
+  /**
+   * The date that this tracking object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Estimated delivery date
+   */
   estimatedDelivery?: Date | undefined;
   /**
    * Array of tracking events
    */
   events?: Array<ShippingTrackingEvent> | undefined;
+  /**
+   * Unique identifier for this tracking object
+   */
   id?: string | undefined;
+  /**
+   * The raw data returned by the integration for this tracking
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Reference to the shipment
+   */
   shipmentId?: string | undefined;
+  /**
+   * Current status of the shipment
+   */
   status?: ShippingTrackingStatus | undefined;
+  /**
+   * Human-readable status
+   */
   statusDescription?: string | undefined;
+  /**
+   * Tracking number for the shipment
+   */
   trackingNumber?: string | undefined;
+  /**
+   * The last date that this tracking object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

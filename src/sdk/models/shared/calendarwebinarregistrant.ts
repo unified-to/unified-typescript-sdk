@@ -21,6 +21,9 @@ export type RegistrationStatus = OpenEnum<typeof RegistrationStatus>;
 export type CalendarWebinarRegistrant = {
   email?: string | undefined;
   name?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   registeredAt?: Date | undefined;
   registrationReference?: string | undefined;
   registrationStatus?: RegistrationStatus | undefined;

@@ -8,6 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type TaskChangeItem = {
+  /**
+   * unified field in ITaskTask
+   */
   field: string;
   from?: string | undefined;
   to?: string | undefined;

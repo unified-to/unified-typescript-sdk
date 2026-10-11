@@ -10,11 +10,11 @@ let value: AssessmentResponseDetail = {};
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `downloadUrl`      | *string*           | :heavy_minus_sign: | N/A                |
-| `isFailedReason`   | *boolean*          | :heavy_minus_sign: | N/A                |
-| `isPrivate`        | *boolean*          | :heavy_minus_sign: | N/A                |
-| `parameterId`      | *string*           | :heavy_minus_sign: | N/A                |
-| `text`             | *string*           | :heavy_minus_sign: | N/A                |
-| `title`            | *string*           | :heavy_minus_sign: | N/A                |
+| Field                               | Type                                | Required                            | Description                         |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| `downloadUrl`                       | *string*                            | :heavy_minus_sign:                  | N/A                                 |
+| `isFailedReason`                    | *boolean*                           | :heavy_minus_sign:                  | N/A                                 |
+| `isPrivate`                         | *boolean*                           | :heavy_minus_sign:                  | N/A                                 |
+| `parameterId`                       | *string*                            | :heavy_minus_sign:                  | In reference to the parameter input |
+| `text`                              | *string*                            | :heavy_minus_sign:                  | N/A                                 |
+| `title`                             | *string*                            | :heavy_minus_sign:                  | N/A                                 |

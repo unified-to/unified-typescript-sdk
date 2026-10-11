@@ -34,6 +34,9 @@ export type VerificationParameter = {
    * options for MULTIPLE_CHOICE and MULTIPLE_SELECT
    */
   options?: Array<string> | undefined;
+  /**
+   * question to ask the human
+   */
   publicQuestion?: string | undefined;
   type?: VerificationParameterType | undefined;
   /**

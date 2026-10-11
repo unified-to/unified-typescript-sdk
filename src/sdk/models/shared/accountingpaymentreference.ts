@@ -9,8 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingPaymentReference = {
+  /**
+   * Date and time when the payment was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   allocatedAt?: Date | undefined;
+  /**
+   * amount of the payment applied to this object
+   */
   amount?: number | undefined;
+  /**
+   * references a PaymentPayment that was applied to this object (reference to PaymentPayment)
+   */
   paymentId?: string | undefined;
 };
 

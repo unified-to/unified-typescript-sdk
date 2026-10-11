@@ -10,10 +10,19 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type EnrichPersonWorkHistory = {
   companyDomain?: string | undefined;
+  /**
+   * (reference to EnrichCompany)
+   */
   companyId?: string | undefined;
   companyName?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   location?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   title: string;
 };

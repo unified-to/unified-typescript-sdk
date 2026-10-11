@@ -1,5 +1,7 @@
 # AccountingFeeType
 
+Unified fee category
+
 ## Example Usage
 
 ```typescript

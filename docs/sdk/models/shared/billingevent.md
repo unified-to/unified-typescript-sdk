@@ -1,5 +1,7 @@
 # BillingEvent
 
+Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)
+
 ## Example Usage
 
 ```typescript

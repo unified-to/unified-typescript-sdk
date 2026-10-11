@@ -21,6 +21,9 @@ import {
 } from "./ticketingtelephone.js";
 
 export type TicketingCustomer = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   emails?: Array<TicketingEmail> | undefined;
   id?: string | undefined;
@@ -28,6 +31,9 @@ export type TicketingCustomer = {
   raw?: { [k: string]: any } | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<TicketingTelephone> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

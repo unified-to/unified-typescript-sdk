@@ -1,5 +1,7 @@
 # Metric
 
+The metric being reported
+
 ## Example Usage
 
 ```typescript

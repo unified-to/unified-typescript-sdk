@@ -25,6 +25,9 @@ export type PropertyConnectionAuth = {
   emails?: Array<string> | undefined;
   expiresIn?: number | undefined;
   expiryDate?: Date | undefined;
+  /**
+   * the private KEY X.509 certificate in Base64 ASCII format
+   */
   key?: string | undefined;
   meta?: { [k: string]: any } | undefined;
   name?: string | undefined;
@@ -32,6 +35,9 @@ export type PropertyConnectionAuth = {
    * When integration.auth_type = "other", this field contains the authentication credentials in the same order as token_names
    */
   otherAuthInfo?: Array<string> | undefined;
+  /**
+   * the PEM X.509 certificate in Base64 ASCII format
+   */
   pem?: string | undefined;
   refreshToken?: string | undefined;
   refreshTokenExpiresDate?: Date | undefined;
@@ -40,6 +46,9 @@ export type PropertyConnectionAuth = {
   state?: string | undefined;
   token?: string | undefined;
   tokenUrl?: string | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

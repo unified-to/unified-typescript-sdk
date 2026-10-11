@@ -6,6 +6,10 @@ import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type GetUnifiedIntegrationAuthRequest = {
+  /**
+   * Existing connection ID to re-authorize in place instead of creating a duplicate. Requires reauth_token.
+   */
+  connectionId?: string | undefined;
   env?: string | undefined;
   /**
    * Your user identifier to associate with the new Integration
@@ -23,6 +27,10 @@ export type GetUnifiedIntegrationAuthRequest = {
    * Language: en, fr, es, it, pt, zh, hi
    */
   lang?: string | undefined;
+  /**
+   * Single-use token from "Create a re-authorization token for a connection" (POST /unified/connection/{id}/reauth); required with connection_id.
+   */
+  reauthToken?: string | undefined;
   redirect?: boolean | undefined;
   /**
    * Optional region index (into the integration api.urls array) selected by the end-user. Set automatically by the auth widget when the workspace integration has prompt_region=true.
@@ -49,11 +57,13 @@ export type GetUnifiedIntegrationAuthRequest = {
 
 /** @internal */
 export type GetUnifiedIntegrationAuthRequest$Outbound = {
+  connection_id?: string | undefined;
   env?: string | undefined;
   external_xref?: string | undefined;
   failure_redirect?: string | undefined;
   integration_type: string;
   lang?: string | undefined;
+  reauth_token?: string | undefined;
   redirect?: boolean | undefined;
   region?: string | undefined;
   scopes?: Array<string> | undefined;
@@ -69,11 +79,13 @@ export const GetUnifiedIntegrationAuthRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetUnifiedIntegrationAuthRequest
 > = z.object({
+  connectionId: z.string().optional(),
   env: z.string().optional(),
   externalXref: z.string().optional(),
   failureRedirect: z.string().optional(),
   integrationType: z.string(),
   lang: z.string().optional(),
+  reauthToken: z.string().optional(),
   redirect: z.boolean().optional(),
   region: z.string().optional(),
   scopes: z.array(z.string()).optional(),
@@ -83,9 +95,11 @@ export const GetUnifiedIntegrationAuthRequest$outboundSchema: z.ZodType<
   workspaceId: z.string(),
 }).transform((v) => {
   return remap$(v, {
+    connectionId: "connection_id",
     externalXref: "external_xref",
     failureRedirect: "failure_redirect",
     integrationType: "integration_type",
+    reauthToken: "reauth_token",
     successRedirect: "success_redirect",
     workspaceId: "workspace_id",
   });

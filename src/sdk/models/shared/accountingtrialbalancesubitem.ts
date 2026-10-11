@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingTrialbalanceSubItem = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   accountName?: string | undefined;
   amount?: number | undefined;

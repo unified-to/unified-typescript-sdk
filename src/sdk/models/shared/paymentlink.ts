@@ -16,7 +16,13 @@ import {
 
 export type PaymentLink = {
   amount?: number | undefined;
+  /**
+   * ID of the AccountingContact (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
@@ -24,10 +30,19 @@ export type PaymentLink = {
   isActive?: boolean | undefined;
   isChargeableNow?: boolean | undefined;
   lineitems?: Array<PaymentLineitem> | undefined;
+  /**
+   * (reference to PaymentPayment)
+   */
   paymentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   successUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * the payment link
+   */
   url?: string | undefined;
 };
 

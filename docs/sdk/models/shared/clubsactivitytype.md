@@ -1,5 +1,7 @@
 # ClubsActivityType
 
+The activity type
+
 ## Example Usage
 
 ```typescript

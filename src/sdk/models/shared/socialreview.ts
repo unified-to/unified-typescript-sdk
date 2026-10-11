@@ -15,21 +15,57 @@ import {
 } from "./propertysocialreviewreply.js";
 
 export type SocialReview = {
+  /**
+   * Profile image URL of the reviewer
+   */
   authorAvatarUrl?: string | undefined;
+  /**
+   * Free-text location of the reviewer
+   */
   authorLocation?: string | undefined;
+  /**
+   * Display name of the reviewer
+   */
   authorName?: string | undefined;
+  /**
+   * The review text
+   */
   content?: string | undefined;
+  /**
+   * When the review was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Unique identifier for the review
+   */
   id?: string | undefined;
+  /**
+   * The social profile (page/handle/listing) being reviewed
+   */
   profileId?: string | undefined;
+  /**
+   * Star rating, typically 1-5
+   */
   rating?: number | undefined;
+  /**
+   * Raw data from integration
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * The business's reply to the review
    */
   reply?: PropertySocialReviewReply | undefined;
+  /**
+   * Optional review title/headline
+   */
   title?: string | undefined;
+  /**
+   * When the review was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Public permalink to the review
+   */
   url?: string | undefined;
 };
 

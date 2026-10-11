@@ -32,6 +32,9 @@ export type AssessmentParameter = {
    * Options for MULTIPLE_CHOICE and MULTIPLE_SELECT
    */
   options?: Array<string> | undefined;
+  /**
+   * Question to ask the candidateuser
+   */
   publicQuestion?: string | undefined;
   type?: AssessmentParameterType | undefined;
   /**

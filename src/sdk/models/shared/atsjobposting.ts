@@ -19,13 +19,28 @@ export type AtsJobPosting = {
    * job-post-specific address
    */
   address?: PropertyAtsJobPostingAddress | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * job-post-specific description
+   */
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * job-post-specific location
+   */
   location?: string | undefined;
+  /**
+   * job-post-specific name
+   */
   name?: string | undefined;
   postingUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

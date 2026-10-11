@@ -1,5 +1,7 @@
 # PropertyCrmEventTaskStatus
 
+The event task's status
+
 ## Example Usage
 
 ```typescript

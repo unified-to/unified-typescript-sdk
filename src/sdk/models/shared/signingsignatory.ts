@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Role of the signatory
+ */
 export const SigningSignatoryRole = {
   Signer: "SIGNER",
   Cc: "CC",
@@ -17,8 +20,14 @@ export const SigningSignatoryRole = {
   InPersonSigner: "IN_PERSON_SIGNER",
   Viewer: "VIEWER",
 } as const;
+/**
+ * Role of the signatory
+ */
 export type SigningSignatoryRole = OpenEnum<typeof SigningSignatoryRole>;
 
+/**
+ * Current status of this signatory
+ */
 export const SigningSignatoryStatus = {
   Pending: "PENDING",
   Sent: "SENT",
@@ -27,20 +36,59 @@ export const SigningSignatoryStatus = {
   Declined: "DECLINED",
   Error: "ERROR",
 } as const;
+/**
+ * Current status of this signatory
+ */
 export type SigningSignatoryStatus = OpenEnum<typeof SigningSignatoryStatus>;
 
 export type SigningSignatory = {
+  /**
+   * The date that this signatory was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Reason for declining (if status is DECLINED)
+   */
   declineReason?: string | undefined;
+  /**
+   * Parent signing document; points to SigningDocument
+   */
   documentId?: string | undefined;
+  /**
+   * Email address of the signatory
+   */
   email?: string | undefined;
+  /**
+   * Unique identifier for this signatory
+   */
   id?: string | undefined;
+  /**
+   * Full name of the signatory
+   */
   name?: string | undefined;
+  /**
+   * Signing order (1, 2, 3...)
+   */
   order?: number | undefined;
+  /**
+   * The raw data returned by the integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Role of the signatory
+   */
   role?: SigningSignatoryRole | undefined;
+  /**
+   * When this signatory signed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   signedAt?: Date | undefined;
+  /**
+   * Current status of this signatory
+   */
   status?: SigningSignatoryStatus | undefined;
+  /**
+   * The last date that this signatory was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

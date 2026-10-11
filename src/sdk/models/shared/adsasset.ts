@@ -20,17 +20,32 @@ export const AdsAssetType = {
 export type AdsAssetType = OpenEnum<typeof AdsAssetType>;
 
 export type AdsAsset = {
+  /**
+   * inbound create-only: base64-encoded image/media bytes to upload
+   */
   content?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   fileSize?: number | undefined;
   height?: number | undefined;
+  /**
+   * provider asset resource name/id (e.g. Google Ads customers/{cid}/assets/{id}, TikTok image/video id, DV360 mediaId)
+   */
   id?: string | undefined;
   mimeType?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: AdsAssetType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * outbound: public asset URL; inbound (create): source URL to fetch bytes from when content is not supplied
+   */
   url?: string | undefined;
   width?: number | undefined;
 };

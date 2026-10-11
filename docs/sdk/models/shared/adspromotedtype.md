@@ -1,5 +1,7 @@
 # AdsPromotedType
 
+Promoted entity types for ads_promoted list endpoint
+
 ## Example Usage
 
 ```typescript

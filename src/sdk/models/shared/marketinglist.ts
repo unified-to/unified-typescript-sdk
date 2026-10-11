@@ -19,21 +19,45 @@ import {
  */
 export type MarketingList = {
   address?: PropertyMarketingListAddress | undefined;
+  /**
+   * Date that this list was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * Identifier for this list
+   */
   id?: string | undefined;
   isActive?: boolean | undefined;
   language?: string | undefined;
+  /**
+   * The list's name
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this list
+   */
   raw?: { [k: string]: any } | undefined;
   senderCompany?: string | undefined;
   senderEmail?: string | undefined;
   senderName?: string | undefined;
   senderPhone?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   subject?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The user who created this list (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

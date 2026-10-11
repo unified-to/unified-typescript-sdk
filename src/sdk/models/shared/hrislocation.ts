@@ -22,13 +22,22 @@ import {
 
 export type HrisLocation = {
   address?: PropertyHrisLocationAddress | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
   externalIdentifier?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * if this location is the headquarters of the company
+   */
   isHq?: boolean | undefined;
   languageLocale?: string | undefined;
   name?: string | undefined;
@@ -36,6 +45,9 @@ export type HrisLocation = {
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<HrisTelephone> | undefined;
   timezone?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

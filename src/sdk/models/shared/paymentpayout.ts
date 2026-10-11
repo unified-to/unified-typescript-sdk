@@ -23,21 +23,39 @@ export const PaymentPayoutStatus = {
 export type PaymentPayoutStatus = OpenEnum<typeof PaymentPayoutStatus>;
 
 export type PaymentPayout = {
+  /**
+   * ref -> AccountingAccount; the destination account (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
+  /**
+   * Date the funds land in the destination account (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   arrivalAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: string | undefined;
   currency?: string | undefined;
+  /**
+   * Processor fee deducted from the payout
+   */
   feeAmount?: number | undefined;
   id?: string | undefined;
   /**
    * The transactions included in this payout
    */
   lineitems?: Array<PaymentPayoutLineitem> | undefined;
+  /**
+   * total_amount minus fee_amount
+   */
   netAmount?: number | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: PaymentPayoutStatus | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: string | undefined;
 };
 

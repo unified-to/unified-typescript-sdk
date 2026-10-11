@@ -21,6 +21,9 @@ import {
 } from "./lmstelephone.js";
 
 export type LmsInstructor = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   emails?: Array<LmsEmail> | undefined;
   firstName?: string | undefined;
@@ -31,6 +34,9 @@ export type LmsInstructor = {
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<LmsTelephone> | undefined;
   title?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -10,7 +10,13 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AtsCandidateExperience = {
   companyName?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   title?: string | undefined;
 };

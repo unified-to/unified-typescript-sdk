@@ -38,10 +38,22 @@ export type PerformanceGoalSchemasType = OpenEnum<
 
 export type PerformanceGoal = {
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   completedAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * pointer to the Performance Cycle object (goal cycle or timeframe)
+   */
   cycleId?: string | undefined;
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
   id?: string | undefined;
   /**
@@ -49,17 +61,32 @@ export type PerformanceGoal = {
    */
   milestones?: Array<PerformanceGoalMilestone> | undefined;
   name?: string | undefined;
+  /**
+   * id of the parent goal, for goal alignment / OKR trees
+   */
   parentId?: string | undefined;
+  /**
+   * progress percentage from 0 to 100
+   */
   progress?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: PerformanceGoalStatus | undefined;
   type?: PerformanceGoalSchemasType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   /**
    * HR Employees that own or share this goal; the first element is the primary owner
    */
   userIds?: Array<string> | undefined;
+  /**
+   * the weight of this goal when the provider weighs goals in reviews
+   */
   weight?: number | undefined;
 };
 

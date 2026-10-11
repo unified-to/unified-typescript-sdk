@@ -8,6 +8,8 @@ import { atsListAtsScorecards } from "../funcs/atsListAtsScorecards.js";
 import { atsPatchAtsScorecard } from "../funcs/atsPatchAtsScorecard.js";
 import { atsRemoveAtsScorecard } from "../funcs/atsRemoveAtsScorecard.js";
 import { atsUpdateAtsScorecard } from "../funcs/atsUpdateAtsScorecard.js";
+import { scorecardGetUcScorecard } from "../funcs/scorecardGetUcScorecard.js";
+import { scorecardListUcScorecards } from "../funcs/scorecardListUcScorecards.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -43,6 +45,20 @@ export class Scorecard extends ClientSDK {
   }
 
   /**
+   * Retrieve a scorecard
+   */
+  async getUcScorecard(
+    request: operations.GetUcScorecardRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcScorecard> {
+    return unwrapAsync(scorecardGetUcScorecard(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all scorecards
    */
   async listAtsScorecards(
@@ -50,6 +66,20 @@ export class Scorecard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AtsScorecard>> {
     return unwrapAsync(atsListAtsScorecards(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all scorecards
+   */
+  async listUcScorecards(
+    request: operations.ListUcScorecardsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.UcScorecard>> {
+    return unwrapAsync(scorecardListUcScorecards(
       this,
       request,
       options,

@@ -15,6 +15,9 @@ import {
 } from "./crmeventformfield.js";
 
 export type PropertyCrmEventForm = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   archivedAt?: Date | undefined;
   fields?: Array<CrmEventFormField> | undefined;
   name?: string | undefined;

@@ -1,5 +1,7 @@
 # ClubsMemberMembershipStatus
 
+The member's membership status
+
 ## Example Usage
 
 ```typescript

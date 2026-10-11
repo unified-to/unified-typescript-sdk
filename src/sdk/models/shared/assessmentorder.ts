@@ -62,24 +62,54 @@ export const AssessmentOrderStatus = {
 export type AssessmentOrderStatus = OpenEnum<typeof AssessmentOrderStatus>;
 
 export type AssessmentOrder = {
+  /**
+   * ATS application ID
+   */
   applicationId?: string | undefined;
+  /**
+   * ATS candidate ID
+   */
   candidateId?: string | undefined;
+  /**
+   * ATS company ID (reference to AtsCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * Connection ID that this order belongs to
+   */
   connectionId: string;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * ATS employee ID
+   */
   employeeId?: string | undefined;
   id?: string | undefined;
+  /**
+   * ATS job ID
+   */
   jobId?: string | undefined;
+  /**
+   * Assessment package ID
+   */
   packageId?: string | undefined;
   /**
    * Filled-in answers to the package's parameter questions
    */
   parameters?: Array<AssessmentParameterInput> | undefined;
   profileAddresses?: Array<AssessmentAddress> | undefined;
+  /**
+   * YYYY-MM-DD
+   */
   profileDateOfBirth?: string | undefined;
   profileEmails?: Array<string> | undefined;
   profileFirstName?: string | undefined;
   profileGender?: ProfileGender | undefined;
+  /**
+   * XXX.XXX.XXX.XXX
+   */
   profileIpAddress?: string | undefined;
   profileLastName?: string | undefined;
   profileName?: string | undefined;
@@ -88,29 +118,65 @@ export type AssessmentOrder = {
   profileSocialMediaUrls?: Array<string> | undefined;
   profileTelephones?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * ATS-specific reference ID
+   */
   reference?: string | undefined;
   /**
    * Additional result attributes
    */
   responseAttributes?: Array<AssessmentAttribute> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   responseCompletedAt?: Date | undefined;
   responseDetails?: Array<AssessmentResponseDetail> | undefined;
   /**
    * Report download URLs
    */
   responseDownloadUrls?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   responseExpiresAt?: Date | undefined;
+  /**
+   * Datetime that assessment was issued (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   responseIssuedAt?: Date | undefined;
+  /**
+   * Maximum possible score
+   */
   responseMaxScore?: number | undefined;
+  /**
+   * URL to redirect the user to complete assessment
+   */
   responseRedirectUrl?: string | undefined;
+  /**
+   * Assessment score (e.g., 0-100)
+   */
   responseScore?: number | undefined;
   responseSource?: string | undefined;
   responseStatus?: ResponseStatus | undefined;
+  /**
+   * URL to view detailed results
+   */
   responseUrl?: string | undefined;
   status?: AssessmentOrderStatus | undefined;
+  /**
+   * URL to redirect user to after assessment
+   */
   targetUrl?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Webhook ID that this order belongs to
+   */
   webhookId?: string | undefined;
+  /**
+   * Workspace ID that this order belongs to (reference to KmsSpace)
+   */
   workspaceId: string;
 };
 

@@ -1,5 +1,7 @@
 # ShippingPackageWeightUnit
 
+Unit for weight (g, kg, oz, lb)
+
 ## Example Usage
 
 ```typescript

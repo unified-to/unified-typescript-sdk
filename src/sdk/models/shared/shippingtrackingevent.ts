@@ -14,6 +14,9 @@ import {
   PropertyShippingTrackingEventLocationAddress$inboundSchema,
 } from "./propertyshippingtrackingeventlocationaddress.js";
 
+/**
+ * Status at the time of this event
+ */
 export const ShippingTrackingEventStatus = {
   Pending: "PENDING",
   Processing: "PROCESSING",
@@ -30,20 +33,50 @@ export const ShippingTrackingEventStatus = {
   CustomsClearance: "CUSTOMS_CLEARANCE",
   ExceptionResolved: "EXCEPTION_RESOLVED",
 } as const;
+/**
+ * Status at the time of this event
+ */
 export type ShippingTrackingEventStatus = OpenEnum<
   typeof ShippingTrackingEventStatus
 >;
 
 export type ShippingTrackingEvent = {
+  /**
+   * Carrier's status code at this event
+   */
   carrierStatusCode?: string | undefined;
+  /**
+   * The date that this tracking event object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Description of the tracking event
+   */
   description?: string | undefined;
+  /**
+   * Carrier-specific event code
+   */
   eventCode?: string | undefined;
   locationAddress?: PropertyShippingTrackingEventLocationAddress | undefined;
+  /**
+   * Location ID; points to CommerceLocation (reference to ShippingLocation)
+   */
   locationId?: string | undefined;
+  /**
+   * Location name
+   */
   locationName?: string | undefined;
+  /**
+   * Additional notes
+   */
   notes?: string | undefined;
+  /**
+   * Who signed for delivery
+   */
   signedBy?: string | undefined;
+  /**
+   * Status at the time of this event
+   */
   status?: ShippingTrackingEventStatus | undefined;
 };
 

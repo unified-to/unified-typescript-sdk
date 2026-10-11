@@ -57,7 +57,13 @@ export type CommerceItemvariantWeightUnit = OpenEnum<
 >;
 
 export type CommerceItemvariant = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   availableAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   height?: number | undefined;
@@ -81,9 +87,15 @@ export type CommerceItemvariant = {
   raw?: { [k: string]: any } | undefined;
   requiresShipping?: boolean | undefined;
   sizeUnit?: SizeUnit | undefined;
+  /**
+   * barcode, UPC, isbn, etc
+   */
   sku?: string | undefined;
   tags?: Array<string> | undefined;
   totalStock?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   weight?: number | undefined;
   weightUnit?: CommerceItemvariantWeightUnit | undefined;

@@ -12,8 +12,8 @@ let value: PropertySocialProfileMetrics = {};
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `followerCount`    | *number*           | :heavy_minus_sign: | N/A                |
-| `followingCount`   | *number*           | :heavy_minus_sign: | N/A                |
-| `postCount`        | *number*           | :heavy_minus_sign: | N/A                |
+| Field                                           | Type                                            | Required                                        | Description                                     |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `followerCount`                                 | *number*                                        | :heavy_minus_sign:                              | Number of followers                             |
+| `followingCount`                                | *number*                                        | :heavy_minus_sign:                              | Number of accounts this profile follows         |
+| `postCount`                                     | *number*                                        | :heavy_minus_sign:                              | Total number of posts published by this profile |

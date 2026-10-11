@@ -37,17 +37,38 @@ export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGen
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User =
   {
     additionalManagers?: Array<ScimManager> | undefined;
+    /**
+     * 1985-07-20
+     */
     birthday?: Date | undefined;
+    /**
+     * Identifies the name of a cost center.
+     */
     costCenter?: string | undefined;
+    /**
+     * User currency
+     */
     currency?: string | undefined;
+    /**
+     * Identifies the name of a department.
+     */
     department?: string | undefined;
+    /**
+     * Identifies the name of a division.
+     */
     division?: string | undefined;
     employeeNumber?: string | undefined;
+    /**
+     * 2022-02-25
+     */
     endDate?: Date | undefined;
     gender?:
       | PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
       | undefined;
     level?: string | undefined;
+    /**
+     * Berlin
+     */
     location?: string | undefined;
     /**
      * "id" attribute of another User.
@@ -55,7 +76,13 @@ export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User =
     manager?:
       | PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager
       | undefined;
+    /**
+     * Identifies the name of an organization.
+     */
     organization?: string | undefined;
+    /**
+     * 2011-03-25
+     */
     startDate?: Date | undefined;
   };
 

@@ -1,5 +1,7 @@
 # AnalyticsReportMetricsDimension
 
+new vs returning
+
 ## Example Usage
 
 ```typescript

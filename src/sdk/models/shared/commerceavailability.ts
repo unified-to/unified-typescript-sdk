@@ -9,12 +9,27 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CommerceAvailability = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * (reference to CommerceItem)
+   */
   itemId?: string | undefined;
+  /**
+   * (reference to CommerceLocation)
+   */
   locationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   size?: number | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   staffUserId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
 };
 

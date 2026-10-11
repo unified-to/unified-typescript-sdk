@@ -28,6 +28,9 @@ import {
 
 export type LmsStudent = {
   address?: PropertyLmsStudentAddress | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   emails?: Array<LmsEmail> | undefined;
   firstName?: string | undefined;
@@ -37,6 +40,9 @@ export type LmsStudent = {
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<LmsTelephone> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

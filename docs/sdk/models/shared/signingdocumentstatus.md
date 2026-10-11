@@ -1,5 +1,7 @@
 # SigningDocumentStatus
 
+Current status of the signing document
+
 ## Example Usage
 
 ```typescript

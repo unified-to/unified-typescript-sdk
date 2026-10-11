@@ -9,14 +9,26 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type TaskComment = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   hasChildren?: boolean | undefined;
   id?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (reference to TaskTask)
+   */
   taskId?: string | undefined;
   text?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   userName?: string | undefined;
 };

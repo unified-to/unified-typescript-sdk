@@ -1,5 +1,7 @@
 # ClubsEventStatus
 
+The event status
+
 ## Example Usage
 
 ```typescript

@@ -9,6 +9,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The call-to-action button type
+ */
 export const PropertySocialPostCallToActionType = {
   Book: "BOOK",
   Order: "ORDER",
@@ -18,6 +21,9 @@ export const PropertySocialPostCallToActionType = {
   Call: "CALL",
   Other: "OTHER",
 } as const;
+/**
+ * The call-to-action button type
+ */
 export type PropertySocialPostCallToActionType = OpenEnum<
   typeof PropertySocialPostCallToActionType
 >;
@@ -26,7 +32,13 @@ export type PropertySocialPostCallToActionType = OpenEnum<
  * Call-to-action button on the post
  */
 export type PropertySocialPostCallToAction = {
+  /**
+   * The call-to-action button type
+   */
   type?: PropertySocialPostCallToActionType | undefined;
+  /**
+   * The URL the call-to-action points to
+   */
   url?: string | undefined;
 };
 

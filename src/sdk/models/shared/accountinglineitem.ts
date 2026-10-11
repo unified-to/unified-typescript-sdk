@@ -21,30 +21,60 @@ import {
 } from "./accountingreference.js";
 
 export type AccountingLineitem = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   discountAmount?: number | undefined;
+  /**
+   * The exchange rate applied to this line, for multi-currency documents
+   */
   exchangeRate?: number | undefined;
   fees?: Array<AccountingFee> | undefined;
   id?: string | undefined;
+  /**
+   * True when the line is rebillable to a customer
+   */
   isBillable?: boolean | undefined;
   itemDescription?: string | undefined;
+  /**
+   * (reference to CommerceItem)
+   */
   itemId?: string | undefined;
   itemName?: string | undefined;
   itemSku?: string | undefined;
   itemVariants?: Array<AccountingReference> | undefined;
   locations?: Array<AccountingReference> | undefined;
   notes?: string | undefined;
+  /**
+   * ref -> AccountingProject; the project this line is coded to (reference to TaskProject)
+   */
   projectId?: string | undefined;
   refundAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   refundedAt?: Date | undefined;
   taxAmount?: number | undefined;
   taxrateId?: string | undefined;
+  /**
+   * unit_quantity * unit_amount + tax_amount
+   */
   totalAmount?: number | undefined;
   unitAmount?: number | undefined;
   unitQuantity?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

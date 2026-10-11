@@ -69,6 +69,9 @@ export type AdsInsertionorder = {
   budgetSegments?: Array<AdsInsertionorderBudgetSegment> | undefined;
   budgetUnit?: AdsInsertionorderBudgetUnit | undefined;
   campaignId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   frequencyCap?: PropertyAdsInsertionorderFrequencyCap | undefined;
   id?: string | undefined;
@@ -77,8 +80,14 @@ export type AdsInsertionorder = {
   organizationId?: string | undefined;
   pacing?: PropertyAdsInsertionorderPacing | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * client's reference ID for the insertion order
+   */
   reference?: string | undefined;
   status?: AdsInsertionorderStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

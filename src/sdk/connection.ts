@@ -3,6 +3,7 @@
  */
 
 import { unifiedCreateUnifiedConnection } from "../funcs/unifiedCreateUnifiedConnection.js";
+import { unifiedCreateUnifiedConnectionReauth } from "../funcs/unifiedCreateUnifiedConnectionReauth.js";
 import { unifiedGetUnifiedConnection } from "../funcs/unifiedGetUnifiedConnection.js";
 import { unifiedListUnifiedConnections } from "../funcs/unifiedListUnifiedConnections.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
@@ -18,13 +19,30 @@ export class Connection extends ClientSDK {
    * Create connection
    *
    * @remarks
-   * Used only to import existing customer credentials; use "Authorize new connection" instead
+   * Used only to import existing customer credentials. To connect a new account, use the "Authorize or re-authorize a connection" auth URL instead. To change credentials on an existing connection, use "Update connection".
    */
   async createUnifiedConnection(
     request: shared.Connection,
     options?: RequestOptions,
   ): Promise<shared.Connection> {
     return unwrapAsync(unifiedCreateUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a re-authorization token for a connection
+   *
+   * @remarks
+   * Returns a short-lived, single-use token that lets your end-user re-authorize this existing connection in place via the "Authorize or re-authorize a connection" URL with connection_id and reauth_token.
+   */
+  async createUnifiedConnectionReauth(
+    request: operations.CreateUnifiedConnectionReauthRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ConnectionReauth> {
+    return unwrapAsync(unifiedCreateUnifiedConnectionReauth(
       this,
       request,
       options,

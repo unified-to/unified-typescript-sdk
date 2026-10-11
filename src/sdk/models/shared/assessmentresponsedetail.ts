@@ -12,6 +12,9 @@ export type AssessmentResponseDetail = {
   downloadUrl?: string | undefined;
   isFailedReason?: boolean | undefined;
   isPrivate?: boolean | undefined;
+  /**
+   * In reference to the parameter input
+   */
   parameterId?: string | undefined;
   text?: string | undefined;
   title?: string | undefined;

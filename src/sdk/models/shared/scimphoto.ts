@@ -19,6 +19,9 @@ export type ScimPhoto = {
   display?: string | undefined;
   primary?: boolean | undefined;
   type?: ScimPhotoType | undefined;
+  /**
+   * URL
+   */
   value?: string | undefined;
 };
 

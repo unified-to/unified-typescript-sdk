@@ -10,22 +10,55 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * SOURCE, or BIDIRECTIONAL for import+export connectors
+ */
 export const CdpSourceDirection = {
   Source: "SOURCE",
   Destination: "DESTINATION",
   Bidirectional: "BIDIRECTIONAL",
 } as const;
+/**
+ * SOURCE, or BIDIRECTIONAL for import+export connectors
+ */
 export type CdpSourceDirection = OpenEnum<typeof CdpSourceDirection>;
 
 export type CdpSource = {
+  /**
+   * The date that this source object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * SOURCE, or BIDIRECTIONAL for import+export connectors
+   */
   direction?: CdpSourceDirection | undefined;
+  /**
+   * Unique identifier for this source object
+   */
   id?: string | undefined;
+  /**
+   * Whether the source is active/enabled
+   */
   isEnabled?: boolean | undefined;
+  /**
+   * The name of the inbound data source
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this source
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * A stable handle/key for the source
+   */
   slug?: string | undefined;
+  /**
+   * The connector/source type (eg. the provider's connector slug or plugin id)
+   */
   type?: string | undefined;
+  /**
+   * The last date that this source object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

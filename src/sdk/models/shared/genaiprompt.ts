@@ -8,21 +8,57 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  GenaiAnswer,
+  GenaiAnswer$inboundSchema,
+  GenaiAnswer$Outbound,
+  GenaiAnswer$outboundSchema,
+} from "./genaianswer.js";
+import {
   GenaiContent,
   GenaiContent$inboundSchema,
   GenaiContent$Outbound,
   GenaiContent$outboundSchema,
 } from "./genaicontent.js";
+import {
+  GenaiQuestion,
+  GenaiQuestion$inboundSchema,
+  GenaiQuestion$Outbound,
+  GenaiQuestion$outboundSchema,
+} from "./genaiquestion.js";
 
 export type GenaiPrompt = {
+  /**
+   * One answer per question, matched by id.
+   */
+  answers?: Array<GenaiAnswer> | undefined;
+  /**
+   * a float between 0-1
+   */
   maxTokens?: number | undefined;
+  /**
+   * OAuth Bearer token for MCP servers that require authentication.
+   */
   mcpAuthorizationToken?: string | undefined;
   mcpDeferredTools?: Array<string> | undefined;
+  /**
+   * Supply a remote MCP URL to send to the LLM API for it to call its tools.  Note: Some LLM APIs do not yet support remote MCP URLs.
+   */
   mcpUrl?: string | undefined;
   messages?: Array<GenaiContent> | undefined;
   modelId?: string | undefined;
+  /**
+   * Typed questions to evaluate against the messages (for decision models such as TypeSafe Jev).
+   */
+  questions?: Array<GenaiQuestion> | undefined;
   raw?: { [k: string]: any } | undefined;
   responses?: Array<string> | undefined;
+  /**
+   * ids of the genai_skill objects (Agent Skills) to make available to the LLM while it answers.
+   */
+  skillIds?: Array<string> | undefined;
+  /**
+   * 0-1
+   */
   temperature?: number | undefined;
   tokensUsed?: number | undefined;
 };
@@ -33,14 +69,17 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  answers: z.array(GenaiAnswer$inboundSchema).optional(),
   max_tokens: z.number().optional(),
   mcp_authorization_token: z.string().optional(),
   mcp_deferred_tools: z.array(z.string()).optional(),
   mcp_url: z.string().optional(),
   messages: z.array(GenaiContent$inboundSchema).optional(),
   model_id: z.string().optional(),
+  questions: z.array(GenaiQuestion$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   responses: z.array(z.string()).optional(),
+  skill_ids: z.array(z.string()).optional(),
   temperature: z.number().optional(),
   tokens_used: z.number().optional(),
 }).transform((v) => {
@@ -50,19 +89,23 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
     "mcp_deferred_tools": "mcpDeferredTools",
     "mcp_url": "mcpUrl",
     "model_id": "modelId",
+    "skill_ids": "skillIds",
     "tokens_used": "tokensUsed",
   });
 });
 /** @internal */
 export type GenaiPrompt$Outbound = {
+  answers?: Array<GenaiAnswer$Outbound> | undefined;
   max_tokens?: number | undefined;
   mcp_authorization_token?: string | undefined;
   mcp_deferred_tools?: Array<string> | undefined;
   mcp_url?: string | undefined;
   messages?: Array<GenaiContent$Outbound> | undefined;
   model_id?: string | undefined;
+  questions?: Array<GenaiQuestion$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   responses?: Array<string> | undefined;
+  skill_ids?: Array<string> | undefined;
   temperature?: number | undefined;
   tokens_used?: number | undefined;
 };
@@ -73,14 +116,17 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GenaiPrompt
 > = z.object({
+  answers: z.array(GenaiAnswer$outboundSchema).optional(),
   maxTokens: z.number().optional(),
   mcpAuthorizationToken: z.string().optional(),
   mcpDeferredTools: z.array(z.string()).optional(),
   mcpUrl: z.string().optional(),
   messages: z.array(GenaiContent$outboundSchema).optional(),
   modelId: z.string().optional(),
+  questions: z.array(GenaiQuestion$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   responses: z.array(z.string()).optional(),
+  skillIds: z.array(z.string()).optional(),
   temperature: z.number().optional(),
   tokensUsed: z.number().optional(),
 }).transform((v) => {
@@ -90,6 +136,7 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
     mcpDeferredTools: "mcp_deferred_tools",
     mcpUrl: "mcp_url",
     modelId: "model_id",
+    skillIds: "skill_ids",
     tokensUsed: "tokens_used",
   });
 });

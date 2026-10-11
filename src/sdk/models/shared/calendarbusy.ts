@@ -10,9 +10,15 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CalendarBusy = {
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt: Date;
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt: Date;
   timezone?: string | undefined;
 };

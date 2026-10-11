@@ -5,7 +5,7 @@
 ```typescript
 import { HrisCompensationType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisCompensationType = "OTHER";
+let value: HrisCompensationType = "COMMISSION";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: HrisCompensationType = "OTHER";
 ## Values
 
 ```typescript
-"SALARY" | "BONUS" | "STOCK_OPTIONS" | "EQUITY" | "OTHER" | Unrecognized<string>
+"SALARY" | "BONUS" | "STOCK_OPTIONS" | "EQUITY" | "OTHER" | "HOURLY" | "COMMISSION" | Unrecognized<string>
 ```

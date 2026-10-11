@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
+ */
 export const HrisDeductionCoverageLevel = {
   EmployeeOnly: "EMPLOYEE_ONLY",
   EmployeeSpouse: "EMPLOYEE_SPOUSE",
@@ -19,10 +22,22 @@ export const HrisDeductionCoverageLevel = {
   Family: "FAMILY",
   Other: "OTHER",
 } as const;
+/**
+ * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
+ */
 export type HrisDeductionCoverageLevel = OpenEnum<
   typeof HrisDeductionCoverageLevel
 >;
 
+export const EmployerType = {
+  Percentage: "PERCENTAGE",
+  Fixed: "FIXED",
+} as const;
+export type EmployerType = OpenEnum<typeof EmployerType>;
+
+/**
+ * Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+ */
 export const HrisDeductionFrequency = {
   OneTime: "ONE_TIME",
   Day: "DAY",
@@ -31,8 +46,29 @@ export const HrisDeductionFrequency = {
   Hour: "HOUR",
   Month: "MONTH",
   Week: "WEEK",
+  Biweekly: "BIWEEKLY",
+  Semimonthly: "SEMIMONTHLY",
 } as const;
+/**
+ * Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+ */
 export type HrisDeductionFrequency = OpenEnum<typeof HrisDeductionFrequency>;
+
+/**
+ * set when this deduction is a court-ordered garnishment
+ */
+export const GarnishmentType = {
+  ChildSupport: "CHILD_SUPPORT",
+  TaxLevy: "TAX_LEVY",
+  StudentLoan: "STUDENT_LOAN",
+  Creditor: "CREDITOR",
+  Bankruptcy: "BANKRUPTCY",
+  Other: "OTHER",
+} as const;
+/**
+ * set when this deduction is a court-ordered garnishment
+ */
+export type GarnishmentType = OpenEnum<typeof GarnishmentType>;
 
 export const HrisDeductionType = {
   Fixed: "FIXED",
@@ -44,20 +80,64 @@ export type HrisDeductionType = OpenEnum<typeof HrisDeductionType>;
  * Employee-specific deduction/benefit enrolment.
  */
 export type HrisDeduction = {
+  /**
+   * percentage or absolute amount (employee's portion)
+   */
   amount?: number | undefined;
   benefitId?: string | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
+   */
   coverageLevel?: HrisDeductionCoverageLevel | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * percentage or absolute amount (employer's portion/match)
+   */
+  employerAmount?: number | undefined;
+  employerType?: EmployerType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+   */
   frequency?: HrisDeductionFrequency | undefined;
+  /**
+   * set when this deduction is a court-ordered garnishment
+   */
+  garnishmentType?: GarnishmentType | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * annual maximum employee amount (always money)
+   */
+  maxAmount?: number | undefined;
   notes?: string | undefined;
+  /**
+   * the hris_paycode (deduction code) this deduction uses
+   */
+  paycodeId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   type?: HrisDeductionType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * employee ID (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 
@@ -75,6 +155,19 @@ export const HrisDeductionCoverageLevel$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(HrisDeductionCoverageLevel);
 
 /** @internal */
+export const EmployerType$inboundSchema: z.ZodType<
+  EmployerType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(EmployerType);
+/** @internal */
+export const EmployerType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  EmployerType
+> = openEnums.outboundSchema(EmployerType);
+
+/** @internal */
 export const HrisDeductionFrequency$inboundSchema: z.ZodType<
   HrisDeductionFrequency,
   z.ZodTypeDef,
@@ -86,6 +179,19 @@ export const HrisDeductionFrequency$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   HrisDeductionFrequency
 > = openEnums.outboundSchema(HrisDeductionFrequency);
+
+/** @internal */
+export const GarnishmentType$inboundSchema: z.ZodType<
+  GarnishmentType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(GarnishmentType);
+/** @internal */
+export const GarnishmentType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  GarnishmentType
+> = openEnums.outboundSchema(GarnishmentType);
 
 /** @internal */
 export const HrisDeductionType$inboundSchema: z.ZodType<
@@ -112,12 +218,17 @@ export const HrisDeduction$inboundSchema: z.ZodType<
   coverage_level: HrisDeductionCoverageLevel$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  employer_amount: z.number().optional(),
+  employer_type: EmployerType$inboundSchema.optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency: HrisDeductionFrequency$inboundSchema.optional(),
+  garnishment_type: GarnishmentType$inboundSchema.optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  max_amount: z.number().optional(),
   notes: z.string().optional(),
+  paycode_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -131,8 +242,13 @@ export const HrisDeduction$inboundSchema: z.ZodType<
     "company_id": "companyId",
     "coverage_level": "coverageLevel",
     "created_at": "createdAt",
+    "employer_amount": "employerAmount",
+    "employer_type": "employerType",
     "end_at": "endAt",
+    "garnishment_type": "garnishmentType",
     "is_active": "isActive",
+    "max_amount": "maxAmount",
+    "paycode_id": "paycodeId",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -145,11 +261,16 @@ export type HrisDeduction$Outbound = {
   company_id?: string | undefined;
   coverage_level?: string | undefined;
   created_at?: string | undefined;
+  employer_amount?: number | undefined;
+  employer_type?: string | undefined;
   end_at?: string | undefined;
   frequency?: string | undefined;
+  garnishment_type?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  max_amount?: number | undefined;
   notes?: string | undefined;
+  paycode_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   type?: string | undefined;
@@ -168,11 +289,16 @@ export const HrisDeduction$outboundSchema: z.ZodType<
   companyId: z.string().optional(),
   coverageLevel: HrisDeductionCoverageLevel$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  employerAmount: z.number().optional(),
+  employerType: EmployerType$outboundSchema.optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   frequency: HrisDeductionFrequency$outboundSchema.optional(),
+  garnishmentType: GarnishmentType$outboundSchema.optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  maxAmount: z.number().optional(),
   notes: z.string().optional(),
+  paycodeId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   type: HrisDeductionType$outboundSchema.optional(),
@@ -184,8 +310,13 @@ export const HrisDeduction$outboundSchema: z.ZodType<
     companyId: "company_id",
     coverageLevel: "coverage_level",
     createdAt: "created_at",
+    employerAmount: "employer_amount",
+    employerType: "employer_type",
     endAt: "end_at",
+    garnishmentType: "garnishment_type",
     isActive: "is_active",
+    maxAmount: "max_amount",
+    paycodeId: "paycode_id",
     startAt: "start_at",
     updatedAt: "updated_at",
     userId: "user_id",

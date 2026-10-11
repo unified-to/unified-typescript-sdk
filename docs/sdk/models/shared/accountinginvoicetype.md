@@ -1,5 +1,7 @@
 # AccountingInvoiceType
 
+BILL removed (use AccountingBill); remaining values: INVOICE, CREDITMEMO
+
 ## Example Usage
 
 ```typescript

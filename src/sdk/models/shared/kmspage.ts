@@ -25,6 +25,9 @@ export const KmsPageType = {
 export type KmsPageType = OpenEnum<typeof KmsPageType>;
 
 export type KmsPage = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   downloadUrl?: string | undefined;
   hasChildren?: boolean | undefined;
@@ -33,10 +36,19 @@ export type KmsPage = {
   metadata?: Array<KmsPageMetadata> | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (reference to KmsSpace)
+   */
   spaceId?: string | undefined;
   title?: string | undefined;
   type: KmsPageType;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   webUrl?: string | undefined;
 };

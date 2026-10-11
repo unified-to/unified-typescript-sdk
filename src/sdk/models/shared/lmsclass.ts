@@ -21,7 +21,13 @@ import {
 } from "./lmsreference.js";
 
 export type LmsClass = {
+  /**
+   * (reference to Course)
+   */
   courseId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
@@ -31,6 +37,9 @@ export type LmsClass = {
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   students?: Array<LmsReference> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

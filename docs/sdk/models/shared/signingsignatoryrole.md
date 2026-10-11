@@ -1,5 +1,7 @@
 # SigningSignatoryRole
 
+Role of the signatory
+
 ## Example Usage
 
 ```typescript

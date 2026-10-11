@@ -5,7 +5,7 @@
 ```typescript
 import { HrisGroupType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisGroupType = "DIVISION";
+let value: HrisGroupType = "BUSINESS_UNIT";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: HrisGroupType = "DIVISION";
 ## Values
 
 ```typescript
-"TEAM" | "GROUP" | "DEPARTMENT" | "DIVISION" | "BUSINESS_UNIT" | "BRANCH" | "SUB_DEPARTMENT" | Unrecognized<string>
+"TEAM" | "GROUP" | "DEPARTMENT" | "DIVISION" | "BUSINESS_UNIT" | "BRANCH" | "SUB_DEPARTMENT" | "PAY_GROUP" | Unrecognized<string>
 ```

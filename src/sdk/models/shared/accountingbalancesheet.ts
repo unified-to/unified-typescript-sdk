@@ -14,8 +14,14 @@ import {
 
 export type AccountingBalancesheet = {
   assets?: Array<AccountingBalancesheetItem> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   equity?: Array<AccountingBalancesheetItem> | undefined;
   id?: string | undefined;
@@ -23,7 +29,13 @@ export type AccountingBalancesheet = {
   name?: string | undefined;
   netAssetsAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -23,10 +23,16 @@ import {
   PropertyEnrichPersonAddress$inboundSchema,
 } from "./propertyenrichpersonaddress.js";
 
+/**
+ * The gender of the person
+ */
 export const EnrichPersonGender = {
   Male: "MALE",
   Female: "FEMALE",
 } as const;
+/**
+ * The gender of the person
+ */
 export type EnrichPersonGender = OpenEnum<typeof EnrichPersonGender>;
 
 /**
@@ -37,35 +43,95 @@ export type EnrichPerson = {
    * The address of the person
    */
   address?: PropertyEnrichPersonAddress | undefined;
+  /**
+   * The biography description of the person
+   */
   bio?: string | undefined;
+  /**
+   * The birth date of the person
+   */
   birthdate?: string | undefined;
+  /**
+   * The companyorganization name  of the person
+   */
   company?: string | undefined;
+  /**
+   * The company's domain
+   */
   companyDomain?: string | undefined;
+  /**
+   * The date that this person object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * An array of email addresses for this person
    */
   emails?: Array<EnrichEmail> | undefined;
+  /**
+   * The Facebook URL of the person
+   */
   facebookUrl?: string | undefined;
   firstName?: string | undefined;
+  /**
+   * The gender of the person
+   */
   gender?: EnrichPersonGender | undefined;
+  /**
+   * The GitHub URL of the person
+   */
   githubUrl?: string | undefined;
+  /**
+   * The GitHub username of the person
+   */
   githubUsername?: string | undefined;
+  /**
+   * Unique identifier for this person object
+   */
   id?: string | undefined;
+  /**
+   * The image URL of the person
+   */
   imageUrl?: string | undefined;
   lastName?: string | undefined;
+  /**
+   * The LinkedIn URL of the person
+   */
   linkedinUrl?: string | undefined;
+  /**
+   * The name of the person
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this person
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * An array of telephones for this person
    */
   telephones?: Array<EnrichTelephone> | undefined;
+  /**
+   * The timezone code of the person
+   */
   timezone?: string | undefined;
+  /**
+   * The job title of the person
+   */
   title?: string | undefined;
+  /**
+   * The twitter handle of the person
+   */
   twitterHandle?: string | undefined;
+  /**
+   * The twitter URL of the person
+   */
   twitterUrl?: string | undefined;
+  /**
+   * The last date that this person object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The timezone's hourly offset from UTC of the person
+   */
   utcOffset?: number | undefined;
   workHistories?: Array<EnrichPersonWorkHistory> | undefined;
 };

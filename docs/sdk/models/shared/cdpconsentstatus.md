@@ -1,5 +1,7 @@
 # CdpConsentStatus
 
+The consent status for this purpose
+
 ## Example Usage
 
 ```typescript

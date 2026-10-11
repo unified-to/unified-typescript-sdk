@@ -8,7 +8,7 @@ import * as shared from "../shared/index.js";
 
 export type PatchUnifiedWebhookRequest = {
   /**
-   * A webhook is used to POST new/updated information to your server.
+   * A webhook is used to POST new, updated, or deleted records to your server.
    */
   webhook: shared.Webhook;
   /**

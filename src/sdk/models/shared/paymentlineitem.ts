@@ -9,22 +9,40 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PaymentLineitem = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   discountAmount?: number | undefined;
   id?: string | undefined;
   itemDescription?: string | undefined;
+  /**
+   * (reference to CommerceItem)
+   */
   itemId?: string | undefined;
   itemName?: string | undefined;
   itemSku?: string | undefined;
   notes?: string | undefined;
+  /**
+   * new field
+   */
   refundAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   refundedAt?: Date | undefined;
   taxAmount?: number | undefined;
   taxrateId?: string | undefined;
   totalAmount?: number | undefined;
   unitAmount?: number | undefined;
   unitQuantity?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

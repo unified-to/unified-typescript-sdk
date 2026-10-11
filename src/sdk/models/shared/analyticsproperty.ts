@@ -9,14 +9,23 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AnalyticsProperty = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
   industry?: string | undefined;
   name?: string | undefined;
+  /**
+   * points to AnalyticsProperty
+   */
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

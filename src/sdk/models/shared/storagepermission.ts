@@ -14,10 +14,16 @@ import {
 } from "./propertystoragepermissionroles.js";
 
 export type StoragePermission = {
+  /**
+   * (reference to HrisGroup)
+   */
   groupId?: string | undefined;
   isHidden?: boolean | undefined;
   isPublic?: boolean | undefined;
   roles: Array<PropertyStoragePermissionRoles>;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

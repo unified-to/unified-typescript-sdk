@@ -9,9 +9,21 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CdpProfileSegment = {
+  /**
+   * When the profile's membership expires (if applicable) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   expiresAt?: Date | undefined;
+  /**
+   * When the profile joined the segment (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   joinedAt?: Date | undefined;
+  /**
+   * The name of the segment/audience
+   */
   name?: string | undefined;
+  /**
+   * The segment/audience this profile belongs to; points to CdpSegment
+   */
   segmentId?: string | undefined;
 };
 

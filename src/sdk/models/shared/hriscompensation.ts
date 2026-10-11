@@ -18,6 +18,8 @@ export const HrisCompensationFrequency = {
   Hour: "HOUR",
   Month: "MONTH",
   Week: "WEEK",
+  Biweekly: "BIWEEKLY",
+  Semimonthly: "SEMIMONTHLY",
 } as const;
 export type HrisCompensationFrequency = OpenEnum<
   typeof HrisCompensationFrequency
@@ -29,6 +31,8 @@ export const HrisCompensationType = {
   StockOptions: "STOCK_OPTIONS",
   Equity: "EQUITY",
   Other: "OTHER",
+  Hourly: "HOURLY",
+  Commission: "COMMISSION",
 } as const;
 export type HrisCompensationType = OpenEnum<typeof HrisCompensationType>;
 
@@ -36,6 +40,9 @@ export type HrisCompensation = {
   amount?: number | undefined;
   currency?: string | undefined;
   frequency?: HrisCompensationFrequency | undefined;
+  /**
+   * (reference to HrisGroup)
+   */
   groupId?: string | undefined;
   notes?: string | undefined;
   type?: HrisCompensationType | undefined;

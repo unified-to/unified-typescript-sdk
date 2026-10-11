@@ -26,8 +26,8 @@ export const PatchCrmDealQueryParamFields = {
   UserId: "user_id",
   ContactIds: "contact_ids",
   CompanyIds: "company_ids",
-  Metadata: "metadata",
   Description: "description",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchCrmDealQueryParamFields = ClosedEnum<

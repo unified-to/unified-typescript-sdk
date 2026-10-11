@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CommerceItemPrice = {
+  /**
+   * The original price of the item before an adjustment or a sale.
+   */
   compareAtPrice?: number | undefined;
   currency?: string | undefined;
   price: number;

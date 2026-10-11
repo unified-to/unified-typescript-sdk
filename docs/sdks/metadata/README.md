@@ -32,17 +32,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "a66e402b-9ccd-461c-9d94-1a40e872793e",
+      id: "0d50010f-fe15-4320-9085-e750d1f5c117",
       isRequired: false,
       name: "autem",
-      objectType: "signing_template",
+      objectType: "signing_signatory",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-02-28T08:05:10.351Z"),
+      updatedAt: new Date("2025-03-14T19:24:03.223Z"),
     },
     connectionId: "<id>",
   });
@@ -74,17 +74,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "a66e402b-9ccd-461c-9d94-1a40e872793e",
+      id: "0d50010f-fe15-4320-9085-e750d1f5c117",
       isRequired: false,
       name: "autem",
-      objectType: "signing_template",
+      objectType: "signing_signatory",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-02-28T08:05:10.351Z"),
+      updatedAt: new Date("2025-03-14T19:24:03.223Z"),
     },
     connectionId: "<id>",
   });
@@ -295,17 +295,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "a0d83ad7-5bf9-4c3b-ae13-626991f33c1b",
+      id: "77cd83fb-e2c5-447e-9767-0de767b4e59f",
       isRequired: false,
       name: "autem",
-      objectType: "signing_template",
+      objectType: "signing_signatory",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-02-28T08:05:10.358Z"),
+      updatedAt: new Date("2025-03-14T19:24:03.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -338,17 +338,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "a0d83ad7-5bf9-4c3b-ae13-626991f33c1b",
+      id: "77cd83fb-e2c5-447e-9767-0de767b4e59f",
       isRequired: false,
       name: "autem",
-      objectType: "signing_template",
+      objectType: "signing_signatory",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-02-28T08:05:10.358Z"),
+      updatedAt: new Date("2025-03-14T19:24:03.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -483,17 +483,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "a0d83ad7-5bf9-4c3b-ae13-626991f33c1b",
+      id: "77cd83fb-e2c5-447e-9767-0de767b4e59f",
       isRequired: false,
       name: "autem",
-      objectType: "signing_template",
+      objectType: "signing_signatory",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-02-28T08:05:10.358Z"),
+      updatedAt: new Date("2025-03-14T19:24:03.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -526,17 +526,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "a0d83ad7-5bf9-4c3b-ae13-626991f33c1b",
+      id: "77cd83fb-e2c5-447e-9767-0de767b4e59f",
       isRequired: false,
       name: "autem",
-      objectType: "signing_template",
+      objectType: "signing_signatory",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-02-28T08:05:10.358Z"),
+      updatedAt: new Date("2025-03-14T19:24:03.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -36,15 +36,39 @@ export type VerificationPackage = {
    * average processing time in minutes
    */
   averageProcessingTimes?: Array<VerificationTime> | undefined;
+  /**
+   * Cost-related information
+   */
   costAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * Detailed description
+   */
   description?: string | undefined;
   hasRedirectUrl?: boolean | undefined;
+  /**
+   * where the provider will redirect the user to after the verification
+   */
   hasTargetUrl?: boolean | undefined;
+  /**
+   * Unique identifier for the verification type
+   */
   id?: string | undefined;
+  /**
+   * where to find additional information
+   */
   infoUrl?: string | undefined;
+  /**
+   * if this verification returns a score, what is the maximum?
+   */
   maxScore?: number | undefined;
+  /**
+   * Name of the verification type
+   */
   name: string;
   needsIpAddress?: boolean | undefined;
   /**
@@ -57,6 +81,9 @@ export type VerificationPackage = {
    */
   tags?: Array<string> | undefined;
   type: VerificationPackageType;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   /**
    * {country}-{state/province/territory} or just {country} 2-digit ISO codes

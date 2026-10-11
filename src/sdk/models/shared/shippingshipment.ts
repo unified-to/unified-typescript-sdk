@@ -52,6 +52,9 @@ import {
   ShippingShipmentLineitem$outboundSchema,
 } from "./shippingshipmentlineitem.js";
 
+/**
+ * Type of return
+ */
 export const ReturnTypeT = {
   Customer: "CUSTOMER",
   Vendor: "VENDOR",
@@ -59,8 +62,14 @@ export const ReturnTypeT = {
   Defective: "DEFECTIVE",
   Other: "OTHER",
 } as const;
+/**
+ * Type of return
+ */
 export type ReturnTypeT = OpenEnum<typeof ReturnTypeT>;
 
+/**
+ * Current status of the shipment
+ */
 export const ShippingShipmentStatus = {
   Pending: "PENDING",
   Processing: "PROCESSING",
@@ -77,11 +86,23 @@ export const ShippingShipmentStatus = {
   CustomsClearance: "CUSTOMS_CLEARANCE",
   ExceptionResolved: "EXCEPTION_RESOLVED",
 } as const;
+/**
+ * Current status of the shipment
+ */
 export type ShippingShipmentStatus = OpenEnum<typeof ShippingShipmentStatus>;
 
 export type ShippingShipment = {
+  /**
+   * Reference to the carrier
+   */
   carrierId?: string | undefined;
+  /**
+   * Human-readable carrier/provider name when there is no carrier record to reference (e.g. commerce-platform fulfillments)
+   */
   carrierName?: string | undefined;
+  /**
+   * The date that this shipment object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * Customs information
@@ -91,58 +112,145 @@ export type ShippingShipment = {
    * Origin address
    */
   fromAddress?: PropertyShippingShipmentFromAddress | undefined;
+  /**
+   * Unique identifier for this shipment object
+   */
   id?: string | undefined;
   /**
    * Insurance details
    */
   insurance?: PropertyShippingShipmentInsurance | undefined;
+  /**
+   * Adult signature required
+   */
   isAdultSignatureRequired?: boolean | undefined;
+  /**
+   * Whether shipment is international
+   */
   isInternational?: boolean | undefined;
+  /**
+   * Whether delivery is guaranteed (from rate)
+   */
   isRateGuaranteed?: boolean | undefined;
+  /**
+   * Whether this is a return shipment
+   */
   isReturn?: boolean | undefined;
+  /**
+   * Signature required on delivery
+   */
   isSignatureRequired?: boolean | undefined;
+  /**
+   * Optional reference to the shipping label
+   */
   labelId?: string | undefined;
   /**
    * Item-level fulfillment lines (what shipped); used by commerce-platform fulfillments
    */
   lineitems?: Array<ShippingShipmentLineitem> | undefined;
+  /**
+   * Reference to commerce_order or accounting_order
+   */
   orderId?: string | undefined;
+  /**
+   * ref -> accounting Organization this shipment belongs to (multi-company ERPs)
+   */
   organizationId?: string | undefined;
+  /**
+   * Reference to original shipment if return; points to ShippingShipment
+   */
   originalShipmentId?: string | undefined;
   /**
    * Array of packages in this shipment
    */
   packages?: Array<ShippingPackage> | undefined;
+  /**
+   * The rate amount used (may differ from shipping_cost due to adjustments)
+   */
   rateAmount?: number | undefined;
+  /**
+   * Currency for rate_amount
+   */
   rateCurrency?: string | undefined;
+  /**
+   * Estimated delivery days from the rate
+   */
   rateEstimatedDays?: number | undefined;
+  /**
+   * Estimated delivery date from the rate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   rateEstimatedDeliveryAt?: Date | undefined;
+  /**
+   * Optional reference to the selected rate (for traceability)
+   */
   rateId?: string | undefined;
+  /**
+   * Service name from the rate (e.g., "Priority Mail")
+   */
   rateServiceName?: string | undefined;
+  /**
+   * The raw data returned by the integration for this shipment
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Customer reference number
+   */
   referenceNumber?: string | undefined;
   /**
    * Return address (may differ from from_address)
    */
   returnAddress?: PropertyShippingShipmentReturnAddress | undefined;
+  /**
+   * RMA number if return shipment
+   */
   returnAuthorizationNumber?: string | undefined;
+  /**
+   * Reason for return
+   */
   returnReason?: string | undefined;
+  /**
+   * Type of return
+   */
   returnType?: ReturnTypeT | undefined;
+  /**
+   * Code for the shipping service used
+   */
   serviceCode?: string | undefined;
+  /**
+   * When shipment was createddispatched (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   shippedAt?: Date | undefined;
   /**
    * Array of special instructions
    */
   specialInstructions?: Array<string> | undefined;
+  /**
+   * Current status of the shipment
+   */
   status?: ShippingShipmentStatus | undefined;
   /**
    * Destination address
    */
   toAddress?: PropertyShippingShipmentToAddress | undefined;
+  /**
+   * Optional reference to the tracking information
+   */
   trackingId?: string | undefined;
+  /**
+   * Carrier tracking URL for this shipment
+   */
   trackingUrl?: string | undefined;
+  /**
+   * The last date that this shipment object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Origin warehouselocation ID; points to CommerceLocation
+   */
   warehouseLocationId?: string | undefined;
+  /**
+   * Origin warehouse location name
+   */
   warehouseLocationName?: string | undefined;
 };
 

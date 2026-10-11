@@ -10,22 +10,55 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * DESTINATION, or BIDIRECTIONAL for import+export connectors
+ */
 export const Direction = {
   Source: "SOURCE",
   Destination: "DESTINATION",
   Bidirectional: "BIDIRECTIONAL",
 } as const;
+/**
+ * DESTINATION, or BIDIRECTIONAL for import+export connectors
+ */
 export type Direction = OpenEnum<typeof Direction>;
 
 export type CdpDestination = {
+  /**
+   * The date that this destination object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * DESTINATION, or BIDIRECTIONAL for import+export connectors
+   */
   direction?: Direction | undefined;
+  /**
+   * Unique identifier for this destination object
+   */
   id?: string | undefined;
+  /**
+   * Whether the destination is active/enabled
+   */
   isEnabled?: boolean | undefined;
+  /**
+   * The name of the outbound activation destination
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this destination
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * A stable handle/key for the destination
+   */
   slug?: string | undefined;
+  /**
+   * The connector/destination type (eg. the provider's connector slug or plugin id)
+   */
   type?: string | undefined;
+  /**
+   * The last date that this destination object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

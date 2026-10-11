@@ -30,21 +30,36 @@ export type AnalyticsVisitor = {
   city?: string | undefined;
   country?: string | undefined;
   countryCode?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   email?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   firstSeenAt?: Date | undefined;
   gender?: Gender | undefined;
   id?: string | undefined;
   language?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   lastSeenAt?: Date | undefined;
   metadata?: { [k: string]: PropertyAnalyticsVisitorMetadata } | undefined;
   name?: string | undefined;
+  /**
+   * points to AnalyticsProperty
+   */
   propertyId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
   totalEvents?: number | undefined;
   totalPageViews?: number | undefined;
   totalSessions?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

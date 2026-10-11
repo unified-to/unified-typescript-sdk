@@ -10,36 +10,93 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * direction: DEBIT, CREDIT
+ */
 export const AccountingBankfeedtransactionType = {
   Debit: "DEBIT",
   Credit: "CREDIT",
 } as const;
+/**
+ * direction: DEBIT, CREDIT
+ */
 export type AccountingBankfeedtransactionType = OpenEnum<
   typeof AccountingBankfeedtransactionType
 >;
 
 export type AccountingBankfeedtransaction = {
+  /**
+   * GL account once categorized (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
+  /**
+   * transaction amount (positive; direction from type)
+   */
   amount?: number | undefined;
+  /**
+   * the bank's own category label
+   */
   bankCategory?: string | undefined;
+  /**
+   * ref -> BankfeedAccount this transaction belongs to
+   */
   bankfeedaccountId?: string | undefined;
   /**
    * dimension refs -> AccountingCategory (class/department/location)
    */
   categoryIds?: Array<string> | undefined;
+  /**
+   * matched vendor/customer once reconciled (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * creation timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217
+   */
   currency?: string | undefined;
+  /**
+   * bank memo / statement text
+   */
   description?: string | undefined;
   id?: string | undefined;
+  /**
+   * true if not yet cleared
+   */
   isPending?: boolean | undefined;
+  /**
+   * counterparty as reported by the bank
+   */
   merchantName?: string | undefined;
+  /**
+   * ref -> accounting Organization this record belongs to
+   */
   organizationId?: string | undefined;
+  /**
+   * when it posted / cleared (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
+  /**
+   * The original data from the integration's API
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * bank reference or check number
+   */
   reference?: string | undefined;
+  /**
+   * when the transaction occurred (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   transactionAt?: Date | undefined;
+  /**
+   * direction: DEBIT, CREDIT
+   */
   type?: AccountingBankfeedtransactionType | undefined;
+  /**
+   * last-update timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -23,7 +23,13 @@ import {
 export type LmsCourse = {
   categories?: Array<string> | undefined;
   contentIds?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The currency code (ISO) of the course price
+   */
   currency?: string | undefined;
   description?: string | undefined;
   durationMinutes?: number | undefined;
@@ -34,13 +40,22 @@ export type LmsCourse = {
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia> | undefined;
   name?: string | undefined;
+  /**
+   * How much the course costs
+   */
   priceAmount?: number | undefined;
   providerName?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   publishedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   students?: Array<LmsReference> | undefined;
   timeEstimateMinutes?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

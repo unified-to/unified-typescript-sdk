@@ -12,7 +12,7 @@ let value: PropertyCrmEventNote = {};
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `description`      | *string*           | :heavy_minus_sign: | N/A                |
-| `title`            | *string*           | :heavy_minus_sign: | N/A                |
+| Field                        | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `description`                | *string*                     | :heavy_minus_sign:           | The event note's description |
+| `title`                      | *string*                     | :heavy_minus_sign:           | N/A                          |

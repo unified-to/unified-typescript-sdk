@@ -5,11 +5,11 @@
 ```typescript
 import { PatchAccountingPurchaseorderQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: PatchAccountingPurchaseorderQueryParamFields = "currency";
+let value: PatchAccountingPurchaseorderQueryParamFields = "total_amount";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "posted_at" | "contact_id" | "account_id" | "currency" | "total_amount" | "shipping_address" | "billing_address" | "status" | "lineitems" | "organization_id" | "category_ids" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "posted_at" | "contact_id" | "account_id" | "currency" | "total_amount" | "shipping_address" | "billing_address" | "status" | "lineitems" | "organization_id" | "category_ids" | "metadata" | "attachments" | "raw"
 ```

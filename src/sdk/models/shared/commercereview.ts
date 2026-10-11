@@ -43,25 +43,46 @@ export type CommerceReview = {
   authorName?: string | undefined;
   comments?: Array<CommerceReviewComment> | undefined;
   content?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   helpfulVotes?: number | undefined;
   id?: string | undefined;
   isFeatured?: boolean | undefined;
   isPublic?: boolean | undefined;
   isVerified?: boolean | undefined;
+  /**
+   * Reference to the product being reviewed (reference to CommerceItem)
+   */
   itemId?: string | undefined;
+  /**
+   * Optional reference to specific variant if applicable (reference to CommerceCommerceItemvariant)
+   */
   itemVariantId?: string | undefined;
+  /**
+   * (reference to CommerceLocation)
+   */
   locationId?: string | undefined;
   /**
    * Photosvideos attached to the review
    */
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
+  /**
+   * 1-5 rating
+   */
   rating?: number | undefined;
+  /**
+   * Original review data from source platform
+   */
   raw?: { [k: string]: any } | undefined;
   status?: CommerceReviewStatus | undefined;
   title?: string | undefined;
   unhelpfulVotes?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   url?: string | undefined;
   verifiedPurchase?: boolean | undefined;

@@ -38,15 +38,30 @@ export type AccountingProject = {
   actualCostAmount?: number | undefined;
   billingType?: BillingType | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * provider-side project code/number (e.g. NetSuite entityId, Intacct PROJECTID, BC jobNumber)
+   */
   code?: string | undefined;
+  /**
+   * the customer the project is for (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   creditNoteAmount?: number | undefined;
   currency?: string | undefined;
   depositAmount?: number | undefined;
   depositAppliedAmount?: number | undefined;
   description?: string | undefined;
+  /**
+   * planned/target end date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
+  /**
+   * actual completion (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endedAt?: Date | undefined;
   estimateAmount?: number | undefined;
   estimatedCostAmount?: number | undefined;
@@ -56,18 +71,39 @@ export type AccountingProject = {
   isActive?: boolean | undefined;
   isBillable?: boolean | undefined;
   locationId?: string | undefined;
+  /**
+   * references a HRIS employee/user (reference to HrisEmployee)
+   */
   managerUserId?: string | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
+  /**
+   * integer minutes, not hours
+   */
   minutesLogged?: number | undefined;
+  /**
+   * integer minutes, not hours
+   */
   minutesToBeInvoiced?: number | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
+  /**
+   * parent project / sub-project hierarchy
+   */
   parentId?: string | undefined;
+  /**
+   * 0-100
+   */
   percentComplete?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startedAt?: Date | undefined;
   status?: AccountingProjectStatus | undefined;
   toBeInvoicedAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -1,5 +1,7 @@
 # ShippingTrackingStatus
 
+Current status of the shipment
+
 ## Example Usage
 
 ```typescript

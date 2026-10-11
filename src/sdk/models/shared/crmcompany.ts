@@ -41,6 +41,9 @@ export type CrmCompany = {
    * An array of contact IDs associated with this company
    */
   contactIds?: Array<string> | undefined;
+  /**
+   * The date that this company object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * An array of deal IDs associated with this contact
@@ -50,6 +53,9 @@ export type CrmCompany = {
   domains?: Array<string> | undefined;
   emails?: Array<CrmEmail> | undefined;
   employees?: number | undefined;
+  /**
+   * Unique identifier for this company object
+   */
   id?: string | undefined;
   industry?: string | undefined;
   isActive?: boolean | undefined;
@@ -58,12 +64,24 @@ export type CrmCompany = {
    */
   linkUrls?: Array<string> | undefined;
   metadata?: Array<CrmMetadata> | undefined;
+  /**
+   * The name of the company
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this company
+   */
   raw?: { [k: string]: any } | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<CrmTelephone> | undefined;
   timezone?: string | undefined;
+  /**
+   * The last date that this company object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   websites?: Array<string> | undefined;
 };

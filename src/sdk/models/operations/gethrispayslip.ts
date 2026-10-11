@@ -22,6 +22,16 @@ export const GetHrisPayslipQueryParamFields = {
   NetAmount: "net_amount",
   Details: "details",
   Deduction: "deduction",
+  PayrollId: "payroll_id",
+  GroupId: "group_id",
+  Type: "type",
+  Hours: "hours",
+  EmployeeTaxAmount: "employee_tax_amount",
+  EmployerTaxAmount: "employer_tax_amount",
+  DeductionAmount: "deduction_amount",
+  EmployerContributionAmount: "employer_contribution_amount",
+  GrossYtdAmount: "gross_ytd_amount",
+  NetYtdAmount: "net_ytd_amount",
   Raw: "raw",
 } as const;
 export type GetHrisPayslipQueryParamFields = ClosedEnum<

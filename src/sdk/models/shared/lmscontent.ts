@@ -36,8 +36,14 @@ export type LmsContent = {
   categories?: Array<string> | undefined;
   collectionIds?: Array<string> | undefined;
   courseIds?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
+  /**
+   * Difficulty or level of the content (e.g. Beginner, Intermediate, Advanced)
+   */
   difficulty?: string | undefined;
   durationMinutes?: number | undefined;
   externalReference?: string | undefined;
@@ -49,6 +55,9 @@ export type LmsContent = {
   media?: Array<LmsMedia> | undefined;
   name?: string | undefined;
   providerName?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   publishedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   shortDescription?: string | undefined;
@@ -59,6 +68,9 @@ export type LmsContent = {
    */
   subjects?: Array<LmsSubject> | undefined;
   tags?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

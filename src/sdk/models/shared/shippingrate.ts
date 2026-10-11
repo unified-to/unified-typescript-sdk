@@ -33,12 +33,18 @@ import {
 } from "./shippingraterate.js";
 
 export type ShippingRate = {
+  /**
+   * Reference to the carrier
+   */
   carrierId?: string | undefined;
   currency?: string | undefined;
   /**
    * Origin address
    */
   fromAddress?: PropertyShippingRateFromAddress | undefined;
+  /**
+   * Unique identifier for this rate object
+   */
   id?: string | undefined;
   /**
    * Multiple packages (alternative to package)
@@ -46,7 +52,13 @@ export type ShippingRate = {
   packages?: Array<ShippingPackage> | undefined;
   rates?: Array<ShippingRateRate> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Latest date to ship (from order) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   shipByAt?: Date | undefined;
+  /**
+   * Reference to the shipping object (if rate is for existing shipment)
+   */
   shipmentId?: string | undefined;
   /**
    * Destination address

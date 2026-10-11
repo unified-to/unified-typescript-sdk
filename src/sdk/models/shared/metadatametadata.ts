@@ -28,17 +28,26 @@ export const MetadataMetadataFormat = {
 export type MetadataMetadataFormat = OpenEnum<typeof MetadataMetadataFormat>;
 
 export type MetadataMetadata = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   format?: MetadataMetadataFormat | undefined;
   id?: string | undefined;
   isRequired?: boolean | undefined;
   name: string;
+  /**
+   * This is the unified object type that this metadata is associated with. eg. crm_contact or coomerce_item
+   */
   objectType: string;
   objects?: { [k: string]: any } | undefined;
   options?: Array<string> | undefined;
   originalFormat?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

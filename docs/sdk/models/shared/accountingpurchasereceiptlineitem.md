@@ -1,0 +1,27 @@
+# AccountingPurchasereceiptLineitem
+
+## Example Usage
+
+```typescript
+import { AccountingPurchasereceiptLineitem } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingPurchasereceiptLineitem = {};
+```
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `accountId`                                                                       | *string*                                                                          | :heavy_minus_sign:                                                                | (reference to AccountingAccount)                                                  |
+| `id`                                                                              | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `itemDescription`                                                                 | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `itemId`                                                                          | *string*                                                                          | :heavy_minus_sign:                                                                | (reference to CommerceItem)                                                       |
+| `itemName`                                                                        | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `itemSku`                                                                         | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `locations`                                                                       | [shared.AccountingReference](../../../sdk/models/shared/accountingreference.md)[] | :heavy_minus_sign:                                                                | plant/warehouse/bin — same shape as IAccountingLineitem.locations                 |
+| `purchaseorderId`                                                                 | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `purchaseorderLineIdentifier`                                                     | *string*                                                                          | :heavy_minus_sign:                                                                | vendor PO line number for three-way match                                         |
+| `totalAmount`                                                                     | *number*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `unitAmount`                                                                      | *number*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `unitQuantityOrdered`                                                             | *number*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `unitQuantityReceived`                                                            | *number*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |

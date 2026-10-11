@@ -1,5 +1,7 @@
 # LabelFormat
 
+Format of the label (PDF, PNG, ZPL, EPL2)
+
 ## Example Usage
 
 ```typescript

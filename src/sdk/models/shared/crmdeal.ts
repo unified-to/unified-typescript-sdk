@@ -24,25 +24,58 @@ import {
  * A deal represents an opportunity with companies and/or contacts
  */
 export type CrmDeal = {
+  /**
+   * The potential amount that deal could be worth
+   */
   amount?: number | undefined;
+  /**
+   * The date that this deal closed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   closedAt?: Date | undefined;
+  /**
+   * expected closing date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   closingAt?: Date | undefined;
   companyIds?: Array<string> | undefined;
   contactIds?: Array<string> | undefined;
+  /**
+   * The date that this deal object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The currency for the deal amount (3 letter ISO code; eg. USD)
+   */
   currency?: string | undefined;
   description?: string | undefined;
+  /**
+   * Unique identifier for this deal object
+   */
   id?: string | undefined;
   lostReason?: string | undefined;
   metadata?: Array<CrmMetadata> | undefined;
+  /**
+   * The name of this deal
+   */
   name?: string | undefined;
   pipelines?: Array<CrmReference> | undefined;
   probability?: number | undefined;
+  /**
+   * The raw data returned by the integration for this deal
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The source for this deal
+   */
   source?: string | undefined;
   stages?: Array<CrmReference> | undefined;
   tags?: Array<string> | undefined;
+  /**
+   * The last date that this deal object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   wonReason?: string | undefined;
 };

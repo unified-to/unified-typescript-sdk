@@ -44,9 +44,30 @@ export const AccountingExpenseStatus = {
 } as const;
 export type AccountingExpenseStatus = OpenEnum<typeof AccountingExpenseStatus>;
 
+/**
+ * USER = employee spend; COMPANY = books/purchase expense
+ */
+export const AccountingExpenseType = {
+  User: "USER",
+  Company: "COMPANY",
+} as const;
+/**
+ * USER = employee spend; COMPANY = books/purchase expense
+ */
+export type AccountingExpenseType = OpenEnum<typeof AccountingExpenseType>;
+
 export type AccountingExpense = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   approvedAt?: Date | undefined;
+  /**
+   * references HR employee/user (reference to HrisEmployee)
+   */
   approverUserId?: string | undefined;
   /**
    * expense approver(s); id is HR employee/user when resolved
@@ -54,9 +75,18 @@ export type AccountingExpense = {
   approverUsers?: Array<AccountingReference> | undefined;
   attachments?: Array<AccountingAttachment> | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * Exchange rate to the base/home currency at the expense date
+   */
   exchangeRate?: number | undefined;
   externalNumber?: string | undefined;
   id?: string | undefined;
@@ -65,16 +95,38 @@ export type AccountingExpense = {
   name?: string | undefined;
   organizationId?: string | undefined;
   paymentMethod?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
+  /**
+   * (reference to TaskProject)
+   */
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reimbursedAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   reimbursedAt?: Date | undefined;
   status?: AccountingExpenseStatus | undefined;
   taxAmount?: number | undefined;
+  /**
+   * ref -> AccountingTaxrate applied to the expense
+   */
   taxrateId?: string | undefined;
   totalAmount?: number | undefined;
+  /**
+   * USER = employee spend; COMPANY = books/purchase expense
+   */
+  type?: AccountingExpenseType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * references a HR employee/user (reference to HrisEmployee)
+   */
   userId?: string | undefined;
   users?: Array<AccountingReference> | undefined;
 };
@@ -91,6 +143,19 @@ export const AccountingExpenseStatus$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingExpenseStatus
 > = openEnums.outboundSchema(AccountingExpenseStatus);
+
+/** @internal */
+export const AccountingExpenseType$inboundSchema: z.ZodType<
+  AccountingExpenseType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AccountingExpenseType);
+/** @internal */
+export const AccountingExpenseType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AccountingExpenseType
+> = openEnums.outboundSchema(AccountingExpenseType);
 
 /** @internal */
 export const AccountingExpense$inboundSchema: z.ZodType<
@@ -129,6 +194,7 @@ export const AccountingExpense$inboundSchema: z.ZodType<
   tax_amount: z.number().optional(),
   taxrate_id: z.string().optional(),
   total_amount: z.number().optional(),
+  type: AccountingExpenseType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -185,6 +251,7 @@ export type AccountingExpense$Outbound = {
   tax_amount?: number | undefined;
   taxrate_id?: string | undefined;
   total_amount?: number | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
   users?: Array<AccountingReference$Outbound> | undefined;
@@ -222,6 +289,7 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   taxAmount: z.number().optional(),
   taxrateId: z.string().optional(),
   totalAmount: z.number().optional(),
+  type: AccountingExpenseType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
   users: z.array(AccountingReference$outboundSchema).optional(),

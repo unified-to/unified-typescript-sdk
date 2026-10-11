@@ -8,14 +8,19 @@ import { genaiCreateGenaiPrompt } from "../funcs/genaiCreateGenaiPrompt.js";
 import { genaiCreateGenaiTask } from "../funcs/genaiCreateGenaiTask.js";
 import { genaiGetGenaiAgent } from "../funcs/genaiGetGenaiAgent.js";
 import { genaiGetGenaiModel } from "../funcs/genaiGetGenaiModel.js";
+import { genaiGetGenaiSkill } from "../funcs/genaiGetGenaiSkill.js";
 import { genaiGetGenaiTask } from "../funcs/genaiGetGenaiTask.js";
 import { genaiListGenaiAgents } from "../funcs/genaiListGenaiAgents.js";
 import { genaiListGenaiModels } from "../funcs/genaiListGenaiModels.js";
+import { genaiListGenaiSkills } from "../funcs/genaiListGenaiSkills.js";
 import { genaiListGenaiTasks } from "../funcs/genaiListGenaiTasks.js";
 import { genaiPatchGenaiAgent } from "../funcs/genaiPatchGenaiAgent.js";
+import { genaiPatchGenaiTask } from "../funcs/genaiPatchGenaiTask.js";
 import { genaiRemoveGenaiAgent } from "../funcs/genaiRemoveGenaiAgent.js";
+import { genaiRemoveGenaiSkill } from "../funcs/genaiRemoveGenaiSkill.js";
 import { genaiRemoveGenaiTask } from "../funcs/genaiRemoveGenaiTask.js";
 import { genaiUpdateGenaiAgent } from "../funcs/genaiUpdateGenaiAgent.js";
+import { genaiUpdateGenaiTask } from "../funcs/genaiUpdateGenaiTask.js";
 import { organizationCreateGenaiOrganization } from "../funcs/organizationCreateGenaiOrganization.js";
 import { organizationGetGenaiOrganization } from "../funcs/organizationGetGenaiOrganization.js";
 import { organizationListGenaiOrganizations } from "../funcs/organizationListGenaiOrganizations.js";
@@ -141,6 +146,20 @@ export class Genai extends ClientSDK {
   }
 
   /**
+   * Retrieve a skill
+   */
+  async getGenaiSkill(
+    request: operations.GetGenaiSkillRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiSkill> {
+    return unwrapAsync(genaiGetGenaiSkill(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a task
    */
   async getGenaiTask(
@@ -197,6 +216,20 @@ export class Genai extends ClientSDK {
   }
 
   /**
+   * List all skills
+   */
+  async listGenaiSkills(
+    request: operations.ListGenaiSkillsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.GenaiSkill>> {
+    return unwrapAsync(genaiListGenaiSkills(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all tasks
    */
   async listGenaiTasks(
@@ -239,6 +272,20 @@ export class Genai extends ClientSDK {
   }
 
   /**
+   * Update a task
+   */
+  async patchGenaiTask(
+    request: operations.PatchGenaiTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiTask> {
+    return unwrapAsync(genaiPatchGenaiTask(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove an agent
    */
   async removeGenaiAgent(
@@ -260,6 +307,20 @@ export class Genai extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveGenaiOrganizationResponse | undefined> {
     return unwrapAsync(organizationRemoveGenaiOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a skill
+   */
+  async removeGenaiSkill(
+    request: operations.RemoveGenaiSkillRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveGenaiSkillResponse | undefined> {
+    return unwrapAsync(genaiRemoveGenaiSkill(
       this,
       request,
       options,
@@ -302,6 +363,20 @@ export class Genai extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.GenaiOrganization> {
     return unwrapAsync(organizationUpdateGenaiOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a task
+   */
+  async updateGenaiTask(
+    request: operations.UpdateGenaiTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiTask> {
+    return unwrapAsync(genaiUpdateGenaiTask(
       this,
       request,
       options,

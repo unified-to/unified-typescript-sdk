@@ -5,11 +5,11 @@
 ```typescript
 import { PatchUcRecordingQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: PatchUcRecordingQueryParamFields = "expires_at";
+let value: PatchUcRecordingQueryParamFields = "call_id";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "start_at" | "end_at" | "expires_at" | "call_id" | "web_url" | "contacts" | "user_id" | "media" | "user_name" | "user_phone" | "type" | "raw"
+"id" | "created_at" | "updated_at" | "start_at" | "end_at" | "expires_at" | "call_id" | "web_url" | "contacts" | "user_id" | "media" | "user_name" | "user_phone" | "type" | "conversation_identifier" | "raw"
 ```

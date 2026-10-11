@@ -21,13 +21,28 @@ export type CoverageType = OpenEnum<typeof CoverageType>;
  * Insurance details
  */
 export type PropertyShippingShipmentInsurance = {
+  /**
+   * Coverage amount (may differ from insured_value)
+   */
   coverageAmount?: number | undefined;
   coverageType?: CoverageType | undefined;
   currency?: string | undefined;
+  /**
+   * Cost of insurance
+   */
   insuranceCost?: number | undefined;
   insuranceCostCurrency?: string | undefined;
+  /**
+   * Insurance provider name
+   */
   insuranceProvider?: string | undefined;
+  /**
+   * Provider code
+   */
   insuranceProviderCode?: string | undefined;
+  /**
+   * Insured value
+   */
   insuredValue?: number | undefined;
 };
 

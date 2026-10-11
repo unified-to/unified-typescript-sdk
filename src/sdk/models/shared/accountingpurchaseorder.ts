@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingAttachment,
+  AccountingAttachment$inboundSchema,
+  AccountingAttachment$Outbound,
+  AccountingAttachment$outboundSchema,
+} from "./accountingattachment.js";
+import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
   AccountingLineitem$Outbound,
@@ -53,21 +59,37 @@ export type AccountingPurchaseorderStatus = OpenEnum<
 >;
 
 export type AccountingPurchaseorder = {
+  /**
+   * (reference to AccountingAccount)
+   */
   accountId?: string | undefined;
+  attachments?: Array<AccountingAttachment> | undefined;
   billingAddress?: PropertyAccountingPurchaseorderBillingAddress | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * Customer, Supplier (reference to AccountingContact)
+   */
   contactId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   shippingAddress?: PropertyAccountingPurchaseorderShippingAddress | undefined;
   status?: AccountingPurchaseorderStatus | undefined;
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 
@@ -91,6 +113,7 @@ export const AccountingPurchaseorder$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
   billing_address: PropertyAccountingPurchaseorderBillingAddress$inboundSchema
     .optional(),
   category_ids: z.array(z.string()).optional(),
@@ -128,6 +151,7 @@ export const AccountingPurchaseorder$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingPurchaseorder$Outbound = {
   account_id?: string | undefined;
+  attachments?: Array<AccountingAttachment$Outbound> | undefined;
   billing_address?:
     | PropertyAccountingPurchaseorderBillingAddress$Outbound
     | undefined;
@@ -156,6 +180,7 @@ export const AccountingPurchaseorder$outboundSchema: z.ZodType<
   AccountingPurchaseorder
 > = z.object({
   accountId: z.string().optional(),
+  attachments: z.array(AccountingAttachment$outboundSchema).optional(),
   billingAddress: PropertyAccountingPurchaseorderBillingAddress$outboundSchema
     .optional(),
   categoryIds: z.array(z.string()).optional(),

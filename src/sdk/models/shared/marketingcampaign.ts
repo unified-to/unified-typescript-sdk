@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Campaign status
+ */
 export const MarketingCampaignStatus = {
   Draft: "DRAFT",
   Scheduled: "SCHEDULED",
@@ -20,25 +23,67 @@ export const MarketingCampaignStatus = {
   Archived: "ARCHIVED",
   Other: "OTHER",
 } as const;
+/**
+ * Campaign status
+ */
 export type MarketingCampaignStatus = OpenEnum<typeof MarketingCampaignStatus>;
 
 export type MarketingCampaign = {
+  /**
+   * When the campaign was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Sender email address
+   */
   fromEmail?: string | undefined;
+  /**
+   * Sender name
+   */
   fromName?: string | undefined;
+  /**
+   * Unique identifier for the campaign
+   */
   id?: string | undefined;
   /**
    * Associated listaudience IDs
    */
   listIds?: Array<string> | undefined;
+  /**
+   * Campaign nametitle
+   */
   name?: string | undefined;
+  /**
+   * Email preview text
+   */
   previewText?: string | undefined;
+  /**
+   * Raw data from integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Reply-to email address
+   */
   replyToEmail?: string | undefined;
+  /**
+   * Scheduled send time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   sendAt?: Date | undefined;
+  /**
+   * Campaign status
+   */
   status?: MarketingCampaignStatus | undefined;
+  /**
+   * Email subject line
+   */
   subjectLine?: string | undefined;
+  /**
+   * Campaign type (e.g., regular, automation, ab_test)
+   */
   type?: string | undefined;
+  /**
+   * When the campaign was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

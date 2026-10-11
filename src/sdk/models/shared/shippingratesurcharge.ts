@@ -8,9 +8,21 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ShippingRateSurcharge = {
+  /**
+   * Surcharge amount
+   */
   amount?: number | undefined;
+  /**
+   * Surcharge type (e.g., "RESIDENTIAL", "FUEL", "SIGNATURE")
+   */
   code?: string | undefined;
+  /**
+   * Description of surcharge
+   */
   description?: string | undefined;
+  /**
+   * Human-readable name
+   */
   name?: string | undefined;
 };
 

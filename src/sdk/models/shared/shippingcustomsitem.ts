@@ -21,13 +21,34 @@ export type ShippingCustomsItemWeightUnit = OpenEnum<
 >;
 
 export type ShippingCustomsItem = {
+  /**
+   * Value per unit
+   */
   amount?: number | undefined;
+  /**
+   * Country of origin (ISO code)
+   */
   countryOfOrigin?: string | undefined;
   currency?: string | undefined;
+  /**
+   * Item description
+   */
   description?: string | undefined;
+  /**
+   * HS code
+   */
   harmonizedTariffCode?: string | undefined;
+  /**
+   * Quantity
+   */
   quantity?: number | undefined;
+  /**
+   * SKU
+   */
   sku?: string | undefined;
+  /**
+   * Weight per unit
+   */
   weight?: number | undefined;
   weightUnit?: ShippingCustomsItemWeightUnit | undefined;
 };

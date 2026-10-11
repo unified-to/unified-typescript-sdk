@@ -19,24 +19,48 @@ export const PerformanceCycleStatus = {
 } as const;
 export type PerformanceCycleStatus = OpenEnum<typeof PerformanceCycleStatus>;
 
+/**
+ * whether this is a review cycle or a goal cycle/timeframe
+ */
 export const PerformanceCycleType = {
   Review: "REVIEW",
   Goal: "GOAL",
   Other: "OTHER",
 } as const;
+/**
+ * whether this is a review cycle or a goal cycle/timeframe
+ */
 export type PerformanceCycleType = OpenEnum<typeof PerformanceCycleType>;
 
 export type PerformanceCycle = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   id?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: PerformanceCycleStatus | undefined;
+  /**
+   * whether this is a review cycle or a goal cycle/timeframe
+   */
   type?: PerformanceCycleType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

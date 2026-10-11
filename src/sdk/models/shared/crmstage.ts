@@ -10,12 +10,18 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CrmStage = {
   active?: boolean | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   dealProbability?: number | undefined;
   displayOrder?: number | undefined;
   id?: string | undefined;
   isClosed?: boolean | undefined;
   name?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -94,6 +94,7 @@ async function $do(
   const path = pathToFunc("/genai/{connection_id}/task")(pathParams);
 
   const query = encodeFormQuery({
+    "agent_id": payload.agent_id,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,

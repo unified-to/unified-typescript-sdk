@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Unified fee category
+ */
 export const AccountingFeeType = {
   Tax: "TAX",
   Discount: "DISCOUNT",
@@ -22,12 +25,24 @@ export const AccountingFeeType = {
   ServiceCharge: "SERVICE_CHARGE",
   Other: "OTHER",
 } as const;
+/**
+ * Unified fee category
+ */
 export type AccountingFeeType = OpenEnum<typeof AccountingFeeType>;
 
 export type AccountingFee = {
   amount: number;
+  /**
+   * ISO 4217 currency code, e.g. USD
+   */
   currency?: string | undefined;
+  /**
+   * The provider's original fee label, e.g. "VAT" or a shipping carrier name
+   */
   originalType?: string | undefined;
+  /**
+   * Unified fee category
+   */
   type: AccountingFeeType;
 };
 

@@ -14,4 +14,4 @@ let value: VerificationParameterInput = {};
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `id`               | *string*           | :heavy_minus_sign: | N/A                |
 | `inputs`           | *string*[]         | :heavy_minus_sign: | N/A                |
-| `name`             | *string*           | :heavy_minus_sign: | N/A                |
+| `name`             | *string*           | :heavy_minus_sign: | name of parameter  |

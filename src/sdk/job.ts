@@ -8,6 +8,12 @@ import { atsListAtsJobs } from "../funcs/atsListAtsJobs.js";
 import { atsPatchAtsJob } from "../funcs/atsPatchAtsJob.js";
 import { atsRemoveAtsJob } from "../funcs/atsRemoveAtsJob.js";
 import { atsUpdateAtsJob } from "../funcs/atsUpdateAtsJob.js";
+import { jobCreateHrisJob } from "../funcs/jobCreateHrisJob.js";
+import { jobGetHrisJob } from "../funcs/jobGetHrisJob.js";
+import { jobListHrisJobs } from "../funcs/jobListHrisJobs.js";
+import { jobPatchHrisJob } from "../funcs/jobPatchHrisJob.js";
+import { jobRemoveHrisJob } from "../funcs/jobRemoveHrisJob.js";
+import { jobUpdateHrisJob } from "../funcs/jobUpdateHrisJob.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -29,6 +35,20 @@ export class Job extends ClientSDK {
   }
 
   /**
+   * Create a job
+   */
+  async createHrisJob(
+    request: operations.CreateHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobCreateHrisJob(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a job
    */
   async getAtsJob(
@@ -36,6 +56,20 @@ export class Job extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsJob> {
     return unwrapAsync(atsGetAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a job
+   */
+  async getHrisJob(
+    request: operations.GetHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobGetHrisJob(
       this,
       request,
       options,
@@ -57,6 +91,20 @@ export class Job extends ClientSDK {
   }
 
   /**
+   * List all jobs
+   */
+  async listHrisJobs(
+    request: operations.ListHrisJobsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisJob>> {
+    return unwrapAsync(jobListHrisJobs(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a job
    */
   async patchAtsJob(
@@ -64,6 +112,20 @@ export class Job extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsJob> {
     return unwrapAsync(atsPatchAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a job
+   */
+  async patchHrisJob(
+    request: operations.PatchHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobPatchHrisJob(
       this,
       request,
       options,
@@ -85,6 +147,20 @@ export class Job extends ClientSDK {
   }
 
   /**
+   * Remove a job
+   */
+  async removeHrisJob(
+    request: operations.RemoveHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisJobResponse | undefined> {
+    return unwrapAsync(jobRemoveHrisJob(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a job
    */
   async updateAtsJob(
@@ -92,6 +168,20 @@ export class Job extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsJob> {
     return unwrapAsync(atsUpdateAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a job
+   */
+  async updateHrisJob(
+    request: operations.UpdateHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobUpdateHrisJob(
       this,
       request,
       options,

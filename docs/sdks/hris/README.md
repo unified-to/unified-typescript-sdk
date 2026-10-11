@@ -11,8 +11,10 @@
 * [createHrisDeduction](#createhrisdeduction) - Create a deduction
 * [createHrisDevice](#createhrisdevice) - Create a device
 * [createHrisDocument](#createhrisdocument) - Create a document
+* [createHrisEarning](#createhrisearning) - Create an earning
 * [createHrisEmployee](#createhrisemployee) - Create an employee
 * [createHrisGroup](#createhrisgroup) - Create a group
+* [createHrisJob](#createhrisjob) - Create a job
 * [createHrisLocation](#createhrislocation) - Create a location
 * [createHrisTaxonomy](#createhristaxonomy) - Create a taxonomy
 * [createHrisTimeoff](#createhristimeoff) - Create a timeoff
@@ -24,9 +26,13 @@
 * [getHrisDeduction](#gethrisdeduction) - Retrieve a deduction
 * [getHrisDevice](#gethrisdevice) - Retrieve a device
 * [getHrisDocument](#gethrisdocument) - Retrieve a document
+* [getHrisEarning](#gethrisearning) - Retrieve an earning
 * [getHrisEmployee](#gethrisemployee) - Retrieve an employee
 * [getHrisGroup](#gethrisgroup) - Retrieve a group
+* [getHrisJob](#gethrisjob) - Retrieve a job
 * [getHrisLocation](#gethrislocation) - Retrieve a location
+* [getHrisPaycode](#gethrispaycode) - Retrieve a paycode
+* [getHrisPayroll](#gethrispayroll) - Retrieve a payroll
 * [getHrisPayslip](#gethrispayslip) - Retrieve a payslip
 * [getHrisTaxonomy](#gethristaxonomy) - Retrieve a taxonomy
 * [getHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
@@ -38,9 +44,13 @@
 * [listHrisDeductions](#listhrisdeductions) - List all deductions
 * [listHrisDevices](#listhrisdevices) - List all devices
 * [listHrisDocuments](#listhrisdocuments) - List all documents
+* [listHrisEarnings](#listhrisearnings) - List all earnings
 * [listHrisEmployees](#listhrisemployees) - List all employees
 * [listHrisGroups](#listhrisgroups) - List all groups
+* [listHrisJobs](#listhrisjobs) - List all jobs
 * [listHrisLocations](#listhrislocations) - List all locations
+* [listHrisPaycodes](#listhrispaycodes) - List all paycodes
+* [listHrisPayrolls](#listhrispayrolls) - List all payrolls
 * [listHrisPayslips](#listhrispayslips) - List all payslips
 * [listHrisTaxonomies](#listhristaxonomies) - List all taxonomies
 * [listHrisTimeoffs](#listhristimeoffs) - List all timeoffs
@@ -52,8 +62,10 @@
 * [patchHrisDeduction](#patchhrisdeduction) - Update a deduction
 * [patchHrisDevice](#patchhrisdevice) - Update a device
 * [patchHrisDocument](#patchhrisdocument) - Update a document
+* [patchHrisEarning](#patchhrisearning) - Update an earning
 * [patchHrisEmployee](#patchhrisemployee) - Update an employee
 * [patchHrisGroup](#patchhrisgroup) - Update a group
+* [patchHrisJob](#patchhrisjob) - Update a job
 * [patchHrisLocation](#patchhrislocation) - Update a location
 * [patchHrisTimeoff](#patchhristimeoff) - Update a timeoff
 * [patchHrisTimeshift](#patchhristimeshift) - Update a timeshift
@@ -64,8 +76,10 @@
 * [removeHrisDeduction](#removehrisdeduction) - Remove a deduction
 * [removeHrisDevice](#removehrisdevice) - Remove a device
 * [removeHrisDocument](#removehrisdocument) - Remove a document
+* [removeHrisEarning](#removehrisearning) - Remove an earning
 * [removeHrisEmployee](#removehrisemployee) - Remove an employee
 * [removeHrisGroup](#removehrisgroup) - Remove a group
+* [removeHrisJob](#removehrisjob) - Remove a job
 * [removeHrisLocation](#removehrislocation) - Remove a location
 * [removeHrisTimeoff](#removehristimeoff) - Remove a timeoff
 * [removeHrisTimeshift](#removehristimeshift) - Remove a timeshift
@@ -76,8 +90,10 @@
 * [updateHrisDeduction](#updatehrisdeduction) - Update a deduction
 * [updateHrisDevice](#updatehrisdevice) - Update a device
 * [updateHrisDocument](#updatehrisdocument) - Update a document
+* [updateHrisEarning](#updatehrisearning) - Update an earning
 * [updateHrisEmployee](#updatehrisemployee) - Update an employee
 * [updateHrisGroup](#updatehrisgroup) - Update a group
+* [updateHrisJob](#updatehrisjob) - Update a job
 * [updateHrisLocation](#updatehrislocation) - Update a location
 * [updateHrisTimeoff](#updatehristimeoff) - Update a timeoff
 * [updateHrisTimeshift](#updatehristimeshift) - Update a timeshift
@@ -109,31 +125,31 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-08-13T10:41:42.336Z"),
+      approvedAt: new Date("2021-08-13T11:22:36.334Z"),
       breaks: [
         {
           durationMinutes: 12,
-          endAt: new Date("2023-10-23T21:17:35.680Z"),
+          endAt: new Date("2023-11-01T14:11:00.163Z"),
           id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
           isPaid: true,
           name: "Lunch",
-          startAt: new Date("2023-10-17T01:29:11.478Z"),
+          startAt: new Date("2023-10-25T16:36:12.599Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "UGX",
       declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-07T14:50:55.145Z"),
+      endAt: new Date("2024-04-18T03:03:15.706Z"),
       hourlyRate: 53,
       hours: 10,
-      id: "4dc42a25-5423-40c7-8e9f-7a6ee2825a9d",
+      id: "e74e69eb-6766-4f84-94d3-88c4a2a8a630",
       jobName: "Global Creative Supervisor",
       nonCashTipsAmount: 54,
-      startAt: new Date("2021-11-09T13:41:47.651Z"),
+      startAt: new Date("2021-11-10T13:16:20.859Z"),
       status: "CLOSED",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-17T07:09:09.539Z"),
+      updatedAt: new Date("2022-01-19T00:35:00.181Z"),
     },
     connectionId: "<id>",
   });
@@ -171,31 +187,31 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-08-13T10:41:42.336Z"),
+      approvedAt: new Date("2021-08-13T11:22:36.334Z"),
       breaks: [
         {
           durationMinutes: 12,
-          endAt: new Date("2023-10-23T21:17:35.680Z"),
+          endAt: new Date("2023-11-01T14:11:00.163Z"),
           id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
           isPaid: true,
           name: "Lunch",
-          startAt: new Date("2023-10-17T01:29:11.478Z"),
+          startAt: new Date("2023-10-25T16:36:12.599Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "UGX",
       declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-07T14:50:55.145Z"),
+      endAt: new Date("2024-04-18T03:03:15.706Z"),
       hourlyRate: 53,
       hours: 10,
-      id: "4dc42a25-5423-40c7-8e9f-7a6ee2825a9d",
+      id: "e74e69eb-6766-4f84-94d3-88c4a2a8a630",
       jobName: "Global Creative Supervisor",
       nonCashTipsAmount: 54,
-      startAt: new Date("2021-11-09T13:41:47.651Z"),
+      startAt: new Date("2021-11-10T13:16:20.859Z"),
       status: "CLOSED",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-17T07:09:09.539Z"),
+      updatedAt: new Date("2022-01-19T00:35:00.181Z"),
     },
     connectionId: "<id>",
   });
@@ -252,12 +268,17 @@ async function run() {
       accountNumberLast4: "3777",
       accountType: "CHECKING",
       bankName: "Huel Group",
+      countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
-      id: "c82c9187-bf76-4b65-bf02-79054582a285",
+      currency: "USD",
+      id: "7e815bf9-ec7a-4ee8-8911-f21a079cef3c",
       isPrimary: false,
       name: "Checking Account",
+      priority: 3,
       routingNumber: "448650724",
-      updatedAt: new Date("2025-06-06T18:00:27.146Z"),
+      splitAmount: 23,
+      splitType: "FIXED",
+      updatedAt: new Date("2025-06-23T03:38:54.315Z"),
     },
     connectionId: "<id>",
   });
@@ -291,12 +312,17 @@ async function run() {
       accountNumberLast4: "3777",
       accountType: "CHECKING",
       bankName: "Huel Group",
+      countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
-      id: "c82c9187-bf76-4b65-bf02-79054582a285",
+      currency: "USD",
+      id: "7e815bf9-ec7a-4ee8-8911-f21a079cef3c",
       isPrimary: false,
       name: "Checking Account",
+      priority: 3,
       routingNumber: "448650724",
-      updatedAt: new Date("2025-06-06T18:00:27.146Z"),
+      splitAmount: 23,
+      splitType: "FIXED",
+      updatedAt: new Date("2025-06-23T03:38:54.315Z"),
     },
     connectionId: "<id>",
   });
@@ -356,13 +382,13 @@ async function run() {
       employerContributionAmount: 185006,
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
-      frequency: "HOUR",
-      id: "b395db38-c261-454e-9bfe-9466e617f2ee",
+      frequency: "MONTH",
+      id: "8fdc527a-4da8-453b-ac64-f5e6c64924cd",
       isActive: false,
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "GARNISHMENT",
-      updatedAt: new Date("2023-03-07T16:17:00.575Z"),
+      type: "OTHER",
+      updatedAt: new Date("2023-03-16T11:45:05.623Z"),
     },
     connectionId: "<id>",
   });
@@ -399,13 +425,13 @@ async function run() {
       employerContributionAmount: 185006,
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
-      frequency: "HOUR",
-      id: "b395db38-c261-454e-9bfe-9466e617f2ee",
+      frequency: "MONTH",
+      id: "8fdc527a-4da8-453b-ac64-f5e6c64924cd",
       isActive: false,
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "GARNISHMENT",
-      updatedAt: new Date("2023-03-07T16:17:00.575Z"),
+      type: "OTHER",
+      updatedAt: new Date("2023-03-16T11:45:05.623Z"),
     },
     connectionId: "<id>",
   });
@@ -467,10 +493,10 @@ async function run() {
         regionCode: "PA",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "06e7e4d7-17be-4700-8e1d-0a3f524df53c",
+      id: "42ce1d4c-f8bd-454a-b563-5591888df93e",
       legalName: "Schultz LLC",
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-09-08T15:55:10.653Z"),
+      updatedAt: new Date("2026-09-28T17:57:11.728Z"),
     },
     connectionId: "<id>",
   });
@@ -509,10 +535,10 @@ async function run() {
         regionCode: "PA",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "06e7e4d7-17be-4700-8e1d-0a3f524df53c",
+      id: "42ce1d4c-f8bd-454a-b563-5591888df93e",
       legalName: "Schultz LLC",
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-09-08T15:55:10.653Z"),
+      updatedAt: new Date("2026-09-28T17:57:11.728Z"),
     },
     connectionId: "<id>",
   });
@@ -568,14 +594,17 @@ async function run() {
       amount: 139655,
       coverageLevel: "EMPLOYEE_ONLY",
       createdAt: new Date("2020-02-05T01:46:31.384Z"),
-      endAt: new Date("2026-05-25T14:43:59.509Z"),
-      frequency: "MONTH",
-      id: "c829711a-715d-455b-bb4d-00ee88c2deb9",
+      employerAmount: 22611,
+      employerType: "FIXED",
+      endAt: new Date("2026-06-13T20:04:08.022Z"),
+      frequency: "BIWEEKLY",
+      garnishmentType: "OTHER",
+      id: "05d38118-0f78-4663-824a-01818995c24c",
       isActive: false,
       notes: "Carmen desidero.",
-      startAt: new Date("2025-02-20T07:45:12.827Z"),
+      startAt: new Date("2025-03-07T17:01:33.631Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-03T17:00:24.883Z"),
+      updatedAt: new Date("2024-03-16T03:23:54.844Z"),
     },
     connectionId: "<id>",
   });
@@ -608,14 +637,17 @@ async function run() {
       amount: 139655,
       coverageLevel: "EMPLOYEE_ONLY",
       createdAt: new Date("2020-02-05T01:46:31.384Z"),
-      endAt: new Date("2026-05-25T14:43:59.509Z"),
-      frequency: "MONTH",
-      id: "c829711a-715d-455b-bb4d-00ee88c2deb9",
+      employerAmount: 22611,
+      employerType: "FIXED",
+      endAt: new Date("2026-06-13T20:04:08.022Z"),
+      frequency: "BIWEEKLY",
+      garnishmentType: "OTHER",
+      id: "05d38118-0f78-4663-824a-01818995c24c",
       isActive: false,
       notes: "Carmen desidero.",
-      startAt: new Date("2025-02-20T07:45:12.827Z"),
+      startAt: new Date("2025-03-07T17:01:33.631Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-03T17:00:24.883Z"),
+      updatedAt: new Date("2024-03-16T03:23:54.844Z"),
     },
     connectionId: "<id>",
   });
@@ -676,14 +708,14 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: true,
-      id: "e592d58c-449d-47c3-b4f2-cc9f41866826",
+      id: "d2057774-4f79-4124-be41-78903376fc22",
       isMissing: false,
       manufacturer: "Sanford - Hamill",
       model: "Refined",
       name: "cross_contamination_if.rar",
       os: "monitor",
       osVersion: "1.12.16",
-      updatedAt: new Date("2023-05-22T14:06:09.513Z"),
+      updatedAt: new Date("2023-06-02T18:33:40.574Z"),
       version: "2.20.17",
     },
     connectionId: "<id>",
@@ -722,14 +754,14 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: true,
-      id: "e592d58c-449d-47c3-b4f2-cc9f41866826",
+      id: "d2057774-4f79-4124-be41-78903376fc22",
       isMissing: false,
       manufacturer: "Sanford - Hamill",
       model: "Refined",
       name: "cross_contamination_if.rar",
       os: "monitor",
       osVersion: "1.12.16",
-      updatedAt: new Date("2023-05-22T14:06:09.513Z"),
+      updatedAt: new Date("2023-06-02T18:33:40.574Z"),
       version: "2.20.17",
     },
     connectionId: "<id>",
@@ -786,9 +818,9 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "c36ce7b1-e96d-4546-8310-2b1cd2427e9f",
+      id: "54907c15-9207-4304-b1bd-58e1fe8fe4cb",
       type: "POLICY",
-      updatedAt: new Date("2025-09-19T03:46:30.170Z"),
+      updatedAt: new Date("2025-10-04T03:56:54.229Z"),
     },
     connectionId: "<id>",
   });
@@ -821,9 +853,9 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "c36ce7b1-e96d-4546-8310-2b1cd2427e9f",
+      id: "54907c15-9207-4304-b1bd-58e1fe8fe4cb",
       type: "POLICY",
-      updatedAt: new Date("2025-09-19T03:46:30.170Z"),
+      updatedAt: new Date("2025-10-04T03:56:54.229Z"),
     },
     connectionId: "<id>",
   });
@@ -850,6 +882,105 @@ run();
 ### Response
 
 **Promise\<[shared.HrisDocument](../../sdk/models/shared/hrisdocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## createHrisEarning
+
+Create an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createHrisEarning" method="post" path="/hris/{connection_id}/earning" example="hris_earning" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.createHrisEarning({
+    hrisEarning: {
+      amount: 4026,
+      createdAt: new Date("2019-01-26T12:44:52.326Z"),
+      currency: "PKR",
+      frequency: "BIWEEKLY",
+      id: "1368dfbd-9cf1-4ec1-819f-052f1603a7b3",
+      notes: "Truculenter vinum beatae.",
+      startAt: new Date("2022-07-20T23:26:03.276Z"),
+      status: "PROCESSED",
+      updatedAt: new Date("2020-02-07T12:24:47.606Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisCreateHrisEarning } from "@unified-api/typescript-sdk/funcs/hrisCreateHrisEarning.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisCreateHrisEarning(unifiedTo, {
+    hrisEarning: {
+      amount: 4026,
+      createdAt: new Date("2019-01-26T12:44:52.326Z"),
+      currency: "PKR",
+      frequency: "BIWEEKLY",
+      id: "1368dfbd-9cf1-4ec1-819f-052f1603a7b3",
+      notes: "Truculenter vinum beatae.",
+      startAt: new Date("2022-07-20T23:26:03.276Z"),
+      status: "PROCESSED",
+      updatedAt: new Date("2020-02-07T12:24:47.606Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisCreateHrisEarning failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateHrisEarningRequest](../../sdk/models/operations/createhrisearningrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisEarning](../../sdk/models/shared/hrisearning.md)\>**
 
 ### Errors
 
@@ -888,11 +1019,11 @@ async function run() {
       bio: "sushi devotee, singer",
       compensation: [
         {
-          amount: 69148,
+          amount: 60136,
           currency: "CRC",
           frequency: "QUARTER",
           notes: "Tergeo laborum laboriosam tutis.",
-          type: "EQUITY",
+          type: "STOCK_OPTIONS",
         },
       ],
       createdAt: new Date("2019-09-16T15:08:53.262Z"),
@@ -908,10 +1039,11 @@ async function run() {
       employmentStatus: "ACTIVE",
       employmentType: "VOLUNTEER",
       firstName: "Zetta",
+      flsaStatus: "SALARIED_NONEXEMPT",
       gender: "INTERSEX",
-      hasMfa: true,
-      hiredAt: new Date("2023-05-12T03:12:11.486Z"),
-      id: "38a79fa8-80b1-4659-b0a6-327121c773f1",
+      hasMfa: false,
+      hiredAt: new Date("2023-05-22T15:44:14.310Z"),
+      id: "17ed493b-6e5c-4453-bf9f-c4ae590fc095",
       imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
       languageLocale: "es",
       lastName: "Prohaska",
@@ -923,13 +1055,14 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "f5bf964b-886a-4dd4-bc29-e4151986a960",
+          id: "26a1704a-8a68-4f61-b9cb-080b07a7d39b",
           namespace: "custom",
           slug: "custom_property",
-          value: "tenetur",
+          value: "appono",
         },
       ],
       name: "Zetta Prohaska",
+      payFrequency: "BIWEEKLY",
       pronouns: "she/her",
       relationships: [
         {
@@ -945,38 +1078,35 @@ async function run() {
             },
           ],
           name: "Automotive",
-          type: "EMERGENCY",
+          type: "FRIEND",
         },
         {
           emails: [
             {
               email: "Benedict_Wisozk83@hotmail.com",
             },
-            {
-              email: "Princess_Rath43@gmail.com",
-            },
-            {
-              email: "Elmira92@yahoo.com",
-            },
           ],
           name: "Music",
-          type: "FRIEND",
+          type: "SIBLING",
         },
         {
           emails: [
             {
-              email: "Jane30@gmail.com",
+              email: "Margot11@yahoo.com",
+            },
+            {
+              email: "Jaden_Miller@gmail.com",
             },
           ],
-          name: "Jewelry",
-          type: "SIBLING",
+          name: "Electronics",
+          type: "OTHER",
         },
       ],
       salutation: "Miss",
       ssnSin: "yMRtj0Q3xO",
-      storageQuotaAllocated: 3674489,
-      storageQuotaAvailable: 7748057,
-      storageQuotaUsed: 301727,
+      storageQuotaAllocated: 7748057,
+      storageQuotaAvailable: 1590710,
+      storageQuotaUsed: 730343,
       telephones: [
         {
           telephone: "(409) 801-3705",
@@ -988,7 +1118,7 @@ async function run() {
       timeoffDaysUsed: 6,
       timezone: "Africa/Harare",
       title: "Investor Paradigm Liaison",
-      updatedAt: new Date("2022-02-20T06:18:08.630Z"),
+      updatedAt: new Date("2022-02-27T06:23:56.438Z"),
     },
     connectionId: "<id>",
   });
@@ -1030,11 +1160,11 @@ async function run() {
       bio: "sushi devotee, singer",
       compensation: [
         {
-          amount: 69148,
+          amount: 60136,
           currency: "CRC",
           frequency: "QUARTER",
           notes: "Tergeo laborum laboriosam tutis.",
-          type: "EQUITY",
+          type: "STOCK_OPTIONS",
         },
       ],
       createdAt: new Date("2019-09-16T15:08:53.262Z"),
@@ -1050,10 +1180,11 @@ async function run() {
       employmentStatus: "ACTIVE",
       employmentType: "VOLUNTEER",
       firstName: "Zetta",
+      flsaStatus: "SALARIED_NONEXEMPT",
       gender: "INTERSEX",
-      hasMfa: true,
-      hiredAt: new Date("2023-05-12T03:12:11.486Z"),
-      id: "38a79fa8-80b1-4659-b0a6-327121c773f1",
+      hasMfa: false,
+      hiredAt: new Date("2023-05-22T15:44:14.310Z"),
+      id: "17ed493b-6e5c-4453-bf9f-c4ae590fc095",
       imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
       languageLocale: "es",
       lastName: "Prohaska",
@@ -1065,13 +1196,14 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "f5bf964b-886a-4dd4-bc29-e4151986a960",
+          id: "26a1704a-8a68-4f61-b9cb-080b07a7d39b",
           namespace: "custom",
           slug: "custom_property",
-          value: "tenetur",
+          value: "appono",
         },
       ],
       name: "Zetta Prohaska",
+      payFrequency: "BIWEEKLY",
       pronouns: "she/her",
       relationships: [
         {
@@ -1087,38 +1219,35 @@ async function run() {
             },
           ],
           name: "Automotive",
-          type: "EMERGENCY",
+          type: "FRIEND",
         },
         {
           emails: [
             {
               email: "Benedict_Wisozk83@hotmail.com",
             },
-            {
-              email: "Princess_Rath43@gmail.com",
-            },
-            {
-              email: "Elmira92@yahoo.com",
-            },
           ],
           name: "Music",
-          type: "FRIEND",
+          type: "SIBLING",
         },
         {
           emails: [
             {
-              email: "Jane30@gmail.com",
+              email: "Margot11@yahoo.com",
+            },
+            {
+              email: "Jaden_Miller@gmail.com",
             },
           ],
-          name: "Jewelry",
-          type: "SIBLING",
+          name: "Electronics",
+          type: "OTHER",
         },
       ],
       salutation: "Miss",
       ssnSin: "yMRtj0Q3xO",
-      storageQuotaAllocated: 3674489,
-      storageQuotaAvailable: 7748057,
-      storageQuotaUsed: 301727,
+      storageQuotaAllocated: 7748057,
+      storageQuotaAvailable: 1590710,
+      storageQuotaUsed: 730343,
       telephones: [
         {
           telephone: "(409) 801-3705",
@@ -1130,7 +1259,7 @@ async function run() {
       timeoffDaysUsed: 6,
       timezone: "Africa/Harare",
       title: "Investor Paradigm Liaison",
-      updatedAt: new Date("2022-02-20T06:18:08.630Z"),
+      updatedAt: new Date("2022-02-27T06:23:56.438Z"),
     },
     connectionId: "<id>",
   });
@@ -1185,11 +1314,11 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "5536364b-d302-4a73-96c0-7b59633aa9a4",
+      id: "8cc2b705-c0d0-4395-9505-75415822ceed",
       isActive: false,
       name: "Games",
-      type: "BUSINESS_UNIT",
-      updatedAt: new Date("2026-04-26T00:08:53.897Z"),
+      type: "BRANCH",
+      updatedAt: new Date("2026-05-13T09:10:59.146Z"),
     },
     connectionId: "<id>",
   });
@@ -1221,11 +1350,11 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "5536364b-d302-4a73-96c0-7b59633aa9a4",
+      id: "8cc2b705-c0d0-4395-9505-75415822ceed",
       isActive: false,
       name: "Games",
-      type: "BUSINESS_UNIT",
-      updatedAt: new Date("2026-04-26T00:08:53.897Z"),
+      type: "BRANCH",
+      updatedAt: new Date("2026-05-13T09:10:59.146Z"),
     },
     connectionId: "<id>",
   });
@@ -1252,6 +1381,103 @@ run();
 ### Response
 
 **Promise\<[shared.HrisGroup](../../sdk/models/shared/hrisgroup.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## createHrisJob
+
+Create a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createHrisJob" method="post" path="/hris/{connection_id}/job" example="hris_job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.createHrisJob({
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "00e817dd-4168-4184-b834-7236d1199e80",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.821Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobCreateHrisJob } from "@unified-api/typescript-sdk/funcs/jobCreateHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobCreateHrisJob(unifiedTo, {
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "00e817dd-4168-4184-b834-7236d1199e80",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.821Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobCreateHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateHrisJobRequest](../../sdk/models/operations/createhrisjobrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
 
 ### Errors
 
@@ -1290,8 +1516,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "a4b2700b-1f32-461e-bdb2-b452e0c5c022",
-      id: "babcc944-d428-43aa-902f-1d0ca3e00057",
+      externalIdentifier: "cf90be07-bf08-4542-ae05-d6af5965c6f1",
+      id: "1e53dfa8-5595-4dc1-bcc5-10de4c8bdcba",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -1311,7 +1537,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-10T01:13:57.534Z"),
+      updatedAt: new Date("2023-06-17T10:41:08.849Z"),
     },
     connectionId: "<id>",
   });
@@ -1353,8 +1579,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "a4b2700b-1f32-461e-bdb2-b452e0c5c022",
-      id: "babcc944-d428-43aa-902f-1d0ca3e00057",
+      externalIdentifier: "cf90be07-bf08-4542-ae05-d6af5965c6f1",
+      id: "1e53dfa8-5595-4dc1-bcc5-10de4c8bdcba",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -1374,7 +1600,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-10T01:13:57.534Z"),
+      updatedAt: new Date("2023-06-17T10:41:08.849Z"),
     },
     connectionId: "<id>",
   });
@@ -1439,7 +1665,7 @@ async function run() {
       ],
       subcategory: "Bamboo",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-22T19:24:30.042Z"),
+      updatedAt: new Date("2023-05-27T03:47:17.200Z"),
       url: "https://our-polarisation.name",
     },
     connectionId: "<id>",
@@ -1482,7 +1708,7 @@ async function run() {
       ],
       subcategory: "Bamboo",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-22T19:24:30.042Z"),
+      updatedAt: new Date("2023-05-27T03:47:17.200Z"),
       url: "https://our-polarisation.name",
     },
     connectionId: "<id>",
@@ -1536,20 +1762,20 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-21T02:08:20.330Z"),
+      approvedAt: new Date("2022-02-22T14:56:26.764Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-09T08:52:11.281Z"),
-      id: "3766cf5c-9dcb-4419-9212-a74a979cf1ee",
+      endAt: new Date("2024-12-22T07:36:18.995Z"),
+      id: "8b4b4675-624e-476c-96de-e8be644dc6f6",
       isPaid: true,
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-08-24T08:25:05.389Z"),
+      startAt: new Date("2023-09-01T00:24:06.966Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-08T05:45:54.437Z"),
+      updatedAt: new Date("2022-07-11T07:19:06.143Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -1580,20 +1806,20 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-21T02:08:20.330Z"),
+      approvedAt: new Date("2022-02-22T14:56:26.764Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-09T08:52:11.281Z"),
-      id: "3766cf5c-9dcb-4419-9212-a74a979cf1ee",
+      endAt: new Date("2024-12-22T07:36:18.995Z"),
+      id: "8b4b4675-624e-476c-96de-e8be644dc6f6",
       isPaid: true,
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-08-24T08:25:05.389Z"),
+      startAt: new Date("2023-09-01T00:24:06.966Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-08T05:45:54.437Z"),
+      updatedAt: new Date("2022-07-11T07:19:06.143Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -1647,24 +1873,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.680Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.270Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.094Z"),
+      endAt: new Date("2026-09-17T03:41:27.361Z"),
       hours: 8,
-      id: "9f128688-46cc-481b-a41e-503d0c962370",
+      id: "019ea5ad-589d-41bc-bc20-1df4380434fb",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.006Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.677Z"),
+      startAt: new Date("2023-07-07T12:08:41.034Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.284Z"),
     },
     connectionId: "<id>",
   });
@@ -1694,24 +1920,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.680Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.270Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.094Z"),
+      endAt: new Date("2026-09-17T03:41:27.361Z"),
       hours: 8,
-      id: "9f128688-46cc-481b-a41e-503d0c962370",
+      id: "019ea5ad-589d-41bc-bc20-1df4380434fb",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.006Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.677Z"),
+      startAt: new Date("2023-07-07T12:08:41.034Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.284Z"),
     },
     connectionId: "<id>",
   });
@@ -2298,6 +2524,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getHrisEarning
+
+Retrieve an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHrisEarning" method="get" path="/hris/{connection_id}/earning/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.getHrisEarning({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisGetHrisEarning } from "@unified-api/typescript-sdk/funcs/hrisGetHrisEarning.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisGetHrisEarning(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisGetHrisEarning failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHrisEarningRequest](../../sdk/models/operations/gethrisearningrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisEarning](../../sdk/models/shared/hrisearning.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getHrisEmployee
 
 Retrieve an employee
@@ -2456,6 +2761,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getHrisJob
+
+Retrieve a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHrisJob" method="get" path="/hris/{connection_id}/job/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.getHrisJob({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobGetHrisJob } from "@unified-api/typescript-sdk/funcs/jobGetHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobGetHrisJob(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobGetHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHrisJobRequest](../../sdk/models/operations/gethrisjobrequest.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getHrisLocation
 
 Retrieve a location
@@ -2528,6 +2912,164 @@ run();
 ### Response
 
 **Promise\<[shared.HrisLocation](../../sdk/models/shared/hrislocation.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getHrisPaycode
+
+Retrieve a paycode
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHrisPaycode" method="get" path="/hris/{connection_id}/paycode/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.getHrisPaycode({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisGetHrisPaycode } from "@unified-api/typescript-sdk/funcs/hrisGetHrisPaycode.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisGetHrisPaycode(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisGetHrisPaycode failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHrisPaycodeRequest](../../sdk/models/operations/gethrispaycoderequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisPaycode](../../sdk/models/shared/hrispaycode.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getHrisPayroll
+
+Retrieve a payroll
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHrisPayroll" method="get" path="/hris/{connection_id}/payroll/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.getHrisPayroll({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisGetHrisPayroll } from "@unified-api/typescript-sdk/funcs/hrisGetHrisPayroll.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisGetHrisPayroll(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisGetHrisPayroll failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHrisPayrollRequest](../../sdk/models/operations/gethrispayrollrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisPayroll](../../sdk/models/shared/hrispayroll.md)\>**
 
 ### Errors
 
@@ -3390,6 +3932,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listHrisEarnings
+
+List all earnings
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHrisEarnings" method="get" path="/hris/{connection_id}/earning" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.listHrisEarnings({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisListHrisEarnings } from "@unified-api/typescript-sdk/funcs/hrisListHrisEarnings.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisListHrisEarnings(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisListHrisEarnings failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHrisEarningsRequest](../../sdk/models/operations/listhrisearningsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisEarning[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listHrisEmployees
 
 List all employees
@@ -3544,6 +4163,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listHrisJobs
+
+List all jobs
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHrisJobs" method="get" path="/hris/{connection_id}/job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.listHrisJobs({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobListHrisJobs } from "@unified-api/typescript-sdk/funcs/jobListHrisJobs.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobListHrisJobs(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobListHrisJobs failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHrisJobsRequest](../../sdk/models/operations/listhrisjobsrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listHrisLocations
 
 List all locations
@@ -3614,6 +4310,160 @@ run();
 ### Response
 
 **Promise\<[shared.HrisLocation[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listHrisPaycodes
+
+List all paycodes
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHrisPaycodes" method="get" path="/hris/{connection_id}/paycode" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.listHrisPaycodes({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisListHrisPaycodes } from "@unified-api/typescript-sdk/funcs/hrisListHrisPaycodes.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisListHrisPaycodes(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisListHrisPaycodes failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHrisPaycodesRequest](../../sdk/models/operations/listhrispaycodesrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisPaycode[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listHrisPayrolls
+
+List all payrolls
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHrisPayrolls" method="get" path="/hris/{connection_id}/payroll" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.listHrisPayrolls({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisListHrisPayrolls } from "@unified-api/typescript-sdk/funcs/hrisListHrisPayrolls.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisListHrisPayrolls(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisListHrisPayrolls failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHrisPayrollsRequest](../../sdk/models/operations/listhrispayrollsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisPayroll[]](../../models/.md)\>**
 
 ### Errors
 
@@ -3956,31 +4806,31 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-08-13T10:41:42.336Z"),
+      approvedAt: new Date("2021-08-13T11:22:36.334Z"),
       breaks: [
         {
           durationMinutes: 12,
-          endAt: new Date("2023-10-23T21:17:35.691Z"),
+          endAt: new Date("2023-11-01T14:11:00.170Z"),
           id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
           isPaid: true,
           name: "Lunch",
-          startAt: new Date("2023-10-17T01:29:11.489Z"),
+          startAt: new Date("2023-10-25T16:36:12.606Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "UGX",
       declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-07T14:50:55.159Z"),
+      endAt: new Date("2024-04-18T03:03:15.715Z"),
       hourlyRate: 53,
       hours: 10,
-      id: "6a4550f7-d438-4b96-af25-c8104c25caf9",
+      id: "586b8503-23ff-4bd9-b402-8f95bc8a4a34",
       jobName: "Global Creative Supervisor",
       nonCashTipsAmount: 54,
-      startAt: new Date("2021-11-09T13:41:47.653Z"),
+      startAt: new Date("2021-11-10T13:16:20.860Z"),
       status: "CLOSED",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-17T07:09:09.542Z"),
+      updatedAt: new Date("2022-01-19T00:35:00.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4019,31 +4869,31 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-08-13T10:41:42.336Z"),
+      approvedAt: new Date("2021-08-13T11:22:36.334Z"),
       breaks: [
         {
           durationMinutes: 12,
-          endAt: new Date("2023-10-23T21:17:35.691Z"),
+          endAt: new Date("2023-11-01T14:11:00.170Z"),
           id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
           isPaid: true,
           name: "Lunch",
-          startAt: new Date("2023-10-17T01:29:11.489Z"),
+          startAt: new Date("2023-10-25T16:36:12.606Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "UGX",
       declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-07T14:50:55.159Z"),
+      endAt: new Date("2024-04-18T03:03:15.715Z"),
       hourlyRate: 53,
       hours: 10,
-      id: "6a4550f7-d438-4b96-af25-c8104c25caf9",
+      id: "586b8503-23ff-4bd9-b402-8f95bc8a4a34",
       jobName: "Global Creative Supervisor",
       nonCashTipsAmount: 54,
-      startAt: new Date("2021-11-09T13:41:47.653Z"),
+      startAt: new Date("2021-11-10T13:16:20.860Z"),
       status: "CLOSED",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-17T07:09:09.542Z"),
+      updatedAt: new Date("2022-01-19T00:35:00.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4101,12 +4951,17 @@ async function run() {
       accountNumberLast4: "3777",
       accountType: "CHECKING",
       bankName: "Huel Group",
+      countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
-      id: "6005b494-a4b0-4602-8c37-94e7048e00e8",
+      currency: "USD",
+      id: "5068078d-c2ce-4bc7-8594-995ea7c9bf7d",
       isPrimary: false,
       name: "Checking Account",
+      priority: 3,
       routingNumber: "448650724",
-      updatedAt: new Date("2025-06-06T18:00:27.158Z"),
+      splitAmount: 23,
+      splitType: "FIXED",
+      updatedAt: new Date("2025-06-23T03:38:54.324Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4141,12 +4996,17 @@ async function run() {
       accountNumberLast4: "3777",
       accountType: "CHECKING",
       bankName: "Huel Group",
+      countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
-      id: "6005b494-a4b0-4602-8c37-94e7048e00e8",
+      currency: "USD",
+      id: "5068078d-c2ce-4bc7-8594-995ea7c9bf7d",
       isPrimary: false,
       name: "Checking Account",
+      priority: 3,
       routingNumber: "448650724",
-      updatedAt: new Date("2025-06-06T18:00:27.158Z"),
+      splitAmount: 23,
+      splitType: "FIXED",
+      updatedAt: new Date("2025-06-23T03:38:54.324Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4207,13 +5067,13 @@ async function run() {
       employerContributionAmount: 185006,
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
-      frequency: "HOUR",
-      id: "03fe3c3a-0a32-4f47-af0e-f9e4092754de",
+      frequency: "MONTH",
+      id: "3d2c72ae-7c09-4c9f-ad7c-0fc18839d305",
       isActive: false,
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "GARNISHMENT",
-      updatedAt: new Date("2023-03-07T16:17:00.582Z"),
+      type: "OTHER",
+      updatedAt: new Date("2023-03-16T11:45:05.630Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4251,13 +5111,13 @@ async function run() {
       employerContributionAmount: 185006,
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
-      frequency: "HOUR",
-      id: "03fe3c3a-0a32-4f47-af0e-f9e4092754de",
+      frequency: "MONTH",
+      id: "3d2c72ae-7c09-4c9f-ad7c-0fc18839d305",
       isActive: false,
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "GARNISHMENT",
-      updatedAt: new Date("2023-03-07T16:17:00.582Z"),
+      type: "OTHER",
+      updatedAt: new Date("2023-03-16T11:45:05.630Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4320,10 +5180,10 @@ async function run() {
         regionCode: "PA",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "85a95ea9-94dd-4928-a69f-aaef5373741a",
+      id: "f9820fdd-0c4e-4cbf-9b93-dac1efb81aaf",
       legalName: "Schultz LLC",
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-09-08T15:55:10.670Z"),
+      updatedAt: new Date("2026-09-28T17:57:11.742Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4363,10 +5223,10 @@ async function run() {
         regionCode: "PA",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "85a95ea9-94dd-4928-a69f-aaef5373741a",
+      id: "f9820fdd-0c4e-4cbf-9b93-dac1efb81aaf",
       legalName: "Schultz LLC",
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-09-08T15:55:10.670Z"),
+      updatedAt: new Date("2026-09-28T17:57:11.742Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4423,14 +5283,17 @@ async function run() {
       amount: 139655,
       coverageLevel: "EMPLOYEE_ONLY",
       createdAt: new Date("2020-02-05T01:46:31.384Z"),
-      endAt: new Date("2026-05-25T14:43:59.520Z"),
-      frequency: "MONTH",
-      id: "a126ff04-6413-411e-932d-9a25af613ff0",
+      employerAmount: 22611,
+      employerType: "FIXED",
+      endAt: new Date("2026-06-13T20:04:08.043Z"),
+      frequency: "BIWEEKLY",
+      garnishmentType: "OTHER",
+      id: "694f5bac-c102-49b9-a80c-f01052d74fc7",
       isActive: false,
       notes: "Carmen desidero.",
-      startAt: new Date("2025-02-20T07:45:12.836Z"),
+      startAt: new Date("2025-03-07T17:01:33.648Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-03T17:00:24.891Z"),
+      updatedAt: new Date("2024-03-16T03:23:54.858Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4464,14 +5327,17 @@ async function run() {
       amount: 139655,
       coverageLevel: "EMPLOYEE_ONLY",
       createdAt: new Date("2020-02-05T01:46:31.384Z"),
-      endAt: new Date("2026-05-25T14:43:59.520Z"),
-      frequency: "MONTH",
-      id: "a126ff04-6413-411e-932d-9a25af613ff0",
+      employerAmount: 22611,
+      employerType: "FIXED",
+      endAt: new Date("2026-06-13T20:04:08.043Z"),
+      frequency: "BIWEEKLY",
+      garnishmentType: "OTHER",
+      id: "694f5bac-c102-49b9-a80c-f01052d74fc7",
       isActive: false,
       notes: "Carmen desidero.",
-      startAt: new Date("2025-02-20T07:45:12.836Z"),
+      startAt: new Date("2025-03-07T17:01:33.648Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-03T17:00:24.891Z"),
+      updatedAt: new Date("2024-03-16T03:23:54.858Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4533,14 +5399,14 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: true,
-      id: "52148932-32c0-49fe-bd1f-9a5c66b73d70",
+      id: "5174313e-a747-4f8f-b1f6-787292713f4a",
       isMissing: false,
       manufacturer: "Sanford - Hamill",
       model: "Refined",
       name: "cross_contamination_if.rar",
       os: "monitor",
       osVersion: "1.12.16",
-      updatedAt: new Date("2023-05-22T14:06:09.520Z"),
+      updatedAt: new Date("2023-06-02T18:33:40.578Z"),
       version: "2.20.17",
     },
     connectionId: "<id>",
@@ -4580,14 +5446,14 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: true,
-      id: "52148932-32c0-49fe-bd1f-9a5c66b73d70",
+      id: "5174313e-a747-4f8f-b1f6-787292713f4a",
       isMissing: false,
       manufacturer: "Sanford - Hamill",
       model: "Refined",
       name: "cross_contamination_if.rar",
       os: "monitor",
       osVersion: "1.12.16",
-      updatedAt: new Date("2023-05-22T14:06:09.520Z"),
+      updatedAt: new Date("2023-06-02T18:33:40.578Z"),
       version: "2.20.17",
     },
     connectionId: "<id>",
@@ -4645,9 +5511,9 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "23391a53-5d85-4874-b27c-6cc01144df3c",
+      id: "86541b69-8e13-4e0a-ae7d-943b71e74b4c",
       type: "POLICY",
-      updatedAt: new Date("2025-09-19T03:46:30.178Z"),
+      updatedAt: new Date("2025-10-04T03:56:54.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4681,9 +5547,9 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "23391a53-5d85-4874-b27c-6cc01144df3c",
+      id: "86541b69-8e13-4e0a-ae7d-943b71e74b4c",
       type: "POLICY",
-      updatedAt: new Date("2025-09-19T03:46:30.178Z"),
+      updatedAt: new Date("2025-10-04T03:56:54.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4711,6 +5577,107 @@ run();
 ### Response
 
 **Promise\<[shared.HrisDocument](../../sdk/models/shared/hrisdocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchHrisEarning
+
+Update an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchHrisEarning" method="patch" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.patchHrisEarning({
+    hrisEarning: {
+      amount: 4026,
+      createdAt: new Date("2019-01-26T12:44:52.326Z"),
+      currency: "PKR",
+      frequency: "BIWEEKLY",
+      id: "59a0433c-3ed7-4583-85d3-4ba7f5f7e9d8",
+      notes: "Truculenter vinum beatae.",
+      startAt: new Date("2022-07-20T23:26:03.282Z"),
+      status: "PROCESSED",
+      updatedAt: new Date("2020-02-07T12:24:47.607Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisPatchHrisEarning } from "@unified-api/typescript-sdk/funcs/hrisPatchHrisEarning.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisPatchHrisEarning(unifiedTo, {
+    hrisEarning: {
+      amount: 4026,
+      createdAt: new Date("2019-01-26T12:44:52.326Z"),
+      currency: "PKR",
+      frequency: "BIWEEKLY",
+      id: "59a0433c-3ed7-4583-85d3-4ba7f5f7e9d8",
+      notes: "Truculenter vinum beatae.",
+      startAt: new Date("2022-07-20T23:26:03.282Z"),
+      status: "PROCESSED",
+      updatedAt: new Date("2020-02-07T12:24:47.607Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisPatchHrisEarning failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchHrisEarningRequest](../../sdk/models/operations/patchhrisearningrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisEarning](../../sdk/models/shared/hrisearning.md)\>**
 
 ### Errors
 
@@ -4749,11 +5716,11 @@ async function run() {
       bio: "sushi devotee, singer",
       compensation: [
         {
-          amount: 69148,
+          amount: 60136,
           currency: "CRC",
           frequency: "QUARTER",
           notes: "Tergeo laborum laboriosam tutis.",
-          type: "EQUITY",
+          type: "STOCK_OPTIONS",
         },
       ],
       createdAt: new Date("2019-09-16T15:08:53.262Z"),
@@ -4769,10 +5736,11 @@ async function run() {
       employmentStatus: "ACTIVE",
       employmentType: "VOLUNTEER",
       firstName: "Zetta",
+      flsaStatus: "SALARIED_NONEXEMPT",
       gender: "INTERSEX",
-      hasMfa: true,
-      hiredAt: new Date("2023-05-12T03:12:11.541Z"),
-      id: "58337faa-4e32-4102-b7c8-c1d452691dbf",
+      hasMfa: false,
+      hiredAt: new Date("2023-05-22T15:44:14.369Z"),
+      id: "f8e282cf-d934-44ec-a6e9-aa6ac2875cb7",
       imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
       languageLocale: "es",
       lastName: "Prohaska",
@@ -4784,13 +5752,14 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+          id: "1e5ed876-f4a7-4735-b4b6-66d2390b286b",
           namespace: "custom",
           slug: "custom_property",
-          value: "tenetur",
+          value: "appono",
         },
       ],
       name: "Zetta Prohaska",
+      payFrequency: "BIWEEKLY",
       pronouns: "she/her",
       relationships: [
         {
@@ -4806,38 +5775,35 @@ async function run() {
             },
           ],
           name: "Automotive",
-          type: "EMERGENCY",
+          type: "FRIEND",
         },
         {
           emails: [
             {
               email: "Benedict_Wisozk83@hotmail.com",
             },
-            {
-              email: "Princess_Rath43@gmail.com",
-            },
-            {
-              email: "Elmira92@yahoo.com",
-            },
           ],
           name: "Music",
-          type: "FRIEND",
+          type: "SIBLING",
         },
         {
           emails: [
             {
-              email: "Jane30@gmail.com",
+              email: "Margot11@yahoo.com",
+            },
+            {
+              email: "Jaden_Miller@gmail.com",
             },
           ],
-          name: "Jewelry",
-          type: "SIBLING",
+          name: "Electronics",
+          type: "OTHER",
         },
       ],
       salutation: "Miss",
       ssnSin: "yMRtj0Q3xO",
-      storageQuotaAllocated: 3674489,
-      storageQuotaAvailable: 7748057,
-      storageQuotaUsed: 301727,
+      storageQuotaAllocated: 7748057,
+      storageQuotaAvailable: 1590710,
+      storageQuotaUsed: 730343,
       telephones: [
         {
           telephone: "(409) 801-3705",
@@ -4849,7 +5815,7 @@ async function run() {
       timeoffDaysUsed: 6,
       timezone: "Africa/Harare",
       title: "Investor Paradigm Liaison",
-      updatedAt: new Date("2022-02-20T06:18:08.666Z"),
+      updatedAt: new Date("2022-02-27T06:23:56.477Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4892,11 +5858,11 @@ async function run() {
       bio: "sushi devotee, singer",
       compensation: [
         {
-          amount: 69148,
+          amount: 60136,
           currency: "CRC",
           frequency: "QUARTER",
           notes: "Tergeo laborum laboriosam tutis.",
-          type: "EQUITY",
+          type: "STOCK_OPTIONS",
         },
       ],
       createdAt: new Date("2019-09-16T15:08:53.262Z"),
@@ -4912,10 +5878,11 @@ async function run() {
       employmentStatus: "ACTIVE",
       employmentType: "VOLUNTEER",
       firstName: "Zetta",
+      flsaStatus: "SALARIED_NONEXEMPT",
       gender: "INTERSEX",
-      hasMfa: true,
-      hiredAt: new Date("2023-05-12T03:12:11.541Z"),
-      id: "58337faa-4e32-4102-b7c8-c1d452691dbf",
+      hasMfa: false,
+      hiredAt: new Date("2023-05-22T15:44:14.369Z"),
+      id: "f8e282cf-d934-44ec-a6e9-aa6ac2875cb7",
       imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
       languageLocale: "es",
       lastName: "Prohaska",
@@ -4927,13 +5894,14 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+          id: "1e5ed876-f4a7-4735-b4b6-66d2390b286b",
           namespace: "custom",
           slug: "custom_property",
-          value: "tenetur",
+          value: "appono",
         },
       ],
       name: "Zetta Prohaska",
+      payFrequency: "BIWEEKLY",
       pronouns: "she/her",
       relationships: [
         {
@@ -4949,38 +5917,35 @@ async function run() {
             },
           ],
           name: "Automotive",
-          type: "EMERGENCY",
+          type: "FRIEND",
         },
         {
           emails: [
             {
               email: "Benedict_Wisozk83@hotmail.com",
             },
-            {
-              email: "Princess_Rath43@gmail.com",
-            },
-            {
-              email: "Elmira92@yahoo.com",
-            },
           ],
           name: "Music",
-          type: "FRIEND",
+          type: "SIBLING",
         },
         {
           emails: [
             {
-              email: "Jane30@gmail.com",
+              email: "Margot11@yahoo.com",
+            },
+            {
+              email: "Jaden_Miller@gmail.com",
             },
           ],
-          name: "Jewelry",
-          type: "SIBLING",
+          name: "Electronics",
+          type: "OTHER",
         },
       ],
       salutation: "Miss",
       ssnSin: "yMRtj0Q3xO",
-      storageQuotaAllocated: 3674489,
-      storageQuotaAvailable: 7748057,
-      storageQuotaUsed: 301727,
+      storageQuotaAllocated: 7748057,
+      storageQuotaAvailable: 1590710,
+      storageQuotaUsed: 730343,
       telephones: [
         {
           telephone: "(409) 801-3705",
@@ -4992,7 +5957,7 @@ async function run() {
       timeoffDaysUsed: 6,
       timezone: "Africa/Harare",
       title: "Investor Paradigm Liaison",
-      updatedAt: new Date("2022-02-20T06:18:08.666Z"),
+      updatedAt: new Date("2022-02-27T06:23:56.477Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5048,11 +6013,11 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "3d2f3a6f-a93f-4944-9979-441dfe433fe9",
+      id: "f55bf44f-d748-4699-98be-3b63f29cb8b8",
       isActive: false,
       name: "Games",
-      type: "BUSINESS_UNIT",
-      updatedAt: new Date("2026-04-26T00:08:53.907Z"),
+      type: "BRANCH",
+      updatedAt: new Date("2026-05-13T09:10:59.153Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5085,11 +6050,11 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "3d2f3a6f-a93f-4944-9979-441dfe433fe9",
+      id: "f55bf44f-d748-4699-98be-3b63f29cb8b8",
       isActive: false,
       name: "Games",
-      type: "BUSINESS_UNIT",
-      updatedAt: new Date("2026-04-26T00:08:53.907Z"),
+      type: "BRANCH",
+      updatedAt: new Date("2026-05-13T09:10:59.153Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5117,6 +6082,105 @@ run();
 ### Response
 
 **Promise\<[shared.HrisGroup](../../sdk/models/shared/hrisgroup.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchHrisJob" method="patch" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.patchHrisJob({
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobPatchHrisJob } from "@unified-api/typescript-sdk/funcs/jobPatchHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobPatchHrisJob(unifiedTo, {
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobPatchHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchHrisJobRequest](../../sdk/models/operations/patchhrisjobrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
 
 ### Errors
 
@@ -5155,8 +6219,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "996e7b27-7913-4e41-b567-67ebb6db77ef",
-      id: "8aada89e-1868-4e4d-9fcc-6e895a06d15d",
+      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
+      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -5176,7 +6240,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-10T01:13:57.540Z"),
+      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5219,8 +6283,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "996e7b27-7913-4e41-b567-67ebb6db77ef",
-      id: "8aada89e-1868-4e4d-9fcc-6e895a06d15d",
+      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
+      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -5240,7 +6304,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-10T01:13:57.540Z"),
+      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5294,20 +6358,20 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-21T02:08:20.331Z"),
+      approvedAt: new Date("2022-02-22T14:56:26.765Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-09T08:52:11.290Z"),
-      id: "1b90647f-5bb3-4551-b5f1-77cbcbbc655e",
+      endAt: new Date("2024-12-22T07:36:19.005Z"),
+      id: "62c80396-58c6-4819-a48d-b6f68f9a1a71",
       isPaid: true,
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-08-24T08:25:05.395Z"),
+      startAt: new Date("2023-09-01T00:24:06.972Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-08T05:45:54.439Z"),
+      updatedAt: new Date("2022-07-11T07:19:06.145Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -5339,20 +6403,20 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-21T02:08:20.331Z"),
+      approvedAt: new Date("2022-02-22T14:56:26.765Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-09T08:52:11.290Z"),
-      id: "1b90647f-5bb3-4551-b5f1-77cbcbbc655e",
+      endAt: new Date("2024-12-22T07:36:19.005Z"),
+      id: "62c80396-58c6-4819-a48d-b6f68f9a1a71",
       isPaid: true,
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-08-24T08:25:05.395Z"),
+      startAt: new Date("2023-09-01T00:24:06.972Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-08T05:45:54.439Z"),
+      updatedAt: new Date("2022-07-11T07:19:06.145Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -5407,24 +6471,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5455,24 +6519,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6060,6 +7124,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeHrisEarning
+
+Remove an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeHrisEarning" method="delete" path="/hris/{connection_id}/earning/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.removeHrisEarning({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisRemoveHrisEarning } from "@unified-api/typescript-sdk/funcs/hrisRemoveHrisEarning.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisRemoveHrisEarning(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisRemoveHrisEarning failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveHrisEarningRequest](../../sdk/models/operations/removehrisearningrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveHrisEarningResponse](../../sdk/models/operations/removehrisearningresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removeHrisEmployee
 
 Remove an employee
@@ -6211,6 +7354,85 @@ run();
 ### Response
 
 **Promise\<[operations.RemoveHrisGroupResponse](../../sdk/models/operations/removehrisgroupresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## removeHrisJob
+
+Remove a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeHrisJob" method="delete" path="/hris/{connection_id}/job/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.removeHrisJob({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobRemoveHrisJob } from "@unified-api/typescript-sdk/funcs/jobRemoveHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobRemoveHrisJob(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobRemoveHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveHrisJobRequest](../../sdk/models/operations/removehrisjobrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveHrisJobResponse](../../sdk/models/operations/removehrisjobresponse.md)\>**
 
 ### Errors
 
@@ -6482,31 +7704,31 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-08-13T10:41:42.336Z"),
+      approvedAt: new Date("2021-08-13T11:22:36.334Z"),
       breaks: [
         {
           durationMinutes: 12,
-          endAt: new Date("2023-10-23T21:17:35.691Z"),
+          endAt: new Date("2023-11-01T14:11:00.170Z"),
           id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
           isPaid: true,
           name: "Lunch",
-          startAt: new Date("2023-10-17T01:29:11.489Z"),
+          startAt: new Date("2023-10-25T16:36:12.606Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "UGX",
       declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-07T14:50:55.159Z"),
+      endAt: new Date("2024-04-18T03:03:15.715Z"),
       hourlyRate: 53,
       hours: 10,
-      id: "6a4550f7-d438-4b96-af25-c8104c25caf9",
+      id: "586b8503-23ff-4bd9-b402-8f95bc8a4a34",
       jobName: "Global Creative Supervisor",
       nonCashTipsAmount: 54,
-      startAt: new Date("2021-11-09T13:41:47.653Z"),
+      startAt: new Date("2021-11-10T13:16:20.860Z"),
       status: "CLOSED",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-17T07:09:09.542Z"),
+      updatedAt: new Date("2022-01-19T00:35:00.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6545,31 +7767,31 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-08-13T10:41:42.336Z"),
+      approvedAt: new Date("2021-08-13T11:22:36.334Z"),
       breaks: [
         {
           durationMinutes: 12,
-          endAt: new Date("2023-10-23T21:17:35.691Z"),
+          endAt: new Date("2023-11-01T14:11:00.170Z"),
           id: "d60a1001-5a8a-4991-8c21-f4da6036cc87",
           isPaid: true,
           name: "Lunch",
-          startAt: new Date("2023-10-17T01:29:11.489Z"),
+          startAt: new Date("2023-10-25T16:36:12.606Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "UGX",
       declaredTipsAmount: 161,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-07T14:50:55.159Z"),
+      endAt: new Date("2024-04-18T03:03:15.715Z"),
       hourlyRate: 53,
       hours: 10,
-      id: "6a4550f7-d438-4b96-af25-c8104c25caf9",
+      id: "586b8503-23ff-4bd9-b402-8f95bc8a4a34",
       jobName: "Global Creative Supervisor",
       nonCashTipsAmount: 54,
-      startAt: new Date("2021-11-09T13:41:47.653Z"),
+      startAt: new Date("2021-11-10T13:16:20.860Z"),
       status: "CLOSED",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-17T07:09:09.542Z"),
+      updatedAt: new Date("2022-01-19T00:35:00.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6627,12 +7849,17 @@ async function run() {
       accountNumberLast4: "3777",
       accountType: "CHECKING",
       bankName: "Huel Group",
+      countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
-      id: "6005b494-a4b0-4602-8c37-94e7048e00e8",
+      currency: "USD",
+      id: "5068078d-c2ce-4bc7-8594-995ea7c9bf7d",
       isPrimary: false,
       name: "Checking Account",
+      priority: 3,
       routingNumber: "448650724",
-      updatedAt: new Date("2025-06-06T18:00:27.158Z"),
+      splitAmount: 23,
+      splitType: "FIXED",
+      updatedAt: new Date("2025-06-23T03:38:54.324Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6667,12 +7894,17 @@ async function run() {
       accountNumberLast4: "3777",
       accountType: "CHECKING",
       bankName: "Huel Group",
+      countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
-      id: "6005b494-a4b0-4602-8c37-94e7048e00e8",
+      currency: "USD",
+      id: "5068078d-c2ce-4bc7-8594-995ea7c9bf7d",
       isPrimary: false,
       name: "Checking Account",
+      priority: 3,
       routingNumber: "448650724",
-      updatedAt: new Date("2025-06-06T18:00:27.158Z"),
+      splitAmount: 23,
+      splitType: "FIXED",
+      updatedAt: new Date("2025-06-23T03:38:54.324Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6733,13 +7965,13 @@ async function run() {
       employerContributionAmount: 185006,
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
-      frequency: "HOUR",
-      id: "03fe3c3a-0a32-4f47-af0e-f9e4092754de",
+      frequency: "MONTH",
+      id: "3d2c72ae-7c09-4c9f-ad7c-0fc18839d305",
       isActive: false,
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "GARNISHMENT",
-      updatedAt: new Date("2023-03-07T16:17:00.582Z"),
+      type: "OTHER",
+      updatedAt: new Date("2023-03-16T11:45:05.630Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6777,13 +8009,13 @@ async function run() {
       employerContributionAmount: 185006,
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
-      frequency: "HOUR",
-      id: "03fe3c3a-0a32-4f47-af0e-f9e4092754de",
+      frequency: "MONTH",
+      id: "3d2c72ae-7c09-4c9f-ad7c-0fc18839d305",
       isActive: false,
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "GARNISHMENT",
-      updatedAt: new Date("2023-03-07T16:17:00.582Z"),
+      type: "OTHER",
+      updatedAt: new Date("2023-03-16T11:45:05.630Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6846,10 +8078,10 @@ async function run() {
         regionCode: "PA",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "85a95ea9-94dd-4928-a69f-aaef5373741a",
+      id: "f9820fdd-0c4e-4cbf-9b93-dac1efb81aaf",
       legalName: "Schultz LLC",
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-09-08T15:55:10.670Z"),
+      updatedAt: new Date("2026-09-28T17:57:11.742Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6889,10 +8121,10 @@ async function run() {
         regionCode: "PA",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "85a95ea9-94dd-4928-a69f-aaef5373741a",
+      id: "f9820fdd-0c4e-4cbf-9b93-dac1efb81aaf",
       legalName: "Schultz LLC",
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-09-08T15:55:10.670Z"),
+      updatedAt: new Date("2026-09-28T17:57:11.742Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6949,14 +8181,17 @@ async function run() {
       amount: 139655,
       coverageLevel: "EMPLOYEE_ONLY",
       createdAt: new Date("2020-02-05T01:46:31.384Z"),
-      endAt: new Date("2026-05-25T14:43:59.520Z"),
-      frequency: "MONTH",
-      id: "a126ff04-6413-411e-932d-9a25af613ff0",
+      employerAmount: 22611,
+      employerType: "FIXED",
+      endAt: new Date("2026-06-13T20:04:08.043Z"),
+      frequency: "BIWEEKLY",
+      garnishmentType: "OTHER",
+      id: "694f5bac-c102-49b9-a80c-f01052d74fc7",
       isActive: false,
       notes: "Carmen desidero.",
-      startAt: new Date("2025-02-20T07:45:12.836Z"),
+      startAt: new Date("2025-03-07T17:01:33.648Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-03T17:00:24.891Z"),
+      updatedAt: new Date("2024-03-16T03:23:54.858Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6990,14 +8225,17 @@ async function run() {
       amount: 139655,
       coverageLevel: "EMPLOYEE_ONLY",
       createdAt: new Date("2020-02-05T01:46:31.384Z"),
-      endAt: new Date("2026-05-25T14:43:59.520Z"),
-      frequency: "MONTH",
-      id: "a126ff04-6413-411e-932d-9a25af613ff0",
+      employerAmount: 22611,
+      employerType: "FIXED",
+      endAt: new Date("2026-06-13T20:04:08.043Z"),
+      frequency: "BIWEEKLY",
+      garnishmentType: "OTHER",
+      id: "694f5bac-c102-49b9-a80c-f01052d74fc7",
       isActive: false,
       notes: "Carmen desidero.",
-      startAt: new Date("2025-02-20T07:45:12.836Z"),
+      startAt: new Date("2025-03-07T17:01:33.648Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-03T17:00:24.891Z"),
+      updatedAt: new Date("2024-03-16T03:23:54.858Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7059,14 +8297,14 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: true,
-      id: "52148932-32c0-49fe-bd1f-9a5c66b73d70",
+      id: "5174313e-a747-4f8f-b1f6-787292713f4a",
       isMissing: false,
       manufacturer: "Sanford - Hamill",
       model: "Refined",
       name: "cross_contamination_if.rar",
       os: "monitor",
       osVersion: "1.12.16",
-      updatedAt: new Date("2023-05-22T14:06:09.520Z"),
+      updatedAt: new Date("2023-06-02T18:33:40.578Z"),
       version: "2.20.17",
     },
     connectionId: "<id>",
@@ -7106,14 +8344,14 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: true,
-      id: "52148932-32c0-49fe-bd1f-9a5c66b73d70",
+      id: "5174313e-a747-4f8f-b1f6-787292713f4a",
       isMissing: false,
       manufacturer: "Sanford - Hamill",
       model: "Refined",
       name: "cross_contamination_if.rar",
       os: "monitor",
       osVersion: "1.12.16",
-      updatedAt: new Date("2023-05-22T14:06:09.520Z"),
+      updatedAt: new Date("2023-06-02T18:33:40.578Z"),
       version: "2.20.17",
     },
     connectionId: "<id>",
@@ -7171,9 +8409,9 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "23391a53-5d85-4874-b27c-6cc01144df3c",
+      id: "86541b69-8e13-4e0a-ae7d-943b71e74b4c",
       type: "POLICY",
-      updatedAt: new Date("2025-09-19T03:46:30.178Z"),
+      updatedAt: new Date("2025-10-04T03:56:54.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7207,9 +8445,9 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "23391a53-5d85-4874-b27c-6cc01144df3c",
+      id: "86541b69-8e13-4e0a-ae7d-943b71e74b4c",
       type: "POLICY",
-      updatedAt: new Date("2025-09-19T03:46:30.178Z"),
+      updatedAt: new Date("2025-10-04T03:56:54.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7237,6 +8475,107 @@ run();
 ### Response
 
 **Promise\<[shared.HrisDocument](../../sdk/models/shared/hrisdocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateHrisEarning
+
+Update an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateHrisEarning" method="put" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.updateHrisEarning({
+    hrisEarning: {
+      amount: 4026,
+      createdAt: new Date("2019-01-26T12:44:52.326Z"),
+      currency: "PKR",
+      frequency: "BIWEEKLY",
+      id: "59a0433c-3ed7-4583-85d3-4ba7f5f7e9d8",
+      notes: "Truculenter vinum beatae.",
+      startAt: new Date("2022-07-20T23:26:03.282Z"),
+      status: "PROCESSED",
+      updatedAt: new Date("2020-02-07T12:24:47.607Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { hrisUpdateHrisEarning } from "@unified-api/typescript-sdk/funcs/hrisUpdateHrisEarning.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await hrisUpdateHrisEarning(unifiedTo, {
+    hrisEarning: {
+      amount: 4026,
+      createdAt: new Date("2019-01-26T12:44:52.326Z"),
+      currency: "PKR",
+      frequency: "BIWEEKLY",
+      id: "59a0433c-3ed7-4583-85d3-4ba7f5f7e9d8",
+      notes: "Truculenter vinum beatae.",
+      startAt: new Date("2022-07-20T23:26:03.282Z"),
+      status: "PROCESSED",
+      updatedAt: new Date("2020-02-07T12:24:47.607Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("hrisUpdateHrisEarning failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateHrisEarningRequest](../../sdk/models/operations/updatehrisearningrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisEarning](../../sdk/models/shared/hrisearning.md)\>**
 
 ### Errors
 
@@ -7275,11 +8614,11 @@ async function run() {
       bio: "sushi devotee, singer",
       compensation: [
         {
-          amount: 69148,
+          amount: 60136,
           currency: "CRC",
           frequency: "QUARTER",
           notes: "Tergeo laborum laboriosam tutis.",
-          type: "EQUITY",
+          type: "STOCK_OPTIONS",
         },
       ],
       createdAt: new Date("2019-09-16T15:08:53.262Z"),
@@ -7295,10 +8634,11 @@ async function run() {
       employmentStatus: "ACTIVE",
       employmentType: "VOLUNTEER",
       firstName: "Zetta",
+      flsaStatus: "SALARIED_NONEXEMPT",
       gender: "INTERSEX",
-      hasMfa: true,
-      hiredAt: new Date("2023-05-12T03:12:11.541Z"),
-      id: "58337faa-4e32-4102-b7c8-c1d452691dbf",
+      hasMfa: false,
+      hiredAt: new Date("2023-05-22T15:44:14.369Z"),
+      id: "f8e282cf-d934-44ec-a6e9-aa6ac2875cb7",
       imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
       languageLocale: "es",
       lastName: "Prohaska",
@@ -7310,13 +8650,14 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+          id: "1e5ed876-f4a7-4735-b4b6-66d2390b286b",
           namespace: "custom",
           slug: "custom_property",
-          value: "tenetur",
+          value: "appono",
         },
       ],
       name: "Zetta Prohaska",
+      payFrequency: "BIWEEKLY",
       pronouns: "she/her",
       relationships: [
         {
@@ -7332,38 +8673,35 @@ async function run() {
             },
           ],
           name: "Automotive",
-          type: "EMERGENCY",
+          type: "FRIEND",
         },
         {
           emails: [
             {
               email: "Benedict_Wisozk83@hotmail.com",
             },
-            {
-              email: "Princess_Rath43@gmail.com",
-            },
-            {
-              email: "Elmira92@yahoo.com",
-            },
           ],
           name: "Music",
-          type: "FRIEND",
+          type: "SIBLING",
         },
         {
           emails: [
             {
-              email: "Jane30@gmail.com",
+              email: "Margot11@yahoo.com",
+            },
+            {
+              email: "Jaden_Miller@gmail.com",
             },
           ],
-          name: "Jewelry",
-          type: "SIBLING",
+          name: "Electronics",
+          type: "OTHER",
         },
       ],
       salutation: "Miss",
       ssnSin: "yMRtj0Q3xO",
-      storageQuotaAllocated: 3674489,
-      storageQuotaAvailable: 7748057,
-      storageQuotaUsed: 301727,
+      storageQuotaAllocated: 7748057,
+      storageQuotaAvailable: 1590710,
+      storageQuotaUsed: 730343,
       telephones: [
         {
           telephone: "(409) 801-3705",
@@ -7375,7 +8713,7 @@ async function run() {
       timeoffDaysUsed: 6,
       timezone: "Africa/Harare",
       title: "Investor Paradigm Liaison",
-      updatedAt: new Date("2022-02-20T06:18:08.666Z"),
+      updatedAt: new Date("2022-02-27T06:23:56.477Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7418,11 +8756,11 @@ async function run() {
       bio: "sushi devotee, singer",
       compensation: [
         {
-          amount: 69148,
+          amount: 60136,
           currency: "CRC",
           frequency: "QUARTER",
           notes: "Tergeo laborum laboriosam tutis.",
-          type: "EQUITY",
+          type: "STOCK_OPTIONS",
         },
       ],
       createdAt: new Date("2019-09-16T15:08:53.262Z"),
@@ -7438,10 +8776,11 @@ async function run() {
       employmentStatus: "ACTIVE",
       employmentType: "VOLUNTEER",
       firstName: "Zetta",
+      flsaStatus: "SALARIED_NONEXEMPT",
       gender: "INTERSEX",
-      hasMfa: true,
-      hiredAt: new Date("2023-05-12T03:12:11.541Z"),
-      id: "58337faa-4e32-4102-b7c8-c1d452691dbf",
+      hasMfa: false,
+      hiredAt: new Date("2023-05-22T15:44:14.369Z"),
+      id: "f8e282cf-d934-44ec-a6e9-aa6ac2875cb7",
       imageUrl: "https://loremflickr.com/3684/2116?lock=4686991638584456",
       languageLocale: "es",
       lastName: "Prohaska",
@@ -7453,13 +8792,14 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+          id: "1e5ed876-f4a7-4735-b4b6-66d2390b286b",
           namespace: "custom",
           slug: "custom_property",
-          value: "tenetur",
+          value: "appono",
         },
       ],
       name: "Zetta Prohaska",
+      payFrequency: "BIWEEKLY",
       pronouns: "she/her",
       relationships: [
         {
@@ -7475,38 +8815,35 @@ async function run() {
             },
           ],
           name: "Automotive",
-          type: "EMERGENCY",
+          type: "FRIEND",
         },
         {
           emails: [
             {
               email: "Benedict_Wisozk83@hotmail.com",
             },
-            {
-              email: "Princess_Rath43@gmail.com",
-            },
-            {
-              email: "Elmira92@yahoo.com",
-            },
           ],
           name: "Music",
-          type: "FRIEND",
+          type: "SIBLING",
         },
         {
           emails: [
             {
-              email: "Jane30@gmail.com",
+              email: "Margot11@yahoo.com",
+            },
+            {
+              email: "Jaden_Miller@gmail.com",
             },
           ],
-          name: "Jewelry",
-          type: "SIBLING",
+          name: "Electronics",
+          type: "OTHER",
         },
       ],
       salutation: "Miss",
       ssnSin: "yMRtj0Q3xO",
-      storageQuotaAllocated: 3674489,
-      storageQuotaAvailable: 7748057,
-      storageQuotaUsed: 301727,
+      storageQuotaAllocated: 7748057,
+      storageQuotaAvailable: 1590710,
+      storageQuotaUsed: 730343,
       telephones: [
         {
           telephone: "(409) 801-3705",
@@ -7518,7 +8855,7 @@ async function run() {
       timeoffDaysUsed: 6,
       timezone: "Africa/Harare",
       title: "Investor Paradigm Liaison",
-      updatedAt: new Date("2022-02-20T06:18:08.666Z"),
+      updatedAt: new Date("2022-02-27T06:23:56.477Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7574,11 +8911,11 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "3d2f3a6f-a93f-4944-9979-441dfe433fe9",
+      id: "f55bf44f-d748-4699-98be-3b63f29cb8b8",
       isActive: false,
       name: "Games",
-      type: "BUSINESS_UNIT",
-      updatedAt: new Date("2026-04-26T00:08:53.907Z"),
+      type: "BRANCH",
+      updatedAt: new Date("2026-05-13T09:10:59.153Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7611,11 +8948,11 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "3d2f3a6f-a93f-4944-9979-441dfe433fe9",
+      id: "f55bf44f-d748-4699-98be-3b63f29cb8b8",
       isActive: false,
       name: "Games",
-      type: "BUSINESS_UNIT",
-      updatedAt: new Date("2026-04-26T00:08:53.907Z"),
+      type: "BRANCH",
+      updatedAt: new Date("2026-05-13T09:10:59.153Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7643,6 +8980,105 @@ run();
 ### Response
 
 **Promise\<[shared.HrisGroup](../../sdk/models/shared/hrisgroup.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateHrisJob" method="put" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.updateHrisJob({
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobUpdateHrisJob } from "@unified-api/typescript-sdk/funcs/jobUpdateHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobUpdateHrisJob(unifiedTo, {
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobUpdateHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateHrisJobRequest](../../sdk/models/operations/updatehrisjobrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
 
 ### Errors
 
@@ -7681,8 +9117,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "996e7b27-7913-4e41-b567-67ebb6db77ef",
-      id: "8aada89e-1868-4e4d-9fcc-6e895a06d15d",
+      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
+      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -7702,7 +9138,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-10T01:13:57.540Z"),
+      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7745,8 +9181,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "996e7b27-7913-4e41-b567-67ebb6db77ef",
-      id: "8aada89e-1868-4e4d-9fcc-6e895a06d15d",
+      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
+      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -7766,7 +9202,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-10T01:13:57.540Z"),
+      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7820,20 +9256,20 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-21T02:08:20.331Z"),
+      approvedAt: new Date("2022-02-22T14:56:26.765Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-09T08:52:11.290Z"),
-      id: "1b90647f-5bb3-4551-b5f1-77cbcbbc655e",
+      endAt: new Date("2024-12-22T07:36:19.005Z"),
+      id: "62c80396-58c6-4819-a48d-b6f68f9a1a71",
       isPaid: true,
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-08-24T08:25:05.395Z"),
+      startAt: new Date("2023-09-01T00:24:06.972Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-08T05:45:54.439Z"),
+      updatedAt: new Date("2022-07-11T07:19:06.145Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -7865,20 +9301,20 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-21T02:08:20.331Z"),
+      approvedAt: new Date("2022-02-22T14:56:26.765Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-09T08:52:11.290Z"),
-      id: "1b90647f-5bb3-4551-b5f1-77cbcbbc655e",
+      endAt: new Date("2024-12-22T07:36:19.005Z"),
+      id: "62c80396-58c6-4819-a48d-b6f68f9a1a71",
       isPaid: true,
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-08-24T08:25:05.395Z"),
+      startAt: new Date("2023-09-01T00:24:06.972Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-08T05:45:54.439Z"),
+      updatedAt: new Date("2022-07-11T07:19:06.145Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -7933,24 +9369,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7981,24 +9417,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -1,5 +1,7 @@
 # ScimGroupMemberType
 
+NOT STANDARD
+
 ## Example Usage
 
 ```typescript

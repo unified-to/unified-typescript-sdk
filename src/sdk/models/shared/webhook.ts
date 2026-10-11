@@ -21,13 +21,22 @@ export const DbType = {
 } as const;
 export type DbType = OpenEnum<typeof DbType>;
 
+/**
+ * The event to subscribe to. "deleted" is supported on native webhooks, and on virtual webhooks where the integration supports it. Check the integration's Feature Support tab.
+ */
 export const WebhookEvent = {
   Updated: "updated",
   Created: "created",
   Deleted: "deleted",
 } as const;
+/**
+ * The event to subscribe to. "deleted" is supported on native webhooks, and on virtual webhooks where the integration supports it. Check the integration's Feature Support tab.
+ */
 export type WebhookEvent = OpenEnum<typeof WebhookEvent>;
 
+/**
+ * The object to return (eg. CRM "contact")
+ */
 export const WebhookObjectType = {
   AccountingAccount: "accounting_account",
   AccountingTransaction: "accounting_transaction",
@@ -42,12 +51,15 @@ export const WebhookObjectType = {
   AccountingOrganization: "accounting_organization",
   AccountingOrder: "accounting_order",
   AccountingSalesorder: "accounting_salesorder",
+  AccountingSalesreceipt: "accounting_salesreceipt",
   AccountingPurchaseorder: "accounting_purchaseorder",
   AccountingBalancesheet: "accounting_balancesheet",
   AccountingProfitloss: "accounting_profitloss",
   AccountingTrialbalance: "accounting_trialbalance",
   AccountingCategory: "accounting_category",
   AccountingExpense: "accounting_expense",
+  AccountingExpensereport: "accounting_expensereport",
+  AccountingPurchasereceipt: "accounting_purchasereceipt",
   AccountingCashflow: "accounting_cashflow",
   AccountingQuote: "accounting_quote",
   AccountingAgedreceivable: "accounting_agedreceivable",
@@ -103,6 +115,10 @@ export const WebhookObjectType = {
   HrisBankaccount: "hris_bankaccount",
   HrisDocument: "hris_document",
   HrisTaxonomy: "hris_taxonomy",
+  HrisJob: "hris_job",
+  HrisPayroll: "hris_payroll",
+  HrisPaycode: "hris_paycode",
+  HrisEarning: "hris_earning",
   MartechList: "martech_list",
   MartechMember: "martech_member",
   MartechCampaign: "martech_campaign",
@@ -116,6 +132,8 @@ export const WebhookObjectType = {
   UcCall: "uc_call",
   UcComment: "uc_comment",
   UcRecording: "uc_recording",
+  UcScorecard: "uc_scorecard",
+  UcScorecardtemplate: "uc_scorecardtemplate",
   EnrichPerson: "enrich_person",
   EnrichCompany: "enrich_company",
   StorageFile: "storage_file",
@@ -125,6 +143,7 @@ export const WebhookObjectType = {
   GenaiTask: "genai_task",
   GenaiAgent: "genai_agent",
   GenaiOrganization: "genai_organization",
+  GenaiSkill: "genai_skill",
   MessagingMessage: "messaging_message",
   MessagingChannel: "messaging_channel",
   MessagingEvent: "messaging_event",
@@ -205,44 +224,86 @@ export const WebhookObjectType = {
   SocialReview: "social_review",
   SocialInsight: "social_insight",
 } as const;
+/**
+ * The object to return (eg. CRM "contact")
+ */
 export type WebhookObjectType = OpenEnum<typeof WebhookObjectType>;
 
+/**
+ * "native" registers with the integration, which sends events as they happen. "virtual" checks for changes on "interval". Optional on create; if omitted, Unified.to picks a supported type for the object. Requesting a type the integration doesn't support returns 400. Set on create only: changes sent on update are ignored without an error. Delete and recreate the webhook to change type.
+ */
 export const WebhookType = {
   Virtual: "virtual",
   Native: "native",
 } as const;
+/**
+ * "native" registers with the integration, which sends events as they happen. "virtual" checks for changes on "interval". Optional on create; if omitted, Unified.to picks a supported type for the object. Requesting a type the integration doesn't support returns 400. Set on create only: changes sent on update are ignored without an error. Delete and recreate the webhook to change type.
+ */
 export type WebhookType = OpenEnum<typeof WebhookType>;
 
 /**
- * A webhook is used to POST new/updated information to your server.
+ * A webhook is used to POST new, updated, or deleted records to your server.
  */
 export type Webhook = {
+  /**
+   * Read-only. The time Unified.to last recorded a check on this webhook. Behaviour varies by webhook implementation, so don't use this field to tell whether a webhook is still running. Use is_healthy, and subscribe to WEBHOOK_UNHEALTHY on the notifications webhook, to monitor health. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   checkedAt?: Date | undefined;
   connectionId: string;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   dbNamePrefix?: string | undefined;
   dbSchema?: string | undefined;
   dbType?: DbType | undefined;
   dbUrl?: string | undefined;
   environment?: string | undefined;
+  /**
+   * The event to subscribe to. "deleted" is supported on native webhooks, and on virtual webhooks where the integration supports it. Check the integration's Feature Support tab.
+   */
   event: WebhookEvent;
   fields?: string | undefined;
+  /**
+   * Supported on virtual webhooks, and on native webhooks for many integrations. Check the integration's Feature Support tab for which filters apply. Filters the integration doesn't support are accepted but have no effect. Some integrations require a filter; if it's missing, create returns an error naming the integration and the filter.
+   */
   filters?: { [k: string]: string } | undefined;
+  /**
+   * The URL of the webhook
+   */
   hookUrl?: string | undefined;
   id?: string | undefined;
   integrationType?: string | undefined;
+  /**
+   * Virtual webhooks only. How often (in minutes) Unified.to checks for new or updated records. Minimum 1 on paid plans, 60 on free. Ignored for native webhooks.
+   */
   interval?: number | undefined;
   isBeta?: boolean | undefined;
+  /**
+   * Read-only. True while the webhook can operate or recover; a transient failure may still be retrying. False after retries are exhausted or a non-retryable failure such as broken connection auth. Cannot be reset; recreate the webhook.
+   */
   isHealthy?: boolean | undefined;
   isPaused?: boolean | undefined;
+  /**
+   * The object to return (eg. CRM "contact")
+   */
   objectType: WebhookObjectType;
   pageMaxLimit?: number | undefined;
   /**
-   * An array of the most revent virtual webhook runs
+   * An array of the most recent virtual webhook runs
    */
   runs?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * "native" registers with the integration, which sends events as they happen. "virtual" checks for changes on "interval". Optional on create; if omitted, Unified.to picks a supported type for the object. Requesting a type the integration doesn't support returns 400. Set on create only: changes sent on update are ignored without an error. Delete and recreate the webhook to change type.
+   */
   webhookType?: WebhookType | undefined;
+  /**
+   * (reference to KmsSpace)
+   */
   workspaceId?: string | undefined;
 };
 

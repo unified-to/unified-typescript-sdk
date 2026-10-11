@@ -1,5 +1,7 @@
 # CdpMetadataValue
 
+The attribute/trait value
+
 
 ## Supported Types
 

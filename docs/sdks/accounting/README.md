@@ -12,6 +12,7 @@
 * [createAccountingContact](#createaccountingcontact) - Create a contact
 * [createAccountingCreditmemo](#createaccountingcreditmemo) - Create a creditmemo
 * [createAccountingExpense](#createaccountingexpense) - Create an expense
+* [createAccountingExpensereport](#createaccountingexpensereport) - Create an expensereport
 * [createAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [createAccountingJournal](#createaccountingjournal) - Create a journal
 * [createAccountingOrder](#createaccountingorder) - Create an order
@@ -35,6 +36,7 @@
 * [getAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [getAccountingCreditmemo](#getaccountingcreditmemo) - Retrieve a creditmemo
 * [getAccountingExpense](#getaccountingexpense) - Retrieve an expense
+* [getAccountingExpensereport](#getaccountingexpensereport) - Retrieve an expensereport
 * [getAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [getAccountingJournal](#getaccountingjournal) - Retrieve a journal
 * [getAccountingOrder](#getaccountingorder) - Retrieve an order
@@ -43,8 +45,10 @@
 * [getAccountingProfitloss](#getaccountingprofitloss) - Retrieve a profitloss
 * [getAccountingProject](#getaccountingproject) - Retrieve a project
 * [getAccountingPurchaseorder](#getaccountingpurchaseorder) - Retrieve a purchaseorder
+* [getAccountingPurchasereceipt](#getaccountingpurchasereceipt) - Retrieve a purchasereceipt
 * [getAccountingQuote](#getaccountingquote) - Retrieve a quote
 * [getAccountingSalesorder](#getaccountingsalesorder) - Retrieve a salesorder
+* [getAccountingSalesreceipt](#getaccountingsalesreceipt) - Retrieve a salesreceipt
 * [getAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [getAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [getAccountingTrialbalance](#getaccountingtrialbalance) - Retrieve a trialbalance
@@ -60,6 +64,7 @@
 * [listAccountingCategories](#listaccountingcategories) - List all categories
 * [listAccountingContacts](#listaccountingcontacts) - List all contacts
 * [listAccountingCreditmemoes](#listaccountingcreditmemoes) - List all creditmemoes
+* [listAccountingExpensereports](#listaccountingexpensereports) - List all expensereports
 * [listAccountingExpenses](#listaccountingexpenses) - List all expenses
 * [listAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [listAccountingJournals](#listaccountingjournals) - List all journals
@@ -69,8 +74,10 @@
 * [listAccountingProfitlosses](#listaccountingprofitlosses) - List all profitlosses
 * [listAccountingProjects](#listaccountingprojects) - List all projects
 * [listAccountingPurchaseorders](#listaccountingpurchaseorders) - List all purchaseorders
+* [listAccountingPurchasereceipts](#listaccountingpurchasereceipts) - List all purchasereceipts
 * [listAccountingQuotes](#listaccountingquotes) - List all quotes
 * [listAccountingSalesorders](#listaccountingsalesorders) - List all salesorders
+* [listAccountingSalesreceipts](#listaccountingsalesreceipts) - List all salesreceipts
 * [listAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [listAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [listAccountingTrialbalances](#listaccountingtrialbalances) - List all trialbalances
@@ -83,6 +90,7 @@
 * [patchAccountingContact](#patchaccountingcontact) - Update a contact
 * [patchAccountingCreditmemo](#patchaccountingcreditmemo) - Update a creditmemo
 * [patchAccountingExpense](#patchaccountingexpense) - Update an expense
+* [patchAccountingExpensereport](#patchaccountingexpensereport) - Update an expensereport
 * [patchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [patchAccountingJournal](#patchaccountingjournal) - Update a journal
 * [patchAccountingOrder](#patchaccountingorder) - Update an order
@@ -102,6 +110,7 @@
 * [removeAccountingContact](#removeaccountingcontact) - Remove a contact
 * [removeAccountingCreditmemo](#removeaccountingcreditmemo) - Remove a creditmemo
 * [removeAccountingExpense](#removeaccountingexpense) - Remove an expense
+* [removeAccountingExpensereport](#removeaccountingexpensereport) - Remove an expensereport
 * [removeAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [removeAccountingJournal](#removeaccountingjournal) - Remove a journal
 * [removeAccountingOrder](#removeaccountingorder) - Remove an order
@@ -121,6 +130,7 @@
 * [updateAccountingContact](#updateaccountingcontact) - Update a contact
 * [updateAccountingCreditmemo](#updateaccountingcreditmemo) - Update a creditmemo
 * [updateAccountingExpense](#updateaccountingexpense) - Update an expense
+* [updateAccountingExpensereport](#updateaccountingexpensereport) - Update an expensereport
 * [updateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [updateAccountingJournal](#updateaccountingjournal) - Update a journal
 * [updateAccountingOrder](#updateaccountingorder) - Update an order
@@ -157,7 +167,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+      id: "832b57ad-5e35-4937-9912-7620283aa898",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -174,7 +184,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
     },
     connectionId: "<id>",
   });
@@ -209,7 +219,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+      id: "832b57ad-5e35-4937-9912-7620283aa898",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -226,7 +236,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
     },
     connectionId: "<id>",
   });
@@ -288,11 +298,11 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "SSP",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "218719f8-8226-4e63-9a83-e71deec58055",
+      id: "d24c7eed-6260-4646-b879-c1b2b5d4633e",
       name: "Corwin, Donnelly and Connelly Savings",
       routingNumber: "667753156",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-12T13:57:09.405Z"),
+      updatedAt: new Date("2024-04-20T02:35:25.217Z"),
     },
     connectionId: "<id>",
   });
@@ -331,11 +341,11 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "SSP",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "218719f8-8226-4e63-9a83-e71deec58055",
+      id: "d24c7eed-6260-4646-b879-c1b2b5d4633e",
       name: "Corwin, Donnelly and Connelly Savings",
       routingNumber: "667753156",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-12T13:57:09.405Z"),
+      updatedAt: new Date("2024-04-20T02:35:25.217Z"),
     },
     connectionId: "<id>",
   });
@@ -397,14 +407,14 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "SRD",
       description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-      id: "149a7dcd-1137-4fc6-9014-f73511481cb8",
+      id: "e17c73bc-3a48-49eb-9ec3-53d4ef89d58f",
       isPending: true,
       merchantName: "Reichert, Erdman and Tillman",
-      postedAt: new Date("2025-03-25T15:26:46.355Z"),
+      postedAt: new Date("2025-04-08T03:37:11.941Z"),
       reference: "93642593",
-      transactionAt: new Date("2022-07-28T00:55:13.105Z"),
+      transactionAt: new Date("2022-07-29T13:53:08.693Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-23T23:14:36.067Z"),
+      updatedAt: new Date("2022-05-24T16:58:26.460Z"),
     },
     connectionId: "<id>",
   });
@@ -443,14 +453,14 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "SRD",
       description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-      id: "149a7dcd-1137-4fc6-9014-f73511481cb8",
+      id: "e17c73bc-3a48-49eb-9ec3-53d4ef89d58f",
       isPending: true,
       merchantName: "Reichert, Erdman and Tillman",
-      postedAt: new Date("2025-03-25T15:26:46.355Z"),
+      postedAt: new Date("2025-04-08T03:37:11.941Z"),
       reference: "93642593",
-      transactionAt: new Date("2022-07-28T00:55:13.105Z"),
+      transactionAt: new Date("2022-07-29T13:53:08.693Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-23T23:14:36.067Z"),
+      updatedAt: new Date("2022-05-24T16:58:26.460Z"),
     },
     connectionId: "<id>",
   });
@@ -511,13 +521,13 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-08-11T20:52:55.321Z"),
       extendedNotes: [],
-      id: "47aff446-04b3-478f-a547-1dfef16a2da3",
+      id: "93de5bc7-06ff-4223-b00b-5119ff6188e7",
       lineitems: [],
       metadata: [],
       notes: "Tutamen cilicium infit.",
       paymentCollectionMethod: "charge_automatically",
       payments: [],
-      postedAt: new Date("2024-04-06T03:20:50.873Z"),
+      postedAt: new Date("2024-04-19T08:54:19.935Z"),
       purchaseorderIds: [],
       send: true,
       status: "DELETED",
@@ -525,7 +535,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_10",
       totalAmount: 0,
-      updatedAt: new Date("2025-01-31T04:40:21.326Z"),
+      updatedAt: new Date("2025-02-15T18:12:32.002Z"),
       url: "https://coarse-interviewer.biz/",
     },
     connectionId: "<id>",
@@ -564,13 +574,13 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-08-11T20:52:55.321Z"),
       extendedNotes: [],
-      id: "47aff446-04b3-478f-a547-1dfef16a2da3",
+      id: "93de5bc7-06ff-4223-b00b-5119ff6188e7",
       lineitems: [],
       metadata: [],
       notes: "Tutamen cilicium infit.",
       paymentCollectionMethod: "charge_automatically",
       payments: [],
-      postedAt: new Date("2024-04-06T03:20:50.873Z"),
+      postedAt: new Date("2024-04-19T08:54:19.935Z"),
       purchaseorderIds: [],
       send: true,
       status: "DELETED",
@@ -578,7 +588,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_10",
       totalAmount: 0,
-      updatedAt: new Date("2025-01-31T04:40:21.326Z"),
+      updatedAt: new Date("2025-02-15T18:12:32.002Z"),
       url: "https://coarse-interviewer.biz/",
     },
     connectionId: "<id>",
@@ -634,11 +644,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
-      id: "bd82d66f-0901-40ed-81c3-24bc2c90b469",
+      id: "fdd21fd5-c17b-4699-b534-5ec5f899070d",
       isActive: false,
       metadata: [],
       name: "Electronic Cotton Shoes",
-      updatedAt: new Date("2025-08-22T03:49:23.607Z"),
+      updatedAt: new Date("2025-09-04T18:33:59.171Z"),
     },
     connectionId: "<id>",
   });
@@ -670,11 +680,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
-      id: "bd82d66f-0901-40ed-81c3-24bc2c90b469",
+      id: "fdd21fd5-c17b-4699-b534-5ec5f899070d",
       isActive: false,
       metadata: [],
       name: "Electronic Cotton Shoes",
-      updatedAt: new Date("2025-08-22T03:49:23.607Z"),
+      updatedAt: new Date("2025-09-04T18:33:59.171Z"),
     },
     connectionId: "<id>",
   });
@@ -729,11 +739,11 @@ async function run() {
     accountingContact: {
       associatedContacts: [
         {
-          id: "9bebb770-590a-4626-9e91-a1e3f6a1a152",
+          id: "4397621d-1152-4118-97cd-0b4ec62f002b",
           name: "Delores Reynolds",
         },
         {
-          id: "98dc7b2b-a61a-4a86-a865-2c32e436115f",
+          id: "9eb442e9-4f82-41db-b651-40250f8549da",
           name: "Delores Reynolds",
         },
       ],
@@ -756,7 +766,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "8ed22c78-3f9d-4b74-8667-42e4fe13d6d2",
+      id: "c2079aaa-6553-4fca-9590-c1ab1b3f66ec",
       identification: "amicitia",
       isActive: true,
       isCustomer: true,
@@ -766,7 +776,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "ebd23a6a-340a-4205-bc59-1ccf6a918747",
+          id: "5ec455cb-a1f1-419a-badc-d627701e5a3b",
           name: "Visa 1234",
           type: "CARD",
         },
@@ -793,7 +803,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-06T04:50:42.426Z"),
+      updatedAt: new Date("2023-12-15T08:18:18.532Z"),
       website: "https://noxious-advertisement.org",
     },
     connectionId: "<id>",
@@ -826,11 +836,11 @@ async function run() {
     accountingContact: {
       associatedContacts: [
         {
-          id: "9bebb770-590a-4626-9e91-a1e3f6a1a152",
+          id: "4397621d-1152-4118-97cd-0b4ec62f002b",
           name: "Delores Reynolds",
         },
         {
-          id: "98dc7b2b-a61a-4a86-a865-2c32e436115f",
+          id: "9eb442e9-4f82-41db-b651-40250f8549da",
           name: "Delores Reynolds",
         },
       ],
@@ -853,7 +863,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "8ed22c78-3f9d-4b74-8667-42e4fe13d6d2",
+      id: "c2079aaa-6553-4fca-9590-c1ab1b3f66ec",
       identification: "amicitia",
       isActive: true,
       isCustomer: true,
@@ -863,7 +873,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "ebd23a6a-340a-4205-bc59-1ccf6a918747",
+          id: "5ec455cb-a1f1-419a-badc-d627701e5a3b",
           name: "Visa 1234",
           type: "CARD",
         },
@@ -890,7 +900,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-06T04:50:42.426Z"),
+      updatedAt: new Date("2023-12-15T08:18:18.532Z"),
       website: "https://noxious-advertisement.org",
     },
     connectionId: "<id>",
@@ -948,7 +958,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://enlightened-chairperson.com/",
-          id: "1db49fd3-7f25-4080-b187-04bcbc9f3bc1",
+          id: "eb7d45dd-de09-4b88-af0c-e8d84f099f0b",
           mimeType: "complectus",
           name: "thesis",
         },
@@ -958,12 +968,12 @@ async function run() {
       currency: "MKD",
       discountAmount: 0,
       dueAt: new Date("2023-10-18T04:35:00.543Z"),
-      id: "d04c0986-5cc3-4c55-a5b5-1caa37d81dd4",
+      id: "8a36aa30-1292-445e-b65c-996c3b7aeef4",
       lineitems: [],
       metadata: [],
       notes: "Dedecor amo adfero torqueo quas.",
       paymentCollectionMethod: "charge_automatically",
-      postedAt: new Date("2025-11-17T11:22:22.052Z"),
+      postedAt: new Date("2025-12-02T00:29:13.787Z"),
       refundAmount: 0,
       refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
       refundedAt: new Date("2023-10-23T00:35:36.814Z"),
@@ -971,7 +981,7 @@ async function run() {
       status: "PAID",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2024-11-16T15:28:24.980Z"),
+      updatedAt: new Date("2024-11-24T10:47:56.110Z"),
       url: "https://lighthearted-bandwidth.net/",
     },
     connectionId: "<id>",
@@ -1006,7 +1016,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://enlightened-chairperson.com/",
-          id: "1db49fd3-7f25-4080-b187-04bcbc9f3bc1",
+          id: "eb7d45dd-de09-4b88-af0c-e8d84f099f0b",
           mimeType: "complectus",
           name: "thesis",
         },
@@ -1016,12 +1026,12 @@ async function run() {
       currency: "MKD",
       discountAmount: 0,
       dueAt: new Date("2023-10-18T04:35:00.543Z"),
-      id: "d04c0986-5cc3-4c55-a5b5-1caa37d81dd4",
+      id: "8a36aa30-1292-445e-b65c-996c3b7aeef4",
       lineitems: [],
       metadata: [],
       notes: "Dedecor amo adfero torqueo quas.",
       paymentCollectionMethod: "charge_automatically",
-      postedAt: new Date("2025-11-17T11:22:22.052Z"),
+      postedAt: new Date("2025-12-02T00:29:13.787Z"),
       refundAmount: 0,
       refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
       refundedAt: new Date("2023-10-23T00:35:36.814Z"),
@@ -1029,7 +1039,7 @@ async function run() {
       status: "PAID",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2024-11-16T15:28:24.980Z"),
+      updatedAt: new Date("2024-11-24T10:47:56.110Z"),
       url: "https://lighthearted-bandwidth.net/",
     },
     connectionId: "<id>",
@@ -1083,11 +1093,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.createAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-05-12T09:40:54.236Z"),
+      approvedAt: new Date("2026-05-31T10:54:34.814Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "fef67b87-0957-42c3-adcf-43c0c46d6107",
+          id: "a31f87a7-4eb4-4302-b833-915ecb235046",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -1096,10 +1106,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "ffa6e9c7-9193-4696-85f6-b19d35be2a3b",
+      id: "9984dbbc-0b26-48c0-8a8e-1e73ac0f709e",
       lineitems: [
         {
-          id: "271f95a7-bbfc-403d-919c-785e59b3c427",
+          id: "6f21535d-972a-4fdc-926e-2321c794ccd9",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -1113,12 +1123,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-04T15:33:50.453Z"),
+      postedAt: new Date("2021-06-07T19:24:22.969Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
-      updatedAt: new Date("2026-05-12T09:40:54.236Z"),
+      type: "USER",
+      updatedAt: new Date("2026-05-31T10:54:34.814Z"),
     },
     connectionId: "<id>",
   });
@@ -1148,11 +1159,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-05-12T09:40:54.236Z"),
+      approvedAt: new Date("2026-05-31T10:54:34.814Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "fef67b87-0957-42c3-adcf-43c0c46d6107",
+          id: "a31f87a7-4eb4-4302-b833-915ecb235046",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -1161,10 +1172,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "ffa6e9c7-9193-4696-85f6-b19d35be2a3b",
+      id: "9984dbbc-0b26-48c0-8a8e-1e73ac0f709e",
       lineitems: [
         {
-          id: "271f95a7-bbfc-403d-919c-785e59b3c427",
+          id: "6f21535d-972a-4fdc-926e-2321c794ccd9",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -1178,12 +1189,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-04T15:33:50.453Z"),
+      postedAt: new Date("2021-06-07T19:24:22.969Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
-      updatedAt: new Date("2026-05-12T09:40:54.236Z"),
+      type: "USER",
+      updatedAt: new Date("2026-05-31T10:54:34.814Z"),
     },
     connectionId: "<id>",
   });
@@ -1217,6 +1229,165 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createAccountingExpensereport
+
+Create an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createAccountingExpensereport" method="post" path="/accounting/{connection_id}/expensereport" example="accounting_expensereport" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.createAccountingExpensereport({
+    accountingExpensereport: {
+      approvedAt: new Date("2025-04-06T09:46:05.554Z"),
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-05-29T02:04:59.078Z"),
+      currency: "BMD",
+      externalNumber: "asporto",
+      id: "5cc3e5ae-9728-4cc1-ac0e-b0ecca46b23e",
+      lineitems: [
+        {
+          id: "8ee4223d-5e90-4930-8787-efa0f90ccea8",
+          itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
+          itemName: "Intelligent Gold Cheese",
+          itemSku: "978-0-6550-0228-4",
+          notes: "Utrimque quas vesica spes.",
+          taxAmount: 448,
+          totalAmount: 10875,
+          unitAmount: 4092,
+          unitQuantity: 1,
+        },
+        {
+          id: "44b3c8aa-a228-430f-8874-0092ec8d271f",
+          itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
+          itemName: "Practical Steel Pizza",
+          itemSku: "978-1-4129-9332-6",
+          notes: "Corrumpo.",
+          taxAmount: 875,
+          totalAmount: 12363,
+          unitAmount: 6783,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Rustic Aluminum Car",
+      postedAt: new Date("2022-10-30T06:39:38.734Z"),
+      reimbursedAmount: 6696,
+      status: "PAID",
+      taxAmount: 983,
+      totalAmount: 13931,
+      updatedAt: new Date("2025-04-06T09:46:05.554Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingCreateAccountingExpensereport } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingExpensereport.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingCreateAccountingExpensereport(unifiedTo, {
+    accountingExpensereport: {
+      approvedAt: new Date("2025-04-06T09:46:05.554Z"),
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-05-29T02:04:59.078Z"),
+      currency: "BMD",
+      externalNumber: "asporto",
+      id: "5cc3e5ae-9728-4cc1-ac0e-b0ecca46b23e",
+      lineitems: [
+        {
+          id: "8ee4223d-5e90-4930-8787-efa0f90ccea8",
+          itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
+          itemName: "Intelligent Gold Cheese",
+          itemSku: "978-0-6550-0228-4",
+          notes: "Utrimque quas vesica spes.",
+          taxAmount: 448,
+          totalAmount: 10875,
+          unitAmount: 4092,
+          unitQuantity: 1,
+        },
+        {
+          id: "44b3c8aa-a228-430f-8874-0092ec8d271f",
+          itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
+          itemName: "Practical Steel Pizza",
+          itemSku: "978-1-4129-9332-6",
+          notes: "Corrumpo.",
+          taxAmount: 875,
+          totalAmount: 12363,
+          unitAmount: 6783,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Rustic Aluminum Car",
+      postedAt: new Date("2022-10-30T06:39:38.734Z"),
+      reimbursedAmount: 6696,
+      status: "PAID",
+      taxAmount: 983,
+      totalAmount: 13931,
+      updatedAt: new Date("2025-04-06T09:46:05.554Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingCreateAccountingExpensereport failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateAccountingExpensereportRequest](../../sdk/models/operations/createaccountingexpensereportrequest.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingExpensereport](../../sdk/models/shared/accountingexpensereport.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## createAccountingInvoice
 
 Create an invoice
@@ -1239,7 +1410,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "a086fefd-c55c-4086-8542-9968b04e5561",
+          id: "e3639a48-ff4f-4839-b893-9a0b19c147e4",
           mimeType: "benevolentia",
           name: "vespillo",
         },
@@ -1251,7 +1422,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-11-27T21:25:37.363Z"),
       extendedNotes: [],
-      id: "a3e2a8ae-f055-408c-a0f6-ab0bb70b14f7",
+      id: "55bf2c55-6a5d-4db9-848c-9fe29259a430",
       invoiceNumber: "vinco",
       isInclusiveOfTax: true,
       lineitems: [],
@@ -1261,7 +1432,7 @@ async function run() {
       paidAt: new Date("2022-11-25T15:00:28.871Z"),
       paymentCollectionMethod: "send_invoice",
       payments: [],
-      postedAt: new Date("2026-03-29T09:35:22.722Z"),
+      postedAt: new Date("2026-04-16T02:25:06.860Z"),
       reference: "adinventitias",
       salesorderIds: [],
       send: true,
@@ -1271,7 +1442,7 @@ async function run() {
       term: "NET_45",
       totalAmount: 0,
       type: "CREDITMEMO",
-      updatedAt: new Date("2023-02-06T11:07:47.339Z"),
+      updatedAt: new Date("2023-02-07T18:19:00.742Z"),
       url: "https://gifted-yarmulke.info/",
     },
     connectionId: "<id>",
@@ -1305,7 +1476,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "a086fefd-c55c-4086-8542-9968b04e5561",
+          id: "e3639a48-ff4f-4839-b893-9a0b19c147e4",
           mimeType: "benevolentia",
           name: "vespillo",
         },
@@ -1317,7 +1488,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-11-27T21:25:37.363Z"),
       extendedNotes: [],
-      id: "a3e2a8ae-f055-408c-a0f6-ab0bb70b14f7",
+      id: "55bf2c55-6a5d-4db9-848c-9fe29259a430",
       invoiceNumber: "vinco",
       isInclusiveOfTax: true,
       lineitems: [],
@@ -1327,7 +1498,7 @@ async function run() {
       paidAt: new Date("2022-11-25T15:00:28.871Z"),
       paymentCollectionMethod: "send_invoice",
       payments: [],
-      postedAt: new Date("2026-03-29T09:35:22.722Z"),
+      postedAt: new Date("2026-04-16T02:25:06.860Z"),
       reference: "adinventitias",
       salesorderIds: [],
       send: true,
@@ -1337,7 +1508,7 @@ async function run() {
       term: "NET_45",
       totalAmount: 0,
       type: "CREDITMEMO",
-      updatedAt: new Date("2023-02-06T11:07:47.339Z"),
+      updatedAt: new Date("2023-02-07T18:19:00.742Z"),
       url: "https://gifted-yarmulke.info/",
     },
     connectionId: "<id>",
@@ -1394,17 +1565,18 @@ async function run() {
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
-      currency: "FKP",
-      description: "Calco constans adipisci.",
-      id: "fa50e556-5eab-4cb7-afd1-a16ff072dcc4",
-      isInclusiveOfTax: true,
-      postedAt: new Date("2023-10-20T15:13:49.802Z"),
-      reference: "ullam",
-      source: "crustulum",
+      currency: "RUB",
+      description: "Solum commemoro conor nemo ultio.",
+      exchangeRate: 1.0625,
+      id: "0e601b3e-d851-4e4a-bb97-4a7f2ed1be85",
+      isInclusiveOfTax: false,
+      lineitems: [],
+      postedAt: new Date("2023-10-31T21:09:49.601Z"),
+      reference: "82523039",
+      source: "amplitudo",
       status: "VOID",
-      taxAmount: 78672,
-      totalAmount: 74094,
-      updatedAt: new Date("2022-01-02T06:10:58.511Z"),
+      totalAmount: 0,
+      updatedAt: new Date("2022-01-07T23:41:45.956Z"),
     },
     connectionId: "<id>",
   });
@@ -1437,17 +1609,18 @@ async function run() {
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
-      currency: "FKP",
-      description: "Calco constans adipisci.",
-      id: "fa50e556-5eab-4cb7-afd1-a16ff072dcc4",
-      isInclusiveOfTax: true,
-      postedAt: new Date("2023-10-20T15:13:49.802Z"),
-      reference: "ullam",
-      source: "crustulum",
+      currency: "RUB",
+      description: "Solum commemoro conor nemo ultio.",
+      exchangeRate: 1.0625,
+      id: "0e601b3e-d851-4e4a-bb97-4a7f2ed1be85",
+      isInclusiveOfTax: false,
+      lineitems: [],
+      postedAt: new Date("2023-10-31T21:09:49.601Z"),
+      reference: "82523039",
+      source: "amplitudo",
       status: "VOID",
-      taxAmount: 78672,
-      totalAmount: 74094,
-      updatedAt: new Date("2022-01-02T06:10:58.511Z"),
+      totalAmount: 0,
+      updatedAt: new Date("2022-01-07T23:41:45.956Z"),
     },
     connectionId: "<id>",
   });
@@ -1511,10 +1684,10 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "USD",
-      id: "445e9028-1570-4f8f-9d13-775af36237a6",
+      id: "16e86dac-3377-4af6-b713-9b538cee62f7",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2022-04-05T16:02:41.218Z"),
+      postedAt: new Date("2022-04-10T10:12:37.179Z"),
       shippingAddress: {
         address1: "9745 Betty Shore",
         city: "South Alainaland",
@@ -1526,7 +1699,7 @@ async function run() {
       status: "SUBMITTED",
       totalAmount: 0,
       type: "PURCHASE",
-      updatedAt: new Date("2021-06-18T05:17:48.570Z"),
+      updatedAt: new Date("2021-06-20T05:06:58.566Z"),
     },
     connectionId: "<id>",
   });
@@ -1567,10 +1740,10 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "USD",
-      id: "445e9028-1570-4f8f-9d13-775af36237a6",
+      id: "16e86dac-3377-4af6-b713-9b538cee62f7",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2022-04-05T16:02:41.218Z"),
+      postedAt: new Date("2022-04-10T10:12:37.179Z"),
       shippingAddress: {
         address1: "9745 Betty Shore",
         city: "South Alainaland",
@@ -1582,7 +1755,7 @@ async function run() {
       status: "SUBMITTED",
       totalAmount: 0,
       type: "PURCHASE",
-      updatedAt: new Date("2021-06-18T05:17:48.570Z"),
+      updatedAt: new Date("2021-06-20T05:06:58.566Z"),
     },
     connectionId: "<id>",
   });
@@ -1644,12 +1817,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "6c9516f3-8973-4fc0-b9eb-6b8b42fe52f0",
+      id: "7f92edc2-78f8-40bb-9047-958ee23b7cb9",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2025-12-13T20:05:08.549Z"),
+      updatedAt: new Date("2025-12-30T23:38:35.930Z"),
     },
     connectionId: "<id>",
   });
@@ -1688,12 +1861,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "6c9516f3-8973-4fc0-b9eb-6b8b42fe52f0",
+      id: "7f92edc2-78f8-40bb-9047-958ee23b7cb9",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2025-12-13T20:05:08.549Z"),
+      updatedAt: new Date("2025-12-30T23:38:35.930Z"),
     },
     connectionId: "<id>",
   });
@@ -1825,6 +1998,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.createAccountingPurchaseorder({
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -1836,10 +2010,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "2c15629f-d92a-450f-9a90-c739019fa131",
+      id: "fcb307fc-6c22-47df-b1ec-904ef8da0eb8",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.375Z"),
+      postedAt: new Date("2025-05-12T13:43:58.288Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -1850,7 +2024,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.981Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.329Z"),
     },
     connectionId: "<id>",
   });
@@ -1880,6 +2054,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingPurchaseorder(unifiedTo, {
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -1891,10 +2066,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "2c15629f-d92a-450f-9a90-c739019fa131",
+      id: "fcb307fc-6c22-47df-b1ec-904ef8da0eb8",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.375Z"),
+      postedAt: new Date("2025-05-12T13:43:58.288Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -1905,7 +2080,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.981Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.329Z"),
     },
     connectionId: "<id>",
   });
@@ -2047,7 +2222,7 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-08-17T20:29:31.172Z"),
+      closedAt: new Date("2023-08-24T16:28:46.845Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "ANG",
       discountAmount: 99,
@@ -2061,12 +2236,12 @@ async function run() {
       ],
       fulfillmentType: "TAKEOUT",
       guestCount: 8,
-      id: "566ad961-babd-4344-bdd8-6636f2c1f2fa",
+      id: "86262349-70b0-4eca-be12-3db5899dcc77",
       lineitems: [],
       metadata: [],
       orderNumber: "988187",
       payments: [],
-      postedAt: new Date("2026-01-13T11:28:48.101Z"),
+      postedAt: new Date("2026-01-30T17:23:09.696Z"),
       refundedAmount: 0,
       salesChannel: "Harvey, Collier and Weimann",
       serviceChargeAmount: 63,
@@ -2084,7 +2259,7 @@ async function run() {
       taxAmount: 63,
       tipAmount: 34,
       totalAmount: 0,
-      updatedAt: new Date("2022-02-10T19:46:08.025Z"),
+      updatedAt: new Date("2022-02-11T02:37:48.148Z"),
     },
     connectionId: "<id>",
   });
@@ -2124,7 +2299,7 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-08-17T20:29:31.172Z"),
+      closedAt: new Date("2023-08-24T16:28:46.845Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "ANG",
       discountAmount: 99,
@@ -2138,12 +2313,12 @@ async function run() {
       ],
       fulfillmentType: "TAKEOUT",
       guestCount: 8,
-      id: "566ad961-babd-4344-bdd8-6636f2c1f2fa",
+      id: "86262349-70b0-4eca-be12-3db5899dcc77",
       lineitems: [],
       metadata: [],
       orderNumber: "988187",
       payments: [],
-      postedAt: new Date("2026-01-13T11:28:48.101Z"),
+      postedAt: new Date("2026-01-30T17:23:09.696Z"),
       refundedAmount: 0,
       salesChannel: "Harvey, Collier and Weimann",
       serviceChargeAmount: 63,
@@ -2161,7 +2336,7 @@ async function run() {
       taxAmount: 63,
       tipAmount: 34,
       totalAmount: 0,
-      updatedAt: new Date("2022-02-10T19:46:08.025Z"),
+      updatedAt: new Date("2022-02-11T02:37:48.148Z"),
     },
     connectionId: "<id>",
   });
@@ -2225,7 +2400,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Atrox tricesimus creator.",
       effectiveRate: 53,
-      id: "9d45b1ab-9993-41c7-9148-b552b5883179",
+      id: "083e9301-ee22-462c-a205-9b9a08019e09",
       isActive: false,
       isCompound: true,
       metadata: [],
@@ -2234,7 +2409,7 @@ async function run() {
       region: "TX",
       totalRate: 53,
       type: "OTHER",
-      updatedAt: new Date("2022-04-13T08:15:29.223Z"),
+      updatedAt: new Date("2022-04-20T04:27:44.555Z"),
     },
     connectionId: "<id>",
   });
@@ -2275,7 +2450,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Atrox tricesimus creator.",
       effectiveRate: 53,
-      id: "9d45b1ab-9993-41c7-9148-b552b5883179",
+      id: "083e9301-ee22-462c-a205-9b9a08019e09",
       isActive: false,
       isCompound: true,
       metadata: [],
@@ -2284,7 +2459,7 @@ async function run() {
       region: "TX",
       totalRate: 53,
       type: "OTHER",
-      updatedAt: new Date("2022-04-13T08:15:29.223Z"),
+      updatedAt: new Date("2022-04-20T04:27:44.555Z"),
     },
     connectionId: "<id>",
   });
@@ -2339,12 +2514,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "17615f5e-0ebb-445a-b676-67eeac8b692b",
+      id: "be4e624e-49d6-44cb-a925-9bca1b3dbfaf",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "211e7819-c286-480e-bcae-2c7237cdef02",
+          id: "3efb3863-4c56-4152-a851-9e0d03fbc572",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -2357,7 +2532,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-10T21:27:21.377Z"),
+      updatedAt: new Date("2021-09-16T13:35:50.876Z"),
     },
     connectionId: "<id>",
   });
@@ -2389,12 +2564,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "17615f5e-0ebb-445a-b676-67eeac8b692b",
+      id: "be4e624e-49d6-44cb-a925-9bca1b3dbfaf",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "211e7819-c286-480e-bcae-2c7237cdef02",
+          id: "3efb3863-4c56-4152-a851-9e0d03fbc572",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -2407,7 +2582,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-10T21:27:21.377Z"),
+      updatedAt: new Date("2021-09-16T13:35:50.876Z"),
     },
     connectionId: "<id>",
   });
@@ -2466,14 +2641,14 @@ async function run() {
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "KGS",
       dueAt: new Date("2023-05-06T20:38:46.775Z"),
-      id: "a277fafd-6a45-453a-a250-b99677d7a27d",
+      id: "48f0273c-0d65-45d0-9b77-01fd92760ac3",
       lineitems: [],
       metadata: [],
       notes: "Conatus cruciamentum decor avaritia tantum.",
-      postedAt: new Date("2023-09-29T01:37:34.419Z"),
+      postedAt: new Date("2023-10-01T17:54:27.922Z"),
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2023-11-27T02:39:20.516Z"),
+      updatedAt: new Date("2023-11-30T17:46:32.583Z"),
     },
     connectionId: "<id>",
   });
@@ -2509,14 +2684,14 @@ async function run() {
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "KGS",
       dueAt: new Date("2023-05-06T20:38:46.775Z"),
-      id: "a277fafd-6a45-453a-a250-b99677d7a27d",
+      id: "48f0273c-0d65-45d0-9b77-01fd92760ac3",
       lineitems: [],
       metadata: [],
       notes: "Conatus cruciamentum decor avaritia tantum.",
-      postedAt: new Date("2023-09-29T01:37:34.419Z"),
+      postedAt: new Date("2023-10-01T17:54:27.922Z"),
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2023-11-27T02:39:20.516Z"),
+      updatedAt: new Date("2023-11-30T17:46:32.583Z"),
     },
     connectionId: "<id>",
   });
@@ -3498,6 +3673,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getAccountingExpensereport
+
+Retrieve an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAccountingExpensereport" method="get" path="/accounting/{connection_id}/expensereport/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.getAccountingExpensereport({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingGetAccountingExpensereport } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingExpensereport.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingGetAccountingExpensereport(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingGetAccountingExpensereport failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAccountingExpensereportRequest](../../sdk/models/operations/getaccountingexpensereportrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingExpensereport](../../sdk/models/shared/accountingexpensereport.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getAccountingInvoice
 
 Retrieve an invoice
@@ -4130,6 +4384,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getAccountingPurchasereceipt
+
+Retrieve a purchasereceipt
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAccountingPurchasereceipt" method="get" path="/accounting/{connection_id}/purchasereceipt/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.getAccountingPurchasereceipt({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingGetAccountingPurchasereceipt } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingPurchasereceipt.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingGetAccountingPurchasereceipt(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingGetAccountingPurchasereceipt failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAccountingPurchasereceiptRequest](../../sdk/models/operations/getaccountingpurchasereceiptrequest.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingPurchasereceipt](../../sdk/models/shared/accountingpurchasereceipt.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getAccountingQuote
 
 Retrieve a quote
@@ -4281,6 +4614,85 @@ run();
 ### Response
 
 **Promise\<[shared.AccountingSalesorder](../../sdk/models/shared/accountingsalesorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getAccountingSalesreceipt
+
+Retrieve a salesreceipt
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAccountingSalesreceipt" method="get" path="/accounting/{connection_id}/salesreceipt/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.getAccountingSalesreceipt({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingGetAccountingSalesreceipt } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingSalesreceipt.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingGetAccountingSalesreceipt(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingGetAccountingSalesreceipt failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAccountingSalesreceiptRequest](../../sdk/models/operations/getaccountingsalesreceiptrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingSalesreceipt](../../sdk/models/shared/accountingsalesreceipt.md)\>**
 
 ### Errors
 
@@ -5451,6 +5863,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listAccountingExpensereports
+
+List all expensereports
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listAccountingExpensereports" method="get" path="/accounting/{connection_id}/expensereport" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.listAccountingExpensereports({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingListAccountingExpensereports } from "@unified-api/typescript-sdk/funcs/accountingListAccountingExpensereports.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingListAccountingExpensereports(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingListAccountingExpensereports failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListAccountingExpensereportsRequest](../../sdk/models/operations/listaccountingexpensereportsrequest.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingExpensereport[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listAccountingExpenses
 
 List all expenses
@@ -6144,6 +6633,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listAccountingPurchasereceipts
+
+List all purchasereceipts
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listAccountingPurchasereceipts" method="get" path="/accounting/{connection_id}/purchasereceipt" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.listAccountingPurchasereceipts({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingListAccountingPurchasereceipts } from "@unified-api/typescript-sdk/funcs/accountingListAccountingPurchasereceipts.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingListAccountingPurchasereceipts(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingListAccountingPurchasereceipts failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListAccountingPurchasereceiptsRequest](../../sdk/models/operations/listaccountingpurchasereceiptsrequest.md)                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingPurchasereceipt[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listAccountingQuotes
 
 List all quotes
@@ -6291,6 +6857,83 @@ run();
 ### Response
 
 **Promise\<[shared.AccountingSalesorder[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listAccountingSalesreceipts
+
+List all salesreceipts
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listAccountingSalesreceipts" method="get" path="/accounting/{connection_id}/salesreceipt" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.listAccountingSalesreceipts({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingListAccountingSalesreceipts } from "@unified-api/typescript-sdk/funcs/accountingListAccountingSalesreceipts.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingListAccountingSalesreceipts(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingListAccountingSalesreceipts failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListAccountingSalesreceiptsRequest](../../sdk/models/operations/listaccountingsalesreceiptsrequest.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingSalesreceipt[]](../../models/.md)\>**
 
 ### Errors
 
@@ -6630,7 +7273,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "d91a9733-3a17-4074-a1b1-aa422f50d958",
+      id: "06c3b45c-ba9c-4882-a181-f3cfc5e6a837",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -6647,7 +7290,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.469Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.375Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6683,7 +7326,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "d91a9733-3a17-4074-a1b1-aa422f50d958",
+      id: "06c3b45c-ba9c-4882-a181-f3cfc5e6a837",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -6700,7 +7343,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.469Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.375Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6763,11 +7406,11 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "SSP",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d019420d-033e-4e21-8a76-2104d7cbef79",
+      id: "7102d1b1-656e-4677-9f0c-1082f2c8956c",
       name: "Corwin, Donnelly and Connelly Savings",
       routingNumber: "667753156",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-12T13:57:09.411Z"),
+      updatedAt: new Date("2024-04-20T02:35:25.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6807,11 +7450,11 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "SSP",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d019420d-033e-4e21-8a76-2104d7cbef79",
+      id: "7102d1b1-656e-4677-9f0c-1082f2c8956c",
       name: "Corwin, Donnelly and Connelly Savings",
       routingNumber: "667753156",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-12T13:57:09.411Z"),
+      updatedAt: new Date("2024-04-20T02:35:25.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6874,14 +7517,14 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "SRD",
       description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-      id: "a27d611c-a43a-436c-94bf-16e1266c55f2",
+      id: "200794a5-c24e-46a8-953a-494fd6e67fcb",
       isPending: true,
       merchantName: "Reichert, Erdman and Tillman",
-      postedAt: new Date("2025-03-25T15:26:46.365Z"),
+      postedAt: new Date("2025-04-08T03:37:11.948Z"),
       reference: "93642593",
-      transactionAt: new Date("2022-07-28T00:55:13.106Z"),
+      transactionAt: new Date("2022-07-29T13:53:08.694Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-23T23:14:36.068Z"),
+      updatedAt: new Date("2022-05-24T16:58:26.460Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6921,14 +7564,14 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "SRD",
       description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-      id: "a27d611c-a43a-436c-94bf-16e1266c55f2",
+      id: "200794a5-c24e-46a8-953a-494fd6e67fcb",
       isPending: true,
       merchantName: "Reichert, Erdman and Tillman",
-      postedAt: new Date("2025-03-25T15:26:46.365Z"),
+      postedAt: new Date("2025-04-08T03:37:11.948Z"),
       reference: "93642593",
-      transactionAt: new Date("2022-07-28T00:55:13.106Z"),
+      transactionAt: new Date("2022-07-29T13:53:08.694Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-23T23:14:36.068Z"),
+      updatedAt: new Date("2022-05-24T16:58:26.460Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6990,13 +7633,13 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-08-11T20:52:55.321Z"),
       extendedNotes: [],
-      id: "f9268e84-980f-40e0-a64b-2c964ec54a34",
+      id: "bab9d251-e1a7-4914-8c35-942d148ef93e",
       lineitems: [],
       metadata: [],
       notes: "Tutamen cilicium infit.",
       paymentCollectionMethod: "charge_automatically",
       payments: [],
-      postedAt: new Date("2024-04-06T03:20:50.910Z"),
+      postedAt: new Date("2024-04-19T08:54:19.964Z"),
       purchaseorderIds: [],
       send: true,
       status: "DELETED",
@@ -7004,7 +7647,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_10",
       totalAmount: 0,
-      updatedAt: new Date("2025-01-31T04:40:21.369Z"),
+      updatedAt: new Date("2025-02-15T18:12:32.036Z"),
       url: "https://coarse-interviewer.biz/",
     },
     connectionId: "<id>",
@@ -7044,13 +7687,13 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-08-11T20:52:55.321Z"),
       extendedNotes: [],
-      id: "f9268e84-980f-40e0-a64b-2c964ec54a34",
+      id: "bab9d251-e1a7-4914-8c35-942d148ef93e",
       lineitems: [],
       metadata: [],
       notes: "Tutamen cilicium infit.",
       paymentCollectionMethod: "charge_automatically",
       payments: [],
-      postedAt: new Date("2024-04-06T03:20:50.910Z"),
+      postedAt: new Date("2024-04-19T08:54:19.964Z"),
       purchaseorderIds: [],
       send: true,
       status: "DELETED",
@@ -7058,7 +7701,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_10",
       totalAmount: 0,
-      updatedAt: new Date("2025-01-31T04:40:21.369Z"),
+      updatedAt: new Date("2025-02-15T18:12:32.036Z"),
       url: "https://coarse-interviewer.biz/",
     },
     connectionId: "<id>",
@@ -7115,11 +7758,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
-      id: "517496d1-823c-438e-b1e0-ca87622b0590",
+      id: "14ff8cb0-ebd4-4c75-a81a-70675e637a25",
       isActive: false,
       metadata: [],
       name: "Electronic Cotton Shoes",
-      updatedAt: new Date("2025-08-22T03:49:23.618Z"),
+      updatedAt: new Date("2025-09-04T18:33:59.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7152,11 +7795,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
-      id: "517496d1-823c-438e-b1e0-ca87622b0590",
+      id: "14ff8cb0-ebd4-4c75-a81a-70675e637a25",
       isActive: false,
       metadata: [],
       name: "Electronic Cotton Shoes",
-      updatedAt: new Date("2025-08-22T03:49:23.618Z"),
+      updatedAt: new Date("2025-09-04T18:33:59.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7212,11 +7855,11 @@ async function run() {
     accountingContact: {
       associatedContacts: [
         {
-          id: "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+          id: "8a8efa3e-5cb5-49b9-bbbc-df541a41ee09",
           name: "Delores Reynolds",
         },
         {
-          id: "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+          id: "b0b576ff-e82f-4235-aaba-8dd61d552653",
           name: "Delores Reynolds",
         },
       ],
@@ -7239,7 +7882,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "4a153b39-b59a-47be-a636-304762d04879",
+      id: "597bca1b-241c-4726-a69d-44e26b42878c",
       identification: "amicitia",
       isActive: true,
       isCustomer: true,
@@ -7249,7 +7892,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+          id: "1b28a768-215b-42c0-a38e-b02aa6834e50",
           name: "Visa 1234",
           type: "CARD",
         },
@@ -7276,7 +7919,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-06T04:50:42.446Z"),
+      updatedAt: new Date("2023-12-15T08:18:18.548Z"),
       website: "https://noxious-advertisement.org",
     },
     connectionId: "<id>",
@@ -7310,11 +7953,11 @@ async function run() {
     accountingContact: {
       associatedContacts: [
         {
-          id: "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+          id: "8a8efa3e-5cb5-49b9-bbbc-df541a41ee09",
           name: "Delores Reynolds",
         },
         {
-          id: "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+          id: "b0b576ff-e82f-4235-aaba-8dd61d552653",
           name: "Delores Reynolds",
         },
       ],
@@ -7337,7 +7980,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "4a153b39-b59a-47be-a636-304762d04879",
+      id: "597bca1b-241c-4726-a69d-44e26b42878c",
       identification: "amicitia",
       isActive: true,
       isCustomer: true,
@@ -7347,7 +7990,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+          id: "1b28a768-215b-42c0-a38e-b02aa6834e50",
           name: "Visa 1234",
           type: "CARD",
         },
@@ -7374,7 +8017,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-06T04:50:42.446Z"),
+      updatedAt: new Date("2023-12-15T08:18:18.548Z"),
       website: "https://noxious-advertisement.org",
     },
     connectionId: "<id>",
@@ -7433,7 +8076,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://enlightened-chairperson.com/",
-          id: "1c286351-0ae3-4808-afca-05d66fa97fc4",
+          id: "930c38a2-f505-493c-8c2d-f1d7f79a1458",
           mimeType: "complectus",
           name: "thesis",
         },
@@ -7443,12 +8086,12 @@ async function run() {
       currency: "MKD",
       discountAmount: 0,
       dueAt: new Date("2023-10-18T04:35:00.543Z"),
-      id: "d40e3d9c-5b72-4e11-99da-b9debead5a6b",
+      id: "9d37fdaf-d11d-4ed6-b6b4-bba2091b84fc",
       lineitems: [],
       metadata: [],
       notes: "Dedecor amo adfero torqueo quas.",
       paymentCollectionMethod: "charge_automatically",
-      postedAt: new Date("2025-11-17T11:22:22.083Z"),
+      postedAt: new Date("2025-12-02T00:29:13.815Z"),
       refundAmount: 0,
       refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
       refundedAt: new Date("2023-10-23T00:35:36.814Z"),
@@ -7456,7 +8099,7 @@ async function run() {
       status: "PAID",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2024-11-16T15:28:24.996Z"),
+      updatedAt: new Date("2024-11-24T10:47:56.125Z"),
       url: "https://lighthearted-bandwidth.net/",
     },
     connectionId: "<id>",
@@ -7492,7 +8135,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://enlightened-chairperson.com/",
-          id: "1c286351-0ae3-4808-afca-05d66fa97fc4",
+          id: "930c38a2-f505-493c-8c2d-f1d7f79a1458",
           mimeType: "complectus",
           name: "thesis",
         },
@@ -7502,12 +8145,12 @@ async function run() {
       currency: "MKD",
       discountAmount: 0,
       dueAt: new Date("2023-10-18T04:35:00.543Z"),
-      id: "d40e3d9c-5b72-4e11-99da-b9debead5a6b",
+      id: "9d37fdaf-d11d-4ed6-b6b4-bba2091b84fc",
       lineitems: [],
       metadata: [],
       notes: "Dedecor amo adfero torqueo quas.",
       paymentCollectionMethod: "charge_automatically",
-      postedAt: new Date("2025-11-17T11:22:22.083Z"),
+      postedAt: new Date("2025-12-02T00:29:13.815Z"),
       refundAmount: 0,
       refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
       refundedAt: new Date("2023-10-23T00:35:36.814Z"),
@@ -7515,7 +8158,7 @@ async function run() {
       status: "PAID",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2024-11-16T15:28:24.996Z"),
+      updatedAt: new Date("2024-11-24T10:47:56.125Z"),
       url: "https://lighthearted-bandwidth.net/",
     },
     connectionId: "<id>",
@@ -7570,11 +8213,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-05-12T09:40:54.291Z"),
+      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "952638a5-c054-405a-9014-96aef0753c77",
+          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -7583,10 +8226,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "fa30c86b-1dc7-447f-99a5-bb2137a4e4c2",
+      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
       lineitems: [
         {
-          id: "8b534c2b-fe41-4494-86df-02ef8117de50",
+          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -7600,12 +8243,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-04T15:33:50.462Z"),
+      postedAt: new Date("2021-06-07T19:24:22.977Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
-      updatedAt: new Date("2026-05-12T09:40:54.291Z"),
+      type: "USER",
+      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7636,11 +8280,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-05-12T09:40:54.291Z"),
+      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "952638a5-c054-405a-9014-96aef0753c77",
+          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -7649,10 +8293,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "fa30c86b-1dc7-447f-99a5-bb2137a4e4c2",
+      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
       lineitems: [
         {
-          id: "8b534c2b-fe41-4494-86df-02ef8117de50",
+          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -7666,12 +8310,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-04T15:33:50.462Z"),
+      postedAt: new Date("2021-06-07T19:24:22.977Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
-      updatedAt: new Date("2026-05-12T09:40:54.291Z"),
+      type: "USER",
+      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7706,6 +8351,167 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchAccountingExpensereport
+
+Update an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchAccountingExpensereport" method="patch" path="/accounting/{connection_id}/expensereport/{id}" example="accounting_expensereport" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.patchAccountingExpensereport({
+    accountingExpensereport: {
+      approvedAt: new Date("2025-04-06T09:46:05.580Z"),
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-05-29T02:04:59.078Z"),
+      currency: "BMD",
+      externalNumber: "asporto",
+      id: "ffc14074-5d47-4758-b84b-894cd168e9a4",
+      lineitems: [
+        {
+          id: "95a46ec8-1094-49ae-a7d7-e5a066beb145",
+          itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
+          itemName: "Intelligent Gold Cheese",
+          itemSku: "978-0-6550-0228-4",
+          notes: "Utrimque quas vesica spes.",
+          taxAmount: 448,
+          totalAmount: 10875,
+          unitAmount: 4092,
+          unitQuantity: 1,
+        },
+        {
+          id: "eb99ff14-ffa0-4b46-a27a-ba0f828b4fa4",
+          itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
+          itemName: "Practical Steel Pizza",
+          itemSku: "978-1-4129-9332-6",
+          notes: "Corrumpo.",
+          taxAmount: 875,
+          totalAmount: 12363,
+          unitAmount: 6783,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Rustic Aluminum Car",
+      postedAt: new Date("2022-10-30T06:39:38.747Z"),
+      reimbursedAmount: 6696,
+      status: "PAID",
+      taxAmount: 983,
+      totalAmount: 13931,
+      updatedAt: new Date("2025-04-06T09:46:05.580Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingPatchAccountingExpensereport } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingExpensereport.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingPatchAccountingExpensereport(unifiedTo, {
+    accountingExpensereport: {
+      approvedAt: new Date("2025-04-06T09:46:05.580Z"),
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-05-29T02:04:59.078Z"),
+      currency: "BMD",
+      externalNumber: "asporto",
+      id: "ffc14074-5d47-4758-b84b-894cd168e9a4",
+      lineitems: [
+        {
+          id: "95a46ec8-1094-49ae-a7d7-e5a066beb145",
+          itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
+          itemName: "Intelligent Gold Cheese",
+          itemSku: "978-0-6550-0228-4",
+          notes: "Utrimque quas vesica spes.",
+          taxAmount: 448,
+          totalAmount: 10875,
+          unitAmount: 4092,
+          unitQuantity: 1,
+        },
+        {
+          id: "eb99ff14-ffa0-4b46-a27a-ba0f828b4fa4",
+          itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
+          itemName: "Practical Steel Pizza",
+          itemSku: "978-1-4129-9332-6",
+          notes: "Corrumpo.",
+          taxAmount: 875,
+          totalAmount: 12363,
+          unitAmount: 6783,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Rustic Aluminum Car",
+      postedAt: new Date("2022-10-30T06:39:38.747Z"),
+      reimbursedAmount: 6696,
+      status: "PAID",
+      taxAmount: 983,
+      totalAmount: 13931,
+      updatedAt: new Date("2025-04-06T09:46:05.580Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingPatchAccountingExpensereport failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchAccountingExpensereportRequest](../../sdk/models/operations/patchaccountingexpensereportrequest.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingExpensereport](../../sdk/models/shared/accountingexpensereport.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchAccountingInvoice
 
 Update an invoice
@@ -7728,7 +8534,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "42f96d4c-bad4-4392-8233-a33df24a8c6c",
+          id: "194141c2-445a-40f7-9dd6-819bf3413e1f",
           mimeType: "benevolentia",
           name: "vespillo",
         },
@@ -7740,7 +8546,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-11-27T21:25:37.363Z"),
       extendedNotes: [],
-      id: "06ca1e6c-52aa-4fe5-8ec5-54e9da3aa325",
+      id: "af9e2ade-b378-453f-a94a-dbd92c8b09a4",
       invoiceNumber: "vinco",
       isInclusiveOfTax: true,
       lineitems: [],
@@ -7750,7 +8556,7 @@ async function run() {
       paidAt: new Date("2022-11-25T15:00:28.871Z"),
       paymentCollectionMethod: "send_invoice",
       payments: [],
-      postedAt: new Date("2026-03-29T09:35:22.780Z"),
+      postedAt: new Date("2026-04-16T02:25:06.900Z"),
       reference: "adinventitias",
       salesorderIds: [],
       send: true,
@@ -7760,7 +8566,7 @@ async function run() {
       term: "NET_45",
       totalAmount: 0,
       type: "CREDITMEMO",
-      updatedAt: new Date("2023-02-06T11:07:47.343Z"),
+      updatedAt: new Date("2023-02-07T18:19:00.745Z"),
       url: "https://gifted-yarmulke.info/",
     },
     connectionId: "<id>",
@@ -7795,7 +8601,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "42f96d4c-bad4-4392-8233-a33df24a8c6c",
+          id: "194141c2-445a-40f7-9dd6-819bf3413e1f",
           mimeType: "benevolentia",
           name: "vespillo",
         },
@@ -7807,7 +8613,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-11-27T21:25:37.363Z"),
       extendedNotes: [],
-      id: "06ca1e6c-52aa-4fe5-8ec5-54e9da3aa325",
+      id: "af9e2ade-b378-453f-a94a-dbd92c8b09a4",
       invoiceNumber: "vinco",
       isInclusiveOfTax: true,
       lineitems: [],
@@ -7817,7 +8623,7 @@ async function run() {
       paidAt: new Date("2022-11-25T15:00:28.871Z"),
       paymentCollectionMethod: "send_invoice",
       payments: [],
-      postedAt: new Date("2026-03-29T09:35:22.780Z"),
+      postedAt: new Date("2026-04-16T02:25:06.900Z"),
       reference: "adinventitias",
       salesorderIds: [],
       send: true,
@@ -7827,7 +8633,7 @@ async function run() {
       term: "NET_45",
       totalAmount: 0,
       type: "CREDITMEMO",
-      updatedAt: new Date("2023-02-06T11:07:47.343Z"),
+      updatedAt: new Date("2023-02-07T18:19:00.745Z"),
       url: "https://gifted-yarmulke.info/",
     },
     connectionId: "<id>",
@@ -7885,17 +8691,18 @@ async function run() {
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
-      currency: "FKP",
-      description: "Calco constans adipisci.",
-      id: "f7779d43-9388-4634-8682-5de7127545a9",
-      isInclusiveOfTax: true,
-      postedAt: new Date("2023-10-20T15:13:49.817Z"),
-      reference: "ullam",
-      source: "crustulum",
+      currency: "RUB",
+      description: "Solum commemoro conor nemo ultio.",
+      exchangeRate: 1.0625,
+      id: "c6510716-6c54-4440-a86a-72cac3705f85",
+      isInclusiveOfTax: false,
+      lineitems: [],
+      postedAt: new Date("2023-10-31T21:09:49.610Z"),
+      reference: "82523039",
+      source: "amplitudo",
       status: "VOID",
-      taxAmount: 78672,
-      totalAmount: 74094,
-      updatedAt: new Date("2022-01-02T06:10:58.518Z"),
+      totalAmount: 0,
+      updatedAt: new Date("2022-01-07T23:41:45.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7929,17 +8736,18 @@ async function run() {
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
-      currency: "FKP",
-      description: "Calco constans adipisci.",
-      id: "f7779d43-9388-4634-8682-5de7127545a9",
-      isInclusiveOfTax: true,
-      postedAt: new Date("2023-10-20T15:13:49.817Z"),
-      reference: "ullam",
-      source: "crustulum",
+      currency: "RUB",
+      description: "Solum commemoro conor nemo ultio.",
+      exchangeRate: 1.0625,
+      id: "c6510716-6c54-4440-a86a-72cac3705f85",
+      isInclusiveOfTax: false,
+      lineitems: [],
+      postedAt: new Date("2023-10-31T21:09:49.610Z"),
+      reference: "82523039",
+      source: "amplitudo",
       status: "VOID",
-      taxAmount: 78672,
-      totalAmount: 74094,
-      updatedAt: new Date("2022-01-02T06:10:58.518Z"),
+      totalAmount: 0,
+      updatedAt: new Date("2022-01-07T23:41:45.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8004,10 +8812,10 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "USD",
-      id: "bdf36a05-6b7f-4eef-9179-63e8d329f593",
+      id: "da3eefbe-36cf-48dd-8d68-584949d7fb74",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2022-04-05T16:02:41.231Z"),
+      postedAt: new Date("2022-04-10T10:12:37.188Z"),
       shippingAddress: {
         address1: "9745 Betty Shore",
         city: "South Alainaland",
@@ -8019,7 +8827,7 @@ async function run() {
       status: "SUBMITTED",
       totalAmount: 0,
       type: "PURCHASE",
-      updatedAt: new Date("2021-06-18T05:17:48.576Z"),
+      updatedAt: new Date("2021-06-20T05:06:58.570Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8061,10 +8869,10 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "USD",
-      id: "bdf36a05-6b7f-4eef-9179-63e8d329f593",
+      id: "da3eefbe-36cf-48dd-8d68-584949d7fb74",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2022-04-05T16:02:41.231Z"),
+      postedAt: new Date("2022-04-10T10:12:37.188Z"),
       shippingAddress: {
         address1: "9745 Betty Shore",
         city: "South Alainaland",
@@ -8076,7 +8884,7 @@ async function run() {
       status: "SUBMITTED",
       totalAmount: 0,
       type: "PURCHASE",
-      updatedAt: new Date("2021-06-18T05:17:48.576Z"),
+      updatedAt: new Date("2021-06-20T05:06:58.570Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8139,12 +8947,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "708643f5-baec-4dfc-8c39-cc2303907aa2",
+      id: "df125725-c898-4749-bd3d-e0bf7d75c79c",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2025-12-13T20:05:08.559Z"),
+      updatedAt: new Date("2025-12-30T23:38:35.940Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8184,12 +8992,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "708643f5-baec-4dfc-8c39-cc2303907aa2",
+      id: "df125725-c898-4749-bd3d-e0bf7d75c79c",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2025-12-13T20:05:08.559Z"),
+      updatedAt: new Date("2025-12-30T23:38:35.940Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8324,6 +9132,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingPurchaseorder({
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -8335,10 +9144,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -8349,7 +9158,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8380,6 +9189,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingPurchaseorder(unifiedTo, {
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -8391,10 +9201,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -8405,7 +9215,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8550,7 +9360,7 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-08-17T20:29:31.196Z"),
+      closedAt: new Date("2023-08-24T16:28:46.860Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "ANG",
       discountAmount: 99,
@@ -8564,12 +9374,12 @@ async function run() {
       ],
       fulfillmentType: "TAKEOUT",
       guestCount: 8,
-      id: "06b6c05e-10dc-4e23-9cd8-d13c368864b3",
+      id: "894f6094-be58-463a-81e8-b5408af2fa24",
       lineitems: [],
       metadata: [],
       orderNumber: "988187",
       payments: [],
-      postedAt: new Date("2026-01-13T11:28:48.163Z"),
+      postedAt: new Date("2026-01-30T17:23:09.735Z"),
       refundedAmount: 0,
       salesChannel: "Harvey, Collier and Weimann",
       serviceChargeAmount: 63,
@@ -8587,7 +9397,7 @@ async function run() {
       taxAmount: 63,
       tipAmount: 34,
       totalAmount: 0,
-      updatedAt: new Date("2022-02-10T19:46:08.026Z"),
+      updatedAt: new Date("2022-02-11T02:37:48.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8628,7 +9438,7 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-08-17T20:29:31.196Z"),
+      closedAt: new Date("2023-08-24T16:28:46.860Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "ANG",
       discountAmount: 99,
@@ -8642,12 +9452,12 @@ async function run() {
       ],
       fulfillmentType: "TAKEOUT",
       guestCount: 8,
-      id: "06b6c05e-10dc-4e23-9cd8-d13c368864b3",
+      id: "894f6094-be58-463a-81e8-b5408af2fa24",
       lineitems: [],
       metadata: [],
       orderNumber: "988187",
       payments: [],
-      postedAt: new Date("2026-01-13T11:28:48.163Z"),
+      postedAt: new Date("2026-01-30T17:23:09.735Z"),
       refundedAmount: 0,
       salesChannel: "Harvey, Collier and Weimann",
       serviceChargeAmount: 63,
@@ -8665,7 +9475,7 @@ async function run() {
       taxAmount: 63,
       tipAmount: 34,
       totalAmount: 0,
-      updatedAt: new Date("2022-02-10T19:46:08.026Z"),
+      updatedAt: new Date("2022-02-11T02:37:48.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8730,7 +9540,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Atrox tricesimus creator.",
       effectiveRate: 53,
-      id: "6b146958-8711-4255-89a5-4e504a6d2a0f",
+      id: "96149177-44f0-4c0f-9d19-3e7b29a92abe",
       isActive: false,
       isCompound: true,
       metadata: [],
@@ -8739,7 +9549,7 @@ async function run() {
       region: "TX",
       totalRate: 53,
       type: "OTHER",
-      updatedAt: new Date("2022-04-13T08:15:29.226Z"),
+      updatedAt: new Date("2022-04-20T04:27:44.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8781,7 +9591,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Atrox tricesimus creator.",
       effectiveRate: 53,
-      id: "6b146958-8711-4255-89a5-4e504a6d2a0f",
+      id: "96149177-44f0-4c0f-9d19-3e7b29a92abe",
       isActive: false,
       isCompound: true,
       metadata: [],
@@ -8790,7 +9600,7 @@ async function run() {
       region: "TX",
       totalRate: 53,
       type: "OTHER",
-      updatedAt: new Date("2022-04-13T08:15:29.226Z"),
+      updatedAt: new Date("2022-04-20T04:27:44.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8846,12 +9656,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
+      id: "d5d0b4cb-930e-4dba-89af-66e1e4c500c8",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
+          id: "804a7946-9ebd-45e1-94e3-79e0b92f49e6",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -8864,7 +9674,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
+      updatedAt: new Date("2021-09-16T13:35:50.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8897,12 +9707,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
+      id: "d5d0b4cb-930e-4dba-89af-66e1e4c500c8",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
+          id: "804a7946-9ebd-45e1-94e3-79e0b92f49e6",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -8915,7 +9725,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
+      updatedAt: new Date("2021-09-16T13:35:50.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8975,14 +9785,14 @@ async function run() {
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "KGS",
       dueAt: new Date("2023-05-06T20:38:46.775Z"),
-      id: "b6f8e422-65bf-48c8-ad52-a5537ca85940",
+      id: "99c1efcf-4a95-4a94-bdde-6ebbd51b4746",
       lineitems: [],
       metadata: [],
       notes: "Conatus cruciamentum decor avaritia tantum.",
-      postedAt: new Date("2023-09-29T01:37:34.425Z"),
+      postedAt: new Date("2023-10-01T17:54:27.925Z"),
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2023-11-27T02:39:20.523Z"),
+      updatedAt: new Date("2023-11-30T17:46:32.588Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9019,14 +9829,14 @@ async function run() {
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "KGS",
       dueAt: new Date("2023-05-06T20:38:46.775Z"),
-      id: "b6f8e422-65bf-48c8-ad52-a5537ca85940",
+      id: "99c1efcf-4a95-4a94-bdde-6ebbd51b4746",
       lineitems: [],
       metadata: [],
       notes: "Conatus cruciamentum decor avaritia tantum.",
-      postedAt: new Date("2023-09-29T01:37:34.425Z"),
+      postedAt: new Date("2023-10-01T17:54:27.925Z"),
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2023-11-27T02:39:20.523Z"),
+      updatedAt: new Date("2023-11-30T17:46:32.588Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9686,6 +10496,85 @@ run();
 ### Response
 
 **Promise\<[operations.RemoveAccountingExpenseResponse](../../sdk/models/operations/removeaccountingexpenseresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## removeAccountingExpensereport
+
+Remove an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeAccountingExpensereport" method="delete" path="/accounting/{connection_id}/expensereport/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.removeAccountingExpensereport({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingRemoveAccountingExpensereport } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingExpensereport.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingRemoveAccountingExpensereport(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingRemoveAccountingExpensereport failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveAccountingExpensereportRequest](../../sdk/models/operations/removeaccountingexpensereportrequest.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveAccountingExpensereportResponse](../../sdk/models/operations/removeaccountingexpensereportresponse.md)\>**
 
 ### Errors
 
@@ -10586,7 +11475,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "d91a9733-3a17-4074-a1b1-aa422f50d958",
+      id: "06c3b45c-ba9c-4882-a181-f3cfc5e6a837",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -10603,7 +11492,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.469Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.375Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -10639,7 +11528,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "d91a9733-3a17-4074-a1b1-aa422f50d958",
+      id: "06c3b45c-ba9c-4882-a181-f3cfc5e6a837",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -10656,7 +11545,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.469Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.375Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -10719,11 +11608,11 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "SSP",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d019420d-033e-4e21-8a76-2104d7cbef79",
+      id: "7102d1b1-656e-4677-9f0c-1082f2c8956c",
       name: "Corwin, Donnelly and Connelly Savings",
       routingNumber: "667753156",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-12T13:57:09.411Z"),
+      updatedAt: new Date("2024-04-20T02:35:25.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -10763,11 +11652,11 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "SSP",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d019420d-033e-4e21-8a76-2104d7cbef79",
+      id: "7102d1b1-656e-4677-9f0c-1082f2c8956c",
       name: "Corwin, Donnelly and Connelly Savings",
       routingNumber: "667753156",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-12T13:57:09.411Z"),
+      updatedAt: new Date("2024-04-20T02:35:25.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -10830,14 +11719,14 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "SRD",
       description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-      id: "a27d611c-a43a-436c-94bf-16e1266c55f2",
+      id: "200794a5-c24e-46a8-953a-494fd6e67fcb",
       isPending: true,
       merchantName: "Reichert, Erdman and Tillman",
-      postedAt: new Date("2025-03-25T15:26:46.365Z"),
+      postedAt: new Date("2025-04-08T03:37:11.948Z"),
       reference: "93642593",
-      transactionAt: new Date("2022-07-28T00:55:13.106Z"),
+      transactionAt: new Date("2022-07-29T13:53:08.694Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-23T23:14:36.068Z"),
+      updatedAt: new Date("2022-05-24T16:58:26.460Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -10877,14 +11766,14 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "SRD",
       description: "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-      id: "a27d611c-a43a-436c-94bf-16e1266c55f2",
+      id: "200794a5-c24e-46a8-953a-494fd6e67fcb",
       isPending: true,
       merchantName: "Reichert, Erdman and Tillman",
-      postedAt: new Date("2025-03-25T15:26:46.365Z"),
+      postedAt: new Date("2025-04-08T03:37:11.948Z"),
       reference: "93642593",
-      transactionAt: new Date("2022-07-28T00:55:13.106Z"),
+      transactionAt: new Date("2022-07-29T13:53:08.694Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-23T23:14:36.068Z"),
+      updatedAt: new Date("2022-05-24T16:58:26.460Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -10946,13 +11835,13 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-08-11T20:52:55.321Z"),
       extendedNotes: [],
-      id: "f9268e84-980f-40e0-a64b-2c964ec54a34",
+      id: "bab9d251-e1a7-4914-8c35-942d148ef93e",
       lineitems: [],
       metadata: [],
       notes: "Tutamen cilicium infit.",
       paymentCollectionMethod: "charge_automatically",
       payments: [],
-      postedAt: new Date("2024-04-06T03:20:50.910Z"),
+      postedAt: new Date("2024-04-19T08:54:19.964Z"),
       purchaseorderIds: [],
       send: true,
       status: "DELETED",
@@ -10960,7 +11849,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_10",
       totalAmount: 0,
-      updatedAt: new Date("2025-01-31T04:40:21.369Z"),
+      updatedAt: new Date("2025-02-15T18:12:32.036Z"),
       url: "https://coarse-interviewer.biz/",
     },
     connectionId: "<id>",
@@ -11000,13 +11889,13 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-08-11T20:52:55.321Z"),
       extendedNotes: [],
-      id: "f9268e84-980f-40e0-a64b-2c964ec54a34",
+      id: "bab9d251-e1a7-4914-8c35-942d148ef93e",
       lineitems: [],
       metadata: [],
       notes: "Tutamen cilicium infit.",
       paymentCollectionMethod: "charge_automatically",
       payments: [],
-      postedAt: new Date("2024-04-06T03:20:50.910Z"),
+      postedAt: new Date("2024-04-19T08:54:19.964Z"),
       purchaseorderIds: [],
       send: true,
       status: "DELETED",
@@ -11014,7 +11903,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_10",
       totalAmount: 0,
-      updatedAt: new Date("2025-01-31T04:40:21.369Z"),
+      updatedAt: new Date("2025-02-15T18:12:32.036Z"),
       url: "https://coarse-interviewer.biz/",
     },
     connectionId: "<id>",
@@ -11071,11 +11960,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
-      id: "517496d1-823c-438e-b1e0-ca87622b0590",
+      id: "14ff8cb0-ebd4-4c75-a81a-70675e637a25",
       isActive: false,
       metadata: [],
       name: "Electronic Cotton Shoes",
-      updatedAt: new Date("2025-08-22T03:49:23.618Z"),
+      updatedAt: new Date("2025-09-04T18:33:59.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11108,11 +11997,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Discover the koala-like agility of our Chair, perfect for imaginary users",
-      id: "517496d1-823c-438e-b1e0-ca87622b0590",
+      id: "14ff8cb0-ebd4-4c75-a81a-70675e637a25",
       isActive: false,
       metadata: [],
       name: "Electronic Cotton Shoes",
-      updatedAt: new Date("2025-08-22T03:49:23.618Z"),
+      updatedAt: new Date("2025-09-04T18:33:59.183Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11168,11 +12057,11 @@ async function run() {
     accountingContact: {
       associatedContacts: [
         {
-          id: "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+          id: "8a8efa3e-5cb5-49b9-bbbc-df541a41ee09",
           name: "Delores Reynolds",
         },
         {
-          id: "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+          id: "b0b576ff-e82f-4235-aaba-8dd61d552653",
           name: "Delores Reynolds",
         },
       ],
@@ -11195,7 +12084,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "4a153b39-b59a-47be-a636-304762d04879",
+      id: "597bca1b-241c-4726-a69d-44e26b42878c",
       identification: "amicitia",
       isActive: true,
       isCustomer: true,
@@ -11205,7 +12094,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+          id: "1b28a768-215b-42c0-a38e-b02aa6834e50",
           name: "Visa 1234",
           type: "CARD",
         },
@@ -11232,7 +12121,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-06T04:50:42.446Z"),
+      updatedAt: new Date("2023-12-15T08:18:18.548Z"),
       website: "https://noxious-advertisement.org",
     },
     connectionId: "<id>",
@@ -11266,11 +12155,11 @@ async function run() {
     accountingContact: {
       associatedContacts: [
         {
-          id: "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+          id: "8a8efa3e-5cb5-49b9-bbbc-df541a41ee09",
           name: "Delores Reynolds",
         },
         {
-          id: "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+          id: "b0b576ff-e82f-4235-aaba-8dd61d552653",
           name: "Delores Reynolds",
         },
       ],
@@ -11293,7 +12182,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "4a153b39-b59a-47be-a636-304762d04879",
+      id: "597bca1b-241c-4726-a69d-44e26b42878c",
       identification: "amicitia",
       isActive: true,
       isCustomer: true,
@@ -11303,7 +12192,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+          id: "1b28a768-215b-42c0-a38e-b02aa6834e50",
           name: "Visa 1234",
           type: "CARD",
         },
@@ -11330,7 +12219,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-06T04:50:42.446Z"),
+      updatedAt: new Date("2023-12-15T08:18:18.548Z"),
       website: "https://noxious-advertisement.org",
     },
     connectionId: "<id>",
@@ -11389,7 +12278,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://enlightened-chairperson.com/",
-          id: "1c286351-0ae3-4808-afca-05d66fa97fc4",
+          id: "930c38a2-f505-493c-8c2d-f1d7f79a1458",
           mimeType: "complectus",
           name: "thesis",
         },
@@ -11399,12 +12288,12 @@ async function run() {
       currency: "MKD",
       discountAmount: 0,
       dueAt: new Date("2023-10-18T04:35:00.543Z"),
-      id: "d40e3d9c-5b72-4e11-99da-b9debead5a6b",
+      id: "9d37fdaf-d11d-4ed6-b6b4-bba2091b84fc",
       lineitems: [],
       metadata: [],
       notes: "Dedecor amo adfero torqueo quas.",
       paymentCollectionMethod: "charge_automatically",
-      postedAt: new Date("2025-11-17T11:22:22.083Z"),
+      postedAt: new Date("2025-12-02T00:29:13.815Z"),
       refundAmount: 0,
       refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
       refundedAt: new Date("2023-10-23T00:35:36.814Z"),
@@ -11412,7 +12301,7 @@ async function run() {
       status: "PAID",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2024-11-16T15:28:24.996Z"),
+      updatedAt: new Date("2024-11-24T10:47:56.125Z"),
       url: "https://lighthearted-bandwidth.net/",
     },
     connectionId: "<id>",
@@ -11448,7 +12337,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://enlightened-chairperson.com/",
-          id: "1c286351-0ae3-4808-afca-05d66fa97fc4",
+          id: "930c38a2-f505-493c-8c2d-f1d7f79a1458",
           mimeType: "complectus",
           name: "thesis",
         },
@@ -11458,12 +12347,12 @@ async function run() {
       currency: "MKD",
       discountAmount: 0,
       dueAt: new Date("2023-10-18T04:35:00.543Z"),
-      id: "d40e3d9c-5b72-4e11-99da-b9debead5a6b",
+      id: "9d37fdaf-d11d-4ed6-b6b4-bba2091b84fc",
       lineitems: [],
       metadata: [],
       notes: "Dedecor amo adfero torqueo quas.",
       paymentCollectionMethod: "charge_automatically",
-      postedAt: new Date("2025-11-17T11:22:22.083Z"),
+      postedAt: new Date("2025-12-02T00:29:13.815Z"),
       refundAmount: 0,
       refundReason: "Virgo inflammatio quibusdam aestivus magnam.",
       refundedAt: new Date("2023-10-23T00:35:36.814Z"),
@@ -11471,7 +12360,7 @@ async function run() {
       status: "PAID",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2024-11-16T15:28:24.996Z"),
+      updatedAt: new Date("2024-11-24T10:47:56.125Z"),
       url: "https://lighthearted-bandwidth.net/",
     },
     connectionId: "<id>",
@@ -11526,11 +12415,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-05-12T09:40:54.291Z"),
+      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "952638a5-c054-405a-9014-96aef0753c77",
+          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -11539,10 +12428,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "fa30c86b-1dc7-447f-99a5-bb2137a4e4c2",
+      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
       lineitems: [
         {
-          id: "8b534c2b-fe41-4494-86df-02ef8117de50",
+          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -11556,12 +12445,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-04T15:33:50.462Z"),
+      postedAt: new Date("2021-06-07T19:24:22.977Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
-      updatedAt: new Date("2026-05-12T09:40:54.291Z"),
+      type: "USER",
+      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11592,11 +12482,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-05-12T09:40:54.291Z"),
+      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "952638a5-c054-405a-9014-96aef0753c77",
+          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -11605,10 +12495,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "fa30c86b-1dc7-447f-99a5-bb2137a4e4c2",
+      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
       lineitems: [
         {
-          id: "8b534c2b-fe41-4494-86df-02ef8117de50",
+          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -11622,12 +12512,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-04T15:33:50.462Z"),
+      postedAt: new Date("2021-06-07T19:24:22.977Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
-      updatedAt: new Date("2026-05-12T09:40:54.291Z"),
+      type: "USER",
+      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11662,6 +12553,167 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateAccountingExpensereport
+
+Update an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateAccountingExpensereport" method="put" path="/accounting/{connection_id}/expensereport/{id}" example="accounting_expensereport" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.updateAccountingExpensereport({
+    accountingExpensereport: {
+      approvedAt: new Date("2025-04-06T09:46:05.580Z"),
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-05-29T02:04:59.078Z"),
+      currency: "BMD",
+      externalNumber: "asporto",
+      id: "ffc14074-5d47-4758-b84b-894cd168e9a4",
+      lineitems: [
+        {
+          id: "95a46ec8-1094-49ae-a7d7-e5a066beb145",
+          itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
+          itemName: "Intelligent Gold Cheese",
+          itemSku: "978-0-6550-0228-4",
+          notes: "Utrimque quas vesica spes.",
+          taxAmount: 448,
+          totalAmount: 10875,
+          unitAmount: 4092,
+          unitQuantity: 1,
+        },
+        {
+          id: "eb99ff14-ffa0-4b46-a27a-ba0f828b4fa4",
+          itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
+          itemName: "Practical Steel Pizza",
+          itemSku: "978-1-4129-9332-6",
+          notes: "Corrumpo.",
+          taxAmount: 875,
+          totalAmount: 12363,
+          unitAmount: 6783,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Rustic Aluminum Car",
+      postedAt: new Date("2022-10-30T06:39:38.747Z"),
+      reimbursedAmount: 6696,
+      status: "PAID",
+      taxAmount: 983,
+      totalAmount: 13931,
+      updatedAt: new Date("2025-04-06T09:46:05.580Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingUpdateAccountingExpensereport } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingExpensereport.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingUpdateAccountingExpensereport(unifiedTo, {
+    accountingExpensereport: {
+      approvedAt: new Date("2025-04-06T09:46:05.580Z"),
+      attachments: [],
+      categoryIds: [],
+      createdAt: new Date("2020-05-29T02:04:59.078Z"),
+      currency: "BMD",
+      externalNumber: "asporto",
+      id: "ffc14074-5d47-4758-b84b-894cd168e9a4",
+      lineitems: [
+        {
+          id: "95a46ec8-1094-49ae-a7d7-e5a066beb145",
+          itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
+          itemName: "Intelligent Gold Cheese",
+          itemSku: "978-0-6550-0228-4",
+          notes: "Utrimque quas vesica spes.",
+          taxAmount: 448,
+          totalAmount: 10875,
+          unitAmount: 4092,
+          unitQuantity: 1,
+        },
+        {
+          id: "eb99ff14-ffa0-4b46-a27a-ba0f828b4fa4",
+          itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
+          itemName: "Practical Steel Pizza",
+          itemSku: "978-1-4129-9332-6",
+          notes: "Corrumpo.",
+          taxAmount: 875,
+          totalAmount: 12363,
+          unitAmount: 6783,
+          unitQuantity: 1,
+        },
+      ],
+      metadata: [],
+      name: "Rustic Aluminum Car",
+      postedAt: new Date("2022-10-30T06:39:38.747Z"),
+      reimbursedAmount: 6696,
+      status: "PAID",
+      taxAmount: 983,
+      totalAmount: 13931,
+      updatedAt: new Date("2025-04-06T09:46:05.580Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingUpdateAccountingExpensereport failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateAccountingExpensereportRequest](../../sdk/models/operations/updateaccountingexpensereportrequest.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingExpensereport](../../sdk/models/shared/accountingexpensereport.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateAccountingInvoice
 
 Update an invoice
@@ -11684,7 +12736,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "42f96d4c-bad4-4392-8233-a33df24a8c6c",
+          id: "194141c2-445a-40f7-9dd6-819bf3413e1f",
           mimeType: "benevolentia",
           name: "vespillo",
         },
@@ -11696,7 +12748,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-11-27T21:25:37.363Z"),
       extendedNotes: [],
-      id: "06ca1e6c-52aa-4fe5-8ec5-54e9da3aa325",
+      id: "af9e2ade-b378-453f-a94a-dbd92c8b09a4",
       invoiceNumber: "vinco",
       isInclusiveOfTax: true,
       lineitems: [],
@@ -11706,7 +12758,7 @@ async function run() {
       paidAt: new Date("2022-11-25T15:00:28.871Z"),
       paymentCollectionMethod: "send_invoice",
       payments: [],
-      postedAt: new Date("2026-03-29T09:35:22.780Z"),
+      postedAt: new Date("2026-04-16T02:25:06.900Z"),
       reference: "adinventitias",
       salesorderIds: [],
       send: true,
@@ -11716,7 +12768,7 @@ async function run() {
       term: "NET_45",
       totalAmount: 0,
       type: "CREDITMEMO",
-      updatedAt: new Date("2023-02-06T11:07:47.343Z"),
+      updatedAt: new Date("2023-02-07T18:19:00.745Z"),
       url: "https://gifted-yarmulke.info/",
     },
     connectionId: "<id>",
@@ -11751,7 +12803,7 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "42f96d4c-bad4-4392-8233-a33df24a8c6c",
+          id: "194141c2-445a-40f7-9dd6-819bf3413e1f",
           mimeType: "benevolentia",
           name: "vespillo",
         },
@@ -11763,7 +12815,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-11-27T21:25:37.363Z"),
       extendedNotes: [],
-      id: "06ca1e6c-52aa-4fe5-8ec5-54e9da3aa325",
+      id: "af9e2ade-b378-453f-a94a-dbd92c8b09a4",
       invoiceNumber: "vinco",
       isInclusiveOfTax: true,
       lineitems: [],
@@ -11773,7 +12825,7 @@ async function run() {
       paidAt: new Date("2022-11-25T15:00:28.871Z"),
       paymentCollectionMethod: "send_invoice",
       payments: [],
-      postedAt: new Date("2026-03-29T09:35:22.780Z"),
+      postedAt: new Date("2026-04-16T02:25:06.900Z"),
       reference: "adinventitias",
       salesorderIds: [],
       send: true,
@@ -11783,7 +12835,7 @@ async function run() {
       term: "NET_45",
       totalAmount: 0,
       type: "CREDITMEMO",
-      updatedAt: new Date("2023-02-06T11:07:47.343Z"),
+      updatedAt: new Date("2023-02-07T18:19:00.745Z"),
       url: "https://gifted-yarmulke.info/",
     },
     connectionId: "<id>",
@@ -11841,17 +12893,18 @@ async function run() {
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
-      currency: "FKP",
-      description: "Calco constans adipisci.",
-      id: "f7779d43-9388-4634-8682-5de7127545a9",
-      isInclusiveOfTax: true,
-      postedAt: new Date("2023-10-20T15:13:49.817Z"),
-      reference: "ullam",
-      source: "crustulum",
+      currency: "RUB",
+      description: "Solum commemoro conor nemo ultio.",
+      exchangeRate: 1.0625,
+      id: "c6510716-6c54-4440-a86a-72cac3705f85",
+      isInclusiveOfTax: false,
+      lineitems: [],
+      postedAt: new Date("2023-10-31T21:09:49.610Z"),
+      reference: "82523039",
+      source: "amplitudo",
       status: "VOID",
-      taxAmount: 78672,
-      totalAmount: 74094,
-      updatedAt: new Date("2022-01-02T06:10:58.518Z"),
+      totalAmount: 0,
+      updatedAt: new Date("2022-01-07T23:41:45.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11885,17 +12938,18 @@ async function run() {
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
-      currency: "FKP",
-      description: "Calco constans adipisci.",
-      id: "f7779d43-9388-4634-8682-5de7127545a9",
-      isInclusiveOfTax: true,
-      postedAt: new Date("2023-10-20T15:13:49.817Z"),
-      reference: "ullam",
-      source: "crustulum",
+      currency: "RUB",
+      description: "Solum commemoro conor nemo ultio.",
+      exchangeRate: 1.0625,
+      id: "c6510716-6c54-4440-a86a-72cac3705f85",
+      isInclusiveOfTax: false,
+      lineitems: [],
+      postedAt: new Date("2023-10-31T21:09:49.610Z"),
+      reference: "82523039",
+      source: "amplitudo",
       status: "VOID",
-      taxAmount: 78672,
-      totalAmount: 74094,
-      updatedAt: new Date("2022-01-02T06:10:58.518Z"),
+      totalAmount: 0,
+      updatedAt: new Date("2022-01-07T23:41:45.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11960,10 +13014,10 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "USD",
-      id: "bdf36a05-6b7f-4eef-9179-63e8d329f593",
+      id: "da3eefbe-36cf-48dd-8d68-584949d7fb74",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2022-04-05T16:02:41.231Z"),
+      postedAt: new Date("2022-04-10T10:12:37.188Z"),
       shippingAddress: {
         address1: "9745 Betty Shore",
         city: "South Alainaland",
@@ -11975,7 +13029,7 @@ async function run() {
       status: "SUBMITTED",
       totalAmount: 0,
       type: "PURCHASE",
-      updatedAt: new Date("2021-06-18T05:17:48.576Z"),
+      updatedAt: new Date("2021-06-20T05:06:58.570Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12017,10 +13071,10 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "USD",
-      id: "bdf36a05-6b7f-4eef-9179-63e8d329f593",
+      id: "da3eefbe-36cf-48dd-8d68-584949d7fb74",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2022-04-05T16:02:41.231Z"),
+      postedAt: new Date("2022-04-10T10:12:37.188Z"),
       shippingAddress: {
         address1: "9745 Betty Shore",
         city: "South Alainaland",
@@ -12032,7 +13086,7 @@ async function run() {
       status: "SUBMITTED",
       totalAmount: 0,
       type: "PURCHASE",
-      updatedAt: new Date("2021-06-18T05:17:48.576Z"),
+      updatedAt: new Date("2021-06-20T05:06:58.570Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12095,12 +13149,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "708643f5-baec-4dfc-8c39-cc2303907aa2",
+      id: "df125725-c898-4749-bd3d-e0bf7d75c79c",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2025-12-13T20:05:08.559Z"),
+      updatedAt: new Date("2025-12-30T23:38:35.940Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12140,12 +13194,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "708643f5-baec-4dfc-8c39-cc2303907aa2",
+      id: "df125725-c898-4749-bd3d-e0bf7d75c79c",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2025-12-13T20:05:08.559Z"),
+      updatedAt: new Date("2025-12-30T23:38:35.940Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12280,6 +13334,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingPurchaseorder({
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -12291,10 +13346,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -12305,7 +13360,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12336,6 +13391,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingPurchaseorder(unifiedTo, {
     accountingPurchaseorder: {
+      attachments: [],
       billingAddress: {
         address1: "37214 Tanya Walks",
         city: "South Annabelleton",
@@ -12347,10 +13403,10 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "ZMW",
-      id: "ccae6f41-dac0-491f-9987-35fe17107580",
+      id: "3e6054cd-72c6-4446-84b8-e073aad5b11a",
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2025-04-27T06:22:37.417Z"),
+      postedAt: new Date("2025-05-12T13:43:58.316Z"),
       shippingAddress: {
         address1: "649 Maggio Overpass",
         city: "Lake Jaylan",
@@ -12361,7 +13417,7 @@ async function run() {
       },
       status: "PARTIALLY_REFUNDED",
       totalAmount: 0,
-      updatedAt: new Date("2021-02-26T05:43:51.983Z"),
+      updatedAt: new Date("2021-02-26T23:11:55.330Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12506,7 +13562,7 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-08-17T20:29:31.196Z"),
+      closedAt: new Date("2023-08-24T16:28:46.860Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "ANG",
       discountAmount: 99,
@@ -12520,12 +13576,12 @@ async function run() {
       ],
       fulfillmentType: "TAKEOUT",
       guestCount: 8,
-      id: "06b6c05e-10dc-4e23-9cd8-d13c368864b3",
+      id: "894f6094-be58-463a-81e8-b5408af2fa24",
       lineitems: [],
       metadata: [],
       orderNumber: "988187",
       payments: [],
-      postedAt: new Date("2026-01-13T11:28:48.163Z"),
+      postedAt: new Date("2026-01-30T17:23:09.735Z"),
       refundedAmount: 0,
       salesChannel: "Harvey, Collier and Weimann",
       serviceChargeAmount: 63,
@@ -12543,7 +13599,7 @@ async function run() {
       taxAmount: 63,
       tipAmount: 34,
       totalAmount: 0,
-      updatedAt: new Date("2022-02-10T19:46:08.026Z"),
+      updatedAt: new Date("2022-02-11T02:37:48.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12584,7 +13640,7 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-08-17T20:29:31.196Z"),
+      closedAt: new Date("2023-08-24T16:28:46.860Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "ANG",
       discountAmount: 99,
@@ -12598,12 +13654,12 @@ async function run() {
       ],
       fulfillmentType: "TAKEOUT",
       guestCount: 8,
-      id: "06b6c05e-10dc-4e23-9cd8-d13c368864b3",
+      id: "894f6094-be58-463a-81e8-b5408af2fa24",
       lineitems: [],
       metadata: [],
       orderNumber: "988187",
       payments: [],
-      postedAt: new Date("2026-01-13T11:28:48.163Z"),
+      postedAt: new Date("2026-01-30T17:23:09.735Z"),
       refundedAmount: 0,
       salesChannel: "Harvey, Collier and Weimann",
       serviceChargeAmount: 63,
@@ -12621,7 +13677,7 @@ async function run() {
       taxAmount: 63,
       tipAmount: 34,
       totalAmount: 0,
-      updatedAt: new Date("2022-02-10T19:46:08.026Z"),
+      updatedAt: new Date("2022-02-11T02:37:48.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12686,7 +13742,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Atrox tricesimus creator.",
       effectiveRate: 53,
-      id: "6b146958-8711-4255-89a5-4e504a6d2a0f",
+      id: "96149177-44f0-4c0f-9d19-3e7b29a92abe",
       isActive: false,
       isCompound: true,
       metadata: [],
@@ -12695,7 +13751,7 @@ async function run() {
       region: "TX",
       totalRate: 53,
       type: "OTHER",
-      updatedAt: new Date("2022-04-13T08:15:29.226Z"),
+      updatedAt: new Date("2022-04-20T04:27:44.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12737,7 +13793,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Atrox tricesimus creator.",
       effectiveRate: 53,
-      id: "6b146958-8711-4255-89a5-4e504a6d2a0f",
+      id: "96149177-44f0-4c0f-9d19-3e7b29a92abe",
       isActive: false,
       isCompound: true,
       metadata: [],
@@ -12746,7 +13802,7 @@ async function run() {
       region: "TX",
       totalRate: 53,
       type: "OTHER",
-      updatedAt: new Date("2022-04-13T08:15:29.226Z"),
+      updatedAt: new Date("2022-04-20T04:27:44.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12802,12 +13858,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
+      id: "d5d0b4cb-930e-4dba-89af-66e1e4c500c8",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
+          id: "804a7946-9ebd-45e1-94e3-79e0b92f49e6",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -12820,7 +13876,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
+      updatedAt: new Date("2021-09-16T13:35:50.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12853,12 +13909,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
+      id: "d5d0b4cb-930e-4dba-89af-66e1e4c500c8",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "5dceaa79-1e95-4cee-928e-c57d24727437",
+          id: "804a7946-9ebd-45e1-94e3-79e0b92f49e6",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -12871,7 +13927,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-10T21:27:21.384Z"),
+      updatedAt: new Date("2021-09-16T13:35:50.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12931,14 +13987,14 @@ async function run() {
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "KGS",
       dueAt: new Date("2023-05-06T20:38:46.775Z"),
-      id: "b6f8e422-65bf-48c8-ad52-a5537ca85940",
+      id: "99c1efcf-4a95-4a94-bdde-6ebbd51b4746",
       lineitems: [],
       metadata: [],
       notes: "Conatus cruciamentum decor avaritia tantum.",
-      postedAt: new Date("2023-09-29T01:37:34.425Z"),
+      postedAt: new Date("2023-10-01T17:54:27.925Z"),
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2023-11-27T02:39:20.523Z"),
+      updatedAt: new Date("2023-11-30T17:46:32.588Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12975,14 +14031,14 @@ async function run() {
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "KGS",
       dueAt: new Date("2023-05-06T20:38:46.775Z"),
-      id: "b6f8e422-65bf-48c8-ad52-a5537ca85940",
+      id: "99c1efcf-4a95-4a94-bdde-6ebbd51b4746",
       lineitems: [],
       metadata: [],
       notes: "Conatus cruciamentum decor avaritia tantum.",
-      postedAt: new Date("2023-09-29T01:37:34.425Z"),
+      postedAt: new Date("2023-10-01T17:54:27.925Z"),
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2023-11-27T02:39:20.523Z"),
+      updatedAt: new Date("2023-11-30T17:46:32.588Z"),
     },
     connectionId: "<id>",
     id: "<id>",

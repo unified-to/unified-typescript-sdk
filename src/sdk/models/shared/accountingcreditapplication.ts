@@ -10,16 +10,34 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The type of object this credit was applied to
+ */
 export const ObjectType = {
   Invoice: "INVOICE",
   Bill: "BILL",
 } as const;
+/**
+ * The type of object this credit was applied to
+ */
 export type ObjectType = OpenEnum<typeof ObjectType>;
 
 export type AccountingCreditApplication = {
+  /**
+   * The amount of credit applied to this object
+   */
   amount?: number | undefined;
+  /**
+   * Date and time when the credit was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   appliedAt?: Date | undefined;
+  /**
+   * The id of the object this credit was applied to
+   */
   objectId?: string | undefined;
+  /**
+   * The type of object this credit was applied to
+   */
   objectType?: ObjectType | undefined;
 };
 

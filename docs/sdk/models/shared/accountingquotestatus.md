@@ -1,5 +1,7 @@
 # AccountingQuoteStatus
 
+where EXPIRED is derived (expires_at < now), the source status is preserved in raw
+
 ## Example Usage
 
 ```typescript

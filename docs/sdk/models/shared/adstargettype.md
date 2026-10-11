@@ -1,5 +1,7 @@
 # AdsTargetType
 
+Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant)
+
 ## Example Usage
 
 ```typescript

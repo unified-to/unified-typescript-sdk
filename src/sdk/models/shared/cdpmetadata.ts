@@ -21,6 +21,9 @@ export type CdpMetadataExtraData =
   | boolean
   | Array<CdpMetadata1 | string | number | boolean>;
 
+/**
+ * The data type of the attribute value
+ */
 export const CdpMetadataFormat = {
   Text: "TEXT",
   Number: "NUMBER",
@@ -29,6 +32,9 @@ export const CdpMetadataFormat = {
   Array: "ARRAY",
   Object: "OBJECT",
 } as const;
+/**
+ * The data type of the attribute value
+ */
 export type CdpMetadataFormat = OpenEnum<typeof CdpMetadataFormat>;
 
 export type CdpMetadataSchemas1 = {};
@@ -39,6 +45,9 @@ export type CdpMetadataSchemas5 =
   | number
   | boolean;
 
+/**
+ * The attribute/trait value
+ */
 export type CdpMetadataValue =
   | { [k: string]: any }
   | string
@@ -54,10 +63,22 @@ export type CdpMetadata = {
     | boolean
     | Array<CdpMetadata1 | string | number | boolean>
     | undefined;
+  /**
+   * The data type of the attribute value
+   */
   format?: CdpMetadataFormat | undefined;
   id?: string | undefined;
+  /**
+   * The scope or origin of the attribute (eg. computed, event, visitor)
+   */
   namespace?: string | undefined;
+  /**
+   * The attribute/trait key (eg. lifetime_value)
+   */
   slug?: string | undefined;
+  /**
+   * The attribute/trait value
+   */
   value?:
     | { [k: string]: any }
     | string

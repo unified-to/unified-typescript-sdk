@@ -25,6 +25,7 @@ import { hrisCreateHrisBankaccount } from "../funcs/hrisCreateHrisBankaccount.js
 import { hrisCreateHrisBenefit } from "../funcs/hrisCreateHrisBenefit.js";
 import { hrisCreateHrisDeduction } from "../funcs/hrisCreateHrisDeduction.js";
 import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
+import { hrisCreateHrisEarning } from "../funcs/hrisCreateHrisEarning.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
 import { hrisCreateHrisTimeoff } from "../funcs/hrisCreateHrisTimeoff.js";
 import { hrisCreateHrisTimeshift } from "../funcs/hrisCreateHrisTimeshift.js";
@@ -33,7 +34,10 @@ import { hrisGetHrisBankaccount } from "../funcs/hrisGetHrisBankaccount.js";
 import { hrisGetHrisBenefit } from "../funcs/hrisGetHrisBenefit.js";
 import { hrisGetHrisDeduction } from "../funcs/hrisGetHrisDeduction.js";
 import { hrisGetHrisDevice } from "../funcs/hrisGetHrisDevice.js";
+import { hrisGetHrisEarning } from "../funcs/hrisGetHrisEarning.js";
 import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
+import { hrisGetHrisPaycode } from "../funcs/hrisGetHrisPaycode.js";
+import { hrisGetHrisPayroll } from "../funcs/hrisGetHrisPayroll.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
@@ -42,7 +46,10 @@ import { hrisListHrisBankaccounts } from "../funcs/hrisListHrisBankaccounts.js";
 import { hrisListHrisBenefits } from "../funcs/hrisListHrisBenefits.js";
 import { hrisListHrisDeductions } from "../funcs/hrisListHrisDeductions.js";
 import { hrisListHrisDevices } from "../funcs/hrisListHrisDevices.js";
+import { hrisListHrisEarnings } from "../funcs/hrisListHrisEarnings.js";
 import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
+import { hrisListHrisPaycodes } from "../funcs/hrisListHrisPaycodes.js";
+import { hrisListHrisPayrolls } from "../funcs/hrisListHrisPayrolls.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
@@ -51,6 +58,7 @@ import { hrisPatchHrisBankaccount } from "../funcs/hrisPatchHrisBankaccount.js";
 import { hrisPatchHrisBenefit } from "../funcs/hrisPatchHrisBenefit.js";
 import { hrisPatchHrisDeduction } from "../funcs/hrisPatchHrisDeduction.js";
 import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
+import { hrisPatchHrisEarning } from "../funcs/hrisPatchHrisEarning.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
 import { hrisPatchHrisTimeoff } from "../funcs/hrisPatchHrisTimeoff.js";
 import { hrisPatchHrisTimeshift } from "../funcs/hrisPatchHrisTimeshift.js";
@@ -59,6 +67,7 @@ import { hrisRemoveHrisBankaccount } from "../funcs/hrisRemoveHrisBankaccount.js
 import { hrisRemoveHrisBenefit } from "../funcs/hrisRemoveHrisBenefit.js";
 import { hrisRemoveHrisDeduction } from "../funcs/hrisRemoveHrisDeduction.js";
 import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
+import { hrisRemoveHrisEarning } from "../funcs/hrisRemoveHrisEarning.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
 import { hrisRemoveHrisTimeoff } from "../funcs/hrisRemoveHrisTimeoff.js";
 import { hrisRemoveHrisTimeshift } from "../funcs/hrisRemoveHrisTimeshift.js";
@@ -67,9 +76,16 @@ import { hrisUpdateHrisBankaccount } from "../funcs/hrisUpdateHrisBankaccount.js
 import { hrisUpdateHrisBenefit } from "../funcs/hrisUpdateHrisBenefit.js";
 import { hrisUpdateHrisDeduction } from "../funcs/hrisUpdateHrisDeduction.js";
 import { hrisUpdateHrisDevice } from "../funcs/hrisUpdateHrisDevice.js";
+import { hrisUpdateHrisEarning } from "../funcs/hrisUpdateHrisEarning.js";
 import { hrisUpdateHrisEmployee } from "../funcs/hrisUpdateHrisEmployee.js";
 import { hrisUpdateHrisTimeoff } from "../funcs/hrisUpdateHrisTimeoff.js";
 import { hrisUpdateHrisTimeshift } from "../funcs/hrisUpdateHrisTimeshift.js";
+import { jobCreateHrisJob } from "../funcs/jobCreateHrisJob.js";
+import { jobGetHrisJob } from "../funcs/jobGetHrisJob.js";
+import { jobListHrisJobs } from "../funcs/jobListHrisJobs.js";
+import { jobPatchHrisJob } from "../funcs/jobPatchHrisJob.js";
+import { jobRemoveHrisJob } from "../funcs/jobRemoveHrisJob.js";
+import { jobUpdateHrisJob } from "../funcs/jobUpdateHrisJob.js";
 import { locationCreateHrisLocation } from "../funcs/locationCreateHrisLocation.js";
 import { locationGetHrisLocation } from "../funcs/locationGetHrisLocation.js";
 import { locationListHrisLocations } from "../funcs/locationListHrisLocations.js";
@@ -184,6 +200,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Create an earning
+   */
+  async createHrisEarning(
+    request: operations.CreateHrisEarningRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEarning> {
+    return unwrapAsync(hrisCreateHrisEarning(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Create an employee
    */
   async createHrisEmployee(
@@ -205,6 +235,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
     return unwrapAsync(groupCreateHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a job
+   */
+  async createHrisJob(
+    request: operations.CreateHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobCreateHrisJob(
       this,
       request,
       options,
@@ -366,6 +410,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Retrieve an earning
+   */
+  async getHrisEarning(
+    request: operations.GetHrisEarningRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEarning> {
+    return unwrapAsync(hrisGetHrisEarning(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve an employee
    */
   async getHrisEmployee(
@@ -394,6 +452,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Retrieve a job
+   */
+  async getHrisJob(
+    request: operations.GetHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobGetHrisJob(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a location
    */
   async getHrisLocation(
@@ -401,6 +473,34 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(locationGetHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a paycode
+   */
+  async getHrisPaycode(
+    request: operations.GetHrisPaycodeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisPaycode> {
+    return unwrapAsync(hrisGetHrisPaycode(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a payroll
+   */
+  async getHrisPayroll(
+    request: operations.GetHrisPayrollRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisPayroll> {
+    return unwrapAsync(hrisGetHrisPayroll(
       this,
       request,
       options,
@@ -562,6 +662,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all earnings
+   */
+  async listHrisEarnings(
+    request: operations.ListHrisEarningsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisEarning>> {
+    return unwrapAsync(hrisListHrisEarnings(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all employees
    */
   async listHrisEmployees(
@@ -590,6 +704,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all jobs
+   */
+  async listHrisJobs(
+    request: operations.ListHrisJobsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisJob>> {
+    return unwrapAsync(jobListHrisJobs(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all locations
    */
   async listHrisLocations(
@@ -597,6 +725,34 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.HrisLocation>> {
     return unwrapAsync(locationListHrisLocations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all paycodes
+   */
+  async listHrisPaycodes(
+    request: operations.ListHrisPaycodesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisPaycode>> {
+    return unwrapAsync(hrisListHrisPaycodes(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all payrolls
+   */
+  async listHrisPayrolls(
+    request: operations.ListHrisPayrollsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisPayroll>> {
+    return unwrapAsync(hrisListHrisPayrolls(
       this,
       request,
       options,
@@ -758,6 +914,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update an earning
+   */
+  async patchHrisEarning(
+    request: operations.PatchHrisEarningRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEarning> {
+    return unwrapAsync(hrisPatchHrisEarning(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an employee
    */
   async patchHrisEmployee(
@@ -779,6 +949,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
     return unwrapAsync(groupPatchHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a job
+   */
+  async patchHrisJob(
+    request: operations.PatchHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobPatchHrisJob(
       this,
       request,
       options,
@@ -926,6 +1110,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove an earning
+   */
+  async removeHrisEarning(
+    request: operations.RemoveHrisEarningRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisEarningResponse | undefined> {
+    return unwrapAsync(hrisRemoveHrisEarning(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove an employee
    */
   async removeHrisEmployee(
@@ -947,6 +1145,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveHrisGroupResponse | undefined> {
     return unwrapAsync(groupRemoveHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a job
+   */
+  async removeHrisJob(
+    request: operations.RemoveHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisJobResponse | undefined> {
+    return unwrapAsync(jobRemoveHrisJob(
       this,
       request,
       options,
@@ -1094,6 +1306,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update an earning
+   */
+  async updateHrisEarning(
+    request: operations.UpdateHrisEarningRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEarning> {
+    return unwrapAsync(hrisUpdateHrisEarning(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an employee
    */
   async updateHrisEmployee(
@@ -1115,6 +1341,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
     return unwrapAsync(groupUpdateHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a job
+   */
+  async updateHrisJob(
+    request: operations.UpdateHrisJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisJob> {
+    return unwrapAsync(jobUpdateHrisJob(
       this,
       request,
       options,

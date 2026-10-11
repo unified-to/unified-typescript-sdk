@@ -1,5 +1,7 @@
 # TaxMode
 
+INCLUSIVE / EXCLUSIVE / NONE; maps Xero LineAmountTypes (a boolean cannot represent NoTax)
+
 ## Example Usage
 
 ```typescript

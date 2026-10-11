@@ -10,17 +10,35 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LmsActivity = {
   assignedGrade?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   completedAt?: Date | undefined;
   contentId?: string | undefined;
+  /**
+   * For providers that track at course level (e.g., Learnupon enrollments) (reference to Course)
+   */
   courseId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   durationMinutes?: number | undefined;
   id?: string | undefined;
   isCompleted?: boolean | undefined;
   progressPercentage?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startedAt?: Date | undefined;
+  /**
+   * (reference to LmsStudent)
+   */
   studentId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

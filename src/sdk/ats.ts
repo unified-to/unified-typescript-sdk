@@ -12,6 +12,7 @@ import { atsCreateAtsJob } from "../funcs/atsCreateAtsJob.js";
 import { atsCreateAtsScorecard } from "../funcs/atsCreateAtsScorecard.js";
 import { atsGetAtsActivity } from "../funcs/atsGetAtsActivity.js";
 import { atsGetAtsApplication } from "../funcs/atsGetAtsApplication.js";
+import { atsGetAtsApplicationstatus } from "../funcs/atsGetAtsApplicationstatus.js";
 import { atsGetAtsCandidate } from "../funcs/atsGetAtsCandidate.js";
 import { atsGetAtsCompany } from "../funcs/atsGetAtsCompany.js";
 import { atsGetAtsDocument } from "../funcs/atsGetAtsDocument.js";
@@ -191,6 +192,20 @@ export class Ats extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsApplication> {
     return unwrapAsync(atsGetAtsApplication(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an applicationstatus
+   */
+  async getAtsApplicationstatus(
+    request: operations.GetAtsApplicationstatusRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsStatus> {
+    return unwrapAsync(atsGetAtsApplicationstatus(
       this,
       request,
       options,

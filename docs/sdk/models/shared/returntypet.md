@@ -1,5 +1,7 @@
 # ReturnTypeT
 
+Type of return
+
 ## Example Usage
 
 ```typescript

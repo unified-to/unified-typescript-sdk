@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The type of object this payment was applied to
+ */
 export const PaymentAllocationObjectType = {
   Invoice: "INVOICE",
   Bill: "BILL",
@@ -18,16 +21,37 @@ export const PaymentAllocationObjectType = {
   Salesorder: "SALESORDER",
   Purchaseorder: "PURCHASEORDER",
 } as const;
+/**
+ * The type of object this payment was applied to
+ */
 export type PaymentAllocationObjectType = OpenEnum<
   typeof PaymentAllocationObjectType
 >;
 
 export type PaymentAllocation = {
+  /**
+   * Date and time when the payment was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   allocatedAt?: Date | undefined;
+  /**
+   * The amount of the payment applied to this object
+   */
   amount?: number | undefined;
+  /**
+   * ISO 4217 currency code of the applied amount
+   */
   currency?: string | undefined;
+  /**
+   * The exchange rate at the time the payment was applied, for multi-currency
+   */
   exchangeRate?: number | undefined;
+  /**
+   * The id of the object this payment was applied to
+   */
   objectId?: string | undefined;
+  /**
+   * The type of object this payment was applied to
+   */
   objectType?: PaymentAllocationObjectType | undefined;
 };
 

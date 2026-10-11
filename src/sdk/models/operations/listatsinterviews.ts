@@ -31,6 +31,10 @@ export type ListAtsInterviewsRequest = {
    */
   applicationId?: string | undefined;
   /**
+   * The candidate ID to filter by
+   */
+  candidateId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
@@ -38,6 +42,10 @@ export type ListAtsInterviewsRequest = {
    * Fields to return
    */
   fields?: Array<ListAtsInterviewsQueryParamFields> | undefined;
+  /**
+   * The job ID to filter by
+   */
+  jobId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -64,8 +72,10 @@ export const ListAtsInterviewsQueryParamFields$outboundSchema: z.ZodNativeEnum<
 /** @internal */
 export type ListAtsInterviewsRequest$Outbound = {
   application_id?: string | undefined;
+  candidate_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
+  job_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -82,8 +92,10 @@ export const ListAtsInterviewsRequest$outboundSchema: z.ZodType<
   ListAtsInterviewsRequest
 > = z.object({
   applicationId: z.string().optional(),
+  candidateId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(ListAtsInterviewsQueryParamFields$outboundSchema).optional(),
+  jobId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -94,7 +106,9 @@ export const ListAtsInterviewsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     applicationId: "application_id",
+    candidateId: "candidate_id",
     connectionId: "connection_id",
+    jobId: "job_id",
     updatedGte: "updated_gte",
   });
 });

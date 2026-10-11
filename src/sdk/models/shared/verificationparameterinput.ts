@@ -10,6 +10,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type VerificationParameterInput = {
   id?: string | undefined;
   inputs?: Array<string> | undefined;
+  /**
+   * name of parameter
+   */
   name?: string | undefined;
 };
 

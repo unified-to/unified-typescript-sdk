@@ -10,8 +10,22 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GenaiModel = {
   description?: string | undefined;
+  /**
+   * Whether the model is a decision model (such as TypeSafe Jev or Cloudflare Clef) that answers the typed questions of a prompt with answers instead of generating text responses.
+   */
+  hasQuestions?: boolean | undefined;
+  /**
+   * Controls randomness of responses. A lower temperature leads to more predictable outputs while a higher temperature results in more varies and sometimes more creative outputs. 0-1
+   */
   hasTemperature?: boolean | undefined;
+  /**
+   * Whether the model accepts images as input (see the images on each prompt message).
+   */
+  hasVision?: boolean | undefined;
   id?: string | undefined;
+  /**
+   * The maximum number of tokens that the model can process in a single response. This limits ensures computational efficiency and resource management.
+   */
   maxTokens?: number | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -25,7 +39,9 @@ export const GenaiModel$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   description: z.string().optional(),
+  has_questions: z.boolean().optional(),
   has_temperature: z.boolean().optional(),
+  has_vision: z.boolean().optional(),
   id: z.string().optional(),
   max_tokens: z.number().optional(),
   name: z.string().optional(),
@@ -33,7 +49,9 @@ export const GenaiModel$inboundSchema: z.ZodType<
   web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "has_questions": "hasQuestions",
     "has_temperature": "hasTemperature",
+    "has_vision": "hasVision",
     "max_tokens": "maxTokens",
     "web_url": "webUrl",
   });

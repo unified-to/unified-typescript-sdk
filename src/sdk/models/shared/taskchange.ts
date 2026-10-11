@@ -13,12 +13,24 @@ import {
 } from "./taskchangeitem.js";
 
 export type TaskChange = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
   items?: Array<TaskChangeItem> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (reference to TaskTask)
+   */
   taskId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

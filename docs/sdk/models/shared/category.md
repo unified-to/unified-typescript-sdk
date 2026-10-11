@@ -1,5 +1,7 @@
 # Category
 
+STANDARD (days-based) or DATE_DRIVEN (month-based)
+
 ## Example Usage
 
 ```typescript

@@ -3,15 +3,16 @@
  */
 
 import { unifiedCreateUnifiedConnection } from "../funcs/unifiedCreateUnifiedConnection.js";
+import { unifiedCreateUnifiedConnectionReauth } from "../funcs/unifiedCreateUnifiedConnectionReauth.js";
 import { unifiedCreateUnifiedEnvironment } from "../funcs/unifiedCreateUnifiedEnvironment.js";
+import { unifiedCreateUnifiedSecretsmanager } from "../funcs/unifiedCreateUnifiedSecretsmanager.js";
 import { unifiedCreateUnifiedWebhook } from "../funcs/unifiedCreateUnifiedWebhook.js";
-import { unifiedCreateUnifiedWorkspaceSecretsmanager } from "../funcs/unifiedCreateUnifiedWorkspaceSecretsmanager.js";
 import { unifiedGetUnifiedApicall } from "../funcs/unifiedGetUnifiedApicall.js";
 import { unifiedGetUnifiedConnection } from "../funcs/unifiedGetUnifiedConnection.js";
 import { unifiedGetUnifiedIntegrationAuth } from "../funcs/unifiedGetUnifiedIntegrationAuth.js";
 import { unifiedGetUnifiedIssue } from "../funcs/unifiedGetUnifiedIssue.js";
+import { unifiedGetUnifiedSecretsmanager } from "../funcs/unifiedGetUnifiedSecretsmanager.js";
 import { unifiedGetUnifiedWebhook } from "../funcs/unifiedGetUnifiedWebhook.js";
-import { unifiedGetUnifiedWorkspaceSecretsmanager } from "../funcs/unifiedGetUnifiedWorkspaceSecretsmanager.js";
 import { unifiedListUnifiedApicalls } from "../funcs/unifiedListUnifiedApicalls.js";
 import { unifiedListUnifiedConnections } from "../funcs/unifiedListUnifiedConnections.js";
 import { unifiedListUnifiedEnvironments } from "../funcs/unifiedListUnifiedEnvironments.js";
@@ -19,15 +20,17 @@ import { unifiedListUnifiedIntegrations } from "../funcs/unifiedListUnifiedInteg
 import { unifiedListUnifiedIntegrationWorkspaces } from "../funcs/unifiedListUnifiedIntegrationWorkspaces.js";
 import { unifiedListUnifiedIssues } from "../funcs/unifiedListUnifiedIssues.js";
 import { unifiedListUnifiedNotifications } from "../funcs/unifiedListUnifiedNotifications.js";
+import { unifiedListUnifiedSecretsmanagerInstructions } from "../funcs/unifiedListUnifiedSecretsmanagerInstructions.js";
+import { unifiedListUnifiedSecretsmanagers } from "../funcs/unifiedListUnifiedSecretsmanagers.js";
+import { unifiedListUnifiedSecretsmanagerSecrets } from "../funcs/unifiedListUnifiedSecretsmanagerSecrets.js";
 import { unifiedListUnifiedWebhooks } from "../funcs/unifiedListUnifiedWebhooks.js";
-import { unifiedListUnifiedWorkspaceSecretsmanagers } from "../funcs/unifiedListUnifiedWorkspaceSecretsmanagers.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
 import { unifiedPatchUnifiedWebhook } from "../funcs/unifiedPatchUnifiedWebhook.js";
 import { unifiedPatchUnifiedWebhookTrigger } from "../funcs/unifiedPatchUnifiedWebhookTrigger.js";
 import { unifiedRemoveUnifiedConnection } from "../funcs/unifiedRemoveUnifiedConnection.js";
 import { unifiedRemoveUnifiedEnvironment } from "../funcs/unifiedRemoveUnifiedEnvironment.js";
+import { unifiedRemoveUnifiedSecretsmanager } from "../funcs/unifiedRemoveUnifiedSecretsmanager.js";
 import { unifiedRemoveUnifiedWebhook } from "../funcs/unifiedRemoveUnifiedWebhook.js";
-import { unifiedRemoveUnifiedWorkspaceSecretsmanager } from "../funcs/unifiedRemoveUnifiedWorkspaceSecretsmanager.js";
 import { unifiedUpdateUnifiedConnection } from "../funcs/unifiedUpdateUnifiedConnection.js";
 import { unifiedUpdateUnifiedWebhook } from "../funcs/unifiedUpdateUnifiedWebhook.js";
 import { unifiedUpdateUnifiedWebhookTrigger } from "../funcs/unifiedUpdateUnifiedWebhookTrigger.js";
@@ -41,13 +44,30 @@ export class Unified extends ClientSDK {
    * Create connection
    *
    * @remarks
-   * Used only to import existing customer credentials; use "Authorize new connection" instead
+   * Used only to import existing customer credentials. To connect a new account, use the "Authorize or re-authorize a connection" auth URL instead. To change credentials on an existing connection, use "Update connection".
    */
   async createUnifiedConnection(
     request: shared.Connection,
     options?: RequestOptions,
   ): Promise<shared.Connection> {
     return unwrapAsync(unifiedCreateUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a re-authorization token for a connection
+   *
+   * @remarks
+   * Returns a short-lived, single-use token that lets your end-user re-authorize this existing connection in place via the "Authorize or re-authorize a connection" URL with connection_id and reauth_token.
+   */
+  async createUnifiedConnectionReauth(
+    request: operations.CreateUnifiedConnectionReauthRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ConnectionReauth> {
+    return unwrapAsync(unifiedCreateUnifiedConnectionReauth(
       this,
       request,
       options,
@@ -69,6 +89,20 @@ export class Unified extends ClientSDK {
   }
 
   /**
+   * Create secrets manager
+   */
+  async createUnifiedSecretsmanager(
+    request: shared.SecretsManager,
+    options?: RequestOptions,
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedCreateUnifiedSecretsmanager(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Create webhook subscription
    *
    * @remarks
@@ -79,20 +113,6 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.Webhook> {
     return unwrapAsync(unifiedCreateUnifiedWebhook(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Create secrets manager
-   */
-  async createUnifiedWorkspaceSecretsmanager(
-    request: shared.SecretsManager,
-    options?: RequestOptions,
-  ): Promise<shared.SecretsManager> {
-    return unwrapAsync(unifiedCreateUnifiedWorkspaceSecretsmanager(
       this,
       request,
       options,
@@ -128,10 +148,10 @@ export class Unified extends ClientSDK {
   }
 
   /**
-   * Authorize new connection
+   * Authorize or re-authorize a connection
    *
    * @remarks
-   * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+   * Returns an authorization URL for the specified integration. After successful authorization, a new connection is created unless connection_id and reauth_token are provided, in which case the existing connection is updated in place.
    */
   async getUnifiedIntegrationAuth(
     request: operations.GetUnifiedIntegrationAuthRequest,
@@ -159,13 +179,13 @@ export class Unified extends ClientSDK {
   }
 
   /**
-   * Retrieve webhook by its ID
+   * Retrieve secrets manager
    */
-  async getUnifiedWebhook(
-    request: operations.GetUnifiedWebhookRequest,
+  async getUnifiedSecretsmanager(
+    request: operations.GetUnifiedSecretsmanagerRequest,
     options?: RequestOptions,
-  ): Promise<shared.Webhook> {
-    return unwrapAsync(unifiedGetUnifiedWebhook(
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedGetUnifiedSecretsmanager(
       this,
       request,
       options,
@@ -173,13 +193,13 @@ export class Unified extends ClientSDK {
   }
 
   /**
-   * Retrieve secrets manager
+   * Retrieve webhook by its ID
    */
-  async getUnifiedWorkspaceSecretsmanager(
-    request: operations.GetUnifiedWorkspaceSecretsmanagerRequest,
+  async getUnifiedWebhook(
+    request: operations.GetUnifiedWebhookRequest,
     options?: RequestOptions,
-  ): Promise<shared.SecretsManager> {
-    return unwrapAsync(unifiedGetUnifiedWorkspaceSecretsmanager(
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(unifiedGetUnifiedWebhook(
       this,
       request,
       options,
@@ -286,13 +306,25 @@ export class Unified extends ClientSDK {
   }
 
   /**
-   * Returns all registered webhooks
+   * List secrets manager setup instructions
    */
-  async listUnifiedWebhooks(
-    request: operations.ListUnifiedWebhooksRequest,
+  async listUnifiedSecretsmanagerInstructions(
     options?: RequestOptions,
-  ): Promise<Array<shared.Webhook>> {
-    return unwrapAsync(unifiedListUnifiedWebhooks(
+  ): Promise<Array<shared.SecretsManagerInstructions>> {
+    return unwrapAsync(unifiedListUnifiedSecretsmanagerInstructions(
+      this,
+      options,
+    ));
+  }
+
+  /**
+   * List secrets in a secrets manager
+   */
+  async listUnifiedSecretsmanagerSecrets(
+    request: operations.ListUnifiedSecretsmanagerSecretsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.SecretsManagerSecret>> {
+    return unwrapAsync(unifiedListUnifiedSecretsmanagerSecrets(
       this,
       request,
       options,
@@ -302,11 +334,25 @@ export class Unified extends ClientSDK {
   /**
    * List secrets managers
    */
-  async listUnifiedWorkspaceSecretsmanagers(
-    request: operations.ListUnifiedWorkspaceSecretsmanagersRequest,
+  async listUnifiedSecretsmanagers(
+    request: operations.ListUnifiedSecretsmanagersRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.SecretsManager>> {
-    return unwrapAsync(unifiedListUnifiedWorkspaceSecretsmanagers(
+    return unwrapAsync(unifiedListUnifiedSecretsmanagers(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Returns all registered webhooks
+   */
+  async listUnifiedWebhooks(
+    request: operations.ListUnifiedWebhooksRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Webhook>> {
+    return unwrapAsync(unifiedListUnifiedWebhooks(
       this,
       request,
       options,
@@ -384,13 +430,13 @@ export class Unified extends ClientSDK {
   }
 
   /**
-   * Remove webhook subscription
+   * Remove secrets manager
    */
-  async removeUnifiedWebhook(
-    request: operations.RemoveUnifiedWebhookRequest,
+  async removeUnifiedSecretsmanager(
+    request: operations.RemoveUnifiedSecretsmanagerRequest,
     options?: RequestOptions,
-  ): Promise<operations.RemoveUnifiedWebhookResponse | undefined> {
-    return unwrapAsync(unifiedRemoveUnifiedWebhook(
+  ): Promise<operations.RemoveUnifiedSecretsmanagerResponse | undefined> {
+    return unwrapAsync(unifiedRemoveUnifiedSecretsmanager(
       this,
       request,
       options,
@@ -398,15 +444,13 @@ export class Unified extends ClientSDK {
   }
 
   /**
-   * Remove secrets manager
+   * Remove webhook subscription
    */
-  async removeUnifiedWorkspaceSecretsmanager(
-    request: operations.RemoveUnifiedWorkspaceSecretsmanagerRequest,
+  async removeUnifiedWebhook(
+    request: operations.RemoveUnifiedWebhookRequest,
     options?: RequestOptions,
-  ): Promise<
-    operations.RemoveUnifiedWorkspaceSecretsmanagerResponse | undefined
-  > {
-    return unwrapAsync(unifiedRemoveUnifiedWorkspaceSecretsmanager(
+  ): Promise<operations.RemoveUnifiedWebhookResponse | undefined> {
+    return unwrapAsync(unifiedRemoveUnifiedWebhook(
       this,
       request,
       options,

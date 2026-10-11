@@ -20,6 +20,9 @@ export type ScimUserGroups = {
   dollarRef?: string | undefined;
   display?: string | undefined;
   type?: ScimUserGroupsType | undefined;
+  /**
+   * ID
+   */
   value: string;
 };
 

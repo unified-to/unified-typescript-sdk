@@ -5,11 +5,17 @@
 ### Available Operations
 
 * [createAtsJob](#createatsjob) - Create a job
+* [createHrisJob](#createhrisjob) - Create a job
 * [getAtsJob](#getatsjob) - Retrieve a job
+* [getHrisJob](#gethrisjob) - Retrieve a job
 * [listAtsJobs](#listatsjobs) - List all jobs
+* [listHrisJobs](#listhrisjobs) - List all jobs
 * [patchAtsJob](#patchatsjob) - Update a job
+* [patchHrisJob](#patchhrisjob) - Update a job
 * [removeAtsJob](#removeatsjob) - Remove a job
+* [removeHrisJob](#removehrisjob) - Remove a job
 * [updateAtsJob](#updateatsjob) - Update a job
+* [updateHrisJob](#updatehrisjob) - Update a job
 
 ## createAtsJob
 
@@ -61,12 +67,12 @@ async function run() {
       employmentType: "FREELANCE",
       hiringManagers: [
         {
-          id: "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-          name: "Eloise Mueller PhD",
+          id: "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+          name: "Troy Greenholt",
         },
       ],
-      id: "a4e564ca-17df-4b25-9e7c-4e8bd4b8c91e",
-      industry: "Gorgeous Plastic Computer",
+      id: "0ee8f1dd-d2a4-4d3f-b110-115d71aceb41",
+      industry: "Modern Granite Gloves",
       languageLocale: "en",
       metadata: [
         {
@@ -74,10 +80,10 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0922852e-0bdd-4572-8490-0c07e2162c8d",
+          id: "4bbebe6a-9dc3-4841-a1f9-fae0230b783c",
           namespace: "custom",
           slug: "custom_property",
-          value: "acceptus",
+          value: "vomica",
         },
       ],
       minimumDegree: "Bachelor",
@@ -87,28 +93,28 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-05-12T00:39:03.827Z"),
+          openedAt: new Date("2026-05-30T00:04:25.024Z"),
           status: "OPEN",
         },
       ],
       postings: [
         {
           address: {
-            address1: "8460 Nils Trace",
-            city: "West Mervinburgh",
+            address1: "51372 Kshlerin Creek",
+            city: "Logancester",
             countryCode: "US",
-            postalCode: "14162",
-            region: "Maine",
+            postalCode: "85013-9865",
+            region: "Vermont",
             regionCode: "MO",
           },
-          createdAt: new Date("2026-07-04T18:58:56.779Z"),
-          description: "Deduco cultellus alii terebro depono thesaurus.",
-          id: "f6101769-deb3-4721-978c-d205638870ee",
+          createdAt: new Date("2026-07-23T16:16:36.686Z"),
+          description: "Provident turbo cunabula spoliatio agnitio.",
+          id: "372178cd-2056-4388-870e-e7c199761c7c",
           isActive: false,
-          location: "6788 Oxford Road",
-          name: "Forward Security Orchestrator",
-          postingUrl: "https://ajar-metabolite.net/",
-          updatedAt: new Date("2026-07-30T10:45:53.530Z"),
+          location: "2925 Connie Green",
+          name: "Lead Intranet Developer",
+          postingUrl: "https://smart-summer.name/",
+          updatedAt: new Date("2026-08-18T18:29:49.765Z"),
         },
       ],
       publicJobUrls: [
@@ -119,6 +125,8 @@ async function run() {
         {
           description: "Trepide provident taceo rem.",
           id: "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+          maxLength: 387,
+          minLength: 1,
           options: [
             "censura",
             "tum",
@@ -129,34 +137,38 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+          id: "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+          maxLength: 430,
+          minLength: 1,
           options: [
-            "odit",
+            "aetas",
           ],
-          prompt: "Similique absque temeritas celebrer enim.",
-          question: "Vinitor sodalitas desino sollers viduo volo.",
+          prompt: "Contra damno desolo suadeo utrimque cresco.",
+          question: "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
           required: false,
           type: "TEXT",
         },
         {
-          description: "Abstergo possimus quibusdam deinde amoveo.",
-          id: "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+          description: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+          id: "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+          maxLength: 381,
+          minLength: 1,
           options: [
-            "vallum",
+            "utroque",
           ],
-          prompt: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-          question: "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+          prompt: "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+          question: "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
           required: false,
           type: "TEXT",
         },
       ],
       skills: [
-        "amiculum",
-        "crux",
+        "coaegresco",
+        "appello",
       ],
       status: "ARCHIVED",
-      summary: "Amicitia vergo hic.",
-      updatedAt: new Date("2026-02-03T00:33:37.747Z"),
+      summary: "Iste sto communis.",
+      updatedAt: new Date("2026-02-19T08:06:49.474Z"),
     },
     connectionId: "<id>",
   });
@@ -217,12 +229,12 @@ async function run() {
       employmentType: "FREELANCE",
       hiringManagers: [
         {
-          id: "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-          name: "Eloise Mueller PhD",
+          id: "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+          name: "Troy Greenholt",
         },
       ],
-      id: "a4e564ca-17df-4b25-9e7c-4e8bd4b8c91e",
-      industry: "Gorgeous Plastic Computer",
+      id: "0ee8f1dd-d2a4-4d3f-b110-115d71aceb41",
+      industry: "Modern Granite Gloves",
       languageLocale: "en",
       metadata: [
         {
@@ -230,10 +242,10 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0922852e-0bdd-4572-8490-0c07e2162c8d",
+          id: "4bbebe6a-9dc3-4841-a1f9-fae0230b783c",
           namespace: "custom",
           slug: "custom_property",
-          value: "acceptus",
+          value: "vomica",
         },
       ],
       minimumDegree: "Bachelor",
@@ -243,28 +255,28 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-05-12T00:39:03.827Z"),
+          openedAt: new Date("2026-05-30T00:04:25.024Z"),
           status: "OPEN",
         },
       ],
       postings: [
         {
           address: {
-            address1: "8460 Nils Trace",
-            city: "West Mervinburgh",
+            address1: "51372 Kshlerin Creek",
+            city: "Logancester",
             countryCode: "US",
-            postalCode: "14162",
-            region: "Maine",
+            postalCode: "85013-9865",
+            region: "Vermont",
             regionCode: "MO",
           },
-          createdAt: new Date("2026-07-04T18:58:56.779Z"),
-          description: "Deduco cultellus alii terebro depono thesaurus.",
-          id: "f6101769-deb3-4721-978c-d205638870ee",
+          createdAt: new Date("2026-07-23T16:16:36.686Z"),
+          description: "Provident turbo cunabula spoliatio agnitio.",
+          id: "372178cd-2056-4388-870e-e7c199761c7c",
           isActive: false,
-          location: "6788 Oxford Road",
-          name: "Forward Security Orchestrator",
-          postingUrl: "https://ajar-metabolite.net/",
-          updatedAt: new Date("2026-07-30T10:45:53.530Z"),
+          location: "2925 Connie Green",
+          name: "Lead Intranet Developer",
+          postingUrl: "https://smart-summer.name/",
+          updatedAt: new Date("2026-08-18T18:29:49.765Z"),
         },
       ],
       publicJobUrls: [
@@ -275,6 +287,8 @@ async function run() {
         {
           description: "Trepide provident taceo rem.",
           id: "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+          maxLength: 387,
+          minLength: 1,
           options: [
             "censura",
             "tum",
@@ -285,34 +299,38 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+          id: "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+          maxLength: 430,
+          minLength: 1,
           options: [
-            "odit",
+            "aetas",
           ],
-          prompt: "Similique absque temeritas celebrer enim.",
-          question: "Vinitor sodalitas desino sollers viduo volo.",
+          prompt: "Contra damno desolo suadeo utrimque cresco.",
+          question: "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
           required: false,
           type: "TEXT",
         },
         {
-          description: "Abstergo possimus quibusdam deinde amoveo.",
-          id: "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+          description: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+          id: "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+          maxLength: 381,
+          minLength: 1,
           options: [
-            "vallum",
+            "utroque",
           ],
-          prompt: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-          question: "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+          prompt: "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+          question: "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
           required: false,
           type: "TEXT",
         },
       ],
       skills: [
-        "amiculum",
-        "crux",
+        "coaegresco",
+        "appello",
       ],
       status: "ARCHIVED",
-      summary: "Amicitia vergo hic.",
-      updatedAt: new Date("2026-02-03T00:33:37.747Z"),
+      summary: "Iste sto communis.",
+      updatedAt: new Date("2026-02-19T08:06:49.474Z"),
     },
     connectionId: "<id>",
   });
@@ -339,6 +357,103 @@ run();
 ### Response
 
 **Promise\<[shared.AtsJob](../../sdk/models/shared/atsjob.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## createHrisJob
+
+Create a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createHrisJob" method="post" path="/hris/{connection_id}/job" example="hris_job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.job.createHrisJob({
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "00e817dd-4168-4184-b834-7236d1199e80",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.821Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobCreateHrisJob } from "@unified-api/typescript-sdk/funcs/jobCreateHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobCreateHrisJob(unifiedTo, {
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "00e817dd-4168-4184-b834-7236d1199e80",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.821Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobCreateHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateHrisJobRequest](../../sdk/models/operations/createhrisjobrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
 
 ### Errors
 
@@ -425,6 +540,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getHrisJob
+
+Retrieve a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHrisJob" method="get" path="/hris/{connection_id}/job/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.job.getHrisJob({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobGetHrisJob } from "@unified-api/typescript-sdk/funcs/jobGetHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobGetHrisJob(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobGetHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHrisJobRequest](../../sdk/models/operations/gethrisjobrequest.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listAtsJobs
 
 List all jobs
@@ -502,6 +696,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listHrisJobs
+
+List all jobs
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHrisJobs" method="get" path="/hris/{connection_id}/job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.job.listHrisJobs({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobListHrisJobs } from "@unified-api/typescript-sdk/funcs/jobListHrisJobs.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobListHrisJobs(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobListHrisJobs failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHrisJobsRequest](../../sdk/models/operations/listhrisjobsrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchAtsJob
 
 Update a job
@@ -552,12 +823,12 @@ async function run() {
       employmentType: "FREELANCE",
       hiringManagers: [
         {
-          id: "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-          name: "Eloise Mueller PhD",
+          id: "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+          name: "Troy Greenholt",
         },
       ],
-      id: "78c9bfcb-beac-4ae7-adf1-cb11fb046603",
-      industry: "Gorgeous Plastic Computer",
+      id: "af418507-1c9c-4c5b-920c-26766149192c",
+      industry: "Modern Granite Gloves",
       languageLocale: "en",
       metadata: [
         {
@@ -565,10 +836,10 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "d7b24ca2-56c7-478f-96e3-9af999ae067d",
+          id: "62defe21-ae2b-42cb-9737-922337bda35c",
           namespace: "custom",
           slug: "custom_property",
-          value: "acceptus",
+          value: "vomica",
         },
       ],
       minimumDegree: "Bachelor",
@@ -578,28 +849,28 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-05-12T00:39:03.877Z"),
+          openedAt: new Date("2026-05-30T00:04:25.089Z"),
           status: "OPEN",
         },
       ],
       postings: [
         {
           address: {
-            address1: "8460 Nils Trace",
-            city: "West Mervinburgh",
+            address1: "51372 Kshlerin Creek",
+            city: "Logancester",
             countryCode: "US",
-            postalCode: "14162",
-            region: "Maine",
+            postalCode: "85013-9865",
+            region: "Vermont",
             regionCode: "MO",
           },
-          createdAt: new Date("2026-07-04T18:58:56.831Z"),
-          description: "Deduco cultellus alii terebro depono thesaurus.",
-          id: "f6101769-deb3-4721-978c-d205638870ee",
+          createdAt: new Date("2026-07-23T16:16:36.754Z"),
+          description: "Provident turbo cunabula spoliatio agnitio.",
+          id: "372178cd-2056-4388-870e-e7c199761c7c",
           isActive: false,
-          location: "6788 Oxford Road",
-          name: "Forward Security Orchestrator",
-          postingUrl: "https://ajar-metabolite.net/",
-          updatedAt: new Date("2026-07-30T10:45:53.584Z"),
+          location: "2925 Connie Green",
+          name: "Lead Intranet Developer",
+          postingUrl: "https://smart-summer.name/",
+          updatedAt: new Date("2026-08-18T18:29:49.834Z"),
         },
       ],
       publicJobUrls: [
@@ -610,6 +881,8 @@ async function run() {
         {
           description: "Trepide provident taceo rem.",
           id: "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+          maxLength: 387,
+          minLength: 1,
           options: [
             "censura",
             "tum",
@@ -620,34 +893,38 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+          id: "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+          maxLength: 430,
+          minLength: 1,
           options: [
-            "odit",
+            "aetas",
           ],
-          prompt: "Similique absque temeritas celebrer enim.",
-          question: "Vinitor sodalitas desino sollers viduo volo.",
+          prompt: "Contra damno desolo suadeo utrimque cresco.",
+          question: "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
           required: false,
           type: "TEXT",
         },
         {
-          description: "Abstergo possimus quibusdam deinde amoveo.",
-          id: "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+          description: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+          id: "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+          maxLength: 381,
+          minLength: 1,
           options: [
-            "vallum",
+            "utroque",
           ],
-          prompt: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-          question: "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+          prompt: "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+          question: "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
           required: false,
           type: "TEXT",
         },
       ],
       skills: [
-        "amiculum",
-        "crux",
+        "coaegresco",
+        "appello",
       ],
       status: "ARCHIVED",
-      summary: "Amicitia vergo hic.",
-      updatedAt: new Date("2026-02-03T00:33:37.792Z"),
+      summary: "Iste sto communis.",
+      updatedAt: new Date("2026-02-19T08:06:49.533Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -709,12 +986,12 @@ async function run() {
       employmentType: "FREELANCE",
       hiringManagers: [
         {
-          id: "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-          name: "Eloise Mueller PhD",
+          id: "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+          name: "Troy Greenholt",
         },
       ],
-      id: "78c9bfcb-beac-4ae7-adf1-cb11fb046603",
-      industry: "Gorgeous Plastic Computer",
+      id: "af418507-1c9c-4c5b-920c-26766149192c",
+      industry: "Modern Granite Gloves",
       languageLocale: "en",
       metadata: [
         {
@@ -722,10 +999,10 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "d7b24ca2-56c7-478f-96e3-9af999ae067d",
+          id: "62defe21-ae2b-42cb-9737-922337bda35c",
           namespace: "custom",
           slug: "custom_property",
-          value: "acceptus",
+          value: "vomica",
         },
       ],
       minimumDegree: "Bachelor",
@@ -735,28 +1012,28 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-05-12T00:39:03.877Z"),
+          openedAt: new Date("2026-05-30T00:04:25.089Z"),
           status: "OPEN",
         },
       ],
       postings: [
         {
           address: {
-            address1: "8460 Nils Trace",
-            city: "West Mervinburgh",
+            address1: "51372 Kshlerin Creek",
+            city: "Logancester",
             countryCode: "US",
-            postalCode: "14162",
-            region: "Maine",
+            postalCode: "85013-9865",
+            region: "Vermont",
             regionCode: "MO",
           },
-          createdAt: new Date("2026-07-04T18:58:56.831Z"),
-          description: "Deduco cultellus alii terebro depono thesaurus.",
-          id: "f6101769-deb3-4721-978c-d205638870ee",
+          createdAt: new Date("2026-07-23T16:16:36.754Z"),
+          description: "Provident turbo cunabula spoliatio agnitio.",
+          id: "372178cd-2056-4388-870e-e7c199761c7c",
           isActive: false,
-          location: "6788 Oxford Road",
-          name: "Forward Security Orchestrator",
-          postingUrl: "https://ajar-metabolite.net/",
-          updatedAt: new Date("2026-07-30T10:45:53.584Z"),
+          location: "2925 Connie Green",
+          name: "Lead Intranet Developer",
+          postingUrl: "https://smart-summer.name/",
+          updatedAt: new Date("2026-08-18T18:29:49.834Z"),
         },
       ],
       publicJobUrls: [
@@ -767,6 +1044,8 @@ async function run() {
         {
           description: "Trepide provident taceo rem.",
           id: "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+          maxLength: 387,
+          minLength: 1,
           options: [
             "censura",
             "tum",
@@ -777,34 +1056,38 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+          id: "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+          maxLength: 430,
+          minLength: 1,
           options: [
-            "odit",
+            "aetas",
           ],
-          prompt: "Similique absque temeritas celebrer enim.",
-          question: "Vinitor sodalitas desino sollers viduo volo.",
+          prompt: "Contra damno desolo suadeo utrimque cresco.",
+          question: "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
           required: false,
           type: "TEXT",
         },
         {
-          description: "Abstergo possimus quibusdam deinde amoveo.",
-          id: "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+          description: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+          id: "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+          maxLength: 381,
+          minLength: 1,
           options: [
-            "vallum",
+            "utroque",
           ],
-          prompt: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-          question: "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+          prompt: "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+          question: "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
           required: false,
           type: "TEXT",
         },
       ],
       skills: [
-        "amiculum",
-        "crux",
+        "coaegresco",
+        "appello",
       ],
       status: "ARCHIVED",
-      summary: "Amicitia vergo hic.",
-      updatedAt: new Date("2026-02-03T00:33:37.792Z"),
+      summary: "Iste sto communis.",
+      updatedAt: new Date("2026-02-19T08:06:49.533Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -832,6 +1115,105 @@ run();
 ### Response
 
 **Promise\<[shared.AtsJob](../../sdk/models/shared/atsjob.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchHrisJob" method="patch" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.job.patchHrisJob({
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobPatchHrisJob } from "@unified-api/typescript-sdk/funcs/jobPatchHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobPatchHrisJob(unifiedTo, {
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobPatchHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchHrisJobRequest](../../sdk/models/operations/patchhrisjobrequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
 
 ### Errors
 
@@ -918,6 +1300,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeHrisJob
+
+Remove a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeHrisJob" method="delete" path="/hris/{connection_id}/job/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.job.removeHrisJob({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobRemoveHrisJob } from "@unified-api/typescript-sdk/funcs/jobRemoveHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobRemoveHrisJob(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobRemoveHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveHrisJobRequest](../../sdk/models/operations/removehrisjobrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveHrisJobResponse](../../sdk/models/operations/removehrisjobresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateAtsJob
 
 Update a job
@@ -968,12 +1429,12 @@ async function run() {
       employmentType: "FREELANCE",
       hiringManagers: [
         {
-          id: "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-          name: "Eloise Mueller PhD",
+          id: "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+          name: "Troy Greenholt",
         },
       ],
-      id: "78c9bfcb-beac-4ae7-adf1-cb11fb046603",
-      industry: "Gorgeous Plastic Computer",
+      id: "af418507-1c9c-4c5b-920c-26766149192c",
+      industry: "Modern Granite Gloves",
       languageLocale: "en",
       metadata: [
         {
@@ -981,10 +1442,10 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "d7b24ca2-56c7-478f-96e3-9af999ae067d",
+          id: "62defe21-ae2b-42cb-9737-922337bda35c",
           namespace: "custom",
           slug: "custom_property",
-          value: "acceptus",
+          value: "vomica",
         },
       ],
       minimumDegree: "Bachelor",
@@ -994,28 +1455,28 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-05-12T00:39:03.877Z"),
+          openedAt: new Date("2026-05-30T00:04:25.089Z"),
           status: "OPEN",
         },
       ],
       postings: [
         {
           address: {
-            address1: "8460 Nils Trace",
-            city: "West Mervinburgh",
+            address1: "51372 Kshlerin Creek",
+            city: "Logancester",
             countryCode: "US",
-            postalCode: "14162",
-            region: "Maine",
+            postalCode: "85013-9865",
+            region: "Vermont",
             regionCode: "MO",
           },
-          createdAt: new Date("2026-07-04T18:58:56.831Z"),
-          description: "Deduco cultellus alii terebro depono thesaurus.",
-          id: "f6101769-deb3-4721-978c-d205638870ee",
+          createdAt: new Date("2026-07-23T16:16:36.754Z"),
+          description: "Provident turbo cunabula spoliatio agnitio.",
+          id: "372178cd-2056-4388-870e-e7c199761c7c",
           isActive: false,
-          location: "6788 Oxford Road",
-          name: "Forward Security Orchestrator",
-          postingUrl: "https://ajar-metabolite.net/",
-          updatedAt: new Date("2026-07-30T10:45:53.584Z"),
+          location: "2925 Connie Green",
+          name: "Lead Intranet Developer",
+          postingUrl: "https://smart-summer.name/",
+          updatedAt: new Date("2026-08-18T18:29:49.834Z"),
         },
       ],
       publicJobUrls: [
@@ -1026,6 +1487,8 @@ async function run() {
         {
           description: "Trepide provident taceo rem.",
           id: "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+          maxLength: 387,
+          minLength: 1,
           options: [
             "censura",
             "tum",
@@ -1036,34 +1499,38 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+          id: "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+          maxLength: 430,
+          minLength: 1,
           options: [
-            "odit",
+            "aetas",
           ],
-          prompt: "Similique absque temeritas celebrer enim.",
-          question: "Vinitor sodalitas desino sollers viduo volo.",
+          prompt: "Contra damno desolo suadeo utrimque cresco.",
+          question: "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
           required: false,
           type: "TEXT",
         },
         {
-          description: "Abstergo possimus quibusdam deinde amoveo.",
-          id: "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+          description: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+          id: "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+          maxLength: 381,
+          minLength: 1,
           options: [
-            "vallum",
+            "utroque",
           ],
-          prompt: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-          question: "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+          prompt: "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+          question: "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
           required: false,
           type: "TEXT",
         },
       ],
       skills: [
-        "amiculum",
-        "crux",
+        "coaegresco",
+        "appello",
       ],
       status: "ARCHIVED",
-      summary: "Amicitia vergo hic.",
-      updatedAt: new Date("2026-02-03T00:33:37.792Z"),
+      summary: "Iste sto communis.",
+      updatedAt: new Date("2026-02-19T08:06:49.533Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1125,12 +1592,12 @@ async function run() {
       employmentType: "FREELANCE",
       hiringManagers: [
         {
-          id: "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-          name: "Eloise Mueller PhD",
+          id: "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+          name: "Troy Greenholt",
         },
       ],
-      id: "78c9bfcb-beac-4ae7-adf1-cb11fb046603",
-      industry: "Gorgeous Plastic Computer",
+      id: "af418507-1c9c-4c5b-920c-26766149192c",
+      industry: "Modern Granite Gloves",
       languageLocale: "en",
       metadata: [
         {
@@ -1138,10 +1605,10 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "d7b24ca2-56c7-478f-96e3-9af999ae067d",
+          id: "62defe21-ae2b-42cb-9737-922337bda35c",
           namespace: "custom",
           slug: "custom_property",
-          value: "acceptus",
+          value: "vomica",
         },
       ],
       minimumDegree: "Bachelor",
@@ -1151,28 +1618,28 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-05-12T00:39:03.877Z"),
+          openedAt: new Date("2026-05-30T00:04:25.089Z"),
           status: "OPEN",
         },
       ],
       postings: [
         {
           address: {
-            address1: "8460 Nils Trace",
-            city: "West Mervinburgh",
+            address1: "51372 Kshlerin Creek",
+            city: "Logancester",
             countryCode: "US",
-            postalCode: "14162",
-            region: "Maine",
+            postalCode: "85013-9865",
+            region: "Vermont",
             regionCode: "MO",
           },
-          createdAt: new Date("2026-07-04T18:58:56.831Z"),
-          description: "Deduco cultellus alii terebro depono thesaurus.",
-          id: "f6101769-deb3-4721-978c-d205638870ee",
+          createdAt: new Date("2026-07-23T16:16:36.754Z"),
+          description: "Provident turbo cunabula spoliatio agnitio.",
+          id: "372178cd-2056-4388-870e-e7c199761c7c",
           isActive: false,
-          location: "6788 Oxford Road",
-          name: "Forward Security Orchestrator",
-          postingUrl: "https://ajar-metabolite.net/",
-          updatedAt: new Date("2026-07-30T10:45:53.584Z"),
+          location: "2925 Connie Green",
+          name: "Lead Intranet Developer",
+          postingUrl: "https://smart-summer.name/",
+          updatedAt: new Date("2026-08-18T18:29:49.834Z"),
         },
       ],
       publicJobUrls: [
@@ -1183,6 +1650,8 @@ async function run() {
         {
           description: "Trepide provident taceo rem.",
           id: "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+          maxLength: 387,
+          minLength: 1,
           options: [
             "censura",
             "tum",
@@ -1193,34 +1662,38 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+          id: "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+          maxLength: 430,
+          minLength: 1,
           options: [
-            "odit",
+            "aetas",
           ],
-          prompt: "Similique absque temeritas celebrer enim.",
-          question: "Vinitor sodalitas desino sollers viduo volo.",
+          prompt: "Contra damno desolo suadeo utrimque cresco.",
+          question: "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
           required: false,
           type: "TEXT",
         },
         {
-          description: "Abstergo possimus quibusdam deinde amoveo.",
-          id: "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+          description: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+          id: "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+          maxLength: 381,
+          minLength: 1,
           options: [
-            "vallum",
+            "utroque",
           ],
-          prompt: "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-          question: "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+          prompt: "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+          question: "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
           required: false,
           type: "TEXT",
         },
       ],
       skills: [
-        "amiculum",
-        "crux",
+        "coaegresco",
+        "appello",
       ],
       status: "ARCHIVED",
-      summary: "Amicitia vergo hic.",
-      updatedAt: new Date("2026-02-03T00:33:37.792Z"),
+      summary: "Iste sto communis.",
+      updatedAt: new Date("2026-02-19T08:06:49.533Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1248,6 +1721,105 @@ run();
 ### Response
 
 **Promise\<[shared.AtsJob](../../sdk/models/shared/atsjob.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateHrisJob" method="put" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.job.updateHrisJob({
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { jobUpdateHrisJob } from "@unified-api/typescript-sdk/funcs/jobUpdateHrisJob.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await jobUpdateHrisJob(unifiedTo, {
+    hrisJob: {
+      code: "P-05547",
+      createdAt: new Date("2020-10-28T01:13:19.491Z"),
+      description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+      employmentType: "FREELANCE",
+      id: "f6c68600-9698-4e15-bc64-586f729ee803",
+      isActive: false,
+      name: "Internal Integration Specialist",
+      updatedAt: new Date("2023-01-26T10:46:31.859Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("jobUpdateHrisJob failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateHrisJobRequest](../../sdk/models/operations/updatehrisjobrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisJob](../../sdk/models/shared/hrisjob.md)\>**
 
 ### Errors
 

@@ -9,7 +9,7 @@ let value: PatchUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "calendar_busy",
+    objectType: "metadata_metadata",
   },
   id: "<id>",
 };
@@ -17,7 +17,7 @@ let value: PatchUnifiedWebhookRequest = {
 
 ## Fields
 
-| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `webhook`                                                         | [shared.Webhook](../../../sdk/models/shared/webhook.md)           | :heavy_check_mark:                                                | A webhook is used to POST new/updated information to your server. |
-| `id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `webhook`                                                                  | [shared.Webhook](../../../sdk/models/shared/webhook.md)                    | :heavy_check_mark:                                                         | A webhook is used to POST new, updated, or deleted records to your server. |
+| `id`                                                                       | *string*                                                                   | :heavy_check_mark:                                                         | ID of the Webhook                                                          |

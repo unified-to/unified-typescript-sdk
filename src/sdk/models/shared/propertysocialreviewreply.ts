@@ -12,8 +12,17 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * The business's reply to the review
  */
 export type PropertySocialReviewReply = {
+  /**
+   * The reply text from the business
+   */
   content?: string | undefined;
+  /**
+   * When the reply was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * When the reply was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

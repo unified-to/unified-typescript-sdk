@@ -25,6 +25,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.prompt.createGenaiPrompt({
     genaiPrompt: {
+      answers: [
+        {
+          confidence: 0.5384309098590165,
+          id: "TeZpueFB",
+          probabilities: [
+            {
+              option: "veniam",
+              probability: 0.05683182482607663,
+            },
+            {
+              option: "comes",
+              probability: 0.1404057613108307,
+            },
+          ],
+          score: 0.05974147981032729,
+          type: "CHOICE",
+          value: "summisse",
+        },
+      ],
       maxTokens: 0.4677782787475735,
       mcpAuthorizationToken: "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
       mcpDeferredTools: [],
@@ -32,11 +51,45 @@ async function run() {
       messages: [
         {
           content: "Aegre repudiandae verecundia facere statua.",
+          images: [],
           role: "ASSISTANT",
         },
         {
           content: "Speciosus xiphias soleo trepide crinis.",
+          images: [],
           role: "SYSTEM",
+        },
+      ],
+      questions: [
+        {
+          id: "KtvbYiEq",
+          instructions: "Admiratio cura contabesco subvenio venustas architecto vacuus summopere.",
+          options: [
+            "vulnero",
+            "quasi",
+            "tolero",
+          ],
+          type: "BOOLEAN",
+        },
+        {
+          id: "oV6IURtv",
+          instructions: "Celer deleniti ventus ipsam tendo odit.",
+          options: [
+            "nulla",
+            "aspicio",
+            "tero",
+          ],
+          type: "CHOICE",
+        },
+        {
+          id: "60dBZk2K",
+          instructions: "Decretum vesica amet repudiandae.",
+          options: [
+            "ducimus",
+            "civis",
+            "alter",
+          ],
+          type: "BOOLEAN",
         },
       ],
       responses: [
@@ -73,6 +126,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiPrompt(unifiedTo, {
     genaiPrompt: {
+      answers: [
+        {
+          confidence: 0.5384309098590165,
+          id: "TeZpueFB",
+          probabilities: [
+            {
+              option: "veniam",
+              probability: 0.05683182482607663,
+            },
+            {
+              option: "comes",
+              probability: 0.1404057613108307,
+            },
+          ],
+          score: 0.05974147981032729,
+          type: "CHOICE",
+          value: "summisse",
+        },
+      ],
       maxTokens: 0.4677782787475735,
       mcpAuthorizationToken: "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
       mcpDeferredTools: [],
@@ -80,11 +152,45 @@ async function run() {
       messages: [
         {
           content: "Aegre repudiandae verecundia facere statua.",
+          images: [],
           role: "ASSISTANT",
         },
         {
           content: "Speciosus xiphias soleo trepide crinis.",
+          images: [],
           role: "SYSTEM",
+        },
+      ],
+      questions: [
+        {
+          id: "KtvbYiEq",
+          instructions: "Admiratio cura contabesco subvenio venustas architecto vacuus summopere.",
+          options: [
+            "vulnero",
+            "quasi",
+            "tolero",
+          ],
+          type: "BOOLEAN",
+        },
+        {
+          id: "oV6IURtv",
+          instructions: "Celer deleniti ventus ipsam tendo odit.",
+          options: [
+            "nulla",
+            "aspicio",
+            "tero",
+          ],
+          type: "CHOICE",
+        },
+        {
+          id: "60dBZk2K",
+          instructions: "Decretum vesica amet repudiandae.",
+          options: [
+            "ducimus",
+            "civis",
+            "alter",
+          ],
+          type: "BOOLEAN",
         },
       ],
       responses: [

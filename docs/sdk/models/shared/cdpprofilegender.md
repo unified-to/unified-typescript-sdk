@@ -1,5 +1,7 @@
 # CdpProfileGender
 
+The gender of the profile
+
 ## Example Usage
 
 ```typescript

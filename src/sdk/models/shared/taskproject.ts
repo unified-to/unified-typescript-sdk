@@ -15,16 +15,28 @@ import {
 } from "./taskmetadata.js";
 
 export type TaskProject = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   groupIds?: Array<string> | undefined;
+  /**
+   * If this project has children folders / lists
+   */
   hasChildren?: boolean | undefined;
+  /**
+   * If you can use this project ID to list tasks. Default is true.
+   */
   hasTasks?: boolean | undefined;
   id?: string | undefined;
   metadata?: Array<TaskMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   userIds?: Array<string> | undefined;
 };

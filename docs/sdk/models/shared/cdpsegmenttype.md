@@ -1,5 +1,7 @@
 # CdpSegmentType
 
+The type of entity the segment targets (USERS, ACCOUNTS, LINKED)
+
 ## Example Usage
 
 ```typescript

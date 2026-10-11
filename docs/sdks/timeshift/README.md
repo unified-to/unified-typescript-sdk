@@ -30,24 +30,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.createHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.680Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.270Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.094Z"),
+      endAt: new Date("2026-09-17T03:41:27.361Z"),
       hours: 8,
-      id: "9f128688-46cc-481b-a41e-503d0c962370",
+      id: "019ea5ad-589d-41bc-bc20-1df4380434fb",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.006Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.677Z"),
+      startAt: new Date("2023-07-07T12:08:41.034Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.284Z"),
     },
     connectionId: "<id>",
   });
@@ -77,24 +77,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.680Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.270Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.094Z"),
+      endAt: new Date("2026-09-17T03:41:27.361Z"),
       hours: 8,
-      id: "9f128688-46cc-481b-a41e-503d0c962370",
+      id: "019ea5ad-589d-41bc-bc20-1df4380434fb",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.006Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.677Z"),
+      startAt: new Date("2023-07-07T12:08:41.034Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.284Z"),
     },
     connectionId: "<id>",
   });
@@ -303,24 +303,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.patchHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -351,24 +351,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -501,24 +501,24 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.updateHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -549,24 +549,24 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2023-06-07T03:05:14.688Z"),
+      approvedAt: new Date("2023-06-18T03:09:21.276Z"),
       compensation: [
         {
           amount: 76761,
           currency: "JPY",
-          frequency: "HOUR",
+          frequency: "WEEK",
           notes: "Annus adficio suasoria architecto aggero.",
-          type: "OTHER",
+          type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-08-28T03:01:07.109Z"),
+      endAt: new Date("2026-09-17T03:41:27.371Z"),
       hours: 8,
-      id: "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+      id: "2115c4ae-1887-4cad-b775-61a475b5af0f",
       isApproved: true,
-      startAt: new Date("2023-06-26T08:32:27.015Z"),
-      updatedAt: new Date("2021-06-23T15:17:01.681Z"),
+      startAt: new Date("2023-07-07T12:08:41.040Z"),
+      updatedAt: new Date("2021-06-29T04:09:33.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",

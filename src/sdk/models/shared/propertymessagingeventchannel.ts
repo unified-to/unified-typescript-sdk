@@ -15,6 +15,9 @@ import {
 } from "./messagingmember.js";
 
 export type PropertyMessagingEventChannel = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   hasSubchannels?: boolean | undefined;
@@ -25,6 +28,9 @@ export type PropertyMessagingEventChannel = {
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };

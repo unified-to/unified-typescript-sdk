@@ -27,6 +27,9 @@ import {
   PropertyAdsReportMetricsGroupTargeting$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargeting.js";
 
+/**
+ * Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)
+ */
 export const PropertyAdsReportMetricsGroupBillingEvent = {
   Impressions: "IMPRESSIONS",
   LinkClicks: "LINK_CLICKS",
@@ -39,6 +42,9 @@ export const PropertyAdsReportMetricsGroupBillingEvent = {
   Purchase: "PURCHASE",
   None: "NONE",
 } as const;
+/**
+ * Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)
+ */
 export type PropertyAdsReportMetricsGroupBillingEvent = OpenEnum<
   typeof PropertyAdsReportMetricsGroupBillingEvent
 >;
@@ -72,10 +78,16 @@ export type PropertyAdsReportMetricsGroupBudgetUnit = OpenEnum<
   typeof PropertyAdsReportMetricsGroupBudgetUnit
 >;
 
+/**
+ * Creative rotation strategy (LinkedIn creativeSelection)
+ */
 export const PropertyAdsReportMetricsGroupCreativeSelection = {
   Optimized: "OPTIMIZED",
   RoundRobin: "ROUND_ROBIN",
 } as const;
+/**
+ * Creative rotation strategy (LinkedIn creativeSelection)
+ */
 export type PropertyAdsReportMetricsGroupCreativeSelection = OpenEnum<
   typeof PropertyAdsReportMetricsGroupCreativeSelection
 >;
@@ -97,6 +109,9 @@ export type PropertyAdsReportMetricsGroupEffectiveStatus = OpenEnum<
   typeof PropertyAdsReportMetricsGroupEffectiveStatus
 >;
 
+/**
+ * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
+ */
 export const PropertyAdsReportMetricsGroupOptimizationGoal = {
   Reach: "REACH",
   Impressions: "IMPRESSIONS",
@@ -111,6 +126,9 @@ export const PropertyAdsReportMetricsGroupOptimizationGoal = {
   PageLikes: "PAGE_LIKES",
   Messages: "MESSAGES",
 } as const;
+/**
+ * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
+ */
 export type PropertyAdsReportMetricsGroupOptimizationGoal = OpenEnum<
   typeof PropertyAdsReportMetricsGroupOptimizationGoal
 >;
@@ -158,6 +176,9 @@ export type PropertyAdsReportMetricsGroup = {
    * YOUTUBE_AND_PARTNERS
    */
   bidStrategy?: PropertyAdsReportMetricsGroupBidStrategy | undefined;
+  /**
+   * Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)
+   */
   billingEvent?: PropertyAdsReportMetricsGroupBillingEvent | undefined;
   budgetAllocationType?:
     | PropertyAdsReportMetricsGroupBudgetAllocationType
@@ -167,30 +188,51 @@ export type PropertyAdsReportMetricsGroup = {
   budgetPeriod?: PropertyAdsReportMetricsGroupBudgetPeriod | undefined;
   budgetUnit?: PropertyAdsReportMetricsGroupBudgetUnit | undefined;
   campaignId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   creativeIds?: Array<string> | undefined;
+  /**
+   * Creative rotation strategy (LinkedIn creativeSelection)
+   */
   creativeSelection?:
     | PropertyAdsReportMetricsGroupCreativeSelection
     | undefined;
   currency?: string | undefined;
   effectiveStatus?: PropertyAdsReportMetricsGroupEffectiveStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   frequencyCap?: PropertyAdsReportMetricsGroupFrequencyCap | undefined;
   hasEuPoliticalAds?: boolean | undefined;
   id?: string | undefined;
   insertionorderId?: string | undefined;
+  /**
+   * Language + region, ISO 639-1 with region (e.g. en-US); LinkedIn locale
+   */
   languageLocale?: string | undefined;
   name?: string | undefined;
+  /**
+   * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
+   */
   optimizationGoal?: PropertyAdsReportMetricsGroupOptimizationGoal | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsReportMetricsGroupPacing | undefined;
   parentId?: string | undefined;
   promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: PropertyAdsReportMetricsGroupStatus | undefined;
   targeting?: PropertyAdsReportMetricsGroupTargeting | undefined;
   type?: PropertyAdsReportMetricsGroupType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

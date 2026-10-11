@@ -17,15 +17,45 @@ import {
  */
 export type ClubsLocation = {
   address?: PropertyClubsLocationAddress | undefined;
+  /**
+   * The date that this location was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The group this location is associated with (reference to HrisGroup)
+   */
   groupId?: string | undefined;
+  /**
+   * Unique identifier for this location
+   */
   id?: string | undefined;
+  /**
+   * The latitude
+   */
   latitude?: number | undefined;
+  /**
+   * The longitude
+   */
   longitude?: number | undefined;
+  /**
+   * The location name
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this location
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * A contact phone number for the location
+   */
   telephone?: string | undefined;
+  /**
+   * The last date that this location was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * A URL for the location
+   */
   url?: string | undefined;
 };
 

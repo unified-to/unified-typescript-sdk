@@ -30,6 +30,9 @@ export type SecretsManager = {
    * secrets-manager specific authentication values
    */
   auth: { [k: string]: string };
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   /**
    * data-regions
@@ -38,7 +41,13 @@ export type SecretsManager = {
   id?: string | undefined;
   name: string;
   type: SecretsManagerType;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to KmsSpace)
+   */
   workspaceId?: string | undefined;
 };
 

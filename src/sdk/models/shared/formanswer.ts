@@ -15,6 +15,9 @@ export type FormAnswer = {
    * references StorageFile ID
    */
   fileIds?: Array<string> | undefined;
+  /**
+   * Can be string, number, boolean, array, etc.
+   */
   value?: string | undefined;
 };
 

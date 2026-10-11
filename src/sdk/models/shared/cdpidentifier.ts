@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The type of the identifier (eg. EMAIL, USER_ID, ANONYMOUS_ID)
+ */
 export const CdpIdentifierType = {
   Email: "EMAIL",
   UserId: "USER_ID",
@@ -20,13 +23,31 @@ export const CdpIdentifierType = {
   LoyaltyId: "LOYALTY_ID",
   Other: "OTHER",
 } as const;
+/**
+ * The type of the identifier (eg. EMAIL, USER_ID, ANONYMOUS_ID)
+ */
 export type CdpIdentifierType = OpenEnum<typeof CdpIdentifierType>;
 
 export type CdpIdentifier = {
+  /**
+   * The encoding of the identifier value (eg. raw, sha256)
+   */
   encoding?: string | undefined;
+  /**
+   * Whether this is the primary identifier for the profile
+   */
   isPrimary?: boolean | undefined;
+  /**
+   * The source that provided this identifier
+   */
   source?: string | undefined;
+  /**
+   * The type of the identifier (eg. EMAIL, USER_ID, ANONYMOUS_ID)
+   */
   type?: CdpIdentifierType | undefined;
+  /**
+   * The identifier value that resolves to the profile
+   */
   value: string;
 };
 

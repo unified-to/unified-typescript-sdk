@@ -11,6 +11,9 @@ export type ScimRole = {
   display?: string | undefined;
   primary?: boolean | undefined;
   type?: string | undefined;
+  /**
+   * value of the role
+   */
   value: string;
 };
 

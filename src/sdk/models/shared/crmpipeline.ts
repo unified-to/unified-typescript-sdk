@@ -15,6 +15,9 @@ import {
 } from "./crmstage.js";
 
 export type CrmPipeline = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   dealProbability?: number | undefined;
   displayOrder?: number | undefined;
@@ -23,6 +26,9 @@ export type CrmPipeline = {
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   stages?: Array<CrmStage> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

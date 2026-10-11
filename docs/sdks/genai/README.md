@@ -12,18 +12,23 @@
 * [getGenaiAgent](#getgenaiagent) - Retrieve an agent
 * [getGenaiModel](#getgenaimodel) - Retrieve a model
 * [getGenaiOrganization](#getgenaiorganization) - Retrieve an organization
+* [getGenaiSkill](#getgenaiskill) - Retrieve a skill
 * [getGenaiTask](#getgenaitask) - Retrieve a task
 * [listGenaiAgents](#listgenaiagents) - List all agents
 * [listGenaiModels](#listgenaimodels) - List all models
 * [listGenaiOrganizations](#listgenaiorganizations) - List all organizations
+* [listGenaiSkills](#listgenaiskills) - List all skills
 * [listGenaiTasks](#listgenaitasks) - List all tasks
 * [patchGenaiAgent](#patchgenaiagent) - Update an agent
 * [patchGenaiOrganization](#patchgenaiorganization) - Update an organization
+* [patchGenaiTask](#patchgenaitask) - Update a task
 * [removeGenaiAgent](#removegenaiagent) - Remove an agent
 * [removeGenaiOrganization](#removegenaiorganization) - Remove an organization
+* [removeGenaiSkill](#removegenaiskill) - Remove a skill
 * [removeGenaiTask](#removegenaitask) - Remove a task
 * [updateGenaiAgent](#updategenaiagent) - Update an agent
 * [updateGenaiOrganization](#updategenaiorganization) - Update an organization
+* [updateGenaiTask](#updategenaitask) - Update a task
 
 ## createGenaiAgent
 
@@ -46,11 +51,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c104d9fa-c7f7-473a-9190-eb8d7db8fccd",
+      id: "de841757-e48f-4b2b-b729-cad69f7fe827",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-09-20T11:48:23.168Z"),
+      updatedAt: new Date("2025-10-07T04:34:03.506Z"),
     },
     connectionId: "<id>",
   });
@@ -82,11 +87,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c104d9fa-c7f7-473a-9190-eb8d7db8fccd",
+      id: "de841757-e48f-4b2b-b729-cad69f7fe827",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-09-20T11:48:23.168Z"),
+      updatedAt: new Date("2025-10-07T04:34:03.506Z"),
     },
     connectionId: "<id>",
   });
@@ -147,7 +152,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "62bbaf9c-5d32-4a2e-88ba-812b77de9ed1",
+      id: "c8f3e5f9-2cdf-41da-ac5f-f365e72f1ad2",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -188,7 +193,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "62bbaf9c-5d32-4a2e-88ba-812b77de9ed1",
+      id: "c8f3e5f9-2cdf-41da-ac5f-f365e72f1ad2",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -246,10 +251,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "c6b6737d-7782-41e3-a20e-674fb9c33d86",
+      id: "cc2ecfba-c52b-4288-98f0-6f723c21f2ca",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-15T02:14:43.003Z"),
+      updatedAt: new Date("2023-01-22T16:29:45.582Z"),
     },
     connectionId: "<id>",
   });
@@ -281,10 +286,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "c6b6737d-7782-41e3-a20e-674fb9c33d86",
+      id: "cc2ecfba-c52b-4288-98f0-6f723c21f2ca",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-15T02:14:43.003Z"),
+      updatedAt: new Date("2023-01-22T16:29:45.582Z"),
     },
     connectionId: "<id>",
   });
@@ -337,6 +342,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.createGenaiPrompt({
     genaiPrompt: {
+      answers: [
+        {
+          confidence: 0.5384309098590165,
+          id: "TeZpueFB",
+          probabilities: [
+            {
+              option: "veniam",
+              probability: 0.05683182482607663,
+            },
+            {
+              option: "comes",
+              probability: 0.1404057613108307,
+            },
+          ],
+          score: 0.05974147981032729,
+          type: "CHOICE",
+          value: "summisse",
+        },
+      ],
       maxTokens: 0.4677782787475735,
       mcpAuthorizationToken: "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
       mcpDeferredTools: [],
@@ -344,11 +368,45 @@ async function run() {
       messages: [
         {
           content: "Aegre repudiandae verecundia facere statua.",
+          images: [],
           role: "ASSISTANT",
         },
         {
           content: "Speciosus xiphias soleo trepide crinis.",
+          images: [],
           role: "SYSTEM",
+        },
+      ],
+      questions: [
+        {
+          id: "KtvbYiEq",
+          instructions: "Admiratio cura contabesco subvenio venustas architecto vacuus summopere.",
+          options: [
+            "vulnero",
+            "quasi",
+            "tolero",
+          ],
+          type: "BOOLEAN",
+        },
+        {
+          id: "oV6IURtv",
+          instructions: "Celer deleniti ventus ipsam tendo odit.",
+          options: [
+            "nulla",
+            "aspicio",
+            "tero",
+          ],
+          type: "CHOICE",
+        },
+        {
+          id: "60dBZk2K",
+          instructions: "Decretum vesica amet repudiandae.",
+          options: [
+            "ducimus",
+            "civis",
+            "alter",
+          ],
+          type: "BOOLEAN",
         },
       ],
       responses: [
@@ -385,6 +443,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiPrompt(unifiedTo, {
     genaiPrompt: {
+      answers: [
+        {
+          confidence: 0.5384309098590165,
+          id: "TeZpueFB",
+          probabilities: [
+            {
+              option: "veniam",
+              probability: 0.05683182482607663,
+            },
+            {
+              option: "comes",
+              probability: 0.1404057613108307,
+            },
+          ],
+          score: 0.05974147981032729,
+          type: "CHOICE",
+          value: "summisse",
+        },
+      ],
       maxTokens: 0.4677782787475735,
       mcpAuthorizationToken: "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
       mcpDeferredTools: [],
@@ -392,11 +469,45 @@ async function run() {
       messages: [
         {
           content: "Aegre repudiandae verecundia facere statua.",
+          images: [],
           role: "ASSISTANT",
         },
         {
           content: "Speciosus xiphias soleo trepide crinis.",
+          images: [],
           role: "SYSTEM",
+        },
+      ],
+      questions: [
+        {
+          id: "KtvbYiEq",
+          instructions: "Admiratio cura contabesco subvenio venustas architecto vacuus summopere.",
+          options: [
+            "vulnero",
+            "quasi",
+            "tolero",
+          ],
+          type: "BOOLEAN",
+        },
+        {
+          id: "oV6IURtv",
+          instructions: "Celer deleniti ventus ipsam tendo odit.",
+          options: [
+            "nulla",
+            "aspicio",
+            "tero",
+          ],
+          type: "CHOICE",
+        },
+        {
+          id: "60dBZk2K",
+          instructions: "Decretum vesica amet repudiandae.",
+          options: [
+            "ducimus",
+            "civis",
+            "alter",
+          ],
+          type: "BOOLEAN",
         },
       ],
       responses: [
@@ -456,16 +567,17 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.createGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-09-06T09:18:49.674Z"),
+      completedAt: new Date("2025-09-23T00:58:59.988Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "586f6326-fe69-435c-8548-3150816342b0",
+      id: "6daef881-a5fd-464e-a22c-3c5bc1b30b5e",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
       messages: [
         {
           content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
           role: "ASSISTANT",
         },
       ],
@@ -473,12 +585,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-03T10:13:29.849Z"),
+      startedAt: new Date("2024-05-15T11:26:32.878Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-14T12:14:43.464Z"),
+      updatedAt: new Date("2023-02-22T09:35:41.667Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -509,16 +621,17 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-09-06T09:18:49.674Z"),
+      completedAt: new Date("2025-09-23T00:58:59.988Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "586f6326-fe69-435c-8548-3150816342b0",
+      id: "6daef881-a5fd-464e-a22c-3c5bc1b30b5e",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
       messages: [
         {
           content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
           role: "ASSISTANT",
         },
       ],
@@ -526,12 +639,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-03T10:13:29.849Z"),
+      startedAt: new Date("2024-05-15T11:26:32.878Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-14T12:14:43.464Z"),
+      updatedAt: new Date("2023-02-22T09:35:41.667Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -796,6 +909,85 @@ run();
 ### Response
 
 **Promise\<[shared.GenaiOrganization](../../sdk/models/shared/genaiorganization.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getGenaiSkill
+
+Retrieve a skill
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getGenaiSkill" method="get" path="/genai/{connection_id}/skill/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.genai.getGenaiSkill({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiGetGenaiSkill } from "@unified-api/typescript-sdk/funcs/genaiGetGenaiSkill.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiGetGenaiSkill(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiGetGenaiSkill failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetGenaiSkillRequest](../../sdk/models/operations/getgenaiskillrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiSkill](../../sdk/models/shared/genaiskill.md)\>**
 
 ### Errors
 
@@ -1113,6 +1305,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listGenaiSkills
+
+List all skills
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listGenaiSkills" method="get" path="/genai/{connection_id}/skill" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.genai.listGenaiSkills({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiListGenaiSkills } from "@unified-api/typescript-sdk/funcs/genaiListGenaiSkills.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiListGenaiSkills(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiListGenaiSkills failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListGenaiSkillsRequest](../../sdk/models/operations/listgenaiskillsrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiSkill[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listGenaiTasks
 
 List all tasks
@@ -1211,11 +1480,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "1c8b2286-947d-4e72-ab18-0b3a5b1e863d",
+      id: "748f6dfd-f228-435c-95dd-2cadccaf033e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-09-20T11:48:23.176Z"),
+      updatedAt: new Date("2025-10-07T04:34:03.513Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1248,11 +1517,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "1c8b2286-947d-4e72-ab18-0b3a5b1e863d",
+      id: "748f6dfd-f228-435c-95dd-2cadccaf033e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-09-20T11:48:23.176Z"),
+      updatedAt: new Date("2025-10-07T04:34:03.513Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1308,10 +1577,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      id: "479e33a3-5029-4a78-9917-8a26c82ee9ff",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+      updatedAt: new Date("2023-01-22T16:29:45.585Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1344,10 +1613,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      id: "479e33a3-5029-4a78-9917-8a26c82ee9ff",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+      updatedAt: new Date("2023-01-22T16:29:45.585Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1375,6 +1644,139 @@ run();
 ### Response
 
 **Promise\<[shared.GenaiOrganization](../../sdk/models/shared/genaiorganization.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchGenaiTask
+
+Update a task
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchGenaiTask" method="patch" path="/genai/{connection_id}/task/{id}" example="genai_task" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.genai.patchGenaiTask({
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiPatchGenaiTask } from "@unified-api/typescript-sdk/funcs/genaiPatchGenaiTask.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiPatchGenaiTask(unifiedTo, {
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiPatchGenaiTask failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchGenaiTaskRequest](../../sdk/models/operations/patchgenaitaskrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiTask](../../sdk/models/shared/genaitask.md)\>**
 
 ### Errors
 
@@ -1540,6 +1942,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeGenaiSkill
+
+Remove a skill
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeGenaiSkill" method="delete" path="/genai/{connection_id}/skill/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.genai.removeGenaiSkill({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiRemoveGenaiSkill } from "@unified-api/typescript-sdk/funcs/genaiRemoveGenaiSkill.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiRemoveGenaiSkill(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiRemoveGenaiSkill failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveGenaiSkillRequest](../../sdk/models/operations/removegenaiskillrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveGenaiSkillResponse](../../sdk/models/operations/removegenaiskillresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removeGenaiTask
 
 Remove a task
@@ -1640,11 +2121,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "1c8b2286-947d-4e72-ab18-0b3a5b1e863d",
+      id: "748f6dfd-f228-435c-95dd-2cadccaf033e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-09-20T11:48:23.176Z"),
+      updatedAt: new Date("2025-10-07T04:34:03.513Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1677,11 +2158,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "1c8b2286-947d-4e72-ab18-0b3a5b1e863d",
+      id: "748f6dfd-f228-435c-95dd-2cadccaf033e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-09-20T11:48:23.176Z"),
+      updatedAt: new Date("2025-10-07T04:34:03.513Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1737,10 +2218,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      id: "479e33a3-5029-4a78-9917-8a26c82ee9ff",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+      updatedAt: new Date("2023-01-22T16:29:45.585Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1773,10 +2254,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "e466e490-09c0-476e-9a38-d324960c1635",
+      id: "479e33a3-5029-4a78-9917-8a26c82ee9ff",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-15T02:14:43.005Z"),
+      updatedAt: new Date("2023-01-22T16:29:45.585Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1804,6 +2285,139 @@ run();
 ### Response
 
 **Promise\<[shared.GenaiOrganization](../../sdk/models/shared/genaiorganization.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateGenaiTask
+
+Update a task
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateGenaiTask" method="put" path="/genai/{connection_id}/task/{id}" example="genai_task" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.genai.updateGenaiTask({
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { genaiUpdateGenaiTask } from "@unified-api/typescript-sdk/funcs/genaiUpdateGenaiTask.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await genaiUpdateGenaiTask(unifiedTo, {
+    genaiTask: {
+      completedAt: new Date("2025-09-23T00:59:00.006Z"),
+      createdAt: new Date("2020-10-25T20:19:33.247Z"),
+      filesChanged: 19,
+      id: "9a632f24-8948-4e24-b29e-e648e72e1df0",
+      instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
+      linesAdded: 244,
+      linesDeleted: 118,
+      messages: [
+        {
+          content: "Stultus esse cursim stabilis tenetur amet contigo tristis.",
+          images: [],
+          role: "ASSISTANT",
+        },
+      ],
+      name: "connect multi-byte port",
+      pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
+      repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
+      sourceBranchIdentifier: "main",
+      startedAt: new Date("2024-05-15T11:26:32.891Z"),
+      status: "BLOCKED",
+      summary: "Cur aeternus cogito vesper.",
+      targetBranchIdentifier: "agent/joshingly-ignorance",
+      tokensUsed: 2165,
+      updatedAt: new Date("2023-02-22T09:35:41.675Z"),
+      webUrl: "https://inexperienced-adrenalin.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("genaiUpdateGenaiTask failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateGenaiTaskRequest](../../sdk/models/operations/updategenaitaskrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.GenaiTask](../../sdk/models/shared/genaitask.md)\>**
 
 ### Errors
 

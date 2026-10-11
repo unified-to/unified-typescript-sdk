@@ -37,6 +37,9 @@ export type FormField = {
    * For select/radio/checkbox fields
    */
   choices?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   defaultValue?: string | undefined;
   description?: string | undefined;
@@ -51,6 +54,9 @@ export type FormField = {
   order?: number | undefined;
   pattern?: string | undefined;
   type: FormFieldType;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -10,49 +10,136 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The event status
+ */
 export const ClubsEventStatus = {
   Scheduled: "SCHEDULED",
   Canceled: "CANCELED",
   Tbd: "TBD",
   Final: "FINAL",
 } as const;
+/**
+ * The event status
+ */
 export type ClubsEventStatus = OpenEnum<typeof ClubsEventStatus>;
 
+/**
+ * The event type
+ */
 export const ClubsEventType = {
   Game: "GAME",
   Practice: "PRACTICE",
   Other: "OTHER",
 } as const;
+/**
+ * The event type
+ */
 export type ClubsEventType = OpenEnum<typeof ClubsEventType>;
 
 /**
  * (home-vs-away competitors with scores). Distinct from the fitness-oriented IClubsActivity.
  */
 export type ClubsEvent = {
+  /**
+   * The away team's score
+   */
   awayScore?: number | undefined;
+  /**
+   * The away team's name (homeaway providers)
+   */
   awayTeamName?: string | undefined;
+  /**
+   * The date that this event was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * A description or notes for the event
+   */
   description?: string | undefined;
+  /**
+   * The scheduled duration, in minutes
+   */
   durationMinutes?: number | undefined;
+  /**
+   * When the event ends (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * The group this event belongs to (reference to HrisGroup)
+   */
   groupId?: string | undefined;
+  /**
+   * The home team's score
+   */
   homeScore?: number | undefined;
+  /**
+   * The home team's name (homeaway providers)
+   */
   homeTeamName?: string | undefined;
+  /**
+   * Unique identifier for this event
+   */
   id?: string | undefined;
+  /**
+   * Whether the connected groupteam is the home side
+   */
   isHome?: boolean | undefined;
+  /**
+   * The id of the location for this event (reference to ClubsLocation)
+   */
   locationId?: string | undefined;
+  /**
+   * The name of the location for this event
+   */
   locationName?: string | undefined;
+  /**
+   * The event name (or a "Home vs Away" matchup label)
+   */
   name?: string | undefined;
+  /**
+   * The id of the opposing team (single-opponent providers)
+   */
   opponentId?: string | undefined;
+  /**
+   * The name of the opposing team
+   */
   opponentName?: string | undefined;
+  /**
+   * The raw data returned by the integration for this event
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The opponent's score (team-vs-opponent providers)
+   */
   scoreAgainst?: number | undefined;
+  /**
+   * The connected groupteam's score (team-vs-opponent providers)
+   */
   scoreFor?: number | undefined;
+  /**
+   * When the event starts (UTC) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
+  /**
+   * The event status
+   */
   status?: ClubsEventStatus | undefined;
+  /**
+   * The timezone of the event
+   */
   timezone?: string | undefined;
+  /**
+   * The event type
+   */
   type?: ClubsEventType | undefined;
+  /**
+   * The last date that this event was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * A URL to the event
+   */
   url?: string | undefined;
 };
 

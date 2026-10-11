@@ -40,6 +40,9 @@ import {
   PropertyCdpProfileAddress$outboundSchema,
 } from "./propertycdpprofileaddress.js";
 
+/**
+ * The gender of the profile
+ */
 export const CdpProfileGender = {
   Male: "MALE",
   Female: "FEMALE",
@@ -47,6 +50,9 @@ export const CdpProfileGender = {
   Trans: "TRANS",
   NonBinary: "NON_BINARY",
 } as const;
+/**
+ * The gender of the profile
+ */
 export type CdpProfileGender = OpenEnum<typeof CdpProfileGender>;
 
 export type CdpProfile = {
@@ -54,36 +60,81 @@ export type CdpProfile = {
    * The address of the profile
    */
   address?: PropertyCdpProfileAddress | undefined;
+  /**
+   * The birth date of the profile
+   */
   birthdate?: string | undefined;
+  /**
+   * The company/organization name of the profile
+   */
   company?: string | undefined;
   /**
    * The consent/privacy preferences of the profile
    */
   consent?: Array<CdpConsent> | undefined;
+  /**
+   * The date that this profile object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The primary email address of the profile
+   */
   email?: string | undefined;
+  /**
+   * The first name of the profile
+   */
   firstName?: string | undefined;
+  /**
+   * The gender of the profile
+   */
   gender?: CdpProfileGender | undefined;
+  /**
+   * Unique identifier for this profile object
+   */
   id?: string | undefined;
   /**
    * The typed identifiers stitched to this profile
    */
   identifiers?: Array<CdpIdentifier> | undefined;
+  /**
+   * Whether the profile is anonymous (no known identity)
+   */
   isAnonymous?: boolean | undefined;
+  /**
+   * The last name of the profile
+   */
   lastName?: string | undefined;
   /**
    * The traits/attributes of the profile
    */
   metadata?: Array<CdpMetadata> | undefined;
+  /**
+   * The full name of the profile
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this profile
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * The segments/audiences this profile currently belongs to
    */
   segments?: Array<CdpProfileSegment> | undefined;
+  /**
+   * The cdp_source this profile originated from; points to CdpSource
+   */
   sourceId?: string | undefined;
+  /**
+   * The primary telephone number of the profile
+   */
   telephone?: string | undefined;
+  /**
+   * The job title of the profile
+   */
   title?: string | undefined;
+  /**
+   * The last date that this profile object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

@@ -1,5 +1,7 @@
 # VerificationRequestResponseStatus
 
+Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO
+
 ## Example Usage
 
 ```typescript

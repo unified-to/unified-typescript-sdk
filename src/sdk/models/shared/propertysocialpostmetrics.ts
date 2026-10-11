@@ -12,11 +12,29 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * Engagement metrics for the post
  */
 export type PropertySocialPostMetrics = {
+  /**
+   * Number of bookmarks/saves
+   */
   bookmarkCount?: number | undefined;
+  /**
+   * Number of comments/replies
+   */
   commentCount?: number | undefined;
+  /**
+   * Number of likes/reactions
+   */
   likeCount?: number | undefined;
+  /**
+   * Number of quotes
+   */
   quoteCount?: number | undefined;
+  /**
+   * Number of shares/reposts
+   */
   shareCount?: number | undefined;
+  /**
+   * Number of views/impressions
+   */
   viewCount?: number | undefined;
 };
 

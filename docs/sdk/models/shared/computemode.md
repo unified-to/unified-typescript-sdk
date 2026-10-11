@@ -1,5 +1,7 @@
 # ComputeMode
 
+How the segment membership is computed (REALTIME or BATCH)
+
 ## Example Usage
 
 ```typescript

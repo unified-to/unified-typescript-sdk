@@ -61,6 +61,9 @@ export type PropertyAdsReportMetricsCreative = {
   assetUrls?: Array<string> | undefined;
   body?: string | undefined;
   campaignId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   creativeType?: PropertyAdsReportMetricsCreativeCreativeType | undefined;
   cta?: string | undefined;
@@ -68,23 +71,44 @@ export type PropertyAdsReportMetricsCreative = {
   externalAdReference?: string | undefined;
   externalCreativeReference?: string | undefined;
   externalPlacementReference?: string | undefined;
+  /**
+   * (reference to AdsGroup)
+   */
   groupId?: string | undefined;
   height?: number | undefined;
   hostingSource?: PropertyAdsReportMetricsCreativeHostingSource | undefined;
   id?: string | undefined;
+  /**
+   * references Commerce Item ID (reference to CommerceItem)
+   */
   itemId?: string | undefined;
   labels?: Array<string> | undefined;
+  /**
+   * Destination URL for creatives with links
+   */
   linkUrl?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
+  /**
+   * Display URL path 1 (Microsoft RSA Path1)
+   */
   path1?: string | undefined;
+  /**
+   * Display URL path 2 (Microsoft RSA Path2)
+   */
   path2?: string | undefined;
   promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: PropertyAdsReportMetricsCreativeStatus | undefined;
   thirdPartyTag?: string | undefined;
   title?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * Appended URL tracking params (e.g. utm_source=..&utm_medium=..); Meta url_tags, Google tracking template
+   */
   urlTags?: string | undefined;
   vastTagUrl?: string | undefined;
   width?: number | undefined;

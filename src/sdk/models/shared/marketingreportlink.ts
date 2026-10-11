@@ -9,11 +9,29 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type MarketingReportLink = {
+  /**
+   * Percentage of total clicks
+   */
   clickPercentage?: number | undefined;
+  /**
+   * Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   lastClickAt?: Date | undefined;
+  /**
+   * Total clicks on this link
+   */
   totalClicks?: number | undefined;
+  /**
+   * Percentage of unique clicks
+   */
   uniqueClickPercentage?: number | undefined;
+  /**
+   * Unique clicks on this link
+   */
   uniqueClicks?: number | undefined;
+  /**
+   * The URL
+   */
   url?: string | undefined;
 };
 

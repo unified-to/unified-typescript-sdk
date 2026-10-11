@@ -1,5 +1,7 @@
 # PropertyAdsReportMetricsGroupOptimizationGoal
 
+Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
+
 ## Example Usage
 
 ```typescript

@@ -22,22 +22,43 @@ export type CommerceReservationStatus = OpenEnum<
 >;
 
 export type CommerceReservation = {
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
   guestEmail?: string | undefined;
   guestName?: string | undefined;
   guestPhone?: string | undefined;
   id?: string | undefined;
+  /**
+   * (reference to CommerceItem)
+   */
   itemId?: string | undefined;
   itemName?: string | undefined;
+  /**
+   * (reference to CommerceLocation)
+   */
   locationId?: string | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   size?: number | undefined;
   staffName?: string | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   staffUserId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   status?: CommerceReservationStatus | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   url?: string | undefined;
 };

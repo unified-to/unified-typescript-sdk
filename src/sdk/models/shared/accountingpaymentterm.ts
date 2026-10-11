@@ -16,11 +16,17 @@ import {
   AccountingMetadata$outboundSchema,
 } from "./accountingmetadata.js";
 
+/**
+ * STANDARD (days-based) or DATE_DRIVEN (month-based)
+ */
 export const Category = {
   Standard: "STANDARD",
   DateDriven: "DATE_DRIVEN",
   Other: "OTHER",
 } as const;
+/**
+ * STANDARD (days-based) or DATE_DRIVEN (month-based)
+ */
 export type Category = OpenEnum<typeof Category>;
 
 export const AccountingPaymenttermType = {
@@ -41,22 +47,52 @@ export type AccountingPaymenttermType = OpenEnum<
 >;
 
 export type AccountingPaymentterm = {
+  /**
+   * STANDARD (days-based) or DATE_DRIVEN (month-based)
+   */
   category?: Category | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (date-driven) day of month payment is due (1–31)
+   */
   dayOfMonthDue?: number | undefined;
   description?: string | undefined;
+  /**
+   * (date-driven) pay before this day of month for the discount
+   */
   discountDayOfMonth?: number | undefined;
+  /**
+   * (standard) days within which an early-pay discount applies
+   */
   discountDays?: number | undefined;
+  /**
+   * (standard) early-pay discount rate
+   */
   discountPercent?: number | undefined;
+  /**
+   * (standard) days until payment is due
+   */
   dueDays?: number | undefined;
+  /**
+   * (date-driven) if invoiced within N days of month-end, due next month
+   */
   dueNextMonthDays?: number | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
+  /**
+   * term label, e.g. "Net 30"
+   */
   name?: string | undefined;
   organizationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: AccountingPaymenttermType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

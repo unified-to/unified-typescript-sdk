@@ -10,33 +10,78 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Unit for dimensions (cm, inch)
+ */
 export const ShippingPackageSizeUnit = {
   Cm: "cm",
   Inch: "inch",
 } as const;
+/**
+ * Unit for dimensions (cm, inch)
+ */
 export type ShippingPackageSizeUnit = OpenEnum<typeof ShippingPackageSizeUnit>;
 
+/**
+ * Unit for weight (g, kg, oz, lb)
+ */
 export const ShippingPackageWeightUnit = {
   G: "g",
   Kg: "kg",
   Oz: "oz",
   Lb: "lb",
 } as const;
+/**
+ * Unit for weight (g, kg, oz, lb)
+ */
 export type ShippingPackageWeightUnit = OpenEnum<
   typeof ShippingPackageWeightUnit
 >;
 
 export type ShippingPackage = {
+  /**
+   * ISO 4217 currency code
+   */
   currency?: string | undefined;
+  /**
+   * Description of the package contents
+   */
   description?: string | undefined;
+  /**
+   * Height of the package
+   */
   height?: number | undefined;
+  /**
+   * Insured value for this package
+   */
   insuredAmount?: number | undefined;
+  /**
+   * Length of the package
+   */
   length?: number | undefined;
+  /**
+   * Unit for dimensions (cm, inch)
+   */
   sizeUnit?: ShippingPackageSizeUnit | undefined;
+  /**
+   * Package-level tracking (for multi-package shipments)
+   */
   trackingNumber?: string | undefined;
+  /**
+   * Declared value of the package
+   */
   value?: number | undefined;
+  /**
+   * Weight of the package
+   */
   weight?: number | undefined;
+  /**
+   * Unit for weight (g, kg, oz, lb)
+   */
   weightUnit?: ShippingPackageWeightUnit | undefined;
+  /**
+   * Width of the package
+   */
   width?: number | undefined;
 };
 

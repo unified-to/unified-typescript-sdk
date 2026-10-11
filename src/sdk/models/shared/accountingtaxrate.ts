@@ -22,12 +22,18 @@ import {
   AccountingTaxrateComponent$outboundSchema,
 } from "./accountingtaxratecomponent.js";
 
+/**
+ * Whether the rate applies to sales, purchases, or both
+ */
 export const AccountingTaxrateType = {
   Sales: "SALES",
   Purchase: "PURCHASE",
   Both: "BOTH",
   Other: "OTHER",
 } as const;
+/**
+ * Whether the rate applies to sales, purchases, or both
+ */
 export type AccountingTaxrateType = OpenEnum<typeof AccountingTaxrateType>;
 
 export type AccountingTaxrate = {
@@ -35,21 +41,48 @@ export type AccountingTaxrate = {
    * Component parts of a compound or multi-component tax
    */
   components?: Array<AccountingTaxrateComponent> | undefined;
+  /**
+   * Jurisdiction country
+   */
   country?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
+  /**
+   * Net effective rate in %, where it differs from the nominal rate
+   */
   effectiveRate?: number | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * True when the rate stacks on top of other taxes
+   */
   isCompound?: boolean | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
+  /**
+   * %
+   */
   rate?: number | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Jurisdiction state / province
+   */
   region?: string | undefined;
+  /**
+   * Sum of all components, in %
+   */
   totalRate?: number | undefined;
+  /**
+   * Whether the rate applies to sales, purchases, or both
+   */
   type?: AccountingTaxrateType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

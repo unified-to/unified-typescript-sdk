@@ -1,5 +1,7 @@
 # Type
 
+Account type, such as BANK. EQUITY, ASSET, ...
+
 ## Example Usage
 
 ```typescript

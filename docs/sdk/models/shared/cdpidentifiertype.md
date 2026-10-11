@@ -1,5 +1,7 @@
 # CdpIdentifierType
 
+The type of the identifier (eg. EMAIL, USER_ID, ANONYMOUS_ID)
+
 ## Example Usage
 
 ```typescript

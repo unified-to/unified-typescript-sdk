@@ -36,6 +36,7 @@ export const PatchAccountingExpenseQueryParamFields = {
   Metadata: "metadata",
   TaxrateId: "taxrate_id",
   ExchangeRate: "exchange_rate",
+  Type: "type",
   Raw: "raw",
 } as const;
 export type PatchAccountingExpenseQueryParamFields = ClosedEnum<

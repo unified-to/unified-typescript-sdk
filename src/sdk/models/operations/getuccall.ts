@@ -22,6 +22,7 @@ export const GetUcCallQueryParamFields = {
   Type: "type",
   Metadata: "metadata",
   Raw: "raw",
+  ConversationIdentifier: "conversation_identifier",
 } as const;
 export type GetUcCallQueryParamFields = ClosedEnum<
   typeof GetUcCallQueryParamFields

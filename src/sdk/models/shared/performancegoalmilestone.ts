@@ -11,11 +11,17 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type PerformanceGoalMilestone = {
   currentValue?: number | undefined;
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
   id?: string | undefined;
   isCompleted?: boolean | undefined;
   name: string;
   targetValue?: number | undefined;
+  /**
+   * unit of the target/current values (e.g. %, USD, count)
+   */
   unit?: string | undefined;
   weight?: number | undefined;
 };

@@ -10,6 +10,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CalendarAttachment = {
   downloadUrl?: string | undefined;
+  /**
+   * ID for the storage_fileget endpoint
+   */
   id?: string | undefined;
   mimeType?: string | undefined;
   name?: string | undefined;

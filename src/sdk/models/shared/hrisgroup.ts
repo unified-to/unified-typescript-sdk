@@ -10,6 +10,25 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * pay cycle when type is PAY_GROUP
+ */
+export const HrisGroupPayFrequency = {
+  OneTime: "ONE_TIME",
+  Day: "DAY",
+  Quarter: "QUARTER",
+  Year: "YEAR",
+  Hour: "HOUR",
+  Month: "MONTH",
+  Week: "WEEK",
+  Biweekly: "BIWEEKLY",
+  Semimonthly: "SEMIMONTHLY",
+} as const;
+/**
+ * pay cycle when type is PAY_GROUP
+ */
+export type HrisGroupPayFrequency = OpenEnum<typeof HrisGroupPayFrequency>;
+
 export const HrisGroupType = {
   Team: "TEAM",
   Group: "GROUP",
@@ -18,23 +37,54 @@ export const HrisGroupType = {
   BusinessUnit: "BUSINESS_UNIT",
   Branch: "BRANCH",
   SubDepartment: "SUB_DEPARTMENT",
+  PayGroup: "PAY_GROUP",
 } as const;
 export type HrisGroupType = OpenEnum<typeof HrisGroupType>;
 
 export type HrisGroup = {
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   managerIds?: Array<string> | undefined;
   name?: string | undefined;
+  /**
+   * next pay date when type is PAY_GROUP (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  nextPaidAt?: Date | undefined;
   parentId?: string | undefined;
+  /**
+   * pay cycle when type is PAY_GROUP
+   */
+  payFrequency?: HrisGroupPayFrequency | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: HrisGroupType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   userIds?: Array<string> | undefined;
 };
+
+/** @internal */
+export const HrisGroupPayFrequency$inboundSchema: z.ZodType<
+  HrisGroupPayFrequency,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(HrisGroupPayFrequency);
+/** @internal */
+export const HrisGroupPayFrequency$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  HrisGroupPayFrequency
+> = openEnums.outboundSchema(HrisGroupPayFrequency);
 
 /** @internal */
 export const HrisGroupType$inboundSchema: z.ZodType<
@@ -63,7 +113,11 @@ export const HrisGroup$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   manager_ids: z.array(z.string()).optional(),
   name: z.string().optional(),
+  next_paid_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
   parent_id: z.string().optional(),
+  pay_frequency: HrisGroupPayFrequency$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
   type: HrisGroupType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -75,7 +129,9 @@ export const HrisGroup$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "is_active": "isActive",
     "manager_ids": "managerIds",
+    "next_paid_at": "nextPaidAt",
     "parent_id": "parentId",
+    "pay_frequency": "payFrequency",
     "updated_at": "updatedAt",
     "user_ids": "userIds",
   });
@@ -89,7 +145,9 @@ export type HrisGroup$Outbound = {
   is_active?: boolean | undefined;
   manager_ids?: Array<string> | undefined;
   name?: string | undefined;
+  next_paid_at?: string | undefined;
   parent_id?: string | undefined;
+  pay_frequency?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -109,7 +167,9 @@ export const HrisGroup$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   managerIds: z.array(z.string()).optional(),
   name: z.string().optional(),
+  nextPaidAt: z.date().transform(v => v.toISOString()).optional(),
   parentId: z.string().optional(),
+  payFrequency: HrisGroupPayFrequency$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),
   type: HrisGroupType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -120,7 +180,9 @@ export const HrisGroup$outboundSchema: z.ZodType<
     createdAt: "created_at",
     isActive: "is_active",
     managerIds: "manager_ids",
+    nextPaidAt: "next_paid_at",
     parentId: "parent_id",
+    payFrequency: "pay_frequency",
     updatedAt: "updated_at",
     userIds: "user_ids",
   });

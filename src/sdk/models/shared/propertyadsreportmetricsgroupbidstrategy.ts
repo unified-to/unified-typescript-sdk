@@ -64,6 +64,9 @@ export type PropertyAdsReportMetricsGroupBidStrategy = {
     | PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType
     | undefined;
   raiseBidForDeals?: boolean | undefined;
+  /**
+   * Target ROAS e.g. 2.5 = 250% (Google)
+   */
   targetRoas?: number | undefined;
   type: PropertyAdsReportMetricsGroupBidStrategyType;
   youtubeAndPartnersType?:

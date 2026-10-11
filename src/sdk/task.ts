@@ -5,7 +5,9 @@
 import { genaiCreateGenaiTask } from "../funcs/genaiCreateGenaiTask.js";
 import { genaiGetGenaiTask } from "../funcs/genaiGetGenaiTask.js";
 import { genaiListGenaiTasks } from "../funcs/genaiListGenaiTasks.js";
+import { genaiPatchGenaiTask } from "../funcs/genaiPatchGenaiTask.js";
 import { genaiRemoveGenaiTask } from "../funcs/genaiRemoveGenaiTask.js";
+import { genaiUpdateGenaiTask } from "../funcs/genaiUpdateGenaiTask.js";
 import { projectCreateTaskProject } from "../funcs/projectCreateTaskProject.js";
 import { projectGetTaskProject } from "../funcs/projectGetTaskProject.js";
 import { projectListTaskProjects } from "../funcs/projectListTaskProjects.js";
@@ -229,6 +231,20 @@ export class Task extends ClientSDK {
   }
 
   /**
+   * Update a task
+   */
+  async patchGenaiTask(
+    request: operations.PatchGenaiTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiTask> {
+    return unwrapAsync(genaiPatchGenaiTask(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a comment
    */
   async patchTaskComment(
@@ -320,6 +336,20 @@ export class Task extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveTaskTaskResponse | undefined> {
     return unwrapAsync(taskRemoveTaskTask(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a task
+   */
+  async updateGenaiTask(
+    request: operations.UpdateGenaiTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiTask> {
+    return unwrapAsync(genaiUpdateGenaiTask(
       this,
       request,
       options,

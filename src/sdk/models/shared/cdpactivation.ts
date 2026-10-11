@@ -10,26 +10,68 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The current status of the activation
+ */
 export const CdpActivationStatus = {
   Active: "ACTIVE",
   Paused: "PAUSED",
   Error: "ERROR",
   Pending: "PENDING",
 } as const;
+/**
+ * The current status of the activation
+ */
 export type CdpActivationStatus = OpenEnum<typeof CdpActivationStatus>;
 
 export type CdpActivation = {
+  /**
+   * The date that this activation object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The cdp_destination the data is sent to; points to CdpDestination
+   */
   destinationId?: string | undefined;
+  /**
+   * Unique identifier for this activation object
+   */
   id?: string | undefined;
+  /**
+   * Whether the activation is active/enabled
+   */
   isEnabled?: boolean | undefined;
+  /**
+   * When the activation last ran (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   lastRunAt?: Date | undefined;
+  /**
+   * The name of the activation/sync job
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration for this activation
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The activation schedule or mode (eg. cron, interval, realtime, batch)
+   */
   schedule?: string | undefined;
+  /**
+   * The cdp_segment being activated; points to CdpSegment
+   */
   segmentId?: string | undefined;
+  /**
+   * The cdp_source the data originates from; points to CdpSource
+   */
   sourceId?: string | undefined;
+  /**
+   * The current status of the activation
+   */
   status?: CdpActivationStatus | undefined;
+  /**
+   * The last date that this activation object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

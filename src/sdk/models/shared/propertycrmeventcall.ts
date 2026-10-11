@@ -12,8 +12,17 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * The call object, when type = call
  */
 export type PropertyCrmEventCall = {
+  /**
+   * The event call's descriptionnotes
+   */
   description?: string | undefined;
+  /**
+   * The event call's duration in minutes
+   */
   duration?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
 };
 

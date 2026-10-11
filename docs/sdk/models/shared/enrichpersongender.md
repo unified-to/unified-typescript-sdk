@@ -1,5 +1,7 @@
 # EnrichPersonGender
 
+The gender of the person
+
 ## Example Usage
 
 ```typescript

@@ -15,6 +15,9 @@ export type PropertyMessagingEventMessageAuthorMember = {
   email?: string | undefined;
   imageUrl?: string | undefined;
   name?: string | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

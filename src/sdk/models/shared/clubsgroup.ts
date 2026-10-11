@@ -14,6 +14,9 @@ import {
   PropertyClubsGroupAddress$inboundSchema,
 } from "./propertyclubsgroupaddress.js";
 
+/**
+ * The group type
+ */
 export const GroupType = {
   CasualClub: "CASUAL_CLUB",
   RacingTeam: "RACING_TEAM",
@@ -21,15 +24,27 @@ export const GroupType = {
   Company: "COMPANY",
   Other: "OTHER",
 } as const;
+/**
+ * The group type
+ */
 export type GroupType = OpenEnum<typeof GroupType>;
 
+/**
+ * The authenticated user's membership status
+ */
 export const MembershipStatus = {
   Member: "MEMBER",
   Pending: "PENDING",
   None: "NONE",
 } as const;
+/**
+ * The authenticated user's membership status
+ */
 export type MembershipStatus = OpenEnum<typeof MembershipStatus>;
 
+/**
+ * The primary sport of the group
+ */
 export const SportType = {
   Running: "RUNNING",
   Cycling: "CYCLING",
@@ -39,6 +54,9 @@ export const SportType = {
   Hiking: "HIKING",
   Other: "OTHER",
 } as const;
+/**
+ * The primary sport of the group
+ */
 export type SportType = OpenEnum<typeof SportType>;
 
 /**
@@ -53,25 +71,85 @@ export type ClubsGroup = {
    * The group's address
    */
   address?: PropertyClubsGroupAddress | undefined;
+  /**
+   * URL to the group's cover photo
+   */
   coverImageUrl?: string | undefined;
+  /**
+   * The date that this group was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * The group's description
+   */
   description?: string | undefined;
+  /**
+   * The number of athletes the group follows
+   */
   followingCount?: number | undefined;
+  /**
+   * The group type
+   */
   groupType?: GroupType | undefined;
+  /**
+   * Unique identifier for this group
+   */
   id?: string | undefined;
+  /**
+   * Whether the authenticated user is an admin of the group
+   */
   isAdmin?: boolean | undefined;
+  /**
+   * Whether the group is featured
+   */
   isFeatured?: boolean | undefined;
+  /**
+   * Whether the authenticated user is the owner of the group
+   */
   isOwner?: boolean | undefined;
+  /**
+   * Whether the group is private
+   */
   isPrivate?: boolean | undefined;
+  /**
+   * Whether the group is verified
+   */
   isVerified?: boolean | undefined;
+  /**
+   * The number of members in the group
+   */
   memberCount?: number | undefined;
+  /**
+   * The authenticated user's membership status
+   */
   membershipStatus?: MembershipStatus | undefined;
+  /**
+   * The group's name
+   */
   name?: string | undefined;
+  /**
+   * The number of posts in the group
+   */
   postCount?: number | undefined;
+  /**
+   * URL to the group's profile picture
+   */
   profileImageUrl?: string | undefined;
+  /**
+   * The raw data returned by the integration for this group
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The primary sport of the group
+   */
   sportType?: SportType | undefined;
+  /**
+   * The last date that this group was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * The group's vanity URL
+   */
   url?: string | undefined;
 };
 

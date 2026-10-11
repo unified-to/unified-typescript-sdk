@@ -9,8 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingTaxrateComponent = {
+  /**
+   * True when this component is charged on top of the other components
+   */
   isCompound?: boolean | undefined;
+  /**
+   * Name of the tax component, e.g. GST or PST
+   */
   name?: string | undefined;
+  /**
+   * Rate of this component, in %
+   */
   rate?: number | undefined;
 };
 

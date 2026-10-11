@@ -1,5 +1,7 @@
 # Status
 
+Account status, such as ACTIVE or ARCHIVED
+
 ## Example Usage
 
 ```typescript

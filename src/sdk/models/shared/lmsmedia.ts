@@ -23,6 +23,9 @@ export const LmsMediaType = {
 export type LmsMediaType = OpenEnum<typeof LmsMediaType>;
 
 export type LmsMedia = {
+  /**
+   * Inline text/HTML/markdown content (use when url is empty or for embedded content)
+   */
   content?: string | undefined;
   description?: string | undefined;
   /**

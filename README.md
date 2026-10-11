@@ -105,7 +105,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+      id: "832b57ad-5e35-4937-9912-7620283aa898",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -122,7 +122,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
     },
     connectionId: "<id>",
   });
@@ -155,7 +155,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+      id: "832b57ad-5e35-4937-9912-7620283aa898",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -172,7 +172,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
     },
     connectionId: "<id>",
   });
@@ -271,7 +271,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+      id: "832b57ad-5e35-4937-9912-7620283aa898",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -288,7 +288,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
     },
     connectionId: "<id>",
   });
@@ -337,7 +337,7 @@ async function run() {
         currency: "BOB",
         customerDefinedCode: "quo",
         description: "Spoliatio comedo vilitas harum cupiditate.",
-        id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+        id: "832b57ad-5e35-4937-9912-7620283aa898",
         isPayable: true,
         name: "Electronic Aluminum Tuna",
         status: "ARCHIVED",
@@ -354,7 +354,7 @@ async function run() {
           },
         ],
         type: "BANK",
-        updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+        updatedAt: new Date("2023-01-05T21:03:34.373Z"),
       },
       connectionId: "<id>",
     });
@@ -462,7 +462,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+      id: "832b57ad-5e35-4937-9912-7620283aa898",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -479,7 +479,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
     },
     connectionId: "<id>",
   }, {
@@ -530,7 +530,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+      id: "832b57ad-5e35-4937-9912-7620283aa898",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -547,7 +547,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-03T11:11:55.467Z"),
+      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
     },
     connectionId: "<id>",
   });
@@ -608,6 +608,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingCreateAccountingCreditmemo`](docs/sdks/creditmemo/README.md#createaccountingcreditmemo) - Create a creditmemo
 - [`accountingCreateAccountingExpense`](docs/sdks/accounting/README.md#createaccountingexpense) - Create an expense
 - [`accountingCreateAccountingExpense`](docs/sdks/expense/README.md#createaccountingexpense) - Create an expense
+- [`accountingCreateAccountingExpensereport`](docs/sdks/accounting/README.md#createaccountingexpensereport) - Create an expensereport
+- [`accountingCreateAccountingExpensereport`](docs/sdks/expensereport/README.md#createaccountingexpensereport) - Create an expensereport
 - [`accountingCreateAccountingInvoice`](docs/sdks/accounting/README.md#createaccountinginvoice) - Create an invoice
 - [`accountingCreateAccountingInvoice`](docs/sdks/invoice/README.md#createaccountinginvoice) - Create an invoice
 - [`accountingCreateAccountingJournal`](docs/sdks/accounting/README.md#createaccountingjournal) - Create a journal
@@ -654,6 +656,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingCreditmemo`](docs/sdks/creditmemo/README.md#getaccountingcreditmemo) - Retrieve a creditmemo
 - [`accountingGetAccountingExpense`](docs/sdks/accounting/README.md#getaccountingexpense) - Retrieve an expense
 - [`accountingGetAccountingExpense`](docs/sdks/expense/README.md#getaccountingexpense) - Retrieve an expense
+- [`accountingGetAccountingExpensereport`](docs/sdks/accounting/README.md#getaccountingexpensereport) - Retrieve an expensereport
+- [`accountingGetAccountingExpensereport`](docs/sdks/expensereport/README.md#getaccountingexpensereport) - Retrieve an expensereport
 - [`accountingGetAccountingInvoice`](docs/sdks/accounting/README.md#getaccountinginvoice) - Retrieve an invoice
 - [`accountingGetAccountingInvoice`](docs/sdks/invoice/README.md#getaccountinginvoice) - Retrieve an invoice
 - [`accountingGetAccountingJournal`](docs/sdks/accounting/README.md#getaccountingjournal) - Retrieve a journal
@@ -670,10 +674,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingProject`](docs/sdks/project/README.md#getaccountingproject) - Retrieve a project
 - [`accountingGetAccountingPurchaseorder`](docs/sdks/accounting/README.md#getaccountingpurchaseorder) - Retrieve a purchaseorder
 - [`accountingGetAccountingPurchaseorder`](docs/sdks/purchaseorder/README.md#getaccountingpurchaseorder) - Retrieve a purchaseorder
+- [`accountingGetAccountingPurchasereceipt`](docs/sdks/accounting/README.md#getaccountingpurchasereceipt) - Retrieve a purchasereceipt
+- [`accountingGetAccountingPurchasereceipt`](docs/sdks/purchasereceipt/README.md#getaccountingpurchasereceipt) - Retrieve a purchasereceipt
 - [`accountingGetAccountingQuote`](docs/sdks/accounting/README.md#getaccountingquote) - Retrieve a quote
 - [`accountingGetAccountingQuote`](docs/sdks/quote/README.md#getaccountingquote) - Retrieve a quote
 - [`accountingGetAccountingSalesorder`](docs/sdks/accounting/README.md#getaccountingsalesorder) - Retrieve a salesorder
 - [`accountingGetAccountingSalesorder`](docs/sdks/salesorder/README.md#getaccountingsalesorder) - Retrieve a salesorder
+- [`accountingGetAccountingSalesreceipt`](docs/sdks/accounting/README.md#getaccountingsalesreceipt) - Retrieve a salesreceipt
+- [`accountingGetAccountingSalesreceipt`](docs/sdks/salesreceipt/README.md#getaccountingsalesreceipt) - Retrieve a salesreceipt
 - [`accountingGetAccountingTaxrate`](docs/sdks/accounting/README.md#getaccountingtaxrate) - Retrieve a taxrate
 - [`accountingGetAccountingTaxrate`](docs/sdks/taxrate/README.md#getaccountingtaxrate) - Retrieve a taxrate
 - [`accountingGetAccountingTransaction`](docs/sdks/accounting/README.md#getaccountingtransaction) - Retrieve a transaction
@@ -704,6 +712,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingContacts`](docs/sdks/contact/README.md#listaccountingcontacts) - List all contacts
 - [`accountingListAccountingCreditmemoes`](docs/sdks/accounting/README.md#listaccountingcreditmemoes) - List all creditmemoes
 - [`accountingListAccountingCreditmemoes`](docs/sdks/creditmemo/README.md#listaccountingcreditmemoes) - List all creditmemoes
+- [`accountingListAccountingExpensereports`](docs/sdks/accounting/README.md#listaccountingexpensereports) - List all expensereports
+- [`accountingListAccountingExpensereports`](docs/sdks/expensereport/README.md#listaccountingexpensereports) - List all expensereports
 - [`accountingListAccountingExpenses`](docs/sdks/accounting/README.md#listaccountingexpenses) - List all expenses
 - [`accountingListAccountingExpenses`](docs/sdks/expense/README.md#listaccountingexpenses) - List all expenses
 - [`accountingListAccountingInvoices`](docs/sdks/accounting/README.md#listaccountinginvoices) - List all invoices
@@ -722,10 +732,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingProjects`](docs/sdks/project/README.md#listaccountingprojects) - List all projects
 - [`accountingListAccountingPurchaseorders`](docs/sdks/accounting/README.md#listaccountingpurchaseorders) - List all purchaseorders
 - [`accountingListAccountingPurchaseorders`](docs/sdks/purchaseorder/README.md#listaccountingpurchaseorders) - List all purchaseorders
+- [`accountingListAccountingPurchasereceipts`](docs/sdks/accounting/README.md#listaccountingpurchasereceipts) - List all purchasereceipts
+- [`accountingListAccountingPurchasereceipts`](docs/sdks/purchasereceipt/README.md#listaccountingpurchasereceipts) - List all purchasereceipts
 - [`accountingListAccountingQuotes`](docs/sdks/accounting/README.md#listaccountingquotes) - List all quotes
 - [`accountingListAccountingQuotes`](docs/sdks/quote/README.md#listaccountingquotes) - List all quotes
 - [`accountingListAccountingSalesorders`](docs/sdks/accounting/README.md#listaccountingsalesorders) - List all salesorders
 - [`accountingListAccountingSalesorders`](docs/sdks/salesorder/README.md#listaccountingsalesorders) - List all salesorders
+- [`accountingListAccountingSalesreceipts`](docs/sdks/accounting/README.md#listaccountingsalesreceipts) - List all salesreceipts
+- [`accountingListAccountingSalesreceipts`](docs/sdks/salesreceipt/README.md#listaccountingsalesreceipts) - List all salesreceipts
 - [`accountingListAccountingTaxrates`](docs/sdks/accounting/README.md#listaccountingtaxrates) - List all taxrates
 - [`accountingListAccountingTaxrates`](docs/sdks/taxrate/README.md#listaccountingtaxrates) - List all taxrates
 - [`accountingListAccountingTransactions`](docs/sdks/accounting/README.md#listaccountingtransactions) - List all transactions
@@ -750,6 +764,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingPatchAccountingCreditmemo`](docs/sdks/creditmemo/README.md#patchaccountingcreditmemo) - Update a creditmemo
 - [`accountingPatchAccountingExpense`](docs/sdks/accounting/README.md#patchaccountingexpense) - Update an expense
 - [`accountingPatchAccountingExpense`](docs/sdks/expense/README.md#patchaccountingexpense) - Update an expense
+- [`accountingPatchAccountingExpensereport`](docs/sdks/accounting/README.md#patchaccountingexpensereport) - Update an expensereport
+- [`accountingPatchAccountingExpensereport`](docs/sdks/expensereport/README.md#patchaccountingexpensereport) - Update an expensereport
 - [`accountingPatchAccountingInvoice`](docs/sdks/accounting/README.md#patchaccountinginvoice) - Update an invoice
 - [`accountingPatchAccountingInvoice`](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update an invoice
 - [`accountingPatchAccountingJournal`](docs/sdks/accounting/README.md#patchaccountingjournal) - Update a journal
@@ -788,6 +804,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingRemoveAccountingCreditmemo`](docs/sdks/creditmemo/README.md#removeaccountingcreditmemo) - Remove a creditmemo
 - [`accountingRemoveAccountingExpense`](docs/sdks/accounting/README.md#removeaccountingexpense) - Remove an expense
 - [`accountingRemoveAccountingExpense`](docs/sdks/expense/README.md#removeaccountingexpense) - Remove an expense
+- [`accountingRemoveAccountingExpensereport`](docs/sdks/accounting/README.md#removeaccountingexpensereport) - Remove an expensereport
+- [`accountingRemoveAccountingExpensereport`](docs/sdks/expensereport/README.md#removeaccountingexpensereport) - Remove an expensereport
 - [`accountingRemoveAccountingInvoice`](docs/sdks/accounting/README.md#removeaccountinginvoice) - Remove an invoice
 - [`accountingRemoveAccountingInvoice`](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove an invoice
 - [`accountingRemoveAccountingJournal`](docs/sdks/accounting/README.md#removeaccountingjournal) - Remove a journal
@@ -826,6 +844,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingUpdateAccountingCreditmemo`](docs/sdks/creditmemo/README.md#updateaccountingcreditmemo) - Update a creditmemo
 - [`accountingUpdateAccountingExpense`](docs/sdks/accounting/README.md#updateaccountingexpense) - Update an expense
 - [`accountingUpdateAccountingExpense`](docs/sdks/expense/README.md#updateaccountingexpense) - Update an expense
+- [`accountingUpdateAccountingExpensereport`](docs/sdks/accounting/README.md#updateaccountingexpensereport) - Update an expensereport
+- [`accountingUpdateAccountingExpensereport`](docs/sdks/expensereport/README.md#updateaccountingexpensereport) - Update an expensereport
 - [`accountingUpdateAccountingInvoice`](docs/sdks/accounting/README.md#updateaccountinginvoice) - Update an invoice
 - [`accountingUpdateAccountingInvoice`](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update an invoice
 - [`accountingUpdateAccountingJournal`](docs/sdks/accounting/README.md#updateaccountingjournal) - Update a journal
@@ -1006,6 +1026,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`atsGetAtsActivity`](docs/sdks/ats/README.md#getatsactivity) - Retrieve an activity
 - [`atsGetAtsApplication`](docs/sdks/application/README.md#getatsapplication) - Retrieve an application
 - [`atsGetAtsApplication`](docs/sdks/ats/README.md#getatsapplication) - Retrieve an application
+- [`atsGetAtsApplicationstatus`](docs/sdks/applicationstatus/README.md#getatsapplicationstatus) - Retrieve an applicationstatus
+- [`atsGetAtsApplicationstatus`](docs/sdks/ats/README.md#getatsapplicationstatus) - Retrieve an applicationstatus
 - [`atsGetAtsCandidate`](docs/sdks/ats/README.md#getatscandidate) - Retrieve a candidate
 - [`atsGetAtsCandidate`](docs/sdks/candidate/README.md#getatscandidate) - Retrieve a candidate
 - [`atsGetAtsCompany`](docs/sdks/ats/README.md#getatscompany) - Retrieve a company
@@ -1550,22 +1572,32 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`genaiGetGenaiAgent`](docs/sdks/genai/README.md#getgenaiagent) - Retrieve an agent
 - [`genaiGetGenaiModel`](docs/sdks/genai/README.md#getgenaimodel) - Retrieve a model
 - [`genaiGetGenaiModel`](docs/sdks/model/README.md#getgenaimodel) - Retrieve a model
+- [`genaiGetGenaiSkill`](docs/sdks/genai/README.md#getgenaiskill) - Retrieve a skill
+- [`genaiGetGenaiSkill`](docs/sdks/skill/README.md#getgenaiskill) - Retrieve a skill
 - [`genaiGetGenaiTask`](docs/sdks/genai/README.md#getgenaitask) - Retrieve a task
 - [`genaiGetGenaiTask`](docs/sdks/task/README.md#getgenaitask) - Retrieve a task
 - [`genaiListGenaiAgents`](docs/sdks/agent/README.md#listgenaiagents) - List all agents
 - [`genaiListGenaiAgents`](docs/sdks/genai/README.md#listgenaiagents) - List all agents
 - [`genaiListGenaiModels`](docs/sdks/genai/README.md#listgenaimodels) - List all models
 - [`genaiListGenaiModels`](docs/sdks/model/README.md#listgenaimodels) - List all models
+- [`genaiListGenaiSkills`](docs/sdks/genai/README.md#listgenaiskills) - List all skills
+- [`genaiListGenaiSkills`](docs/sdks/skill/README.md#listgenaiskills) - List all skills
 - [`genaiListGenaiTasks`](docs/sdks/genai/README.md#listgenaitasks) - List all tasks
 - [`genaiListGenaiTasks`](docs/sdks/task/README.md#listgenaitasks) - List all tasks
 - [`genaiPatchGenaiAgent`](docs/sdks/agent/README.md#patchgenaiagent) - Update an agent
 - [`genaiPatchGenaiAgent`](docs/sdks/genai/README.md#patchgenaiagent) - Update an agent
+- [`genaiPatchGenaiTask`](docs/sdks/genai/README.md#patchgenaitask) - Update a task
+- [`genaiPatchGenaiTask`](docs/sdks/task/README.md#patchgenaitask) - Update a task
 - [`genaiRemoveGenaiAgent`](docs/sdks/agent/README.md#removegenaiagent) - Remove an agent
 - [`genaiRemoveGenaiAgent`](docs/sdks/genai/README.md#removegenaiagent) - Remove an agent
+- [`genaiRemoveGenaiSkill`](docs/sdks/genai/README.md#removegenaiskill) - Remove a skill
+- [`genaiRemoveGenaiSkill`](docs/sdks/skill/README.md#removegenaiskill) - Remove a skill
 - [`genaiRemoveGenaiTask`](docs/sdks/genai/README.md#removegenaitask) - Remove a task
 - [`genaiRemoveGenaiTask`](docs/sdks/task/README.md#removegenaitask) - Remove a task
 - [`genaiUpdateGenaiAgent`](docs/sdks/agent/README.md#updategenaiagent) - Update an agent
 - [`genaiUpdateGenaiAgent`](docs/sdks/genai/README.md#updategenaiagent) - Update an agent
+- [`genaiUpdateGenaiTask`](docs/sdks/genai/README.md#updategenaitask) - Update a task
+- [`genaiUpdateGenaiTask`](docs/sdks/task/README.md#updategenaitask) - Update a task
 - [`groupCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group
 - [`groupCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 - [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group
@@ -1604,6 +1636,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisCreateHrisDeduction`](docs/sdks/hris/README.md#createhrisdeduction) - Create a deduction
 - [`hrisCreateHrisDevice`](docs/sdks/device/README.md#createhrisdevice) - Create a device
 - [`hrisCreateHrisDevice`](docs/sdks/hris/README.md#createhrisdevice) - Create a device
+- [`hrisCreateHrisEarning`](docs/sdks/earning/README.md#createhrisearning) - Create an earning
+- [`hrisCreateHrisEarning`](docs/sdks/hris/README.md#createhrisearning) - Create an earning
 - [`hrisCreateHrisEmployee`](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
 - [`hrisCreateHrisEmployee`](docs/sdks/hris/README.md#createhrisemployee) - Create an employee
 - [`hrisCreateHrisTimeoff`](docs/sdks/hris/README.md#createhristimeoff) - Create a timeoff
@@ -1620,8 +1654,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisDeduction`](docs/sdks/hris/README.md#gethrisdeduction) - Retrieve a deduction
 - [`hrisGetHrisDevice`](docs/sdks/device/README.md#gethrisdevice) - Retrieve a device
 - [`hrisGetHrisDevice`](docs/sdks/hris/README.md#gethrisdevice) - Retrieve a device
+- [`hrisGetHrisEarning`](docs/sdks/earning/README.md#gethrisearning) - Retrieve an earning
+- [`hrisGetHrisEarning`](docs/sdks/hris/README.md#gethrisearning) - Retrieve an earning
 - [`hrisGetHrisEmployee`](docs/sdks/employee/README.md#gethrisemployee) - Retrieve an employee
 - [`hrisGetHrisEmployee`](docs/sdks/hris/README.md#gethrisemployee) - Retrieve an employee
+- [`hrisGetHrisPaycode`](docs/sdks/hris/README.md#gethrispaycode) - Retrieve a paycode
+- [`hrisGetHrisPaycode`](docs/sdks/paycode/README.md#gethrispaycode) - Retrieve a paycode
+- [`hrisGetHrisPayroll`](docs/sdks/hris/README.md#gethrispayroll) - Retrieve a payroll
+- [`hrisGetHrisPayroll`](docs/sdks/payroll/README.md#gethrispayroll) - Retrieve a payroll
 - [`hrisGetHrisPayslip`](docs/sdks/hris/README.md#gethrispayslip) - Retrieve a payslip
 - [`hrisGetHrisPayslip`](docs/sdks/payslip/README.md#gethrispayslip) - Retrieve a payslip
 - [`hrisGetHrisTimeoff`](docs/sdks/hris/README.md#gethristimeoff) - Retrieve a timeoff
@@ -1638,8 +1678,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisDeductions`](docs/sdks/hris/README.md#listhrisdeductions) - List all deductions
 - [`hrisListHrisDevices`](docs/sdks/device/README.md#listhrisdevices) - List all devices
 - [`hrisListHrisDevices`](docs/sdks/hris/README.md#listhrisdevices) - List all devices
+- [`hrisListHrisEarnings`](docs/sdks/earning/README.md#listhrisearnings) - List all earnings
+- [`hrisListHrisEarnings`](docs/sdks/hris/README.md#listhrisearnings) - List all earnings
 - [`hrisListHrisEmployees`](docs/sdks/employee/README.md#listhrisemployees) - List all employees
 - [`hrisListHrisEmployees`](docs/sdks/hris/README.md#listhrisemployees) - List all employees
+- [`hrisListHrisPaycodes`](docs/sdks/hris/README.md#listhrispaycodes) - List all paycodes
+- [`hrisListHrisPaycodes`](docs/sdks/paycode/README.md#listhrispaycodes) - List all paycodes
+- [`hrisListHrisPayrolls`](docs/sdks/hris/README.md#listhrispayrolls) - List all payrolls
+- [`hrisListHrisPayrolls`](docs/sdks/payroll/README.md#listhrispayrolls) - List all payrolls
 - [`hrisListHrisPayslips`](docs/sdks/hris/README.md#listhrispayslips) - List all payslips
 - [`hrisListHrisPayslips`](docs/sdks/payslip/README.md#listhrispayslips) - List all payslips
 - [`hrisListHrisTimeoffs`](docs/sdks/hris/README.md#listhristimeoffs) - List all timeoffs
@@ -1656,6 +1702,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisPatchHrisDeduction`](docs/sdks/hris/README.md#patchhrisdeduction) - Update a deduction
 - [`hrisPatchHrisDevice`](docs/sdks/device/README.md#patchhrisdevice) - Update a device
 - [`hrisPatchHrisDevice`](docs/sdks/hris/README.md#patchhrisdevice) - Update a device
+- [`hrisPatchHrisEarning`](docs/sdks/earning/README.md#patchhrisearning) - Update an earning
+- [`hrisPatchHrisEarning`](docs/sdks/hris/README.md#patchhrisearning) - Update an earning
 - [`hrisPatchHrisEmployee`](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
 - [`hrisPatchHrisEmployee`](docs/sdks/hris/README.md#patchhrisemployee) - Update an employee
 - [`hrisPatchHrisTimeoff`](docs/sdks/hris/README.md#patchhristimeoff) - Update a timeoff
@@ -1672,6 +1720,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisRemoveHrisDeduction`](docs/sdks/hris/README.md#removehrisdeduction) - Remove a deduction
 - [`hrisRemoveHrisDevice`](docs/sdks/device/README.md#removehrisdevice) - Remove a device
 - [`hrisRemoveHrisDevice`](docs/sdks/hris/README.md#removehrisdevice) - Remove a device
+- [`hrisRemoveHrisEarning`](docs/sdks/earning/README.md#removehrisearning) - Remove an earning
+- [`hrisRemoveHrisEarning`](docs/sdks/hris/README.md#removehrisearning) - Remove an earning
 - [`hrisRemoveHrisEmployee`](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
 - [`hrisRemoveHrisEmployee`](docs/sdks/hris/README.md#removehrisemployee) - Remove an employee
 - [`hrisRemoveHrisTimeoff`](docs/sdks/hris/README.md#removehristimeoff) - Remove a timeoff
@@ -1688,12 +1738,26 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisUpdateHrisDeduction`](docs/sdks/hris/README.md#updatehrisdeduction) - Update a deduction
 - [`hrisUpdateHrisDevice`](docs/sdks/device/README.md#updatehrisdevice) - Update a device
 - [`hrisUpdateHrisDevice`](docs/sdks/hris/README.md#updatehrisdevice) - Update a device
+- [`hrisUpdateHrisEarning`](docs/sdks/earning/README.md#updatehrisearning) - Update an earning
+- [`hrisUpdateHrisEarning`](docs/sdks/hris/README.md#updatehrisearning) - Update an earning
 - [`hrisUpdateHrisEmployee`](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
 - [`hrisUpdateHrisEmployee`](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
 - [`hrisUpdateHrisTimeoff`](docs/sdks/hris/README.md#updatehristimeoff) - Update a timeoff
 - [`hrisUpdateHrisTimeoff`](docs/sdks/timeoff/README.md#updatehristimeoff) - Update a timeoff
 - [`hrisUpdateHrisTimeshift`](docs/sdks/hris/README.md#updatehristimeshift) - Update a timeshift
 - [`hrisUpdateHrisTimeshift`](docs/sdks/timeshift/README.md#updatehristimeshift) - Update a timeshift
+- [`jobCreateHrisJob`](docs/sdks/hris/README.md#createhrisjob) - Create a job
+- [`jobCreateHrisJob`](docs/sdks/job/README.md#createhrisjob) - Create a job
+- [`jobGetHrisJob`](docs/sdks/hris/README.md#gethrisjob) - Retrieve a job
+- [`jobGetHrisJob`](docs/sdks/job/README.md#gethrisjob) - Retrieve a job
+- [`jobListHrisJobs`](docs/sdks/hris/README.md#listhrisjobs) - List all jobs
+- [`jobListHrisJobs`](docs/sdks/job/README.md#listhrisjobs) - List all jobs
+- [`jobPatchHrisJob`](docs/sdks/hris/README.md#patchhrisjob) - Update a job
+- [`jobPatchHrisJob`](docs/sdks/job/README.md#patchhrisjob) - Update a job
+- [`jobRemoveHrisJob`](docs/sdks/hris/README.md#removehrisjob) - Remove a job
+- [`jobRemoveHrisJob`](docs/sdks/job/README.md#removehrisjob) - Remove a job
+- [`jobUpdateHrisJob`](docs/sdks/hris/README.md#updatehrisjob) - Update a job
+- [`jobUpdateHrisJob`](docs/sdks/job/README.md#updatehrisjob) - Update a job
 - [`kmsCreateKmsComment`](docs/sdks/comment/README.md#createkmscomment) - Create a comment
 - [`kmsCreateKmsComment`](docs/sdks/kms/README.md#createkmscomment) - Create a comment
 - [`kmsCreateKmsPage`](docs/sdks/kms/README.md#createkmspage) - Create a page
@@ -2088,6 +2152,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`scimRemoveScimUsers`](docs/sdks/user/README.md#removescimusers) - Delete user
 - [`scimUpdateScimUsers`](docs/sdks/scim/README.md#updatescimusers) - Update user
 - [`scimUpdateScimUsers`](docs/sdks/user/README.md#updatescimusers) - Update user
+- [`scorecardGetUcScorecard`](docs/sdks/scorecard/README.md#getucscorecard) - Retrieve a scorecard
+- [`scorecardGetUcScorecard`](docs/sdks/uc/README.md#getucscorecard) - Retrieve a scorecard
+- [`scorecardListUcScorecards`](docs/sdks/scorecard/README.md#listucscorecards) - List all scorecards
+- [`scorecardListUcScorecards`](docs/sdks/uc/README.md#listucscorecards) - List all scorecards
 - [`shippingCreateShippingLabel`](docs/sdks/label/README.md#createshippinglabel) - Create a label
 - [`shippingCreateShippingLabel`](docs/sdks/shipping/README.md#createshippinglabel) - Create a label
 - [`shippingCreateShippingRate`](docs/sdks/rate/README.md#createshippingrate) - Create a rate
@@ -2232,29 +2300,35 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`ticketingUpdateTicketingTicket`](docs/sdks/ticketing/README.md#updateticketingticket) - Update a ticket
 - [`ucGetUcCall`](docs/sdks/call/README.md#getuccall) - Retrieve a call
 - [`ucGetUcCall`](docs/sdks/uc/README.md#getuccall) - Retrieve a call
+- [`ucGetUcScorecardtemplate`](docs/sdks/scorecardtemplate/README.md#getucscorecardtemplate) - Retrieve a scorecardtemplate
+- [`ucGetUcScorecardtemplate`](docs/sdks/uc/README.md#getucscorecardtemplate) - Retrieve a scorecardtemplate
 - [`ucListUcCalls`](docs/sdks/call/README.md#listuccalls) - List all calls
 - [`ucListUcCalls`](docs/sdks/uc/README.md#listuccalls) - List all calls
+- [`ucListUcScorecardtemplates`](docs/sdks/scorecardtemplate/README.md#listucscorecardtemplates) - List all scorecardtemplates
+- [`ucListUcScorecardtemplates`](docs/sdks/uc/README.md#listucscorecardtemplates) - List all scorecardtemplates
 - [`unifiedCreateUnifiedConnection`](docs/sdks/connection/README.md#createunifiedconnection) - Create connection
 - [`unifiedCreateUnifiedConnection`](docs/sdks/unified/README.md#createunifiedconnection) - Create connection
+- [`unifiedCreateUnifiedConnectionReauth`](docs/sdks/connection/README.md#createunifiedconnectionreauth) - Create a re-authorization token for a connection
+- [`unifiedCreateUnifiedConnectionReauth`](docs/sdks/unified/README.md#createunifiedconnectionreauth) - Create a re-authorization token for a connection
 - [`unifiedCreateUnifiedEnvironment`](docs/sdks/environment/README.md#createunifiedenvironment) - Create new environments
 - [`unifiedCreateUnifiedEnvironment`](docs/sdks/unified/README.md#createunifiedenvironment) - Create new environments
+- [`unifiedCreateUnifiedSecretsmanager`](docs/sdks/secretsmanager/README.md#createunifiedsecretsmanager) - Create secrets manager
+- [`unifiedCreateUnifiedSecretsmanager`](docs/sdks/unified/README.md#createunifiedsecretsmanager) - Create secrets manager
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/unified/README.md#createunifiedwebhook) - Create webhook subscription
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/webhook/README.md#createunifiedwebhook) - Create webhook subscription
-- [`unifiedCreateUnifiedWorkspaceSecretsmanager`](docs/sdks/secretsmanager/README.md#createunifiedworkspacesecretsmanager) - Create secrets manager
-- [`unifiedCreateUnifiedWorkspaceSecretsmanager`](docs/sdks/unified/README.md#createunifiedworkspacesecretsmanager) - Create secrets manager
 - [`unifiedGetUnifiedApicall`](docs/sdks/apicall/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 - [`unifiedGetUnifiedApicall`](docs/sdks/unified/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 - [`unifiedGetUnifiedConnection`](docs/sdks/connection/README.md#getunifiedconnection) - Retrieve connection
 - [`unifiedGetUnifiedConnection`](docs/sdks/unified/README.md#getunifiedconnection) - Retrieve connection
-- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Authorize new connection
-- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Authorize new connection
-- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/unified/README.md#getunifiedintegrationauth) - Authorize new connection
+- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Authorize or re-authorize a connection
+- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Authorize or re-authorize a connection
+- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/unified/README.md#getunifiedintegrationauth) - Authorize or re-authorize a connection
 - [`unifiedGetUnifiedIssue`](docs/sdks/issue/README.md#getunifiedissue) - Retrieve support issue
 - [`unifiedGetUnifiedIssue`](docs/sdks/unified/README.md#getunifiedissue) - Retrieve support issue
+- [`unifiedGetUnifiedSecretsmanager`](docs/sdks/secretsmanager/README.md#getunifiedsecretsmanager) - Retrieve secrets manager
+- [`unifiedGetUnifiedSecretsmanager`](docs/sdks/unified/README.md#getunifiedsecretsmanager) - Retrieve secrets manager
 - [`unifiedGetUnifiedWebhook`](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 - [`unifiedGetUnifiedWebhook`](docs/sdks/webhook/README.md#getunifiedwebhook) - Retrieve webhook by its ID
-- [`unifiedGetUnifiedWorkspaceSecretsmanager`](docs/sdks/secretsmanager/README.md#getunifiedworkspacesecretsmanager) - Retrieve secrets manager
-- [`unifiedGetUnifiedWorkspaceSecretsmanager`](docs/sdks/unified/README.md#getunifiedworkspacesecretsmanager) - Retrieve secrets manager
 - [`unifiedListUnifiedApicalls`](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls
 - [`unifiedListUnifiedApicalls`](docs/sdks/unified/README.md#listunifiedapicalls) - Returns API Calls
 - [`unifiedListUnifiedConnections`](docs/sdks/connection/README.md#listunifiedconnections) - List all connections
@@ -2269,10 +2343,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedListUnifiedIssues`](docs/sdks/unified/README.md#listunifiedissues) - List support issues
 - [`unifiedListUnifiedNotifications`](docs/sdks/notification/README.md#listunifiednotifications) - List event notifications
 - [`unifiedListUnifiedNotifications`](docs/sdks/unified/README.md#listunifiednotifications) - List event notifications
+- [`unifiedListUnifiedSecretsmanagerInstructions`](docs/sdks/secretsmanager/README.md#listunifiedsecretsmanagerinstructions) - List secrets manager setup instructions
+- [`unifiedListUnifiedSecretsmanagerInstructions`](docs/sdks/unified/README.md#listunifiedsecretsmanagerinstructions) - List secrets manager setup instructions
+- [`unifiedListUnifiedSecretsmanagers`](docs/sdks/secretsmanager/README.md#listunifiedsecretsmanagers) - List secrets managers
+- [`unifiedListUnifiedSecretsmanagers`](docs/sdks/unified/README.md#listunifiedsecretsmanagers) - List secrets managers
+- [`unifiedListUnifiedSecretsmanagerSecrets`](docs/sdks/secretsmanager/README.md#listunifiedsecretsmanagersecrets) - List secrets in a secrets manager
+- [`unifiedListUnifiedSecretsmanagerSecrets`](docs/sdks/unified/README.md#listunifiedsecretsmanagersecrets) - List secrets in a secrets manager
 - [`unifiedListUnifiedWebhooks`](docs/sdks/unified/README.md#listunifiedwebhooks) - Returns all registered webhooks
 - [`unifiedListUnifiedWebhooks`](docs/sdks/webhook/README.md#listunifiedwebhooks) - Returns all registered webhooks
-- [`unifiedListUnifiedWorkspaceSecretsmanagers`](docs/sdks/secretsmanager/README.md#listunifiedworkspacesecretsmanagers) - List secrets managers
-- [`unifiedListUnifiedWorkspaceSecretsmanagers`](docs/sdks/unified/README.md#listunifiedworkspacesecretsmanagers) - List secrets managers
 - [`unifiedPatchUnifiedConnection`](docs/sdks/connection/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedConnection`](docs/sdks/unified/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedWebhook`](docs/sdks/unified/README.md#patchunifiedwebhook) - Update webhook subscription
@@ -2283,10 +2361,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedRemoveUnifiedConnection`](docs/sdks/unified/README.md#removeunifiedconnection) - Remove connection
 - [`unifiedRemoveUnifiedEnvironment`](docs/sdks/environment/README.md#removeunifiedenvironment) - Remove an environment
 - [`unifiedRemoveUnifiedEnvironment`](docs/sdks/unified/README.md#removeunifiedenvironment) - Remove an environment
+- [`unifiedRemoveUnifiedSecretsmanager`](docs/sdks/secretsmanager/README.md#removeunifiedsecretsmanager) - Remove secrets manager
+- [`unifiedRemoveUnifiedSecretsmanager`](docs/sdks/unified/README.md#removeunifiedsecretsmanager) - Remove secrets manager
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/webhook/README.md#removeunifiedwebhook) - Remove webhook subscription
-- [`unifiedRemoveUnifiedWorkspaceSecretsmanager`](docs/sdks/secretsmanager/README.md#removeunifiedworkspacesecretsmanager) - Remove secrets manager
-- [`unifiedRemoveUnifiedWorkspaceSecretsmanager`](docs/sdks/unified/README.md#removeunifiedworkspacesecretsmanager) - Remove secrets manager
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription

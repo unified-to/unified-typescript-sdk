@@ -1,5 +1,7 @@
 # CdpActivationStatus
 
+The current status of the activation
+
 ## Example Usage
 
 ```typescript

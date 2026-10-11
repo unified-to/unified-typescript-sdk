@@ -43,17 +43,35 @@ export type SexualOrientation = OpenEnum<typeof SexualOrientation>;
 
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User =
   {
+    /**
+     * 'M3',
+     */
     jobLevel?: string | undefined;
+    /**
+     * 'People Manager',
+     */
     peopleManagerReviews?: string | undefined;
+    /**
+     * 'Ontario',
+     */
     remoteWorkLocation?: string | undefined;
+    /**
+     * '130000',
+     */
     salaryInformation?: string | undefined;
     subDepartments?: string | undefined;
+    /**
+     * "1987-10-06",
+     */
     birthDate?: Date | undefined;
     ethnicity?: Ethnicity | undefined;
     gender?:
       | PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender
       | undefined;
     sexualOrientation?: SexualOrientation | undefined;
+    /**
+     * "2022-03-08",
+     */
     startDate?: Date | undefined;
   };
 

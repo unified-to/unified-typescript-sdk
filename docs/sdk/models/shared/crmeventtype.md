@@ -1,5 +1,7 @@
 # CrmEventType
 
+The type of event
+
 ## Example Usage
 
 ```typescript

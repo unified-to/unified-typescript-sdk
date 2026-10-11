@@ -1,5 +1,7 @@
 # Reason
 
+Why the refund was issued
+
 ## Example Usage
 
 ```typescript

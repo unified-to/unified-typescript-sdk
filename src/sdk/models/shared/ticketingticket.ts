@@ -21,22 +21,52 @@ export type TicketingTicket = {
    * Array of attachment IDs retrieved from StorageFile.Get endpoint
    */
   attachmentIds?: Array<string> | undefined;
+  /**
+   * (reference to AccountingCategory)
+   */
   categoryId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   closedAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   customerId?: string | undefined;
+  /**
+   * Full description of ticket issue
+   */
   description?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   dueAt?: Date | undefined;
   id?: string | undefined;
   priority?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Channel where ticket was originally submitted
+   */
   source?: string | undefined;
+  /**
+   * Reference to source-specific object
+   */
   sourceRef?: string | undefined;
   status?: TicketingTicketStatus | undefined;
+  /**
+   * short description of the ticket
+   */
   subject?: string | undefined;
   tags?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   url?: string | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

@@ -18,6 +18,10 @@ export type Role = OpenEnum<typeof Role>;
 
 export type GenaiContent = {
   content: string;
+  /**
+   * Images for the model to evaluate with this message, as base64 data URLs (data:image/png;base64,...). Only for models with has_vision.
+   */
+  images?: Array<string> | undefined;
   role?: Role | undefined;
 };
 
@@ -35,11 +39,13 @@ export const GenaiContent$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   content: z.string(),
+  images: z.array(z.string()).optional(),
   role: Role$inboundSchema.optional(),
 });
 /** @internal */
 export type GenaiContent$Outbound = {
   content: string;
+  images?: Array<string> | undefined;
   role?: string | undefined;
 };
 
@@ -50,6 +56,7 @@ export const GenaiContent$outboundSchema: z.ZodType<
   GenaiContent
 > = z.object({
   content: z.string(),
+  images: z.array(z.string()).optional(),
   role: Role$outboundSchema.optional(),
 });
 

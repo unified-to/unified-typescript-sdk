@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation
+ */
 export const HrisTaxonomyType = {
   Skill: "SKILL",
   Knowledge: "KNOWLEDGE",
@@ -20,6 +23,9 @@ export const HrisTaxonomyType = {
   Holiday: "HOLIDAY",
   Leave: "LEAVE",
 } as const;
+/**
+ * the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation
+ */
 export type HrisTaxonomyType = OpenEnum<typeof HrisTaxonomyType>;
 
 export type HrisTaxonomy = {
@@ -27,22 +33,49 @@ export type HrisTaxonomy = {
    * synonyms / alternative labels
    */
   alternativeNames?: Array<string> | undefined;
+  /**
+   * 2nd-level grouping
+   */
   category?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   description?: string | undefined;
+  /**
+   * 1st-level grouping (broadest)
+   */
   domain?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * the preferred label of the skill/role
+   */
   name?: string | undefined;
+  /**
+   * id of the parent taxonomy item, for providers exposing arbitrary-depth trees
+   */
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * ids of hris_taxonomy items of type ROLE that this skill relates to
    */
   roleIds?: Array<string> | undefined;
+  /**
+   * 3rd-level grouping
+   */
   subcategory?: string | undefined;
+  /**
+   * the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation
+   */
   type?: HrisTaxonomyType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * external reference URL for this item
+   */
   url?: string | undefined;
 };
 

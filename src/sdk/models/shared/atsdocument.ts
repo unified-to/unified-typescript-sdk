@@ -23,15 +23,30 @@ export type AtsDocumentType = OpenEnum<typeof AtsDocumentType>;
 export type AtsDocument = {
   applicationId?: string | undefined;
   candidateId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * base64 encoded file contents used for create/update actions. Use this field to send an attachment e.g. a resume, a profile, or other text content
+   */
   documentData?: string | undefined;
+  /**
+   * This link expires after 1 hour.
+   */
   documentUrl?: string | undefined;
   filename?: string | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: AtsDocumentType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

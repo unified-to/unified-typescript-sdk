@@ -64,6 +64,9 @@ export type AtsMetadata = {
   format?: AtsMetadataFormat | undefined;
   id?: string | undefined;
   namespace?: string | undefined;
+  /**
+   * Actual textual value of the slug
+   */
   slug?: string | undefined;
   value?:
     | { [k: string]: any }

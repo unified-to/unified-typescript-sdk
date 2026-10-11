@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
@@ -28,7 +29,39 @@ export type AtsJobQuestionType = OpenEnum<typeof AtsJobQuestionType>;
 export type AtsJobQuestion = {
   description?: string | undefined;
   id?: string | undefined;
+  /**
+   * latest allowed answer (DATE) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  maxAt?: Date | undefined;
+  /**
+   * maximum answer length (TEXT)
+   */
+  maxLength?: number | undefined;
+  /**
+   * maximum answer value (NUMBER)
+   */
+  maxValue?: number | undefined;
+  /**
+   * earliest allowed answer (DATE) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  minAt?: Date | undefined;
+  /**
+   * minimum answer length (TEXT)
+   */
+  minLength?: number | undefined;
+  /**
+   * minimum answer value (NUMBER)
+   */
+  minValue?: number | undefined;
   options?: Array<string> | undefined;
+  /**
+   * only ask this question when the parent question's answer is one of these
+   */
+  parentAnswerValues?: Array<string> | undefined;
+  /**
+   * id of the question in this job's questions list that this question depends on
+   */
+  parentId?: string | undefined;
   prompt?: string | undefined;
   question: string;
   required?: boolean | undefined;
@@ -56,17 +89,46 @@ export const AtsJobQuestion$inboundSchema: z.ZodType<
 > = z.object({
   description: z.string().optional(),
   id: z.string().optional(),
+  max_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  max_length: z.number().optional(),
+  max_value: z.number().optional(),
+  min_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  min_length: z.number().optional(),
+  min_value: z.number().optional(),
   options: z.array(z.string()).optional(),
+  parent_answer_values: z.array(z.string()).optional(),
+  parent_id: z.string().optional(),
   prompt: z.string().optional(),
   question: z.string(),
   required: z.boolean().optional(),
   type: AtsJobQuestionType$inboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    "max_at": "maxAt",
+    "max_length": "maxLength",
+    "max_value": "maxValue",
+    "min_at": "minAt",
+    "min_length": "minLength",
+    "min_value": "minValue",
+    "parent_answer_values": "parentAnswerValues",
+    "parent_id": "parentId",
+  });
 });
 /** @internal */
 export type AtsJobQuestion$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
+  max_at?: string | undefined;
+  max_length?: number | undefined;
+  max_value?: number | undefined;
+  min_at?: string | undefined;
+  min_length?: number | undefined;
+  min_value?: number | undefined;
   options?: Array<string> | undefined;
+  parent_answer_values?: Array<string> | undefined;
+  parent_id?: string | undefined;
   prompt?: string | undefined;
   question: string;
   required?: boolean | undefined;
@@ -81,11 +143,30 @@ export const AtsJobQuestion$outboundSchema: z.ZodType<
 > = z.object({
   description: z.string().optional(),
   id: z.string().optional(),
+  maxAt: z.date().transform(v => v.toISOString()).optional(),
+  maxLength: z.number().optional(),
+  maxValue: z.number().optional(),
+  minAt: z.date().transform(v => v.toISOString()).optional(),
+  minLength: z.number().optional(),
+  minValue: z.number().optional(),
   options: z.array(z.string()).optional(),
+  parentAnswerValues: z.array(z.string()).optional(),
+  parentId: z.string().optional(),
   prompt: z.string().optional(),
   question: z.string(),
   required: z.boolean().optional(),
   type: AtsJobQuestionType$outboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    maxAt: "max_at",
+    maxLength: "max_length",
+    maxValue: "max_value",
+    minAt: "min_at",
+    minLength: "min_length",
+    minValue: "min_value",
+    parentAnswerValues: "parent_answer_values",
+    parentId: "parent_id",
+  });
 });
 
 export function atsJobQuestionToJSON(atsJobQuestion: AtsJobQuestion): string {

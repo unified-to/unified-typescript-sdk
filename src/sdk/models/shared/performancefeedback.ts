@@ -10,18 +10,33 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * praise/recognition, constructive feedback, or a response to a feedback request
+ */
 export const PerformanceFeedbackType = {
   Praise: "PRAISE",
   Feedback: "FEEDBACK",
   Requested: "REQUESTED",
   Other: "OTHER",
 } as const;
+/**
+ * praise/recognition, constructive feedback, or a response to a feedback request
+ */
 export type PerformanceFeedbackType = OpenEnum<typeof PerformanceFeedbackType>;
 
 export type PerformanceFeedback = {
+  /**
+   * the HR Employee that gave this feedback (reference to HrisEmployee)
+   */
   authorUserId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   id?: string | undefined;
+  /**
+   * true when publicly visible (e.g. praise wall); false when private or manager-only
+   */
   isVisible?: boolean | undefined;
   message?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -29,8 +44,17 @@ export type PerformanceFeedback = {
    * badges or company values attached to this feedback
    */
   tags?: Array<string> | undefined;
+  /**
+   * praise/recognition, constructive feedback, or a response to a feedback request
+   */
   type?: PerformanceFeedbackType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * the HR Employee that this feedback is about (reference to HrisEmployee)
+   */
   userId: string;
 };
 

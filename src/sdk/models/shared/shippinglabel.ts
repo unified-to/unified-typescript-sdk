@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Format of the label (PDF, PNG, ZPL, EPL2)
+ */
 export const LabelFormat = {
   Pdf: "PDF",
   Png: "PNG",
@@ -20,8 +23,14 @@ export const LabelFormat = {
   Png4X6: "PNG_4X6",
   Png4X8: "PNG_4X8",
 } as const;
+/**
+ * Format of the label (PDF, PNG, ZPL, EPL2)
+ */
 export type LabelFormat = OpenEnum<typeof LabelFormat>;
 
+/**
+ * Status of the label
+ */
 export const ShippingLabelStatus = {
   Pending: "PENDING",
   Processing: "PROCESSING",
@@ -38,22 +47,64 @@ export const ShippingLabelStatus = {
   CustomsClearance: "CUSTOMS_CLEARANCE",
   ExceptionResolved: "EXCEPTION_RESOLVED",
 } as const;
+/**
+ * Status of the label
+ */
 export type ShippingLabelStatus = OpenEnum<typeof ShippingLabelStatus>;
 
 export type ShippingLabel = {
+  /**
+   * The date that this label object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * Unique identifier for this label object
+   */
   id?: string | undefined;
+  /**
+   * Whether label has been voided
+   */
   isVoided?: boolean | undefined;
+  /**
+   * Cost to purchase label
+   */
   labelCost?: number | undefined;
   labelCostCurrency?: string | undefined;
+  /**
+   * Format of the label (PDF, PNG, ZPL, EPL2)
+   */
   labelFormat?: LabelFormat | undefined;
+  /**
+   * URL to download the label
+   */
   labelUrl?: string | undefined;
+  /**
+   * Rate used for this label; points to ShippingRate
+   */
   rateId?: string | undefined;
+  /**
+   * The raw data returned by the integration for this label
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * Service code used
+   */
   serviceCode?: string | undefined;
+  /**
+   * Reference to the shipment
+   */
   shipmentId?: string | undefined;
+  /**
+   * Status of the label
+   */
   status?: ShippingLabelStatus | undefined;
+  /**
+   * Tracking number for the shipment
+   */
   trackingNumber?: string | undefined;
+  /**
+   * The last date that this label object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

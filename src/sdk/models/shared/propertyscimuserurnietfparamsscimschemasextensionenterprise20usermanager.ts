@@ -25,12 +25,24 @@ export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMan
  */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager =
   {
+    /**
+     * The URI of the SCIM resource representing the User's manager.  RECOMMENDED.
+     */
     dollarRef?: string | undefined;
+    /**
+     * The displayName of the user's manager.  This attribute is OPTIONAL, and mutability is "readOnly".
+     */
     displayName?: string | undefined;
+    /**
+     * alias for value?
+     */
     managerId?: string | undefined;
     type?:
       | PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
       | undefined;
+    /**
+     * The "id" of the SCIM resource representing the user's manager.  RECOMMENDED.
+     */
     value?: string | undefined;
   };
 

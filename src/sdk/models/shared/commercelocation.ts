@@ -40,6 +40,9 @@ export type LocationType = OpenEnum<typeof LocationType>;
 export type CommerceLocation = {
   address?: PropertyCommerceLocationAddress | undefined;
   categories?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
@@ -58,6 +61,9 @@ export type CommerceLocation = {
   raw?: { [k: string]: any } | undefined;
   reviewCount?: number | undefined;
   telephones?: Array<CommerceTelephone> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };

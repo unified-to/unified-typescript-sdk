@@ -11,6 +11,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * The note object, when type = note
  */
 export type PropertyCrmEventNote = {
+  /**
+   * The event note's description
+   */
   description?: string | undefined;
   title?: string | undefined;
 };

@@ -19,6 +19,8 @@ export const PatchHrisGroupQueryParamFields = {
   ManagerIds: "manager_ids",
   IsActive: "is_active",
   CompanyId: "company_id",
+  PayFrequency: "pay_frequency",
+  NextPaidAt: "next_paid_at",
   Raw: "raw",
 } as const;
 export type PatchHrisGroupQueryParamFields = ClosedEnum<

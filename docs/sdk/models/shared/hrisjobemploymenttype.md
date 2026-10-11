@@ -1,0 +1,17 @@
+# HrisJobEmploymentType
+
+## Example Usage
+
+```typescript
+import { HrisJobEmploymentType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisJobEmploymentType = "FREELANCE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
+```
+
+## Values
+
+```typescript
+"FULL_TIME" | "PART_TIME" | "CONTRACTOR" | "INTERN" | "CONSULTANT" | "VOLUNTEER" | "CASUAL" | "SEASONAL" | "FREELANCE" | "OTHER" | Unrecognized<string>
+```

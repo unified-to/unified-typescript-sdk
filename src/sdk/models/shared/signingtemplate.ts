@@ -9,13 +9,37 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type SigningTemplate = {
+  /**
+   * The date that this template was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * User who created the template
+   */
   creatorId?: string | undefined;
+  /**
+   * Template description
+   */
   description?: string | undefined;
+  /**
+   * Unique identifier for this template
+   */
   id?: string | undefined;
+  /**
+   * Whether the template is active/available
+   */
   isActive?: boolean | undefined;
+  /**
+   * Template name
+   */
   name?: string | undefined;
+  /**
+   * The raw data returned by the integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The last date that this template was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 

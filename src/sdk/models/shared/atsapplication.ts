@@ -48,23 +48,50 @@ export type AtsApplicationStatus = OpenEnum<typeof AtsApplicationStatus>;
 
 export type AtsApplication = {
   answers?: Array<AtsApplicationAnswer> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   appliedAt?: Date | undefined;
   candidateId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   hiredAt?: Date | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
   offers?: Array<AtsOffer> | undefined;
+  /**
+   * The integration's original status.  Mostly used to have your customers chose the application status/stage so that your software can trigger an event.
+   */
   originalStatus?: string | undefined;
+  /**
+   * The provider's secondary/sub status, when distinct from original_status (e.g. UKG Ready hiring_stage)
+   */
   originalSubstatus?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   rejectedAt?: Date | undefined;
   rejectedReason?: string | undefined;
   source?: string | undefined;
   status?: AtsApplicationStatus | undefined;
+  /**
+   * Application personal summary (e.g. Pinpoint Personal Summary)
+   */
   summary?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * HR user/employee ID (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 

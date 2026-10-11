@@ -16,5 +16,5 @@ let value: PropertyAdsCampaignTargetingOptimization = {};
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | `advantageAudience`                               | *boolean*                                         | :heavy_minus_sign:                                | N/A                                               |
 | `advantagePlacements`                             | *boolean*                                         | :heavy_minus_sign:                                | N/A                                               |
-| `mode`                                            | [shared.Mode](../../../sdk/models/shared/mode.md) | :heavy_minus_sign:                                | N/A                                               |
+| `mode`                                            | [shared.Mode](../../../sdk/models/shared/mode.md) | :heavy_minus_sign:                                | Google: bid_only falsetrue                        |
 | `targetingOptimizationExpansionAll`               | *boolean*                                         | :heavy_minus_sign:                                | N/A                                               |

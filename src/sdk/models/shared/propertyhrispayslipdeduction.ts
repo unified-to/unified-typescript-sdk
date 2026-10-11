@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
+ */
 export const PropertyHrisPayslipDeductionCoverageLevel = {
   EmployeeOnly: "EMPLOYEE_ONLY",
   EmployeeSpouse: "EMPLOYEE_SPOUSE",
@@ -19,10 +22,24 @@ export const PropertyHrisPayslipDeductionCoverageLevel = {
   Family: "FAMILY",
   Other: "OTHER",
 } as const;
+/**
+ * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
+ */
 export type PropertyHrisPayslipDeductionCoverageLevel = OpenEnum<
   typeof PropertyHrisPayslipDeductionCoverageLevel
 >;
 
+export const PropertyHrisPayslipDeductionEmployerType = {
+  Percentage: "PERCENTAGE",
+  Fixed: "FIXED",
+} as const;
+export type PropertyHrisPayslipDeductionEmployerType = OpenEnum<
+  typeof PropertyHrisPayslipDeductionEmployerType
+>;
+
+/**
+ * Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+ */
 export const PropertyHrisPayslipDeductionFrequency = {
   OneTime: "ONE_TIME",
   Day: "DAY",
@@ -31,9 +48,32 @@ export const PropertyHrisPayslipDeductionFrequency = {
   Hour: "HOUR",
   Month: "MONTH",
   Week: "WEEK",
+  Biweekly: "BIWEEKLY",
+  Semimonthly: "SEMIMONTHLY",
 } as const;
+/**
+ * Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+ */
 export type PropertyHrisPayslipDeductionFrequency = OpenEnum<
   typeof PropertyHrisPayslipDeductionFrequency
+>;
+
+/**
+ * set when this deduction is a court-ordered garnishment
+ */
+export const PropertyHrisPayslipDeductionGarnishmentType = {
+  ChildSupport: "CHILD_SUPPORT",
+  TaxLevy: "TAX_LEVY",
+  StudentLoan: "STUDENT_LOAN",
+  Creditor: "CREDITOR",
+  Bankruptcy: "BANKRUPTCY",
+  Other: "OTHER",
+} as const;
+/**
+ * set when this deduction is a court-ordered garnishment
+ */
+export type PropertyHrisPayslipDeductionGarnishmentType = OpenEnum<
+  typeof PropertyHrisPayslipDeductionGarnishmentType
 >;
 
 export const PropertyHrisPayslipDeductionType = {
@@ -48,20 +88,64 @@ export type PropertyHrisPayslipDeductionType = OpenEnum<
  * The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
  */
 export type PropertyHrisPayslipDeduction = {
+  /**
+   * percentage or absolute amount (employee's portion)
+   */
   amount?: number | undefined;
   benefitId?: string | undefined;
+  /**
+   * (reference to HrisCompany)
+   */
   companyId?: string | undefined;
+  /**
+   * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
+   */
   coverageLevel?: PropertyHrisPayslipDeductionCoverageLevel | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
+  /**
+   * percentage or absolute amount (employer's portion/match)
+   */
+  employerAmount?: number | undefined;
+  employerType?: PropertyHrisPayslipDeductionEmployerType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   endAt?: Date | undefined;
+  /**
+   * Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+   */
   frequency?: PropertyHrisPayslipDeductionFrequency | undefined;
+  /**
+   * set when this deduction is a court-ordered garnishment
+   */
+  garnishmentType?: PropertyHrisPayslipDeductionGarnishmentType | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * annual maximum employee amount (always money)
+   */
+  maxAmount?: number | undefined;
   notes?: string | undefined;
+  /**
+   * the hris_paycode (deduction code) this deduction uses
+   */
+  paycodeId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   startAt?: Date | undefined;
   type?: PropertyHrisPayslipDeductionType | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
+  /**
+   * employee ID (reference to HrisEmployee)
+   */
   userId?: string | undefined;
 };
 
@@ -73,11 +157,26 @@ export const PropertyHrisPayslipDeductionCoverageLevel$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(PropertyHrisPayslipDeductionCoverageLevel);
 
 /** @internal */
+export const PropertyHrisPayslipDeductionEmployerType$inboundSchema: z.ZodType<
+  PropertyHrisPayslipDeductionEmployerType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyHrisPayslipDeductionEmployerType);
+
+/** @internal */
 export const PropertyHrisPayslipDeductionFrequency$inboundSchema: z.ZodType<
   PropertyHrisPayslipDeductionFrequency,
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(PropertyHrisPayslipDeductionFrequency);
+
+/** @internal */
+export const PropertyHrisPayslipDeductionGarnishmentType$inboundSchema:
+  z.ZodType<
+    PropertyHrisPayslipDeductionGarnishmentType,
+    z.ZodTypeDef,
+    unknown
+  > = openEnums.inboundSchema(PropertyHrisPayslipDeductionGarnishmentType);
 
 /** @internal */
 export const PropertyHrisPayslipDeductionType$inboundSchema: z.ZodType<
@@ -99,12 +198,19 @@ export const PropertyHrisPayslipDeduction$inboundSchema: z.ZodType<
     .optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  employer_amount: z.number().optional(),
+  employer_type: PropertyHrisPayslipDeductionEmployerType$inboundSchema
+    .optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   frequency: PropertyHrisPayslipDeductionFrequency$inboundSchema.optional(),
+  garnishment_type: PropertyHrisPayslipDeductionGarnishmentType$inboundSchema
+    .optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  max_amount: z.number().optional(),
   notes: z.string().optional(),
+  paycode_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -118,8 +224,13 @@ export const PropertyHrisPayslipDeduction$inboundSchema: z.ZodType<
     "company_id": "companyId",
     "coverage_level": "coverageLevel",
     "created_at": "createdAt",
+    "employer_amount": "employerAmount",
+    "employer_type": "employerType",
     "end_at": "endAt",
+    "garnishment_type": "garnishmentType",
     "is_active": "isActive",
+    "max_amount": "maxAmount",
+    "paycode_id": "paycodeId",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",

@@ -10,10 +10,16 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * Google: bid_only falsetrue
+ */
 export const PropertyAdsGroupTargetingOptimizationMode = {
   Targeting: "TARGETING",
   Observation: "OBSERVATION",
 } as const;
+/**
+ * Google: bid_only falsetrue
+ */
 export type PropertyAdsGroupTargetingOptimizationMode = OpenEnum<
   typeof PropertyAdsGroupTargetingOptimizationMode
 >;
@@ -24,6 +30,9 @@ export type PropertyAdsGroupTargetingOptimizationMode = OpenEnum<
 export type PropertyAdsGroupTargetingOptimization = {
   advantageAudience?: boolean | undefined;
   advantagePlacements?: boolean | undefined;
+  /**
+   * Google: bid_only falsetrue
+   */
   mode?: PropertyAdsGroupTargetingOptimizationMode | undefined;
   targetingOptimizationExpansionAll?: boolean | undefined;
 };

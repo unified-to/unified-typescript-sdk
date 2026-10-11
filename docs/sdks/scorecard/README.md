@@ -6,7 +6,9 @@
 
 * [createAtsScorecard](#createatsscorecard) - Create a scorecard
 * [getAtsScorecard](#getatsscorecard) - Retrieve a scorecard
+* [getUcScorecard](#getucscorecard) - Retrieve a scorecard
 * [listAtsScorecards](#listatsscorecards) - List all scorecards
+* [listUcScorecards](#listucscorecards) - List all scorecards
 * [patchAtsScorecard](#patchatsscorecard) - Update a scorecard
 * [removeAtsScorecard](#removeatsscorecard) - Remove a scorecard
 * [updateAtsScorecard](#updateatsscorecard) - Update a scorecard
@@ -32,7 +34,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "091c9532-8ab4-4902-a520-acd54c4e76d1",
+      id: "d677dd7b-1b96-4b5c-8a95-54ed320d2fa1",
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -45,7 +47,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-05-28T05:41:35.701Z"),
+      updatedAt: new Date("2023-06-02T19:29:18.675Z"),
     },
     connectionId: "<id>",
   });
@@ -77,7 +79,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "091c9532-8ab4-4902-a520-acd54c4e76d1",
+      id: "d677dd7b-1b96-4b5c-8a95-54ed320d2fa1",
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -90,7 +92,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-05-28T05:41:35.701Z"),
+      updatedAt: new Date("2023-06-02T19:29:18.675Z"),
     },
     connectionId: "<id>",
   });
@@ -203,6 +205,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getUcScorecard
+
+Retrieve a scorecard
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getUcScorecard" method="get" path="/uc/{connection_id}/scorecard/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.scorecard.getUcScorecard({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { scorecardGetUcScorecard } from "@unified-api/typescript-sdk/funcs/scorecardGetUcScorecard.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await scorecardGetUcScorecard(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("scorecardGetUcScorecard failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetUcScorecardRequest](../../sdk/models/operations/getucscorecardrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcScorecard](../../sdk/models/shared/ucscorecard.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listAtsScorecards
 
 List all scorecards
@@ -280,6 +361,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listUcScorecards
+
+List all scorecards
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listUcScorecards" method="get" path="/uc/{connection_id}/scorecard" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.scorecard.listUcScorecards({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { scorecardListUcScorecards } from "@unified-api/typescript-sdk/funcs/scorecardListUcScorecards.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await scorecardListUcScorecards(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("scorecardListUcScorecards failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListUcScorecardsRequest](../../sdk/models/operations/listucscorecardsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcScorecard[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchAtsScorecard
 
 Update a scorecard
@@ -301,7 +459,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "ad5a2091-694e-47c1-b863-8de6e0265017",
+      id: "e2cfba84-25ef-4659-ad26-a8e579a445a5",
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -314,7 +472,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-05-28T05:41:35.703Z"),
+      updatedAt: new Date("2023-06-02T19:29:18.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -347,7 +505,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "ad5a2091-694e-47c1-b863-8de6e0265017",
+      id: "e2cfba84-25ef-4659-ad26-a8e579a445a5",
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -360,7 +518,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-05-28T05:41:35.703Z"),
+      updatedAt: new Date("2023-06-02T19:29:18.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -495,7 +653,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "ad5a2091-694e-47c1-b863-8de6e0265017",
+      id: "e2cfba84-25ef-4659-ad26-a8e579a445a5",
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -508,7 +666,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-05-28T05:41:35.703Z"),
+      updatedAt: new Date("2023-06-02T19:29:18.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -541,7 +699,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "ad5a2091-694e-47c1-b863-8de6e0265017",
+      id: "e2cfba84-25ef-4659-ad26-a8e579a445a5",
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -554,7 +712,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-05-28T05:41:35.703Z"),
+      updatedAt: new Date("2023-06-02T19:29:18.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",

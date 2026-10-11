@@ -22,37 +22,67 @@ import {
   AccountingJournalLineitem$outboundSchema,
 } from "./accountingjournallineitem.js";
 
+/**
+ * Posting state of the journal entry
+ */
 export const AccountingJournalStatus = {
   Draft: "DRAFT",
   Posted: "POSTED",
   Void: "VOID",
   Other: "OTHER",
 } as const;
+/**
+ * Posting state of the journal entry
+ */
 export type AccountingJournalStatus = OpenEnum<typeof AccountingJournalStatus>;
 
 export type AccountingJournal = {
   attachments?: Array<AccountingAttachment> | undefined;
   categoryIds?: Array<string> | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
+  /**
+   * Exchange rate to the base/home currency at the posting date
+   */
   exchangeRate?: number | undefined;
   id?: string | undefined;
+  /**
+   * True when the line amounts already include tax
+   */
   isInclusiveOfTax?: boolean | undefined;
   /**
    * new field name
    */
   lineitems?: Array<AccountingJournalLineitem> | undefined;
   organizationId?: string | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   postedAt?: Date | undefined;
+  /**
+   * (reference to TaskProject)
+   */
   projectId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   source?: string | undefined;
+  /**
+   * Posting state of the journal entry
+   */
   status?: AccountingJournalStatus | undefined;
   taxAmount?: number | undefined;
   taxrateId?: string | undefined;
+  /**
+   * Total of the debit lines; equals the total of the credit lines
+   */
   totalAmount?: number | undefined;
+  /**
+   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
   updatedAt?: Date | undefined;
 };
 
