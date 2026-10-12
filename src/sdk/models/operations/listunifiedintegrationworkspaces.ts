@@ -42,6 +42,9 @@ export const QueryParamCategories = {
   Cdp: "cdp",
   Performance: "performance",
   Social: "social",
+  Legal: "legal",
+  Compute: "compute",
+  Healthcare: "healthcare",
 } as const;
 export type QueryParamCategories = ClosedEnum<typeof QueryParamCategories>;
 

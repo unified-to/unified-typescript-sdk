@@ -69,6 +69,10 @@ export type CalendarEvent = {
   isFree?: boolean | undefined;
   isPrivate?: boolean | undefined;
   location?: string | undefined;
+  /**
+   * pointer to Legal Matter
+   */
+  matterId?: string | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -123,6 +127,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   is_free: z.boolean().optional(),
   is_private: z.boolean().optional(),
   location: z.string().optional(),
+  matter_id: z.string().optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
@@ -144,6 +149,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
     "is_all_day": "isAllDay",
     "is_free": "isFree",
     "is_private": "isPrivate",
+    "matter_id": "matterId",
     "recurring_event_id": "recurringEventId",
     "send_notifications": "sendNotifications",
     "start_at": "startAt",
@@ -165,6 +171,7 @@ export type CalendarEvent$Outbound = {
   is_free?: boolean | undefined;
   is_private?: boolean | undefined;
   location?: string | undefined;
+  matter_id?: string | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -197,6 +204,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   isFree: z.boolean().optional(),
   isPrivate: z.boolean().optional(),
   location: z.string().optional(),
+  matterId: z.string().optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),
@@ -218,6 +226,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
     isAllDay: "is_all_day",
     isFree: "is_free",
     isPrivate: "is_private",
+    matterId: "matter_id",
     recurringEventId: "recurring_event_id",
     sendNotifications: "send_notifications",
     startAt: "start_at",

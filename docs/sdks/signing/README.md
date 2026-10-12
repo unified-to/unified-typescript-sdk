@@ -39,11 +39,11 @@ async function run() {
   const result = await unifiedTo.signing.createSigningDocument({
     signingDocument: {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
-      expiresAt: new Date("2027-01-08T10:26:23.150Z"),
-      id: "15cd3359-7624-4d8b-bc9d-de291ded3d6c",
+      expiresAt: new Date("2027-01-09T07:34:59.549Z"),
+      id: "f902bfcc-0e46-43d1-a067-dd1de2583b35",
       name: "nam audax absens",
       status: "VOIDED",
-      updatedAt: new Date("2025-08-26T00:10:46.163Z"),
+      updatedAt: new Date("2025-08-26T16:57:03.648Z"),
     },
     connectionId: "<id>",
   });
@@ -74,11 +74,11 @@ async function run() {
   const res = await documentCreateSigningDocument(unifiedTo, {
     signingDocument: {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
-      expiresAt: new Date("2027-01-08T10:26:23.150Z"),
-      id: "15cd3359-7624-4d8b-bc9d-de291ded3d6c",
+      expiresAt: new Date("2027-01-09T07:34:59.549Z"),
+      id: "f902bfcc-0e46-43d1-a067-dd1de2583b35",
       name: "nam audax absens",
       status: "VOIDED",
-      updatedAt: new Date("2025-08-26T00:10:46.163Z"),
+      updatedAt: new Date("2025-08-26T16:57:03.648Z"),
     },
     connectionId: "<id>",
   });
@@ -133,11 +133,11 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "Hardy.Wehner@gmail.com",
-      id: "a68100fa-2a8e-4332-86f4-0be5094512ea",
+      id: "69b21449-e5cf-47f0-b500-ec5645588ace",
       order: 5,
       role: "SIGNER",
       status: "SIGNED",
-      updatedAt: new Date("2026-09-02T06:09:41.540Z"),
+      updatedAt: new Date("2026-09-03T02:48:18.237Z"),
     },
     connectionId: "<id>",
   });
@@ -169,11 +169,11 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "Hardy.Wehner@gmail.com",
-      id: "a68100fa-2a8e-4332-86f4-0be5094512ea",
+      id: "69b21449-e5cf-47f0-b500-ec5645588ace",
       order: 5,
       role: "SIGNER",
       status: "SIGNED",
-      updatedAt: new Date("2026-09-02T06:09:41.540Z"),
+      updatedAt: new Date("2026-09-03T02:48:18.237Z"),
     },
     connectionId: "<id>",
   });
@@ -399,7 +399,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingGetSigningTemplate } from "@unified-api/typescript-sdk/funcs/signingGetSigningTemplate.js";
+import { templateGetSigningTemplate } from "@unified-api/typescript-sdk/funcs/templateGetSigningTemplate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -410,7 +410,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingGetSigningTemplate(unifiedTo, {
+  const res = await templateGetSigningTemplate(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -418,7 +418,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingGetSigningTemplate failed:", res.error);
+    console.log("templateGetSigningTemplate failed:", res.error);
   }
 }
 
@@ -631,7 +631,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { signingListSigningTemplates } from "@unified-api/typescript-sdk/funcs/signingListSigningTemplates.js";
+import { templateListSigningTemplates } from "@unified-api/typescript-sdk/funcs/templateListSigningTemplates.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -642,14 +642,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await signingListSigningTemplates(unifiedTo, {
+  const res = await templateListSigningTemplates(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("signingListSigningTemplates failed:", res.error);
+    console.log("templateListSigningTemplates failed:", res.error);
   }
 }
 
@@ -695,11 +695,11 @@ async function run() {
   const result = await unifiedTo.signing.patchSigningDocument({
     signingDocument: {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
-      expiresAt: new Date("2027-01-08T10:26:23.159Z"),
-      id: "43587f18-6012-4978-bf2e-b4022894e235",
+      expiresAt: new Date("2027-01-09T07:34:59.561Z"),
+      id: "1ff5bdce-3dcf-44c6-8197-69e777110415",
       name: "nam audax absens",
       status: "VOIDED",
-      updatedAt: new Date("2025-08-26T00:10:46.169Z"),
+      updatedAt: new Date("2025-08-26T16:57:03.658Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -731,11 +731,11 @@ async function run() {
   const res = await documentPatchSigningDocument(unifiedTo, {
     signingDocument: {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
-      expiresAt: new Date("2027-01-08T10:26:23.159Z"),
-      id: "43587f18-6012-4978-bf2e-b4022894e235",
+      expiresAt: new Date("2027-01-09T07:34:59.561Z"),
+      id: "1ff5bdce-3dcf-44c6-8197-69e777110415",
       name: "nam audax absens",
       status: "VOIDED",
-      updatedAt: new Date("2025-08-26T00:10:46.169Z"),
+      updatedAt: new Date("2025-08-26T16:57:03.658Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -791,11 +791,11 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "Hardy.Wehner@gmail.com",
-      id: "78c13205-aae7-4d71-819f-8a7fd1f7ba9a",
+      id: "ef7575db-80ef-4699-9eb8-371a4d95acbd",
       order: 5,
       role: "SIGNER",
       status: "SIGNED",
-      updatedAt: new Date("2026-09-02T06:09:41.552Z"),
+      updatedAt: new Date("2026-09-03T02:48:18.252Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -828,11 +828,11 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "Hardy.Wehner@gmail.com",
-      id: "78c13205-aae7-4d71-819f-8a7fd1f7ba9a",
+      id: "ef7575db-80ef-4699-9eb8-371a4d95acbd",
       order: 5,
       role: "SIGNER",
       status: "SIGNED",
-      updatedAt: new Date("2026-09-02T06:09:41.552Z"),
+      updatedAt: new Date("2026-09-03T02:48:18.252Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1045,11 +1045,11 @@ async function run() {
   const result = await unifiedTo.signing.updateSigningDocument({
     signingDocument: {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
-      expiresAt: new Date("2027-01-08T10:26:23.159Z"),
-      id: "43587f18-6012-4978-bf2e-b4022894e235",
+      expiresAt: new Date("2027-01-09T07:34:59.561Z"),
+      id: "1ff5bdce-3dcf-44c6-8197-69e777110415",
       name: "nam audax absens",
       status: "VOIDED",
-      updatedAt: new Date("2025-08-26T00:10:46.169Z"),
+      updatedAt: new Date("2025-08-26T16:57:03.658Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1081,11 +1081,11 @@ async function run() {
   const res = await documentUpdateSigningDocument(unifiedTo, {
     signingDocument: {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
-      expiresAt: new Date("2027-01-08T10:26:23.159Z"),
-      id: "43587f18-6012-4978-bf2e-b4022894e235",
+      expiresAt: new Date("2027-01-09T07:34:59.561Z"),
+      id: "1ff5bdce-3dcf-44c6-8197-69e777110415",
       name: "nam audax absens",
       status: "VOIDED",
-      updatedAt: new Date("2025-08-26T00:10:46.169Z"),
+      updatedAt: new Date("2025-08-26T16:57:03.658Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1141,11 +1141,11 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "Hardy.Wehner@gmail.com",
-      id: "78c13205-aae7-4d71-819f-8a7fd1f7ba9a",
+      id: "ef7575db-80ef-4699-9eb8-371a4d95acbd",
       order: 5,
       role: "SIGNER",
       status: "SIGNED",
-      updatedAt: new Date("2026-09-02T06:09:41.552Z"),
+      updatedAt: new Date("2026-09-03T02:48:18.252Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1178,11 +1178,11 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "Hardy.Wehner@gmail.com",
-      id: "78c13205-aae7-4d71-819f-8a7fd1f7ba9a",
+      id: "ef7575db-80ef-4699-9eb8-371a4d95acbd",
       order: 5,
       role: "SIGNER",
       status: "SIGNED",
-      updatedAt: new Date("2026-09-02T06:09:41.552Z"),
+      updatedAt: new Date("2026-09-03T02:48:18.252Z"),
     },
     connectionId: "<id>",
     id: "<id>",

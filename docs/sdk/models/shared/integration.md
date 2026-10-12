@@ -9,7 +9,7 @@ import { Integration } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Integration = {
   categories: [
-    "cdp",
+    "legal",
   ],
   name: "<value>",
   type: "<value>",

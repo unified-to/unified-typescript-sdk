@@ -5,11 +5,17 @@
 ### Available Operations
 
 * [createAccountingExpense](#createaccountingexpense) - Create an expense
+* [createLegalExpense](#createlegalexpense) - Create an expense
 * [getAccountingExpense](#getaccountingexpense) - Retrieve an expense
+* [getLegalExpense](#getlegalexpense) - Retrieve an expense
 * [listAccountingExpenses](#listaccountingexpenses) - List all expenses
+* [listLegalExpenses](#listlegalexpenses) - List all expenses
 * [patchAccountingExpense](#patchaccountingexpense) - Update an expense
+* [patchLegalExpense](#patchlegalexpense) - Update an expense
 * [removeAccountingExpense](#removeaccountingexpense) - Remove an expense
+* [removeLegalExpense](#removelegalexpense) - Remove an expense
 * [updateAccountingExpense](#updateaccountingexpense) - Update an expense
+* [updateLegalExpense](#updatelegalexpense) - Update an expense
 
 ## createAccountingExpense
 
@@ -30,11 +36,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expense.createAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-05-31T10:54:34.814Z"),
+      approvedAt: new Date("2026-06-01T06:50:29.682Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "a31f87a7-4eb4-4302-b833-915ecb235046",
+          id: "cf8cc5be-0413-422c-b84c-79fd08e3fd5f",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -43,10 +49,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "9984dbbc-0b26-48c0-8a8e-1e73ac0f709e",
+      id: "7521ce66-7153-4bff-b5bb-0aa64e9279fa",
       lineitems: [
         {
-          id: "6f21535d-972a-4fdc-926e-2321c794ccd9",
+          id: "fdb3259a-209f-40cb-83aa-41de61dec257",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -60,13 +66,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-07T19:24:22.969Z"),
+      postedAt: new Date("2021-06-07T22:42:45.258Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-05-31T10:54:34.814Z"),
+      updatedAt: new Date("2026-06-01T06:50:29.682Z"),
     },
     connectionId: "<id>",
   });
@@ -96,11 +102,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-05-31T10:54:34.814Z"),
+      approvedAt: new Date("2026-06-01T06:50:29.682Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "a31f87a7-4eb4-4302-b833-915ecb235046",
+          id: "cf8cc5be-0413-422c-b84c-79fd08e3fd5f",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -109,10 +115,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "9984dbbc-0b26-48c0-8a8e-1e73ac0f709e",
+      id: "7521ce66-7153-4bff-b5bb-0aa64e9279fa",
       lineitems: [
         {
-          id: "6f21535d-972a-4fdc-926e-2321c794ccd9",
+          id: "fdb3259a-209f-40cb-83aa-41de61dec257",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -126,13 +132,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-07T19:24:22.969Z"),
+      postedAt: new Date("2021-06-07T22:42:45.258Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-05-31T10:54:34.814Z"),
+      updatedAt: new Date("2026-06-01T06:50:29.682Z"),
     },
     connectionId: "<id>",
   });
@@ -159,6 +165,113 @@ run();
 ### Response
 
 **Promise\<[shared.AccountingExpense](../../sdk/models/shared/accountingexpense.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## createLegalExpense
+
+Create an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createLegalExpense" method="post" path="/legal/{connection_id}/expense" example="legal_expense" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.expense.createLegalExpense({
+    legalExpense: {
+      category: "Kids",
+      createdAt: new Date("2020-11-08T00:41:42.356Z"),
+      currency: "MVR",
+      description: "Temporibus agnitio sui.",
+      id: "4b5483e3-7b1c-4b1b-9ae2-53a8db8258ba",
+      incurredAt: new Date("2020-11-08T00:41:42.356Z"),
+      isBilled: false,
+      metadata: [],
+      priceAmount: 100,
+      quantity: 3,
+      totalAmount: 300,
+      type: "OTHER",
+      updatedAt: new Date("2024-03-25T18:37:19.750Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { expenseCreateLegalExpense } from "@unified-api/typescript-sdk/funcs/expenseCreateLegalExpense.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await expenseCreateLegalExpense(unifiedTo, {
+    legalExpense: {
+      category: "Kids",
+      createdAt: new Date("2020-11-08T00:41:42.356Z"),
+      currency: "MVR",
+      description: "Temporibus agnitio sui.",
+      id: "4b5483e3-7b1c-4b1b-9ae2-53a8db8258ba",
+      incurredAt: new Date("2020-11-08T00:41:42.356Z"),
+      isBilled: false,
+      metadata: [],
+      priceAmount: 100,
+      quantity: 3,
+      totalAmount: 300,
+      type: "OTHER",
+      updatedAt: new Date("2024-03-25T18:37:19.750Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("expenseCreateLegalExpense failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateLegalExpenseRequest](../../sdk/models/operations/createlegalexpenserequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.LegalExpense](../../sdk/models/shared/legalexpense.md)\>**
 
 ### Errors
 
@@ -245,6 +358,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getLegalExpense
+
+Retrieve an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getLegalExpense" method="get" path="/legal/{connection_id}/expense/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.expense.getLegalExpense({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { expenseGetLegalExpense } from "@unified-api/typescript-sdk/funcs/expenseGetLegalExpense.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await expenseGetLegalExpense(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("expenseGetLegalExpense failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetLegalExpenseRequest](../../sdk/models/operations/getlegalexpenserequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.LegalExpense](../../sdk/models/shared/legalexpense.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listAccountingExpenses
 
 List all expenses
@@ -322,6 +514,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listLegalExpenses
+
+List all expenses
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listLegalExpenses" method="get" path="/legal/{connection_id}/expense" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.expense.listLegalExpenses({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { expenseListLegalExpenses } from "@unified-api/typescript-sdk/funcs/expenseListLegalExpenses.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await expenseListLegalExpenses(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("expenseListLegalExpenses failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListLegalExpensesRequest](../../sdk/models/operations/listlegalexpensesrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.LegalExpense[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchAccountingExpense
 
 Update an expense
@@ -341,11 +610,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expense.patchAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
+      approvedAt: new Date("2026-06-01T06:50:29.731Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
+          id: "10bdc6d0-bbb0-4f94-8eb8-8dc39e300a93",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -354,10 +623,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
+      id: "d82e9dbc-1802-4664-bfa1-ea3c2e55d8aa",
       lineitems: [
         {
-          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
+          id: "c0b40d0c-a495-4b53-ac84-bdeedb1abfd0",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -371,13 +640,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-07T19:24:22.977Z"),
+      postedAt: new Date("2021-06-07T22:42:45.266Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
+      updatedAt: new Date("2026-06-01T06:50:29.731Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -408,11 +677,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
+      approvedAt: new Date("2026-06-01T06:50:29.731Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
+          id: "10bdc6d0-bbb0-4f94-8eb8-8dc39e300a93",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -421,10 +690,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
+      id: "d82e9dbc-1802-4664-bfa1-ea3c2e55d8aa",
       lineitems: [
         {
-          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
+          id: "c0b40d0c-a495-4b53-ac84-bdeedb1abfd0",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -438,13 +707,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-07T19:24:22.977Z"),
+      postedAt: new Date("2021-06-07T22:42:45.266Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
+      updatedAt: new Date("2026-06-01T06:50:29.731Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -472,6 +741,115 @@ run();
 ### Response
 
 **Promise\<[shared.AccountingExpense](../../sdk/models/shared/accountingexpense.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchLegalExpense
+
+Update an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchLegalExpense" method="patch" path="/legal/{connection_id}/expense/{id}" example="legal_expense" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.expense.patchLegalExpense({
+    legalExpense: {
+      category: "Kids",
+      createdAt: new Date("2020-11-08T00:41:42.356Z"),
+      currency: "MVR",
+      description: "Temporibus agnitio sui.",
+      id: "a1d1574a-5f4f-401d-8178-fff5cfce7fc4",
+      incurredAt: new Date("2020-11-08T00:41:42.356Z"),
+      isBilled: false,
+      metadata: [],
+      priceAmount: 100,
+      quantity: 3,
+      totalAmount: 300,
+      type: "OTHER",
+      updatedAt: new Date("2024-03-25T18:37:19.762Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { expensePatchLegalExpense } from "@unified-api/typescript-sdk/funcs/expensePatchLegalExpense.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await expensePatchLegalExpense(unifiedTo, {
+    legalExpense: {
+      category: "Kids",
+      createdAt: new Date("2020-11-08T00:41:42.356Z"),
+      currency: "MVR",
+      description: "Temporibus agnitio sui.",
+      id: "a1d1574a-5f4f-401d-8178-fff5cfce7fc4",
+      incurredAt: new Date("2020-11-08T00:41:42.356Z"),
+      isBilled: false,
+      metadata: [],
+      priceAmount: 100,
+      quantity: 3,
+      totalAmount: 300,
+      type: "OTHER",
+      updatedAt: new Date("2024-03-25T18:37:19.762Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("expensePatchLegalExpense failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchLegalExpenseRequest](../../sdk/models/operations/patchlegalexpenserequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.LegalExpense](../../sdk/models/shared/legalexpense.md)\>**
 
 ### Errors
 
@@ -558,6 +936,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeLegalExpense
+
+Remove an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeLegalExpense" method="delete" path="/legal/{connection_id}/expense/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.expense.removeLegalExpense({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { expenseRemoveLegalExpense } from "@unified-api/typescript-sdk/funcs/expenseRemoveLegalExpense.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await expenseRemoveLegalExpense(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("expenseRemoveLegalExpense failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveLegalExpenseRequest](../../sdk/models/operations/removelegalexpenserequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveLegalExpenseResponse](../../sdk/models/operations/removelegalexpenseresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateAccountingExpense
 
 Update an expense
@@ -577,11 +1034,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expense.updateAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
+      approvedAt: new Date("2026-06-01T06:50:29.731Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
+          id: "10bdc6d0-bbb0-4f94-8eb8-8dc39e300a93",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -590,10 +1047,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
+      id: "d82e9dbc-1802-4664-bfa1-ea3c2e55d8aa",
       lineitems: [
         {
-          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
+          id: "c0b40d0c-a495-4b53-ac84-bdeedb1abfd0",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -607,13 +1064,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-07T19:24:22.977Z"),
+      postedAt: new Date("2021-06-07T22:42:45.266Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
+      updatedAt: new Date("2026-06-01T06:50:29.731Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -644,11 +1101,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-05-31T10:54:34.862Z"),
+      approvedAt: new Date("2026-06-01T06:50:29.731Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "5476b7b2-d37e-4977-957f-aa4d8ec5c5a1",
+          id: "10bdc6d0-bbb0-4f94-8eb8-8dc39e300a93",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -657,10 +1114,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "7a5365f5-1bd4-4cac-8131-6bd2366ba182",
+      id: "d82e9dbc-1802-4664-bfa1-ea3c2e55d8aa",
       lineitems: [
         {
-          id: "4e568a1a-bcad-4e8a-b51d-faaafbd22415",
+          id: "c0b40d0c-a495-4b53-ac84-bdeedb1abfd0",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -674,13 +1131,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-07T19:24:22.977Z"),
+      postedAt: new Date("2021-06-07T22:42:45.266Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-05-31T10:54:34.862Z"),
+      updatedAt: new Date("2026-06-01T06:50:29.731Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -708,6 +1165,115 @@ run();
 ### Response
 
 **Promise\<[shared.AccountingExpense](../../sdk/models/shared/accountingexpense.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateLegalExpense
+
+Update an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateLegalExpense" method="put" path="/legal/{connection_id}/expense/{id}" example="legal_expense" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.expense.updateLegalExpense({
+    legalExpense: {
+      category: "Kids",
+      createdAt: new Date("2020-11-08T00:41:42.356Z"),
+      currency: "MVR",
+      description: "Temporibus agnitio sui.",
+      id: "a1d1574a-5f4f-401d-8178-fff5cfce7fc4",
+      incurredAt: new Date("2020-11-08T00:41:42.356Z"),
+      isBilled: false,
+      metadata: [],
+      priceAmount: 100,
+      quantity: 3,
+      totalAmount: 300,
+      type: "OTHER",
+      updatedAt: new Date("2024-03-25T18:37:19.762Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { expenseUpdateLegalExpense } from "@unified-api/typescript-sdk/funcs/expenseUpdateLegalExpense.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await expenseUpdateLegalExpense(unifiedTo, {
+    legalExpense: {
+      category: "Kids",
+      createdAt: new Date("2020-11-08T00:41:42.356Z"),
+      currency: "MVR",
+      description: "Temporibus agnitio sui.",
+      id: "a1d1574a-5f4f-401d-8178-fff5cfce7fc4",
+      incurredAt: new Date("2020-11-08T00:41:42.356Z"),
+      isBilled: false,
+      metadata: [],
+      priceAmount: 100,
+      quantity: 3,
+      totalAmount: 300,
+      type: "OTHER",
+      updatedAt: new Date("2024-03-25T18:37:19.762Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("expenseUpdateLegalExpense failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateLegalExpenseRequest](../../sdk/models/operations/updatelegalexpenserequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.LegalExpense](../../sdk/models/shared/legalexpense.md)\>**
 
 ### Errors
 

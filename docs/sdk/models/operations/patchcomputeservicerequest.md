@@ -1,0 +1,23 @@
+# PatchComputeServiceRequest
+
+## Example Usage
+
+```typescript
+import { PatchComputeServiceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchComputeServiceRequest = {
+  computeService: {},
+  connectionId: "<id>",
+  id: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                            | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `computeService`                                                                                                                                 | [shared.ComputeService](../../../sdk/models/shared/computeservice.md)                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `connectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields`                                                                                                                                         | [operations.PatchComputeServiceQueryParamFields](../../../sdk/models/operations/patchcomputeservicequeryparamfields.md)[]                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Service                                                                                                                                |
+| `raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |

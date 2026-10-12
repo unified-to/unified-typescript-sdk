@@ -1,0 +1,22 @@
+# ComputeRegion
+
+## Example Usage
+
+```typescript
+import { ComputeRegion } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ComputeRegion = {};
+```
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `country`                                                                                               | *string*                                                                                                | :heavy_minus_sign:                                                                                      | Country code                                                                                            |
+| `createdAt`                                                                                             | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)           | :heavy_minus_sign:                                                                                      | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                                                                |
+| `gpuModels`                                                                                             | [shared.PropertyComputeRegionGpuModels](../../../sdk/models/shared/propertycomputeregiongpumodels.md)[] | :heavy_minus_sign:                                                                                      | GPU models offered in this region                                                                       |
+| `id`                                                                                                    | *string*                                                                                                | :heavy_minus_sign:                                                                                      | Unique identifier for the region or data center                                                         |
+| `location`                                                                                              | *string*                                                                                                | :heavy_minus_sign:                                                                                      | Free-text location (eg. city or state)                                                                  |
+| `name`                                                                                                  | *string*                                                                                                | :heavy_minus_sign:                                                                                      | Display name of the region                                                                              |
+| `raw`                                                                                                   | Record<string, *any*>                                                                                   | :heavy_minus_sign:                                                                                      | Raw data from integration                                                                               |
+| `updatedAt`                                                                                             | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)           | :heavy_minus_sign:                                                                                      | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                                                                |

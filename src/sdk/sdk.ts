@@ -12,10 +12,12 @@ import { Ads } from "./ads.js";
 import { Agedpayable } from "./agedpayable.js";
 import { Agedreceivable } from "./agedreceivable.js";
 import { Agent } from "./agent.js";
+import { Allergy } from "./allergy.js";
 import { Analytics } from "./analytics.js";
 import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
 import { Applicationstatus } from "./applicationstatus.js";
+import { Appointment } from "./appointment.js";
 import { Assessment } from "./assessment.js";
 import { Asset } from "./asset.js";
 import { Ats } from "./ats.js";
@@ -47,6 +49,8 @@ import { Comment } from "./comment.js";
 import { Commerce } from "./commerce.js";
 import { Commit } from "./commit.js";
 import { Company } from "./company.js";
+import { Compute } from "./compute.js";
+import { Condition } from "./condition.js";
 import { Connection } from "./connection.js";
 import { Contact } from "./contact.js";
 import { Content } from "./content.js";
@@ -60,14 +64,18 @@ import { Database } from "./database.js";
 import { Datastore } from "./datastore.js";
 import { Deal } from "./deal.js";
 import { Deduction } from "./deduction.js";
+import { Deployment } from "./deployment.js";
 import { Destination } from "./destination.js";
 import { Device } from "./device.js";
 import { Document } from "./document.js";
+import { Domain } from "./domain.js";
 import { Earning } from "./earning.js";
 import { Embedding } from "./embedding.js";
 import { Employee } from "./employee.js";
+import { Encounter } from "./encounter.js";
 import { Enrich } from "./enrich.js";
 import { Environment } from "./environment.js";
+import { Envvar } from "./envvar.js";
 import { Event } from "./event.js";
 import { Expense } from "./expense.js";
 import { Expensereport } from "./expensereport.js";
@@ -77,10 +85,14 @@ import { Form } from "./form.js";
 import { Forms } from "./forms.js";
 import { Genai } from "./genai.js";
 import { Goal } from "./goal.js";
+import { Gputype } from "./gputype.js";
 import { Group } from "./group.js";
+import { Healthcare } from "./healthcare.js";
 import { Hris } from "./hris.js";
+import { Immunization } from "./immunization.js";
 import { Insertionorder } from "./insertionorder.js";
 import { Insight } from "./insight.js";
+import { Instance } from "./instance.js";
 import { Instructor } from "./instructor.js";
 import { Integration } from "./integration.js";
 import { Interview } from "./interview.js";
@@ -91,15 +103,19 @@ import { Item } from "./item.js";
 import { Itemvariant } from "./itemvariant.js";
 import { Job } from "./job.js";
 import { Journal } from "./journal.js";
+import { Key } from "./key.js";
 import { Kms } from "./kms.js";
 import { Label } from "./label.js";
 import { Lead } from "./lead.js";
+import { Legal } from "./legal.js";
 import { Link } from "./link.js";
 import { List } from "./list.js";
 import { Lms } from "./lms.js";
 import { Location } from "./location.js";
 import { Login } from "./login.js";
 import { Martech } from "./martech.js";
+import { Matter } from "./matter.js";
+import { Medication } from "./medication.js";
 import { Member } from "./member.js";
 import { Message } from "./message.js";
 import { Messaging } from "./messaging.js";
@@ -107,11 +123,13 @@ import { Metadata } from "./metadata.js";
 import { Model } from "./model.js";
 import { Note } from "./note.js";
 import { Notification } from "./notification.js";
+import { Observation } from "./observation.js";
 import { Order } from "./order.js";
 import { Organization } from "./organization.js";
 import { Package } from "./package.js";
 import { Page } from "./page.js";
 import { Passthrough } from "./passthrough.js";
+import { Patient } from "./patient.js";
 import { Paycode } from "./paycode.js";
 import { Payment } from "./payment.js";
 import { Paymentterm } from "./paymentterm.js";
@@ -122,6 +140,8 @@ import { Performance } from "./performance.js";
 import { Person } from "./person.js";
 import { Pipeline } from "./pipeline.js";
 import { Post } from "./post.js";
+import { Practicearea } from "./practicearea.js";
+import { Practitioner } from "./practitioner.js";
 import { Profile } from "./profile.js";
 import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
@@ -137,6 +157,7 @@ import { Rate } from "./rate.js";
 import { RecordT } from "./record.js";
 import { Recording } from "./recording.js";
 import { Refund } from "./refund.js";
+import { Region } from "./region.js";
 import { Repo } from "./repo.js";
 import { Report } from "./report.js";
 import { Repository } from "./repository.js";
@@ -152,12 +173,15 @@ import { Scorecard } from "./scorecard.js";
 import { Scorecardtemplate } from "./scorecardtemplate.js";
 import { Secretsmanager } from "./secretsmanager.js";
 import { Segment } from "./segment.js";
+import { Service } from "./service.js";
 import { Session } from "./session.js";
 import { Shipment } from "./shipment.js";
 import { Shipping } from "./shipping.js";
 import { Signatory } from "./signatory.js";
 import { Signing } from "./signing.js";
 import { Skill } from "./skill.js";
+import { Slot } from "./slot.js";
+import { Snapshot } from "./snapshot.js";
 import { Social } from "./social.js";
 import { Source } from "./source.js";
 import { Space } from "./space.js";
@@ -173,6 +197,7 @@ import { Taxrate } from "./taxrate.js";
 import { Template } from "./template.js";
 import { Ticket } from "./ticket.js";
 import { Ticketing } from "./ticketing.js";
+import { Timeentry } from "./timeentry.js";
 import { Timeoff } from "./timeoff.js";
 import { Timeshift } from "./timeshift.js";
 import { Tracking } from "./tracking.js";
@@ -180,10 +205,12 @@ import { Transaction } from "./transaction.js";
 import { Trialbalance } from "./trialbalance.js";
 import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
+import { Usage } from "./usage.js";
 import { User } from "./user.js";
 import { Vendorcredit } from "./vendorcredit.js";
 import { Verification } from "./verification.js";
 import { Visitor } from "./visitor.js";
+import { Volume } from "./volume.js";
 import { Webhook } from "./webhook.js";
 import { Webinar } from "./webinar.js";
 
@@ -590,6 +617,71 @@ export class UnifiedTo extends ClientSDK {
     return (this._saleschannel ??= new Saleschannel(this._options));
   }
 
+  private _compute?: Compute;
+  get compute(): Compute {
+    return (this._compute ??= new Compute(this._options));
+  }
+
+  private _deployment?: Deployment;
+  get deployment(): Deployment {
+    return (this._deployment ??= new Deployment(this._options));
+  }
+
+  private _domain?: Domain;
+  get domain(): Domain {
+    return (this._domain ??= new Domain(this._options));
+  }
+
+  private _envvar?: Envvar;
+  get envvar(): Envvar {
+    return (this._envvar ??= new Envvar(this._options));
+  }
+
+  private _gputype?: Gputype;
+  get gputype(): Gputype {
+    return (this._gputype ??= new Gputype(this._options));
+  }
+
+  private _instance?: Instance;
+  get instance(): Instance {
+    return (this._instance ??= new Instance(this._options));
+  }
+
+  private _key?: Key;
+  get key(): Key {
+    return (this._key ??= new Key(this._options));
+  }
+
+  private _region?: Region;
+  get region(): Region {
+    return (this._region ??= new Region(this._options));
+  }
+
+  private _service?: Service;
+  get service(): Service {
+    return (this._service ??= new Service(this._options));
+  }
+
+  private _snapshot?: Snapshot;
+  get snapshot(): Snapshot {
+    return (this._snapshot ??= new Snapshot(this._options));
+  }
+
+  private _template?: Template;
+  get template(): Template {
+    return (this._template ??= new Template(this._options));
+  }
+
+  private _usage?: Usage;
+  get usage(): Usage {
+    return (this._usage ??= new Usage(this._options));
+  }
+
+  private _volume?: Volume;
+  get volume(): Volume {
+    return (this._volume ??= new Volume(this._options));
+  }
+
   private _crm?: Crm;
   get crm(): Crm {
     return (this._crm ??= new Crm(this._options));
@@ -700,6 +792,61 @@ export class UnifiedTo extends ClientSDK {
     return (this._task ??= new Task(this._options));
   }
 
+  private _healthcare?: Healthcare;
+  get healthcare(): Healthcare {
+    return (this._healthcare ??= new Healthcare(this._options));
+  }
+
+  private _allergy?: Allergy;
+  get allergy(): Allergy {
+    return (this._allergy ??= new Allergy(this._options));
+  }
+
+  private _appointment?: Appointment;
+  get appointment(): Appointment {
+    return (this._appointment ??= new Appointment(this._options));
+  }
+
+  private _condition?: Condition;
+  get condition(): Condition {
+    return (this._condition ??= new Condition(this._options));
+  }
+
+  private _encounter?: Encounter;
+  get encounter(): Encounter {
+    return (this._encounter ??= new Encounter(this._options));
+  }
+
+  private _immunization?: Immunization;
+  get immunization(): Immunization {
+    return (this._immunization ??= new Immunization(this._options));
+  }
+
+  private _medication?: Medication;
+  get medication(): Medication {
+    return (this._medication ??= new Medication(this._options));
+  }
+
+  private _observation?: Observation;
+  get observation(): Observation {
+    return (this._observation ??= new Observation(this._options));
+  }
+
+  private _patient?: Patient;
+  get patient(): Patient {
+    return (this._patient ??= new Patient(this._options));
+  }
+
+  private _practitioner?: Practitioner;
+  get practitioner(): Practitioner {
+    return (this._practitioner ??= new Practitioner(this._options));
+  }
+
+  private _slot?: Slot;
+  get slot(): Slot {
+    return (this._slot ??= new Slot(this._options));
+  }
+
   private _hris?: Hris;
   get hris(): Hris {
     return (this._hris ??= new Hris(this._options));
@@ -783,6 +930,26 @@ export class UnifiedTo extends ClientSDK {
   private _space?: Space;
   get space(): Space {
     return (this._space ??= new Space(this._options));
+  }
+
+  private _legal?: Legal;
+  get legal(): Legal {
+    return (this._legal ??= new Legal(this._options));
+  }
+
+  private _matter?: Matter;
+  get matter(): Matter {
+    return (this._matter ??= new Matter(this._options));
+  }
+
+  private _practicearea?: Practicearea;
+  get practicearea(): Practicearea {
+    return (this._practicearea ??= new Practicearea(this._options));
+  }
+
+  private _timeentry?: Timeentry;
+  get timeentry(): Timeentry {
+    return (this._timeentry ??= new Timeentry(this._options));
   }
 
   private _lms?: Lms;
@@ -963,11 +1130,6 @@ export class UnifiedTo extends ClientSDK {
   private _signatory?: Signatory;
   get signatory(): Signatory {
     return (this._signatory ??= new Signatory(this._options));
-  }
-
-  private _template?: Template;
-  get template(): Template {
-    return (this._template ??= new Template(this._options));
   }
 
   private _social?: Social;

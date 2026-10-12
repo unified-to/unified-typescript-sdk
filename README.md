@@ -105,7 +105,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "832b57ad-5e35-4937-9912-7620283aa898",
+      id: "b096adb6-85c6-43bd-8b65-9908676ad8f8",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -122,7 +122,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
+      updatedAt: new Date("2023-01-05T23:34:54.694Z"),
     },
     connectionId: "<id>",
   });
@@ -155,7 +155,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "832b57ad-5e35-4937-9912-7620283aa898",
+      id: "b096adb6-85c6-43bd-8b65-9908676ad8f8",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -172,7 +172,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
+      updatedAt: new Date("2023-01-05T23:34:54.694Z"),
     },
     connectionId: "<id>",
   });
@@ -271,7 +271,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "832b57ad-5e35-4937-9912-7620283aa898",
+      id: "b096adb6-85c6-43bd-8b65-9908676ad8f8",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -288,7 +288,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
+      updatedAt: new Date("2023-01-05T23:34:54.694Z"),
     },
     connectionId: "<id>",
   });
@@ -337,7 +337,7 @@ async function run() {
         currency: "BOB",
         customerDefinedCode: "quo",
         description: "Spoliatio comedo vilitas harum cupiditate.",
-        id: "832b57ad-5e35-4937-9912-7620283aa898",
+        id: "b096adb6-85c6-43bd-8b65-9908676ad8f8",
         isPayable: true,
         name: "Electronic Aluminum Tuna",
         status: "ARCHIVED",
@@ -354,7 +354,7 @@ async function run() {
           },
         ],
         type: "BANK",
-        updatedAt: new Date("2023-01-05T21:03:34.373Z"),
+        updatedAt: new Date("2023-01-05T23:34:54.694Z"),
       },
       connectionId: "<id>",
     });
@@ -462,7 +462,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "832b57ad-5e35-4937-9912-7620283aa898",
+      id: "b096adb6-85c6-43bd-8b65-9908676ad8f8",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -479,7 +479,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
+      updatedAt: new Date("2023-01-05T23:34:54.694Z"),
     },
     connectionId: "<id>",
   }, {
@@ -530,7 +530,7 @@ async function run() {
       currency: "BOB",
       customerDefinedCode: "quo",
       description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "832b57ad-5e35-4937-9912-7620283aa898",
+      id: "b096adb6-85c6-43bd-8b65-9908676ad8f8",
       isPayable: true,
       name: "Electronic Aluminum Tuna",
       status: "ARCHIVED",
@@ -547,7 +547,7 @@ async function run() {
         },
       ],
       type: "BANK",
-      updatedAt: new Date("2023-01-05T21:03:34.373Z"),
+      updatedAt: new Date("2023-01-05T23:34:54.694Z"),
     },
     connectionId: "<id>",
   });
@@ -1374,6 +1374,120 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`companyUpdateCrmCompany`](docs/sdks/crm/README.md#updatecrmcompany) - Update a company
 - [`companyUpdateHrisCompany`](docs/sdks/company/README.md#updatehriscompany) - Update a company
 - [`companyUpdateHrisCompany`](docs/sdks/hris/README.md#updatehriscompany) - Update a company
+- [`computeCreateComputeDeployment`](docs/sdks/compute/README.md#createcomputedeployment) - Create a deployment
+- [`computeCreateComputeDeployment`](docs/sdks/deployment/README.md#createcomputedeployment) - Create a deployment
+- [`computeCreateComputeDomain`](docs/sdks/compute/README.md#createcomputedomain) - Create a domain
+- [`computeCreateComputeDomain`](docs/sdks/domain/README.md#createcomputedomain) - Create a domain
+- [`computeCreateComputeEnvvar`](docs/sdks/compute/README.md#createcomputeenvvar) - Create an envvar
+- [`computeCreateComputeEnvvar`](docs/sdks/envvar/README.md#createcomputeenvvar) - Create an envvar
+- [`computeCreateComputeInstance`](docs/sdks/compute/README.md#createcomputeinstance) - Create an instance
+- [`computeCreateComputeInstance`](docs/sdks/instance/README.md#createcomputeinstance) - Create an instance
+- [`computeCreateComputeKey`](docs/sdks/compute/README.md#createcomputekey) - Create a key
+- [`computeCreateComputeKey`](docs/sdks/key/README.md#createcomputekey) - Create a key
+- [`computeCreateComputeService`](docs/sdks/compute/README.md#createcomputeservice) - Create a service
+- [`computeCreateComputeService`](docs/sdks/service/README.md#createcomputeservice) - Create a service
+- [`computeCreateComputeSnapshot`](docs/sdks/compute/README.md#createcomputesnapshot) - Create a snapshot
+- [`computeCreateComputeSnapshot`](docs/sdks/snapshot/README.md#createcomputesnapshot) - Create a snapshot
+- [`computeCreateComputeTemplate`](docs/sdks/compute/README.md#createcomputetemplate) - Create a template
+- [`computeCreateComputeTemplate`](docs/sdks/template/README.md#createcomputetemplate) - Create a template
+- [`computeCreateComputeVolume`](docs/sdks/compute/README.md#createcomputevolume) - Create a volume
+- [`computeCreateComputeVolume`](docs/sdks/volume/README.md#createcomputevolume) - Create a volume
+- [`computeGetComputeDeployment`](docs/sdks/compute/README.md#getcomputedeployment) - Retrieve a deployment
+- [`computeGetComputeDeployment`](docs/sdks/deployment/README.md#getcomputedeployment) - Retrieve a deployment
+- [`computeGetComputeDomain`](docs/sdks/compute/README.md#getcomputedomain) - Retrieve a domain
+- [`computeGetComputeDomain`](docs/sdks/domain/README.md#getcomputedomain) - Retrieve a domain
+- [`computeGetComputeEnvvar`](docs/sdks/compute/README.md#getcomputeenvvar) - Retrieve an envvar
+- [`computeGetComputeEnvvar`](docs/sdks/envvar/README.md#getcomputeenvvar) - Retrieve an envvar
+- [`computeGetComputeGputype`](docs/sdks/compute/README.md#getcomputegputype) - Retrieve a gputype
+- [`computeGetComputeGputype`](docs/sdks/gputype/README.md#getcomputegputype) - Retrieve a gputype
+- [`computeGetComputeInstance`](docs/sdks/compute/README.md#getcomputeinstance) - Retrieve an instance
+- [`computeGetComputeInstance`](docs/sdks/instance/README.md#getcomputeinstance) - Retrieve an instance
+- [`computeGetComputeKey`](docs/sdks/compute/README.md#getcomputekey) - Retrieve a key
+- [`computeGetComputeKey`](docs/sdks/key/README.md#getcomputekey) - Retrieve a key
+- [`computeGetComputeRegion`](docs/sdks/compute/README.md#getcomputeregion) - Retrieve a region
+- [`computeGetComputeRegion`](docs/sdks/region/README.md#getcomputeregion) - Retrieve a region
+- [`computeGetComputeService`](docs/sdks/compute/README.md#getcomputeservice) - Retrieve a service
+- [`computeGetComputeService`](docs/sdks/service/README.md#getcomputeservice) - Retrieve a service
+- [`computeGetComputeSnapshot`](docs/sdks/compute/README.md#getcomputesnapshot) - Retrieve a snapshot
+- [`computeGetComputeSnapshot`](docs/sdks/snapshot/README.md#getcomputesnapshot) - Retrieve a snapshot
+- [`computeGetComputeTemplate`](docs/sdks/compute/README.md#getcomputetemplate) - Retrieve a template
+- [`computeGetComputeTemplate`](docs/sdks/template/README.md#getcomputetemplate) - Retrieve a template
+- [`computeGetComputeVolume`](docs/sdks/compute/README.md#getcomputevolume) - Retrieve a volume
+- [`computeGetComputeVolume`](docs/sdks/volume/README.md#getcomputevolume) - Retrieve a volume
+- [`computeListComputeDeployments`](docs/sdks/compute/README.md#listcomputedeployments) - List all deployments
+- [`computeListComputeDeployments`](docs/sdks/deployment/README.md#listcomputedeployments) - List all deployments
+- [`computeListComputeDomains`](docs/sdks/compute/README.md#listcomputedomains) - List all domains
+- [`computeListComputeDomains`](docs/sdks/domain/README.md#listcomputedomains) - List all domains
+- [`computeListComputeEnvvars`](docs/sdks/compute/README.md#listcomputeenvvars) - List all envvars
+- [`computeListComputeEnvvars`](docs/sdks/envvar/README.md#listcomputeenvvars) - List all envvars
+- [`computeListComputeGputypes`](docs/sdks/compute/README.md#listcomputegputypes) - List all gputypes
+- [`computeListComputeGputypes`](docs/sdks/gputype/README.md#listcomputegputypes) - List all gputypes
+- [`computeListComputeInstances`](docs/sdks/compute/README.md#listcomputeinstances) - List all instances
+- [`computeListComputeInstances`](docs/sdks/instance/README.md#listcomputeinstances) - List all instances
+- [`computeListComputeKeys`](docs/sdks/compute/README.md#listcomputekeys) - List all keys
+- [`computeListComputeKeys`](docs/sdks/key/README.md#listcomputekeys) - List all keys
+- [`computeListComputeRegions`](docs/sdks/compute/README.md#listcomputeregions) - List all regions
+- [`computeListComputeRegions`](docs/sdks/region/README.md#listcomputeregions) - List all regions
+- [`computeListComputeServices`](docs/sdks/compute/README.md#listcomputeservices) - List all services
+- [`computeListComputeServices`](docs/sdks/service/README.md#listcomputeservices) - List all services
+- [`computeListComputeSnapshots`](docs/sdks/compute/README.md#listcomputesnapshots) - List all snapshots
+- [`computeListComputeSnapshots`](docs/sdks/snapshot/README.md#listcomputesnapshots) - List all snapshots
+- [`computeListComputeTemplates`](docs/sdks/compute/README.md#listcomputetemplates) - List all templates
+- [`computeListComputeTemplates`](docs/sdks/template/README.md#listcomputetemplates) - List all templates
+- [`computeListComputeUsages`](docs/sdks/compute/README.md#listcomputeusages) - List all usages
+- [`computeListComputeUsages`](docs/sdks/usage/README.md#listcomputeusages) - List all usages
+- [`computeListComputeVolumes`](docs/sdks/compute/README.md#listcomputevolumes) - List all volumes
+- [`computeListComputeVolumes`](docs/sdks/volume/README.md#listcomputevolumes) - List all volumes
+- [`computePatchComputeDeployment`](docs/sdks/compute/README.md#patchcomputedeployment) - Update a deployment
+- [`computePatchComputeDeployment`](docs/sdks/deployment/README.md#patchcomputedeployment) - Update a deployment
+- [`computePatchComputeDomain`](docs/sdks/compute/README.md#patchcomputedomain) - Update a domain
+- [`computePatchComputeDomain`](docs/sdks/domain/README.md#patchcomputedomain) - Update a domain
+- [`computePatchComputeEnvvar`](docs/sdks/compute/README.md#patchcomputeenvvar) - Update an envvar
+- [`computePatchComputeEnvvar`](docs/sdks/envvar/README.md#patchcomputeenvvar) - Update an envvar
+- [`computePatchComputeInstance`](docs/sdks/compute/README.md#patchcomputeinstance) - Update an instance
+- [`computePatchComputeInstance`](docs/sdks/instance/README.md#patchcomputeinstance) - Update an instance
+- [`computePatchComputeKey`](docs/sdks/compute/README.md#patchcomputekey) - Update a key
+- [`computePatchComputeKey`](docs/sdks/key/README.md#patchcomputekey) - Update a key
+- [`computePatchComputeService`](docs/sdks/compute/README.md#patchcomputeservice) - Update a service
+- [`computePatchComputeService`](docs/sdks/service/README.md#patchcomputeservice) - Update a service
+- [`computePatchComputeTemplate`](docs/sdks/compute/README.md#patchcomputetemplate) - Update a template
+- [`computePatchComputeTemplate`](docs/sdks/template/README.md#patchcomputetemplate) - Update a template
+- [`computePatchComputeVolume`](docs/sdks/compute/README.md#patchcomputevolume) - Update a volume
+- [`computePatchComputeVolume`](docs/sdks/volume/README.md#patchcomputevolume) - Update a volume
+- [`computeRemoveComputeDeployment`](docs/sdks/compute/README.md#removecomputedeployment) - Remove a deployment
+- [`computeRemoveComputeDeployment`](docs/sdks/deployment/README.md#removecomputedeployment) - Remove a deployment
+- [`computeRemoveComputeDomain`](docs/sdks/compute/README.md#removecomputedomain) - Remove a domain
+- [`computeRemoveComputeDomain`](docs/sdks/domain/README.md#removecomputedomain) - Remove a domain
+- [`computeRemoveComputeEnvvar`](docs/sdks/compute/README.md#removecomputeenvvar) - Remove an envvar
+- [`computeRemoveComputeEnvvar`](docs/sdks/envvar/README.md#removecomputeenvvar) - Remove an envvar
+- [`computeRemoveComputeInstance`](docs/sdks/compute/README.md#removecomputeinstance) - Remove an instance
+- [`computeRemoveComputeInstance`](docs/sdks/instance/README.md#removecomputeinstance) - Remove an instance
+- [`computeRemoveComputeKey`](docs/sdks/compute/README.md#removecomputekey) - Remove a key
+- [`computeRemoveComputeKey`](docs/sdks/key/README.md#removecomputekey) - Remove a key
+- [`computeRemoveComputeService`](docs/sdks/compute/README.md#removecomputeservice) - Remove a service
+- [`computeRemoveComputeService`](docs/sdks/service/README.md#removecomputeservice) - Remove a service
+- [`computeRemoveComputeSnapshot`](docs/sdks/compute/README.md#removecomputesnapshot) - Remove a snapshot
+- [`computeRemoveComputeSnapshot`](docs/sdks/snapshot/README.md#removecomputesnapshot) - Remove a snapshot
+- [`computeRemoveComputeTemplate`](docs/sdks/compute/README.md#removecomputetemplate) - Remove a template
+- [`computeRemoveComputeTemplate`](docs/sdks/template/README.md#removecomputetemplate) - Remove a template
+- [`computeRemoveComputeVolume`](docs/sdks/compute/README.md#removecomputevolume) - Remove a volume
+- [`computeRemoveComputeVolume`](docs/sdks/volume/README.md#removecomputevolume) - Remove a volume
+- [`computeUpdateComputeDeployment`](docs/sdks/compute/README.md#updatecomputedeployment) - Update a deployment
+- [`computeUpdateComputeDeployment`](docs/sdks/deployment/README.md#updatecomputedeployment) - Update a deployment
+- [`computeUpdateComputeDomain`](docs/sdks/compute/README.md#updatecomputedomain) - Update a domain
+- [`computeUpdateComputeDomain`](docs/sdks/domain/README.md#updatecomputedomain) - Update a domain
+- [`computeUpdateComputeEnvvar`](docs/sdks/compute/README.md#updatecomputeenvvar) - Update an envvar
+- [`computeUpdateComputeEnvvar`](docs/sdks/envvar/README.md#updatecomputeenvvar) - Update an envvar
+- [`computeUpdateComputeInstance`](docs/sdks/compute/README.md#updatecomputeinstance) - Update an instance
+- [`computeUpdateComputeInstance`](docs/sdks/instance/README.md#updatecomputeinstance) - Update an instance
+- [`computeUpdateComputeKey`](docs/sdks/compute/README.md#updatecomputekey) - Update a key
+- [`computeUpdateComputeKey`](docs/sdks/key/README.md#updatecomputekey) - Update a key
+- [`computeUpdateComputeService`](docs/sdks/compute/README.md#updatecomputeservice) - Update a service
+- [`computeUpdateComputeService`](docs/sdks/service/README.md#updatecomputeservice) - Update a service
+- [`computeUpdateComputeTemplate`](docs/sdks/compute/README.md#updatecomputetemplate) - Update a template
+- [`computeUpdateComputeTemplate`](docs/sdks/template/README.md#updatecomputetemplate) - Update a template
+- [`computeUpdateComputeVolume`](docs/sdks/compute/README.md#updatecomputevolume) - Update a volume
+- [`computeUpdateComputeVolume`](docs/sdks/volume/README.md#updatecomputevolume) - Update a volume
 - [`contactCreateCrmContact`](docs/sdks/contact/README.md#createcrmcontact) - Create a contact
 - [`contactCreateCrmContact`](docs/sdks/crm/README.md#createcrmcontact) - Create a contact
 - [`contactCreateUcContact`](docs/sdks/contact/README.md#createuccontact) - Create a contact
@@ -1544,6 +1658,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`eventUpdateCrmEvent`](docs/sdks/event/README.md#updatecrmevent) - Update an event
 - [`eventUpdateMessagingEvent`](docs/sdks/event/README.md#updatemessagingevent) - Update an event
 - [`eventUpdateMessagingEvent`](docs/sdks/messaging/README.md#updatemessagingevent) - Update an event
+- [`expenseCreateLegalExpense`](docs/sdks/expense/README.md#createlegalexpense) - Create an expense
+- [`expenseCreateLegalExpense`](docs/sdks/legal/README.md#createlegalexpense) - Create an expense
+- [`expenseGetLegalExpense`](docs/sdks/expense/README.md#getlegalexpense) - Retrieve an expense
+- [`expenseGetLegalExpense`](docs/sdks/legal/README.md#getlegalexpense) - Retrieve an expense
+- [`expenseListLegalExpenses`](docs/sdks/expense/README.md#listlegalexpenses) - List all expenses
+- [`expenseListLegalExpenses`](docs/sdks/legal/README.md#listlegalexpenses) - List all expenses
+- [`expensePatchLegalExpense`](docs/sdks/expense/README.md#patchlegalexpense) - Update an expense
+- [`expensePatchLegalExpense`](docs/sdks/legal/README.md#patchlegalexpense) - Update an expense
+- [`expenseRemoveLegalExpense`](docs/sdks/expense/README.md#removelegalexpense) - Remove an expense
+- [`expenseRemoveLegalExpense`](docs/sdks/legal/README.md#removelegalexpense) - Remove an expense
+- [`expenseUpdateLegalExpense`](docs/sdks/expense/README.md#updatelegalexpense) - Update an expense
+- [`expenseUpdateLegalExpense`](docs/sdks/legal/README.md#updatelegalexpense) - Update an expense
 - [`formsCreateFormsForm`](docs/sdks/form/README.md#createformsform) - Create a form
 - [`formsCreateFormsForm`](docs/sdks/forms/README.md#createformsform) - Create a form
 - [`formsGetFormsForm`](docs/sdks/form/README.md#getformsform) - Retrieve a form
@@ -1626,6 +1752,62 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`groupUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 - [`groupUpdateScimGroups`](docs/sdks/group/README.md#updatescimgroups) - Update group
 - [`groupUpdateScimGroups`](docs/sdks/scim/README.md#updatescimgroups) - Update group
+- [`healthcareCreateHealthcareAppointment`](docs/sdks/appointment/README.md#createhealthcareappointment) - Create an appointment
+- [`healthcareCreateHealthcareAppointment`](docs/sdks/healthcare/README.md#createhealthcareappointment) - Create an appointment
+- [`healthcareCreateHealthcareObservation`](docs/sdks/healthcare/README.md#createhealthcareobservation) - Create an observation
+- [`healthcareCreateHealthcareObservation`](docs/sdks/observation/README.md#createhealthcareobservation) - Create an observation
+- [`healthcareCreateHealthcarePatient`](docs/sdks/healthcare/README.md#createhealthcarepatient) - Create a patient
+- [`healthcareCreateHealthcarePatient`](docs/sdks/patient/README.md#createhealthcarepatient) - Create a patient
+- [`healthcareGetHealthcareAllergy`](docs/sdks/allergy/README.md#gethealthcareallergy) - Retrieve an allergy
+- [`healthcareGetHealthcareAllergy`](docs/sdks/healthcare/README.md#gethealthcareallergy) - Retrieve an allergy
+- [`healthcareGetHealthcareAppointment`](docs/sdks/appointment/README.md#gethealthcareappointment) - Retrieve an appointment
+- [`healthcareGetHealthcareAppointment`](docs/sdks/healthcare/README.md#gethealthcareappointment) - Retrieve an appointment
+- [`healthcareGetHealthcareCondition`](docs/sdks/condition/README.md#gethealthcarecondition) - Retrieve a condition
+- [`healthcareGetHealthcareCondition`](docs/sdks/healthcare/README.md#gethealthcarecondition) - Retrieve a condition
+- [`healthcareGetHealthcareEncounter`](docs/sdks/encounter/README.md#gethealthcareencounter) - Retrieve an encounter
+- [`healthcareGetHealthcareEncounter`](docs/sdks/healthcare/README.md#gethealthcareencounter) - Retrieve an encounter
+- [`healthcareGetHealthcareImmunization`](docs/sdks/healthcare/README.md#gethealthcareimmunization) - Retrieve an immunization
+- [`healthcareGetHealthcareImmunization`](docs/sdks/immunization/README.md#gethealthcareimmunization) - Retrieve an immunization
+- [`healthcareGetHealthcareMedication`](docs/sdks/healthcare/README.md#gethealthcaremedication) - Retrieve a medication
+- [`healthcareGetHealthcareMedication`](docs/sdks/medication/README.md#gethealthcaremedication) - Retrieve a medication
+- [`healthcareGetHealthcareObservation`](docs/sdks/healthcare/README.md#gethealthcareobservation) - Retrieve an observation
+- [`healthcareGetHealthcareObservation`](docs/sdks/observation/README.md#gethealthcareobservation) - Retrieve an observation
+- [`healthcareGetHealthcarePatient`](docs/sdks/healthcare/README.md#gethealthcarepatient) - Retrieve a patient
+- [`healthcareGetHealthcarePatient`](docs/sdks/patient/README.md#gethealthcarepatient) - Retrieve a patient
+- [`healthcareGetHealthcarePractitioner`](docs/sdks/healthcare/README.md#gethealthcarepractitioner) - Retrieve a practitioner
+- [`healthcareGetHealthcarePractitioner`](docs/sdks/practitioner/README.md#gethealthcarepractitioner) - Retrieve a practitioner
+- [`healthcareGetHealthcareSlot`](docs/sdks/healthcare/README.md#gethealthcareslot) - Retrieve a slot
+- [`healthcareGetHealthcareSlot`](docs/sdks/slot/README.md#gethealthcareslot) - Retrieve a slot
+- [`healthcareListHealthcareAllergies`](docs/sdks/allergy/README.md#listhealthcareallergies) - List all allergies
+- [`healthcareListHealthcareAllergies`](docs/sdks/healthcare/README.md#listhealthcareallergies) - List all allergies
+- [`healthcareListHealthcareAppointments`](docs/sdks/appointment/README.md#listhealthcareappointments) - List all appointments
+- [`healthcareListHealthcareAppointments`](docs/sdks/healthcare/README.md#listhealthcareappointments) - List all appointments
+- [`healthcareListHealthcareConditions`](docs/sdks/condition/README.md#listhealthcareconditions) - List all conditions
+- [`healthcareListHealthcareConditions`](docs/sdks/healthcare/README.md#listhealthcareconditions) - List all conditions
+- [`healthcareListHealthcareEncounters`](docs/sdks/encounter/README.md#listhealthcareencounters) - List all encounters
+- [`healthcareListHealthcareEncounters`](docs/sdks/healthcare/README.md#listhealthcareencounters) - List all encounters
+- [`healthcareListHealthcareImmunizations`](docs/sdks/healthcare/README.md#listhealthcareimmunizations) - List all immunizations
+- [`healthcareListHealthcareImmunizations`](docs/sdks/immunization/README.md#listhealthcareimmunizations) - List all immunizations
+- [`healthcareListHealthcareMedications`](docs/sdks/healthcare/README.md#listhealthcaremedications) - List all medications
+- [`healthcareListHealthcareMedications`](docs/sdks/medication/README.md#listhealthcaremedications) - List all medications
+- [`healthcareListHealthcareObservations`](docs/sdks/healthcare/README.md#listhealthcareobservations) - List all observations
+- [`healthcareListHealthcareObservations`](docs/sdks/observation/README.md#listhealthcareobservations) - List all observations
+- [`healthcareListHealthcarePatients`](docs/sdks/healthcare/README.md#listhealthcarepatients) - List all patients
+- [`healthcareListHealthcarePatients`](docs/sdks/patient/README.md#listhealthcarepatients) - List all patients
+- [`healthcareListHealthcarePractitioners`](docs/sdks/healthcare/README.md#listhealthcarepractitioners) - List all practitioners
+- [`healthcareListHealthcarePractitioners`](docs/sdks/practitioner/README.md#listhealthcarepractitioners) - List all practitioners
+- [`healthcareListHealthcareSlots`](docs/sdks/healthcare/README.md#listhealthcareslots) - List all slots
+- [`healthcareListHealthcareSlots`](docs/sdks/slot/README.md#listhealthcareslots) - List all slots
+- [`healthcarePatchHealthcareAppointment`](docs/sdks/appointment/README.md#patchhealthcareappointment) - Update an appointment
+- [`healthcarePatchHealthcareAppointment`](docs/sdks/healthcare/README.md#patchhealthcareappointment) - Update an appointment
+- [`healthcarePatchHealthcarePatient`](docs/sdks/healthcare/README.md#patchhealthcarepatient) - Update a patient
+- [`healthcarePatchHealthcarePatient`](docs/sdks/patient/README.md#patchhealthcarepatient) - Update a patient
+- [`healthcareRemoveHealthcareAppointment`](docs/sdks/appointment/README.md#removehealthcareappointment) - Remove an appointment
+- [`healthcareRemoveHealthcareAppointment`](docs/sdks/healthcare/README.md#removehealthcareappointment) - Remove an appointment
+- [`healthcareUpdateHealthcareAppointment`](docs/sdks/appointment/README.md#updatehealthcareappointment) - Update an appointment
+- [`healthcareUpdateHealthcareAppointment`](docs/sdks/healthcare/README.md#updatehealthcareappointment) - Update an appointment
+- [`healthcareUpdateHealthcarePatient`](docs/sdks/healthcare/README.md#updatehealthcarepatient) - Update a patient
+- [`healthcareUpdateHealthcarePatient`](docs/sdks/patient/README.md#updatehealthcarepatient) - Update a patient
 - [`hrisCreateHrisAttendance`](docs/sdks/attendance/README.md#createhrisattendance) - Create an attendance
 - [`hrisCreateHrisAttendance`](docs/sdks/hris/README.md#createhrisattendance) - Create an attendance
 - [`hrisCreateHrisBankaccount`](docs/sdks/bankaccount/README.md#createhrisbankaccount) - Create a bankaccount
@@ -1794,6 +1976,42 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`kmsUpdateKmsPage`](docs/sdks/page/README.md#updatekmspage) - Update a page
 - [`kmsUpdateKmsSpace`](docs/sdks/kms/README.md#updatekmsspace) - Update a space
 - [`kmsUpdateKmsSpace`](docs/sdks/space/README.md#updatekmsspace) - Update a space
+- [`legalCreateLegalMatter`](docs/sdks/legal/README.md#createlegalmatter) - Create a matter
+- [`legalCreateLegalMatter`](docs/sdks/matter/README.md#createlegalmatter) - Create a matter
+- [`legalCreateLegalPracticearea`](docs/sdks/legal/README.md#createlegalpracticearea) - Create a practicearea
+- [`legalCreateLegalPracticearea`](docs/sdks/practicearea/README.md#createlegalpracticearea) - Create a practicearea
+- [`legalCreateLegalTimeentry`](docs/sdks/legal/README.md#createlegaltimeentry) - Create a timeentry
+- [`legalCreateLegalTimeentry`](docs/sdks/timeentry/README.md#createlegaltimeentry) - Create a timeentry
+- [`legalGetLegalMatter`](docs/sdks/legal/README.md#getlegalmatter) - Retrieve a matter
+- [`legalGetLegalMatter`](docs/sdks/matter/README.md#getlegalmatter) - Retrieve a matter
+- [`legalGetLegalPracticearea`](docs/sdks/legal/README.md#getlegalpracticearea) - Retrieve a practicearea
+- [`legalGetLegalPracticearea`](docs/sdks/practicearea/README.md#getlegalpracticearea) - Retrieve a practicearea
+- [`legalGetLegalTimeentry`](docs/sdks/legal/README.md#getlegaltimeentry) - Retrieve a timeentry
+- [`legalGetLegalTimeentry`](docs/sdks/timeentry/README.md#getlegaltimeentry) - Retrieve a timeentry
+- [`legalListLegalMatters`](docs/sdks/legal/README.md#listlegalmatters) - List all matters
+- [`legalListLegalMatters`](docs/sdks/matter/README.md#listlegalmatters) - List all matters
+- [`legalListLegalPracticeareas`](docs/sdks/legal/README.md#listlegalpracticeareas) - List all practiceareas
+- [`legalListLegalPracticeareas`](docs/sdks/practicearea/README.md#listlegalpracticeareas) - List all practiceareas
+- [`legalListLegalTimeentries`](docs/sdks/legal/README.md#listlegaltimeentries) - List all timeentries
+- [`legalListLegalTimeentries`](docs/sdks/timeentry/README.md#listlegaltimeentries) - List all timeentries
+- [`legalPatchLegalMatter`](docs/sdks/legal/README.md#patchlegalmatter) - Update a matter
+- [`legalPatchLegalMatter`](docs/sdks/matter/README.md#patchlegalmatter) - Update a matter
+- [`legalPatchLegalPracticearea`](docs/sdks/legal/README.md#patchlegalpracticearea) - Update a practicearea
+- [`legalPatchLegalPracticearea`](docs/sdks/practicearea/README.md#patchlegalpracticearea) - Update a practicearea
+- [`legalPatchLegalTimeentry`](docs/sdks/legal/README.md#patchlegaltimeentry) - Update a timeentry
+- [`legalPatchLegalTimeentry`](docs/sdks/timeentry/README.md#patchlegaltimeentry) - Update a timeentry
+- [`legalRemoveLegalMatter`](docs/sdks/legal/README.md#removelegalmatter) - Remove a matter
+- [`legalRemoveLegalMatter`](docs/sdks/matter/README.md#removelegalmatter) - Remove a matter
+- [`legalRemoveLegalPracticearea`](docs/sdks/legal/README.md#removelegalpracticearea) - Remove a practicearea
+- [`legalRemoveLegalPracticearea`](docs/sdks/practicearea/README.md#removelegalpracticearea) - Remove a practicearea
+- [`legalRemoveLegalTimeentry`](docs/sdks/legal/README.md#removelegaltimeentry) - Remove a timeentry
+- [`legalRemoveLegalTimeentry`](docs/sdks/timeentry/README.md#removelegaltimeentry) - Remove a timeentry
+- [`legalUpdateLegalMatter`](docs/sdks/legal/README.md#updatelegalmatter) - Update a matter
+- [`legalUpdateLegalMatter`](docs/sdks/matter/README.md#updatelegalmatter) - Update a matter
+- [`legalUpdateLegalPracticearea`](docs/sdks/legal/README.md#updatelegalpracticearea) - Update a practicearea
+- [`legalUpdateLegalPracticearea`](docs/sdks/practicearea/README.md#updatelegalpracticearea) - Update a practicearea
+- [`legalUpdateLegalTimeentry`](docs/sdks/legal/README.md#updatelegaltimeentry) - Update a timeentry
+- [`legalUpdateLegalTimeentry`](docs/sdks/timeentry/README.md#updatelegaltimeentry) - Update a timeentry
 - [`linkCreatePaymentLink`](docs/sdks/link/README.md#createpaymentlink) - Create a link
 - [`linkCreatePaymentLink`](docs/sdks/payment/README.md#createpaymentlink) - Create a link
 - [`linkGetPaymentLink`](docs/sdks/link/README.md#getpaymentlink) - Retrieve a link
@@ -1872,10 +2090,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`locationCreateHrisLocation`](docs/sdks/location/README.md#createhrislocation) - Create a location
 - [`locationGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
 - [`locationGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
+- [`locationGetHealthcareLocation`](docs/sdks/healthcare/README.md#gethealthcarelocation) - Retrieve a location
+- [`locationGetHealthcareLocation`](docs/sdks/location/README.md#gethealthcarelocation) - Retrieve a location
 - [`locationGetHrisLocation`](docs/sdks/hris/README.md#gethrislocation) - Retrieve a location
 - [`locationGetHrisLocation`](docs/sdks/location/README.md#gethrislocation) - Retrieve a location
 - [`locationListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
 - [`locationListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
+- [`locationListHealthcareLocations`](docs/sdks/healthcare/README.md#listhealthcarelocations) - List all locations
+- [`locationListHealthcareLocations`](docs/sdks/location/README.md#listhealthcarelocations) - List all locations
 - [`locationListHrisLocations`](docs/sdks/hris/README.md#listhrislocations) - List all locations
 - [`locationListHrisLocations`](docs/sdks/location/README.md#listhrislocations) - List all locations
 - [`locationPatchCommerceLocation`](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
@@ -2194,12 +2416,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`signingCreateSigningSignatory`](docs/sdks/signing/README.md#createsigningsignatory) - Create a signatory
 - [`signingGetSigningSignatory`](docs/sdks/signatory/README.md#getsigningsignatory) - Retrieve a signatory
 - [`signingGetSigningSignatory`](docs/sdks/signing/README.md#getsigningsignatory) - Retrieve a signatory
-- [`signingGetSigningTemplate`](docs/sdks/signing/README.md#getsigningtemplate) - Retrieve a template
-- [`signingGetSigningTemplate`](docs/sdks/template/README.md#getsigningtemplate) - Retrieve a template
 - [`signingListSigningSignatories`](docs/sdks/signatory/README.md#listsigningsignatories) - List all signatories
 - [`signingListSigningSignatories`](docs/sdks/signing/README.md#listsigningsignatories) - List all signatories
-- [`signingListSigningTemplates`](docs/sdks/signing/README.md#listsigningtemplates) - List all templates
-- [`signingListSigningTemplates`](docs/sdks/template/README.md#listsigningtemplates) - List all templates
 - [`signingPatchSigningSignatory`](docs/sdks/signatory/README.md#patchsigningsignatory) - Update a signatory
 - [`signingPatchSigningSignatory`](docs/sdks/signing/README.md#patchsigningsignatory) - Update a signatory
 - [`signingRemoveSigningSignatory`](docs/sdks/signatory/README.md#removesigningsignatory) - Remove a signatory
@@ -2262,6 +2480,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`taxonomyGetHrisTaxonomy`](docs/sdks/taxonomy/README.md#gethristaxonomy) - Retrieve a taxonomy
 - [`taxonomyListHrisTaxonomies`](docs/sdks/hris/README.md#listhristaxonomies) - List all taxonomies
 - [`taxonomyListHrisTaxonomies`](docs/sdks/taxonomy/README.md#listhristaxonomies) - List all taxonomies
+- [`templateGetSigningTemplate`](docs/sdks/signing/README.md#getsigningtemplate) - Retrieve a template
+- [`templateGetSigningTemplate`](docs/sdks/template/README.md#getsigningtemplate) - Retrieve a template
+- [`templateListSigningTemplates`](docs/sdks/signing/README.md#listsigningtemplates) - List all templates
+- [`templateListSigningTemplates`](docs/sdks/template/README.md#listsigningtemplates) - List all templates
 - [`ticketingCreateTicketingCustomer`](docs/sdks/customer/README.md#createticketingcustomer) - Create a customer
 - [`ticketingCreateTicketingCustomer`](docs/sdks/ticketing/README.md#createticketingcustomer) - Create a customer
 - [`ticketingCreateTicketingNote`](docs/sdks/note/README.md#createticketingnote) - Create a note

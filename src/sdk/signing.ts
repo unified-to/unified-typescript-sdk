@@ -10,12 +10,12 @@ import { documentRemoveSigningDocument } from "../funcs/documentRemoveSigningDoc
 import { documentUpdateSigningDocument } from "../funcs/documentUpdateSigningDocument.js";
 import { signingCreateSigningSignatory } from "../funcs/signingCreateSigningSignatory.js";
 import { signingGetSigningSignatory } from "../funcs/signingGetSigningSignatory.js";
-import { signingGetSigningTemplate } from "../funcs/signingGetSigningTemplate.js";
 import { signingListSigningSignatories } from "../funcs/signingListSigningSignatories.js";
-import { signingListSigningTemplates } from "../funcs/signingListSigningTemplates.js";
 import { signingPatchSigningSignatory } from "../funcs/signingPatchSigningSignatory.js";
 import { signingRemoveSigningSignatory } from "../funcs/signingRemoveSigningSignatory.js";
 import { signingUpdateSigningSignatory } from "../funcs/signingUpdateSigningSignatory.js";
+import { templateGetSigningTemplate } from "../funcs/templateGetSigningTemplate.js";
+import { templateListSigningTemplates } from "../funcs/templateListSigningTemplates.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -85,7 +85,7 @@ export class Signing extends ClientSDK {
     request: operations.GetSigningTemplateRequest,
     options?: RequestOptions,
   ): Promise<shared.SigningTemplate> {
-    return unwrapAsync(signingGetSigningTemplate(
+    return unwrapAsync(templateGetSigningTemplate(
       this,
       request,
       options,
@@ -127,7 +127,7 @@ export class Signing extends ClientSDK {
     request: operations.ListSigningTemplatesRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.SigningTemplate>> {
-    return unwrapAsync(signingListSigningTemplates(
+    return unwrapAsync(templateListSigningTemplates(
       this,
       request,
       options,

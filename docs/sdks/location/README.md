@@ -8,9 +8,11 @@
 * [createHrisLocation](#createhrislocation) - Create a location
 * [getClubsLocation](#getclubslocation) - Retrieve a location
 * [getCommerceLocation](#getcommercelocation) - Retrieve a location
+* [getHealthcareLocation](#gethealthcarelocation) - Retrieve a location
 * [getHrisLocation](#gethrislocation) - Retrieve a location
 * [listClubsLocations](#listclubslocations) - List all locations
 * [listCommerceLocations](#listcommercelocations) - List all locations
+* [listHealthcareLocations](#listhealthcarelocations) - List all locations
 * [listHrisLocations](#listhrislocations) - List all locations
 * [patchCommerceLocation](#patchcommercelocation) - Update a location
 * [patchHrisLocation](#patchhrislocation) - Update a location
@@ -50,7 +52,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "5eb2c8d8-67d7-4993-93ba-0b9210a34d1e",
+      id: "7ac92ab4-ae41-4514-96d1-478c8c218613",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -61,10 +63,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "0fd1a451-74a9-4366-b56e-1cab6cfed93d",
+          id: "eb8db84d-c9b5-4ebd-ac27-a79341a5b150",
           metadata: [
             {
-              id: "8ff94f86-ce83-4a5a-82d9-7cdca5e18fcd",
+              id: "08495af3-76ce-408d-858d-95e28e72981e",
               slug: "abutor",
               value: "damno",
             },
@@ -89,7 +91,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-17T07:27:20.940Z"),
+      updatedAt: new Date("2024-04-17T14:43:33.537Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -132,7 +134,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "5eb2c8d8-67d7-4993-93ba-0b9210a34d1e",
+      id: "7ac92ab4-ae41-4514-96d1-478c8c218613",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -143,10 +145,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "0fd1a451-74a9-4366-b56e-1cab6cfed93d",
+          id: "eb8db84d-c9b5-4ebd-ac27-a79341a5b150",
           metadata: [
             {
-              id: "8ff94f86-ce83-4a5a-82d9-7cdca5e18fcd",
+              id: "08495af3-76ce-408d-858d-95e28e72981e",
               slug: "abutor",
               value: "damno",
             },
@@ -171,7 +173,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-17T07:27:20.940Z"),
+      updatedAt: new Date("2024-04-17T14:43:33.537Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -237,8 +239,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "cf90be07-bf08-4542-ae05-d6af5965c6f1",
-      id: "1e53dfa8-5595-4dc1-bcc5-10de4c8bdcba",
+      externalIdentifier: "54889f3b-64bd-4c03-87a4-3046c3f40499",
+      id: "d23bc217-59a3-4e73-a3a3-155cbeeb1978",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -258,7 +260,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-17T10:41:08.849Z"),
+      updatedAt: new Date("2023-06-17T18:25:17.217Z"),
     },
     connectionId: "<id>",
   });
@@ -300,8 +302,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "cf90be07-bf08-4542-ae05-d6af5965c6f1",
-      id: "1e53dfa8-5595-4dc1-bcc5-10de4c8bdcba",
+      externalIdentifier: "54889f3b-64bd-4c03-87a4-3046c3f40499",
+      id: "d23bc217-59a3-4e73-a3a3-155cbeeb1978",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -321,7 +323,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-17T10:41:08.849Z"),
+      updatedAt: new Date("2023-06-17T18:25:17.217Z"),
     },
     connectionId: "<id>",
   });
@@ -506,6 +508,85 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceLocation](../../sdk/models/shared/commercelocation.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getHealthcareLocation
+
+Retrieve a location
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHealthcareLocation" method="get" path="/healthcare/{connection_id}/location/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.location.getHealthcareLocation({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { locationGetHealthcareLocation } from "@unified-api/typescript-sdk/funcs/locationGetHealthcareLocation.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await locationGetHealthcareLocation(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationGetHealthcareLocation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHealthcareLocationRequest](../../sdk/models/operations/gethealthcarelocationrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareLocation](../../sdk/models/shared/healthcarelocation.md)\>**
 
 ### Errors
 
@@ -746,6 +827,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listHealthcareLocations
+
+List all locations
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHealthcareLocations" method="get" path="/healthcare/{connection_id}/location" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.location.listHealthcareLocations({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { locationListHealthcareLocations } from "@unified-api/typescript-sdk/funcs/locationListHealthcareLocations.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await locationListHealthcareLocations(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("locationListHealthcareLocations failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHealthcareLocationsRequest](../../sdk/models/operations/listhealthcarelocationsrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareLocation[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listHrisLocations
 
 List all locations
@@ -854,7 +1012,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "6a2af433-fc3f-4ff5-84e4-0c61128fafdd",
+      id: "602a4d92-5d65-4016-978b-8b03bed67fd9",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -865,10 +1023,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "8e0e88b1-254c-4027-93a5-32d4b03fb5a2",
+          id: "05e11113-6be6-45df-8796-c425ccecdcfc",
           metadata: [
             {
-              id: "5be152a2-ea26-4af9-96ce-530d98842281",
+              id: "5c08a4a3-7827-44f7-b4a6-7d08143fe585",
               slug: "abutor",
               value: "damno",
             },
@@ -893,7 +1051,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-17T07:27:20.954Z"),
+      updatedAt: new Date("2024-04-17T14:43:33.549Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -937,7 +1095,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "6a2af433-fc3f-4ff5-84e4-0c61128fafdd",
+      id: "602a4d92-5d65-4016-978b-8b03bed67fd9",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -948,10 +1106,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "8e0e88b1-254c-4027-93a5-32d4b03fb5a2",
+          id: "05e11113-6be6-45df-8796-c425ccecdcfc",
           metadata: [
             {
-              id: "5be152a2-ea26-4af9-96ce-530d98842281",
+              id: "5c08a4a3-7827-44f7-b4a6-7d08143fe585",
               slug: "abutor",
               value: "damno",
             },
@@ -976,7 +1134,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-17T07:27:20.954Z"),
+      updatedAt: new Date("2024-04-17T14:43:33.549Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1043,8 +1201,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
-      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
+      externalIdentifier: "0e9dcba4-0ad5-4c38-8a0a-74cdda1b2bbc",
+      id: "d71ba7b1-de46-43ab-a5c9-6f86497eaac1",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -1064,7 +1222,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
+      updatedAt: new Date("2023-06-17T18:25:17.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1107,8 +1265,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
-      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
+      externalIdentifier: "0e9dcba4-0ad5-4c38-8a0a-74cdda1b2bbc",
+      id: "d71ba7b1-de46-43ab-a5c9-6f86497eaac1",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -1128,7 +1286,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
+      updatedAt: new Date("2023-06-17T18:25:17.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1352,7 +1510,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "6a2af433-fc3f-4ff5-84e4-0c61128fafdd",
+      id: "602a4d92-5d65-4016-978b-8b03bed67fd9",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1363,10 +1521,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "8e0e88b1-254c-4027-93a5-32d4b03fb5a2",
+          id: "05e11113-6be6-45df-8796-c425ccecdcfc",
           metadata: [
             {
-              id: "5be152a2-ea26-4af9-96ce-530d98842281",
+              id: "5c08a4a3-7827-44f7-b4a6-7d08143fe585",
               slug: "abutor",
               value: "damno",
             },
@@ -1391,7 +1549,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-17T07:27:20.954Z"),
+      updatedAt: new Date("2024-04-17T14:43:33.549Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1435,7 +1593,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "6a2af433-fc3f-4ff5-84e4-0c61128fafdd",
+      id: "602a4d92-5d65-4016-978b-8b03bed67fd9",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1446,10 +1604,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "8e0e88b1-254c-4027-93a5-32d4b03fb5a2",
+          id: "05e11113-6be6-45df-8796-c425ccecdcfc",
           metadata: [
             {
-              id: "5be152a2-ea26-4af9-96ce-530d98842281",
+              id: "5c08a4a3-7827-44f7-b4a6-7d08143fe585",
               slug: "abutor",
               value: "damno",
             },
@@ -1474,7 +1632,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-17T07:27:20.954Z"),
+      updatedAt: new Date("2024-04-17T14:43:33.549Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1541,8 +1699,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
-      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
+      externalIdentifier: "0e9dcba4-0ad5-4c38-8a0a-74cdda1b2bbc",
+      id: "d71ba7b1-de46-43ab-a5c9-6f86497eaac1",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -1562,7 +1720,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
+      updatedAt: new Date("2023-06-17T18:25:17.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1605,8 +1763,8 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MUR",
       description: "Acervus caries.",
-      externalIdentifier: "514209de-9c29-4060-acaf-75af1d4884d7",
-      id: "710eed80-ff85-4b44-80c5-8b4d22e2ab36",
+      externalIdentifier: "0e9dcba4-0ad5-4c38-8a0a-74cdda1b2bbc",
+      id: "d71ba7b1-de46-43ab-a5c9-6f86497eaac1",
       isActive: true,
       isHq: false,
       languageLocale: "fr",
@@ -1626,7 +1784,7 @@ async function run() {
         },
       ],
       timezone: "America/Guyana",
-      updatedAt: new Date("2023-06-17T10:41:08.855Z"),
+      updatedAt: new Date("2023-06-17T18:25:17.222Z"),
     },
     connectionId: "<id>",
     id: "<id>",

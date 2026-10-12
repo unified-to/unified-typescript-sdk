@@ -7,8 +7,10 @@ import { clubsListClubsLocations } from "../funcs/clubsListClubsLocations.js";
 import { locationCreateCommerceLocation } from "../funcs/locationCreateCommerceLocation.js";
 import { locationCreateHrisLocation } from "../funcs/locationCreateHrisLocation.js";
 import { locationGetCommerceLocation } from "../funcs/locationGetCommerceLocation.js";
+import { locationGetHealthcareLocation } from "../funcs/locationGetHealthcareLocation.js";
 import { locationGetHrisLocation } from "../funcs/locationGetHrisLocation.js";
 import { locationListCommerceLocations } from "../funcs/locationListCommerceLocations.js";
+import { locationListHealthcareLocations } from "../funcs/locationListHealthcareLocations.js";
 import { locationListHrisLocations } from "../funcs/locationListHrisLocations.js";
 import { locationPatchCommerceLocation } from "../funcs/locationPatchCommerceLocation.js";
 import { locationPatchHrisLocation } from "../funcs/locationPatchHrisLocation.js";
@@ -81,6 +83,20 @@ export class Location extends ClientSDK {
   /**
    * Retrieve a location
    */
+  async getHealthcareLocation(
+    request: operations.GetHealthcareLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HealthcareLocation> {
+    return unwrapAsync(locationGetHealthcareLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a location
+   */
   async getHrisLocation(
     request: operations.GetHrisLocationRequest,
     options?: RequestOptions,
@@ -114,6 +130,20 @@ export class Location extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CommerceLocation>> {
     return unwrapAsync(locationListCommerceLocations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all locations
+   */
+  async listHealthcareLocations(
+    request: operations.ListHealthcareLocationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HealthcareLocation>> {
+    return unwrapAsync(locationListHealthcareLocations(
       this,
       request,
       options,

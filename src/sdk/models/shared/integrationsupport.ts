@@ -13,1021 +13,308 @@ import {
   PropertyIntegrationSupportWebhookEvents,
   PropertyIntegrationSupportWebhookEvents$inboundSchema,
 } from "./propertyintegrationsupportwebhookevents.js";
-
-export const FromWebhook = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type FromWebhook = OpenEnum<typeof FromWebhook>;
-
-export const ListAccountId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListAccountId = OpenEnum<typeof ListAccountId>;
-
-export const ListAdId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListAdId = OpenEnum<typeof ListAdId>;
-
-export const ListAgentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListAgentId = OpenEnum<typeof ListAgentId>;
-
-export const ListApplicationId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListApplicationId = OpenEnum<typeof ListApplicationId>;
-
-export const ListApproverUserId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListApproverUserId = OpenEnum<typeof ListApproverUserId>;
-
-export const ListAssignedUserId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListAssignedUserId = OpenEnum<typeof ListAssignedUserId>;
-
-export const ListBankfeedaccountId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListBankfeedaccountId = OpenEnum<typeof ListBankfeedaccountId>;
-
-export const ListBenefitId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListBenefitId = OpenEnum<typeof ListBenefitId>;
-
-export const ListBillId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListBillId = OpenEnum<typeof ListBillId>;
-
-export const ListBranchId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListBranchId = OpenEnum<typeof ListBranchId>;
-
-export const ListCalendarId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCalendarId = OpenEnum<typeof ListCalendarId>;
-
-export const ListCallId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCallId = OpenEnum<typeof ListCallId>;
-
-export const ListCampaignId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCampaignId = OpenEnum<typeof ListCampaignId>;
-
-export const ListCandidateId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCandidateId = OpenEnum<typeof ListCandidateId>;
-
-export const ListCarrierId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCarrierId = OpenEnum<typeof ListCarrierId>;
-
-export const ListCategoryId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCategoryId = OpenEnum<typeof ListCategoryId>;
-
-export const ListChannelId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListChannelId = OpenEnum<typeof ListChannelId>;
-
-export const ListClassId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListClassId = OpenEnum<typeof ListClassId>;
-
-export const ListCollectionId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCollectionId = OpenEnum<typeof ListCollectionId>;
-
-export const ListCompanyId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCompanyId = OpenEnum<typeof ListCompanyId>;
-
-export const ListContactId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListContactId = OpenEnum<typeof ListContactId>;
-
-export const ListContentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListContentId = OpenEnum<typeof ListContentId>;
-
-export const ListCourseId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCourseId = OpenEnum<typeof ListCourseId>;
-
-export const ListCustomerId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCustomerId = OpenEnum<typeof ListCustomerId>;
-
-export const ListCycleId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListCycleId = OpenEnum<typeof ListCycleId>;
-
-export const ListDatabaseId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListDatabaseId = OpenEnum<typeof ListDatabaseId>;
-
-export const ListDealId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListDealId = OpenEnum<typeof ListDealId>;
-
-export const ListDestinationId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListDestinationId = OpenEnum<typeof ListDestinationId>;
-
-export const ListDimension = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListDimension = OpenEnum<typeof ListDimension>;
-
-export const ListDocumentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListDocumentId = OpenEnum<typeof ListDocumentId>;
-
-export const ListEffectiveStatus = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListEffectiveStatus = OpenEnum<typeof ListEffectiveStatus>;
-
-export const ListEmail = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListEmail = OpenEnum<typeof ListEmail>;
-
-export const ListEndLt = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListEndLt = OpenEnum<typeof ListEndLt>;
-
-export const ListEventId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListEventId = OpenEnum<typeof ListEventId>;
-
-export const ListExpand = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListExpand = OpenEnum<typeof ListExpand>;
-
-export const ListFormId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListFormId = OpenEnum<typeof ListFormId>;
-
-export const ListFulltext = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListFulltext = OpenEnum<typeof ListFulltext>;
-
-export const ListGoal = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListGoal = OpenEnum<typeof ListGoal>;
-
-export const ListGroupId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListGroupId = OpenEnum<typeof ListGroupId>;
-
-export const ListInstructorId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListInstructorId = OpenEnum<typeof ListInstructorId>;
-
-export const ListInterviewId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListInterviewId = OpenEnum<typeof ListInterviewId>;
-
-export const ListInvoiceId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListInvoiceId = OpenEnum<typeof ListInvoiceId>;
-
-export const ListIoId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListIoId = OpenEnum<typeof ListIoId>;
-
-export const ListItemId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListItemId = OpenEnum<typeof ListItemId>;
-
-export const ListItemVariantId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListItemVariantId = OpenEnum<typeof ListItemVariantId>;
-
-export const ListJobId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListJobId = OpenEnum<typeof ListJobId>;
-
-export const ListLabelId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListLabelId = OpenEnum<typeof ListLabelId>;
-
-export const ListLeadId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListLeadId = OpenEnum<typeof ListLeadId>;
-
-export const ListLimit = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListLimit = OpenEnum<typeof ListLimit>;
-
-export const ListLinkId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListLinkId = OpenEnum<typeof ListLinkId>;
-
-export const ListListId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListListId = OpenEnum<typeof ListListId>;
-
-export const ListLocationId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListLocationId = OpenEnum<typeof ListLocationId>;
-
-export const ListMedium = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListMedium = OpenEnum<typeof ListMedium>;
-
-export const ListMemberId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListMemberId = OpenEnum<typeof ListMemberId>;
-
-export const ListOffset = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListOffset = OpenEnum<typeof ListOffset>;
-
-export const ListOrder = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListOrder = OpenEnum<typeof ListOrder>;
-
-export const ListOrderId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListOrderId = OpenEnum<typeof ListOrderId>;
-
-export const ListOrgId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListOrgId = OpenEnum<typeof ListOrgId>;
-
-export const ListPackageId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListPackageId = OpenEnum<typeof ListPackageId>;
-
-export const ListPageId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListPageId = OpenEnum<typeof ListPageId>;
-
-export const ListParentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListParentId = OpenEnum<typeof ListParentId>;
-
-export const ListPaymentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListPaymentId = OpenEnum<typeof ListPaymentId>;
-
-export const ListPayslipId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListPayslipId = OpenEnum<typeof ListPayslipId>;
-
-export const ListPipelineId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListPipelineId = OpenEnum<typeof ListPipelineId>;
-
-export const ListPostId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListPostId = OpenEnum<typeof ListPostId>;
-
-export const ListProfileId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListProfileId = OpenEnum<typeof ListProfileId>;
-
-export const ListProjectId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListProjectId = OpenEnum<typeof ListProjectId>;
-
-export const ListPropertyId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListPropertyId = OpenEnum<typeof ListPropertyId>;
-
-export const ListQuery = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListQuery = OpenEnum<typeof ListQuery>;
-
-export const ListRawFields = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListRawFields = OpenEnum<typeof ListRawFields>;
-
-export const ListReference = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListReference = OpenEnum<typeof ListReference>;
-
-export const ListRepoId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListRepoId = OpenEnum<typeof ListRepoId>;
-
-export const ListRoleId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListRoleId = OpenEnum<typeof ListRoleId>;
-
-export const ListRootId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListRootId = OpenEnum<typeof ListRootId>;
-
-export const ListSaleschannelId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSaleschannelId = OpenEnum<typeof ListSaleschannelId>;
-
-export const ListSegmentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSegmentId = OpenEnum<typeof ListSegmentId>;
-
-export const ListSessionId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSessionId = OpenEnum<typeof ListSessionId>;
-
-export const ListShipmentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListShipmentId = OpenEnum<typeof ListShipmentId>;
-
-export const ListSize = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSize = OpenEnum<typeof ListSize>;
-
-export const ListSortByCreatedAt = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSortByCreatedAt = OpenEnum<typeof ListSortByCreatedAt>;
-
-export const ListSortByName = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSortByName = OpenEnum<typeof ListSortByName>;
-
-export const ListSortByUpdatedAt = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSortByUpdatedAt = OpenEnum<typeof ListSortByUpdatedAt>;
-
-export const ListSource = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSource = OpenEnum<typeof ListSource>;
-
-export const ListSpaceId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListSpaceId = OpenEnum<typeof ListSpaceId>;
-
-export const ListStartGte = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListStartGte = OpenEnum<typeof ListStartGte>;
-
-export const ListStatus = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListStatus = OpenEnum<typeof ListStatus>;
-
-export const ListStudentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListStudentId = OpenEnum<typeof ListStudentId>;
-
-export const ListTableId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListTableId = OpenEnum<typeof ListTableId>;
-
-export const ListTaskId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListTaskId = OpenEnum<typeof ListTaskId>;
-
-export const ListTeacherId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListTeacherId = OpenEnum<typeof ListTeacherId>;
-
-export const ListTemplateId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListTemplateId = OpenEnum<typeof ListTemplateId>;
-
-export const ListTicketId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListTicketId = OpenEnum<typeof ListTicketId>;
-
-export const ListType = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListType = OpenEnum<typeof ListType>;
-
-export const ListUpdatedGte = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListUpdatedGte = OpenEnum<typeof ListUpdatedGte>;
-
-export const ListUserId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListUserId = OpenEnum<typeof ListUserId>;
-
-export const ListUserMentionedId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListUserMentionedId = OpenEnum<typeof ListUserMentionedId>;
-
-export const ListVisitorId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type ListVisitorId = OpenEnum<typeof ListVisitorId>;
-
-export const NativeWebhookCalendarId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookCalendarId = OpenEnum<typeof NativeWebhookCalendarId>;
-
-export const NativeWebhookCarrierId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookCarrierId = OpenEnum<typeof NativeWebhookCarrierId>;
-
-export const NativeWebhookChannelId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookChannelId = OpenEnum<typeof NativeWebhookChannelId>;
-
-export const NativeWebhookCompanyId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookCompanyId = OpenEnum<typeof NativeWebhookCompanyId>;
-
-export const NativeWebhookCourseId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookCourseId = OpenEnum<typeof NativeWebhookCourseId>;
-
-export const NativeWebhookDatabaseId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookDatabaseId = OpenEnum<typeof NativeWebhookDatabaseId>;
-
-export const NativeWebhookEventId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookEventId = OpenEnum<typeof NativeWebhookEventId>;
-
-export const NativeWebhookFormId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookFormId = OpenEnum<typeof NativeWebhookFormId>;
-
-export const NativeWebhookIoId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookIoId = OpenEnum<typeof NativeWebhookIoId>;
-
-export const NativeWebhookLabelId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookLabelId = OpenEnum<typeof NativeWebhookLabelId>;
-
-export const NativeWebhookListId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookListId = OpenEnum<typeof NativeWebhookListId>;
-
-export const NativeWebhookMemberId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookMemberId = OpenEnum<typeof NativeWebhookMemberId>;
-
-export const NativeWebhookOrderId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookOrderId = OpenEnum<typeof NativeWebhookOrderId>;
-
-export const NativeWebhookParentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookParentId = OpenEnum<typeof NativeWebhookParentId>;
-
-export const NativeWebhookProjectId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookProjectId = OpenEnum<typeof NativeWebhookProjectId>;
-
-export const NativeWebhookPropertyId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookPropertyId = OpenEnum<typeof NativeWebhookPropertyId>;
-
-export const NativeWebhookSessionId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookSessionId = OpenEnum<typeof NativeWebhookSessionId>;
-
-export const NativeWebhookShipmentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookShipmentId = OpenEnum<typeof NativeWebhookShipmentId>;
-
-export const NativeWebhookStudentId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookStudentId = OpenEnum<typeof NativeWebhookStudentId>;
-
-export const NativeWebhookTableId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookTableId = OpenEnum<typeof NativeWebhookTableId>;
-
-export const NativeWebhookTaskId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookTaskId = OpenEnum<typeof NativeWebhookTaskId>;
-
-export const NativeWebhookTemplateId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookTemplateId = OpenEnum<typeof NativeWebhookTemplateId>;
-
-export const NativeWebhookType = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookType = OpenEnum<typeof NativeWebhookType>;
-
-export const NativeWebhookUpdatedGte = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookUpdatedGte = OpenEnum<typeof NativeWebhookUpdatedGte>;
-
-export const NativeWebhookVisitorId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type NativeWebhookVisitorId = OpenEnum<typeof NativeWebhookVisitorId>;
-
-export const SearchDomain = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type SearchDomain = OpenEnum<typeof SearchDomain>;
-
-export const SearchEmail = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type SearchEmail = OpenEnum<typeof SearchEmail>;
-
-export const SearchLinkedinurl = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type SearchLinkedinurl = OpenEnum<typeof SearchLinkedinurl>;
-
-export const SearchName = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type SearchName = OpenEnum<typeof SearchName>;
-
-export const SearchTwitter = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type SearchTwitter = OpenEnum<typeof SearchTwitter>;
-
-export const VirtualWebhookAccountId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookAccountId = OpenEnum<typeof VirtualWebhookAccountId>;
-
-export const VirtualWebhookAdId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookAdId = OpenEnum<typeof VirtualWebhookAdId>;
-
-export const VirtualWebhookApplicationId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookApplicationId = OpenEnum<
-  typeof VirtualWebhookApplicationId
->;
-
-export const VirtualWebhookApproverUserId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookApproverUserId = OpenEnum<
-  typeof VirtualWebhookApproverUserId
->;
-
-export const VirtualWebhookAssignedUserId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookAssignedUserId = OpenEnum<
-  typeof VirtualWebhookAssignedUserId
->;
-
-export const VirtualWebhookBankfeedaccountId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookBankfeedaccountId = OpenEnum<
-  typeof VirtualWebhookBankfeedaccountId
->;
-
-export const VirtualWebhookBenefitId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookBenefitId = OpenEnum<typeof VirtualWebhookBenefitId>;
-
-export const VirtualWebhookBillId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookBillId = OpenEnum<typeof VirtualWebhookBillId>;
-
-export const VirtualWebhookBranchId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookBranchId = OpenEnum<typeof VirtualWebhookBranchId>;
-
-export const VirtualWebhookCalendarId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookCalendarId = OpenEnum<
-  typeof VirtualWebhookCalendarId
->;
-
-export const VirtualWebhookCallId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookCallId = OpenEnum<typeof VirtualWebhookCallId>;
-
-export const VirtualWebhookCampaignId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookCampaignId = OpenEnum<
-  typeof VirtualWebhookCampaignId
->;
-
-export const VirtualWebhookCandidateId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookCandidateId = OpenEnum<
-  typeof VirtualWebhookCandidateId
->;
-
-export const VirtualWebhookCarrierId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookCarrierId = OpenEnum<typeof VirtualWebhookCarrierId>;
-
-export const VirtualWebhookChannelId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookChannelId = OpenEnum<typeof VirtualWebhookChannelId>;
+import {
+  FromWebhook,
+  FromWebhook$inboundSchema,
+  ListAccountId,
+  ListAccountId$inboundSchema,
+  ListAdId,
+  ListAdId$inboundSchema,
+  ListAgentId,
+  ListAgentId$inboundSchema,
+  ListApplicationId,
+  ListApplicationId$inboundSchema,
+  ListApproverUserId,
+  ListApproverUserId$inboundSchema,
+  ListAssignedUserId,
+  ListAssignedUserId$inboundSchema,
+  ListBankfeedaccountId,
+  ListBankfeedaccountId$inboundSchema,
+  ListBenefitId,
+  ListBenefitId$inboundSchema,
+  ListBillId,
+  ListBillId$inboundSchema,
+  ListBranchId,
+  ListBranchId$inboundSchema,
+  ListCalendarId,
+  ListCalendarId$inboundSchema,
+  ListCallId,
+  ListCallId$inboundSchema,
+  ListCampaignId,
+  ListCampaignId$inboundSchema,
+  ListCandidateId,
+  ListCandidateId$inboundSchema,
+  ListCarrierId,
+  ListCarrierId$inboundSchema,
+  ListCategoryId,
+  ListCategoryId$inboundSchema,
+  ListChannelId,
+  ListChannelId$inboundSchema,
+  ListClassId,
+  ListClassId$inboundSchema,
+  ListCollectionId,
+  ListCollectionId$inboundSchema,
+  ListCompanyId,
+  ListCompanyId$inboundSchema,
+  ListContactId,
+  ListContactId$inboundSchema,
+  ListContentId,
+  ListContentId$inboundSchema,
+  ListCourseId,
+  ListCourseId$inboundSchema,
+  ListCustomerId,
+  ListCustomerId$inboundSchema,
+  ListCycleId,
+  ListCycleId$inboundSchema,
+  ListDatabaseId,
+  ListDatabaseId$inboundSchema,
+  ListDealId,
+  ListDealId$inboundSchema,
+  ListDestinationId,
+  ListDestinationId$inboundSchema,
+  ListDimension,
+  ListDimension$inboundSchema,
+  ListDocumentId,
+  ListDocumentId$inboundSchema,
+  ListEffectiveStatus,
+  ListEffectiveStatus$inboundSchema,
+  ListEmail,
+  ListEmail$inboundSchema,
+  ListEndLt,
+  ListEndLt$inboundSchema,
+  ListEventId,
+  ListEventId$inboundSchema,
+  ListExpand,
+  ListExpand$inboundSchema,
+  ListFormId,
+  ListFormId$inboundSchema,
+  ListFulltext,
+  ListFulltext$inboundSchema,
+  ListGoal,
+  ListGoal$inboundSchema,
+  ListGroupId,
+  ListGroupId$inboundSchema,
+  ListInstanceId,
+  ListInstanceId$inboundSchema,
+  ListInstructorId,
+  ListInstructorId$inboundSchema,
+  ListInterviewId,
+  ListInterviewId$inboundSchema,
+  ListInvoiceId,
+  ListInvoiceId$inboundSchema,
+  ListIoId,
+  ListIoId$inboundSchema,
+  ListItemId,
+  ListItemId$inboundSchema,
+  ListItemVariantId,
+  ListItemVariantId$inboundSchema,
+  ListJobId,
+  ListJobId$inboundSchema,
+  ListLabelId,
+  ListLabelId$inboundSchema,
+  ListLeadId,
+  ListLeadId$inboundSchema,
+  ListLimit,
+  ListLimit$inboundSchema,
+  ListLinkId,
+  ListLinkId$inboundSchema,
+  ListListId,
+  ListListId$inboundSchema,
+  ListLocationId,
+  ListLocationId$inboundSchema,
+  ListMatterId,
+  ListMatterId$inboundSchema,
+  ListMedium,
+  ListMedium$inboundSchema,
+  ListMemberId,
+  ListMemberId$inboundSchema,
+  ListOffset,
+  ListOffset$inboundSchema,
+  ListOrder,
+  ListOrder$inboundSchema,
+  ListOrderId,
+  ListOrderId$inboundSchema,
+  ListOrgId,
+  ListOrgId$inboundSchema,
+  ListPackageId,
+  ListPackageId$inboundSchema,
+  ListPageId,
+  ListPageId$inboundSchema,
+  ListParentId,
+  ListParentId$inboundSchema,
+  ListPatientId,
+  ListPatientId$inboundSchema,
+  ListPaymentId,
+  ListPaymentId$inboundSchema,
+  ListPayslipId,
+  ListPayslipId$inboundSchema,
+  ListPipelineId,
+  ListPipelineId$inboundSchema,
+  ListPostId,
+  ListPostId$inboundSchema,
+  ListPracticeareaId,
+  ListPracticeareaId$inboundSchema,
+  ListPractitionerId,
+  ListPractitionerId$inboundSchema,
+  ListProfileId,
+  ListProfileId$inboundSchema,
+  ListProjectId,
+  ListProjectId$inboundSchema,
+  ListPropertyId,
+  ListPropertyId$inboundSchema,
+  ListQuery,
+  ListQuery$inboundSchema,
+  ListRawFields,
+  ListRawFields$inboundSchema,
+  ListReference,
+  ListReference$inboundSchema,
+  ListRegionId,
+  ListRegionId$inboundSchema,
+  ListRepoId,
+  ListRepoId$inboundSchema,
+  ListRoleId,
+  ListRoleId$inboundSchema,
+  ListRootId,
+  ListRootId$inboundSchema,
+  ListSaleschannelId,
+  ListSaleschannelId$inboundSchema,
+  ListSegmentId,
+  ListSegmentId$inboundSchema,
+  ListServiceId,
+  ListServiceId$inboundSchema,
+  ListSessionId,
+  ListSessionId$inboundSchema,
+  ListShipmentId,
+  ListShipmentId$inboundSchema,
+  ListSize,
+  ListSize$inboundSchema,
+  ListSortByCreatedAt,
+  ListSortByCreatedAt$inboundSchema,
+  ListSortByName,
+  ListSortByName$inboundSchema,
+  ListSortByUpdatedAt,
+  ListSortByUpdatedAt$inboundSchema,
+  ListSource,
+  ListSource$inboundSchema,
+  ListSpaceId,
+  ListSpaceId$inboundSchema,
+  ListStartGte,
+  ListStartGte$inboundSchema,
+  ListStatus,
+  ListStatus$inboundSchema,
+  ListStudentId,
+  ListStudentId$inboundSchema,
+  ListTableId,
+  ListTableId$inboundSchema,
+  ListTaskId,
+  ListTaskId$inboundSchema,
+  ListTeacherId,
+  ListTeacherId$inboundSchema,
+  ListTemplateId,
+  ListTemplateId$inboundSchema,
+  ListTicketId,
+  ListTicketId$inboundSchema,
+  ListType,
+  ListType$inboundSchema,
+  ListUpdatedGte,
+  ListUpdatedGte$inboundSchema,
+  ListUserId,
+  ListUserId$inboundSchema,
+  ListUserMentionedId,
+  ListUserMentionedId$inboundSchema,
+  ListVisitorId,
+  ListVisitorId$inboundSchema,
+  NativeWebhookCalendarId,
+  NativeWebhookCalendarId$inboundSchema,
+  NativeWebhookCarrierId,
+  NativeWebhookCarrierId$inboundSchema,
+  NativeWebhookChannelId,
+  NativeWebhookChannelId$inboundSchema,
+  NativeWebhookCompanyId,
+  NativeWebhookCompanyId$inboundSchema,
+  NativeWebhookCourseId,
+  NativeWebhookCourseId$inboundSchema,
+  NativeWebhookDatabaseId,
+  NativeWebhookDatabaseId$inboundSchema,
+  NativeWebhookEventId,
+  NativeWebhookEventId$inboundSchema,
+  NativeWebhookFormId,
+  NativeWebhookFormId$inboundSchema,
+  NativeWebhookIoId,
+  NativeWebhookIoId$inboundSchema,
+  NativeWebhookLabelId,
+  NativeWebhookLabelId$inboundSchema,
+  NativeWebhookListId,
+  NativeWebhookListId$inboundSchema,
+  NativeWebhookMemberId,
+  NativeWebhookMemberId$inboundSchema,
+  NativeWebhookOrderId,
+  NativeWebhookOrderId$inboundSchema,
+  NativeWebhookParentId,
+  NativeWebhookParentId$inboundSchema,
+  NativeWebhookProjectId,
+  NativeWebhookProjectId$inboundSchema,
+  NativeWebhookPropertyId,
+  NativeWebhookPropertyId$inboundSchema,
+  NativeWebhookSessionId,
+  NativeWebhookSessionId$inboundSchema,
+  NativeWebhookShipmentId,
+  NativeWebhookShipmentId$inboundSchema,
+  NativeWebhookStudentId,
+  NativeWebhookStudentId$inboundSchema,
+  NativeWebhookTableId,
+  NativeWebhookTableId$inboundSchema,
+  NativeWebhookTaskId,
+  NativeWebhookTaskId$inboundSchema,
+  NativeWebhookTemplateId,
+  NativeWebhookTemplateId$inboundSchema,
+  NativeWebhookType,
+  NativeWebhookType$inboundSchema,
+  NativeWebhookUpdatedGte,
+  NativeWebhookUpdatedGte$inboundSchema,
+  NativeWebhookVisitorId,
+  NativeWebhookVisitorId$inboundSchema,
+  SearchDomain,
+  SearchDomain$inboundSchema,
+  SearchEmail,
+  SearchEmail$inboundSchema,
+  SearchLinkedinurl,
+  SearchLinkedinurl$inboundSchema,
+  SearchName,
+  SearchName$inboundSchema,
+  SearchTwitter,
+  SearchTwitter$inboundSchema,
+  VirtualWebhookAccountId,
+  VirtualWebhookAccountId$inboundSchema,
+  VirtualWebhookAdId,
+  VirtualWebhookAdId$inboundSchema,
+  VirtualWebhookApplicationId,
+  VirtualWebhookApplicationId$inboundSchema,
+  VirtualWebhookApproverUserId,
+  VirtualWebhookApproverUserId$inboundSchema,
+  VirtualWebhookAssignedUserId,
+  VirtualWebhookAssignedUserId$inboundSchema,
+  VirtualWebhookBankfeedaccountId,
+  VirtualWebhookBankfeedaccountId$inboundSchema,
+  VirtualWebhookBenefitId,
+  VirtualWebhookBenefitId$inboundSchema,
+  VirtualWebhookBillId,
+  VirtualWebhookBillId$inboundSchema,
+  VirtualWebhookBranchId,
+  VirtualWebhookBranchId$inboundSchema,
+  VirtualWebhookCalendarId,
+  VirtualWebhookCalendarId$inboundSchema,
+  VirtualWebhookCallId,
+  VirtualWebhookCallId$inboundSchema,
+  VirtualWebhookCampaignId,
+  VirtualWebhookCampaignId$inboundSchema,
+  VirtualWebhookCandidateId,
+  VirtualWebhookCandidateId$inboundSchema,
+  VirtualWebhookCarrierId,
+  VirtualWebhookCarrierId$inboundSchema,
+  VirtualWebhookChannelId,
+  VirtualWebhookChannelId$inboundSchema,
+} from "./virtualwebhookchannelid.js";
 
 export const VirtualWebhookCollectionId = {
   SupportedRequired: "supported-required",
@@ -1223,6 +510,13 @@ export type VirtualWebhookLocationId = OpenEnum<
   typeof VirtualWebhookLocationId
 >;
 
+export const VirtualWebhookMatterId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookMatterId = OpenEnum<typeof VirtualWebhookMatterId>;
+
 export const VirtualWebhookMemberId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1258,6 +552,13 @@ export const VirtualWebhookParentId = {
 } as const;
 export type VirtualWebhookParentId = OpenEnum<typeof VirtualWebhookParentId>;
 
+export const VirtualWebhookPatientId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookPatientId = OpenEnum<typeof VirtualWebhookPatientId>;
+
 export const VirtualWebhookPaymentId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1280,6 +581,24 @@ export const VirtualWebhookPostId = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookPostId = OpenEnum<typeof VirtualWebhookPostId>;
+
+export const VirtualWebhookPracticeareaId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookPracticeareaId = OpenEnum<
+  typeof VirtualWebhookPracticeareaId
+>;
+
+export const VirtualWebhookPractitionerId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookPractitionerId = OpenEnum<
+  typeof VirtualWebhookPractitionerId
+>;
 
 export const VirtualWebhookProfileId = {
   SupportedRequired: "supported-required",
@@ -1482,6 +801,7 @@ export type IntegrationSupport = {
   listFulltext?: ListFulltext | undefined;
   listGoal?: ListGoal | undefined;
   listGroupId?: ListGroupId | undefined;
+  listInstanceId?: ListInstanceId | undefined;
   listInstructorId?: ListInstructorId | undefined;
   listInterviewId?: ListInterviewId | undefined;
   listInvoiceId?: ListInvoiceId | undefined;
@@ -1495,6 +815,7 @@ export type IntegrationSupport = {
   listLinkId?: ListLinkId | undefined;
   listListId?: ListListId | undefined;
   listLocationId?: ListLocationId | undefined;
+  listMatterId?: ListMatterId | undefined;
   listMedium?: ListMedium | undefined;
   listMemberId?: ListMemberId | undefined;
   listOffset?: ListOffset | undefined;
@@ -1504,21 +825,26 @@ export type IntegrationSupport = {
   listPackageId?: ListPackageId | undefined;
   listPageId?: ListPageId | undefined;
   listParentId?: ListParentId | undefined;
+  listPatientId?: ListPatientId | undefined;
   listPaymentId?: ListPaymentId | undefined;
   listPayslipId?: ListPayslipId | undefined;
   listPipelineId?: ListPipelineId | undefined;
   listPostId?: ListPostId | undefined;
+  listPracticeareaId?: ListPracticeareaId | undefined;
+  listPractitionerId?: ListPractitionerId | undefined;
   listProfileId?: ListProfileId | undefined;
   listProjectId?: ListProjectId | undefined;
   listPropertyId?: ListPropertyId | undefined;
   listQuery?: ListQuery | undefined;
   listRawFields?: ListRawFields | undefined;
   listReference?: ListReference | undefined;
+  listRegionId?: ListRegionId | undefined;
   listRepoId?: ListRepoId | undefined;
   listRoleId?: ListRoleId | undefined;
   listRootId?: ListRootId | undefined;
   listSaleschannelId?: ListSaleschannelId | undefined;
   listSegmentId?: ListSegmentId | undefined;
+  listServiceId?: ListServiceId | undefined;
   listSessionId?: ListSessionId | undefined;
   listShipmentId?: ListShipmentId | undefined;
   listSize?: ListSize | undefined;
@@ -1618,14 +944,18 @@ export type IntegrationSupport = {
   virtualWebhookLinkId?: VirtualWebhookLinkId | undefined;
   virtualWebhookListId?: VirtualWebhookListId | undefined;
   virtualWebhookLocationId?: VirtualWebhookLocationId | undefined;
+  virtualWebhookMatterId?: VirtualWebhookMatterId | undefined;
   virtualWebhookMemberId?: VirtualWebhookMemberId | undefined;
   virtualWebhookOrderId?: VirtualWebhookOrderId | undefined;
   virtualWebhookOrgId?: VirtualWebhookOrgId | undefined;
   virtualWebhookPageId?: VirtualWebhookPageId | undefined;
   virtualWebhookParentId?: VirtualWebhookParentId | undefined;
+  virtualWebhookPatientId?: VirtualWebhookPatientId | undefined;
   virtualWebhookPaymentId?: VirtualWebhookPaymentId | undefined;
   virtualWebhookPipelineId?: VirtualWebhookPipelineId | undefined;
   virtualWebhookPostId?: VirtualWebhookPostId | undefined;
+  virtualWebhookPracticeareaId?: VirtualWebhookPracticeareaId | undefined;
+  virtualWebhookPractitionerId?: VirtualWebhookPractitionerId | undefined;
   virtualWebhookProfileId?: VirtualWebhookProfileId | undefined;
   virtualWebhookProjectId?: VirtualWebhookProjectId | undefined;
   virtualWebhookPropertyId?: VirtualWebhookPropertyId | undefined;
@@ -1649,1007 +979,6 @@ export type IntegrationSupport = {
   virtualWebhookVisitorId?: VirtualWebhookVisitorId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
-
-/** @internal */
-export const FromWebhook$inboundSchema: z.ZodType<
-  FromWebhook,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(FromWebhook);
-
-/** @internal */
-export const ListAccountId$inboundSchema: z.ZodType<
-  ListAccountId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListAccountId);
-
-/** @internal */
-export const ListAdId$inboundSchema: z.ZodType<
-  ListAdId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListAdId);
-
-/** @internal */
-export const ListAgentId$inboundSchema: z.ZodType<
-  ListAgentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListAgentId);
-
-/** @internal */
-export const ListApplicationId$inboundSchema: z.ZodType<
-  ListApplicationId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListApplicationId);
-
-/** @internal */
-export const ListApproverUserId$inboundSchema: z.ZodType<
-  ListApproverUserId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListApproverUserId);
-
-/** @internal */
-export const ListAssignedUserId$inboundSchema: z.ZodType<
-  ListAssignedUserId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListAssignedUserId);
-
-/** @internal */
-export const ListBankfeedaccountId$inboundSchema: z.ZodType<
-  ListBankfeedaccountId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListBankfeedaccountId);
-
-/** @internal */
-export const ListBenefitId$inboundSchema: z.ZodType<
-  ListBenefitId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListBenefitId);
-
-/** @internal */
-export const ListBillId$inboundSchema: z.ZodType<
-  ListBillId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListBillId);
-
-/** @internal */
-export const ListBranchId$inboundSchema: z.ZodType<
-  ListBranchId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListBranchId);
-
-/** @internal */
-export const ListCalendarId$inboundSchema: z.ZodType<
-  ListCalendarId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCalendarId);
-
-/** @internal */
-export const ListCallId$inboundSchema: z.ZodType<
-  ListCallId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCallId);
-
-/** @internal */
-export const ListCampaignId$inboundSchema: z.ZodType<
-  ListCampaignId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCampaignId);
-
-/** @internal */
-export const ListCandidateId$inboundSchema: z.ZodType<
-  ListCandidateId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCandidateId);
-
-/** @internal */
-export const ListCarrierId$inboundSchema: z.ZodType<
-  ListCarrierId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCarrierId);
-
-/** @internal */
-export const ListCategoryId$inboundSchema: z.ZodType<
-  ListCategoryId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCategoryId);
-
-/** @internal */
-export const ListChannelId$inboundSchema: z.ZodType<
-  ListChannelId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListChannelId);
-
-/** @internal */
-export const ListClassId$inboundSchema: z.ZodType<
-  ListClassId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListClassId);
-
-/** @internal */
-export const ListCollectionId$inboundSchema: z.ZodType<
-  ListCollectionId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCollectionId);
-
-/** @internal */
-export const ListCompanyId$inboundSchema: z.ZodType<
-  ListCompanyId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCompanyId);
-
-/** @internal */
-export const ListContactId$inboundSchema: z.ZodType<
-  ListContactId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListContactId);
-
-/** @internal */
-export const ListContentId$inboundSchema: z.ZodType<
-  ListContentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListContentId);
-
-/** @internal */
-export const ListCourseId$inboundSchema: z.ZodType<
-  ListCourseId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCourseId);
-
-/** @internal */
-export const ListCustomerId$inboundSchema: z.ZodType<
-  ListCustomerId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCustomerId);
-
-/** @internal */
-export const ListCycleId$inboundSchema: z.ZodType<
-  ListCycleId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListCycleId);
-
-/** @internal */
-export const ListDatabaseId$inboundSchema: z.ZodType<
-  ListDatabaseId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListDatabaseId);
-
-/** @internal */
-export const ListDealId$inboundSchema: z.ZodType<
-  ListDealId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListDealId);
-
-/** @internal */
-export const ListDestinationId$inboundSchema: z.ZodType<
-  ListDestinationId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListDestinationId);
-
-/** @internal */
-export const ListDimension$inboundSchema: z.ZodType<
-  ListDimension,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListDimension);
-
-/** @internal */
-export const ListDocumentId$inboundSchema: z.ZodType<
-  ListDocumentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListDocumentId);
-
-/** @internal */
-export const ListEffectiveStatus$inboundSchema: z.ZodType<
-  ListEffectiveStatus,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListEffectiveStatus);
-
-/** @internal */
-export const ListEmail$inboundSchema: z.ZodType<
-  ListEmail,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListEmail);
-
-/** @internal */
-export const ListEndLt$inboundSchema: z.ZodType<
-  ListEndLt,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListEndLt);
-
-/** @internal */
-export const ListEventId$inboundSchema: z.ZodType<
-  ListEventId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListEventId);
-
-/** @internal */
-export const ListExpand$inboundSchema: z.ZodType<
-  ListExpand,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListExpand);
-
-/** @internal */
-export const ListFormId$inboundSchema: z.ZodType<
-  ListFormId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListFormId);
-
-/** @internal */
-export const ListFulltext$inboundSchema: z.ZodType<
-  ListFulltext,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListFulltext);
-
-/** @internal */
-export const ListGoal$inboundSchema: z.ZodType<
-  ListGoal,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListGoal);
-
-/** @internal */
-export const ListGroupId$inboundSchema: z.ZodType<
-  ListGroupId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListGroupId);
-
-/** @internal */
-export const ListInstructorId$inboundSchema: z.ZodType<
-  ListInstructorId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListInstructorId);
-
-/** @internal */
-export const ListInterviewId$inboundSchema: z.ZodType<
-  ListInterviewId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListInterviewId);
-
-/** @internal */
-export const ListInvoiceId$inboundSchema: z.ZodType<
-  ListInvoiceId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListInvoiceId);
-
-/** @internal */
-export const ListIoId$inboundSchema: z.ZodType<
-  ListIoId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListIoId);
-
-/** @internal */
-export const ListItemId$inboundSchema: z.ZodType<
-  ListItemId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListItemId);
-
-/** @internal */
-export const ListItemVariantId$inboundSchema: z.ZodType<
-  ListItemVariantId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListItemVariantId);
-
-/** @internal */
-export const ListJobId$inboundSchema: z.ZodType<
-  ListJobId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListJobId);
-
-/** @internal */
-export const ListLabelId$inboundSchema: z.ZodType<
-  ListLabelId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListLabelId);
-
-/** @internal */
-export const ListLeadId$inboundSchema: z.ZodType<
-  ListLeadId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListLeadId);
-
-/** @internal */
-export const ListLimit$inboundSchema: z.ZodType<
-  ListLimit,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListLimit);
-
-/** @internal */
-export const ListLinkId$inboundSchema: z.ZodType<
-  ListLinkId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListLinkId);
-
-/** @internal */
-export const ListListId$inboundSchema: z.ZodType<
-  ListListId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListListId);
-
-/** @internal */
-export const ListLocationId$inboundSchema: z.ZodType<
-  ListLocationId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListLocationId);
-
-/** @internal */
-export const ListMedium$inboundSchema: z.ZodType<
-  ListMedium,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListMedium);
-
-/** @internal */
-export const ListMemberId$inboundSchema: z.ZodType<
-  ListMemberId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListMemberId);
-
-/** @internal */
-export const ListOffset$inboundSchema: z.ZodType<
-  ListOffset,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListOffset);
-
-/** @internal */
-export const ListOrder$inboundSchema: z.ZodType<
-  ListOrder,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListOrder);
-
-/** @internal */
-export const ListOrderId$inboundSchema: z.ZodType<
-  ListOrderId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListOrderId);
-
-/** @internal */
-export const ListOrgId$inboundSchema: z.ZodType<
-  ListOrgId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListOrgId);
-
-/** @internal */
-export const ListPackageId$inboundSchema: z.ZodType<
-  ListPackageId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListPackageId);
-
-/** @internal */
-export const ListPageId$inboundSchema: z.ZodType<
-  ListPageId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListPageId);
-
-/** @internal */
-export const ListParentId$inboundSchema: z.ZodType<
-  ListParentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListParentId);
-
-/** @internal */
-export const ListPaymentId$inboundSchema: z.ZodType<
-  ListPaymentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListPaymentId);
-
-/** @internal */
-export const ListPayslipId$inboundSchema: z.ZodType<
-  ListPayslipId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListPayslipId);
-
-/** @internal */
-export const ListPipelineId$inboundSchema: z.ZodType<
-  ListPipelineId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListPipelineId);
-
-/** @internal */
-export const ListPostId$inboundSchema: z.ZodType<
-  ListPostId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListPostId);
-
-/** @internal */
-export const ListProfileId$inboundSchema: z.ZodType<
-  ListProfileId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListProfileId);
-
-/** @internal */
-export const ListProjectId$inboundSchema: z.ZodType<
-  ListProjectId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListProjectId);
-
-/** @internal */
-export const ListPropertyId$inboundSchema: z.ZodType<
-  ListPropertyId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListPropertyId);
-
-/** @internal */
-export const ListQuery$inboundSchema: z.ZodType<
-  ListQuery,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListQuery);
-
-/** @internal */
-export const ListRawFields$inboundSchema: z.ZodType<
-  ListRawFields,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListRawFields);
-
-/** @internal */
-export const ListReference$inboundSchema: z.ZodType<
-  ListReference,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListReference);
-
-/** @internal */
-export const ListRepoId$inboundSchema: z.ZodType<
-  ListRepoId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListRepoId);
-
-/** @internal */
-export const ListRoleId$inboundSchema: z.ZodType<
-  ListRoleId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListRoleId);
-
-/** @internal */
-export const ListRootId$inboundSchema: z.ZodType<
-  ListRootId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListRootId);
-
-/** @internal */
-export const ListSaleschannelId$inboundSchema: z.ZodType<
-  ListSaleschannelId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSaleschannelId);
-
-/** @internal */
-export const ListSegmentId$inboundSchema: z.ZodType<
-  ListSegmentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSegmentId);
-
-/** @internal */
-export const ListSessionId$inboundSchema: z.ZodType<
-  ListSessionId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSessionId);
-
-/** @internal */
-export const ListShipmentId$inboundSchema: z.ZodType<
-  ListShipmentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListShipmentId);
-
-/** @internal */
-export const ListSize$inboundSchema: z.ZodType<
-  ListSize,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSize);
-
-/** @internal */
-export const ListSortByCreatedAt$inboundSchema: z.ZodType<
-  ListSortByCreatedAt,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSortByCreatedAt);
-
-/** @internal */
-export const ListSortByName$inboundSchema: z.ZodType<
-  ListSortByName,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSortByName);
-
-/** @internal */
-export const ListSortByUpdatedAt$inboundSchema: z.ZodType<
-  ListSortByUpdatedAt,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSortByUpdatedAt);
-
-/** @internal */
-export const ListSource$inboundSchema: z.ZodType<
-  ListSource,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSource);
-
-/** @internal */
-export const ListSpaceId$inboundSchema: z.ZodType<
-  ListSpaceId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListSpaceId);
-
-/** @internal */
-export const ListStartGte$inboundSchema: z.ZodType<
-  ListStartGte,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListStartGte);
-
-/** @internal */
-export const ListStatus$inboundSchema: z.ZodType<
-  ListStatus,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListStatus);
-
-/** @internal */
-export const ListStudentId$inboundSchema: z.ZodType<
-  ListStudentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListStudentId);
-
-/** @internal */
-export const ListTableId$inboundSchema: z.ZodType<
-  ListTableId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListTableId);
-
-/** @internal */
-export const ListTaskId$inboundSchema: z.ZodType<
-  ListTaskId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListTaskId);
-
-/** @internal */
-export const ListTeacherId$inboundSchema: z.ZodType<
-  ListTeacherId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListTeacherId);
-
-/** @internal */
-export const ListTemplateId$inboundSchema: z.ZodType<
-  ListTemplateId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListTemplateId);
-
-/** @internal */
-export const ListTicketId$inboundSchema: z.ZodType<
-  ListTicketId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListTicketId);
-
-/** @internal */
-export const ListType$inboundSchema: z.ZodType<
-  ListType,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListType);
-
-/** @internal */
-export const ListUpdatedGte$inboundSchema: z.ZodType<
-  ListUpdatedGte,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListUpdatedGte);
-
-/** @internal */
-export const ListUserId$inboundSchema: z.ZodType<
-  ListUserId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListUserId);
-
-/** @internal */
-export const ListUserMentionedId$inboundSchema: z.ZodType<
-  ListUserMentionedId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListUserMentionedId);
-
-/** @internal */
-export const ListVisitorId$inboundSchema: z.ZodType<
-  ListVisitorId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(ListVisitorId);
-
-/** @internal */
-export const NativeWebhookCalendarId$inboundSchema: z.ZodType<
-  NativeWebhookCalendarId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookCalendarId);
-
-/** @internal */
-export const NativeWebhookCarrierId$inboundSchema: z.ZodType<
-  NativeWebhookCarrierId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookCarrierId);
-
-/** @internal */
-export const NativeWebhookChannelId$inboundSchema: z.ZodType<
-  NativeWebhookChannelId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookChannelId);
-
-/** @internal */
-export const NativeWebhookCompanyId$inboundSchema: z.ZodType<
-  NativeWebhookCompanyId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookCompanyId);
-
-/** @internal */
-export const NativeWebhookCourseId$inboundSchema: z.ZodType<
-  NativeWebhookCourseId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookCourseId);
-
-/** @internal */
-export const NativeWebhookDatabaseId$inboundSchema: z.ZodType<
-  NativeWebhookDatabaseId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookDatabaseId);
-
-/** @internal */
-export const NativeWebhookEventId$inboundSchema: z.ZodType<
-  NativeWebhookEventId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookEventId);
-
-/** @internal */
-export const NativeWebhookFormId$inboundSchema: z.ZodType<
-  NativeWebhookFormId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookFormId);
-
-/** @internal */
-export const NativeWebhookIoId$inboundSchema: z.ZodType<
-  NativeWebhookIoId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookIoId);
-
-/** @internal */
-export const NativeWebhookLabelId$inboundSchema: z.ZodType<
-  NativeWebhookLabelId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookLabelId);
-
-/** @internal */
-export const NativeWebhookListId$inboundSchema: z.ZodType<
-  NativeWebhookListId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookListId);
-
-/** @internal */
-export const NativeWebhookMemberId$inboundSchema: z.ZodType<
-  NativeWebhookMemberId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookMemberId);
-
-/** @internal */
-export const NativeWebhookOrderId$inboundSchema: z.ZodType<
-  NativeWebhookOrderId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookOrderId);
-
-/** @internal */
-export const NativeWebhookParentId$inboundSchema: z.ZodType<
-  NativeWebhookParentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookParentId);
-
-/** @internal */
-export const NativeWebhookProjectId$inboundSchema: z.ZodType<
-  NativeWebhookProjectId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookProjectId);
-
-/** @internal */
-export const NativeWebhookPropertyId$inboundSchema: z.ZodType<
-  NativeWebhookPropertyId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookPropertyId);
-
-/** @internal */
-export const NativeWebhookSessionId$inboundSchema: z.ZodType<
-  NativeWebhookSessionId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookSessionId);
-
-/** @internal */
-export const NativeWebhookShipmentId$inboundSchema: z.ZodType<
-  NativeWebhookShipmentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookShipmentId);
-
-/** @internal */
-export const NativeWebhookStudentId$inboundSchema: z.ZodType<
-  NativeWebhookStudentId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookStudentId);
-
-/** @internal */
-export const NativeWebhookTableId$inboundSchema: z.ZodType<
-  NativeWebhookTableId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookTableId);
-
-/** @internal */
-export const NativeWebhookTaskId$inboundSchema: z.ZodType<
-  NativeWebhookTaskId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookTaskId);
-
-/** @internal */
-export const NativeWebhookTemplateId$inboundSchema: z.ZodType<
-  NativeWebhookTemplateId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookTemplateId);
-
-/** @internal */
-export const NativeWebhookType$inboundSchema: z.ZodType<
-  NativeWebhookType,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookType);
-
-/** @internal */
-export const NativeWebhookUpdatedGte$inboundSchema: z.ZodType<
-  NativeWebhookUpdatedGte,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookUpdatedGte);
-
-/** @internal */
-export const NativeWebhookVisitorId$inboundSchema: z.ZodType<
-  NativeWebhookVisitorId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(NativeWebhookVisitorId);
-
-/** @internal */
-export const SearchDomain$inboundSchema: z.ZodType<
-  SearchDomain,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(SearchDomain);
-
-/** @internal */
-export const SearchEmail$inboundSchema: z.ZodType<
-  SearchEmail,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(SearchEmail);
-
-/** @internal */
-export const SearchLinkedinurl$inboundSchema: z.ZodType<
-  SearchLinkedinurl,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(SearchLinkedinurl);
-
-/** @internal */
-export const SearchName$inboundSchema: z.ZodType<
-  SearchName,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(SearchName);
-
-/** @internal */
-export const SearchTwitter$inboundSchema: z.ZodType<
-  SearchTwitter,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(SearchTwitter);
-
-/** @internal */
-export const VirtualWebhookAccountId$inboundSchema: z.ZodType<
-  VirtualWebhookAccountId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookAccountId);
-
-/** @internal */
-export const VirtualWebhookAdId$inboundSchema: z.ZodType<
-  VirtualWebhookAdId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookAdId);
-
-/** @internal */
-export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
-  VirtualWebhookApplicationId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookApplicationId);
-
-/** @internal */
-export const VirtualWebhookApproverUserId$inboundSchema: z.ZodType<
-  VirtualWebhookApproverUserId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookApproverUserId);
-
-/** @internal */
-export const VirtualWebhookAssignedUserId$inboundSchema: z.ZodType<
-  VirtualWebhookAssignedUserId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookAssignedUserId);
-
-/** @internal */
-export const VirtualWebhookBankfeedaccountId$inboundSchema: z.ZodType<
-  VirtualWebhookBankfeedaccountId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookBankfeedaccountId);
-
-/** @internal */
-export const VirtualWebhookBenefitId$inboundSchema: z.ZodType<
-  VirtualWebhookBenefitId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookBenefitId);
-
-/** @internal */
-export const VirtualWebhookBillId$inboundSchema: z.ZodType<
-  VirtualWebhookBillId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookBillId);
-
-/** @internal */
-export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
-  VirtualWebhookBranchId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookBranchId);
-
-/** @internal */
-export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
-  VirtualWebhookCalendarId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookCalendarId);
-
-/** @internal */
-export const VirtualWebhookCallId$inboundSchema: z.ZodType<
-  VirtualWebhookCallId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookCallId);
-
-/** @internal */
-export const VirtualWebhookCampaignId$inboundSchema: z.ZodType<
-  VirtualWebhookCampaignId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookCampaignId);
-
-/** @internal */
-export const VirtualWebhookCandidateId$inboundSchema: z.ZodType<
-  VirtualWebhookCandidateId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookCandidateId);
-
-/** @internal */
-export const VirtualWebhookCarrierId$inboundSchema: z.ZodType<
-  VirtualWebhookCarrierId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookCarrierId);
-
-/** @internal */
-export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
-  VirtualWebhookChannelId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookChannelId);
 
 /** @internal */
 export const VirtualWebhookCollectionId$inboundSchema: z.ZodType<
@@ -2834,6 +1163,13 @@ export const VirtualWebhookLocationId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookLocationId);
 
 /** @internal */
+export const VirtualWebhookMatterId$inboundSchema: z.ZodType<
+  VirtualWebhookMatterId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookMatterId);
+
+/** @internal */
 export const VirtualWebhookMemberId$inboundSchema: z.ZodType<
   VirtualWebhookMemberId,
   z.ZodTypeDef,
@@ -2869,6 +1205,13 @@ export const VirtualWebhookParentId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookParentId);
 
 /** @internal */
+export const VirtualWebhookPatientId$inboundSchema: z.ZodType<
+  VirtualWebhookPatientId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookPatientId);
+
+/** @internal */
 export const VirtualWebhookPaymentId$inboundSchema: z.ZodType<
   VirtualWebhookPaymentId,
   z.ZodTypeDef,
@@ -2888,6 +1231,20 @@ export const VirtualWebhookPostId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookPostId);
+
+/** @internal */
+export const VirtualWebhookPracticeareaId$inboundSchema: z.ZodType<
+  VirtualWebhookPracticeareaId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookPracticeareaId);
+
+/** @internal */
+export const VirtualWebhookPractitionerId$inboundSchema: z.ZodType<
+  VirtualWebhookPractitionerId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookPractitionerId);
 
 /** @internal */
 export const VirtualWebhookProfileId$inboundSchema: z.ZodType<
@@ -3083,6 +1440,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_fulltext: ListFulltext$inboundSchema.optional(),
   list_goal: ListGoal$inboundSchema.optional(),
   list_group_id: ListGroupId$inboundSchema.optional(),
+  list_instance_id: ListInstanceId$inboundSchema.optional(),
   list_instructor_id: ListInstructorId$inboundSchema.optional(),
   list_interview_id: ListInterviewId$inboundSchema.optional(),
   list_invoice_id: ListInvoiceId$inboundSchema.optional(),
@@ -3096,6 +1454,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_link_id: ListLinkId$inboundSchema.optional(),
   list_list_id: ListListId$inboundSchema.optional(),
   list_location_id: ListLocationId$inboundSchema.optional(),
+  list_matter_id: ListMatterId$inboundSchema.optional(),
   list_medium: ListMedium$inboundSchema.optional(),
   list_member_id: ListMemberId$inboundSchema.optional(),
   list_offset: ListOffset$inboundSchema.optional(),
@@ -3105,21 +1464,26 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_package_id: ListPackageId$inboundSchema.optional(),
   list_page_id: ListPageId$inboundSchema.optional(),
   list_parent_id: ListParentId$inboundSchema.optional(),
+  list_patient_id: ListPatientId$inboundSchema.optional(),
   list_payment_id: ListPaymentId$inboundSchema.optional(),
   list_payslip_id: ListPayslipId$inboundSchema.optional(),
   list_pipeline_id: ListPipelineId$inboundSchema.optional(),
   list_post_id: ListPostId$inboundSchema.optional(),
+  list_practicearea_id: ListPracticeareaId$inboundSchema.optional(),
+  list_practitioner_id: ListPractitionerId$inboundSchema.optional(),
   list_profile_id: ListProfileId$inboundSchema.optional(),
   list_project_id: ListProjectId$inboundSchema.optional(),
   list_property_id: ListPropertyId$inboundSchema.optional(),
   list_query: ListQuery$inboundSchema.optional(),
   list_raw_fields: ListRawFields$inboundSchema.optional(),
   list_reference: ListReference$inboundSchema.optional(),
+  list_region_id: ListRegionId$inboundSchema.optional(),
   list_repo_id: ListRepoId$inboundSchema.optional(),
   list_role_id: ListRoleId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
   list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
   list_segment_id: ListSegmentId$inboundSchema.optional(),
+  list_service_id: ListServiceId$inboundSchema.optional(),
   list_session_id: ListSessionId$inboundSchema.optional(),
   list_shipment_id: ListShipmentId$inboundSchema.optional(),
   list_size: ListSize$inboundSchema.optional(),
@@ -3229,15 +1593,21 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_list_id: VirtualWebhookListId$inboundSchema.optional(),
   virtual_webhook_location_id: VirtualWebhookLocationId$inboundSchema
     .optional(),
+  virtual_webhook_matter_id: VirtualWebhookMatterId$inboundSchema.optional(),
   virtual_webhook_member_id: VirtualWebhookMemberId$inboundSchema.optional(),
   virtual_webhook_order_id: VirtualWebhookOrderId$inboundSchema.optional(),
   virtual_webhook_org_id: VirtualWebhookOrgId$inboundSchema.optional(),
   virtual_webhook_page_id: VirtualWebhookPageId$inboundSchema.optional(),
   virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
+  virtual_webhook_patient_id: VirtualWebhookPatientId$inboundSchema.optional(),
   virtual_webhook_payment_id: VirtualWebhookPaymentId$inboundSchema.optional(),
   virtual_webhook_pipeline_id: VirtualWebhookPipelineId$inboundSchema
     .optional(),
   virtual_webhook_post_id: VirtualWebhookPostId$inboundSchema.optional(),
+  virtual_webhook_practicearea_id: VirtualWebhookPracticeareaId$inboundSchema
+    .optional(),
+  virtual_webhook_practitioner_id: VirtualWebhookPractitionerId$inboundSchema
+    .optional(),
   virtual_webhook_profile_id: VirtualWebhookProfileId$inboundSchema.optional(),
   virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema.optional(),
   virtual_webhook_property_id: VirtualWebhookPropertyId$inboundSchema
@@ -3310,6 +1680,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_fulltext": "listFulltext",
     "list_goal": "listGoal",
     "list_group_id": "listGroupId",
+    "list_instance_id": "listInstanceId",
     "list_instructor_id": "listInstructorId",
     "list_interview_id": "listInterviewId",
     "list_invoice_id": "listInvoiceId",
@@ -3323,6 +1694,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_link_id": "listLinkId",
     "list_list_id": "listListId",
     "list_location_id": "listLocationId",
+    "list_matter_id": "listMatterId",
     "list_medium": "listMedium",
     "list_member_id": "listMemberId",
     "list_offset": "listOffset",
@@ -3332,21 +1704,26 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_package_id": "listPackageId",
     "list_page_id": "listPageId",
     "list_parent_id": "listParentId",
+    "list_patient_id": "listPatientId",
     "list_payment_id": "listPaymentId",
     "list_payslip_id": "listPayslipId",
     "list_pipeline_id": "listPipelineId",
     "list_post_id": "listPostId",
+    "list_practicearea_id": "listPracticeareaId",
+    "list_practitioner_id": "listPractitionerId",
     "list_profile_id": "listProfileId",
     "list_project_id": "listProjectId",
     "list_property_id": "listPropertyId",
     "list_query": "listQuery",
     "list_raw_fields": "listRawFields",
     "list_reference": "listReference",
+    "list_region_id": "listRegionId",
     "list_repo_id": "listRepoId",
     "list_role_id": "listRoleId",
     "list_root_id": "listRootId",
     "list_saleschannel_id": "listSaleschannelId",
     "list_segment_id": "listSegmentId",
+    "list_service_id": "listServiceId",
     "list_session_id": "listSessionId",
     "list_shipment_id": "listShipmentId",
     "list_size": "listSize",
@@ -3442,14 +1819,18 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_link_id": "virtualWebhookLinkId",
     "virtual_webhook_list_id": "virtualWebhookListId",
     "virtual_webhook_location_id": "virtualWebhookLocationId",
+    "virtual_webhook_matter_id": "virtualWebhookMatterId",
     "virtual_webhook_member_id": "virtualWebhookMemberId",
     "virtual_webhook_order_id": "virtualWebhookOrderId",
     "virtual_webhook_org_id": "virtualWebhookOrgId",
     "virtual_webhook_page_id": "virtualWebhookPageId",
     "virtual_webhook_parent_id": "virtualWebhookParentId",
+    "virtual_webhook_patient_id": "virtualWebhookPatientId",
     "virtual_webhook_payment_id": "virtualWebhookPaymentId",
     "virtual_webhook_pipeline_id": "virtualWebhookPipelineId",
     "virtual_webhook_post_id": "virtualWebhookPostId",
+    "virtual_webhook_practicearea_id": "virtualWebhookPracticeareaId",
+    "virtual_webhook_practitioner_id": "virtualWebhookPractitionerId",
     "virtual_webhook_profile_id": "virtualWebhookProfileId",
     "virtual_webhook_project_id": "virtualWebhookProjectId",
     "virtual_webhook_property_id": "virtualWebhookPropertyId",

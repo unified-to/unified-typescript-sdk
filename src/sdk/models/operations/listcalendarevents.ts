@@ -30,6 +30,7 @@ export const ListCalendarEventsQueryParamFields = {
   Conference: "conference",
   Attachments: "attachments",
   SendNotifications: "send_notifications",
+  MatterId: "matter_id",
   Raw: "raw",
 } as const;
 export type ListCalendarEventsQueryParamFields = ClosedEnum<
@@ -58,6 +59,10 @@ export type ListCalendarEventsRequest = {
    */
   fields?: Array<ListCalendarEventsQueryParamFields> | undefined;
   limit?: number | undefined;
+  /**
+   * The matter ID to filter by
+   */
+  matterId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
@@ -92,6 +97,7 @@ export type ListCalendarEventsRequest$Outbound = {
   expand?: boolean | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
+  matter_id?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
@@ -113,6 +119,7 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
   expand: z.boolean().optional(),
   fields: z.array(ListCalendarEventsQueryParamFields$outboundSchema).optional(),
   limit: z.number().optional(),
+  matterId: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
@@ -125,6 +132,7 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
     calendarId: "calendar_id",
     connectionId: "connection_id",
     endLt: "end_lt",
+    matterId: "matter_id",
     startGte: "start_gte",
     updatedGte: "updated_gte",
   });

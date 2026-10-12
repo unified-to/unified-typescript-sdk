@@ -8,6 +8,12 @@ import { accountingListAccountingExpenses } from "../funcs/accountingListAccount
 import { accountingPatchAccountingExpense } from "../funcs/accountingPatchAccountingExpense.js";
 import { accountingRemoveAccountingExpense } from "../funcs/accountingRemoveAccountingExpense.js";
 import { accountingUpdateAccountingExpense } from "../funcs/accountingUpdateAccountingExpense.js";
+import { expenseCreateLegalExpense } from "../funcs/expenseCreateLegalExpense.js";
+import { expenseGetLegalExpense } from "../funcs/expenseGetLegalExpense.js";
+import { expenseListLegalExpenses } from "../funcs/expenseListLegalExpenses.js";
+import { expensePatchLegalExpense } from "../funcs/expensePatchLegalExpense.js";
+import { expenseRemoveLegalExpense } from "../funcs/expenseRemoveLegalExpense.js";
+import { expenseUpdateLegalExpense } from "../funcs/expenseUpdateLegalExpense.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -29,6 +35,20 @@ export class Expense extends ClientSDK {
   }
 
   /**
+   * Create an expense
+   */
+  async createLegalExpense(
+    request: operations.CreateLegalExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.LegalExpense> {
+    return unwrapAsync(expenseCreateLegalExpense(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve an expense
    */
   async getAccountingExpense(
@@ -36,6 +56,20 @@ export class Expense extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingExpense> {
     return unwrapAsync(accountingGetAccountingExpense(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an expense
+   */
+  async getLegalExpense(
+    request: operations.GetLegalExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.LegalExpense> {
+    return unwrapAsync(expenseGetLegalExpense(
       this,
       request,
       options,
@@ -57,6 +91,20 @@ export class Expense extends ClientSDK {
   }
 
   /**
+   * List all expenses
+   */
+  async listLegalExpenses(
+    request: operations.ListLegalExpensesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.LegalExpense>> {
+    return unwrapAsync(expenseListLegalExpenses(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an expense
    */
   async patchAccountingExpense(
@@ -64,6 +112,20 @@ export class Expense extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingExpense> {
     return unwrapAsync(accountingPatchAccountingExpense(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an expense
+   */
+  async patchLegalExpense(
+    request: operations.PatchLegalExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.LegalExpense> {
+    return unwrapAsync(expensePatchLegalExpense(
       this,
       request,
       options,
@@ -85,6 +147,20 @@ export class Expense extends ClientSDK {
   }
 
   /**
+   * Remove an expense
+   */
+  async removeLegalExpense(
+    request: operations.RemoveLegalExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveLegalExpenseResponse | undefined> {
+    return unwrapAsync(expenseRemoveLegalExpense(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an expense
    */
   async updateAccountingExpense(
@@ -92,6 +168,20 @@ export class Expense extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingExpense> {
     return unwrapAsync(accountingUpdateAccountingExpense(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an expense
+   */
+  async updateLegalExpense(
+    request: operations.UpdateLegalExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.LegalExpense> {
+    return unwrapAsync(expenseUpdateLegalExpense(
       this,
       request,
       options,

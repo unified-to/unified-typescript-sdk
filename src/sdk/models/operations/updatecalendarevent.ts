@@ -31,6 +31,7 @@ export const UpdateCalendarEventQueryParamFields = {
   Conference: "conference",
   Attachments: "attachments",
   SendNotifications: "send_notifications",
+  MatterId: "matter_id",
   Raw: "raw",
 } as const;
 export type UpdateCalendarEventQueryParamFields = ClosedEnum<

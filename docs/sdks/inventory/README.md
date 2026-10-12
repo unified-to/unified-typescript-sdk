@@ -31,7 +31,7 @@ async function run() {
   const result = await unifiedTo.inventory.createCommerceInventory({
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-12T08:30:29.217Z"),
+      updatedAt: new Date("2025-11-13T01:32:39.525Z"),
     },
     connectionId: "<id>",
   });
@@ -62,7 +62,7 @@ async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-12T08:30:29.217Z"),
+      updatedAt: new Date("2025-11-13T01:32:39.525Z"),
     },
     connectionId: "<id>",
   });
@@ -272,7 +272,7 @@ async function run() {
   const result = await unifiedTo.inventory.patchCommerceInventory({
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-12T08:30:29.224Z"),
+      updatedAt: new Date("2025-11-13T01:32:39.530Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -304,7 +304,7 @@ async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-12T08:30:29.224Z"),
+      updatedAt: new Date("2025-11-13T01:32:39.530Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -438,7 +438,7 @@ async function run() {
   const result = await unifiedTo.inventory.updateCommerceInventory({
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-12T08:30:29.224Z"),
+      updatedAt: new Date("2025-11-13T01:32:39.530Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -470,7 +470,7 @@ async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-12T08:30:29.224Z"),
+      updatedAt: new Date("2025-11-13T01:32:39.530Z"),
     },
     connectionId: "<id>",
     id: "<id>",

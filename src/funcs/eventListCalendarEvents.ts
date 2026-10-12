@@ -99,6 +99,7 @@ async function $do(
     "expand": payload.expand,
     "fields": payload.fields,
     "limit": payload.limit,
+    "matter_id": payload.matter_id,
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,

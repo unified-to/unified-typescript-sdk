@@ -42,6 +42,9 @@ export const Categories = {
   Cdp: "cdp",
   Performance: "performance",
   Social: "social",
+  Legal: "legal",
+  Compute: "compute",
+  Healthcare: "healthcare",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 

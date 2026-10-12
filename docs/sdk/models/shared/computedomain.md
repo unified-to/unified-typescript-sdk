@@ -1,0 +1,23 @@
+# ComputeDomain
+
+## Example Usage
+
+```typescript
+import { ComputeDomain } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ComputeDomain = {};
+```
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | When the domain was added (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                            |
+| `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | Unique identifier for the domain                                                              |
+| `isPrimary`                                                                                   | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | Whether this is the service's primary domain                                                  |
+| `name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | The hostname (eg. app.example.com)                                                            |
+| `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | Raw data from integration                                                                     |
+| `redirectUrl`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | Where the domain redirects, when it is a redirect                                             |
+| `serviceId`                                                                                   | *string*                                                                                      | :heavy_minus_sign:                                                                            | The service this domain routes to                                                             |
+| `status`                                                                                      | [shared.ComputeDomainStatus](../../../sdk/models/shared/computedomainstatus.md)               | :heavy_minus_sign:                                                                            | DNS/ownership verification status                                                             |
+| `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | When the domain was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                     |
