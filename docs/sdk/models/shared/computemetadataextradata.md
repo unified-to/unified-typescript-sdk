@@ -1,5 +1,7 @@
 # ComputeMetadataExtraData
 
+Additional data about the value
+
 
 ## Supported Types
 

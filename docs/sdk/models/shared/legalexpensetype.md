@@ -1,5 +1,7 @@
 # LegalExpenseType
 
+hard cost, soft cost or other
+
 ## Example Usage
 
 ```typescript

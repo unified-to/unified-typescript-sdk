@@ -14,6 +14,9 @@ export type LegalMetadata1 = {};
 
 export type LegalMetadata5 = LegalMetadata1 | string | number | boolean;
 
+/**
+ * additional data about the custom field
+ */
 export type LegalMetadataExtraData =
   | { [k: string]: any }
   | string
@@ -21,6 +24,9 @@ export type LegalMetadataExtraData =
   | boolean
   | Array<LegalMetadata1 | string | number | boolean>;
 
+/**
+ * the data type of the value
+ */
 export const LegalMetadataFormat = {
   Text: "TEXT",
   Number: "NUMBER",
@@ -36,6 +42,9 @@ export const LegalMetadataFormat = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
+/**
+ * the data type of the value
+ */
 export type LegalMetadataFormat = OpenEnum<typeof LegalMetadataFormat>;
 
 export type LegalMetadataSchemas1 = {};
@@ -46,6 +55,9 @@ export type LegalMetadataSchemas5 =
   | number
   | boolean;
 
+/**
+ * the custom field value
+ */
 export type LegalMetadataValue =
   | { [k: string]: any }
   | string
@@ -54,6 +66,9 @@ export type LegalMetadataValue =
   | Array<LegalMetadataSchemas1 | string | number | boolean>;
 
 export type LegalMetadata = {
+  /**
+   * additional data about the custom field
+   */
   extraData?:
     | { [k: string]: any }
     | string
@@ -61,10 +76,25 @@ export type LegalMetadata = {
     | boolean
     | Array<LegalMetadata1 | string | number | boolean>
     | undefined;
+  /**
+   * the data type of the value
+   */
   format?: LegalMetadataFormat | undefined;
+  /**
+   * the custom field identifier
+   */
   id?: string | undefined;
+  /**
+   * the scope or origin of the custom field
+   */
   namespace?: string | undefined;
+  /**
+   * the custom field key
+   */
   slug?: string | undefined;
+  /**
+   * the custom field value
+   */
   value?:
     | { [k: string]: any }
     | string

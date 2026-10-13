@@ -9,15 +9,27 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The kind of email address (work, home or other)
+ */
 export const HealthcareEmailType = {
   Work: "WORK",
   Home: "HOME",
   Other: "OTHER",
 } as const;
+/**
+ * The kind of email address (work, home or other)
+ */
 export type HealthcareEmailType = OpenEnum<typeof HealthcareEmailType>;
 
 export type HealthcareEmail = {
+  /**
+   * The email address
+   */
   email: string;
+  /**
+   * The kind of email address (work, home or other)
+   */
   type?: HealthcareEmailType | undefined;
 };
 

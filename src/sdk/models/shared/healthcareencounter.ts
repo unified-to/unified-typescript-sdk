@@ -82,6 +82,9 @@ export type HealthcareEncounter = {
    * Where the encounter took place
    */
   locationId?: string | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * The patient seen in the encounter

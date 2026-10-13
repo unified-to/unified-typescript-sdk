@@ -1,5 +1,7 @@
 # LegalMatterStatus
 
+the matter status
+
 ## Example Usage
 
 ```typescript

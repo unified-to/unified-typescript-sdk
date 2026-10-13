@@ -12,11 +12,11 @@ let value: PropertyHealthcareLocationAddress = {};
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `address1`         | *string*           | :heavy_minus_sign: | N/A                |
-| `address2`         | *string*           | :heavy_minus_sign: | N/A                |
-| `city`             | *string*           | :heavy_minus_sign: | N/A                |
-| `country`          | *string*           | :heavy_minus_sign: | N/A                |
-| `postalCode`       | *string*           | :heavy_minus_sign: | N/A                |
-| `region`           | *string*           | :heavy_minus_sign: | N/A                |
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `address1`                                                  | *string*                                                    | :heavy_minus_sign:                                          | First line of the street address                            |
+| `address2`                                                  | *string*                                                    | :heavy_minus_sign:                                          | Second line of the street address                           |
+| `city`                                                      | *string*                                                    | :heavy_minus_sign:                                          | City or locality                                            |
+| `country`                                                   | *string*                                                    | :heavy_minus_sign:                                          | Country                                                     |
+| `postalCode`                                                | *string*                                                    | :heavy_minus_sign:                                          | Postal or ZIP code                                          |
+| `region`                                                    | *string*                                                    | :heavy_minus_sign:                                          | Regional area (e.g., state in the U.S., province in Canada) |

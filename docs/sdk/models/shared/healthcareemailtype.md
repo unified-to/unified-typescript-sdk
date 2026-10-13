@@ -1,5 +1,7 @@
 # HealthcareEmailType
 
+The kind of email address (work, home or other)
+
 ## Example Usage
 
 ```typescript

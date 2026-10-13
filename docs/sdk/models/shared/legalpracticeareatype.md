@@ -1,5 +1,7 @@
 # LegalPracticeareaType
 
+the normalized practice area type
+
 ## Example Usage
 
 ```typescript

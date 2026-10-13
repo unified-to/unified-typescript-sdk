@@ -99,6 +99,9 @@ export type HealthcarePractitioner = {
    * Locations where the practitioner provides care
    */
   locationIds?: Array<string> | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Full name of the practitioner

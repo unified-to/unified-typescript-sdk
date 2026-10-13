@@ -70,6 +70,9 @@ export type HealthcareAppointment = {
    * Where the appointment takes place
    */
   locationId?: string | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Free-text notes or comments

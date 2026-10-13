@@ -1,5 +1,7 @@
 # HealthcareMetadataFormat
 
+The data type of the value
+
 ## Example Usage
 
 ```typescript

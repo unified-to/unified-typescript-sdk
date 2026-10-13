@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * the party role on the matter
+ */
 export const LegalPartyRole = {
   Client: "CLIENT",
   OpposingParty: "OPPOSING_PARTY",
@@ -21,6 +24,9 @@ export const LegalPartyRole = {
   Referrer: "REFERRER",
   Other: "OTHER",
 } as const;
+/**
+ * the party role on the matter
+ */
 export type LegalPartyRole = OpenEnum<typeof LegalPartyRole>;
 
 export type LegalParty = {
@@ -36,6 +42,9 @@ export type LegalParty = {
    * the vendor's free-text relationship description
    */
   description?: string | undefined;
+  /**
+   * the party role on the matter
+   */
   role?: LegalPartyRole | undefined;
 };
 

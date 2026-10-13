@@ -123,6 +123,9 @@ export type HealthcareObservation = {
    * When the result was released (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   issuedAt?: Date | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Human-readable name of what was observed

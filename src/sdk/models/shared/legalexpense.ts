@@ -16,11 +16,17 @@ import {
   LegalMetadata$outboundSchema,
 } from "./legalmetadata.js";
 
+/**
+ * hard cost, soft cost or other
+ */
 export const LegalExpenseType = {
   HardCost: "HARD_COST",
   SoftCost: "SOFT_COST",
   Other: "OTHER",
 } as const;
+/**
+ * hard cost, soft cost or other
+ */
 export type LegalExpenseType = OpenEnum<typeof LegalExpenseType>;
 
 export type LegalExpense = {
@@ -29,15 +35,24 @@ export type LegalExpense = {
    */
   category?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the expense was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217 currency code
+   */
   currency?: string | undefined;
+  /**
+   * free-text description of the expense
+   */
   description?: string | undefined;
   /**
    * UTBMS/LEDES expense code
    */
   expenseCode?: string | undefined;
+  /**
+   * unique identifier for the expense
+   */
   id?: string | undefined;
   /**
    * date the expense was incurred (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -47,7 +62,13 @@ export type LegalExpense = {
    * pointer to the Accounting Invoice this expense was billed on (reference to AccountingInvoice)
    */
   invoiceId?: string | undefined;
+  /**
+   * whether the expense is billable
+   */
   isBillable?: boolean | undefined;
+  /**
+   * whether the expense has been billed
+   */
   isBilled?: boolean | undefined;
   /**
    * pointer to the Legal Matter this expense is recorded against
@@ -61,12 +82,24 @@ export type LegalExpense = {
    * unit price
    */
   priceAmount?: number | undefined;
+  /**
+   * number of units
+   */
   quantity?: number | undefined;
+  /**
+   * raw data from the integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * total amount of the expense
+   */
   totalAmount?: number | undefined;
+  /**
+   * hard cost, soft cost or other
+   */
   type?: LegalExpenseType | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the expense was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedAt?: Date | undefined;
   /**

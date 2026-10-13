@@ -9,6 +9,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The kind of telephone number (work, home, mobile, fax or other)
+ */
 export const HealthcareTelephoneType = {
   Work: "WORK",
   Home: "HOME",
@@ -16,10 +19,19 @@ export const HealthcareTelephoneType = {
   Fax: "FAX",
   Other: "OTHER",
 } as const;
+/**
+ * The kind of telephone number (work, home, mobile, fax or other)
+ */
 export type HealthcareTelephoneType = OpenEnum<typeof HealthcareTelephoneType>;
 
 export type HealthcareTelephone = {
+  /**
+   * The telephone number
+   */
   telephone: string;
+  /**
+   * The kind of telephone number (work, home, mobile, fax or other)
+   */
   type?: HealthcareTelephoneType | undefined;
 };
 

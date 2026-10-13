@@ -67,6 +67,9 @@ export type HealthcareImmunization = {
    * Vaccine lot number
    */
   lotNumber?: string | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Human-readable name of the vaccine

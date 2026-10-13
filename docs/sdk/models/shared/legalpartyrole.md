@@ -1,5 +1,7 @@
 # LegalPartyRole
 
+the party role on the matter
+
 ## Example Usage
 
 ```typescript

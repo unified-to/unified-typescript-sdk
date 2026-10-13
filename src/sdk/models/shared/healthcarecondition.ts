@@ -68,6 +68,9 @@ export type HealthcareCondition = {
    * Unique identifier for the condition
    */
   id?: string | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Human-readable name of the condition

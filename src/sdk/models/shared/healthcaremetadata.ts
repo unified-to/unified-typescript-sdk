@@ -18,6 +18,9 @@ export type HealthcareMetadata5 =
   | number
   | boolean;
 
+/**
+ * Additional data about the custom field
+ */
 export type HealthcareMetadataExtraData =
   | { [k: string]: any }
   | string
@@ -25,6 +28,9 @@ export type HealthcareMetadataExtraData =
   | boolean
   | Array<HealthcareMetadata1 | string | number | boolean>;
 
+/**
+ * The data type of the value
+ */
 export const HealthcareMetadataFormat = {
   Text: "TEXT",
   Number: "NUMBER",
@@ -33,6 +39,9 @@ export const HealthcareMetadataFormat = {
   Array: "ARRAY",
   Object: "OBJECT",
 } as const;
+/**
+ * The data type of the value
+ */
 export type HealthcareMetadataFormat = OpenEnum<
   typeof HealthcareMetadataFormat
 >;
@@ -45,6 +54,9 @@ export type HealthcareMetadataSchemas5 =
   | number
   | boolean;
 
+/**
+ * The custom field value
+ */
 export type HealthcareMetadataValue =
   | { [k: string]: any }
   | string
@@ -53,6 +65,9 @@ export type HealthcareMetadataValue =
   | Array<HealthcareMetadataSchemas1 | string | number | boolean>;
 
 export type HealthcareMetadata = {
+  /**
+   * Additional data about the custom field
+   */
   extraData?:
     | { [k: string]: any }
     | string
@@ -60,10 +75,25 @@ export type HealthcareMetadata = {
     | boolean
     | Array<HealthcareMetadata1 | string | number | boolean>
     | undefined;
+  /**
+   * The data type of the value
+   */
   format?: HealthcareMetadataFormat | undefined;
+  /**
+   * Identifier of the custom field
+   */
   id?: string | undefined;
+  /**
+   * The scope or origin of the custom field
+   */
   namespace?: string | undefined;
+  /**
+   * The custom field key
+   */
   slug?: string | undefined;
+  /**
+   * The custom field value
+   */
   value?:
     | { [k: string]: any }
     | string

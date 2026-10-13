@@ -65,6 +65,9 @@ export type HealthcareLocation = {
    * Longitude of the location
    */
   longitude?: number | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Name of the location

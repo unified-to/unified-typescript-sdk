@@ -12,11 +12,29 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * Postal address of the location
  */
 export type PropertyHealthcareLocationAddress = {
+  /**
+   * First line of the street address
+   */
   address1?: string | undefined;
+  /**
+   * Second line of the street address
+   */
   address2?: string | undefined;
+  /**
+   * City or locality
+   */
   city?: string | undefined;
+  /**
+   * Country
+   */
   country?: string | undefined;
+  /**
+   * Postal or ZIP code
+   */
   postalCode?: string | undefined;
+  /**
+   * Regional area (e.g., state in the U.S., province in Canada)
+   */
   region?: string | undefined;
 };
 

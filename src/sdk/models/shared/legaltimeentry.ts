@@ -24,17 +24,32 @@ export type LegalTimeentry = {
    */
   billableMinutes?: number | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the time entry was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217 currency code
+   */
   currency?: string | undefined;
+  /**
+   * description of the work performed
+   */
   description?: string | undefined;
+  /**
+   * unique identifier for the time entry
+   */
   id?: string | undefined;
   /**
    * pointer to the Accounting Invoice this time was billed on (reference to AccountingInvoice)
    */
   invoiceId?: string | undefined;
+  /**
+   * whether the time entry is billable
+   */
   isBillable?: boolean | undefined;
+  /**
+   * whether the time entry has been billed
+   */
   isBilled?: boolean | undefined;
   /**
    * pointer to the Legal Matter this time is recorded against
@@ -52,14 +67,20 @@ export type LegalTimeentry = {
    * hourly rate, or the flat amount for flat-rate entries
    */
   rateAmount?: number | undefined;
+  /**
+   * raw data from the integration
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * UTBMS/LEDES task code
    */
   taskCode?: string | undefined;
+  /**
+   * total amount of the time entry
+   */
   totalAmount?: number | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the time entry was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedAt?: Date | undefined;
   /**

@@ -16,6 +16,9 @@ import {
   LegalMetadata$outboundSchema,
 } from "./legalmetadata.js";
 
+/**
+ * the normalized practice area type
+ */
 export const LegalPracticeareaType = {
   Administrative: "ADMINISTRATIVE",
   AdmiraltyAndMaritime: "ADMIRALTY_AND_MARITIME",
@@ -77,25 +80,46 @@ export const LegalPracticeareaType = {
   WillsAndEstates: "WILLS_AND_ESTATES",
   WorkersCompensation: "WORKERS_COMPENSATION",
 } as const;
+/**
+ * the normalized practice area type
+ */
 export type LegalPracticeareaType = OpenEnum<typeof LegalPracticeareaType>;
 
 export type LegalPracticearea = {
+  /**
+   * the practice area code
+   */
   code?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the practice area was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * unique identifier for the practice area
+   */
   id?: string | undefined;
+  /**
+   * whether the practice area is active
+   */
   isActive?: boolean | undefined;
   /**
    * custom field values
    */
   metadata?: Array<LegalMetadata> | undefined;
+  /**
+   * the practice area name
+   */
   name?: string | undefined;
+  /**
+   * raw data from the integration
+   */
   raw?: { [k: string]: any } | undefined;
+  /**
+   * the normalized practice area type
+   */
   type?: LegalPracticeareaType | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the practice area was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedAt?: Date | undefined;
 };

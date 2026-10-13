@@ -14,6 +14,9 @@ export type ComputeMetadata1 = {};
 
 export type ComputeMetadata5 = ComputeMetadata1 | string | number | boolean;
 
+/**
+ * Additional data about the value
+ */
 export type ComputeMetadataExtraData =
   | { [k: string]: any }
   | string
@@ -56,6 +59,9 @@ export type ComputeMetadataValue =
   | Array<ComputeMetadataSchemas1 | string | number | boolean>;
 
 export type ComputeMetadata = {
+  /**
+   * Additional data about the value
+   */
   extraData?:
     | { [k: string]: any }
     | string
@@ -67,6 +73,9 @@ export type ComputeMetadata = {
    * The data type of the value
    */
   format?: ComputeMetadataFormat | undefined;
+  /**
+   * The label, tag or metadata identifier
+   */
   id?: string | undefined;
   /**
    * The origin of the value (eg. labels, tags, metadata)

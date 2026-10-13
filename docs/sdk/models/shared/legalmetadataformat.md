@@ -1,5 +1,7 @@
 # LegalMetadataFormat
 
+the data type of the value
+
 ## Example Usage
 
 ```typescript

@@ -1,5 +1,7 @@
 # BillingMethod
 
+how the matter is billed
+
 ## Example Usage
 
 ```typescript

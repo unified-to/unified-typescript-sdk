@@ -107,6 +107,9 @@ export type HealthcarePatient = {
    * Family name of the patient
    */
   lastName?: string | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Full name of the patient

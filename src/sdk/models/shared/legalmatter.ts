@@ -22,30 +22,45 @@ import {
   LegalParty$outboundSchema,
 } from "./legalparty.js";
 
+/**
+ * how the matter is billed
+ */
 export const BillingMethod = {
   Hourly: "HOURLY",
   FlatFee: "FLAT_FEE",
   Contingency: "CONTINGENCY",
   Other: "OTHER",
 } as const;
+/**
+ * how the matter is billed
+ */
 export type BillingMethod = OpenEnum<typeof BillingMethod>;
 
+/**
+ * the matter status
+ */
 export const LegalMatterStatus = {
   Pending: "PENDING",
   Open: "OPEN",
   Closed: "CLOSED",
   Other: "OTHER",
 } as const;
+/**
+ * the matter status
+ */
 export type LegalMatterStatus = OpenEnum<typeof LegalMatterStatus>;
 
 export type LegalMatter = {
+  /**
+   * how the matter is billed
+   */
   billingMethod?: BillingMethod | undefined;
   /**
    * the client's own reference number for this matter
    */
   clientReference?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the matter was closed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   closedAt?: Date | undefined;
   /**
@@ -57,24 +72,39 @@ export type LegalMatter = {
    */
   contactIds?: Array<string> | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the matter was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217 currency code
+   */
   currency?: string | undefined;
+  /**
+   * free-text description of the matter
+   */
   description?: string | undefined;
+  /**
+   * unique identifier for the matter
+   */
   id?: string | undefined;
+  /**
+   * whether the matter is billable
+   */
   isBillable?: boolean | undefined;
   /**
    * custom field values
    */
   metadata?: Array<LegalMetadata> | undefined;
+  /**
+   * the matter name
+   */
   name?: string | undefined;
   /**
    * the firm's display/matter number
    */
   number?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the matter was opened (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   openedAt?: Date | undefined;
   /**
@@ -86,25 +116,31 @@ export type LegalMatter = {
    */
   parties?: Array<LegalParty> | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the matter became pending (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   pendingAt?: Date | undefined;
   /**
    * pointer to the Legal Practicearea object
    */
   practiceareaId?: string | undefined;
+  /**
+   * raw data from the integration
+   */
   raw?: { [k: string]: any } | undefined;
   /**
    * the matter stage name
    */
   stage?: string | undefined;
+  /**
+   * the matter status
+   */
   status?: LegalMatterStatus | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * statute of limitations deadline for the matter (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   statuteOfLimitationsAt?: Date | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * when the matter was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedAt?: Date | undefined;
   /**

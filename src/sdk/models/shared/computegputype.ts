@@ -98,7 +98,7 @@ export type ComputeGputype = {
    */
   cpuCount?: number | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * When the GPU type was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
   /**
@@ -146,7 +146,7 @@ export type ComputeGputype = {
    */
   sku?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * When the GPU type was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedAt?: Date | undefined;
 };

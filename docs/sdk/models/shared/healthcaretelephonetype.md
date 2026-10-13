@@ -1,5 +1,7 @@
 # HealthcareTelephoneType
 
+The kind of telephone number (work, home, mobile, fax or other)
+
 ## Example Usage
 
 ```typescript

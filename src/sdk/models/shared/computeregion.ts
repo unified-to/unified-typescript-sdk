@@ -18,7 +18,7 @@ export type ComputeRegion = {
    */
   country?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * When the region was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
   /**
@@ -42,7 +42,7 @@ export type ComputeRegion = {
    */
   raw?: { [k: string]: any } | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * When the region was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   updatedAt?: Date | undefined;
 };

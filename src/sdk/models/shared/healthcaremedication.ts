@@ -68,6 +68,9 @@ export type HealthcareMedication = {
    * Unique identifier for the medication order/prescription
    */
   id?: string | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Human-readable name of the medication

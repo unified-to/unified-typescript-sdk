@@ -55,6 +55,9 @@ export type HealthcareSlot = {
    * Where the slot takes place
    */
   locationId?: string | undefined;
+  /**
+   * Custom field values
+   */
   metadata?: Array<HealthcareMetadata> | undefined;
   /**
    * Free-text notes about the slot
