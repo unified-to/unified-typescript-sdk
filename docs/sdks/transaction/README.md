@@ -32,12 +32,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "94d9588c-09c7-4a53-afba-85cd721e8aec",
+      id: "a7f00b75-5e8b-483c-9c6d-bbd7b7c858fd",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "e599dbbe-753a-4faf-86d8-4a19e103a308",
+          id: "3ab39fa1-9caa-4a20-bf26-f82fbaea7549",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -50,7 +50,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-17T00:49:54.913Z"),
+      updatedAt: new Date("2021-09-17T09:00:27.979Z"),
     },
     connectionId: "<id>",
   });
@@ -82,12 +82,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "94d9588c-09c7-4a53-afba-85cd721e8aec",
+      id: "a7f00b75-5e8b-483c-9c6d-bbd7b7c858fd",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "e599dbbe-753a-4faf-86d8-4a19e103a308",
+          id: "3ab39fa1-9caa-4a20-bf26-f82fbaea7549",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -100,7 +100,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-17T00:49:54.913Z"),
+      updatedAt: new Date("2021-09-17T09:00:27.979Z"),
     },
     connectionId: "<id>",
   });
@@ -311,12 +311,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "b6f5ac71-f21f-482f-b30c-e33f36a27205",
+      id: "699067be-5678-4e29-bcf9-738987088e42",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "1e431989-db51-451e-b144-8fb24e9263a5",
+          id: "eff23fe8-ddbf-402e-afb8-deb6d4d5abd9",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -329,7 +329,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-17T00:49:54.921Z"),
+      updatedAt: new Date("2021-09-17T09:00:27.986Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -362,12 +362,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "b6f5ac71-f21f-482f-b30c-e33f36a27205",
+      id: "699067be-5678-4e29-bcf9-738987088e42",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "1e431989-db51-451e-b144-8fb24e9263a5",
+          id: "eff23fe8-ddbf-402e-afb8-deb6d4d5abd9",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -380,7 +380,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-17T00:49:54.921Z"),
+      updatedAt: new Date("2021-09-17T09:00:27.986Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -515,12 +515,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "b6f5ac71-f21f-482f-b30c-e33f36a27205",
+      id: "699067be-5678-4e29-bcf9-738987088e42",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "1e431989-db51-451e-b144-8fb24e9263a5",
+          id: "eff23fe8-ddbf-402e-afb8-deb6d4d5abd9",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -533,7 +533,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-17T00:49:54.921Z"),
+      updatedAt: new Date("2021-09-17T09:00:27.986Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -566,12 +566,12 @@ async function run() {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
       exchangeRate: 0.5674,
-      id: "b6f5ac71-f21f-482f-b30c-e33f36a27205",
+      id: "699067be-5678-4e29-bcf9-738987088e42",
       lineitems: [
         {
           categoryIds: [],
           description: "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-          id: "1e431989-db51-451e-b144-8fb24e9263a5",
+          id: "eff23fe8-ddbf-402e-afb8-deb6d4d5abd9",
           name: "Salad",
           objectType: "delicate",
           totalAmount: 58531,
@@ -584,7 +584,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 94452,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2021-09-17T00:49:54.921Z"),
+      updatedAt: new Date("2021-09-17T09:00:27.986Z"),
     },
     connectionId: "<id>",
     id: "<id>",
