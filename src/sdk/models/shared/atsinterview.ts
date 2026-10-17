@@ -37,6 +37,10 @@ export type AtsInterview = {
   id?: string | undefined;
   jobId?: string | undefined;
   location?: string | undefined;
+  /**
+   * the URL of the virtual/video meeting (eg. Zoom, Google Meet, Microsoft Teams)
+   */
+  meetingUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -79,6 +83,7 @@ export const AtsInterview$inboundSchema: z.ZodType<
   id: z.string().optional(),
   job_id: z.string().optional(),
   location: z.string().optional(),
+  meeting_url: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -94,6 +99,7 @@ export const AtsInterview$inboundSchema: z.ZodType<
     "end_at": "endAt",
     "external_event_xref": "externalEventXref",
     "job_id": "jobId",
+    "meeting_url": "meetingUrl",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_ids": "userIds",
@@ -109,6 +115,7 @@ export type AtsInterview$Outbound = {
   id?: string | undefined;
   job_id?: string | undefined;
   location?: string | undefined;
+  meeting_url?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
@@ -130,6 +137,7 @@ export const AtsInterview$outboundSchema: z.ZodType<
   id: z.string().optional(),
   jobId: z.string().optional(),
   location: z.string().optional(),
+  meetingUrl: z.string().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   status: AtsInterviewStatus$outboundSchema.optional(),
@@ -143,6 +151,7 @@ export const AtsInterview$outboundSchema: z.ZodType<
     endAt: "end_at",
     externalEventXref: "external_event_xref",
     jobId: "job_id",
+    meetingUrl: "meeting_url",
     startAt: "start_at",
     updatedAt: "updated_at",
     userIds: "user_ids",

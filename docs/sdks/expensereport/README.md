@@ -30,16 +30,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expensereport.createAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2025-04-10T05:35:43.802Z"),
+      approvedAt: new Date("2025-04-10T23:44:25.952Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "BMD",
       externalNumber: "asporto",
-      id: "15043081-ce4a-43fa-a64f-cf8929d3360c",
+      id: "a7006450-3055-4e59-9157-d8f1fdce9c4e",
       lineitems: [
         {
-          id: "6583927a-2e30-4c76-8709-e3ac684e9610",
+          id: "a250d98f-d3bf-4c96-ac60-feedc8d72076",
           itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
           itemName: "Intelligent Gold Cheese",
           itemSku: "978-0-6550-0228-4",
@@ -50,7 +50,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "0cd1184d-2f54-4759-92b6-a6b064226d28",
+          id: "a37456a3-6242-49b9-9dac-ec6767dd1c50",
           itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
           itemName: "Practical Steel Pizza",
           itemSku: "978-1-4129-9332-6",
@@ -63,12 +63,12 @@ async function run() {
       ],
       metadata: [],
       name: "Rustic Aluminum Car",
-      postedAt: new Date("2022-11-01T04:26:47.523Z"),
+      postedAt: new Date("2022-11-01T13:29:37.637Z"),
       reimbursedAmount: 6696,
       status: "PAID",
       taxAmount: 983,
       totalAmount: 13931,
-      updatedAt: new Date("2025-04-10T05:35:43.802Z"),
+      updatedAt: new Date("2025-04-10T23:44:25.952Z"),
     },
     connectionId: "<id>",
   });
@@ -98,16 +98,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2025-04-10T05:35:43.802Z"),
+      approvedAt: new Date("2025-04-10T23:44:25.952Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "BMD",
       externalNumber: "asporto",
-      id: "15043081-ce4a-43fa-a64f-cf8929d3360c",
+      id: "a7006450-3055-4e59-9157-d8f1fdce9c4e",
       lineitems: [
         {
-          id: "6583927a-2e30-4c76-8709-e3ac684e9610",
+          id: "a250d98f-d3bf-4c96-ac60-feedc8d72076",
           itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
           itemName: "Intelligent Gold Cheese",
           itemSku: "978-0-6550-0228-4",
@@ -118,7 +118,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "0cd1184d-2f54-4759-92b6-a6b064226d28",
+          id: "a37456a3-6242-49b9-9dac-ec6767dd1c50",
           itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
           itemName: "Practical Steel Pizza",
           itemSku: "978-1-4129-9332-6",
@@ -131,12 +131,12 @@ async function run() {
       ],
       metadata: [],
       name: "Rustic Aluminum Car",
-      postedAt: new Date("2022-11-01T04:26:47.523Z"),
+      postedAt: new Date("2022-11-01T13:29:37.637Z"),
       reimbursedAmount: 6696,
       status: "PAID",
       taxAmount: 983,
       totalAmount: 13931,
-      updatedAt: new Date("2025-04-10T05:35:43.802Z"),
+      updatedAt: new Date("2025-04-10T23:44:25.952Z"),
     },
     connectionId: "<id>",
   });
@@ -345,16 +345,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expensereport.patchAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2025-04-10T05:35:43.868Z"),
+      approvedAt: new Date("2025-04-10T23:44:25.991Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "BMD",
       externalNumber: "asporto",
-      id: "db3966a4-c4c5-4c90-a694-0dbb2acd3f2f",
+      id: "192b1f94-0267-435f-bbf8-0a8e5828da59",
       lineitems: [
         {
-          id: "746123d0-6dc9-4877-aec0-287ed3e1cdcb",
+          id: "38448448-d92e-4d6a-8340-a99936cfd014",
           itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
           itemName: "Intelligent Gold Cheese",
           itemSku: "978-0-6550-0228-4",
@@ -365,7 +365,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "ea7e43f2-23ca-4d02-89ff-66477476a068",
+          id: "12e1fe71-0428-41ac-845c-e700e71a17e3",
           itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
           itemName: "Practical Steel Pizza",
           itemSku: "978-1-4129-9332-6",
@@ -378,12 +378,12 @@ async function run() {
       ],
       metadata: [],
       name: "Rustic Aluminum Car",
-      postedAt: new Date("2022-11-01T04:26:47.556Z"),
+      postedAt: new Date("2022-11-01T13:29:37.656Z"),
       reimbursedAmount: 6696,
       status: "PAID",
       taxAmount: 983,
       totalAmount: 13931,
-      updatedAt: new Date("2025-04-10T05:35:43.868Z"),
+      updatedAt: new Date("2025-04-10T23:44:25.991Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -414,16 +414,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2025-04-10T05:35:43.868Z"),
+      approvedAt: new Date("2025-04-10T23:44:25.991Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "BMD",
       externalNumber: "asporto",
-      id: "db3966a4-c4c5-4c90-a694-0dbb2acd3f2f",
+      id: "192b1f94-0267-435f-bbf8-0a8e5828da59",
       lineitems: [
         {
-          id: "746123d0-6dc9-4877-aec0-287ed3e1cdcb",
+          id: "38448448-d92e-4d6a-8340-a99936cfd014",
           itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
           itemName: "Intelligent Gold Cheese",
           itemSku: "978-0-6550-0228-4",
@@ -434,7 +434,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "ea7e43f2-23ca-4d02-89ff-66477476a068",
+          id: "12e1fe71-0428-41ac-845c-e700e71a17e3",
           itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
           itemName: "Practical Steel Pizza",
           itemSku: "978-1-4129-9332-6",
@@ -447,12 +447,12 @@ async function run() {
       ],
       metadata: [],
       name: "Rustic Aluminum Car",
-      postedAt: new Date("2022-11-01T04:26:47.556Z"),
+      postedAt: new Date("2022-11-01T13:29:37.656Z"),
       reimbursedAmount: 6696,
       status: "PAID",
       taxAmount: 983,
       totalAmount: 13931,
-      updatedAt: new Date("2025-04-10T05:35:43.868Z"),
+      updatedAt: new Date("2025-04-10T23:44:25.991Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -585,16 +585,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expensereport.updateAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2025-04-10T05:35:43.868Z"),
+      approvedAt: new Date("2025-04-10T23:44:25.991Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "BMD",
       externalNumber: "asporto",
-      id: "db3966a4-c4c5-4c90-a694-0dbb2acd3f2f",
+      id: "192b1f94-0267-435f-bbf8-0a8e5828da59",
       lineitems: [
         {
-          id: "746123d0-6dc9-4877-aec0-287ed3e1cdcb",
+          id: "38448448-d92e-4d6a-8340-a99936cfd014",
           itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
           itemName: "Intelligent Gold Cheese",
           itemSku: "978-0-6550-0228-4",
@@ -605,7 +605,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "ea7e43f2-23ca-4d02-89ff-66477476a068",
+          id: "12e1fe71-0428-41ac-845c-e700e71a17e3",
           itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
           itemName: "Practical Steel Pizza",
           itemSku: "978-1-4129-9332-6",
@@ -618,12 +618,12 @@ async function run() {
       ],
       metadata: [],
       name: "Rustic Aluminum Car",
-      postedAt: new Date("2022-11-01T04:26:47.556Z"),
+      postedAt: new Date("2022-11-01T13:29:37.656Z"),
       reimbursedAmount: 6696,
       status: "PAID",
       taxAmount: 983,
       totalAmount: 13931,
-      updatedAt: new Date("2025-04-10T05:35:43.868Z"),
+      updatedAt: new Date("2025-04-10T23:44:25.991Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -654,16 +654,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2025-04-10T05:35:43.868Z"),
+      approvedAt: new Date("2025-04-10T23:44:25.991Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "BMD",
       externalNumber: "asporto",
-      id: "db3966a4-c4c5-4c90-a694-0dbb2acd3f2f",
+      id: "192b1f94-0267-435f-bbf8-0a8e5828da59",
       lineitems: [
         {
-          id: "746123d0-6dc9-4877-aec0-287ed3e1cdcb",
+          id: "38448448-d92e-4d6a-8340-a99936cfd014",
           itemDescription: "The Synchronised motivating software Car offers reliable performance and webbed design",
           itemName: "Intelligent Gold Cheese",
           itemSku: "978-0-6550-0228-4",
@@ -674,7 +674,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "ea7e43f2-23ca-4d02-89ff-66477476a068",
+          id: "12e1fe71-0428-41ac-845c-e700e71a17e3",
           itemDescription: "Ergonomic Bike made with Marble for all-day coordinated support",
           itemName: "Practical Steel Pizza",
           itemSku: "978-1-4129-9332-6",
@@ -687,12 +687,12 @@ async function run() {
       ],
       metadata: [],
       name: "Rustic Aluminum Car",
-      postedAt: new Date("2022-11-01T04:26:47.556Z"),
+      postedAt: new Date("2022-11-01T13:29:37.656Z"),
       reimbursedAmount: 6696,
       status: "PAID",
       taxAmount: 983,
       totalAmount: 13931,
-      updatedAt: new Date("2025-04-10T05:35:43.868Z"),
+      updatedAt: new Date("2025-04-10T23:44:25.991Z"),
     },
     connectionId: "<id>",
     id: "<id>",

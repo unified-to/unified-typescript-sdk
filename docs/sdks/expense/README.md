@@ -36,11 +36,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expense.createAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-06-05T04:26:57.766Z"),
+      approvedAt: new Date("2026-06-06T02:53:05.245Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "60d3cfdb-f4eb-464d-8162-2b751bfb3380",
+          id: "c36df703-bd3c-484d-8301-b8dad63c4111",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -49,10 +49,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "fae12a73-3dd2-4791-9526-8902f8d0cac0",
+      id: "f777c7a6-a685-46fe-be7a-44c86901039d",
       lineitems: [
         {
-          id: "6d264026-41d6-425d-bd46-a4eb97887a99",
+          id: "dc9a3231-6f9c-4628-b590-d31f8bee0316",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -66,13 +66,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-08T14:14:22.921Z"),
+      postedAt: new Date("2021-06-08T17:57:40.171Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-06-05T04:26:57.766Z"),
+      updatedAt: new Date("2026-06-06T02:53:05.245Z"),
     },
     connectionId: "<id>",
   });
@@ -102,11 +102,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-06-05T04:26:57.766Z"),
+      approvedAt: new Date("2026-06-06T02:53:05.245Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "60d3cfdb-f4eb-464d-8162-2b751bfb3380",
+          id: "c36df703-bd3c-484d-8301-b8dad63c4111",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -115,10 +115,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "fae12a73-3dd2-4791-9526-8902f8d0cac0",
+      id: "f777c7a6-a685-46fe-be7a-44c86901039d",
       lineitems: [
         {
-          id: "6d264026-41d6-425d-bd46-a4eb97887a99",
+          id: "dc9a3231-6f9c-4628-b590-d31f8bee0316",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -132,13 +132,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-08T14:14:22.921Z"),
+      postedAt: new Date("2021-06-08T17:57:40.171Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-06-05T04:26:57.766Z"),
+      updatedAt: new Date("2026-06-06T02:53:05.245Z"),
     },
     connectionId: "<id>",
   });
@@ -195,7 +195,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "7463da1c-4398-40ee-8325-b3a2e627366b",
+      id: "3ebc1870-c19b-4aa9-9087-c6e24a1241e6",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -203,7 +203,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-28T03:14:18.360Z"),
+      updatedAt: new Date("2024-03-28T16:48:28.673Z"),
     },
     connectionId: "<id>",
   });
@@ -237,7 +237,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "7463da1c-4398-40ee-8325-b3a2e627366b",
+      id: "3ebc1870-c19b-4aa9-9087-c6e24a1241e6",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -245,7 +245,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-28T03:14:18.360Z"),
+      updatedAt: new Date("2024-03-28T16:48:28.673Z"),
     },
     connectionId: "<id>",
   });
@@ -610,11 +610,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expense.patchAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-06-05T04:26:57.812Z"),
+      approvedAt: new Date("2026-06-06T02:53:05.292Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "addb2cf8-2f97-42cc-9a0f-35e8d65bf084",
+          id: "a92f4662-5f81-42b1-8e02-335861c72dda",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -623,10 +623,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "6cd1a1b9-4fd9-4c9f-9f39-f3e6f8a10cba",
+      id: "2662b518-e099-40bc-bd1e-f33f22d0f82a",
       lineitems: [
         {
-          id: "9af6e9d3-824c-4304-ba8a-87408c17808c",
+          id: "a6e5aefa-46bc-49fd-b1cd-53701a19716d",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -640,13 +640,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-08T14:14:22.929Z"),
+      postedAt: new Date("2021-06-08T17:57:40.179Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-06-05T04:26:57.812Z"),
+      updatedAt: new Date("2026-06-06T02:53:05.292Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -677,11 +677,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-06-05T04:26:57.812Z"),
+      approvedAt: new Date("2026-06-06T02:53:05.292Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "addb2cf8-2f97-42cc-9a0f-35e8d65bf084",
+          id: "a92f4662-5f81-42b1-8e02-335861c72dda",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -690,10 +690,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "6cd1a1b9-4fd9-4c9f-9f39-f3e6f8a10cba",
+      id: "2662b518-e099-40bc-bd1e-f33f22d0f82a",
       lineitems: [
         {
-          id: "9af6e9d3-824c-4304-ba8a-87408c17808c",
+          id: "a6e5aefa-46bc-49fd-b1cd-53701a19716d",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -707,13 +707,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-08T14:14:22.929Z"),
+      postedAt: new Date("2021-06-08T17:57:40.179Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-06-05T04:26:57.812Z"),
+      updatedAt: new Date("2026-06-06T02:53:05.292Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -771,7 +771,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "dde7c23d-ec83-43b7-8364-31bcc14dc9bf",
+      id: "47538e6b-53a2-4410-a4c7-57645bafa132",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -779,7 +779,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-28T03:14:18.368Z"),
+      updatedAt: new Date("2024-03-28T16:48:28.684Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -814,7 +814,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "dde7c23d-ec83-43b7-8364-31bcc14dc9bf",
+      id: "47538e6b-53a2-4410-a4c7-57645bafa132",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -822,7 +822,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-28T03:14:18.368Z"),
+      updatedAt: new Date("2024-03-28T16:48:28.684Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1034,11 +1034,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expense.updateAccountingExpense({
     accountingExpense: {
-      approvedAt: new Date("2026-06-05T04:26:57.812Z"),
+      approvedAt: new Date("2026-06-06T02:53:05.292Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "addb2cf8-2f97-42cc-9a0f-35e8d65bf084",
+          id: "a92f4662-5f81-42b1-8e02-335861c72dda",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -1047,10 +1047,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "6cd1a1b9-4fd9-4c9f-9f39-f3e6f8a10cba",
+      id: "2662b518-e099-40bc-bd1e-f33f22d0f82a",
       lineitems: [
         {
-          id: "9af6e9d3-824c-4304-ba8a-87408c17808c",
+          id: "a6e5aefa-46bc-49fd-b1cd-53701a19716d",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -1064,13 +1064,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-08T14:14:22.929Z"),
+      postedAt: new Date("2021-06-08T17:57:40.179Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-06-05T04:26:57.812Z"),
+      updatedAt: new Date("2026-06-06T02:53:05.292Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1101,11 +1101,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingExpense(unifiedTo, {
     accountingExpense: {
-      approvedAt: new Date("2026-06-05T04:26:57.812Z"),
+      approvedAt: new Date("2026-06-06T02:53:05.292Z"),
       attachments: [
         {
           downloadUrl: "https://ripe-napkin.biz/",
-          id: "addb2cf8-2f97-42cc-9a0f-35e8d65bf084",
+          id: "a92f4662-5f81-42b1-8e02-335861c72dda",
           mimeType: "annus",
           name: "cohibeo",
         },
@@ -1114,10 +1114,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "SSP",
       externalNumber: "necessitatibus",
-      id: "6cd1a1b9-4fd9-4c9f-9f39-f3e6f8a10cba",
+      id: "2662b518-e099-40bc-bd1e-f33f22d0f82a",
       lineitems: [
         {
-          id: "9af6e9d3-824c-4304-ba8a-87408c17808c",
+          id: "a6e5aefa-46bc-49fd-b1cd-53701a19716d",
           itemDescription: "Innovative Table featuring left technology and Rubber construction",
           itemName: "Luxurious Cotton Pizza",
           itemSku: "978-0-8324-6620-5",
@@ -1131,13 +1131,13 @@ async function run() {
       metadata: [],
       name: "Refined Steel Shoes",
       paymentMethod: "CASH",
-      postedAt: new Date("2021-06-08T14:14:22.929Z"),
+      postedAt: new Date("2021-06-08T17:57:40.179Z"),
       reimbursedAmount: 1833,
       status: "SUBMITTED",
       taxAmount: 2602,
       totalAmount: 3580,
       type: "USER",
-      updatedAt: new Date("2026-06-05T04:26:57.812Z"),
+      updatedAt: new Date("2026-06-06T02:53:05.292Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1195,7 +1195,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "dde7c23d-ec83-43b7-8364-31bcc14dc9bf",
+      id: "47538e6b-53a2-4410-a4c7-57645bafa132",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1203,7 +1203,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-28T03:14:18.368Z"),
+      updatedAt: new Date("2024-03-28T16:48:28.684Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1238,7 +1238,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "dde7c23d-ec83-43b7-8364-31bcc14dc9bf",
+      id: "47538e6b-53a2-4410-a4c7-57645bafa132",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1246,7 +1246,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-28T03:14:18.368Z"),
+      updatedAt: new Date("2024-03-28T16:48:28.684Z"),
     },
     connectionId: "<id>",
     id: "<id>",

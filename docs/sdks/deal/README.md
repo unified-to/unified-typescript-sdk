@@ -31,19 +31,19 @@ async function run() {
   const result = await unifiedTo.deal.createCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-09T09:19:28.182Z"),
-      closingAt: new Date("2025-08-28T06:22:27.213Z"),
+      closedAt: new Date("2024-03-09T14:15:43.472Z"),
+      closingAt: new Date("2025-08-28T21:57:50.777Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "IQD",
       description: "Tabula cicuta sophismata comis tepidus sit cavus.",
-      id: "dccab2af-5c46-493e-ac62-e7f9bde2e309",
+      id: "152dd8f4-fe55-4237-9aca-25f5b414fded",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "674c1c48-8bf3-47c5-a3d6-0bee425c45e0",
+          id: "fcd107f8-1144-4328-8da9-6608c608787b",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -52,7 +52,7 @@ async function run() {
       name: "Frozen Silk Chicken",
       pipelines: [
         {
-          id: "dd206832-c99f-423f-b7c0-e1ba59d5bcae",
+          id: "d48d4c35-4d62-4113-a25b-4066bd766521",
           name: "trans",
         },
       ],
@@ -60,11 +60,11 @@ async function run() {
       source: "cubo",
       stages: [
         {
-          id: "d8f4cd16-cad2-4b7b-9c0e-2b9c8f8c8156",
+          id: "1725c0a5-aac9-4ff7-aca7-bce9bd4a2c4f",
           name: "tubineus",
         },
         {
-          id: "c40f4e56-edba-467a-9e3c-4dde963189b1",
+          id: "db672d40-5857-4106-a5dd-c739bc59da2d",
           name: "adfectus",
         },
       ],
@@ -72,7 +72,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-09T23:03:35.308Z"),
+      updatedAt: new Date("2024-10-10T08:15:17.156Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -104,19 +104,19 @@ async function run() {
   const res = await crmCreateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-09T09:19:28.182Z"),
-      closingAt: new Date("2025-08-28T06:22:27.213Z"),
+      closedAt: new Date("2024-03-09T14:15:43.472Z"),
+      closingAt: new Date("2025-08-28T21:57:50.777Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "IQD",
       description: "Tabula cicuta sophismata comis tepidus sit cavus.",
-      id: "dccab2af-5c46-493e-ac62-e7f9bde2e309",
+      id: "152dd8f4-fe55-4237-9aca-25f5b414fded",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "674c1c48-8bf3-47c5-a3d6-0bee425c45e0",
+          id: "fcd107f8-1144-4328-8da9-6608c608787b",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -125,7 +125,7 @@ async function run() {
       name: "Frozen Silk Chicken",
       pipelines: [
         {
-          id: "dd206832-c99f-423f-b7c0-e1ba59d5bcae",
+          id: "d48d4c35-4d62-4113-a25b-4066bd766521",
           name: "trans",
         },
       ],
@@ -133,11 +133,11 @@ async function run() {
       source: "cubo",
       stages: [
         {
-          id: "d8f4cd16-cad2-4b7b-9c0e-2b9c8f8c8156",
+          id: "1725c0a5-aac9-4ff7-aca7-bce9bd4a2c4f",
           name: "tubineus",
         },
         {
-          id: "c40f4e56-edba-467a-9e3c-4dde963189b1",
+          id: "db672d40-5857-4106-a5dd-c739bc59da2d",
           name: "adfectus",
         },
       ],
@@ -145,7 +145,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-09T23:03:35.308Z"),
+      updatedAt: new Date("2024-10-10T08:15:17.156Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -356,19 +356,19 @@ async function run() {
   const result = await unifiedTo.deal.patchCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-09T09:19:28.187Z"),
-      closingAt: new Date("2025-08-28T06:22:27.228Z"),
+      closedAt: new Date("2024-03-09T14:15:43.477Z"),
+      closingAt: new Date("2025-08-28T21:57:50.794Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "IQD",
       description: "Tabula cicuta sophismata comis tepidus sit cavus.",
-      id: "72bb39aa-887e-4456-8e00-f85b7e678bf7",
+      id: "08de6ff0-41df-4e8b-ac01-071149d74f35",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0d6925ff-0e04-4ccb-8c05-e7429ca8c5e1",
+          id: "7cd6bfe7-3abc-4236-a381-df1a3f718fbe",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -377,7 +377,7 @@ async function run() {
       name: "Frozen Silk Chicken",
       pipelines: [
         {
-          id: "a4ac96c1-4a23-47a2-90e8-94ce560163f0",
+          id: "e1732b54-57b3-4c09-8902-9a79b66b2fe9",
           name: "trans",
         },
       ],
@@ -385,11 +385,11 @@ async function run() {
       source: "cubo",
       stages: [
         {
-          id: "a65f683f-6c6b-42b6-86f9-ce876498a33a",
+          id: "fac00fac-6da7-4b0a-bf28-76408669182a",
           name: "tubineus",
         },
         {
-          id: "55a4c450-6a99-48b0-ad03-4d538eb37ea3",
+          id: "ca338e46-84d0-4b0a-8de0-1e4445c3114c",
           name: "adfectus",
         },
       ],
@@ -397,7 +397,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-09T23:03:35.317Z"),
+      updatedAt: new Date("2024-10-10T08:15:17.166Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -430,19 +430,19 @@ async function run() {
   const res = await crmPatchCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-09T09:19:28.187Z"),
-      closingAt: new Date("2025-08-28T06:22:27.228Z"),
+      closedAt: new Date("2024-03-09T14:15:43.477Z"),
+      closingAt: new Date("2025-08-28T21:57:50.794Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "IQD",
       description: "Tabula cicuta sophismata comis tepidus sit cavus.",
-      id: "72bb39aa-887e-4456-8e00-f85b7e678bf7",
+      id: "08de6ff0-41df-4e8b-ac01-071149d74f35",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0d6925ff-0e04-4ccb-8c05-e7429ca8c5e1",
+          id: "7cd6bfe7-3abc-4236-a381-df1a3f718fbe",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -451,7 +451,7 @@ async function run() {
       name: "Frozen Silk Chicken",
       pipelines: [
         {
-          id: "a4ac96c1-4a23-47a2-90e8-94ce560163f0",
+          id: "e1732b54-57b3-4c09-8902-9a79b66b2fe9",
           name: "trans",
         },
       ],
@@ -459,11 +459,11 @@ async function run() {
       source: "cubo",
       stages: [
         {
-          id: "a65f683f-6c6b-42b6-86f9-ce876498a33a",
+          id: "fac00fac-6da7-4b0a-bf28-76408669182a",
           name: "tubineus",
         },
         {
-          id: "55a4c450-6a99-48b0-ad03-4d538eb37ea3",
+          id: "ca338e46-84d0-4b0a-8de0-1e4445c3114c",
           name: "adfectus",
         },
       ],
@@ -471,7 +471,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-09T23:03:35.317Z"),
+      updatedAt: new Date("2024-10-10T08:15:17.166Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -606,19 +606,19 @@ async function run() {
   const result = await unifiedTo.deal.updateCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-09T09:19:28.187Z"),
-      closingAt: new Date("2025-08-28T06:22:27.228Z"),
+      closedAt: new Date("2024-03-09T14:15:43.477Z"),
+      closingAt: new Date("2025-08-28T21:57:50.794Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "IQD",
       description: "Tabula cicuta sophismata comis tepidus sit cavus.",
-      id: "72bb39aa-887e-4456-8e00-f85b7e678bf7",
+      id: "08de6ff0-41df-4e8b-ac01-071149d74f35",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0d6925ff-0e04-4ccb-8c05-e7429ca8c5e1",
+          id: "7cd6bfe7-3abc-4236-a381-df1a3f718fbe",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -627,7 +627,7 @@ async function run() {
       name: "Frozen Silk Chicken",
       pipelines: [
         {
-          id: "a4ac96c1-4a23-47a2-90e8-94ce560163f0",
+          id: "e1732b54-57b3-4c09-8902-9a79b66b2fe9",
           name: "trans",
         },
       ],
@@ -635,11 +635,11 @@ async function run() {
       source: "cubo",
       stages: [
         {
-          id: "a65f683f-6c6b-42b6-86f9-ce876498a33a",
+          id: "fac00fac-6da7-4b0a-bf28-76408669182a",
           name: "tubineus",
         },
         {
-          id: "55a4c450-6a99-48b0-ad03-4d538eb37ea3",
+          id: "ca338e46-84d0-4b0a-8de0-1e4445c3114c",
           name: "adfectus",
         },
       ],
@@ -647,7 +647,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-09T23:03:35.317Z"),
+      updatedAt: new Date("2024-10-10T08:15:17.166Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -680,19 +680,19 @@ async function run() {
   const res = await crmUpdateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-09T09:19:28.187Z"),
-      closingAt: new Date("2025-08-28T06:22:27.228Z"),
+      closedAt: new Date("2024-03-09T14:15:43.477Z"),
+      closingAt: new Date("2025-08-28T21:57:50.794Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "IQD",
       description: "Tabula cicuta sophismata comis tepidus sit cavus.",
-      id: "72bb39aa-887e-4456-8e00-f85b7e678bf7",
+      id: "08de6ff0-41df-4e8b-ac01-071149d74f35",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0d6925ff-0e04-4ccb-8c05-e7429ca8c5e1",
+          id: "7cd6bfe7-3abc-4236-a381-df1a3f718fbe",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -701,7 +701,7 @@ async function run() {
       name: "Frozen Silk Chicken",
       pipelines: [
         {
-          id: "a4ac96c1-4a23-47a2-90e8-94ce560163f0",
+          id: "e1732b54-57b3-4c09-8902-9a79b66b2fe9",
           name: "trans",
         },
       ],
@@ -709,11 +709,11 @@ async function run() {
       source: "cubo",
       stages: [
         {
-          id: "a65f683f-6c6b-42b6-86f9-ce876498a33a",
+          id: "fac00fac-6da7-4b0a-bf28-76408669182a",
           name: "tubineus",
         },
         {
-          id: "55a4c450-6a99-48b0-ad03-4d538eb37ea3",
+          id: "ca338e46-84d0-4b0a-8de0-1e4445c3114c",
           name: "adfectus",
         },
       ],
@@ -721,7 +721,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-09T23:03:35.317Z"),
+      updatedAt: new Date("2024-10-10T08:15:17.166Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",

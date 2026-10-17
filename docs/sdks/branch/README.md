@@ -31,10 +31,10 @@ async function run() {
   const result = await unifiedTo.branch.createRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "2284854d-37e3-4669-8d79-11ebcc8d927e",
+      id: "3a7ffe0c-02db-4605-af6e-97253c8f638b",
       name: "voluptas",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-06T18:30:18.052Z"),
+      updatedAt: new Date("2020-01-06T21:12:11.307Z"),
     },
     connectionId: "<id>",
   });
@@ -65,10 +65,10 @@ async function run() {
   const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "2284854d-37e3-4669-8d79-11ebcc8d927e",
+      id: "3a7ffe0c-02db-4605-af6e-97253c8f638b",
       name: "voluptas",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-06T18:30:18.052Z"),
+      updatedAt: new Date("2020-01-06T21:12:11.307Z"),
     },
     connectionId: "<id>",
   });
@@ -278,10 +278,10 @@ async function run() {
   const result = await unifiedTo.branch.patchRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "26c16ff6-1d94-4e32-9a0c-8842d0bfef81",
+      id: "532e7354-11a8-4160-9b34-2885c7fb2b1c",
       name: "voluptas",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-06T18:30:18.053Z"),
+      updatedAt: new Date("2020-01-06T21:12:11.307Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -313,10 +313,10 @@ async function run() {
   const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "26c16ff6-1d94-4e32-9a0c-8842d0bfef81",
+      id: "532e7354-11a8-4160-9b34-2885c7fb2b1c",
       name: "voluptas",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-06T18:30:18.053Z"),
+      updatedAt: new Date("2020-01-06T21:12:11.307Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -450,10 +450,10 @@ async function run() {
   const result = await unifiedTo.branch.updateRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "26c16ff6-1d94-4e32-9a0c-8842d0bfef81",
+      id: "532e7354-11a8-4160-9b34-2885c7fb2b1c",
       name: "voluptas",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-06T18:30:18.053Z"),
+      updatedAt: new Date("2020-01-06T21:12:11.307Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -485,10 +485,10 @@ async function run() {
   const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "26c16ff6-1d94-4e32-9a0c-8842d0bfef81",
+      id: "532e7354-11a8-4160-9b34-2885c7fb2b1c",
       name: "voluptas",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-06T18:30:18.053Z"),
+      updatedAt: new Date("2020-01-06T21:12:11.307Z"),
     },
     connectionId: "<id>",
     id: "<id>",
