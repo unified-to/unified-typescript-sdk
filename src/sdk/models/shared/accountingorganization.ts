@@ -10,6 +10,10 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+} from "./accountingmetadata.js";
+import {
   PropertyAccountingOrganizationAddress,
   PropertyAccountingOrganizationAddress$inboundSchema,
 } from "./propertyaccountingorganizationaddress.js";
@@ -54,6 +58,7 @@ export type AccountingOrganization = {
    */
   isElimination?: boolean | undefined;
   legalName?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   /**
    * Identifier for tracking and categorizing organizations for reporting or analysis purposes that is defined by the end-customer
@@ -101,6 +106,7 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_elimination: z.boolean().optional(),
   legal_name: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_code: z.string().optional(),
   parent_id: z.string().optional(),

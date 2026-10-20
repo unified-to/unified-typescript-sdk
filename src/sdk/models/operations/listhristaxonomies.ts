@@ -21,6 +21,7 @@ export const ListHrisTaxonomiesQueryParamFields = {
   Url: "url",
   RoleIds: "role_ids",
   IsActive: "is_active",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListHrisTaxonomiesQueryParamFields = ClosedEnum<

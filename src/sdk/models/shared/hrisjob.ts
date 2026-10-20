@@ -33,6 +33,12 @@ import {
   HrisLocation$Outbound,
   HrisLocation$outboundSchema,
 } from "./hrislocation.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 export const HrisJobEmploymentType = {
   FullTime: "FULL_TIME",
@@ -77,6 +83,7 @@ export type HrisJob = {
    * where this job is worked. May not have all of the Location fields present, but should have id and name
    */
   locations?: Array<HrisLocation> | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   /**
    * the job or position title
    */
@@ -124,6 +131,7 @@ export const HrisJob$inboundSchema: z.ZodType<HrisJob, z.ZodTypeDef, unknown> =
     id: z.string().optional(),
     is_active: z.boolean().optional(),
     locations: z.array(HrisLocation$inboundSchema).optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
     name: z.string().optional(),
     parent_id: z.string().optional(),
     raw: z.record(z.any()).optional(),
@@ -153,6 +161,7 @@ export type HrisJob$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   locations?: Array<HrisLocation$Outbound> | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -176,6 +185,7 @@ export const HrisJob$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   locations: z.array(HrisLocation$outboundSchema).optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

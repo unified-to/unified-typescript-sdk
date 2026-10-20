@@ -15,6 +15,7 @@ export const CreateTicketingCategoryQueryParamFields = {
   Description: "description",
   IsActive: "is_active",
   ParentId: "parent_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateTicketingCategoryQueryParamFields = ClosedEnum<

@@ -5,11 +5,11 @@
 ```typescript
 import { ListCrmTaxonomiesQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListCrmTaxonomiesQueryParamFields = "name";
+let value: ListCrmTaxonomiesQueryParamFields = "label";
 ```
 
 ## Values
 
 ```typescript
-"id" | "name" | "label" | "type" | "raw"
+"id" | "name" | "label" | "type" | "metadata" | "raw"
 ```

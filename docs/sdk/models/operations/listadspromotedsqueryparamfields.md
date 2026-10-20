@@ -5,11 +5,11 @@
 ```typescript
 import { ListAdsPromotedsQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListAdsPromotedsQueryParamFields = "type";
+let value: ListAdsPromotedsQueryParamFields = "metadata";
 ```
 
 ## Values
 
 ```typescript
-"id" | "name" | "type" | "raw"
+"id" | "name" | "type" | "metadata" | "raw"
 ```

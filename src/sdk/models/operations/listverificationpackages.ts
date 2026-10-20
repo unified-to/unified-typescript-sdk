@@ -25,6 +25,7 @@ export const ListVerificationPackagesQueryParamFields = {
   MaxScore: "max_score",
   InfoUrl: "info_url",
   ValidRegions: "valid_regions",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListVerificationPackagesQueryParamFields = ClosedEnum<

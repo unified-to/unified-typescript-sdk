@@ -11,5 +11,5 @@ let value: GetSocialPostQueryParamFields = "status";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "profile_id" | "parent_post_id" | "title" | "body" | "status" | "type" | "media" | "url" | "language" | "scheduled_at" | "call_to_action" | "metrics" | "raw"
+"id" | "created_at" | "updated_at" | "profile_id" | "parent_post_id" | "title" | "body" | "status" | "type" | "media" | "url" | "language" | "scheduled_at" | "call_to_action" | "metrics" | "metadata" | "raw"
 ```

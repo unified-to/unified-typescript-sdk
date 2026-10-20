@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+  CommerceMetadata$Outbound,
+  CommerceMetadata$outboundSchema,
+} from "./commercemetadata.js";
+import {
   CommerceReference,
   CommerceReference$inboundSchema,
   CommerceReference$Outbound,
@@ -26,6 +32,7 @@ export type CommerceSaleschannel = {
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * maps to code (name)  a stable identifier per channel
@@ -49,6 +56,7 @@ export const CommerceSaleschannel$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -67,6 +75,7 @@ export type CommerceSaleschannel$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<CommerceMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
   updated_at?: string | undefined;
@@ -83,6 +92,7 @@ export const CommerceSaleschannel$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

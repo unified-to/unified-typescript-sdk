@@ -11,5 +11,5 @@ let value: ListCommerceAvailabilitiesQueryParamFields = "end_at";
 ## Values
 
 ```typescript
-"location_id" | "start_at" | "end_at" | "size" | "item_id" | "staff_user_id" | "raw"
+"location_id" | "start_at" | "end_at" | "size" | "item_id" | "staff_user_id" | "metadata" | "raw"
 ```

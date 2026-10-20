@@ -18,6 +18,7 @@ export const PatchDatastoreTableQueryParamFields = {
   Relationships: "relationships",
   WebUrl: "web_url",
   ParentId: "parent_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchDatastoreTableQueryParamFields = ClosedEnum<

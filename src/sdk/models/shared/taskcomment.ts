@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  TaskMetadata,
+  TaskMetadata$inboundSchema,
+  TaskMetadata$Outbound,
+  TaskMetadata$outboundSchema,
+} from "./taskmetadata.js";
 
 export type TaskComment = {
   /**
@@ -15,6 +21,7 @@ export type TaskComment = {
   createdAt?: Date | undefined;
   hasChildren?: boolean | undefined;
   id?: string | undefined;
+  metadata?: Array<TaskMetadata> | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -43,6 +50,7 @@ export const TaskComment$inboundSchema: z.ZodType<
     .optional(),
   has_children: z.boolean().optional(),
   id: z.string().optional(),
+  metadata: z.array(TaskMetadata$inboundSchema).optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   task_id: z.string().optional(),
@@ -67,6 +75,7 @@ export type TaskComment$Outbound = {
   created_at?: string | undefined;
   has_children?: boolean | undefined;
   id?: string | undefined;
+  metadata?: Array<TaskMetadata$Outbound> | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   task_id?: string | undefined;
@@ -85,6 +94,7 @@ export const TaskComment$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   hasChildren: z.boolean().optional(),
   id: z.string().optional(),
+  metadata: z.array(TaskMetadata$outboundSchema).optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   taskId: z.string().optional(),

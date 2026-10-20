@@ -7,6 +7,10 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  SigningMetadata,
+  SigningMetadata$inboundSchema,
+} from "./signingmetadata.js";
 
 export type SigningTemplate = {
   /**
@@ -29,6 +33,7 @@ export type SigningTemplate = {
    * Whether the template is active/available
    */
   isActive?: boolean | undefined;
+  metadata?: Array<SigningMetadata> | undefined;
   /**
    * Template name
    */
@@ -55,6 +60,7 @@ export const SigningTemplate$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(SigningMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

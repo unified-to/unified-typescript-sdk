@@ -11,5 +11,5 @@ let value: UpdateRepoBranchQueryParamFields = "repo_id";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "repo_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "repo_id" | "metadata" | "raw"
 ```

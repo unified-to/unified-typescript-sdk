@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  KmsPageMetadata,
+  KmsPageMetadata$inboundSchema,
+  KmsPageMetadata$Outbound,
+  KmsPageMetadata$outboundSchema,
+} from "./kmspagemetadata.js";
 
 export const ContentType = {
   Html: "HTML",
@@ -32,6 +38,7 @@ export type KmsComment = {
    */
   createdAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<KmsPageMetadata> | undefined;
   /**
    * (reference to KmsPage)
    */
@@ -86,6 +93,7 @@ export const KmsComment$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
   page_id: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -109,6 +117,7 @@ export type KmsComment$Outbound = {
   content_type?: string | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<KmsPageMetadata$Outbound> | undefined;
   page_id?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -127,6 +136,7 @@ export const KmsComment$outboundSchema: z.ZodType<
   contentType: ContentType$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
   pageId: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

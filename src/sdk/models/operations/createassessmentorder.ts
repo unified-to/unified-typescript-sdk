@@ -48,6 +48,7 @@ export const CreateAssessmentOrderQueryParamFields = {
   ResponseDetails: "response_details",
   ResponseSource: "response_source",
   ResponseAttributes: "response_attributes",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateAssessmentOrderQueryParamFields = ClosedEnum<

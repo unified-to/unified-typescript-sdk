@@ -22,6 +22,7 @@ export const GetHrisLocationQueryParamFields = {
   IsActive: "is_active",
   IsHq: "is_hq",
   CompanyId: "company_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetHrisLocationQueryParamFields = ClosedEnum<

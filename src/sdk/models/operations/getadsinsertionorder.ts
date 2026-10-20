@@ -21,6 +21,7 @@ export const GetAdsInsertionorderQueryParamFields = {
   BudgetSegments: "budget_segments",
   BidStrategy: "bid_strategy",
   Reference: "reference",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAdsInsertionorderQueryParamFields = ClosedEnum<

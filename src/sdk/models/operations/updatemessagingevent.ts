@@ -15,6 +15,7 @@ export const UpdateMessagingEventQueryParamFields = {
   Message: "message",
   Button: "button",
   User: "user",
+  Metadata: "metadata",
   Raw: "raw",
   IsReplacingOriginal: "is_replacing_original",
 } as const;

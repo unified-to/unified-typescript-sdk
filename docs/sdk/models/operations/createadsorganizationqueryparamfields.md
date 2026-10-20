@@ -5,11 +5,11 @@
 ```typescript
 import { CreateAdsOrganizationQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateAdsOrganizationQueryParamFields = "account_number";
+let value: CreateAdsOrganizationQueryParamFields = "managers";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "currency" | "timezone" | "parent_id" | "status" | "account_number" | "managers" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "currency" | "timezone" | "parent_id" | "status" | "account_number" | "managers" | "metadata" | "raw"
 ```

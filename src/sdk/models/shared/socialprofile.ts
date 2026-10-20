@@ -15,6 +15,10 @@ import {
   PropertySocialProfileMetrics,
   PropertySocialProfileMetrics$inboundSchema,
 } from "./propertysocialprofilemetrics.js";
+import {
+  SocialMetadata,
+  SocialMetadata$inboundSchema,
+} from "./socialmetadata.js";
 
 export type SocialProfile = {
   /**
@@ -53,6 +57,7 @@ export type SocialProfile = {
    * Free-text location/locale string
    */
   location?: string | undefined;
+  metadata?: Array<SocialMetadata> | undefined;
   /**
    * Audience metrics for the profile
    */
@@ -107,6 +112,7 @@ export const SocialProfile$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   is_verified: z.boolean().optional(),
   location: z.string().optional(),
+  metadata: z.array(SocialMetadata$inboundSchema).optional(),
   metrics: PropertySocialProfileMetrics$inboundSchema.optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),

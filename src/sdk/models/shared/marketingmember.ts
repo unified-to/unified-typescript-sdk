@@ -15,6 +15,12 @@ import {
   MarketingEmail$Outbound,
   MarketingEmail$outboundSchema,
 } from "./marketingemail.js";
+import {
+  MarketingMetadata,
+  MarketingMetadata$inboundSchema,
+  MarketingMetadata$Outbound,
+  MarketingMetadata$outboundSchema,
+} from "./marketingmetadata.js";
 
 export const MarketingMemberStatus = {
   Subscribed: "SUBSCRIBED",
@@ -51,6 +57,7 @@ export type MarketingMember = {
    * An array of list IDs associated with this member
    */
   listIds?: Array<string> | undefined;
+  metadata?: Array<MarketingMetadata> | undefined;
   /**
    * The name of the member
    */
@@ -97,6 +104,7 @@ export const MarketingMember$inboundSchema: z.ZodType<
   id: z.string().optional(),
   last_name: z.string().optional(),
   list_ids: z.array(z.string()).optional(),
+  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: MarketingMemberStatus$inboundSchema.optional(),
@@ -121,6 +129,7 @@ export type MarketingMember$Outbound = {
   id?: string | undefined;
   last_name?: string | undefined;
   list_ids?: Array<string> | undefined;
+  metadata?: Array<MarketingMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: string | undefined;
@@ -141,6 +150,7 @@ export const MarketingMember$outboundSchema: z.ZodType<
   id: z.string().optional(),
   lastName: z.string().optional(),
   listIds: z.array(z.string()).optional(),
+  metadata: z.array(MarketingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: MarketingMemberStatus$outboundSchema.optional(),

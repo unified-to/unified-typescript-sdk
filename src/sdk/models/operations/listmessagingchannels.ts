@@ -18,6 +18,7 @@ export const ListMessagingChannelsQueryParamFields = {
   IsActive: "is_active",
   IsPrivate: "is_private",
   WebUrl: "web_url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListMessagingChannelsQueryParamFields = ClosedEnum<

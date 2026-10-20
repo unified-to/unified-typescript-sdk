@@ -15,6 +15,7 @@ export const ListRepoOrganizationsQueryParamFields = {
   AvatarUrl: "avatar_url",
   WebUrl: "web_url",
   UserIds: "user_ids",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListRepoOrganizationsQueryParamFields = ClosedEnum<

@@ -16,6 +16,12 @@ import {
   HrisAttendanceBreak$outboundSchema,
 } from "./hrisattendancebreak.js";
 import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
+import {
   PropertyHrisAttendanceAddress,
   PropertyHrisAttendanceAddress$inboundSchema,
   PropertyHrisAttendanceAddress$Outbound,
@@ -82,6 +88,7 @@ export type HrisAttendance = {
    * (reference to HrisLocation)
    */
   locationId?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   /**
    * card/non-cash tips attributed to this attendance record
    */
@@ -140,6 +147,7 @@ export const HrisAttendance$inboundSchema: z.ZodType<
   id: z.string().optional(),
   job_name: z.string().optional(),
   location_id: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   non_cash_tips_amount: z.number().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
@@ -185,6 +193,7 @@ export type HrisAttendance$Outbound = {
   id?: string | undefined;
   job_name?: string | undefined;
   location_id?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   non_cash_tips_amount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at: string;
@@ -216,6 +225,7 @@ export const HrisAttendance$outboundSchema: z.ZodType<
   id: z.string().optional(),
   jobName: z.string().optional(),
   locationId: z.string().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   nonCashTipsAmount: z.number().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()),

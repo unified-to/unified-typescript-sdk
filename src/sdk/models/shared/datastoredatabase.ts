@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  DatastoreMetadata,
+  DatastoreMetadata$inboundSchema,
+  DatastoreMetadata$Outbound,
+  DatastoreMetadata$outboundSchema,
+} from "./datastoremetadata.js";
 
 export type DatastoreDatabase = {
   /**
@@ -16,6 +22,7 @@ export type DatastoreDatabase = {
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<DatastoreMetadata> | undefined;
   name?: string | undefined;
   password?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -38,6 +45,7 @@ export const DatastoreDatabase$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   password: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -59,6 +67,7 @@ export type DatastoreDatabase$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<DatastoreMetadata$Outbound> | undefined;
   name?: string | undefined;
   password?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -77,6 +86,7 @@ export const DatastoreDatabase$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   password: z.string().optional(),
   raw: z.record(z.any()).optional(),

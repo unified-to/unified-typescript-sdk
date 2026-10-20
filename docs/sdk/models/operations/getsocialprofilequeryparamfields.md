@@ -5,11 +5,11 @@
 ```typescript
 import { GetSocialProfileQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetSocialProfileQueryParamFields = "category";
+let value: GetSocialProfileQueryParamFields = "is_verified";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "username" | "parent_id" | "description" | "url" | "website_url" | "avatar_url" | "phone" | "location" | "address" | "category" | "is_verified" | "is_private" | "metrics" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "username" | "parent_id" | "description" | "url" | "website_url" | "avatar_url" | "phone" | "location" | "address" | "category" | "is_verified" | "is_private" | "metrics" | "metadata" | "raw"
 ```

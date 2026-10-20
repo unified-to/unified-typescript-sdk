@@ -22,6 +22,7 @@ export const GetAccountingBankfeedaccountQueryParamFields = {
   Balance: "balance",
   FeedStartAt: "feed_start_at",
   Status: "status",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAccountingBankfeedaccountQueryParamFields = ClosedEnum<

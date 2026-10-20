@@ -49,6 +49,7 @@ export const GetClubsActivityQueryParamFields = {
   WorkoutType: "workout_type",
   SufferScore: "suffer_score",
   PrCount: "pr_count",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetClubsActivityQueryParamFields = ClosedEnum<

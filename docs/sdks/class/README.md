@@ -32,7 +32,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "05fe0db3-4c68-4255-aca0-70b6cf92adad",
+      id: "7fadb9e5-51e7-4e8a-90e6-c5fac8c6a3e0",
       instructors: [],
       languages: [
         "in",
@@ -51,9 +51,10 @@ async function run() {
           url: "https://loremflickr.com/487/921?lock=5127962071241632",
         },
       ],
+      metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-02T03:49:08.240Z"),
+      updatedAt: new Date("2025-08-02T21:40:13.799Z"),
     },
     connectionId: "<id>",
   });
@@ -85,7 +86,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "05fe0db3-4c68-4255-aca0-70b6cf92adad",
+      id: "7fadb9e5-51e7-4e8a-90e6-c5fac8c6a3e0",
       instructors: [],
       languages: [
         "in",
@@ -104,9 +105,10 @@ async function run() {
           url: "https://loremflickr.com/487/921?lock=5127962071241632",
         },
       ],
+      metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-02T03:49:08.240Z"),
+      updatedAt: new Date("2025-08-02T21:40:13.799Z"),
     },
     connectionId: "<id>",
   });
@@ -317,7 +319,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "399f27a5-161d-4262-8354-355ff68cafa7",
+      id: "4fa077c2-6ed7-4c3e-951f-cce7b333d6f5",
       instructors: [],
       languages: [
         "in",
@@ -336,9 +338,10 @@ async function run() {
           url: "https://loremflickr.com/487/921?lock=5127962071241632",
         },
       ],
+      metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-02T03:49:08.249Z"),
+      updatedAt: new Date("2025-08-02T21:40:13.811Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -371,7 +374,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "399f27a5-161d-4262-8354-355ff68cafa7",
+      id: "4fa077c2-6ed7-4c3e-951f-cce7b333d6f5",
       instructors: [],
       languages: [
         "in",
@@ -390,9 +393,10 @@ async function run() {
           url: "https://loremflickr.com/487/921?lock=5127962071241632",
         },
       ],
+      metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-02T03:49:08.249Z"),
+      updatedAt: new Date("2025-08-02T21:40:13.811Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -527,7 +531,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "399f27a5-161d-4262-8354-355ff68cafa7",
+      id: "4fa077c2-6ed7-4c3e-951f-cce7b333d6f5",
       instructors: [],
       languages: [
         "in",
@@ -546,9 +550,10 @@ async function run() {
           url: "https://loremflickr.com/487/921?lock=5127962071241632",
         },
       ],
+      metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-02T03:49:08.249Z"),
+      updatedAt: new Date("2025-08-02T21:40:13.811Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -581,7 +586,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "399f27a5-161d-4262-8354-355ff68cafa7",
+      id: "4fa077c2-6ed7-4c3e-951f-cce7b333d6f5",
       instructors: [],
       languages: [
         "in",
@@ -600,9 +605,10 @@ async function run() {
           url: "https://loremflickr.com/487/921?lock=5127962071241632",
         },
       ],
+      metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-02T03:49:08.249Z"),
+      updatedAt: new Date("2025-08-02T21:40:13.811Z"),
     },
     connectionId: "<id>",
     id: "<id>",

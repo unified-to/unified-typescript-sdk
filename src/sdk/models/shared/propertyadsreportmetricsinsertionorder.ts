@@ -13,6 +13,7 @@ import {
   AdsInsertionorderBudgetSegment,
   AdsInsertionorderBudgetSegment$inboundSchema,
 } from "./adsinsertionorderbudgetsegment.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import {
   PropertyAdsReportMetricsInsertionorderBidStrategy,
   PropertyAdsReportMetricsInsertionorderBidStrategy$inboundSchema,
@@ -68,6 +69,7 @@ export type PropertyAdsReportMetricsInsertionorder = {
   frequencyCap?: PropertyAdsReportMetricsInsertionorderFrequencyCap | undefined;
   id?: string | undefined;
   kpi?: PropertyAdsReportMetricsInsertionorderKpi | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsReportMetricsInsertionorderPacing | undefined;
@@ -118,6 +120,7 @@ export const PropertyAdsReportMetricsInsertionorder$inboundSchema: z.ZodType<
     PropertyAdsReportMetricsInsertionorderFrequencyCap$inboundSchema.optional(),
   id: z.string().optional(),
   kpi: PropertyAdsReportMetricsInsertionorderKpi$inboundSchema.optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   pacing: PropertyAdsReportMetricsInsertionorderPacing$inboundSchema.optional(),

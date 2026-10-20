@@ -14,6 +14,12 @@ import {
   DatastoreField$outboundSchema,
 } from "./datastorefield.js";
 import {
+  DatastoreMetadata,
+  DatastoreMetadata$inboundSchema,
+  DatastoreMetadata$Outbound,
+  DatastoreMetadata$outboundSchema,
+} from "./datastoremetadata.js";
+import {
   DatastoreRelationship,
   DatastoreRelationship$inboundSchema,
   DatastoreRelationship$Outbound,
@@ -32,6 +38,7 @@ export type DatastoreTable = {
   description?: string | undefined;
   fields?: Array<DatastoreField> | undefined;
   id?: string | undefined;
+  metadata?: Array<DatastoreMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -55,6 +62,7 @@ export const DatastoreTable$inboundSchema: z.ZodType<
   description: z.string().optional(),
   fields: z.array(DatastoreField$inboundSchema).optional(),
   id: z.string().optional(),
+  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -78,6 +86,7 @@ export type DatastoreTable$Outbound = {
   description?: string | undefined;
   fields?: Array<DatastoreField$Outbound> | undefined;
   id?: string | undefined;
+  metadata?: Array<DatastoreMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -97,6 +106,7 @@ export const DatastoreTable$outboundSchema: z.ZodType<
   description: z.string().optional(),
   fields: z.array(DatastoreField$outboundSchema).optional(),
   id: z.string().optional(),
+  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

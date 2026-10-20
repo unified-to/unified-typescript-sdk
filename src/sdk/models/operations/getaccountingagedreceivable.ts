@@ -18,6 +18,7 @@ export const GetAccountingAgedreceivableQueryParamFields = {
   TotalAmount: "total_amount",
   Periods: "periods",
   OrganizationId: "organization_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAccountingAgedreceivableQueryParamFields = ClosedEnum<

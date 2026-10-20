@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  CrmMetadata,
+  CrmMetadata$inboundSchema,
+  CrmMetadata$Outbound,
+  CrmMetadata$outboundSchema,
+} from "./crmmetadata.js";
+import {
   PropertyCrmEventCall,
   PropertyCrmEventCall$inboundSchema,
   PropertyCrmEventCall$Outbound,
@@ -115,6 +121,7 @@ export type CrmEvent = {
    * The meeting object, when type = meeting
    */
   meeting?: PropertyCrmEventMeeting | undefined;
+  metadata?: Array<CrmMetadata> | undefined;
   /**
    * The note object, when type = note
    */
@@ -173,6 +180,7 @@ export const CrmEvent$inboundSchema: z.ZodType<
   lead_ids: z.array(z.string()).optional(),
   marketing_email: PropertyCrmEventMarketingEmail$inboundSchema.optional(),
   meeting: PropertyCrmEventMeeting$inboundSchema.optional(),
+  metadata: z.array(CrmMetadata$inboundSchema).optional(),
   note: PropertyCrmEventNote$inboundSchema.optional(),
   page_view: PropertyCrmEventPageView$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
@@ -207,6 +215,7 @@ export type CrmEvent$Outbound = {
   lead_ids?: Array<string> | undefined;
   marketing_email?: PropertyCrmEventMarketingEmail$Outbound | undefined;
   meeting?: PropertyCrmEventMeeting$Outbound | undefined;
+  metadata?: Array<CrmMetadata$Outbound> | undefined;
   note?: PropertyCrmEventNote$Outbound | undefined;
   page_view?: PropertyCrmEventPageView$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -233,6 +242,7 @@ export const CrmEvent$outboundSchema: z.ZodType<
   leadIds: z.array(z.string()).optional(),
   marketingEmail: PropertyCrmEventMarketingEmail$outboundSchema.optional(),
   meeting: PropertyCrmEventMeeting$outboundSchema.optional(),
+  metadata: z.array(CrmMetadata$outboundSchema).optional(),
   note: PropertyCrmEventNote$outboundSchema.optional(),
   pageView: PropertyCrmEventPageView$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),

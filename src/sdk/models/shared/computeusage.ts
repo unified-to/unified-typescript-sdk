@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  ComputeMetadata,
+  ComputeMetadata$inboundSchema,
+} from "./computemetadata.js";
 
 /**
  * What was consumed
@@ -72,6 +76,7 @@ export type ComputeUsage = {
    * The instance the usage belongs to, when per-instance
    */
   instanceId?: string | undefined;
+  metadata?: Array<ComputeMetadata> | undefined;
   /**
    * Amount consumed, in unit
    */
@@ -120,6 +125,7 @@ export const ComputeUsage$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   instance_id: z.string().optional(),
+  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
   quantity: z.number().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

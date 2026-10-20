@@ -17,6 +17,7 @@ export const ListClubsMembersQueryParamFields = {
   IsAdmin: "is_admin",
   IsOwner: "is_owner",
   MembershipStatus: "membership_status",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListClubsMembersQueryParamFields = ClosedEnum<

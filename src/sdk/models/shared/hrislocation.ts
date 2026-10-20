@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
+import {
   HrisTelephone,
   HrisTelephone$inboundSchema,
   HrisTelephone$Outbound,
@@ -40,6 +46,7 @@ export type HrisLocation = {
    */
   isHq?: boolean | undefined;
   languageLocale?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -68,6 +75,7 @@ export const HrisLocation$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_hq: z.boolean().optional(),
   language_locale: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -99,6 +107,7 @@ export type HrisLocation$Outbound = {
   is_active?: boolean | undefined;
   is_hq?: boolean | undefined;
   language_locale?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -123,6 +132,7 @@ export const HrisLocation$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isHq: z.boolean().optional(),
   languageLocale: z.string().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

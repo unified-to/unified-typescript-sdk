@@ -117,6 +117,7 @@ import { Martech } from "./martech.js";
 import { Matter } from "./matter.js";
 import { Medication } from "./medication.js";
 import { Member } from "./member.js";
+import { Memory } from "./memory.js";
 import { Message } from "./message.js";
 import { Messaging } from "./messaging.js";
 import { Metadata } from "./metadata.js";
@@ -770,6 +771,11 @@ export class UnifiedTo extends ClientSDK {
   private _embedding?: Embedding;
   get embedding(): Embedding {
     return (this._embedding ??= new Embedding(this._options));
+  }
+
+  private _memory?: Memory;
+  get memory(): Memory {
+    return (this._memory ??= new Memory(this._options));
   }
 
   private _model?: Model;

@@ -14,6 +14,12 @@ import {
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
 import {
+  LmsMetadata,
+  LmsMetadata$inboundSchema,
+  LmsMetadata$Outbound,
+  LmsMetadata$outboundSchema,
+} from "./lmsmetadata.js";
+import {
   LmsReference,
   LmsReference$inboundSchema,
   LmsReference$Outbound,
@@ -39,6 +45,7 @@ export type LmsCourse = {
   isPrivate?: boolean | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia> | undefined;
+  metadata?: Array<LmsMetadata> | undefined;
   name?: string | undefined;
   /**
    * How much the course costs
@@ -78,6 +85,7 @@ export const LmsCourse$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
+  metadata: z.array(LmsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   price_amount: z.number().optional(),
   provider_name: z.string().optional(),
@@ -118,6 +126,7 @@ export type LmsCourse$Outbound = {
   is_private?: boolean | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
+  metadata?: Array<LmsMetadata$Outbound> | undefined;
   name?: string | undefined;
   price_amount?: number | undefined;
   provider_name?: string | undefined;
@@ -147,6 +156,7 @@ export const LmsCourse$outboundSchema: z.ZodType<
   isPrivate: z.boolean().optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
+  metadata: z.array(LmsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   priceAmount: z.number().optional(),
   providerName: z.string().optional(),

@@ -39,6 +39,7 @@ export const PatchAdsGroupQueryParamFields = {
   Promoted: "promoted",
   LanguageLocale: "language_locale",
   CreativeSelection: "creative_selection",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAdsGroupQueryParamFields = ClosedEnum<

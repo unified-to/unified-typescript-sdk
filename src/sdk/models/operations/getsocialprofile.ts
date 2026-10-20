@@ -24,6 +24,7 @@ export const GetSocialProfileQueryParamFields = {
   IsVerified: "is_verified",
   IsPrivate: "is_private",
   Metrics: "metrics",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetSocialProfileQueryParamFields = ClosedEnum<

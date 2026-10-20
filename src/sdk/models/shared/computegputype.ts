@@ -13,6 +13,10 @@ import {
   ComputeAvailability,
   ComputeAvailability$inboundSchema,
 } from "./computeavailability.js";
+import {
+  ComputeMetadata,
+  ComputeMetadata$inboundSchema,
+} from "./computemetadata.js";
 import { ComputePrice, ComputePrice$inboundSchema } from "./computeprice.js";
 
 /**
@@ -129,6 +133,7 @@ export type ComputeGputype = {
    * System memory in MiB
    */
   memoryMb?: number | undefined;
+  metadata?: Array<ComputeMetadata> | undefined;
   /**
    * Display name of the type
    */
@@ -190,6 +195,7 @@ export const ComputeGputype$inboundSchema: z.ZodType<
   gpu_model: GpuModel$inboundSchema.optional(),
   id: z.string().optional(),
   memory_mb: z.number().optional(),
+  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   prices: z.array(ComputePrice$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),

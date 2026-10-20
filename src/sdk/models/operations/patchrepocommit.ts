@@ -19,6 +19,7 @@ export const PatchRepoCommitQueryParamFields = {
   LinesAdded: "lines_added",
   LinesDeleted: "lines_deleted",
   LinesChanged: "lines_changed",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchRepoCommitQueryParamFields = ClosedEnum<

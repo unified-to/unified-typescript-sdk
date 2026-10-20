@@ -8,6 +8,10 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  ComputeMetadata,
+  ComputeMetadata$inboundSchema,
+} from "./computemetadata.js";
+import {
   PropertyComputeRegionGpuModels,
   PropertyComputeRegionGpuModels$inboundSchema,
 } from "./propertycomputeregiongpumodels.js";
@@ -33,6 +37,7 @@ export type ComputeRegion = {
    * Free-text location (eg. city or state)
    */
   location?: string | undefined;
+  metadata?: Array<ComputeMetadata> | undefined;
   /**
    * Display name of the region
    */
@@ -59,6 +64,7 @@ export const ComputeRegion$inboundSchema: z.ZodType<
   gpu_models: z.array(PropertyComputeRegionGpuModels$inboundSchema).optional(),
   id: z.string().optional(),
   location: z.string().optional(),
+  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

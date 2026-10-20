@@ -31,6 +31,7 @@ export const GetAdsCampaignQueryParamFields = {
   HasEuPoliticalAds: "has_eu_political_ads",
   Labels: "labels",
   Kpi: "kpi",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAdsCampaignQueryParamFields = ClosedEnum<

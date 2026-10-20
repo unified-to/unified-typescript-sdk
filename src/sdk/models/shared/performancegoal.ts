@@ -15,6 +15,12 @@ import {
   PerformanceGoalMilestone$Outbound,
   PerformanceGoalMilestone$outboundSchema,
 } from "./performancegoalmilestone.js";
+import {
+  PerformanceMetadata,
+  PerformanceMetadata$inboundSchema,
+  PerformanceMetadata$Outbound,
+  PerformanceMetadata$outboundSchema,
+} from "./performancemetadata.js";
 
 export const PerformanceGoalStatus = {
   NotStarted: "NOT_STARTED",
@@ -56,6 +62,7 @@ export type PerformanceGoal = {
    */
   dueAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<PerformanceMetadata> | undefined;
   /**
    * milestones or key results for this goal
    */
@@ -133,6 +140,7 @@ export const PerformanceGoal$inboundSchema: z.ZodType<
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
   milestones: z.array(PerformanceGoalMilestone$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
@@ -168,6 +176,7 @@ export type PerformanceGoal$Outbound = {
   description?: string | undefined;
   due_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<PerformanceMetadata$Outbound> | undefined;
   milestones?: Array<PerformanceGoalMilestone$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
@@ -194,6 +203,7 @@ export const PerformanceGoal$outboundSchema: z.ZodType<
   description: z.string().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(PerformanceMetadata$outboundSchema).optional(),
   milestones: z.array(PerformanceGoalMilestone$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),

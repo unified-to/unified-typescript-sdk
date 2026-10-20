@@ -29,6 +29,7 @@ export const ListAnalyticsSessionsQueryParamFields = {
   City: "city",
   IsBounce: "is_bounce",
   IsConversion: "is_conversion",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAnalyticsSessionsQueryParamFields = ClosedEnum<

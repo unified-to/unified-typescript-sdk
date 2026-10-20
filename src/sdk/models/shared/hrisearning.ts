@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 /**
  * ONE_TIME for a single addition to the next unprocessed pay run, otherwise recurring
@@ -63,6 +69,7 @@ export type HrisEarning = {
   frequency?: HrisEarningFrequency | undefined;
   hours?: number | undefined;
   id?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   notes?: string | undefined;
   /**
    * the hris_paycode (earning code) this earning is paid under
@@ -138,6 +145,7 @@ export const HrisEarning$inboundSchema: z.ZodType<
   frequency: HrisEarningFrequency$inboundSchema.optional(),
   hours: z.number().optional(),
   id: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   paycode_id: z.string().optional(),
   payroll_id: z.string().optional(),
@@ -174,6 +182,7 @@ export type HrisEarning$Outbound = {
   frequency?: string | undefined;
   hours?: number | undefined;
   id?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   notes?: string | undefined;
   paycode_id?: string | undefined;
   payroll_id?: string | undefined;
@@ -200,6 +209,7 @@ export const HrisEarning$outboundSchema: z.ZodType<
   frequency: HrisEarningFrequency$outboundSchema.optional(),
   hours: z.number().optional(),
   id: z.string().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   paycodeId: z.string().optional(),
   payrollId: z.string().optional(),

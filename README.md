@@ -102,27 +102,23 @@ async function run() {
     accountingAccount: {
       balance: 12092,
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
-      currency: "BOB",
-      customerDefinedCode: "quo",
-      description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "53d00966-a212-4d81-864a-6d2a174737a3",
-      isPayable: true,
-      name: "Electronic Aluminum Tuna",
+      currency: "CAD",
+      customerDefinedCode: "6170",
+      description: "Voluptatibus valde spoliatio.",
+      id: "71a0c5e2-8579-4ed0-9615-d3a139f92492",
+      isPayable: false,
+      metadata: [],
+      name: "Auto Loan Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vesper",
+          originalType: "vilitas",
           type: "SUBGROUP",
-          value: "iste",
-        },
-        {
-          originalType: "adamo",
-          type: "SUBGROUP",
-          value: "peccatus",
+          value: "comedo",
         },
       ],
-      type: "BANK",
-      updatedAt: new Date("2023-01-06T19:35:55.660Z"),
+      type: "ACCOUNTS_RECEIVABLE",
+      updatedAt: new Date("2023-08-06T14:16:21.001Z"),
     },
     connectionId: "<id>",
   });
@@ -152,27 +148,23 @@ async function run() {
     accountingAccount: {
       balance: 12092,
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
-      currency: "BOB",
-      customerDefinedCode: "quo",
-      description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "53d00966-a212-4d81-864a-6d2a174737a3",
-      isPayable: true,
-      name: "Electronic Aluminum Tuna",
+      currency: "CAD",
+      customerDefinedCode: "6170",
+      description: "Voluptatibus valde spoliatio.",
+      id: "71a0c5e2-8579-4ed0-9615-d3a139f92492",
+      isPayable: false,
+      metadata: [],
+      name: "Auto Loan Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vesper",
+          originalType: "vilitas",
           type: "SUBGROUP",
-          value: "iste",
-        },
-        {
-          originalType: "adamo",
-          type: "SUBGROUP",
-          value: "peccatus",
+          value: "comedo",
         },
       ],
-      type: "BANK",
-      updatedAt: new Date("2023-01-06T19:35:55.660Z"),
+      type: "ACCOUNTS_RECEIVABLE",
+      updatedAt: new Date("2023-08-06T14:16:21.001Z"),
     },
     connectionId: "<id>",
   });
@@ -268,27 +260,23 @@ async function run() {
     accountingAccount: {
       balance: 12092,
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
-      currency: "BOB",
-      customerDefinedCode: "quo",
-      description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "53d00966-a212-4d81-864a-6d2a174737a3",
-      isPayable: true,
-      name: "Electronic Aluminum Tuna",
+      currency: "CAD",
+      customerDefinedCode: "6170",
+      description: "Voluptatibus valde spoliatio.",
+      id: "71a0c5e2-8579-4ed0-9615-d3a139f92492",
+      isPayable: false,
+      metadata: [],
+      name: "Auto Loan Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vesper",
+          originalType: "vilitas",
           type: "SUBGROUP",
-          value: "iste",
-        },
-        {
-          originalType: "adamo",
-          type: "SUBGROUP",
-          value: "peccatus",
+          value: "comedo",
         },
       ],
-      type: "BANK",
-      updatedAt: new Date("2023-01-06T19:35:55.660Z"),
+      type: "ACCOUNTS_RECEIVABLE",
+      updatedAt: new Date("2023-08-06T14:16:21.001Z"),
     },
     connectionId: "<id>",
   });
@@ -334,27 +322,23 @@ async function run() {
       accountingAccount: {
         balance: 12092,
         createdAt: new Date("2022-07-03T17:57:07.391Z"),
-        currency: "BOB",
-        customerDefinedCode: "quo",
-        description: "Spoliatio comedo vilitas harum cupiditate.",
-        id: "53d00966-a212-4d81-864a-6d2a174737a3",
-        isPayable: true,
-        name: "Electronic Aluminum Tuna",
+        currency: "CAD",
+        customerDefinedCode: "6170",
+        description: "Voluptatibus valde spoliatio.",
+        id: "71a0c5e2-8579-4ed0-9615-d3a139f92492",
+        isPayable: false,
+        metadata: [],
+        name: "Auto Loan Account",
         status: "ARCHIVED",
         taxonomy: [
           {
-            originalType: "vesper",
+            originalType: "vilitas",
             type: "SUBGROUP",
-            value: "iste",
-          },
-          {
-            originalType: "adamo",
-            type: "SUBGROUP",
-            value: "peccatus",
+            value: "comedo",
           },
         ],
-        type: "BANK",
-        updatedAt: new Date("2023-01-06T19:35:55.660Z"),
+        type: "ACCOUNTS_RECEIVABLE",
+        updatedAt: new Date("2023-08-06T14:16:21.001Z"),
       },
       connectionId: "<id>",
     });
@@ -459,27 +443,23 @@ async function run() {
     accountingAccount: {
       balance: 12092,
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
-      currency: "BOB",
-      customerDefinedCode: "quo",
-      description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "53d00966-a212-4d81-864a-6d2a174737a3",
-      isPayable: true,
-      name: "Electronic Aluminum Tuna",
+      currency: "CAD",
+      customerDefinedCode: "6170",
+      description: "Voluptatibus valde spoliatio.",
+      id: "71a0c5e2-8579-4ed0-9615-d3a139f92492",
+      isPayable: false,
+      metadata: [],
+      name: "Auto Loan Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vesper",
+          originalType: "vilitas",
           type: "SUBGROUP",
-          value: "iste",
-        },
-        {
-          originalType: "adamo",
-          type: "SUBGROUP",
-          value: "peccatus",
+          value: "comedo",
         },
       ],
-      type: "BANK",
-      updatedAt: new Date("2023-01-06T19:35:55.660Z"),
+      type: "ACCOUNTS_RECEIVABLE",
+      updatedAt: new Date("2023-08-06T14:16:21.001Z"),
     },
     connectionId: "<id>",
   }, {
@@ -527,27 +507,23 @@ async function run() {
     accountingAccount: {
       balance: 12092,
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
-      currency: "BOB",
-      customerDefinedCode: "quo",
-      description: "Spoliatio comedo vilitas harum cupiditate.",
-      id: "53d00966-a212-4d81-864a-6d2a174737a3",
-      isPayable: true,
-      name: "Electronic Aluminum Tuna",
+      currency: "CAD",
+      customerDefinedCode: "6170",
+      description: "Voluptatibus valde spoliatio.",
+      id: "71a0c5e2-8579-4ed0-9615-d3a139f92492",
+      isPayable: false,
+      metadata: [],
+      name: "Auto Loan Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vesper",
+          originalType: "vilitas",
           type: "SUBGROUP",
-          value: "iste",
-        },
-        {
-          originalType: "adamo",
-          type: "SUBGROUP",
-          value: "peccatus",
+          value: "comedo",
         },
       ],
-      type: "BANK",
-      updatedAt: new Date("2023-01-06T19:35:55.660Z"),
+      type: "ACCOUNTS_RECEIVABLE",
+      updatedAt: new Date("2023-08-06T14:16:21.001Z"),
     },
     connectionId: "<id>",
   });
@@ -1690,12 +1666,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`genaiCreateGenaiAgent`](docs/sdks/genai/README.md#creategenaiagent) - Create an agent
 - [`genaiCreateGenaiEmbedding`](docs/sdks/embedding/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiEmbedding`](docs/sdks/genai/README.md#creategenaiembedding) - Create an embedding
+- [`genaiCreateGenaiMemory`](docs/sdks/genai/README.md#creategenaimemory) - Create a memory
+- [`genaiCreateGenaiMemory`](docs/sdks/memory/README.md#creategenaimemory) - Create a memory
 - [`genaiCreateGenaiPrompt`](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt
 - [`genaiCreateGenaiPrompt`](docs/sdks/prompt/README.md#creategenaiprompt) - Create a prompt
 - [`genaiCreateGenaiTask`](docs/sdks/genai/README.md#creategenaitask) - Create a task
 - [`genaiCreateGenaiTask`](docs/sdks/task/README.md#creategenaitask) - Create a task
 - [`genaiGetGenaiAgent`](docs/sdks/agent/README.md#getgenaiagent) - Retrieve an agent
 - [`genaiGetGenaiAgent`](docs/sdks/genai/README.md#getgenaiagent) - Retrieve an agent
+- [`genaiGetGenaiMemory`](docs/sdks/genai/README.md#getgenaimemory) - Retrieve a memory
+- [`genaiGetGenaiMemory`](docs/sdks/memory/README.md#getgenaimemory) - Retrieve a memory
 - [`genaiGetGenaiModel`](docs/sdks/genai/README.md#getgenaimodel) - Retrieve a model
 - [`genaiGetGenaiModel`](docs/sdks/model/README.md#getgenaimodel) - Retrieve a model
 - [`genaiGetGenaiSkill`](docs/sdks/genai/README.md#getgenaiskill) - Retrieve a skill
@@ -1704,6 +1684,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`genaiGetGenaiTask`](docs/sdks/task/README.md#getgenaitask) - Retrieve a task
 - [`genaiListGenaiAgents`](docs/sdks/agent/README.md#listgenaiagents) - List all agents
 - [`genaiListGenaiAgents`](docs/sdks/genai/README.md#listgenaiagents) - List all agents
+- [`genaiListGenaiMemories`](docs/sdks/genai/README.md#listgenaimemories) - List all memories
+- [`genaiListGenaiMemories`](docs/sdks/memory/README.md#listgenaimemories) - List all memories
 - [`genaiListGenaiModels`](docs/sdks/genai/README.md#listgenaimodels) - List all models
 - [`genaiListGenaiModels`](docs/sdks/model/README.md#listgenaimodels) - List all models
 - [`genaiListGenaiSkills`](docs/sdks/genai/README.md#listgenaiskills) - List all skills
@@ -1712,16 +1694,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`genaiListGenaiTasks`](docs/sdks/task/README.md#listgenaitasks) - List all tasks
 - [`genaiPatchGenaiAgent`](docs/sdks/agent/README.md#patchgenaiagent) - Update an agent
 - [`genaiPatchGenaiAgent`](docs/sdks/genai/README.md#patchgenaiagent) - Update an agent
+- [`genaiPatchGenaiMemory`](docs/sdks/genai/README.md#patchgenaimemory) - Update a memory
+- [`genaiPatchGenaiMemory`](docs/sdks/memory/README.md#patchgenaimemory) - Update a memory
 - [`genaiPatchGenaiTask`](docs/sdks/genai/README.md#patchgenaitask) - Update a task
 - [`genaiPatchGenaiTask`](docs/sdks/task/README.md#patchgenaitask) - Update a task
 - [`genaiRemoveGenaiAgent`](docs/sdks/agent/README.md#removegenaiagent) - Remove an agent
 - [`genaiRemoveGenaiAgent`](docs/sdks/genai/README.md#removegenaiagent) - Remove an agent
+- [`genaiRemoveGenaiMemory`](docs/sdks/genai/README.md#removegenaimemory) - Remove a memory
+- [`genaiRemoveGenaiMemory`](docs/sdks/memory/README.md#removegenaimemory) - Remove a memory
 - [`genaiRemoveGenaiSkill`](docs/sdks/genai/README.md#removegenaiskill) - Remove a skill
 - [`genaiRemoveGenaiSkill`](docs/sdks/skill/README.md#removegenaiskill) - Remove a skill
 - [`genaiRemoveGenaiTask`](docs/sdks/genai/README.md#removegenaitask) - Remove a task
 - [`genaiRemoveGenaiTask`](docs/sdks/task/README.md#removegenaitask) - Remove a task
 - [`genaiUpdateGenaiAgent`](docs/sdks/agent/README.md#updategenaiagent) - Update an agent
 - [`genaiUpdateGenaiAgent`](docs/sdks/genai/README.md#updategenaiagent) - Update an agent
+- [`genaiUpdateGenaiMemory`](docs/sdks/genai/README.md#updategenaimemory) - Update a memory
+- [`genaiUpdateGenaiMemory`](docs/sdks/memory/README.md#updategenaimemory) - Update a memory
 - [`genaiUpdateGenaiTask`](docs/sdks/genai/README.md#updategenaitask) - Update a task
 - [`genaiUpdateGenaiTask`](docs/sdks/task/README.md#updategenaitask) - Update a task
 - [`groupCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group

@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  LmsMetadata,
+  LmsMetadata$inboundSchema,
+  LmsMetadata$Outbound,
+  LmsMetadata$outboundSchema,
+} from "./lmsmetadata.js";
 
 export type LmsActivity = {
   assignedGrade?: string | undefined;
@@ -26,6 +32,7 @@ export type LmsActivity = {
   durationMinutes?: number | undefined;
   id?: string | undefined;
   isCompleted?: boolean | undefined;
+  metadata?: Array<LmsMetadata> | undefined;
   progressPercentage?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -59,6 +66,7 @@ export const LmsActivity$inboundSchema: z.ZodType<
   duration_minutes: z.number().optional(),
   id: z.string().optional(),
   is_completed: z.boolean().optional(),
+  metadata: z.array(LmsMetadata$inboundSchema).optional(),
   progress_percentage: z.number().optional(),
   raw: z.record(z.any()).optional(),
   started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -91,6 +99,7 @@ export type LmsActivity$Outbound = {
   duration_minutes?: number | undefined;
   id?: string | undefined;
   is_completed?: boolean | undefined;
+  metadata?: Array<LmsMetadata$Outbound> | undefined;
   progress_percentage?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   started_at?: string | undefined;
@@ -112,6 +121,7 @@ export const LmsActivity$outboundSchema: z.ZodType<
   durationMinutes: z.number().optional(),
   id: z.string().optional(),
   isCompleted: z.boolean().optional(),
+  metadata: z.array(LmsMetadata$outboundSchema).optional(),
   progressPercentage: z.number().optional(),
   raw: z.record(z.any()).optional(),
   startedAt: z.date().transform(v => v.toISOString()).optional(),

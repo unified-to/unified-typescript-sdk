@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import { AdsPromoted, AdsPromoted$inboundSchema } from "./adspromoted.js";
 
 export const PropertyAdsReportMetricsCreativeCreativeType = {
@@ -87,6 +88,7 @@ export type PropertyAdsReportMetricsCreative = {
    * Destination URL for creatives with links
    */
   linkUrl?: string | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   /**
@@ -163,6 +165,7 @@ export const PropertyAdsReportMetricsCreative$inboundSchema: z.ZodType<
   item_id: z.string().optional(),
   labels: z.array(z.string()).optional(),
   link_url: z.string().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   path1: z.string().optional(),

@@ -5,11 +5,11 @@
 ```typescript
 import { ListPerformanceCyclesQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListPerformanceCyclesQueryParamFields = "updated_at";
+let value: ListPerformanceCyclesQueryParamFields = "name";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "type" | "status" | "start_at" | "end_at" | "due_at" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "type" | "status" | "start_at" | "end_at" | "due_at" | "metadata" | "raw"
 ```

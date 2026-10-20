@@ -15,6 +15,12 @@ import {
   PaymentAllocation$Outbound,
   PaymentAllocation$outboundSchema,
 } from "./paymentallocation.js";
+import {
+  PaymentMetadata,
+  PaymentMetadata$inboundSchema,
+  PaymentMetadata$Outbound,
+  PaymentMetadata$outboundSchema,
+} from "./paymentmetadata.js";
 
 export const PaymentPaymentStatus = {
   Succeeded: "SUCCEEDED",
@@ -101,6 +107,7 @@ export type PaymentPayment = {
    * store/site where the payment was taken (commerce_location)
    */
   locationId?: string | undefined;
+  metadata?: Array<PaymentMetadata> | undefined;
   /**
    * total_amount minus fee_amount
    */
@@ -197,6 +204,7 @@ export const PaymentPayment$inboundSchema: z.ZodType<
   invoice_id: z.string().optional(),
   link_id: z.string().optional(),
   location_id: z.string().optional(),
+  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
   net_amount: z.number().optional(),
   notes: z.string().optional(),
   organization_id: z.string().optional(),
@@ -257,6 +265,7 @@ export type PaymentPayment$Outbound = {
   invoice_id?: string | undefined;
   link_id?: string | undefined;
   location_id?: string | undefined;
+  metadata?: Array<PaymentMetadata$Outbound> | undefined;
   net_amount?: number | undefined;
   notes?: string | undefined;
   organization_id?: string | undefined;
@@ -295,6 +304,7 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   invoiceId: z.string().optional(),
   linkId: z.string().optional(),
   locationId: z.string().optional(),
+  metadata: z.array(PaymentMetadata$outboundSchema).optional(),
   netAmount: z.number().optional(),
   notes: z.string().optional(),
   organizationId: z.string().optional(),

@@ -11,5 +11,5 @@ let value: ListComputeRegionsQueryParamFields = "id";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "location" | "country" | "gpu_models" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "location" | "country" | "gpu_models" | "metadata" | "raw"
 ```

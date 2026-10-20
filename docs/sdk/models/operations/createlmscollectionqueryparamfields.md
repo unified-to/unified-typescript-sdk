@@ -11,5 +11,5 @@ let value: CreateLmsCollectionQueryParamFields = "media";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "media" | "is_active" | "parent_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "media" | "is_active" | "parent_id" | "metadata" | "raw"
 ```

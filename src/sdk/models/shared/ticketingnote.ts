@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  TicketingMetadata,
+  TicketingMetadata$inboundSchema,
+  TicketingMetadata$Outbound,
+  TicketingMetadata$outboundSchema,
+} from "./ticketingmetadata.js";
 
 export type TicketingNote = {
   /**
@@ -16,6 +22,7 @@ export type TicketingNote = {
   customerId?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<TicketingMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   ticketId?: string | undefined;
   /**
@@ -39,6 +46,7 @@ export const TicketingNote$inboundSchema: z.ZodType<
   customer_id: z.string().optional(),
   description: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(TicketingMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   ticket_id: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -59,6 +67,7 @@ export type TicketingNote$Outbound = {
   customer_id?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<TicketingMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   ticket_id?: string | undefined;
   updated_at?: string | undefined;
@@ -75,6 +84,7 @@ export const TicketingNote$outboundSchema: z.ZodType<
   customerId: z.string().optional(),
   description: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(TicketingMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   ticketId: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

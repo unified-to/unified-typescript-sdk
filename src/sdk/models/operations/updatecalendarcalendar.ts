@@ -15,6 +15,7 @@ export const UpdateCalendarCalendarQueryParamFields = {
   Description: "description",
   Timezone: "timezone",
   IsPrimary: "is_primary",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateCalendarCalendarQueryParamFields = ClosedEnum<

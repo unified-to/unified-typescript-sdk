@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  ComputeMetadata,
+  ComputeMetadata$inboundSchema,
+  ComputeMetadata$Outbound,
+  ComputeMetadata$outboundSchema,
+} from "./computemetadata.js";
 
 /**
  * DNS/ownership verification status
@@ -37,6 +43,7 @@ export type ComputeDomain = {
    * Whether this is the service's primary domain
    */
   isPrimary?: boolean | undefined;
+  metadata?: Array<ComputeMetadata> | undefined;
   /**
    * The hostname (eg. app.example.com)
    */
@@ -86,6 +93,7 @@ export const ComputeDomain$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   is_primary: z.boolean().optional(),
+  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   redirect_url: z.string().optional(),
@@ -107,6 +115,7 @@ export type ComputeDomain$Outbound = {
   created_at?: string | undefined;
   id?: string | undefined;
   is_primary?: boolean | undefined;
+  metadata?: Array<ComputeMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   redirect_url?: string | undefined;
@@ -124,6 +133,7 @@ export const ComputeDomain$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   isPrimary: z.boolean().optional(),
+  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   redirectUrl: z.string().optional(),

@@ -25,6 +25,7 @@ export const CreateHrisTimeoffQueryParamFields = {
   Type: "type",
   Duration: "duration",
   DurationType: "duration_type",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateHrisTimeoffQueryParamFields = ClosedEnum<

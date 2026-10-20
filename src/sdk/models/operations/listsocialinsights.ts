@@ -15,6 +15,7 @@ export const ListSocialInsightsQueryParamFields = {
   Period: "period",
   Metric: "metric",
   Value: "value",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListSocialInsightsQueryParamFields = ClosedEnum<

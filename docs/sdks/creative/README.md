@@ -31,15 +31,16 @@ async function run() {
   const result = await unifiedTo.creative.createAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "dc23b51e-dd4d-4e6b-af05-fe6e33f22d14",
+      id: "c2d1ca1e-628d-4fb4-9ce1-630e71b0182f",
       labels: [
         "coma",
         "accedo",
         "termes",
       ],
+      metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T07:54:52.229Z"),
+      updatedAt: new Date("2021-06-27T12:21:28.461Z"),
     },
     connectionId: "<id>",
   });
@@ -70,15 +71,16 @@ async function run() {
   const res = await adsCreateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "dc23b51e-dd4d-4e6b-af05-fe6e33f22d14",
+      id: "c2d1ca1e-628d-4fb4-9ce1-630e71b0182f",
       labels: [
         "coma",
         "accedo",
         "termes",
       ],
+      metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T07:54:52.229Z"),
+      updatedAt: new Date("2021-06-27T12:21:28.461Z"),
     },
     connectionId: "<id>",
   });
@@ -288,15 +290,16 @@ async function run() {
   const result = await unifiedTo.creative.patchAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "e780775a-53a8-4dfe-8669-68eda5091bd4",
+      id: "0b97a7b1-1ddd-44c9-94bc-b3f07a7e8ba7",
       labels: [
         "coma",
         "accedo",
         "termes",
       ],
+      metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T07:54:52.232Z"),
+      updatedAt: new Date("2021-06-27T12:21:28.466Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -328,15 +331,16 @@ async function run() {
   const res = await adsPatchAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "e780775a-53a8-4dfe-8669-68eda5091bd4",
+      id: "0b97a7b1-1ddd-44c9-94bc-b3f07a7e8ba7",
       labels: [
         "coma",
         "accedo",
         "termes",
       ],
+      metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T07:54:52.232Z"),
+      updatedAt: new Date("2021-06-27T12:21:28.466Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -470,15 +474,16 @@ async function run() {
   const result = await unifiedTo.creative.updateAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "e780775a-53a8-4dfe-8669-68eda5091bd4",
+      id: "0b97a7b1-1ddd-44c9-94bc-b3f07a7e8ba7",
       labels: [
         "coma",
         "accedo",
         "termes",
       ],
+      metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T07:54:52.232Z"),
+      updatedAt: new Date("2021-06-27T12:21:28.466Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -510,15 +515,16 @@ async function run() {
   const res = await adsUpdateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "e780775a-53a8-4dfe-8669-68eda5091bd4",
+      id: "0b97a7b1-1ddd-44c9-94bc-b3f07a7e8ba7",
       labels: [
         "coma",
         "accedo",
         "termes",
       ],
+      metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T07:54:52.232Z"),
+      updatedAt: new Date("2021-06-27T12:21:28.466Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -11,5 +11,5 @@ let value: ListSigningTemplatesQueryParamFields = "updated_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "is_active" | "creator_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "is_active" | "creator_id" | "raw" | "metadata"
 ```

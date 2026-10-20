@@ -16,6 +16,7 @@ export const UpdateAnalyticsPropertyQueryParamFields = {
   Currency: "currency",
   Industry: "industry",
   ParentId: "parent_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateAnalyticsPropertyQueryParamFields = ClosedEnum<

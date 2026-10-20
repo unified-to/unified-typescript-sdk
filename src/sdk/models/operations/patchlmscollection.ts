@@ -16,6 +16,7 @@ export const PatchLmsCollectionQueryParamFields = {
   Media: "media",
   IsActive: "is_active",
   ParentId: "parent_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchLmsCollectionQueryParamFields = ClosedEnum<

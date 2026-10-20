@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  KmsPageMetadata,
+  KmsPageMetadata$inboundSchema,
+  KmsPageMetadata$Outbound,
+  KmsPageMetadata$outboundSchema,
+} from "./kmspagemetadata.js";
 
 export type KmsSpace = {
   /**
@@ -16,6 +22,7 @@ export type KmsSpace = {
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<KmsPageMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   /**
@@ -44,6 +51,7 @@ export const KmsSpace$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   parent_page_id: z.string().optional(),
@@ -67,6 +75,7 @@ export type KmsSpace$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<KmsPageMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   parent_page_id?: string | undefined;
@@ -85,6 +94,7 @@ export const KmsSpace$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   parentPageId: z.string().optional(),

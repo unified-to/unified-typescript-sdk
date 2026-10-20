@@ -20,6 +20,7 @@ export const ListShippingTrackingsQueryParamFields = {
   CarrierId: "carrier_id",
   CarrierStatusCode: "carrier_status_code",
   CarrierStatusDescription: "carrier_status_description",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListShippingTrackingsQueryParamFields = ClosedEnum<

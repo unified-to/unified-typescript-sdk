@@ -29,6 +29,7 @@ export const CreateMessagingMessageQueryParamFields = {
   HasChildren: "has_children",
   IsUnread: "is_unread",
   Buttons: "buttons",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateMessagingMessageQueryParamFields = ClosedEnum<

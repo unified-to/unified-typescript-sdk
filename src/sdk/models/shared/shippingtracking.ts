@@ -10,6 +10,10 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  ShippingMetadata,
+  ShippingMetadata$inboundSchema,
+} from "./shippingmetadata.js";
+import {
   ShippingTrackingEvent,
   ShippingTrackingEvent$inboundSchema,
 } from "./shippingtrackingevent.js";
@@ -71,6 +75,7 @@ export type ShippingTracking = {
    * Unique identifier for this tracking object
    */
   id?: string | undefined;
+  metadata?: Array<ShippingMetadata> | undefined;
   /**
    * The raw data returned by the integration for this tracking
    */
@@ -123,6 +128,7 @@ export const ShippingTracking$inboundSchema: z.ZodType<
   ).optional(),
   events: z.array(ShippingTrackingEvent$inboundSchema).optional(),
   id: z.string().optional(),
+  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   shipment_id: z.string().optional(),
   status: ShippingTrackingStatus$inboundSchema.optional(),

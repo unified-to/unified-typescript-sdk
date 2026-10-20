@@ -13,6 +13,12 @@ import {
   HrisCompensation$Outbound,
   HrisCompensation$outboundSchema,
 } from "./hriscompensation.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 export type HrisTimeshift = {
   /**
@@ -51,6 +57,7 @@ export type HrisTimeshift = {
    * (reference to HrisLocation)
    */
   locationId?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -83,6 +90,7 @@ export const HrisTimeshift$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_approved: z.boolean().optional(),
   location_id: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -117,6 +125,7 @@ export type HrisTimeshift$Outbound = {
   id?: string | undefined;
   is_approved?: boolean | undefined;
   location_id?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   updated_at?: string | undefined;
@@ -140,6 +149,7 @@ export const HrisTimeshift$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isApproved: z.boolean().optional(),
   locationId: z.string().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

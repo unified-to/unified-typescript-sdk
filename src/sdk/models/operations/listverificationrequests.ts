@@ -31,6 +31,7 @@ export const ListVerificationRequestsQueryParamFields = {
   ResponseDownloadUrls: "response_download_urls",
   ResponseDetails: "response_details",
   ResponseSource: "response_source",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListVerificationRequestsQueryParamFields = ClosedEnum<

@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  RepoMetadata,
+  RepoMetadata$inboundSchema,
+  RepoMetadata$Outbound,
+  RepoMetadata$outboundSchema,
+} from "./repometadata.js";
 
 export type RepoBranch = {
   /**
@@ -14,6 +20,7 @@ export type RepoBranch = {
    */
   createdAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<RepoMetadata> | undefined;
   name: string;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -35,6 +42,7 @@ export const RepoBranch$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(RepoMetadata$inboundSchema).optional(),
   name: z.string(),
   raw: z.record(z.any()).optional(),
   repo_id: z.string(),
@@ -51,6 +59,7 @@ export const RepoBranch$inboundSchema: z.ZodType<
 export type RepoBranch$Outbound = {
   created_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<RepoMetadata$Outbound> | undefined;
   name: string;
   raw?: { [k: string]: any } | undefined;
   repo_id: string;
@@ -65,6 +74,7 @@ export const RepoBranch$outboundSchema: z.ZodType<
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(RepoMetadata$outboundSchema).optional(),
   name: z.string(),
   raw: z.record(z.any()).optional(),
   repoId: z.string(),

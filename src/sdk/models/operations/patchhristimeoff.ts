@@ -25,6 +25,7 @@ export const PatchHrisTimeoffQueryParamFields = {
   Type: "type",
   Duration: "duration",
   DurationType: "duration_type",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchHrisTimeoffQueryParamFields = ClosedEnum<

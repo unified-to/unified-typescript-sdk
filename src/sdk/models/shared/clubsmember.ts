@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { ClubsMetadata, ClubsMetadata$inboundSchema } from "./clubsmetadata.js";
 
 /**
  * The member's membership status
@@ -61,6 +62,7 @@ export type ClubsMember = {
    * The member's membership status
    */
   membershipStatus?: ClubsMemberMembershipStatus | undefined;
+  metadata?: Array<ClubsMetadata> | undefined;
   /**
    * The full name of the member (first name + last initial for Strava)
    */
@@ -97,6 +99,7 @@ export const ClubsMember$inboundSchema: z.ZodType<
   is_owner: z.boolean().optional(),
   last_name: z.string().optional(),
   membership_status: ClubsMemberMembershipStatus$inboundSchema.optional(),
+  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

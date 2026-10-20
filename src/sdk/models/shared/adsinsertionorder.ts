@@ -16,6 +16,12 @@ import {
   AdsInsertionorderBudgetSegment$outboundSchema,
 } from "./adsinsertionorderbudgetsegment.js";
 import {
+  AdsMetadata,
+  AdsMetadata$inboundSchema,
+  AdsMetadata$Outbound,
+  AdsMetadata$outboundSchema,
+} from "./adsmetadata.js";
+import {
   PropertyAdsInsertionorderBidStrategy,
   PropertyAdsInsertionorderBidStrategy$inboundSchema,
   PropertyAdsInsertionorderBidStrategy$Outbound,
@@ -76,6 +82,7 @@ export type AdsInsertionorder = {
   frequencyCap?: PropertyAdsInsertionorderFrequencyCap | undefined;
   id?: string | undefined;
   kpi?: PropertyAdsInsertionorderKpi | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   pacing?: PropertyAdsInsertionorderPacing | undefined;
@@ -133,6 +140,7 @@ export const AdsInsertionorder$inboundSchema: z.ZodType<
   frequency_cap: PropertyAdsInsertionorderFrequencyCap$inboundSchema.optional(),
   id: z.string().optional(),
   kpi: PropertyAdsInsertionorderKpi$inboundSchema.optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   pacing: PropertyAdsInsertionorderPacing$inboundSchema.optional(),
@@ -163,6 +171,7 @@ export type AdsInsertionorder$Outbound = {
   frequency_cap?: PropertyAdsInsertionorderFrequencyCap$Outbound | undefined;
   id?: string | undefined;
   kpi?: PropertyAdsInsertionorderKpi$Outbound | undefined;
+  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   pacing?: PropertyAdsInsertionorderPacing$Outbound | undefined;
@@ -187,6 +196,7 @@ export const AdsInsertionorder$outboundSchema: z.ZodType<
   frequencyCap: PropertyAdsInsertionorderFrequencyCap$outboundSchema.optional(),
   id: z.string().optional(),
   kpi: PropertyAdsInsertionorderKpi$outboundSchema.optional(),
+  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   pacing: PropertyAdsInsertionorderPacing$outboundSchema.optional(),

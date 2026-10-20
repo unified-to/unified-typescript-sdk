@@ -7,6 +7,7 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { ClubsMetadata, ClubsMetadata$inboundSchema } from "./clubsmetadata.js";
 import {
   PropertyClubsLocationAddress,
   PropertyClubsLocationAddress$inboundSchema,
@@ -37,6 +38,7 @@ export type ClubsLocation = {
    * The longitude
    */
   longitude?: number | undefined;
+  metadata?: Array<ClubsMetadata> | undefined;
   /**
    * The location name
    */
@@ -72,6 +74,7 @@ export const ClubsLocation$inboundSchema: z.ZodType<
   id: z.string().optional(),
   latitude: z.number().optional(),
   longitude: z.number().optional(),
+  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   telephone: z.string().optional(),

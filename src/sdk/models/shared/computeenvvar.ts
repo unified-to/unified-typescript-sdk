@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  ComputeMetadata,
+  ComputeMetadata$inboundSchema,
+  ComputeMetadata$Outbound,
+  ComputeMetadata$outboundSchema,
+} from "./computemetadata.js";
+import {
   PropertyComputeEnvvarEnvironments,
   PropertyComputeEnvvarEnvironments$inboundSchema,
   PropertyComputeEnvvarEnvironments$outboundSchema,
@@ -30,6 +36,7 @@ export type ComputeEnvvar = {
    * Whether the vendor stores the value as a secret
    */
   isSecret?: boolean | undefined;
+  metadata?: Array<ComputeMetadata> | undefined;
   /**
    * Variable name
    */
@@ -64,6 +71,7 @@ export const ComputeEnvvar$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   is_secret: z.boolean().optional(),
+  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   service_id: z.string().optional(),
@@ -84,6 +92,7 @@ export type ComputeEnvvar$Outbound = {
   environments?: Array<string> | undefined;
   id?: string | undefined;
   is_secret?: boolean | undefined;
+  metadata?: Array<ComputeMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   service_id?: string | undefined;
@@ -102,6 +111,7 @@ export const ComputeEnvvar$outboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   isSecret: z.boolean().optional(),
+  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   serviceId: z.string().optional(),

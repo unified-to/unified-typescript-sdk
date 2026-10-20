@@ -11,6 +11,10 @@ import {
   AccountingBalancesheetItem,
   AccountingBalancesheetItem$inboundSchema,
 } from "./accountingbalancesheetitem.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+} from "./accountingmetadata.js";
 
 export type AccountingBalancesheet = {
   assets?: Array<AccountingBalancesheetItem> | undefined;
@@ -26,6 +30,7 @@ export type AccountingBalancesheet = {
   equity?: Array<AccountingBalancesheetItem> | undefined;
   id?: string | undefined;
   liabilities?: Array<AccountingBalancesheetItem> | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   netAssetsAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -54,6 +59,7 @@ export const AccountingBalancesheet$inboundSchema: z.ZodType<
   equity: z.array(AccountingBalancesheetItem$inboundSchema).optional(),
   id: z.string().optional(),
   liabilities: z.array(AccountingBalancesheetItem$inboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   net_assets_amount: z.number().optional(),
   raw: z.record(z.any()).optional(),

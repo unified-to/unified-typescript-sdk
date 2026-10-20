@@ -11,5 +11,5 @@ let value: PatchSigningSignatoryQueryParamFields = "role";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "document_id" | "name" | "email" | "role" | "status" | "order" | "signed_at" | "decline_reason" | "raw"
+"id" | "created_at" | "updated_at" | "document_id" | "name" | "email" | "role" | "status" | "order" | "signed_at" | "decline_reason" | "raw" | "metadata"
 ```

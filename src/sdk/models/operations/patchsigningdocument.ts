@@ -21,6 +21,7 @@ export const PatchSigningDocumentQueryParamFields = {
   DownloadUrl: "download_url",
   CreatorId: "creator_id",
   Raw: "raw",
+  Metadata: "metadata",
 } as const;
 export type PatchSigningDocumentQueryParamFields = ClosedEnum<
   typeof PatchSigningDocumentQueryParamFields

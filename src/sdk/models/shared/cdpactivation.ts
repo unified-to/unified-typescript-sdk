@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CdpMetadata,
+  CdpMetadata$inboundSchema,
+  CdpMetadata$Outbound,
+  CdpMetadata$outboundSchema,
+} from "./cdpmetadata.js";
 
 /**
  * The current status of the activation
@@ -45,6 +51,7 @@ export type CdpActivation = {
    * When the activation last ran (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   lastRunAt?: Date | undefined;
+  metadata?: Array<CdpMetadata> | undefined;
   /**
    * The name of the activation/sync job
    */
@@ -101,6 +108,7 @@ export const CdpActivation$inboundSchema: z.ZodType<
   is_enabled: z.boolean().optional(),
   last_run_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  metadata: z.array(CdpMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   schedule: z.string().optional(),
@@ -127,6 +135,7 @@ export type CdpActivation$Outbound = {
   id?: string | undefined;
   is_enabled?: boolean | undefined;
   last_run_at?: string | undefined;
+  metadata?: Array<CdpMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   schedule?: string | undefined;
@@ -147,6 +156,7 @@ export const CdpActivation$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isEnabled: z.boolean().optional(),
   lastRunAt: z.date().transform(v => v.toISOString()).optional(),
+  metadata: z.array(CdpMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   schedule: z.string().optional(),

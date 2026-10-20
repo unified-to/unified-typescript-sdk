@@ -16,6 +16,12 @@ import {
   VerificationAddress$outboundSchema,
 } from "./verificationaddress.js";
 import {
+  VerificationMetadata,
+  VerificationMetadata$inboundSchema,
+  VerificationMetadata$Outbound,
+  VerificationMetadata$outboundSchema,
+} from "./verificationmetadata.js";
+import {
   VerificationParameterInput,
   VerificationParameterInput$inboundSchema,
   VerificationParameterInput$Outbound,
@@ -65,6 +71,7 @@ export type VerificationRequest = {
    */
   createdAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<VerificationMetadata> | undefined;
   packageId?: string | undefined;
   parameters?: Array<VerificationParameterInput> | undefined;
   profileAddresses?: Array<VerificationAddress> | undefined;
@@ -155,6 +162,7 @@ export const VerificationRequest$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(VerificationMetadata$inboundSchema).optional(),
   package_id: z.string().optional(),
   parameters: z.array(VerificationParameterInput$inboundSchema).optional(),
   profile_addresses: z.array(VerificationAddress$inboundSchema).optional(),
@@ -216,6 +224,7 @@ export type VerificationRequest$Outbound = {
   candidate_id?: string | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<VerificationMetadata$Outbound> | undefined;
   package_id?: string | undefined;
   parameters?: Array<VerificationParameterInput$Outbound> | undefined;
   profile_addresses?: Array<VerificationAddress$Outbound> | undefined;
@@ -249,6 +258,7 @@ export const VerificationRequest$outboundSchema: z.ZodType<
   candidateId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(VerificationMetadata$outboundSchema).optional(),
   packageId: z.string().optional(),
   parameters: z.array(VerificationParameterInput$outboundSchema).optional(),
   profileAddresses: z.array(VerificationAddress$outboundSchema).optional(),

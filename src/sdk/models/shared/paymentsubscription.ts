@@ -15,6 +15,12 @@ import {
   PaymentLineitem$Outbound,
   PaymentLineitem$outboundSchema,
 } from "./paymentlineitem.js";
+import {
+  PaymentMetadata,
+  PaymentMetadata$inboundSchema,
+  PaymentMetadata$Outbound,
+  PaymentMetadata$outboundSchema,
+} from "./paymentmetadata.js";
 
 export const IntervalUnit = {
   Year: "YEAR",
@@ -80,6 +86,7 @@ export type PaymentSubscription = {
    */
   invoiceId?: string | undefined;
   lineitems?: Array<PaymentLineitem> | undefined;
+  metadata?: Array<PaymentMetadata> | undefined;
   /**
    * the month on which to charge a customer (1-12). Only applies when the interval_unit is YEAR.
    */
@@ -151,6 +158,7 @@ export const PaymentSubscription$inboundSchema: z.ZodType<
   interval_unit: IntervalUnit$inboundSchema.optional(),
   invoice_id: z.string().optional(),
   lineitems: z.array(PaymentLineitem$inboundSchema).optional(),
+  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
   month: z.number().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -193,6 +201,7 @@ export type PaymentSubscription$Outbound = {
   interval_unit?: string | undefined;
   invoice_id?: string | undefined;
   lineitems?: Array<PaymentLineitem$Outbound> | undefined;
+  metadata?: Array<PaymentMetadata$Outbound> | undefined;
   month?: number | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
@@ -222,6 +231,7 @@ export const PaymentSubscription$outboundSchema: z.ZodType<
   intervalUnit: IntervalUnit$outboundSchema.optional(),
   invoiceId: z.string().optional(),
   lineitems: z.array(PaymentLineitem$outboundSchema).optional(),
+  metadata: z.array(PaymentMetadata$outboundSchema).optional(),
   month: z.number().optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),

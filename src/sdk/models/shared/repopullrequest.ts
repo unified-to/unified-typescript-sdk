@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  RepoMetadata,
+  RepoMetadata$inboundSchema,
+  RepoMetadata$Outbound,
+  RepoMetadata$outboundSchema,
+} from "./repometadata.js";
 
 export const RepoPullrequestStatus = {
   Pending: "PENDING",
@@ -29,6 +35,7 @@ export type RepoPullrequest = {
   createdAt?: Date | undefined;
   id?: string | undefined;
   labels?: Array<string> | undefined;
+  metadata?: Array<RepoMetadata> | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -72,6 +79,7 @@ export const RepoPullrequest$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   labels: z.array(z.string()).optional(),
+  metadata: z.array(RepoMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   repo_id: z.string().optional(),
@@ -101,6 +109,7 @@ export type RepoPullrequest$Outbound = {
   created_at?: string | undefined;
   id?: string | undefined;
   labels?: Array<string> | undefined;
+  metadata?: Array<RepoMetadata$Outbound> | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   repo_id?: string | undefined;
@@ -123,6 +132,7 @@ export const RepoPullrequest$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   labels: z.array(z.string()).optional(),
+  metadata: z.array(RepoMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   repoId: z.string().optional(),

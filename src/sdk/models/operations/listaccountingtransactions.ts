@@ -30,6 +30,7 @@ export const ListAccountingTransactionsQueryParamFields = {
   TransactionAt: "transaction_at",
   ExchangeRate: "exchange_rate",
   Status: "status",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAccountingTransactionsQueryParamFields = ClosedEnum<

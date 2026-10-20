@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
+import {
   PropertyHrisCompanyAddress,
   PropertyHrisCompanyAddress$inboundSchema,
   PropertyHrisCompanyAddress$Outbound,
@@ -22,6 +28,7 @@ export type HrisCompany = {
   createdAt?: Date | undefined;
   id?: string | undefined;
   legalName?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -41,6 +48,7 @@ export const HrisCompany$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   legal_name: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -58,6 +66,7 @@ export type HrisCompany$Outbound = {
   created_at?: string | undefined;
   id?: string | undefined;
   legal_name?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
@@ -73,6 +82,7 @@ export const HrisCompany$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   legalName: z.string().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

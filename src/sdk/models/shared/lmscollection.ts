@@ -13,6 +13,12 @@ import {
   LmsMedia$Outbound,
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
+import {
+  LmsMetadata,
+  LmsMetadata$inboundSchema,
+  LmsMetadata$Outbound,
+  LmsMetadata$outboundSchema,
+} from "./lmsmetadata.js";
 
 export type LmsCollection = {
   /**
@@ -23,6 +29,7 @@ export type LmsCollection = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   media?: Array<LmsMedia> | undefined;
+  metadata?: Array<LmsMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -44,6 +51,7 @@ export const LmsCollection$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
+  metadata: z.array(LmsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -64,6 +72,7 @@ export type LmsCollection$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
+  metadata?: Array<LmsMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -81,6 +90,7 @@ export const LmsCollection$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
+  metadata: z.array(LmsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

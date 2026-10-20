@@ -11,5 +11,5 @@ let value: ListAdsReportsQueryParamFields = "currency";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "currency" | "metrics" | "start_at" | "end_at" | "organization_id" | "raw"
+"id" | "created_at" | "updated_at" | "currency" | "metrics" | "start_at" | "end_at" | "organization_id" | "metadata" | "raw"
 ```

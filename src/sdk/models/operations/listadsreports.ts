@@ -15,6 +15,7 @@ export const ListAdsReportsQueryParamFields = {
   StartAt: "start_at",
   EndAt: "end_at",
   OrganizationId: "organization_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAdsReportsQueryParamFields = ClosedEnum<

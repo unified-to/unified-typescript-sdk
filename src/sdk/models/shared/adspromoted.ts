@@ -8,6 +8,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AdsMetadata,
+  AdsMetadata$inboundSchema,
+  AdsMetadata$Outbound,
+  AdsMetadata$outboundSchema,
+} from "./adsmetadata.js";
 
 /**
  * Promoted entity types for ads_promoted list endpoint
@@ -39,6 +45,7 @@ export type AdsPromotedType = OpenEnum<typeof AdsPromotedType>;
  */
 export type AdsPromoted = {
   id: string;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -67,6 +74,7 @@ export const AdsPromoted$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   id: z.string(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   type: AdsPromotedType$inboundSchema,
@@ -74,6 +82,7 @@ export const AdsPromoted$inboundSchema: z.ZodType<
 /** @internal */
 export type AdsPromoted$Outbound = {
   id: string;
+  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type: string;
@@ -86,6 +95,7 @@ export const AdsPromoted$outboundSchema: z.ZodType<
   AdsPromoted
 > = z.object({
   id: z.string(),
+  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   type: AdsPromotedType$outboundSchema,

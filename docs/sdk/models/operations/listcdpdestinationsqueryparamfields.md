@@ -5,11 +5,11 @@
 ```typescript
 import { ListCdpDestinationsQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListCdpDestinationsQueryParamFields = "is_enabled";
+let value: ListCdpDestinationsQueryParamFields = "metadata";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "slug" | "type" | "direction" | "is_enabled" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "slug" | "type" | "direction" | "is_enabled" | "metadata" | "raw"
 ```

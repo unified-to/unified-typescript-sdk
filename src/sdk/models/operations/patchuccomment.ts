@@ -14,6 +14,7 @@ export const PatchUcCommentQueryParamFields = {
   Content: "content",
   UserId: "user_id",
   CallId: "call_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchUcCommentQueryParamFields = ClosedEnum<

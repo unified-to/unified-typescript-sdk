@@ -27,6 +27,7 @@ export const PatchHrisBankaccountQueryParamFields = {
   SplitType: "split_type",
   SplitAmount: "split_amount",
   Priority: "priority",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchHrisBankaccountQueryParamFields = ClosedEnum<

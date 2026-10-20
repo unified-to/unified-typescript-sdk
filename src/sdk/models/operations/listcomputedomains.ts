@@ -15,6 +15,7 @@ export const ListComputeDomainsQueryParamFields = {
   Status: "status",
   IsPrimary: "is_primary",
   RedirectUrl: "redirect_url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListComputeDomainsQueryParamFields = ClosedEnum<

@@ -13,6 +13,12 @@ import {
   PropertySocialReviewReply$Outbound,
   PropertySocialReviewReply$outboundSchema,
 } from "./propertysocialreviewreply.js";
+import {
+  SocialMetadata,
+  SocialMetadata$inboundSchema,
+  SocialMetadata$Outbound,
+  SocialMetadata$outboundSchema,
+} from "./socialmetadata.js";
 
 export type SocialReview = {
   /**
@@ -39,6 +45,7 @@ export type SocialReview = {
    * Unique identifier for the review
    */
   id?: string | undefined;
+  metadata?: Array<SocialMetadata> | undefined;
   /**
    * The social profile (page/handle/listing) being reviewed
    */
@@ -82,6 +89,7 @@ export const SocialReview$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(SocialMetadata$inboundSchema).optional(),
   profile_id: z.string().optional(),
   rating: z.number().optional(),
   raw: z.record(z.any()).optional(),
@@ -108,6 +116,7 @@ export type SocialReview$Outbound = {
   content?: string | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<SocialMetadata$Outbound> | undefined;
   profile_id?: string | undefined;
   rating?: number | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -129,6 +138,7 @@ export const SocialReview$outboundSchema: z.ZodType<
   content: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(SocialMetadata$outboundSchema).optional(),
   profileId: z.string().optional(),
   rating: z.number().optional(),
   raw: z.record(z.any()).optional(),

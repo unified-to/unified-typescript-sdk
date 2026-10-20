@@ -14,6 +14,7 @@ export const GetFormsSubmissionQueryParamFields = {
   RespondentEmail: "respondent_email",
   RespondentName: "respondent_name",
   Answers: "answers",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetFormsSubmissionQueryParamFields = ClosedEnum<

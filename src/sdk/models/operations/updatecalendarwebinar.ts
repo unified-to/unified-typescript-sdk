@@ -41,6 +41,7 @@ export const UpdateCalendarWebinarQueryParamFields = {
   HasQa: "has_qa",
   HasPolls: "has_polls",
   HasRecording: "has_recording",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateCalendarWebinarQueryParamFields = ClosedEnum<

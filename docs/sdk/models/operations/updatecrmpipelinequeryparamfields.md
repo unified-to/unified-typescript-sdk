@@ -11,5 +11,5 @@ let value: UpdateCrmPipelineQueryParamFields = "is_active";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "is_active" | "deal_probability" | "display_order" | "stages" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "is_active" | "deal_probability" | "display_order" | "stages" | "metadata" | "raw"
 ```

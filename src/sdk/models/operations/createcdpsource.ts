@@ -16,6 +16,7 @@ export const CreateCdpSourceQueryParamFields = {
   Type: "type",
   Direction: "direction",
   IsEnabled: "is_enabled",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateCdpSourceQueryParamFields = ClosedEnum<

@@ -16,6 +16,7 @@ export const GetKmsCommentQueryParamFields = {
   UserId: "user_id",
   PageId: "page_id",
   ParentId: "parent_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetKmsCommentQueryParamFields = ClosedEnum<

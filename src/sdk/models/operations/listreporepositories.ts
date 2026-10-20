@@ -16,6 +16,7 @@ export const ListRepoRepositoriesQueryParamFields = {
   IsPrivate: "is_private",
   WebUrl: "web_url",
   OrgId: "org_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListRepoRepositoriesQueryParamFields = ClosedEnum<

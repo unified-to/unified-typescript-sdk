@@ -14,6 +14,7 @@ export const ListDatastoreRecordsQueryParamFields = {
   TableId: "table_id",
   Fields: "fields",
   RowNumber: "row_number",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListDatastoreRecordsQueryParamFields = ClosedEnum<

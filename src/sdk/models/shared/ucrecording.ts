@@ -16,6 +16,12 @@ import {
   UcContact$outboundSchema,
 } from "./uccontact.js";
 import {
+  UcMetadata,
+  UcMetadata$inboundSchema,
+  UcMetadata$Outbound,
+  UcMetadata$outboundSchema,
+} from "./ucmetadata.js";
+import {
   UcRecordingMedia,
   UcRecordingMedia$inboundSchema,
   UcRecordingMedia$Outbound,
@@ -49,6 +55,7 @@ export type UcRecording = {
   expiresAt?: Date | undefined;
   id?: string | undefined;
   media?: Array<UcRecordingMedia> | undefined;
+  metadata?: Array<UcMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -98,6 +105,7 @@ export const UcRecording$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   media: z.array(UcRecordingMedia$inboundSchema).optional(),
+  metadata: z.array(UcMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -133,6 +141,7 @@ export type UcRecording$Outbound = {
   expires_at?: string | undefined;
   id?: string | undefined;
   media?: Array<UcRecordingMedia$Outbound> | undefined;
+  metadata?: Array<UcMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   type?: string | undefined;
@@ -157,6 +166,7 @@ export const UcRecording$outboundSchema: z.ZodType<
   expiresAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   media: z.array(UcRecordingMedia$outboundSchema).optional(),
+  metadata: z.array(UcMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   type: UcRecordingType$outboundSchema.optional(),

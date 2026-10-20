@@ -15,6 +15,7 @@ export const GetSigningTemplateQueryParamFields = {
   IsActive: "is_active",
   CreatorId: "creator_id",
   Raw: "raw",
+  Metadata: "metadata",
 } as const;
 export type GetSigningTemplateQueryParamFields = ClosedEnum<
   typeof GetSigningTemplateQueryParamFields

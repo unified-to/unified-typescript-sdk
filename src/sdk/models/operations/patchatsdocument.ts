@@ -19,6 +19,7 @@ export const PatchAtsDocumentQueryParamFields = {
   ApplicationId: "application_id",
   JobId: "job_id",
   UserId: "user_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAtsDocumentQueryParamFields = ClosedEnum<

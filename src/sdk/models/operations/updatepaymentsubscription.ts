@@ -28,6 +28,7 @@ export const UpdatePaymentSubscriptionQueryParamFields = {
   DayOfWeek: "day_of_week",
   Interval: "interval",
   Lineitems: "lineitems",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdatePaymentSubscriptionQueryParamFields = ClosedEnum<

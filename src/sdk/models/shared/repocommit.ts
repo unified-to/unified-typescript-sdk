@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  RepoMetadata,
+  RepoMetadata$inboundSchema,
+  RepoMetadata$Outbound,
+  RepoMetadata$outboundSchema,
+} from "./repometadata.js";
 
 export type RepoCommit = {
   /**
@@ -22,6 +28,7 @@ export type RepoCommit = {
   linesChanged?: number | undefined;
   linesDeleted?: number | undefined;
   message?: string | undefined;
+  metadata?: Array<RepoMetadata> | undefined;
   pullrequestIds?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -52,6 +59,7 @@ export const RepoCommit$inboundSchema: z.ZodType<
   lines_changed: z.number().optional(),
   lines_deleted: z.number().optional(),
   message: z.string().optional(),
+  metadata: z.array(RepoMetadata$inboundSchema).optional(),
   pullrequest_ids: z.array(z.string()).optional(),
   raw: z.record(z.any()).optional(),
   repo_id: z.string(),
@@ -80,6 +88,7 @@ export type RepoCommit$Outbound = {
   lines_changed?: number | undefined;
   lines_deleted?: number | undefined;
   message?: string | undefined;
+  metadata?: Array<RepoMetadata$Outbound> | undefined;
   pullrequest_ids?: Array<string> | undefined;
   raw?: { [k: string]: any } | undefined;
   repo_id: string;
@@ -100,6 +109,7 @@ export const RepoCommit$outboundSchema: z.ZodType<
   linesChanged: z.number().optional(),
   linesDeleted: z.number().optional(),
   message: z.string().optional(),
+  metadata: z.array(RepoMetadata$outboundSchema).optional(),
   pullrequestIds: z.array(z.string()).optional(),
   raw: z.record(z.any()).optional(),
   repoId: z.string(),

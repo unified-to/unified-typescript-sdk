@@ -31,6 +31,7 @@ export const ListClubsEventsQueryParamFields = {
   ScoreAgainst: "score_against",
   IsHome: "is_home",
   Url: "url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListClubsEventsQueryParamFields = ClosedEnum<

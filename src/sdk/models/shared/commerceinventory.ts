@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+  CommerceMetadata$Outbound,
+  CommerceMetadata$outboundSchema,
+} from "./commercemetadata.js";
 
 export type CommerceInventory = {
   available?: number | undefined;
@@ -24,6 +30,7 @@ export type CommerceInventory = {
    * (reference to CommerceLocation)
    */
   locationId?: string | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -43,6 +50,7 @@ export const CommerceInventory$inboundSchema: z.ZodType<
   item_option_id: z.string().optional(),
   item_variant_id: z.string().optional(),
   location_id: z.string().optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -63,6 +71,7 @@ export type CommerceInventory$Outbound = {
   item_option_id?: string | undefined;
   item_variant_id?: string | undefined;
   location_id?: string | undefined;
+  metadata?: Array<CommerceMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
 };
@@ -79,6 +88,7 @@ export const CommerceInventory$outboundSchema: z.ZodType<
   itemOptionId: z.string().optional(),
   itemVariantId: z.string().optional(),
   locationId: z.string().optional(),
+  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

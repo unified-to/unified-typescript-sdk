@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
+import {
   AtsScorecardQuestion,
   AtsScorecardQuestion$inboundSchema,
   AtsScorecardQuestion$Outbound,
@@ -36,6 +42,7 @@ export type AtsScorecard = {
   interviewId?: string | undefined;
   interviewerId?: string | undefined;
   jobId?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   questions?: Array<AtsScorecardQuestion> | undefined;
   raw?: { [k: string]: any } | undefined;
   recommendation?: Recommendation | undefined;
@@ -73,6 +80,7 @@ export const AtsScorecard$inboundSchema: z.ZodType<
   interview_id: z.string().optional(),
   interviewer_id: z.string().optional(),
   job_id: z.string().optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   questions: z.array(AtsScorecardQuestion$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   recommendation: Recommendation$inboundSchema.optional(),
@@ -99,6 +107,7 @@ export type AtsScorecard$Outbound = {
   interview_id?: string | undefined;
   interviewer_id?: string | undefined;
   job_id?: string | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   questions?: Array<AtsScorecardQuestion$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   recommendation?: string | undefined;
@@ -119,6 +128,7 @@ export const AtsScorecard$outboundSchema: z.ZodType<
   interviewId: z.string().optional(),
   interviewerId: z.string().optional(),
   jobId: z.string().optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   questions: z.array(AtsScorecardQuestion$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   recommendation: Recommendation$outboundSchema.optional(),

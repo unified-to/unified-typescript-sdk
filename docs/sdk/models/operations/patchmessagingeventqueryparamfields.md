@@ -11,5 +11,5 @@ let value: PatchMessagingEventQueryParamFields = "is_replacing_original";
 ## Values
 
 ```typescript
-"id" | "created_at" | "type" | "channel" | "message" | "button" | "user" | "raw" | "is_replacing_original"
+"id" | "created_at" | "type" | "channel" | "message" | "button" | "user" | "metadata" | "raw" | "is_replacing_original"
 ```

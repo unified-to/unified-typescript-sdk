@@ -28,6 +28,7 @@ export const CreateLmsCourseQueryParamFields = {
   ProviderName: "provider_name",
   PublishedAt: "published_at",
   TimeEstimateMinutes: "time_estimate_minutes",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateLmsCourseQueryParamFields = ClosedEnum<

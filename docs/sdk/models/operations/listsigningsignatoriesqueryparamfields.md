@@ -5,11 +5,11 @@
 ```typescript
 import { ListSigningSignatoriesQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListSigningSignatoriesQueryParamFields = "raw";
+let value: ListSigningSignatoriesQueryParamFields = "metadata";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "document_id" | "name" | "email" | "role" | "status" | "order" | "signed_at" | "decline_reason" | "raw"
+"id" | "created_at" | "updated_at" | "document_id" | "name" | "email" | "role" | "status" | "order" | "signed_at" | "decline_reason" | "raw" | "metadata"
 ```

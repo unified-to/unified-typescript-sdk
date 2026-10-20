@@ -7,6 +7,10 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AnalyticsMetadata,
+  AnalyticsMetadata$inboundSchema,
+} from "./analyticsmetadata.js";
 
 export type AnalyticsSession = {
   browser?: string | undefined;
@@ -45,6 +49,7 @@ export type AnalyticsSession = {
    */
   landingPage?: string | undefined;
   medium?: string | undefined;
+  metadata?: Array<AnalyticsMetadata> | undefined;
   os?: string | undefined;
   /**
    * Session attributes
@@ -93,6 +98,7 @@ export const AnalyticsSession$inboundSchema: z.ZodType<
   is_conversion: z.boolean().optional(),
   landing_page: z.string().optional(),
   medium: z.string().optional(),
+  metadata: z.array(AnalyticsMetadata$inboundSchema).optional(),
   os: z.string().optional(),
   page_views: z.number().optional(),
   property_id: z.string().optional(),

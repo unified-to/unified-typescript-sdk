@@ -8,6 +8,10 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  MarketingMetadata,
+  MarketingMetadata$inboundSchema,
+} from "./marketingmetadata.js";
+import {
   MarketingReportLink,
   MarketingReportLink$inboundSchema,
 } from "./marketingreportlink.js";
@@ -81,6 +85,7 @@ export type MarketingReport = {
    * Associated list ID
    */
   listId?: string | undefined;
+  metadata?: Array<MarketingMetadata> | undefined;
   /**
    * Open rate (decimal)
    */
@@ -155,6 +160,7 @@ export const MarketingReport$inboundSchema: z.ZodType<
   ).optional(),
   links: z.array(MarketingReportLink$inboundSchema).optional(),
   list_id: z.string().optional(),
+  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
   open_rate: z.number().optional(),
   opens_total: z.number().optional(),
   raw: z.record(z.any()).optional(),

@@ -24,6 +24,7 @@ export const ListCrmEventsQueryParamFields = {
   ContactIds: "contact_ids",
   LeadIds: "lead_ids",
   UserId: "user_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListCrmEventsQueryParamFields = ClosedEnum<

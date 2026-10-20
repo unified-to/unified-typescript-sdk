@@ -18,6 +18,7 @@ export const PatchAdsOrganizationQueryParamFields = {
   Status: "status",
   AccountNumber: "account_number",
   Managers: "managers",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAdsOrganizationQueryParamFields = ClosedEnum<

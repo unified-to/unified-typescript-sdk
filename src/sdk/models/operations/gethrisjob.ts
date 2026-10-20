@@ -21,6 +21,7 @@ export const GetHrisJobQueryParamFields = {
   ParentId: "parent_id",
   Users: "users",
   Compensation: "compensation",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetHrisJobQueryParamFields = ClosedEnum<

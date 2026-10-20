@@ -24,6 +24,7 @@ export const GetPerformanceReviewQueryParamFields = {
   IsAcknowledged: "is_acknowledged",
   SubmittedAt: "submitted_at",
   CompletedAt: "completed_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetPerformanceReviewQueryParamFields = ClosedEnum<

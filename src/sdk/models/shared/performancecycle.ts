@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PerformanceMetadata,
+  PerformanceMetadata$inboundSchema,
+} from "./performancemetadata.js";
 
 export const PerformanceCycleStatus = {
   Draft: "DRAFT",
@@ -47,6 +51,7 @@ export type PerformanceCycle = {
    */
   endAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<PerformanceMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -92,6 +97,7 @@ export const PerformanceCycle$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

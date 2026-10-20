@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
 
 export const AtsDocumentType = {
   Resume: "RESUME",
@@ -38,6 +44,7 @@ export type AtsDocument = {
   filename?: string | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: AtsDocumentType | undefined;
   /**
@@ -78,6 +85,7 @@ export const AtsDocument$inboundSchema: z.ZodType<
   filename: z.string().optional(),
   id: z.string().optional(),
   job_id: z.string().optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   type: AtsDocumentType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -105,6 +113,7 @@ export type AtsDocument$Outbound = {
   filename?: string | undefined;
   id?: string | undefined;
   job_id?: string | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -125,6 +134,7 @@ export const AtsDocument$outboundSchema: z.ZodType<
   filename: z.string().optional(),
   id: z.string().optional(),
   jobId: z.string().optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   type: AtsDocumentType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

@@ -8,6 +8,10 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AnalyticsMetadata,
+  AnalyticsMetadata$inboundSchema,
+} from "./analyticsmetadata.js";
+import {
   AnalyticsReportMetrics,
   AnalyticsReportMetrics$inboundSchema,
 } from "./analyticsreportmetrics.js";
@@ -22,6 +26,7 @@ export type AnalyticsReport = {
    */
   endAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<AnalyticsMetadata> | undefined;
   metrics?: Array<AnalyticsReportMetrics> | undefined;
   /**
    * points to AnalyticsProperty
@@ -49,6 +54,7 @@ export const AnalyticsReport$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(AnalyticsMetadata$inboundSchema).optional(),
   metrics: z.array(AnalyticsReportMetrics$inboundSchema).optional(),
   property_id: z.string().optional(),
   raw: z.record(z.any()).optional(),

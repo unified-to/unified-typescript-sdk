@@ -22,6 +22,7 @@ export const GetComputeGputypeQueryParamFields = {
   Architecture: "architecture",
   Prices: "prices",
   Availability: "availability",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetComputeGputypeQueryParamFields = ClosedEnum<

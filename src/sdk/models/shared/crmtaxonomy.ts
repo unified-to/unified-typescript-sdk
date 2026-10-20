@@ -8,6 +8,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { CrmMetadata, CrmMetadata$inboundSchema } from "./crmmetadata.js";
 
 export const CrmTaxonomyType = {
   Industry: "INDUSTRY",
@@ -17,6 +18,7 @@ export type CrmTaxonomyType = OpenEnum<typeof CrmTaxonomyType>;
 export type CrmTaxonomy = {
   id: string;
   label?: string | undefined;
+  metadata?: Array<CrmMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: CrmTaxonomyType | undefined;
@@ -37,6 +39,7 @@ export const CrmTaxonomy$inboundSchema: z.ZodType<
 > = z.object({
   id: z.string(),
   label: z.string().optional(),
+  metadata: z.array(CrmMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   type: CrmTaxonomyType$inboundSchema.optional(),

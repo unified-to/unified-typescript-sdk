@@ -13,6 +13,7 @@ export const GetTaskChangeQueryParamFields = {
   TaskId: "task_id",
   UserId: "user_id",
   Items: "items",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetTaskChangeQueryParamFields = ClosedEnum<

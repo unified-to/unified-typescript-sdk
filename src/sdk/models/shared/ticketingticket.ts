@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  TicketingMetadata,
+  TicketingMetadata$inboundSchema,
+  TicketingMetadata$Outbound,
+  TicketingMetadata$outboundSchema,
+} from "./ticketingmetadata.js";
 
 export const TicketingTicketStatus = {
   Active: "ACTIVE",
@@ -43,6 +49,7 @@ export type TicketingTicket = {
    */
   dueAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<TicketingMetadata> | undefined;
   priority?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -100,6 +107,7 @@ export const TicketingTicket$inboundSchema: z.ZodType<
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(TicketingMetadata$inboundSchema).optional(),
   priority: z.string().optional(),
   raw: z.record(z.any()).optional(),
   source: z.string().optional(),
@@ -134,6 +142,7 @@ export type TicketingTicket$Outbound = {
   description?: string | undefined;
   due_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<TicketingMetadata$Outbound> | undefined;
   priority?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
@@ -160,6 +169,7 @@ export const TicketingTicket$outboundSchema: z.ZodType<
   description: z.string().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(TicketingMetadata$outboundSchema).optional(),
   priority: z.string().optional(),
   raw: z.record(z.any()).optional(),
   source: z.string().optional(),

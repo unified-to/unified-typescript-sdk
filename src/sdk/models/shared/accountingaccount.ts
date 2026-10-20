@@ -15,6 +15,12 @@ import {
   AccountingAccountTaxonomy$Outbound,
   AccountingAccountTaxonomy$outboundSchema,
 } from "./accountingaccounttaxonomy.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 /**
  * Account status, such as ACTIVE or ARCHIVED
@@ -80,6 +86,7 @@ export type AccountingAccount = {
    * True if the account is an “accounts payable” account
    */
   isPayable?: boolean | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   /**
    * Account name
    */
@@ -136,6 +143,7 @@ export const AccountingAccount$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_payable: z.boolean().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   parent_id: z.string().optional(),
@@ -164,6 +172,7 @@ export type AccountingAccount$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_payable?: boolean | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   parent_id?: string | undefined;
@@ -187,6 +196,7 @@ export const AccountingAccount$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isPayable: z.boolean().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   parentId: z.string().optional(),

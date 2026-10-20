@@ -11,6 +11,7 @@ import {
   TaskChangeItem,
   TaskChangeItem$inboundSchema,
 } from "./taskchangeitem.js";
+import { TaskMetadata, TaskMetadata$inboundSchema } from "./taskmetadata.js";
 
 export type TaskChange = {
   /**
@@ -19,6 +20,7 @@ export type TaskChange = {
   createdAt?: Date | undefined;
   id?: string | undefined;
   items?: Array<TaskChangeItem> | undefined;
+  metadata?: Array<TaskMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (reference to TaskTask)
@@ -44,6 +46,7 @@ export const TaskChange$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   items: z.array(TaskChangeItem$inboundSchema).optional(),
+  metadata: z.array(TaskMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   task_id: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

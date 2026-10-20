@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+  CommerceMetadata$Outbound,
+  CommerceMetadata$outboundSchema,
+} from "./commercemetadata.js";
 
 export const CommerceReservationStatus = {
   Pending: "PENDING",
@@ -43,6 +49,7 @@ export type CommerceReservation = {
    * (reference to CommerceLocation)
    */
   locationId?: string | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   size?: number | undefined;
@@ -93,6 +100,7 @@ export const CommerceReservation$inboundSchema: z.ZodType<
   item_id: z.string().optional(),
   item_name: z.string().optional(),
   location_id: z.string().optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   size: z.number().optional(),
@@ -131,6 +139,7 @@ export type CommerceReservation$Outbound = {
   item_id?: string | undefined;
   item_name?: string | undefined;
   location_id?: string | undefined;
+  metadata?: Array<CommerceMetadata$Outbound> | undefined;
   notes?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   size?: number | undefined;
@@ -157,6 +166,7 @@ export const CommerceReservation$outboundSchema: z.ZodType<
   itemId: z.string().optional(),
   itemName: z.string().optional(),
   locationId: z.string().optional(),
+  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   raw: z.record(z.any()).optional(),
   size: z.number().optional(),

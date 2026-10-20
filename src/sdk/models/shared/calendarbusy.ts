@@ -7,6 +7,10 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CalendarMetadata,
+  CalendarMetadata$inboundSchema,
+} from "./calendarmetadata.js";
 
 export type CalendarBusy = {
   description?: string | undefined;
@@ -15,6 +19,7 @@ export type CalendarBusy = {
    */
   endAt: Date;
   id?: string | undefined;
+  metadata?: Array<CalendarMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -32,6 +37,7 @@ export const CalendarBusy$inboundSchema: z.ZodType<
   description: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   id: z.string().optional(),
+  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   timezone: z.string().optional(),

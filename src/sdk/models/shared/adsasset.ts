@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AdsMetadata,
+  AdsMetadata$inboundSchema,
+  AdsMetadata$Outbound,
+  AdsMetadata$outboundSchema,
+} from "./adsmetadata.js";
 
 export const AdsAssetType = {
   Image: "IMAGE",
@@ -34,6 +40,7 @@ export type AdsAsset = {
    * provider asset resource name/id (e.g. Google Ads customers/{cid}/assets/{id}, TikTok image/video id, DV360 mediaId)
    */
   id?: string | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   mimeType?: string | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
@@ -75,6 +82,7 @@ export const AdsAsset$inboundSchema: z.ZodType<
   file_size: z.number().optional(),
   height: z.number().optional(),
   id: z.string().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   mime_type: z.string().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
@@ -100,6 +108,7 @@ export type AdsAsset$Outbound = {
   file_size?: number | undefined;
   height?: number | undefined;
   id?: string | undefined;
+  metadata?: Array<AdsMetadata$Outbound> | undefined;
   mime_type?: string | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
@@ -121,6 +130,7 @@ export const AdsAsset$outboundSchema: z.ZodType<
   fileSize: z.number().optional(),
   height: z.number().optional(),
   id: z.string().optional(),
+  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   mimeType: z.string().optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),

@@ -10,6 +10,7 @@ export const GetAdsPromotedQueryParamFields = {
   Id: "id",
   Name: "name",
   Type: "type",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAdsPromotedQueryParamFields = ClosedEnum<

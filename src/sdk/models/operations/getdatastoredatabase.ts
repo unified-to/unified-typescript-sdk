@@ -16,6 +16,7 @@ export const GetDatastoreDatabaseQueryParamFields = {
   IsActive: "is_active",
   Password: "password",
   Region: "region",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetDatastoreDatabaseQueryParamFields = ClosedEnum<

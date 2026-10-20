@@ -19,6 +19,7 @@ export const ListSigningSignatoriesQueryParamFields = {
   SignedAt: "signed_at",
   DeclineReason: "decline_reason",
   Raw: "raw",
+  Metadata: "metadata",
 } as const;
 export type ListSigningSignatoriesQueryParamFields = ClosedEnum<
   typeof ListSigningSignatoriesQueryParamFields

@@ -20,6 +20,7 @@ export const UpdateSocialReviewQueryParamFields = {
   AuthorLocation: "author_location",
   Reply: "reply",
   Url: "url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateSocialReviewQueryParamFields = ClosedEnum<

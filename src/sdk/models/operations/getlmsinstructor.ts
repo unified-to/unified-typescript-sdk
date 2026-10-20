@@ -17,6 +17,7 @@ export const GetLmsInstructorQueryParamFields = {
   Title: "title",
   Telephones: "telephones",
   ImageUrl: "image_url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetLmsInstructorQueryParamFields = ClosedEnum<

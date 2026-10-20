@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 /**
  * the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation
@@ -48,6 +54,7 @@ export type HrisTaxonomy = {
   domain?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   /**
    * the preferred label of the skill/role
    */
@@ -106,6 +113,7 @@ export const HrisTaxonomy$inboundSchema: z.ZodType<
   domain: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -134,6 +142,7 @@ export type HrisTaxonomy$Outbound = {
   domain?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -157,6 +166,7 @@ export const HrisTaxonomy$outboundSchema: z.ZodType<
   domain: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

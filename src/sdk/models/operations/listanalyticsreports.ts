@@ -14,6 +14,7 @@ export const ListAnalyticsReportsQueryParamFields = {
   StartAt: "start_at",
   EndAt: "end_at",
   Metrics: "metrics",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAnalyticsReportsQueryParamFields = ClosedEnum<

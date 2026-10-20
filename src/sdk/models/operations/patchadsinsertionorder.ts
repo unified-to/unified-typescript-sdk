@@ -22,6 +22,7 @@ export const PatchAdsInsertionorderQueryParamFields = {
   BudgetSegments: "budget_segments",
   BidStrategy: "bid_strategy",
   Reference: "reference",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchAdsInsertionorderQueryParamFields = ClosedEnum<

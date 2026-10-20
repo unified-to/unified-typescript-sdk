@@ -25,6 +25,7 @@ export const CreatePerformanceGoalQueryParamFields = {
   DueAt: "due_at",
   CompletedAt: "completed_at",
   Milestones: "milestones",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreatePerformanceGoalQueryParamFields = ClosedEnum<

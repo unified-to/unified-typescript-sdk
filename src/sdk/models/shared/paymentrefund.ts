@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PaymentMetadata,
+  PaymentMetadata$inboundSchema,
+} from "./paymentmetadata.js";
 
 /**
  * Why the refund was issued
@@ -59,6 +63,7 @@ export type PaymentRefund = {
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<PaymentMetadata> | undefined;
   notes?: string | undefined;
   /**
    * (reference to PaymentPayment)
@@ -114,6 +119,7 @@ export const PaymentRefund$inboundSchema: z.ZodType<
     .optional(),
   currency: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   payment_id: z.string().optional(),
   raw: z.record(z.any()).optional(),

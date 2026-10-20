@@ -15,6 +15,7 @@ export const PatchCommerceSaleschannelQueryParamFields = {
   Description: "description",
   IsActive: "is_active",
   Collections: "collections",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchCommerceSaleschannelQueryParamFields = ClosedEnum<

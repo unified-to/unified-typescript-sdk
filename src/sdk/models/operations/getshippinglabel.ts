@@ -20,6 +20,7 @@ export const GetShippingLabelQueryParamFields = {
   LabelCostCurrency: "label_cost_currency",
   RateId: "rate_id",
   ServiceCode: "service_code",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetShippingLabelQueryParamFields = ClosedEnum<

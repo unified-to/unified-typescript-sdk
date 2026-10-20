@@ -16,6 +16,7 @@ export const PatchCrmPipelineQueryParamFields = {
   DealProbability: "deal_probability",
   DisplayOrder: "display_order",
   Stages: "stages",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchCrmPipelineQueryParamFields = ClosedEnum<

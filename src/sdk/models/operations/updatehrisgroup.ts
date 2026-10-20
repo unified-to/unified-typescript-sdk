@@ -21,6 +21,7 @@ export const UpdateHrisGroupQueryParamFields = {
   CompanyId: "company_id",
   PayFrequency: "pay_frequency",
   NextPaidAt: "next_paid_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateHrisGroupQueryParamFields = ClosedEnum<

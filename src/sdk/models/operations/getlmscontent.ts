@@ -30,6 +30,7 @@ export const GetLmsContentQueryParamFields = {
   CollectionIds: "collection_ids",
   Instructors: "instructors",
   PublishedAt: "published_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetLmsContentQueryParamFields = ClosedEnum<

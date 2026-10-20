@@ -15,6 +15,7 @@ export const UpdateTicketingCustomerQueryParamFields = {
   Emails: "emails",
   Telephones: "telephones",
   Tags: "tags",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateTicketingCustomerQueryParamFields = ClosedEnum<

@@ -22,6 +22,7 @@ export const ListHrisBenefitsQueryParamFields = {
   EmployerContributionMaxAmount: "employer_contribution_max_amount",
   CoverageLevel: "coverage_level",
   Currency: "currency",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListHrisBenefitsQueryParamFields = ClosedEnum<

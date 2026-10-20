@@ -25,6 +25,7 @@ export const UpdateHrisEarningQueryParamFields = {
   PayrollId: "payroll_id",
   PayslipId: "payslip_id",
   Notes: "notes",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateHrisEarningQueryParamFields = ClosedEnum<

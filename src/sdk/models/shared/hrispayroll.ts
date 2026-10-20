@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { HrisMetadata, HrisMetadata$inboundSchema } from "./hrismetadata.js";
 
 export const HrisPayrollStatus = {
   Draft: "DRAFT",
@@ -65,6 +66,7 @@ export type HrisPayroll = {
    */
   groupId?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   netAmount?: number | undefined;
   /**
    * pay/check date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -127,6 +129,7 @@ export const HrisPayroll$inboundSchema: z.ZodType<
   gross_amount: z.number().optional(),
   group_id: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   net_amount: z.number().optional(),
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),

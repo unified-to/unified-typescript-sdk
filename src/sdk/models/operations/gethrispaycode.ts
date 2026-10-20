@@ -19,6 +19,7 @@ export const GetHrisPaycodeQueryParamFields = {
   IsPreTax: "is_pre_tax",
   IsEmployer: "is_employer",
   IsActive: "is_active",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetHrisPaycodeQueryParamFields = ClosedEnum<

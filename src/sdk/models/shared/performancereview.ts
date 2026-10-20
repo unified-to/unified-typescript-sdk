@@ -10,6 +10,10 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  PerformanceMetadata,
+  PerformanceMetadata$inboundSchema,
+} from "./performancemetadata.js";
+import {
   PerformanceReviewQuestion,
   PerformanceReviewQuestion$inboundSchema,
 } from "./performancereviewquestion.js";
@@ -56,6 +60,7 @@ export type PerformanceReview = {
    * whether the reviewee acknowledged this review
    */
   isAcknowledged?: boolean | undefined;
+  metadata?: Array<PerformanceMetadata> | undefined;
   questions?: Array<PerformanceReviewQuestion> | undefined;
   /**
    * the overall rating/score of this review
@@ -123,6 +128,7 @@ export const PerformanceReview$inboundSchema: z.ZodType<
   cycle_id: z.string().optional(),
   id: z.string().optional(),
   is_acknowledged: z.boolean().optional(),
+  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
   questions: z.array(PerformanceReviewQuestion$inboundSchema).optional(),
   rating: z.number().optional(),
   rating_description: z.string().optional(),

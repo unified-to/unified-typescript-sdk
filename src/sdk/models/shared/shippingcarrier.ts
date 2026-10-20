@@ -7,6 +7,10 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  ShippingMetadata,
+  ShippingMetadata$inboundSchema,
+} from "./shippingmetadata.js";
 
 export type ShippingCarrier = {
   /**
@@ -29,6 +33,7 @@ export type ShippingCarrier = {
    * Carrier logo URL
    */
   logoUrl?: string | undefined;
+  metadata?: Array<ShippingMetadata> | undefined;
   /**
    * The name of the carrier
    */
@@ -59,6 +64,7 @@ export const ShippingCarrier$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   logo_url: z.string().optional(),
+  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

@@ -20,6 +20,12 @@ import {
   PropertyShippingRateToAddress$outboundSchema,
 } from "./propertyshippingratetoaddress.js";
 import {
+  ShippingMetadata,
+  ShippingMetadata$inboundSchema,
+  ShippingMetadata$Outbound,
+  ShippingMetadata$outboundSchema,
+} from "./shippingmetadata.js";
+import {
   ShippingPackage,
   ShippingPackage$inboundSchema,
   ShippingPackage$Outbound,
@@ -46,6 +52,7 @@ export type ShippingRate = {
    * Unique identifier for this rate object
    */
   id?: string | undefined;
+  metadata?: Array<ShippingMetadata> | undefined;
   /**
    * Multiple packages (alternative to package)
    */
@@ -76,6 +83,7 @@ export const ShippingRate$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   from_address: PropertyShippingRateFromAddress$inboundSchema.optional(),
   id: z.string().optional(),
+  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
   packages: z.array(ShippingPackage$inboundSchema).optional(),
   rates: z.array(ShippingRateRate$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
@@ -98,6 +106,7 @@ export type ShippingRate$Outbound = {
   currency?: string | undefined;
   from_address?: PropertyShippingRateFromAddress$Outbound | undefined;
   id?: string | undefined;
+  metadata?: Array<ShippingMetadata$Outbound> | undefined;
   packages?: Array<ShippingPackage$Outbound> | undefined;
   rates?: Array<ShippingRateRate$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -116,6 +125,7 @@ export const ShippingRate$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   fromAddress: PropertyShippingRateFromAddress$outboundSchema.optional(),
   id: z.string().optional(),
+  metadata: z.array(ShippingMetadata$outboundSchema).optional(),
   packages: z.array(ShippingPackage$outboundSchema).optional(),
   rates: z.array(ShippingRateRate$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),

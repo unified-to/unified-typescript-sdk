@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 export const DurationType = {
   Hour: "HOUR",
@@ -62,6 +68,7 @@ export type HrisTimeoff = {
   endAt?: Date | undefined;
   id?: string | undefined;
   isPaid?: boolean | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   /**
    * integration leave-type label before normalization
    */
@@ -142,6 +149,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   is_paid: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   original_type: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reason: z.string().optional(),
@@ -179,6 +187,7 @@ export type HrisTimeoff$Outbound = {
   end_at?: string | undefined;
   id?: string | undefined;
   is_paid?: boolean | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   original_type?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reason?: string | undefined;
@@ -205,6 +214,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   isPaid: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   originalType: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reason: z.string().optional(),

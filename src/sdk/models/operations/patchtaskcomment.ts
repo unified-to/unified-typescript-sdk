@@ -17,6 +17,7 @@ export const PatchTaskCommentQueryParamFields = {
   TaskId: "task_id",
   ParentId: "parent_id",
   HasChildren: "has_children",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchTaskCommentQueryParamFields = ClosedEnum<

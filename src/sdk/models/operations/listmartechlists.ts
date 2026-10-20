@@ -23,6 +23,7 @@ export const ListMartechListsQueryParamFields = {
   Language: "language",
   SenderCompany: "sender_company",
   SenderPhone: "sender_phone",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListMartechListsQueryParamFields = ClosedEnum<

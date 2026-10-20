@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 export const CoverageLevel = {
   EmployeeOnly: "EMPLOYEE_ONLY",
@@ -120,6 +126,7 @@ export type HrisBenefit = {
   frequency?: HrisBenefitFrequency | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   /**
    * e.g. "401(k) Plan"
    */
@@ -213,6 +220,7 @@ export const HrisBenefit$inboundSchema: z.ZodType<
   frequency: HrisBenefitFrequency$inboundSchema.optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   tax: Tax$inboundSchema.optional(),
@@ -244,6 +252,7 @@ export type HrisBenefit$Outbound = {
   frequency?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   tax?: string | undefined;
@@ -268,6 +277,7 @@ export const HrisBenefit$outboundSchema: z.ZodType<
   frequency: HrisBenefitFrequency$outboundSchema.optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   tax: Tax$outboundSchema.optional(),

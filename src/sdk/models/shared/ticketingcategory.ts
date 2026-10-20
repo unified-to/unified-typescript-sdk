@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  TicketingMetadata,
+  TicketingMetadata$inboundSchema,
+  TicketingMetadata$Outbound,
+  TicketingMetadata$outboundSchema,
+} from "./ticketingmetadata.js";
 
 export type TicketingCategory = {
   /**
@@ -16,6 +22,7 @@ export type TicketingCategory = {
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<TicketingMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -36,6 +43,7 @@ export const TicketingCategory$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(TicketingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -55,6 +63,7 @@ export type TicketingCategory$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<TicketingMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -71,6 +80,7 @@ export const TicketingCategory$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(TicketingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

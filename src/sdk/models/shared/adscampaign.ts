@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AdsMetadata,
+  AdsMetadata$inboundSchema,
+  AdsMetadata$Outbound,
+  AdsMetadata$outboundSchema,
+} from "./adsmetadata.js";
+import {
   PropertyAdsCampaignFrequencyCap,
   PropertyAdsCampaignFrequencyCap$inboundSchema,
   PropertyAdsCampaignFrequencyCap$Outbound,
@@ -141,6 +147,7 @@ export type AdsCampaign = {
   id?: string | undefined;
   kpi?: PropertyAdsCampaignKpi | undefined;
   labels?: Array<string> | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
@@ -254,6 +261,7 @@ export const AdsCampaign$inboundSchema: z.ZodType<
   id: z.string().optional(),
   kpi: PropertyAdsCampaignKpi$inboundSchema.optional(),
   labels: z.array(z.string()).optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   planned_spend_amount: z.number().optional(),
@@ -302,6 +310,7 @@ export type AdsCampaign$Outbound = {
   id?: string | undefined;
   kpi?: PropertyAdsCampaignKpi$Outbound | undefined;
   labels?: Array<string> | undefined;
+  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   planned_spend_amount?: number | undefined;
@@ -335,6 +344,7 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   id: z.string().optional(),
   kpi: PropertyAdsCampaignKpi$outboundSchema.optional(),
   labels: z.array(z.string()).optional(),
+  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   plannedSpendAmount: z.number().optional(),

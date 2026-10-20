@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PerformanceMetadata,
+  PerformanceMetadata$inboundSchema,
+  PerformanceMetadata$Outbound,
+  PerformanceMetadata$outboundSchema,
+} from "./performancemetadata.js";
 
 /**
  * praise/recognition, constructive feedback, or a response to a feedback request
@@ -39,6 +45,7 @@ export type PerformanceFeedback = {
    */
   isVisible?: boolean | undefined;
   message?: string | undefined;
+  metadata?: Array<PerformanceMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * badges or company values attached to this feedback
@@ -83,6 +90,7 @@ export const PerformanceFeedback$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_visible: z.boolean().optional(),
   message: z.string().optional(),
+  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   tags: z.array(z.string()).optional(),
   type: PerformanceFeedbackType$inboundSchema.optional(),
@@ -105,6 +113,7 @@ export type PerformanceFeedback$Outbound = {
   id?: string | undefined;
   is_visible?: boolean | undefined;
   message?: string | undefined;
+  metadata?: Array<PerformanceMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   tags?: Array<string> | undefined;
   type?: string | undefined;
@@ -123,6 +132,7 @@ export const PerformanceFeedback$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isVisible: z.boolean().optional(),
   message: z.string().optional(),
+  metadata: z.array(PerformanceMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   tags: z.array(z.string()).optional(),
   type: PerformanceFeedbackType$outboundSchema.optional(),

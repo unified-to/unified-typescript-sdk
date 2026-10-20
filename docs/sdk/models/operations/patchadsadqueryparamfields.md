@@ -5,11 +5,11 @@
 ```typescript
 import { PatchAdsAdQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: PatchAdsAdQueryParamFields = "path2";
+let value: PatchAdsAdQueryParamFields = "promoted";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "campaign_id" | "group_id" | "organization_id" | "status" | "ad_type" | "advertiser_name" | "creative_ids" | "creative_asset_url" | "ad_copy" | "headline" | "description" | "cta" | "final_url" | "display_url" | "path1" | "path2" | "promoted" | "logo_creative_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "campaign_id" | "group_id" | "organization_id" | "status" | "ad_type" | "advertiser_name" | "creative_ids" | "creative_asset_url" | "ad_copy" | "headline" | "description" | "cta" | "final_url" | "display_url" | "path1" | "path2" | "promoted" | "logo_creative_id" | "metadata" | "raw"
 ```

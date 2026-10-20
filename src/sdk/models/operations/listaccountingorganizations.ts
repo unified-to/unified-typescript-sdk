@@ -23,6 +23,7 @@ export const ListAccountingOrganizationsQueryParamFields = {
   Type: "type",
   IsElimination: "is_elimination",
   BooksCloseAt: "books_close_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAccountingOrganizationsQueryParamFields = ClosedEnum<

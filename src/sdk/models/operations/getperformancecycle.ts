@@ -17,6 +17,7 @@ export const GetPerformanceCycleQueryParamFields = {
   StartAt: "start_at",
   EndAt: "end_at",
   DueAt: "due_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetPerformanceCycleQueryParamFields = ClosedEnum<

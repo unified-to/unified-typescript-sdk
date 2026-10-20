@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  ShippingMetadata,
+  ShippingMetadata$inboundSchema,
+  ShippingMetadata$Outbound,
+  ShippingMetadata$outboundSchema,
+} from "./shippingmetadata.js";
 
 /**
  * Format of the label (PDF, PNG, ZPL, EPL2)
@@ -78,6 +84,7 @@ export type ShippingLabel = {
    * URL to download the label
    */
   labelUrl?: string | undefined;
+  metadata?: Array<ShippingMetadata> | undefined;
   /**
    * Rate used for this label; points to ShippingRate
    */
@@ -148,6 +155,7 @@ export const ShippingLabel$inboundSchema: z.ZodType<
   label_cost_currency: z.string().optional(),
   label_format: LabelFormat$inboundSchema.optional(),
   label_url: z.string().optional(),
+  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
   rate_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   service_code: z.string().optional(),
@@ -180,6 +188,7 @@ export type ShippingLabel$Outbound = {
   label_cost_currency?: string | undefined;
   label_format?: string | undefined;
   label_url?: string | undefined;
+  metadata?: Array<ShippingMetadata$Outbound> | undefined;
   rate_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   service_code?: string | undefined;
@@ -202,6 +211,7 @@ export const ShippingLabel$outboundSchema: z.ZodType<
   labelCostCurrency: z.string().optional(),
   labelFormat: LabelFormat$outboundSchema.optional(),
   labelUrl: z.string().optional(),
+  metadata: z.array(ShippingMetadata$outboundSchema).optional(),
   rateId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   serviceCode: z.string().optional(),

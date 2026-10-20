@@ -7,6 +7,7 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import {
   AdsReportMetrics,
   AdsReportMetrics$inboundSchema,
@@ -23,6 +24,7 @@ export type AdsReport = {
    */
   endAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   metrics?: Array<AdsReportMetrics> | undefined;
   organizationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -48,6 +50,7 @@ export const AdsReport$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   metrics: z.array(AdsReportMetrics$inboundSchema).optional(),
   organization_id: z.string().optional(),
   raw: z.record(z.any()).optional(),

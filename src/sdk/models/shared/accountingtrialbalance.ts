@@ -8,6 +8,10 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+} from "./accountingmetadata.js";
+import {
   AccountingTrialbalanceSubItem,
   AccountingTrialbalanceSubItem$inboundSchema,
 } from "./accountingtrialbalancesubitem.js";
@@ -23,6 +27,7 @@ export type AccountingTrialbalance = {
    */
   endAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -50,6 +55,7 @@ export const AccountingTrialbalance$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

@@ -14,6 +14,12 @@ import {
   UcEmail$outboundSchema,
 } from "./ucemail.js";
 import {
+  UcMetadata,
+  UcMetadata$inboundSchema,
+  UcMetadata$Outbound,
+  UcMetadata$outboundSchema,
+} from "./ucmetadata.js";
+import {
   UcTelephone,
   UcTelephone$inboundSchema,
   UcTelephone$Outbound,
@@ -42,6 +48,7 @@ export type UcContact = {
    */
   id?: string | undefined;
   lastName?: string | undefined;
+  metadata?: Array<UcMetadata> | undefined;
   /**
    * The name of the contact
    */
@@ -77,6 +84,7 @@ export const UcContact$inboundSchema: z.ZodType<
   first_name: z.string().optional(),
   id: z.string().optional(),
   last_name: z.string().optional(),
+  metadata: z.array(UcMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(UcTelephone$inboundSchema).optional(),
@@ -99,6 +107,7 @@ export type UcContact$Outbound = {
   first_name?: string | undefined;
   id?: string | undefined;
   last_name?: string | undefined;
+  metadata?: Array<UcMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<UcTelephone$Outbound> | undefined;
@@ -118,6 +127,7 @@ export const UcContact$outboundSchema: z.ZodType<
   firstName: z.string().optional(),
   id: z.string().optional(),
   lastName: z.string().optional(),
+  metadata: z.array(UcMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(UcTelephone$outboundSchema).optional(),

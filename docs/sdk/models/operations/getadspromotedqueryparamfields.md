@@ -11,5 +11,5 @@ let value: GetAdsPromotedQueryParamFields = "type";
 ## Values
 
 ```typescript
-"id" | "name" | "type" | "raw"
+"id" | "name" | "type" | "metadata" | "raw"
 ```

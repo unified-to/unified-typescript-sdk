@@ -22,6 +22,12 @@ import {
   AssessmentAttribute$outboundSchema,
 } from "./assessmentattribute.js";
 import {
+  AssessmentMetadata,
+  AssessmentMetadata$inboundSchema,
+  AssessmentMetadata$Outbound,
+  AssessmentMetadata$outboundSchema,
+} from "./assessmentmetadata.js";
+import {
   AssessmentParameterInput,
   AssessmentParameterInput$inboundSchema,
   AssessmentParameterInput$Outbound,
@@ -91,6 +97,7 @@ export type AssessmentOrder = {
    * ATS job ID
    */
   jobId?: string | undefined;
+  metadata?: Array<AssessmentMetadata> | undefined;
   /**
    * Assessment package ID
    */
@@ -234,6 +241,7 @@ export const AssessmentOrder$inboundSchema: z.ZodType<
   employee_id: z.string().optional(),
   id: z.string().optional(),
   job_id: z.string().optional(),
+  metadata: z.array(AssessmentMetadata$inboundSchema).optional(),
   package_id: z.string().optional(),
   parameters: z.array(AssessmentParameterInput$inboundSchema).optional(),
   profile_addresses: z.array(AssessmentAddress$inboundSchema).optional(),
@@ -324,6 +332,7 @@ export type AssessmentOrder$Outbound = {
   employee_id?: string | undefined;
   id?: string | undefined;
   job_id?: string | undefined;
+  metadata?: Array<AssessmentMetadata$Outbound> | undefined;
   package_id?: string | undefined;
   parameters?: Array<AssessmentParameterInput$Outbound> | undefined;
   profile_addresses?: Array<AssessmentAddress$Outbound> | undefined;
@@ -373,6 +382,7 @@ export const AssessmentOrder$outboundSchema: z.ZodType<
   employeeId: z.string().optional(),
   id: z.string().optional(),
   jobId: z.string().optional(),
+  metadata: z.array(AssessmentMetadata$outboundSchema).optional(),
   packageId: z.string().optional(),
   parameters: z.array(AssessmentParameterInput$outboundSchema).optional(),
   profileAddresses: z.array(AssessmentAddress$outboundSchema).optional(),

@@ -19,6 +19,7 @@ export const CreateAtsDocumentQueryParamFields = {
   ApplicationId: "application_id",
   JobId: "job_id",
   UserId: "user_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateAtsDocumentQueryParamFields = ClosedEnum<

@@ -11,5 +11,5 @@ let value: PatchRepoRepositoryQueryParamFields = "created_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "owner" | "is_private" | "web_url" | "org_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "owner" | "is_private" | "web_url" | "org_id" | "metadata" | "raw"
 ```

@@ -16,6 +16,7 @@ export const PatchComputeEnvvarQueryParamFields = {
   Value: "value",
   Environments: "environments",
   IsSecret: "is_secret",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchComputeEnvvarQueryParamFields = ClosedEnum<

@@ -31,7 +31,9 @@ async function run() {
   const result = await unifiedTo.inventory.createCommerceInventory({
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-18T16:44:30.418Z"),
+      id: "504bd63b-9ec8-4c75-833b-d623e83e1957",
+      metadata: [],
+      updatedAt: new Date("2025-11-19T10:19:33.532Z"),
     },
     connectionId: "<id>",
   });
@@ -62,7 +64,9 @@ async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-18T16:44:30.418Z"),
+      id: "504bd63b-9ec8-4c75-833b-d623e83e1957",
+      metadata: [],
+      updatedAt: new Date("2025-11-19T10:19:33.532Z"),
     },
     connectionId: "<id>",
   });
@@ -272,7 +276,9 @@ async function run() {
   const result = await unifiedTo.inventory.patchCommerceInventory({
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-18T16:44:30.423Z"),
+      id: "d773026f-b003-48b0-acbc-43098f9aae5d",
+      metadata: [],
+      updatedAt: new Date("2025-11-19T10:19:33.538Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -304,7 +310,9 @@ async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-18T16:44:30.423Z"),
+      id: "d773026f-b003-48b0-acbc-43098f9aae5d",
+      metadata: [],
+      updatedAt: new Date("2025-11-19T10:19:33.538Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -438,7 +446,9 @@ async function run() {
   const result = await unifiedTo.inventory.updateCommerceInventory({
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-18T16:44:30.423Z"),
+      id: "d773026f-b003-48b0-acbc-43098f9aae5d",
+      metadata: [],
+      updatedAt: new Date("2025-11-19T10:19:33.538Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -470,7 +480,9 @@ async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      updatedAt: new Date("2025-11-18T16:44:30.423Z"),
+      id: "d773026f-b003-48b0-acbc-43098f9aae5d",
+      metadata: [],
+      updatedAt: new Date("2025-11-19T10:19:33.538Z"),
     },
     connectionId: "<id>",
     id: "<id>",

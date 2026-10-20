@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  ComputeMetadata,
+  ComputeMetadata$inboundSchema,
+  ComputeMetadata$Outbound,
+  ComputeMetadata$outboundSchema,
+} from "./computemetadata.js";
 
 /**
  * The kind of credential
@@ -45,6 +51,7 @@ export type ComputeKey = {
    * The instance this key is scoped to, for per-instance keys
    */
   instanceId?: string | undefined;
+  metadata?: Array<ComputeMetadata> | undefined;
   /**
    * Display name of the key
    */
@@ -109,6 +116,7 @@ export const ComputeKey$inboundSchema: z.ZodType<
   fingerprint: z.string().optional(),
   id: z.string().optional(),
   instance_id: z.string().optional(),
+  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   private_key: z.string().optional(),
   public_key: z.string().optional(),
@@ -137,6 +145,7 @@ export type ComputeKey$Outbound = {
   fingerprint?: string | undefined;
   id?: string | undefined;
   instance_id?: string | undefined;
+  metadata?: Array<ComputeMetadata$Outbound> | undefined;
   name?: string | undefined;
   private_key?: string | undefined;
   public_key?: string | undefined;
@@ -159,6 +168,7 @@ export const ComputeKey$outboundSchema: z.ZodType<
   fingerprint: z.string().optional(),
   id: z.string().optional(),
   instanceId: z.string().optional(),
+  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   privateKey: z.string().optional(),
   publicKey: z.string().optional(),

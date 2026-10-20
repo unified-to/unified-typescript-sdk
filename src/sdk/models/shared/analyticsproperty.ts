@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AnalyticsMetadata,
+  AnalyticsMetadata$inboundSchema,
+  AnalyticsMetadata$Outbound,
+  AnalyticsMetadata$outboundSchema,
+} from "./analyticsmetadata.js";
 
 export type AnalyticsProperty = {
   /**
@@ -16,6 +22,7 @@ export type AnalyticsProperty = {
   currency?: string | undefined;
   id?: string | undefined;
   industry?: string | undefined;
+  metadata?: Array<AnalyticsMetadata> | undefined;
   name?: string | undefined;
   /**
    * points to AnalyticsProperty
@@ -40,6 +47,7 @@ export const AnalyticsProperty$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   industry: z.string().optional(),
+  metadata: z.array(AnalyticsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -59,6 +67,7 @@ export type AnalyticsProperty$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   industry?: string | undefined;
+  metadata?: Array<AnalyticsMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -76,6 +85,7 @@ export const AnalyticsProperty$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   industry: z.string().optional(),
+  metadata: z.array(AnalyticsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

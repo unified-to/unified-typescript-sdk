@@ -13,6 +13,7 @@ export const ListCommerceAvailabilitiesQueryParamFields = {
   Size: "size",
   ItemId: "item_id",
   StaffUserId: "staff_user_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListCommerceAvailabilitiesQueryParamFields = ClosedEnum<

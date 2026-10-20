@@ -12,6 +12,7 @@ export const ListRepoBranchesQueryParamFields = {
   UpdatedAt: "updated_at",
   Name: "name",
   RepoId: "repo_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListRepoBranchesQueryParamFields = ClosedEnum<

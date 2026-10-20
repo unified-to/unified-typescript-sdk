@@ -11,6 +11,10 @@ import {
   AccountingCashflowSection,
   AccountingCashflowSection$inboundSchema,
 } from "./accountingcashflowsection.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+} from "./accountingmetadata.js";
 
 /**
  * Sections
@@ -44,6 +48,7 @@ export type AccountingCashflow = {
   financingSections?: Array<AccountingCashflowSection> | undefined;
   id?: string | undefined;
   investingSections?: Array<AccountingCashflowSection> | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   /**
    * e.g. "Cash Flow Statement Q1 2020"
    */
@@ -87,6 +92,7 @@ export const AccountingCashflow$inboundSchema: z.ZodType<
   id: z.string().optional(),
   investing_sections: z.array(AccountingCashflowSection$inboundSchema)
     .optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   net_change_in_cash_amount: z.number().optional(),
   operating_sections: z.array(AccountingCashflowSection$inboundSchema)

@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 /**
  * pay cycle when type is PAY_GROUP
@@ -54,6 +60,7 @@ export type HrisGroup = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   managerIds?: Array<string> | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   name?: string | undefined;
   /**
    * next pay date when type is PAY_GROUP (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -112,6 +119,7 @@ export const HrisGroup$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   manager_ids: z.array(z.string()).optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   next_paid_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
@@ -144,6 +152,7 @@ export type HrisGroup$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   manager_ids?: Array<string> | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   next_paid_at?: string | undefined;
   parent_id?: string | undefined;
@@ -166,6 +175,7 @@ export const HrisGroup$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   managerIds: z.array(z.string()).optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   nextPaidAt: z.date().transform(v => v.toISOString()).optional(),
   parentId: z.string().optional(),

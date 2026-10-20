@@ -11,5 +11,5 @@ let value: CreateTicketingTicketQueryParamFields = "source";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "customer_id" | "subject" | "description" | "status" | "closed_at" | "priority" | "category_id" | "source" | "source_ref" | "tags" | "user_id" | "url" | "attachment_ids" | "due_at" | "raw"
+"id" | "created_at" | "updated_at" | "customer_id" | "subject" | "description" | "status" | "closed_at" | "priority" | "category_id" | "source" | "source_ref" | "tags" | "user_id" | "url" | "attachment_ids" | "due_at" | "metadata" | "raw"
 ```

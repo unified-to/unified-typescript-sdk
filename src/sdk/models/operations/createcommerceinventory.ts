@@ -15,6 +15,7 @@ export const CreateCommerceInventoryQueryParamFields = {
   ItemOptionId: "item_option_id",
   LocationId: "location_id",
   Available: "available",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateCommerceInventoryQueryParamFields = ClosedEnum<

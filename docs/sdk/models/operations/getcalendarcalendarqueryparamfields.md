@@ -5,11 +5,11 @@
 ```typescript
 import { GetCalendarCalendarQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetCalendarCalendarQueryParamFields = "description";
+let value: GetCalendarCalendarQueryParamFields = "timezone";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "timezone" | "is_primary" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "timezone" | "is_primary" | "metadata" | "raw"
 ```

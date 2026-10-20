@@ -11,5 +11,5 @@ let value: ListSocialInsightsQueryParamFields = "value";
 ## Values
 
 ```typescript
-"id" | "created_at" | "profile_id" | "post_id" | "date" | "period" | "metric" | "value" | "raw"
+"id" | "created_at" | "profile_id" | "post_id" | "date" | "period" | "metric" | "value" | "metadata" | "raw"
 ```

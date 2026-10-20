@@ -11,5 +11,5 @@ let value: ListCalendarBusiesQueryParamFields = "start_at";
 ## Values
 
 ```typescript
-"id" | "start_at" | "end_at" | "timezone" | "description" | "raw"
+"id" | "start_at" | "end_at" | "timezone" | "description" | "metadata" | "raw"
 ```

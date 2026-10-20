@@ -18,6 +18,7 @@ export const PatchLmsInstructorQueryParamFields = {
   Title: "title",
   Telephones: "telephones",
   ImageUrl: "image_url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchLmsInstructorQueryParamFields = ClosedEnum<

@@ -25,6 +25,7 @@ export const PatchTicketingTicketQueryParamFields = {
   Url: "url",
   AttachmentIds: "attachment_ids",
   DueAt: "due_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchTicketingTicketQueryParamFields = ClosedEnum<

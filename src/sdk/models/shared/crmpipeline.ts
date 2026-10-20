@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  CrmMetadata,
+  CrmMetadata$inboundSchema,
+  CrmMetadata$Outbound,
+  CrmMetadata$outboundSchema,
+} from "./crmmetadata.js";
+import {
   CrmStage,
   CrmStage$inboundSchema,
   CrmStage$Outbound,
@@ -23,6 +29,7 @@ export type CrmPipeline = {
   displayOrder?: number | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<CrmMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   stages?: Array<CrmStage> | undefined;
@@ -44,6 +51,7 @@ export const CrmPipeline$inboundSchema: z.ZodType<
   display_order: z.number().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(CrmMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   stages: z.array(CrmStage$inboundSchema).optional(),
@@ -65,6 +73,7 @@ export type CrmPipeline$Outbound = {
   display_order?: number | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<CrmMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   stages?: Array<CrmStage$Outbound> | undefined;
@@ -82,6 +91,7 @@ export const CrmPipeline$outboundSchema: z.ZodType<
   displayOrder: z.number().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(CrmMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   stages: z.array(CrmStage$outboundSchema).optional(),

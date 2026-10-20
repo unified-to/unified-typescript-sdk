@@ -22,6 +22,12 @@ import {
   CalendarEventRecurrence$outboundSchema,
 } from "./calendareventrecurrence.js";
 import {
+  CalendarMetadata,
+  CalendarMetadata$inboundSchema,
+  CalendarMetadata$Outbound,
+  CalendarMetadata$outboundSchema,
+} from "./calendarmetadata.js";
+import {
   CalendarWebinarPanelist,
   CalendarWebinarPanelist$inboundSchema,
   CalendarWebinarPanelist$Outbound,
@@ -70,6 +76,7 @@ export type CalendarWebinar = {
   isEnabled?: boolean | undefined;
   isWebcast?: boolean | undefined;
   joinUrl?: string | undefined;
+  metadata?: Array<CalendarMetadata> | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarWebinarOrganizer | undefined;
   panelistPassword?: string | undefined;
@@ -136,6 +143,7 @@ export const CalendarWebinar$inboundSchema: z.ZodType<
   is_enabled: z.boolean().optional(),
   is_webcast: z.boolean().optional(),
   join_url: z.string().optional(),
+  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarWebinarOrganizer$inboundSchema.optional(),
   panelist_password: z.string().optional(),
@@ -200,6 +208,7 @@ export type CalendarWebinar$Outbound = {
   is_enabled?: boolean | undefined;
   is_webcast?: boolean | undefined;
   join_url?: string | undefined;
+  metadata?: Array<CalendarMetadata$Outbound> | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarWebinarOrganizer$Outbound | undefined;
   panelist_password?: string | undefined;
@@ -242,6 +251,7 @@ export const CalendarWebinar$outboundSchema: z.ZodType<
   isEnabled: z.boolean().optional(),
   isWebcast: z.boolean().optional(),
   joinUrl: z.string().optional(),
+  metadata: z.array(CalendarMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarWebinarOrganizer$outboundSchema.optional(),
   panelistPassword: z.string().optional(),

@@ -35,6 +35,7 @@ export const UpdateAccountingContactQueryParamFields = {
   BalanceAmount: "balance_amount",
   Website: "website",
   Notes: "notes",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateAccountingContactQueryParamFields = ClosedEnum<

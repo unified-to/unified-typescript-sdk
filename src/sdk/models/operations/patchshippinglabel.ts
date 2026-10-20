@@ -21,6 +21,7 @@ export const PatchShippingLabelQueryParamFields = {
   LabelCostCurrency: "label_cost_currency",
   RateId: "rate_id",
   ServiceCode: "service_code",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchShippingLabelQueryParamFields = ClosedEnum<

@@ -13,6 +13,12 @@ import {
   MessagingMember$Outbound,
   MessagingMember$outboundSchema,
 } from "./messagingmember.js";
+import {
+  MessagingMetadata,
+  MessagingMetadata$inboundSchema,
+  MessagingMetadata$Outbound,
+  MessagingMetadata$outboundSchema,
+} from "./messagingmetadata.js";
 
 export type MessagingChannel = {
   /**
@@ -25,6 +31,7 @@ export type MessagingChannel = {
   isActive?: boolean | undefined;
   isPrivate?: boolean | undefined;
   members?: Array<MessagingMember> | undefined;
+  metadata?: Array<MessagingMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -49,6 +56,7 @@ export const MessagingChannel$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_private: z.boolean().optional(),
   members: z.array(MessagingMember$inboundSchema).optional(),
+  metadata: z.array(MessagingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -75,6 +83,7 @@ export type MessagingChannel$Outbound = {
   is_active?: boolean | undefined;
   is_private?: boolean | undefined;
   members?: Array<MessagingMember$Outbound> | undefined;
+  metadata?: Array<MessagingMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -95,6 +104,7 @@ export const MessagingChannel$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isPrivate: z.boolean().optional(),
   members: z.array(MessagingMember$outboundSchema).optional(),
+  metadata: z.array(MessagingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

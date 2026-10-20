@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  RepoMetadata,
+  RepoMetadata$inboundSchema,
+  RepoMetadata$Outbound,
+  RepoMetadata$outboundSchema,
+} from "./repometadata.js";
 
 export type RepoRepository = {
   /**
@@ -16,6 +22,7 @@ export type RepoRepository = {
   description?: string | undefined;
   id?: string | undefined;
   isPrivate?: boolean | undefined;
+  metadata?: Array<RepoMetadata> | undefined;
   name: string;
   /**
    * (reference to RepoOrganization)
@@ -41,6 +48,7 @@ export const RepoRepository$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_private: z.boolean().optional(),
+  metadata: z.array(RepoMetadata$inboundSchema).optional(),
   name: z.string(),
   org_id: z.string().optional(),
   owner: z.string().optional(),
@@ -63,6 +71,7 @@ export type RepoRepository$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_private?: boolean | undefined;
+  metadata?: Array<RepoMetadata$Outbound> | undefined;
   name: string;
   org_id?: string | undefined;
   owner?: string | undefined;
@@ -81,6 +90,7 @@ export const RepoRepository$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isPrivate: z.boolean().optional(),
+  metadata: z.array(RepoMetadata$outboundSchema).optional(),
   name: z.string(),
   orgId: z.string().optional(),
   owner: z.string().optional(),

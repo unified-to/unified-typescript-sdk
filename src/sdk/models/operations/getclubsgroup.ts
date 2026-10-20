@@ -28,6 +28,7 @@ export const GetClubsGroupQueryParamFields = {
   ProfileImageUrl: "profile_image_url",
   CoverImageUrl: "cover_image_url",
   ActivityTypes: "activity_types",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetClubsGroupQueryParamFields = ClosedEnum<

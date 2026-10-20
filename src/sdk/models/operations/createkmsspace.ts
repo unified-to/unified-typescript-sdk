@@ -17,6 +17,7 @@ export const CreateKmsSpaceQueryParamFields = {
   IsActive: "is_active",
   UserId: "user_id",
   ParentPageId: "parent_page_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateKmsSpaceQueryParamFields = ClosedEnum<

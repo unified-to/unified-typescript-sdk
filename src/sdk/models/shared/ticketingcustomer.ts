@@ -14,6 +14,12 @@ import {
   TicketingEmail$outboundSchema,
 } from "./ticketingemail.js";
 import {
+  TicketingMetadata,
+  TicketingMetadata$inboundSchema,
+  TicketingMetadata$Outbound,
+  TicketingMetadata$outboundSchema,
+} from "./ticketingmetadata.js";
+import {
   TicketingTelephone,
   TicketingTelephone$inboundSchema,
   TicketingTelephone$Outbound,
@@ -27,6 +33,7 @@ export type TicketingCustomer = {
   createdAt?: Date | undefined;
   emails?: Array<TicketingEmail> | undefined;
   id?: string | undefined;
+  metadata?: Array<TicketingMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   tags?: Array<string> | undefined;
@@ -47,6 +54,7 @@ export const TicketingCustomer$inboundSchema: z.ZodType<
     .optional(),
   emails: z.array(TicketingEmail$inboundSchema).optional(),
   id: z.string().optional(),
+  metadata: z.array(TicketingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   tags: z.array(z.string()).optional(),
@@ -64,6 +72,7 @@ export type TicketingCustomer$Outbound = {
   created_at?: string | undefined;
   emails?: Array<TicketingEmail$Outbound> | undefined;
   id?: string | undefined;
+  metadata?: Array<TicketingMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   tags?: Array<string> | undefined;
@@ -80,6 +89,7 @@ export const TicketingCustomer$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   emails: z.array(TicketingEmail$outboundSchema).optional(),
   id: z.string().optional(),
+  metadata: z.array(TicketingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   tags: z.array(z.string()).optional(),

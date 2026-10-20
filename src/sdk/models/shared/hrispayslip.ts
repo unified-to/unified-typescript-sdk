@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { HrisMetadata, HrisMetadata$inboundSchema } from "./hrismetadata.js";
 import {
   HrisPayslipDetail,
   HrisPayslipDetail$inboundSchema,
@@ -84,6 +85,7 @@ export type HrisPayslip = {
    */
   hours?: number | undefined;
   id?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   netAmount?: number | undefined;
   /**
    * year-to-date net pay as of this payslip
@@ -152,6 +154,7 @@ export const HrisPayslip$inboundSchema: z.ZodType<
   group_id: z.string().optional(),
   hours: z.number().optional(),
   id: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   net_amount: z.number().optional(),
   net_ytd_amount: z.number().optional(),
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))

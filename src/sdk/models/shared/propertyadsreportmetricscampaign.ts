@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import {
   PropertyAdsReportMetricsCampaignFrequencyCap,
   PropertyAdsReportMetricsCampaignFrequencyCap$inboundSchema,
@@ -149,6 +150,7 @@ export type PropertyAdsReportMetricsCampaign = {
   id?: string | undefined;
   kpi?: PropertyAdsReportMetricsCampaignKpi | undefined;
   labels?: Array<string> | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
@@ -241,6 +243,7 @@ export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   id: z.string().optional(),
   kpi: PropertyAdsReportMetricsCampaignKpi$inboundSchema.optional(),
   labels: z.array(z.string()).optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   planned_spend_amount: z.number().optional(),

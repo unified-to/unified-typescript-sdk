@@ -11,5 +11,5 @@ let value: GetClubsLocationQueryParamFields = "longitude";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "group_id" | "name" | "address" | "latitude" | "longitude" | "telephone" | "url" | "raw"
+"id" | "created_at" | "updated_at" | "group_id" | "name" | "address" | "latitude" | "longitude" | "telephone" | "url" | "metadata" | "raw"
 ```

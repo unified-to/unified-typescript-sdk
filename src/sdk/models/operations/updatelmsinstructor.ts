@@ -18,6 +18,7 @@ export const UpdateLmsInstructorQueryParamFields = {
   Title: "title",
   Telephones: "telephones",
   ImageUrl: "image_url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateLmsInstructorQueryParamFields = ClosedEnum<

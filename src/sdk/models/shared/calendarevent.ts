@@ -34,6 +34,12 @@ import {
   CalendarEventRecurrence$outboundSchema,
 } from "./calendareventrecurrence.js";
 import {
+  CalendarMetadata,
+  CalendarMetadata$inboundSchema,
+  CalendarMetadata$Outbound,
+  CalendarMetadata$outboundSchema,
+} from "./calendarmetadata.js";
+import {
   PropertyCalendarEventOrganizer,
   PropertyCalendarEventOrganizer$inboundSchema,
   PropertyCalendarEventOrganizer$Outbound,
@@ -73,6 +79,7 @@ export type CalendarEvent = {
    * pointer to Legal Matter
    */
   matterId?: string | undefined;
+  metadata?: Array<CalendarMetadata> | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -128,6 +135,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   location: z.string().optional(),
   matter_id: z.string().optional(),
+  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
@@ -172,6 +180,7 @@ export type CalendarEvent$Outbound = {
   is_private?: boolean | undefined;
   location?: string | undefined;
   matter_id?: string | undefined;
+  metadata?: Array<CalendarMetadata$Outbound> | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -205,6 +214,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   isPrivate: z.boolean().optional(),
   location: z.string().optional(),
   matterId: z.string().optional(),
+  metadata: z.array(CalendarMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),

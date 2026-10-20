@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  StorageMetadata,
+  StorageMetadata$inboundSchema,
+  StorageMetadata$Outbound,
+  StorageMetadata$outboundSchema,
+} from "./storagemetadata.js";
+import {
   StoragePermission,
   StoragePermission$inboundSchema,
   StoragePermission$Outbound,
@@ -44,6 +50,7 @@ export type StorageFile = {
   downloadUrl?: string | undefined;
   hash?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<StorageMetadata> | undefined;
   mimeType?: string | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
@@ -94,6 +101,7 @@ export const StorageFile$inboundSchema: z.ZodType<
   download_url: z.string().optional(),
   hash: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(StorageMetadata$inboundSchema).optional(),
   mime_type: z.string().optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
@@ -127,6 +135,7 @@ export type StorageFile$Outbound = {
   download_url?: string | undefined;
   hash?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<StorageMetadata$Outbound> | undefined;
   mime_type?: string | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
@@ -154,6 +163,7 @@ export const StorageFile$outboundSchema: z.ZodType<
   downloadUrl: z.string().optional(),
   hash: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(StorageMetadata$outboundSchema).optional(),
   mimeType: z.string().optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),

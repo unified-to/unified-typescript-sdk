@@ -11,5 +11,5 @@ let value: ListHrisAttendancesQueryParamFields = "declared_tips_amount";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "employee_user_id" | "start_at" | "end_at" | "timeshift_id" | "location_id" | "company_id" | "group_id" | "timezone" | "address" | "hours" | "currency" | "status" | "breaks" | "declared_tips_amount" | "non_cash_tips_amount" | "job_name" | "hourly_rate" | "approver_user_id" | "approved_at" | "raw"
+"id" | "created_at" | "updated_at" | "employee_user_id" | "start_at" | "end_at" | "timeshift_id" | "location_id" | "company_id" | "group_id" | "timezone" | "address" | "hours" | "currency" | "status" | "breaks" | "declared_tips_amount" | "non_cash_tips_amount" | "job_name" | "hourly_rate" | "approver_user_id" | "approved_at" | "metadata" | "raw"
 ```

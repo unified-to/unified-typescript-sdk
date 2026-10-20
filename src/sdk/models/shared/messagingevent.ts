@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  MessagingMetadata,
+  MessagingMetadata$inboundSchema,
+  MessagingMetadata$Outbound,
+  MessagingMetadata$outboundSchema,
+} from "./messagingmetadata.js";
+import {
   PropertyMessagingEventButton,
   PropertyMessagingEventButton$inboundSchema,
   PropertyMessagingEventButton$Outbound,
@@ -64,6 +70,7 @@ export type MessagingEvent = {
   id?: string | undefined;
   isReplacingOriginal?: boolean | undefined;
   message?: PropertyMessagingEventMessage | undefined;
+  metadata?: Array<MessagingMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: MessagingEventType | undefined;
   user?: PropertyMessagingEventUser | undefined;
@@ -95,6 +102,7 @@ export const MessagingEvent$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_replacing_original: z.boolean().optional(),
   message: PropertyMessagingEventMessage$inboundSchema.optional(),
+  metadata: z.array(MessagingMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   type: MessagingEventType$inboundSchema.optional(),
   user: PropertyMessagingEventUser$inboundSchema.optional(),
@@ -112,6 +120,7 @@ export type MessagingEvent$Outbound = {
   id?: string | undefined;
   is_replacing_original?: boolean | undefined;
   message?: PropertyMessagingEventMessage$Outbound | undefined;
+  metadata?: Array<MessagingMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: string | undefined;
   user?: PropertyMessagingEventUser$Outbound | undefined;
@@ -129,6 +138,7 @@ export const MessagingEvent$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isReplacingOriginal: z.boolean().optional(),
   message: PropertyMessagingEventMessage$outboundSchema.optional(),
+  metadata: z.array(MessagingMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   type: MessagingEventType$outboundSchema.optional(),
   user: PropertyMessagingEventUser$outboundSchema.optional(),

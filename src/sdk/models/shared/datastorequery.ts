@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  DatastoreMetadata,
+  DatastoreMetadata$inboundSchema,
+  DatastoreMetadata$Outbound,
+  DatastoreMetadata$outboundSchema,
+} from "./datastoremetadata.js";
+import {
   PropertyDatastoreQueryQuery,
   PropertyDatastoreQueryQuery$inboundSchema,
   PropertyDatastoreQueryQuery$Outbound,
@@ -22,6 +28,7 @@ import {
 
 export type DatastoreQuery = {
   databaseId?: string | undefined;
+  metadata?: Array<DatastoreMetadata> | undefined;
   query?: PropertyDatastoreQueryQuery | undefined;
   raw?: { [k: string]: any } | undefined;
   response?: PropertyDatastoreQueryResponse | undefined;
@@ -35,6 +42,7 @@ export const DatastoreQuery$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   database_id: z.string().optional(),
+  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
   query: PropertyDatastoreQueryQuery$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
   response: PropertyDatastoreQueryResponse$inboundSchema.optional(),
@@ -48,6 +56,7 @@ export const DatastoreQuery$inboundSchema: z.ZodType<
 /** @internal */
 export type DatastoreQuery$Outbound = {
   database_id?: string | undefined;
+  metadata?: Array<DatastoreMetadata$Outbound> | undefined;
   query?: PropertyDatastoreQueryQuery$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
   response?: PropertyDatastoreQueryResponse$Outbound | undefined;
@@ -61,6 +70,7 @@ export const DatastoreQuery$outboundSchema: z.ZodType<
   DatastoreQuery
 > = z.object({
   databaseId: z.string().optional(),
+  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
   query: PropertyDatastoreQueryQuery$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),
   response: PropertyDatastoreQueryResponse$outboundSchema.optional(),

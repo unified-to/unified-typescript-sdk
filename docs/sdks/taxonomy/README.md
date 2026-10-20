@@ -28,20 +28,21 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.taxonomy.createHrisTaxonomy({
     hrisTaxonomy: {
-      createdAt: new Date("2022-06-23T02:10:00.789Z"),
-      description: "Apto demonstro audacia adstringo cursim tristis solio careo.",
-      domain: "Electronics",
-      id: "ede085db-5709-4d53-a490-746f3de5be17",
-      isActive: false,
-      name: "International Functionality Architect",
-      parentId: "6524b2a7-6520-4e15-8c4e-1aa6793db837",
-      roleIds: [
-        "2b1ef757-eb4c-4207-8af1-929afe49cd65",
+      alternativeNames: [
+        "Facilitator",
+        "National",
       ],
-      subcategory: "Bamboo",
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+      domain: "Health",
+      id: "850b63ec-634d-41eb-bab1-532ac5fb89a4",
+      isActive: false,
+      metadata: [],
+      name: "International Functionality Architect",
+      subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-28T20:26:54.504Z"),
-      url: "https://our-polarisation.name",
+      updatedAt: new Date("2023-05-29T01:08:42.082Z"),
+      url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
   });
@@ -71,20 +72,21 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await taxonomyCreateHrisTaxonomy(unifiedTo, {
     hrisTaxonomy: {
-      createdAt: new Date("2022-06-23T02:10:00.789Z"),
-      description: "Apto demonstro audacia adstringo cursim tristis solio careo.",
-      domain: "Electronics",
-      id: "ede085db-5709-4d53-a490-746f3de5be17",
-      isActive: false,
-      name: "International Functionality Architect",
-      parentId: "6524b2a7-6520-4e15-8c4e-1aa6793db837",
-      roleIds: [
-        "2b1ef757-eb4c-4207-8af1-929afe49cd65",
+      alternativeNames: [
+        "Facilitator",
+        "National",
       ],
-      subcategory: "Bamboo",
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+      domain: "Health",
+      id: "850b63ec-634d-41eb-bab1-532ac5fb89a4",
+      isActive: false,
+      metadata: [],
+      name: "International Functionality Architect",
+      subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-28T20:26:54.504Z"),
-      url: "https://our-polarisation.name",
+      updatedAt: new Date("2023-05-29T01:08:42.082Z"),
+      url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
   });

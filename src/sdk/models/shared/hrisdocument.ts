@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 /**
  * unified, normalized document type (OTHER when unmappable)
@@ -53,6 +59,7 @@ export type HrisDocument = {
   documentUrl?: string | undefined;
   filename?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * unified, normalized document type (OTHER when unmappable)
@@ -94,6 +101,7 @@ export const HrisDocument$inboundSchema: z.ZodType<
   document_url: z.string().optional(),
   filename: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   type: HrisDocumentType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -117,6 +125,7 @@ export type HrisDocument$Outbound = {
   document_url?: string | undefined;
   filename?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -135,6 +144,7 @@ export const HrisDocument$outboundSchema: z.ZodType<
   documentUrl: z.string().optional(),
   filename: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   type: HrisDocumentType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

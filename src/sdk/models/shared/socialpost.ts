@@ -27,6 +27,12 @@ import {
   SocialMedia$Outbound,
   SocialMedia$outboundSchema,
 } from "./socialmedia.js";
+import {
+  SocialMetadata,
+  SocialMetadata$inboundSchema,
+  SocialMetadata$Outbound,
+  SocialMetadata$outboundSchema,
+} from "./socialmetadata.js";
 
 /**
  * Publication status of the post
@@ -89,6 +95,7 @@ export type SocialPost = {
    * Media assets attached to the post
    */
   media?: Array<SocialMedia> | undefined;
+  metadata?: Array<SocialMetadata> | undefined;
   /**
    * Engagement metrics for the post
    */
@@ -170,6 +177,7 @@ export const SocialPost$inboundSchema: z.ZodType<
   id: z.string().optional(),
   language: z.string().optional(),
   media: z.array(SocialMedia$inboundSchema).optional(),
+  metadata: z.array(SocialMetadata$inboundSchema).optional(),
   metrics: PropertySocialPostMetrics$inboundSchema.optional(),
   parent_post_id: z.string().optional(),
   profile_id: z.string().optional(),
@@ -201,6 +209,7 @@ export type SocialPost$Outbound = {
   id?: string | undefined;
   language?: string | undefined;
   media?: Array<SocialMedia$Outbound> | undefined;
+  metadata?: Array<SocialMetadata$Outbound> | undefined;
   metrics?: PropertySocialPostMetrics$Outbound | undefined;
   parent_post_id?: string | undefined;
   profile_id?: string | undefined;
@@ -225,6 +234,7 @@ export const SocialPost$outboundSchema: z.ZodType<
   id: z.string().optional(),
   language: z.string().optional(),
   media: z.array(SocialMedia$outboundSchema).optional(),
+  metadata: z.array(SocialMetadata$outboundSchema).optional(),
   metrics: PropertySocialPostMetrics$outboundSchema.optional(),
   parentPostId: z.string().optional(),
   profileId: z.string().optional(),

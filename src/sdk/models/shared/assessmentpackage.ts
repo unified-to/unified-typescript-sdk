@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AssessmentMetadata,
+  AssessmentMetadata$inboundSchema,
+  AssessmentMetadata$Outbound,
+  AssessmentMetadata$outboundSchema,
+} from "./assessmentmetadata.js";
+import {
   AssessmentPackageRegion,
   AssessmentPackageRegion$inboundSchema,
   AssessmentPackageRegion$Outbound,
@@ -76,6 +82,7 @@ export type AssessmentPackage = {
    * Maximum possible score if this assessment returns a score
    */
   maxScore?: number | undefined;
+  metadata?: Array<AssessmentMetadata> | undefined;
   /**
    * Name of the assessment package
    */
@@ -135,6 +142,7 @@ export const AssessmentPackage$inboundSchema: z.ZodType<
   info_url: z.string().optional(),
   integration_types: z.array(z.string()).optional(),
   max_score: z.number().optional(),
+  metadata: z.array(AssessmentMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   needs_ip_address: z.boolean().optional(),
   parameters: z.array(AssessmentParameter$inboundSchema).optional(),
@@ -171,6 +179,7 @@ export type AssessmentPackage$Outbound = {
   info_url?: string | undefined;
   integration_types?: Array<string> | undefined;
   max_score?: number | undefined;
+  metadata?: Array<AssessmentMetadata$Outbound> | undefined;
   name?: string | undefined;
   needs_ip_address?: boolean | undefined;
   parameters?: Array<AssessmentParameter$Outbound> | undefined;
@@ -198,6 +207,7 @@ export const AssessmentPackage$outboundSchema: z.ZodType<
   infoUrl: z.string().optional(),
   integrationTypes: z.array(z.string()).optional(),
   maxScore: z.number().optional(),
+  metadata: z.array(AssessmentMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   needsIpAddress: z.boolean().optional(),
   parameters: z.array(AssessmentParameter$outboundSchema).optional(),

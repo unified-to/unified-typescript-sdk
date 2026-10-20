@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  MarketingMetadata,
+  MarketingMetadata$inboundSchema,
+  MarketingMetadata$Outbound,
+  MarketingMetadata$outboundSchema,
+} from "./marketingmetadata.js";
 
 /**
  * Campaign status
@@ -49,6 +55,7 @@ export type MarketingCampaign = {
    * Associated listaudience IDs
    */
   listIds?: Array<string> | undefined;
+  metadata?: Array<MarketingMetadata> | undefined;
   /**
    * Campaign nametitle
    */
@@ -112,6 +119,7 @@ export const MarketingCampaign$inboundSchema: z.ZodType<
   from_name: z.string().optional(),
   id: z.string().optional(),
   list_ids: z.array(z.string()).optional(),
+  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   preview_text: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -143,6 +151,7 @@ export type MarketingCampaign$Outbound = {
   from_name?: string | undefined;
   id?: string | undefined;
   list_ids?: Array<string> | undefined;
+  metadata?: Array<MarketingMetadata$Outbound> | undefined;
   name?: string | undefined;
   preview_text?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -165,6 +174,7 @@ export const MarketingCampaign$outboundSchema: z.ZodType<
   fromName: z.string().optional(),
   id: z.string().optional(),
   listIds: z.array(z.string()).optional(),
+  metadata: z.array(MarketingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   previewText: z.string().optional(),
   raw: z.record(z.any()).optional(),

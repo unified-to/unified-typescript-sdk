@@ -21,6 +21,7 @@ export const UpdateAtsInterviewQueryParamFields = {
   Location: "location",
   MeetingUrl: "meeting_url",
   ExternalEventXref: "external_event_xref",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateAtsInterviewQueryParamFields = ClosedEnum<

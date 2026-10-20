@@ -14,6 +14,7 @@ export const GetTicketingCustomerQueryParamFields = {
   Emails: "emails",
   Telephones: "telephones",
   Tags: "tags",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetTicketingCustomerQueryParamFields = ClosedEnum<

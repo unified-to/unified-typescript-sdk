@@ -11,5 +11,5 @@ let value: CreateShippingRateQueryParamFields = "to_address";
 ## Values
 
 ```typescript
-"shipment_id" | "currency" | "from_address" | "to_address" | "packages" | "ship_by_at" | "carrier_id" | "id" | "rates" | "raw"
+"shipment_id" | "currency" | "from_address" | "to_address" | "packages" | "ship_by_at" | "carrier_id" | "id" | "rates" | "metadata" | "raw"
 ```

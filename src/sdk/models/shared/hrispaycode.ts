@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { HrisMetadata, HrisMetadata$inboundSchema } from "./hrismetadata.js";
 
 /**
  * the normalized payslip-line type this code produces
@@ -91,6 +92,7 @@ export type HrisPaycode = {
   isActive?: boolean | undefined;
   isEmployer?: boolean | undefined;
   isPreTax?: boolean | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   type?: HrisPaycodeType | undefined;
@@ -130,6 +132,7 @@ export const HrisPaycode$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_employer: z.boolean().optional(),
   is_pre_tax: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   type: HrisPaycodeType$inboundSchema.optional(),

@@ -34,6 +34,7 @@ export const GetAccountingContactQueryParamFields = {
   BalanceAmount: "balance_amount",
   Website: "website",
   Notes: "notes",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAccountingContactQueryParamFields = ClosedEnum<

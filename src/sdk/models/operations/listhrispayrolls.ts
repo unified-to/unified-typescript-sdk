@@ -28,6 +28,7 @@ export const ListHrisPayrollsQueryParamFields = {
   TotalCostAmount: "total_cost_amount",
   UserIds: "user_ids",
   PayslipIds: "payslip_ids",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListHrisPayrollsQueryParamFields = ClosedEnum<

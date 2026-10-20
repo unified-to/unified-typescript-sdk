@@ -13,6 +13,12 @@ import {
   DatastoreFieldValue$Outbound,
   DatastoreFieldValue$outboundSchema,
 } from "./datastorefieldvalue.js";
+import {
+  DatastoreMetadata,
+  DatastoreMetadata$inboundSchema,
+  DatastoreMetadata$Outbound,
+  DatastoreMetadata$outboundSchema,
+} from "./datastoremetadata.js";
 
 export type DatastoreRecord = {
   /**
@@ -25,6 +31,7 @@ export type DatastoreRecord = {
   databaseId?: string | undefined;
   fields: { [k: string]: DatastoreFieldValue };
   id?: string | undefined;
+  metadata?: Array<DatastoreMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   rowNumber?: number | undefined;
   /**
@@ -48,6 +55,7 @@ export const DatastoreRecord$inboundSchema: z.ZodType<
   database_id: z.string().optional(),
   fields: z.record(DatastoreFieldValue$inboundSchema),
   id: z.string().optional(),
+  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   row_number: z.number().optional(),
   table_id: z.string().optional(),
@@ -68,6 +76,7 @@ export type DatastoreRecord$Outbound = {
   database_id?: string | undefined;
   fields: { [k: string]: DatastoreFieldValue$Outbound };
   id?: string | undefined;
+  metadata?: Array<DatastoreMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   row_number?: number | undefined;
   table_id?: string | undefined;
@@ -84,6 +93,7 @@ export const DatastoreRecord$outboundSchema: z.ZodType<
   databaseId: z.string().optional(),
   fields: z.record(DatastoreFieldValue$outboundSchema),
   id: z.string().optional(),
+  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   rowNumber: z.number().optional(),
   tableId: z.string().optional(),

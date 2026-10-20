@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CalendarMetadata,
+  CalendarMetadata$inboundSchema,
+  CalendarMetadata$Outbound,
+  CalendarMetadata$outboundSchema,
+} from "./calendarmetadata.js";
 
 export type CalendarLink = {
   /**
@@ -20,6 +26,7 @@ export type CalendarLink = {
   duration?: number | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<CalendarMetadata> | undefined;
   name?: string | undefined;
   priceAmount?: number | undefined;
   priceCurrency?: string | undefined;
@@ -42,6 +49,7 @@ export const CalendarLink$inboundSchema: z.ZodType<
   duration: z.number().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   price_amount: z.number().optional(),
   price_currency: z.string().optional(),
@@ -64,6 +72,7 @@ export type CalendarLink$Outbound = {
   duration?: number | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<CalendarMetadata$Outbound> | undefined;
   name?: string | undefined;
   price_amount?: number | undefined;
   price_currency?: string | undefined;
@@ -83,6 +92,7 @@ export const CalendarLink$outboundSchema: z.ZodType<
   duration: z.number().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(CalendarMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   priceAmount: z.number().optional(),
   priceCurrency: z.string().optional(),

@@ -5,11 +5,11 @@
 ```typescript
 import { ListTicketingCategoriesQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListTicketingCategoriesQueryParamFields = "parent_id";
+let value: ListTicketingCategoriesQueryParamFields = "metadata";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "is_active" | "parent_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "is_active" | "parent_id" | "metadata" | "raw"
 ```

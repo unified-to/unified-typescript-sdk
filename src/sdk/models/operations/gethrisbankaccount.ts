@@ -26,6 +26,7 @@ export const GetHrisBankaccountQueryParamFields = {
   SplitType: "split_type",
   SplitAmount: "split_amount",
   Priority: "priority",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetHrisBankaccountQueryParamFields = ClosedEnum<

@@ -19,6 +19,7 @@ export const CreateRepoCommitQueryParamFields = {
   LinesAdded: "lines_added",
   LinesDeleted: "lines_deleted",
   LinesChanged: "lines_changed",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateRepoCommitQueryParamFields = ClosedEnum<

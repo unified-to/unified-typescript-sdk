@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  UcMetadata,
+  UcMetadata$inboundSchema,
+  UcMetadata$Outbound,
+  UcMetadata$outboundSchema,
+} from "./ucmetadata.js";
 
 export type UcComment = {
   callId?: string | undefined;
@@ -16,6 +22,7 @@ export type UcComment = {
    */
   createdAt?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<UcMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -37,6 +44,7 @@ export const UcComment$inboundSchema: z.ZodType<
   content: z.string().optional(),
   created_at: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(UcMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().optional(),
   user_id: z.string().optional(),
@@ -54,6 +62,7 @@ export type UcComment$Outbound = {
   content?: string | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<UcMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -69,6 +78,7 @@ export const UcComment$outboundSchema: z.ZodType<
   content: z.string().optional(),
   createdAt: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(UcMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.string().optional(),
   userId: z.string().optional(),

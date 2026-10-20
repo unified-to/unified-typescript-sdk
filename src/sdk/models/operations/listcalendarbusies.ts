@@ -12,6 +12,7 @@ export const ListCalendarBusiesQueryParamFields = {
   EndAt: "end_at",
   Timezone: "timezone",
   Description: "description",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListCalendarBusiesQueryParamFields = ClosedEnum<

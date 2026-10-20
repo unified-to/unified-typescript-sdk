@@ -22,6 +22,7 @@ export const ListAccountingCashflowsQueryParamFields = {
   OperatingSections: "operating_sections",
   InvestingSections: "investing_sections",
   FinancingSections: "financing_sections",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAccountingCashflowsQueryParamFields = ClosedEnum<

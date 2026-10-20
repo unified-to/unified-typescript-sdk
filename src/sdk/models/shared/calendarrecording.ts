@@ -8,6 +8,10 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  CalendarMetadata,
+  CalendarMetadata$inboundSchema,
+} from "./calendarmetadata.js";
+import {
   CalendarRecordingMedia,
   CalendarRecordingMedia$inboundSchema,
 } from "./calendarrecordingmedia.js";
@@ -31,6 +35,7 @@ export type CalendarRecording = {
   expiresAt?: Date | undefined;
   id?: string | undefined;
   media?: Array<CalendarRecordingMedia> | undefined;
+  metadata?: Array<CalendarMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -58,6 +63,7 @@ export const CalendarRecording$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   media: z.array(CalendarRecordingMedia$inboundSchema).optional(),
+  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),

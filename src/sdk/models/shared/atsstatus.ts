@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AtsMetadata, AtsMetadata$inboundSchema } from "./atsmetadata.js";
 
 export const AtsStatusStatus = {
   New: "NEW",
@@ -35,6 +36,7 @@ export type AtsStatus = {
    * The ID of the job this status/stage belongs to, when the provider scopes statuses per job.
    */
   jobId?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   originalStatus?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   status?: AtsStatusStatus | undefined;
@@ -56,6 +58,7 @@ export const AtsStatus$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   job_id: z.string().optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   original_status: z.string().optional(),
   raw: z.record(z.any()).optional(),
   status: AtsStatusStatus$inboundSchema.optional(),

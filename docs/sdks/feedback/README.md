@@ -28,15 +28,16 @@ async function run() {
   const result = await unifiedTo.feedback.createPerformanceFeedback({
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "53cd6f13-428f-4809-a595-60f59e64add5",
+      id: "daae710f-3a6d-49f6-853d-116dc89b72d6",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
+      metadata: [],
       tags: [
         "well-to-do",
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-02T15:47:32.890Z"),
+      updatedAt: new Date("2025-09-03T06:38:20.723Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -68,15 +69,16 @@ async function run() {
   const res = await performanceCreatePerformanceFeedback(unifiedTo, {
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "53cd6f13-428f-4809-a595-60f59e64add5",
+      id: "daae710f-3a6d-49f6-853d-116dc89b72d6",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
+      metadata: [],
       tags: [
         "well-to-do",
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-02T15:47:32.890Z"),
+      updatedAt: new Date("2025-09-03T06:38:20.723Z"),
       userId: "<id>",
     },
     connectionId: "<id>",

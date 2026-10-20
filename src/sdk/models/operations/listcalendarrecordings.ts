@@ -16,6 +16,7 @@ export const ListCalendarRecordingsQueryParamFields = {
   EventId: "event_id",
   WebUrl: "web_url",
   Media: "media",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListCalendarRecordingsQueryParamFields = ClosedEnum<

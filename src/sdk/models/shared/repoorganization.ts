@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  RepoMetadata,
+  RepoMetadata$inboundSchema,
+  RepoMetadata$Outbound,
+  RepoMetadata$outboundSchema,
+} from "./repometadata.js";
 
 export type RepoOrganization = {
   avatarUrl?: string | undefined;
@@ -16,6 +22,7 @@ export type RepoOrganization = {
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<RepoMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -40,6 +47,7 @@ export const RepoOrganization$inboundSchema: z.ZodType<
     .optional(),
   description: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(RepoMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -61,6 +69,7 @@ export type RepoOrganization$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<RepoMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
@@ -78,6 +87,7 @@ export const RepoOrganization$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(RepoMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

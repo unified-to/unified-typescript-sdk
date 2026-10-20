@@ -21,6 +21,7 @@ export const ListAccountingAccountsQueryParamFields = {
   ParentId: "parent_id",
   Taxonomy: "taxonomy",
   OrganizationId: "organization_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAccountingAccountsQueryParamFields = ClosedEnum<

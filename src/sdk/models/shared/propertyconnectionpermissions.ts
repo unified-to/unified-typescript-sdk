@@ -200,6 +200,8 @@ export const PropertyConnectionPermissions = {
   GenaiOrganizationWrite: "genai_organization_write",
   GenaiSkillRead: "genai_skill_read",
   GenaiSkillWrite: "genai_skill_write",
+  GenaiMemoryRead: "genai_memory_read",
+  GenaiMemoryWrite: "genai_memory_write",
   MessagingMessageRead: "messaging_message_read",
   MessagingMessageWrite: "messaging_message_write",
   MessagingChannelRead: "messaging_channel_read",

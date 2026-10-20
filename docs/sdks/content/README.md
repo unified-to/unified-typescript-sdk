@@ -37,14 +37,8 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "8642346e-99a0-4046-9baf-58a827c37f50",
-      instructors: [
-        {
-          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
-          name: "Winston Ferry",
-        },
-      ],
+      id: "35aef03d-c088-46eb-bd39-c4c8e07344e0",
+      instructors: [],
       isActive: true,
       languages: [
         "despecto",
@@ -52,14 +46,14 @@ async function run() {
       ],
       localizations: [
         {
-          description: "Numquam.",
+          description: "Acervus.",
           language: "es",
-          name: "validus",
+          name: "talis",
         },
         {
-          description: "Callide.",
-          language: "fr",
-          name: "crux",
+          description: "Ratione.",
+          language: "es",
+          name: "sint",
         },
       ],
       media: [
@@ -100,10 +94,11 @@ async function run() {
           url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
         },
       ],
+      metadata: [],
       name: "ut",
-      providerName: "Berge LLC",
-      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
-      shortDescription: "Commemoro.",
+      providerName: "Bins LLC",
+      publishedAt: new Date("2022-09-02T21:15:04.034Z"),
+      shortDescription: "Caritas.",
       skills: [
         "trucido",
       ],
@@ -117,7 +112,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-03T12:01:13.570Z"),
+      updatedAt: new Date("2022-10-03T19:06:40.663Z"),
     },
     connectionId: "<id>",
   });
@@ -154,14 +149,8 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "8642346e-99a0-4046-9baf-58a827c37f50",
-      instructors: [
-        {
-          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
-          name: "Winston Ferry",
-        },
-      ],
+      id: "35aef03d-c088-46eb-bd39-c4c8e07344e0",
+      instructors: [],
       isActive: true,
       languages: [
         "despecto",
@@ -169,14 +158,14 @@ async function run() {
       ],
       localizations: [
         {
-          description: "Numquam.",
+          description: "Acervus.",
           language: "es",
-          name: "validus",
+          name: "talis",
         },
         {
-          description: "Callide.",
-          language: "fr",
-          name: "crux",
+          description: "Ratione.",
+          language: "es",
+          name: "sint",
         },
       ],
       media: [
@@ -217,10 +206,11 @@ async function run() {
           url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
         },
       ],
+      metadata: [],
       name: "ut",
-      providerName: "Berge LLC",
-      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
-      shortDescription: "Commemoro.",
+      providerName: "Bins LLC",
+      publishedAt: new Date("2022-09-02T21:15:04.034Z"),
+      shortDescription: "Caritas.",
       skills: [
         "trucido",
       ],
@@ -234,7 +224,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-03T12:01:13.570Z"),
+      updatedAt: new Date("2022-10-03T19:06:40.663Z"),
     },
     connectionId: "<id>",
   });
@@ -450,14 +440,8 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "d28bf7e9-a2a1-4b17-a3e5-e1d7c74fc34c",
-      instructors: [
-        {
-          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
-          name: "Winston Ferry",
-        },
-      ],
+      id: "7d82d051-c431-44dd-bda9-e36dec98b1b3",
+      instructors: [],
       isActive: true,
       languages: [
         "despecto",
@@ -465,14 +449,14 @@ async function run() {
       ],
       localizations: [
         {
-          description: "Numquam.",
+          description: "Acervus.",
           language: "es",
-          name: "validus",
+          name: "talis",
         },
         {
-          description: "Callide.",
-          language: "fr",
-          name: "crux",
+          description: "Ratione.",
+          language: "es",
+          name: "sint",
         },
       ],
       media: [
@@ -513,10 +497,11 @@ async function run() {
           url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
         },
       ],
+      metadata: [],
       name: "ut",
-      providerName: "Berge LLC",
-      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
-      shortDescription: "Commemoro.",
+      providerName: "Bins LLC",
+      publishedAt: new Date("2022-09-02T21:15:04.040Z"),
+      shortDescription: "Caritas.",
       skills: [
         "trucido",
       ],
@@ -530,7 +515,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-03T12:01:13.577Z"),
+      updatedAt: new Date("2022-10-03T19:06:40.670Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -568,14 +553,8 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "d28bf7e9-a2a1-4b17-a3e5-e1d7c74fc34c",
-      instructors: [
-        {
-          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
-          name: "Winston Ferry",
-        },
-      ],
+      id: "7d82d051-c431-44dd-bda9-e36dec98b1b3",
+      instructors: [],
       isActive: true,
       languages: [
         "despecto",
@@ -583,14 +562,14 @@ async function run() {
       ],
       localizations: [
         {
-          description: "Numquam.",
+          description: "Acervus.",
           language: "es",
-          name: "validus",
+          name: "talis",
         },
         {
-          description: "Callide.",
-          language: "fr",
-          name: "crux",
+          description: "Ratione.",
+          language: "es",
+          name: "sint",
         },
       ],
       media: [
@@ -631,10 +610,11 @@ async function run() {
           url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
         },
       ],
+      metadata: [],
       name: "ut",
-      providerName: "Berge LLC",
-      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
-      shortDescription: "Commemoro.",
+      providerName: "Bins LLC",
+      publishedAt: new Date("2022-09-02T21:15:04.040Z"),
+      shortDescription: "Caritas.",
       skills: [
         "trucido",
       ],
@@ -648,7 +628,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-03T12:01:13.577Z"),
+      updatedAt: new Date("2022-10-03T19:06:40.670Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -788,14 +768,8 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "d28bf7e9-a2a1-4b17-a3e5-e1d7c74fc34c",
-      instructors: [
-        {
-          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
-          name: "Winston Ferry",
-        },
-      ],
+      id: "7d82d051-c431-44dd-bda9-e36dec98b1b3",
+      instructors: [],
       isActive: true,
       languages: [
         "despecto",
@@ -803,14 +777,14 @@ async function run() {
       ],
       localizations: [
         {
-          description: "Numquam.",
+          description: "Acervus.",
           language: "es",
-          name: "validus",
+          name: "talis",
         },
         {
-          description: "Callide.",
-          language: "fr",
-          name: "crux",
+          description: "Ratione.",
+          language: "es",
+          name: "sint",
         },
       ],
       media: [
@@ -851,10 +825,11 @@ async function run() {
           url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
         },
       ],
+      metadata: [],
       name: "ut",
-      providerName: "Berge LLC",
-      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
-      shortDescription: "Commemoro.",
+      providerName: "Bins LLC",
+      publishedAt: new Date("2022-09-02T21:15:04.040Z"),
+      shortDescription: "Caritas.",
       skills: [
         "trucido",
       ],
@@ -868,7 +843,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-03T12:01:13.577Z"),
+      updatedAt: new Date("2022-10-03T19:06:40.670Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -906,14 +881,8 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      externalReference: "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-      id: "d28bf7e9-a2a1-4b17-a3e5-e1d7c74fc34c",
-      instructors: [
-        {
-          id: "91a23b20-a7a3-4323-9548-0897c09eb49e",
-          name: "Winston Ferry",
-        },
-      ],
+      id: "7d82d051-c431-44dd-bda9-e36dec98b1b3",
+      instructors: [],
       isActive: true,
       languages: [
         "despecto",
@@ -921,14 +890,14 @@ async function run() {
       ],
       localizations: [
         {
-          description: "Numquam.",
+          description: "Acervus.",
           language: "es",
-          name: "validus",
+          name: "talis",
         },
         {
-          description: "Callide.",
-          language: "fr",
-          name: "crux",
+          description: "Ratione.",
+          language: "es",
+          name: "sint",
         },
       ],
       media: [
@@ -969,10 +938,11 @@ async function run() {
           url: "https://loremflickr.com/3927/2086?lock=5199784913821481",
         },
       ],
+      metadata: [],
       name: "ut",
-      providerName: "Berge LLC",
-      publishedAt: new Date("2023-11-08T11:32:09.080Z"),
-      shortDescription: "Commemoro.",
+      providerName: "Bins LLC",
+      publishedAt: new Date("2022-09-02T21:15:04.040Z"),
+      shortDescription: "Caritas.",
       skills: [
         "trucido",
       ],
@@ -986,7 +956,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-03T12:01:13.577Z"),
+      updatedAt: new Date("2022-10-03T19:06:40.670Z"),
     },
     connectionId: "<id>",
     id: "<id>",

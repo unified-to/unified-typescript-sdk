@@ -11,5 +11,5 @@ let value: GetAtsApplicationstatusQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"id" | "job_id" | "status" | "original_status" | "description" | "raw"
+"id" | "job_id" | "status" | "original_status" | "description" | "metadata" | "raw"
 ```

@@ -15,6 +15,7 @@ export const PatchTicketingCustomerQueryParamFields = {
   Emails: "emails",
   Telephones: "telephones",
   Tags: "tags",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchTicketingCustomerQueryParamFields = ClosedEnum<

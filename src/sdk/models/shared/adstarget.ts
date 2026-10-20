@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 
 /**
  * Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant)
@@ -41,6 +42,7 @@ export type AdsTarget = {
   audienceCountMin?: number | undefined;
   id: string;
   isActive?: boolean | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -67,6 +69,7 @@ export const AdsTarget$inboundSchema: z.ZodType<
   audience_count_min: z.number().optional(),
   id: z.string(),
   is_active: z.boolean().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),

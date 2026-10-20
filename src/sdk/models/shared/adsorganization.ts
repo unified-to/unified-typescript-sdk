@@ -15,6 +15,12 @@ import {
   AdsManager$Outbound,
   AdsManager$outboundSchema,
 } from "./adsmanager.js";
+import {
+  AdsMetadata,
+  AdsMetadata$inboundSchema,
+  AdsMetadata$Outbound,
+  AdsMetadata$outboundSchema,
+} from "./adsmetadata.js";
 
 export const AdsOrganizationStatus = {
   Unspecified: "UNSPECIFIED",
@@ -43,6 +49,7 @@ export type AdsOrganization = {
    * Manager/agency chain, top-most manager first, closest manager last (SA360 manager/sub_manager)
    */
   managers?: Array<AdsManager> | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -79,6 +86,7 @@ export const AdsOrganization$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   managers: z.array(AdsManager$inboundSchema).optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -101,6 +109,7 @@ export type AdsOrganization$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   managers?: Array<AdsManager$Outbound> | undefined;
+  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -120,6 +129,7 @@ export const AdsOrganization$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   managers: z.array(AdsManager$outboundSchema).optional(),
+  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),

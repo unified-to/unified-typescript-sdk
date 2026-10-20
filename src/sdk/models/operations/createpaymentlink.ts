@@ -21,6 +21,7 @@ export const CreatePaymentLinkQueryParamFields = {
   Description: "description",
   IsChargeableNow: "is_chargeable_now",
   SuccessUrl: "success_url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreatePaymentLinkQueryParamFields = ClosedEnum<

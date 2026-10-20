@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 /**
  * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
@@ -120,6 +126,7 @@ export type HrisDeduction = {
    * annual maximum employee amount (always money)
    */
   maxAmount?: number | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   notes?: string | undefined;
   /**
    * the hris_paycode (deduction code) this deduction uses
@@ -227,6 +234,7 @@ export const HrisDeduction$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   max_amount: z.number().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   paycode_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -269,6 +277,7 @@ export type HrisDeduction$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   max_amount?: number | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   notes?: string | undefined;
   paycode_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -297,6 +306,7 @@ export const HrisDeduction$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   maxAmount: z.number().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   paycodeId: z.string().optional(),
   raw: z.record(z.any()).optional(),

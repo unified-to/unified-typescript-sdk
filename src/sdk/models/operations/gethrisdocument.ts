@@ -16,6 +16,7 @@ export const GetHrisDocumentQueryParamFields = {
   Type: "type",
   UserId: "user_id",
   CompanyId: "company_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetHrisDocumentQueryParamFields = ClosedEnum<

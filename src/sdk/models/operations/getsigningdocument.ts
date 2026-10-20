@@ -20,6 +20,7 @@ export const GetSigningDocumentQueryParamFields = {
   DownloadUrl: "download_url",
   CreatorId: "creator_id",
   Raw: "raw",
+  Metadata: "metadata",
 } as const;
 export type GetSigningDocumentQueryParamFields = ClosedEnum<
   typeof GetSigningDocumentQueryParamFields

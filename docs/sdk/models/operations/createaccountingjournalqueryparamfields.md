@@ -11,5 +11,5 @@ let value: CreateAccountingJournalQueryParamFields = "updated_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "reference" | "tax_amount" | "currency" | "lineitems" | "taxrate_id" | "description" | "posted_at" | "source" | "organization_id" | "category_ids" | "project_id" | "attachments" | "total_amount" | "exchange_rate" | "status" | "is_inclusive_of_tax" | "raw"
+"id" | "created_at" | "updated_at" | "reference" | "tax_amount" | "currency" | "lineitems" | "taxrate_id" | "description" | "posted_at" | "source" | "organization_id" | "category_ids" | "project_id" | "attachments" | "total_amount" | "exchange_rate" | "status" | "is_inclusive_of_tax" | "metadata" | "raw"
 ```

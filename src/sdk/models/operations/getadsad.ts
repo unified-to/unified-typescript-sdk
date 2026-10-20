@@ -29,6 +29,7 @@ export const GetAdsAdQueryParamFields = {
   Path2: "path2",
   Promoted: "promoted",
   LogoCreativeId: "logo_creative_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAdsAdQueryParamFields = ClosedEnum<

@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
+import {
   AccountingTransactionContact,
   AccountingTransactionContact$inboundSchema,
   AccountingTransactionContact$Outbound,
@@ -58,6 +64,7 @@ export type AccountingTransaction = {
   id?: string | undefined;
   lineitems?: Array<AccountingTransactionLineItem> | undefined;
   memo?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
   paymentMethod?: string | undefined;
   paymentTerms?: string | undefined;
@@ -125,6 +132,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingTransactionLineItem$inboundSchema).optional(),
   memo: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   organization_id: z.string().optional(),
   payment_method: z.string().optional(),
   payment_terms: z.string().optional(),
@@ -173,6 +181,7 @@ export type AccountingTransaction$Outbound = {
   id?: string | undefined;
   lineitems?: Array<AccountingTransactionLineItem$Outbound> | undefined;
   memo?: string | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   organization_id?: string | undefined;
   payment_method?: string | undefined;
   payment_terms?: string | undefined;
@@ -205,6 +214,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
   id: z.string().optional(),
   lineitems: z.array(AccountingTransactionLineItem$outboundSchema).optional(),
   memo: z.string().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   organizationId: z.string().optional(),
   paymentMethod: z.string().optional(),
   paymentTerms: z.string().optional(),

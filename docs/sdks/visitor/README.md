@@ -31,16 +31,15 @@ async function run() {
   const result = await unifiedTo.visitor.createAnalyticsVisitor({
     analyticsVisitor: {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
-      email: "Dallas_Mitchell@yahoo.com",
+      email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "b351144a-2e17-496e-ae35-34fd907dad78",
-      lastSeenAt: new Date("2021-12-12T14:47:09.642Z"),
+      id: "017c7a7a-6ee1-4e5d-ba12-a0c5c64cd75b",
+      lastSeenAt: new Date("2025-01-10T10:19:21.620Z"),
       metadata: {
         "segment": {},
       },
-      name: "Desiree O'Hara",
-      totalEvents: 3639,
-      updatedAt: new Date("2025-06-28T00:31:39.753Z"),
+      totalEvents: 2916,
+      updatedAt: new Date("2025-06-28T17:57:45.358Z"),
     },
     connectionId: "<id>",
   });
@@ -71,16 +70,15 @@ async function run() {
   const res = await analyticsCreateAnalyticsVisitor(unifiedTo, {
     analyticsVisitor: {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
-      email: "Dallas_Mitchell@yahoo.com",
+      email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "b351144a-2e17-496e-ae35-34fd907dad78",
-      lastSeenAt: new Date("2021-12-12T14:47:09.642Z"),
+      id: "017c7a7a-6ee1-4e5d-ba12-a0c5c64cd75b",
+      lastSeenAt: new Date("2025-01-10T10:19:21.620Z"),
       metadata: {
         "segment": {},
       },
-      name: "Desiree O'Hara",
-      totalEvents: 3639,
-      updatedAt: new Date("2025-06-28T00:31:39.753Z"),
+      totalEvents: 2916,
+      updatedAt: new Date("2025-06-28T17:57:45.358Z"),
     },
     connectionId: "<id>",
   });
@@ -290,16 +288,15 @@ async function run() {
   const result = await unifiedTo.visitor.patchAnalyticsVisitor({
     analyticsVisitor: {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
-      email: "Dallas_Mitchell@yahoo.com",
+      email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "c990bffa-b011-488c-abe2-4e4cfbf108f4",
-      lastSeenAt: new Date("2021-12-12T14:47:09.644Z"),
+      id: "1aa5ed2a-3c41-49e7-9e9d-043af363eecf",
+      lastSeenAt: new Date("2025-01-10T10:19:21.631Z"),
       metadata: {
         "segment": {},
       },
-      name: "Desiree O'Hara",
-      totalEvents: 3639,
-      updatedAt: new Date("2025-06-28T00:31:39.761Z"),
+      totalEvents: 2916,
+      updatedAt: new Date("2025-06-28T17:57:45.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -331,16 +328,15 @@ async function run() {
   const res = await analyticsPatchAnalyticsVisitor(unifiedTo, {
     analyticsVisitor: {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
-      email: "Dallas_Mitchell@yahoo.com",
+      email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "c990bffa-b011-488c-abe2-4e4cfbf108f4",
-      lastSeenAt: new Date("2021-12-12T14:47:09.644Z"),
+      id: "1aa5ed2a-3c41-49e7-9e9d-043af363eecf",
+      lastSeenAt: new Date("2025-01-10T10:19:21.631Z"),
       metadata: {
         "segment": {},
       },
-      name: "Desiree O'Hara",
-      totalEvents: 3639,
-      updatedAt: new Date("2025-06-28T00:31:39.761Z"),
+      totalEvents: 2916,
+      updatedAt: new Date("2025-06-28T17:57:45.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -474,16 +470,15 @@ async function run() {
   const result = await unifiedTo.visitor.updateAnalyticsVisitor({
     analyticsVisitor: {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
-      email: "Dallas_Mitchell@yahoo.com",
+      email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "c990bffa-b011-488c-abe2-4e4cfbf108f4",
-      lastSeenAt: new Date("2021-12-12T14:47:09.644Z"),
+      id: "1aa5ed2a-3c41-49e7-9e9d-043af363eecf",
+      lastSeenAt: new Date("2025-01-10T10:19:21.631Z"),
       metadata: {
         "segment": {},
       },
-      name: "Desiree O'Hara",
-      totalEvents: 3639,
-      updatedAt: new Date("2025-06-28T00:31:39.761Z"),
+      totalEvents: 2916,
+      updatedAt: new Date("2025-06-28T17:57:45.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -515,16 +510,15 @@ async function run() {
   const res = await analyticsUpdateAnalyticsVisitor(unifiedTo, {
     analyticsVisitor: {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
-      email: "Dallas_Mitchell@yahoo.com",
+      email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "c990bffa-b011-488c-abe2-4e4cfbf108f4",
-      lastSeenAt: new Date("2021-12-12T14:47:09.644Z"),
+      id: "1aa5ed2a-3c41-49e7-9e9d-043af363eecf",
+      lastSeenAt: new Date("2025-01-10T10:19:21.631Z"),
       metadata: {
         "segment": {},
       },
-      name: "Desiree O'Hara",
-      totalEvents: 3639,
-      updatedAt: new Date("2025-06-28T00:31:39.761Z"),
+      totalEvents: 2916,
+      updatedAt: new Date("2025-06-28T17:57:45.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",

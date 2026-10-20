@@ -11,5 +11,5 @@ let value: GetComputeEnvvarQueryParamFields = "name";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "service_id" | "name" | "value" | "environments" | "is_secret" | "raw"
+"id" | "created_at" | "updated_at" | "service_id" | "name" | "value" | "environments" | "is_secret" | "metadata" | "raw"
 ```

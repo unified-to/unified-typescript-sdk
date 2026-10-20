@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { ClubsMetadata, ClubsMetadata$inboundSchema } from "./clubsmetadata.js";
 
 /**
  * The activity type
@@ -151,6 +152,7 @@ export type ClubsActivity = {
    * The activity's max power output, in watts
    */
   maxWatts?: number | undefined;
+  metadata?: Array<ClubsMetadata> | undefined;
   /**
    * The activity's moving time, in seconds
    */
@@ -249,6 +251,7 @@ export const ClubsActivity$inboundSchema: z.ZodType<
   max_heartrate: z.number().optional(),
   max_speed: z.number().optional(),
   max_watts: z.number().optional(),
+  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
   moving_time: z.number().optional(),
   name: z.string().optional(),
   photo_count: z.number().optional(),

@@ -11,5 +11,5 @@ let value: ListRepoOrganizationsQueryParamFields = "user_ids";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "avatar_url" | "web_url" | "user_ids" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "avatar_url" | "web_url" | "user_ids" | "metadata" | "raw"
 ```

@@ -25,6 +25,7 @@ export const UpdateCommerceReservationQueryParamFields = {
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
   Url: "url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateCommerceReservationQueryParamFields = ClosedEnum<

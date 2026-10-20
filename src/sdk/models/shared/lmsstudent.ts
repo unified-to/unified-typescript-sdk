@@ -14,6 +14,12 @@ import {
   LmsEmail$outboundSchema,
 } from "./lmsemail.js";
 import {
+  LmsMetadata,
+  LmsMetadata$inboundSchema,
+  LmsMetadata$Outbound,
+  LmsMetadata$outboundSchema,
+} from "./lmsmetadata.js";
+import {
   LmsTelephone,
   LmsTelephone$inboundSchema,
   LmsTelephone$Outbound,
@@ -37,6 +43,7 @@ export type LmsStudent = {
   id?: string | undefined;
   imageUrl?: string | undefined;
   lastName?: string | undefined;
+  metadata?: Array<LmsMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<LmsTelephone> | undefined;
@@ -60,6 +67,7 @@ export const LmsStudent$inboundSchema: z.ZodType<
   id: z.string().optional(),
   image_url: z.string().optional(),
   last_name: z.string().optional(),
+  metadata: z.array(LmsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(LmsTelephone$inboundSchema).optional(),
@@ -83,6 +91,7 @@ export type LmsStudent$Outbound = {
   id?: string | undefined;
   image_url?: string | undefined;
   last_name?: string | undefined;
+  metadata?: Array<LmsMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<LmsTelephone$Outbound> | undefined;
@@ -102,6 +111,7 @@ export const LmsStudent$outboundSchema: z.ZodType<
   id: z.string().optional(),
   imageUrl: z.string().optional(),
   lastName: z.string().optional(),
+  metadata: z.array(LmsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(LmsTelephone$outboundSchema).optional(),

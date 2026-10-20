@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import { AdsPromoted, AdsPromoted$inboundSchema } from "./adspromoted.js";
 import {
   PropertyAdsReportMetricsGroupBidStrategy,
@@ -213,6 +214,7 @@ export type PropertyAdsReportMetricsGroup = {
    * Language + region, ISO 639-1 with region (e.g. en-US); LinkedIn locale
    */
   languageLocale?: string | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   /**
    * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
@@ -340,6 +342,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
   language_locale: z.string().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   optimization_goal: PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema
     .optional(),

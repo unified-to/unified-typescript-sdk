@@ -32,6 +32,7 @@ export const PatchCalendarEventQueryParamFields = {
   Attachments: "attachments",
   SendNotifications: "send_notifications",
   MatterId: "matter_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchCalendarEventQueryParamFields = ClosedEnum<

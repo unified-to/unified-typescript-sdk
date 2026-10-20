@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  SigningMetadata,
+  SigningMetadata$inboundSchema,
+  SigningMetadata$Outbound,
+  SigningMetadata$outboundSchema,
+} from "./signingmetadata.js";
 
 /**
  * Current status of the signing document
@@ -57,6 +63,7 @@ export type SigningDocument = {
    * Unique identifier for this signing document
    */
   id?: string | undefined;
+  metadata?: Array<SigningMetadata> | undefined;
   /**
    * Document/envelope title
    */
@@ -113,6 +120,7 @@ export const SigningDocument$inboundSchema: z.ZodType<
   expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(SigningMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -142,6 +150,7 @@ export type SigningDocument$Outbound = {
   download_url?: string | undefined;
   expires_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<SigningMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   sent_at?: string | undefined;
@@ -163,6 +172,7 @@ export const SigningDocument$outboundSchema: z.ZodType<
   downloadUrl: z.string().optional(),
   expiresAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(SigningMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   sentAt: z.date().transform(v => v.toISOString()).optional(),

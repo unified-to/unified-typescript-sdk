@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { ClubsMetadata, ClubsMetadata$inboundSchema } from "./clubsmetadata.js";
 
 /**
  * The event status
@@ -93,6 +94,7 @@ export type ClubsEvent = {
    * The name of the location for this event
    */
   locationName?: string | undefined;
+  metadata?: Array<ClubsMetadata> | undefined;
   /**
    * The event name (or a "Home vs Away" matchup label)
    */
@@ -178,6 +180,7 @@ export const ClubsEvent$inboundSchema: z.ZodType<
   is_home: z.boolean().optional(),
   location_id: z.string().optional(),
   location_name: z.string().optional(),
+  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   opponent_id: z.string().optional(),
   opponent_name: z.string().optional(),

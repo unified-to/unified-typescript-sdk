@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CdpMetadata,
+  CdpMetadata$inboundSchema,
+  CdpMetadata$Outbound,
+  CdpMetadata$outboundSchema,
+} from "./cdpmetadata.js";
 
 /**
  * DESTINATION, or BIDIRECTIONAL for import+export connectors
@@ -40,6 +46,7 @@ export type CdpDestination = {
    * Whether the destination is active/enabled
    */
   isEnabled?: boolean | undefined;
+  metadata?: Array<CdpMetadata> | undefined;
   /**
    * The name of the outbound activation destination
    */
@@ -86,6 +93,7 @@ export const CdpDestination$inboundSchema: z.ZodType<
   direction: Direction$inboundSchema.optional(),
   id: z.string().optional(),
   is_enabled: z.boolean().optional(),
+  metadata: z.array(CdpMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
@@ -105,6 +113,7 @@ export type CdpDestination$Outbound = {
   direction?: string | undefined;
   id?: string | undefined;
   is_enabled?: boolean | undefined;
+  metadata?: Array<CdpMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
@@ -122,6 +131,7 @@ export const CdpDestination$outboundSchema: z.ZodType<
   direction: Direction$outboundSchema.optional(),
   id: z.string().optional(),
   isEnabled: z.boolean().optional(),
+  metadata: z.array(CdpMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),

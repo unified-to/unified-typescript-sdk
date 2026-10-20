@@ -26,6 +26,12 @@ import {
   MessagingMember$outboundSchema,
 } from "./messagingmember.js";
 import {
+  MessagingMetadata,
+  MessagingMetadata$inboundSchema,
+  MessagingMetadata$Outbound,
+  MessagingMetadata$outboundSchema,
+} from "./messagingmetadata.js";
+import {
   MessagingReaction,
   MessagingReaction$inboundSchema,
   MessagingReaction$Outbound,
@@ -81,6 +87,7 @@ export type MessagingMessage = {
    * the opaque identifier for the first message in a thread
    */
   messageThreadIdentifier?: string | undefined;
+  metadata?: Array<MessagingMetadata> | undefined;
   /**
    * Represents the ID of the immediate predecessor message in the thread. Identifies a specific message to which the current message directly replies.
    */
@@ -121,6 +128,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   message_html: z.string().optional(),
   message_markdown: z.string().optional(),
   message_thread_identifier: z.string().optional(),
+  metadata: z.array(MessagingMetadata$inboundSchema).optional(),
   parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reactions: z.array(MessagingReaction$inboundSchema).optional(),
@@ -163,6 +171,7 @@ export type MessagingMessage$Outbound = {
   message_html?: string | undefined;
   message_markdown?: string | undefined;
   message_thread_identifier?: string | undefined;
+  metadata?: Array<MessagingMetadata$Outbound> | undefined;
   parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reactions?: Array<MessagingReaction$Outbound> | undefined;
@@ -193,6 +202,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   messageHtml: z.string().optional(),
   messageMarkdown: z.string().optional(),
   messageThreadIdentifier: z.string().optional(),
+  metadata: z.array(MessagingMetadata$outboundSchema).optional(),
   parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reactions: z.array(MessagingReaction$outboundSchema).optional(),

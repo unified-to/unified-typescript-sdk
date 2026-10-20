@@ -17,6 +17,7 @@ export const GetClubsLocationQueryParamFields = {
   Longitude: "longitude",
   Telephone: "telephone",
   Url: "url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetClubsLocationQueryParamFields = ClosedEnum<

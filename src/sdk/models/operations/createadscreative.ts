@@ -37,6 +37,7 @@ export const CreateAdsCreativeQueryParamFields = {
   Path2: "path2",
   Data: "data",
   Labels: "labels",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateAdsCreativeQueryParamFields = ClosedEnum<

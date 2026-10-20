@@ -8,6 +8,10 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+} from "./accountingmetadata.js";
+import {
   AccountingProfitlossSection,
   AccountingProfitlossSection$inboundSchema,
 } from "./accountingprofitlosssection.js";
@@ -30,6 +34,7 @@ export type AccountingProfitloss = {
   id?: string | undefined;
   incomeSections?: Array<AccountingProfitlossSection> | undefined;
   incomeTotalAmount?: number | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   netIncomeAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -66,6 +71,7 @@ export const AccountingProfitloss$inboundSchema: z.ZodType<
   income_sections: z.array(AccountingProfitlossSection$inboundSchema)
     .optional(),
   income_total_amount: z.number().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   net_income_amount: z.number().optional(),
   raw: z.record(z.any()).optional(),

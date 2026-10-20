@@ -40,6 +40,12 @@ import {
   PropertyShippingShipmentToAddress$outboundSchema,
 } from "./propertyshippingshipmenttoaddress.js";
 import {
+  ShippingMetadata,
+  ShippingMetadata$inboundSchema,
+  ShippingMetadata$Outbound,
+  ShippingMetadata$outboundSchema,
+} from "./shippingmetadata.js";
+import {
   ShippingPackage,
   ShippingPackage$inboundSchema,
   ShippingPackage$Outbound,
@@ -148,6 +154,7 @@ export type ShippingShipment = {
    * Item-level fulfillment lines (what shipped); used by commerce-platform fulfillments
    */
   lineitems?: Array<ShippingShipmentLineitem> | undefined;
+  metadata?: Array<ShippingMetadata> | undefined;
   /**
    * Reference to commerce_order or accounting_order
    */
@@ -301,6 +308,7 @@ export const ShippingShipment$inboundSchema: z.ZodType<
   is_signature_required: z.boolean().optional(),
   label_id: z.string().optional(),
   lineitems: z.array(ShippingShipmentLineitem$inboundSchema).optional(),
+  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
   order_id: z.string().optional(),
   organization_id: z.string().optional(),
   original_shipment_id: z.string().optional(),
@@ -385,6 +393,7 @@ export type ShippingShipment$Outbound = {
   is_signature_required?: boolean | undefined;
   label_id?: string | undefined;
   lineitems?: Array<ShippingShipmentLineitem$Outbound> | undefined;
+  metadata?: Array<ShippingMetadata$Outbound> | undefined;
   order_id?: string | undefined;
   organization_id?: string | undefined;
   original_shipment_id?: string | undefined;
@@ -433,6 +442,7 @@ export const ShippingShipment$outboundSchema: z.ZodType<
   isSignatureRequired: z.boolean().optional(),
   labelId: z.string().optional(),
   lineitems: z.array(ShippingShipmentLineitem$outboundSchema).optional(),
+  metadata: z.array(ShippingMetadata$outboundSchema).optional(),
   orderId: z.string().optional(),
   organizationId: z.string().optional(),
   originalShipmentId: z.string().optional(),

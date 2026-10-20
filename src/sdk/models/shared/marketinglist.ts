@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  MarketingMetadata,
+  MarketingMetadata$inboundSchema,
+  MarketingMetadata$Outbound,
+  MarketingMetadata$outboundSchema,
+} from "./marketingmetadata.js";
+import {
   PropertyMarketingListAddress,
   PropertyMarketingListAddress$inboundSchema,
   PropertyMarketingListAddress$Outbound,
@@ -34,6 +40,7 @@ export type MarketingList = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   language?: string | undefined;
+  metadata?: Array<MarketingMetadata> | undefined;
   /**
    * The list's name
    */
@@ -76,6 +83,7 @@ export const MarketingList$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   language: z.string().optional(),
+  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   sender_company: z.string().optional(),
@@ -111,6 +119,7 @@ export type MarketingList$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   language?: string | undefined;
+  metadata?: Array<MarketingMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   sender_company?: string | undefined;
@@ -136,6 +145,7 @@ export const MarketingList$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   language: z.string().optional(),
+  metadata: z.array(MarketingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   senderCompany: z.string().optional(),

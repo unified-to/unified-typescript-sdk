@@ -11,5 +11,5 @@ let value: CreateDatastoreQueryQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"table_id" | "database_id" | "query" | "response" | "raw"
+"table_id" | "database_id" | "query" | "response" | "metadata" | "raw"
 ```

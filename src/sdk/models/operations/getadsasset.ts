@@ -19,6 +19,7 @@ export const GetAdsAssetQueryParamFields = {
   Width: "width",
   Height: "height",
   FileSize: "file_size",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAdsAssetQueryParamFields = ClosedEnum<

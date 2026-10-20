@@ -13,6 +13,12 @@ import {
   PaymentLineitem$Outbound,
   PaymentLineitem$outboundSchema,
 } from "./paymentlineitem.js";
+import {
+  PaymentMetadata,
+  PaymentMetadata$inboundSchema,
+  PaymentMetadata$Outbound,
+  PaymentMetadata$outboundSchema,
+} from "./paymentmetadata.js";
 
 export type PaymentLink = {
   amount?: number | undefined;
@@ -30,6 +36,7 @@ export type PaymentLink = {
   isActive?: boolean | undefined;
   isChargeableNow?: boolean | undefined;
   lineitems?: Array<PaymentLineitem> | undefined;
+  metadata?: Array<PaymentMetadata> | undefined;
   /**
    * (reference to PaymentPayment)
    */
@@ -62,6 +69,7 @@ export const PaymentLink$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_chargeable_now: z.boolean().optional(),
   lineitems: z.array(PaymentLineitem$inboundSchema).optional(),
+  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
   payment_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   success_url: z.string().optional(),
@@ -90,6 +98,7 @@ export type PaymentLink$Outbound = {
   is_active?: boolean | undefined;
   is_chargeable_now?: boolean | undefined;
   lineitems?: Array<PaymentLineitem$Outbound> | undefined;
+  metadata?: Array<PaymentMetadata$Outbound> | undefined;
   payment_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   success_url?: string | undefined;
@@ -112,6 +121,7 @@ export const PaymentLink$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isChargeableNow: z.boolean().optional(),
   lineitems: z.array(PaymentLineitem$outboundSchema).optional(),
+  metadata: z.array(PaymentMetadata$outboundSchema).optional(),
   paymentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   successUrl: z.string().optional(),

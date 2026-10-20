@@ -10,6 +10,10 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  PaymentMetadata,
+  PaymentMetadata$inboundSchema,
+} from "./paymentmetadata.js";
+import {
   PaymentPayoutLineitem,
   PaymentPayoutLineitem$inboundSchema,
 } from "./paymentpayoutlineitem.js";
@@ -45,6 +49,7 @@ export type PaymentPayout = {
    * The transactions included in this payout
    */
   lineitems?: Array<PaymentPayoutLineitem> | undefined;
+  metadata?: Array<PaymentMetadata> | undefined;
   /**
    * total_amount minus fee_amount
    */
@@ -80,6 +85,7 @@ export const PaymentPayout$inboundSchema: z.ZodType<
   fee_amount: z.number().optional(),
   id: z.string().optional(),
   lineitems: z.array(PaymentPayoutLineitem$inboundSchema).optional(),
+  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
   net_amount: z.number().optional(),
   notes: z.string().optional(),
   raw: z.record(z.any()).optional(),

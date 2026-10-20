@@ -7,6 +7,10 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+} from "./commercemetadata.js";
 
 export type CommerceAvailability = {
   /**
@@ -21,6 +25,7 @@ export type CommerceAvailability = {
    * (reference to CommerceLocation)
    */
   locationId?: string | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   size?: number | undefined;
   /**
@@ -43,6 +48,7 @@ export const CommerceAvailability$inboundSchema: z.ZodType<
     .optional(),
   item_id: z.string().optional(),
   location_id: z.string().optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   size: z.number().optional(),
   staff_user_id: z.string().optional(),

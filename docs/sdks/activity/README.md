@@ -38,43 +38,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.activity.createAtsActivity({
     atsActivity: {
-      bcc: [
-        {
-          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
-          name: "Rochelle Franey-Bechtelar",
-          type: "HOME",
-        },
-      ],
-      cc: [
-        {
-          email: "Sasha24@hotmail.com",
-          name: "Dr. Elbert Kuvalis",
-          type: "HOME",
-        },
-        {
-          email: "Rosetta_Donnelly@gmail.com",
-          name: "Ramon Daniel",
-          type: "OTHER",
-        },
-        {
-          email: "Kathryne_Jast@yahoo.com",
-          name: "Christian Jacobson",
-          type: "OTHER",
-        },
-        {
-          email: "Eldred95@yahoo.com",
-          name: "Edna Bogan",
-          type: "OTHER",
-        },
-      ],
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
-      description: "Amplus.",
-      from: {
-        email: "Norwood.Wiza47@yahoo.com",
-        name: "Toby Grant",
-        type: "OTHER",
-      },
-      id: "1c40002f-bb95-41f7-b30f-f7a0b9e09814",
+      description: "Sapiente.",
+      id: "e1db9a02-ef94-4862-8d19-e2a4397a6a2e",
       isPrivate: false,
       metadata: [
         {
@@ -82,33 +48,16 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "fafd0700-c02b-4308-a204-0751cd3cb516",
+          id: "dd7e1f14-c74b-4f58-b191-a9fc72989819",
           namespace: "activity",
-          slug: "acer",
-          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
-        },
-        {
-          extraData: {
-
-          },
-          format: "TEXT",
-          id: "b6f6171b-b0f7-427a-b02f-908610867b87",
-          namespace: "activity",
-          slug: "tremo",
-          value: "Amita delectus dicta temptatio utroque ex.",
+          slug: "cimentarius",
+          value: "Reprehenderit verto.",
         },
       ],
       subType: "TASK",
-      title: "Senior Interactions Manager",
-      to: [
-        {
-          email: "Sister91@hotmail.com",
-          name: "Eddie Nienow PhD",
-          type: "WORK",
-        },
-      ],
+      title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-02T10:17:42.083Z"),
+      updatedAt: new Date("2026-04-03T05:16:50.040Z"),
     },
     connectionId: "<id>",
   });
@@ -138,43 +87,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await atsCreateAtsActivity(unifiedTo, {
     atsActivity: {
-      bcc: [
-        {
-          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
-          name: "Rochelle Franey-Bechtelar",
-          type: "HOME",
-        },
-      ],
-      cc: [
-        {
-          email: "Sasha24@hotmail.com",
-          name: "Dr. Elbert Kuvalis",
-          type: "HOME",
-        },
-        {
-          email: "Rosetta_Donnelly@gmail.com",
-          name: "Ramon Daniel",
-          type: "OTHER",
-        },
-        {
-          email: "Kathryne_Jast@yahoo.com",
-          name: "Christian Jacobson",
-          type: "OTHER",
-        },
-        {
-          email: "Eldred95@yahoo.com",
-          name: "Edna Bogan",
-          type: "OTHER",
-        },
-      ],
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
-      description: "Amplus.",
-      from: {
-        email: "Norwood.Wiza47@yahoo.com",
-        name: "Toby Grant",
-        type: "OTHER",
-      },
-      id: "1c40002f-bb95-41f7-b30f-f7a0b9e09814",
+      description: "Sapiente.",
+      id: "e1db9a02-ef94-4862-8d19-e2a4397a6a2e",
       isPrivate: false,
       metadata: [
         {
@@ -182,33 +97,16 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "fafd0700-c02b-4308-a204-0751cd3cb516",
+          id: "dd7e1f14-c74b-4f58-b191-a9fc72989819",
           namespace: "activity",
-          slug: "acer",
-          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
-        },
-        {
-          extraData: {
-  
-          },
-          format: "TEXT",
-          id: "b6f6171b-b0f7-427a-b02f-908610867b87",
-          namespace: "activity",
-          slug: "tremo",
-          value: "Amita delectus dicta temptatio utroque ex.",
+          slug: "cimentarius",
+          value: "Reprehenderit verto.",
         },
       ],
       subType: "TASK",
-      title: "Senior Interactions Manager",
-      to: [
-        {
-          email: "Sister91@hotmail.com",
-          name: "Eddie Nienow PhD",
-          type: "WORK",
-        },
-      ],
+      title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-02T10:17:42.083Z"),
+      updatedAt: new Date("2026-04-03T05:16:50.040Z"),
     },
     connectionId: "<id>",
   });
@@ -262,14 +160,15 @@ async function run() {
   const result = await unifiedTo.activity.createLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2025-04-27T14:05:32.830Z"),
+      completedAt: new Date("2023-12-05T08:28:26.998Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "df20215a-0a68-4763-9a24-09141b27c31f",
+      id: "4a011a17-50ff-4bc8-839b-23a7ab272d70",
       isCompleted: true,
+      metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2023-12-24T04:54:05.825Z"),
-      updatedAt: new Date("2022-01-30T12:45:11.907Z"),
+      startedAt: new Date("2021-04-25T01:52:03.845Z"),
+      updatedAt: new Date("2022-01-30T17:26:08.393Z"),
     },
     connectionId: "<id>",
   });
@@ -300,14 +199,15 @@ async function run() {
   const res = await activityCreateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2025-04-27T14:05:32.830Z"),
+      completedAt: new Date("2023-12-05T08:28:26.998Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "df20215a-0a68-4763-9a24-09141b27c31f",
+      id: "4a011a17-50ff-4bc8-839b-23a7ab272d70",
       isCompleted: true,
+      metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2023-12-24T04:54:05.825Z"),
-      updatedAt: new Date("2022-01-30T12:45:11.907Z"),
+      startedAt: new Date("2021-04-25T01:52:03.845Z"),
+      updatedAt: new Date("2022-01-30T17:26:08.393Z"),
     },
     connectionId: "<id>",
   });
@@ -828,43 +728,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.activity.patchAtsActivity({
     atsActivity: {
-      bcc: [
-        {
-          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
-          name: "Rochelle Franey-Bechtelar",
-          type: "HOME",
-        },
-      ],
-      cc: [
-        {
-          email: "Sasha24@hotmail.com",
-          name: "Dr. Elbert Kuvalis",
-          type: "HOME",
-        },
-        {
-          email: "Rosetta_Donnelly@gmail.com",
-          name: "Ramon Daniel",
-          type: "OTHER",
-        },
-        {
-          email: "Kathryne_Jast@yahoo.com",
-          name: "Christian Jacobson",
-          type: "OTHER",
-        },
-        {
-          email: "Eldred95@yahoo.com",
-          name: "Edna Bogan",
-          type: "OTHER",
-        },
-      ],
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
-      description: "Amplus.",
-      from: {
-        email: "Norwood.Wiza47@yahoo.com",
-        name: "Toby Grant",
-        type: "OTHER",
-      },
-      id: "66f8ac20-132c-471c-be77-5c53ae0043a0",
+      description: "Sapiente.",
+      id: "c64a3b91-bcc4-4d53-8c9a-2cb976fa7c45",
       isPrivate: false,
       metadata: [
         {
@@ -872,33 +738,16 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "33766884-8b18-4954-97a0-df1ab4e74cd6",
+          id: "b3b7e8d4-59b0-4141-85ec-25de202661e0",
           namespace: "activity",
-          slug: "acer",
-          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
-        },
-        {
-          extraData: {
-
-          },
-          format: "TEXT",
-          id: "788a05b8-5bc8-4a7e-958d-23ad8ba7a871",
-          namespace: "activity",
-          slug: "tremo",
-          value: "Amita delectus dicta temptatio utroque ex.",
+          slug: "cimentarius",
+          value: "Reprehenderit verto.",
         },
       ],
       subType: "TASK",
-      title: "Senior Interactions Manager",
-      to: [
-        {
-          email: "Sister91@hotmail.com",
-          name: "Eddie Nienow PhD",
-          type: "WORK",
-        },
-      ],
+      title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-02T10:17:42.103Z"),
+      updatedAt: new Date("2026-04-03T05:16:50.068Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -929,43 +778,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await atsPatchAtsActivity(unifiedTo, {
     atsActivity: {
-      bcc: [
-        {
-          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
-          name: "Rochelle Franey-Bechtelar",
-          type: "HOME",
-        },
-      ],
-      cc: [
-        {
-          email: "Sasha24@hotmail.com",
-          name: "Dr. Elbert Kuvalis",
-          type: "HOME",
-        },
-        {
-          email: "Rosetta_Donnelly@gmail.com",
-          name: "Ramon Daniel",
-          type: "OTHER",
-        },
-        {
-          email: "Kathryne_Jast@yahoo.com",
-          name: "Christian Jacobson",
-          type: "OTHER",
-        },
-        {
-          email: "Eldred95@yahoo.com",
-          name: "Edna Bogan",
-          type: "OTHER",
-        },
-      ],
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
-      description: "Amplus.",
-      from: {
-        email: "Norwood.Wiza47@yahoo.com",
-        name: "Toby Grant",
-        type: "OTHER",
-      },
-      id: "66f8ac20-132c-471c-be77-5c53ae0043a0",
+      description: "Sapiente.",
+      id: "c64a3b91-bcc4-4d53-8c9a-2cb976fa7c45",
       isPrivate: false,
       metadata: [
         {
@@ -973,33 +788,16 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "33766884-8b18-4954-97a0-df1ab4e74cd6",
+          id: "b3b7e8d4-59b0-4141-85ec-25de202661e0",
           namespace: "activity",
-          slug: "acer",
-          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
-        },
-        {
-          extraData: {
-  
-          },
-          format: "TEXT",
-          id: "788a05b8-5bc8-4a7e-958d-23ad8ba7a871",
-          namespace: "activity",
-          slug: "tremo",
-          value: "Amita delectus dicta temptatio utroque ex.",
+          slug: "cimentarius",
+          value: "Reprehenderit verto.",
         },
       ],
       subType: "TASK",
-      title: "Senior Interactions Manager",
-      to: [
-        {
-          email: "Sister91@hotmail.com",
-          name: "Eddie Nienow PhD",
-          type: "WORK",
-        },
-      ],
+      title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-02T10:17:42.103Z"),
+      updatedAt: new Date("2026-04-03T05:16:50.068Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1054,14 +852,15 @@ async function run() {
   const result = await unifiedTo.activity.patchLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2025-04-27T14:05:32.833Z"),
+      completedAt: new Date("2023-12-05T08:28:27.006Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "6029f60b-9038-4698-a935-249fbde456fd",
+      id: "a77e52b9-23d7-4ff8-9732-9a57f09786e8",
       isCompleted: true,
+      metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2023-12-24T04:54:05.825Z"),
-      updatedAt: new Date("2022-01-30T12:45:11.909Z"),
+      startedAt: new Date("2021-04-25T01:52:03.847Z"),
+      updatedAt: new Date("2022-01-30T17:26:08.396Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1093,14 +892,15 @@ async function run() {
   const res = await activityPatchLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2025-04-27T14:05:32.833Z"),
+      completedAt: new Date("2023-12-05T08:28:27.006Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "6029f60b-9038-4698-a935-249fbde456fd",
+      id: "a77e52b9-23d7-4ff8-9732-9a57f09786e8",
       isCompleted: true,
+      metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2023-12-24T04:54:05.825Z"),
-      updatedAt: new Date("2022-01-30T12:45:11.909Z"),
+      startedAt: new Date("2021-04-25T01:52:03.847Z"),
+      updatedAt: new Date("2022-01-30T17:26:08.396Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1312,43 +1112,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.activity.updateAtsActivity({
     atsActivity: {
-      bcc: [
-        {
-          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
-          name: "Rochelle Franey-Bechtelar",
-          type: "HOME",
-        },
-      ],
-      cc: [
-        {
-          email: "Sasha24@hotmail.com",
-          name: "Dr. Elbert Kuvalis",
-          type: "HOME",
-        },
-        {
-          email: "Rosetta_Donnelly@gmail.com",
-          name: "Ramon Daniel",
-          type: "OTHER",
-        },
-        {
-          email: "Kathryne_Jast@yahoo.com",
-          name: "Christian Jacobson",
-          type: "OTHER",
-        },
-        {
-          email: "Eldred95@yahoo.com",
-          name: "Edna Bogan",
-          type: "OTHER",
-        },
-      ],
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
-      description: "Amplus.",
-      from: {
-        email: "Norwood.Wiza47@yahoo.com",
-        name: "Toby Grant",
-        type: "OTHER",
-      },
-      id: "66f8ac20-132c-471c-be77-5c53ae0043a0",
+      description: "Sapiente.",
+      id: "c64a3b91-bcc4-4d53-8c9a-2cb976fa7c45",
       isPrivate: false,
       metadata: [
         {
@@ -1356,33 +1122,16 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "33766884-8b18-4954-97a0-df1ab4e74cd6",
+          id: "b3b7e8d4-59b0-4141-85ec-25de202661e0",
           namespace: "activity",
-          slug: "acer",
-          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
-        },
-        {
-          extraData: {
-
-          },
-          format: "TEXT",
-          id: "788a05b8-5bc8-4a7e-958d-23ad8ba7a871",
-          namespace: "activity",
-          slug: "tremo",
-          value: "Amita delectus dicta temptatio utroque ex.",
+          slug: "cimentarius",
+          value: "Reprehenderit verto.",
         },
       ],
       subType: "TASK",
-      title: "Senior Interactions Manager",
-      to: [
-        {
-          email: "Sister91@hotmail.com",
-          name: "Eddie Nienow PhD",
-          type: "WORK",
-        },
-      ],
+      title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-02T10:17:42.103Z"),
+      updatedAt: new Date("2026-04-03T05:16:50.068Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1413,43 +1162,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await atsUpdateAtsActivity(unifiedTo, {
     atsActivity: {
-      bcc: [
-        {
-          email: "Mabel_Schuppe-Schowalter42@hotmail.com",
-          name: "Rochelle Franey-Bechtelar",
-          type: "HOME",
-        },
-      ],
-      cc: [
-        {
-          email: "Sasha24@hotmail.com",
-          name: "Dr. Elbert Kuvalis",
-          type: "HOME",
-        },
-        {
-          email: "Rosetta_Donnelly@gmail.com",
-          name: "Ramon Daniel",
-          type: "OTHER",
-        },
-        {
-          email: "Kathryne_Jast@yahoo.com",
-          name: "Christian Jacobson",
-          type: "OTHER",
-        },
-        {
-          email: "Eldred95@yahoo.com",
-          name: "Edna Bogan",
-          type: "OTHER",
-        },
-      ],
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
-      description: "Amplus.",
-      from: {
-        email: "Norwood.Wiza47@yahoo.com",
-        name: "Toby Grant",
-        type: "OTHER",
-      },
-      id: "66f8ac20-132c-471c-be77-5c53ae0043a0",
+      description: "Sapiente.",
+      id: "c64a3b91-bcc4-4d53-8c9a-2cb976fa7c45",
       isPrivate: false,
       metadata: [
         {
@@ -1457,33 +1172,16 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "33766884-8b18-4954-97a0-df1ab4e74cd6",
+          id: "b3b7e8d4-59b0-4141-85ec-25de202661e0",
           namespace: "activity",
-          slug: "acer",
-          value: "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.",
-        },
-        {
-          extraData: {
-  
-          },
-          format: "TEXT",
-          id: "788a05b8-5bc8-4a7e-958d-23ad8ba7a871",
-          namespace: "activity",
-          slug: "tremo",
-          value: "Amita delectus dicta temptatio utroque ex.",
+          slug: "cimentarius",
+          value: "Reprehenderit verto.",
         },
       ],
       subType: "TASK",
-      title: "Senior Interactions Manager",
-      to: [
-        {
-          email: "Sister91@hotmail.com",
-          name: "Eddie Nienow PhD",
-          type: "WORK",
-        },
-      ],
+      title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-02T10:17:42.103Z"),
+      updatedAt: new Date("2026-04-03T05:16:50.068Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1538,14 +1236,15 @@ async function run() {
   const result = await unifiedTo.activity.updateLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2025-04-27T14:05:32.833Z"),
+      completedAt: new Date("2023-12-05T08:28:27.006Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "6029f60b-9038-4698-a935-249fbde456fd",
+      id: "a77e52b9-23d7-4ff8-9732-9a57f09786e8",
       isCompleted: true,
+      metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2023-12-24T04:54:05.825Z"),
-      updatedAt: new Date("2022-01-30T12:45:11.909Z"),
+      startedAt: new Date("2021-04-25T01:52:03.847Z"),
+      updatedAt: new Date("2022-01-30T17:26:08.396Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1577,14 +1276,15 @@ async function run() {
   const res = await activityUpdateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2025-04-27T14:05:32.833Z"),
+      completedAt: new Date("2023-12-05T08:28:27.006Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "6029f60b-9038-4698-a935-249fbde456fd",
+      id: "a77e52b9-23d7-4ff8-9732-9a57f09786e8",
       isCompleted: true,
+      metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2023-12-24T04:54:05.825Z"),
-      updatedAt: new Date("2022-01-30T12:45:11.909Z"),
+      startedAt: new Date("2021-04-25T01:52:03.847Z"),
+      updatedAt: new Date("2022-01-30T17:26:08.396Z"),
     },
     connectionId: "<id>",
     id: "<id>",

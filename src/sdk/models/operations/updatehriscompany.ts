@@ -14,6 +14,7 @@ export const UpdateHrisCompanyQueryParamFields = {
   Name: "name",
   LegalName: "legal_name",
   Address: "address",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateHrisCompanyQueryParamFields = ClosedEnum<

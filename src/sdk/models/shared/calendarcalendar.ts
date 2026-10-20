@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CalendarMetadata,
+  CalendarMetadata$inboundSchema,
+  CalendarMetadata$Outbound,
+  CalendarMetadata$outboundSchema,
+} from "./calendarmetadata.js";
 
 export type CalendarCalendar = {
   /**
@@ -16,6 +22,7 @@ export type CalendarCalendar = {
   description?: string | undefined;
   id?: string | undefined;
   isPrimary?: boolean | undefined;
+  metadata?: Array<CalendarMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
@@ -36,6 +43,7 @@ export const CalendarCalendar$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_primary: z.boolean().optional(),
+  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),
@@ -54,6 +62,7 @@ export type CalendarCalendar$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_primary?: boolean | undefined;
+  metadata?: Array<CalendarMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
@@ -70,6 +79,7 @@ export const CalendarCalendar$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isPrimary: z.boolean().optional(),
+  metadata: z.array(CalendarMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),

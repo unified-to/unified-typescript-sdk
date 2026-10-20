@@ -11,6 +11,10 @@ import {
   AccountingAgedPeriod,
   AccountingAgedPeriod$inboundSchema,
 } from "./accountingagedperiod.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+} from "./accountingmetadata.js";
 
 export type AccountingAgedreceivable = {
   /**
@@ -29,6 +33,7 @@ export type AccountingAgedreceivable = {
    * synthetic, one row per currency / date window
    */
   id?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
   periods?: Array<AccountingAgedPeriod> | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -63,6 +68,7 @@ export const AccountingAgedreceivable$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   organization_id: z.string().optional(),
   periods: z.array(AccountingAgedPeriod$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),

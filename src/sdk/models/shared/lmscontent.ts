@@ -20,6 +20,12 @@ import {
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
 import {
+  LmsMetadata,
+  LmsMetadata$inboundSchema,
+  LmsMetadata$Outbound,
+  LmsMetadata$outboundSchema,
+} from "./lmsmetadata.js";
+import {
   LmsReference,
   LmsReference$inboundSchema,
   LmsReference$Outbound,
@@ -53,6 +59,7 @@ export type LmsContent = {
   languages?: Array<string> | undefined;
   localizations?: Array<LmsContentLocalization> | undefined;
   media?: Array<LmsMedia> | undefined;
+  metadata?: Array<LmsMetadata> | undefined;
   name?: string | undefined;
   providerName?: string | undefined;
   /**
@@ -95,6 +102,7 @@ export const LmsContent$inboundSchema: z.ZodType<
   languages: z.array(z.string()).optional(),
   localizations: z.array(LmsContentLocalization$inboundSchema).optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
+  metadata: z.array(LmsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   provider_name: z.string().optional(),
   published_at: z.string().datetime({ offset: true }).transform(v =>
@@ -139,6 +147,7 @@ export type LmsContent$Outbound = {
   languages?: Array<string> | undefined;
   localizations?: Array<LmsContentLocalization$Outbound> | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
+  metadata?: Array<LmsMetadata$Outbound> | undefined;
   name?: string | undefined;
   provider_name?: string | undefined;
   published_at?: string | undefined;
@@ -171,6 +180,7 @@ export const LmsContent$outboundSchema: z.ZodType<
   languages: z.array(z.string()).optional(),
   localizations: z.array(LmsContentLocalization$outboundSchema).optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
+  metadata: z.array(LmsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   providerName: z.string().optional(),
   publishedAt: z.date().transform(v => v.toISOString()).optional(),

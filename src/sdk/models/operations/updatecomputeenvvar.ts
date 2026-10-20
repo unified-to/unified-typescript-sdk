@@ -16,6 +16,7 @@ export const UpdateComputeEnvvarQueryParamFields = {
   Value: "value",
   Environments: "environments",
   IsSecret: "is_secret",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateComputeEnvvarQueryParamFields = ClosedEnum<

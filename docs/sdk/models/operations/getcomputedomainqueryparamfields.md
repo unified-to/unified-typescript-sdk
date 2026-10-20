@@ -11,5 +11,5 @@ let value: GetComputeDomainQueryParamFields = "created_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "service_id" | "name" | "status" | "is_primary" | "redirect_url" | "raw"
+"id" | "created_at" | "updated_at" | "service_id" | "name" | "status" | "is_primary" | "redirect_url" | "metadata" | "raw"
 ```

@@ -76,7 +76,19 @@ export const UcMetadata1$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
+/** @internal */
+export type UcMetadata1$Outbound = {};
 
+/** @internal */
+export const UcMetadata1$outboundSchema: z.ZodType<
+  UcMetadata1$Outbound,
+  z.ZodTypeDef,
+  UcMetadata1
+> = z.object({});
+
+export function ucMetadata1ToJSON(ucMetadata1: UcMetadata1): string {
+  return JSON.stringify(UcMetadata1$outboundSchema.parse(ucMetadata1));
+}
 export function ucMetadata1FromJSON(
   jsonString: string,
 ): SafeParseResult<UcMetadata1, SDKValidationError> {
@@ -98,7 +110,28 @@ export const UcMetadata5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
+/** @internal */
+export type UcMetadata5$Outbound =
+  | UcMetadata1$Outbound
+  | string
+  | number
+  | boolean;
 
+/** @internal */
+export const UcMetadata5$outboundSchema: z.ZodType<
+  UcMetadata5$Outbound,
+  z.ZodTypeDef,
+  UcMetadata5
+> = z.union([
+  z.lazy(() => UcMetadata1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+export function ucMetadata5ToJSON(ucMetadata5: UcMetadata5): string {
+  return JSON.stringify(UcMetadata5$outboundSchema.parse(ucMetadata5));
+}
 export function ucMetadata5FromJSON(
   jsonString: string,
 ): SafeParseResult<UcMetadata5, SDKValidationError> {
@@ -128,7 +161,41 @@ export const UcMetadataExtraData$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
+/** @internal */
+export type UcMetadataExtraData$Outbound =
+  | { [k: string]: any }
+  | string
+  | number
+  | boolean
+  | Array<UcMetadata1$Outbound | string | number | boolean>;
 
+/** @internal */
+export const UcMetadataExtraData$outboundSchema: z.ZodType<
+  UcMetadataExtraData$Outbound,
+  z.ZodTypeDef,
+  UcMetadataExtraData
+> = z.union([
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => UcMetadata1$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
+]);
+
+export function ucMetadataExtraDataToJSON(
+  ucMetadataExtraData: UcMetadataExtraData,
+): string {
+  return JSON.stringify(
+    UcMetadataExtraData$outboundSchema.parse(ucMetadataExtraData),
+  );
+}
 export function ucMetadataExtraDataFromJSON(
   jsonString: string,
 ): SafeParseResult<UcMetadataExtraData, SDKValidationError> {
@@ -145,6 +212,12 @@ export const UcMetadataFormat$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(UcMetadataFormat);
+/** @internal */
+export const UcMetadataFormat$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  UcMetadataFormat
+> = openEnums.outboundSchema(UcMetadataFormat);
 
 /** @internal */
 export const UcMetadataSchemas1$inboundSchema: z.ZodType<
@@ -152,7 +225,23 @@ export const UcMetadataSchemas1$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
+/** @internal */
+export type UcMetadataSchemas1$Outbound = {};
 
+/** @internal */
+export const UcMetadataSchemas1$outboundSchema: z.ZodType<
+  UcMetadataSchemas1$Outbound,
+  z.ZodTypeDef,
+  UcMetadataSchemas1
+> = z.object({});
+
+export function ucMetadataSchemas1ToJSON(
+  ucMetadataSchemas1: UcMetadataSchemas1,
+): string {
+  return JSON.stringify(
+    UcMetadataSchemas1$outboundSchema.parse(ucMetadataSchemas1),
+  );
+}
 export function ucMetadataSchemas1FromJSON(
   jsonString: string,
 ): SafeParseResult<UcMetadataSchemas1, SDKValidationError> {
@@ -174,7 +263,32 @@ export const UcMetadataSchemas5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
+/** @internal */
+export type UcMetadataSchemas5$Outbound =
+  | UcMetadataSchemas1$Outbound
+  | string
+  | number
+  | boolean;
 
+/** @internal */
+export const UcMetadataSchemas5$outboundSchema: z.ZodType<
+  UcMetadataSchemas5$Outbound,
+  z.ZodTypeDef,
+  UcMetadataSchemas5
+> = z.union([
+  z.lazy(() => UcMetadataSchemas1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+export function ucMetadataSchemas5ToJSON(
+  ucMetadataSchemas5: UcMetadataSchemas5,
+): string {
+  return JSON.stringify(
+    UcMetadataSchemas5$outboundSchema.parse(ucMetadataSchemas5),
+  );
+}
 export function ucMetadataSchemas5FromJSON(
   jsonString: string,
 ): SafeParseResult<UcMetadataSchemas5, SDKValidationError> {
@@ -204,7 +318,39 @@ export const UcMetadataValue$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
+/** @internal */
+export type UcMetadataValue$Outbound =
+  | { [k: string]: any }
+  | string
+  | number
+  | boolean
+  | Array<UcMetadataSchemas1$Outbound | string | number | boolean>;
 
+/** @internal */
+export const UcMetadataValue$outboundSchema: z.ZodType<
+  UcMetadataValue$Outbound,
+  z.ZodTypeDef,
+  UcMetadataValue
+> = z.union([
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => UcMetadataSchemas1$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
+]);
+
+export function ucMetadataValueToJSON(
+  ucMetadataValue: UcMetadataValue,
+): string {
+  return JSON.stringify(UcMetadataValue$outboundSchema.parse(ucMetadataValue));
+}
 export function ucMetadataValueFromJSON(
   jsonString: string,
 ): SafeParseResult<UcMetadataValue, SDKValidationError> {
@@ -258,7 +404,75 @@ export const UcMetadata$inboundSchema: z.ZodType<
     "extra_data": "extraData",
   });
 });
+/** @internal */
+export type UcMetadata$Outbound = {
+  extra_data?:
+    | { [k: string]: any }
+    | string
+    | number
+    | boolean
+    | Array<UcMetadata1$Outbound | string | number | boolean>
+    | undefined;
+  format?: string | undefined;
+  id?: string | undefined;
+  namespace?: string | undefined;
+  slug?: string | undefined;
+  value?:
+    | { [k: string]: any }
+    | string
+    | number
+    | boolean
+    | Array<UcMetadataSchemas1$Outbound | string | number | boolean>
+    | undefined;
+};
 
+/** @internal */
+export const UcMetadata$outboundSchema: z.ZodType<
+  UcMetadata$Outbound,
+  z.ZodTypeDef,
+  UcMetadata
+> = z.object({
+  extraData: z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => UcMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ]).optional(),
+  format: UcMetadataFormat$outboundSchema.optional(),
+  id: z.string().optional(),
+  namespace: z.string().optional(),
+  slug: z.string().optional(),
+  value: z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => UcMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ]).optional(),
+}).transform((v) => {
+  return remap$(v, {
+    extraData: "extra_data",
+  });
+});
+
+export function ucMetadataToJSON(ucMetadata: UcMetadata): string {
+  return JSON.stringify(UcMetadata$outboundSchema.parse(ucMetadata));
+}
 export function ucMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<UcMetadata, SDKValidationError> {

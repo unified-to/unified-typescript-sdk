@@ -47,6 +47,7 @@ export const CreateShippingShipmentQueryParamFields = {
   CarrierName: "carrier_name",
   TrackingUrl: "tracking_url",
   Lineitems: "lineitems",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateShippingShipmentQueryParamFields = ClosedEnum<

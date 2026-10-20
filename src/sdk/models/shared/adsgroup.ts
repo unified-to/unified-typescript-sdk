@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AdsMetadata,
+  AdsMetadata$inboundSchema,
+  AdsMetadata$Outbound,
+  AdsMetadata$outboundSchema,
+} from "./adsmetadata.js";
+import {
   AdsPromoted,
   AdsPromoted$inboundSchema,
   AdsPromoted$Outbound,
@@ -204,6 +210,7 @@ export type AdsGroup = {
    * Language + region, ISO 639-1 with region (e.g. en-US); LinkedIn locale
    */
   languageLocale?: string | undefined;
+  metadata?: Array<AdsMetadata> | undefined;
   name?: string | undefined;
   /**
    * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)
@@ -372,6 +379,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   id: z.string().optional(),
   insertionorder_id: z.string().optional(),
   language_locale: z.string().optional(),
+  metadata: z.array(AdsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   optimization_goal: OptimizationGoal$inboundSchema.optional(),
   organization_id: z.string().optional(),
@@ -435,6 +443,7 @@ export type AdsGroup$Outbound = {
   id?: string | undefined;
   insertionorder_id?: string | undefined;
   language_locale?: string | undefined;
+  metadata?: Array<AdsMetadata$Outbound> | undefined;
   name?: string | undefined;
   optimization_goal?: string | undefined;
   organization_id?: string | undefined;
@@ -475,6 +484,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   id: z.string().optional(),
   insertionorderId: z.string().optional(),
   languageLocale: z.string().optional(),
+  metadata: z.array(AdsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   optimizationGoal: OptimizationGoal$outboundSchema.optional(),
   organizationId: z.string().optional(),

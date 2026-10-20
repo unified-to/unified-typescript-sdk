@@ -11,5 +11,5 @@ let value: PatchTicketingCustomerQueryParamFields = "raw";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "emails" | "telephones" | "tags" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "emails" | "telephones" | "tags" | "metadata" | "raw"
 ```

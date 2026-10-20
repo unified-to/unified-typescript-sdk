@@ -37,6 +37,7 @@ export const UpdatePaymentPaymentQueryParamFields = {
   ExchangeRate: "exchange_rate",
   CategoryIds: "category_ids",
   NetAmount: "net_amount",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdatePaymentPaymentQueryParamFields = ClosedEnum<

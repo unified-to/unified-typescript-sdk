@@ -22,6 +22,7 @@ export const GetSocialPostQueryParamFields = {
   ScheduledAt: "scheduled_at",
   CallToAction: "call_to_action",
   Metrics: "metrics",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetSocialPostQueryParamFields = ClosedEnum<

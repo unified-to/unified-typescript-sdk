@@ -11,5 +11,5 @@ let value: ListTaskChangesQueryParamFields = "updated_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "task_id" | "user_id" | "items" | "raw"
+"id" | "created_at" | "updated_at" | "task_id" | "user_id" | "items" | "metadata" | "raw"
 ```

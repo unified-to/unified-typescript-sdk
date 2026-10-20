@@ -21,6 +21,12 @@ import {
   AccountingJournalLineitem$Outbound,
   AccountingJournalLineitem$outboundSchema,
 } from "./accountingjournallineitem.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 /**
  * Posting state of the journal entry
@@ -58,6 +64,7 @@ export type AccountingJournal = {
    * new field name
    */
   lineitems?: Array<AccountingJournalLineitem> | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   organizationId?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -115,6 +122,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_inclusive_of_tax: z.boolean().optional(),
   lineitems: z.array(AccountingJournalLineitem$inboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -154,6 +162,7 @@ export type AccountingJournal$Outbound = {
   id?: string | undefined;
   is_inclusive_of_tax?: boolean | undefined;
   lineitems?: Array<AccountingJournalLineitem$Outbound> | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   organization_id?: string | undefined;
   posted_at?: string | undefined;
   project_id?: string | undefined;
@@ -182,6 +191,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isInclusiveOfTax: z.boolean().optional(),
   lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   projectId: z.string().optional(),

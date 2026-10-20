@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
 
 export const AtsInterviewStatus = {
   Scheduled: "SCHEDULED",
@@ -41,6 +47,7 @@ export type AtsInterview = {
    * the URL of the virtual/video meeting (eg. Zoom, Google Meet, Microsoft Teams)
    */
   meetingUrl?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -84,6 +91,7 @@ export const AtsInterview$inboundSchema: z.ZodType<
   job_id: z.string().optional(),
   location: z.string().optional(),
   meeting_url: z.string().optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -116,6 +124,7 @@ export type AtsInterview$Outbound = {
   job_id?: string | undefined;
   location?: string | undefined;
   meeting_url?: string | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
@@ -138,6 +147,7 @@ export const AtsInterview$outboundSchema: z.ZodType<
   jobId: z.string().optional(),
   location: z.string().optional(),
   meetingUrl: z.string().optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   status: AtsInterviewStatus$outboundSchema.optional(),

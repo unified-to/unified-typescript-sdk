@@ -18,6 +18,7 @@ export const ListComputeUsagesQueryParamFields = {
   Unit: "unit",
   CostAmount: "cost_amount",
   Currency: "currency",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListComputeUsagesQueryParamFields = ClosedEnum<

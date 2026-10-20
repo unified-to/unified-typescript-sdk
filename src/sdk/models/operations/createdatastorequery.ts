@@ -12,6 +12,7 @@ export const CreateDatastoreQueryQueryParamFields = {
   DatabaseId: "database_id",
   Query: "query",
   Response: "response",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateDatastoreQueryQueryParamFields = ClosedEnum<

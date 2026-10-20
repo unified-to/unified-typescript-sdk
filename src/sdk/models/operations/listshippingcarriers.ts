@@ -15,6 +15,7 @@ export const ListShippingCarriersQueryParamFields = {
   IsActive: "is_active",
   LogoUrl: "logo_url",
   WebsiteUrl: "website_url",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListShippingCarriersQueryParamFields = ClosedEnum<

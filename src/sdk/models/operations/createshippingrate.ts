@@ -17,6 +17,7 @@ export const CreateShippingRateQueryParamFields = {
   CarrierId: "carrier_id",
   Id: "id",
   Rates: "rates",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateShippingRateQueryParamFields = ClosedEnum<

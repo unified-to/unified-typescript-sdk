@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 /**
  * CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER
@@ -77,6 +83,7 @@ export type AccountingBankfeedaccount = {
    */
   feedStartAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   /**
    * account nickname / source name
    */
@@ -148,6 +155,7 @@ export const AccountingBankfeedaccount$inboundSchema: z.ZodType<
     new Date(v)
   ).optional(),
   id: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -181,6 +189,7 @@ export type AccountingBankfeedaccount$Outbound = {
   currency?: string | undefined;
   feed_start_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -205,6 +214,7 @@ export const AccountingBankfeedaccount$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   feedStartAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   raw: z.record(z.any()).optional(),

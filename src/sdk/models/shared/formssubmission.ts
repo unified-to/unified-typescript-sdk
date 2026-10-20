@@ -8,6 +8,7 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { FormAnswer, FormAnswer$inboundSchema } from "./formanswer.js";
+import { FormsMetadata, FormsMetadata$inboundSchema } from "./formsmetadata.js";
 
 export type FormsSubmission = {
   answers: Array<FormAnswer>;
@@ -17,6 +18,7 @@ export type FormsSubmission = {
   createdAt?: Date | undefined;
   formId: string;
   id?: string | undefined;
+  metadata?: Array<FormsMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   respondentEmail?: string | undefined;
   respondentName?: string | undefined;
@@ -37,6 +39,7 @@ export const FormsSubmission$inboundSchema: z.ZodType<
     .optional(),
   form_id: z.string(),
   id: z.string().optional(),
+  metadata: z.array(FormsMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   respondent_email: z.string().optional(),
   respondent_name: z.string().optional(),

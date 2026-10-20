@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  SocialMetadata,
+  SocialMetadata$inboundSchema,
+} from "./socialmetadata.js";
 
 /**
  * The metric being reported
@@ -63,6 +67,7 @@ export type SocialInsight = {
    * Unique identifier for the insight data point
    */
   id?: string | undefined;
+  metadata?: Array<SocialMetadata> | undefined;
   /**
    * The metric being reported
    */
@@ -108,6 +113,7 @@ export const SocialInsight$inboundSchema: z.ZodType<
   date: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(SocialMetadata$inboundSchema).optional(),
   metric: Metric$inboundSchema.optional(),
   period: Period$inboundSchema.optional(),
   post_id: z.string().optional(),

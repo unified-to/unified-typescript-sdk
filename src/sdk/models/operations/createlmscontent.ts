@@ -31,6 +31,7 @@ export const CreateLmsContentQueryParamFields = {
   CollectionIds: "collection_ids",
   Instructors: "instructors",
   PublishedAt: "published_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type CreateLmsContentQueryParamFields = ClosedEnum<

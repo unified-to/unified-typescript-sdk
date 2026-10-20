@@ -32,6 +32,7 @@ export const ListHrisPayslipsQueryParamFields = {
   EmployerContributionAmount: "employer_contribution_amount",
   GrossYtdAmount: "gross_ytd_amount",
   NetYtdAmount: "net_ytd_amount",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListHrisPayslipsQueryParamFields = ClosedEnum<

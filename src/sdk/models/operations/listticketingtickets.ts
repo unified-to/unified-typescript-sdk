@@ -24,6 +24,7 @@ export const ListTicketingTicketsQueryParamFields = {
   Url: "url",
   AttachmentIds: "attachment_ids",
   DueAt: "due_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListTicketingTicketsQueryParamFields = ClosedEnum<

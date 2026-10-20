@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { ClubsMetadata, ClubsMetadata$inboundSchema } from "./clubsmetadata.js";
 import {
   PropertyClubsGroupAddress,
   PropertyClubsGroupAddress$inboundSchema,
@@ -123,6 +124,7 @@ export type ClubsGroup = {
    * The authenticated user's membership status
    */
   membershipStatus?: MembershipStatus | undefined;
+  metadata?: Array<ClubsMetadata> | undefined;
   /**
    * The group's name
    */
@@ -196,6 +198,7 @@ export const ClubsGroup$inboundSchema: z.ZodType<
   is_verified: z.boolean().optional(),
   member_count: z.number().optional(),
   membership_status: MembershipStatus$inboundSchema.optional(),
+  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   post_count: z.number().optional(),
   profile_image_url: z.string().optional(),

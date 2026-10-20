@@ -14,6 +14,12 @@ import {
   LmsMedia$outboundSchema,
 } from "./lmsmedia.js";
 import {
+  LmsMetadata,
+  LmsMetadata$inboundSchema,
+  LmsMetadata$Outbound,
+  LmsMetadata$outboundSchema,
+} from "./lmsmetadata.js";
+import {
   LmsReference,
   LmsReference$inboundSchema,
   LmsReference$Outbound,
@@ -34,6 +40,7 @@ export type LmsClass = {
   instructors?: Array<LmsReference> | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia> | undefined;
+  metadata?: Array<LmsMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   students?: Array<LmsReference> | undefined;
@@ -57,6 +64,7 @@ export const LmsClass$inboundSchema: z.ZodType<
   instructors: z.array(LmsReference$inboundSchema).optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$inboundSchema).optional(),
+  metadata: z.array(LmsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   students: z.array(LmsReference$inboundSchema).optional(),
@@ -78,6 +86,7 @@ export type LmsClass$Outbound = {
   instructors?: Array<LmsReference$Outbound> | undefined;
   languages?: Array<string> | undefined;
   media?: Array<LmsMedia$Outbound> | undefined;
+  metadata?: Array<LmsMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   students?: Array<LmsReference$Outbound> | undefined;
@@ -97,6 +106,7 @@ export const LmsClass$outboundSchema: z.ZodType<
   instructors: z.array(LmsReference$outboundSchema).optional(),
   languages: z.array(z.string()).optional(),
   media: z.array(LmsMedia$outboundSchema).optional(),
+  metadata: z.array(LmsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   students: z.array(LmsReference$outboundSchema).optional(),

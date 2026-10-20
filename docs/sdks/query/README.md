@@ -25,6 +25,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.query.createDatastoreQuery({
     datastoreQuery: {
+      metadata: [],
       query: {
         filter: {
           type: "OR",
@@ -63,6 +64,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await datastoreCreateDatastoreQuery(unifiedTo, {
     datastoreQuery: {
+      metadata: [],
       query: {
         filter: {
           type: "OR",

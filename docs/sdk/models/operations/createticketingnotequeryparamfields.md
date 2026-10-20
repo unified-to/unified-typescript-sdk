@@ -5,11 +5,11 @@
 ```typescript
 import { CreateTicketingNoteQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateTicketingNoteQueryParamFields = "updated_at";
+let value: CreateTicketingNoteQueryParamFields = "customer_id";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "customer_id" | "description" | "ticket_id" | "user_id" | "raw"
+"id" | "created_at" | "updated_at" | "customer_id" | "description" | "ticket_id" | "user_id" | "metadata" | "raw"
 ```

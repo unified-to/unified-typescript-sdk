@@ -11,6 +11,7 @@ export const ListCrmTaxonomiesQueryParamFields = {
   Name: "name",
   Label: "label",
   Type: "type",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListCrmTaxonomiesQueryParamFields = ClosedEnum<

@@ -17,6 +17,7 @@ export const ListAdsOrganizationsQueryParamFields = {
   Status: "status",
   AccountNumber: "account_number",
   Managers: "managers",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListAdsOrganizationsQueryParamFields = ClosedEnum<

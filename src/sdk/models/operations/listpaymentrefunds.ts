@@ -19,6 +19,7 @@ export const ListPaymentRefundsQueryParamFields = {
   RefundedAt: "refunded_at",
   Reason: "reason",
   TenderType: "tender_type",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListPaymentRefundsQueryParamFields = ClosedEnum<

@@ -19,6 +19,7 @@ export const UpdateAtsScorecardQueryParamFields = {
   Recommendation: "recommendation",
   Comment: "comment",
   Questions: "questions",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateAtsScorecardQueryParamFields = ClosedEnum<

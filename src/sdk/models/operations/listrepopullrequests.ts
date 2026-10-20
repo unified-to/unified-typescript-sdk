@@ -20,6 +20,7 @@ export const ListRepoPullrequestsQueryParamFields = {
   Labels: "labels",
   ClosedAt: "closed_at",
   CommitIds: "commit_ids",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListRepoPullrequestsQueryParamFields = ClosedEnum<

@@ -5,11 +5,11 @@
 ```typescript
 import { GetCdpSegmentQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetCdpSegmentQueryParamFields = "slug";
+let value: GetCdpSegmentQueryParamFields = "description";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "slug" | "description" | "definition" | "type" | "compute_mode" | "size" | "is_active" | "source_id" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "slug" | "description" | "definition" | "type" | "compute_mode" | "size" | "is_active" | "source_id" | "metadata" | "raw"
 ```

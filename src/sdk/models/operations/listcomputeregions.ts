@@ -14,6 +14,7 @@ export const ListComputeRegionsQueryParamFields = {
   Location: "location",
   Country: "country",
   GpuModels: "gpu_models",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListComputeRegionsQueryParamFields = ClosedEnum<

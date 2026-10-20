@@ -10,6 +10,10 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  VerificationMetadata,
+  VerificationMetadata$inboundSchema,
+} from "./verificationmetadata.js";
+import {
   VerificationParameter,
   VerificationParameter$inboundSchema,
 } from "./verificationparameter.js";
@@ -66,6 +70,7 @@ export type VerificationPackage = {
    * if this verification returns a score, what is the maximum?
    */
   maxScore?: number | undefined;
+  metadata?: Array<VerificationMetadata> | undefined;
   /**
    * Name of the verification type
    */
@@ -116,6 +121,7 @@ export const VerificationPackage$inboundSchema: z.ZodType<
   id: z.string().optional(),
   info_url: z.string().optional(),
   max_score: z.number().optional(),
+  metadata: z.array(VerificationMetadata$inboundSchema).optional(),
   name: z.string(),
   needs_ip_address: z.boolean().optional(),
   parameters: z.array(VerificationParameter$inboundSchema).optional(),

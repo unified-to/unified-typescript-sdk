@@ -20,6 +20,7 @@ export const PatchCdpSegmentQueryParamFields = {
   Size: "size",
   IsActive: "is_active",
   SourceId: "source_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchCdpSegmentQueryParamFields = ClosedEnum<

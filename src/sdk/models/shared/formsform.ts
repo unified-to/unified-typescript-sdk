@@ -13,6 +13,12 @@ import {
   FormField$Outbound,
   FormField$outboundSchema,
 } from "./formfield.js";
+import {
+  FormsMetadata,
+  FormsMetadata$inboundSchema,
+  FormsMetadata$Outbound,
+  FormsMetadata$outboundSchema,
+} from "./formsmetadata.js";
 
 export type FormsForm = {
   confirmationMessage?: string | undefined;
@@ -28,6 +34,7 @@ export type FormsForm = {
   hasShuffleQuestions?: boolean | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<FormsMetadata> | undefined;
   name?: string | undefined;
   publishedUrl?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -55,6 +62,7 @@ export const FormsForm$inboundSchema: z.ZodType<
   has_shuffle_questions: z.boolean().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(FormsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   published_url: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -87,6 +95,7 @@ export type FormsForm$Outbound = {
   has_shuffle_questions?: boolean | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<FormsMetadata$Outbound> | undefined;
   name?: string | undefined;
   published_url?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -110,6 +119,7 @@ export const FormsForm$outboundSchema: z.ZodType<
   hasShuffleQuestions: z.boolean().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(FormsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   publishedUrl: z.string().optional(),
   raw: z.record(z.any()).optional(),

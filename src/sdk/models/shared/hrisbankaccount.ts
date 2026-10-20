@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 export const HrisBankaccountAccountType = {
   Checking: "CHECKING",
@@ -65,6 +71,7 @@ export type HrisBankaccount = {
    * primary for direct deposit
    */
   isPrimary?: boolean | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   /**
    * account nickname (e.g. "BoA Checking")
    */
@@ -141,6 +148,7 @@ export const HrisBankaccount$inboundSchema: z.ZodType<
   iban: z.string().optional(),
   id: z.string().optional(),
   is_primary: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   priority: z.number().optional(),
   raw: z.record(z.any()).optional(),
@@ -181,6 +189,7 @@ export type HrisBankaccount$Outbound = {
   iban?: string | undefined;
   id?: string | undefined;
   is_primary?: boolean | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   priority?: number | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -209,6 +218,7 @@ export const HrisBankaccount$outboundSchema: z.ZodType<
   iban: z.string().optional(),
   id: z.string().optional(),
   isPrimary: z.boolean().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   priority: z.number().optional(),
   raw: z.record(z.any()).optional(),

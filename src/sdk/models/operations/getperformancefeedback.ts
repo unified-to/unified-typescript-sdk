@@ -16,6 +16,7 @@ export const GetPerformanceFeedbackQueryParamFields = {
   Message: "message",
   Tags: "tags",
   IsVisible: "is_visible",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetPerformanceFeedbackQueryParamFields = ClosedEnum<

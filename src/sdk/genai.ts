@@ -4,22 +4,28 @@
 
 import { genaiCreateGenaiAgent } from "../funcs/genaiCreateGenaiAgent.js";
 import { genaiCreateGenaiEmbedding } from "../funcs/genaiCreateGenaiEmbedding.js";
+import { genaiCreateGenaiMemory } from "../funcs/genaiCreateGenaiMemory.js";
 import { genaiCreateGenaiPrompt } from "../funcs/genaiCreateGenaiPrompt.js";
 import { genaiCreateGenaiTask } from "../funcs/genaiCreateGenaiTask.js";
 import { genaiGetGenaiAgent } from "../funcs/genaiGetGenaiAgent.js";
+import { genaiGetGenaiMemory } from "../funcs/genaiGetGenaiMemory.js";
 import { genaiGetGenaiModel } from "../funcs/genaiGetGenaiModel.js";
 import { genaiGetGenaiSkill } from "../funcs/genaiGetGenaiSkill.js";
 import { genaiGetGenaiTask } from "../funcs/genaiGetGenaiTask.js";
 import { genaiListGenaiAgents } from "../funcs/genaiListGenaiAgents.js";
+import { genaiListGenaiMemories } from "../funcs/genaiListGenaiMemories.js";
 import { genaiListGenaiModels } from "../funcs/genaiListGenaiModels.js";
 import { genaiListGenaiSkills } from "../funcs/genaiListGenaiSkills.js";
 import { genaiListGenaiTasks } from "../funcs/genaiListGenaiTasks.js";
 import { genaiPatchGenaiAgent } from "../funcs/genaiPatchGenaiAgent.js";
+import { genaiPatchGenaiMemory } from "../funcs/genaiPatchGenaiMemory.js";
 import { genaiPatchGenaiTask } from "../funcs/genaiPatchGenaiTask.js";
 import { genaiRemoveGenaiAgent } from "../funcs/genaiRemoveGenaiAgent.js";
+import { genaiRemoveGenaiMemory } from "../funcs/genaiRemoveGenaiMemory.js";
 import { genaiRemoveGenaiSkill } from "../funcs/genaiRemoveGenaiSkill.js";
 import { genaiRemoveGenaiTask } from "../funcs/genaiRemoveGenaiTask.js";
 import { genaiUpdateGenaiAgent } from "../funcs/genaiUpdateGenaiAgent.js";
+import { genaiUpdateGenaiMemory } from "../funcs/genaiUpdateGenaiMemory.js";
 import { genaiUpdateGenaiTask } from "../funcs/genaiUpdateGenaiTask.js";
 import { organizationCreateGenaiOrganization } from "../funcs/organizationCreateGenaiOrganization.js";
 import { organizationGetGenaiOrganization } from "../funcs/organizationGetGenaiOrganization.js";
@@ -55,6 +61,20 @@ export class Genai extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.GenaiEmbedding> {
     return unwrapAsync(genaiCreateGenaiEmbedding(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a memory
+   */
+  async createGenaiMemory(
+    request: operations.CreateGenaiMemoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiMemory> {
+    return unwrapAsync(genaiCreateGenaiMemory(
       this,
       request,
       options,
@@ -111,6 +131,20 @@ export class Genai extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.GenaiAgent> {
     return unwrapAsync(genaiGetGenaiAgent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a memory
+   */
+  async getGenaiMemory(
+    request: operations.GetGenaiMemoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiMemory> {
+    return unwrapAsync(genaiGetGenaiMemory(
       this,
       request,
       options,
@@ -188,6 +222,20 @@ export class Genai extends ClientSDK {
   }
 
   /**
+   * List all memories
+   */
+  async listGenaiMemories(
+    request: operations.ListGenaiMemoriesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.GenaiMemory>> {
+    return unwrapAsync(genaiListGenaiMemories(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all models
    */
   async listGenaiModels(
@@ -258,6 +306,20 @@ export class Genai extends ClientSDK {
   }
 
   /**
+   * Update a memory
+   */
+  async patchGenaiMemory(
+    request: operations.PatchGenaiMemoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiMemory> {
+    return unwrapAsync(genaiPatchGenaiMemory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an organization
    */
   async patchGenaiOrganization(
@@ -293,6 +355,20 @@ export class Genai extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveGenaiAgentResponse | undefined> {
     return unwrapAsync(genaiRemoveGenaiAgent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a memory
+   */
+  async removeGenaiMemory(
+    request: operations.RemoveGenaiMemoryRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveGenaiMemoryResponse | undefined> {
+    return unwrapAsync(genaiRemoveGenaiMemory(
       this,
       request,
       options,
@@ -349,6 +425,20 @@ export class Genai extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.GenaiAgent> {
     return unwrapAsync(genaiUpdateGenaiAgent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a memory
+   */
+  async updateGenaiMemory(
+    request: operations.UpdateGenaiMemoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiMemory> {
+    return unwrapAsync(genaiUpdateGenaiMemory(
       this,
       request,
       options,

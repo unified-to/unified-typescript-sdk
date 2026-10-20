@@ -5,11 +5,11 @@
 ```typescript
 import { ListFormsFormsQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListFormsFormsQueryParamFields = "confirmation_message";
+let value: ListFormsFormsQueryParamFields = "confirmation_redirect_url";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "fields" | "is_active" | "published_url" | "response_count" | "has_multiple_submissions" | "has_progress_bar" | "has_shuffle_questions" | "confirmation_message" | "confirmation_redirect_url" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "fields" | "is_active" | "published_url" | "response_count" | "has_multiple_submissions" | "has_progress_bar" | "has_shuffle_questions" | "confirmation_message" | "confirmation_redirect_url" | "metadata" | "raw"
 ```

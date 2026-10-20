@@ -27,6 +27,7 @@ export const ListLmsCoursesQueryParamFields = {
   ProviderName: "provider_name",
   PublishedAt: "published_at",
   TimeEstimateMinutes: "time_estimate_minutes",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListLmsCoursesQueryParamFields = ClosedEnum<

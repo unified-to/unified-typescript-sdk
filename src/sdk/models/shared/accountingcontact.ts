@@ -28,6 +28,12 @@ import {
   AccountingEmail$outboundSchema,
 } from "./accountingemail.js";
 import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
+import {
   AccountingTelephone,
   AccountingTelephone$inboundSchema,
   AccountingTelephone$Outbound,
@@ -102,6 +108,7 @@ export type AccountingContact = {
   isCustomer?: boolean | undefined;
   isSupplier?: boolean | undefined;
   lastName?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   name?: string | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;
@@ -176,6 +183,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
   is_customer: z.boolean().optional(),
   is_supplier: z.boolean().optional(),
   last_name: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   notes: z.string().optional(),
   organization_id: z.string().optional(),
@@ -234,6 +242,7 @@ export type AccountingContact$Outbound = {
   is_customer?: boolean | undefined;
   is_supplier?: boolean | undefined;
   last_name?: string | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   name?: string | undefined;
   notes?: string | undefined;
   organization_id?: string | undefined;
@@ -274,6 +283,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   isCustomer: z.boolean().optional(),
   isSupplier: z.boolean().optional(),
   lastName: z.string().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   notes: z.string().optional(),
   organizationId: z.string().optional(),

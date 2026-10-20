@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CdpMetadata,
+  CdpMetadata$inboundSchema,
+  CdpMetadata$Outbound,
+  CdpMetadata$outboundSchema,
+} from "./cdpmetadata.js";
 
 /**
  * How the segment membership is computed (REALTIME or BATCH)
@@ -60,6 +66,7 @@ export type CdpSegment = {
    * Whether the segment is active/enabled
    */
   isActive?: boolean | undefined;
+  metadata?: Array<CdpMetadata> | undefined;
   /**
    * The name of the segment/audience
    */
@@ -129,6 +136,7 @@ export const CdpSegment$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  metadata: z.array(CdpMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   size: z.number().optional(),
@@ -154,6 +162,7 @@ export type CdpSegment$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<CdpMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   size?: number | undefined;
@@ -175,6 +184,7 @@ export const CdpSegment$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(CdpMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   size: z.number().optional(),

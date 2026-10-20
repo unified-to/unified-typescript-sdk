@@ -20,6 +20,7 @@ export const GetMartechCampaignQueryParamFields = {
   FromEmail: "from_email",
   ReplyToEmail: "reply_to_email",
   SendAt: "send_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetMartechCampaignQueryParamFields = ClosedEnum<

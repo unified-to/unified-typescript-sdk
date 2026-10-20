@@ -1,0 +1,29 @@
+# PaymentMetadata5
+
+
+## Supported Types
+
+### `shared.PaymentMetadata1`
+
+```typescript
+const value: shared.PaymentMetadata1 = {};
+```
+
+### `string`
+
+```typescript
+const value: string = "<value>";
+```
+
+### `number`
+
+```typescript
+const value: number = 1284.03;
+```
+
+### `boolean`
+
+```typescript
+const value: boolean = true;
+```
+

@@ -26,6 +26,7 @@ export const GetAccountingJournalQueryParamFields = {
   ExchangeRate: "exchange_rate",
   Status: "status",
   IsInclusiveOfTax: "is_inclusive_of_tax",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type GetAccountingJournalQueryParamFields = ClosedEnum<

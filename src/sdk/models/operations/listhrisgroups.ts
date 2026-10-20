@@ -20,6 +20,7 @@ export const ListHrisGroupsQueryParamFields = {
   CompanyId: "company_id",
   PayFrequency: "pay_frequency",
   NextPaidAt: "next_paid_at",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type ListHrisGroupsQueryParamFields = ClosedEnum<

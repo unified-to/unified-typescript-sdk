@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
 
 export type HrisDevice = {
   adminUserIds?: Array<string> | undefined;
@@ -30,6 +36,7 @@ export type HrisDevice = {
    * device manufacturer
    */
   manufacturer?: string | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   /**
    * device model
    */
@@ -74,6 +81,7 @@ export const HrisDevice$inboundSchema: z.ZodType<
   is_missing: z.boolean().optional(),
   location_id: z.string().optional(),
   manufacturer: z.string().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   model: z.string().optional(),
   name: z.string().optional(),
   os: z.string().optional(),
@@ -114,6 +122,7 @@ export type HrisDevice$Outbound = {
   is_missing?: boolean | undefined;
   location_id?: string | undefined;
   manufacturer?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   model?: string | undefined;
   name?: string | undefined;
   os?: string | undefined;
@@ -142,6 +151,7 @@ export const HrisDevice$outboundSchema: z.ZodType<
   isMissing: z.boolean().optional(),
   locationId: z.string().optional(),
   manufacturer: z.string().optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   model: z.string().optional(),
   name: z.string().optional(),
   os: z.string().optional(),

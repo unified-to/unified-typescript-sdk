@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  SigningMetadata,
+  SigningMetadata$inboundSchema,
+  SigningMetadata$Outbound,
+  SigningMetadata$outboundSchema,
+} from "./signingmetadata.js";
 
 /**
  * Role of the signatory
@@ -62,6 +68,7 @@ export type SigningSignatory = {
    * Unique identifier for this signatory
    */
   id?: string | undefined;
+  metadata?: Array<SigningMetadata> | undefined;
   /**
    * Full name of the signatory
    */
@@ -130,6 +137,7 @@ export const SigningSignatory$inboundSchema: z.ZodType<
   document_id: z.string().optional(),
   email: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(SigningMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   order: z.number().optional(),
   raw: z.record(z.any()).optional(),
@@ -155,6 +163,7 @@ export type SigningSignatory$Outbound = {
   document_id?: string | undefined;
   email?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<SigningMetadata$Outbound> | undefined;
   name?: string | undefined;
   order?: number | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -175,6 +184,7 @@ export const SigningSignatory$outboundSchema: z.ZodType<
   documentId: z.string().optional(),
   email: z.string().optional(),
   id: z.string().optional(),
+  metadata: z.array(SigningMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   order: z.number().optional(),
   raw: z.record(z.any()).optional(),

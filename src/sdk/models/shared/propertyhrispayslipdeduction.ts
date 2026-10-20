@@ -9,6 +9,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { HrisMetadata, HrisMetadata$inboundSchema } from "./hrismetadata.js";
 
 /**
  * Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other)
@@ -128,6 +129,7 @@ export type PropertyHrisPayslipDeduction = {
    * annual maximum employee amount (always money)
    */
   maxAmount?: number | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   notes?: string | undefined;
   /**
    * the hris_paycode (deduction code) this deduction uses
@@ -209,6 +211,7 @@ export const PropertyHrisPayslipDeduction$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   max_amount: z.number().optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   paycode_id: z.string().optional(),
   raw: z.record(z.any()).optional(),

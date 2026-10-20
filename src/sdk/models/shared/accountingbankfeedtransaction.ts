@@ -9,6 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AccountingMetadata,
+  AccountingMetadata$inboundSchema,
+  AccountingMetadata$Outbound,
+  AccountingMetadata$outboundSchema,
+} from "./accountingmetadata.js";
 
 /**
  * direction: DEBIT, CREDIT
@@ -70,6 +76,7 @@ export type AccountingBankfeedtransaction = {
    * counterparty as reported by the bank
    */
   merchantName?: string | undefined;
+  metadata?: Array<AccountingMetadata> | undefined;
   /**
    * ref -> accounting Organization this record belongs to
    */
@@ -132,6 +139,7 @@ export const AccountingBankfeedtransaction$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_pending: z.boolean().optional(),
   merchant_name: z.string().optional(),
+  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   organization_id: z.string().optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -173,6 +181,7 @@ export type AccountingBankfeedtransaction$Outbound = {
   id?: string | undefined;
   is_pending?: boolean | undefined;
   merchant_name?: string | undefined;
+  metadata?: Array<AccountingMetadata$Outbound> | undefined;
   organization_id?: string | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -200,6 +209,7 @@ export const AccountingBankfeedtransaction$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isPending: z.boolean().optional(),
   merchantName: z.string().optional(),
+  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   organizationId: z.string().optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),

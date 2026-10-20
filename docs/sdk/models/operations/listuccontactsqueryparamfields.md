@@ -11,5 +11,5 @@ let value: ListUcContactsQueryParamFields = "first_name";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "title" | "company" | "emails" | "telephones" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "title" | "company" | "emails" | "telephones" | "metadata" | "raw"
 ```

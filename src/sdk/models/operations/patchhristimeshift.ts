@@ -22,6 +22,7 @@ export const PatchHrisTimeshiftQueryParamFields = {
   ApprovedAt: "approved_at",
   Hours: "hours",
   IsApproved: "is_approved",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type PatchHrisTimeshiftQueryParamFields = ClosedEnum<

@@ -15,6 +15,7 @@ export const UpdateTicketingNoteQueryParamFields = {
   Description: "description",
   TicketId: "ticket_id",
   UserId: "user_id",
+  Metadata: "metadata",
   Raw: "raw",
 } as const;
 export type UpdateTicketingNoteQueryParamFields = ClosedEnum<

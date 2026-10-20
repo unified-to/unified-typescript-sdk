@@ -34,7 +34,8 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "c38a2d0e-97be-475e-8dce-cdcaa6c5bc69",
+      id: "529ff7e6-4745-4b54-8ea2-9b567864322f",
+      metadata: [],
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -47,7 +48,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-04T23:36:27.002Z"),
+      updatedAt: new Date("2023-06-05T05:37:39.188Z"),
     },
     connectionId: "<id>",
   });
@@ -79,7 +80,8 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "c38a2d0e-97be-475e-8dce-cdcaa6c5bc69",
+      id: "529ff7e6-4745-4b54-8ea2-9b567864322f",
+      metadata: [],
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -92,7 +94,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-04T23:36:27.002Z"),
+      updatedAt: new Date("2023-06-05T05:37:39.188Z"),
     },
     connectionId: "<id>",
   });
@@ -459,7 +461,8 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "760f2760-9780-4c67-91b0-2cfcb4b5a090",
+      id: "a8937081-7adc-4c1d-8066-b145418e5781",
+      metadata: [],
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -472,7 +475,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-04T23:36:27.004Z"),
+      updatedAt: new Date("2023-06-05T05:37:39.193Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -505,7 +508,8 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "760f2760-9780-4c67-91b0-2cfcb4b5a090",
+      id: "a8937081-7adc-4c1d-8066-b145418e5781",
+      metadata: [],
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -518,7 +522,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-04T23:36:27.004Z"),
+      updatedAt: new Date("2023-06-05T05:37:39.193Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -653,7 +657,8 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "760f2760-9780-4c67-91b0-2cfcb4b5a090",
+      id: "a8937081-7adc-4c1d-8066-b145418e5781",
+      metadata: [],
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -666,7 +671,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-04T23:36:27.004Z"),
+      updatedAt: new Date("2023-06-05T05:37:39.193Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -699,7 +704,8 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "760f2760-9780-4c67-91b0-2cfcb4b5a090",
+      id: "a8937081-7adc-4c1d-8066-b145418e5781",
+      metadata: [],
       questions: [
         {
           description: "Sulum textor eveniet facere vita.",
@@ -712,7 +718,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-04T23:36:27.004Z"),
+      updatedAt: new Date("2023-06-05T05:37:39.193Z"),
     },
     connectionId: "<id>",
     id: "<id>",
