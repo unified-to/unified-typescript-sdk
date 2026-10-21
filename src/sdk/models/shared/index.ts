@@ -62,6 +62,7 @@ export * from "./adsasset.js";
 export * from "./adscampaign.js";
 export * from "./adschedule.js";
 export * from "./adscreative.js";
+export * from "./adscreativecard.js";
 export * from "./adsgroup.js";
 export * from "./adsinsertionorder.js";
 export * from "./adsinsertionorderbudgetsegment.js";

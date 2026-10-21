@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AdsCreativeCard,
+  AdsCreativeCard$inboundSchema,
+} from "./adscreativecard.js";
 import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import { AdsPromoted, AdsPromoted$inboundSchema } from "./adspromoted.js";
 
@@ -62,6 +66,10 @@ export type PropertyAdsReportMetricsCreative = {
   assetUrls?: Array<string> | undefined;
   body?: string | undefined;
   campaignId?: string | undefined;
+  /**
+   * Carousel cards, in display order
+   */
+  cards?: Array<AdsCreativeCard> | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -148,6 +156,7 @@ export const PropertyAdsReportMetricsCreative$inboundSchema: z.ZodType<
   asset_urls: z.array(z.string()).optional(),
   body: z.string().optional(),
   campaign_id: z.string().optional(),
+  cards: z.array(AdsCreativeCard$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_type: PropertyAdsReportMetricsCreativeCreativeType$inboundSchema

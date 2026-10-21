@@ -34,13 +34,16 @@ export type MetadataMetadata = {
   createdAt?: Date | undefined;
   format?: MetadataMetadataFormat | undefined;
   id?: string | undefined;
+  /**
+   * When true, this metadata slug is required for create for this integration.
+   */
   isRequired?: boolean | undefined;
   name: string;
   /**
-   * This is the unified object type that this metadata is associated with. eg. crm_contact or coomerce_item
+   * This is the unified object type that this metadata is associated with. eg. crm_contact or commerce_item
    */
   objectType: string;
-  objects?: { [k: string]: any } | undefined;
+  objects?: { [k: string]: string } | undefined;
   options?: Array<string> | undefined;
   originalFormat?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -77,7 +80,7 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
   is_required: z.boolean().optional(),
   name: z.string(),
   object_type: z.string(),
-  objects: z.record(z.any()).optional(),
+  objects: z.record(z.string()).optional(),
   options: z.array(z.string()).optional(),
   original_format: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -101,7 +104,7 @@ export type MetadataMetadata$Outbound = {
   is_required?: boolean | undefined;
   name: string;
   object_type: string;
-  objects?: { [k: string]: any } | undefined;
+  objects?: { [k: string]: string } | undefined;
   options?: Array<string> | undefined;
   original_format?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -121,7 +124,7 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   isRequired: z.boolean().optional(),
   name: z.string(),
   objectType: z.string(),
-  objects: z.record(z.any()).optional(),
+  objects: z.record(z.string()).optional(),
   options: z.array(z.string()).optional(),
   originalFormat: z.string().optional(),
   raw: z.record(z.any()).optional(),

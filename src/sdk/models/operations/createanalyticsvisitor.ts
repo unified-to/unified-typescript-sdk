@@ -14,6 +14,8 @@ export const CreateAnalyticsVisitorQueryParamFields = {
   PropertyId: "property_id",
   Email: "email",
   Name: "name",
+  FirstName: "first_name",
+  LastName: "last_name",
   Age: "age",
   Gender: "gender",
   Country: "country",

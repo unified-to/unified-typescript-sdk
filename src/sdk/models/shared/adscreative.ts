@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AdsCreativeCard,
+  AdsCreativeCard$inboundSchema,
+  AdsCreativeCard$Outbound,
+  AdsCreativeCard$outboundSchema,
+} from "./adscreativecard.js";
+import {
   AdsMetadata,
   AdsMetadata$inboundSchema,
   AdsMetadata$Outbound,
@@ -66,6 +72,10 @@ export type AdsCreative = {
   assetUrls?: Array<string> | undefined;
   body?: string | undefined;
   campaignId?: string | undefined;
+  /**
+   * Carousel cards, in display order
+   */
+  cards?: Array<AdsCreativeCard> | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -168,6 +178,7 @@ export const AdsCreative$inboundSchema: z.ZodType<
   asset_urls: z.array(z.string()).optional(),
   body: z.string().optional(),
   campaign_id: z.string().optional(),
+  cards: z.array(AdsCreativeCard$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_type: CreativeType$inboundSchema.optional(),
@@ -223,6 +234,7 @@ export type AdsCreative$Outbound = {
   asset_urls?: Array<string> | undefined;
   body?: string | undefined;
   campaign_id?: string | undefined;
+  cards?: Array<AdsCreativeCard$Outbound> | undefined;
   created_at?: string | undefined;
   creative_type?: string | undefined;
   cta?: string | undefined;
@@ -262,6 +274,7 @@ export const AdsCreative$outboundSchema: z.ZodType<
   assetUrls: z.array(z.string()).optional(),
   body: z.string().optional(),
   campaignId: z.string().optional(),
+  cards: z.array(AdsCreativeCard$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeType: CreativeType$outboundSchema.optional(),
   cta: z.string().optional(),

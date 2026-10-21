@@ -35,6 +35,7 @@ export type AnalyticsVisitor = {
    */
   createdAt?: Date | undefined;
   email?: string | undefined;
+  firstName?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -42,6 +43,7 @@ export type AnalyticsVisitor = {
   gender?: Gender | undefined;
   id?: string | undefined;
   language?: string | undefined;
+  lastName?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -83,12 +85,14 @@ export const AnalyticsVisitor$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   email: z.string().optional(),
+  first_name: z.string().optional(),
   first_seen_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
   gender: Gender$inboundSchema.optional(),
   id: z.string().optional(),
   language: z.string().optional(),
+  last_name: z.string().optional(),
   last_seen_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
@@ -106,7 +110,9 @@ export const AnalyticsVisitor$inboundSchema: z.ZodType<
   return remap$(v, {
     "country_code": "countryCode",
     "created_at": "createdAt",
+    "first_name": "firstName",
     "first_seen_at": "firstSeenAt",
+    "last_name": "lastName",
     "last_seen_at": "lastSeenAt",
     "property_id": "propertyId",
     "total_events": "totalEvents",
@@ -123,10 +129,12 @@ export type AnalyticsVisitor$Outbound = {
   country_code?: string | undefined;
   created_at?: string | undefined;
   email?: string | undefined;
+  first_name?: string | undefined;
   first_seen_at?: string | undefined;
   gender?: string | undefined;
   id?: string | undefined;
   language?: string | undefined;
+  last_name?: string | undefined;
   last_seen_at?: string | undefined;
   metadata?:
     | { [k: string]: PropertyAnalyticsVisitorMetadata$Outbound }
@@ -153,10 +161,12 @@ export const AnalyticsVisitor$outboundSchema: z.ZodType<
   countryCode: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   email: z.string().optional(),
+  firstName: z.string().optional(),
   firstSeenAt: z.date().transform(v => v.toISOString()).optional(),
   gender: Gender$outboundSchema.optional(),
   id: z.string().optional(),
   language: z.string().optional(),
+  lastName: z.string().optional(),
   lastSeenAt: z.date().transform(v => v.toISOString()).optional(),
   metadata: z.record(PropertyAnalyticsVisitorMetadata$outboundSchema)
     .optional(),
@@ -172,7 +182,9 @@ export const AnalyticsVisitor$outboundSchema: z.ZodType<
   return remap$(v, {
     countryCode: "country_code",
     createdAt: "created_at",
+    firstName: "first_name",
     firstSeenAt: "first_seen_at",
+    lastName: "last_name",
     lastSeenAt: "last_seen_at",
     propertyId: "property_id",
     totalEvents: "total_events",
